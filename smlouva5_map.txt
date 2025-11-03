@@ -1,0 +1,45 @@
+OSOBY
+-----
+[[PERSON_10]]: David Urban
+[[PERSON_1]]: Radek Procházka
+[[PERSON_1]]: Radka Procházky
+[[PERSON_2]]: Tomáš Holý
+[[PERSON_3]]: Barbora Veselá
+[[PERSON_4]]: Helena Krátká
+[[PERSON_4]]: Helenou Krátkou
+[[PERSON_5]]: Marek Beneš
+[[PERSON_6]]: Tereza Kolářová
+[[PERSON_6]]: Terezou Kolářovou
+[[PERSON_7]]: Lucie Němcová
+[[PERSON_8]]: Pavel Jelínek
+[[PERSON_9]]: Alena Svobodová
+[[PERSON_9]]: Alenou Svobodovou
+
+DATA
+----
+[[DATE_10]]: 6. 8. 1980
+[[DATE_11]]: 25. 11. 1994
+[[DATE_1]]: 31. července 2025
+[[DATE_1]]: 31. 7. 2025
+[[DATE_2]]: 2. 3. 1983
+[[DATE_3]]: 15. 4. 1988
+[[DATE_4]]: 29. 7. 1990
+[[DATE_5]]: 19. 6. 1992
+[[DATE_6]]: 3. 12. 1985
+[[DATE_7]]: 9. 5. 1991
+[[DATE_8]]: 21. 10. 1986
+[[DATE_9]]: 17. 1. 1993
+
+ADRESY
+------
+[[ADDRESS_10]]: Lesní 10, 787 01 Šumperk
+[[ADDRESS_1]]: Na Výsluní 8, 779 00 Olomouc
+[[ADDRESS_2]]: V Koutech 123, 110 00 Praha
+[[ADDRESS_3]]: U Trati 66, 602 00 Brno
+[[ADDRESS_4]]: Slunečná 45, 370 01 České Budějovice
+[[ADDRESS_5]]: Družstevní 17, 736 01 Havířov
+[[ADDRESS_6]]: Lipová 9, 460 01 Liberec
+[[ADDRESS_7]]: Komenského 5, 400 01 Ústí nad Labem
+[[ADDRESS_8]]: Na Lani 77, 290 01 Poděbrady
+[[ADDRESS_9]]: Horská 3, 500 03 Hradec Králové
+

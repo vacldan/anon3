@@ -1,0 +1,53 @@
+{
+  "[[ADDRESS_1]]": [
+    "Na Hrázi 123/7, 750 02 Přerov"
+  ],
+  "[[ADDRESS_2]]": [
+    "U Lávky 45, 779 00 Olomouc"
+  ],
+  "[[BANK_1]]": [
+    "200123456/2010"
+  ],
+  "[[BANK_2]]": [
+    "260987654/5500"
+  ],
+  "[[DATE_1]]": [
+    "14. 3. 1985"
+  ],
+  "[[DATE_2]]": [
+    "22. 9. 1989"
+  ],
+  "[[DATE_3]]": [
+    "15. 4. 2026"
+  ],
+  "[[DATE_4]]": [
+    "22. 5. 2025"
+  ],
+  "[[ID_CARD_1]]": [
+    "123456789"
+  ],
+  "[[ID_CARD_2]]": [
+    "987654321"
+  ],
+  "[[LICENSE_PLATE_1]]": [
+    "3M1 2345"
+  ],
+  "[[PERSON_1]]": [
+    "Jan Novák",
+    "Janem Novákem",
+    "Jana Nováka",
+    "Janovo Novákovo"
+  ],
+  "[[PERSON_2]]": [
+    "Petra Svobodová",
+    "Petrou Svobodovou",
+    "Petry Svobodové",
+    "Petřina"
+  ],
+  "[[PERSON_5]]": [
+    "Kateřinou Svobodovou"
+  ],
+  "[[VIN_1]]": [
+    "TMBJK61Z3G0123456"
+  ]
+}

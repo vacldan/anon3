@@ -1,0 +1,27 @@
+OSOBY
+-----
+[[PERSON_1]]: Martin Horák
+[[PERSON_2]]: Tomáš Černý
+
+RODNÁ ČÍSLA
+-----------
+[[BIRTH_ID_1]]: 854123/3256
+[[BIRTH_ID_2]]: 901108/4521
+
+BANKOVNÍ ÚČTY
+-------------
+[[BANK_1]]: 123456789/0100
+
+DATA
+----
+[[DATE_1]]: 12. 3. 1985
+[[DATE_2]]: 8. 11. 1990
+[[DATE_3]]: 31. července 2025
+[[DATE_3]]: 31. 7. 2025
+[[DATE_4]]: 31. října 2025
+
+ADRESY
+------
+[[ADDRESS_1]]: U Zámečku 45, 779 00 Olomouc
+[[ADDRESS_2]]: Na Výsluní 122, 736 01 Havířov
+
