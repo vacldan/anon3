@@ -1777,8 +1777,19 @@ class Anonymizer:
                 items = []
                 for tag, vals in sorted(self.tag_map.items()):
                     if tag.startswith(f'[[{pref}_'):
-                        for v in vals:
-                            items.append(f"{tag}: {v}")
+                        if pref == "PERSON" and len(vals) > 0:
+                            # Pro PERSON: první hodnota je kanonická, zbytek jsou varianty
+                            canonical = vals[0]
+                            items.append(f"{tag}: {canonical}")
+                            if len(vals) > 1:
+                                variants = vals[1:]
+                                # Přidej varianty s odsazením
+                                for v in variants:
+                                    items.append(f"  - {v}")
+                        else:
+                            # Pro ostatní kategorie: standardní formát
+                            for v in vals:
+                                items.append(f"{tag}: {v}")
                 if items:
                     f.write(f"{title}\n{'-'*len(title)}\n")
                     f.write("\n".join(items) + "\n\n")

@@ -1,13 +1,13 @@
 OSOBY
 -----
 [[PERSON_1]]: Jan Novák
-[[PERSON_1]]: Janem Novákem
-[[PERSON_1]]: Jana Nováka
-[[PERSON_1]]: Janovo Novákovo
+  - Janem Novákem
+  - Jana Nováka
+  - Janovo Novákovo
 [[PERSON_2]]: Petra Svobodová
-[[PERSON_2]]: Petrou Svobodovou
-[[PERSON_2]]: Petry Svobodové
-[[PERSON_2]]: Petřina
+  - Petrou Svobodovou
+  - Petry Svobodové
+  - Petřina
 [[PERSON_5]]: Kateřinou Svobodovou
 
 BANKOVNÍ ÚČTY

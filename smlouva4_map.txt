@@ -1,16 +1,16 @@
 OSOBY
 -----
 [[PERSON_1]]: Lukáš Mareček
-[[PERSON_1]]: Lukáše Marečka
+  - Lukáše Marečka
 [[PERSON_2]]: Jakub Doležal
 [[PERSON_3]]: Klára Malá
-[[PERSON_3]]: Kláry Malé
+  - Kláry Malé
 [[PERSON_4]]: Petra Novotná
-[[PERSON_4]]: Petry Novotné
+  - Petry Novotné
 [[PERSON_5]]: Veronika Suchá
-[[PERSON_5]]: Veronice Suché
+  - Veronice Suché
 [[PERSON_6]]: Michal Říha
-[[PERSON_6]]: Michalu Říhovi
+  - Michalu Říhovi
 
 BANKOVNÍ ÚČTY
 -------------
