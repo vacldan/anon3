@@ -42,15 +42,19 @@ POZNÁVACÍ ZNAČKY (SPZ/RZ)
 
 DATA
 ----
-[[DATE_1]]: 15. 4. 1982
-[[DATE_2]]: 3. 6. 1990
-[[DATE_3]]: 21. 9. 1985
-[[DATE_4]]: 12. 1. 1995
-[[DATE_5]]: 1. 9. 2025
-[[DATE_6]]: 31. 8. 2026
-[[DATE_7]]: 13. srpna 2025
+[[DATE_1]]: 15.04.1982
+[[DATE_2]]: 03.06.1990
+[[DATE_3]]: 21.09.1985
+[[DATE_4]]: 12.01.1995
+[[DATE_5]]: 01.09.2025
+[[DATE_6]]: 31.08.2026
+[[DATE_7]]: 13.08.2025
 
 ADRESY
 ------
+[[ADDRESS_1]]: U Křižovatky 25, 779 00 Olomouc
+[[ADDRESS_2]]: Jabloňová 12, 625 00 Brno
+[[ADDRESS_3]]: Na Pískách 7, 370 01 České Budějovice
+[[ADDRESS_4]]: Pod Lesem 45, 460 07 Liberec
 [[ADDRESS_5]]: Tylova 58, 779 00 Olomouc
 

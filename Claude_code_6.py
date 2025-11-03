@@ -689,8 +689,8 @@ ADDRESS_RE = re.compile(
     r',\s*'                                          # Čárka POVINNÁ
     r'(?:\d{3}\s?\d{2}\s+)?'                         # PSČ volitelné (612 00)
     r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]'                         # Velké písmeno (začátek města)
-    r'[a-záčďéěíňóřšťúůýž\s\d]{1,60}'               # Název města (GREEDY! pro víceslovná města)
-    r'(?=\s*(?:$|[,.\n()\[\]]|(?:Nar\.|RČ|Rodn[éě]|IČO|DIČ|OP|Občansk|Tel\.|Telefon|E-mail|Kontakt|Číslo|Datum|Zastoupen|Jednatel|vyd[aá]n|dále)))',  # KRITICKÁ OPRAVA: greedy matching města
+    r'(?:(?:(?!Tel\.?|Nar\.?|Rodn[éě]|Číslo|IČO|DIČ)[a-záčďéěíňóřšťúůýž\s\d])+?)'  # Město - negative lookahead
+    r'(?=\s*(?:$|[,.\n()\[\]]|(?:Nar\.?|RČ|Rodn[éě]|IČO|DIČ|OP|Občansk|Tel\.?|Telefon|E-mail|Kontakt|Číslo|Datum|Zastoupen|Jednatel|vyd[aá]n|dále)))',  # Lookahead
     re.UNICODE | re.IGNORECASE
 )
 
@@ -708,8 +708,8 @@ ADDRESS_WITH_ZIP_RE = re.compile(
     r',\s*'                                          # Čárka
     r'\d{3}\s?\d{2}\s+'                              # PSČ POVINNÉ (612 00 nebo 61200)
     r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]'                         # Velké písmeno (začátek města)
-    r'[a-záčďéěíňóřšťúůýž\s\d]{1,60}'               # Název města (GREEDY! pro víceslovná města)
-    r')(?=\s*(?:$|[,.\n()\[\]]|Tel\.|Telefon|E-mail|RČ|OP|Datum|Kontakt))',  # Group 2 KONEC + Lookahead
+    r'(?:(?:(?!Tel\.?|Nar\.?|Rodn[éě]|Číslo)[a-záčďéěíňóřšťúůýž\s\d])+?)'  # Město - negative lookahead pro klíčová slova
+    r')(?=\s*(?:$|[,.\n()\[\]]|Tel\.?|Telefon|E-mail|RČ|OP|Datum|Kontakt|Nar\.?|Rodn[éě]|Číslo))',  # Lookahead
     re.UNICODE | re.IGNORECASE
 )
 
@@ -867,7 +867,15 @@ class Anonymizer:
     def _record_value(self, tag: str, value: str):
         # Normalize: odstranění leading/trailing mezer a vícenásobných mezer
         value = re.sub(r'\s+', ' ', value).strip()
-        if value and re.search(r'(?<!\w)'+re.escape(value)+r'(?!\w)', self.source_text):
+        if not value:
+            return
+
+        # Pro DATE tagy ukládat vždy (normalizované hodnoty nemusí být v původním textu)
+        if tag.startswith('[[DATE_'):
+            if value not in self.tag_map[tag]:
+                self.tag_map[tag].append(value)
+        # Pro ostatní tagy kontrolovat, zda hodnota existuje v původním textu
+        elif re.search(r'(?<!\w)'+re.escape(value)+r'(?!\w)', self.source_text):
             if value not in self.tag_map[tag]:
                 self.tag_map[tag].append(value)
 
@@ -1443,7 +1451,7 @@ class Anonymizer:
                 normalized = original  # Fallback
 
             tag = self._get_or_create_tag('DATE', normalized)
-            self._record_value(tag, original)  # KRITICKÉ: Zaznamenat PŮVODNÍ hodnotu!
+            self._record_value(tag, normalized)  # OPRAVA: Ukládat normalizovanou formu pro konzistenci
             return tag
 
         text = DATE_RE.sub(date_repl, text)
@@ -1464,7 +1472,7 @@ class Anonymizer:
             normalized = f'{day}.{month_num}.{year}'
 
             tag = self._get_or_create_tag('DATE', normalized)
-            self._record_value(tag, original)  # KRITICKÉ: Zaznamenat PŮVODNÍ slovní formu!
+            self._record_value(tag, normalized)  # OPRAVA: Ukládat normalizovanou formu pro eliminaci duplicit
             return tag
 
         text = DATE_WORDS_RE.sub(date_words_repl, text)
