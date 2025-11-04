@@ -165,7 +165,15 @@ SURNAME_BLACKLIST = {
     'elektromobilita','elektromobility','elektromobilitě','elektromobilitu',
     'společnost','spolecnost','firma','firmy','firmu','firmou','organizace','organizaci',
     'institut','instituce','instituci','korporace','korporaci','koncern','koncernu',
-    'holding','holdingu','group','skupiny','skupina','družstvo','družstva'
+    'holding','holdingu','group','skupiny','skupina','družstvo','družstva',
+    'invest','investment','capital','kapitál','kapitalu','partners','consulting',
+
+    # KRITICKÁ OPRAVA: Role a ne-jména (zabránit "Rodiča Petr", "Učitelka Marie")
+    'rodič','rodiče','rodiča','rodičů','rodičům','rodičích','rodičem',
+    'učitel','učitelka','učitele','učitelů','učitelům','učitelce','učitelkou',
+    'žák','žáci','žáka','žáků','žákům','žákem','student','studenta','studentka','studentkou',
+    'matka','matky','matce','matkou','otec','otce','otci','otcem',
+    'syn','syna','synovi','synové','dcera','dcery','dceři','dcerou'
 }
 
 ROLE_STOP = {
@@ -426,8 +434,22 @@ def infer_surname_nominative(observed: str) -> str:
             # Je to pravděpodobně nominativ
             return obs
         else:
+            # KRITICKÁ OPRAVA: Vložné e/ě v příjmeních (Havl → Havel, Vrán → Vrána)
+            # Pokud základní tvar (po odebrání -a) končí na dvě souhlásky, může to být vložné e
+            base = obs[:-1]
+            if len(base) >= 2:
+                last_two = base[-2:].lower()
+                # Běžné vzory s vložným e: -vl, -dl, -kl, -pl, -sl, -zl, -čl, -šl
+                # Běžné vzory s vložným ě: -st, -šť, -čt
+                if last_two in ('vl', 'dl', 'kl', 'pl', 'sl', 'zl', 'čl', 'šl', 'tl', 'hl', 'bl', 'gl'):
+                    # Vlož 'e': Havl → Havel
+                    return base[:-1] + 'e' + base[-1:]
+                elif last_two in ('st', 'šť', 'čt', 'zt', 'žď'):
+                    # Vlož 'ě': možná Štěpánský, ale to už je ošetřeno výše
+                    # Pro jistotu necháme bez změny
+                    pass
             # Jinak je to pravděpodobně genitiv → odebrat -a
-            return obs[:-1]
+            return base
 
     return obs
 
@@ -701,25 +723,31 @@ def variants_for_surname(surname: str) -> set:
 # Podporuje prefixy: "Sídlo:", "Bytem:", "v ulici", "Místo podnikání:", atd.
 # DŮLEŽITÉ: Adresa MUSÍ mít formát "Ulice číslo, Město" (čárka + město jsou povinné)
 # VYLUČUJE: formát "Jméno Příjmení, bytem..." (to je osoba + adresa, ne jen adresa)
+# KRITICKÁ OPRAVA: Podpora pro zkratky ulic (nám., ul., tř.)
+# KRITICKÁ OPRAVA: Prefix je nyní volitelný (např. "IČO: 123456, Na Příkopě 33, Praha 1")
 ADDRESS_RE = re.compile(
     r'(?<!\[)'                                       # Ne po '['
-    r'(?:'                                           # Začátek prefixů
+    r'(?:'                                           # Začátek prefixů (VOLITELNÉ!)
     r'(?:(?:trvale\s+)?bytem\s*:?\s*)|'             # "bytem" nebo "Bytem:"
     r'(?:(?:trvalé\s+)?bydlišt[eě]\s*:\s*)|'        # "trvalé bydliště:"
     r'(?:(?:sídlo(?:\s+podnikání)?|se\s+sídlem)\s*:\s*)|'  # "sídlo:" / "se sídlem:"
     r'(?:místo\s+(?:podnikání|výkonu\s+práce)\s*:?\s*)|'  # "Místo podnikání:" nebo "Místo výkonu práce" (volitelná :)
     r'(?:(?:adresa|trvalý\s+pobyt)\s*:\s*)|'       # "adresa:" / "trvalý pobyt:"
     r'(?:(?:v\s+ulic[ií]|na\s+adrese|v\s+dom[eě])\s+)'  # "v ulici " / "na adrese " (BEZ volitelnosti!)
-    r')'
+    r')?'                                            # CELÝ PREFIX JE VOLITELNÝ!
     r'(?![A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+,\s+bytem)'  # VYLUČUJE: "Jméno Příjmení, bytem"
     r'(?![A-Z]{2,3}\s+\d{6,9})'                      # VYLUČUJE: "AB 456789" (OP kódy)
-    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]'                         # Velké písmeno (začátek ulice)
-    r'[a-záčďéěíňóřšťúůýž\s]{2,50}?'                # Název ulice (non-greedy OK, ukončeno číslem)
+    r'(?:'                                           # Začátek ulice
+    r'(?:nám\.|ul\.|tř\.|n\.|u\.|t\.)\s+|'          # Zkratky: nám. (náměstí), ul. (ulice), tř. (třída)
+    r'(?:(?:Na|U|K|Pod|V|Nad|Za)\s+)?'              # Volitelné předložky (Na Příkopě, U Lávky, K Lesu, Pod Skalkou)
+    r'(?:[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ])'                     # Velké písmeno (začátek názvu)
+    r')'
+    r'[a-záčďéěíňóřšťúůýž\s]{1,50}?'                # Název ulice (non-greedy OK, ukončeno číslem)
     r'\s+\d{1,4}(?:/\d{1,4})?'                      # Číslo domu (25 nebo 25/8)
     r',\s*'                                          # Čárka POVINNÁ
     r'(?:\d{3}\s?\d{2}\s+)?'                         # PSČ volitelné (612 00)
     r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]'                         # Velké písmeno (začátek města)
-    r'(?:(?:(?!Tel\.?|Nar\.?|Rodn[éě]|Číslo|IČO|DIČ)[a-záčďéěíňóřšťúůýž\s\d])+?)'  # Město - negative lookahead
+    r'(?:(?:(?!Tel\.?|Nar\.?|Rodn[éě]|Číslo|IČO|DIČ)[a-záčďéěíňóřšťúůýž\s\d\-])+?)'  # Město - negative lookahead, přidána pomlčka pro "Brno-střed"
     r'(?=\s*(?:$|[,.\n()\[\]]|(?:Nar\.?|RČ|Rodn[éě]|IČO|DIČ|OP|Občansk|Tel\.?|Telefon|E-mail|Kontakt|Číslo|Datum|Zastoupen|Jednatel|vyd[aá]n|dále)))',  # Lookahead
     re.UNICODE | re.IGNORECASE
 )
