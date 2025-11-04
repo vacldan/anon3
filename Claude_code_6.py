@@ -36,14 +36,35 @@ def iter_paragraphs(doc: Document):
                     yield p
 
 def get_text(p) -> str:
-    return ''.join(r.text or '' for r in p.runs) or p.text or ''
+    # KRITICKÁ OPRAVA: Hyperlinky (e-maily, URLs) NEJSOU v p.runs!
+    # Musíme použít p.text, který zahrnuje i hyperlinky
+    # Fallback na runs je pro případ, kdy p.text nefunguje
+    text_from_property = p.text or ''
+    if text_from_property:
+        return text_from_property
+    # Fallback: pokud p.text je prázdný, zkus runs
+    return ''.join(r.text or '' for r in p.runs) or ''
 
 def set_text(p, s: str):
-    if p.runs:
-        p.runs[0].text = s
-        for r in p.runs[1:]: r.text = ''
-    else:
-        p.text = s
+    # KRITICKÁ OPRAVA: Pokud paragraph obsahuje hyperlinky, musíme zachovat jejich strukturu
+    # Nejjednodušší způsob: smazat všechny runs a hyperlinky a vytvořit nový run
+    # (Zachování hyperlinkův by bylo složité, ale nejsou potřeba v anonymizovaném dokumentu)
+
+    # Smaž všechny child elementy (runs, hyperlinky, atd.)
+    for child in list(p._element):
+        p._element.remove(child)
+
+    # Vytvoř nový run s anonymizovaným textem
+    from docx.oxml import OxmlElement
+    from docx.oxml.ns import qn
+
+    run_elem = OxmlElement('w:r')
+    text_elem = OxmlElement('w:t')
+    text_elem.text = s
+    # Zachovat mezery (preserve space)
+    text_elem.set(qn('xml:space'), 'preserve')
+    run_elem.append(text_elem)
+    p._element.append(run_elem)
 
 def preserve_case(surface: str, tag: str) -> str:
     if surface.isupper(): return tag.upper()
@@ -740,7 +761,7 @@ ACCT_RE    = re.compile(r'\b(?:\d{1,6}-)?\d{2,10}/\d{4}\b')
 BIRTHID_RE = re.compile(r'\b\d{6}\s*/\s*\d{3,4}\b')
 IDCARD_RE  = re.compile(r'\b\d{6,9}/\d{3,4}\b|\b\d{9}\b|[A-Z]{2,3}[ \t]?\d{6,9}\b')
 PHONE_RE   = re.compile(r'(?<!\d)(?:\+420|00420)?[ \t\-]?\d{3}[ \t\-]?\d{3}[ \t\-]?\d{3}(?!\s*/\d{4})\b')
-EMAIL_RE   = re.compile(r'[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}')
+EMAIL_RE   = re.compile(r'[A-Za-z0-9._%+\-\u00C0-\u017F]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}', re.UNICODE)
 DATE_RE    = re.compile(r'\b\d{1,2}\.\s*\d{1,2}\.\s*\d{4}\b')
 
 # DATE_WORDS_RE - detekuje datumy psané s českými názvy měsíců
@@ -1321,6 +1342,11 @@ class Anonymizer:
         return rx.sub(repl, text)
 
     def anonymize_entities(self, text: str) -> str:
+        # KRITICKÁ OPRAVA: E-MAILY MUSÍ BÝT ÚPLNĚ PRVNÍ!
+        # Jinak se jména v e-mailech (např. "martina.horáková@example.com") nahradí jako osoby
+        # a zbyde "[[PERSON]].horáková@example.com"
+        text = self._replace_entity(text, EMAIL_RE, 'EMAIL')
+
         # SPECIÁLNÍ PŘÍPAD: "Jméno Příjmení, bytem Adresa" (např. v Svědcích)
         # Musí být PŘED zpracováním adres a osob!
         PERSON_BYTEM_ADDRESS_RE = re.compile(
@@ -1357,7 +1383,7 @@ class Anonymizer:
 
         text = PERSON_BYTEM_ADDRESS_RE.sub(person_bytem_repl, text)
 
-        # DŮLEŽITÉ: Adresy PRVNÍ! (před emaily a osobami)
+        # DŮLEŽITÉ: Adresy DRUHÉ! (po e-mailech, ale před osobami)
         # Jinak "Novákova 45" se detekuje jako jméno
         def addr_repl(m):
             full_match = m.group(0)
@@ -1443,7 +1469,7 @@ class Anonymizer:
         # GDPR: VIN (Vehicle Identification Number) - 17-znakový kód vozidla
         text = self._replace_entity(text, VIN_RE, 'VIN')
 
-        text = self._replace_entity(text, EMAIL_RE, 'EMAIL')
+        # POZNÁMKA: E-maily jsou zpracovány na ZAČÁTKU funkce (před adresami a osobami)
 
         # Datumy - normalizovat na DD.MM.RRRR formát
         def date_repl(m):
@@ -1724,7 +1750,11 @@ class Anonymizer:
             pieces.append(clean_invisibles(get_text(p)))
         self.source_text = '\n'.join(pieces)
 
-        self._extract_persons_to_index(self.source_text)
+        # KRITICKÁ OPRAVA: Před detekcí osob DOČASNĚ nahradit e-maily placeholdery
+        # Jinak se jména v e-mailech (např. "martina.horáková@example.com") detekují jako osoby
+        text_for_person_detection = EMAIL_RE.sub('__EMAIL_PLACEHOLDER__', self.source_text)
+
+        self._extract_persons_to_index(text_for_person_detection)
 
         for p in iter_paragraphs(doc):
             raw = get_text(p)

@@ -1,0 +1,183 @@
+OSOBY
+-----
+[[PERSON_10]]: Alexandru Popescua
+  - Alexandru Popescuovi
+[[PERSON_11]]: Hana Nejedlá
+  - Nejedlá
+  - Nejedlé
+  - Haně Nejedlé
+[[PERSON_12]]: Filip Špaček
+  - Špačkovi
+  - Špaček
+[[PERSON_13]]: Jan Kovář
+  - Janem Kovářem
+  - Kovář
+[[PERSON_14]]: Alena Sedláčková
+  - Alenou Sedláčkovou
+  - Sedláčkovou
+[[PERSON_15]]: Jiří Bárt
+  - Jiří Bárta
+[[PERSON_16]]: Barbora Šimková
+  - (rozená Hrubá)
+  - Šimková
+[[PERSON_17]]: Barbora Hrubá
+  - Barbora
+[[PERSON_18]]: Lenka Slavíková
+  - Lenku Slavíkovou
+  - Slavíková
+[[PERSON_19]]: Ondřej Jelínek
+  - Ondřejem Jelínkem
+[[PERSON_1]]: Radek Schneider
+  - Schneider
+[[PERSON_20]]: Klára Vrabcová
+  - Klárou Vrabcovou
+[[PERSON_21]]: Josef Havela
+  - Josef Havel
+  - Josefu Havelovi
+  - Havelovi
+  - Havel
+[[PERSON_22]]: Petr Havelek
+  - Petr Havelka
+[[PERSON_2]]: Trần Văn Minh
+  - Trần
+[[PERSON_4]]: David Havlas
+  - Havlasovi
+  - Havlas
+[[PERSON_5]]: Jakub Havlíček
+  - Jakub "Kuba" Havlíček
+  - Havlíček
+  - Jakubovi
+  - (dále jen "Kuba")
+[[PERSON_6]]: Tomáš Černýý
+  - Tomášem
+[[PERSON_7]]: Lucie Dvořáková
+[[PERSON_8]]: Miroslav Kučera
+  - Kučera
+  - Kučeru
+[[PERSON_9]]: Alexandru Popesec
+  - Alexandru Popescu
+  - Popescu
+
+RODNÁ ČÍSLA
+-----------
+[[BIRTH_ID_10]]: 850314/2589
+[[BIRTH_ID_11]]: 940725/3698
+[[BIRTH_ID_12]]: 780522/4125
+[[BIRTH_ID_1]]: 945722/8541
+[[BIRTH_ID_2]]: 760825/4125
+[[BIRTH_ID_3]]: 725412/6985
+[[BIRTH_ID_4]]: 980514/3698
+[[BIRTH_ID_5]]: 885908/6325
+[[BIRTH_ID_6]]: 820216/4785
+[[BIRTH_ID_7]]: 915623/8745
+[[BIRTH_ID_8]]: 780425/9632
+[[BIRTH_ID_9]]: 990618/7845
+
+IČO
+---
+[[ICO_1]]: 36985471
+[[ICO_2]]: 95874632
+[[ICO_3]]: 07896543
+[[ICO_4]]: 85693214
+[[ICO_5]]: 12365478
+[[ICO_6]]: 45698732
+
+DIČ
+---
+[[DIC_1]]: CZ36985471
+[[DIC_2]]: CZ8908265471
+
+OSOBNÍ ČÍSLA ZAMĚSTNANCŮ
+------------------------
+[[EMP_ID_1]]: 6982
+
+BANKOVNÍ ÚČTY
+-------------
+[[BANK_1]]: 3698547125/0300
+[[BANK_2]]: 287456398/2400
+[[BANK_3]]: 3698741258/0600
+[[BANK_4]]: 478965321/0100
+[[BANK_5]]: 2547896321/5500
+[[BANK_6]]: 8963254781/3030
+
+TELEFONY
+--------
+[[PHONE_10]]: +420 725 369 874
+[[PHONE_11]]: 604 258 963
+[[PHONE_12]]: 777 854 963
+[[PHONE_13]]: +420 736 254 987
+[[PHONE_14]]: 605 874 236
+[[PHONE_15]]: 724 369 874
+[[PHONE_1]]: +420 604 785 963
+[[PHONE_2]]: 725 896 314
+[[PHONE_3]]: +420 778 524 963
+[[PHONE_4]]: 606 987 425
+[[PHONE_5]]: +420 609 456 873
+[[PHONE_6]]: +420 296 874 536
+[[PHONE_7]]: 724 587 963
+[[PHONE_8]]: 604 325 874
+[[PHONE_9]]: 778 965 321
+
+EMAILY
+------
+[[EMAIL_10]]: tran.minh@email.cz
+[[EMAIL_11]]: david.havlas@email.com
+[[EMAIL_1]]: lucie.dvorakova@email.cz
+[[EMAIL_2]]: m.kucera@email.cz
+[[EMAIL_3]]: nejedla.hana@gmail.com
+[[EMAIL_4]]: kontakt@propertymatch.cz
+[[EMAIL_5]]: alena.sedlackova@univerzita.cz
+[[EMAIL_6]]: simkova.bara@email.cz
+[[EMAIL_7]]: lenka.slavikova@consulting.cz
+[[EMAIL_8]]: ondrej.jelinek@techvision.cz
+[[EMAIL_9]]: info@cafehub.cz
+
+OBČANSKÉ PRŮKAZY
+----------------
+[[ID_CARD_1]]: 987456321
+[[ID_CARD_2]]: CD 789456
+[[ID_CARD_3]]: EF 456789
+[[ID_CARD_4]]: GH 654321
+[[ID_CARD_5]]: IJ 852963
+[[ID_CARD_6]]: KL 963258
+[[ID_CARD_7]]: MN 741258
+
+DATA
+----
+[[DATE_10]]: 22.08.1979
+[[DATE_11]]: 18.06.1999
+[[DATE_1]]: 22.07.1994
+[[DATE_2]]: 01.07.2025
+[[DATE_3]]: 18.11.1987
+[[DATE_4]]: 15.05.2025
+[[DATE_5]]: 12.04.1972
+[[DATE_6]]: 08.03.2021
+[[DATE_7]]: 08.09.1988
+[[DATE_8]]: 16.02.1982
+[[DATE_9]]: 23.06.1991
+
+ADRESY
+------
+[[ADDRESS_10]]: U Parku 25, 140 00 Praha 4
+[[ADDRESS_11]]: Belgická 47, 120 00 Praha 2
+[[ADDRESS_12]]: Pod Lipami 18, 150 00 Praha 5
+[[ADDRESS_13]]: Karlovo náměstí 25, 120 00 Praha 2
+[[ADDRESS_14]]: Národní 38, 110 00 Praha 1
+[[ADDRESS_15]]: Žitná 1365/42, 120 00 Praha 2
+[[ADDRESS_16]]: Havelská 12, 110 00 Praha 1
+[[ADDRESS_17]]: Havlíčkova 85, 130 00 Praha 3
+[[ADDRESS_18]]: Havířov 78
+[[ADDRESS_1]]: Revoluční 2548/9, 110 00 Praha 1
+[[ADDRESS_2]]: Jiráskova 45, 702 00 Ostrava
+[[ADDRESS_3]]: Údolní 15/238, 602 00 Brno
+[[ADDRESS_4]]: Vinohradská 1458/65, 130 00 Praha 3
+[[ADDRESS_5]]: Studentská 28, 160 00 Praha 6
+[[ADDRESS_6]]: Mánesova 156, 621 00 Brno
+[[ADDRESS_7]]: Studentská 28, Praha 6
+[[ADDRESS_8]]: Pařížská 1548/30, 110 00 Praha 1
+[[ADDRESS_9]]: Purkyňova 88, 612 00 Brno
+
+MÍSTA NAROZENÍ
+--------------
+[[PLACE_1]]: Ostrava
+

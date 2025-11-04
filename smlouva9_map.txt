@@ -1,0 +1,126 @@
+OSOBY
+-----
+[[PERSON_10]]: Michal Konečný
+[[PERSON_11]]: Klára Veselá
+[[PERSON_12]]: Tomáš Čada
+[[PERSON_13]]: Veronika Štěpánová
+[[PERSON_14]]: Roman Doležal
+[[PERSON_15]]: Moravia Energa
+  - Moravia Energy
+[[PERSON_16]]: Jana Čechová
+[[PERSON_17]]: Petr Beneš
+[[PERSON_18]]: Lenka Růžičková
+[[PERSON_19]]: Radek Matoušek
+[[PERSON_1]]: Alena Vránová
+[[PERSON_20]]: Marek Šmíd
+[[PERSON_21]]: Jitka Dvořáčková
+[[PERSON_22]]: Petr Kovář
+[[PERSON_23]]: Marta Horáková
+  - Martina Horáková
+[[PERSON_24]]: Jana Černá
+[[PERSON_25]]: Iveta Zelená
+[[PERSON_2]]: Karel Šveec
+  - Karel
+[[PERSON_3]]: Česká Finanční
+  - Česká
+[[PERSON_4]]: Jiří Konečný
+  - Konečný
+[[PERSON_5]]: Pavla Růžičková
+[[PERSON_6]]: Tomáš Doležal
+[[PERSON_7]]: Barbora Nováková
+[[PERSON_8]]: Petra Malíková
+[[PERSON_9]]: Elektromobilita Hodnocení
+  - Elektromobilita
+  - Hodnocení
+
+RODNÁ ČÍSLA
+-----------
+[[BIRTH_ID_1]]: 740914/1825
+[[BIRTH_ID_2]]: 880722/0543
+[[BIRTH_ID_3]]: 851117/4758
+
+IČO
+---
+[[ICO_10]]: 45317054
+[[ICO_11]]: 60232514
+[[ICO_12]]: 45272956
+[[ICO_1]]: 65269705
+[[ICO_2]]: 98765432
+[[ICO_3]]: 74125896
+[[ICO_4]]: 65478932
+[[ICO_5]]: 55669877
+[[ICO_6]]: 88977655
+[[ICO_7]]: 77889911
+[[ICO_8]]: 74215368
+[[ICO_9]]: 11122334
+
+DIČ
+---
+[[DIC_1]]: CZ74125896
+
+BANKOVNÍ ÚČTY
+-------------
+[[BANK_1]]: 123456789/0100
+[[BANK_2]]: 256987451/0300
+[[BANK_3]]: 987123456/5500
+[[BANK_4]]: 303456789/0300
+[[BANK_5]]: 2310456789/0100
+[[BANK_6]]: 987456123/5500
+
+TELEFONY
+--------
+[[PHONE_1]]: 543 123 789
+[[PHONE_2]]: 222 333 444
+[[PHONE_3]]: +420 734 555 111
+[[PHONE_4]]: 721 888 123
+
+EMAILY
+------
+[[EMAIL_10]]: lenka.vlčková@neoteam.cz
+[[EMAIL_1]]: alena.vranova@fnbrno.cz
+[[EMAIL_2]]: jiri.konecny@cfb.cz
+[[EMAIL_3]]: barbora.novakova@agroklasik.cz
+[[EMAIL_4]]: klara.vesela@datasys.cz
+[[EMAIL_5]]: pavel.novotny@datasys.cz
+[[EMAIL_6]]: v.stepanova@taxadvisors.cz
+[[EMAIL_7]]: johann.schmidt@powergrid.de
+[[EMAIL_8]]: martina.horáková@neoteam.cz
+[[EMAIL_9]]: jan.korbel@neoteam.cz
+
+DATA
+----
+[[DATE_10]]: 14.02.2025
+[[DATE_11]]: 01.07.2025
+[[DATE_12]]: 15.06.2025
+[[DATE_13]]: 02.09.2025
+[[DATE_14]]: 07.11.2025
+[[DATE_15]]: 25.06.2025
+[[DATE_16]]: 17.11.1985
+[[DATE_17]]: 01.08.2025
+[[DATE_18]]: 31.07.2040
+[[DATE_1]]: 14.09.1974
+[[DATE_2]]: 10.10.2025
+[[DATE_3]]: 11.10.2025
+[[DATE_4]]: 12.10.2025
+[[DATE_5]]: 17.09.2025
+[[DATE_6]]: 14.06.2025
+[[DATE_7]]: 28.06.2025
+[[DATE_8]]: 22.07.1988
+[[DATE_9]]: 18.08.2025
+
+ADRESY
+------
+[[ADDRESS_10]]: Jungmannova 5, Praha 1
+[[ADDRESS_11]]: Vídeňská 4, 639 00 Brno
+[[ADDRESS_12]]: Křižíkova 56, 186 00 Praha 8
+[[ADDRESS_13]]: Sokolská 14, Ostrava
+[[ADDRESS_1]]: Jihlavská 20, 625 00 Brno
+[[ADDRESS_2]]: Křížkovského 12, 602 00 Brno
+[[ADDRESS_3]]: Na Poříčí 8, 110 00 Praha 1
+[[ADDRESS_4]]: Antonínská 8, Brno
+[[ADDRESS_5]]: Masarykova 22, 602 00 Brno
+[[ADDRESS_6]]: Družstevní 5, 779 00 Olomouc
+[[ADDRESS_7]]: Vídeňská 118, 619 00 Brno
+[[ADDRESS_8]]: Technologická 45, Praha 6
+[[ADDRESS_9]]: Lipová 19, 460 01 Liberec
+
