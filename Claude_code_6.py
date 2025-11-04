@@ -886,6 +886,14 @@ class Anonymizer:
         tag = self._get_or_create_tag('PERSON', f'{first_nom} {last_nom}')
         self.person_index[key] = tag
         self.canonical_persons.append({'first': first_nom, 'last': last_nom, 'tag': tag})
+
+        # KRITICKÁ OPRAVA: Zajisti, že kanonická forma (nominativ) je VŽDY první v tag_map
+        # i když není přímo v původním textu (může být jen pádová forma)
+        canonical_full = f'{first_nom} {last_nom}'
+        if canonical_full not in self.tag_map[tag]:
+            # Vlož kanonickou formu na PRVNÍ místo
+            self.tag_map[tag].insert(0, canonical_full)
+
         fvars = variants_for_first(first_nom)
         svars = variants_for_surname(last_nom)
         self.person_variants[tag] = {f'{f} {s}' for f in fvars for s in svars}
