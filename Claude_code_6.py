@@ -156,7 +156,16 @@ SURNAME_BLACKLIST = {
     # Slova často mylně detekovaná jako příjmení (s i bez diakritiky)
     'bytem','bydliště','bydliste','rodné','rodne','číslo','cislo','císlo','čislo',
     'nový','novy','nová','nova','nové','nove','starý','stary','stará','stara','staré','stare',
-    'místo','misto','datum','účtu','uctu','částku','castku','petru'
+    'místo','misto','datum','účtu','uctu','částku','castku','petru',
+
+    # KRITICKÁ OPRAVA: Organizace a firmy (zabránit "Česká Finanční" = jméno)
+    'banka','banky','banku','bankám','bankou','bankách','finanční','financni','pojišťovna','pojišťovny','pojištovna',
+    'energy','energa','energii','energií','energie','energetický','energeticka',
+    'moravia','moravská','moravska','moravské','moravske','českomoravská','ceskomoravska',
+    'elektromobilita','elektromobility','elektromobilitě','elektromobilitu',
+    'společnost','spolecnost','firma','firmy','firmu','firmou','organizace','organizaci',
+    'institut','instituce','instituci','korporace','korporaci','koncern','koncernu',
+    'holding','holdingu','group','skupiny','skupina','družstvo','družstva'
 }
 
 ROLE_STOP = {
@@ -991,8 +1000,18 @@ class Anonymizer:
             
             pre = text[max(0, s-80):s]
             post = text[e:e+80]
+
+            # KRITICKÁ OPRAVA: Organizace a firmy
+            # Pokud je za jménem "a.s.", "s.r.o.", "spol.", atd., je to firma, ne osoba
+            if re.search(r'\s+(a\.s\.|s\.r\.o\.|spol\.|v\.o\.s\.|o\.p\.s\.|o\.s\.|z\.s\.)', post, re.IGNORECASE):
+                continue
+
+            # Pokud je před jménem "Oddělení:", "Instituce:", "Společnost:", je to organizace
+            if re.search(r'\b(Oddělení|Instituce|Společnost|Korporace|Organizace|Firma)\s*:\s*$', pre, re.IGNORECASE):
+                continue
+
             if re.search(r'\b(výrobce|model|značka|inventář|výrobek|položk)', pre+post, re.IGNORECASE):
-                if (normalize_for_matching(f_tok) in SURNAME_BLACKLIST or 
+                if (normalize_for_matching(f_tok) in SURNAME_BLACKLIST or
                     normalize_for_matching(l_tok) in SURNAME_BLACKLIST):
                     continue
 

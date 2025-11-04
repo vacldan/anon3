@@ -1,37 +1,30 @@
 OSOBY
 -----
-[[PERSON_10]]: Michal Konečný
-[[PERSON_11]]: Klára Veselá
-[[PERSON_12]]: Tomáš Čada
-[[PERSON_13]]: Veronika Štěpánová
-[[PERSON_14]]: Roman Doležal
-[[PERSON_15]]: Moravia Energa
-  - Moravia Energy
-[[PERSON_16]]: Jana Čechová
-[[PERSON_17]]: Petr Beneš
-[[PERSON_18]]: Lenka Růžičková
-[[PERSON_19]]: Radek Matoušek
+[[PERSON_10]]: Tomáš Čada
+[[PERSON_11]]: Veronika Štěpánová
+[[PERSON_12]]: Roman Doležal
+[[PERSON_13]]: Jana Čechová
+[[PERSON_14]]: Petr Beneš
+[[PERSON_15]]: Lenka Růžičková
+[[PERSON_16]]: Radek Matoušek
+[[PERSON_17]]: Marek Šmíd
+[[PERSON_18]]: Jitka Dvořáčková
+[[PERSON_19]]: Petr Kovář
 [[PERSON_1]]: Alena Vránová
-[[PERSON_20]]: Marek Šmíd
-[[PERSON_21]]: Jitka Dvořáčková
-[[PERSON_22]]: Petr Kovář
-[[PERSON_23]]: Marta Horáková
+[[PERSON_20]]: Marta Horáková
   - Martina Horáková
-[[PERSON_24]]: Jana Černá
-[[PERSON_25]]: Iveta Zelená
+[[PERSON_21]]: Jana Černá
+[[PERSON_22]]: Iveta Zelená
 [[PERSON_2]]: Karel Šveec
   - Karel
-[[PERSON_3]]: Česká Finanční
-  - Česká
-[[PERSON_4]]: Jiří Konečný
+[[PERSON_3]]: Jiří Konečný
   - Konečný
-[[PERSON_5]]: Pavla Růžičková
-[[PERSON_6]]: Tomáš Doležal
-[[PERSON_7]]: Barbora Nováková
-[[PERSON_8]]: Petra Malíková
-[[PERSON_9]]: Elektromobilita Hodnocení
-  - Elektromobilita
-  - Hodnocení
+[[PERSON_4]]: Pavla Růžičková
+[[PERSON_5]]: Tomáš Doležal
+[[PERSON_6]]: Barbora Nováková
+[[PERSON_7]]: Petra Malíková
+[[PERSON_8]]: Michal Konečný
+[[PERSON_9]]: Klára Veselá
 
 RODNÁ ČÍSLA
 -----------
