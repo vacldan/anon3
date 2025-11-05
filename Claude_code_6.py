@@ -375,18 +375,23 @@ def infer_surname_nominative(observed: str) -> str:
         return m2.group(1) + 'nek'
 
     # DŮLEŽITÉ: Pouze pro příjmení typu -ek (Hájek, Čábelek), NE pro běžná příjmení+'kem' (Dvořákem)
+    # KRITICKÁ OPRAVA: NE pro zvířecí příjmení (Liška, ne Lišek)
     # Kontrola: před 'k' musí být souhláska (ne samohláska)
     if low.endswith(('ka','kovi','kem','ku','ke','ků','kům')) and len(obs) > 3:
-        # Zjisti, který suffix máme
-        for suff in ['kovi', 'kem', 'kům', 'ka', 'ku', 'ke', 'ků']:
-            if low.endswith(suff):
-                idx_before_k = -(len(suff) + 1)
-                if len(obs) >= abs(idx_before_k):
-                    char_before_k = obs[idx_before_k].lower()
-                    # Pouze pokud je před 'k' souhláska (příjmení typu Hájek)
-                    if char_before_k not in 'aáeéěiíoóuúůyý':
-                        return re.sub(r'k(ovi|em|u|e|a|ů|ům)?$', 'ek', obs, flags=re.IGNORECASE)
-                break
+        # KRITICKÁ OPRAVA: Vyjmout zvířecí příjmení (Liška, ne Lišek)
+        # Pokud to vypadá jako zvířecí příjmení, NEPŘEPISOVAT na -ek
+        base_without_suffix = re.sub(r'k(ovi|em|u|e|a|ů|ům)?$', 'k', obs, flags=re.IGNORECASE)
+        if not base_without_suffix.lower().endswith(('išk', 'íšk', 'ešk', 'ůbk', 'ubk')):
+            # Zjisti, který suffix máme
+            for suff in ['kovi', 'kem', 'kům', 'ka', 'ku', 'ke', 'ků']:
+                if low.endswith(suff):
+                    idx_before_k = -(len(suff) + 1)
+                    if len(obs) >= abs(idx_before_k):
+                        char_before_k = obs[idx_before_k].lower()
+                        # Pouze pokud je před 'k' souhláska (příjmení typu Hájek)
+                        if char_before_k not in 'aáeéěiíoóuúůyý':
+                            return re.sub(r'k(ovi|em|u|e|a|ů|ům)?$', 'ek', obs, flags=re.IGNORECASE)
+                    break
 
     # ========== Příjmení typu -ec (Němec) ==========
     m3 = re.match(r'^(.+)c(e|i|em|ů|ích|ům|ech|emi|u|y)?$', obs, flags=re.IGNORECASE)
@@ -423,6 +428,12 @@ def infer_surname_nominative(observed: str) -> str:
                 char_before = base[-3].lower()
                 if char_before in 'aáeéěiíoóuúůyý':
                     return base[:-1] + 'e' + base[-1:]  # Havl → Havel
+
+        # KRITICKÁ OPRAVA: Příjmení typu Liška, Holub (zvířecí příjmení)
+        # Liškovi → Liška (ne Lišk), Holubovi → Holub
+        # Heuristika: Pokud základ končí na typické zvířecí vzory, přidej -a
+        if base.lower().endswith(('išk', 'íšk', 'ešk', 'ůbk', 'ubk', 'oub', 'lub', 'rán', 'ván')):
+            return base + 'a'
         return base
     if low.endswith('em') and len(obs) > 2:
         base = obs[:-2]  # Novákem → Novák
@@ -442,20 +453,21 @@ def infer_surname_nominative(observed: str) -> str:
     if low.endswith('a') and len(obs) > 2:
         # Typické vzory pro příjmení v nominativu na -a:
         # -ha, -la, -ra, -da, -ta, -na, -ka, -cha, -ma, -ba, -pa, -va, -za, -sa
-        # Příklady: Říha, Skála, Hora, Svoboda, Kučera
-        if low.endswith(('iha','íha','uha','ůha','eha','ěha','oha','aha','yha',
-                         'ila','íla','ula','ůla','ela','ěla','ola','ala','yla',
-                         'ira','íra','ura','ůra','era','ěra','ora','ara','yra',
-                         'ida','ída','uda','ůda','eda','ěda','oda','ada','yda',
-                         'ita','íta','uta','ůta','eta','ěta','ota','ata','yta',
-                         'ina','ína','una','ůna','ena','ěna','ona','ana','yna',
-                         'ika','íka','uka','ůka','eka','ěka','oka','aka','yka',
-                         'ima','íma','uma','ůma','ema','ěma','oma','ama','yma',
-                         'iba','íba','uba','ůba','eba','ěba','oba','aba','yba',
-                         'ipa','ípa','upa','ůpa','epa','ěpa','opa','apa','ypa',
-                         'iva','íva','uva','ůva','eva','ěva','ova','ava','yva',
-                         'iza','íza','uza','ůza','eza','ěza','oza','aza','yza',
-                         'isa','ísa','usa','ůsa','esa','ěsa','osa','asa','ysa')):
+        # Příklady: Říha, Skála, Hora, Svoboda, Kučera, Vrána, Liška
+        # KRITICKÁ OPRAVA: Přidány vzory s dlouhými samohláskami (ána, íška, ůbka)
+        if low.endswith(('iha','íha','uha','ůha','eha','ěha','oha','aha','ána','yha',
+                         'ila','íla','ula','ůla','ela','ěla','ola','ala','ála','yla',
+                         'ira','íra','ura','ůra','era','ěra','ora','ara','ára','yra',
+                         'ida','ída','uda','ůda','eda','ěda','oda','ada','áda','yda',
+                         'ita','íta','uta','ůta','eta','ěta','ota','ata','áta','yta',
+                         'ina','ína','una','ůna','ena','ěna','ona','ana','ána','yna',
+                         'ika','íka','uka','ůka','eka','ěka','oka','aka','áka','yka','íška','iška','ůbka','ubka','ybka',
+                         'ima','íma','uma','ůma','ema','ěma','oma','ama','áma','yma',
+                         'iba','íba','uba','ůba','eba','ěba','oba','aba','ába','yba',
+                         'ipa','ípa','upa','ůpa','epa','ěpa','opa','apa','ápa','ypa',
+                         'iva','íva','uva','ůva','eva','ěva','ova','ava','áva','yva',
+                         'iza','íza','uza','ůza','eza','ěza','oza','aza','áza','yza',
+                         'isa','ísa','usa','ůsa','esa','ěsa','osa','asa','ása','ysa')):
             # Je to pravděpodobně nominativ
             return obs
         else:
