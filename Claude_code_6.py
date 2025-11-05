@@ -176,6 +176,15 @@ SURNAME_BLACKLIST = {
     'syn','syna','synovi','synové','dcera','dcery','dceři','dcerou'
 }
 
+# KRITICKÁ OPRAVA: Přidat do blacklistu i verze bez diakritiky
+# (protože normalize_for_matching() odstraňuje diakritiku)
+_blacklist_no_diacritics = set()
+for word in SURNAME_BLACKLIST:
+    normalized = normalize_for_matching(word)
+    if normalized and normalized != word:
+        _blacklist_no_diacritics.add(normalized)
+SURNAME_BLACKLIST.update(_blacklist_no_diacritics)
+
 ROLE_STOP = {
     'pronajímatel','nájemce','dlužník','věřitel','objednatel','zhotovitel',
     'zaměstnanec','zaměstnavatel','ručitel','spoludlužník','jednatel','svědek',
@@ -406,9 +415,25 @@ def infer_surname_nominative(observed: str) -> str:
 
     # Dativ/Lokál: -ovi, Instrumentál: -em
     if low.endswith('ovi') and len(obs) > 3:
-        return obs[:-3]  # Novákovi → Novák
+        base = obs[:-3]  # Novákovi → Novák
+        # KRITICKÁ OPRAVA: Kontrola vložného e (Havlovi → Havel, ne Havl)
+        if len(base) >= 3:
+            last_two = base[-2:].lower()
+            if last_two in ('vl', 'dl', 'kl', 'pl', 'sl', 'zl', 'čl', 'šl', 'tl', 'hl', 'bl', 'gl'):
+                char_before = base[-3].lower()
+                if char_before in 'aáeéěiíoóuúůyý':
+                    return base[:-1] + 'e' + base[-1:]  # Havl → Havel
+        return base
     if low.endswith('em') and len(obs) > 2:
-        return obs[:-2]  # Novákem → Novák
+        base = obs[:-2]  # Novákem → Novák
+        # KRITICKÁ OPRAVA: Kontrola vložného e (Havlem → Havel, ne Havl)
+        if len(base) >= 3:
+            last_two = base[-2:].lower()
+            if last_two in ('vl', 'dl', 'kl', 'pl', 'sl', 'zl', 'čl', 'šl', 'tl', 'hl', 'bl', 'gl'):
+                char_before = base[-3].lower()
+                if char_before in 'aáeéěiíoóuúůyý':
+                    return base[:-1] + 'e' + base[-1:]  # Havl → Havel
+        return base
 
     # Genitiv/Akuzativ: -a (ale POUZE pokud to není příjmení na -a v nominativu!)
     # Problém: "Říha" je nominativ, ale končí na -a
@@ -450,6 +475,22 @@ def infer_surname_nominative(observed: str) -> str:
                     pass
             # Jinak je to pravděpodobně genitiv → odebrat -a
             return base
+
+    # KRITICKÁ OPRAVA: Pokud příjmení v nominativu končí na souhláskovou skupinu,
+    # která by měla mít vložné e, přidej ho (Havl → Havel, Vrb → Vrba)
+    # Toto řeší chyby v dokumentu, kde je napsáno "Petr Havl" místo "Petr Havel"
+    if len(obs) >= 3:
+        last_two = obs[-2:].lower()
+        if last_two in ('vl', 'dl', 'kl', 'pl', 'sl', 'zl', 'čl', 'šl', 'tl', 'hl', 'bl', 'gl', 'rb', 'mb'):
+            # Kontrola, že před tím je samohláska (aby "Navl" nebylo "Navel")
+            if len(obs) >= 3:
+                char_before = obs[-3].lower()
+                if char_before in 'aáeéěiíoóuúůyý':
+                    # Vlož 'e': Havl → Havel, Vrb → Vrba (ne, počkat - Vrb → Vrb)
+                    # Vlastně ne, Vrb se deklinuje jako Vrba (nom. Vrb, gen. Vrba)
+                    # Zkusme jen pro -vl, -dl, -kl, -pl, -sl, -zl, -čl, -šl, -tl, -hl, -bl, -gl
+                    if last_two in ('vl', 'dl', 'kl', 'pl', 'sl', 'zl', 'čl', 'šl', 'tl', 'hl', 'bl', 'gl'):
+                        return obs[:-1] + 'e' + obs[-1:]
 
     return obs
 
