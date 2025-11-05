@@ -353,7 +353,13 @@ def infer_surname_nominative(observed: str) -> str:
                 return obs[:-len(s)] + repl
     if low.endswith('nou'):
         # Instrumentál ženska forma: Novotnou → Novotná, Suchou → Suchá
-        return obs[:-3] + 'ná'
+        # KRITICKÁ OPRAVA: Vyjmout zvířecí příjmení (Vrbou → Vrba, ne Vrbá)
+        base = obs[:-2]  # Odstraň -ou
+        if base.lower().endswith(('rb', 'rk', 'lk')):
+            # Je to pravděpodobně zvířecí příjmení → pokračuj níže
+            pass  # Neskoč do return, pokračuj v kódu
+        else:
+            return obs[:-3] + 'ná'
     # Obecný test pro příjmení končící na '-é' (přídavná jména)
     # Suché, Novotné, Malé, atd. → Suchá, Novotná, Malá
     if low.endswith('é') and len(obs) > 1:
@@ -410,7 +416,16 @@ def infer_surname_nominative(observed: str) -> str:
     for suf in ['ou','e','u','y']:
         if low.endswith(suf) and len(obs) > len(suf)+1:
             # Svobodou → Svoboda, Svobodě → Svoboda
-            candidate = obs[:-len(suf)] + 'a'
+            base = obs[:-len(suf)]
+            # KRITICKÁ OPRAVA: Kontrola zvířecích příjmení (Vrbou → Vrba, ne Vrbá)
+            # Pokud základ končí na souhlásku, může být nominativ buď se "-a" nebo bez
+            # Vrba je nominativ (zvířecí příjmení), Svoboda je nominativ (obecné)
+            # Zkontroluj, zda base + 'a' je v seznamu nominativních vzorů
+            test_with_a = (base + 'a').lower()
+            if test_with_a.endswith(('rba','íška','iška','ána','vrána','liška','holuba','jelínka')):
+                # Je to pravděpodobně zvířecí příjmení → nominativ je base + 'a'
+                return base + 'a'
+            candidate = base + 'a'
             # Ale pozor: může to být i příjmení bez -a
             # Pokud původní slovo končí na souhlásku, může to být Novák
             return candidate
@@ -463,7 +478,7 @@ def infer_surname_nominative(observed: str) -> str:
                          'ina','ína','una','ůna','ena','ěna','ona','ana','ána','yna',
                          'ika','íka','uka','ůka','eka','ěka','oka','aka','áka','yka','íška','iška','ůbka','ubka','ybka',
                          'ima','íma','uma','ůma','ema','ěma','oma','ama','áma','yma',
-                         'iba','íba','uba','ůba','eba','ěba','oba','aba','ába','yba',
+                         'iba','íba','uba','ůba','eba','ěba','oba','aba','ába','yba','rba',
                          'ipa','ípa','upa','ůpa','epa','ěpa','opa','apa','ápa','ypa',
                          'iva','íva','uva','ůva','eva','ěva','ova','ava','áva','yva',
                          'iza','íza','uza','ůza','eza','ěza','oza','aza','áza','yza',
