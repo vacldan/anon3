@@ -1,0 +1,238 @@
+OSOBY
+-----
+[[PERSON_10]]: Jan Dvořák
+[[PERSON_11]]: Robert Kovář
+[[PERSON_12]]: Eva Málková
+  - Málková
+[[PERSON_13]]: Petr Svoboda
+[[PERSON_14]]: Alena Svobodová
+[[PERSON_15]]: Eliška Svobodová
+[[PERSON_16]]: Jakub Svoboda
+[[PERSON_17]]: Marta Horáková
+  - Martina Horáková
+  - Martina
+[[PERSON_18]]: Tomáš Veselý
+[[PERSON_19]]: Jana Málková
+[[PERSON_1]]: Martin Svoboda
+  - Martine
+[[PERSON_20]]: Michaela Kratochvílová
+[[PERSON_21]]: David Procházek
+  - David Procházka
+[[PERSON_22]]: Michal Horák
+[[PERSON_23]]: Lenka Veselá
+[[PERSON_24]]: Kateřina Dvořáková
+[[PERSON_25]]: Ondřej Novák
+[[PERSON_26]]: Karel Procházek
+  - Karel Procházka
+[[PERSON_27]]: Eva Svobodová
+[[PERSON_28]]: Marta Krajíčková
+  - Krajíčková
+[[PERSON_29]]: Petra Dvořáka
+  - Petr Dvořák
+  - Dvořák
+[[PERSON_2]]: Jana Nováková
+  - Jana
+[[PERSON_30]]: Hana Dvořáková
+  - Hana
+[[PERSON_31]]: Jan Malý
+[[PERSON_32]]: Petra Veselá
+[[PERSON_33]]: Pavel Novák
+[[PERSON_34]]: Milan Kratochvíl
+[[PERSON_35]]: Robert Svoboda
+[[PERSON_4]]: Pavel Horák
+  - Pavle
+[[PERSON_5]]: Lucie Procházková
+[[PERSON_6]]: Tomáš Černý
+[[PERSON_7]]: Petra Černá
+[[PERSON_8]]: Milan Novotný
+  - Milane
+[[PERSON_9]]: Karolína Svobodová
+  - Karolína
+
+RODNÁ ČÍSLA
+-----------
+[[BIRTH_ID_10]]: 123456/2024
+[[BIRTH_ID_11]]: 750630/2314
+[[BIRTH_ID_12]]: 720308/1245
+[[BIRTH_ID_13]]: 745112/6789
+[[BIRTH_ID_14]]: 055615/4523
+[[BIRTH_ID_15]]: 080922/3412
+[[BIRTH_ID_16]]: 885228/7634
+[[BIRTH_ID_17]]: 780915/2314
+[[BIRTH_ID_18]]: 681210/5634
+[[BIRTH_ID_19]]: 905212/6745
+[[BIRTH_ID_1]]: 850812/1234
+[[BIRTH_ID_20]]: 870830/1923
+[[BIRTH_ID_21]]: 820615/3421
+[[BIRTH_ID_22]]: 910523/7812
+[[BIRTH_ID_23]]: 870923/6745
+[[BIRTH_ID_24]]: 920312/2134
+[[BIRTH_ID_25]]: 751008/1823
+[[BIRTH_ID_26]]: 880714/5623
+[[BIRTH_ID_27]]: 781125/6789
+[[BIRTH_ID_28]]: 705523/4512
+[[BIRTH_ID_29]]: 830507/1234
+[[BIRTH_ID_2]]: 785325/6789
+[[BIRTH_ID_30]]: 890823/6745
+[[BIRTH_ID_31]]: 760312/2314
+[[BIRTH_ID_32]]: 740825/1923
+[[BIRTH_ID_33]]: 770615/2314
+[[BIRTH_ID_3]]: 671105/1823
+[[BIRTH_ID_4]]: 895718/3421
+[[BIRTH_ID_5]]: 850422/2145
+[[BIRTH_ID_6]]: 875915/7823
+[[BIRTH_ID_7]]: 801215/3456
+[[BIRTH_ID_8]]: 875610/4562
+[[BIRTH_ID_9]]: 900123/1234
+
+IČO
+---
+[[ICO_1]]: 09876543
+[[ICO_2]]: 12345678
+[[ICO_3]]: 87654321
+[[ICO_4]]: 23456789
+[[ICO_5]]: 65432198
+
+DIČ
+---
+[[DIC_1]]: CZ09876543
+[[DIC_2]]: CZ12345678
+[[DIC_3]]: CZ87654321
+
+BANKOVNÍ ÚČTY
+-------------
+[[BANK_10]]: 4567891230/5500
+[[BANK_11]]: 6677889900/5500
+[[BANK_12]]: 1122334455/0100
+[[BANK_13]]: 5544332211/0100
+[[BANK_14]]: 9988776655/2700
+[[BANK_15]]: 3344556677/0100
+[[BANK_16]]: 7788990011/5500
+[[BANK_17]]: 4455667788/2700
+[[BANK_18]]: 8899001122/0600
+[[BANK_19]]: 1234567890/0800
+[[BANK_1]]: 2847563921/0800
+[[BANK_20]]: 9876543210/5500
+[[BANK_21]]: 3622-1717371319/0710
+[[BANK_2]]: 1234567890/0100
+[[BANK_3]]: 1928374650/2700
+[[BANK_4]]: 2156789432/0800
+[[BANK_5]]: 9876543210/2700
+[[BANK_6]]: 5678901234/0600
+[[BANK_7]]: 9988776655/0100
+[[BANK_8]]: 1234567890/5500
+[[BANK_9]]: 9876543210/0800
+
+BIC/SWIFT
+---------
+[[BIC_1]]: GIBACZPX
+
+TELEFONY
+--------
+[[PHONE_12]]: +420 602 789 456
+[[PHONE_13]]: +420 725 678 901
+[[PHONE_14]]: +420 736 789 012
+[[PHONE_15]]: +420 776 234 567
+[[PHONE_16]]: +420 737 890 123
+[[PHONE_17]]: +420 603 456 789
+[[PHONE_18]]: 777 888 999
+[[PHONE_1]]: +420 724 567 890
+[[PHONE_2]]: +420 777 123 456
+[[PHONE_3]]: +420 605 789 123
+[[PHONE_4]]: +420 733 456 789
+[[PHONE_5]]: +420 606 234 567
+[[PHONE_6]]: +420 777 654 321
+[[PHONE_7]]: +420 734 567 890
+[[PHONE_8]]: +420 605 111 222
+[[PHONE_9]]: +420 606 333 444
+
+EMAILY
+------
+[[EMAIL_10]]: petr.svoboda.law@gmail.com
+[[EMAIL_11]]: a.svobodova.md@centrum.cz
+[[EMAIL_12]]: jana.malkova@email.cz
+[[EMAIL_13]]: m.horak@medicareplus.cz
+[[EMAIL_14]]: l.vesela@medicareplus.cz
+[[EMAIL_15]]: k.dvorakova@nixminds.cz
+[[EMAIL_16]]: o.novak@nixminds.cz
+[[EMAIL_17]]: k.prochazka@medicareplus.cz
+[[EMAIL_18]]: e.svobodova@medicareplus.cz
+[[EMAIL_19]]: m.krajickova@gdpr-audit.cz
+[[EMAIL_1]]: martin.svoboda@nixminds.cz
+[[EMAIL_20]]: p.horak.md@medicareplus.cz
+[[EMAIL_21]]: m.novotny@techsolutions.cz
+[[EMAIL_2]]: j.novakova@medicareplus.cz
+[[EMAIL_3]]: petr.dvorak@email.cz
+[[EMAIL_4]]: l.prochazkova@seznam.cz
+[[EMAIL_5]]: tomas.cerny@gmail.com
+[[EMAIL_6]]: p.cerna@centrum.cz
+[[EMAIL_7]]: k.svobodova@techsolutions.cz
+[[EMAIL_8]]: j.dvorak@techsolutions.cz
+[[EMAIL_9]]: r.kovar@psycholog-private.cz
+
+OBČANSKÉ PRŮKAZY
+----------------
+[[ID_CARD_1]]: 123456789
+[[ID_CARD_2]]: 987654321
+[[ID_CARD_3]]: 456789123
+[[ID_CARD_4]]: 789123456
+
+POZNÁVACÍ ZNAČKY (SPZ/RZ)
+-------------------------
+[[LICENSE_PLATE_1]]: 4A5 6789
+[[LICENSE_PLATE_2]]: 1P2 3456
+
+DATA
+----
+[[DATE_10]]: 22.04.2024
+[[DATE_11]]: 15.11.2023
+[[DATE_12]]: 10.09.2023
+[[DATE_13]]: 22.04.1985
+[[DATE_14]]: 15.09.1987
+[[DATE_15]]: 28.02.2024
+[[DATE_16]]: 15.12.1980
+[[DATE_17]]: 30.06.1975
+[[DATE_18]]: 23.05.2023
+[[DATE_19]]: 17.07.2023
+[[DATE_1]]: 15.03.2024
+[[DATE_20]]: 15.05.2023
+[[DATE_21]]: 31.12.2024
+[[DATE_22]]: 08.03.1972
+[[DATE_23]]: 12.11.1974
+[[DATE_24]]: 15.06.2005
+[[DATE_25]]: 22.09.2008
+[[DATE_26]]: 28.02.1988
+[[DATE_27]]: 01.06.2019
+[[DATE_28]]: 31.12.2023
+[[DATE_29]]: 20.11.2023
+[[DATE_2]]: 12.08.1985
+[[DATE_30]]: 15.02.2024
+[[DATE_31]]: 30.04.2024
+[[DATE_32]]: 31.07.2024
+[[DATE_33]]: 31.12.2025
+[[DATE_34]]: 18.01.2024
+[[DATE_35]]: 05.02.2024
+[[DATE_36]]: 12.12.2023
+[[DATE_37]]: 01.04.2024
+[[DATE_3]]: 25.03.1978
+[[DATE_4]]: 05.11.1967
+[[DATE_5]]: 12.01.2024
+[[DATE_6]]: 10.01.2024
+[[DATE_7]]: 15.01.2024
+[[DATE_8]]: 18.07.1989
+[[DATE_9]]: 03.09.2023
+
+ADRESY
+------
+[[ADDRESS_10]]: Anglická 45/12, 120 00 Praha 2
+[[ADDRESS_11]]: Polská 78/3, Praha 2
+[[ADDRESS_1]]: Praha 1, Václavské náměstí 28
+[[ADDRESS_2]]: Vinohradská 1234/89, 130 00 Praha 3 - Vinohrady
+[[ADDRESS_3]]: Lékařská 567/12, 150 00 Praha 5 - Smíchov
+[[ADDRESS_4]]: Růžová 234/8, 160 00 Praha 6 - Dejvice
+[[ADDRESS_5]]: Dlouhá 67/9, 110 00 Praha 1 - Staré Město
+[[ADDRESS_6]]: Zahradní 45/12, 140 00 Praha 4 - Nusle
+[[ADDRESS_7]]: Slunečná 789/34, 252 00 Říčany
+[[ADDRESS_8]]: Mánesova 123/45, 120 00 Praha 2 - Vinohrady
+[[ADDRESS_9]]: Polská 78/3, 120 00 Praha 2
+
