@@ -1,0 +1,455 @@
+{
+  "[[ADDRESS_10]]": [
+    "Průmyslová 158, 708 00 Ostrava"
+  ],
+  "[[ADDRESS_11]]": [
+    "Holubova 28, 702 00 Ostrava"
+  ],
+  "[[ADDRESS_1]]": [
+    "U Nemocnice 2, 128 08 Praha 2"
+  ],
+  "[[ADDRESS_2]]": [
+    "Rybná 8, 110 00 Praha 1"
+  ],
+  "[[ADDRESS_3]]": [
+    "Rybná 25, Praha 1"
+  ],
+  "[[ADDRESS_4]]": [
+    "Sokolská 45, 120 00 Praha 2"
+  ],
+  "[[ADDRESS_5]]": [
+    "Kolářská 12, 602 00 Brno"
+  ],
+  "[[ADDRESS_6]]": [
+    "Nová Kolářská 88, 615 00 Brno"
+  ],
+  "[[ADDRESS_7]]": [
+    "Komenského 58, Brno"
+  ],
+  "[[ADDRESS_8]]": [
+    "Václavské náměstí 47, 110 00 Praha 1"
+  ],
+  "[[ADDRESS_9]]": [
+    "Vránova 25, 130 00 Praha 3"
+  ],
+  "[[BANK_1]]": [
+    "2547896321/0800"
+  ],
+  "[[BANK_2]]": [
+    "3698745210/0300"
+  ],
+  "[[BANK_3]]": [
+    "2587496321/2010"
+  ],
+  "[[BIRTH_ID_10]]": [
+    "880724/3698"
+  ],
+  "[[BIRTH_ID_11]]": [
+    "850615/4125"
+  ],
+  "[[BIRTH_ID_12]]": [
+    "925423/6985"
+  ],
+  "[[BIRTH_ID_13]]": [
+    "920615/4785"
+  ],
+  "[[BIRTH_ID_1]]": [
+    "680315/4582"
+  ],
+  "[[BIRTH_ID_2]]": [
+    "150908/3654"
+  ],
+  "[[BIRTH_ID_3]]": [
+    "855612/7896"
+  ],
+  "[[BIRTH_ID_4]]": [
+    "830405/2147"
+  ],
+  "[[BIRTH_ID_5]]": [
+    "190325/8965"
+  ],
+  "[[BIRTH_ID_6]]": [
+    "870523/4785"
+  ],
+  "[[BIRTH_ID_7]]": [
+    "895314/6987"
+  ],
+  "[[BIRTH_ID_8]]": [
+    "620815/3698"
+  ],
+  "[[BIRTH_ID_9]]": [
+    "910824/3698"
+  ],
+  "[[DATE_10]]": [
+    "23.05.1987"
+  ],
+  "[[DATE_11]]": [
+    "14.03.1989"
+  ],
+  "[[DATE_12]]": [
+    "08.05.2025"
+  ],
+  "[[DATE_13]]": [
+    "15.05.2025"
+  ],
+  "[[DATE_14]]": [
+    "31.07.2025"
+  ],
+  "[[DATE_15]]": [
+    "01.06.2025"
+  ],
+  "[[DATE_16]]": [
+    "10.06.2025"
+  ],
+  "[[DATE_17]]": [
+    "01.04.2025"
+  ],
+  "[[DATE_18]]": [
+    "12.05.2025"
+  ],
+  "[[DATE_19]]": [
+    "30.04.2025"
+  ],
+  "[[DATE_1]]": [
+    "18.04.2025"
+  ],
+  "[[DATE_20]]": [
+    "24.07.1988"
+  ],
+  "[[DATE_21]]": [
+    "15.06.1992"
+  ],
+  "[[DATE_22]]": [
+    "29.05.2025"
+  ],
+  "[[DATE_2]]": [
+    "25.04.2025"
+  ],
+  "[[DATE_3]]": [
+    "15.03.1968"
+  ],
+  "[[DATE_4]]": [
+    "19.04.2025"
+  ],
+  "[[DATE_5]]": [
+    "10.05.2025"
+  ],
+  "[[DATE_6]]": [
+    "08.09.2015"
+  ],
+  "[[DATE_7]]": [
+    "12.06.1985"
+  ],
+  "[[DATE_8]]": [
+    "05.04.1983"
+  ],
+  "[[DATE_9]]": [
+    "02.05.2025"
+  ],
+  "[[DIC_1]]": [
+    "CZ36985214"
+  ],
+  "[[DIC_2]]": [
+    "CZ45896321"
+  ],
+  "[[EMAIL_10]]": [
+    "martin.liska@techcorp.cz"
+  ],
+  "[[EMAIL_11]]": [
+    "tomas.jelinek@techcorp.cz"
+  ],
+  "[[EMAIL_12]]": [
+    "jiri.sokol@sokolinvest.cz"
+  ],
+  "[[EMAIL_13]]": [
+    "lukas.vlcek@email.cz"
+  ],
+  "[[EMAIL_14]]": [
+    "pavel.novak@novakdesign.cz"
+  ],
+  "[[EMAIL_15]]": [
+    "jan.horak@horakpartners.cz"
+  ],
+  "[[EMAIL_1]]": [
+    "petra.sokolova@email.cz"
+  ],
+  "[[EMAIL_2]]": [
+    "michal.kolar@firma.cz"
+  ],
+  "[[EMAIL_3]]": [
+    "lenka.kolarova@email.cz"
+  ],
+  "[[EMAIL_4]]": [
+    "jana.novakova@digitalsolutions.cz"
+  ],
+  "[[EMAIL_5]]": [
+    "petr.havel@digitalsolutions.cz"
+  ],
+  "[[EMAIL_6]]": [
+    "katerina.mala@digitalsolutions.cz"
+  ],
+  "[[EMAIL_7]]": [
+    "petra.horakova@techcorp.cz"
+  ],
+  "[[EMAIL_8]]": [
+    "david.kos@techcorp.cz"
+  ],
+  "[[EMAIL_9]]": [
+    "jana.vlkova@techcorp.cz"
+  ],
+  "[[ICO_1]]": [
+    "28965473"
+  ],
+  "[[ICO_2]]": [
+    "36987452"
+  ],
+  "[[ICO_3]]": [
+    "28547963"
+  ],
+  "[[ICO_4]]": [
+    "47896325"
+  ],
+  "[[ICO_5]]": [
+    "36985214"
+  ],
+  "[[ICO_6]]": [
+    "45896321"
+  ],
+  "[[ID_CARD_1]]": [
+    "AB 789456"
+  ],
+  "[[PERSON_10]]": [
+    "Matěj Sokol",
+    "Matěj",
+    "Sokol",
+    "Sokola"
+  ],
+  "[[PERSON_11]]": [
+    "Petra Sokolová",
+    "Sokolová",
+    "Petra"
+  ],
+  "[[PERSON_12]]": [
+    "Jiří Sokol",
+    "Jiří Sokolovi",
+    "Jiří Sokola"
+  ],
+  "[[PERSON_13]]": [
+    "Anička Sokolová",
+    "Aničku Sokolovou"
+  ],
+  "[[PERSON_15]]": [
+    "Klára Havránková"
+  ],
+  "[[PERSON_16]]": [
+    "Michal Kolář",
+    "Kolář"
+  ],
+  "[[PERSON_17]]": [
+    "Lenka Kolářová",
+    "(rozená Malá)",
+    "Kolářová"
+  ],
+  "[[PERSON_18]]": [
+    "Pavel Kolář"
+  ],
+  "[[PERSON_19]]": [
+    "Jana Dvořáková"
+  ],
+  "[[PERSON_1]]": [
+    "Karel Ryba",
+    "Ryba"
+  ],
+  "[[PERSON_20]]": [
+    "Tomáš Novák",
+    "Novák"
+  ],
+  "[[PERSON_21]]": [
+    "Martin Vrán",
+    "Martin Vrána",
+    "Vrána",
+    "Vránovi",
+    "Martina Vrány",
+    "Vráno"
+  ],
+  "[[PERSON_22]]": [
+    "Petr Havel"
+  ],
+  "[[PERSON_23]]": [
+    "Kateřina Malá"
+  ],
+  "[[PERSON_24]]": [
+    "Jana Nováková"
+  ],
+  "[[PERSON_25]]": [
+    "David Černý",
+    "Davide"
+  ],
+  "[[PERSON_27]]": [
+    "Tomáš Novotný"
+  ],
+  "[[PERSON_28]]": [
+    "Pavel Novák"
+  ],
+  "[[PERSON_29]]": [
+    "Petra Horáková",
+    "Horáková"
+  ],
+  "[[PERSON_2]]": [
+    "Jana Rybová",
+    "Janou"
+  ],
+  "[[PERSON_30]]": [
+    "David Kos"
+  ],
+  "[[PERSON_31]]": [
+    "Jana Vlková",
+    "Vlková",
+    "Janě Vlkové"
+  ],
+  "[[PERSON_32]]": [
+    "Martin Lišek",
+    "Martin Liška",
+    "Martinu Liškovi"
+  ],
+  "[[PERSON_33]]": [
+    "Tomáš Jelínek",
+    "Tomáše Jelínka"
+  ],
+  "[[PERSON_34]]": [
+    "Lukáš Vrán",
+    "Lukáš Vrána",
+    "Lukášem"
+  ],
+  "[[PERSON_35]]": [
+    "Lukáš Vráná",
+    "Lukášem Vránou"
+  ],
+  "[[PERSON_36]]": [
+    "Klára Sokolová"
+  ],
+  "[[PERSON_37]]": [
+    "Václav Holub",
+    "Holub",
+    "Holuba",
+    "Václav"
+  ],
+  "[[PERSON_38]]": [
+    "Markéta Holubová"
+  ],
+  "[[PERSON_39]]": [
+    "Karel Havran",
+    "Havran",
+    "Havranem"
+  ],
+  "[[PERSON_3]]": [
+    "Josef Ryba"
+  ],
+  "[[PERSON_40]]": [
+    "Jana Vránová",
+    "Janou Vránovou",
+    "Vránová"
+  ],
+  "[[PERSON_41]]": [
+    "Petra Soukupa"
+  ],
+  "[[PERSON_42]]": [
+    "Tomáš Jeřábek"
+  ],
+  "[[PERSON_43]]": [
+    "Martin Vrb",
+    "Martin Vrba"
+  ],
+  "[[PERSON_44]]": [
+    "Eva Holanová",
+    "Eva"
+  ],
+  "[[PERSON_45]]": [
+    "Petr Novotný"
+  ],
+  "[[PERSON_46]]": [
+    "Lukáš Vlček",
+    "Vlčkova"
+  ],
+  "[[PERSON_47]]": [
+    "Jan Horák",
+    "horakova",
+    "Horák"
+  ],
+  "[[PERSON_4]]": [
+    "Marie Rybová"
+  ],
+  "[[PERSON_5]]": [
+    "Tomáš Kapr"
+  ],
+  "[[PERSON_6]]": [
+    "Pavel Losos"
+  ],
+  "[[PERSON_7]]": [
+    "Jana Kaprová"
+  ],
+  "[[PERSON_8]]": [
+    "Petr Rybář",
+    "Petra",
+    "Petrem",
+    "petra"
+  ],
+  "[[PERSON_9]]": [
+    "Martin Štika",
+    "Martin"
+  ],
+  "[[PHONE_10]]": [
+    "604 789 456"
+  ],
+  "[[PHONE_11]]": [
+    "725 896 321"
+  ],
+  "[[PHONE_12]]": [
+    "+420 724 896 325"
+  ],
+  "[[PHONE_13]]": [
+    "606 874 521"
+  ],
+  "[[PHONE_14]]": [
+    "724 365 874"
+  ],
+  "[[PHONE_15]]": [
+    "605 789 632"
+  ],
+  "[[PHONE_16]]": [
+    "724 896 547"
+  ],
+  "[[PHONE_17]]": [
+    "606 874 523"
+  ],
+  "[[PHONE_18]]": [
+    "+420 607 854 963"
+  ],
+  "[[PHONE_1]]": [
+    "+420 605 874 963"
+  ],
+  "[[PHONE_2]]": [
+    "604 325 874"
+  ],
+  "[[PHONE_3]]": [
+    "725 896 314"
+  ],
+  "[[PHONE_4]]": [
+    "604 987 452"
+  ],
+  "[[PHONE_5]]": [
+    "724 365 987"
+  ],
+  "[[PHONE_6]]": [
+    "+420 606 987 452"
+  ],
+  "[[PHONE_7]]": [
+    "+420 724 365 874"
+  ],
+  "[[PHONE_8]]": [
+    "603 741 258"
+  ],
+  "[[PHONE_9]]": [
+    "724 896 325"
+  ]
+}
