@@ -336,6 +336,81 @@ DATE_WORDS_RE = re.compile(
     re.IGNORECASE
 )
 
+# Hesla a credentials (KRITICKÉ - hodnotu neukládat!)
+PASSWORD_RE = re.compile(
+    r'(?:password|heslo|passwd|pwd|pass)\s*[:\-=]\s*([^\s,;\.]{3,50})',
+    re.IGNORECASE
+)
+
+# API klíče, Secrets, Tokens (KRITICKÉ - hodnotu neukládat!)
+API_KEY_RE = re.compile(
+    r'(?:AWS\s+)?(?:Access\s+)?(?:Key(?:\s+ID)?|Secret(?:\s+Access\s+Key)?|Token|API[_\s]?Key)\s*[:\-=]\s*([A-Za-z0-9+/=]{16,})',
+    re.IGNORECASE
+)
+
+SECRET_RE = re.compile(
+    r'(?:Stripe|SendGrid|GitHub|Secret|Client[_\s]?Secret)\s*[:\-=]\s*([A-Za-z0-9_\-]{16,})',
+    re.IGNORECASE
+)
+
+SSH_KEY_RE = re.compile(
+    r'(?:ssh-rsa|ssh-ed25519|ecdsa-sha2-nistp256)\s+([A-Za-z0-9+/=]{50,})',
+    re.IGNORECASE
+)
+
+# Usernames, Account IDs, Hostnames
+USERNAME_RE = re.compile(
+    r'(?:Login|Username|Uživatel|User|GitHub|Jira|AWS\s+Console)\s*[:\-=]\s*([A-Za-z0-9._\-@]+)',
+    re.IGNORECASE
+)
+
+ACCOUNT_ID_RE = re.compile(
+    r'(?:Account\s+ID|AWS\s+Account)\s*[:\-=]\s*(\d{12})',
+    re.IGNORECASE
+)
+
+HOSTNAME_RE = re.compile(
+    r'(?:hostname|host|server|RDS|endpoint)\s*[:\-=]\s*([a-z0-9\-\.]+\.[a-z]{2,})',
+    re.IGNORECASE
+)
+
+# IP adresy (IPv4)
+IP_RE = re.compile(
+    r'\b(?<!\d\.)(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(?!\.\d)\b'
+)
+
+# Platební karty (13-19 číslic, Luhn-compatible)
+CARD_RE = re.compile(
+    r'(?:Číslo\s+karty|Card\s+Number|Card)\s*[:\-=]?\s*(\d{4}[\s\-]?\d{4}[\s\-]?\d{4}[\s\-]?\d{4}(?:[\s\-]?\d{3})?)',
+    re.IGNORECASE
+)
+
+# Čísla pojištěnce
+INSURANCE_ID_RE = re.compile(
+    r'(?:Číslo\s+pojištěnce|Pojišťovna|VZP|ČPZP|ZPŠ|OZP)[,\s:]+(?:číslo\s*:?\s*)?(\d{10})',
+    re.IGNORECASE
+)
+
+# RFID/Badge čísla
+RFID_RE = re.compile(
+    r'(?:RFID\s+karta|badge|ID\s+karta)\s*[:#]?\s*([A-Za-z0-9\-_/]+)',
+    re.IGNORECASE
+)
+
+# Částky (Kč, EUR, USD) - aby se nechytaly do PHONE
+# Prioritně chytá velká čísla (>10 milionů) i bez měny
+AMOUNT_RE = re.compile(
+    r'(?:'
+    # Velké částky (>10 mil) i bez měny: 125 000 000 (ALE NE 420 xxx xxx xxx - telefony!)
+    r'\b(?!420\s)(\d{3}\s+\d{3}\s+\d{3}(?:\s+\d{3})*)\b(?!\s*[-/])|'  # 9+ číslic se mezerami, není rodné číslo/účet/telefon
+    # Částky s měnou: 1 234 Kč, 50 000 EUR (ale vyloučit phone prefixy)
+    r'(?<![\+])\b(\d{1,3}(?:\s+\d{3})+(?:,\d{2})?)\s*(?:Kč|EUR|USD|CZK)\b|'
+    # Částky s kontextem: "částka: 50 000"
+    r'(?:částka|cena|hodnota|kapitál|invest(?:ice)?|fond)\s*:?\s*(\d{1,3}(?:\s+\d{3})+)\b'
+    r')',
+    re.IGNORECASE
+)
+
 # =============== Třída Anonymizer ===============
 class Anonymizer:
     def __init__(self, verbose=False):
@@ -344,10 +419,19 @@ class Anonymizer:
         self.canonical_persons = OrderedDict()  # canonical -> label
         self.entity_map = defaultdict(lambda: defaultdict(set))  # typ -> original -> varianty
 
-    def _get_or_create_label(self, typ: str, original: str) -> str:
-        """Vrátí existující nebo vytvoří nový štítek pro entitu."""
+    def _get_or_create_label(self, typ: str, original: str, store_value: bool = True) -> str:
+        """Vrátí existující nebo vytvoří nový štítek pro entitu.
+
+        Args:
+            typ: Typ entity (PASSWORD, EMAIL, atd.)
+            original: Původní hodnota
+            store_value: False pro citlivá data (hesla, API klíče) - uloží jen "***REDACTED***"
+        """
         # Normalizace
         orig_norm = original.strip()
+
+        # Pro citlivá data ukládej placeholder místo hodnoty
+        map_value = orig_norm if store_value else "***REDACTED***"
 
         # Zkontroluj, zda už existuje
         for existing_orig, variants in self.entity_map[typ].items():
@@ -358,7 +442,7 @@ class Anonymizer:
         # Vytvoř nový
         self.counter[typ] += 1
         idx = len(self.entity_map[typ]) + 1
-        self.entity_map[typ][orig_norm].add(orig_norm)
+        self.entity_map[typ][map_value].add(map_value)
         return f"[[{typ}_{idx}]]"
 
     def _apply_known_people(self, text: str) -> str:
@@ -399,7 +483,7 @@ class Anonymizer:
             first_obs = match.group(1)
             last_obs = match.group(2)
 
-            # Rozšířený seznam slov k ignorování
+            # Rozšířený seznam slov k ignorování (firmy, produkty, instituce)
             ignore_words = {
                 # Běžná slova ve smlouvách
                 'místo', 'datum', 'částku', 'bytem', 'sídlo', 'adresa',
@@ -412,12 +496,16 @@ class Anonymizer:
                 'česká', 'spořitelna', 'komerční', 'banka', 'raiffeisen',
                 'credit', 'bank', 'financial', 'global', 'senior',
                 'junior', 'lead', 'chief', 'head', 'director',
+                # Finance/Investment
+                'capital', 'equity', 'value', 'crescendo', 'investment',
+                'fund', 'holdings', 'partners', 'assets', 'portfolio',
                 # Pozice/role
                 'jednatel', 'jednatelka', 'ředitel', 'ředitelka',
                 'auditor', 'manager', 'consultant', 'specialist',
                 'assistant', 'coordinator', 'analyst', 'pacient',
                 'scrum', 'master', 'developer', 'architect', 'engineer',
                 'officer', 'professional', 'certified', 'advanced',
+                'management', 'legal', 'counsel', 'executive',
                 # Pozdravy/oslovení
                 'ahoj', 'dobrý', 'den', 'vážený', 'vážená',
                 # Značky aut
@@ -433,27 +521,41 @@ class Anonymizer:
                 'team', 'development', 'react', 'splunk', 'innovate',
                 'ventures', 'credo', 'mayo', 'clinic', 'met', 'london',
                 'avenue', 'contractual', 'plánovaná', 'diagno',
-                # Zdravotnictví
+                'cisco', 'processing', 'notářská',
+                # Zdravotnictví + Léky/Produkty
                 'nemocnice', 'poliklinika', 'polikliniek', 'nemocniec',
+                'healthcare', 'symbicort', 'turbuhaler', 'spirometr',
+                'jaeger', 'medical', 'health', 'pharma', 'pharmaceutical',
                 # Další
-                'care', 'plus', 'minus', 'medical', 'health',
-                'service', 'services', 'group', 'company', 'corp', 'ltd'
+                'care', 'plus', 'minus', 'service', 'services',
+                'group', 'company', 'corp', 'ltd', 'gmbh', 'inc'
             }
 
             # Kontrola proti ignore listu
             if first_obs.lower() in ignore_words or last_obs.lower() in ignore_words:
                 return match.group(0)
 
-            # Detekce anglických/technických názvů (obsahují typicky anglická slova)
+            # Detekce firem, produktů, institucí (neměly by být PERSON)
             combined = f"{first_obs} {last_obs}".lower()
-            tech_patterns = [
+            non_person_patterns = [
+                # Tech/Software
                 r'\b(tech|cloud|web|solutions?|data|digital|software|analytics)\b',
                 r'\b(team|hub|enterprise|premium|standard|professional)\b',
-                r'\b(google|amazon|microsoft|apple|facebook|splunk)\b',
+                r'\b(google|amazon|microsoft|apple|facebook|splunk|cisco)\b',
                 r'\b(repository|authenticator|vision|protection|security)\b',
-                r'\b(ventures|clinic|series|launch|innovate)\b'
+                # Finance/Investment
+                r'\b(capital|equity|value|investment|fund|holdings|assets)\b',
+                r'\b(crescendo|ventures|partners|portfolio)\b',
+                # Management/Business
+                r'\b(management|processing|executive|legal|counsel)\b',
+                r'\b(clinic|series|launch|innovate|healthcare)\b',
+                # Products/Medical
+                r'\b(symbicort|turbuhaler|spirometr|jaeger)\b',
+                r'\b(pharma|pharmaceutical|medical)\b',
+                # Company suffixes když jsou uprostřed
+                r'\b(group|company|corp|ltd|gmbh|inc|services?)\b'
             ]
-            for pattern in tech_patterns:
+            for pattern in non_person_patterns:
                 if re.search(pattern, combined):
                     return match.group(0)
 
@@ -521,28 +623,90 @@ class Anonymizer:
         """Anonymizuje všechny entity (adresy, kontakty, IČO, atd.)."""
 
         # DŮLEŽITÉ: Pořadí je klíčové! Od nejvíce specifických po nejméně specifické
+        # KRITICKÉ: Credentials (hesla, API klíče) PRVNÍ s store_value=False!
 
-        # 1. ADRESY (PRVNÍ! Předtím než se "Novákova 45" stane osobou)
+        # 1. HESLA (KRITICKÉ - hodnotu neukládat!)
+        def replace_password(match):
+            return self._get_or_create_label('PASSWORD', match.group(1), store_value=False)
+        text = PASSWORD_RE.sub(replace_password, text)
+
+        # 2. API KLÍČE, SECRETS (KRITICKÉ - hodnotu neukládat!)
+        def replace_api_key(match):
+            return self._get_or_create_label('API_KEY', match.group(1), store_value=False)
+        text = API_KEY_RE.sub(replace_api_key, text)
+
+        def replace_secret(match):
+            return self._get_or_create_label('SECRET', match.group(1), store_value=False)
+        text = SECRET_RE.sub(replace_secret, text)
+
+        # 3. SSH KLÍČE (KRITICKÉ - hodnotu neukládat!)
+        def replace_ssh_key(match):
+            return self._get_or_create_label('SSH_KEY', match.group(1), store_value=False)
+        text = SSH_KEY_RE.sub(replace_ssh_key, text)
+
+        # 4. PLATEBNÍ KARTY (KRITICKÉ - hodnotu neukládat!)
+        def replace_card(match):
+            return self._get_or_create_label('CARD', match.group(1), store_value=False)
+        text = CARD_RE.sub(replace_card, text)
+
+        # 5. USERNAMES, ACCOUNTS, HOSTNAMES
+        def replace_username(match):
+            return self._get_or_create_label('USERNAME', match.group(1))
+        text = USERNAME_RE.sub(replace_username, text)
+
+        def replace_account_id(match):
+            return self._get_or_create_label('ACCOUNT_ID', match.group(1))
+        text = ACCOUNT_ID_RE.sub(replace_account_id, text)
+
+        def replace_hostname(match):
+            return self._get_or_create_label('HOST', match.group(1))
+        text = HOSTNAME_RE.sub(replace_hostname, text)
+
+        # 6. IP ADRESY
+        def replace_ip(match):
+            return self._get_or_create_label('IP', match.group(1))
+        text = IP_RE.sub(replace_ip, text)
+
+        # 7. ČÍSLA POJIŠTĚNCE
+        def replace_insurance_id(match):
+            return self._get_or_create_label('INSURANCE_ID', match.group(1))
+        text = INSURANCE_ID_RE.sub(replace_insurance_id, text)
+
+        # 8. RFID/BADGE
+        def replace_rfid(match):
+            return self._get_or_create_label('RFID', match.group(1))
+        text = RFID_RE.sub(replace_rfid, text)
+
+        # 9. ČÁSTKY (před telefony, aby se "125 000 000" nechytalo jako telefon!)
+        def replace_amount(match):
+            # AMOUNT_RE má 3 capture groups - získej první non-None
+            amount = match.group(1) or match.group(2) or match.group(3)
+            if amount:
+                return self._get_or_create_label('AMOUNT', amount)
+            return match.group(0)
+        text = AMOUNT_RE.sub(replace_amount, text)
+
+        # 10. ADRESY (před jmény, aby "Novákova 45" nebylo osobou)
         def replace_address(match):
             return self._get_or_create_label('ADDRESS', match.group(0))
         text = ADDRESS_RE.sub(replace_address, text)
 
-        # 2. EMAILY (před telefony, protože obsahují čísla)
+        # 11. EMAILY (před telefony, protože obsahují čísla)
         def replace_email(match):
             return self._get_or_create_label('EMAIL', match.group(1))
         text = EMAIL_RE.sub(replace_email, text)
 
-        # 3. RODNÁ ČÍSLA (před čísly OP a telefony)
+        # 12. RODNÁ ČÍSLA (před čísly OP a telefony)
         def replace_birth_id(match):
             return self._get_or_create_label('BIRTH_ID', match.group(1))
         text = BIRTH_ID_RE.sub(replace_birth_id, text)
 
-        # 4. ČÍSLA OP (před telefony!)
+        # 13. ČÍSLA OP (před telefony!)
         def replace_id_card(match):
             return self._get_or_create_label('ID_CARD', match.group(1))
         text = ID_CARD_RE.sub(replace_id_card, text)
 
-        # 5. BANKOVNÍ ÚČTY (před telefony!)
+        # 14. BANKOVNÍ ÚČTY (před telefony!)
         def replace_bank(match):
             account = match.group(1) if match.group(1) else match.group(2)
             if account:
@@ -550,12 +714,12 @@ class Anonymizer:
             return match.group(0)
         text = BANK_RE.sub(replace_bank, text)
 
-        # 6. DIČ (před IČO)
+        # 15. DIČ (před IČO)
         def replace_dic(match):
             return self._get_or_create_label('DIC', match.group(1))
         text = DIC_RE.sub(replace_dic, text)
 
-        # 7. IČO
+        # 16. IČO
         def replace_ico(match):
             full = match.group(0)
             # Ale ne pokud je to DIČ (CZ prefix)
@@ -570,15 +734,60 @@ class Anonymizer:
             return full
         text = ICO_RE.sub(replace_ico, text)
 
-        # 8. SPZ
+        # 17. SPZ
         def replace_license_plate(match):
             return self._get_or_create_label('SPZ', match.group(0))
         text = LICENSE_PLATE_RE.sub(replace_license_plate, text)
 
-        # 9. TELEFONY (AŽ NAKONEC! Po všech číselných identifikátorech)
+        # 18. TELEFONY (AŽ NAKONEC! Po všech číselných identifikátorech a částkách)
         def replace_phone(match):
             return self._get_or_create_label('PHONE', match.group(0))
         text = PHONE_RE.sub(replace_phone, text)
+
+        # 19. END-SCAN - finální kontrola citlivých dat (chytá zbytky nalepené na ]])
+        text = self._end_scan(text)
+
+        return text
+
+    def _end_scan(self, text: str) -> str:
+        """Finální sken po všech náhradách - chytá případné zbytky citlivých dat."""
+
+        # Hesla (pokud unikla nebo jsou nalepená na jiných entitách)
+        def final_password(match):
+            return self._get_or_create_label('PASSWORD', match.group(1), store_value=False)
+        text = PASSWORD_RE.sub(final_password, text)
+
+        # IP adresy (pokud unikly)
+        def final_ip(match):
+            # Přeskoč pokud už je součástí URL/hostname
+            if not re.search(r'[a-z]', text[max(0, match.start()-10):match.start()], re.IGNORECASE):
+                return self._get_or_create_label('IP', match.group(1))
+            return match.group(0)
+        text = IP_RE.sub(final_ip, text)
+
+        # Usernames (pokud unikly)
+        def final_username(match):
+            return self._get_or_create_label('USERNAME', match.group(1))
+        text = USERNAME_RE.sub(final_username, text)
+
+        # API klíče, secrets (pokud unikly)
+        def final_api(match):
+            return self._get_or_create_label('API_KEY', match.group(1), store_value=False)
+        text = API_KEY_RE.sub(final_api, text)
+
+        def final_secret(match):
+            return self._get_or_create_label('SECRET', match.group(1), store_value=False)
+        text = SECRET_RE.sub(final_secret, text)
+
+        # Pojištěnce (pokud unikla)
+        def final_insurance(match):
+            return self._get_or_create_label('INSURANCE_ID', match.group(1))
+        text = INSURANCE_ID_RE.sub(final_insurance, text)
+
+        # RFID (pokud uniklo)
+        def final_rfid(match):
+            return self._get_or_create_label('RFID', match.group(1))
+        text = RFID_RE.sub(final_rfid, text)
 
         return text
 

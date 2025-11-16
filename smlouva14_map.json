@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T20:53:03.364952",
+  "generated_at": "2025-11-16T22:41:16.748257",
   "source_file": "smlouva14.docx",
   "entities": [
     {
@@ -760,267 +760,717 @@
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_1]]",
-      "original": "Telefon: +420 724 123 456",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_1]]",
+      "original": "724 123 456",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_2]]",
-      "original": ": 234567890",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_2]]",
+      "original": "606 789 123",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_3]]",
-      "original": "456789012",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_4]]",
-      "original": "Telefon: +420 606 789 123",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_5]]",
-      "original": "Tel: +420 777 234 567",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_6]]",
-      "original": "Tel: +420 605 123 789",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "tel: +420 724 890 345",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_8]]",
-      "original": "Tel: +420 222 333 444",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_9]]",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_3]]",
       "original": "777 234 567",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_10]]",
-      "original": "Telefon: +420 603 456 789",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_4]]",
+      "original": "605 123 789",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_11]]",
-      "original": "Telefon: +420 234 567 890",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_5]]",
+      "original": "85 000",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_12]]",
-      "original": ": 345678901",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_6]]",
+      "original": "21 250",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_13]]",
-      "original": "Telefon: +420 605 234 567",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_7]]",
+      "original": "170 000",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_14]]",
-      "original": "Tel: +420 724 345 678",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_8]]",
+      "original": "50 000",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_15]]",
-      "original": "Tel: +420 222 456 789",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_9]]",
+      "original": "2 000",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_16]]",
-      "original": "Tel: +420 224 567 890",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_10]]",
+      "original": "1 500",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_17]]",
-      "original": "Tel: +420 777 456 123",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_11]]",
+      "original": "1 000",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_18]]",
-      "original": "tel: 224 567 890",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_12]]",
+      "original": "724 890 345",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_19]]",
-      "original": "tel: 222 678 901",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_13]]",
+      "original": "222 333 444",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_20]]",
-      "original": "tel: 222 456 789",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_14]]",
+      "original": "603 456 789",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_21]]",
-      "original": "tel: 222 801 111",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_15]]",
+      "original": "1 267",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_22]]",
-      "original": "Telefon: +420 724 678 901",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_16]]",
+      "original": "2 534",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_23]]",
-      "original": "Telefon: +420 775 234 567",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_17]]",
+      "original": "876 540",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_24]]",
-      "original": "Tel: +420 606 789 012",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_18]]",
+      "original": "124 567",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_25]]",
-      "original": "Tel: +420 777 123 456",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_19]]",
+      "original": "234 567 890",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_26]]",
-      "original": "Tel: +420 603 567 890",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_20]]",
+      "original": "605 234 567",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_27]]",
-      "original": ": 202403089",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_21]]",
+      "original": "724 345 678",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_28]]",
-      "original": ": +420 603 789 012",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_22]]",
+      "original": "222 456 789",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_29]]",
-      "original": "Telefon: +420 541 234 567",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_23]]",
+      "original": "224 567 890",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_30]]",
-      "original": ": 456789012",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_24]]",
+      "original": "3 000 000",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_31]]",
-      "original": "Telefon: +420 605 678 901",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_25]]",
+      "original": "24 600",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_32]]",
-      "original": "Telefon: +420 603 123 456",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_26]]",
+      "original": "1 500 000",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_33]]",
-      "original": "Telefon: +420 777 890 123",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_27]]",
+      "original": "2 000 000",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_34]]",
-      "original": "tel: +420 541 678 901",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_28]]",
+      "original": "1 000 000",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_35]]",
-      "original": "Telefon: +420 541 234 600",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_29]]",
+      "original": "777 456 123",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_36]]",
-      "original": "Telefon: +420 724 567 890",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_30]]",
+      "original": "38 450",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_37]]",
-      "original": "Telefon: +420 224 433 111",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_31]]",
+      "original": "3 205",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_38]]",
-      "original": "Telefon: +420 261 363 111",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_32]]",
+      "original": "222 678 901",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_39]]",
-      "original": "Telefon: +420 543 136 111",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_33]]",
+      "original": "222 801 111",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_40]]",
-      "original": "Tel: +420 724 567 890",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_34]]",
+      "original": "15 000",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_41]]",
-      "original": "Tel: +420 775 234 567",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_35]]",
+      "original": "17 000",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_42]]",
-      "original": "Tel: +420 606 789 123",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_36]]",
+      "original": "724 678 901",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_43]]",
-      "original": "Tel: +420 221 710 111",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_37]]",
+      "original": "775 234 567",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_44]]",
-      "original": ": 125 000 000",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_38]]",
+      "original": "606 789 012",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_39]]",
+      "original": "777 123 456",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_40]]",
+      "original": "603 567 890",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_41]]",
+      "original": "45 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_42]]",
+      "original": "9 450",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_43]]",
+      "original": "54 450",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_44]]",
+      "original": "120 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_45]]",
+      "original": "25 200",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_46]]",
+      "original": "145 200",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_47]]",
+      "original": "603 789 012",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_48]]",
+      "original": "541 234 567",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_49]]",
+      "original": "605 678 901",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_50]]",
+      "original": "58 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_51]]",
+      "original": "603 123 456",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_52]]",
+      "original": "24 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_53]]",
+      "original": "777 890 123",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_54]]",
+      "original": "95 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_55]]",
+      "original": "850 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_56]]",
+      "original": "13 847",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_57]]",
+      "original": "1 163 148",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_58]]",
+      "original": "78 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_59]]",
+      "original": "58 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_60]]",
+      "original": "156 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_61]]",
+      "original": "1 092 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_62]]",
+      "original": "541 678 901",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_63]]",
+      "original": "43 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_64]]",
+      "original": "696 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_65]]",
+      "original": "1 788 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_66]]",
+      "original": "18 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_67]]",
+      "original": "4 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_68]]",
+      "original": "12 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_69]]",
+      "original": "5 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_70]]",
+      "original": "3 200",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_71]]",
+      "original": "8 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_72]]",
+      "original": "52 200",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_73]]",
+      "original": "450 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_74]]",
+      "original": "287 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_75]]",
+      "original": "8 750",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_76]]",
+      "original": "180 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_77]]",
+      "original": "5 890",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_78]]",
+      "original": "100 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_79]]",
+      "original": "34 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_80]]",
+      "original": "3 450",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_81]]",
+      "original": "9 200",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_82]]",
+      "original": "45 600",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_83]]",
+      "original": "128 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_84]]",
+      "original": "187 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_85]]",
+      "original": "234 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_86]]",
+      "original": "56 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_87]]",
+      "original": "380 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_88]]",
+      "original": "32 400",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_89]]",
+      "original": "96 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_90]]",
+      "original": "5 200 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_91]]",
+      "original": "3 800 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_92]]",
+      "original": "1 200 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_93]]",
+      "original": "18 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_94]]",
+      "original": "89 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_95]]",
+      "original": "456 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_96]]",
+      "original": "500 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_97]]",
+      "original": "541 234 600",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_98]]",
+      "original": "724 567 890",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_99]]",
+      "original": "224 433 111",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_100]]",
+      "original": "4 500 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_101]]",
+      "original": "261 363 111",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_102]]",
+      "original": "6 200 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_103]]",
+      "original": "1 800 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_104]]",
+      "original": "543 136 111",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_105]]",
+      "original": "8 500 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_106]]",
+      "original": "28 450 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_107]]",
+      "original": "7 890 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_108]]",
+      "original": "5 230 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_109]]",
+      "original": "9 200 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_110]]",
+      "original": "5 100 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_111]]",
+      "original": "14 500 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_112]]",
+      "original": "165 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_113]]",
+      "original": "145 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_114]]",
+      "original": "115 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_115]]",
+      "original": "18 400 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_116]]",
+      "original": "221 710 111",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_117]]",
+      "original": "125 000 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_118]]",
+      "original": "5 000 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_119]]",
+      "original": "20 000 000",
       "occurrences": 1
     },
     {
@@ -1366,6 +1816,72 @@
       "occurrences": 1
     },
     {
+      "type": "PHONE",
+      "label": "[[PHONE_1]]",
+      "original": ": 234567890",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_2]]",
+      "original": "456789012",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_3]]",
+      "original": ": 345678901",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_4]]",
+      "original": ": 202403089",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_5]]",
+      "original": ": 456789012",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_1]]",
+      "original": "78.45.123.89",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_2]]",
+      "original": "192.168.10.45",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_3]]",
+      "original": "192.168.10.46",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_4]]",
+      "original": "192.168.10.47",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_5]]",
+      "original": "192.168.10.48",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_6]]",
+      "original": "185.56.234.89",
+      "occurrences": 1
+    },
+    {
       "type": "BANK",
       "label": "[[BANK_1]]",
       "original": "2345678901/0800",
@@ -1504,6 +2020,126 @@
       "occurrences": 1
     },
     {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_1]]",
+      "original": "9307151245",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_2]]",
+      "original": "7805231245",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_3]]",
+      "original": "8956154521",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_4]]",
+      "original": "6508231923",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_1]]",
+      "original": "jprochazka",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_2]]",
+      "original": "jprochazka@innovatetech",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_3]]",
+      "original": "jprochazka-dev",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_4]]",
+      "original": "r.novak",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_5]]",
+      "original": "h.prochazkova",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_6]]",
+      "original": "j.svobodova",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_7]]",
+      "original": "p.novak.admin",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_8]]",
+      "original": "e.mala",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_9]]",
+      "original": "hcp_admin",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_10]]",
+      "original": "admin@healthcarepro",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_11]]",
+      "original": "hcp_backup",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_12]]",
+      "original": "nixminds-review-2024",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_13]]",
+      "original": "nixminds-review",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_14]]",
+      "original": "demo-nixminds",
+      "occurrences": 1
+    },
+    {
+      "type": "PASSWORD",
+      "label": "[[PASSWORD_1]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "SECRET",
+      "label": "[[SECRET_1]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
       "type": "DIC",
       "label": "[[DIC_1]]",
       "original": "CZ12398745",
@@ -1525,6 +2161,30 @@
       "type": "DIC",
       "label": "[[DIC_4]]",
       "original": "CZ09876543",
+      "occurrences": 1
+    },
+    {
+      "type": "HOST",
+      "label": "[[HOST_1]]",
+      "original": "db-prod-01.cloudmed.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "HOST",
+      "label": "[[HOST_2]]",
+      "original": "sftp.backup.cloudmed.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_1]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "ACCOUNT_ID",
+      "label": "[[ACCOUNT_ID_1]]",
+      "original": "123456789012",
       "occurrences": 1
     }
   ]
