@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T23:44:38.928295",
+  "generated_at": "2025-11-16T23:57:04.646746",
   "source_file": "smlouva13.docx",
   "entities": [
     {
@@ -334,27 +334,135 @@
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_1]]",
+      "type": "PHONE",
+      "label": "[[PHONE_1]]",
       "original": "123456789",
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_2]]",
+      "type": "PHONE",
+      "label": "[[PHONE_2]]",
+      "original": "+420 724 567 890",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_3]]",
       "original": "987654321",
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_3]]",
+      "type": "PHONE",
+      "label": "[[PHONE_4]]",
+      "original": "+420 777 123 456",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_5]]",
+      "original": "+420 605 789 123",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_6]]",
       "original": "456789123",
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_4]]",
+      "type": "PHONE",
+      "label": "[[PHONE_7]]",
+      "original": "+420 733 456 789",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_8]]",
       "original": "789123456",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_9]]",
+      "original": "+420 606 234 567",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_10]]",
+      "original": "+420 777 654 321",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_11]]",
+      "original": "+420 734 567 890",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_12]]",
+      "original": "+420 605 111 222",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_13]]",
+      "original": "+420 606 333 444",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_14]]",
+      "original": "789456123",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_15]]",
+      "original": "123789456",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_16]]",
+      "original": "+420 602 789 456",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_17]]",
+      "original": "+420 725 678 901",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_18]]",
+      "original": "+420 736 789 012",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_19]]",
+      "original": "+420 776 234 567",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_20]]",
+      "original": "+420 737 890 123",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_21]]",
+      "original": "+420 603 456 789",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_22]]",
+      "original": "777 888 999",
       "occurrences": 1
     },
     {
@@ -682,486 +790,6 @@
       "occurrences": 1
     },
     {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_1]]",
-      "original": "420 724 567 890",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_2]]",
-      "original": "420 777 123 456",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_3]]",
-      "original": "420 605 789 123",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_4]]",
-      "original": "487 350",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_5]]",
-      "original": "412 500",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_6]]",
-      "original": "74 850",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_7]]",
-      "original": "420 733 456 789",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_8]]",
-      "original": "3 500",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_9]]",
-      "original": "274 750",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_10]]",
-      "original": "150 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_11]]",
-      "original": "182 448",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_12]]",
-      "original": "420 606 234 567",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_13]]",
-      "original": "5 240 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_14]]",
-      "original": "31 847",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_15]]",
-      "original": "7 100 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_16]]",
-      "original": "78 450",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_17]]",
-      "original": "64 200",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_18]]",
-      "original": "1 711 800",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_19]]",
-      "original": "247 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_20]]",
-      "original": "7 890",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_21]]",
-      "original": "23 450",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_22]]",
-      "original": "12 450 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_23]]",
-      "original": "2 890 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_24]]",
-      "original": "1 740 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_25]]",
-      "original": "95 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_26]]",
-      "original": "78 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_27]]",
-      "original": "35 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_28]]",
-      "original": "330 600",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_29]]",
-      "original": "1 567 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_30]]",
-      "original": "894 500",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_31]]",
-      "original": "387 200",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_32]]",
-      "original": "127 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_33]]",
-      "original": "25 400",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_34]]",
-      "original": "420 777 654 321",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_35]]",
-      "original": "287 600",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_36]]",
-      "original": "1 500",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_37]]",
-      "original": "2 500 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_38]]",
-      "original": "2 340",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_39]]",
-      "original": "9 800 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_40]]",
-      "original": "2 300 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_41]]",
-      "original": "7 500 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_42]]",
-      "original": "3 200 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_43]]",
-      "original": "487 650",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_44]]",
-      "original": "1 234 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_45]]",
-      "original": "876 500",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_46]]",
-      "original": "567 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_47]]",
-      "original": "892 300",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_48]]",
-      "original": "780 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_49]]",
-      "original": "320 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_50]]",
-      "original": "15 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_51]]",
-      "original": "420 734 567 890",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_52]]",
-      "original": "72 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_53]]",
-      "original": "576 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_54]]",
-      "original": "350 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_55]]",
-      "original": "98 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_56]]",
-      "original": "1 024 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_57]]",
-      "original": "420 605 111 222",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_58]]",
-      "original": "420 606 333 444",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_59]]",
-      "original": "2 847 500",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_60]]",
-      "original": "597 975",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_61]]",
-      "original": "3 445 475",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_62]]",
-      "original": "1 033 643",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_63]]",
-      "original": "1 205 916",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_64]]",
-      "original": "420 602 789 456",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_65]]",
-      "original": "500 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_66]]",
-      "original": "2 000 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_67]]",
-      "original": "10 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_68]]",
-      "original": "10 000 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_69]]",
-      "original": "420 725 678 901",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_70]]",
-      "original": "420 736 789 012",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_71]]",
-      "original": "420 776 234 567",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_72]]",
-      "original": "420 737 890 123",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_73]]",
-      "original": "420 603 456 789",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_74]]",
-      "original": "8 500",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_75]]",
-      "original": "102 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_76]]",
-      "original": "234 500",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_77]]",
-      "original": "456 700",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_78]]",
-      "original": "287 000",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_79]]",
-      "original": "4 567 890",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_80]]",
-      "original": "868 899",
-      "occurrences": 1
-    },
-    {
       "type": "BANK",
       "label": "[[BANK_1]]",
       "original": "2847563921/0800",
@@ -1288,6 +916,432 @@
       "occurrences": 1
     },
     {
+      "type": "IBAN",
+      "label": "[[IBAN_1]]",
+      "original": "***REDACTED_1***",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_2]]",
+      "original": "***REDACTED_2***",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_3]]",
+      "original": "***REDACTED_3***",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_4]]",
+      "original": "***REDACTED_4***",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_1]]",
+      "original": "6711051823",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_2]]",
+      "original": "7506302314",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_1]]",
+      "original": "487 350",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_2]]",
+      "original": "412 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_3]]",
+      "original": "74 850",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_4]]",
+      "original": "3 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_5]]",
+      "original": "274 750",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_6]]",
+      "original": "150 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_7]]",
+      "original": "182 448",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_8]]",
+      "original": "5 240 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_9]]",
+      "original": "31 847",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_10]]",
+      "original": "7 100 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_11]]",
+      "original": "78 450",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_12]]",
+      "original": "64 200",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_13]]",
+      "original": "1 711 800",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_14]]",
+      "original": "247 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_15]]",
+      "original": "7 890",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_16]]",
+      "original": "23 450",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_17]]",
+      "original": "12 450 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_18]]",
+      "original": "2 890 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_19]]",
+      "original": "1 740 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_20]]",
+      "original": "95 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_21]]",
+      "original": "78 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_22]]",
+      "original": "35 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_23]]",
+      "original": "330 600",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_24]]",
+      "original": "1 567 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_25]]",
+      "original": "894 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_26]]",
+      "original": "387 200",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_27]]",
+      "original": "127 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_28]]",
+      "original": "25 400",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_29]]",
+      "original": "287 600",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_30]]",
+      "original": "1 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_31]]",
+      "original": "2 500 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_32]]",
+      "original": "2 340",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_33]]",
+      "original": "9 800 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_34]]",
+      "original": "2 300 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_35]]",
+      "original": "7 500 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_36]]",
+      "original": "3 200 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_37]]",
+      "original": "487 650",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_38]]",
+      "original": "1 234 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_39]]",
+      "original": "876 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_40]]",
+      "original": "567 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_41]]",
+      "original": "892 300",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_42]]",
+      "original": "780 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_43]]",
+      "original": "320 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_44]]",
+      "original": "15 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_45]]",
+      "original": "72 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_46]]",
+      "original": "576 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_47]]",
+      "original": "350 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_48]]",
+      "original": "98 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_49]]",
+      "original": "1 024 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_50]]",
+      "original": "2 847 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_51]]",
+      "original": "597 975",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_52]]",
+      "original": "3 445 475",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_53]]",
+      "original": "1 033 643",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_54]]",
+      "original": "1 205 916",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_55]]",
+      "original": "500 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_56]]",
+      "original": "2 000 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_57]]",
+      "original": "10 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_58]]",
+      "original": "10 000 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_59]]",
+      "original": "8 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_60]]",
+      "original": "102 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_61]]",
+      "original": "234 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_62]]",
+      "original": "456 700",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_63]]",
+      "original": "287 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_64]]",
+      "original": "4 567 890",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_65]]",
+      "original": "868 899",
+      "occurrences": 1
+    },
+    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "***REDACTED_1***",
@@ -1309,60 +1363,6 @@
       "type": "CARD",
       "label": "[[CARD_4]]",
       "original": "***REDACTED_4***",
-      "occurrences": 1
-    },
-    {
-      "type": "CARD",
-      "label": "[[CARD_5]]",
-      "original": "***REDACTED_5***",
-      "occurrences": 1
-    },
-    {
-      "type": "CARD",
-      "label": "[[CARD_6]]",
-      "original": "***REDACTED_6***",
-      "occurrences": 1
-    },
-    {
-      "type": "CARD",
-      "label": "[[CARD_7]]",
-      "original": "***REDACTED_7***",
-      "occurrences": 1
-    },
-    {
-      "type": "CARD",
-      "label": "[[CARD_8]]",
-      "original": "***REDACTED_8***",
-      "occurrences": 1
-    },
-    {
-      "type": "INSURANCE_ID",
-      "label": "[[INSURANCE_ID_1]]",
-      "original": "6711051823",
-      "occurrences": 1
-    },
-    {
-      "type": "INSURANCE_ID",
-      "label": "[[INSURANCE_ID_2]]",
-      "original": "7506302314",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_1]]",
-      "original": "789456123",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_2]]",
-      "original": "123789456",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_3]]",
-      "original": "777 888 999",
       "occurrences": 1
     },
     {

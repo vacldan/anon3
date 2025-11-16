@@ -324,10 +324,18 @@ PHONE_RE = re.compile(
     re.IGNORECASE
 )
 
-# Bankovní účet (formát: číslo/kód banky nebo IBAN)
+# Bankovní účet (formát: číslo/kód banky)
+# DŮLEŽITÉ: IBAN je samostatný regex níže!
 BANK_RE = re.compile(
-    r'\b(\d{6,16}/\d{4})\b|'
-    r'\b([A-Z]{2}\d{2}\s?\d{4}\s?\d{4}\s?\d{4}\s?\d{4}(?:\s?\d{0,4})?)\b',
+    r'\b(\d{6,16}/\d{4})\b',
+    re.IGNORECASE
+)
+
+# IBAN (mezinárodní formát bankovního účtu)
+# CZ IBAN: CZ + 2 číslice + 20 číslic = 24 znaků celkem
+# KRITICKÉ: Musí být před CARD_RE, protože obsahuje dlouhé sekvence číslic!
+IBAN_RE = re.compile(
+    r'\b(CZ\d{2}(?:\s?\d{4}){5})\b',
     re.IGNORECASE
 )
 
@@ -386,13 +394,17 @@ IP_RE = re.compile(
 )
 
 # Platební karty (13-19 číslic, Luhn-compatible)
-# Rozšířený pattern pro všechny varianty: s/bez prefixu, různé formátování
+# Rozšířený pattern: Visa/MC (16), AmEx (15), Diners (14), atd.
+# DŮLEŽITÉ: IBAN se zpracovává PŘED tímto regexem!
 CARD_RE = re.compile(
     r'(?:'
     # S prefixem: "Karta 1:", "Platební karta:", "Číslo karty:", etc.
-    r'(?:Platební\s+)?(?:Karta|Card)(?:\s+\d+)?(?:\s+Number)?\s*[:\-=]?\s*(\d{4}[\s\-]?\d{4}[\s\-]?\d{4}[\s\-]?\d{4}(?:[\s\-]?\d{2,3})?)|'
-    # Bez prefixu: standalone 16-19 číslic (ale ne telefony/účty)
-    r'(?<!\d)(\d{4}[\s\-]\d{4}[\s\-]\d{4}[\s\-]\d{4}(?:[\s\-]\d{2,3})?)(?!\d)'
+    r'(?:Platební\s+)?(?:Karta|Card)(?:\s+\d+)?(?:\s+Number)?\s*[:\-=]?\s*'
+    r'('
+    r'\d{4}[\s\-]?\d{6}[\s\-]?\d{5}|'  # AmEx: 4-6-5 (15 číslic)
+    r'\d{4}[\s\-]?\d{4}[\s\-]?\d{4}[\s\-]?\d{4}(?:[\s\-]?\d{2,3})?|'  # Visa/MC: 16-19
+    r'\d{4}[\s\-]?\d{6}[\s\-]?\d{4}'  # Diners: 4-6-4 (14 číslic)
+    r')'
     r')',
     re.IGNORECASE
 )
@@ -669,6 +681,11 @@ class Anonymizer:
             return self._get_or_create_label('SSH_KEY', match.group(1), store_value=False)
         text = SSH_KEY_RE.sub(replace_ssh_key, text)
 
+        # 3.5. IBAN (PŘED kartami! IBAN má dlouhé číselné sekvence)
+        def replace_iban(match):
+            return self._get_or_create_label('IBAN', match.group(1), store_value=False)
+        text = IBAN_RE.sub(replace_iban, text)
+
         # 4. PLATEBNÍ KARTY (KRITICKÉ - hodnotu neukládat!)
         def replace_card(match):
             # CARD_RE má 2 capture groups - získej první non-None
@@ -706,14 +723,11 @@ class Anonymizer:
             return self._get_or_create_label('RFID', match.group(1))
         text = RFID_RE.sub(replace_rfid, text)
 
-        # 9. ČÁSTKY (MUSÍ být před telefony!)
-        def replace_amount(match):
-            # AMOUNT_RE má 3 capture groups - získej první non-None
-            amount = match.group(1) or match.group(2) or match.group(3)
-            if amount:
-                return self._get_or_create_label('AMOUNT', amount)
-            return match.group(0)
-        text = AMOUNT_RE.sub(replace_amount, text)
+        # 9. TELEFONY (KRITICKÉ: MUSÍ být PŘED částkami! Jinak "Telefon: +420 xxx" → AMOUNT)
+        def replace_phone(match):
+            # PHONE_RE má capture group (1) pro samotné číslo (bez prefixu!)
+            return self._get_or_create_label('PHONE', match.group(1))
+        text = PHONE_RE.sub(replace_phone, text)
 
         # 10. ADRESY (před jmény, aby "Novákova 45" nebylo osobou)
         def replace_address(match):
@@ -771,11 +785,14 @@ class Anonymizer:
             return self._get_or_create_label('SPZ', match.group(0))
         text = LICENSE_PLATE_RE.sub(replace_license_plate, text)
 
-        # 18. TELEFONY (AŽ NAKONEC! Po všech číselných identifikátorech a částkách)
-        def replace_phone(match):
-            # PHONE_RE má capture group (1) pro samotné číslo (bez prefixu!)
-            return self._get_or_create_label('PHONE', match.group(1))
-        text = PHONE_RE.sub(replace_phone, text)
+        # 18. ČÁSTKY (AŽ NAKONEC! Po telefonech a všech číselných identifikátorech)
+        def replace_amount(match):
+            # AMOUNT_RE má 3 capture groups - získej první non-None
+            amount = match.group(1) or match.group(2) or match.group(3)
+            if amount:
+                return self._get_or_create_label('AMOUNT', amount)
+            return match.group(0)
+        text = AMOUNT_RE.sub(replace_amount, text)
 
         # 19. END-SCAN - finální kontrola citlivých dat (chytá zbytky nalepené na ]])
         text = self._end_scan(text)
@@ -784,6 +801,13 @@ class Anonymizer:
 
     def _end_scan(self, text: str) -> str:
         """Finální sken po všech náhradách - chytá případné zbytky citlivých dat."""
+
+        # IBAN (pokud unikl)
+        def final_iban(match):
+            if not '[[IBAN_' in text[max(0, match.start()-10):match.start()+30]:
+                return self._get_or_create_label('IBAN', match.group(1), store_value=False)
+            return match.group(0)
+        text = IBAN_RE.sub(final_iban, text)
 
         # Platební karty (pokud unikly nebo mají CVV/exp. datum)
         def final_card(match):
