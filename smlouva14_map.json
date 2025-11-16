@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T22:41:16.748257",
+  "generated_at": "2025-11-16T23:21:45.432269",
   "source_file": "smlouva14.docx",
   "entities": [
     {
@@ -2178,6 +2178,12 @@
     {
       "type": "CARD",
       "label": "[[CARD_1]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "API_KEY",
+      "label": "[[API_KEY_1]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },

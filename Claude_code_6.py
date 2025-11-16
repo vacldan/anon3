@@ -344,12 +344,12 @@ PASSWORD_RE = re.compile(
 
 # API klíče, Secrets, Tokens (KRITICKÉ - hodnotu neukládat!)
 API_KEY_RE = re.compile(
-    r'(?:AWS\s+)?(?:Access\s+)?(?:Key(?:\s+ID)?|Secret(?:\s+Access\s+Key)?|Token|API[_\s]?Key)\s*[:\-=]\s*([A-Za-z0-9+/=]{16,})',
+    r'(?:AWS\s+)?(?:Access\s+)?(?:Key(?:\s+ID)?|Secret(?:\s+Access\s+Key)?|Token|API[_\s]?Key)\s*[:\-=]\s*([A-Za-z0-9+/=_\-]{16,})',
     re.IGNORECASE
 )
 
 SECRET_RE = re.compile(
-    r'(?:Stripe|SendGrid|GitHub|Secret|Client[_\s]?Secret)\s*[:\-=]\s*([A-Za-z0-9_\-]{16,})',
+    r'(?:Stripe|SendGrid|GitHub|Secret|Client[_\s]?Secret|Access\s+Token|Personal\s+Access\s+Token)\s*[:\-=]\s*([A-Za-z0-9+/=_\-]{16,})',
     re.IGNORECASE
 )
 
