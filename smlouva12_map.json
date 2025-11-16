@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T20:48:40.841594",
+  "generated_at": "2025-11-16T23:06:24.803404",
   "source_file": "smlouva12.docx",
   "entities": [
     {
@@ -538,123 +538,171 @@
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_1]]",
-      "original": "Telefon: +420 605 874 963",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_1]]",
+      "original": "605 874 963",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_2]]",
-      "original": "tel. 604 325 874",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_2]]",
+      "original": "604 325 874",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_3]]",
-      "original": "Telefon: 725 896 314",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_3]]",
+      "original": "725 896 314",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_4]]",
-      "original": "Telefon: 604 987 452",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_4]]",
+      "original": "604 987 452",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_5]]",
-      "original": "tel. 724 365 987",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_5]]",
+      "original": "724 365 987",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_6]]",
-      "original": "Telefon: +420 606 987 452",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_6]]",
+      "original": "606 987 452",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "Telefon: +420 724 365 874",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_7]]",
+      "original": "85 000",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_8]]",
-      "original": "Telefon: 603 741 258",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_8]]",
+      "original": "724 365 874",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_9]]",
-      "original": "tel. 724 896 325",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_9]]",
+      "original": "62 000",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_10]]",
-      "original": "tel. 604 789 456",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_10]]",
+      "original": "603 741 258",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_11]]",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_11]]",
+      "original": "4 500 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_12]]",
+      "original": "724 896 325",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_13]]",
       "original": "604 789 456",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_12]]",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_14]]",
       "original": "725 896 321",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_13]]",
-      "original": "Mobil: +420 724 896 325",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_15]]",
+      "original": "606 874 521",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_14]]",
-      "original": "Telefon: 606 874 521",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_16]]",
+      "original": "605 789 632",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_15]]",
-      "original": "tel. 724 365 874",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_17]]",
+      "original": "724 896 547",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_16]]",
-      "original": "Telefon: 605 789 632",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_18]]",
+      "original": "606 874 523",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_17]]",
-      "original": "Telefon: 724 896 547",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_19]]",
+      "original": "75 000",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_18]]",
-      "original": "Tel: 606 874 523",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_20]]",
+      "original": "4 875",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_19]]",
-      "original": "Tel: +420 607 854 963",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_21]]",
+      "original": "3 375",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_20]]",
-      "original": "Tel: 724 365 987",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_22]]",
+      "original": "11 250",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_23]]",
+      "original": "55 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_24]]",
+      "original": "607 854 963",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_25]]",
+      "original": "42 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_26]]",
+      "original": "127 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_27]]",
+      "original": "26 670",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_28]]",
+      "original": "153 670",
       "occurrences": 1
     },
     {

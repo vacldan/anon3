@@ -16,6 +16,10 @@ ADDRESS
 [[ADDRESS_5]]: trvale bytem Pod Skalkou 3, 101 00 Praha
 [[ADDRESS_6]]: trvale bytem Družstevní 66, 787 01 Šumperk
 
+AMOUNT
+[[AMOUNT_1]]: 120 000
+[[AMOUNT_2]]: 1 000
+
 BANK
 [[BANK_1]]: 555123456/0300
 

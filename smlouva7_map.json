@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T20:57:11.397144",
+  "generated_at": "2025-11-16T23:15:07.458883",
   "source_file": "smlouva7.docx",
   "entities": [
     {
@@ -268,6 +268,114 @@
       "occurrences": 1
     },
     {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_1]]",
+      "original": "721 123 456",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_2]]",
+      "original": "55 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_3]]",
+      "original": "602 987 321",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_4]]",
+      "original": "777 555 444",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_5]]",
+      "original": "14 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_6]]",
+      "original": "29 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_7]]",
+      "original": "603 214 789",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_8]]",
+      "original": "731 888 777",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_9]]",
+      "original": "120 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_10]]",
+      "original": "605 333 222",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_11]]",
+      "original": "350 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_12]]",
+      "original": "602 111 222",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_13]]",
+      "original": "777 999 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_14]]",
+      "original": "733 444 555",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_15]]",
+      "original": "604 789 321",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_16]]",
+      "original": "150 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_17]]",
+      "original": "606 111 222",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_18]]",
+      "original": "18 000",
+      "occurrences": 1
+    },
+    {
       "type": "EMAIL",
       "label": "[[EMAIL_1]]",
       "original": "jan.horak@example.com",
@@ -376,75 +484,15 @@
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_1]]",
-      "original": "tel.: +420 721 123 456",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_2]]",
-      "original": "tel.: 602 987 321",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_3]]",
-      "original": "tel.: 777 555 444",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_4]]",
-      "original": "tel.: 603 214 789",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_5]]",
-      "original": "tel.: 731 888 777",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_6]]",
-      "original": "tel.: 605 333 222",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "tel.: 602 111 222",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_8]]",
-      "original": "tel.: 777 999 000",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_9]]",
-      "original": "tel.: +420 733 444 555",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_10]]",
-      "original": "tel.: 604 789 321",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_11]]",
-      "original": "tel.: 606 111 222",
-      "occurrences": 1
-    },
-    {
       "type": "SPZ",
       "label": "[[SPZ_1]]",
       "original": "2AB 1234",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_1]]",
+      "original": "Bc.",
       "occurrences": 1
     }
   ]

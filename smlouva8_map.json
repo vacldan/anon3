@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T20:57:20.687736",
+  "generated_at": "2025-11-16T23:15:16.897272",
   "source_file": "smlouva8.docx",
   "entities": [
     {
@@ -388,93 +388,117 @@
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_2]]",
-      "original": ": +420 604 785 963",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_1]]",
+      "original": "604 785 963",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_3]]",
-      "original": "Tel.: 725 896 314",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_2]]",
+      "original": "725 896 314",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_4]]",
-      "original": "Telefon: +420 778 524 963",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_3]]",
+      "original": "778 524 963",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_5]]",
-      "original": "tel. 606 987 425",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_4]]",
+      "original": "420 000",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_6]]",
-      "original": "Mobil: +420 609 456 873",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_5]]",
+      "original": "606 987 425",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "Tel.: +420 296 874 536",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_6]]",
+      "original": "609 456 873",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_8]]",
-      "original": "Telefon: 724 587 963",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_7]]",
+      "original": "18 500",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_9]]",
-      "original": "Tel.: 604 325 874",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_8]]",
+      "original": "296 874 536",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_10]]",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_9]]",
+      "original": "724 587 963",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_10]]",
+      "original": "604 325 874",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_11]]",
       "original": "778 965 321",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_11]]",
-      "original": "Tel.: +420 725 369 874",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_12]]",
+      "original": "32 000",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_12]]",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_13]]",
+      "original": "725 369 874",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_14]]",
       "original": "604 258 963",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_13]]",
-      "original": ": 777 854 963",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_15]]",
+      "original": "777 854 963",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_14]]",
-      "original": "Telefon: +420 736 254 987",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_16]]",
+      "original": "736 254 987",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_15]]",
-      "original": "Tel.: 605 874 236",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_17]]",
+      "original": "605 874 236",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_16]]",
-      "original": "Telefon: 724 369 874",
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_18]]",
+      "original": "724 369 874",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_19]]",
+      "original": "220 000",
       "occurrences": 1
     },
     {

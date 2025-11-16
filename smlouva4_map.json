@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T20:57:05.551401",
+  "generated_at": "2025-11-16T23:15:01.481850",
   "source_file": "smlouva4.docx",
   "entities": [
     {
@@ -85,6 +85,18 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
       "original": "trvale bytem Družstevní 66, 787 01 Šumperk",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_1]]",
+      "original": "120 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_2]]",
+      "original": "1 000",
       "occurrences": 1
     },
     {

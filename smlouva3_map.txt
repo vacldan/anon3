@@ -8,6 +8,9 @@ ADDRESS
 [[ADDRESS_2]]: Bydliště: Na Výsluní 122, 736 01 Havířov
 Číslo občanského
 
+AMOUNT
+[[AMOUNT_1]]: 20 000
+
 BANK
 [[BANK_1]]: 123456789/0100
 

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T20:46:12.151983",
+  "generated_at": "2025-11-16T23:03:55.756325",
   "source_file": "smlouva0.docx",
   "entities": [
     {
@@ -298,6 +298,120 @@
       "occurrences": 1
     },
     {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_1]]",
+      "original": "603 125 478",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_2]]",
+      "original": "724 589 632",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_3]]",
+      "original": "777 142 536",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_4]]",
+      "original": "285 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_5]]",
+      "original": "605 874 125",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_6]]",
+      "original": "608 321 547",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_7]]",
+      "original": "15 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_8]]",
+      "original": "296 547 821",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_9]]",
+      "original": "723 456 891",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_10]]",
+      "original": "603 789 145",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_11]]",
+      "original": "777 365 214",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_12]]",
+      "original": "250 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_13]]",
+      "original": "724 158 963",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_14]]",
+      "original": "603 147 258",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_15]]",
+      "original": "776 325 148",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_16]]",
+      "original": "735 896 214",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_17]]",
+      "original": "604 789 321",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_18]]",
+      "original": "723 654 987",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_19]]",
+      "original": "150 000",
+      "occurrences": 1
+    },
+    {
       "type": "EMAIL",
       "label": "[[EMAIL_1]]",
       "original": "jana.svobodova@email.cz",
@@ -475,96 +589,6 @@
       "type": "PHONE",
       "label": "[[PHONE_1]]",
       "original": ": 123456789",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_2]]",
-      "original": ": +420 603 125 478",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_3]]",
-      "original": "Tel.: 724 589 632",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_4]]",
-      "original": "Telefon: +420 777 142 536",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_5]]",
-      "original": "tel. 605 874 125",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_6]]",
-      "original": "Mobil: +420 608 321 547",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "Tel.: +420 296 547 821",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_8]]",
-      "original": "Telefon: 723 456 891",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_9]]",
-      "original": "Tel.: 603 789 145",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_10]]",
-      "original": "777 365 214",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_11]]",
-      "original": "Tel.: +420 724 158 963",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_12]]",
-      "original": "603 147 258",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_13]]",
-      "original": ": 776 325 148",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_14]]",
-      "original": "Telefon: +420 735 896 214",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_15]]",
-      "original": "Tel.: 604 789 321",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_16]]",
-      "original": "Telefon: 723 654 987",
       "occurrences": 1
     },
     {

@@ -9,6 +9,9 @@ ADDRESS
 [[ADDRESS_1]]: Trvalé bydliště: Na Hrázi 123/7, 750 02 Přerov
 [[ADDRESS_2]]: Trvalé bydliště: U Lávky 45, 779 00 Olomouc
 
+AMOUNT
+[[AMOUNT_1]]: 245 000
+
 BANK
 [[BANK_1]]: 200123456/2010
 [[BANK_2]]: 260987654/5500

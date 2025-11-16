@@ -6,29 +6,28 @@ OSOBY
 [[PERSON_5]]: Pavla Růžičková
 [[PERSON_6]]: Tomáš Doležal
 [[PERSON_7]]: Barbora Nováková
-[[PERSON_8]]: Kč Celkem
-[[PERSON_9]]: Petra Malíková
-[[PERSON_10]]: Dominik Král
-[[PERSON_11]]: Pan Král
-[[PERSON_12]]: Michal Konečný
-[[PERSON_13]]: Klára Veselá
-[[PERSON_14]]: Forensic Logging
-[[PERSON_15]]: Tomáš Čada
-[[PERSON_16]]: Veronika Štěpánová
-[[PERSON_17]]: Roman Doležal
-[[PERSON_18]]: Jana Čechová
-[[PERSON_19]]: Petr Beneš
-[[PERSON_20]]: Lenka Růžičková
-[[PERSON_21]]: Radek Matoušek
-[[PERSON_22]]: Marek Šmíd
-[[PERSON_23]]: Jitka Dvořáčková
-[[PERSON_24]]: Petr Kovář
-[[PERSON_25]]: Martina Horáková
-[[PERSON_26]]: Na Příkopě
-[[PERSON_27]]: Jana Černá
-[[PERSON_28]]: Iveta Zelená
-[[PERSON_29]]: Ostrav Produkt
-[[PERSON_30]]: Kč Začátek
+[[PERSON_8]]: Petra Malíková
+[[PERSON_9]]: Dominik Král
+[[PERSON_10]]: Pan Král
+[[PERSON_11]]: Michal Konečný
+[[PERSON_12]]: Klára Veselá
+[[PERSON_13]]: Forensic Logging
+[[PERSON_14]]: Tomáš Čada
+[[PERSON_15]]: Veronika Štěpánová
+[[PERSON_16]]: Roman Doležal
+[[PERSON_17]]: Jana Čechová
+[[PERSON_18]]: Petr Beneš
+[[PERSON_19]]: Lenka Růžičková
+[[PERSON_20]]: Radek Matoušek
+[[PERSON_21]]: Marek Šmíd
+[[PERSON_22]]: Jitka Dvořáčková
+[[PERSON_23]]: Petr Kovář
+[[PERSON_24]]: Martina Horáková
+[[PERSON_25]]: Na Příkopě
+[[PERSON_26]]: Jana Černá
+[[PERSON_27]]: Iveta Zelená
+[[PERSON_28]]: Ostrav Produkt
+[[PERSON_29]]: Kč Začátek
 
 ADDRESS
 [[ADDRESS_1]]: Jihlavská 20, 625 00 Brno
@@ -44,6 +43,22 @@ Zaměstnanec
 [[ADDRESS_8]]: sídlo: Vídeňská 4, 639 00 Brno
 Datum
 [[ADDRESS_9]]: Křižíkova 56, 186 00 Praha 8
+
+AMOUNT
+[[AMOUNT_1]]: 543 123 789
+[[AMOUNT_2]]: 222 333 444
+[[AMOUNT_3]]: 500 000
+[[AMOUNT_4]]: 1 000
+[[AMOUNT_5]]: 20 000
+[[AMOUNT_6]]: 2 000
+[[AMOUNT_7]]: 22 000
+[[AMOUNT_8]]: 25 000
+[[AMOUNT_9]]: 734 555 111
+[[AMOUNT_10]]: 721 888 123
+[[AMOUNT_11]]: 920 000
+[[AMOUNT_12]]: 60 000
+[[AMOUNT_13]]: 18 250
+[[AMOUNT_14]]: 2 000 000
 
 BANK
 [[BANK_1]]: 123456789/0100
@@ -86,9 +101,6 @@ ICO
 [[ICO_12]]: 60232514
 [[ICO_13]]: 45272956
 
-PHONE
-[[PHONE_1]]: tel.: 543 123 789
-[[PHONE_2]]: tel.: 222 333 444
-[[PHONE_3]]: tel.: +420 734 555 111
-[[PHONE_4]]: tel.: 721 888 123
+IP
+[[IP_1]]: 185.63.115.42
 

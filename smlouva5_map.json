@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T20:57:07.584403",
+  "generated_at": "2025-11-16T23:15:03.539946",
   "source_file": "smlouva5.docx",
   "entities": [
     {
@@ -127,6 +127,12 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_10]]",
       "original": "trvale bytem Lesní 10, 787 01 Šumperk",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_1]]",
+      "original": "5 000",
       "occurrences": 1
     }
   ]

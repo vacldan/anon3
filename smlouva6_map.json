@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T20:57:07.642895",
+  "generated_at": "2025-11-16T23:15:03.602755",
   "source_file": "smlouva6.docx",
   "entities": [
     {
@@ -25,6 +25,42 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Tereza Valachová",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_1]]",
+      "original": "602 456 789",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_2]]",
+      "original": "608 234 567",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_3]]",
+      "original": "777 111 333",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_4]]",
+      "original": "720 555 888",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_5]]",
+      "original": "18 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_6]]",
+      "original": "36 000",
       "occurrences": 1
     },
     {
@@ -151,30 +187,6 @@
       "type": "SPZ",
       "label": "[[SPZ_4]]",
       "original": "3CZ 4598",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_1]]",
-      "original": ": +420 602 456 789",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_2]]",
-      "original": ": +420 608 234 567",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_3]]",
-      "original": ": +420 777 111 333",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_4]]",
-      "original": ": +420 720 555 888",
       "occurrences": 1
     }
   ]

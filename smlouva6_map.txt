@@ -15,6 +15,14 @@ Tel
 Tel
 [[ADDRESS_5]]: Tylova 58, 779 00 Olomouc
 
+AMOUNT
+[[AMOUNT_1]]: 602 456 789
+[[AMOUNT_2]]: 608 234 567
+[[AMOUNT_3]]: 777 111 333
+[[AMOUNT_4]]: 720 555 888
+[[AMOUNT_5]]: 18 000
+[[AMOUNT_6]]: 36 000
+
 BANK
 [[BANK_1]]: 123456789/0100
 [[BANK_2]]: 987654321/0300
@@ -32,12 +40,6 @@ EMAIL
 [[EMAIL_2]]: lucie.horka@example.cz
 [[EMAIL_3]]: marek.sedy@example.org
 [[EMAIL_4]]: tereza.valachova@example.net
-
-PHONE
-[[PHONE_1]]: : +420 602 456 789
-[[PHONE_2]]: : +420 608 234 567
-[[PHONE_3]]: : +420 777 111 333
-[[PHONE_4]]: : +420 720 555 888
 
 SPZ
 [[SPZ_1]]: 7AB 4567

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T20:46:09.130560",
+  "generated_at": "2025-11-16T23:03:52.704791",
   "source_file": "smlouva.docx",
   "entities": [
     {
@@ -67,6 +67,12 @@
       "type": "BANK",
       "label": "[[BANK_2]]",
       "original": "260987654/5500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_1]]",
+      "original": "245 000",
       "occurrences": 1
     }
   ]
