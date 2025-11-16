@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T19:32:25.269173",
+  "generated_at": "2025-11-16T20:47:25.032097",
   "source_file": "smlouva10.docx",
   "entities": [
     {
@@ -90,7 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_15]]",
-      "original": "Učitelek Mgr",
+      "original": "Učitelk Mgr",
       "occurrences": 1
     },
     {
@@ -102,7 +102,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_17]]",
-      "original": "Paní Sokolová",
+      "original": "Panía Sokolová",
       "occurrences": 1
     },
     {
@@ -120,7 +120,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_20]]",
-      "original": "Poboček Praha",
+      "original": "Pobočk Praha",
       "occurrences": 1
     },
     {
@@ -270,7 +270,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_45]]",
-      "original": "Petra Nový",
+      "original": "Petr Nový",
       "occurrences": 1
     },
     {
@@ -294,7 +294,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_49]]",
-      "original": "Lukáš Vráná",
+      "original": "Lukášema Vráná",
       "occurrences": 1
     },
     {
@@ -348,7 +348,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_58]]",
-      "original": "Petra Soukupa",
+      "original": "Petr Soukupa",
       "occurrences": 1
     },
     {
@@ -384,24 +384,18 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_64]]",
-      "original": "Backend Developer",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_65]]",
       "original": "Novák Design",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_66]]",
+      "label": "[[PERSON_65]]",
       "original": "Firm Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_67]]",
+      "label": "[[PERSON_66]]",
       "original": "Jan Horák",
       "occurrences": 1
     },

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T19:48:38.784539",
+  "generated_at": "2025-11-16T20:57:07.584403",
   "source_file": "smlouva5.docx",
   "entities": [
     {
@@ -66,7 +66,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_11]]",
-      "original": "Radka Procházky",
+      "original": "Radk Procházky",
       "occurrences": 1
     },
     {

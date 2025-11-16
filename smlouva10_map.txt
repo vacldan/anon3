@@ -13,12 +13,12 @@ OSOBY
 [[PERSON_12]]: Petra Sokolová
 [[PERSON_13]]: Jiří Sokol
 [[PERSON_14]]: Anička Sokolová
-[[PERSON_15]]: Učitelek Mgr
+[[PERSON_15]]: Učitelk Mgr
 [[PERSON_16]]: Eva Svobodová
-[[PERSON_17]]: Paní Sokolová
+[[PERSON_17]]: Panía Sokolová
 [[PERSON_18]]: Rodiče Petra
 [[PERSON_19]]: Klára Havránková
-[[PERSON_20]]: Poboček Praha
+[[PERSON_20]]: Pobočk Praha
 [[PERSON_21]]: Michal Kolář
 [[PERSON_22]]: Lenka Kolářová
 [[PERSON_23]]: Pavel Kolář
@@ -43,11 +43,11 @@ OSOBY
 [[PERSON_42]]: Martin Lišek
 [[PERSON_43]]: Tomáš Jelínek
 [[PERSON_44]]: Sokol Invest
-[[PERSON_45]]: Petra Nový
+[[PERSON_45]]: Petr Nový
 [[PERSON_46]]: Lukáš Vrána
 [[PERSON_47]]: Pan Sokol
 [[PERSON_48]]: Prosím Davide
-[[PERSON_49]]: Lukáš Vráná
+[[PERSON_49]]: Lukášema Vráná
 [[PERSON_50]]: Klára Sokolová
 [[PERSON_51]]: Customer Success
 [[PERSON_52]]: Václav Holub
@@ -56,16 +56,15 @@ OSOBY
 [[PERSON_55]]: Karel Havran
 [[PERSON_56]]: Jana Vránová
 [[PERSON_57]]: Pan Havran
-[[PERSON_58]]: Petra Soukupa
+[[PERSON_58]]: Petr Soukupa
 [[PERSON_59]]: Tomáš Jeřábek
 [[PERSON_60]]: Martin Vrba
 [[PERSON_61]]: Eva Holanová
 [[PERSON_62]]: Petr Novotný
 [[PERSON_63]]: Lukáš Vlček
-[[PERSON_64]]: Backend Developer
-[[PERSON_65]]: Novák Design
-[[PERSON_66]]: Firm Horák
-[[PERSON_67]]: Jan Horák
+[[PERSON_64]]: Novák Design
+[[PERSON_65]]: Firm Horák
+[[PERSON_66]]: Jan Horák
 
 ADDRESS
 [[ADDRESS_1]]: U Nemocnice 2, 128 08 Praha 2

@@ -183,6 +183,13 @@ def infer_first_name_nominative(obs: str) -> str:
     if lo in CZECH_FIRST_NAMES:
         return obs.capitalize()
 
+    # Speciální případy - zkrácená jména (Han → Hana, Mart → Marta, Martin → Martina)
+    # Priorita: nejdřív zkus +ina (pro Martin → Martina), pak +a
+    if lo + 'ina' in CZECH_FIRST_NAMES:
+        return (obs + 'ina').capitalize()
+    if lo + 'a' in CZECH_FIRST_NAMES:
+        return (obs + 'a').capitalize()
+
     # Ženská jména - pádové varianty
     if lo.endswith(('y', 'ě', 'e', 'u', 'ou')):
         # Zkus -a variantu
@@ -409,29 +416,61 @@ class Anonymizer:
                 'jednatel', 'jednatelka', 'ředitel', 'ředitelka',
                 'auditor', 'manager', 'consultant', 'specialist',
                 'assistant', 'coordinator', 'analyst', 'pacient',
+                'scrum', 'master', 'developer', 'architect', 'engineer',
+                'officer', 'professional', 'certified', 'advanced',
                 # Pozdravy/oslovení
                 'ahoj', 'dobrý', 'den', 'vážený', 'vážená',
                 # Značky aut
                 'škoda', 'octavia', 'fabia', 'superb', 'kodiaq',
                 'volkswagen', 'toyota', 'ford', 'bmw', 'audi',
+                # Technologie a software
+                'google', 'amazon', 'microsoft', 'apple', 'facebook',
+                'cloud', 'web', 'tech', 'solutions', 'data', 'digital',
+                'software', 'enterprise', 'premium', 'standard',
+                'analytics', 'computer', 'vision', 'protection',
+                'security', 'authenticator', 'repository', 'access',
+                'personal', 'hub', 'book', 'pro', 'series', 'launch',
+                'team', 'development', 'react', 'splunk', 'innovate',
+                'ventures', 'credo', 'mayo', 'clinic', 'met', 'london',
+                'avenue', 'contractual', 'plánovaná', 'diagno',
+                # Zdravotnictví
+                'nemocnice', 'poliklinika', 'polikliniek', 'nemocniec',
                 # Další
                 'care', 'plus', 'minus', 'medical', 'health',
-                'service', 'services', 'group', 'company', 'corp'
+                'service', 'services', 'group', 'company', 'corp', 'ltd'
             }
 
             # Kontrola proti ignore listu
             if first_obs.lower() in ignore_words or last_obs.lower() in ignore_words:
                 return match.group(0)
 
-            # Detekce názvů firem (končí na s.r.o., a.s., spol. atd.)
-            # Pokud následuje firemní typ, ignoruj
+            # Detekce anglických/technických názvů (obsahují typicky anglická slova)
+            combined = f"{first_obs} {last_obs}".lower()
+            tech_patterns = [
+                r'\b(tech|cloud|web|solutions?|data|digital|software|analytics)\b',
+                r'\b(team|hub|enterprise|premium|standard|professional)\b',
+                r'\b(google|amazon|microsoft|apple|facebook|splunk)\b',
+                r'\b(repository|authenticator|vision|protection|security)\b',
+                r'\b(ventures|clinic|series|launch|innovate)\b'
+            ]
+            for pattern in tech_patterns:
+                if re.search(pattern, combined):
+                    return match.group(0)
+
+            # Detekce názvů firem (končí na s.r.o., a.s., spol., Ltd. atd.)
             context_after = text[match.end():match.end()+20]
-            if re.search(r'^\s*(s\.r\.o\.|a\.s\.|spol\.|k\.s\.|v\.o\.s\.)', context_after, re.IGNORECASE):
+            if re.search(r'^\s*(s\.r\.o\.|a\.s\.|spol\.|k\.s\.|v\.o\.s\.|ltd\.?|inc\.?)', context_after, re.IGNORECASE):
                 return match.group(0)
 
             # Inference nominativu
             first_nom = infer_first_name_nominative(first_obs)
             last_nom = infer_surname_nominative(last_obs)
+
+            # Speciální případ: Jana vs Jan - závisí na rodu příjmení
+            if first_nom.lower() == 'jana' and last_nom.lower() in ['horák', 'novák', 'svoboda', 'dvořák', 'procházek', 'malý']:
+                # Mužské příjmení → pravděpodobně Jan (genitiv)
+                if 'jan' in CZECH_FIRST_NAMES:
+                    first_nom = 'Jan'
 
             canonical = f"{first_nom} {last_nom}"
 

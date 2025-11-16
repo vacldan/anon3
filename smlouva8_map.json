@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T19:48:53.802467",
+  "generated_at": "2025-11-16T20:57:20.687736",
   "source_file": "smlouva8.docx",
   "entities": [
     {
@@ -36,7 +36,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Han Nejedlá",
+      "original": "Hana Nejedlá",
       "occurrences": 1
     },
     {
@@ -48,126 +48,120 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Paní Nejedlá",
+      "original": "Panía Nejedlá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_9]]",
-      "original": "Haně Nejedlá",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
       "original": "Jan Kovářem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_11]]",
+      "label": "[[PERSON_10]]",
       "original": "Alena Sedláčková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_12]]",
+      "label": "[[PERSON_11]]",
       "original": "Jiří Bárta",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_13]]",
+      "label": "[[PERSON_12]]",
       "original": "Barbora Šimková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_14]]",
+      "label": "[[PERSON_13]]",
       "original": "Pan Havlíček",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_15]]",
+      "label": "[[PERSON_14]]",
       "original": "Barbora Hrubá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_16]]",
+      "label": "[[PERSON_15]]",
       "original": "Lenovo Think",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_17]]",
+      "label": "[[PERSON_16]]",
       "original": "Lenka Slavíková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_18]]",
+      "label": "[[PERSON_17]]",
       "original": "Ondřej Jelínkem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_19]]",
+      "label": "[[PERSON_18]]",
       "original": "Pan Ondřej",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_20]]",
+      "label": "[[PERSON_19]]",
       "original": "Klára Vrabcová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_21]]",
+      "label": "[[PERSON_20]]",
       "original": "Radek Schneider",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_22]]",
+      "label": "[[PERSON_21]]",
       "original": "Pan Tr",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_23]]",
+      "label": "[[PERSON_22]]",
       "original": "Pan Schneider",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_24]]",
+      "label": "[[PERSON_23]]",
       "original": "Josef Havel",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_25]]",
+      "label": "[[PERSON_24]]",
       "original": "David Havlas",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_26]]",
+      "label": "[[PERSON_25]]",
       "original": "Pan Havel",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_27]]",
+      "label": "[[PERSON_26]]",
       "original": "Josefa Havel",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_28]]",
+      "label": "[[PERSON_27]]",
       "original": "Petr Havelek",
       "occurrences": 1
     },

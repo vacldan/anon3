@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T19:34:38.748807",
+  "generated_at": "2025-11-16T20:49:26.898640",
   "source_file": "smlouva13.docx",
   "entities": [
     {
@@ -102,7 +102,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_17]]",
-      "original": "Martin Horáková",
+      "original": "Martina Horáková",
       "occurrences": 1
     },
     {
@@ -120,7 +120,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_20]]",
-      "original": "Han Nová",
+      "original": "Hana Nová",
       "occurrences": 1
     },
     {
@@ -174,13 +174,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_29]]",
-      "original": "Martin Krajíčková",
+      "original": "Martina Krajíčková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_30]]",
-      "original": "Han Dvořáková",
+      "original": "Hana Dvořáková",
       "occurrences": 1
     },
     {

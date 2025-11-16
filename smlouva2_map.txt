@@ -1,7 +1,7 @@
 OSOBY
 [[PERSON_1]]: Nájemec Pronajímateli
 [[PERSON_2]]: Pronajímatel Nájemci
-[[PERSON_3]]: Položek Stav
+[[PERSON_3]]: Položk Stav
 [[PERSON_4]]: Popis Počet
 [[PERSON_5]]: Předat Byt
 [[PERSON_6]]: Služb Způsob
@@ -16,7 +16,7 @@ OSOBY
 [[PERSON_15]]: Užívat Byt
 [[PERSON_16]]: Hlásit Pronajímateli
 [[PERSON_17]]: Nepřenechávat Byt
-[[PERSON_18]]: Jena Dominik
+[[PERSON_18]]: Jen Dominik
 [[PERSON_19]]: Sconto Bolton
 
 ADDRESS

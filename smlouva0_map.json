@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T19:31:10.522924",
+  "generated_at": "2025-11-16T20:46:12.151983",
   "source_file": "smlouva0.docx",
   "entities": [
     {
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Paní Horváthová",
+      "original": "Panía Horváthová",
       "occurrences": 1
     },
     {

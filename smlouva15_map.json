@@ -1,461 +1,281 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T19:48:09.040399",
+  "generated_at": "2025-11-16T20:56:41.015870",
   "source_file": "smlouva15.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Innovate Tech",
+      "original": "Martina Horáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Martin Horáková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
       "original": "Jakub Procházek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_3]]",
       "original": "Petra Procházková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_4]]",
       "original": "Eliška Procházková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_6]]",
+      "label": "[[PERSON_5]]",
       "original": "Matěj Procházek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Hana Procházková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Han Procházková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Development Team",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
       "original": "Martin Svoboda",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Book Pro",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_11]]",
-      "original": "Polikliniek Vinohrady",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_12]]",
-      "original": "Certified Solutions",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_13]]",
-      "original": "React Advanced",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_14]]",
-      "original": "Scrum Master",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_15]]",
+      "label": "[[PERSON_8]]",
       "original": "Pavel Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_16]]",
+      "label": "[[PERSON_9]]",
       "original": "Jana Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_17]]",
+      "label": "[[PERSON_10]]",
       "original": "Karel Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_18]]",
-      "original": "Premium Life",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_19]]",
+      "label": "[[PERSON_11]]",
       "original": "Tomáš Veselý",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_20]]",
+      "label": "[[PERSON_12]]",
       "original": "Alena Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_21]]",
-      "original": "Nemocniec Na",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_22]]",
+      "label": "[[PERSON_13]]",
       "original": "Petr Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_23]]",
+      "label": "[[PERSON_14]]",
       "original": "Adam Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_24]]",
+      "label": "[[PERSON_15]]",
       "original": "Lucie Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_25]]",
+      "label": "[[PERSON_16]]",
       "original": "Jana Nová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_26]]",
+      "label": "[[PERSON_17]]",
       "original": "Pavel Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_27]]",
-      "original": "Polikliniek Vinohradská",
+      "label": "[[PERSON_18]]",
+      "original": "Hana Nováková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_28]]",
-      "original": "Han Nováková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_29]]",
+      "label": "[[PERSON_19]]",
       "original": "Jana Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_30]]",
+      "label": "[[PERSON_20]]",
       "original": "Karel Novotný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_31]]",
+      "label": "[[PERSON_21]]",
       "original": "Petr Malý",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_32]]",
+      "label": "[[PERSON_22]]",
       "original": "Robert Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_33]]",
+      "label": "[[PERSON_23]]",
       "original": "Martin Procházek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_34]]",
+      "label": "[[PERSON_24]]",
       "original": "Petra Nováková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_35]]",
-      "original": "Han Svobodová",
+      "label": "[[PERSON_25]]",
+      "original": "Hana Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_36]]",
+      "label": "[[PERSON_26]]",
       "original": "Tomáš Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_37]]",
+      "label": "[[PERSON_27]]",
       "original": "Jan Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_38]]",
-      "original": "Google Authenticator",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_39]]",
+      "label": "[[PERSON_28]]",
       "original": "Petr Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_40]]",
-      "original": "Cloud Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_41]]",
+      "label": "[[PERSON_29]]",
       "original": "Martin Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_42]]",
-      "original": "Cloud Architect",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_43]]",
-      "original": "Solutions Architect",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_44]]",
+      "label": "[[PERSON_30]]",
       "original": "Petra Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_45]]",
-      "original": "Certified Professional",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_46]]",
+      "label": "[[PERSON_31]]",
       "original": "Jan Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_47]]",
-      "original": "Security Officer",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_48]]",
-      "original": "Splunk Enterprise",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_49]]",
-      "original": "Amazon Web",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_50]]",
-      "original": "Avenue John",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_51]]",
-      "original": "Standard Contractual",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_52]]",
+      "label": "[[PERSON_32]]",
       "original": "Karel Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_53]]",
-      "original": "Analytics Ltd",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_54]]",
+      "label": "[[PERSON_33]]",
       "original": "Tomáš Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_55]]",
+      "label": "[[PERSON_34]]",
       "original": "Pavel Svoboda",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_56]]",
-      "original": "Martin Svobodová",
+      "label": "[[PERSON_35]]",
+      "original": "Martina Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_57]]",
+      "label": "[[PERSON_36]]",
       "original": "Jan Svoboda",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_58]]",
+      "label": "[[PERSON_37]]",
       "original": "Tomáš Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_59]]",
+      "label": "[[PERSON_38]]",
       "original": "Eva Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_60]]",
-      "original": "Dat Protection",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_61]]",
+      "label": "[[PERSON_39]]",
       "original": "Tomáš Svoboda",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_62]]",
-      "original": "Computer Vision",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_63]]",
-      "original": "Met London",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_64]]",
+      "label": "[[PERSON_40]]",
       "original": "Jan Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_65]]",
+      "label": "[[PERSON_41]]",
       "original": "Martin Novotný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_66]]",
+      "label": "[[PERSON_42]]",
       "original": "Eva Málková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_67]]",
-      "original": "Credo Ventures",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_68]]",
+      "label": "[[PERSON_43]]",
       "original": "Ondřej Bartoš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_69]]",
-      "original": "Plánovaná Series",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_70]]",
+      "label": "[[PERSON_44]]",
       "original": "Pavel Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_71]]",
+      "label": "[[PERSON_45]]",
       "original": "Jana Nováková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_72]]",
-      "original": "Launch Diagno",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_73]]",
-      "original": "Mayo Clinic",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_74]]",
-      "original": "Hub Repository",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_75]]",
-      "original": "Personal Access",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_76]]",
+      "label": "[[PERSON_46]]",
       "original": "Petra Horáková",
       "occurrences": 1
     },

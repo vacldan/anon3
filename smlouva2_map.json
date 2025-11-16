@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T19:48:35.352737",
+  "generated_at": "2025-11-16T20:57:04.510873",
   "source_file": "smlouva2.docx",
   "entities": [
     {
@@ -18,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Položek Stav",
+      "original": "Položk Stav",
       "occurrences": 1
     },
     {
@@ -108,7 +108,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_18]]",
-      "original": "Jena Dominik",
+      "original": "Jen Dominik",
       "occurrences": 1
     },
     {

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T19:48:58.747841",
+  "generated_at": "2025-11-16T20:57:25.275616",
   "source_file": "smlouva9.docx",
   "entities": [
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Pavel Růžičková",
+      "original": "Pavla Růžičková",
       "occurrences": 1
     },
     {
@@ -150,13 +150,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_25]]",
-      "original": "Martin Horáková",
+      "original": "Martina Horáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_26]]",
-      "original": "N Příkopě",
+      "original": "Na Příkopě",
       "occurrences": 1
     },
     {
