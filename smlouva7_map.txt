@@ -1,0 +1,92 @@
+OSOBY
+[[PERSON_1]]: Petra Dvořáková
+[[PERSON_2]]: Jan Horák
+[[PERSON_3]]: Eva Novotná
+[[PERSON_4]]: Lukáš Křížek
+[[PERSON_5]]: Lukáši Kříž
+[[PERSON_6]]: Petra Bartošová
+[[PERSON_7]]: Radim Svoboda
+[[PERSON_8]]: Tomáš Kučera
+[[PERSON_9]]: Českých Budějovicích
+[[PERSON_10]]: Růžena Poláková
+[[PERSON_11]]: Pavel Marek
+[[PERSON_12]]: Karel Blažek
+[[PERSON_13]]: Petr Malý
+[[PERSON_14]]: Adam Novotný
+[[PERSON_15]]: Martin Němec
+[[PERSON_16]]: Tomáš Veselý
+[[PERSON_17]]: Král Kupující
+[[PERSON_18]]: Petra Beránková
+[[PERSON_19]]: Karel Rybář
+
+ADDRESS
+[[ADDRESS_1]]: Sídlo: Nerudova 12, 110 00 Praha 1
+[[ADDRESS_2]]: trvalé bydliště: Růžová 5, 602 00 Brno
+[[ADDRESS_3]]: Slezská 33, 779 00 Olomouc
+[[ADDRESS_4]]: trvalý pobyt: Jiráskova 12, 779 00 Olomouc
+[[ADDRESS_5]]: adresa: Slezská 33, 779 00 Olomouc
+[[ADDRESS_6]]: Na Kopci 7, 130 00 Praha 3
+[[ADDRESS_7]]: Kollárova 28, 602 00 Brno
+[[ADDRESS_8]]: Tyršova 10, 370 01 České Budějovice
+[[ADDRESS_9]]: Dlouhá 89, 110 00 Praha 1
+[[ADDRESS_10]]: Sídlo: Na Příkopě 5, 110 00 Praha 1
+[[ADDRESS_11]]: adresa: Masarykova 4, 602 00 Brno
+[[ADDRESS_12]]: trvalý pobyt: Elišky Přemyslovny 15, 170 00 Praha
+[[ADDRESS_13]]: Nová 156, 252 19 Rudná
+[[ADDRESS_14]]: Novákova 45, 250 01 Brandýs nad Labem
+[[ADDRESS_15]]: Lesní 12, 251 01 Říčany
+[[ADDRESS_16]]: sídlo: Vinohradská 120, 130 00 Praha 3
+[[ADDRESS_17]]: Smetanova 45, 500 02 Hradec Králové
+[[ADDRESS_18]]: Palackého 10, 500 02 Hradec Králové
+[[ADDRESS_19]]: sídlo: Horní 5, 602 00 Brno
+
+BANK
+[[BANK_1]]: 2300456789/2010
+[[BANK_2]]: 123456789/0300
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 870312/1234
+[[BIRTH_ID_2]]: 950824/0456
+[[BIRTH_ID_3]]: 790610/2543
+[[BIRTH_ID_4]]: 880412/6987
+[[BIRTH_ID_5]]: 930228/1547
+
+EMAIL
+[[EMAIL_1]]: jan.horak@example.com
+[[EMAIL_2]]: eva.novotna@mail.cz
+[[EMAIL_3]]: lukas.kriz@mail.com
+[[EMAIL_4]]: martin.cerny@seznam.cz
+[[EMAIL_5]]: r.svoboda@ordinace.cz
+[[EMAIL_6]]: ruzena.polakova@consulting.cz
+[[EMAIL_7]]: k.blazek@pravno.cz
+[[EMAIL_8]]: adam.novotny@mail.com
+[[EMAIL_9]]: katerina.mala@univerzita.cz
+[[EMAIL_10]]: rybar.k@fake.cz
+
+ICO
+[[ICO_1]]: 12345678
+[[ICO_2]]: 87654321
+[[ICO_3]]: 65432109
+[[ICO_4]]: 23456789
+[[ICO_5]]: 34567890
+[[ICO_6]]: 99988877
+
+ID_CARD
+[[ID_CARD_1]]: AA123456
+
+PHONE
+[[PHONE_1]]: tel.: +420 721 123 456
+[[PHONE_2]]: tel.: 602 987 321
+[[PHONE_3]]: tel.: 777 555 444
+[[PHONE_4]]: tel.: 603 214 789
+[[PHONE_5]]: tel.: 731 888 777
+[[PHONE_6]]: tel.: 605 333 222
+[[PHONE_7]]: tel.: 602 111 222
+[[PHONE_8]]: tel.: 777 999 000
+[[PHONE_9]]: tel.: +420 733 444 555
+[[PHONE_10]]: tel.: 604 789 321
+[[PHONE_11]]: tel.: 606 111 222
+
+SPZ
+[[SPZ_1]]: 2AB 1234
+

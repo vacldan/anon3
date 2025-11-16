@@ -1,0 +1,24 @@
+OSOBY
+[[PERSON_1]]: Lukáš Mareček
+[[PERSON_2]]: Petra Novotná
+[[PERSON_3]]: Jakub Doležal
+[[PERSON_4]]: Michal Říha
+[[PERSON_5]]: Veronika Suchá
+[[PERSON_6]]: Veronica Suchá
+[[PERSON_7]]: Michala Říh
+[[PERSON_8]]: Klára Malá
+
+ADDRESS
+[[ADDRESS_1]]: trvale bytem Na Hrázi 21, 612 00 Brno
+[[ADDRESS_2]]: trvale bytem K Lesu 14, 370 01 České Budějovice
+[[ADDRESS_3]]: trvale bytem U Studánky 58, 500 03 Hradec Králové
+[[ADDRESS_4]]: trvale bytem Horní cesta 17, 674 01 Třebíč
+[[ADDRESS_5]]: trvale bytem Pod Skalkou 3, 101 00 Praha
+[[ADDRESS_6]]: trvale bytem Družstevní 66, 787 01 Šumperk
+
+BANK
+[[BANK_1]]: 555123456/0300
+
+SPZ
+[[SPZ_1]]: 2AB 1234
+

@@ -1,0 +1,47 @@
+OSOBY
+[[PERSON_1]]: Radovan Koutný
+[[PERSON_2]]: Lucie Horká
+[[PERSON_3]]: Marek Šedý
+[[PERSON_4]]: Tereza Valachová
+
+ADDRESS
+[[ADDRESS_1]]: U Křižovatky 25, 779 00 Olomouc
+Tel
+[[ADDRESS_2]]: Jabloňová 12, 625 00 Brno
+Tel
+[[ADDRESS_3]]: Na Pískách 7, 370 01 České Budějovice
+Tel
+[[ADDRESS_4]]: Pod Lesem 45, 460 07 Liberec
+Tel
+[[ADDRESS_5]]: Tylova 58, 779 00 Olomouc
+
+BANK
+[[BANK_1]]: 123456789/0100
+[[BANK_2]]: 987654321/0300
+[[BANK_3]]: 456123789/0800
+[[BANK_4]]: 159753486/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 820415/1785
+[[BIRTH_ID_2]]: 900603/4521
+[[BIRTH_ID_3]]: 850921/3344
+[[BIRTH_ID_4]]: 950112/7890
+
+EMAIL
+[[EMAIL_1]]: radovan.koutny@example.com
+[[EMAIL_2]]: lucie.horka@example.cz
+[[EMAIL_3]]: marek.sedy@example.org
+[[EMAIL_4]]: tereza.valachova@example.net
+
+PHONE
+[[PHONE_1]]: : +420 602 456 789
+[[PHONE_2]]: : +420 608 234 567
+[[PHONE_3]]: : +420 777 111 333
+[[PHONE_4]]: : +420 720 555 888
+
+SPZ
+[[SPZ_1]]: 7AB 4567
+[[SPZ_2]]: 5AC 9845
+[[SPZ_3]]: 4BD 7654
+[[SPZ_4]]: 3CZ 4598
+

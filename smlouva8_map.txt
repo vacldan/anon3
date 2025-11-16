@@ -1,0 +1,121 @@
+OSOBY
+[[PERSON_1]]: Tomáš Černý
+[[PERSON_2]]: Lucie Dvořáková
+[[PERSON_3]]: Miroslav Kučera
+[[PERSON_4]]: Alexandru Popescu
+[[PERSON_5]]: Pan Popescu
+[[PERSON_6]]: Han Nejedlá
+[[PERSON_7]]: Filip Špaček
+[[PERSON_8]]: Paní Nejedlá
+[[PERSON_9]]: Haně Nejedlá
+[[PERSON_10]]: Jan Kovářem
+[[PERSON_11]]: Alena Sedláčková
+[[PERSON_12]]: Jiří Bárta
+[[PERSON_13]]: Barbora Šimková
+[[PERSON_14]]: Pan Havlíček
+[[PERSON_15]]: Barbora Hrubá
+[[PERSON_16]]: Lenovo Think
+[[PERSON_17]]: Lenka Slavíková
+[[PERSON_18]]: Ondřej Jelínkem
+[[PERSON_19]]: Pan Ondřej
+[[PERSON_20]]: Klára Vrabcová
+[[PERSON_21]]: Radek Schneider
+[[PERSON_22]]: Pan Tr
+[[PERSON_23]]: Pan Schneider
+[[PERSON_24]]: Josef Havel
+[[PERSON_25]]: David Havlas
+[[PERSON_26]]: Pan Havel
+[[PERSON_27]]: Josefa Havel
+[[PERSON_28]]: Petr Havelek
+
+ADDRESS
+[[ADDRESS_1]]: Sídlo: Revoluční 2548/9, 110 00 Praha 1
+[[ADDRESS_2]]: Trvalý pobyt: Jiráskova 45, 702 00 Ostrava
+[[ADDRESS_3]]: Bydliště: Údolní 15/238, 602 00 Brno
+[[ADDRESS_4]]: Místo podnikání: Vinohradská 1458/65, 130 00 Praha 3
+[[ADDRESS_5]]: Studentská 28, 160 00 Praha 6
+[[ADDRESS_6]]: Mánesova 156, 621 00 Brno
+[[ADDRESS_7]]: Se sídlem: Pařížská 1548/30, 110 00 Praha 1
+[[ADDRESS_8]]: Purkyňova 88, 612 00 Brno
+[[ADDRESS_9]]: U Parku 25, 140 00 Praha 4
+[[ADDRESS_10]]: Bydliště: Belgická 47, 120 00 Praha 2
+[[ADDRESS_11]]: Sídlo podnikání: Pod Lipami 18, 150 00 Praha 5
+[[ADDRESS_12]]: Sídlo: Karlovo náměstí 25, 120 00 Praha 2
+[[ADDRESS_13]]: Sídlo: Národní 38, 110 00 Praha 1
+[[ADDRESS_14]]: Žitná 1365/42, 120 00 Praha 2
+[[ADDRESS_15]]: Havelská 12, 110 00 Praha 1
+[[ADDRESS_16]]: Bydliště: Havlíčkova 85, 130 00 Praha 3
+
+BANK
+[[BANK_1]]: 3698547125/0300
+[[BANK_2]]: 287456398/2400
+[[BANK_3]]: 3698741258/0600
+[[BANK_4]]: 478965321/0100
+[[BANK_5]]: 2547896321/5500
+[[BANK_6]]: 8963254781/3030
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 945722/8541
+[[BIRTH_ID_2]]: 760825/4125
+[[BIRTH_ID_3]]: 725412/6985
+[[BIRTH_ID_4]]: 980514/3698
+[[BIRTH_ID_5]]: 885908/6325
+[[BIRTH_ID_6]]: 820216/4785
+[[BIRTH_ID_7]]: 915623/8745
+[[BIRTH_ID_8]]: 780425/9632
+[[BIRTH_ID_9]]: 990618/7845
+[[BIRTH_ID_10]]: 850314/2589
+[[BIRTH_ID_11]]: 940725/3698
+[[BIRTH_ID_12]]: 780522/4125
+
+DIC
+[[DIC_1]]: CZ36985471
+[[DIC_2]]: CZ8908265471
+
+EMAIL
+[[EMAIL_1]]: lucie.dvorakova@email.cz
+[[EMAIL_2]]: m.kucera@email.cz
+[[EMAIL_3]]: nejedla.hana@gmail.com
+[[EMAIL_4]]: kontakt@propertymatch.cz
+[[EMAIL_5]]: alena.sedlackova@univerzita.cz
+[[EMAIL_6]]: simkova.bara@email.cz
+[[EMAIL_7]]: lenka.slavikova@consulting.cz
+[[EMAIL_8]]: ondrej.jelinek@techvision.cz
+[[EMAIL_9]]: info@cafehub.cz
+[[EMAIL_10]]: tran.minh@email.cz
+[[EMAIL_11]]: david.havlas@email.com
+
+ICO
+[[ICO_1]]: 36985471
+[[ICO_2]]: 95874632
+[[ICO_3]]: 07896543
+[[ICO_4]]: 85693214
+[[ICO_5]]: 12365478
+[[ICO_6]]: 45698732
+
+ID_CARD
+[[ID_CARD_1]]: CD 789456
+[[ID_CARD_2]]: EF 456789
+[[ID_CARD_3]]: GH 654321
+[[ID_CARD_4]]: IJ 852963
+[[ID_CARD_5]]: KL 963258
+[[ID_CARD_6]]: MN 741258
+
+PHONE
+[[PHONE_1]]: : 987456321
+[[PHONE_2]]: : +420 604 785 963
+[[PHONE_3]]: Tel.: 725 896 314
+[[PHONE_4]]: Telefon: +420 778 524 963
+[[PHONE_5]]: tel. 606 987 425
+[[PHONE_6]]: Mobil: +420 609 456 873
+[[PHONE_7]]: Tel.: +420 296 874 536
+[[PHONE_8]]: Telefon: 724 587 963
+[[PHONE_9]]: Tel.: 604 325 874
+[[PHONE_10]]: 778 965 321
+[[PHONE_11]]: Tel.: +420 725 369 874
+[[PHONE_12]]: 604 258 963
+[[PHONE_13]]: : 777 854 963
+[[PHONE_14]]: Telefon: +420 736 254 987
+[[PHONE_15]]: Tel.: 605 874 236
+[[PHONE_16]]: Telefon: 724 369 874
+

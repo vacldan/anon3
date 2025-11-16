@@ -1,0 +1,155 @@
+OSOBY
+[[PERSON_1]]: Karel Ryba
+[[PERSON_2]]: Jana Rybová
+[[PERSON_3]]: Pan Ryba
+[[PERSON_4]]: Josef Ryba
+[[PERSON_5]]: Marie Rybová
+[[PERSON_6]]: Tomáš Kapr
+[[PERSON_7]]: Pavel Losos
+[[PERSON_8]]: Jana Kaprová
+[[PERSON_9]]: Petr Rybář
+[[PERSON_10]]: Martin Štiek
+[[PERSON_11]]: Matěj Sokol
+[[PERSON_12]]: Petra Sokolová
+[[PERSON_13]]: Jiří Sokol
+[[PERSON_14]]: Anička Sokolová
+[[PERSON_15]]: Učitelek Mgr
+[[PERSON_16]]: Eva Svobodová
+[[PERSON_17]]: Paní Sokolová
+[[PERSON_18]]: Rodiče Petra
+[[PERSON_19]]: Klára Havránková
+[[PERSON_20]]: Poboček Praha
+[[PERSON_21]]: Michal Kolář
+[[PERSON_22]]: Lenka Kolářová
+[[PERSON_23]]: Pavel Kolář
+[[PERSON_24]]: Pan Kolář
+[[PERSON_25]]: Jana Dvořáková
+[[PERSON_26]]: Tomáš Novák
+[[PERSON_27]]: Martin Vrána
+[[PERSON_28]]: Petr Havlem
+[[PERSON_29]]: Pan Vrána
+[[PERSON_30]]: Petr Havel
+[[PERSON_31]]: Career Support
+[[PERSON_32]]: Jana Nováková
+[[PERSON_33]]: David Černý
+[[PERSON_34]]: Martin Vrány
+[[PERSON_35]]: Martin Hora
+[[PERSON_36]]: Eva Vlková
+[[PERSON_37]]: Tomáš Novotný
+[[PERSON_38]]: Pavel Novák
+[[PERSON_39]]: Petra Horáková
+[[PERSON_40]]: David Kos
+[[PERSON_41]]: Jana Vlková
+[[PERSON_42]]: Martin Lišek
+[[PERSON_43]]: Tomáš Jelínek
+[[PERSON_44]]: Sokol Invest
+[[PERSON_45]]: Petra Nový
+[[PERSON_46]]: Lukáš Vrána
+[[PERSON_47]]: Pan Sokol
+[[PERSON_48]]: Prosím Davide
+[[PERSON_49]]: Lukáš Vráná
+[[PERSON_50]]: Klára Sokolová
+[[PERSON_51]]: Customer Success
+[[PERSON_52]]: Václav Holub
+[[PERSON_53]]: Markéta Holubová
+[[PERSON_54]]: Pan Holub
+[[PERSON_55]]: Karel Havran
+[[PERSON_56]]: Jana Vránová
+[[PERSON_57]]: Pan Havran
+[[PERSON_58]]: Petra Soukupa
+[[PERSON_59]]: Tomáš Jeřábek
+[[PERSON_60]]: Martin Vrba
+[[PERSON_61]]: Eva Holanová
+[[PERSON_62]]: Petr Novotný
+[[PERSON_63]]: Lukáš Vlček
+[[PERSON_64]]: Backend Developer
+[[PERSON_65]]: Novák Design
+[[PERSON_66]]: Firm Horák
+[[PERSON_67]]: Jan Horák
+
+ADDRESS
+[[ADDRESS_1]]: U Nemocnice 2, 128 08 Praha 2
+[[ADDRESS_2]]: Adresa: Rybná 8, 110 00 Praha 1
+[[ADDRESS_3]]: Bydliště: Sokolská 45, 120 00 Praha 2
+[[ADDRESS_4]]: Trvalé bydliště: Kolářská 12, 602 00 Brno
+[[ADDRESS_5]]: Bydliště: Nová Kolářská 88, 615 00 Brno
+[[ADDRESS_6]]: Václavské náměstí 47, 110 00 Praha 1
+[[ADDRESS_7]]: Vránova 25, 130 00 Praha 3
+[[ADDRESS_8]]: Ovocný trh 8, 110 00 Praha 1
+[[ADDRESS_9]]: Průmyslová 158, 708 00 Ostrava
+[[ADDRESS_10]]: Adresa: Holubova 28, 702 00 Ostrava
+
+BANK
+[[BANK_1]]: 2547896321/0800
+[[BANK_2]]: 3698745210/0300
+[[BANK_3]]: 2587496321/2010
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 680315/4582
+[[BIRTH_ID_2]]: 150908/3654
+[[BIRTH_ID_3]]: 855612/7896
+[[BIRTH_ID_4]]: 830405/2147
+[[BIRTH_ID_5]]: 190325/8965
+[[BIRTH_ID_6]]: 870523/4785
+[[BIRTH_ID_7]]: 895314/6987
+[[BIRTH_ID_8]]: 620815/3698
+[[BIRTH_ID_9]]: 910824/3698
+[[BIRTH_ID_10]]: 880724/3698
+[[BIRTH_ID_11]]: 850615/4125
+[[BIRTH_ID_12]]: 925423/6985
+[[BIRTH_ID_13]]: 920615/4785
+
+DIC
+[[DIC_1]]: CZ36985214
+[[DIC_2]]: CZ45896321
+
+EMAIL
+[[EMAIL_1]]: petra.sokolova@email.cz
+[[EMAIL_2]]: michal.kolar@firma.cz
+[[EMAIL_3]]: lenka.kolarova@email.cz
+[[EMAIL_4]]: jana.novakova@digitalsolutions.cz
+[[EMAIL_5]]: petr.havel@digitalsolutions.cz
+[[EMAIL_6]]: katerina.mala@digitalsolutions.cz
+[[EMAIL_7]]: petra.horakova@techcorp.cz
+[[EMAIL_8]]: david.kos@techcorp.cz
+[[EMAIL_9]]: jana.vlkova@techcorp.cz
+[[EMAIL_10]]: martin.liska@techcorp.cz
+[[EMAIL_11]]: tomas.jelinek@techcorp.cz
+[[EMAIL_12]]: jiri.sokol@sokolinvest.cz
+[[EMAIL_13]]: lukas.vlcek@email.cz
+[[EMAIL_14]]: pavel.novak@novakdesign.cz
+[[EMAIL_15]]: jan.horak@horakpartners.cz
+
+ICO
+[[ICO_1]]: 28965473
+[[ICO_2]]: 36987452
+[[ICO_3]]: 28547963
+[[ICO_4]]: 47896325
+[[ICO_5]]: 36985214
+[[ICO_6]]: 45896321
+
+ID_CARD
+[[ID_CARD_1]]: AB 789456
+
+PHONE
+[[PHONE_1]]: Telefon: +420 605 874 963
+[[PHONE_2]]: tel. 604 325 874
+[[PHONE_3]]: Telefon: 725 896 314
+[[PHONE_4]]: Telefon: 604 987 452
+[[PHONE_5]]: tel. 724 365 987
+[[PHONE_6]]: Telefon: +420 606 987 452
+[[PHONE_7]]: Telefon: +420 724 365 874
+[[PHONE_8]]: Telefon: 603 741 258
+[[PHONE_9]]: tel. 724 896 325
+[[PHONE_10]]: tel. 604 789 456
+[[PHONE_11]]: 604 789 456
+[[PHONE_12]]: 725 896 321
+[[PHONE_13]]: Mobil: +420 724 896 325
+[[PHONE_14]]: Telefon: 606 874 521
+[[PHONE_15]]: tel. 724 365 874
+[[PHONE_16]]: Telefon: 605 789 632
+[[PHONE_17]]: Telefon: 724 896 547
+[[PHONE_18]]: Tel: 606 874 523
+[[PHONE_19]]: Tel: +420 607 854 963
+[[PHONE_20]]: Tel: 724 365 987
+

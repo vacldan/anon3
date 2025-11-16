@@ -1,0 +1,25 @@
+OSOBY
+[[PERSON_1]]: Radek Procházek
+[[PERSON_2]]: Helena Krátká
+[[PERSON_3]]: Marek Beneš
+[[PERSON_4]]: Tereza Kolářová
+[[PERSON_5]]: Tomáš Holý
+[[PERSON_6]]: Lucie Němcová
+[[PERSON_7]]: Pavel Jelínek
+[[PERSON_8]]: Alena Svobodová
+[[PERSON_9]]: David Urban
+[[PERSON_10]]: Barbora Veselá
+[[PERSON_11]]: Radka Procházky
+
+ADDRESS
+[[ADDRESS_1]]: trvale bytem Na Výsluní 8, 779 00 Olomouc
+[[ADDRESS_2]]: trvale bytem V Koutech 123, 110 00 Praha
+[[ADDRESS_3]]: trvale bytem U Trati 66, 602 00 Brno
+[[ADDRESS_4]]: trvale bytem Slunečná 45, 370 01 České Budějovice
+[[ADDRESS_5]]: trvale bytem Družstevní 17, 736 01 Havířov
+[[ADDRESS_6]]: trvale bytem Lipová 9, 460 01 Liberec
+[[ADDRESS_7]]: trvale bytem Komenského 5, 400 01 Ústí nad Labem
+[[ADDRESS_8]]: trvale bytem Na Lani 77, 290 01 Poděbrady
+[[ADDRESS_9]]: trvale bytem Horská 3, 500 03 Hradec Králové
+[[ADDRESS_10]]: trvale bytem Lesní 10, 787 01 Šumperk
+

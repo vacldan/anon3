@@ -1,0 +1,300 @@
+OSOBY
+[[PERSON_1]]: Innovate Tech
+[[PERSON_2]]: Martin Horáková
+[[PERSON_3]]: Jakub Procházek
+[[PERSON_4]]: Petra Procházková
+[[PERSON_5]]: Eliška Procházková
+[[PERSON_6]]: Matěj Procházek
+[[PERSON_7]]: Han Procházková
+[[PERSON_8]]: Development Team
+[[PERSON_9]]: Martin Svoboda
+[[PERSON_10]]: Book Pro
+[[PERSON_11]]: Polikliniek Vinohrady
+[[PERSON_12]]: Certified Solutions
+[[PERSON_13]]: React Advanced
+[[PERSON_14]]: Scrum Master
+[[PERSON_15]]: Pavel Novák
+[[PERSON_16]]: Jana Svobodová
+[[PERSON_17]]: Karel Novák
+[[PERSON_18]]: Premium Life
+[[PERSON_19]]: Tomáš Veselý
+[[PERSON_20]]: Alena Dvořáková
+[[PERSON_21]]: Nemocniec Na
+[[PERSON_22]]: Petr Dvořák
+[[PERSON_23]]: Adam Dvořák
+[[PERSON_24]]: Lucie Dvořáková
+[[PERSON_25]]: Jana Nová
+[[PERSON_26]]: Pavel Horák
+[[PERSON_27]]: Polikliniek Vinohradská
+[[PERSON_28]]: Han Nováková
+[[PERSON_29]]: Jana Dvořáková
+[[PERSON_30]]: Karel Novotný
+[[PERSON_31]]: Petr Malý
+[[PERSON_32]]: Robert Novák
+[[PERSON_33]]: Martin Procházek
+[[PERSON_34]]: Petra Nováková
+[[PERSON_35]]: Han Svobodová
+[[PERSON_36]]: Tomáš Dvořák
+[[PERSON_37]]: Jan Dvořák
+[[PERSON_38]]: Google Authenticator
+[[PERSON_39]]: Petr Novák
+[[PERSON_40]]: Cloud Brno
+[[PERSON_41]]: Martin Horák
+[[PERSON_42]]: Cloud Architect
+[[PERSON_43]]: Solutions Architect
+[[PERSON_44]]: Petra Svobodová
+[[PERSON_45]]: Certified Professional
+[[PERSON_46]]: Jan Novák
+[[PERSON_47]]: Security Officer
+[[PERSON_48]]: Splunk Enterprise
+[[PERSON_49]]: Amazon Web
+[[PERSON_50]]: Avenue John
+[[PERSON_51]]: Standard Contractual
+[[PERSON_52]]: Karel Dvořák
+[[PERSON_53]]: Analytics Ltd
+[[PERSON_54]]: Tomáš Novák
+[[PERSON_55]]: Pavel Svoboda
+[[PERSON_56]]: Martin Svobodová
+[[PERSON_57]]: Jan Svoboda
+[[PERSON_58]]: Tomáš Horák
+[[PERSON_59]]: Eva Svobodová
+[[PERSON_60]]: Dat Protection
+[[PERSON_61]]: Tomáš Svoboda
+[[PERSON_62]]: Computer Vision
+[[PERSON_63]]: Met London
+[[PERSON_64]]: Jan Horák
+[[PERSON_65]]: Martin Novotný
+[[PERSON_66]]: Eva Málková
+[[PERSON_67]]: Credo Ventures
+[[PERSON_68]]: Ondřej Bartoš
+[[PERSON_69]]: Plánovaná Series
+[[PERSON_70]]: Pavel Dvořák
+[[PERSON_71]]: Jana Nováková
+[[PERSON_72]]: Launch Diagno
+[[PERSON_73]]: Mayo Clinic
+[[PERSON_74]]: Hub Repository
+[[PERSON_75]]: Personal Access
+[[PERSON_76]]: Petra Horáková
+
+ADDRESS
+[[ADDRESS_1]]: Sídlo: Karlovo náměstí 12/34, 120 00 Praha 2
+[[ADDRESS_2]]: Trvalý pobyt: Slezská 45/9, 130 00 Praha 3
+[[ADDRESS_3]]: Žižkova 123/8, 130 00 Praha 3
+[[ADDRESS_4]]: Adresa: Masarykova 67/12, 602 00 Brno
+[[ADDRESS_5]]: Sídlo: Evropská 178/123, 160 00 Praha 6
+[[ADDRESS_6]]: Trvalé bydliště: Korunní 234/56, 130 00 Praha 3
+[[ADDRESS_7]]: Adresa: Mánesova 45/12, 160 00 Praha 6
+[[ADDRESS_8]]: Sídlo: Na Příkopě 123/45, 110 00 Praha 1
+[[ADDRESS_9]]: Sídlo: Vinohradská 234/78, 130 00 Praha 3
+[[ADDRESS_10]]: Adresa: Dlouhá 45/12, 110 00 Praha 1
+[[ADDRESS_11]]: Adresa: Vinohradská 123/89, 130 00 Praha 3
+[[ADDRESS_12]]: Adresa: Mánesova 234/12, 120 00 Praha 2
+[[ADDRESS_13]]: Adresa: Průmyslová 12, 170 00 Praha 7
+[[ADDRESS_14]]: Adresa: Technická 456, 616 00 Brno
+[[ADDRESS_15]]: Sídlo: Ostravská 123, 702 00 Ostrava
+[[ADDRESS_16]]: Sídlo: Brněnská 456, 602 00 Brno
+[[ADDRESS_17]]: Sídlo: Náměstí Svobody 21, 602 00 Brno
+[[ADDRESS_18]]: Trvalý pobyt: Husova 123/45, 602 00 Brno
+[[ADDRESS_19]]: Trvalý pobyt: Vodní 67/8, 602 00 Brno
+[[ADDRESS_20]]: Trvalý pobyt: Purkyňova 234/56, 612 00 Brno
+[[ADDRESS_21]]: Vodní 67/8, 602 00 Brno
+[[ADDRESS_22]]: Purkyňova 234/56, 612 00 Brno
+[[ADDRESS_23]]: Sídlo: Wenceslas Square 89/23, 110 00 Praha 1
+[[ADDRESS_24]]: Sídlo: Vinohradská 1234/89, 130 00 Praha 3
+
+BANK
+[[BANK_1]]: 2345678901/0800
+[[BANK_2]]: CZ23 0800 0000 0023 4567 8901
+[[BANK_3]]: 4567890123/0800
+[[BANK_4]]: CZ89 0800 0000 0045 6789 0123
+[[BANK_5]]: 9876543210/2700
+[[BANK_6]]: CZ12 2700 0000 0098 7654 3210
+[[BANK_7]]: 7890123456/5500
+[[BANK_8]]: CZ45 5500 0000 0078 9012 3456
+[[BANK_9]]: 3456789012/0300
+[[BANK_10]]: 7890123456/0300
+[[BANK_11]]: 4567890123/8060
+[[BANK_12]]: 5432109876/2700
+[[BANK_13]]: 1122334455/0100
+[[BANK_14]]: 6677889900/5500
+[[BANK_15]]: 5566778899/5500
+[[BANK_16]]: 8901234567/3030
+[[BANK_17]]: CZ67 3030 0000 0089 0123 4567
+[[BANK_18]]: CZ89 0300 0000 0034 5678 9012
+[[BANK_19]]: 1234567890/2700
+[[BANK_20]]: CZ12 2700 0000 0012 3456 7890
+[[BANK_21]]: 9876543210/5500
+[[BANK_22]]: CZ98 5500 0000 0098 7654 3210
+[[BANK_23]]: 5678901234/2700
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 930715/1245
+[[BIRTH_ID_2]]: 945922/6743
+[[BIRTH_ID_3]]: 200310/4521
+[[BIRTH_ID_4]]: 221105/2314
+[[BIRTH_ID_5]]: 661123/5634
+[[BIRTH_ID_6]]: 820305/1823
+[[BIRTH_ID_7]]: 781205/6789
+[[BIRTH_ID_8]]: 900315/4521
+[[BIRTH_ID_9]]: 850612/1234
+[[BIRTH_ID_10]]: 825428/6734
+[[BIRTH_ID_11]]: 800615/1234
+[[BIRTH_ID_12]]: 100510/3421
+[[BIRTH_ID_13]]: 145822/4567
+[[BIRTH_ID_14]]: 850923/5634
+[[BIRTH_ID_15]]: 720615/2134
+[[BIRTH_ID_16]]: 680312/1823
+[[BIRTH_ID_17]]: 750923/6745
+[[BIRTH_ID_18]]: 651108/1234
+[[BIRTH_ID_19]]: 750918/1234
+[[BIRTH_ID_20]]: 805512/6734
+[[BIRTH_ID_21]]: 780523/1245
+[[BIRTH_ID_22]]: 690815/2314
+[[BIRTH_ID_23]]: 720612/5634
+[[BIRTH_ID_24]]: 895615/4521
+[[BIRTH_ID_25]]: 750923/6723
+[[BIRTH_ID_26]]: 821012/1834
+[[BIRTH_ID_27]]: 650823/1923
+[[BIRTH_ID_28]]: 680512/1234
+[[BIRTH_ID_29]]: 951015/1234
+[[BIRTH_ID_30]]: 980322/2345
+[[BIRTH_ID_31]]: 820615/5634
+[[BIRTH_ID_32]]: 900523/4521
+[[BIRTH_ID_33]]: 850712/2314
+[[BIRTH_ID_34]]: 880923/6745
+[[BIRTH_ID_35]]: 830615/1234
+[[BIRTH_ID_36]]: 910823/5634
+[[BIRTH_ID_37]]: 780512/2314
+[[BIRTH_ID_38]]: 851023/6745
+[[BIRTH_ID_39]]: 760923/1234
+[[BIRTH_ID_40]]: 850712/2345
+[[BIRTH_ID_41]]: 861108/1234
+[[BIRTH_ID_42]]: 885315/6734
+[[BIRTH_ID_43]]: 600512/1823
+[[BIRTH_ID_44]]: 850822/2314
+[[BIRTH_ID_45]]: 780615/6734
+[[BIRTH_ID_46]]: 850923/1234
+[[BIRTH_ID_47]]: 821108/5634
+[[BIRTH_ID_48]]: 900512/2314
+[[BIRTH_ID_49]]: 780715/1234
+[[BIRTH_ID_50]]: 850812/1234
+[[BIRTH_ID_51]]: 720512/1234
+[[BIRTH_ID_52]]: 681125/5634
+[[BIRTH_ID_53]]: 750823/1234
+[[BIRTH_ID_54]]: 830612/6734
+[[BIRTH_ID_55]]: 900315/2314
+[[BIRTH_ID_56]]: 880615/5634
+[[BIRTH_ID_57]]: 820923/6745
+
+DIC
+[[DIC_1]]: CZ12398745
+[[DIC_2]]: CZ45612378
+[[DIC_3]]: CZ56789012
+[[DIC_4]]: CZ09876543
+
+EMAIL
+[[EMAIL_1]]: m.horakova@innovatetech.cz
+[[EMAIL_2]]: jakub.prochazka@gmail.com
+[[EMAIL_3]]: petra.prochazkova@email.cz
+[[EMAIL_4]]: h.prochazkova@seznam.cz
+[[EMAIL_5]]: m.svoboda@innovatetech.cz
+[[EMAIL_6]]: p.novak@digitalagency.cz
+[[EMAIL_7]]: j.prochazka@innovatetech.cz
+[[EMAIL_8]]: t.vesely@premiumlife.cz
+[[EMAIL_9]]: alena.dvorakova.md@email.cz
+[[EMAIL_10]]: k.novotny@premiumlife.cz
+[[EMAIL_11]]: r.novak@healthcarepro.cz
+[[EMAIL_12]]: j.svobodova@cloudmed.cz
+[[EMAIL_13]]: m.prochazka@email.cz
+[[EMAIL_14]]: p.novakova@gmail.com
+[[EMAIL_15]]: t.dvorak@legal.cz
+[[EMAIL_16]]: m.horak@cloudmed.cz
+[[EMAIL_17]]: p.svobodova@cloudmed.cz
+[[EMAIL_18]]: j.novak@cloudmed.cz
+[[EMAIL_19]]: e.mala@cloudmed.cz
+[[EMAIL_20]]: p.novakova@moravskabanka.cz
+[[EMAIL_21]]: pavel.svoboda@email.cz
+[[EMAIL_22]]: jan.svoboda@centrum.cz
+[[EMAIL_23]]: t.horak@gmail.com
+[[EMAIL_24]]: p.novakova@autotech.cz
+[[EMAIL_25]]: gdpr@moravskabanka.cz
+[[EMAIL_26]]: m.horak@moravskabanka.cz
+[[EMAIL_27]]: j.dvorakova@moravskabanka.cz
+[[EMAIL_28]]: t.novak@moravskabanka.cz
+[[EMAIL_29]]: r.novak@aiinnovations.cz
+[[EMAIL_30]]: martin.svoboda@nixminds.cz
+[[EMAIL_31]]: p.horak@fnmotol.cz
+[[EMAIL_32]]: j.dvorakova@ikem.cz
+[[EMAIL_33]]: t.svoboda@mou.cz
+[[EMAIL_34]]: p.svobodova@aiinnovations.cz
+[[EMAIL_35]]: j.horak@aiinnovations.cz
+[[EMAIL_36]]: m.novotny@aiinnovations.cz
+[[EMAIL_37]]: e.malkova@aiinnovations.cz
+[[EMAIL_38]]: t.vesely@jt-ventures.cz
+[[EMAIL_39]]: ondrej.bartos@credoventures.com
+[[EMAIL_40]]: p.dvorak@medtechsolutions.cz
+[[EMAIL_41]]: review@nixminds.cz
+[[EMAIL_42]]: petra.horakova@nixminds.cz
+[[EMAIL_43]]: jana.novakova@nixminds.cz
+
+ICO
+[[ICO_1]]: 45678901
+[[ICO_2]]: 34567890
+[[ICO_3]]: 23456789
+[[ICO_4]]: 00064173
+[[ICO_5]]: 12398745
+[[ICO_6]]: 45612378
+[[ICO_7]]: 78901234
+[[ICO_8]]: 23456780
+[[ICO_9]]: 56789012
+[[ICO_10]]: 09876543
+[[ICO_11]]: 00064203
+[[ICO_12]]: 00023001
+[[ICO_13]]: 00209805
+
+PHONE
+[[PHONE_1]]: Telefon: +420 724 123 456
+[[PHONE_2]]: : 234567890
+[[PHONE_3]]: 456789012
+[[PHONE_4]]: Telefon: +420 606 789 123
+[[PHONE_5]]: Tel: +420 777 234 567
+[[PHONE_6]]: Tel: +420 605 123 789
+[[PHONE_7]]: tel: +420 724 890 345
+[[PHONE_8]]: Tel: +420 222 333 444
+[[PHONE_9]]: 777 234 567
+[[PHONE_10]]: Telefon: +420 603 456 789
+[[PHONE_11]]: Telefon: +420 234 567 890
+[[PHONE_12]]: : 345678901
+[[PHONE_13]]: Telefon: +420 605 234 567
+[[PHONE_14]]: Tel: +420 724 345 678
+[[PHONE_15]]: Tel: +420 222 456 789
+[[PHONE_16]]: Tel: +420 224 567 890
+[[PHONE_17]]: Tel: +420 777 456 123
+[[PHONE_18]]: tel: 224 567 890
+[[PHONE_19]]: tel: 222 678 901
+[[PHONE_20]]: tel: 222 456 789
+[[PHONE_21]]: tel: 222 801 111
+[[PHONE_22]]: Telefon: +420 724 678 901
+[[PHONE_23]]: Telefon: +420 775 234 567
+[[PHONE_24]]: Tel: +420 606 789 012
+[[PHONE_25]]: Tel: +420 777 123 456
+[[PHONE_26]]: Tel: +420 603 567 890
+[[PHONE_27]]: : 202403089
+[[PHONE_28]]: : +420 603 789 012
+[[PHONE_29]]: Telefon: +420 541 234 567
+[[PHONE_30]]: : 456789012
+[[PHONE_31]]: Telefon: +420 605 678 901
+[[PHONE_32]]: Telefon: +420 603 123 456
+[[PHONE_33]]: Telefon: +420 777 890 123
+[[PHONE_34]]: tel: +420 541 678 901
+[[PHONE_35]]: Telefon: +420 541 234 600
+[[PHONE_36]]: Telefon: +420 724 567 890
+[[PHONE_37]]: Telefon: +420 224 433 111
+[[PHONE_38]]: Telefon: +420 261 363 111
+[[PHONE_39]]: Telefon: +420 543 136 111
+[[PHONE_40]]: Tel: +420 724 567 890
+[[PHONE_41]]: Tel: +420 775 234 567
+[[PHONE_42]]: Tel: +420 606 789 123
+[[PHONE_43]]: Tel: +420 221 710 111
+[[PHONE_44]]: : 125 000 000
+

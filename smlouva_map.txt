@@ -1,0 +1,19 @@
+OSOBY
+[[PERSON_1]]: Jan Novákem
+[[PERSON_2]]: Petra Svobodová
+[[PERSON_3]]: Jan Novák
+[[PERSON_4]]: Janovo Novákovo
+[[PERSON_5]]: Kateřina Svobodová
+
+ADDRESS
+[[ADDRESS_1]]: Trvalé bydliště: Na Hrázi 123/7, 750 02 Přerov
+[[ADDRESS_2]]: Trvalé bydliště: U Lávky 45, 779 00 Olomouc
+
+BANK
+[[BANK_1]]: 200123456/2010
+[[BANK_2]]: 260987654/5500
+
+PHONE
+[[PHONE_1]]: : 123456789
+[[PHONE_2]]: : 987654321
+
