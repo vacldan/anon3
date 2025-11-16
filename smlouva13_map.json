@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T23:07:11.575923",
+  "generated_at": "2025-11-16T23:44:38.928295",
   "source_file": "smlouva13.docx",
   "entities": [
     {
@@ -334,39 +334,27 @@
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_1]]",
-      "original": ": 123456789",
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_1]]",
+      "original": "123456789",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_2]]",
-      "original": ": 987654321",
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_2]]",
+      "original": "987654321",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_3]]",
-      "original": ": 456789123",
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_3]]",
+      "original": "456789123",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_4]]",
-      "original": ": 789123456",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_5]]",
-      "original": "789456123",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_6]]",
-      "original": "123789456",
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_4]]",
+      "original": "789123456",
       "occurrences": 1
     },
     {
@@ -696,19 +684,19 @@
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_1]]",
-      "original": "724 567 890",
+      "original": "420 724 567 890",
       "occurrences": 1
     },
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_2]]",
-      "original": "777 123 456",
+      "original": "420 777 123 456",
       "occurrences": 1
     },
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_3]]",
-      "original": "605 789 123",
+      "original": "420 605 789 123",
       "occurrences": 1
     },
     {
@@ -732,7 +720,7 @@
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_7]]",
-      "original": "733 456 789",
+      "original": "420 733 456 789",
       "occurrences": 1
     },
     {
@@ -762,7 +750,7 @@
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_12]]",
-      "original": "606 234 567",
+      "original": "420 606 234 567",
       "occurrences": 1
     },
     {
@@ -894,7 +882,7 @@
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_34]]",
-      "original": "777 654 321",
+      "original": "420 777 654 321",
       "occurrences": 1
     },
     {
@@ -996,7 +984,7 @@
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_51]]",
-      "original": "734 567 890",
+      "original": "420 734 567 890",
       "occurrences": 1
     },
     {
@@ -1032,13 +1020,13 @@
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_57]]",
-      "original": "605 111 222",
+      "original": "420 605 111 222",
       "occurrences": 1
     },
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_58]]",
-      "original": "606 333 444",
+      "original": "420 606 333 444",
       "occurrences": 1
     },
     {
@@ -1074,7 +1062,7 @@
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_64]]",
-      "original": "602 789 456",
+      "original": "420 602 789 456",
       "occurrences": 1
     },
     {
@@ -1104,31 +1092,31 @@
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_69]]",
-      "original": "725 678 901",
+      "original": "420 725 678 901",
       "occurrences": 1
     },
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_70]]",
-      "original": "736 789 012",
+      "original": "420 736 789 012",
       "occurrences": 1
     },
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_71]]",
-      "original": "776 234 567",
+      "original": "420 776 234 567",
       "occurrences": 1
     },
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_72]]",
-      "original": "737 890 123",
+      "original": "420 737 890 123",
       "occurrences": 1
     },
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_73]]",
-      "original": "603 456 789",
+      "original": "420 603 456 789",
       "occurrences": 1
     },
     {
@@ -1146,36 +1134,30 @@
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_76]]",
-      "original": "777 888 999",
-      "occurrences": 1
-    },
-    {
-      "type": "AMOUNT",
-      "label": "[[AMOUNT_77]]",
       "original": "234 500",
       "occurrences": 1
     },
     {
       "type": "AMOUNT",
-      "label": "[[AMOUNT_78]]",
+      "label": "[[AMOUNT_77]]",
       "original": "456 700",
       "occurrences": 1
     },
     {
       "type": "AMOUNT",
-      "label": "[[AMOUNT_79]]",
+      "label": "[[AMOUNT_78]]",
       "original": "287 000",
       "occurrences": 1
     },
     {
       "type": "AMOUNT",
-      "label": "[[AMOUNT_80]]",
+      "label": "[[AMOUNT_79]]",
       "original": "4 567 890",
       "occurrences": 1
     },
     {
       "type": "AMOUNT",
-      "label": "[[AMOUNT_81]]",
+      "label": "[[AMOUNT_80]]",
       "original": "868 899",
       "occurrences": 1
     },
@@ -1188,145 +1170,169 @@
     {
       "type": "BANK",
       "label": "[[BANK_2]]",
-      "original": "CZ65 0800 0000 0028 4756 3921",
-      "occurrences": 1
-    },
-    {
-      "type": "BANK",
-      "label": "[[BANK_3]]",
       "original": "1234567890/0100",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_4]]",
-      "original": "CZ12 0100 0000 0012 3456 7890",
-      "occurrences": 1
-    },
-    {
-      "type": "BANK",
-      "label": "[[BANK_5]]",
+      "label": "[[BANK_3]]",
       "original": "1928374650/2700",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_6]]",
+      "label": "[[BANK_4]]",
       "original": "2156789432/0800",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_7]]",
+      "label": "[[BANK_5]]",
       "original": "9876543210/2700",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_8]]",
+      "label": "[[BANK_6]]",
       "original": "5678901234/0600",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_9]]",
-      "original": "CZ89 0600 0000 0056 7890 1234",
-      "occurrences": 1
-    },
-    {
-      "type": "BANK",
-      "label": "[[BANK_10]]",
+      "label": "[[BANK_7]]",
       "original": "9988776655/0100",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_11]]",
-      "original": "CZ44 0100 0000 0099 8877 6655",
-      "occurrences": 1
-    },
-    {
-      "type": "BANK",
-      "label": "[[BANK_12]]",
+      "label": "[[BANK_8]]",
       "original": "1234567890/5500",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_13]]",
+      "label": "[[BANK_9]]",
       "original": "9876543210/0800",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_14]]",
+      "label": "[[BANK_10]]",
       "original": "4567891230/5500",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_15]]",
+      "label": "[[BANK_11]]",
       "original": "6677889900/5500",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_16]]",
+      "label": "[[BANK_12]]",
       "original": "1122334455/0100",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_17]]",
+      "label": "[[BANK_13]]",
       "original": "5544332211/0100",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_18]]",
+      "label": "[[BANK_14]]",
       "original": "9988776655/2700",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_19]]",
+      "label": "[[BANK_15]]",
       "original": "3344556677/0100",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_20]]",
+      "label": "[[BANK_16]]",
       "original": "7788990011/5500",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_21]]",
+      "label": "[[BANK_17]]",
       "original": "4455667788/2700",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_22]]",
+      "label": "[[BANK_18]]",
       "original": "8899001122/0600",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_23]]",
+      "label": "[[BANK_19]]",
       "original": "1234567890/0800",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_24]]",
+      "label": "[[BANK_20]]",
       "original": "9876543210/5500",
       "occurrences": 1
     },
     {
       "type": "BANK",
-      "label": "[[BANK_25]]",
+      "label": "[[BANK_21]]",
       "original": "1717371319/0710",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_1]]",
+      "original": "***REDACTED_1***",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_2]]",
+      "original": "***REDACTED_2***",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_3]]",
+      "original": "***REDACTED_3***",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_4]]",
+      "original": "***REDACTED_4***",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_5]]",
+      "original": "***REDACTED_5***",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_6]]",
+      "original": "***REDACTED_6***",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_7]]",
+      "original": "***REDACTED_7***",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_8]]",
+      "original": "***REDACTED_8***",
       "occurrences": 1
     },
     {
@@ -1342,9 +1348,21 @@
       "occurrences": 1
     },
     {
-      "type": "CARD",
-      "label": "[[CARD_1]]",
-      "original": "***REDACTED***",
+      "type": "PHONE",
+      "label": "[[PHONE_1]]",
+      "original": "789456123",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_2]]",
+      "original": "123789456",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_3]]",
+      "original": "777 888 999",
       "occurrences": 1
     },
     {
@@ -1362,7 +1380,13 @@
     {
       "type": "PASSWORD",
       "label": "[[PASSWORD_1]]",
-      "original": "***REDACTED***",
+      "original": "***REDACTED_1***",
+      "occurrences": 1
+    },
+    {
+      "type": "PASSWORD",
+      "label": "[[PASSWORD_2]]",
+      "original": "***REDACTED_2***",
       "occurrences": 1
     },
     {

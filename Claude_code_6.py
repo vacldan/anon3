@@ -296,9 +296,14 @@ BIRTH_ID_RE = re.compile(
     r'\b(\d{6}/\d{3,4})\b'
 )
 
-# Číslo OP (formát: AB 123456)
+# Číslo OP (formát: AB 123456 nebo OP: 123456789)
+# DŮLEŽITÉ: Musí být před PHONE_RE!
 ID_CARD_RE = re.compile(
-    r'\b([A-Z]{2}\s?\d{6})\b'
+    r'(?:'
+    r'\b([A-Z]{2}\s?\d{6})\b|'  # Standardní formát: AB 123456
+    r'(?:OP|pas|pas\.|pas\.č\.|č\.OP)\s*[:\-]?\s*(\d{6,9})'  # OP: 123456789 nebo Pas: 123456
+    r')',
+    re.IGNORECASE
 )
 
 # Email
@@ -306,15 +311,16 @@ EMAIL_RE = re.compile(
     r'\b([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})\b'
 )
 
-# Telefon (CZ formáty) - vylepšený, aby nezachytával čísla OP a bankovní účty
+# Telefon (CZ formáty) - NESMÍ zachytit prefix do hodnoty!
+# Prefix je mimo capture group, telefon je uvnitř
 PHONE_RE = re.compile(
-    r'(?:tel\.?|telefon|mobil|GSM)?\s*:?\s*'  # Volitelný prefix
-    r'(?:'
+    r'(?:tel\.?|telefon|mobil|GSM)?\s*:?\s*'  # Volitelný prefix (MIMO capture group!)
+    r'('  # START capture group - jen samotné číslo
     r'\+420\s?\d{3}\s?\d{3}\s?\d{3}|'  # +420 xxx xxx xxx
     r'\+420\s?\d{3}\s?\d{2}\s?\d{2}\s?\d{2}|'  # +420 xxx xx xx xx
     r'(?<!\d)\d{3}\s?\d{3}\s?\d{3}(?!\d)|'  # xxx xxx xxx (bez okolních číslic)
     r'(?<!\d)\d{3}\s?\d{2}\s?\d{2}\s?\d{2}(?!\d)'  # xxx xx xx xx
-    r')',
+    r')',  # END capture group
     re.IGNORECASE
 )
 
@@ -380,8 +386,14 @@ IP_RE = re.compile(
 )
 
 # Platební karty (13-19 číslic, Luhn-compatible)
+# Rozšířený pattern pro všechny varianty: s/bez prefixu, různé formátování
 CARD_RE = re.compile(
-    r'(?:Číslo\s+karty|Card\s+Number|Card)\s*[:\-=]?\s*(\d{4}[\s\-]?\d{4}[\s\-]?\d{4}[\s\-]?\d{4}(?:[\s\-]?\d{3})?)',
+    r'(?:'
+    # S prefixem: "Karta 1:", "Platební karta:", "Číslo karty:", etc.
+    r'(?:Platební\s+)?(?:Karta|Card)(?:\s+\d+)?(?:\s+Number)?\s*[:\-=]?\s*(\d{4}[\s\-]?\d{4}[\s\-]?\d{4}[\s\-]?\d{4}(?:[\s\-]?\d{2,3})?)|'
+    # Bez prefixu: standalone 16-19 číslic (ale ne telefony/účty)
+    r'(?<!\d)(\d{4}[\s\-]\d{4}[\s\-]\d{4}[\s\-]\d{4}(?:[\s\-]\d{2,3})?)(?!\d)'
+    r')',
     re.IGNORECASE
 )
 
@@ -397,16 +409,17 @@ RFID_RE = re.compile(
     re.IGNORECASE
 )
 
-# Částky (Kč, EUR, USD) - aby se nechytaly do PHONE
-# Prioritně chytá velká čísla (>10 milionů) i bez měny
+# Částky (Kč, EUR, USD) - NESMÍ chytat telefony!
+# KLÍČOVÉ: xxx xxx xxx může být telefon, takže vyžadujeme kontext nebo měnu
 AMOUNT_RE = re.compile(
     r'(?:'
-    # Velké částky (>10 mil) i bez měny: 125 000 000 (ALE NE 420 xxx xxx xxx - telefony!)
-    r'\b(?!420\s)(\d{3}\s+\d{3}\s+\d{3}(?:\s+\d{3})*)\b(?!\s*[-/])|'  # 9+ číslic se mezerami, není rodné číslo/účet/telefon
-    # Částky s měnou: 1 234 Kč, 50 000 EUR (ale vyloučit phone prefixy)
+    # Částky s měnou: 1 234 Kč, 50 000 EUR (vyloučit phone/+ prefixy)
     r'(?<![\+])\b(\d{1,3}(?:\s+\d{3})+(?:,\d{2})?)\s*(?:Kč|EUR|USD|CZK)\b|'
-    # Částky s kontextem: "částka: 50 000"
-    r'(?:částka|cena|hodnota|kapitál|invest(?:ice)?|fond)\s*:?\s*(\d{1,3}(?:\s+\d{3})+)\b'
+    # Částky s kontextem: "částka: 50 000", "hodnota: 5 240 000"
+    r'(?:částka|cena|hodnota|kapitál|invest(?:ice)?|fond|úrok|splátka|dluh|hodnot[ayě])\s*:?\s*(\d{1,3}(?:\s+\d{3})+)\b|'
+    # Velké částky (10+ mil) POUZE pokud mají 4+ skupiny: "125 000 000 000"
+    # DŮLEŽITÉ: xxx xxx xxx je telefon, takže 9 číslic vynecháváme!
+    r'\b(\d{3}(?:\s+\d{3}){3,})\b(?!\s*[-/])'  # 4+ skupiny = 12+ číslic
     r')',
     re.IGNORECASE
 )
@@ -430,19 +443,31 @@ class Anonymizer:
         # Normalizace
         orig_norm = original.strip()
 
-        # Pro citlivá data ukládej placeholder místo hodnoty
-        map_value = orig_norm if store_value else "***REDACTED***"
-
-        # Zkontroluj, zda už existuje
-        for existing_orig, variants in self.entity_map[typ].items():
-            if orig_norm in variants or orig_norm == existing_orig:
-                self.counter[typ] += 1
-                return f"[[{typ}_{list(self.entity_map[typ].keys()).index(existing_orig) + 1}]]"
+        # Pro citlivá data: kontrola duplicit podle skutečné hodnoty
+        if not store_value:
+            for existing_orig, variants in self.entity_map[typ].items():
+                if orig_norm in variants:
+                    existing_idx = list(self.entity_map[typ].keys()).index(existing_orig) + 1
+                    return f"[[{typ}_{existing_idx}]]"
+        else:
+            # Pro běžná data: standardní kontrola
+            for existing_orig, variants in self.entity_map[typ].items():
+                if orig_norm in variants or orig_norm == existing_orig:
+                    existing_idx = list(self.entity_map[typ].keys()).index(existing_orig) + 1
+                    return f"[[{typ}_{existing_idx}]]"
 
         # Vytvoř nový
-        self.counter[typ] += 1
         idx = len(self.entity_map[typ]) + 1
-        self.entity_map[typ][map_value].add(map_value)
+
+        # Pro citlivá data: unikátní placeholder pro každý item
+        # Pro běžná data: ukládej skutečnou hodnotu
+        if store_value:
+            map_key = orig_norm
+        else:
+            # Každý citlivý item má unikátní klíč, ale zobrazí se jako ***REDACTED***
+            map_key = f"***REDACTED_{idx}***"
+
+        self.entity_map[typ][map_key].add(orig_norm)
         return f"[[{typ}_{idx}]]"
 
     def _apply_known_people(self, text: str) -> str:
@@ -646,7 +671,11 @@ class Anonymizer:
 
         # 4. PLATEBNÍ KARTY (KRITICKÉ - hodnotu neukládat!)
         def replace_card(match):
-            return self._get_or_create_label('CARD', match.group(1), store_value=False)
+            # CARD_RE má 2 capture groups - získej první non-None
+            card = match.group(1) if match.group(1) else match.group(2)
+            if card:
+                return self._get_or_create_label('CARD', card, store_value=False)
+            return match.group(0)
         text = CARD_RE.sub(replace_card, text)
 
         # 5. USERNAMES, ACCOUNTS, HOSTNAMES
@@ -677,7 +706,7 @@ class Anonymizer:
             return self._get_or_create_label('RFID', match.group(1))
         text = RFID_RE.sub(replace_rfid, text)
 
-        # 9. ČÁSTKY (před telefony, aby se "125 000 000" nechytalo jako telefon!)
+        # 9. ČÁSTKY (MUSÍ být před telefony!)
         def replace_amount(match):
             # AMOUNT_RE má 3 capture groups - získej první non-None
             amount = match.group(1) or match.group(2) or match.group(3)
@@ -703,7 +732,10 @@ class Anonymizer:
 
         # 13. ČÍSLA OP (před telefony!)
         def replace_id_card(match):
-            return self._get_or_create_label('ID_CARD', match.group(1))
+            id_card = match.group(1) if match.group(1) else match.group(2)
+            if id_card:
+                return self._get_or_create_label('ID_CARD', id_card)
+            return match.group(0)
         text = ID_CARD_RE.sub(replace_id_card, text)
 
         # 14. BANKOVNÍ ÚČTY (před telefony!)
@@ -741,7 +773,8 @@ class Anonymizer:
 
         # 18. TELEFONY (AŽ NAKONEC! Po všech číselných identifikátorech a částkách)
         def replace_phone(match):
-            return self._get_or_create_label('PHONE', match.group(0))
+            # PHONE_RE má capture group (1) pro samotné číslo (bez prefixu!)
+            return self._get_or_create_label('PHONE', match.group(1))
         text = PHONE_RE.sub(replace_phone, text)
 
         # 19. END-SCAN - finální kontrola citlivých dat (chytá zbytky nalepené na ]])
@@ -751,6 +784,14 @@ class Anonymizer:
 
     def _end_scan(self, text: str) -> str:
         """Finální sken po všech náhradách - chytá případné zbytky citlivých dat."""
+
+        # Platební karty (pokud unikly nebo mají CVV/exp. datum)
+        def final_card(match):
+            card = match.group(1) if match.group(1) else match.group(2)
+            if card and not '[[CARD_' in text[max(0, match.start()-10):match.start()+len(card)+10]:
+                return self._get_or_create_label('CARD', card, store_value=False)
+            return match.group(0)
+        text = CARD_RE.sub(final_card, text)
 
         # Hesla (pokud unikla nebo jsou nalepená na jiných entitách)
         def final_password(match):
@@ -891,7 +932,9 @@ class Anonymizer:
                     f.write(f"{typ}\n")
                     for idx, (original, variants) in enumerate(entities.items(), 1):
                         label = f"[[{typ}_{idx}]]"
-                        f.write(f"{label}: {original}\n")
+                        # Pro citlivá data zobraz jen ***REDACTED*** bez čísla
+                        display_value = "***REDACTED***" if original.startswith("***REDACTED_") else original
+                        f.write(f"{label}: {display_value}\n")
                     f.write("\n")
 
 # =============== Batch processing ===============
