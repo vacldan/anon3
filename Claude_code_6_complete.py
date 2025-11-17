@@ -292,11 +292,12 @@ DIC_RE = re.compile(
 )
 
 # Rodné číslo (6 číslic / 3-4 číslice)
-# DŮLEŽITÉ: Musí mít kontext (RČ, Rodné číslo, nar.) nebo negativní lookahead pro spisové značky
+# DŮLEŽITÉ: Musí mít SILNÝ kontext (RČ, Rodné číslo, nar.) - PRIORITA!
+# Regex má 2 capture groups - první pro context match, druhý pro standalone
 BIRTH_ID_RE = re.compile(
     r'(?:'
-    r'(?:RČ|Rodné\s+číslo|nar\.|Narození)\s*:?\s*(\d{6}/\d{3,4})|'  # S kontextem
-    r'(?<!FÚ-)(?<!KS-)(?<!VS-)(\d{6}/\d{3,4})'  # Bez kontextu, ale ne po FÚ-/KS-/VS-
+    r'(?:RČ|Rodné\s+číslo|r\.?\s?č\.?|nar\.|narozen[aáý]?|Narození)\s*:?\s*(\d{6}/?\d{3,4})|'  # S kontextem (CAPTURE GROUP 1)
+    r'(?<!FÚ-)(?<!KS-)(?<!VS-)(?<!čj-)(?<!\d)(\d{6}/\d{3,4})(?!\d)'  # Bez kontextu, ale ne po FÚ-/KS-/VS- (CAPTURE GROUP 2)
     r')',
     re.IGNORECASE
 )
@@ -700,40 +701,42 @@ class Anonymizer:
             username = match.group(2)
             password = match.group(3)
             username_tag = self._get_or_create_label('USERNAME', username)
-            password_tag = self._get_or_create_label('PASSWORD', password, store_value=False)
+            # TEST MODE: store_value=True (ukládá plnou hodnotu)
+            password_tag = self._get_or_create_label('PASSWORD', password, store_value=True)
             return f"{match.group(1)}: {username_tag} / {password_tag}"
         text = CREDENTIALS_RE.sub(replace_credentials, text)
 
-        # 2. HESLA (KRITICKÉ - hodnotu neukládat!)
+        # 2. HESLA (TEST MODE: store_value=True)
         def replace_password(match):
-            return self._get_or_create_label('PASSWORD', match.group(1), store_value=False)
+            return self._get_or_create_label('PASSWORD', match.group(1), store_value=True)
         text = PASSWORD_RE.sub(replace_password, text)
 
-        # 2. API KLÍČE, SECRETS (KRITICKÉ - hodnotu neukládat!)
+        # 2. API KLÍČE, SECRETS (TEST MODE: store_value=True)
         def replace_api_key(match):
-            return self._get_or_create_label('API_KEY', match.group(1), store_value=False)
+            return self._get_or_create_label('API_KEY', match.group(1), store_value=True)
         text = API_KEY_RE.sub(replace_api_key, text)
 
         def replace_secret(match):
-            return self._get_or_create_label('SECRET', match.group(1), store_value=False)
+            return self._get_or_create_label('SECRET', match.group(1), store_value=True)
         text = SECRET_RE.sub(replace_secret, text)
 
-        # 3. SSH KLÍČE (KRITICKÉ - hodnotu neukládat!)
+        # 3. SSH KLÍČE (TEST MODE: store_value=True)
         def replace_ssh_key(match):
-            return self._get_or_create_label('SSH_KEY', match.group(1), store_value=False)
+            return self._get_or_create_label('SSH_KEY', match.group(1), store_value=True)
         text = SSH_KEY_RE.sub(replace_ssh_key, text)
 
         # 3.5. IBAN (PŘED kartami! IBAN má dlouhé číselné sekvence)
+        # TEST MODE: store_value=True (ukládá plnou hodnotu)
         def replace_iban(match):
-            return self._get_or_create_label('IBAN', match.group(1), store_value=False)
+            return self._get_or_create_label('IBAN', match.group(1), store_value=True)
         text = IBAN_RE.sub(replace_iban, text)
 
-        # 4. PLATEBNÍ KARTY (KRITICKÉ - hodnotu neukládat!)
+        # 4. PLATEBNÍ KARTY (TEST MODE: store_value=True)
         def replace_card(match):
             # CARD_RE má 2 capture groups - získej první non-None
             card = match.group(1) if match.group(1) else match.group(2)
             if card:
-                return self._get_or_create_label('CARD', card, store_value=False)
+                return self._get_or_create_label('CARD', card, store_value=True)
             return match.group(0)
         text = CARD_RE.sub(replace_card, text)
 
@@ -775,27 +778,30 @@ class Anonymizer:
             return self._get_or_create_label('EMAIL', match.group(1))
         text = EMAIL_RE.sub(replace_email, text)
 
-        # 11. BANKOVNÍ ÚČTY (KRITICKÉ: MUSÍ být PŘED BIRTH_ID!)
-        # Jinak rodná čísla "rozbijí" čísla účtů (např. 1928384576/3210)
-        def replace_bank(match):
-            account = match.group(1) or match.group(2)
-            if account:
-                return self._get_or_create_label('BANK', account, store_value=False)
-            return match.group(0)
-        text = BANK_RE.sub(replace_bank, text)
-
-        # 12. DATUM NAROZENÍ (před BIRTH_ID a všemi daty)
+        # 11. DATUM NAROZENÍ (před BIRTH_ID a všemi daty)
         def replace_dob(match):
             return self._get_or_create_label('DATE', match.group(1))
         text = DOB_RE.sub(replace_dob, text)
 
-        # 13. RODNÁ ČÍSLA (po BANK a DOB, ale před čísly OP a telefony)
+        # 12. RODNÁ ČÍSLA (PŘED BANK! Jinak "Rodné číslo: 850123/1234" by se rozpadlo)
+        # KRITICKÁ PRIORITA: Silný kontext ("Rodné číslo:") má přednost před bank účty
         def replace_birth_id(match):
             birth_id = match.group(1) if match.group(1) else match.group(2)
             if birth_id:
-                return self._get_or_create_label('BIRTH_ID', birth_id)
+                # Odstranit lomítko pokud není přítomné
+                birth_id_clean = birth_id.replace(' ', '')
+                return self._get_or_create_label('BIRTH_ID', birth_id_clean)
             return match.group(0)
         text = BIRTH_ID_RE.sub(replace_birth_id, text)
+
+        # 13. BANKOVNÍ ÚČTY (po BIRTH_ID, aby RČ nebylo zachyceno jako účet)
+        def replace_bank(match):
+            account = match.group(1) or match.group(2)
+            if account:
+                # TEST MODE: store_value=True (ukládá plnou hodnotu)
+                return self._get_or_create_label('BANK', account, store_value=True)
+            return match.group(0)
+        text = BANK_RE.sub(replace_bank, text)
 
         # 14. ČÍSLA OP (KRITICKÉ: MUSÍ být PŘED telefony!)
         def replace_id_card(match):
@@ -864,7 +870,8 @@ class Anonymizer:
         # "Číslo účtu: 6677[[BIRTH_ID_21]]" → "Číslo účtu: [[BANK_x]]"
         def replace_bank_fragment(match):
             # Celý fragment (čísla před + [[BIRTH_ID_*]] + čísla po) → [[BANK_*]]
-            return self._get_or_create_label('BANK', match.group(1), store_value=False)
+            # TEST MODE: store_value=True
+            return self._get_or_create_label('BANK', match.group(1), store_value=True)
 
         # Pattern: číslice (volitelně) + [[BIRTH_ID_*]] + číslice (volitelně) v kontextu "účt"
         bank_fragment_pattern = re.compile(
@@ -906,28 +913,29 @@ class Anonymizer:
                 return match.group(0)
             # Validuj Luhn
             if self._luhn_check(candidate):
-                return self._get_or_create_label('CARD', candidate, store_value=False)
+                # TEST MODE: store_value=True
+                return self._get_or_create_label('CARD', candidate, store_value=True)
             return match.group(0)
         text = luhn_pattern.sub(final_luhn_card, text)
 
-        # IBAN (pokud unikl)
+        # IBAN (pokud unikl) - TEST MODE
         def final_iban(match):
             if not '[[IBAN_' in text[max(0, match.start()-10):match.start()+30]:
-                return self._get_or_create_label('IBAN', match.group(1), store_value=False)
+                return self._get_or_create_label('IBAN', match.group(1), store_value=True)
             return match.group(0)
         text = IBAN_RE.sub(final_iban, text)
 
-        # Platební karty (pokud unikly nebo mají CVV/exp. datum)
+        # Platební karty (pokud unikly nebo mají CVV/exp. datum) - TEST MODE
         def final_card(match):
             card = match.group(1) if match.group(1) else match.group(2)
             if card and not '[[CARD_' in text[max(0, match.start()-10):match.start()+len(card)+10]:
-                return self._get_or_create_label('CARD', card, store_value=False)
+                return self._get_or_create_label('CARD', card, store_value=True)
             return match.group(0)
         text = CARD_RE.sub(final_card, text)
 
-        # Hesla (pokud unikla nebo jsou nalepená na jiných entitách)
+        # Hesla (pokud unikla nebo jsou nalepená na jiných entitách) - TEST MODE
         def final_password(match):
-            return self._get_or_create_label('PASSWORD', match.group(1), store_value=False)
+            return self._get_or_create_label('PASSWORD', match.group(1), store_value=True)
         text = PASSWORD_RE.sub(final_password, text)
 
         # IP adresy (pokud unikly)
@@ -943,13 +951,13 @@ class Anonymizer:
             return self._get_or_create_label('USERNAME', match.group(1))
         text = USERNAME_RE.sub(final_username, text)
 
-        # API klíče, secrets (pokud unikly)
+        # API klíče, secrets (pokud unikly) - TEST MODE
         def final_api(match):
-            return self._get_or_create_label('API_KEY', match.group(1), store_value=False)
+            return self._get_or_create_label('API_KEY', match.group(1), store_value=True)
         text = API_KEY_RE.sub(final_api, text)
 
         def final_secret(match):
-            return self._get_or_create_label('SECRET', match.group(1), store_value=False)
+            return self._get_or_create_label('SECRET', match.group(1), store_value=True)
         text = SECRET_RE.sub(final_secret, text)
 
         # Pojištěnce (pokud unikla)
@@ -1017,6 +1025,28 @@ class Anonymizer:
 
     def _create_maps(self, json_path: str, txt_path: str, source_file: str):
         """Vytvoří JSON a TXT mapy náhrad."""
+
+        # Cleanup nepoužitých tagů před vytvořením map
+        # Načti anonymizovaný dokument a zjisti které tagy jsou skutečně použity
+        doc = Document(txt_path.replace('_map.txt', '_anon.docx'))
+        anon_text = "\n".join([p.text for p in doc.paragraphs])
+        for table in doc.tables:
+            for row in table.rows:
+                for cell in row.cells:
+                    anon_text += "\n".join([p.text for p in cell.paragraphs])
+
+        # Najdi všechny použité tagy
+        used_tags = set(re.findall(r'\[\[([A-Z_]+)_(\d+)\]\]', anon_text))
+
+        # Vyčisti entity_map - odstraň entity které nejsou v textu
+        cleaned_entity_map = defaultdict(lambda: defaultdict(set))
+        for typ, entities in self.entity_map.items():
+            for idx, (original, variants) in enumerate(entities.items(), 1):
+                # Kontrola zda tag je použit
+                if (typ, str(idx)) in used_tags:
+                    cleaned_entity_map[typ][original] = variants
+
+        self.entity_map = cleaned_entity_map
 
         # JSON mapa
         json_data = {
