@@ -1,0 +1,433 @@
+OSOBY
+[[PERSON_1]]: Martina Horáková
+[[PERSON_2]]: Jakub Procházek
+[[PERSON_3]]: Petra Procházková
+[[PERSON_4]]: Eliška Procházková
+[[PERSON_5]]: Matěj Procházek
+[[PERSON_6]]: Hana Procházková
+[[PERSON_7]]: Martin Svoboda
+[[PERSON_8]]: Pavel Novák
+[[PERSON_9]]: Jana Svobodová
+[[PERSON_10]]: Karel Novák
+[[PERSON_11]]: Tomáš Veselý
+[[PERSON_12]]: Alena Dvořáková
+[[PERSON_13]]: Petr Dvořák
+[[PERSON_14]]: Adam Dvořák
+[[PERSON_15]]: Lucie Dvořáková
+[[PERSON_16]]: Jana Nová
+[[PERSON_17]]: Pavel Horák
+[[PERSON_18]]: Hana Nováková
+[[PERSON_19]]: Jana Dvořáková
+[[PERSON_20]]: Karel Novotný
+[[PERSON_21]]: Petr Malý
+[[PERSON_22]]: Robert Novák
+[[PERSON_23]]: Martin Procházek
+[[PERSON_24]]: Petra Nováková
+[[PERSON_25]]: Hana Svobodová
+[[PERSON_26]]: Tomáš Dvořák
+[[PERSON_27]]: Jan Dvořák
+[[PERSON_28]]: Petr Novák
+[[PERSON_29]]: Martin Horák
+[[PERSON_30]]: Petra Svobodová
+[[PERSON_31]]: Jan Novák
+[[PERSON_32]]: Karel Dvořák
+[[PERSON_33]]: Tomáš Novák
+[[PERSON_34]]: Pavel Svoboda
+[[PERSON_35]]: Martina Svobodová
+[[PERSON_36]]: Jan Svoboda
+[[PERSON_37]]: Tomáš Horák
+[[PERSON_38]]: Eva Svobodová
+[[PERSON_39]]: Tomáš Svoboda
+[[PERSON_40]]: Jan Horák
+[[PERSON_41]]: Martin Novotný
+[[PERSON_42]]: Eva Málková
+[[PERSON_43]]: Ondřej Bartoš
+[[PERSON_44]]: Pavel Dvořák
+[[PERSON_45]]: Jana Nováková
+[[PERSON_46]]: Petra Horáková
+
+ACCOUNT_ID
+[[ACCOUNT_ID_1]]: 123456789012
+
+ADDRESS
+[[ADDRESS_1]]: Karlovo náměstí 12/34, 120 00 Praha 2
+[[ADDRESS_2]]: Trvalý pobyt: Slezská 45/9, 130 00 Praha 3
+[[ADDRESS_3]]: Žižkova 123/8, 130 00 Praha 3
+[[ADDRESS_4]]: Masarykova 67/12, 602 00 Brno
+[[ADDRESS_5]]: Evropská 178/123, 160 00 Praha 6
+[[ADDRESS_6]]: Korunní 234/56, 130 00 Praha 3
+[[ADDRESS_7]]: Mánesova 45/12, 160 00 Praha 6
+[[ADDRESS_8]]: Na Příkopě 123/45, 110 00 Praha 1
+[[ADDRESS_9]]: Vinohradská 234/78, 130 00 Praha 3
+[[ADDRESS_10]]: Dlouhá 45/12, 110 00 Praha 1
+[[ADDRESS_11]]: Vinohradská 123/89, 130 00 Praha 3
+[[ADDRESS_12]]: Mánesova 234/12, 120 00 Praha 2
+[[ADDRESS_13]]: Průmyslová 12, 170 00 Praha 7
+[[ADDRESS_14]]: Technická 456, 616 00 Brno
+[[ADDRESS_15]]: Ostravská 123, 702 00 Ostrava
+[[ADDRESS_16]]: Brněnská 456, 602 00 Brno
+[[ADDRESS_17]]: Náměstí Svobody 21, 602 00 Brno
+[[ADDRESS_18]]: Trvalý pobyt: Husova 123/45, 602 00 Brno
+[[ADDRESS_19]]: Trvalý pobyt: Vodní 67/8, 602 00 Brno
+[[ADDRESS_20]]: Trvalý pobyt: Purkyňova 234/56, 612 00 Brno
+[[ADDRESS_21]]: Vodní 67/8, 602 00 Brno
+[[ADDRESS_22]]: Purkyňova 234/56, 612 00 Brno
+[[ADDRESS_23]]: Wenceslas Square 89/23, 110 00 Praha 1
+[[ADDRESS_24]]: Vinohradská 1234/89, 130 00 Praha 3
+
+AMOUNT
+[[AMOUNT_1]]: 85 000
+[[AMOUNT_2]]: 21 250
+[[AMOUNT_3]]: 170 000
+[[AMOUNT_4]]: 50 000
+[[AMOUNT_5]]: 2 000
+[[AMOUNT_6]]: 1 500
+[[AMOUNT_7]]: 1 000
+[[AMOUNT_8]]: 1 267
+[[AMOUNT_9]]: 2 534
+[[AMOUNT_10]]: 876 540
+[[AMOUNT_11]]: 124 567
+[[AMOUNT_12]]: 3 000 000
+[[AMOUNT_13]]: 24 600
+[[AMOUNT_14]]: 1 500 000
+[[AMOUNT_15]]: 2 000 000
+[[AMOUNT_16]]: 1 000 000
+[[AMOUNT_17]]: 38 450
+[[AMOUNT_18]]: 3 205
+[[AMOUNT_19]]: 15 000
+[[AMOUNT_20]]: 17 000
+[[AMOUNT_21]]: 45 000
+[[AMOUNT_22]]: 9 450
+[[AMOUNT_23]]: 54 450
+[[AMOUNT_24]]: 120 000
+[[AMOUNT_25]]: 25 200
+[[AMOUNT_26]]: 145 200
+[[AMOUNT_27]]: 58 000
+[[AMOUNT_28]]: 24 500
+[[AMOUNT_29]]: 95 000
+[[AMOUNT_30]]: 850 000
+[[AMOUNT_31]]: 13 847
+[[AMOUNT_32]]: 1 163 148
+[[AMOUNT_33]]: 78 000
+[[AMOUNT_34]]: 58 500
+[[AMOUNT_35]]: 156 000
+[[AMOUNT_36]]: 1 092 000
+[[AMOUNT_37]]: 43 500
+[[AMOUNT_38]]: 696 000
+[[AMOUNT_39]]: 1 788 000
+[[AMOUNT_40]]: 18 000
+[[AMOUNT_41]]: 4 500
+[[AMOUNT_42]]: 12 000
+[[AMOUNT_43]]: 5 000
+[[AMOUNT_44]]: 3 200
+[[AMOUNT_45]]: 8 000
+[[AMOUNT_46]]: 52 200
+[[AMOUNT_47]]: 450 000
+[[AMOUNT_48]]: 287 000
+[[AMOUNT_49]]: 8 750
+[[AMOUNT_50]]: 180 000
+[[AMOUNT_51]]: 5 890
+[[AMOUNT_52]]: 100 000
+[[AMOUNT_53]]: 34 500
+[[AMOUNT_54]]: 3 450
+[[AMOUNT_55]]: 9 200
+[[AMOUNT_56]]: 45 600
+[[AMOUNT_57]]: 128 000
+[[AMOUNT_58]]: 187 500
+[[AMOUNT_59]]: 234 000
+[[AMOUNT_60]]: 56 000
+[[AMOUNT_61]]: 380 000
+[[AMOUNT_62]]: 32 400
+[[AMOUNT_63]]: 96 500
+[[AMOUNT_64]]: 5 200 000
+[[AMOUNT_65]]: 3 800 000
+[[AMOUNT_66]]: 1 200 000
+[[AMOUNT_67]]: 18 500
+[[AMOUNT_68]]: 89 000
+[[AMOUNT_69]]: 456 000
+[[AMOUNT_70]]: 500 000
+[[AMOUNT_71]]: 4 500 000
+[[AMOUNT_72]]: 6 200 000
+[[AMOUNT_73]]: 1 800 000
+[[AMOUNT_74]]: 8 500 000
+[[AMOUNT_75]]: 28 450 000
+[[AMOUNT_76]]: 7 890 000
+[[AMOUNT_77]]: 5 230 000
+[[AMOUNT_78]]: 9 200 000
+[[AMOUNT_79]]: 5 100 000
+[[AMOUNT_80]]: 14 500 000
+[[AMOUNT_81]]: 165 000
+[[AMOUNT_82]]: 145 000
+[[AMOUNT_83]]: 115 000
+[[AMOUNT_84]]: 18 400 000
+[[AMOUNT_85]]: 5 000 000
+[[AMOUNT_86]]: 20 000 000
+
+API_KEY
+[[API_KEY_1]]: ghp_Kx7mP2vQ9wR5tYu8iO3nM6lJ4hG1sA0dF
+
+BANK
+[[BANK_1]]: 2345678901
+[[BANK_2]]: 4567890123
+[[BANK_3]]: 9876543210
+[[BANK_4]]: 7890123456
+[[BANK_5]]: 3456789012
+[[BANK_6]]: 4567890123/8060
+[[BANK_7]]: 5432109876
+[[BANK_8]]: 1122334455
+[[BANK_9]]: 6677889900
+[[BANK_10]]: 5566778899
+[[BANK_11]]: 8901234567
+[[BANK_12]]: 1234567890/2700
+[[BANK_13]]: 9876543210/5500
+[[BANK_14]]: 5678901234
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 930715/1245
+[[BIRTH_ID_2]]: 945922/6743
+[[BIRTH_ID_3]]: 200310/4521
+[[BIRTH_ID_4]]: 221105/2314
+[[BIRTH_ID_5]]: 661123/5634
+[[BIRTH_ID_6]]: 820305/1823
+[[BIRTH_ID_7]]: 781205/6789
+[[BIRTH_ID_8]]: 900315/4521
+[[BIRTH_ID_9]]: 850612/1234
+[[BIRTH_ID_10]]: 825428/6734
+[[BIRTH_ID_11]]: 800615/1234
+[[BIRTH_ID_12]]: 100510/3421
+[[BIRTH_ID_13]]: 145822/4567
+[[BIRTH_ID_14]]: 850923/5634
+[[BIRTH_ID_15]]: 720615/2134
+[[BIRTH_ID_16]]: 680312/1823
+[[BIRTH_ID_17]]: 750923/6745
+[[BIRTH_ID_18]]: 651108/1234
+[[BIRTH_ID_19]]: 750918/1234
+[[BIRTH_ID_20]]: 805512/6734
+[[BIRTH_ID_21]]: 780523/1245
+[[BIRTH_ID_22]]: 690815/2314
+[[BIRTH_ID_23]]: 720612/5634
+[[BIRTH_ID_24]]: 895615/4521
+[[BIRTH_ID_25]]: 750923/6723
+[[BIRTH_ID_26]]: 821012/1834
+[[BIRTH_ID_27]]: 650823/1923
+[[BIRTH_ID_28]]: 680512/1234
+[[BIRTH_ID_29]]: 951015/1234
+[[BIRTH_ID_30]]: 980322/2345
+[[BIRTH_ID_31]]: 820615/5634
+[[BIRTH_ID_32]]: 900523/4521
+[[BIRTH_ID_33]]: 850712/2314
+[[BIRTH_ID_34]]: 880923/6745
+[[BIRTH_ID_35]]: 830615/1234
+[[BIRTH_ID_36]]: 910823/5634
+[[BIRTH_ID_37]]: 780512/2314
+[[BIRTH_ID_38]]: 851023/6745
+[[BIRTH_ID_39]]: 760923/1234
+[[BIRTH_ID_40]]: 850712/2345
+[[BIRTH_ID_41]]: 861108/1234
+[[BIRTH_ID_42]]: 885315/6734
+[[BIRTH_ID_43]]: 600512/1823
+[[BIRTH_ID_44]]: 850822/2314
+[[BIRTH_ID_45]]: 780615/6734
+[[BIRTH_ID_46]]: 850923/1234
+[[BIRTH_ID_47]]: 821108/5634
+[[BIRTH_ID_48]]: 900512/2314
+[[BIRTH_ID_49]]: 780715/1234
+[[BIRTH_ID_50]]: 850812/1234
+[[BIRTH_ID_51]]: 720512/1234
+[[BIRTH_ID_52]]: 681125/5634
+[[BIRTH_ID_53]]: 750823/1234
+[[BIRTH_ID_54]]: 830612/6734
+[[BIRTH_ID_55]]: 900315/2314
+[[BIRTH_ID_56]]: 880615/5634
+[[BIRTH_ID_57]]: 820923/6745
+
+CARD
+[[CARD_1]]: 4532 1098 7654 3210
+
+DATE
+[[DATE_1]]: 15.07.1993
+[[DATE_2]]: 22.09.1994
+[[DATE_3]]: 10.03.2020
+[[DATE_4]]: 05.11.2022
+[[DATE_5]]: 28.04.1982
+[[DATE_6]]: 15.06.1980
+[[DATE_7]]: 10.05.2010
+[[DATE_8]]: 22.08.2014
+[[DATE_9]]: 18.09.1975
+[[DATE_10]]: 12.05.1980
+[[DATE_11]]: 23.05.1978
+[[DATE_12]]: 15.06.1989
+[[DATE_13]]: 23.08.1965
+[[DATE_14]]: 08.11.1986
+[[DATE_15]]: 15.03.1988
+[[DATE_16]]: 12.05.1960
+[[DATE_17]]: 22.08.1985
+[[DATE_18]]: 15.07.1978
+[[DATE_19]]: 12.08.1985
+
+DIC
+[[DIC_1]]: CZ12398745
+[[DIC_2]]: CZ45612378
+[[DIC_3]]: CZ56789012
+[[DIC_4]]: CZ09876543
+
+EMAIL
+[[EMAIL_1]]: m.horakova@innovatetech.cz
+[[EMAIL_2]]: jakub.prochazka@gmail.com
+[[EMAIL_3]]: petra.prochazkova@email.cz
+[[EMAIL_4]]: h.prochazkova@seznam.cz
+[[EMAIL_5]]: m.svoboda@innovatetech.cz
+[[EMAIL_6]]: p.novak@digitalagency.cz
+[[EMAIL_7]]: j.prochazka@innovatetech.cz
+[[EMAIL_8]]: t.vesely@premiumlife.cz
+[[EMAIL_9]]: alena.dvorakova.md@email.cz
+[[EMAIL_10]]: k.novotny@premiumlife.cz
+[[EMAIL_11]]: r.novak@healthcarepro.cz
+[[EMAIL_12]]: j.svobodova@cloudmed.cz
+[[EMAIL_13]]: m.prochazka@email.cz
+[[EMAIL_14]]: p.novakova@gmail.com
+[[EMAIL_15]]: t.dvorak@legal.cz
+[[EMAIL_16]]: m.horak@cloudmed.cz
+[[EMAIL_17]]: p.svobodova@cloudmed.cz
+[[EMAIL_18]]: j.novak@cloudmed.cz
+[[EMAIL_19]]: e.mala@cloudmed.cz
+[[EMAIL_20]]: p.novakova@moravskabanka.cz
+[[EMAIL_21]]: pavel.svoboda@email.cz
+[[EMAIL_22]]: jan.svoboda@centrum.cz
+[[EMAIL_23]]: t.horak@gmail.com
+[[EMAIL_24]]: p.novakova@autotech.cz
+[[EMAIL_25]]: gdpr@moravskabanka.cz
+[[EMAIL_26]]: m.horak@moravskabanka.cz
+[[EMAIL_27]]: j.dvorakova@moravskabanka.cz
+[[EMAIL_28]]: t.novak@moravskabanka.cz
+[[EMAIL_29]]: r.novak@aiinnovations.cz
+[[EMAIL_30]]: martin.svoboda@nixminds.cz
+[[EMAIL_31]]: p.horak@fnmotol.cz
+[[EMAIL_32]]: j.dvorakova@ikem.cz
+[[EMAIL_33]]: t.svoboda@mou.cz
+[[EMAIL_34]]: p.svobodova@aiinnovations.cz
+[[EMAIL_35]]: j.horak@aiinnovations.cz
+[[EMAIL_36]]: m.novotny@aiinnovations.cz
+[[EMAIL_37]]: e.malkova@aiinnovations.cz
+[[EMAIL_38]]: t.vesely@jt-ventures.cz
+[[EMAIL_39]]: ondrej.bartos@credoventures.com
+[[EMAIL_40]]: p.dvorak@medtechsolutions.cz
+[[EMAIL_41]]: review@nixminds.cz
+[[EMAIL_42]]: petra.horakova@nixminds.cz
+[[EMAIL_43]]: jana.novakova@nixminds.cz
+
+HOST
+[[HOST_1]]: db-prod-01.cloudmed.cz
+[[HOST_2]]: sftp.backup.cloudmed.cz
+
+IBAN
+[[IBAN_1]]: CZ23 0800 0000 0023 4567 8901
+[[IBAN_2]]: CZ89 0800 0000 0045 6789 0123
+[[IBAN_3]]: CZ12 2700 0000 0098 7654 3210
+[[IBAN_4]]: CZ45 5500 0000 0078 9012 3456
+[[IBAN_5]]: CZ67 3030 0000 0089 0123 4567
+[[IBAN_6]]: CZ89 0300 0000 0034 5678 9012
+[[IBAN_7]]: CZ12 2700 0000 0012 3456 7890
+[[IBAN_8]]: CZ98 5500 0000 0098 7654 3210
+
+ICO
+[[ICO_1]]: 45678901
+[[ICO_2]]: 34567890
+[[ICO_3]]: 23456789
+[[ICO_4]]: 00064173
+[[ICO_5]]: 12398745
+[[ICO_6]]: 45612378
+[[ICO_7]]: 78901234
+[[ICO_8]]: 23456780
+[[ICO_9]]: 56789012
+[[ICO_10]]: 09876543
+[[ICO_11]]: 00064203
+[[ICO_12]]: 00023001
+[[ICO_13]]: 00209805
+
+ID_CARD
+[[ID_CARD_1]]: 234567890
+[[ID_CARD_2]]: 345678901
+[[ID_CARD_3]]: 456789012
+
+INSURANCE_ID
+[[INSURANCE_ID_1]]: 9307151245
+[[INSURANCE_ID_2]]: 7805231245
+[[INSURANCE_ID_3]]: 8956154521
+[[INSURANCE_ID_4]]: 6508231923
+
+IP
+[[IP_1]]: 78.45.123.89
+[[IP_2]]: 192.168.10.45
+[[IP_3]]: 192.168.10.46
+[[IP_4]]: 192.168.10.47
+[[IP_5]]: 192.168.10.48
+[[IP_6]]: 185.56.234.89
+
+PASSWORD
+[[PASSWORD_1]]: ChangeMeNow!2024
+[[PASSWORD_2]]: HC#Pr0d!2024$SecureDB&Pass
+[[PASSWORD_3]]: Adm!n#HCP$2024%Secure
+[[PASSWORD_4]]: AWS#Review!2024$Secure&Pass
+[[PASSWORD_5]]: Jir@#Review2024!Pass
+[[PASSWORD_6]]: Demo!2024#Secure$Pass
+
+PHONE
+[[PHONE_1]]: +420 724 123 456
+[[PHONE_2]]: 456789012
+[[PHONE_3]]: +420 606 789 123
+[[PHONE_4]]: +420 777 234 567
+[[PHONE_5]]: +420 605 123 789
+[[PHONE_6]]: +420 724 890 345
+[[PHONE_7]]: +420 222 333 444
+[[PHONE_8]]: 777 234 567
+[[PHONE_9]]: +420 603 456 789
+[[PHONE_10]]: +420 234 567 890
+[[PHONE_11]]: +420 605 234 567
+[[PHONE_12]]: +420 724 345 678
+[[PHONE_13]]: +420 222 456 789
+[[PHONE_14]]: +420 224 567 890
+[[PHONE_15]]: +420 777 456 123
+[[PHONE_16]]: 224 567 890
+[[PHONE_17]]: 222 678 901
+[[PHONE_18]]: 222 456 789
+[[PHONE_19]]: 222 801 111
+[[PHONE_20]]: +420 724 678 901
+[[PHONE_21]]: +420 775 234 567
+[[PHONE_22]]: +420 606 789 012
+[[PHONE_23]]: +420 777 123 456
+[[PHONE_24]]: +420 603 567 890
+[[PHONE_25]]: 202403089
+[[PHONE_26]]: +420 603 789 012
+[[PHONE_27]]: +420 541 234 567
+[[PHONE_28]]: +420 605 678 901
+[[PHONE_29]]: +420 603 123 456
+[[PHONE_30]]: +420 777 890 123
+[[PHONE_31]]: +420 541 678 901
+[[PHONE_32]]: +420 541 234 600
+[[PHONE_33]]: +420 724 567 890
+[[PHONE_34]]: +420 224 433 111
+[[PHONE_35]]: +420 261 363 111
+[[PHONE_36]]: +420 543 136 111
+[[PHONE_37]]: +420 221 710 111
+[[PHONE_38]]: 125 000 000
+
+SECRET
+[[SECRET_1]]: jakub-prochazka-innovate
+
+USERNAME
+[[USERNAME_1]]: jprochazka
+[[USERNAME_2]]: jprochazka@innovatetech
+[[USERNAME_3]]: jprochazka-dev
+[[USERNAME_4]]: r.novak
+[[USERNAME_5]]: h.prochazkova
+[[USERNAME_6]]: j.svobodova
+[[USERNAME_7]]: p.novak.admin
+[[USERNAME_8]]: e.mala
+[[USERNAME_9]]: hcp_admin
+[[USERNAME_10]]: admin@healthcarepro
+[[USERNAME_11]]: hcp_backup
+[[USERNAME_12]]: nixminds-review-2024
+[[USERNAME_13]]: nixminds-review
+[[USERNAME_14]]: demo-nixminds
+
