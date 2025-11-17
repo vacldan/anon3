@@ -337,9 +337,10 @@ PHONE_RE = re.compile(
 # Bankovní účet (formát: číslo/kód banky NEBO dlouhé číslo s kontextem)
 # DŮLEŽITÉ: IBAN je samostatný regex níže!
 # NESMÍ zachytit spisové značky (FÚ-xxx/xxxx, KS-xxx/xxxx, VS-xxx)
-# MUSÍ být PŘED BIRTH_ID, jinak rodná čísla "rozbijí" účty!
 BANK_RE = re.compile(
     r'(?:'
+    # Standardní formát s předčíslím: 3622-1234567890/0710
+    r'(?<!FÚ-)(?<!KS-)(?<!VS-)(?<!čj-)(\d{1,6}-\d{6,16}/\d{4})|'
     # Standardní formát: 123456/2010, 1234567890/3210
     r'(?<!FÚ-)(?<!KS-)(?<!VS-)(?<!čj-)(\d{6,16}/\d{4})|'
     # S kontextem: "číslo účtu: 123456789", "platba na účet: 987654"
@@ -458,11 +459,25 @@ AMOUNT_RE = re.compile(
     # Částky s měnou: 1 234 Kč, 50 000 EUR (vyloučit phone/+ prefixy)
     r'(?<![\+])\b(\d{1,3}(?:\s+\d{3})+(?:,\d{2})?)\s*(?:Kč|EUR|USD|CZK)\b|'
     # Částky s kontextem: "částka: 50 000", "hodnota: 5 240 000"
-    r'(?:částka|cena|hodnota|kapitál|invest(?:ice)?|fond|úrok|splátka|dluh|hodnot[ayě])\s*:?\s*(\d{1,3}(?:\s+\d{3})+)\b|'
+    r'(?:částka|cena|hodnota|kapitál|invest(?:ice)?|fond|úrok|splátka|dluh|hodnot[ayě]|valuác[eí][aá]|post-money|pre-money)\s*:?\s*(\d{1,3}(?:\s+\d{3})+)\b|'
     # Velké částky (10+ mil) POUZE pokud mají 4+ skupiny: "125 000 000 000"
     # DŮLEŽITÉ: xxx xxx xxx je telefon, takže 9 číslic vynecháváme!
     r'\b(\d{3}(?:\s+\d{3}){3,})\b(?!\s*[-/])'  # 4+ skupiny = 12+ číslic
     r')',
+    re.IGNORECASE
+)
+
+# Variabilní symbol (VS) - NESMÍ být zachycen jako PHONE!
+# Pattern: VS: 12345, VS 1234567890, VS12345, variabilní symbol: 123
+VARIABLE_SYMBOL_RE = re.compile(
+    r'(?:VS|variabilní\s+symbol|var\.?\s*symbol)\s*[:\-]?\s*(\d{2,10})',
+    re.IGNORECASE
+)
+
+# Genetické identifikátory (rs...) - NESMÍ být zachyceny jako ICO!
+# Pattern: rs28897696, rs1234567
+GENETIC_ID_RE = re.compile(
+    r'\b(rs\d{6,})\b',
     re.IGNORECASE
 )
 
@@ -485,9 +500,9 @@ class Anonymizer:
         # Normalizace
         orig_norm = original.strip()
 
-        # Speciální cleanup pro ADDRESS - odstraň prefixy "Sídlo:", "Trvalé bydliště:" atd.
+        # Speciální cleanup pro ADDRESS - odstraň prefixy "Sídlo:", "Trvalé bydliště:", "Trvalý pobyt:" atd.
         if typ == 'ADDRESS':
-            orig_norm = re.sub(r'^(Sídlo|Trvalé\s+bydliště|Bydliště|Adresa|Místo\s+podnikání)\s*:\s*', '', orig_norm, flags=re.IGNORECASE)
+            orig_norm = re.sub(r'^(Sídlo|Trvalé\s+bydliště|Trvalý\s+pobyt|Bydliště|Adresa|Místo\s+podnikání|Se\s+sídlem|Bytem)\s*:\s*', '', orig_norm, flags=re.IGNORECASE)
 
         # Pro citlivá data: kontrola duplicit podle skutečné hodnoty
         if not store_value:
@@ -796,7 +811,8 @@ class Anonymizer:
 
         # 13. BANKOVNÍ ÚČTY (po BIRTH_ID, aby RČ nebylo zachyceno jako účet)
         def replace_bank(match):
-            account = match.group(1) or match.group(2)
+            # BANK_RE má 3 capture groups - získej první non-None
+            account = match.group(1) or match.group(2) or match.group(3)
             if account:
                 # TEST MODE: store_value=True (ukládá plnou hodnotu)
                 return self._get_or_create_label('BANK', account, store_value=True)
@@ -811,7 +827,12 @@ class Anonymizer:
             return match.group(0)
         text = ID_CARD_RE.sub(replace_id_card, text)
 
-        # 15. TELEFONY (po ID_CARD, ale PŘED částkami!)
+        # 14.5. VARIABILNÍ SYMBOL (PŘED telefony! VS čísla nejsou telefony)
+        def replace_variable_symbol(match):
+            return self._get_or_create_label('VARIABLE_SYMBOL', match.group(1))
+        text = VARIABLE_SYMBOL_RE.sub(replace_variable_symbol, text)
+
+        # 15. TELEFONY (po ID_CARD a VS, ale PŘED částkami!)
         def replace_phone(match):
             # PHONE_RE má capture group (1) pro samotné číslo (bez prefixu!)
             return self._get_or_create_label('PHONE', match.group(1))
@@ -821,6 +842,11 @@ class Anonymizer:
         def replace_dic(match):
             return self._get_or_create_label('DIC', match.group(1))
         text = DIC_RE.sub(replace_dic, text)
+
+        # 16.5. GENETICKÉ IDENTIFIKÁTORY (PŘED IČO! rs... nejsou IČO)
+        def replace_genetic_id(match):
+            return self._get_or_create_label('GENETIC_ID', match.group(1))
+        text = GENETIC_ID_RE.sub(replace_genetic_id, text)
 
         # 17. IČO
         def replace_ico(match):

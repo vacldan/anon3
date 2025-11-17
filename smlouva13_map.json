@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-17T20:11:56.880683",
+  "generated_at": "2025-11-17T21:02:20.559756",
   "source_file": "smlouva13.docx",
   "entities": [
     {
@@ -228,36 +228,24 @@
     {
       "type": "ICO",
       "label": "[[ICO_3]]",
-      "original": "20237089",
-      "occurrences": 1
-    },
-    {
-      "type": "ICO",
-      "label": "[[ICO_4]]",
       "original": "87654321",
       "occurrences": 1
     },
     {
       "type": "ICO",
-      "label": "[[ICO_5]]",
+      "label": "[[ICO_4]]",
       "original": "23456789",
       "occurrences": 1
     },
     {
       "type": "ICO",
-      "label": "[[ICO_6]]",
-      "original": "28897696",
-      "occurrences": 1
-    },
-    {
-      "type": "ICO",
-      "label": "[[ICO_7]]",
+      "label": "[[ICO_5]]",
       "original": "78945612",
       "occurrences": 1
     },
     {
       "type": "ICO",
-      "label": "[[ICO_8]]",
+      "label": "[[ICO_6]]",
       "original": "65432198",
       "occurrences": 1
     },
@@ -960,7 +948,7 @@
     {
       "type": "BANK",
       "label": "[[BANK_19]]",
-      "original": "1717371319/0710",
+      "original": "3622-1717371319/0710",
       "occurrences": 1
     },
     {
@@ -1417,6 +1405,36 @@
       "type": "CARD",
       "label": "[[CARD_5]]",
       "original": "3782 822463 10005",
+      "occurrences": 1
+    },
+    {
+      "type": "VARIABLE_SYMBOL",
+      "label": "[[VARIABLE_SYMBOL_1]]",
+      "original": "20237089",
+      "occurrences": 1
+    },
+    {
+      "type": "VARIABLE_SYMBOL",
+      "label": "[[VARIABLE_SYMBOL_2]]",
+      "original": "2024789",
+      "occurrences": 1
+    },
+    {
+      "type": "VARIABLE_SYMBOL",
+      "label": "[[VARIABLE_SYMBOL_3]]",
+      "original": "2024001",
+      "occurrences": 1
+    },
+    {
+      "type": "VARIABLE_SYMBOL",
+      "label": "[[VARIABLE_SYMBOL_4]]",
+      "original": "2024002",
+      "occurrences": 1
+    },
+    {
+      "type": "GENETIC_ID",
+      "label": "[[GENETIC_ID_1]]",
+      "original": "rs28897696",
       "occurrences": 1
     },
     {
