@@ -333,11 +333,17 @@ PHONE_RE = re.compile(
     re.IGNORECASE
 )
 
-# Bankovní účet (formát: číslo/kód banky)
+# Bankovní účet (formát: číslo/kód banky NEBO dlouhé číslo s kontextem)
 # DŮLEŽITÉ: IBAN je samostatný regex níže!
 # NESMÍ zachytit spisové značky (FÚ-xxx/xxxx, KS-xxx/xxxx, VS-xxx)
+# MUSÍ být PŘED BIRTH_ID, jinak rodná čísla "rozbijí" účty!
 BANK_RE = re.compile(
-    r'(?<!FÚ-)(?<!KS-)(?<!VS-)(?<!čj-)(\d{6,16}/\d{4})\b',
+    r'(?:'
+    # Standardní formát: 123456/2010, 1234567890/3210
+    r'(?<!FÚ-)(?<!KS-)(?<!VS-)(?<!čj-)(\d{6,16}/\d{4})|'
+    # S kontextem: "číslo účtu: 123456789", "platba na účet: 987654"
+    r'(?:číslo\s+účtu|účet|účtu|platba\s+na\s+účet|bankovní\s+účet)\s*:?\s*(\d{8,16})'
+    r')\b',
     re.IGNORECASE
 )
 
@@ -350,8 +356,15 @@ IBAN_RE = re.compile(
 )
 
 # Datum (DD.MM.YYYY nebo DD. MM. YYYY)
+# Obecný pattern pro všechna data
 DATE_RE = re.compile(
     r'\b(\d{1,2}\.\s?\d{1,2}\.\s?\d{4})\b'
+)
+
+# Datum narození (DOB) - specificky pro "Datum narození:" kontext
+DOB_RE = re.compile(
+    r'(?:Datum\s+narození|Narozen[aý]?|Nar\.|Narození)\s*:?\s*(\d{1,2}\.\s?\d{1,2}\.\s?\d{4})\b',
+    re.IGNORECASE
 )
 
 # Datum slovně (např. "15. března 2024")
@@ -470,6 +483,10 @@ class Anonymizer:
         """
         # Normalizace
         orig_norm = original.strip()
+
+        # Speciální cleanup pro ADDRESS - odstraň prefixy "Sídlo:", "Trvalé bydliště:" atd.
+        if typ == 'ADDRESS':
+            orig_norm = re.sub(r'^(Sídlo|Trvalé\s+bydliště|Bydliště|Adresa|Místo\s+podnikání)\s*:\s*', '', orig_norm, flags=re.IGNORECASE)
 
         # Pro citlivá data: kontrola duplicit podle skutečné hodnoty
         if not store_value:
@@ -758,7 +775,21 @@ class Anonymizer:
             return self._get_or_create_label('EMAIL', match.group(1))
         text = EMAIL_RE.sub(replace_email, text)
 
-        # 11. RODNÁ ČÍSLA (před čísly OP a telefony)
+        # 11. BANKOVNÍ ÚČTY (KRITICKÉ: MUSÍ být PŘED BIRTH_ID!)
+        # Jinak rodná čísla "rozbijí" čísla účtů (např. 1928384576/3210)
+        def replace_bank(match):
+            account = match.group(1) or match.group(2)
+            if account:
+                return self._get_or_create_label('BANK', account, store_value=False)
+            return match.group(0)
+        text = BANK_RE.sub(replace_bank, text)
+
+        # 12. DATUM NAROZENÍ (před BIRTH_ID a všemi daty)
+        def replace_dob(match):
+            return self._get_or_create_label('DATE', match.group(1))
+        text = DOB_RE.sub(replace_dob, text)
+
+        # 13. RODNÁ ČÍSLA (po BANK a DOB, ale před čísly OP a telefony)
         def replace_birth_id(match):
             birth_id = match.group(1) if match.group(1) else match.group(2)
             if birth_id:
@@ -766,7 +797,7 @@ class Anonymizer:
             return match.group(0)
         text = BIRTH_ID_RE.sub(replace_birth_id, text)
 
-        # 12. ČÍSLA OP (KRITICKÉ: MUSÍ být PŘED telefony!)
+        # 14. ČÍSLA OP (KRITICKÉ: MUSÍ být PŘED telefony!)
         def replace_id_card(match):
             id_card = match.group(1) if match.group(1) else match.group(2)
             if id_card:
@@ -774,26 +805,18 @@ class Anonymizer:
             return match.group(0)
         text = ID_CARD_RE.sub(replace_id_card, text)
 
-        # 13. TELEFONY (po ID_CARD, ale PŘED částkami!)
+        # 15. TELEFONY (po ID_CARD, ale PŘED částkami!)
         def replace_phone(match):
             # PHONE_RE má capture group (1) pro samotné číslo (bez prefixu!)
             return self._get_or_create_label('PHONE', match.group(1))
         text = PHONE_RE.sub(replace_phone, text)
 
-        # 14. BANKOVNÍ ÚČTY (před telefony!)
-        def replace_bank(match):
-            account = match.group(1) if match.group(1) else match.group(2)
-            if account:
-                return self._get_or_create_label('BANK', account)
-            return match.group(0)
-        text = BANK_RE.sub(replace_bank, text)
-
-        # 15. DIČ (před IČO)
+        # 16. DIČ (před IČO)
         def replace_dic(match):
             return self._get_or_create_label('DIC', match.group(1))
         text = DIC_RE.sub(replace_dic, text)
 
-        # 16. IČO
+        # 17. IČO
         def replace_ico(match):
             full = match.group(0)
             # Ale ne pokud je to DIČ (CZ prefix)
@@ -808,12 +831,12 @@ class Anonymizer:
             return full
         text = ICO_RE.sub(replace_ico, text)
 
-        # 17. SPZ
+        # 18. SPZ
         def replace_license_plate(match):
             return self._get_or_create_label('SPZ', match.group(0))
         text = LICENSE_PLATE_RE.sub(replace_license_plate, text)
 
-        # 18. ČÁSTKY (AŽ NAKONEC! Po telefonech a všech číselných identifikátorech)
+        # 19. ČÁSTKY (AŽ NAKONEC! Po telefonech a všech číselných identifikátorech)
         def replace_amount(match):
             # AMOUNT_RE má 3 capture groups - získej první non-None
             amount = match.group(1) or match.group(2) or match.group(3)
@@ -822,12 +845,12 @@ class Anonymizer:
             return match.group(0)
         text = AMOUNT_RE.sub(replace_amount, text)
 
-        # 19. MASKOVÁNÍ CVV/EXPIRACE u karet
+        # 20. MASKOVÁNÍ CVV/EXPIRACE u karet
         # Nahradí "CVV: 123" → "CVV: ***" a "exp: 12/26" → "exp: **/**"
         text = re.sub(r'(CVV|CVC)\s*:\s*\d{3,4}', r'\1: ***', text, flags=re.IGNORECASE)
         text = re.sub(r'exp(?:\.|\s+|iration)?\s*:?\s*\d{2}/\d{2,4}', r'exp: **/**', text, flags=re.IGNORECASE)
 
-        # 19.5. CLEANUP biometrických identifikátorů - odstraň [[PHONE_*]] z bio prefixů
+        # 20.5. CLEANUP biometrických identifikátorů - odstraň [[PHONE_*]] z bio prefixů
         # "IRIS_SCAN_PD_[[PHONE_10]]" → "IRIS_SCAN_PD_10"
         # "VOICE_RK_[[PHONE_11]]" → "VOICE_RK_11"
         text = re.sub(
@@ -836,7 +859,21 @@ class Anonymizer:
             text
         )
 
-        # 20. END-SCAN - finální kontrola citlivých dat (chytá zbytky nalepené na ]])
+        # 20.6. BANK FRAGMENTS - zachyť fragmenty účtů s vloženým [[BIRTH_ID_*]]
+        # "1928[[BIRTH_ID_6]]" → "[[BANK_x]]"
+        # "Číslo účtu: 6677[[BIRTH_ID_21]]" → "Číslo účtu: [[BANK_x]]"
+        def replace_bank_fragment(match):
+            # Celý fragment (čísla před + [[BIRTH_ID_*]] + čísla po) → [[BANK_*]]
+            return self._get_or_create_label('BANK', match.group(1), store_value=False)
+
+        # Pattern: číslice (volitelně) + [[BIRTH_ID_*]] + číslice (volitelně) v kontextu "účt"
+        bank_fragment_pattern = re.compile(
+            r'(?:číslo\s+účtu|účet|účtu|platba\s+na\s+účet|bankovní\s+účet)\s*:?\s*(\d{0,10}\[\[BIRTH_ID_\d+\]\]\d{0,10})',
+            re.IGNORECASE
+        )
+        text = bank_fragment_pattern.sub(replace_bank_fragment, text)
+
+        # 21. END-SCAN - finální kontrola citlivých dat (chytá zbytky nalepené na ]])
         text = self._end_scan(text)
 
         return text

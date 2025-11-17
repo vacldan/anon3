@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-17T07:39:41.113793",
+  "generated_at": "2025-11-17T08:16:41.371507",
   "source_file": "smlouva13.docx",
   "entities": [
     {
@@ -282,31 +282,31 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Sídlo: Vinohradská 1234/89, 130 00 Praha 3",
+      "original": "Vinohradská 1234/89, 130 00 Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Sídlo: Lékařská 567/12, 150 00 Praha 5",
+      "original": "Lékařská 567/12, 150 00 Praha 5",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Trvalé bydliště: Růžová 234/8, 160 00 Praha 6",
+      "original": "Růžová 234/8, 160 00 Praha 6",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "Trvalé bydliště: Dlouhá 67/9, 110 00 Praha 1",
+      "original": "Dlouhá 67/9, 110 00 Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "Trvalé bydliště: Zahradní 45/12, 140 00 Praha 4",
+      "original": "Zahradní 45/12, 140 00 Praha 4",
       "occurrences": 1
     },
     {
@@ -318,19 +318,97 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Bydliště: Mánesova 123/45, 120 00 Praha 2",
+      "original": "Mánesova 123/45, 120 00 Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Adresa: Polská 78/3, 120 00 Praha 2",
+      "original": "Polská 78/3, 120 00 Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_9]]",
-      "original": "Adresa: Anglická 45/12, 120 00 Praha 2",
+      "original": "Anglická 45/12, 120 00 Praha 2",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_1]]",
+      "original": "12.08.1985",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_2]]",
+      "original": "25.03.1978",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_3]]",
+      "original": "05.11.1967",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_4]]",
+      "original": "18.07.1989",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_5]]",
+      "original": "22.04.1985",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_6]]",
+      "original": "15.09.1987",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_7]]",
+      "original": "15.12.1980",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_8]]",
+      "original": "30.06.1975",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_9]]",
+      "original": "08.03.1972",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_10]]",
+      "original": "12.11.1974",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_11]]",
+      "original": "15.06.2005",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_12]]",
+      "original": "22.09.2008",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_13]]",
+      "original": "28.02.1988",
       "occurrences": 1
     },
     {
@@ -358,321 +436,309 @@
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_1]]",
-      "original": "850812/1234",
+      "type": "BANK",
+      "label": "[[BANK_1]]",
+      "original": "***REDACTED_1***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_2]]",
-      "original": "563921/0800",
+      "type": "BANK",
+      "label": "[[BANK_2]]",
+      "original": "***REDACTED_2***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_3]]",
-      "original": "785325/6789",
+      "type": "BANK",
+      "label": "[[BANK_3]]",
+      "original": "***REDACTED_3***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_4]]",
-      "original": "567890/0100",
+      "type": "BANK",
+      "label": "[[BANK_4]]",
+      "original": "***REDACTED_4***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_5]]",
-      "original": "671105/1823",
+      "type": "BANK",
+      "label": "[[BANK_5]]",
+      "original": "***REDACTED_5***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_6]]",
-      "original": "374650/2700",
+      "type": "BANK",
+      "label": "[[BANK_6]]",
+      "original": "***REDACTED_6***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_7]]",
-      "original": "895718/3421",
+      "type": "BANK",
+      "label": "[[BANK_7]]",
+      "original": "***REDACTED_7***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_8]]",
-      "original": "789432/0800",
+      "type": "BANK",
+      "label": "[[BANK_8]]",
+      "original": "***REDACTED_8***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_9]]",
-      "original": "543210/2700",
+      "type": "BANK",
+      "label": "[[BANK_9]]",
+      "original": "***REDACTED_9***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_10]]",
-      "original": "901234/0600",
+      "type": "BANK",
+      "label": "[[BANK_10]]",
+      "original": "***REDACTED_10***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_11]]",
-      "original": "850422/2145",
+      "type": "BANK",
+      "label": "[[BANK_11]]",
+      "original": "***REDACTED_11***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_12]]",
-      "original": "875915/7823",
+      "type": "BANK",
+      "label": "[[BANK_12]]",
+      "original": "***REDACTED_12***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_13]]",
-      "original": "776655/0100",
+      "type": "BANK",
+      "label": "[[BANK_13]]",
+      "original": "***REDACTED_13***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_14]]",
-      "original": "801215/3456",
+      "type": "BANK",
+      "label": "[[BANK_14]]",
+      "original": "***REDACTED_14***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_15]]",
-      "original": "567890/5500",
+      "type": "BANK",
+      "label": "[[BANK_15]]",
+      "original": "***REDACTED_15***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_16]]",
-      "original": "543210/0800",
+      "type": "BANK",
+      "label": "[[BANK_16]]",
+      "original": "***REDACTED_16***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_17]]",
-      "original": "891230/5500",
+      "type": "BANK",
+      "label": "[[BANK_17]]",
+      "original": "***REDACTED_17***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_18]]",
-      "original": "875610/4562",
+      "type": "BANK",
+      "label": "[[BANK_18]]",
+      "original": "***REDACTED_18***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_19]]",
-      "original": "900123/1234",
+      "type": "BANK",
+      "label": "[[BANK_19]]",
+      "original": "***REDACTED_19***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_20]]",
-      "original": "750630/2314",
+      "type": "BANK",
+      "label": "[[BANK_20]]",
+      "original": "***REDACTED_20***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_21]]",
-      "original": "889900/5500",
+      "type": "BANK",
+      "label": "[[BANK_21]]",
+      "original": "***REDACTED_21***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_22]]",
-      "original": "720308/1245",
+      "type": "BANK",
+      "label": "[[BANK_22]]",
+      "original": "***REDACTED_22***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_23]]",
-      "original": "745112/6789",
+      "type": "BANK",
+      "label": "[[BANK_23]]",
+      "original": "***REDACTED_23***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_24]]",
-      "original": "055615/4523",
+      "type": "BANK",
+      "label": "[[BANK_24]]",
+      "original": "***REDACTED_24***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_25]]",
-      "original": "080922/3412",
+      "type": "BANK",
+      "label": "[[BANK_25]]",
+      "original": "***REDACTED_25***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_26]]",
-      "original": "334455/0100",
+      "type": "BANK",
+      "label": "[[BANK_26]]",
+      "original": "***REDACTED_26***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_27]]",
-      "original": "332211/0100",
+      "type": "BANK",
+      "label": "[[BANK_27]]",
+      "original": "***REDACTED_27***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_28]]",
-      "original": "776655/2700",
+      "type": "BANK",
+      "label": "[[BANK_28]]",
+      "original": "***REDACTED_28***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_29]]",
-      "original": "556677/0100",
+      "type": "BANK",
+      "label": "[[BANK_29]]",
+      "original": "***REDACTED_29***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_30]]",
-      "original": "885228/7634",
+      "type": "BANK",
+      "label": "[[BANK_30]]",
+      "original": "***REDACTED_30***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_31]]",
-      "original": "780915/2314",
+      "type": "BANK",
+      "label": "[[BANK_31]]",
+      "original": "***REDACTED_31***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_32]]",
-      "original": "681210/5634",
+      "type": "BANK",
+      "label": "[[BANK_32]]",
+      "original": "***REDACTED_32***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_33]]",
-      "original": "990011/5500",
+      "type": "BANK",
+      "label": "[[BANK_33]]",
+      "original": "***REDACTED_33***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_34]]",
-      "original": "905212/6745",
+      "type": "BANK",
+      "label": "[[BANK_34]]",
+      "original": "***REDACTED_34***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_35]]",
-      "original": "870830/1923",
+      "type": "BANK",
+      "label": "[[BANK_35]]",
+      "original": "***REDACTED_35***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_36]]",
-      "original": "820615/3421",
+      "type": "BANK",
+      "label": "[[BANK_36]]",
+      "original": "***REDACTED_36***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_37]]",
-      "original": "910523/7812",
+      "type": "BANK",
+      "label": "[[BANK_37]]",
+      "original": "***REDACTED_37***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_38]]",
-      "original": "870923/6745",
+      "type": "BANK",
+      "label": "[[BANK_38]]",
+      "original": "***REDACTED_38***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_39]]",
-      "original": "667788/2700",
+      "type": "BANK",
+      "label": "[[BANK_39]]",
+      "original": "***REDACTED_39***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_40]]",
-      "original": "920312/2134",
+      "type": "BANK",
+      "label": "[[BANK_40]]",
+      "original": "***REDACTED_40***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_41]]",
-      "original": "751008/1823",
+      "type": "BANK",
+      "label": "[[BANK_41]]",
+      "original": "***REDACTED_41***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_42]]",
-      "original": "880714/5623",
+      "type": "BANK",
+      "label": "[[BANK_42]]",
+      "original": "***REDACTED_42***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_43]]",
-      "original": "781125/6789",
+      "type": "BANK",
+      "label": "[[BANK_43]]",
+      "original": "***REDACTED_43***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_44]]",
-      "original": "001122/0600",
+      "type": "BANK",
+      "label": "[[BANK_44]]",
+      "original": "***REDACTED_44***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_45]]",
-      "original": "705523/4512",
+      "type": "BANK",
+      "label": "[[BANK_45]]",
+      "original": "***REDACTED_45***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_46]]",
-      "original": "567890/0800",
+      "type": "BANK",
+      "label": "[[BANK_46]]",
+      "original": "***REDACTED_46***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_47]]",
-      "original": "543210/5500",
+      "type": "BANK",
+      "label": "[[BANK_47]]",
+      "original": "***REDACTED_47***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_48]]",
-      "original": "830507/1234",
+      "type": "BANK",
+      "label": "[[BANK_48]]",
+      "original": "***REDACTED_48***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_49]]",
-      "original": "890823/6745",
+      "type": "BANK",
+      "label": "[[BANK_49]]",
+      "original": "***REDACTED_49***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_50]]",
-      "original": "760312/2314",
+      "type": "BANK",
+      "label": "[[BANK_50]]",
+      "original": "***REDACTED_50***",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_51]]",
-      "original": "740825/1923",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_52]]",
-      "original": "770615/2314",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_53]]",
-      "original": "371319/0710",
+      "type": "BANK",
+      "label": "[[BANK_51]]",
+      "original": "***REDACTED_51***",
       "occurrences": 1
     },
     {
