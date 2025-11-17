@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-17T00:12:43.355761",
+  "generated_at": "2025-11-17T07:39:41.113793",
   "source_file": "smlouva13.docx",
   "entities": [
     {
@@ -1360,9 +1360,9 @@
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_1]]",
-      "original": "123456/2024",
+      "type": "CARD",
+      "label": "[[CARD_5]]",
+      "original": "***REDACTED_5***",
       "occurrences": 1
     },
     {

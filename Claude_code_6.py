@@ -335,8 +335,9 @@ PHONE_RE = re.compile(
 
 # Bankovní účet (formát: číslo/kód banky)
 # DŮLEŽITÉ: IBAN je samostatný regex níže!
+# NESMÍ zachytit spisové značky (FÚ-xxx/xxxx, KS-xxx/xxxx, VS-xxx)
 BANK_RE = re.compile(
-    r'\b(\d{6,16}/\d{4})\b',
+    r'(?<!FÚ-)(?<!KS-)(?<!VS-)(?<!čj-)(\d{6,16}/\d{4})\b',
     re.IGNORECASE
 )
 
@@ -413,8 +414,8 @@ IP_RE = re.compile(
 # DŮLEŽITÉ: IBAN se zpracovává PŘED tímto regexem!
 CARD_RE = re.compile(
     r'(?:'
-    # S prefixem: "Karta 1:", "Platební karta:", "Číslo karty:", etc.
-    r'(?:Platební\s+)?(?:Karta|Card)(?:\s+\d+)?(?:\s+Number)?\s*[:\-=]?\s*'
+    # S prefixem: "Číslo karty:", "Karta 1:", "Platební karta:", "Card Number:", etc.
+    r'(?:Číslo\s+(?:platební\s+)?karty|(?:Platební\s+)?(?:Karta|Card)(?:\s+\d+)?(?:\s+Number)?)\s*[:\-=]?\s*'
     r'('
     r'\d{4}[\s\-]?\d{6}[\s\-]?\d{5}|'  # AmEx: 4-6-5 (15 číslic)
     r'\d{4}[\s\-]?\d{4}[\s\-]?\d{4}[\s\-]?\d{4}(?:[\s\-]?\d{2,3})?|'  # Visa/MC: 16-19
@@ -828,9 +829,10 @@ class Anonymizer:
 
         # 19.5. CLEANUP biometrických identifikátorů - odstraň [[PHONE_*]] z bio prefixů
         # "IRIS_SCAN_PD_[[PHONE_10]]" → "IRIS_SCAN_PD_10"
+        # "VOICE_RK_[[PHONE_11]]" → "VOICE_RK_11"
         text = re.sub(
-            r'(IRIS_SCAN|VOICE_RK|HASH_BIO|FINGERPRINT|FACIAL|RETINA|PALM|DNA)_([A-Z0-9_]+)\[\[PHONE_\d+\]\]',
-            r'\1_\2',
+            r'(IRIS_SCAN|VOICE_RK|HASH_BIO|FINGERPRINT|FACIAL|RETINA|PALM|DNA)_([A-Z0-9_]*)\[\[PHONE_(\d+)\]\]',
+            r'\1_\2\3',
             text
         )
 
