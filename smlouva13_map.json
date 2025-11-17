@@ -1,0 +1,1495 @@
+{
+  "version": "1.0",
+  "generated_at": "2025-11-17T20:02:00.025649",
+  "source_file": "smlouva13.docx",
+  "entities": [
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Martin Svoboda",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Jana Nováková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Petr Dvořák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Pavel Horák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Lucie Procházková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Tomáš Černý",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_7]]",
+      "original": "Petra Černá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_8]]",
+      "original": "Milan Novotný",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_9]]",
+      "original": "Karolína Svobodová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_10]]",
+      "original": "Jan Dvořák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_11]]",
+      "original": "Robert Kovář",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_12]]",
+      "original": "Eva Málková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_13]]",
+      "original": "Petr Svoboda",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_14]]",
+      "original": "Alena Svobodová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_15]]",
+      "original": "Eliška Svobodová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_16]]",
+      "original": "Jakub Svoboda",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_17]]",
+      "original": "Martina Horáková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_18]]",
+      "original": "Tomáš Veselý",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_19]]",
+      "original": "Jana Málková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_20]]",
+      "original": "Hana Nová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_21]]",
+      "original": "Michaela Kratochvílová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_22]]",
+      "original": "David Procházek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_23]]",
+      "original": "Michal Horák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_24]]",
+      "original": "Lenka Veselá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_25]]",
+      "original": "Kateřina Dvořáková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_26]]",
+      "original": "Ondřej Novák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_27]]",
+      "original": "Karel Procházek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_28]]",
+      "original": "Eva Svobodová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_29]]",
+      "original": "Martina Krajíčková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_30]]",
+      "original": "Hana Dvořáková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_31]]",
+      "original": "Jan Malý",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_32]]",
+      "original": "Petra Veselá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_33]]",
+      "original": "Pavel Novák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_34]]",
+      "original": "Milan Kratochvíl",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_35]]",
+      "original": "Robert Svoboda",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_1]]",
+      "original": "09876543",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_2]]",
+      "original": "12345678",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_3]]",
+      "original": "20237089",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_4]]",
+      "original": "87654321",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_5]]",
+      "original": "23456789",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_6]]",
+      "original": "28897696",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_7]]",
+      "original": "78945612",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_8]]",
+      "original": "65432198",
+      "occurrences": 1
+    },
+    {
+      "type": "DIC",
+      "label": "[[DIC_1]]",
+      "original": "CZ09876543",
+      "occurrences": 1
+    },
+    {
+      "type": "DIC",
+      "label": "[[DIC_2]]",
+      "original": "CZ12345678",
+      "occurrences": 1
+    },
+    {
+      "type": "DIC",
+      "label": "[[DIC_3]]",
+      "original": "CZ87654321",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Vinohradská 1234/89, 130 00 Praha 3",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Lékařská 567/12, 150 00 Praha 5",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "Růžová 234/8, 160 00 Praha 6",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "Dlouhá 67/9, 110 00 Praha 1",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "Zahradní 45/12, 140 00 Praha 4",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_6]]",
+      "original": "Slunečná 789/34, 252 00 Říčany",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_7]]",
+      "original": "Mánesova 123/45, 120 00 Praha 2",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_8]]",
+      "original": "Polská 78/3, 120 00 Praha 2",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_9]]",
+      "original": "Anglická 45/12, 120 00 Praha 2",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_1]]",
+      "original": "12.08.1985",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_2]]",
+      "original": "25.03.1978",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_3]]",
+      "original": "05.11.1967",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_4]]",
+      "original": "18.07.1989",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_5]]",
+      "original": "22.04.1985",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_6]]",
+      "original": "15.09.1987",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_7]]",
+      "original": "15.12.1980",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_8]]",
+      "original": "30.06.1975",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_9]]",
+      "original": "08.03.1972",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_10]]",
+      "original": "12.11.1974",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_11]]",
+      "original": "15.06.2005",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_12]]",
+      "original": "22.09.2008",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_13]]",
+      "original": "28.02.1988",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_1]]",
+      "original": "123456789",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_2]]",
+      "original": "987654321",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_3]]",
+      "original": "456789123",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_4]]",
+      "original": "789123456",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_1]]",
+      "original": "***REDACTED_1***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_2]]",
+      "original": "***REDACTED_2***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_3]]",
+      "original": "***REDACTED_3***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_4]]",
+      "original": "***REDACTED_4***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_5]]",
+      "original": "***REDACTED_5***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_6]]",
+      "original": "***REDACTED_6***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_7]]",
+      "original": "***REDACTED_7***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_8]]",
+      "original": "***REDACTED_8***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_9]]",
+      "original": "***REDACTED_9***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_10]]",
+      "original": "***REDACTED_10***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_11]]",
+      "original": "***REDACTED_11***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_12]]",
+      "original": "***REDACTED_12***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_13]]",
+      "original": "***REDACTED_13***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_14]]",
+      "original": "***REDACTED_14***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_15]]",
+      "original": "***REDACTED_15***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_16]]",
+      "original": "***REDACTED_16***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_17]]",
+      "original": "***REDACTED_17***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_18]]",
+      "original": "***REDACTED_18***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_19]]",
+      "original": "***REDACTED_19***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_20]]",
+      "original": "***REDACTED_20***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_21]]",
+      "original": "***REDACTED_21***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_22]]",
+      "original": "***REDACTED_22***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_23]]",
+      "original": "***REDACTED_23***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_24]]",
+      "original": "***REDACTED_24***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_25]]",
+      "original": "***REDACTED_25***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_26]]",
+      "original": "***REDACTED_26***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_27]]",
+      "original": "***REDACTED_27***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_28]]",
+      "original": "***REDACTED_28***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_29]]",
+      "original": "***REDACTED_29***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_30]]",
+      "original": "***REDACTED_30***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_31]]",
+      "original": "***REDACTED_31***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_32]]",
+      "original": "***REDACTED_32***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_33]]",
+      "original": "***REDACTED_33***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_34]]",
+      "original": "***REDACTED_34***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_35]]",
+      "original": "***REDACTED_35***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_36]]",
+      "original": "***REDACTED_36***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_37]]",
+      "original": "***REDACTED_37***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_38]]",
+      "original": "***REDACTED_38***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_39]]",
+      "original": "***REDACTED_39***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_40]]",
+      "original": "***REDACTED_40***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_41]]",
+      "original": "***REDACTED_41***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_42]]",
+      "original": "***REDACTED_42***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_43]]",
+      "original": "***REDACTED_43***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_44]]",
+      "original": "***REDACTED_44***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_45]]",
+      "original": "***REDACTED_45***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_46]]",
+      "original": "***REDACTED_46***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_47]]",
+      "original": "***REDACTED_47***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_48]]",
+      "original": "***REDACTED_48***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_49]]",
+      "original": "***REDACTED_49***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_50]]",
+      "original": "***REDACTED_50***",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_51]]",
+      "original": "***REDACTED_51***",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_1]]",
+      "original": "martin.svoboda@nixminds.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_2]]",
+      "original": "j.novakova@medicareplus.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_3]]",
+      "original": "petr.dvorak@email.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_4]]",
+      "original": "l.prochazkova@seznam.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_5]]",
+      "original": "tomas.cerny@gmail.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_6]]",
+      "original": "p.cerna@centrum.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_7]]",
+      "original": "k.svobodova@techsolutions.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_8]]",
+      "original": "j.dvorak@techsolutions.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_9]]",
+      "original": "r.kovar@psycholog-private.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_10]]",
+      "original": "petr.svoboda.law@gmail.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_11]]",
+      "original": "a.svobodova.md@centrum.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_12]]",
+      "original": "jana.malkova@email.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_13]]",
+      "original": "m.horak@medicareplus.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_14]]",
+      "original": "l.vesela@medicareplus.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_15]]",
+      "original": "k.dvorakova@nixminds.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_16]]",
+      "original": "o.novak@nixminds.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_17]]",
+      "original": "k.prochazka@medicareplus.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_18]]",
+      "original": "e.svobodova@medicareplus.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_19]]",
+      "original": "m.krajickova@gdpr-audit.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_20]]",
+      "original": "p.horak.md@medicareplus.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_21]]",
+      "original": "m.novotny@techsolutions.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_1]]",
+      "original": "+420 724 567 890",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_2]]",
+      "original": "+420 777 123 456",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_3]]",
+      "original": "+420 605 789 123",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_4]]",
+      "original": "+420 733 456 789",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_5]]",
+      "original": "+420 606 234 567",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_6]]",
+      "original": "+420 777 654 321",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_7]]",
+      "original": "+420 734 567 890",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_8]]",
+      "original": "+420 605 111 222",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_9]]",
+      "original": "+420 606 333 444",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_10]]",
+      "original": "789456123",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_11]]",
+      "original": "123789456",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_12]]",
+      "original": "+420 602 789 456",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_13]]",
+      "original": "+420 725 678 901",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_14]]",
+      "original": "+420 736 789 012",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_15]]",
+      "original": "+420 776 234 567",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_16]]",
+      "original": "+420 737 890 123",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_17]]",
+      "original": "+420 603 456 789",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_18]]",
+      "original": "777 888 999",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_1]]",
+      "original": "***REDACTED_1***",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_2]]",
+      "original": "***REDACTED_2***",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_3]]",
+      "original": "***REDACTED_3***",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_4]]",
+      "original": "***REDACTED_4***",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_1]]",
+      "original": "6711051823",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_2]]",
+      "original": "7506302314",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_1]]",
+      "original": "487 350",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_2]]",
+      "original": "412 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_3]]",
+      "original": "74 850",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_4]]",
+      "original": "3 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_5]]",
+      "original": "274 750",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_6]]",
+      "original": "150 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_7]]",
+      "original": "182 448",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_8]]",
+      "original": "5 240 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_9]]",
+      "original": "31 847",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_10]]",
+      "original": "7 100 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_11]]",
+      "original": "78 450",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_12]]",
+      "original": "64 200",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_13]]",
+      "original": "1 711 800",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_14]]",
+      "original": "247 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_15]]",
+      "original": "7 890",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_16]]",
+      "original": "23 450",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_17]]",
+      "original": "12 450 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_18]]",
+      "original": "2 890 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_19]]",
+      "original": "1 740 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_20]]",
+      "original": "95 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_21]]",
+      "original": "78 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_22]]",
+      "original": "35 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_23]]",
+      "original": "330 600",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_24]]",
+      "original": "1 567 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_25]]",
+      "original": "894 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_26]]",
+      "original": "387 200",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_27]]",
+      "original": "127 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_28]]",
+      "original": "25 400",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_29]]",
+      "original": "287 600",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_30]]",
+      "original": "1 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_31]]",
+      "original": "2 500 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_32]]",
+      "original": "2 340",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_33]]",
+      "original": "9 800 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_34]]",
+      "original": "2 300 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_35]]",
+      "original": "7 500 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_36]]",
+      "original": "3 200 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_37]]",
+      "original": "487 650",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_38]]",
+      "original": "1 234 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_39]]",
+      "original": "876 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_40]]",
+      "original": "567 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_41]]",
+      "original": "892 300",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_42]]",
+      "original": "780 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_43]]",
+      "original": "320 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_44]]",
+      "original": "15 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_45]]",
+      "original": "72 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_46]]",
+      "original": "576 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_47]]",
+      "original": "350 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_48]]",
+      "original": "98 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_49]]",
+      "original": "1 024 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_50]]",
+      "original": "2 847 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_51]]",
+      "original": "597 975",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_52]]",
+      "original": "3 445 475",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_53]]",
+      "original": "1 033 643",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_54]]",
+      "original": "1 205 916",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_55]]",
+      "original": "500 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_56]]",
+      "original": "2 000 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_57]]",
+      "original": "10 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_58]]",
+      "original": "10 000 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_59]]",
+      "original": "8 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_60]]",
+      "original": "102 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_61]]",
+      "original": "234 500",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_62]]",
+      "original": "456 700",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_63]]",
+      "original": "287 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_64]]",
+      "original": "4 567 890",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_65]]",
+      "original": "868 899",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_1]]",
+      "original": "***REDACTED_1***",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_2]]",
+      "original": "***REDACTED_2***",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_3]]",
+      "original": "***REDACTED_3***",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_4]]",
+      "original": "***REDACTED_4***",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_5]]",
+      "original": "***REDACTED_5***",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_1]]",
+      "original": "admin_medicare_2024",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_2]]",
+      "original": "medicare_admin",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_3]]",
+      "original": "backup_user",
+      "occurrences": 1
+    },
+    {
+      "type": "PASSWORD",
+      "label": "[[PASSWORD_1]]",
+      "original": "***REDACTED_1***",
+      "occurrences": 1
+    },
+    {
+      "type": "PASSWORD",
+      "label": "[[PASSWORD_2]]",
+      "original": "***REDACTED_2***",
+      "occurrences": 1
+    },
+    {
+      "type": "PASSWORD",
+      "label": "[[PASSWORD_3]]",
+      "original": "***REDACTED_3***",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_1]]",
+      "original": "185.47.234.89",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_2]]",
+      "original": "213.168.45.12",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_3]]",
+      "original": "192.168.100.45",
+      "occurrences": 1
+    },
+    {
+      "type": "HOST",
+      "label": "[[HOST_1]]",
+      "original": "db-prod-01.medicareplus.cz",
+      "occurrences": 1
+    }
+  ]
+}
