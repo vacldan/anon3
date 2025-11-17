@@ -292,8 +292,13 @@ DIC_RE = re.compile(
 )
 
 # Rodné číslo (6 číslic / 3-4 číslice)
+# DŮLEŽITÉ: Musí mít kontext (RČ, Rodné číslo, nar.) nebo negativní lookahead pro spisové značky
 BIRTH_ID_RE = re.compile(
-    r'\b(\d{6}/\d{3,4})\b'
+    r'(?:'
+    r'(?:RČ|Rodné\s+číslo|nar\.|Narození)\s*:?\s*(\d{6}/\d{3,4})|'  # S kontextem
+    r'(?<!FÚ-)(?<!KS-)(?<!VS-)(\d{6}/\d{3,4})'  # Bez kontextu, ale ne po FÚ-/KS-/VS-
+    r')',
+    re.IGNORECASE
 )
 
 # Číslo OP (formát: AB 123456 nebo OP: 123456789)
@@ -313,7 +318,11 @@ EMAIL_RE = re.compile(
 
 # Telefon (CZ formáty) - NESMÍ zachytit prefix do hodnoty!
 # Prefix je mimo capture group, telefon je uvnitř
+# DŮLEŽITÉ: Whitelist - NEchytej biometrické/technické prefixy!
 PHONE_RE = re.compile(
+    r'(?!'  # Negative lookahead - NEchytej pokud předchází:
+    r'(?:IRIS_SCAN|VOICE_RK|HASH_BIO|FINGERPRINT|FACIAL_|RETINA_|PALM_|DNA_)_[A-Z0-9_]*'
+    r')'
     r'(?:tel\.?|telefon|mobil|GSM)?\s*:?\s*'  # Volitelný prefix (MIMO capture group!)
     r'('  # START capture group - jen samotné číslo
     r'\+420\s?\d{3}\s?\d{3}\s?\d{3}|'  # +420 xxx xxx xxx
@@ -353,6 +362,12 @@ DATE_WORDS_RE = re.compile(
 # Hesla a credentials (KRITICKÉ - hodnotu neukládat!)
 PASSWORD_RE = re.compile(
     r'(?:password|heslo|passwd|pwd|pass)\s*[:\-=]\s*([^\s,;\.]{3,50})',
+    re.IGNORECASE
+)
+
+# Credentials pattern - "Credentials: username / password"
+CREDENTIALS_RE = re.compile(
+    r'(?i)\b(credentials?|login|přihlašovací\s+údaje)\s*:\s*([A-Za-z0-9._\-@]+)\s*/\s*(\S+)',
     re.IGNORECASE
 )
 
@@ -662,7 +677,16 @@ class Anonymizer:
         # DŮLEŽITÉ: Pořadí je klíčové! Od nejvíce specifických po nejméně specifické
         # KRITICKÉ: Credentials (hesla, API klíče) PRVNÍ s store_value=False!
 
-        # 1. HESLA (KRITICKÉ - hodnotu neukládat!)
+        # 1. CREDENTIALS (username / password) - NEJPRVE!
+        def replace_credentials(match):
+            username = match.group(2)
+            password = match.group(3)
+            username_tag = self._get_or_create_label('USERNAME', username)
+            password_tag = self._get_or_create_label('PASSWORD', password, store_value=False)
+            return f"{match.group(1)}: {username_tag} / {password_tag}"
+        text = CREDENTIALS_RE.sub(replace_credentials, text)
+
+        # 2. HESLA (KRITICKÉ - hodnotu neukládat!)
         def replace_password(match):
             return self._get_or_create_label('PASSWORD', match.group(1), store_value=False)
         text = PASSWORD_RE.sub(replace_password, text)
@@ -723,34 +747,37 @@ class Anonymizer:
             return self._get_or_create_label('RFID', match.group(1))
         text = RFID_RE.sub(replace_rfid, text)
 
-        # 9. TELEFONY (KRITICKÉ: MUSÍ být PŘED částkami! Jinak "Telefon: +420 xxx" → AMOUNT)
-        def replace_phone(match):
-            # PHONE_RE má capture group (1) pro samotné číslo (bez prefixu!)
-            return self._get_or_create_label('PHONE', match.group(1))
-        text = PHONE_RE.sub(replace_phone, text)
-
-        # 10. ADRESY (před jmény, aby "Novákova 45" nebylo osobou)
+        # 9. ADRESY (před jmény, aby "Novákova 45" nebylo osobou)
         def replace_address(match):
             return self._get_or_create_label('ADDRESS', match.group(0))
         text = ADDRESS_RE.sub(replace_address, text)
 
-        # 11. EMAILY (před telefony, protože obsahují čísla)
+        # 10. EMAILY (před ostatními, protože obsahují speciální znaky)
         def replace_email(match):
             return self._get_or_create_label('EMAIL', match.group(1))
         text = EMAIL_RE.sub(replace_email, text)
 
-        # 12. RODNÁ ČÍSLA (před čísly OP a telefony)
+        # 11. RODNÁ ČÍSLA (před čísly OP a telefony)
         def replace_birth_id(match):
-            return self._get_or_create_label('BIRTH_ID', match.group(1))
+            birth_id = match.group(1) if match.group(1) else match.group(2)
+            if birth_id:
+                return self._get_or_create_label('BIRTH_ID', birth_id)
+            return match.group(0)
         text = BIRTH_ID_RE.sub(replace_birth_id, text)
 
-        # 13. ČÍSLA OP (před telefony!)
+        # 12. ČÍSLA OP (KRITICKÉ: MUSÍ být PŘED telefony!)
         def replace_id_card(match):
             id_card = match.group(1) if match.group(1) else match.group(2)
             if id_card:
                 return self._get_or_create_label('ID_CARD', id_card)
             return match.group(0)
         text = ID_CARD_RE.sub(replace_id_card, text)
+
+        # 13. TELEFONY (po ID_CARD, ale PŘED částkami!)
+        def replace_phone(match):
+            # PHONE_RE má capture group (1) pro samotné číslo (bez prefixu!)
+            return self._get_or_create_label('PHONE', match.group(1))
+        text = PHONE_RE.sub(replace_phone, text)
 
         # 14. BANKOVNÍ ÚČTY (před telefony!)
         def replace_bank(match):
@@ -794,13 +821,55 @@ class Anonymizer:
             return match.group(0)
         text = AMOUNT_RE.sub(replace_amount, text)
 
-        # 19. END-SCAN - finální kontrola citlivých dat (chytá zbytky nalepené na ]])
+        # 19. MASKOVÁNÍ CVV/EXPIRACE u karet
+        # Nahradí "CVV: 123" → "CVV: ***" a "exp: 12/26" → "exp: **/**"
+        text = re.sub(r'(CVV|CVC)\s*:\s*\d{3,4}', r'\1: ***', text, flags=re.IGNORECASE)
+        text = re.sub(r'exp(?:\.|\s+|iration)?\s*:?\s*\d{2}/\d{2,4}', r'exp: **/**', text, flags=re.IGNORECASE)
+
+        # 19.5. CLEANUP biometrických identifikátorů - odstraň [[PHONE_*]] z bio prefixů
+        # "IRIS_SCAN_PD_[[PHONE_10]]" → "IRIS_SCAN_PD_10"
+        text = re.sub(
+            r'(IRIS_SCAN|VOICE_RK|HASH_BIO|FINGERPRINT|FACIAL|RETINA|PALM|DNA)_([A-Z0-9_]+)\[\[PHONE_\d+\]\]',
+            r'\1_\2',
+            text
+        )
+
+        # 20. END-SCAN - finální kontrola citlivých dat (chytá zbytky nalepené na ]])
         text = self._end_scan(text)
 
         return text
 
+    def _luhn_check(self, card_number: str) -> bool:
+        """Validace Luhn algoritmem pro platební karty."""
+        digits = [int(d) for d in card_number if d.isdigit()]
+        if len(digits) < 13 or len(digits) > 19:
+            return False
+
+        checksum = 0
+        for i, digit in enumerate(reversed(digits)):
+            if i % 2 == 1:
+                digit *= 2
+                if digit > 9:
+                    digit -= 9
+            checksum += digit
+
+        return checksum % 10 == 0
+
     def _end_scan(self, text: str) -> str:
         """Finální sken po všech náhradách - chytá případné zbytky citlivých dat."""
+
+        # LUHN END-SCAN - zachytí všechny Luhn-validní karty (13-19 číslic)
+        luhn_pattern = re.compile(r'\b(\d[\s\-]?){12,18}\d\b')
+        def final_luhn_card(match):
+            candidate = match.group(0)
+            # Přeskoč pokud už je v [[CARD_*]]
+            if '[[CARD_' in text[max(0, match.start()-10):match.end()+10]:
+                return match.group(0)
+            # Validuj Luhn
+            if self._luhn_check(candidate):
+                return self._get_or_create_label('CARD', candidate, store_value=False)
+            return match.group(0)
+        text = luhn_pattern.sub(final_luhn_card, text)
 
         # IBAN (pokud unikl)
         def final_iban(match):

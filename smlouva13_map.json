@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-16T23:57:04.646746",
+  "generated_at": "2025-11-17T00:12:43.355761",
   "source_file": "smlouva13.docx",
   "entities": [
     {
@@ -334,135 +334,27 @@
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_1]]",
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_1]]",
       "original": "123456789",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_2]]",
-      "original": "+420 724 567 890",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_3]]",
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_2]]",
       "original": "987654321",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_4]]",
-      "original": "+420 777 123 456",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_5]]",
-      "original": "+420 605 789 123",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_6]]",
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_3]]",
       "original": "456789123",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "+420 733 456 789",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_8]]",
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_4]]",
       "original": "789123456",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_9]]",
-      "original": "+420 606 234 567",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_10]]",
-      "original": "+420 777 654 321",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_11]]",
-      "original": "+420 734 567 890",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_12]]",
-      "original": "+420 605 111 222",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_13]]",
-      "original": "+420 606 333 444",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_14]]",
-      "original": "789456123",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_15]]",
-      "original": "123789456",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_16]]",
-      "original": "+420 602 789 456",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_17]]",
-      "original": "+420 725 678 901",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_18]]",
-      "original": "+420 736 789 012",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_19]]",
-      "original": "+420 776 234 567",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_20]]",
-      "original": "+420 737 890 123",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_21]]",
-      "original": "+420 603 456 789",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_22]]",
-      "original": "777 888 999",
       "occurrences": 1
     },
     {
@@ -474,193 +366,313 @@
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_2]]",
-      "original": "785325/6789",
+      "original": "563921/0800",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_3]]",
-      "original": "671105/1823",
+      "original": "785325/6789",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_4]]",
-      "original": "895718/3421",
+      "original": "567890/0100",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_5]]",
-      "original": "850422/2145",
+      "original": "671105/1823",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_6]]",
-      "original": "875915/7823",
+      "original": "374650/2700",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_7]]",
-      "original": "801215/3456",
+      "original": "895718/3421",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_8]]",
-      "original": "875610/4562",
+      "original": "789432/0800",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_9]]",
-      "original": "900123/1234",
+      "original": "543210/2700",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_10]]",
-      "original": "123456/2024",
+      "original": "901234/0600",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_11]]",
-      "original": "750630/2314",
+      "original": "850422/2145",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_12]]",
-      "original": "720308/1245",
+      "original": "875915/7823",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_13]]",
-      "original": "745112/6789",
+      "original": "776655/0100",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_14]]",
-      "original": "055615/4523",
+      "original": "801215/3456",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_15]]",
-      "original": "080922/3412",
+      "original": "567890/5500",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_16]]",
-      "original": "885228/7634",
+      "original": "543210/0800",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_17]]",
-      "original": "780915/2314",
+      "original": "891230/5500",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_18]]",
-      "original": "681210/5634",
+      "original": "875610/4562",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_19]]",
-      "original": "905212/6745",
+      "original": "900123/1234",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_20]]",
-      "original": "870830/1923",
+      "original": "750630/2314",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_21]]",
-      "original": "820615/3421",
+      "original": "889900/5500",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_22]]",
-      "original": "910523/7812",
+      "original": "720308/1245",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_23]]",
-      "original": "870923/6745",
+      "original": "745112/6789",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_24]]",
-      "original": "920312/2134",
+      "original": "055615/4523",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_25]]",
-      "original": "751008/1823",
+      "original": "080922/3412",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_26]]",
-      "original": "880714/5623",
+      "original": "334455/0100",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_27]]",
-      "original": "781125/6789",
+      "original": "332211/0100",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_28]]",
-      "original": "705523/4512",
+      "original": "776655/2700",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_29]]",
-      "original": "830507/1234",
+      "original": "556677/0100",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_30]]",
-      "original": "890823/6745",
+      "original": "885228/7634",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_31]]",
-      "original": "760312/2314",
+      "original": "780915/2314",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_32]]",
-      "original": "740825/1923",
+      "original": "681210/5634",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_33]]",
+      "original": "990011/5500",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_34]]",
+      "original": "905212/6745",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_35]]",
+      "original": "870830/1923",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_36]]",
+      "original": "820615/3421",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_37]]",
+      "original": "910523/7812",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_38]]",
+      "original": "870923/6745",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_39]]",
+      "original": "667788/2700",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_40]]",
+      "original": "920312/2134",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_41]]",
+      "original": "751008/1823",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_42]]",
+      "original": "880714/5623",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_43]]",
+      "original": "781125/6789",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_44]]",
+      "original": "001122/0600",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_45]]",
+      "original": "705523/4512",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_46]]",
+      "original": "567890/0800",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_47]]",
+      "original": "543210/5500",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_48]]",
+      "original": "830507/1234",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_49]]",
+      "original": "890823/6745",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_50]]",
+      "original": "760312/2314",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_51]]",
+      "original": "740825/1923",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_52]]",
       "original": "770615/2314",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_53]]",
+      "original": "371319/0710",
       "occurrences": 1
     },
     {
@@ -790,129 +802,111 @@
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_1]]",
-      "original": "2847563921/0800",
+      "type": "PHONE",
+      "label": "[[PHONE_1]]",
+      "original": "+420 724 567 890",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_2]]",
-      "original": "1234567890/0100",
+      "type": "PHONE",
+      "label": "[[PHONE_2]]",
+      "original": "+420 777 123 456",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_3]]",
-      "original": "1928374650/2700",
+      "type": "PHONE",
+      "label": "[[PHONE_3]]",
+      "original": "+420 605 789 123",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_4]]",
-      "original": "2156789432/0800",
+      "type": "PHONE",
+      "label": "[[PHONE_4]]",
+      "original": "+420 733 456 789",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_5]]",
-      "original": "9876543210/2700",
+      "type": "PHONE",
+      "label": "[[PHONE_5]]",
+      "original": "+420 606 234 567",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_6]]",
-      "original": "5678901234/0600",
+      "type": "PHONE",
+      "label": "[[PHONE_6]]",
+      "original": "+420 777 654 321",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_7]]",
-      "original": "9988776655/0100",
+      "type": "PHONE",
+      "label": "[[PHONE_7]]",
+      "original": "+420 734 567 890",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_8]]",
-      "original": "1234567890/5500",
+      "type": "PHONE",
+      "label": "[[PHONE_8]]",
+      "original": "+420 605 111 222",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_9]]",
-      "original": "9876543210/0800",
+      "type": "PHONE",
+      "label": "[[PHONE_9]]",
+      "original": "+420 606 333 444",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_10]]",
-      "original": "4567891230/5500",
+      "type": "PHONE",
+      "label": "[[PHONE_10]]",
+      "original": "789456123",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_11]]",
-      "original": "6677889900/5500",
+      "type": "PHONE",
+      "label": "[[PHONE_11]]",
+      "original": "123789456",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_12]]",
-      "original": "1122334455/0100",
+      "type": "PHONE",
+      "label": "[[PHONE_12]]",
+      "original": "+420 602 789 456",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_13]]",
-      "original": "5544332211/0100",
+      "type": "PHONE",
+      "label": "[[PHONE_13]]",
+      "original": "+420 725 678 901",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_14]]",
-      "original": "9988776655/2700",
+      "type": "PHONE",
+      "label": "[[PHONE_14]]",
+      "original": "+420 736 789 012",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_15]]",
-      "original": "3344556677/0100",
+      "type": "PHONE",
+      "label": "[[PHONE_15]]",
+      "original": "+420 776 234 567",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_16]]",
-      "original": "7788990011/5500",
+      "type": "PHONE",
+      "label": "[[PHONE_16]]",
+      "original": "+420 737 890 123",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_17]]",
-      "original": "4455667788/2700",
+      "type": "PHONE",
+      "label": "[[PHONE_17]]",
+      "original": "+420 603 456 789",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_18]]",
-      "original": "8899001122/0600",
-      "occurrences": 1
-    },
-    {
-      "type": "BANK",
-      "label": "[[BANK_19]]",
-      "original": "1234567890/0800",
-      "occurrences": 1
-    },
-    {
-      "type": "BANK",
-      "label": "[[BANK_20]]",
-      "original": "9876543210/5500",
-      "occurrences": 1
-    },
-    {
-      "type": "BANK",
-      "label": "[[BANK_21]]",
-      "original": "1717371319/0710",
+      "type": "PHONE",
+      "label": "[[PHONE_18]]",
+      "original": "777 888 999",
       "occurrences": 1
     },
     {
@@ -1366,6 +1360,12 @@
       "occurrences": 1
     },
     {
+      "type": "BANK",
+      "label": "[[BANK_1]]",
+      "original": "123456/2024",
+      "occurrences": 1
+    },
+    {
       "type": "USERNAME",
       "label": "[[USERNAME_1]]",
       "original": "admin_medicare_2024",
@@ -1378,6 +1378,12 @@
       "occurrences": 1
     },
     {
+      "type": "USERNAME",
+      "label": "[[USERNAME_3]]",
+      "original": "backup_user",
+      "occurrences": 1
+    },
+    {
       "type": "PASSWORD",
       "label": "[[PASSWORD_1]]",
       "original": "***REDACTED_1***",
@@ -1387,6 +1393,12 @@
       "type": "PASSWORD",
       "label": "[[PASSWORD_2]]",
       "original": "***REDACTED_2***",
+      "occurrences": 1
+    },
+    {
+      "type": "PASSWORD",
+      "label": "[[PASSWORD_3]]",
+      "original": "***REDACTED_3***",
       "occurrences": 1
     },
     {
