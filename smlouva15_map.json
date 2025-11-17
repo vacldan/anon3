@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-17T20:38:48.007503",
+  "generated_at": "2025-11-17T22:20:10.408274",
   "source_file": "smlouva15.docx",
   "entities": [
     {
@@ -366,7 +366,7 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Trvalý pobyt: Slezská 45/9, 130 00 Praha 3",
+      "original": "Slezská 45/9, 130 00 Praha 3",
       "occurrences": 1
     },
     {
@@ -462,42 +462,30 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_18]]",
-      "original": "Trvalý pobyt: Husova 123/45, 602 00 Brno",
+      "original": "Husova 123/45, 602 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_19]]",
-      "original": "Trvalý pobyt: Vodní 67/8, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_20]]",
-      "original": "Trvalý pobyt: Purkyňova 234/56, 612 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_21]]",
       "original": "Vodní 67/8, 602 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_22]]",
+      "label": "[[ADDRESS_20]]",
       "original": "Purkyňova 234/56, 612 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_23]]",
+      "label": "[[ADDRESS_21]]",
       "original": "Wenceslas Square 89/23, 110 00 Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_24]]",
+      "label": "[[ADDRESS_22]]",
       "original": "Vinohradská 1234/89, 130 00 Praha 3",
       "occurrences": 1
     },
@@ -906,85 +894,73 @@
     {
       "type": "PHONE",
       "label": "[[PHONE_25]]",
-      "original": "202403089",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_26]]",
       "original": "+420 603 789 012",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_27]]",
+      "label": "[[PHONE_26]]",
       "original": "+420 541 234 567",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_28]]",
+      "label": "[[PHONE_27]]",
       "original": "+420 605 678 901",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_29]]",
+      "label": "[[PHONE_28]]",
       "original": "+420 603 123 456",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_30]]",
+      "label": "[[PHONE_29]]",
       "original": "+420 777 890 123",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_31]]",
+      "label": "[[PHONE_30]]",
       "original": "+420 541 678 901",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_32]]",
+      "label": "[[PHONE_31]]",
       "original": "+420 541 234 600",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_33]]",
+      "label": "[[PHONE_32]]",
       "original": "+420 724 567 890",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_34]]",
+      "label": "[[PHONE_33]]",
       "original": "+420 224 433 111",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_35]]",
+      "label": "[[PHONE_34]]",
       "original": "+420 261 363 111",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_36]]",
+      "label": "[[PHONE_35]]",
       "original": "+420 543 136 111",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_37]]",
+      "label": "[[PHONE_36]]",
       "original": "+420 221 710 111",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_38]]",
-      "original": "125 000 000",
       "occurrences": 1
     },
     {
@@ -2004,12 +1980,18 @@
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_85]]",
-      "original": "5 000 000",
+      "original": "125 000 000",
       "occurrences": 1
     },
     {
       "type": "AMOUNT",
       "label": "[[AMOUNT_86]]",
+      "original": "5 000 000",
+      "occurrences": 1
+    },
+    {
+      "type": "AMOUNT",
+      "label": "[[AMOUNT_87]]",
       "original": "20 000 000",
       "occurrences": 1
     },
@@ -2329,6 +2311,12 @@
       "type": "HOST",
       "label": "[[HOST_2]]",
       "original": "sftp.backup.cloudmed.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "VARIABLE_SYMBOL",
+      "label": "[[VARIABLE_SYMBOL_1]]",
+      "original": "202403089",
       "occurrences": 1
     },
     {

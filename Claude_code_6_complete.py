@@ -320,6 +320,7 @@ EMAIL_RE = re.compile(
 # Telefon (CZ formáty) - NESMÍ zachytit prefix do hodnoty!
 # Prefix je mimo capture group, telefon je uvnitř
 # DŮLEŽITÉ: Whitelist - NEchytej biometrické/technické prefixy!
+# DŮLEŽITÉ: NEchytej částky (čísla následovaná Kč, EUR, USD)
 PHONE_RE = re.compile(
     r'(?!'  # Negative lookahead - NEchytej pokud předchází:
     r'(?:IRIS_SCAN|VOICE_RK|HASH_BIO|FINGERPRINT|FACIAL_|RETINA_|PALM_|DNA_)_[A-Z0-9_]*'
@@ -328,7 +329,7 @@ PHONE_RE = re.compile(
     r'('  # START capture group - jen samotné číslo
     r'\+420\s?\d{3}\s?\d{3}\s?\d{3}|'  # +420 xxx xxx xxx
     r'\+420\s?\d{3}\s?\d{2}\s?\d{2}\s?\d{2}|'  # +420 xxx xx xx xx
-    r'(?<!\d)\d{3}\s?\d{3}\s?\d{3}(?!\d)|'  # xxx xxx xxx (bez okolních číslic)
+    r'(?<!\d)\d{3}\s?\d{3}\s?\d{3}(?!\s*(?:Kč|EUR|USD|CZK)\b)(?!\d)|'  # xxx xxx xxx (NE pokud následuje měna!)
     r'(?<!\d)\d{3}\s?\d{2}\s?\d{2}\s?\d{2}(?!\d)'  # xxx xx xx xx
     r')',  # END capture group
     re.IGNORECASE
@@ -488,6 +489,8 @@ class Anonymizer:
         self.counter = defaultdict(int)
         self.canonical_persons = OrderedDict()  # canonical -> label
         self.entity_map = defaultdict(lambda: defaultdict(set))  # typ -> original -> varianty
+        self.entity_index_cache = defaultdict(dict)  # OPTIMIZATION: typ -> original -> idx cache
+        self.entity_reverse_map = defaultdict(dict)  # OPTIMIZATION: typ -> variant -> original
 
     def _get_or_create_label(self, typ: str, original: str, store_value: bool = True) -> str:
         """Vrátí existující nebo vytvoří nový štítek pro entitu.
@@ -504,18 +507,12 @@ class Anonymizer:
         if typ == 'ADDRESS':
             orig_norm = re.sub(r'^(Sídlo|Trvalé\s+bydliště|Trvalý\s+pobyt|Bydliště|Adresa|Místo\s+podnikání|Se\s+sídlem|Bytem)\s*:\s*', '', orig_norm, flags=re.IGNORECASE)
 
-        # Pro citlivá data: kontrola duplicit podle skutečné hodnoty
-        if not store_value:
-            for existing_orig, variants in self.entity_map[typ].items():
-                if orig_norm in variants:
-                    existing_idx = list(self.entity_map[typ].keys()).index(existing_orig) + 1
-                    return f"[[{typ}_{existing_idx}]]"
-        else:
-            # Pro běžná data: standardní kontrola
-            for existing_orig, variants in self.entity_map[typ].items():
-                if orig_norm in variants or orig_norm == existing_orig:
-                    existing_idx = list(self.entity_map[typ].keys()).index(existing_orig) + 1
-                    return f"[[{typ}_{existing_idx}]]"
+        # OPTIMIZATION: Use reverse_map for O(1) lookup instead of O(n) iteration
+        # Check if this variant already exists
+        if orig_norm in self.entity_reverse_map[typ]:
+            existing_orig = self.entity_reverse_map[typ][orig_norm]
+            existing_idx = self.entity_index_cache[typ][existing_orig]
+            return f"[[{typ}_{existing_idx}]]"
 
         # Vytvoř nový
         idx = len(self.entity_map[typ]) + 1
@@ -529,6 +526,8 @@ class Anonymizer:
             map_key = f"***REDACTED_{idx}***"
 
         self.entity_map[typ][map_key].add(orig_norm)
+        self.entity_index_cache[typ][map_key] = idx  # Cache the index
+        self.entity_reverse_map[typ][orig_norm] = map_key  # Reverse lookup
         return f"[[{typ}_{idx}]]"
 
     def _apply_known_people(self, text: str) -> str:
@@ -1003,9 +1002,13 @@ class Anonymizer:
         print(f"\n🔍 Zpracovávám: {Path(input_path).name}")
 
         # Načti dokument
+        import time
+        start_time = time.time()
         doc = Document(input_path)
+        print(f"  [DEBUG] Document loaded in {time.time() - start_time:.1f}s")
 
         # Zpracuj všechny odstavce
+        start_time = time.time()
         for para in doc.paragraphs:
             if not para.text.strip():
                 continue
@@ -1025,6 +1028,8 @@ class Anonymizer:
             if text != original:
                 para.text = text
 
+        print(f"  [DEBUG] Paragraphs processed in {time.time() - start_time:.1f}s")
+
         # Zpracuj tabulky
         for table in doc.tables:
             for row in table.rows:
@@ -1042,37 +1047,34 @@ class Anonymizer:
                             para.text = text
 
         # Ulož dokument
+        start_time = time.time()
         doc.save(output_path)
+        print(f"  [DEBUG] Document saved in {time.time() - start_time:.1f}s")
 
-        # Vytvoř mapy
-        self._create_maps(json_map, txt_map, input_path)
+        # Vytvoř mapy (předej doc a path aby se nečetl znovu)
+        start_time = time.time()
+        self._create_maps(json_map, txt_map, input_path, doc)
+        print(f"  [DEBUG] Maps created in {time.time() - start_time:.1f}s")
 
         print(f"✅ Hotovo! Nalezeno {len(self.canonical_persons)} osob")
 
-    def _create_maps(self, json_path: str, txt_path: str, source_file: str):
+    def _create_maps(self, json_path: str, txt_path: str, source_file: str, doc=None):
         """Vytvoří JSON a TXT mapy náhrad."""
 
         # Cleanup nepoužitých tagů před vytvořením map
-        # Načti anonymizovaný dokument a zjisti které tagy jsou skutečně použity
-        doc = Document(txt_path.replace('_map.txt', '_anon.docx'))
+        # Použij předaný dokument nebo načti z disku
+        if doc is None:
+            from docx import Document
+            doc = Document(txt_path.replace('_map.txt', '_anon.docx'))
+
         anon_text = "\n".join([p.text for p in doc.paragraphs])
         for table in doc.tables:
             for row in table.rows:
                 for cell in row.cells:
                     anon_text += "\n".join([p.text for p in cell.paragraphs])
 
-        # Najdi všechny použité tagy
-        used_tags = set(re.findall(r'\[\[([A-Z_]+)_(\d+)\]\]', anon_text))
-
-        # Vyčisti entity_map - odstraň entity které nejsou v textu
-        cleaned_entity_map = defaultdict(lambda: defaultdict(set))
-        for typ, entities in self.entity_map.items():
-            for idx, (original, variants) in enumerate(entities.items(), 1):
-                # Kontrola zda tag je použit
-                if (typ, str(idx)) in used_tags:
-                    cleaned_entity_map[typ][original] = variants
-
-        self.entity_map = cleaned_entity_map
+        # SKIP cleanup - not needed in TEST MODE and causes issues with index mapping
+        # Všechny entity zůstanou v mapě i když nejsou použity v textu
 
         # JSON mapa
         json_data = {

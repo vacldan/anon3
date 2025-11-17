@@ -41,7 +41,21 @@ def audit_contract(contract_num):
     with open(map_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
         # Handle both old and new JSON formats
-        entity_map = data.get('entities', data) if isinstance(data, dict) and 'entities' in data else data
+        if isinstance(data, dict) and 'entities' in data:
+            # New format: list of entity objects
+            entities_list = data['entities']
+            # Convert to dict format for easier processing
+            entity_map = {}
+            for ent in entities_list:
+                typ = ent['type']
+                label = ent['label']
+                original = ent['original']
+                if typ not in entity_map:
+                    entity_map[typ] = {}
+                entity_map[typ][label] = original
+        else:
+            # Old format: already a dict
+            entity_map = data
 
     # Read anonymized text
     from docx import Document

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-17T21:02:20.559756",
+  "generated_at": "2025-11-17T22:12:44.157144",
   "source_file": "smlouva13.docx",
   "entities": [
     {
@@ -798,42 +798,54 @@
     {
       "type": "PHONE",
       "label": "[[PHONE_10]]",
-      "original": "+420 602 789 456",
+      "original": "789456123",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_11]]",
-      "original": "+420 725 678 901",
+      "original": "123789456",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_12]]",
-      "original": "+420 736 789 012",
+      "original": "+420 602 789 456",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_13]]",
-      "original": "+420 776 234 567",
+      "original": "+420 725 678 901",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_14]]",
-      "original": "+420 737 890 123",
+      "original": "+420 736 789 012",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_15]]",
-      "original": "+420 603 456 789",
+      "original": "+420 776 234 567",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_16]]",
+      "original": "+420 737 890 123",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_17]]",
+      "original": "+420 603 456 789",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_18]]",
       "original": "777 888 999",
       "occurrences": 1
     },
