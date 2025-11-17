@@ -479,7 +479,7 @@ class Anonymizer:
         Args:
             typ: Typ entity (PASSWORD, EMAIL, atd.)
             original: Původní hodnota
-            store_value: False pro citlivá data (hesla, API klíče) - uloží jen "***REDACTED***"
+            store_value: DEPRECATED - v TEST MODE vždy ukládáme plné hodnoty
         """
         # Normalizace
         orig_norm = original.strip()
@@ -488,29 +488,15 @@ class Anonymizer:
         if typ == 'ADDRESS':
             orig_norm = re.sub(r'^(Sídlo|Trvalé\s+bydliště|Bydliště|Adresa|Místo\s+podnikání)\s*:\s*', '', orig_norm, flags=re.IGNORECASE)
 
-        # Pro citlivá data: kontrola duplicit podle skutečné hodnoty
-        if not store_value:
-            for existing_orig, variants in self.entity_map[typ].items():
-                if orig_norm in variants:
-                    existing_idx = list(self.entity_map[typ].keys()).index(existing_orig) + 1
-                    return f"[[{typ}_{existing_idx}]]"
-        else:
-            # Pro běžná data: standardní kontrola
-            for existing_orig, variants in self.entity_map[typ].items():
-                if orig_norm in variants or orig_norm == existing_orig:
-                    existing_idx = list(self.entity_map[typ].keys()).index(existing_orig) + 1
-                    return f"[[{typ}_{existing_idx}]]"
+        # TEST MODE: vždy standardní kontrola (ukládáme plné hodnoty)
+        for existing_orig, variants in self.entity_map[typ].items():
+            if orig_norm in variants or orig_norm == existing_orig:
+                existing_idx = list(self.entity_map[typ].keys()).index(existing_orig) + 1
+                return f"[[{typ}_{existing_idx}]]"
 
-        # Vytvoř nový
+        # Vytvoř nový - TEST MODE: vždy ukládej plnou hodnotu
         idx = len(self.entity_map[typ]) + 1
-
-        # Pro citlivá data: unikátní placeholder pro každý item
-        # Pro běžná data: ukládej skutečnou hodnotu
-        if store_value:
-            map_key = orig_norm
-        else:
-            # Každý citlivý item má unikátní klíč, ale zobrazí se jako ***REDACTED***
-            map_key = f"***REDACTED_{idx}***"
+        map_key = orig_norm
 
         self.entity_map[typ][map_key].add(orig_norm)
         return f"[[{typ}_{idx}]]"
@@ -693,47 +679,47 @@ class Anonymizer:
         """Anonymizuje všechny entity (adresy, kontakty, IČO, atd.)."""
 
         # DŮLEŽITÉ: Pořadí je klíčové! Od nejvíce specifických po nejméně specifické
-        # KRITICKÉ: Credentials (hesla, API klíče) PRVNÍ s store_value=False!
+        # KRITICKÉ: Credentials (hesla, API klíče) PRVNÍ!
 
         # 1. CREDENTIALS (username / password) - NEJPRVE!
         def replace_credentials(match):
             username = match.group(2)
             password = match.group(3)
             username_tag = self._get_or_create_label('USERNAME', username)
-            password_tag = self._get_or_create_label('PASSWORD', password, store_value=False)
+            password_tag = self._get_or_create_label('PASSWORD', password)  # TEST MODE: full value
             return f"{match.group(1)}: {username_tag} / {password_tag}"
         text = CREDENTIALS_RE.sub(replace_credentials, text)
 
-        # 2. HESLA (KRITICKÉ - hodnotu neukládat!)
+        # 2. HESLA (TEST MODE: full value)
         def replace_password(match):
-            return self._get_or_create_label('PASSWORD', match.group(1), store_value=False)
+            return self._get_or_create_label('PASSWORD', match.group(1))
         text = PASSWORD_RE.sub(replace_password, text)
 
-        # 2. API KLÍČE, SECRETS (KRITICKÉ - hodnotu neukládat!)
+        # 2. API KLÍČE, SECRETS (TEST MODE: full value)
         def replace_api_key(match):
-            return self._get_or_create_label('API_KEY', match.group(1), store_value=False)
+            return self._get_or_create_label('API_KEY', match.group(1))
         text = API_KEY_RE.sub(replace_api_key, text)
 
         def replace_secret(match):
-            return self._get_or_create_label('SECRET', match.group(1), store_value=False)
+            return self._get_or_create_label('SECRET', match.group(1))
         text = SECRET_RE.sub(replace_secret, text)
 
-        # 3. SSH KLÍČE (KRITICKÉ - hodnotu neukládat!)
+        # 3. SSH KLÍČE (TEST MODE: full value)
         def replace_ssh_key(match):
-            return self._get_or_create_label('SSH_KEY', match.group(1), store_value=False)
+            return self._get_or_create_label('SSH_KEY', match.group(1))
         text = SSH_KEY_RE.sub(replace_ssh_key, text)
 
-        # 3.5. IBAN (PŘED kartami! IBAN má dlouhé číselné sekvence)
+        # 3.5. IBAN (TEST MODE: full value)
         def replace_iban(match):
-            return self._get_or_create_label('IBAN', match.group(1), store_value=False)
+            return self._get_or_create_label('IBAN', match.group(1))
         text = IBAN_RE.sub(replace_iban, text)
 
-        # 4. PLATEBNÍ KARTY (KRITICKÉ - hodnotu neukládat!)
+        # 4. PLATEBNÍ KARTY (TEST MODE: full value)
         def replace_card(match):
             # CARD_RE má 2 capture groups - získej první non-None
             card = match.group(1) if match.group(1) else match.group(2)
             if card:
-                return self._get_or_create_label('CARD', card, store_value=False)
+                return self._get_or_create_label('CARD', card)  # TEST MODE: full value
             return match.group(0)
         text = CARD_RE.sub(replace_card, text)
 
@@ -780,7 +766,7 @@ class Anonymizer:
         def replace_bank(match):
             account = match.group(1) or match.group(2)
             if account:
-                return self._get_or_create_label('BANK', account, store_value=False)
+                return self._get_or_create_label('BANK', account)  # TEST MODE: full value
             return match.group(0)
         text = BANK_RE.sub(replace_bank, text)
 
@@ -864,7 +850,7 @@ class Anonymizer:
         # "Číslo účtu: 6677[[BIRTH_ID_21]]" → "Číslo účtu: [[BANK_x]]"
         def replace_bank_fragment(match):
             # Celý fragment (čísla před + [[BIRTH_ID_*]] + čísla po) → [[BANK_*]]
-            return self._get_or_create_label('BANK', match.group(1), store_value=False)
+            return self._get_or_create_label('BANK', match.group(1))  # TEST MODE: full value
 
         # Pattern: číslice (volitelně) + [[BIRTH_ID_*]] + číslice (volitelně) v kontextu "účt"
         bank_fragment_pattern = re.compile(
@@ -906,14 +892,14 @@ class Anonymizer:
                 return match.group(0)
             # Validuj Luhn
             if self._luhn_check(candidate):
-                return self._get_or_create_label('CARD', candidate, store_value=False)
+                return self._get_or_create_label('CARD', candidate)  # TEST MODE: full value
             return match.group(0)
         text = luhn_pattern.sub(final_luhn_card, text)
 
         # IBAN (pokud unikl)
         def final_iban(match):
             if not '[[IBAN_' in text[max(0, match.start()-10):match.start()+30]:
-                return self._get_or_create_label('IBAN', match.group(1), store_value=False)
+                return self._get_or_create_label('IBAN', match.group(1))  # TEST MODE: full value
             return match.group(0)
         text = IBAN_RE.sub(final_iban, text)
 
@@ -921,13 +907,13 @@ class Anonymizer:
         def final_card(match):
             card = match.group(1) if match.group(1) else match.group(2)
             if card and not '[[CARD_' in text[max(0, match.start()-10):match.start()+len(card)+10]:
-                return self._get_or_create_label('CARD', card, store_value=False)
+                return self._get_or_create_label('CARD', card)  # TEST MODE: full value
             return match.group(0)
         text = CARD_RE.sub(final_card, text)
 
         # Hesla (pokud unikla nebo jsou nalepená na jiných entitách)
         def final_password(match):
-            return self._get_or_create_label('PASSWORD', match.group(1), store_value=False)
+            return self._get_or_create_label('PASSWORD', match.group(1))  # TEST MODE: full value
         text = PASSWORD_RE.sub(final_password, text)
 
         # IP adresy (pokud unikly)
@@ -945,11 +931,11 @@ class Anonymizer:
 
         # API klíče, secrets (pokud unikly)
         def final_api(match):
-            return self._get_or_create_label('API_KEY', match.group(1), store_value=False)
+            return self._get_or_create_label('API_KEY', match.group(1))  # TEST MODE: full value
         text = API_KEY_RE.sub(final_api, text)
 
         def final_secret(match):
-            return self._get_or_create_label('SECRET', match.group(1), store_value=False)
+            return self._get_or_create_label('SECRET', match.group(1))  # TEST MODE: full value
         text = SECRET_RE.sub(final_secret, text)
 
         # Pojištěnce (pokud unikla)
@@ -1064,8 +1050,8 @@ class Anonymizer:
                     f.write(f"{typ}\n")
                     for idx, (original, variants) in enumerate(entities.items(), 1):
                         label = f"[[{typ}_{idx}]]"
-                        # Pro citlivá data zobraz jen ***REDACTED*** bez čísla
-                        display_value = "***REDACTED***" if original.startswith("***REDACTED_") else original
+                        # TEST MODE: vždy zobraz plnou hodnotu
+                        display_value = original
                         f.write(f"{label}: {display_value}\n")
                     f.write("\n")
 
