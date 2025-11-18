@@ -425,13 +425,14 @@ IP_RE = re.compile(
     r'\b(?<!\d\.)(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(?!\.\d)\b'
 )
 
-# Platební karty (13-19 číslic, Luhn-compatible)
+# Platební karty (13-19 číslic)
 # Rozšířený pattern: Visa/MC (16), AmEx (15), Diners (14), atd.
 # DŮLEŽITÉ: IBAN se zpracovává PŘED tímto regexem!
+# DŮLEŽITÉ: Zachytí i "Číslo:" když je to 16-19 číslic (typicky karta)
 CARD_RE = re.compile(
     r'(?:'
-    # S prefixem: "Číslo karty:", "Karta 1:", "Platební karta:", "Card Number:", etc.
-    r'(?:Číslo\s+(?:platební\s+)?karty|(?:Platební\s+)?(?:Karta|Card)(?:\s+\d+)?(?:\s+Number)?)\s*[:\-=]?\s*'
+    # S prefixem: "Číslo karty:", "Karta:", "Card Number:", "Číslo:" (když 16 číslic)
+    r'(?:Číslo\s+(?:platební\s+)?karty|Číslo|(?:Platební\s+)?(?:Karta|Card)(?:\s+\d+)?(?:\s+Number)?)\s*[:\-=]?\s*'
     r'('
     r'\d{4}[\s\-]?\d{6}[\s\-]?\d{5}|'  # AmEx: 4-6-5 (15 číslic)
     r'\d{4}[\s\-]?\d{4}[\s\-]?\d{4}[\s\-]?\d{4}(?:[\s\-]?\d{2,3})?|'  # Visa/MC: 16-19
@@ -747,8 +748,8 @@ class Anonymizer:
 
         # 4. PLATEBNÍ KARTY (TEST MODE: store_value=True)
         def replace_card(match):
-            # CARD_RE má 2 capture groups - získej první non-None
-            card = match.group(1) if match.group(1) else match.group(2)
+            # CARD_RE má 1 capture group
+            card = match.group(1)
             if card:
                 return self._get_or_create_label('CARD', card, store_value=True)
             return match.group(0)
@@ -994,6 +995,24 @@ class Anonymizer:
         def final_rfid(match):
             return self._get_or_create_label('RFID', match.group(1))
         text = RFID_RE.sub(final_rfid, text)
+
+        # POST-PASS: Karty v kontextu "Číslo:" které unikly hlavnímu CARD_RE
+        # Hledáme specificky "Číslo: 4532..." v blízkosti slov karta/card/platební
+        card_context_pattern = re.compile(
+            r'(?:platební\s+karta|karta|card)[\s\S]{0,100}?'  # Lookforward pro kontext
+            r'Číslo\s*:\s*'
+            r'(\d{4}[\s\-]?\d{4}[\s\-]?\d{4}[\s\-]?\d{4}(?:[\s\-]?\d{1,3})?)',  # 16-19 číslic
+            re.IGNORECASE
+        )
+
+        def replace_card_context(match):
+            card = match.group(1)
+            # Check if already tagged
+            if f"[[CARD_" not in text[max(0, match.start()-20):min(len(text), match.end()+20)]:
+                return match.group(0).replace(card, self._get_or_create_label('CARD', card, store_value=True))
+            return match.group(0)
+
+        text = card_context_pattern.sub(replace_card_context, text)
 
         return text
 

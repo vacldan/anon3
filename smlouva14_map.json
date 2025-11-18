@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-17T22:16:32.899993",
+  "generated_at": "2025-11-18T09:48:33.773347",
   "source_file": "smlouva14.docx",
   "entities": [
     {
@@ -2278,6 +2278,18 @@
       "occurrences": 1
     },
     {
+      "type": "CARD",
+      "label": "[[CARD_1]]",
+      "original": "4532 1234 5678 9012",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_2]]",
+      "original": "4532 1098 7654 3210",
+      "occurrences": 1
+    },
+    {
       "type": "DIC",
       "label": "[[DIC_1]]",
       "original": "CZ12398745",
@@ -2317,12 +2329,6 @@
       "type": "VARIABLE_SYMBOL",
       "label": "[[VARIABLE_SYMBOL_1]]",
       "original": "202403089",
-      "occurrences": 1
-    },
-    {
-      "type": "CARD",
-      "label": "[[CARD_1]]",
-      "original": "4532 1098 7654 3210",
       "occurrences": 1
     },
     {
