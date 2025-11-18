@@ -552,16 +552,38 @@ class Anonymizer:
 
     def _replace_remaining_people(self, text: str) -> str:
         """Detekuje a nahradí zbývající osoby."""
-        # Hledá vzory: Jméno Příjmení
-        # Nejprve tituly
+        # NEJPRVE: Pattern pro jména s titulem (MUDr. Eva Malá)
+        # Tento musí jít PŘED obecným pattern aby titul nebyl ztracen
+        titled_pattern = re.compile(
+            r'(Ing\.|Mgr\.|Bc\.|MUDr\.|JUDr\.|PhDr\.|RNDr\.|Prof\.|Doc\.|Ph\.D\.|MBA|CSc\.|DrSc\.)\s+'
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\s+'
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)',
+            re.UNICODE
+        )
+
+        def replace_titled(match):
+            title = match.group(1)
+            first = match.group(2)
+            last = match.group(3)
+            # Vytvoř/najdi tag pro osobu (bez titulu)
+            canonical = f"{first.capitalize()} {last.capitalize()}"
+            if canonical not in self.canonical_persons:
+                idx = len(self.canonical_persons) + 1
+                self.canonical_persons[canonical] = f"[[PERSON_{idx}]]"
+            # Vrať titul + tag
+            return f"{title} {self.canonical_persons[canonical]}"
+
+        # Nahraď titulované osoby NEJPRVE
+        text = titled_pattern.sub(replace_titled, text)
+
+        # Pak běžný pattern pro jména bez titulu
         titles = r'(?:Ing\.|Mgr\.|Bc\.|MUDr\.|JUDr\.|PhDr\.|RNDr\.|Ph\.D\.|MBA|CSc\.|DrSc\.)'
 
-        # Pattern pro jméno příjmení s volitelným titulem
+        # Pattern pro jméno příjmení
         person_pattern = re.compile(
-            rf'(?:{titles}\s+)?'
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'
+            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'
             r'\s+'
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)',
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\b',
             re.UNICODE
         )
 
@@ -1013,6 +1035,86 @@ class Anonymizer:
             return match.group(0)
 
         text = card_context_pattern.sub(replace_card_context, text)
+
+        # POST-PASS: ALL_CAPS jména bez diakritiky (ALENA DVORAKOVA)
+        # Najdi známé osoby a nahraď jejich ALL_CAPS varianty bez diakritiky
+        for canonical, label in self.canonical_persons.items():
+            parts = canonical.split()
+            if len(parts) == 2:
+                # Vytvoř ALL_CAPS verzi bez diakritiky
+                import unicodedata
+                def remove_dia(s):
+                    nfd = unicodedata.normalize('NFD', s)
+                    return ''.join(c for c in nfd if unicodedata.category(c) != 'Mn')
+
+                first_caps = remove_dia(parts[0]).upper()
+                last_caps = remove_dia(parts[1]).upper()
+                # Nahraď pokud nalezeno
+                pattern = rf'\b{re.escape(first_caps)}\s+{re.escape(last_caps)}\b'
+                text = re.sub(pattern, label, text)
+
+        # POST-PASS: Místo narození
+        birth_place_pattern = re.compile(
+            r'(Místo\s+narození\s*:)\s*([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)',
+            re.IGNORECASE
+        )
+        def replace_birth_place(match):
+            prefix = match.group(1)
+            place = match.group(2)
+            # Simple tag - don't reuse ADDRESS tags
+            tag = self._get_or_create_label('BIRTH_PLACE', place)
+            return f"{prefix} {tag}"
+        text = birth_place_pattern.sub(replace_birth_place, text)
+
+        # POST-PASS: Jednoduché adresy (ulice číslo, město) které unikly ADDRESS_RE
+        # Pattern: Ulice 123/45, Praha 3  (bez PSČ nebo kontextu)
+        simple_addr_pattern = re.compile(
+            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+(?:\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)?)\s+'  # Ulice (1-2 slova)
+            r'(\d+(?:/\d+)?)\s*,\s*'  # Číslo
+            r'(Praha\s+\d+|Brno|Ostrava|Plzeň)',  # Město
+            re.IGNORECASE
+        )
+        def replace_simple_addr(match):
+            addr = match.group(0)
+            # Přeskoč pokud už je tagovaná
+            if '[[ADDRESS_' not in text[max(0, match.start()-10):min(len(text), match.end()+10)]:
+                return self._get_or_create_label('ADDRESS', addr)
+            return addr
+        text = simple_addr_pattern.sub(replace_simple_addr, text)
+
+        # POST-PASS: Adresy - nahraď všechny výskyty známých adres (i bez PSČ)
+        # Projdi všechny adresy v entity_map a nahraď všechny jejich částečné výskyty
+        if 'ADDRESS' in self.entity_map:
+            for addr_key in self.entity_map['ADDRESS'].keys():
+                # Získej tag
+                if addr_key in self.entity_index_cache.get('ADDRESS', {}):
+                    idx = self.entity_index_cache['ADDRESS'][addr_key]
+                    tag = f"[[ADDRESS_{idx}]]"
+
+                    # Generuj varianty: bez PSČ, bez čárek, atd.
+                    # Např. "Karlovo náměstí 12/34, 120 00 Praha 2" → "Karlovo náměstí 12/34, Praha 2"
+                    # Odstran PSČ pattern: \d{3}\s?\d{2}
+                    addr_no_psc = re.sub(r',?\s*\d{3}\s?\d{2}\s*', ', ', addr_key).strip(', ')
+
+                    # Nahraď varianty (ale pouze pokud nejsou už tagované)
+                    for variant in [addr_key, addr_no_psc]:
+                        if variant and len(variant) > 15:  # Min. délka
+                            # Najdi a nahraď všechny výskyty kromě již tagovaných
+                            if variant in text:
+                                # Split by variant
+                                parts = text.split(variant)
+                                if len(parts) > 1:
+                                    # Nahraď pouze pokud kolem není tag
+                                    new_parts = []
+                                    for i, part in enumerate(parts[:-1]):
+                                        new_parts.append(part)
+                                        # Check if not already tagged (look at end of previous part and start of next)
+                                        if not (part.endswith('[[') or parts[i+1].startswith(']]')):
+                                            new_parts.append(tag)
+                                        else:
+                                            new_parts.append(variant)  # Keep original if tagged
+                                    new_parts.append(parts[-1])
+                                    text = ''.join(new_parts)
 
         return text
 
