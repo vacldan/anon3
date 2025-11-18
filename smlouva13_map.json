@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-18T21:33:08.207686",
+  "generated_at": "2025-11-18T22:03:07.892281",
   "source_file": "smlouva13.docx",
   "entities": [
     {
@@ -1495,6 +1495,18 @@
       "type": "CASE_ID",
       "label": "[[CASE_ID_1]]",
       "original": "FÚ-123456/2024/Kon",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "4A5 6789",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_2]]",
+      "original": "1P2 3456",
       "occurrences": 1
     },
     {

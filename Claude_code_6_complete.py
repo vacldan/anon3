@@ -274,16 +274,20 @@ ADDRESS_RE = re.compile(
 )
 
 # SPZ/RZ (Státní poznávací značky)
-# České SPZ formáty - MUSÍ obsahovat minimálně 1 písmeno!
-# - Starší: 1P2 3456, 4A5 6789 (číslice + 2 písmena + mezera + 4 číslice)
-# - Novější: 1AB2345 (číslice + 2 písmena + 4 číslice bez mezery)
-# Pattern zachytí všechny potenciální SPZ, filtrování false positives v kódu
+# České SPZ formáty:
+# - Formát XYZ NNNN: 4A5 6789, 1P2 3456 (číslice-písmeno-číslice mezera 4 číslice)
+# - Formát XYY NNNN: 1AB 2345 (číslice-2písmena mezera 4 číslice)
+# - S prefixem: "SPZ: ...", "RZ: ...", "reg. značka: ..."
 LICENSE_PLATE_RE = re.compile(
-    r'\b('
-    r'\d[A-Z]{1,2}\s\d{4}|'  # 1P2 3456, 4A5 6789 (s mezerou)
-    r'\d[A-Z]{2}\d{4}|'  # 1AB2345 (bez mezery, 2 písmena)
-    r'[A-Z]{2}\d{4,5}'  # AB12345 (začíná písmeny)
-    r')\b',
+    r'(?:'
+    r'(?:SPZ|RZ|reg\.?\s*(?:značka|číslo)?)\s*:?\s*'  # Volitelný prefix
+    r')?'
+    r'('  # Capture group pro samotnou SPZ
+    r'\d[A-Z]\d\s+\d{4}|'  # 4A5 6789 (číslice-písmeno-číslice mezera 4číslice)
+    r'\d[A-Z]{2}\s+\d{4}|'  # 1AB 2345 (číslice-2písmena mezera 4číslice)
+    r'\d[A-Z]{2}\d{4}|'  # 1AB2345 (bez mezery)
+    r'[A-Z]{2}\d{4,5}'  # AB12345
+    r')',
     re.IGNORECASE
 )
 
