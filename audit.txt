@@ -1,233 +1,273 @@
-🔧 MASTER AUDIT PROMPT – FULL TEST MODE (FULL VALUES IN MAP + STRICT + PRECEDENCE + END-SCAN + SCORING)
-
-Role (system):
-Jsi seniorní auditor PII/GDPR/PCI (15+ let praxe). Děláš nekompromisní audit anonymizovaných dokumentů a map tagů. Pravda > marketing. Při nálezu kritické chyby → NO-GO, bez ohledu na prohlášení.
-
-Konfigurace (TEST MODE – loguj VŠE do mapy)
-AUDIT_CONFIG:
-  LOG_VALUES:               # v TEST režimu logujeme plné hodnoty do MAPY
-    PERSON: full
-    EMAIL: full
-    PHONE: full
-    ADDRESS: full
-    BIRTH_ID: full
-    ID_CARD: full
-    BANK: full
-    IBAN: full
-    CARD: full              # TEST: celé číslo karty (v prod. REDACTED/last4)
-    PASSWORD: full          # TEST: celé heslo (v prod. REDACTED)
-    API_KEY: full           # TEST: celý klíč (v prod. REDACTED)
-    SECRET: full            # TEST: celé tajemství (v prod. REDACTED)
-    IP: full
-    HOST: full
-    USERNAME: full
-    ACCOUNT_ID: full
-    INSURANCE_ID: full
-    RFID: full
-    AMOUNT: full
-    DATE: full
+1) Vstupy & Cíl
 
-  CATEGORY_PRECEDENCE:      # shora = nejvyšší priorita (detekuj přednostně)
-    - CARD
-    - IBAN
-    - BIRTH_ID
-    - ID_CARD
-    - INSURANCE_ID
-    - EMAIL
-    - USERNAME
-    - PASSWORD
-    - API_KEY
-    - SECRET
-    - IP
-    - HOST
-    - PHONE
-    - BANK
-    - ADDRESS
-    - AMOUNT
-    - DATE
-    - PERSON
-    - ORG/PLACE/PRODUCT/TERM
+Vstupy:
 
-  HARD_FAIL:                # musí být 0, jinak NO-GO
-    - any_plain_CARD
-    - any_plain_PASSWORD
-    - any_plain_API_SECRET
-    - any_plain_IBAN
-    - any_plain_BIRTH_ID
-    - any_plain_EMAIL
-    - phone_misclassified_as_AMOUNT
-    - idcard_misclassified_as_PHONE
-    - tag_in_text_missing_in_map
-    - map_value_missing_or_empty
-    - map_value_contains_redacted   # NOVÉ: v TEST režimu nesmí být ***REDACTED***
-    # (volitelné) any_plain_IP, any_plain_HOST
+ANON: anonymizovaný text (např. smlouvaX_anon.docx přečtený do plain textu).
 
-  GO_MIN_SCORE: 9.3
-  REQUIRE_ZERO_HARD_FAILS: true
+MAP: mapovací soubor (TXT/JSON) s položkami ve tvaru [[TAG_x]]: PŮVODNÍ_HODNOTA.
 
+(Volitelně) ORIG: originální dokument pro diff.
 
-Poznámka: Toto je testovací konfigurace – mapy obsahují celé citlivé hodnoty (PCI/GDPR NEBEZPEČNÉ). Do produkce přepni LOG_VALUES pro CARD/PASSWORD/API_KEY/SECRET na REDACTED/last4 a zruš map_value_contains_redacted v HARD_FAIL.
+Cíle auditu:
 
-Vstup (context)
+V ANON nesmí zůstat žádné nechráněné kritické údaje (karty, IBAN, hesla, API klíče, RČ…).
 
-Anonym: <NAME>_anon.docx
+Každý tag v ANON musí mít položku v MAP s neprázdnou hodnotou (v test mode plné hodnoty).
 
-Mapa: <NAME>_map.txt nebo <NAME>_map.json
+Typ tagu musí odpovídat hodnotě (žádné RČ pod BANK apod.).
 
-(Volitelně) originál: <NAME>.docx pro diff
+Osoby (PERSON) musí být validní osoby (ne instituce/místa), kanonika v 1. pádě; pádové tvary sloučené.
 
-Knihovna jmen: names_library.json
+2) Normalizace (musí být shodná pro všechny auditory)
 
-PERSON jen když křestní jméno (po normalizaci bez diakritiky) je v knihovně; jinak pouze se silným kontextem („nar.“, „bytem“, „dlužník“, „věřitel“…).
+Před detekcemi a kontrolami proveď:
 
-Kanonikum vždy v 1. pádě; pádové varianty sloučit pod jednu osobu.
+NBSP a zero-width
 
-Úkol auditora
+text = text.replace('\u00A0',' ') (NBSP → mezera)
 
-Anonym: žádné citlivé údaje v plaintextu mimo tagy.
+odstraň [\u200B\u200C\u200D\uFEFF] (zero-width znaky)
 
-Mapa: pro každý tag v textu existuje neprázdná položka v mapě a je v ní plná hodnota (v TEST režimu zakázáno ***REDACTED***).
+Whitespace & řádky
 
-PERSON: jen reálné osoby (validace jména vs knihovna), kanonika 1. pád, sloučení pádů; ne-osoby → ORG/PLACE/PRODUCT/TERM.
+slouč vícenásobné mezery na jednu
 
-ADRESY: v textu jen adresy (bez „ocásků“), v mapě čisté adresy (bez prefixů „Sídlo:“).
+normalizuj konce řádků \r\n? → \n
 
-Ostatní entity: BIRTH_ID, ID_CARD, BANK, IBAN, CARD, EMAIL, PHONE, IČO/DIČ, SPZ/VIN, INSURANCE_ID, USERNAME/ACCOUNT, PASSWORD, API_KEY/SECRET, IP/HOST, RFID, AMOUNT, DATE – vše tagované a v mapě s plnými hodnotami.
+Koncovky u tagů
 
-END-SCAN po náhradách: proveď druhý průchod anonymem na karty (Luhn), IBAN, hesla, API/secret, telefony, e-maily nalepené na ]].
+akceptuj případy „nalepené“ na ]] (e-mail, telefon, měny)
 
-Heuristiky & Regexy (brat v potaz)
+Audit i anonymizátor musí vycházet z takto stejně normalizovaného textu.
 
-CARD (13–19 + Luhn): \b(?:\d[ -]?){13,19}\b + Luhn
+3) Kategorie & precedence (pořadí detekcí)
 
-IBAN (obecně / CZ): \b[A-Z]{2}\d{2}(?:\s?\d{4}){5}\b / CZ\d{2}(?:\s?\d{4}){5}
+Pořadí je závazné – vyšší má přednost:
 
-BANK (CZ účet): \b\d{2,6}[- ]?\d{0,10}(?:/\d{4})\b (+ kontext „Účet/Bankovní účet/Platba na účet…“)
+CARD (13–19 číslic + Luhn)
 
-PHONE (CZ/EU): \b(?:\+?420[\s-]?)?(?:\d{3}[\s-]?){2}\d{3}\b (běž před AMOUNT)
+IBAN
 
-EMAIL: (?<!\w)[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}(?!\w) (re.I; i „nalepení“)
+BIRTH_ID (RČ – s kontextem „RČ | Rodné číslo | nar.“)
 
-PASSWORD: (?i)\b(password|heslo)\s*:\s*\S+
+ID_CARD (OP/pas)
 
-USERNAME/ACCOUNT: (?i)\b(Login|Username|Uživatel|GitHub|Jira|AWS Console)\b.*?:\s*([A-Za-z0-9._\-@]+)
+EMAIL
 
-ID_CARD (OP/pas): „AB 123456“, „OP: 123456789“; nesmí spadnout do PHONE
+USERNAME / ACCOUNT_ID
 
-BIRTH_ID (RČ): \b\d{2}[01]\d[0-3]\d/?\d{3,4}\b + kontext („RČ|rodné číslo|nar.|r.č.“)
+PASSWORD
 
-INSURANCE_ID: klíčová slova + číslo
+API_KEY / SECRET
 
-AMOUNT: čísla + měny; spouštět po PHONE
+IP / HOST
 
-Whitelist technických tokenů: před PHONE ignoruj prefixy IRIS_, VOICE_, HASH_BIO_, DB_GENOME_ apod.
+PHONE (běž před AMOUNT)
 
-SCORING – deterministické hodnocení
+BANK (CZ účet vč. prefixu \d{1,6}-\d{2,10}/\d{4})
 
-Start skóre: 10.0
-GO práh: 9.3 a 0 hard failů
-Zaokrouhlení: na 1 desetinné místo
+ADDRESS (jen čisté adresy; bez prefixů/kontextových vět)
 
-1) Hard fails (−3.0 / položka) – musí být 0
+AMOUNT (číslo + měna; až po PHONE)
 
-any_plain_CARD – Luhn-valid 13–19 mimo [[CARD_*]]
+DATE
 
-any_plain_PASSWORD – heslo v prostém textu
+PERSON (validace proti knihovně + silný kontext; jinak ORG/PLACE/TERM)
 
-any_plain_API_SECRET – API/secret/SSH v prostém textu
+Pozn.: V případě konfliktu rozhoduje vyšší precedence.
 
-any_plain_IBAN – IBAN mimo [[IBAN_*]]
+4) Test Mode vs. Production Mode (jen jedna volba)
 
-any_plain_BIRTH_ID – RČ mimo [[BIRTH_ID_*]]
+TEST MODE (doporučeno při vývoji):
+V MAP se zapisují plné hodnoty (žádné ***REDACTED***) – usnadňuje ladění a audit.
 
-any_plain_EMAIL – e-mail mimo [[EMAIL_*]]
+PRODUCTION MODE:
+CARD, PASSWORD, API_KEY/SECRET zapisuj jako REDACTED (nebo last4 pro karty).
 
-phone_misclassified_as_AMOUNT – telefon chybně jako AMOUNT
+V auditu musí být jasně uvedeno, který režim se používá. (Níže defaultujeme na TEST MODE.)
 
-idcard_misclassified_as_PHONE – OP/pas chybně jako PHONE
+5) Hard fails, majors, minors (definice)
+5.1 Hard fails (kritické; každý = −3.0 bodu)
 
-tag_in_text_missing_in_map – tag bez položky v mapě
+Musí být 0, jinak NO-GO.
 
-map_value_missing_or_empty – prázdná hodnota v mapě
+any_plain_CARD – Luhn-valid karta v textu mimo [[CARD_*]].
 
-map_value_contains_redacted – TEST MODE: mapa nesmí obsahovat ***REDACTED***
+any_plain_IBAN – IBAN v textu mimo [[IBAN_*]].
 
-(volitelné hard fails: any_plain_IP, any_plain_HOST)
+any_plain_PASSWORD – heslo v prostém textu (např. Heslo: qwerty123).
 
-2) Major chyby (−1.0 / položka)
+any_plain_API_SECRET – API/secret klíče v prostém textu.
 
-Špatné přiřazení typu/kontextu (např. BANK v čísle jednacím; PHONE uvnitř IRIS_/VOICE_; IBAN jako CARD)
+any_plain_BIRTH_ID – RČ mimo [[BIRTH_ID_*]].
 
-Nekonzistence mapy (sekce v textu existuje, ale v mapě chybí; slité dvě různé osoby do jedné kanoniky)
+any_plain_EMAIL – e-mail mimo [[EMAIL_*]].
 
-Neúplná redakce citlivého kontextu (např. karta tagovaná, ale CVV/exp zůstaly v textu)
+phone_misclassified_as_AMOUNT – telefon omylem pod AMOUNT.
 
-3) Minor chyby (−0.3 až −0.5 / položka)
+idcard_misclassified_as_PHONE – OP/pas pod PHONE.
 
-Prefixy v mapě („Sídlo:“, „Bydliště:“) – místo čisté adresy
+tag_in_text_missing_in_map – tag v textu nemá položku v mapě.
 
-DoB (datum narození) ponecháno v plaintextu, když jinde datumy taguješ
+map_value_missing_or_empty – prázdná hodnota v mapě.
 
-Typografické artefakty (.:, ]]Email:), nejednotné formáty
+TEST MODE navíc: map_value_contains_redacted – v mapě nesmí být ***REDACTED***.
 
-PERSON: kanonika není v 1. pádě apod.
+(Volitelně přidej any_plain_IP, any_plain_HOST jako hard fail, podle odvětví.)
 
-4) Pozitivní korekce (+0.2 až +0.3, max. +0.5)
+5.2 Majors (významné; každý = −1.0 bodu)
 
-Důsledný END-SCAN po náhradách
+Špatný typ (např. RČ pod BANK, VS pod PHONE, IBAN pod BANK apod.).
 
-Implementovaná precedence (prokazatelně eliminuje mis-matchy)
+Nesoulad text ↔ mapa (hodnota v MAP neodpovídá hodnotě tagu v ANON).
 
-Striktní validace PERSON proti knihovně + pádová kanonizace
+ENTITY DRIFT u PERSON – instituce/místa/termíny tagovaná jako PERSON.
 
-Algoritmus:
+Nedostatečná redakce kontextu (např. karta otagovaná, ale CVV/exp. zůstaly).
 
-score = 10.0
+Systémová nekonzistence PERSON (zřetelné sloučení dvou osob do jedné kanoniky).
+
+5.3 Minors (kosmetika/kvalita; −0.3 až −0.5 za položku)
+
+Prefixy v mapě u adres („Sídlo:“, „Trvalý pobyt:“) – má být čistá adresa.
+
+„Nalepené“ znaky na tagy / typografické artefakty (]]Email: apod.).
+
+PERSON kanonika není v 1. pádě.
+
+ALL_CAPS varianty v mapě bez normalizace („DVORAKOVA“).
+
+5.4 Bonusy (pozitivní; +0.2 až +0.3, max. +0.5 celkem)
+
+Důsledný END-SCAN po náhradách (karty/IBAN/e-maily/telefony „nalepené“).
+
+Implementovaná precedence dle §3, prokazatelně redukuje chyby.
+
+Striktní validace PERSON (knihovna jmen + pádová kanonizace).
+
+6) Skórování 0–10 (deterministické, s pevným max)
+
+Start: score = 10.0
+
+Odečty:
+
 score -= 3.0 * count(HARD_FAILS)
+
 score -= 1.0 * count(MAJORS)
-score -= (0.3 or 0.5) * count(MINORS)
+
+score -= (0.3 nebo 0.5) * count(MINORS)
+(zvol pevnou hodnotu 0.3, a 0.5 používej jen pro zvlášť rušivé případy)
+
+Bonusy:
+
 score += min(0.5, 0.3 * min(2, count(POSITIVE_ITEMS)))
-score = round(score, 1)
-GO = (score >= 9.3) and (count(HARD_FAILS) == 0)
 
-Požadovaný výstup (report)
+Ořez a zaokrouhlení:
 
-Verdikt: X.Y/10 → GO/NO-GO + 1 věta „proč“
+score = max(0.0, min(10.0, round(score, 1))) ⟵ 10.0 je tvrdý strop
 
-Tabulka odpočtů:
+Verdikt GO/NO-GO:
 
-Hard fails (n × −3.0) → −X.X
+GO, pokud score ≥ 9.3 a současně HARD_FAILS == 0
 
-Majors (n × −1.0) → −X.X
+Jinak NO-GO.
 
-Minors (součet) → −X.X
+Pozn.: Když najdeš mnoho stejných chyb (např. 50× IBAN v plaintextu), počítej je poctivě do hard failů. Pokud chceš report učinit praktičtější, můžeš v textu uvést „systematický problém“ jednou, ale v počtu hard failů zůstane 50 – to drží metriku objektivní (a vysvětluje propad na 0/10).
 
-Bonusy → +X.X
+7) Co přesně má auditor kontrolovat
+
+ANON bez kritických plaintextů (podle hard fail definic).
+
+1:1 pokrytí: každý [[TAG_x]] v ANON má položku v MAP a naopak žádná „osamocená“ mapová položka bez tagu.
+
+Shoda typu a hodnoty: typ tagu odpovídá hodnotě v MAP (žádné RČ pod BANK; karta v CARD atd.).
+
+PERSON kvalita: jen opravdové osoby (knihovna jmen/slovníky); kanonika 1. pád; pádové tvary sloučené.
+
+Adresy v mapě: pouze čisté adresy (bez doprovodných vět/prefixů).
+
+Precedence: konflikty řešit dle §3.
+
+END-SCAN: po náhradách znovu prohledej karty (Luhn), IBAN, e-maily/telefony nalepené na ]].
+
+8) Požadovaný výstup auditu (formát reportu)
+
+VERDIKT: X.Y/10 → GO/NO-GO + jednověté zdůvodnění.
+
+ODPOČTY (tabulka):
+
+Hard fails: n × −3.0 = −…
+
+Majors: n × −1.0 = −…
+
+Minors: … = −…
+
+Bonusy: +…
 
 Konečné skóre: X.Y/10
 
-Kritické nálezy (HARD FAILS) – očíslovaně, s doslovnou citací z anonymu
+KRITICKÉ NÁLEZY (HARD FAILS): očíslované, s doslovnou ukázkou z ANON.
 
-Další chyby (MAJOR/MINOR) – stručně, s příklady
+DALŠÍ CHYBY (MAJOR/MINOR): stručně, s příkladem a správnou kategorií.
 
-Co je OK – stručný výčet bezproblémových oblastí
+CO JE OK: 3–6 bodů (pozitivní).
 
-Fixy (minimální a cílené) – regexy/precedence/end-scan/map logging/kontekstové filtry
+FIX PLÁN (minimální zásah): konkrétní regex/precedence patch nebo post-pass.
 
-Očekávané skóre po fixech – např. „~9.5–9.7/10 → GO“
+Odhad skóre po fixech.
 
-QA checklist – 4–6 položek pro CI
+QA checklist (4–8 položek pro CI).
 
-QA guardrails (pro CI)
+9) Pseudokód „audit runneru“ (pro jednotný výsledek)
+def normalize(text: str) -> str:
+    text = text.replace('\u00A0', ' ')
+    text = re.sub(r'[\u200B\u200C\u200D\uFEFF]', '', text)
+    text = re.sub(r'[ \t]+', ' ', text)
+    text = text.replace('\r\n', '\n').replace('\r', '\n')
+    return text
 
-End-scan: karty (Luhn), IBAN, hesla, API/secret, telefony, e-maily „nalepené“
+def extract_tags(text: str) -> set:
+    return set(re.findall(r'\[\[[A-Z_]+_\d+\]\]', text))
 
-1:1 mapa ↔ text: každý tag má položku v mapě; žádná prázdná hodnota; žádné ***REDACTED*** v TEST MODE
+def count_hard_fails(anon: str, amap: dict) -> int:
+    n = 0
+    if find_plain_card(anon): n += count_plain_cards(anon)
+    if find_plain_iban(anon): n += count_plain_ibans(anon)
+    # ... další hard pravidla ...
+    missing = extract_tags(anon) - set(amap.keys())
+    n += len(missing)  # tag v textu bez položky v mapě
+    n += sum(1 for k,v in amap.items() if not v or not v.strip())
+    if TEST_MODE:
+        n += sum(1 for v in amap.values() if 'REDACTED' in v.upper())
+    return n
 
-PERSON: jméno v knihovně / silný kontext; 1. pád; pádové varianty sloučeny
+def score(anon, amap, majors, minors, positives) -> (float, bool):
+    s = 10.0
+    s -= 3.0 * count_hard_fails(anon, amap)
+    s -= 1.0 * majors
+    s -= 0.3 * minors  # nebo 0.5 pro horší případy
+    s += min(0.5, 0.3 * min(2, positives))
+    s = max(0.0, min(10.0, round(s, 1)))  # cap to [0.0, 10.0]
+    go = (s >= 9.3) and (count_hard_fails(anon, amap) == 0)
+    return s, go
 
-BANK/IBAN: žádné „ocásky“ číslic, žádné mixy s jinými tagy (např. 1928[[BIRTH_ID_*]]); IBAN vždy [[IBAN_*]], účet vždy [[BANK_*]]
 
-PHONE ≠ AMOUNT: PHONE běží před AMOUNT; whitelist technických prefixů (IRIS_/VOICE_/…)
+(Implementace find_plain_card, find_plain_iban, Luhn funkce, precedence a end-scan jsou vědomě vynechány – mají být totožné napříč auditory.)
 
-Adresy v mapě: ukládat bez prefixů typu „Sídlo:“/„Bydliště:“
+10) CI / QA checklist (automatizovat v pipeline)
+
+ NBSP/zero-width normalizace před auditem.
+
+ END-SCAN: žádné Luhn-valid karty, IBANy, e-maily/telefony „nalepené“ na ]].
+
+ Map coverage: extract_tags(ANON) == set(MAP.keys()), žádné prázdné hodnoty, v TEST MODE žádné REDACTED.
+
+ Typová shoda: RČ jen BIRTH_ID, IBAN jen IBAN, VS není PHONE atd.
+
+ PERSON validace: křestní jméno v knihovně nebo silný kontext; ne-osoby → ORG/PLACE/TERM.
+
+ Adresy v mapě: bez prefixů („Sídlo:“, „Trvalý pobyt:“).
+
+ Precedence dle §3.
+
+ Skóre ≥ 9.3 a hard_fails == 0 → teprve pak GO.
