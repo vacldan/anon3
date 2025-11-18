@@ -338,14 +338,15 @@ PHONE_RE = re.compile(
 # Bankovní účet (formát: číslo/kód banky NEBO dlouhé číslo s kontextem)
 # DŮLEŽITÉ: IBAN je samostatný regex níže!
 # NESMÍ zachytit spisové značky (FÚ-xxx/xxxx, KS-xxx/xxxx, VS-xxx)
+# DŮLEŽITÉ: Kód banky musí být součástí zachyceného účtu!
 BANK_RE = re.compile(
     r'(?:'
     # Standardní formát s předčíslím: 3622-1234567890/0710
     r'(?<!FÚ-)(?<!KS-)(?<!VS-)(?<!čj-)(\d{1,6}-\d{6,16}/\d{4})|'
     # Standardní formát: 123456/2010, 1234567890/3210
     r'(?<!FÚ-)(?<!KS-)(?<!VS-)(?<!čj-)(\d{6,16}/\d{4})|'
-    # S kontextem: "číslo účtu: 123456789", "platba na účet: 987654"
-    r'(?:číslo\s+účtu|účet|účtu|platba\s+na\s+účet|bankovní\s+účet)\s*:?\s*(\d{8,16})'
+    # S kontextem: "číslo účtu: 123456789/0800" - zachytí i s kódem pokud je
+    r'(?:číslo\s+účtu|účet|účtu|platba\s+na\s+účet|bankovní\s+účet)\s*:?\s*(\d{6,16}(?:/\d{4})?)'
     r')\b',
     re.IGNORECASE
 )
@@ -473,6 +474,51 @@ AMOUNT_RE = re.compile(
 # Pattern: VS: 12345, VS 1234567890, VS12345, variabilní symbol: 123
 VARIABLE_SYMBOL_RE = re.compile(
     r'(?:VS|variabilní\s+symbol|var\.?\s*symbol)\s*[:\-]?\s*(\d{2,10})',
+    re.IGNORECASE
+)
+
+# Konstantní symbol (KS)
+CONST_SYMBOL_RE = re.compile(
+    r'(?:KS|konstantní\s+symbol|konst\.?\s*symbol)\s*[:\-]?\s*(\d{4})',
+    re.IGNORECASE
+)
+
+# Specifický symbol (SS)
+SPEC_SYMBOL_RE = re.compile(
+    r'(?:SS|specifický\s+symbol|spec\.?\s*symbol)\s*[:\-]?\s*(\d{2,10})',
+    re.IGNORECASE
+)
+
+# Číslo lékaře / License ID
+LICENSE_ID_RE = re.compile(
+    r'(?:Číslo\s+lékaře|č\.\s*lékaře|registrační\s+č\.|reg\.?\s*č\.|licence\s+č\.)\s*[:\-]?\s*(\d{5,10})',
+    re.IGNORECASE
+)
+
+# Číslo jednací / Case ID
+# DŮLEŽITÉ: Musí podporovat české znaky (FÚ-, ČJ-, atd.)
+CASE_ID_RE = re.compile(
+    r'(?:Číslo\s+jednací|č\.\s*jednací|č\.j\.|spis\.?\s*č\.)\s*[:\-]?\s*((?:[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]{2,4}[\-/])?[\dA-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]+/\d{4}(?:/[A-Za-záčďéěíňóřšťúůýž]+)?)',
+    re.IGNORECASE
+)
+
+# Spisová značka soudu
+COURT_FILE_RE = re.compile(
+    r'(?:Spisová\s+značka(?:\s+soudu)?|sp\.\s*zn\.)\s*[:\-]?\s*(\d+\s+[A-Z]\s+\d+/\d{4})',
+    re.IGNORECASE
+)
+
+# Číslo pojistné smlouvy
+# DŮLEŽITÉ: Musí podporovat české znaky
+POLICY_ID_RE = re.compile(
+    r'(?:Číslo\s+pojistné\s+smlouvy|pojistka\s+č\.|č\.\s*pojištění)\s*[:\-]?\s*((?:[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]{2,4}[\-/])?\d{4,}[\-/]?\d+)',
+    re.IGNORECASE
+)
+
+# Číslo smlouvy (generické - HYP/2024/56789, atd.)
+# DŮLEŽITÉ: Musí podporovat české znaky
+CONTRACT_ID_RE = re.compile(
+    r'(?:Číslo\s+smlouvy|č\.\s*smlouvy|smlouva\s+č\.)\s*[:\-]?\s*((?:[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]{2,5}/)?[\dA-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]+/\d+)',
     re.IGNORECASE
 )
 
@@ -832,6 +878,7 @@ class Anonymizer:
         text = BIRTH_ID_RE.sub(replace_birth_id, text)
 
         # 13. BANKOVNÍ ÚČTY (po BIRTH_ID, aby RČ nebylo zachyceno jako účet)
+        # DŮLEŽITÉ: Kód banky musí být součástí tagu (BANK_RE ho zachytí pokud je přítomen)
         def replace_bank(match):
             # BANK_RE má 3 capture groups - získej první non-None
             account = match.group(1) or match.group(2) or match.group(3)
@@ -853,6 +900,41 @@ class Anonymizer:
         def replace_variable_symbol(match):
             return self._get_or_create_label('VARIABLE_SYMBOL', match.group(1))
         text = VARIABLE_SYMBOL_RE.sub(replace_variable_symbol, text)
+
+        # 14.6. KONSTANTNÍ SYMBOL
+        def replace_const_symbol(match):
+            return self._get_or_create_label('CONST_SYMBOL', match.group(1))
+        text = CONST_SYMBOL_RE.sub(replace_const_symbol, text)
+
+        # 14.7. SPECIFICKÝ SYMBOL
+        def replace_spec_symbol(match):
+            return self._get_or_create_label('SPEC_SYMBOL', match.group(1))
+        text = SPEC_SYMBOL_RE.sub(replace_spec_symbol, text)
+
+        # 14.8. ČÍSLO LÉKAŘE / LICENSE ID
+        def replace_license_id(match):
+            return self._get_or_create_label('LICENSE_ID', match.group(1))
+        text = LICENSE_ID_RE.sub(replace_license_id, text)
+
+        # 14.9. ČÍSLO JEDNACÍ / CASE ID
+        def replace_case_id(match):
+            return self._get_or_create_label('CASE_ID', match.group(1))
+        text = CASE_ID_RE.sub(replace_case_id, text)
+
+        # 14.10. SPISOVÁ ZNAČKA SOUDU
+        def replace_court_file(match):
+            return self._get_or_create_label('COURT_FILE', match.group(1))
+        text = COURT_FILE_RE.sub(replace_court_file, text)
+
+        # 14.11. ČÍSLO POJISTNÉ SMLOUVY
+        def replace_policy_id(match):
+            return self._get_or_create_label('POLICY_ID', match.group(1))
+        text = POLICY_ID_RE.sub(replace_policy_id, text)
+
+        # 14.12. ČÍSLO SMLOUVY (generické)
+        def replace_contract_id(match):
+            return self._get_or_create_label('CONTRACT_ID', match.group(1))
+        text = CONTRACT_ID_RE.sub(replace_contract_id, text)
 
         # 15. TELEFONY (po ID_CARD a VS, ale PŘED částkami!)
         def replace_phone(match):

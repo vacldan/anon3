@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-17T22:12:44.157144",
+  "generated_at": "2025-11-18T19:33:05.914254",
   "source_file": "smlouva13.docx",
   "entities": [
     {
@@ -132,7 +132,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
-      "original": "David Procházek",
+      "original": "David Procházka",
       "occurrences": 1
     },
     {
@@ -162,7 +162,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_27]]",
-      "original": "Karel Procházek",
+      "original": "Karel Procházka",
       "occurrences": 1
     },
     {
@@ -319,6 +319,12 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_9]]",
       "original": "Anglická 45/12, 120 00 Praha 2",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_10]]",
+      "original": "Polská 78/3, Praha 2",
       "occurrences": 1
     },
     {
@@ -852,13 +858,13 @@
     {
       "type": "BANK",
       "label": "[[BANK_1]]",
-      "original": "2847563921",
+      "original": "2847563921/0800",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_2]]",
-      "original": "1234567890",
+      "original": "1234567890/0100",
       "occurrences": 1
     },
     {
@@ -882,7 +888,7 @@
     {
       "type": "BANK",
       "label": "[[BANK_6]]",
-      "original": "5678901234",
+      "original": "5678901234/0600",
       "occurrences": 1
     },
     {
@@ -894,72 +900,84 @@
     {
       "type": "BANK",
       "label": "[[BANK_8]]",
-      "original": "9876543210",
+      "original": "1234567890/5500",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_9]]",
-      "original": "4567891230",
+      "original": "9876543210/0800",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_10]]",
-      "original": "6677889900",
+      "original": "4567891230/5500",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_11]]",
-      "original": "1122334455",
+      "original": "6677889900/5500",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_12]]",
-      "original": "5544332211/0100",
+      "original": "1122334455/0100",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_13]]",
-      "original": "9988776655/2700",
+      "original": "5544332211/0100",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_14]]",
-      "original": "3344556677",
+      "original": "9988776655/2700",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_15]]",
-      "original": "7788990011/5500",
+      "original": "3344556677/0100",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_16]]",
-      "original": "4455667788/2700",
+      "original": "7788990011/5500",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_17]]",
-      "original": "8899001122",
+      "original": "4455667788/2700",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_18]]",
-      "original": "7788990011",
+      "original": "8899001122/0600",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_19]]",
+      "original": "1234567890/0800",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_20]]",
+      "original": "9876543210/5500",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_21]]",
       "original": "3622-1717371319/0710",
       "occurrences": 1
     },
@@ -985,6 +1003,18 @@
       "type": "IBAN",
       "label": "[[IBAN_4]]",
       "original": "CZ44 0100 0000 0099 8877 6655",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_ID",
+      "label": "[[LICENSE_ID_1]]",
+      "original": "45678",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_ID",
+      "label": "[[LICENSE_ID_2]]",
+      "original": "23456",
       "occurrences": 1
     },
     {
@@ -1420,6 +1450,18 @@
       "occurrences": 1
     },
     {
+      "type": "COURT_FILE",
+      "label": "[[COURT_FILE_1]]",
+      "original": "7 T 89/2023",
+      "occurrences": 1
+    },
+    {
+      "type": "COURT_FILE",
+      "label": "[[COURT_FILE_2]]",
+      "original": "23 C 45/2024",
+      "occurrences": 1
+    },
+    {
       "type": "VARIABLE_SYMBOL",
       "label": "[[VARIABLE_SYMBOL_1]]",
       "original": "20237089",
@@ -1444,9 +1486,27 @@
       "occurrences": 1
     },
     {
+      "type": "CONTRACT_ID",
+      "label": "[[CONTRACT_ID_1]]",
+      "original": "HYP/2024/56789",
+      "occurrences": 1
+    },
+    {
+      "type": "CASE_ID",
+      "label": "[[CASE_ID_1]]",
+      "original": "FÚ-123456/2024/Kon",
+      "occurrences": 1
+    },
+    {
       "type": "GENETIC_ID",
       "label": "[[GENETIC_ID_1]]",
       "original": "rs28897696",
+      "occurrences": 1
+    },
+    {
+      "type": "CONST_SYMBOL",
+      "label": "[[CONST_SYMBOL_1]]",
+      "original": "0308",
       "occurrences": 1
     },
     {
@@ -1507,6 +1567,12 @@
       "type": "HOST",
       "label": "[[HOST_1]]",
       "original": "db-prod-01.medicareplus.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "POLICY_ID",
+      "label": "[[POLICY_ID_1]]",
+      "original": "ÚP-2020-789456",
       "occurrences": 1
     }
   ]
