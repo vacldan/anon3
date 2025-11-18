@@ -273,9 +273,17 @@ ADDRESS_RE = re.compile(
     re.IGNORECASE | re.UNICODE
 )
 
-# SPZ/RZ
+# SPZ/RZ (Státní poznávací značky)
+# České SPZ formáty - MUSÍ obsahovat minimálně 1 písmeno!
+# - Starší: 1P2 3456, 4A5 6789 (číslice + 2 písmena + mezera + 4 číslice)
+# - Novější: 1AB2345 (číslice + 2 písmena + 4 číslice bez mezery)
+# Pattern zachytí všechny potenciální SPZ, filtrování false positives v kódu
 LICENSE_PLATE_RE = re.compile(
-    r'\b\d[A-Z]{2}\s?\d{4}\b',
+    r'\b('
+    r'\d[A-Z]{1,2}\s\d{4}|'  # 1P2 3456, 4A5 6789 (s mezerou)
+    r'\d[A-Z]{2}\d{4}|'  # 1AB2345 (bez mezery, 2 písmena)
+    r'[A-Z]{2}\d{4,5}'  # AB12345 (začíná písmeny)
+    r')\b',
     re.IGNORECASE
 )
 
@@ -967,9 +975,27 @@ class Anonymizer:
             return full
         text = ICO_RE.sub(replace_ico, text)
 
-        # 18. SPZ
+        # 18. SPZ / License Plates
         def replace_license_plate(match):
-            return self._get_or_create_label('SPZ', match.group(0))
+            # LICENSE_PLATE_RE má capture group (1) pro celou SPZ
+            plate = match.group(1) if match.lastindex and match.lastindex >= 1 else match.group(0)
+
+            # Filtruj false positives
+            # Nesmí být jen číslice (789456, 456789)
+            if plate.replace(' ', '').isdigit():
+                return match.group(0)
+
+            # Nesmí začínat "EU " (EU 2016)
+            if plate.upper().startswith('EU '):
+                return match.group(0)
+
+            # Kontrola kontextu - nesmí být po "od", "z", "do", "roku"
+            start_pos = match.start()
+            context_before = text[max(0, start_pos-10):start_pos].lower()
+            if any(word in context_before for word in ['od ', 'z ', 'do ', 'roku ']):
+                return match.group(0)
+
+            return self._get_or_create_label('LICENSE_PLATE', plate)
         text = LICENSE_PLATE_RE.sub(replace_license_plate, text)
 
         # 19. ČÁSTKY (AŽ NAKONEC! Po telefonech a všech číselných identifikátorech)
