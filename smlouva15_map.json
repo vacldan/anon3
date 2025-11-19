@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-19T14:30:45.884993",
+  "generated_at": "2025-11-19T15:28:58.251240",
   "source_file": "smlouva15.docx",
   "entities": [
     {
@@ -2224,6 +2224,12 @@
       "occurrences": 1
     },
     {
+      "type": "SECURITY_CLEARANCE",
+      "label": "[[SECURITY_CLEARANCE_1]]",
+      "original": "2023/VH/45678",
+      "occurrences": 1
+    },
+    {
       "type": "USERNAME",
       "label": "[[USERNAME_1]]",
       "original": "jprochazka",
@@ -2377,6 +2383,24 @@
       "type": "LICENSE_ID",
       "label": "[[LICENSE_ID_5]]",
       "original": "67890",
+      "occurrences": 1
+    },
+    {
+      "type": "LAB_ID",
+      "label": "[[LAB_ID_1]]",
+      "original": "GEN-2013-45678",
+      "occurrences": 1
+    },
+    {
+      "type": "LAB_ID",
+      "label": "[[LAB_ID_2]]",
+      "original": "PL-2024-345678",
+      "occurrences": 1
+    },
+    {
+      "type": "LAB_ID",
+      "label": "[[LAB_ID_3]]",
+      "original": "GEN-2024-12345",
       "occurrences": 1
     },
     {

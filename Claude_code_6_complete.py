@@ -541,6 +541,71 @@ GENETIC_ID_RE = re.compile(
     re.IGNORECASE
 )
 
+# ========== DOPLNĚNÉ GDPR KATEGORIE ==========
+
+# Datum narození (samostatné, ne v rodném čísle)
+# Formáty: dd.mm.yyyy, dd/mm/yyyy, dd-mm-yyyy
+# S kontextem: "datum narození:", "nar.", "narozen(a)"
+BIRTH_DATE_RE = re.compile(
+    r'(?:datum\s+narození|nar\.|narozen[aáý]?)\s*[:\-]?\s*'
+    r'(\d{1,2}[\./\-]\d{1,2}[\./\-]\d{4})',
+    re.IGNORECASE
+)
+
+# Číslo pasu
+# Formáty: 12345678 (8 číslic), AB123456 (2 písmena + 6 číslic)
+PASSPORT_RE = re.compile(
+    r'(?:pas|passport|č\.\s*pasu)\s*(?:č\.)?\s*[:\-]?\s*([A-Z]{0,2}\d{6,9})\b',
+    re.IGNORECASE
+)
+
+# Číslo řidičského průkazu
+# Formáty: AB123456, 12345678
+DRIVER_LICENSE_RE = re.compile(
+    r'(?:ŘP|řidičák|řidičský\s+průkaz|driver\'?s?\s*license)\s*(?:č\.)?\s*[:\-]?\s*([A-Z]{0,2}\d{6,9})\b',
+    re.IGNORECASE
+)
+
+# Benefitní karty (MultiSport, Sodexo, Edenred, atd.)
+# Formáty: 1234567890, MS-123456, SOD/123456
+BENEFIT_CARD_RE = re.compile(
+    r'(?:MultiSport|Sodexo|Edenred|benefitní\s+karta|benefit\s+card)\s*(?:karta|č\.)?\s*[:\-]?\s*'
+    r'([A-Z]{0,3}[\-/]?\d{6,12})\b',
+    re.IGNORECASE
+)
+
+# Číslo diplomu / matrika
+# Formáty: VŠE/2015/12345, ČVUT-2020-45678, UK/PřF/2018/789
+DIPLOMA_ID_RE = re.compile(
+    r'(?:diplom|matrika|diploma)\s*(?:č\.|number)?\s*[:\-]?\s*'
+    r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]{2,6}[\-/]\d{4}[\-/]\d{3,6})\b',
+    re.IGNORECASE
+)
+
+# Zaměstnanecké číslo / HR ID
+# Formáty: EMP-12345, ZAM/123456, EMP123456
+EMPLOYEE_ID_RE = re.compile(
+    r'(?:zaměstnanec(?:ké)?\s+(?:číslo|ID)|employee\s+(?:number|ID)|personální\s+číslo)\s*[:\-]?\s*'
+    r'([A-Z]{0,4}[\-/]?\d{4,8})\b',
+    re.IGNORECASE
+)
+
+# Bezpečnostní prověrka (NBÚ)
+# Formáty: NBÚ/2023/VH/45678, NBU-2023-12345
+SECURITY_CLEARANCE_RE = re.compile(
+    r'(?:NBÚ|prověrka|security\s+clearance)\s*(?:č\.)?\s*[:\-/]?\s*'
+    r'(\d{4}[\-/][A-Z]{0,3}[\-/]?\d{4,8})\b',
+    re.IGNORECASE
+)
+
+# Laboratorní ID / Lab ID
+# Formáty: GEN-2013-45678, LAB/2023/12345, PL-Boh/2021/45879
+LAB_ID_RE = re.compile(
+    r'((?:GEN|LAB|PL)(?:[\-/][A-Za-z]{0,5})?[\-/]\d{4}[\-/]\d{4,8})\b|'
+    r'(?:laboratorní\s+ID|lab\s+ID)\s*[:\-]?\s*([A-Z]{2,4}[\-/]\d{4}[\-/]\d{4,8})\b',
+    re.IGNORECASE
+)
+
 # =============== Třída Anonymizer ===============
 class Anonymizer:
     def __init__(self, verbose=False):
@@ -963,6 +1028,47 @@ class Anonymizer:
         def replace_genetic_id(match):
             return self._get_or_create_label('GENETIC_ID', match.group(1))
         text = GENETIC_ID_RE.sub(replace_genetic_id, text)
+
+        # 16.6. DATUM NAROZENÍ
+        def replace_birth_date(match):
+            return self._get_or_create_label('BIRTH_DATE', match.group(1))
+        text = BIRTH_DATE_RE.sub(replace_birth_date, text)
+
+        # 16.7. ČÍSLO PASU
+        def replace_passport(match):
+            return self._get_or_create_label('PASSPORT', match.group(1))
+        text = PASSPORT_RE.sub(replace_passport, text)
+
+        # 16.8. ŘIDIČSKÝ PRŮKAZ
+        def replace_driver_license(match):
+            return self._get_or_create_label('DRIVER_LICENSE', match.group(1))
+        text = DRIVER_LICENSE_RE.sub(replace_driver_license, text)
+
+        # 16.9. BENEFITNÍ KARTY (MultiSport, Sodexo)
+        def replace_benefit_card(match):
+            return self._get_or_create_label('BENEFIT_CARD', match.group(1))
+        text = BENEFIT_CARD_RE.sub(replace_benefit_card, text)
+
+        # 16.10. ČÍSLO DIPLOMU
+        def replace_diploma_id(match):
+            return self._get_or_create_label('DIPLOMA_ID', match.group(1))
+        text = DIPLOMA_ID_RE.sub(replace_diploma_id, text)
+
+        # 16.11. ZAMĚSTNANECKÉ ČÍSLO
+        def replace_employee_id(match):
+            return self._get_or_create_label('EMPLOYEE_ID', match.group(1))
+        text = EMPLOYEE_ID_RE.sub(replace_employee_id, text)
+
+        # 16.12. NBÚ PROVĚRKA
+        def replace_security_clearance(match):
+            return self._get_or_create_label('SECURITY_CLEARANCE', match.group(1))
+        text = SECURITY_CLEARANCE_RE.sub(replace_security_clearance, text)
+
+        # 16.13. LABORATORNÍ ID
+        def replace_lab_id(match):
+            lab_id = match.group(1) or match.group(2)
+            return self._get_or_create_label('LAB_ID', lab_id)
+        text = LAB_ID_RE.sub(replace_lab_id, text)
 
         # 17. IČO
         def replace_ico(match):
