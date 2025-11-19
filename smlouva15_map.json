@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-17T22:20:10.408274",
+  "generated_at": "2025-11-19T14:30:45.884993",
   "source_file": "smlouva15.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jakub Procházek",
+      "original": "Jakub Procházka",
       "occurrences": 1
     },
     {
@@ -48,234 +48,240 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Pavel Novák",
+      "original": "Eva Malá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_9]]",
-      "original": "Jana Svobodová",
+      "original": "Pavel Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Karel Novák",
+      "original": "Jana Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_11]]",
-      "original": "Tomáš Veselý",
+      "original": "Karel Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
-      "original": "Alena Dvořáková",
+      "original": "Tomáš Veselý",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_13]]",
-      "original": "Petr Dvořák",
+      "original": "Alena Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_14]]",
-      "original": "Adam Dvořák",
+      "original": "Petr Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_15]]",
-      "original": "Lucie Dvořáková",
+      "original": "Adam Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_16]]",
-      "original": "Jana Nová",
+      "original": "Lucie Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_17]]",
-      "original": "Pavel Horák",
+      "original": "Jana Nová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_18]]",
-      "original": "Hana Nováková",
+      "original": "Pavel Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_19]]",
-      "original": "Jana Dvořáková",
+      "original": "Hana Nováková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_20]]",
-      "original": "Karel Novotný",
+      "original": "Jana Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
-      "original": "Petr Malý",
+      "original": "Karel Novotný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
-      "original": "Robert Novák",
+      "original": "Petr Malý",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_23]]",
-      "original": "Martin Procházek",
+      "original": "Robert Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_24]]",
-      "original": "Petra Nováková",
+      "original": "Martin Procházka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_25]]",
-      "original": "Hana Svobodová",
+      "original": "Petra Nováková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_26]]",
-      "original": "Tomáš Dvořák",
+      "original": "Hana Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_27]]",
-      "original": "Jan Dvořák",
+      "original": "Tomáš Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_28]]",
-      "original": "Petr Novák",
+      "original": "Jan Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_29]]",
-      "original": "Martin Horák",
+      "original": "Petr Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_30]]",
-      "original": "Petra Svobodová",
+      "original": "Martin Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_31]]",
-      "original": "Jan Novák",
+      "original": "Petra Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_32]]",
-      "original": "Karel Dvořák",
+      "original": "Jan Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_33]]",
-      "original": "Tomáš Novák",
+      "original": "Karel Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_34]]",
-      "original": "Pavel Svoboda",
+      "original": "Tomáš Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_35]]",
-      "original": "Martina Svobodová",
+      "original": "Pavel Svoboda",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_36]]",
-      "original": "Jan Svoboda",
+      "original": "Martina Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_37]]",
-      "original": "Tomáš Horák",
+      "original": "Jan Svoboda",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_38]]",
-      "original": "Eva Svobodová",
+      "original": "Tomáš Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_39]]",
-      "original": "Tomáš Svoboda",
+      "original": "Eva Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_40]]",
-      "original": "Jan Horák",
+      "original": "Tomáš Svoboda",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_41]]",
-      "original": "Martin Novotný",
+      "original": "Jan Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_42]]",
-      "original": "Eva Málková",
+      "original": "Martin Novotný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_43]]",
-      "original": "Ondřej Bartoš",
+      "original": "Eva Málková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_44]]",
-      "original": "Pavel Dvořák",
+      "original": "Ondřej Bartoš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_45]]",
-      "original": "Jana Nováková",
+      "original": "Pavel Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_46]]",
+      "original": "Jana Nováková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_47]]",
       "original": "Petra Horáková",
       "occurrences": 1
     },
@@ -384,108 +390,162 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "Evropská 178/123, 160 00 Praha 6",
+      "original": "Karlovo náměstí 12/34, Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "Korunní 234/56, 130 00 Praha 3",
+      "original": "Vinohradská 123, Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Mánesova 45/12, 160 00 Praha 6",
+      "original": "Evropská 178/123, 160 00 Praha 6",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Na Příkopě 123/45, 110 00 Praha 1",
+      "original": "Korunní 234/56, 130 00 Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_9]]",
-      "original": "Vinohradská 234/78, 130 00 Praha 3",
+      "original": "Poliklinika Vinohradská 123/45, Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_10]]",
-      "original": "Dlouhá 45/12, 110 00 Praha 1",
+      "original": "Korunní 89, Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_11]]",
-      "original": "Vinohradská 123/89, 130 00 Praha 3",
+      "original": "Polská 23, Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_12]]",
-      "original": "Mánesova 234/12, 120 00 Praha 2",
+      "original": "Mánesova 45/12, 160 00 Praha 6",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_13]]",
-      "original": "Průmyslová 12, 170 00 Praha 7",
+      "original": "Vinohradská 123/45, Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_14]]",
-      "original": "Technická 456, 616 00 Brno",
+      "original": "Budínova 2, Praha 8",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_15]]",
-      "original": "Ostravská 123, 702 00 Ostrava",
+      "original": "Na Příkopě 123/45, 110 00 Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_16]]",
-      "original": "Brněnská 456, 602 00 Brno",
+      "original": "Vinohradská 234/78, 130 00 Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_17]]",
-      "original": "Náměstí Svobody 21, 602 00 Brno",
+      "original": "Dlouhá 45/12, 110 00 Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_18]]",
-      "original": "Husova 123/45, 602 00 Brno",
+      "original": "Vinohradská 123/89, 130 00 Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_19]]",
-      "original": "Vodní 67/8, 602 00 Brno",
+      "original": "Korunní 67, Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_20]]",
-      "original": "Purkyňova 234/56, 612 00 Brno",
+      "original": "Mánesova 234/12, 120 00 Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_21]]",
-      "original": "Wenceslas Square 89/23, 110 00 Praha 1",
+      "original": "Průmyslová 12, 170 00 Praha 7",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_22]]",
+      "original": "Technická 456, 616 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_23]]",
+      "original": "Ostravská 123, 702 00 Ostrava",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_24]]",
+      "original": "Brněnská 456, 602 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_25]]",
+      "original": "Náměstí Svobody 21, 602 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_26]]",
+      "original": "Husova 123/45, 602 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_27]]",
+      "original": "Vodní 67/8, 602 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_28]]",
+      "original": "Purkyňova 234/56, 612 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_29]]",
+      "original": "Husova 123/45, Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_30]]",
+      "original": "Wenceslas Square 89/23, 110 00 Praha 1",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_31]]",
       "original": "Vinohradská 1234/89, 130 00 Praha 3",
       "occurrences": 1
     },
@@ -1420,6 +1480,12 @@
       "occurrences": 1
     },
     {
+      "type": "BIRTH_PLACE",
+      "label": "[[BIRTH_PLACE_1]]",
+      "original": "Brno",
+      "occurrences": 1
+    },
+    {
       "type": "ID_CARD",
       "label": "[[ID_CARD_1]]",
       "original": "234567890",
@@ -1998,85 +2064,91 @@
     {
       "type": "BANK",
       "label": "[[BANK_1]]",
-      "original": "2345678901",
+      "original": "2345678901/0800",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_2]]",
-      "original": "4567890123",
+      "original": "4567890123/0800",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_3]]",
-      "original": "9876543210",
+      "original": "9876543210/2700",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_4]]",
-      "original": "7890123456",
+      "original": "7890123456/5500",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_5]]",
-      "original": "3456789012",
+      "original": "3456789012/0300",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_6]]",
-      "original": "4567890123/8060",
+      "original": "7890123456/0300",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_7]]",
-      "original": "5432109876",
+      "original": "4567890123/8060",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_8]]",
-      "original": "1122334455",
+      "original": "5432109876/2700",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_9]]",
-      "original": "6677889900",
+      "original": "1122334455/0100",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_10]]",
-      "original": "5566778899",
+      "original": "6677889900/5500",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_11]]",
-      "original": "8901234567",
+      "original": "5566778899/5500",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_12]]",
-      "original": "1234567890/2700",
+      "original": "8901234567/3030",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_13]]",
-      "original": "9876543210/5500",
+      "original": "1234567890/2700",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_14]]",
-      "original": "5678901234",
+      "original": "9876543210/5500",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_15]]",
+      "original": "5678901234/2700",
       "occurrences": 1
     },
     {
@@ -2278,6 +2350,48 @@
       "occurrences": 1
     },
     {
+      "type": "LICENSE_ID",
+      "label": "[[LICENSE_ID_1]]",
+      "original": "56789",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_ID",
+      "label": "[[LICENSE_ID_2]]",
+      "original": "34567",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_ID",
+      "label": "[[LICENSE_ID_3]]",
+      "original": "45678",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_ID",
+      "label": "[[LICENSE_ID_4]]",
+      "original": "23456",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_ID",
+      "label": "[[LICENSE_ID_5]]",
+      "original": "67890",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_1]]",
+      "original": "4532 1234 5678 9012",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_2]]",
+      "original": "4532 1098 7654 3210",
+      "occurrences": 1
+    },
+    {
       "type": "DIC",
       "label": "[[DIC_1]]",
       "original": "CZ12398745",
@@ -2302,6 +2416,30 @@
       "occurrences": 1
     },
     {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "SO27001",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_2]]",
+      "original": "SO27701",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_3]]",
+      "original": "3B4 5678",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_4]]",
+      "original": "2B3 4567",
+      "occurrences": 1
+    },
+    {
       "type": "HOST",
       "label": "[[HOST_1]]",
       "original": "db-prod-01.cloudmed.cz",
@@ -2317,12 +2455,6 @@
       "type": "VARIABLE_SYMBOL",
       "label": "[[VARIABLE_SYMBOL_1]]",
       "original": "202403089",
-      "occurrences": 1
-    },
-    {
-      "type": "CARD",
-      "label": "[[CARD_1]]",
-      "original": "4532 1098 7654 3210",
       "occurrences": 1
     },
     {

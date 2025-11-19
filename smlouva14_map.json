@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-18T12:48:32.433442",
+  "generated_at": "2025-11-19T14:26:44.741522",
   "source_file": "smlouva14.docx",
   "entities": [
     {
@@ -2064,85 +2064,91 @@
     {
       "type": "BANK",
       "label": "[[BANK_1]]",
-      "original": "2345678901",
+      "original": "2345678901/0800",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_2]]",
-      "original": "4567890123",
+      "original": "4567890123/0800",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_3]]",
-      "original": "9876543210",
+      "original": "9876543210/2700",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_4]]",
-      "original": "7890123456",
+      "original": "7890123456/5500",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_5]]",
-      "original": "3456789012",
+      "original": "3456789012/0300",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_6]]",
-      "original": "4567890123/8060",
+      "original": "7890123456/0300",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_7]]",
-      "original": "5432109876",
+      "original": "4567890123/8060",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_8]]",
-      "original": "1122334455",
+      "original": "5432109876/2700",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_9]]",
-      "original": "6677889900",
+      "original": "1122334455/0100",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_10]]",
-      "original": "5566778899",
+      "original": "6677889900/5500",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_11]]",
-      "original": "8901234567",
+      "original": "5566778899/5500",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_12]]",
-      "original": "1234567890/2700",
+      "original": "8901234567/3030",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_13]]",
-      "original": "9876543210/5500",
+      "original": "1234567890/2700",
       "occurrences": 1
     },
     {
       "type": "BANK",
       "label": "[[BANK_14]]",
-      "original": "5678901234",
+      "original": "9876543210/5500",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_15]]",
+      "original": "5678901234/2700",
       "occurrences": 1
     },
     {
@@ -2344,6 +2350,36 @@
       "occurrences": 1
     },
     {
+      "type": "LICENSE_ID",
+      "label": "[[LICENSE_ID_1]]",
+      "original": "56789",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_ID",
+      "label": "[[LICENSE_ID_2]]",
+      "original": "34567",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_ID",
+      "label": "[[LICENSE_ID_3]]",
+      "original": "45678",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_ID",
+      "label": "[[LICENSE_ID_4]]",
+      "original": "23456",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_ID",
+      "label": "[[LICENSE_ID_5]]",
+      "original": "67890",
+      "occurrences": 1
+    },
+    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4532 1234 5678 9012",
@@ -2377,6 +2413,30 @@
       "type": "DIC",
       "label": "[[DIC_4]]",
       "original": "CZ09876543",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "SO27001",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_2]]",
+      "original": "SO27701",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_3]]",
+      "original": "3B4 5678",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_4]]",
+      "original": "2B3 4567",
       "occurrences": 1
     },
     {
