@@ -349,9 +349,10 @@ ID_CARD_RE = re.compile(
     re.IGNORECASE
 )
 
-# Email
+# Email - OPRAVENO: Podpora pro diakritiku v lokální části
+# Zachytí: martina.horáková@neoteam.cz, jan.novák@firma.cz, atd.
 EMAIL_RE = re.compile(
-    r'\b([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})\b'
+    r'\b([a-zA-ZáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})\b'
 )
 
 # Telefon (CZ formáty) - NESMÍ zachytit prefix do hodnoty!
