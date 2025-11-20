@@ -524,6 +524,17 @@ DRIVER_LICENSE_RE = re.compile(
     re.IGNORECASE
 )
 
+# Benefitní karty (MultiSport, Sodexo, Edenred, atd.) - DŮLEŽITÉ PII!
+# Formáty: 9876543210, MS-123456, SOD/123456, "ID karty: 9876543210"
+# Důvod přidání: Unikátní identifikátor osoby, jednoznačně PII
+BENEFIT_CARD_RE = re.compile(
+    r'(?:'
+    r'(?:MultiSport|Sodexo|Edenred|benefitní\s+karta|benefit\s+card)\s*(?:karta|č\.?|ID)?\s*[:\-]?\s*([A-Z]{0,3}[\-/]?\d{6,12})|'
+    r'ID\s+karty\s*[:\-]\s*(\d{6,12})'
+    r')\b',
+    re.IGNORECASE
+)
+
 # =============== Třída Anonymizer ===============
 class Anonymizer:
     def __init__(self, verbose=False):
@@ -593,7 +604,53 @@ class Anonymizer:
 
     def _replace_remaining_people(self, text: str) -> str:
         """Detekuje a nahradí zbývající osoby."""
-        # NEJPRVE: Pattern pro jména s titulem (MUDr. Eva Malá)
+
+        # NEJPRVE: Samostatná křestní jména (bez příjmení)
+        # Pattern: "Jakub pracoval jako...", "Eva řekla...", ale NE "Praha", "Česká", atd.
+        def replace_standalone_first_name(match):
+            name = match.group(1)
+            name_lower = name.lower()
+
+            # Kontrola, zda je to křestní jméno z knihovny
+            if name_lower not in CZECH_FIRST_NAMES:
+                return match.group(0)
+
+            # Ignore list - slova která vypadají jako jména, ale nejsou
+            ignore_words = {
+                'praha', 'brno', 'ostrava', 'plzeň', 'česká', 'slovenská',
+                'evropa', 'amerika', 'asie', 'afrika', 'čech', 'moravia'
+            }
+            if name_lower in ignore_words:
+                return match.group(0)
+
+            # Vytvoř/najdi tag pro samostatné křestní jméno
+            # Použijeme jen křestní jméno jako canonical
+            canonical = name.capitalize()
+            if canonical not in self.canonical_persons:
+                idx = len(self.canonical_persons) + 1
+                self.canonical_persons[canonical] = f"[[PERSON_{idx}]]"
+
+            return self.canonical_persons[canonical]
+
+        # Pattern pro samostatné křestní jméno následované slovesem nebo "jako"
+        # Rozšířeno o uvozovky a další slovesa
+        standalone_first_name_pattern = re.compile(
+            r'(?:^|["\s])([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\s+(?:pracoval|pracovala|řekl|řekla|uvedl|uvedla|jako|byl|byla|je|jsou|měl|měla|dělal|dělala)',
+            re.UNICODE | re.MULTILINE
+        )
+
+        def replace_standalone_wrapper(match):
+            # Zachovej prefix (uvozovky nebo mezeru)
+            prefix = match.group(0)[0] if match.group(0)[0] in ('"', ' ', '\n', '\t') else ''
+            result = replace_standalone_first_name(match)
+            # Pokud bylo nahrazeno, přidej prefix
+            if result != match.group(0):
+                return prefix + result[len(prefix):] if prefix else result
+            return match.group(0)
+
+        text = standalone_first_name_pattern.sub(replace_standalone_wrapper, text)
+
+        # DÁLE: Pattern pro jména s titulem (MUDr. Eva Malá)
         # Tento musí jít PŘED obecným pattern aby titul nebyl ztracen
         titled_pattern = re.compile(
             r'(Ing\.|Mgr\.|Bc\.|MUDr\.|JUDr\.|PhDr\.|RNDr\.|Prof\.|Doc\.|Ph\.D\.|MBA|CSc\.|DrSc\.)\s+'
@@ -938,15 +995,13 @@ class Anonymizer:
             return self._get_or_create_label('DRIVER_LICENSE', match.group(1))
         text = DRIVER_LICENSE_RE.sub(replace_driver_license, text)
 
-        # 16.9. BENEFITNÍ KARTY (MultiSport, Sodexo)
-
-        # 16.10. ČÍSLO DIPLOMU
-
-        # 16.11. ZAMĚSTNANECKÉ ČÍSLO
-
-        # 16.12. NBÚ PROVĚRKA
-
-        # 16.13. LABORATORNÍ ID
+        # 16.9. BENEFITNÍ KARTY (MultiSport, Sodexo) - PII!
+        def replace_benefit_card(match):
+            card_id = match.group(1) if match.group(1) else match.group(2)
+            if card_id:
+                return self._get_or_create_label('BENEFIT_CARD', card_id)
+            return match.group(0)
+        text = BENEFIT_CARD_RE.sub(replace_benefit_card, text)
 
         # 17. IČO
         def replace_ico(match):
