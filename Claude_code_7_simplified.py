@@ -647,6 +647,62 @@ RFID_RE = re.compile(
     re.IGNORECASE
 )
 
+# ========== SOCIAL MEDIA (KRITICKÉ - PII) ==========
+
+# LinkedIn profily
+LINKEDIN_RE = re.compile(
+    r'(?:LinkedIn|linkedin)?\s*:?\s*(https?://(?:www\.)?linkedin\.com/in/[A-Za-z0-9\-_]+)',
+    re.IGNORECASE
+)
+
+# Facebook profily
+FACEBOOK_RE = re.compile(
+    r'(?:Facebook|facebook)?\s*:?\s*(https?://(?:www\.)?facebook\.com/[A-Za-z0-9\._\-]+)',
+    re.IGNORECASE
+)
+
+# Instagram handle - POUZE s explicitním kontextem nebo URL
+# NEchytej @ z emailů!
+INSTAGRAM_RE = re.compile(
+    r'(?:Instagram|instagram)\s*:?\s*(@[A-Za-z0-9_]+)|'  # Handle pouze s prefixem "Instagram:"
+    r'(https?://(?:www\.)?instagram\.com/[A-Za-z0-9_\.]+)',  # Nebo plné URL
+    re.IGNORECASE
+)
+
+# Skype ID
+SKYPE_RE = re.compile(
+    r'(?:Skype|skype)\s*:?\s*([A-Za-z0-9\._\-]+)',
+    re.IGNORECASE
+)
+
+# ========== BIOMETRIC IDs (KRITICKÉ - GDPR Článek 9) ==========
+
+# Voice ID / Hlasový profil
+VOICE_ID_RE = re.compile(
+    r'(?:Hlasový\s+profil|Voice\s+ID|VOICE_ID|Voice\s+Profile)\s*[:\-=]?\s*([A-Z0-9_\-]+)',
+    re.IGNORECASE
+)
+
+# Biometric hash (otisk prstu, sítnice, atd.)
+BIO_HASH_RE = re.compile(
+    r'(?:hash|Hash|HASH_BIO|Biometric\s+Hash|Otisk|Fingerprint)\s*[:\-=]?\s*([A-Z0-9_\-]+)',
+    re.IGNORECASE
+)
+
+# Photo ID / Face ID files
+PHOTO_ID_RE = re.compile(
+    r'(photo_id_[A-Za-z0-9_\-]+\.(?:jpg|jpeg|png|gif|bmp))|'
+    r'(face_id_[A-Za-z0-9_\-]+\.(?:jpg|jpeg|png|gif|bmp))|'
+    r'(?:Fotografie|Photo\s+ID|Face\s+ID)\s*[:\-=]?\s*[Uu]loženo.*?\(([A-Za-z0-9_\-]+\.(?:jpg|jpeg|png|gif|bmp))\)',
+    re.IGNORECASE
+)
+
+# Enhanced API Key - zachytí i složitější formáty
+API_KEY_ENHANCED_RE = re.compile(
+    r'(?:API\s+klíč|API\s+Key|api_key)\s*[:\-=]?\s*([A-Za-z0-9_\-]+)',
+    re.IGNORECASE
+)
+
 # Genetické identifikátory (rs...) - NESMÍ být zachyceny jako ICO!
 # Pattern: rs28897696, rs1234567
 GENETIC_ID_RE = re.compile(
@@ -1177,7 +1233,12 @@ class Anonymizer:
             #       "Petra Procházková" → canonical by měl být "Procházková" (ne "Procházek")
 
             # Hledej existující kmen příjmení v canonical_persons
+            # ALE POUZE pokud mají STEJNÝ ROD (mužské vs ženské)
             existing_surname_stem = None
+
+            # Nejdřív zjisti rod aktuálního příjmení
+            current_is_female = last_nom.lower().endswith(('ová', 'á'))
+
             for existing_canonical in self.canonical_persons.keys():
                 # Rozděl existující canonical na jméno a příjmení
                 parts = existing_canonical.split()
@@ -1185,9 +1246,17 @@ class Anonymizer:
                     existing_last = parts[1]
                     existing_last_lo = existing_last.lower()
 
+                    # Zjisti rod existujícího příjmení
+                    existing_is_female = existing_last_lo.endswith(('ová', 'á'))
+
+                    # MUSÍ být stejný rod!
+                    if existing_is_female != current_is_female:
+                        continue  # Různý rod → skip
+
                     # Porovnej kmeny příjmení
-                    # Procházka vs Procházková → kmen = "Procházk"
-                    # Hájek vs Hájková → kmen = "Hájk"
+                    # Procházka vs Procházka → kmen = "Procházk" (oba mužské) ✓
+                    # Procházková vs Procházková → kmen = "Procházk" (obě ženské) ✓
+                    # Procházka vs Procházková → skip (různý rod) ✗
 
                     # Jednoduché pravidlo: odstraň koncovky -ová, -a, -ek, -el, -ec
                     def get_stem(surname):
@@ -1210,12 +1279,12 @@ class Anonymizer:
                     existing_stem = get_stem(existing_last)
                     current_stem = get_stem(last_nom)
 
-                    # Pokud kmeny se shodují → použij existující tvar
+                    # Pokud kmeny se shodují A mají stejný rod → použij existující tvar
                     if existing_stem == current_stem:
                         existing_surname_stem = existing_last
                         break
 
-            # Pokud jsme našli existující kmen, použij ho místo inference
+            # Pokud jsme našli existující kmen (STEJNÝ ROD), použij ho místo inference
             if existing_surname_stem:
                 last_nom = existing_surname_stem
 
@@ -1354,6 +1423,44 @@ class Anonymizer:
         def replace_rfid(match):
             return self._get_or_create_label('RFID', match.group(1))
         text = RFID_RE.sub(replace_rfid, text)
+
+        # 8.1. SOCIÁLNÍ SÍTĚ (KRITICKÉ - PII)
+        def replace_linkedin(match):
+            return self._get_or_create_label('LINKEDIN', match.group(1))
+        text = LINKEDIN_RE.sub(replace_linkedin, text)
+
+        def replace_facebook(match):
+            return self._get_or_create_label('FACEBOOK', match.group(1))
+        text = FACEBOOK_RE.sub(replace_facebook, text)
+
+        def replace_instagram(match):
+            # Instagram má 2 capture groups - handle nebo URL
+            handle = match.group(1) if match.group(1) else match.group(2)
+            return self._get_or_create_label('INSTAGRAM', handle)
+        text = INSTAGRAM_RE.sub(replace_instagram, text)
+
+        def replace_skype(match):
+            return self._get_or_create_label('SKYPE', match.group(1))
+        text = SKYPE_RE.sub(replace_skype, text)
+
+        # 8.2. BIOMETRICKÉ IDENTIFIKÁTORY (KRITICKÉ - GDPR Článek 9)
+        def replace_voice_id(match):
+            return self._get_or_create_label('VOICE_ID', match.group(1), store_value=False)
+        text = VOICE_ID_RE.sub(replace_voice_id, text)
+
+        def replace_bio_hash(match):
+            return self._get_or_create_label('BIO_HASH', match.group(1), store_value=False)
+        text = BIO_HASH_RE.sub(replace_bio_hash, text)
+
+        def replace_photo_id(match):
+            # Photo ID má 3 capture groups
+            photo_id = match.group(1) if match.group(1) else (match.group(2) if match.group(2) else match.group(3))
+            return self._get_or_create_label('PHOTO_ID', photo_id, store_value=False)
+        text = PHOTO_ID_RE.sub(replace_photo_id, text)
+
+        def replace_api_key_enhanced(match):
+            return self._get_or_create_label('API_KEY', match.group(1), store_value=False)
+        text = API_KEY_ENHANCED_RE.sub(replace_api_key_enhanced, text)
 
         # 9. ADRESY (před jmény, aby "Novákova 45" nebylo osobou)
         def replace_address(match):
