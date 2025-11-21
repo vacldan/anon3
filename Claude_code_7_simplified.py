@@ -239,12 +239,14 @@ def infer_first_name_nominative(obs: str) -> str:
         if stem_ra.lower() in CZECH_FIRST_NAMES:
             return stem_ra.capitalize()
 
-    # 3. Zkrácená jména (Han → Hana, Mart → Marta, Martin → Martina)
-    # Priorita: nejdřív zkus +ina (pro Martin → Martina), pak +a
-    if lo + 'ina' in CZECH_FIRST_NAMES:
-        return (obs + 'ina').capitalize()
-    if lo + 'a' in CZECH_FIRST_NAMES:
-        return (obs + 'a').capitalize()
+    # 3. Zkrácená jména (Han → Hana, Mart → Marta, ale NE David → Davida)
+    # POUZE pro krátká jména (max 4 znaky) aby se předešlo chybám jako David → Davida
+    if len(obs) <= 4:
+        # Priorita: nejdřív zkus +ina (pro Mart → Martina), pak +a
+        if lo + 'ina' in CZECH_FIRST_NAMES:
+            return (obs + 'ina').capitalize()
+        if lo + 'a' in CZECH_FIRST_NAMES:
+            return (obs + 'a').capitalize()
 
     # ŽENSKÁ JMÉNA - pádové varianty
     # Genitiv/Dativ/Lokál: -y/-ě/-e → -a
@@ -2192,8 +2194,10 @@ class Anonymizer:
                 "occurrences": 1
             })
 
-        # Ostatní entity
+        # Ostatní entity (kromě PERSON, který už je v canonical_persons)
         for typ, entities in self.entity_map.items():
+            if typ == 'PERSON':
+                continue  # Skip PERSON - already handled in canonical_persons
             for idx, (original, variants) in enumerate(entities.items(), 1):
                 json_data["entities"].append({
                     "type": typ,
@@ -2216,8 +2220,10 @@ class Anonymizer:
                     f.write(f"{p['tag']}: {canonical_full}\n")
                 f.write("\n")
 
-            # Ostatní entity
+            # Ostatní entity (kromě PERSON, který už je v OSOBY)
             for typ, entities in sorted(self.entity_map.items()):
+                if typ == 'PERSON':
+                    continue  # Skip PERSON - already handled in OSOBY section
                 if entities:
                     f.write(f"{typ}\n")
                     for idx, (original, variants) in enumerate(entities.items(), 1):
