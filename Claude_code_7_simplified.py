@@ -684,9 +684,10 @@ VOICE_ID_RE = re.compile(
 )
 
 # Biometric hash (otisk prstu, sítnice, atd.)
+# Zachytí pouze hodnoty po explicitním "hash:", "Hash:", nebo samostatné hash kódy
 BIO_HASH_RE = re.compile(
-    r'(?:hash|Hash|HASH_BIO|Biometric\s+Hash|Otisk|Fingerprint)\s*[:\-=]?\s*([A-Z0-9_\-]+)',
-    re.IGNORECASE
+    r'(?:hash|Hash):\s*([A-Z][A-Z0-9_\-]{10,})|'  # hash: HASH_BIO_JP_2024_0156
+    r'\b((?:HASH_BIO|IRIS|RETINA|FINGERPRINT|PALM|DNA)_[A-Z0-9_\-]{8,})\b'  # Standalone hash codes
 )
 
 # Photo ID / Face ID files
@@ -1445,21 +1446,23 @@ class Anonymizer:
 
         # 8.2. BIOMETRICKÉ IDENTIFIKÁTORY (KRITICKÉ - GDPR Článek 9)
         def replace_voice_id(match):
-            return self._get_or_create_label('VOICE_ID', match.group(1), store_value=False)
+            return self._get_or_create_label('VOICE_ID', match.group(1))
         text = VOICE_ID_RE.sub(replace_voice_id, text)
 
         def replace_bio_hash(match):
-            return self._get_or_create_label('BIO_HASH', match.group(1), store_value=False)
+            # BIO_HASH_RE má 2 capture groups
+            bio_hash = match.group(1) if match.group(1) else match.group(2)
+            return self._get_or_create_label('BIO_HASH', bio_hash)
         text = BIO_HASH_RE.sub(replace_bio_hash, text)
 
         def replace_photo_id(match):
             # Photo ID má 3 capture groups
             photo_id = match.group(1) if match.group(1) else (match.group(2) if match.group(2) else match.group(3))
-            return self._get_or_create_label('PHOTO_ID', photo_id, store_value=False)
+            return self._get_or_create_label('PHOTO_ID', photo_id)
         text = PHOTO_ID_RE.sub(replace_photo_id, text)
 
         def replace_api_key_enhanced(match):
-            return self._get_or_create_label('API_KEY', match.group(1), store_value=False)
+            return self._get_or_create_label('API_KEY', match.group(1))
         text = API_KEY_ENHANCED_RE.sub(replace_api_key_enhanced, text)
 
         # 9. ADRESY (před jmény, aby "Novákova 45" nebylo osobou)
