@@ -398,9 +398,21 @@ def infer_surname_nominative(obs: str) -> str:
 
     # Ale POUZE pokud to není součást příjmení (Šembera, Chlumec, atd.)
     if lo.endswith('em') and len(obs) > 4:
-        # Kontrola: není -lem, -rem, -sem, -šem, -cem (součást příjmení)
-        if not lo.endswith(('lem', 'rem', 'sem', 'šem', 'cem', 'dem', 'nem')):
-            # Novákem → Novák
+        # Speciální případ: -alem, -elem, -olem → pravděpodobně instrumentál od -al, -el, -ol
+        if lo.endswith(('alem', 'elem', 'olem', 'ilem')):
+            # Doležalem → Doležal, Havlem → Havel, Kokolem → Kokol
+            # Ale Havel má výjimku výš (řádek 383-385), takže tady řešíme jen -al/-ol/-il
+            if lo.endswith('alem'):
+                return obs[:-2]  # Doležalem → Doležal
+            elif lo.endswith('elem'):
+                return obs[:-2]  # ?elem → ?el (edge case)
+            elif lo.endswith('olem'):
+                return obs[:-2]  # ?olem → ?ol
+            elif lo.endswith('ilem'):
+                return obs[:-2]  # ?ilem → ?il
+        # Kontrola: není -bem, -dem, -cem, -sem, -šem (součást příjmení)
+        elif not lo.endswith(('bem', 'dem', 'cem', 'sem', 'šem', 'chem', 'gem')):
+            # Novákem → Novák, Procházkou → Procházka
             return obs[:-2]
 
     # ========== GENITIV: -a → NEODSTRAŇUJ! ==========
@@ -2215,9 +2227,18 @@ class Anonymizer:
             # Osoby
             if self.canonical_persons:
                 f.write("OSOBY\n")
+                f.write("-----\n")
                 for p in self.canonical_persons:
                     canonical_full = f'{p["first"]} {p["last"]}'
                     f.write(f"{p['tag']}: {canonical_full}\n")
+
+                    # Vypsat všechny nalezené varianty této osoby
+                    if canonical_full in self.entity_map['PERSON']:
+                        variants = self.entity_map['PERSON'][canonical_full]
+                        # Vypsat pouze varianty odlišné od kanonického tvaru
+                        for variant in sorted(variants):
+                            if variant.lower() != canonical_full.lower():
+                                f.write(f"  - {variant}\n")
                 f.write("\n")
 
             # Ostatní entity (kromě PERSON, který už je v OSOBY)
