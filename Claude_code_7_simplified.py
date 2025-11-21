@@ -386,6 +386,20 @@ def infer_surname_nominative(obs: str) -> str:
     # Mnoho příjmení končí na -a v nominativu (Svoboda, Skála, Liška, atd.)
     # Příliš riskantní, necháme to být
 
+    # ========== GENITIV: -y → -a ==========
+    # Procházky (genitiv) → Procházka (nominativ)
+    # ALE POUZE pokud to NENÍ přídavné jméno (-ský/-cký/-ný)
+    if lo.endswith('y') and len(obs) > 2:
+        # Skip if it's adjective form
+        if not lo.endswith(('ský', 'cký', 'ný')):
+            # Genitiv of surnames ending in -a: Procházka → Procházky
+            # So reverse: Procházky → Procházka
+            # But check if it's not a common surname ending with 'y' in nominative
+            common_y_surnames = {'hubený', 'malý', 'veselý', 'černý', 'bílý'}
+            if lo not in common_y_surnames:
+                candidate = obs[:-1] + 'a'
+                return candidate
+
     return obs
 
 # =============== Regexy ===============
@@ -1226,15 +1240,21 @@ class Anonymizer:
                     first_nom = infer_first_name_nominative(first_obs)
             else:
                 # Příjmení je mužské, jméno musí být mužské
-                # Jana → Jan, Petra → Petr (odstraň 'a' pokud je to genitiv)
+                # Jana → Jan, Petra → Petr, Radka → Radek (použij inference!)
                 if first_lo.endswith('a') and len(first_lo) > 2:
                     # Výjimky - skutečná mužská jména končící na 'a'
                     male_names_with_a = {'kuba', 'míla', 'nikola', 'saša', 'jirka', 'honza'}
                     if first_lo in male_names_with_a:
                         first_nom = first_obs.capitalize()
                     else:
-                        # Odstraň koncové 'a'
-                        first_nom = first_obs[:-1].capitalize()
+                        # FORCE MASCULINE CONVERSION - použij přímo _male_genitive_to_nominative
+                        # Radka → Radek, Jana → Jan, Petra → Petr
+                        male_result = _male_genitive_to_nominative(first_obs)
+                        if male_result:
+                            first_nom = male_result
+                        else:
+                            # Fallback: odstranění 'a'
+                            first_nom = first_obs[:-1].capitalize()
                 elif first_lo.endswith(('u', 'e', 'em', 'ovi', 'ům')):
                     # Typické pádové koncovky → použij inference
                     first_nom = infer_first_name_nominative(first_obs)
