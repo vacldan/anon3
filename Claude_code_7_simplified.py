@@ -906,7 +906,32 @@ class Anonymizer:
             first_obs = match.group(1)
             last_obs = match.group(2)
 
-            # Rozšířený seznam slov k ignorování (firmy, produkty, instituce)
+            # ========== A) BLACKLIST NE-OSOB ==========
+
+            # 1. Blacklist kritických slov (firmy, instituce, produkty)
+            critical_blacklist = {
+                # Firmy a právní formy
+                's.r.o.', 'a.s.', 'spol.', 'k.s.', 'v.o.s.', 'o.p.s.',
+                'ltd', 'inc', 'corp', 'gmbh', 'llc',
+                # Instituce
+                'czech', 'republic', 'synlab', 'gymnázium', 'gymnasium',
+                'university', 'univerzita', 'fakulta', 'klinika', 'nemocnice',
+                'centrum', 'ústav', 'institute', 'academy', 'akademie',
+                # Produkty/Software
+                'kaspersky', 'endpoint', 'latitude', 'archer', 'classic',
+                'windows', 'linux', 'android', 'ios', 'office', 'excel',
+                # Role/Pozice (když jsou samostatně)
+                'ředitelka', 'ředitel', 'jednatel', 'jednatelka',
+                'manager', 'director', 'chief', 'officer'
+            }
+
+            # Kontrola, zda hodnota obsahuje blacklist slovo
+            combined = f"{first_obs} {last_obs}".lower()
+            for word in critical_blacklist:
+                if word in combined:
+                    return match.group(0)  # Není osoba
+
+            # 2. Rozšířený ignore list (původní)
             ignore_words = {
                 # Běžná slova ve smlouvách
                 'místo', 'datum', 'částku', 'bytem', 'sídlo', 'adresa',
@@ -958,8 +983,7 @@ class Anonymizer:
             if first_obs.lower() in ignore_words or last_obs.lower() in ignore_words:
                 return match.group(0)
 
-            # Detekce firem, produktů, institucí (neměly by být PERSON)
-            combined = f"{first_obs} {last_obs}".lower()
+            # 3. Detekce firem, produktů, institucí (neměly by být PERSON)
             non_person_patterns = [
                 # Tech/Software
                 r'\b(tech|cloud|web|solutions?|data|digital|software|analytics)\b',
@@ -982,13 +1006,125 @@ class Anonymizer:
                 if re.search(pattern, combined):
                     return match.group(0)
 
-            # Detekce názvů firem (končí na s.r.o., a.s., spol., Ltd. atd.)
+            # 4. Detekce názvů firem (končí na s.r.o., a.s., spol., Ltd. atd.)
             context_after = text[match.end():match.end()+20]
             if re.search(r'^\s*(s\.r\.o\.|a\.s\.|spol\.|k\.s\.|v\.o\.s\.|ltd\.?|inc\.?)', context_after, re.IGNORECASE):
                 return match.group(0)
 
+            # ========== B) VALIDACE ČESKÉ OSOBY ==========
+
+            # 5. Požadované patterny pro skutečnou osobu
+            # Max 2-3 tokeny (již splněno regex patternem)
+            # Každý token začíná velkým písmenem (již splněno)
+
+            # 6. Validace českého příjmení (poslední token)
+            last_lo = last_obs.lower()
+
+            # Typické české příjmení koncovky
+            valid_surname_suffixes = (
+                'ová', 'á',  # ženské
+                'ek', 'ák', 'ík', 'ský', 'cký', 'čák', 'ec', 'el',  # mužské
+                'a',  # Svoboda, Skála, Liška
+                'ý', 'í',  # přídavná jména
+                # Další běžné koncovky
+                'an', 'en', 'in', 'on', 'un',  # Urban, Marin, Kubín, atd.
+                'eš', 'iš', 'uš', 'áš', 'íš',  # Beneš, Kříž, Lukáš, atd.
+                'or', 'ar', 'ir', 'ur',  # Gregor, Kohár, atd.
+                'ov', 'ev', 'av', 'iv',  # Petrov, Medveděv, atd.
+                'áč', 'ič', 'oč', 'ůč',  # Horváč, Novič, atd.
+                'át', 'ůt', 'ut', 'et'   # Sovát, Kůt, atd.
+            )
+
+            # Pokud příjmení nekončí na typickou koncovku → pravděpodobně není osoba
+            # ALE: pokud je to jednoslabičné anglické slovo (např. "Met", "Hub"), může to být produkt/firma
+            if not last_lo.endswith(valid_surname_suffixes):
+                # Zkontroluj, jestli je to jednoslabičné anglické slovo (firma/produkt)
+                # Např: "Met London", "Hub Team", "Pro Series"
+                if len(last_obs) <= 3 or last_obs.lower() in {'hub', 'pro', 'met', 'net', 'web', 'app', 'lab', 'dev'}:
+                    return match.group(0)  # Pravděpodobně firma/produkt
+                # Jinak je to OK (může to být méně běžné české příjmení)
+
+            # 7. Validace křestního jména (musí být v knihovně nebo mít typickou českou strukturu)
+            first_lo = first_obs.lower()
+
+            # Pokud křestní jméno NENÍ v knihovně jmen → kontroluj speciální případy
+            if first_lo not in CZECH_FIRST_NAMES:
+                # Pokud má méně než 3 znaky → není validní (např. "Me", "Jo")
+                if len(first_obs) < 3:
+                    return match.group(0)
+
+                # Pokud končí na 'k' a má 4 znaky → možná je to zkrácený genitiv (např. "Radk" z "Radka")
+                # V tom případě kontroluj, jestli příjmení je také v genitivu (končí na 'y')
+                if len(first_obs) == 4 and first_lo.endswith('k'):
+                    # Zkontroluj, jestli příjmení je v genitivu (Procházky)
+                    if last_lo.endswith('y') and not last_lo.endswith(('ský', 'cký', 'ný')):
+                        # Oba jsou v genitivu → odmítnout
+                        return match.group(0)
+
+            # 8. Detekce rolí ("Ředitelka Centrum")
+            # Pokud první slovo je role → není to osoba
+            role_words = {
+                'ředitelka', 'ředitel', 'jednatel', 'jednatelka',
+                'manager', 'director', 'chief', 'officer',
+                'specialist', 'consultant', 'coordinator',
+                'developer', 'architect', 'engineer', 'analyst'
+            }
+            if first_obs.lower() in role_words:
+                return match.group(0)  # Role, ne osoba
+
+            # ========== C) INFERENCE KANONICKÉHO JMÉNA ==========
+
             # Nejdřív inference příjmení
             last_nom = infer_surname_nominative(last_obs)
+
+            # DŮLEŽITÉ: Oprava kanonického příjmení
+            # Pokud už máme v canonical_persons nějaký tvar tohoto příjmení (např. "Procházka"),
+            # použij ten existující kmen místo nového inference
+            # Např: "Jakub Procházka" → canonical = "Procházka"
+            #       "Petra Procházková" → canonical by měl být "Procházková" (ne "Procházek")
+
+            # Hledej existující kmen příjmení v canonical_persons
+            existing_surname_stem = None
+            for existing_canonical in self.canonical_persons.keys():
+                # Rozděl existující canonical na jméno a příjmení
+                parts = existing_canonical.split()
+                if len(parts) == 2:
+                    existing_last = parts[1]
+                    existing_last_lo = existing_last.lower()
+
+                    # Porovnej kmeny příjmení
+                    # Procházka vs Procházková → kmen = "Procházk"
+                    # Hájek vs Hájková → kmen = "Hájk"
+
+                    # Jednoduché pravidlo: odstraň koncovky -ová, -a, -ek, -el, -ec
+                    def get_stem(surname):
+                        s = surname.lower()
+                        if s.endswith('ová'):
+                            return s[:-3]  # Procházková → Procházk
+                        elif s.endswith('ek'):
+                            return s[:-2] + 'k'  # Hájek → Hájk
+                        elif s.endswith('el'):
+                            return s[:-2] + 'l'  # Havel → Havl
+                        elif s.endswith('ec'):
+                            return s[:-2] + 'c'  # Němec → Němc
+                        elif s.endswith('a'):
+                            return s[:-1]  # Procházka → Procházk
+                        elif s.endswith('á'):
+                            return s[:-1]  # Malá → Mal
+                        else:
+                            return s  # Novák → Novák
+
+                    existing_stem = get_stem(existing_last)
+                    current_stem = get_stem(last_nom)
+
+                    # Pokud kmeny se shodují → použij existující tvar
+                    if existing_stem == current_stem:
+                        existing_surname_stem = existing_last
+                        break
+
+            # Pokud jsme našli existující kmen, použij ho místo inference
+            if existing_surname_stem:
+                last_nom = existing_surname_stem
 
             # Určení rodu podle příjmení
             is_female_surname = last_nom.lower().endswith(('ová', 'á'))
