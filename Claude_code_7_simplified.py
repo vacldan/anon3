@@ -734,10 +734,23 @@ class Anonymizer:
                 first_vars = variants_for_first(first)
                 last_vars = variants_for_surname(last)
 
-                # Všechny kombinace
+                # Všechny kombinace - ale FILTRUJ zkrácené genitivy
                 for fv in first_vars:
                     for lv in last_vars:
                         if fv and lv:
+                            # FILTR: Odmítni zkrácené genitivy
+                            # Např: "Radk Procházky" (oba v genitivu, zkrácené)
+                            fv_lo = fv.lower()
+                            lv_lo = lv.lower()
+
+                            # Pokud křestní jméno má 3-5 znaků a končí na 'k' → zkrácený genitiv
+                            if 3 <= len(fv) <= 5 and fv_lo[-1] == 'k':
+                                continue  # Skip this variant
+
+                            # Pokud křestní jméno má 3 znaky a nekončí na samohlásku/n/l/r → zkrácený
+                            if len(fv) == 3 and not fv_lo[-1] in 'aeiouyáéíóúůýnlr':
+                                continue  # Skip
+
                             pattern = rf'\b{re.escape(fv)}\s+{re.escape(lv)}\b'
                             text = re.sub(pattern, label, text, flags=re.IGNORECASE)
 
