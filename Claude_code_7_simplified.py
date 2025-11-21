@@ -144,6 +144,23 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
     Důvod: "Petra" může být genitiv od "Petr" (správně) nebo "Petro" (chybně).
     """
     lo = obs.lower()
+
+    # FIRST: Hardcoded list of common feminine names that should NEVER be converted
+    # This is necessary because the name library is incomplete (missing Martina, etc.)
+    common_feminine_names = {
+        'martina', 'jana', 'petra', 'eva', 'anna', 'marie', 'lenka', 'kateřina',
+        'alena', 'hana', 'lucie', 'veronika', 'monika', 'jitka', 'zuzana', 'ivana',
+        'tereza', 'barbora', 'andrea', 'michaela', 'simona', 'nikola', 'pavla',
+        'daniela', 'alexandra', 'kristýna', 'markéta', 'renata', 'šárka', 'karolína'
+    }
+
+    if lo in common_feminine_names:
+        return None  # Don't convert feminine names to masculine
+
+    # Also check library if available
+    if lo in CZECH_FIRST_NAMES and lo.endswith('a'):
+        return None  # Don't convert, let the caller handle it
+
     cands = []
 
     # PRIORITA 1: Speciální případy -ka → -ek, -la → -el, -ce → -ec
@@ -352,7 +369,9 @@ def infer_surname_nominative(obs: str) -> str:
     # Ale POUZE pokud to NENÍ běžné příjmení končící na -a v nominativu
     common_surnames_a = {
         'svoboda', 'skála', 'hora', 'kula', 'hala', 'krejča',
-        'liška', 'vrba', 'ryba', 'kočka', 'sluka', 'janda'
+        'liška', 'vrba', 'ryba', 'kočka', 'sluka', 'janda',
+        'procházka', 'blaha', 'kafka', 'smetana', 'brabec',
+        'kuřátka', 'kubíčka', 'marečka', 'vašíčka'
     }
 
     if lo.endswith('ka') and len(obs) > 3 and lo not in common_surnames_a:
@@ -401,6 +420,217 @@ def infer_surname_nominative(obs: str) -> str:
                 return candidate
 
     return obs
+
+# =============== Varianty pro nahrazování ===============
+def variants_for_first(first: str) -> set:
+    """
+    Generuje všechny pádové varianty křestního jména včetně:
+    - Nominativ, Genitiv, Dativ, Akuzativ, Vokativ, Lokál, Instrumentál
+    - Přivlastňovací přídavná jména (Petrův, Janin, atd.)
+    """
+    f = first.strip()
+    if not f: return {''}
+    V = {f, f.lower(), f.capitalize()}
+    low = f.lower()
+
+    # ========== Ženská jména končící na -a ==========
+    if low.endswith('a'):
+        stem = f[:-1]
+        # Základní pády: Gen/Dat/Akuz/Vok/Lok/Instr
+        V |= {stem+'y', stem+'e', stem+'ě', stem+'u', stem+'ou', stem+'o'}
+
+        # Přivlastňovací přídavná jména (Janin dům, Petřina kniha)
+        V |= {stem+s for s in ['in','ina','iny','iné','inu','inou','iným','iných','ino']}
+
+        # Speciální případy pro měkčení (Petra → Petře, Veronka → Verunce)
+        if stem.endswith('k'):
+            V.add(stem[:-1] + 'c' + 'e')
+            V.add(stem[:-1] + 'c' + 'i')
+
+        # Speciální měkčení tr → tř (Petra → Petřin)
+        if stem.endswith('tr'):
+            soft_stem = stem[:-1] + 'ř'
+            V |= {soft_stem+s for s in ['in','ina','iny','iné','inu','inou','iným','iných','ino']}
+
+        # Speciální měkčení h → z, ch → š, k → c, r → ř
+        if stem.endswith('h'):
+            soft_stem = stem[:-1] + 'z'
+            V.add(soft_stem + 'e')
+            V.add(soft_stem + 'i')
+        if stem.endswith('ch'):
+            soft_stem = stem[:-2] + 'š'
+            V.add(soft_stem + 'e')
+            V.add(soft_stem + 'i')
+        if stem.endswith(('k', 'g')):
+            soft_stem = stem[:-1] + 'c'
+            V.add(soft_stem + 'e')
+            V.add(soft_stem + 'i')
+        if stem.endswith('r') and not stem.endswith('tr'):
+            soft_stem = stem[:-1] + 'ř'
+            V.add(soft_stem + 'e')
+            V.add(soft_stem + 'i')
+
+    # ========== Mužská jména ==========
+    else:
+        # Základní pády
+        V |= {f+'a', f+'ovi', f+'e', f+'em', f+'u', f+'om'}
+
+        # Přivlastňovací přídavná jména (Petrův dům, Petrova kniha)
+        V |= {f+'ův', f+'ova', f+'ovo', f+'ovu', f+'ovou', f+'ově'}
+        V |= {f+'ov'+s for s in ['a','o','y','ě','ým','ých','ou','u','e']}
+
+        # Speciální případy pro zakončení -ek, -el
+        if low.endswith('ek'):
+            stem_k = f[:-2] + 'k'
+            V |= {stem_k+'a', stem_k+'ovi', stem_k+'em', stem_k+'u', stem_k+'e'}
+            V.add(f[:-2] + 'ka')
+
+        if low.endswith('el'):
+            stem_l = f[:-2] + 'l'
+            V |= {stem_l+'a', stem_l+'ovi', stem_l+'em', stem_l+'u', stem_l+'e'}
+            V.add(f[:-2] + 'la')
+
+        # Speciální případy pro zakončení -ec
+        if low.endswith('ec'):
+            stem_c = f[:-2] + 'c'
+            V |= {stem_c+'e', stem_c+'i', stem_c+'em', stem_c+'u'}
+
+        # Speciální případ: Jiří → Jiřího, Jiřímu, Jiřím, Jiřího
+        if low.endswith('í'):
+            stem = f[:-1]
+            V |= {stem+'ího', stem+'ímu', stem+'ím', stem+'íh'}
+
+        # Speciální případ: -iš/-aš → měkčení (Lukáš, Tomáš)
+        if low.endswith(('áš', 'iš')):
+            stem_base = f[:-1]
+            V |= {stem_base+'e', stem_base+'i', stem_base+'em', stem_base+'ovi'}
+
+        # Lokál s měkčením
+        if not low.endswith(('i', 'í')):
+            V |= {f+'ovi', f+'e'}
+
+    return V
+
+def variants_for_surname(surname: str) -> set:
+    """
+    Generuje všechny pádové varianty příjmení včetně:
+    - Všechny pády jednotného i množného čísla
+    - Přivlastňovací přídavná jména (Novákův, Novákova)
+    - Speciální případy pro -ová, -ský, -ek, -ec, atd.
+    """
+    s = surname.strip()
+    if not s: return {''}
+    out = {s, s.lower(), s.capitalize()}
+    low = s.lower()
+
+    # ========== Příjmení typu -ová (ženská) ==========
+    if low.endswith('ová'):
+        base = s[:-1]
+        out |= {
+            s,
+            base+'é',
+            base+'ou',
+            base+'á',
+        }
+        base_stem = s[:-3]
+        out |= {
+            base_stem+'ových',
+            base_stem+'ovým',
+            base_stem+'ové',
+        }
+        return out
+
+    # ========== Příjmení typu -ský/-cký (přídavná jména) ==========
+    if low.endswith(('ský','cký')):
+        stem = s[:-2]
+        out |= {
+            stem+'ý', stem+'ého', stem+'ému', stem+'ým', stem+'ém',
+            stem+'á', stem+'é', stem+'ou',
+            stem+'ých', stem+'ými'
+        }
+        return out
+
+    # ========== Obecná přídavná jména končící na -ý ==========
+    if low.endswith('ý'):
+        stem = s[:-1]
+        out |= {
+            stem+'ý', stem+'ého', stem+'ému', stem+'ým', stem+'ém',
+            stem+'á', stem+'é', stem+'ou',
+            stem+'ých', stem+'ými'
+        }
+        return out
+
+    # ========== Ženská příjmení na -á (ne -ová) ==========
+    if low.endswith('á') and not low.endswith('ová'):
+        stem = s[:-1]
+        out |= {s, stem+'é', stem+'ou', stem+'á'}
+        return out
+
+    # ========== Příjmení typu -ek (Dvořáček, Hájek) ==========
+    if low.endswith('ek') and len(s) >= 3:
+        stem_k = s[:-2] + 'k'
+        out |= {
+            s,
+            stem_k+'a', stem_k+'ovi', stem_k+'em', stem_k+'u', stem_k+'e',
+            stem_k+'y', stem_k+'ou',
+        }
+        out |= {
+            stem_k+'ův', stem_k+'ova', stem_k+'ovo',
+            stem_k+'ovu', stem_k+'ovou', stem_k+'ově'
+        }
+        out |= {
+            stem_k+'ů', stem_k+'ům', stem_k+'y',
+        }
+        return out
+
+    # ========== Příjmení typu -ec (Němec, Konec) ==========
+    if low.endswith('ec') and len(s) >= 3:
+        stem_c = s[:-2] + 'c'
+        out |= {
+            s,
+            stem_c+'e', stem_c+'i', stem_c+'em', stem_c+'u', stem_c+'y',
+        }
+        out |= {
+            stem_c+'ů', stem_c+'ům', stem_c+'ích', stem_c+'ech', stem_c+'emi',
+        }
+        out |= {
+            stem_c+'ův', stem_c+'ova', stem_c+'ovo',
+            stem_c+'ovu', stem_c+'ovou', stem_c+'ově'
+        }
+        return out
+
+    # ========== Příjmení na -a (mužská i ženská) ==========
+    if low.endswith('a') and len(s) >= 2 and not low.endswith('ová'):
+        stem = s[:-1]
+        out |= {
+            s,
+            stem+'y', stem+'ovi', stem+'ou', stem+'u', stem+'e', stem+'o',
+        }
+        out |= {
+            stem+'ův', stem+'ova', stem+'ovo',
+            stem+'ovu', stem+'ovou', stem+'ově'
+        }
+        out |= {
+            stem+'ů', stem+'ům', stem+'y',
+        }
+        return out
+
+    # ========== Obecná mužská příjmení (konsonantní kmeny) ==========
+    out |= {
+        s+'a', s+'ovi', s+'e', s+'em', s+'u',
+    }
+    out |= {
+        s+'ův', s+'ova', s+'ovo',
+        s+'ovu', s+'ovou', s+'ově'
+    }
+    out |= {
+        s+'ov'+suf for suf in ['a','o','y','ě','ým','ých','ou','u','e','i']
+    }
+    out |= {
+        s+'ů', s+'ům', s+'y', s+'ích', s+'ech',
+    }
+
+    return out
 
 # =============== Regexy ===============
 
@@ -752,10 +982,13 @@ class Anonymizer:
     def __init__(self, verbose=False):
         self.verbose = verbose
         self.counter = defaultdict(int)
-        self.canonical_persons = OrderedDict()  # canonical -> label
+        self.canonical_persons = []  # list of {first, last, tag}
+        self.person_index = {}  # (first_norm, last_norm) -> tag
+        self.person_variants = {}  # tag -> set of all variants
         self.entity_map = defaultdict(lambda: defaultdict(set))  # typ -> original -> varianty
         self.entity_index_cache = defaultdict(dict)  # OPTIMIZATION: typ -> original -> idx cache
         self.entity_reverse_map = defaultdict(dict)  # OPTIMIZATION: typ -> variant -> original
+        self.source_text = ""  # Store original text for validation
 
     def _get_or_create_label(self, typ: str, original: str, store_value: bool = True) -> str:
         """Vrátí existující nebo vytvoří nový štítek pro entitu.
@@ -795,35 +1028,73 @@ class Anonymizer:
         self.entity_reverse_map[typ][orig_norm] = map_key  # Reverse lookup
         return f"[[{typ}_{idx}]]"
 
+    def _normalize_for_matching(self, text: str) -> str:
+        """Normalizuje text pro porovnávání (odstranění diakritiky, lowercase)."""
+        if not text: return ""
+        n = unicodedata.normalize('NFD', text)
+        no_diac = ''.join(c for c in n if not unicodedata.combining(c))
+        return re.sub(r'[^A-Za-z]', '', no_diac).lower()
+
+    def _ensure_person_tag(self, first_nom: str, last_nom: str) -> str:
+        """Zajistí, že pro danou osobu existuje tag a vrátí ho."""
+        key = (self._normalize_for_matching(first_nom), self._normalize_for_matching(last_nom))
+
+        if key in self.person_index:
+            return self.person_index[key]
+
+        # Vytvoř nový tag
+        self.counter['PERSON'] += 1
+        tag = f'[[PERSON_{self.counter["PERSON"]}]]'
+
+        # Ulož do indexu
+        self.person_index[key] = tag
+        self.canonical_persons.append({'first': first_nom, 'last': last_nom, 'tag': tag})
+
+        # Vygeneruj všechny pádové varianty
+        fvars = variants_for_first(first_nom)
+        svars = variants_for_surname(last_nom)
+        self.person_variants[tag] = {f'{f} {s}' for f in fvars for s in svars}
+
+        # Ulož kanonickou formu do entity_map
+        canonical_full = f'{first_nom} {last_nom}'
+        self.entity_map['PERSON'][canonical_full].add(canonical_full)
+        self.entity_index_cache['PERSON'][canonical_full] = self.counter['PERSON']
+        self.entity_reverse_map['PERSON'][canonical_full] = canonical_full
+
+        return tag
+
     def _apply_known_people(self, text: str) -> str:
-        """Aplikuje známé osoby (již detekované)."""
-        for canonical, label in self.canonical_persons.items():
-            # Vygeneruj všechny varianty
-            parts = canonical.split()
-            if len(parts) == 2:
-                first, last = parts
-                first_vars = variants_for_first(first)
-                last_vars = variants_for_surname(last)
+        """Aplikuje známé osoby (již detekované) - nahrazuje všechny pádové varianty stejným tagem."""
+        # FÁZE 1: Nahrazení plných jmen (křestní + příjmení)
+        for p in self.canonical_persons:
+            tag = p['tag']
 
-                # Všechny kombinace - ale FILTRUJ zkrácené genitivy
-                for fv in first_vars:
-                    for lv in last_vars:
-                        if fv and lv:
-                            # FILTR: Odmítni zkrácené genitivy
-                            # Např: "Radk Procházky" (oba v genitivu, zkrácené)
-                            fv_lo = fv.lower()
-                            lv_lo = lv.lower()
+            # Pro každou variantu této osoby (seřazeno od nejdelší)
+            for pat in sorted(self.person_variants[tag], key=len, reverse=True):
+                # FILTR: Odmítni zkrácené genitivy
+                parts = pat.split()
+                if len(parts) == 2:
+                    fv, lv = parts
+                    fv_lo = fv.lower()
 
-                            # Pokud křestní jméno má 3-5 znaků a končí na 'k' → zkrácený genitiv
-                            if 3 <= len(fv) <= 5 and fv_lo[-1] == 'k':
-                                continue  # Skip this variant
+                    # Pokud křestní jméno má 3-5 znaků a končí na 'k' → zkrácený genitiv
+                    if 3 <= len(fv) <= 5 and fv_lo[-1] == 'k':
+                        continue
 
-                            # Pokud křestní jméno má 3 znaky a nekončí na samohlásku/n/l/r → zkrácený
-                            if len(fv) == 3 and not fv_lo[-1] in 'aeiouyáéíóúůýnlr':
-                                continue  # Skip
+                    # Pokud křestní jméno má 3 znaky a nekončí na samohlásku/n/l/r → zkrácený
+                    if len(fv) == 3 and not fv_lo[-1] in 'aeiouyáéíóúůýnlr':
+                        continue
 
-                            pattern = rf'\b{re.escape(fv)}\s+{re.escape(lv)}\b'
-                            text = re.sub(pattern, label, text, flags=re.IGNORECASE)
+                rx = re.compile(r'(?<!\w)'+re.escape(pat)+r'(?!\w)', re.IGNORECASE)
+
+                def repl(m):
+                    surf = m.group(0)
+                    # Zaznamenej tuto variantu
+                    canonical = f'{p["first"]} {p["last"]}'
+                    self.entity_map['PERSON'][canonical].add(surf)
+                    return tag
+
+                text = rx.sub(repl, text)
 
         return text
 
@@ -849,13 +1120,10 @@ class Anonymizer:
             # Odhadni nominativ
             surname_nom = infer_surname_nominative(surname)
 
-            # Vytvoř tag pro příjmení
-            canonical = surname_nom.capitalize()
-            if canonical not in self.canonical_persons:
-                idx = len(self.canonical_persons) + 1
-                self.canonical_persons[canonical] = f"[[PERSON_{idx}]]"
+            # Vytvoř tag pro příjmení (použijeme prázdné křestní jméno jako marker)
+            tag = self._ensure_person_tag("", surname_nom)
 
-            return f"({prefix} {self.canonical_persons[canonical]})"
+            return f"({prefix} {tag})"
 
         maiden_name_pattern = re.compile(
             r'\((rozená|rozenou|roz\.|dříve|dřív|původně)\s+([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\)',
@@ -871,25 +1139,17 @@ class Anonymizer:
         def replace_standalone_surname(match):
             prefix = match.group(1) if match.groups()[0] else ""  # "pan", "paní", ""
             surname = match.group(2) if len(match.groups()) > 1 else match.group(1)
-            context = match.group(0)
-
-            # Kontrola, zda za příjmením NENÁSLEDUJE křestní jméno
-            # (to by znamenalo full name "Novák Jan" a mělo by být zachyceno jiným patternem)
-            # Můžeme to detekovat tím, že context obsahuje jen jedno slovo velkým písmenem
 
             # Odhadni nominativ
             surname_nom = infer_surname_nominative(surname)
 
-            # Vytvoř tag
-            canonical = surname_nom.capitalize()
-            if canonical not in self.canonical_persons:
-                idx = len(self.canonical_persons) + 1
-                self.canonical_persons[canonical] = f"[[PERSON_{idx}]]"
+            # Vytvoř tag (prázdné křestní jméno pro standalone příjmení)
+            tag = self._ensure_person_tag("", surname_nom)
 
             if prefix:
-                return f"{prefix} {self.canonical_persons[canonical]}"
+                return f"{prefix} {tag}"
             else:
-                return self.canonical_persons[canonical]
+                return tag
 
         # Pattern pro samostatné příjmení s kontextem
         # Zachytí: "pan Novák", "paní Malá", "Novák uvedl", "Novákovi bylo"
@@ -925,13 +1185,9 @@ class Anonymizer:
                 return match.group(0)
 
             # Vytvoř/najdi tag pro samostatné křestní jméno
-            # Použijeme jen křestní jméno jako canonical
-            canonical = name.capitalize()
-            if canonical not in self.canonical_persons:
-                idx = len(self.canonical_persons) + 1
-                self.canonical_persons[canonical] = f"[[PERSON_{idx}]]"
+            tag = self._ensure_person_tag(name, "")
 
-            return self.canonical_persons[canonical]
+            return tag
 
         # Pattern pro samostatné křestní jméno následované slovesem nebo "jako"
         # Rozšířeno o uvozovky a další slovesa
@@ -1012,13 +1268,12 @@ class Anonymizer:
                 if 4 <= len(first) <= 5 and first_lo[-1] == 'k':
                     return match.group(0)
 
-            # Vytvoř/najdi tag pro osobu (bez titulu)
-            canonical = f"{first.capitalize()} {last.capitalize()}"
-            if canonical not in self.canonical_persons:
-                idx = len(self.canonical_persons) + 1
-                self.canonical_persons[canonical] = f"[[PERSON_{idx}]]"
+            # Vytvoř/najdi tag pro osobu (s inferencí nominativu)
+            last_nom = infer_surname_nominative(last)
+            first_nom = infer_first_name_nominative(first) or first
+            tag = self._ensure_person_tag(first_nom, last_nom)
             # Vrať titul + tag
-            return f"{title} {self.canonical_persons[canonical]}"
+            return f"{title} {tag}"
 
         # Nahraď titulované osoby NEJPRVE
         text = titled_pattern.sub(replace_titled, text)
@@ -1240,50 +1495,50 @@ class Anonymizer:
             # Nejdřív zjisti rod aktuálního příjmení
             current_is_female = last_nom.lower().endswith(('ová', 'á'))
 
-            for existing_canonical in self.canonical_persons.keys():
-                # Rozděl existující canonical na jméno a příjmení
-                parts = existing_canonical.split()
-                if len(parts) == 2:
-                    existing_last = parts[1]
-                    existing_last_lo = existing_last.lower()
+            for p in self.canonical_persons:
+                existing_last = p['last']
+                if not existing_last:
+                    continue
 
-                    # Zjisti rod existujícího příjmení
-                    existing_is_female = existing_last_lo.endswith(('ová', 'á'))
+                existing_last_lo = existing_last.lower()
 
-                    # MUSÍ být stejný rod!
-                    if existing_is_female != current_is_female:
-                        continue  # Různý rod → skip
+                # Zjisti rod existujícího příjmení
+                existing_is_female = existing_last_lo.endswith(('ová', 'á'))
 
-                    # Porovnej kmeny příjmení
-                    # Procházka vs Procházka → kmen = "Procházk" (oba mužské) ✓
-                    # Procházková vs Procházková → kmen = "Procházk" (obě ženské) ✓
-                    # Procházka vs Procházková → skip (různý rod) ✗
+                # MUSÍ být stejný rod!
+                if existing_is_female != current_is_female:
+                    continue  # Různý rod → skip
 
-                    # Jednoduché pravidlo: odstraň koncovky -ová, -a, -ek, -el, -ec
-                    def get_stem(surname):
-                        s = surname.lower()
-                        if s.endswith('ová'):
-                            return s[:-3]  # Procházková → Procházk
-                        elif s.endswith('ek'):
-                            return s[:-2] + 'k'  # Hájek → Hájk
-                        elif s.endswith('el'):
-                            return s[:-2] + 'l'  # Havel → Havl
-                        elif s.endswith('ec'):
-                            return s[:-2] + 'c'  # Němec → Němc
-                        elif s.endswith('a'):
-                            return s[:-1]  # Procházka → Procházk
-                        elif s.endswith('á'):
-                            return s[:-1]  # Malá → Mal
-                        else:
-                            return s  # Novák → Novák
+                # Porovnej kmeny příjmení
+                # Procházka vs Procházka → kmen = "Procházk" (oba mužské) ✓
+                # Procházková vs Procházková → kmen = "Procházk" (obě ženské) ✓
+                # Procházka vs Procházková → skip (různý rod) ✗
 
-                    existing_stem = get_stem(existing_last)
-                    current_stem = get_stem(last_nom)
+                # Jednoduché pravidlo: odstraň koncovky -ová, -a, -ek, -el, -ec
+                def get_stem(surname):
+                    s = surname.lower()
+                    if s.endswith('ová'):
+                        return s[:-3]  # Procházková → Procházk
+                    elif s.endswith('ek'):
+                        return s[:-2] + 'k'  # Hájek → Hájk
+                    elif s.endswith('el'):
+                        return s[:-2] + 'l'  # Havel → Havl
+                    elif s.endswith('ec'):
+                        return s[:-2] + 'c'  # Němec → Němc
+                    elif s.endswith('a'):
+                        return s[:-1]  # Procházka → Procházk
+                    elif s.endswith('á'):
+                        return s[:-1]  # Malá → Mal
+                    else:
+                        return s  # Novák → Novák
 
-                    # Pokud kmeny se shodují A mají stejný rod → použij existující tvar
-                    if existing_stem == current_stem:
-                        existing_surname_stem = existing_last
-                        break
+                existing_stem = get_stem(existing_last)
+                current_stem = get_stem(last_nom)
+
+                # Pokud kmeny se shodují A mají stejný rod → použij existující tvar
+                if existing_stem == current_stem:
+                    existing_surname_stem = existing_last
+                    break
 
             # Pokud jsme našli existující kmen (STEJNÝ ROD), použij ho místo inference
             if existing_surname_stem:
@@ -1332,17 +1587,10 @@ class Anonymizer:
                     # Jiné (pravděpodobně nominativ) → ponech jak je
                     first_nom = first_obs.capitalize()
 
-            canonical = f"{first_nom} {last_nom}"
+            # Vytvoř nebo najdi tag pro tuto osobu
+            tag = self._ensure_person_tag(first_nom, last_nom)
 
-            # Získej nebo vytvoř label
-            if canonical not in self.canonical_persons:
-                idx = len(self.canonical_persons) + 1
-                label = f"[[PERSON_{idx}]]"
-                self.canonical_persons[canonical] = label
-            else:
-                label = self.canonical_persons[canonical]
-
-            return label
+            return tag
 
         text = person_pattern.sub(replace_person, text)
         return text
@@ -1768,20 +2016,19 @@ class Anonymizer:
 
         # POST-PASS: ALL_CAPS jména bez diakritiky (ALENA DVORAKOVA)
         # Najdi známé osoby a nahraď jejich ALL_CAPS varianty bez diakritiky
-        for canonical, label in self.canonical_persons.items():
-            parts = canonical.split()
-            if len(parts) == 2:
-                # Vytvoř ALL_CAPS verzi bez diakritiky
-                import unicodedata
-                def remove_dia(s):
-                    nfd = unicodedata.normalize('NFD', s)
-                    return ''.join(c for c in nfd if unicodedata.category(c) != 'Mn')
+        for p in self.canonical_persons:
+            # Vytvoř ALL_CAPS verzi bez diakritiky
+            import unicodedata
+            def remove_dia(s):
+                nfd = unicodedata.normalize('NFD', s)
+                return ''.join(c for c in nfd if unicodedata.category(c) != 'Mn')
 
-                first_caps = remove_dia(parts[0]).upper()
-                last_caps = remove_dia(parts[1]).upper()
+            if p['first'] and p['last']:
+                first_caps = remove_dia(p['first']).upper()
+                last_caps = remove_dia(p['last']).upper()
                 # Nahraď pokud nalezeno
                 pattern = rf'\b{re.escape(first_caps)}\s+{re.escape(last_caps)}\b'
-                text = re.sub(pattern, label, text)
+                text = re.sub(pattern, p['tag'], text)
 
         # POST-PASS: Místo narození
         birth_place_pattern = re.compile(
@@ -1936,11 +2183,12 @@ class Anonymizer:
         }
 
         # Osoby
-        for canonical, label in self.canonical_persons.items():
+        for p in self.canonical_persons:
+            canonical_full = f'{p["first"]} {p["last"]}'
             json_data["entities"].append({
                 "type": "PERSON",
-                "label": label,
-                "original": canonical,
+                "label": p['tag'],
+                "original": canonical_full,
                 "occurrences": 1
             })
 
@@ -1963,8 +2211,9 @@ class Anonymizer:
             # Osoby
             if self.canonical_persons:
                 f.write("OSOBY\n")
-                for canonical, label in self.canonical_persons.items():
-                    f.write(f"{label}: {canonical}\n")
+                for p in self.canonical_persons:
+                    canonical_full = f'{p["first"]} {p["last"]}'
+                    f.write(f"{p['tag']}: {canonical_full}\n")
                 f.write("\n")
 
             # Ostatní entity
