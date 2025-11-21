@@ -880,6 +880,54 @@ class Anonymizer:
             title = match.group(1)
             first = match.group(2)
             last = match.group(3)
+
+            # ========== VALIDACE - STEJNÁ JAKO V replace_person() ==========
+
+            # 1. Blacklist kritických slov
+            critical_blacklist = {
+                's.r.o.', 'a.s.', 'spol.', 'k.s.', 'v.o.s.', 'o.p.s.',
+                'ltd', 'inc', 'corp', 'gmbh', 'llc',
+                'czech', 'republic', 'synlab', 'gymnázium', 'gymnasium',
+                'university', 'univerzita', 'fakulta', 'klinika', 'nemocnice',
+                'centrum', 'ústav', 'institute', 'academy', 'akademie',
+                'kaspersky', 'endpoint', 'latitude', 'archer', 'classic',
+                'windows', 'linux', 'android', 'ios', 'office', 'excel',
+                'ředitelka', 'ředitel', 'jednatel', 'jednatelka',
+                'manager', 'director', 'chief', 'officer',
+                'vyšetřující', 'vyšetřovatel', 'lékař', 'doktor', 'sestra'
+            }
+
+            combined = f"{first} {last}".lower()
+            for word in critical_blacklist:
+                if word in combined:
+                    return match.group(0)  # Není osoba
+
+            # 2. Role detection - pokud první slovo je role
+            role_words = {
+                'ředitelka', 'ředitel', 'jednatel', 'jednatelka',
+                'manager', 'director', 'chief', 'officer',
+                'specialist', 'consultant', 'coordinator',
+                'developer', 'architect', 'engineer', 'analyst',
+                'vyšetřující', 'vyšetřovatel', 'lékař', 'doktor'
+            }
+            if first.lower() in role_words:
+                return match.group(0)  # Role, ne osoba
+
+            # 3. Validace křestního jména
+            first_lo = first.lower()
+            common_czech_names = {'jan', 'petr', 'pavel', 'jiří', 'josef', 'tomáš', 'martin', 'jakub', 'david', 'daniel'}
+
+            if first_lo not in CZECH_FIRST_NAMES and first_lo not in common_czech_names:
+                # Zkrácené genitivy (Han, Elišk, Radk) - odmítnout
+                if len(first) < 3:
+                    return match.group(0)
+                # Pokud má 3 znaky a nekončí na samohlásku ani n/l/r
+                if len(first) == 3 and not first_lo[-1] in 'aeiouyáéíóúůýnlr':
+                    return match.group(0)
+                # Zkrácené tvary končící na 'k' (4-5 znaků)
+                if 4 <= len(first) <= 5 and first_lo[-1] == 'k':
+                    return match.group(0)
+
             # Vytvoř/najdi tag pro osobu (bez titulu)
             canonical = f"{first.capitalize()} {last.capitalize()}"
             if canonical not in self.canonical_persons:
@@ -908,7 +956,7 @@ class Anonymizer:
 
             # ========== A) BLACKLIST NE-OSOB ==========
 
-            # 1. Blacklist kritických slov (firmy, instituce, produkty)
+            # 1. Blacklist kritických slov (firmy, instituce, produkty, role)
             critical_blacklist = {
                 # Firmy a právní formy
                 's.r.o.', 'a.s.', 'spol.', 'k.s.', 'v.o.s.', 'o.p.s.',
@@ -917,12 +965,14 @@ class Anonymizer:
                 'czech', 'republic', 'synlab', 'gymnázium', 'gymnasium',
                 'university', 'univerzita', 'fakulta', 'klinika', 'nemocnice',
                 'centrum', 'ústav', 'institute', 'academy', 'akademie',
+                'motol', 'bulovka', 'thomayer', 'center',
                 # Produkty/Software
                 'kaspersky', 'endpoint', 'latitude', 'archer', 'classic',
                 'windows', 'linux', 'android', 'ios', 'office', 'excel',
                 # Role/Pozice (když jsou samostatně)
                 'ředitelka', 'ředitel', 'jednatel', 'jednatelka',
-                'manager', 'director', 'chief', 'officer'
+                'manager', 'director', 'chief', 'officer',
+                'vyšetřující', 'vyšetřovatel', 'lékař', 'doktor', 'sestra'
             }
 
             # Kontrola, zda hodnota obsahuje blacklist slovo
@@ -1047,18 +1097,34 @@ class Anonymizer:
             # 7. Validace křestního jména (musí být v knihovně nebo mít typickou českou strukturu)
             first_lo = first_obs.lower()
 
-            # Pokud křestní jméno NENÍ v knihovně jmen → kontroluj speciální případy
-            if first_lo not in CZECH_FIRST_NAMES:
+            # Whitelist běžných českých jmen (nejsou v knihovně, ale jsou validní)
+            common_czech_names = {'jan', 'petr', 'pavel', 'jiří', 'josef', 'tomáš', 'martin', 'jakub', 'david', 'daniel'}
+
+            # Pokud křestní jméno JE v knihovně nebo v whitelistu → OK
+            if first_lo in CZECH_FIRST_NAMES or first_lo in common_czech_names:
+                pass  # OK
+            else:
+                # Není v knihovně ani v whitelistu → kontroluj strukturu
+
                 # Pokud má méně než 3 znaky → není validní (např. "Me", "Jo")
                 if len(first_obs) < 3:
                     return match.group(0)
 
-                # Pokud končí na 'k' a má 4 znaky → možná je to zkrácený genitiv (např. "Radk" z "Radka")
-                # V tom případě kontroluj, jestli příjmení je také v genitivu (končí na 'y')
-                if len(first_obs) == 4 and first_lo.endswith('k'):
-                    # Zkontroluj, jestli příjmení je v genitivu (Procházky)
-                    if last_lo.endswith('y') and not last_lo.endswith(('ský', 'cký', 'ný')):
-                        # Oba jsou v genitivu → odmítnout
+                # Pokud má 3 znaky:
+                if len(first_obs) == 3:
+                    # Pokud nekončí na samohlásku ani na 'n', 'l', 'r' → zkrácený genitiv
+                    # "Jan", "Dan", "Ivo" = OK
+                    # "Han" (z "Hana"), "Jev" (z "Eva") = NENÍ OK
+                    if not first_lo[-1] in 'aeiouyáéíóúůýnlr':
+                        return match.group(0)
+
+                # Pokud má 4-5 znaků:
+                if 4 <= len(first_obs) <= 5:
+                    # Pokud končí na 'k' → skoro vždy zkrácený genitiv (Elišk, Radk)
+                    if first_lo[-1] == 'k':
+                        return match.group(0)
+                    # Pokud nekončí na samohlásku ani na typickou mužskou koncovku
+                    if not first_lo[-1] in 'aeiouyáéíóúůýnlršm':
                         return match.group(0)
 
             # 8. Detekce rolí ("Ředitelka Centrum")
