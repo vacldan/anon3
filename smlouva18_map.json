@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-22T05:25:21.524402",
+  "generated_at": "2025-11-22T05:50:30.718766",
   "source_file": "smlouva18.docx",
   "entities": [
     {
@@ -36,19 +36,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Lenka Kratochvílová",
+      "original": "Lenka Kratochvílova",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Šárka Novotná",
+      "original": "Šárka Novotna",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Alžběta Strmisková",
+      "original": "Alžběta Strmiskova",
       "occurrences": 1
     },
     {
@@ -72,7 +72,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
-      "original": "Tomáš Štefánek",
+      "original": "Tomáeš Štefánek",
       "occurrences": 1
     },
     {
@@ -84,13 +84,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_14]]",
-      "original": "Tobiáš Vráný",
+      "original": "Tobiáš Vrána",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_15]]",
-      "original": "Mark Prášek",
+      "original": "Marek Prášek",
       "occurrences": 1
     },
     {
