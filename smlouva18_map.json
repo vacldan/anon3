@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-22T05:50:30.718766",
+  "generated_at": "2025-11-22T07:32:14.517582",
   "source_file": "smlouva18.docx",
   "entities": [
     {
@@ -72,7 +72,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
-      "original": "Tomáeš Štefánek",
+      "original": "Tomáš Štefánek",
       "occurrences": 1
     },
     {
@@ -90,7 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_15]]",
-      "original": "Marek Prášek",
+      "original": "Mark Prášek",
       "occurrences": 1
     },
     {

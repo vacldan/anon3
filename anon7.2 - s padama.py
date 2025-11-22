@@ -371,6 +371,27 @@ def infer_first_name_nominative(obs: str) -> str:
     if lo == 'hany':
         return 'Hana'
 
+    # Dativ/Lokál -ě formy (Unicode normalization může způsobit problémy s endswith)
+    # Používám přesný match místo endswith
+    dative_e_forms = {
+        'adéle': 'Adéla',
+        'zuzaně': 'Zuzana',
+        'barbaře': 'Barbara',
+        'heleně': 'Helena',
+        'simoně': 'Simona',
+        'nikole': 'Nikola',
+        'gabriele': 'Gabriela',
+        'terezě': 'Tereza',
+        'lence': 'Lenka',  # lokál -ce → -ka
+        'evě': 'Eva',
+        'anně': 'Anna',
+        'janě': 'Jana',
+        'petře': 'Petra',
+        'kateřině': 'Kateřina'
+    }
+    if lo in dative_e_forms:
+        return dative_e_forms[lo]
+
     # DŮLEŽITÉ: Kontrola, zda už je v nominativu (v knihovně jmen)
     if lo in CZECH_FIRST_NAMES:
         return obs.capitalize()
