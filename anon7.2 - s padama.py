@@ -534,26 +534,21 @@ def infer_surname_nominative(obs: str) -> str:
         'alex', 'filip', 'luk', 'mar', 'dan', 'tom', 'jar', 'stef'
     }
 
-    # Detekce: pokud lo končí na 'a' a stem (bez -a) je ve vlozne_e_stems
-    if lo.endswith('a') and len(obs) > 2:
-        stem_without_a = lo[:-1]  # např. "havl" z "havla"
-        if stem_without_a in vlozne_e_stems:
-            # Vlož 'e' před poslední souhlásku
-            # Havl → Havel (vložit před 'l')
-            # Petr → Petra (vložit před 'r')
-            return obs[:-1] + 'e' + obs[-1]  # "Havl" + "e" + "a" → není správně
-
-    # Lepší implementace vložného e:
-    # Pokud stem končí na souhlásku-souhlásku, vlož 'e' mezi ně
+    # Vložné 'e' pro genitiv -a: Havla → Havel, Pavla → Pavel
     if lo.endswith('a') and len(obs) > 3:
         stem = obs[:-1]  # např. "Havl" z "Havla"
         stem_lo = stem.lower()
-        # Kontrola, jestli předposlední a poslední znak jsou souhlásky
+
+        # Kontrola známých kmenů vyžadujících vložné e
+        if stem_lo in vlozne_e_stems:
+            # Vlož 'e' mezi poslední dvě souhlásky: "Havl" → "Havel"
+            return stem[:-1] + 'e' + stem[-1]
+
+        # Obecný případ: pokud stem končí na dvě souhlásky
         consonants = 'bcčdďfghjklmnňpqrřsštťvwxzž'
         if len(stem) >= 2 and stem_lo[-2] in consonants and stem_lo[-1] in consonants:
-            # Zkontroluj známé případy
-            if stem_lo in vlozne_e_stems or stem_lo + 'e' + 'l' in ['havel', 'pavel']:
-                # Vlož 'e' mezi poslední dvě souhlásky
+            # Zkontroluj, jestli výsledek dává smysl
+            if stem_lo + 'e' + 'l' in ['havel', 'pavel'] or stem_lo in vlozne_e_stems:
                 return stem[:-1] + 'e' + stem[-1]
 
     # ========== ZVÍŘECÍ PŘÍJMENÍ ==========
@@ -579,13 +574,26 @@ def infer_surname_nominative(obs: str) -> str:
         'kuřátka', 'kubíčka', 'marečka', 'vašíčka'
     }
 
+    # Genitiv -ka/-la/-ce pouze pokud jde o známé kmeny s vložným e
+    vlozne_e_surname_patterns = {
+        'hav', 'pav', 'sed', 'koz', 'peš', 'pes', 'vojt', 'maš'
+    }
+
     if lo.endswith('ka') and len(obs) > 3 and lo not in common_surnames_a:
-        # Hájek → Hájka (genitiv) → návrat na Hájek
-        return obs[:-2] + 'ek'
+        stem = obs[:-2].lower()
+        # Pouze pokud kmen vyžaduje vložné e: Hájka → Hájek
+        if any(stem.endswith(p) or stem == p for p in vlozne_e_surname_patterns):
+            return obs[:-2] + 'ek'
 
     if lo.endswith('la') and len(obs) > 3 and lo not in common_surnames_a:
-        # Havel → Havla (genitiv) → návrat na Havel
-        return obs[:-2] + 'el'
+        stem_without_a = obs[:-1].lower()  # odstranit jen -a
+        # Pokud kmen (bez -a) vyžaduje vložné e: Havla → Havel, Pavla → Pavel
+        if any(stem_without_a[:-1].endswith(p) or stem_without_a[:-1] == p for p in vlozne_e_surname_patterns):
+            # Vlož 'e' před poslední 'l': "havl" → "havel"
+            return obs[:-2] + 'el'
+        # Jinak jen odstranění -a: Dohnala → Dohnal
+        elif stem_without_a.endswith('l'):
+            return obs[:-1]  # odstranit jen -a
 
     if lo.endswith('ce') and len(obs) > 3:
         # Němec → Němce (genitiv) → návrat na Němec
@@ -615,27 +623,53 @@ def infer_surname_nominative(obs: str) -> str:
             elif lo.endswith('úlem'):
                 return obs[:-2]  # ?úlem → ?úl
 
-        # Speciální případ: -kem → -ek (Štefánkem → Štefánek, Práškem → Prášek)
-        # Musíme přidat 'e' zpět: -kem → -ek (odstraň -em, nechej -k, přidej e před k)
+        # Speciální případ: -kem může být buď -ek+em nebo prostě -k+em
         elif lo.endswith('kem') and len(obs) > 5:
-            return obs[:-3] + 'ek'  # např. Práškem → Prášek, Štefánkem → Štefánek
+            # Většina příjmení: Novákem → Novák (odstranit -em)
+            # Vzácně: Štefánkem → Štefánek (vložné e)
+            # Zkontroluj pattern pro vložné 'e': obvykle -ánek, -íček, -oušek, atd.
+            stem_without_kem = obs[:-3].lower()  # "štefán" z "štefánkem"
 
-        # Kontrola: není -bem, -dem, -cem, -sem, -šem (součást příjmení)
-        # Ale pozor: "Gregorem" → "Gregor" JE validní, "Šemberem" → "Šembera" NE
-        elif not lo.endswith(('bem', 'dem', 'cem', 'sem', 'šem', 'chem', 'gem', 'lem')):
-            # Pokud končí na -rem, zkontroluj jestli výsledek vypadá jako nominativ
-            if lo.endswith('rem'):
-                cand = obs[:-2]
-                # Pokud po odstranění -em dostaneme příjmení končící na souhlásku (ne -a/-e/-o), je to nominativ
-                if cand.lower()[-1] not in ('a', 'e', 'o', 'i', 'u', 'y', 'á', 'é', 'í', 'ó', 'ú', 'ů', 'ý'):
-                    return cand
+            # Známé patterny vyžadující vložné 'e'
+            if any(stem_without_kem.endswith(p) for p in ['ánek', 'ínek', 'ýnek', 'ášek', 'oušek', 'áček', 'íček']):
+                # Štefánkem → Štefánek
+                return obs[:-3] + 'ek'
+            # Default: odstranit jen -em (většina případů)
             else:
-                # Ostatní případy: Novákem → Novák, Králem → Král
-                return obs[:-2]
+                return obs[:-2]  # Novákem → Novák
 
-    # ========== GENITIV: -a → NEODSTRAŇUJ! ==========
+        # Obecný instrumentál -em → odstranění
+        # Ale pozor na příjmení, kde -em je součást kmene (Šembera, Klement)
+        else:
+            cand = obs[:-2]  # odstranění -em
+            cand_lo = cand.lower()
+
+            # Kontrola: jestli výsledek vypadá jako validní nominativ
+            # Validní nominativy končí na souhlásky nebo -ý/-í/-á
+            if len(cand) > 2:
+                # Zkontroluj, že nekončí na -b, -d, -c, -s, -š, -ch, -g v krátkých formách
+                # (ty naznačují, že -em je součást příjmení, ne koncovka)
+                if cand_lo.endswith(('šemb', 'klem', 'chlum')) and len(cand) <= 5:
+                    # Příliš krátké - pravděpodobně součást příjmení
+                    return obs
+                else:
+                    # Běžný instrumentál: Novákem → Novák, Králem → Král, Švecem → Švec
+                    return cand
+
+    # ========== GENITIV: -a → CONDITIONAL ==========
     # Mnoho příjmení končí na -a v nominativu (Svoboda, Skála, Liška, atd.)
-    # Příliš riskantní, necháme to být
+    # ALE některá jsou genitiv od příjmení končících na souhlásku (Hofmana → Hofman)
+
+    if lo.endswith('a') and len(obs) > 3:
+        # Protected surnames ending with -a in nominative
+        if lo not in common_surnames_a:
+            stem_without_a = obs[:-1]
+            # Pokud po odstranění -a dostaneme validní příjmení končící na souhlásku
+            # (ne na samohlásku), pravděpodobně je to genitiv
+            consonants = 'bcčdďfghjklmnňpqrřsštťvwxzž'
+            if stem_without_a.lower()[-1] in consonants:
+                # Hofmana → Hofman, Dohnala → Dohnal (pokud už nebylo zpracováno výše)
+                return stem_without_a
 
     # ========== GENITIV: -y → -a nebo odstranit -y ==========
     # Klímy → Klíma (genitiv mužů), Procházky → Procházka
