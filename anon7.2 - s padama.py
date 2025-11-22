@@ -189,11 +189,30 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
             return cand.capitalize()
         cands.append(cand)
 
-    # PRIORITA 3: Instrumentál -em → remove (Petrem → Petr)
+    # PRIORITA 3: Instrumentál -em → remove (Petrem → Petr, Markem → Marek)
+    # DŮLEŽITÉ: Vložné 'e' má PRIORITU před knihovnou pro známé kmeny (Markem → Marek, ne Mark)
     if lo.endswith('em') and len(obs) > 2:
         cand = obs[:-2]
+
+        # NEJPRVE zkontroluj vložné 'e' pro známé kmeny (před kontrolou knihovny!)
+        if len(cand) >= 2:
+            vlozne_e_stems = {'mar', 'pav', 'pet', 'ale', 'dan', 'tom', 'jos', 'luk', 'filip', 'petr', 'alex'}
+            stem = cand.lower()[:3]
+            if stem in vlozne_e_stems or cand.lower() in vlozne_e_stems:
+                # Tento kmen vyžaduje vložné 'e'
+                cand_with_e = cand[:-1] + 'e' + cand[-1]
+                return cand_with_e.capitalize()
+
+        # Pokud není ve vložném 'e' kmenu, zkontroluj knihovnu
         if cand.lower() in CZECH_FIRST_NAMES:
             return cand.capitalize()
+
+        # Nakonec zkus vložné 'e' pro ostatní případy
+        if len(cand) >= 2:
+            cand_with_e = cand[:-1] + 'e' + cand[-1]
+            if cand_with_e.lower() in CZECH_FIRST_NAMES:
+                return cand_with_e.capitalize()
+
         cands.append(cand)
 
     # PRIORITA 4: Dativ -u → remove (Petru → Petr) - PŘED -a!
@@ -213,6 +232,116 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
 
     # Vrať první kandidát (pokud existuje)
     return cands[0].capitalize() if cands else None
+
+def get_first_name_gender(name: str) -> str:
+    """Určí rod křestního jména. Vrací 'M' (mužský), 'F' (ženský), nebo 'U' (neznámý)."""
+    lo = name.lower().strip()
+
+    # Ženská jména typicky končí na -a, -e, -ie
+    if lo.endswith('a') and lo not in {'joshua', 'luca', 'nicola', 'andrea'}:
+        return 'F'
+    if lo.endswith(('ie', 'y')) and len(lo) > 2:
+        return 'F'
+
+    # Specifická ženská jména bez -a
+    female_exceptions = {'ruth', 'esther', 'carmen', 'mercedes', 'dagmar', 'ingrid', 'margit'}
+    if lo in female_exceptions:
+        return 'F'
+
+    # Mužská jména (většinou)
+    if lo in CZECH_FIRST_NAMES:
+        # Kontrola v knihovně - pokud končí na -a, pravděpodobně ženské
+        if lo.endswith('a'):
+            return 'F'
+        else:
+            return 'M'
+
+    # Default: pokud nekončí na -a, pravděpodobně mužské
+    return 'M' if not lo.endswith('a') else 'F'
+
+def is_valid_surname_variant(surname_obs: str, surname_nom: str, gender: str) -> bool:
+    """
+    Kontroluje, zda pozorovaný tvar příjmení odpovídá rodu osoby.
+
+    Args:
+        surname_obs: Pozorovaný tvar příjmení (např. "Vránou")
+        surname_nom: Kanonický nominativ (např. "Vráný")
+        gender: 'M' nebo 'F'
+
+    Returns:
+        True pokud je tvar validní pro daný rod, False jinak
+    """
+    obs_lo = surname_obs.lower()
+    nom_lo = surname_nom.lower()
+
+    # Pokud jsou stejné, vždy validní
+    if obs_lo == nom_lo:
+        return True
+
+    # Pro přídavná jména na -ý/-á (Černý, Malý, Vráný...)
+    if nom_lo.endswith('ý'):
+        # Mužský rod - platné koncovky: -ý, -ého, -ému, -ým, -ém, -í
+        if gender == 'M':
+            male_endings = ('ý', 'ého', 'ému', 'ým', 'ém', 'í')
+            base = nom_lo[:-1]  # "vrán" z "vráný"
+
+            # Kontrola, že obs začíná správným základem
+            if not obs_lo.startswith(base):
+                return False
+
+            # Kontrola koncovky
+            for ending in male_endings:
+                if obs_lo == base + ending:
+                    return True
+            return False
+
+        # Ženský rod - platné koncovky: -á, -é, -ou
+        elif gender == 'F':
+            female_endings = ('á', 'é', 'ou')
+            base = nom_lo[:-1]  # "vrán" z "vráný"
+
+            if not obs_lo.startswith(base):
+                return False
+
+            for ending in female_endings:
+                if obs_lo == base + ending:
+                    return True
+            return False
+
+    # Pro přídavná jména na -ský/-cký
+    if nom_lo.endswith(('ský', 'cký')):
+        stem = nom_lo[:-2]  # "novot" z "novotský"
+
+        if gender == 'M':
+            male_endings = ('ský', 'ského', 'skému', 'ským', 'ském', 'cký', 'ckého', 'ckému', 'ckým', 'ckém')
+            for ending in male_endings:
+                if obs_lo == stem + ending:
+                    return True
+            return False
+        elif gender == 'F':
+            female_endings = ('ská', 'ské', 'skou', 'cká', 'cké', 'ckou')
+            for ending in female_endings:
+                if obs_lo == stem + ending:
+                    return True
+            return False
+
+    # Pro ženská příjmení na -ová
+    if nom_lo.endswith('ová'):
+        # Tato příjmení jsou POUZE ženská
+        if gender == 'F':
+            base = nom_lo[:-1]  # "novákov" z "nováková"
+            valid_endings = ('ová', 'ové', 'ou')
+            for ending in valid_endings:
+                if obs_lo == base + ending:
+                    return True
+            return False
+        else:
+            # Mužský rod by neměl mít -ová příjmení
+            return False
+
+    # Pro běžná příjmení (Novák, Dvořák, Klíma...)
+    # Tato příjmení se obvykle skloňují stejně pro muže i ženy (kromě -ová formy)
+    return True
 
 def infer_first_name_nominative(obs: str) -> str:
     """Odhadne nominativ křestního jména z pozorovaného tvaru.
@@ -308,18 +437,15 @@ def infer_surname_nominative(obs: str) -> str:
         if not lo.endswith(('ské', 'cké')):
             return obs[:-1] + 'á'
 
-    # -ou → může být -á (žena) nebo -ý (muž)
+    # -ou → může být -a (mužské příjmení Vrána → Vránou) nebo -á (ženské příjmení)
     if lo.endswith('ou') and len(obs) > 3:
         # Kontrola, že není -skou/-ckou (přídavné jméno)
         if not lo.endswith(('skou', 'ckou')):
-            # Heuristika: pokud základ končí na souhlásku + typický vzor
             base = obs[:-2]
-            # Pro příjmení jako "Vránou" → může být "Vráný" (muž) nebo "Vráná" (žena)
-            # Zkusíme nejprve mužský tvar
-            if base.lower().endswith(('vrán', 'novot', 'malý', 'černý', 'bilý', 'vesel')):
-                return base + 'ý'
-            # Jinak ženský tvar
-            return obs[:-2] + 'á'
+            # DŮLEŽITÉ: "Vránou" → "Vrána" (mužské příjmení na -a, instrumentál -ou)
+            # Příklady: Vrána, Kafka, Skála, Dvořák...
+            # Vrať -a (může být mužské i ženské)
+            return base + 'a'
 
     # ========== PŘÍDAVNÁ JMÉNA (-ský, -cký, -ý) ==========
 
@@ -1323,7 +1449,10 @@ class Anonymizer:
             original_form = f"{first} {last}"
             canonical = f"{first_nom} {last_nom}"
             if original_form.lower() != canonical.lower():
-                self.entity_map['PERSON'][canonical].add(original_form)
+                # Kontrola shody rodu před uložením varianty
+                gender = get_first_name_gender(first_nom)
+                if is_valid_surname_variant(last, last_nom, gender):
+                    self.entity_map['PERSON'][canonical].add(original_form)
 
             # Vrať titul + tag
             return f"{title} {tag}"
@@ -1647,7 +1776,10 @@ class Anonymizer:
             original_form = f"{first_obs} {last_obs}"
             canonical = f"{first_nom} {last_nom}"
             if original_form.lower() != canonical.lower():
-                self.entity_map['PERSON'][canonical].add(original_form)
+                # Kontrola shody rodu před uložením varianty
+                gender = get_first_name_gender(first_nom)
+                if is_valid_surname_variant(last_obs, last_nom, gender):
+                    self.entity_map['PERSON'][canonical].add(original_form)
 
             return tag
 
