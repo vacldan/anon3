@@ -221,6 +221,12 @@ def infer_first_name_nominative(obs: str) -> str:
     """
     lo = obs.lower()
 
+    # SPECIÁLNÍ PŘÍPAD PRVNÍ: Roberta může být genitiv od Robert
+    # Musí být PŘED kontrolou knihovny, protože Roberta je v knihovně jako ženské jméno!
+    if lo == 'roberta':
+        # Preferujeme Robert (mužské jméno), protože Roberta je častěji genitiv než samostatné jméno
+        return 'Robert'
+
     # DŮLEŽITÉ: Kontrola, zda už je v nominativu (v knihovně jmen)
     if lo in CZECH_FIRST_NAMES:
         return obs.capitalize()
@@ -296,14 +302,23 @@ def infer_surname_nominative(obs: str) -> str:
 
     # ========== ŽENSKÁ PŘÍJMENÍ ==========
 
-    # -ové/-ou → -ová (genitiv/instrumentál)
+    # -é → -á (genitiv/dativ/lokál žen: Pokorné → Pokorná, Houfové → Houfová)
     if lo.endswith('é') and len(obs) > 3:
         # Kontrola, že není -ské/-cké (přídavné jméno)
         if not lo.endswith(('ské', 'cké')):
             return obs[:-1] + 'á'
+
+    # -ou → může být -á (žena) nebo -ý (muž)
     if lo.endswith('ou') and len(obs) > 3:
         # Kontrola, že není -skou/-ckou (přídavné jméno)
         if not lo.endswith(('skou', 'ckou')):
+            # Heuristika: pokud základ končí na souhlásku + typický vzor
+            base = obs[:-2]
+            # Pro příjmení jako "Vránou" → může být "Vráný" (muž) nebo "Vráná" (žena)
+            # Zkusíme nejprve mužský tvar
+            if base.lower().endswith(('vrán', 'novot', 'malý', 'černý', 'bilý', 'vesel')):
+                return base + 'ý'
+            # Jinak ženský tvar
             return obs[:-2] + 'á'
 
     # ========== PŘÍDAVNÁ JMÉNA (-ský, -cký, -ý) ==========
@@ -410,8 +425,14 @@ def infer_surname_nominative(obs: str) -> str:
                 return obs[:-2]  # ?olem → ?ol
             elif lo.endswith('ilem'):
                 return obs[:-2]  # ?ilem → ?il
+
+        # Speciální případ: -kem → -ek (Štefánkem → Štefánek, Práškem → Prášek)
+        # Musíme přidat 'e' zpět: -kem → -ek (odstraň -em, nechej -k, přidej e před k)
+        elif lo.endswith('kem') and len(obs) > 5:
+            return obs[:-3] + 'ek'  # např. Práškem → Prášek, Štefánkem → Štefánek
+
         # Kontrola: není -bem, -dem, -cem, -sem, -šem (součást příjmení)
-        elif not lo.endswith(('bem', 'dem', 'cem', 'sem', 'šem', 'chem', 'gem')):
+        elif not lo.endswith(('bem', 'dem', 'cem', 'sem', 'šem', 'chem', 'gem', 'lem', 'rem')):
             # Novákem → Novák, Procházkou → Procházka
             return obs[:-2]
 
@@ -419,19 +440,30 @@ def infer_surname_nominative(obs: str) -> str:
     # Mnoho příjmení končí na -a v nominativu (Svoboda, Skála, Liška, atd.)
     # Příliš riskantní, necháme to být
 
-    # ========== GENITIV: -y → -a ==========
-    # Procházky (genitiv) → Procházka (nominativ)
+    # ========== GENITIV: -y → -a nebo odstranit -y ==========
+    # Klímy → Klíma (genitiv mužů), Procházky → Procházka
     # ALE POUZE pokud to NENÍ přídavné jméno (-ský/-cký/-ný)
-    if lo.endswith('y') and len(obs) > 2:
+    if lo.endswith('y') and len(obs) > 3:
         # Skip if it's adjective form
         if not lo.endswith(('ský', 'cký', 'ný')):
-            # Genitiv of surnames ending in -a: Procházka → Procházky
-            # So reverse: Procházky → Procházka
-            # But check if it's not a common surname ending with 'y' in nominative
-            common_y_surnames = {'hubený', 'malý', 'veselý', 'černý', 'bílý'}
-            if lo not in common_y_surnames:
-                candidate = obs[:-1] + 'a'
-                return candidate
+            # Seznam příjmení končících na -a v nominativu
+            protected_a_surnames = {
+                'procházka', 'klíma', 'svoboda', 'skála', 'hora', 'hala',
+                'liška', 'vrba', 'ryba', 'kočka', 'sluka', 'janda',
+                'blaha', 'kafka', 'smetana'
+            }
+
+            # Zkus nejprve -y → -a (pro Klíma, Procházka)
+            candidate_a = obs[:-1] + 'a'
+            if candidate_a.lower() in protected_a_surnames:
+                return candidate_a
+
+            # Heuristika: -y → -a pro příjmení jako Klíma
+            if obs[:-1].lower().endswith(('klím', 'dvořák', 'svobod')):
+                return candidate_a
+
+            # Běžný případ: jen odstraň -y (Nováky → Novák)
+            return obs[:-1]
 
     return obs
 
@@ -1286,6 +1318,13 @@ class Anonymizer:
             last_nom = infer_surname_nominative(last)
             first_nom = infer_first_name_nominative(first) or first
             tag = self._ensure_person_tag(first_nom, last_nom)
+
+            # Ulož původní formu jako variantu (pokud je jiná než kanonická)
+            original_form = f"{first} {last}"
+            canonical = f"{first_nom} {last_nom}"
+            if original_form.lower() != canonical.lower():
+                self.entity_map['PERSON'][canonical].add(original_form)
+
             # Vrať titul + tag
             return f"{title} {tag}"
 
@@ -1603,6 +1642,12 @@ class Anonymizer:
 
             # Vytvoř nebo najdi tag pro tuto osobu
             tag = self._ensure_person_tag(first_nom, last_nom)
+
+            # Ulož původní formu jako variantu (pokud je jiná než kanonická)
+            original_form = f"{first_obs} {last_obs}"
+            canonical = f"{first_nom} {last_nom}"
+            if original_form.lower() != canonical.lower():
+                self.entity_map['PERSON'][canonical].add(original_form)
 
             return tag
 
