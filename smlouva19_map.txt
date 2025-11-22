@@ -1,47 +1,44 @@
 OSOBY
 -----
-[[PERSON_1]]: Adrian Kratochvílem
+[[PERSON_1]]: Adrian Kratochvíl
   - Adrianem Kratochvílem
 [[PERSON_2]]: Svaté Markét
   - Svaté Markéty
 [[PERSON_3]]: Daniela Horská
-[[PERSON_4]]: Lucií Novotna
+[[PERSON_4]]: Lucie Novotna
   - Lucií Novotnou
 [[PERSON_5]]: Gabriela Hrbáčova
   - Gabrielou Hrbáčovou
-[[PERSON_6]]: Tomáeš Pavlíek
+[[PERSON_6]]: Tomáš Pavlíek
   - Tomášem Pavlíkem
-[[PERSON_7]]: Filiep Šimůnek
+[[PERSON_7]]: Filip Šimůnek
   - Filipem Šimůnkem
-[[PERSON_8]]: Lucie Novotná
-  - Lucie Novotné
-[[PERSON_9]]: Hany Zbořilová
-[[PERSON_10]]: Klára Melichová
-[[PERSON_11]]: Michaela Růžičkova
+[[PERSON_8]]: Hany Zbořilová
+[[PERSON_9]]: Klára Melichová
+[[PERSON_10]]: Michaela Růžičkova
   - Michaelou Růžičkovou
-[[PERSON_12]]: Zora Konečna
+[[PERSON_11]]: Zora Konečna
   - Zorou Konečnou
-[[PERSON_13]]: Richard Pavelek
+[[PERSON_12]]: Richard Pavelek
   - Richard Pavelka
-[[PERSON_14]]: Viktorie Benýšková
-[[PERSON_15]]: Nela Kořínková
-[[PERSON_16]]: Štěpán Hejduk
-[[PERSON_17]]: Martin Dvořák
-[[PERSON_18]]: Eva Špačková
-[[PERSON_19]]: Hynek Procházka
-[[PERSON_20]]: Andrea Řehořová
-[[PERSON_21]]: Denisa Kadlecová
-[[PERSON_22]]: Erik Dohnal
-[[PERSON_23]]: Erika Řehořová
-[[PERSON_24]]: Tamara Štefková
-[[PERSON_25]]: Monika Pátková
-[[PERSON_26]]: Radomír Král
-[[PERSON_27]]: Soňa Mikulková
-[[PERSON_28]]: Tomáš Bartoš
-[[PERSON_29]]: Štěpán Šeda
-[[PERSON_30]]: Pavlína Plíškova
+[[PERSON_13]]: Viktorie Benýšková
+[[PERSON_14]]: Nela Kořínková
+[[PERSON_15]]: Štěpán Hejduk
+[[PERSON_16]]: Martin Dvořák
+[[PERSON_17]]: Eva Špačková
+[[PERSON_18]]: Hynek Procházka
+[[PERSON_19]]: Andrea Řehořová
+[[PERSON_20]]: Denisa Kadlecová
+[[PERSON_21]]: Erik Dohnal
+[[PERSON_22]]: Erika Řehořová
+[[PERSON_23]]: Tamara Štefková
+[[PERSON_24]]: Monika Pátková
+[[PERSON_25]]: Radomír Král
+[[PERSON_26]]: Soňa Mikulková
+[[PERSON_27]]: Tomáš Bartoš
+[[PERSON_28]]: Štěpán Šeda
+[[PERSON_29]]: Pavlína Plíškova
   - Pavlínou Plíškovou
-[[PERSON_31]]: Adrian Kratochvíl
 
 ADDRESS
 [[ADDRESS_1]]: Praha 10, 102 00

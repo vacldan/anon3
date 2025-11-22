@@ -1,0 +1,146 @@
+OSOBY
+-----
+[[PERSON_1]]: Gabriela Štěpánova
+  - Gabrielou Štěpánovou
+[[PERSON_2]]: Společností Legamedis
+[[PERSON_3]]: Adam Král
+  - Adamem Králem
+[[PERSON_4]]: Adam Králem
+  - Adamem Králem
+[[PERSON_5]]: Lucie Havelková
+[[PERSON_6]]: Lucii Havelková
+[[PERSON_7]]: Petr Dohnal
+  - Petra Dohnala
+[[PERSON_8]]: Petru Dohnal
+  - Petru Dohnalovi
+[[PERSON_9]]: Martina Jeřábková
+  - Martinou Jeřábkovou
+[[PERSON_10]]: Martin Jeřábkova
+  - Martinu Jeřábkovou
+[[PERSON_11]]: Tomáš Nguyen
+[[PERSON_12]]: Tomáeš Nguyen
+  - Tomášem Nguyenem
+[[PERSON_13]]: Eva Marečková
+[[PERSON_14]]: David Šembera
+  - Davida Šembery
+[[PERSON_15]]: Klára Šustrová
+[[PERSON_16]]: Daniel Mlynář
+  - Danielu Mlynářovi
+[[PERSON_17]]: Daniela Mlynář
+  - Danielu Mlynářovi
+[[PERSON_18]]: Tereza Pavlíková
+  - Terezou Pavlíkovou
+[[PERSON_19]]: Robert Vinkler
+[[PERSON_20]]: Roberta Vinkler
+  - Robertu Vinklerovi
+[[PERSON_21]]: Simona Trčková
+  - Simony Trčkové
+[[PERSON_22]]: Simoněa Trčková
+[[PERSON_23]]: Michal Gregor
+[[PERSON_24]]: Michal Gregorem
+  - Michalem Gregorem
+[[PERSON_25]]: Lenka Šípková
+  - Lenky Šípkové
+[[PERSON_26]]: Ondřej Vlček
+  - Ondřejem Vlčkem
+[[PERSON_27]]: Marcela Bočková
+[[PERSON_28]]: Viktor Havel
+  - Viktoru Havlovi
+[[PERSON_29]]: Barbora Němcová
+  - Barbory Němcové
+[[PERSON_30]]: Radek Hofman
+  - Radka Hofmana
+[[PERSON_31]]: Radk Hofman
+  - Radka Hofmana
+[[PERSON_32]]: Alžběta Konečná
+[[PERSON_33]]: Igor Vraný
+  - Igoru Vranému
+[[PERSON_34]]: Monika Hrabovská
+  - Monice Hrabovské
+[[PERSON_35]]: Monika Hrabovsá
+  - Monikou Hrabovskou
+[[PERSON_36]]: Roman Turek
+  - Romanem Turkovi
+[[PERSON_37]]: Romana Turek
+  - Romanu Turkovi
+[[PERSON_38]]: Kateřina Blažková
+[[PERSON_39]]: Filip Švec
+[[PERSON_40]]: Filiep Švecem
+  - Filipem Švecem
+[[PERSON_41]]: Adéla Jarošová
+[[PERSON_42]]: Adéle Jarošová
+[[PERSON_43]]: Jaroslav Černý
+  - Jaroslavem Černým
+[[PERSON_44]]: Helena Vodičková
+  - Helenou Vodičkovou
+[[PERSON_45]]: Heleněa Vodičková
+[[PERSON_46]]: Kamil Řezníček
+  - Kamila Řezníčka
+[[PERSON_47]]: Gabriela Pokorná
+  - Gabriele Pokorné
+[[PERSON_48]]: Štěpán Hrubeš
+[[PERSON_49]]: Štěpán Hrubešem
+  - Štěpánem Hrubešem
+[[PERSON_50]]: Nikola Šťastná
+  - Nikol Šťastná
+  - Nikol Šťastné
+[[PERSON_51]]: Miroslav Vaněk
+[[PERSON_52]]: Miroslava Vaňk
+  - Miroslavu Vaňkovi
+[[PERSON_53]]: Renata Slámová
+  - Renaty Slámové
+[[PERSON_54]]: Patrik Holík
+  - Patrika Holíka
+[[PERSON_55]]: Patrika Holík
+  - Patriku Holíkovi
+[[PERSON_56]]: Markéta Benešová
+  - Markétě Benešové
+[[PERSON_57]]: Erik Roubal
+  - Erika Roubala
+  - Erikem Roubalem
+[[PERSON_58]]: Sabina Nedvědová
+[[PERSON_59]]: Aleš Kříž
+  - Aleše Kříže
+[[PERSON_60]]: Aleši Kříž
+  - Aleši Křížovi
+[[PERSON_61]]: Veronika Lacinová
+[[PERSON_62]]: Adrian Kratochvílem
+  - Adrianem Kratochvílem
+[[PERSON_63]]: Samsung Galax
+  - Samsung Galaxy
+[[PERSON_64]]: Některé Subjekt
+  - Některé Subjekty
+[[PERSON_65]]: Viktor Havlea
+  - Viktora Havla
+[[PERSON_66]]: Filip Šveec
+  - Filipa Švece
+[[PERSON_67]]: Adrian Kratochvíl
+  - Adrianovi Kratochvílovi
+
+ADDRESS
+[[ADDRESS_1]]: Kapslovně 881/11, Praha 3
+
+API_KEY
+[[API_KEY_1]]: e
+[[API_KEY_2]]: ERP
+
+BANK
+[[BANK_1]]: 112882351/0300
+[[BANK_2]]: 662219881/5500
+[[BANK_3]]: 771199221/0100
+
+ICO
+[[ICO_1]]: 05288977
+
+IMEI
+[[IMEI_1]]: 356778119992110
+
+IP
+[[IP_1]]: 192.168.11.22
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: is2025
+
+MAC
+[[MAC_1]]: 00:1F:44:AA:22:11
+

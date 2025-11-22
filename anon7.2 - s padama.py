@@ -194,7 +194,19 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
     if lo.endswith('em') and len(obs) > 2:
         cand = obs[:-2]
 
-        # NEJPRVE zkontroluj vložné 'e' pro známé kmeny (před kontrolou knihovny!)
+        # NEJPRVE zkontroluj, jestli cand není UŽ správný nominativ
+        if cand.lower() in CZECH_FIRST_NAMES:
+            return cand.capitalize()
+
+        # Zkontroluj, jestli cand VYPADÁ jako validní nominativ (bez potřeby vložného 'e')
+        # Validní mužské nominativy typicky končí na: souhlásky kromě několika výjimek
+        cand_lo = cand.lower()
+        valid_male_endings = ('š', 'n', 'l', 'r', 'm', 'd', 't', 'p', 'b', 'v', 'c', 'č', 'j', 'z', 'ž', 'ň', 'ř', 'ť', 'ď')
+        if len(cand) >= 4 and cand_lo[-1] in valid_male_endings:
+            # Vypadá jako validní nominativ (Tomáš, Filip, Adrian...)
+            return cand.capitalize()
+
+        # Pak zkontroluj vložné 'e' pro známé kmeny
         if len(cand) >= 2:
             vlozne_e_stems = {'mar', 'pav', 'pet', 'ale', 'dan', 'tom', 'jos', 'luk', 'filip', 'petr', 'alex'}
             stem = cand.lower()[:3]
@@ -202,10 +214,6 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
                 # Tento kmen vyžaduje vložné 'e'
                 cand_with_e = cand[:-1] + 'e' + cand[-1]
                 return cand_with_e.capitalize()
-
-        # Pokud není ve vložném 'e' kmenu, zkontroluj knihovnu
-        if cand.lower() in CZECH_FIRST_NAMES:
-            return cand.capitalize()
 
         # Nakonec zkus vložné 'e' pro ostatní případy
         if len(cand) >= 2:
@@ -384,13 +392,22 @@ def infer_first_name_nominative(obs: str) -> str:
             return (obs + 'a').capitalize()
 
     # ŽENSKÁ JMÉNA - pádové varianty
+    # Akuzativ/Lokál: -í/-ií → -ie (Lucií → Lucie, Marii → Marie)
+    if lo.endswith(('í', 'ií')) and len(obs) > 2:
+        if lo.endswith('ií'):
+            stem = obs[:-2] + 'ie'
+        else:
+            stem = obs[:-1] + 'ie'
+        if stem.lower() in CZECH_FIRST_NAMES:
+            return stem.capitalize()
+
     # Genitiv/Dativ/Lokál: -y/-ě/-e → -a
     if lo.endswith(('y', 'ě', 'e')):
         stem = obs[:-1]
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
             return (stem + 'a').capitalize()
 
-    # Dativ: -u → -a (Hanu → Hana)
+    # Dativ: -u → -a (Hanu → Hana) - POUZE pokud existuje ženské jméno
     if lo.endswith('u') and len(obs) > 1:
         stem = obs[:-1]
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
@@ -539,18 +556,19 @@ def infer_surname_nominative(obs: str) -> str:
 
     # Ale POUZE pokud to není součást příjmení (Šembera, Chlumec, atd.)
     if lo.endswith('em') and len(obs) > 4:
-        # Speciální případ: -alem, -elem, -olem → pravděpodobně instrumentál od -al, -el, -ol
-        if lo.endswith(('alem', 'elem', 'olem', 'ilem')):
-            # Doležalem → Doležal, Havlem → Havel, Kokolem → Kokol
-            # Ale Havel má výjimku výš (řádek 383-385), takže tady řešíme jen -al/-ol/-il
-            if lo.endswith('alem'):
+        # Speciální případ: -alem, -elem, -olem, -ilem → pravděpodobně instrumentál od -al, -el, -ol, -il
+        if lo.endswith(('alem', 'elem', 'olem', 'ilem', 'ílem', 'élem', 'ýlem', 'úlem')):
+            # Doležalem → Doležal, Havlem → Havel, Kratochvílem → Kratochvíl
+            if lo.endswith(('alem', 'álem')):
                 return obs[:-2]  # Doležalem → Doležal
-            elif lo.endswith('elem'):
-                return obs[:-2]  # ?elem → ?el (edge case)
-            elif lo.endswith('olem'):
+            elif lo.endswith(('elem', 'élem')):
+                return obs[:-2]  # ?elem → ?el
+            elif lo.endswith(('olem', 'ólem')):
                 return obs[:-2]  # ?olem → ?ol
-            elif lo.endswith('ilem'):
-                return obs[:-2]  # ?ilem → ?il
+            elif lo.endswith(('ilem', 'ílem', 'ýlem')):
+                return obs[:-2]  # Kratochvílem → Kratochvíl, ?ylem → ?yl
+            elif lo.endswith('úlem'):
+                return obs[:-2]  # ?úlem → ?úl
 
         # Speciální případ: -kem → -ek (Štefánkem → Štefánek, Práškem → Prášek)
         # Musíme přidat 'e' zpět: -kem → -ek (odstraň -em, nechej -k, přidej e před k)
@@ -558,9 +576,17 @@ def infer_surname_nominative(obs: str) -> str:
             return obs[:-3] + 'ek'  # např. Práškem → Prášek, Štefánkem → Štefánek
 
         # Kontrola: není -bem, -dem, -cem, -sem, -šem (součást příjmení)
-        elif not lo.endswith(('bem', 'dem', 'cem', 'sem', 'šem', 'chem', 'gem', 'lem', 'rem')):
-            # Novákem → Novák, Procházkou → Procházka
-            return obs[:-2]
+        # Ale pozor: "Gregorem" → "Gregor" JE validní, "Šemberem" → "Šembera" NE
+        elif not lo.endswith(('bem', 'dem', 'cem', 'sem', 'šem', 'chem', 'gem', 'lem')):
+            # Pokud končí na -rem, zkontroluj jestli výsledek vypadá jako nominativ
+            if lo.endswith('rem'):
+                cand = obs[:-2]
+                # Pokud po odstranění -em dostaneme příjmení končící na souhlásku (ne -a/-e/-o), je to nominativ
+                if cand.lower()[-1] not in ('a', 'e', 'o', 'i', 'u', 'y', 'á', 'é', 'í', 'ó', 'ú', 'ů', 'ý'):
+                    return cand
+            else:
+                # Ostatní případy: Novákem → Novák, Králem → Král
+                return obs[:-2]
 
     # ========== GENITIV: -a → NEODSTRAŇUJ! ==========
     # Mnoho příjmení končí na -a v nominativu (Svoboda, Skála, Liška, atd.)
