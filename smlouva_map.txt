@@ -1,0 +1,31 @@
+OSOBY
+-----
+[[PERSON_1]]: Jan Nováek
+  - Jan Novák
+  - Jana Nováka
+  - Janem Novákem
+  - Janovo Novákovo
+[[PERSON_2]]: Petra Svobodova
+  - Petrou Svobodovou
+[[PERSON_3]]: Kateřina Svobodova
+  - Kateřinou Svobodovou
+
+ADDRESS
+[[ADDRESS_1]]: Na Hrázi 123/7, 750 02 Přerov
+[[ADDRESS_2]]: U Lávky 45, 779 00 Olomouc
+
+BANK
+[[BANK_1]]: 200123456/2010
+[[BANK_2]]: 260987654/5500
+
+DATE
+[[DATE_1]]: 14. 3. 1985
+[[DATE_2]]: 22. 9. 1989
+
+ID_CARD
+[[ID_CARD_1]]: 123456789
+[[ID_CARD_2]]: 987654321
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: 3M1 2345
+

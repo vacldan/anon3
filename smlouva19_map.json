@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-22T07:00:30.731319",
+  "generated_at": "2025-11-22T07:20:04.440171",
   "source_file": "smlouva19.docx",
   "entities": [
     {
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Hany Zbořilová",
+      "original": "Hana Zbořilová",
       "occurrences": 1
     },
     {

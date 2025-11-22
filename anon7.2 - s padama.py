@@ -358,11 +358,18 @@ def infer_first_name_nominative(obs: str) -> str:
     """
     lo = obs.lower()
 
-    # SPECIÁLNÍ PŘÍPAD PRVNÍ: Roberta může být genitiv od Robert
-    # Musí být PŘED kontrolou knihovny, protože Roberta je v knihovně jako ženské jméno!
+    # SPECIÁLNÍ PŘÍPADY: Některá jména mohou být genitiv od jiného jména
+    # Musí být PŘED kontrolou knihovny!
+
+    # Roberta může být genitiv od Robert
+    # (Roberta je v knihovně jako ženské jméno, ale častěji je to genitiv od Robert)
     if lo == 'roberta':
-        # Preferujeme Robert (mužské jméno), protože Roberta je častěji genitiv než samostatné jméno
         return 'Robert'
+
+    # Hany může být genitiv od Hana
+    # (Hany může být v knihovně, ale standardní nominativ je Hana)
+    if lo == 'hany':
+        return 'Hana'
 
     # DŮLEŽITÉ: Kontrola, zda už je v nominativu (v knihovně jmen)
     if lo in CZECH_FIRST_NAMES:
@@ -392,9 +399,9 @@ def infer_first_name_nominative(obs: str) -> str:
             return (obs + 'a').capitalize()
 
     # ŽENSKÁ JMÉNA - pádové varianty
-    # Akuzativ/Lokál: -í/-ií → -ie (Lucií → Lucie, Marii → Marie)
-    if lo.endswith(('í', 'ií')) and len(obs) > 2:
-        if lo.endswith('ií'):
+    # Akuzativ/Lokál/Dativ: -í/-ií/-ii → -ie (Lucií → Lucie, Lucii → Lucie, Marii → Marie)
+    if lo.endswith(('í', 'ií', 'ii')) and len(obs) > 2:
+        if lo.endswith(('ií', 'ii')):
             stem = obs[:-2] + 'ie'
         else:
             stem = obs[:-1] + 'ie'
@@ -405,6 +412,15 @@ def infer_first_name_nominative(obs: str) -> str:
     if lo.endswith(('y', 'ě', 'e')):
         stem = obs[:-1]
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
+            return (stem + 'a').capitalize()
+
+        # Fallback pro běžná česká jména, která nejsou v knihovně
+        common_female_names_stems = {
+            'han', 'ev', 'ann', 'jan', 'petr', 'len', 'kateřin',
+            'alen', 'ver', 'monik', 'jitk', 'zuzan', 'ivan',
+            'terez', 'barbar', 'andre', 'michael', 'simon', 'nikol', 'pavl'
+        }
+        if stem.lower() in common_female_names_stems:
             return (stem + 'a').capitalize()
 
     # Dativ: -u → -a (Hanu → Hana) - POUZE pokud existuje ženské jméno
@@ -1762,7 +1778,8 @@ class Anonymizer:
             if is_female_surname:
                 # Han → Hana, Martin → Martina
                 # Pravidlo: pokud jméno končí na souhlásku, přidej 'a'
-                if not first_lo.endswith(('a', 'e', 'i', 'o', 'u', 'y')):
+                # Samohlásky včetně diakritiky: a, á, e, é, ě, i, í, o, ó, u, ú, ů, y, ý
+                if not first_lo.endswith(('a', 'á', 'e', 'é', 'ě', 'i', 'í', 'o', 'ó', 'u', 'ú', 'ů', 'y', 'ý')):
                     # Jméno končí na souhlásku → přidej 'a'
                     first_nom = (first_obs + 'a').capitalize()
                 elif first_lo.endswith('a'):
@@ -1788,7 +1805,7 @@ class Anonymizer:
                         else:
                             # Fallback: odstranění 'a'
                             first_nom = first_obs[:-1].capitalize()
-                elif first_lo.endswith(('u', 'e', 'em', 'ovi', 'ům')):
+                elif first_lo.endswith(('u', 'e', 'em', 'ovi', 'ům', 'y', 'í', 'ou')):
                     # Typické pádové koncovky → použij inference
                     first_nom = infer_first_name_nominative(first_obs)
                 else:
