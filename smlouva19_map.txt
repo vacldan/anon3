@@ -1,0 +1,84 @@
+OSOBY
+-----
+[[PERSON_1]]: Adrian Kratochvílem
+  - Adrianem Kratochvílem
+[[PERSON_2]]: Svaté Markét
+  - Svaté Markéty
+[[PERSON_3]]: Daniela Horská
+[[PERSON_4]]: Lucií Novotna
+  - Lucií Novotnou
+[[PERSON_5]]: Gabriela Hrbáčova
+  - Gabrielou Hrbáčovou
+[[PERSON_6]]: Tomáeš Pavlíek
+  - Tomášem Pavlíkem
+[[PERSON_7]]: Filiep Šimůnek
+  - Filipem Šimůnkem
+[[PERSON_8]]: Lucie Novotná
+  - Lucie Novotné
+[[PERSON_9]]: Hany Zbořilová
+[[PERSON_10]]: Klára Melichová
+[[PERSON_11]]: Michaela Růžičkova
+  - Michaelou Růžičkovou
+[[PERSON_12]]: Zora Konečna
+  - Zorou Konečnou
+[[PERSON_13]]: Richard Pavelek
+  - Richard Pavelka
+[[PERSON_14]]: Viktorie Benýšková
+[[PERSON_15]]: Nela Kořínková
+[[PERSON_16]]: Štěpán Hejduk
+[[PERSON_17]]: Martin Dvořák
+[[PERSON_18]]: Eva Špačková
+[[PERSON_19]]: Hynek Procházka
+[[PERSON_20]]: Andrea Řehořová
+[[PERSON_21]]: Denisa Kadlecová
+[[PERSON_22]]: Erik Dohnal
+[[PERSON_23]]: Erika Řehořová
+[[PERSON_24]]: Tamara Štefková
+[[PERSON_25]]: Monika Pátková
+[[PERSON_26]]: Radomír Král
+[[PERSON_27]]: Soňa Mikulková
+[[PERSON_28]]: Tomáš Bartoš
+[[PERSON_29]]: Štěpán Šeda
+[[PERSON_30]]: Pavlína Plíškova
+  - Pavlínou Plíškovou
+[[PERSON_31]]: Adrian Kratochvíl
+
+ADDRESS
+[[ADDRESS_1]]: Praha 10, 102 00
+IČO
+[[ADDRESS_2]]: Křišťanová 19, 779 00 Olomouc
+Telefon
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 856126/5529
+
+DATE
+[[DATE_1]]: 26. 11. 1985
+
+EMAIL
+[[EMAIL_1]]: adrian.kratochvil@fnsm.cz
+[[EMAIL_2]]: daniela.horska85@gmail.com
+
+ICO
+[[ICO_1]]: 00311245
+
+IMEI
+[[IMEI_1]]: 356778119991871
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: 8AF 2231
+[[LICENSE_PLATE_2]]: FH07711
+[[LICENSE_PLATE_3]]: 3L9 5221
+
+MAC
+[[MAC_1]]: 00:1D:55:AA:44:22
+[[MAC_2]]: 00:1F:66:AA:00:91
+
+PHONE
+[[PHONE_1]]: +420 233 801 220
+[[PHONE_2]]: +420 728 442 991
+[[PHONE_3]]: 551784002
+
+VIN
+[[VIN_1]]: TMBJG9NP8N7022812
+
