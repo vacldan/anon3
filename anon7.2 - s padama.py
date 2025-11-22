@@ -444,16 +444,24 @@ def infer_first_name_nominative(obs: str) -> str:
         if stem.lower() in common_female_names_stems:
             return (stem + 'a').capitalize()
 
-    # Dativ: -u → -a (Hanu → Hana) - POUZE pokud existuje ženské jméno
+    # Dativ/Akuzativ: -u → -a (Hanu → Hana, Martinu → Martina)
     if lo.endswith('u') and len(obs) > 1:
         stem = obs[:-1]
+        # PRVNÍ zkontroluj knihovnu
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
             return (stem + 'a').capitalize()
+        # FALLBACK pro běžná ženská jména -ina/-ýna (Martinu→Martina, Pavlinu→Pavlina)
+        if stem.lower().endswith(('tin', 'lin', 'rin', 'din', 'nin', 'stýn')):
+            return (stem + 'a').capitalize()
 
-    # Instrumentál: -ou → -a (Hanou → Hana)
+    # Instrumentál: -ou → -a (Hanou → Hana, Martinou → Martina)
     if lo.endswith('ou') and len(obs) > 2:
         stem = obs[:-2]
+        # PRVNÍ zkontroluj knihovnu
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
+            return (stem + 'a').capitalize()
+        # FALLBACK pro běžná ženská jména -in/-ýn (Martinou→Martina, Kristýnou→Kristýna)
+        if stem.lower().endswith(('tin', 'lin', 'rin', 'din', 'nin', 'stýn')):
             return (stem + 'a').capitalize()
 
     # MUŽSKÁ JMÉNA - genitiv/dativ/instrumentál
