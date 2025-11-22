@@ -1676,7 +1676,9 @@ class Anonymizer:
                 r'\b(symbicort|turbuhaler|spirometr|jaeger)\b',
                 r'\b(pharma|pharmaceutical|medical)\b',
                 # Company suffixes když jsou uprostřed
-                r'\b(group|company|corp|ltd|gmbh|inc|services?)\b'
+                r'\b(group|company|corp|ltd|gmbh|inc|services?)\b',
+                # Religious/Geographic (kostely, náměstí, ulice...)
+                r'\b(svaté|svatého|svatý|kostel)\b'
             ]
             for pattern in non_person_patterns:
                 if re.search(pattern, combined):
