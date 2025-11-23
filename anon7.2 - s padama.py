@@ -504,10 +504,25 @@ def infer_surname_nominative(obs: str) -> str:
         # Kontrola, že není -skou/-ckou (přídavné jméno)
         if not lo.endswith(('skou', 'ckou')):
             base = obs[:-2]
-            # DŮLEŽITÉ: "Vránou" → "Vrána" (mužské příjmení na -a, instrumentál -ou)
-            # Příklady: Vrána, Kafka, Skála, Dvořák...
-            # Vrať -a (může být mužské i ženské)
-            return base + 'a'
+            base_lo = base.lower()
+
+            # Mužská příjmení končící na -a v nominativu (normalizovaná bez diakritiky)
+            norm = unicodedata.normalize('NFD', base_lo)
+            base_norm = ''.join(c for c in norm if unicodedata.category(c) != 'Mn')
+
+            male_surnames_with_a = {
+                'vrana', 'kafka', 'skala', 'hora', 'svoboda', 'prochazka',
+                'liska', 'ryba', 'hala', 'kula', 'sluka', 'janda', 'blaha', 'smetana',
+                'seda', 'koza', 'vrana'  # add more male surnames ending in -a
+            }
+
+            # Pokud je to známé mužské příjmení (porovnej base+a proti seznamu)
+            # base_norm="vran" → base_norm+"a"="vrana"
+            if base_norm + 'a' in male_surnames_with_a:
+                return base + 'a'
+            # Jinak (pravděpodobně ženské) → vrať dlouhé -á
+            else:
+                return base + 'á'
 
     # ========== PŘÍDAVNÁ JMÉNA (-ský, -cký, -ý) ==========
 
@@ -581,8 +596,9 @@ def infer_surname_nominative(obs: str) -> str:
 
     if lo.endswith('ka') and len(obs) > 3 and lo not in common_surnames_a:
         stem = obs[:-2].lower()
-        # Pouze pokud kmen vyžaduje vložné e: Hájka → Hájek
-        if any(stem.endswith(p) or stem == p for p in vlozne_e_surname_patterns):
+        # Pouze pokud kmen vyžaduje vložné e: Hájka → Hájek, Pavelka → Pavelek
+        # Zkontroluj prefix nebo známý kmen
+        if any(stem.startswith(p) or stem.endswith(p) or stem == p for p in vlozne_e_surname_patterns):
             return obs[:-2] + 'ek'
 
     if lo.endswith('la') and len(obs) > 3 and lo not in common_surnames_a:
@@ -631,8 +647,8 @@ def infer_surname_nominative(obs: str) -> str:
             stem_without_kem = obs[:-3].lower()  # "štefán" z "štefánkem"
 
             # Známé patterny vyžadující vložné 'e'
-            if any(stem_without_kem.endswith(p) for p in ['ánek', 'ínek', 'ýnek', 'ášek', 'oušek', 'áček', 'íček']):
-                # Štefánkem → Štefánek
+            if any(stem_without_kem.endswith(p) for p in ['ánek', 'ínek', 'ýnek', 'ůnek', 'ůn', 'án', 'ín', 'ýn', 'éček', 'ášek', 'oušek', 'áček', 'íček']):
+                # Štefánkem → Štefánek, Šimůnkem → Šimůnek
                 return obs[:-3] + 'ek'
             # Default: odstranit jen -em (většina případů)
             else:
@@ -1664,8 +1680,9 @@ class Anonymizer:
                 # Tech/Software
                 r'\b(tech|cloud|web|solutions?|data|digital|software|analytics)\b',
                 r'\b(team|hub|enterprise|premium|standard|professional)\b',
-                r'\b(google|amazon|microsoft|apple|facebook|splunk|cisco)\b',
-                r'\b(repository|authenticator|vision|protection|security)\b',
+                r'\b(google|amazon|microsoft|apple|facebook|splunk|cisco|samsung)\b',
+                r'\b(repository|authenticator|vision|protection|security|galaxy)\b',
+                r'\b(legamedis|společností)\b',  # Konkrétní společnosti
                 # Finance/Investment
                 r'\b(capital|equity|value|investment|fund|holdings|assets)\b',
                 r'\b(crescendo|ventures|partners|portfolio)\b',
@@ -1876,6 +1893,21 @@ class Anonymizer:
                 else:
                     # Jiné (pravděpodobně nominativ) → ponech jak je
                     first_nom = first_obs.capitalize()
+
+            # POST-PROCESSING: Oprava příjmení podle pohlaví křestního jména
+            # Pokud máme ženské jméno ale mužské příjmení (nebo naopak), oprav to
+            first_gender = get_first_name_gender(first_nom)
+            last_is_female = last_nom.lower().endswith(('ová', 'á'))
+
+            if first_gender == 'F' and not last_is_female:
+                # Ženské jméno, ale příjmení není ženské → přidej -ová/-á
+                last_lo = last_nom.lower()
+                if last_lo.endswith('a') and last_nom[-1] == 'a':  # končí na krátké 'a'
+                    # Novotna → Novotná, Plíškova → Plíšková, Konečna → Konečná
+                    last_nom = last_nom[:-1] + 'á'
+                elif last_nom.lower()[-1] in 'bcčdďfghjklmnňpqrřsštťvwxzž':
+                    # Končí na souhlásku → přidej -ová
+                    last_nom = last_nom + 'ová'
 
             # Vytvoř nebo najdi tag pro tuto osobu
             tag = self._ensure_person_tag(first_nom, last_nom)
