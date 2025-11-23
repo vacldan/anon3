@@ -189,6 +189,27 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
     if lo in common_feminine_names:
         return None  # Don't convert feminine names to masculine
 
+    # PRIORITA 0: Pokud jméno končí na 'a'/'u' a base forma je v knihovně nebo vypadá jako mužské jméno, preferuj ji
+    # Důvod: "davida" je v knihovně jako zastaralá forma, ale měli bychom preferovat "David"
+    # "petru" je v knihovně, ale "petr" také → preferuj "Petr"
+    if lo.endswith(('a', 'u')) and len(obs) > 2:
+        base = obs[:-1]
+        base_lo = base.lower()
+
+        # Strategie 1: Pokud base je v knihovně a není ženské jméno
+        if base_lo in CZECH_FIRST_NAMES:
+            # Base existuje - preferuj ho pokud není ženské (nekončí na 'a' v nominativu)
+            # nebo je known male name
+            if not base_lo.endswith('a') or base_lo in {'kuba', 'míla', 'nikola', 'saša', 'jirka', 'honza'}:
+                return base.capitalize()
+
+        # Strategie 2: Pokud base končí na souhlásku (typické pro mužská jména)
+        # a obs je v knihovně s -a nebo -u (může být genitiv/dativ)
+        elif len(base_lo) > 0 and base_lo[-1] not in 'aeiouáéíóúůýě' and lo in CZECH_FIRST_NAMES:
+            # "davida" končí na 'a', base "david" končí na 'd' (souhláska)
+            # → pravděpodobně genitiv od "David"
+            return base.capitalize()
+
     # Also check library if available
     if lo in CZECH_FIRST_NAMES and lo.endswith('a'):
         return None  # Don't convert, let the caller handle it
@@ -466,22 +487,46 @@ def infer_first_name_nominative(obs: str) -> str:
     if lo in dative_e_forms:
         return dative_e_forms[lo]
 
+    # PRIORITA: Pokud jméno končí na 'a'/'u' a base forma je v knihovně, preferuj base
+    # Důvod: "petru" je v knihovně, ale "petr" také → preferuj "petr"
+    # "davida" je v knihovně, "david" ne, ale "david" končí na souhlásku → preferuj "david"
+    if lo.endswith(('a', 'u')) and len(obs) > 2:
+        base = obs[:-1]
+        base_lo = base.lower()
+
+        # Pokud base je v knihovně, preferuj ho
+        if base_lo in CZECH_FIRST_NAMES:
+            return base.capitalize()
+
+        # Pokud base končí na souhlásku a obs je v knihovně,
+        # pravděpodobně je obs genitiv/dativ od base
+        if base_lo[-1] not in 'aeiouáéíóúůýě' and lo in CZECH_FIRST_NAMES:
+            return base.capitalize()
+
     # DŮLEŽITÉ: Kontrola, zda už je v nominativu (v knihovně jmen)
     if lo in CZECH_FIRST_NAMES:
         return obs.capitalize()
 
     # Zkontroluj TRUNKACE - pokud jméno vypadá jako zkrácené (končí souhláskou)
     # a přidání 'a'/'el'/'ek' dá známé jméno, preferuj úplnou formu
+    # ALE POUZE pokud jméno vypadá zkrácené (krátké nebo končí na typické zkratky)
     if len(obs) >= 3 and obs[-1] not in 'aeiouyáéíóúůýěiu':
-        # Zkus přidat 'a' (Zuzan → Zuzana, Pavl → Pavla)
-        if (lo + 'a') in CZECH_FIRST_NAMES:
-            return (obs + 'a').capitalize()
-        # Zkus přidat 'el' (Pavl → Pavel)
-        if (lo + 'el') in CZECH_FIRST_NAMES:
-            return (obs + 'el').capitalize()
-        # Zkus přidat 'ek' (Radk → Radek, Hynk → Hynek)
-        if (lo + 'ek') in CZECH_FIRST_NAMES:
-            return (obs + 'ek').capitalize()
+        # Kontrola: jméno musí vypadat skutečně zkrácené
+        # - Buď je krátké (< 5 písmen)
+        # - Nebo končí na typické zkrácené tvary (n, l, k, r po souhlásce)
+        looks_truncated = (len(obs) < 5 or
+                          lo.endswith(('zn', 'vl', 'dn', 'rk', 'nk', 'hk')))
+
+        if looks_truncated:
+            # Zkus přidat 'a' (Zuzan → Zuzana, Pavl → Pavla)
+            if (lo + 'a') in CZECH_FIRST_NAMES:
+                return (obs + 'a').capitalize()
+            # Zkus přidat 'el' (Pavl → Pavel)
+            if (lo + 'el') in CZECH_FIRST_NAMES:
+                return (obs + 'el').capitalize()
+            # Zkus přidat 'ek' (Radk → Radek, Hynk → Hynek)
+            if (lo + 'ek') in CZECH_FIRST_NAMES:
+                return (obs + 'ek').capitalize()
 
         # FALLBACK: Běžná jména, která nejsou v knihovně
         known_truncations = {
@@ -821,16 +866,10 @@ def infer_surname_nominative(obs: str) -> str:
     if lo.endswith('y') and len(obs) > 3:
         # Skip if it's adjective form
         if not lo.endswith(('ský', 'cký', 'ný')):
-            # Seznam příjmení končících na -a v nominativu
-            protected_a_surnames = {
-                'procházka', 'klíma', 'svoboda', 'skála', 'hora', 'hala',
-                'liška', 'vrba', 'ryba', 'kočka', 'sluka', 'janda',
-                'blaha', 'kafka', 'smetana'
-            }
-
-            # Zkus nejprve -y → -a (pro Klíma, Procházka)
+            # Zkus nejprve -y → -a (pro Klíma, Procházka, Šembera)
             candidate_a = obs[:-1] + 'a'
-            if candidate_a.lower() in protected_a_surnames:
+            # Použij GLOBÁLNÍ seznam MALE_SURNAMES_WITH_A místo lokálního
+            if candidate_a.lower() in MALE_SURNAMES_WITH_A:
                 return candidate_a
 
             # Heuristika: -y → -a pro příjmení jako Klíma
@@ -2048,6 +2087,9 @@ class Anonymizer:
                         elif first_lo.endswith('na') and len(first_obs) > 2:
                             # Jana → Jan
                             first_nom = first_obs[:-1]
+                        elif first_lo.endswith('da') and len(first_obs) > 2:
+                            # Davida → David, Richarda → Richard
+                            first_nom = first_obs[:-1]
                         else:
                             # Obecné odstranění 'a'
                             first_nom = first_obs[:-1]
@@ -2083,10 +2125,6 @@ class Anonymizer:
                 elif last_nom.lower()[-1] in 'bcčdďfghjklmnňpqrřsštťvwxzž':
                     # Končí na souhlásku → přidej -ová
                     last_nom = last_nom + 'ová'
-
-            # DEBUG: Inference logging (disabled)
-            # if first_obs != first_nom or last_obs != last_nom:
-            #     print(f"[DEBUG-PERSON] '{first_obs} {last_obs}' → '{first_nom} {last_nom}'")
 
             # Vytvoř nebo najdi tag pro tuto osobu
             tag = self._ensure_person_tag(first_nom, last_nom)
