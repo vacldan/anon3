@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-23T06:05:26.387730",
+  "generated_at": "2025-11-23T08:42:34.689437",
   "source_file": "smlouva19.docx",
   "entities": [
     {
@@ -162,7 +162,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_27]]",
-      "original": "Štěpán Šed",
+      "original": "Štěpán Šeda",
       "occurrences": 1
     },
     {

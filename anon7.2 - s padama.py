@@ -182,12 +182,26 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
             return cand.capitalize()
         cands.append(cand)
 
-    # PRIORITA 2: Dativ -ovi → remove (Petrovi → Petr)
+    # PRIORITA 2: Dativ/vokativ -ovi → remove (Petrovi → Petr, Tomášovi → Tomáš)
     if lo.endswith('ovi') and len(obs) > 3:
         cand = obs[:-3]
         if cand.lower() in CZECH_FIRST_NAMES:
             return cand.capitalize()
         cands.append(cand)
+
+    # PRIORITA 2b: Dativ/vokativ -i → remove (Tomáši → Tomáš, Aleši → Aleš, Lukáši → Lukáš)
+    # Ale ne pro jména končící na -i v nominativu (Igor...)
+    if lo.endswith('i') and len(obs) > 2:
+        cand = obs[:-1]
+        # Zkontroluj, zda odstranění -i dává smysl
+        if cand.lower() in CZECH_FIRST_NAMES:
+            return cand.capitalize()
+        # Fallback: pokud cand končí na š/č/ř/ž (měkké souhlásky), pravděpodobně je to vokativ
+        if cand and cand[-1] in 'ščřžj' and len(cand) >= 3:
+            return cand.capitalize()
+        # Také pro ostatní souhlásky, pokud vypadá jako validní nominativ
+        if cand and cand[-1] in 'nldťpbvjk' and len(cand) >= 4:
+            return cand.capitalize()
 
     # PRIORITA 3: Instrumentál -em → remove (Petrem → Petr, Markem → Marek)
     # DŮLEŽITÉ: Vložné 'e' má PRIORITU před knihovnou pro známé kmeny (Markem → Marek, ne Mark)
@@ -387,7 +401,16 @@ def infer_first_name_nominative(obs: str) -> str:
         'anně': 'Anna',
         'janě': 'Jana',
         'petře': 'Petra',
-        'kateřině': 'Kateřina'
+        'kateřině': 'Kateřina',
+        'radce': 'Radka',
+        'elišce': 'Eliška',
+        'šárce': 'Šárka',
+        'andreo': 'Andrea',  # dativ -eo pro -ea jména
+        'alicí': 'Alice',  # instrumentál -í → -ie
+        'alici': 'Alice',  # dativ/lokál -i → -ie
+        'monice': 'Monika',
+        'veronice': 'Veronika',
+        'lucií': 'Lucie'  # instrumentál -ií → -ie
     }
     if lo in dative_e_forms:
         return dative_e_forms[lo]
@@ -395,6 +418,28 @@ def infer_first_name_nominative(obs: str) -> str:
     # DŮLEŽITÉ: Kontrola, zda už je v nominativu (v knihovně jmen)
     if lo in CZECH_FIRST_NAMES:
         return obs.capitalize()
+
+    # Zkontroluj TRUNKACE - pokud jméno vypadá jako zkrácené (končí souhláskou)
+    # a přidání 'a'/'el'/'ek' dá známé jméno, preferuj úplnou formu
+    if len(obs) >= 3 and obs[-1] not in 'aeiouyáéíóúůýěiu':
+        # Zkus přidat 'a' (Zuzan → Zuzana, Pavl → Pavla)
+        if (lo + 'a') in CZECH_FIRST_NAMES:
+            return (obs + 'a').capitalize()
+        # Zkus přidat 'el' (Pavl → Pavel)
+        if (lo + 'el') in CZECH_FIRST_NAMES:
+            return (obs + 'el').capitalize()
+        # Zkus přidat 'ek' (Radk → Radek, Hynk → Hynek)
+        if (lo + 'ek') in CZECH_FIRST_NAMES:
+            return (obs + 'ek').capitalize()
+
+        # FALLBACK: Běžná jména, která nejsou v knihovně
+        known_truncations = {
+            'zuzan': 'Zuzana', 'pavl': 'Pavel', 'radk': 'Radek', 'hynk': 'Hynek',
+            'radec': 'Radka', 'elišec': 'Eliška', 'šárec': 'Šárka',
+            'jiř': 'Jiří', 'petr': 'Petr', 'jan': 'Jan', 'tom': 'Tomáš'
+        }
+        if lo in known_truncations:
+            return known_truncations[lo]
 
     # SPECIÁLNÍ VZORY - PRIORITA (před obecnými pravidly)
 
@@ -539,7 +584,11 @@ def infer_surname_nominative(obs: str) -> str:
 
     # -skou/-ckou → -ská/-cká (ženská přídavná)
     if lo.endswith(('skou', 'ckou')):
-        return obs[:-3] + 'á'
+        return obs[:-2] + 'á'  # Hrabovskou → Hrabovská (ne Hrabovsá!)
+
+    # -ské/-cké → -ská/-cká (genitiv/dativ/lokál ženská přídavná)
+    if lo.endswith(('ské', 'cké')):
+        return obs[:-1] + 'á'  # Hrabovské → Hrabovská
 
     # ========== VLOŽNÉ 'E' - Havl/Havla → Havel, Petr/Petra → Petra ==========
 
@@ -586,7 +635,9 @@ def infer_surname_nominative(obs: str) -> str:
         'svoboda', 'skála', 'hora', 'kula', 'hala', 'krejča',
         'liška', 'vrba', 'ryba', 'kočka', 'sluka', 'janda',
         'procházka', 'blaha', 'kafka', 'smetana', 'brabec',
-        'kuřátka', 'kubíčka', 'marečka', 'vašíčka'
+        'kuřátka', 'kubíčka', 'marečka', 'vašíčka',
+        'šembera', 'klement', 'sláma',  # Příjmení na -era, -ema, -ma
+        'šeda', 'seda'  # Mužská příjmení na -eda
     }
 
     # Genitiv -ka/-la/-ce pouze pokud jde o známé kmeny s vložným e
@@ -612,8 +663,15 @@ def infer_surname_nominative(obs: str) -> str:
             return obs[:-1]  # odstranit jen -a
 
     if lo.endswith('ce') and len(obs) > 3:
-        # Němec → Němce (genitiv) → návrat na Němec
-        return obs[:-2] + 'ec'
+        # Genitiv -ce může být od -ec (Němec) nebo -c (Švec)
+        # Pokud stem je krátký (≤4 znaky), pravděpodobně je to prostě -c
+        stem = obs[:-2]  # Šve z Švece, Něm z Němce
+        if len(stem) <= 3:
+            # Krátký kmen: Švece → Šve + c = Švec (bez vložného e)
+            return obs[:-1]  # odstranit jen -e
+        else:
+            # Delší kmen: Němce → Něm + ec = Němec (s vložným e)
+            return stem + 'ec'
 
     # ========== DATIV: -ovi → REMOVE ==========
 
@@ -647,9 +705,23 @@ def infer_surname_nominative(obs: str) -> str:
             stem_without_kem = obs[:-3].lower()  # "štefán" z "štefánkem"
 
             # Známé patterny vyžadující vložné 'e'
-            if any(stem_without_kem.endswith(p) for p in ['ánek', 'ínek', 'ýnek', 'ůnek', 'ůn', 'án', 'ín', 'ýn', 'éček', 'ášek', 'oušek', 'áček', 'íček']):
+            long_patterns = ['ánek', 'ínek', 'ýnek', 'ůnek', 'ůn', 'án', 'ín', 'ýn', 'éček', 'ášek', 'oušek', 'áček', 'íček']
+
+            # Speciální: krátké kmeny (≤3 znaky) končící na ň, š, ř pravděpodobně vyžadují vložné e
+            # Vaň → Vaněk, Paš → Pašek
+            short_soft_endings = len(stem_without_kem) <= 3 and stem_without_kem[-1] in 'ňšř'
+
+            if any(stem_without_kem.endswith(p) for p in long_patterns):
                 # Štefánkem → Štefánek, Šimůnkem → Šimůnek
                 return obs[:-3] + 'ek'
+            elif short_soft_endings:
+                # Vaňkem → Vaněk (vložné ě způsobuje měkčení: n→ň před -kem)
+                stem = obs[:-3]
+                if stem and stem[-1] in 'ňďť':
+                    # Převeď měkkou souhlásku zpět na tvrdou
+                    hardening = {'ň': 'n', 'ď': 'd', 'ť': 't'}
+                    stem = stem[:-1] + hardening[stem[-1]]
+                return stem + 'ěk'
             # Default: odstranit jen -em (většina případů)
             else:
                 return obs[:-2]  # Novákem → Novák
@@ -659,6 +731,10 @@ def infer_surname_nominative(obs: str) -> str:
         else:
             cand = obs[:-2]  # odstranění -em
             cand_lo = cand.lower()
+
+            # Kontrola: jestli cand+a je protected surname (Šemberem → Šembera)
+            if (cand_lo + 'a') in common_surnames_a:
+                return cand + 'a'
 
             # Kontrola: jestli výsledek vypadá jako validní nominativ
             # Validní nominativy končí na souhlásky nebo -ý/-í/-á
@@ -711,6 +787,13 @@ def infer_surname_nominative(obs: str) -> str:
 
             # Běžný případ: jen odstraň -y (Nováky → Novák)
             return obs[:-1]
+
+    # ========== TRUNKOVANÉ PŘÍJMENÍ ==========
+    # Pokud příjmení vypadá zkrácené (krátké, končí souhláskou)
+    # a přidání 'a' dá známé mužské příjmení, preferuj úplnou formu
+    if len(obs) >= 3 and obs[-1] not in 'aeiouyáéíóúůýěiu':
+        if (lo + 'a') in common_surnames_a:
+            return obs + 'a'
 
     return obs
 
@@ -1683,6 +1766,7 @@ class Anonymizer:
                 r'\b(google|amazon|microsoft|apple|facebook|splunk|cisco|samsung)\b',
                 r'\b(repository|authenticator|vision|protection|security|galaxy)\b',
                 r'\b(legamedis|společností)\b',  # Konkrétní společnosti
+                r'\b(některé|některý|některá|subjekt|subjekty|subjektů)\b',  # Obecná slova ("některé subjekty")
                 # Finance/Investment
                 r'\b(capital|equity|value|investment|fund|holdings|assets)\b',
                 r'\b(crescendo|ventures|partners|portfolio)\b',
