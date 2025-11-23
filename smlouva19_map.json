@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-23T18:52:28.808299",
+  "generated_at": "2025-11-23T21:13:58.216475",
   "source_file": "smlouva19.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Daniela Horská",
+      "original": "Daniel Horská",
       "occurrences": 1
     },
     {
@@ -78,7 +78,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_13]]",
-      "original": "Nela Kořínková",
+      "original": "Nel Kořínková",
       "occurrences": 1
     },
     {
@@ -96,7 +96,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_16]]",
-      "original": "Eva Špačková",
+      "original": "Ev Špačková",
       "occurrences": 1
     },
     {
@@ -108,13 +108,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_18]]",
-      "original": "Andrea Řehořová",
+      "original": "Andre Řehořová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_19]]",
-      "original": "Denisa Kadlecová",
+      "original": "Denis Kadlecová",
       "occurrences": 1
     },
     {
@@ -132,7 +132,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
-      "original": "Tamara Štefková",
+      "original": "Tamar Štefková",
       "occurrences": 1
     },
     {
@@ -150,7 +150,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_25]]",
-      "original": "Soňa Mikulková",
+      "original": "Soň Mikulková",
       "occurrences": 1
     },
     {
