@@ -26,7 +26,9 @@ MALE_SURNAMES_WITH_A = {
     'prochazka', 'procházka', 'blaha', 'kafka', 'smetana', 'brabec',
     'kuratka', 'kuřátka', 'kubicka', 'kubíčka', 'marecka', 'marečka', 'vasicka', 'vašíčka',
     'sembera', 'šembera', 'klement', 'slama', 'sláma', 'seda', 'šeda',
-    'vrana', 'vala', 'vála', 'pala'
+    'vrana', 'vala', 'vála', 'pala',
+    'vojta', 'hruska', 'hruška',  # Can be both first names and surnames
+    'krupicka', 'krupička', 'popelka', 'vlna'  # Male surnames with -a (some with vložné e)
 }
 
 # =============== Načítání knihovny jmen ===============
@@ -217,6 +219,15 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
         cand = obs[:-3]
         if cand.lower() in CZECH_FIRST_NAMES:
             return cand.capitalize()
+
+        # Zkus vložné 'e' (Pavlovi → Pavel, Marckovi → Marek)
+        if len(cand) >= 2 and cand[-1] in 'lntr':
+            cand_with_e = cand[:-1] + 'e' + cand[-1]
+            if cand_with_e.lower() in CZECH_FIRST_NAMES:
+                return cand_with_e.capitalize()
+            # Přidej obě varianty jako kandidáty
+            cands.append(cand_with_e)
+
         cands.append(cand)
 
     # PRIORITA 2b: Dativ/vokativ -i → remove (Tomáši → Tomáš, Aleši → Aleš, Lukáši → Lukáš)
@@ -244,9 +255,10 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
 
         # Zkontroluj, jestli cand VYPADÁ jako validní nominativ (bez potřeby vložného 'e')
         # Validní mužské nominativy typicky končí na: souhlásky kromě několika výjimek
+        # DŮLEŽITÉ: Musí být >= 5 znaků, aby "Pavl", "Radk" neprošly
         cand_lo = cand.lower()
         valid_male_endings = ('š', 'n', 'l', 'r', 'm', 'd', 't', 'p', 'b', 'v', 'c', 'č', 'j', 'z', 'ž', 'ň', 'ř', 'ť', 'ď')
-        if len(cand) >= 4 and cand_lo[-1] in valid_male_endings:
+        if len(cand) >= 5 and cand_lo[-1] in valid_male_endings:
             # Vypadá jako validní nominativ (Tomáš, Filip, Adrian...)
             return cand.capitalize()
 
@@ -273,6 +285,15 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
         cand = obs[:-1]
         if cand.lower() in CZECH_FIRST_NAMES:
             return cand.capitalize()
+
+        # Zkus vložné 'e' (Hynku → Hynek, Radku → Radek)
+        if len(cand) >= 2 and cand[-1] in 'klntr':
+            cand_with_e = cand[:-1] + 'e' + cand[-1]
+            if cand_with_e.lower() in CZECH_FIRST_NAMES:
+                return cand_with_e.capitalize()
+            # Přidej obě varianty jako kandidáty
+            cands.append(cand_with_e)
+
         cands.append(cand)
 
     # PRIORITA 5: Genitiv/Akuzativ -a → remove (Petra → Petr, ale i Jana → Jan)
@@ -1681,6 +1702,11 @@ class Anonymizer:
             # Vytvoř/najdi tag pro osobu (s inferencí nominativu)
             last_nom = infer_surname_nominative(last)
             first_nom = infer_first_name_nominative(first) or first
+
+            # DEBUG: Inference logging (disabled)
+            # if first != first_nom or last != last_nom:
+            #     print(f"[DEBUG-TITLED] '{first} {last}' → '{first_nom} {last_nom}'")
+
             tag = self._ensure_person_tag(first_nom, last_nom)
 
             # Ulož původní formu jako variantu (pokud je jiná než kanonická)
@@ -1969,10 +1995,21 @@ class Anonymizer:
                 last_nom = existing_surname_stem
 
             # Určení rodu podle příjmení
-            is_female_surname = last_nom.lower().endswith(('ová', 'á'))
+            last_lo = last_nom.lower()
+
+            # Indeclinable surnames ending in -í/-ý/-cí can be both M/F
+            # Determine gender from first name instead
+            is_indeclinable = last_lo.endswith(('í', 'ý', 'cí'))
+            is_female_surname = last_lo.endswith(('ová', 'á'))
 
             # Inference křestního jména podle rodu příjmení
             first_lo = first_obs.lower()
+
+            # For indeclinable surnames, determine expected gender from first name
+            if is_indeclinable:
+                # Check if first name appears to be female (ends in -a, or is female in library)
+                first_gender = get_first_name_gender(first_obs)
+                is_female_surname = (first_gender == 'F')
 
             # Pokud příjmení je ženské, jméno musí být ženské
             if is_female_surname:
@@ -1997,20 +2034,40 @@ class Anonymizer:
                     if first_lo in male_names_with_a:
                         first_nom = first_obs.capitalize()
                     else:
-                        # FORCE MASCULINE CONVERSION - použij přímo _male_genitive_to_nominative
-                        # Radka → Radek, Jana → Jan, Petra → Petr
-                        male_result = _male_genitive_to_nominative(first_obs)
-                        if male_result:
-                            first_nom = male_result
+                        # FORCE MASCULINE CONVERSION
+                        # Speciální případy -ka → -ek, -la → -el, -ra → -r
+                        if first_lo.endswith('ka') and len(first_obs) > 2:
+                            # Radka → Radek, Honzka → Honzek
+                            first_nom = first_obs[:-2] + 'ek'
+                        elif first_lo.endswith('la') and len(first_obs) > 2:
+                            # Pavla → Pavel
+                            first_nom = first_obs[:-2] + 'el'
+                        elif first_lo.endswith('ra') and len(first_obs) > 2:
+                            # Petra → Petr
+                            first_nom = first_obs[:-1]
+                        elif first_lo.endswith('na') and len(first_obs) > 2:
+                            # Jana → Jan
+                            first_nom = first_obs[:-1]
                         else:
-                            # Fallback: odstranění 'a'
-                            first_nom = first_obs[:-1].capitalize()
-                elif first_lo.endswith(('u', 'e', 'em', 'ovi', 'ům', 'y', 'í', 'ou')):
+                            # Obecné odstranění 'a'
+                            first_nom = first_obs[:-1]
+                        first_nom = first_nom.capitalize()
+                elif first_lo.endswith(('u', 'e', 'em', 'ovi', 'ům', 'y', 'í', 'ou', 'ě', 'i', 'a')):
                     # Typické pádové koncovky → použij inference
+                    # Přidáno 'ě' (Zuzaně, Evě), 'i' (Pavlovi, Tomáši)
                     first_nom = infer_first_name_nominative(first_obs)
-                else:
-                    # Jiné (pravděpodobně nominativ) → ponech jak je
+                elif first_lo in CZECH_FIRST_NAMES:
+                    # Jméno je v knihovně → pravděpodobně nominativ
                     first_nom = first_obs.capitalize()
+                else:
+                    # Není v knihovně a nemá typickou koncovku → zkus inference
+                    # To zachytí Zuzan, Pavl, Radk, Hynk atd.
+                    inferred = infer_first_name_nominative(first_obs)
+                    # Pokud inference vrátila stejný výsledek, použij capitalize
+                    if inferred.lower() == first_lo:
+                        first_nom = first_obs.capitalize()
+                    else:
+                        first_nom = inferred
 
             # POST-PROCESSING: Oprava příjmení podle pohlaví křestního jména
             # Pokud máme ženské jméno ale mužské příjmení (nebo naopak), oprav to
@@ -2026,6 +2083,10 @@ class Anonymizer:
                 elif last_nom.lower()[-1] in 'bcčdďfghjklmnňpqrřsštťvwxzž':
                     # Končí na souhlásku → přidej -ová
                     last_nom = last_nom + 'ová'
+
+            # DEBUG: Inference logging (disabled)
+            # if first_obs != first_nom or last_obs != last_nom:
+            #     print(f"[DEBUG-PERSON] '{first_obs} {last_obs}' → '{first_nom} {last_nom}'")
 
             # Vytvoř nebo najdi tag pro tuto osobu
             tag = self._ensure_person_tag(first_nom, last_nom)
