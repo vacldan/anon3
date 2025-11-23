@@ -17,6 +17,18 @@ from datetime import datetime
 # =============== Globální proměnné ===============
 CZECH_FIRST_NAMES = set()
 
+# Mužská příjmení končící na -a v nominativu
+# DŮLEŽITÉ: Používá se v infer_surname_nominative a variants_for_surname
+# Obsahuje tvary S diakritikou i BEZ diakritiky (pro normalizaci)
+MALE_SURNAMES_WITH_A = {
+    'svoboda', 'skala', 'hora', 'kula', 'hala', 'krejca', 'krejča',
+    'liska', 'liška', 'vrba', 'ryba', 'kocka', 'kočka', 'sluka', 'janda',
+    'prochazka', 'procházka', 'blaha', 'kafka', 'smetana', 'brabec',
+    'kuratka', 'kuřátka', 'kubicka', 'kubíčka', 'marecka', 'marečka', 'vasicka', 'vašíčka',
+    'sembera', 'šembera', 'klement', 'slama', 'sláma', 'seda', 'šeda',
+    'vrana', 'vala', 'vála', 'pala'
+}
+
 # =============== Načítání knihovny jmen ===============
 def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
     """Načte česká jména z JSON souboru."""
@@ -129,7 +141,25 @@ def variants_for_surname(surname: str) -> set:
         out |= {s, stem_c+'e', stem_c+'i', stem_c+'em', stem_c+'u'}
         return out
 
-    # Standardní mužská příjmení
+    # Mužská příjmení končící na -a (Šembera, Svoboda, Procházka, Vrána, atd.)
+    if low.endswith('a') and len(s) >= 3:
+        # Používáme GLOBÁLNÍ seznam MALE_SURNAMES_WITH_A
+        if low in MALE_SURNAMES_WITH_A:
+            # Správné pádové varianty (BEZ přidání další 'a'!)
+            stem = s[:-1]
+            out |= {
+                s,  # nominativ: Šembera
+                stem+'y',  # genitiv: Šembery
+                stem+'ovi',  # dativ: Šemberovi
+                stem+'u',  # akuzativ: Šemberu
+                stem+'o',  # vokativ: Šembero
+                stem+'ou',  # instrumentál: Šemberou
+                stem+'ův',  # přivlastňovací: Šemberův
+                stem+'ova', stem+'ovo', stem+'ovou', stem+'ovu', stem+'ově', stem+'ovy', stem+'ových', stem+'ovým',  # přivlastňovací pády
+            }
+            return out
+
+    # Standardní mužská příjmení (končí na souhlásku)
     out |= {s+'a', s+'ovi', s+'e', s+'em', s+'u', s+'ům', s+'em'}
     # Množné číslo: u Nováků
     out |= {s+'ů', s+'ům'}
@@ -555,15 +585,10 @@ def infer_surname_nominative(obs: str) -> str:
             norm = unicodedata.normalize('NFD', base_lo)
             base_norm = ''.join(c for c in norm if unicodedata.category(c) != 'Mn')
 
-            male_surnames_with_a = {
-                'vrana', 'kafka', 'skala', 'hora', 'svoboda', 'prochazka',
-                'liska', 'ryba', 'hala', 'kula', 'sluka', 'janda', 'blaha', 'smetana',
-                'seda', 'koza', 'vrana'  # add more male surnames ending in -a
-            }
-
-            # Pokud je to známé mužské příjmení (porovnej base+a proti seznamu)
+            # Pokud je to známé mužské příjmení (porovnej base+a proti GLOBÁLNÍMU seznamu)
             # base_norm="vran" → base_norm+"a"="vrana"
-            if base_norm + 'a' in male_surnames_with_a:
+            # base_norm="sember" → base_norm+"a"="sembera" (bez diakritiky)
+            if base_norm + 'a' in MALE_SURNAMES_WITH_A:
                 return base + 'a'
             # Jinak (pravděpodobně ženské) → vrať dlouhé -á
             else:
@@ -631,28 +656,21 @@ def infer_surname_nominative(obs: str) -> str:
     # ========== SPECIÁLNÍ PŘÍPADY: -ka, -la, -ce → -ek, -el, -ec ==========
 
     # Ale POUZE pokud to NENÍ běžné příjmení končící na -a v nominativu
-    common_surnames_a = {
-        'svoboda', 'skála', 'hora', 'kula', 'hala', 'krejča',
-        'liška', 'vrba', 'ryba', 'kočka', 'sluka', 'janda',
-        'procházka', 'blaha', 'kafka', 'smetana', 'brabec',
-        'kuřátka', 'kubíčka', 'marečka', 'vašíčka',
-        'šembera', 'klement', 'sláma',  # Příjmení na -era, -ema, -ma
-        'šeda', 'seda'  # Mužská příjmení na -eda
-    }
+    # Používáme GLOBÁLNÍ seznam MALE_SURNAMES_WITH_A
 
     # Genitiv -ka/-la/-ce pouze pokud jde o známé kmeny s vložným e
     vlozne_e_surname_patterns = {
         'hav', 'pav', 'sed', 'koz', 'peš', 'pes', 'vojt', 'maš'
     }
 
-    if lo.endswith('ka') and len(obs) > 3 and lo not in common_surnames_a:
+    if lo.endswith('ka') and len(obs) > 3 and lo not in MALE_SURNAMES_WITH_A:
         stem = obs[:-2].lower()
         # Pouze pokud kmen vyžaduje vložné e: Hájka → Hájek, Pavelka → Pavelek
         # Zkontroluj prefix nebo známý kmen
         if any(stem.startswith(p) or stem.endswith(p) or stem == p for p in vlozne_e_surname_patterns):
             return obs[:-2] + 'ek'
 
-    if lo.endswith('la') and len(obs) > 3 and lo not in common_surnames_a:
+    if lo.endswith('la') and len(obs) > 3 and lo not in MALE_SURNAMES_WITH_A:
         stem_without_a = obs[:-1].lower()  # odstranit jen -a
         # Pokud kmen (bez -a) vyžaduje vložné e: Havla → Havel, Pavla → Pavel
         if any(stem_without_a[:-1].endswith(p) or stem_without_a[:-1] == p for p in vlozne_e_surname_patterns):
@@ -733,7 +751,7 @@ def infer_surname_nominative(obs: str) -> str:
             cand_lo = cand.lower()
 
             # Kontrola: jestli cand+a je protected surname (Šemberem → Šembera)
-            if (cand_lo + 'a') in common_surnames_a:
+            if (cand_lo + 'a') in MALE_SURNAMES_WITH_A:
                 return cand + 'a'
 
             # Kontrola: jestli výsledek vypadá jako validní nominativ
@@ -754,7 +772,7 @@ def infer_surname_nominative(obs: str) -> str:
 
     if lo.endswith('a') and len(obs) > 3:
         # Protected surnames ending with -a in nominative
-        if lo not in common_surnames_a:
+        if lo not in MALE_SURNAMES_WITH_A:
             stem_without_a = obs[:-1]
             # Pokud po odstranění -a dostaneme validní příjmení končící na souhlásku
             # (ne na samohlásku), pravděpodobně je to genitiv
@@ -792,7 +810,7 @@ def infer_surname_nominative(obs: str) -> str:
     # Pokud příjmení vypadá zkrácené (krátké, končí souhláskou)
     # a přidání 'a' dá známé mužské příjmení, preferuj úplnou formu
     if len(obs) >= 3 and obs[-1] not in 'aeiouyáéíóúůýěiu':
-        if (lo + 'a') in common_surnames_a:
+        if (lo + 'a') in MALE_SURNAMES_WITH_A:
             return obs + 'a'
 
     return obs
@@ -1560,8 +1578,11 @@ class Anonymizer:
             if name_lower in ignore_words:
                 return match.group(0)
 
-            # Vytvoř/najdi tag pro samostatné křestní jméno
-            tag = self._ensure_person_tag(name, "")
+            # INFERENCE: Převeď na nominativ (Petru → Petr, Tomáši → Tomáš)
+            name_nom = infer_first_name_nominative(name)
+
+            # Vytvoř/najdi tag pro samostatné křestní jméno (v nominativu!)
+            tag = self._ensure_person_tag(name_nom, "")
 
             return tag
 
