@@ -575,13 +575,26 @@ def infer_surname_nominative(obs: str) -> str:
             return obs[:-1] + 'á'
 
     # -ou → může být -a (mužské příjmení Vrána → Vránou) nebo -á (ženské příjmení)
+    # ALE TAKÉ může být -ek (Pavelek → Pavelkou s vložným e)
     if lo.endswith('ou') and len(obs) > 3:
         # Kontrola, že není -skou/-ckou (přídavné jméno)
         if not lo.endswith(('skou', 'ckou')):
             base = obs[:-2]
             base_lo = base.lower()
 
-            # Mužská příjmení končící na -a v nominativu (normalizovaná bez diakritiky)
+            # PRIORITA 1: Zkontroluj jestli base končí na 'k' a může být vložné e (Pavelkou → Pavelek)
+            # Pavelkou: base="Pavelk" → může být Pavelek s vložným e
+            if base_lo.endswith('k') and len(base) >= 4:
+                # Seznam kmenů vyžadujících vložné e
+                vlozne_e_patterns = ['hav', 'pav', 'sed', 'koz', 'peš', 'pes', 'vojt', 'maš']
+                stem_without_k = base_lo[:-1]  # "pavel" z "pavelk"
+
+                # Zkontroluj jestli kmen vyžaduje vložné e
+                if any(stem_without_k.startswith(p) or stem_without_k.endswith(p) or stem_without_k == p for p in vlozne_e_patterns):
+                    # Pavelkou → Pavelek (vložné e)
+                    return base[:-1] + 'ek'
+
+            # PRIORITA 2: Mužská příjmení končící na -a v nominativu (normalizovaná bez diakritiky)
             norm = unicodedata.normalize('NFD', base_lo)
             base_norm = ''.join(c for c in norm if unicodedata.category(c) != 'Mn')
 

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-23T09:40:29.992482",
+  "generated_at": "2025-11-23T10:21:40.881938",
   "source_file": "smlouva21.docx",
   "entities": [
     {
@@ -408,36 +408,30 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_68]]",
-      "original": "Richardema Pavelká",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_69]]",
       "original": "Richarda Paveleková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_70]]",
+      "label": "[[PERSON_69]]",
       "original": "Martin Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_71]]",
+      "label": "[[PERSON_70]]",
       "original": "Martina Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_72]]",
+      "label": "[[PERSON_71]]",
       "original": "Hynek Procházka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_73]]",
+      "label": "[[PERSON_72]]",
       "original": "Hynk Procházka",
       "occurrences": 1
     }
