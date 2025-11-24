@@ -305,14 +305,29 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
     if lo.endswith('ou') and len(obs) > 2:
         stem = obs[:-2]  # "Andreou" → "Andre"
         stem_a = stem + 'a'  # "Andre" + "a" → "Andrea"
+        stem_a_lo = stem_a.lower()
 
-        # Zkontroluj, jestli stem+a je známé ženské jméno
-        if stem_a.lower() in common_feminine_names:
-            return None  # Nech to zpracovat ženskou větev v infer_first_name_nominative
+        # OBECNÁ HEURISTIKA: Je stem+a pravděpodobně ženské jméno?
 
-        # Nebo zkontroluj knihovnu
-        if stem_a.lower() in CZECH_FIRST_NAMES:
-            # Je to pravděpodobně ženské jméno, ne mužské
+        # 1. Zkontroluj knihovnu
+        if stem_a_lo in CZECH_FIRST_NAMES:
+            return None  # Ženské jméno → zpracuj v infer_first_name_nominative
+
+        # 2. Zkontroluj common_feminine_names
+        if stem_a_lo in common_feminine_names:
+            return None
+
+        # 3. Pattern matching - typické ženské vzory
+        female_patterns = (
+            'ina', 'ana', 'ela', 'ara', 'ona', 'ika', 'ála', 'éta',
+            'ata', 'ita', 'ota', 'uta', 'ora', 'ura', 'yna', 'ína',
+            'éna', 'ána', 'una', 'ia', 'ea'
+        )
+        if stem_a_lo.endswith(female_patterns):
+            return None  # Pravděpodobně ženské → zpracuj v infer_first_name_nominative
+
+        # 4. Krátký kmen (≤4 znaky) + 'a' je pravděpodobně ženské
+        if len(stem) <= 4:
             return None
 
     # PRIORITA 4: Dativ -u → remove (Petru → Petr) - PŘED -a!
@@ -457,6 +472,7 @@ def infer_first_name_nominative(obs: str) -> str:
 
     Pokrývá všechny české pády + speciální vzory (ice→ika, ře→ra, apod.).
     """
+
     lo = obs.lower()
 
     # SPECIÁLNÍ PŘÍPADY: Některá jména mohou být genitiv od jiného jména
@@ -501,6 +517,31 @@ def infer_first_name_nominative(obs: str) -> str:
     }
     if lo in dative_e_forms:
         return dative_e_forms[lo]
+
+    # PRIORITA: Instrumentál -ou → -a (Renatou → Renata, Marcelou → Marcela)
+    # MUSÍ být PŘED zpracováním samostatného -u, protože -ou také končí na -u!
+    if lo.endswith('ou') and len(obs) > 2:
+        stem = obs[:-2]
+        stem_a = stem + 'a'
+        stem_a_lo = stem_a.lower()
+
+        # PRVNÍ zkontroluj knihovnu
+        if stem_a_lo in CZECH_FIRST_NAMES:
+            return stem_a.capitalize()
+
+        # FALLBACK: OBECNÁ HEURISTIKA pro ženská jména mimo knihovnu
+        # Pattern 1: končí na typické ženské vzory
+        female_patterns = (
+            'ina', 'ana', 'ela', 'ara', 'ona', 'ika', 'ála', 'éta',
+            'ata', 'ita', 'ota', 'uta', 'ora', 'ura', 'yna', 'ína',
+            'éna', 'ána', 'una', 'ia', 'ea'
+        )
+        if stem_a_lo.endswith(female_patterns):
+            return stem_a.capitalize()
+
+        # Pattern 2: krátký kmen (≤4 znaky) + 'a' je pravděpodobně ženské
+        if len(stem) <= 4:
+            return stem_a.capitalize()
 
     # PRIORITA: Pokud jméno končí na 'a'/'u' a base forma je v knihovně, preferuj base
     # Důvod: "petru" je v knihovně, ale "petr" také → preferuj "petr"
@@ -588,17 +629,59 @@ def infer_first_name_nominative(obs: str) -> str:
     # Genitiv/Dativ/Lokál: -y/-ě/-e → -a
     if lo.endswith(('y', 'ě', 'e')):
         stem = obs[:-1]
-        if (stem + 'a').lower() in CZECH_FIRST_NAMES:
-            return (stem + 'a').capitalize()
+        stem_a = stem + 'a'
+        stem_a_lo = stem_a.lower()
 
-        # Fallback pro běžná česká jména, která nejsou v knihovně
-        common_female_names_stems = {
-            'han', 'ev', 'ann', 'jan', 'petr', 'len', 'kateřin',
-            'alen', 'ver', 'monik', 'jitk', 'zuzan', 'ivan',
-            'terez', 'barbar', 'andre', 'michael', 'simon', 'nikol', 'pavl'
-        }
-        if stem.lower() in common_female_names_stems:
-            return (stem + 'a').capitalize()
+        # PRVNÍ zkontroluj knihovnu
+        if stem_a_lo in CZECH_FIRST_NAMES:
+            return stem_a.capitalize()
+
+        # FALLBACK: OBECNÁ HEURISTIKA pro ženská jména mimo knihovnu
+        # Pattern 1: končí na typické ženské vzory
+        female_patterns = (
+            'ina', 'ana', 'ela', 'ara', 'ona', 'ika', 'ála', 'éta',
+            'ata', 'ita', 'ota', 'uta', 'ora', 'ura', 'yna', 'ína',
+            'éna', 'ána', 'una', 'ia', 'ea'
+        )
+        if stem_a_lo.endswith(female_patterns):
+            return stem_a.capitalize()
+
+        # Pattern 2: krátký kmen (≤4 znaky) + 'a' je pravděpodobně ženské
+        if len(stem) <= 4:
+            return stem_a.capitalize()
+
+    # Vokativ: -o → -a (Renato → Renata, Marcelo → Marcela, Petro → Petra)
+    # Ženská jména v 5. pádě (oslovení) mají koncovku -o místo -a
+    if lo.endswith('o') and len(obs) > 2:
+        stem = obs[:-1]
+        stem_a = stem + 'a'
+        stem_a_lo = stem_a.lower()
+
+        # PRVNÍ zkontroluj knihovnu
+        if stem_a_lo in CZECH_FIRST_NAMES:
+            return stem_a.capitalize()
+
+        # FALLBACK: OBECNÁ HEURISTIKA pro ženská jména mimo knihovnu
+        # Pattern 1: končí na typické ženské vzory
+        female_patterns = (
+            'ina', 'ana', 'ela', 'ara', 'ona', 'ika', 'ála', 'éta',
+            'ata', 'ita', 'ota', 'uta', 'ora', 'ura', 'yna', 'ína',
+            'éna', 'ána', 'una', 'ia', 'ea'
+        )
+        if stem_a_lo.endswith(female_patterns):
+            return stem_a.capitalize()
+
+        # Pattern 2: krátký kmen (≤4 znaky) + 'a' je pravděpodobně ženské
+        if len(stem) <= 4:
+            return stem_a.capitalize()
+
+        # Pattern 3: Check for specific problematic patterns like "Radko" → "Radka"
+        # (Radko is vocative, Radka is nominative)
+        # For names ending in consonant + 'ko', try removing 'o'
+        if len(stem) >= 3 and stem[-1] == 'k':
+            # Radko → stem=Radk, stem_a=Radka
+            # This should match the short stem rule above, but adding explicit check
+            return stem_a.capitalize()
 
     # Dativ/Akuzativ: -u → -a (Hanu → Hana, Martinu → Martina)
     if lo.endswith('u') and len(obs) > 1:
@@ -607,24 +690,6 @@ def infer_first_name_nominative(obs: str) -> str:
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
             return (stem + 'a').capitalize()
         # FALLBACK pro běžná ženská jména -ina/-ýna (Martinu→Martina, Pavlinu→Pavlina)
-        if stem.lower().endswith(('tin', 'lin', 'rin', 'din', 'nin', 'stýn')):
-            return (stem + 'a').capitalize()
-
-    # Instrumentál: -ou → -a (Hanou → Hana, Martinou → Martina)
-    if lo.endswith('ou') and len(obs) > 2:
-        stem = obs[:-2]
-        # PRVNÍ zkontroluj knihovnu
-        if (stem + 'a').lower() in CZECH_FIRST_NAMES:
-            return (stem + 'a').capitalize()
-        # FALLBACK 1: Zkontroluj common_female_names_stems (pro jména mimo knihovnu)
-        common_female_names_stems = {
-            'martin', 'jan', 'petr', 'ev', 'ann', 'mari', 'lenk', 'kateřin',
-            'alen', 'han', 'luci', 'veronik', 'monik', 'jitk', 'zuzan', 'ivan',
-            'terez', 'barbar', 'andre', 'michael', 'simon', 'nikol', 'pavl'
-        }
-        if stem.lower() in common_female_names_stems:
-            return (stem + 'a').capitalize()
-        # FALLBACK 2: pro běžná ženská jména -in/-ýn (Martinou→Martina, Kristýnou→Kristýna)
         if stem.lower().endswith(('tin', 'lin', 'rin', 'din', 'nin', 'stýn')):
             return (stem + 'a').capitalize()
 
@@ -641,7 +706,10 @@ def infer_first_name_nominative(obs: str) -> str:
             return (stem + 'a').capitalize()
 
     # Pokud nic nepomohlo, vrať původní tvar s velkým písmenem
-    return obs.capitalize()
+    result = obs.capitalize()
+
+
+    return result
 
 def infer_surname_nominative(obs: str) -> str:
     """Odhadne nominativ příjmení z pozorovaného tvaru.
@@ -1540,6 +1608,7 @@ class Anonymizer:
 
     def _ensure_person_tag(self, first_nom: str, last_nom: str) -> str:
         """Zajistí, že pro danou osobu existuje tag a vrátí ho."""
+
         key = (self._normalize_for_matching(first_nom), self._normalize_for_matching(last_nom))
 
         if key in self.person_index:

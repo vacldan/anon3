@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-24T05:57:48.251523",
+  "generated_at": "2025-11-24T07:29:07.418472",
   "source_file": "smlouva20.docx",
   "entities": [
     {
@@ -234,48 +234,42 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_39]]",
-      "original": "Renato Slámová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_40]]",
       "original": "Patrik Holík",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_41]]",
+      "label": "[[PERSON_40]]",
       "original": "Markéta Benešová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_42]]",
+      "label": "[[PERSON_41]]",
       "original": "Erik Roubal",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_43]]",
+      "label": "[[PERSON_42]]",
       "original": "Sabina Nedvědová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_44]]",
+      "label": "[[PERSON_43]]",
       "original": "Aleš Kříž",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_45]]",
+      "label": "[[PERSON_44]]",
       "original": "Veronika Lacinová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_46]]",
+      "label": "[[PERSON_45]]",
       "original": "Adrian Kratochvíl",
       "occurrences": 1
     },
