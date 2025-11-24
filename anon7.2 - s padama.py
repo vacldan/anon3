@@ -300,6 +300,21 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
 
         cands.append(cand)
 
+    # PRIORITA 3.5: Ženský instrumentál -ou → -a (Andreou → Andrea, Martinou → Martina)
+    # MUSÍ být PŘED zpracováním -u, protože -ou také končí na -u!
+    if lo.endswith('ou') and len(obs) > 2:
+        stem = obs[:-2]  # "Andreou" → "Andre"
+        stem_a = stem + 'a'  # "Andre" + "a" → "Andrea"
+
+        # Zkontroluj, jestli stem+a je známé ženské jméno
+        if stem_a.lower() in common_feminine_names:
+            return None  # Nech to zpracovat ženskou větev v infer_first_name_nominative
+
+        # Nebo zkontroluj knihovnu
+        if stem_a.lower() in CZECH_FIRST_NAMES:
+            # Je to pravděpodobně ženské jméno, ne mužské
+            return None
+
     # PRIORITA 4: Dativ -u → remove (Petru → Petr) - PŘED -a!
     # Důležité: testovat PŘED -a, protože "Petra" může být "Petr" + -a
     if lo.endswith('u') and len(obs) > 1:
@@ -601,7 +616,15 @@ def infer_first_name_nominative(obs: str) -> str:
         # PRVNÍ zkontroluj knihovnu
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
             return (stem + 'a').capitalize()
-        # FALLBACK pro běžná ženská jména -in/-ýn (Martinou→Martina, Kristýnou→Kristýna)
+        # FALLBACK 1: Zkontroluj common_female_names_stems (pro jména mimo knihovnu)
+        common_female_names_stems = {
+            'martin', 'jan', 'petr', 'ev', 'ann', 'mari', 'lenk', 'kateřin',
+            'alen', 'han', 'luci', 'veronik', 'monik', 'jitk', 'zuzan', 'ivan',
+            'terez', 'barbar', 'andre', 'michael', 'simon', 'nikol', 'pavl'
+        }
+        if stem.lower() in common_female_names_stems:
+            return (stem + 'a').capitalize()
+        # FALLBACK 2: pro běžná ženská jména -in/-ýn (Martinou→Martina, Kristýnou→Kristýna)
         if stem.lower().endswith(('tin', 'lin', 'rin', 'din', 'nin', 'stýn')):
             return (stem + 'a').capitalize()
 
@@ -773,8 +796,21 @@ def infer_surname_nominative(obs: str) -> str:
     # ========== DATIV: -ovi → REMOVE ==========
 
     if lo.endswith('ovi') and len(obs) > 5:
-        # Novákovi → Novák
-        return obs[:-3]
+        # Novákovi → Novák, ale Vaňkovi → Vaněk (vložné e)
+        stem = obs[:-3]  # odstranit -ovi
+        stem_lo = stem.lower()
+
+        # Kontrola pro vložné 'e': příjmení končící na -ňk, -šk, -řk, -žk, -čk
+        # "Vaňk" má vložné 'e' → "Vaněk"
+        if stem_lo.endswith(('ňk', 'šk', 'řk', 'žk', 'čk', 'ďk', 'ťk')):
+            # Převeď měkkou souhlásku zpět na tvrdou před vložným 'ě'
+            if stem_lo[-2] in 'ňďť':
+                hardening = {'ň': 'n', 'ď': 'd', 'ť': 't'}
+                stem = stem[:-2] + hardening[stem[-2]] + stem[-1]
+            return stem[:-1] + 'ěk'  # Vaňk → Vaněk
+
+        # Default: jen odstranit -ovi
+        return stem
 
     # ========== INSTRUMENTÁL: -em → REMOVE ==========
 
@@ -2073,27 +2109,9 @@ class Anonymizer:
                     if first_lo in male_names_with_a:
                         first_nom = first_obs.capitalize()
                     else:
-                        # FORCE MASCULINE CONVERSION
-                        # Speciální případy -ka → -ek, -la → -el, -ra → -r
-                        if first_lo.endswith('ka') and len(first_obs) > 2:
-                            # Radka → Radek, Honzka → Honzek
-                            first_nom = first_obs[:-2] + 'ek'
-                        elif first_lo.endswith('la') and len(first_obs) > 2:
-                            # Pavla → Pavel
-                            first_nom = first_obs[:-2] + 'el'
-                        elif first_lo.endswith('ra') and len(first_obs) > 2:
-                            # Petra → Petr
-                            first_nom = first_obs[:-1]
-                        elif first_lo.endswith('na') and len(first_obs) > 2:
-                            # Jana → Jan
-                            first_nom = first_obs[:-1]
-                        elif first_lo.endswith('da') and len(first_obs) > 2:
-                            # Davida → David, Richarda → Richard
-                            first_nom = first_obs[:-1]
-                        else:
-                            # Obecné odstranění 'a'
-                            first_nom = first_obs[:-1]
-                        first_nom = first_nom.capitalize()
+                        # Použij inference místo FORCE převodu
+                        # Inference má lepší logiku pro rozlišování vzorů (Kamila vs Pavla)
+                        first_nom = infer_first_name_nominative(first_obs)
                 elif first_lo.endswith(('u', 'e', 'em', 'ovi', 'ům', 'y', 'í', 'ou', 'ě', 'i', 'a')):
                     # Typické pádové koncovky → použij inference
                     # Přidáno 'ě' (Zuzaně, Evě), 'i' (Pavlovi, Tomáši)
