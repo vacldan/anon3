@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-23T21:15:09.238222",
+  "generated_at": "2025-11-24T05:58:04.673930",
   "source_file": "smlouva21.docx",
   "entities": [
     {
@@ -252,43 +252,43 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_42]]",
-      "original": "Radka Hofmanová",
+      "original": "Radk Hofman",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_43]]",
-      "original": "Igor Vraný",
+      "original": "Radka Hofmanová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_44]]",
-      "original": "Roman Turek",
+      "original": "Igor Vraný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_45]]",
-      "original": "Filip Švec",
+      "original": "Roman Turek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_46]]",
-      "original": "Jaroslav Černý",
+      "original": "Filip Švec",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_47]]",
-      "original": "Kamil Řezníček",
+      "original": "Jaroslav Černý",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_48]]",
-      "original": "Kamiel Řezníček",
+      "original": "Kamil Řezníček",
       "occurrences": 1
     },
     {
@@ -306,54 +306,48 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_51]]",
-      "original": "Miroslav Vaňk",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_52]]",
       "original": "Patrik Holík",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_53]]",
+      "label": "[[PERSON_52]]",
       "original": "Aleš Kříž",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_54]]",
+      "label": "[[PERSON_53]]",
       "original": "Erik Roubal",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_55]]",
+      "label": "[[PERSON_54]]",
       "original": "Lukáš Marek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_56]]",
+      "label": "[[PERSON_55]]",
       "original": "Pavel Dobeš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_57]]",
+      "label": "[[PERSON_56]]",
       "original": "Richard Pavelek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_58]]",
+      "label": "[[PERSON_57]]",
       "original": "Martin Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_59]]",
+      "label": "[[PERSON_58]]",
       "original": "Hynek Procházka",
       "occurrences": 1
     }

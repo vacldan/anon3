@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-23T21:14:51.563234",
+  "generated_at": "2025-11-24T05:57:48.251523",
   "source_file": "smlouva20.docx",
   "entities": [
     {
@@ -138,67 +138,67 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_23]]",
-      "original": "Alžběta Konečná",
+      "original": "Radk Hofman",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_24]]",
-      "original": "Igor Vraný",
+      "original": "Alžběta Konečná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_25]]",
-      "original": "Monika Hrabovská",
+      "original": "Igor Vraný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_26]]",
-      "original": "Roman Turek",
+      "original": "Monika Hrabovská",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_27]]",
-      "original": "Kateřina Blažková",
+      "original": "Roman Turek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_28]]",
-      "original": "Filip Švec",
+      "original": "Kateřina Blažková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_29]]",
-      "original": "Adéla Jarošová",
+      "original": "Filip Švec",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_30]]",
-      "original": "Jaroslav Černý",
+      "original": "Adéla Jarošová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_31]]",
-      "original": "Helena Vodičková",
+      "original": "Jaroslav Černý",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_32]]",
-      "original": "Kamil Řezníček",
+      "original": "Helena Vodičková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_33]]",
-      "original": "Kamiel Řezníček",
+      "original": "Kamil Řezníček",
       "occurrences": 1
     },
     {
@@ -228,60 +228,54 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_38]]",
-      "original": "Miroslav Vaňk",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_39]]",
       "original": "Renata Slámová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_40]]",
+      "label": "[[PERSON_39]]",
       "original": "Renato Slámová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_41]]",
+      "label": "[[PERSON_40]]",
       "original": "Patrik Holík",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_42]]",
+      "label": "[[PERSON_41]]",
       "original": "Markéta Benešová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_43]]",
+      "label": "[[PERSON_42]]",
       "original": "Erik Roubal",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_44]]",
+      "label": "[[PERSON_43]]",
       "original": "Sabina Nedvědová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_45]]",
+      "label": "[[PERSON_44]]",
       "original": "Aleš Kříž",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_46]]",
+      "label": "[[PERSON_45]]",
       "original": "Veronika Lacinová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_47]]",
+      "label": "[[PERSON_46]]",
       "original": "Adrian Kratochvíl",
       "occurrences": 1
     },
