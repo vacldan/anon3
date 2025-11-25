@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-24T07:29:19.198519",
+  "generated_at": "2025-11-24T08:45:31.085694",
   "source_file": "smlouva21.docx",
   "entities": [
     {
@@ -24,7 +24,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Martin Jeřábková",
+      "original": "Martin Jeřábek",
       "occurrences": 1
     },
     {

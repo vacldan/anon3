@@ -742,14 +742,22 @@ def infer_surname_nominative(obs: str) -> str:
             # PRIORITA 1: Zkontroluj jestli base končí na 'k' a může být vložné e (Pavelkou → Pavelek)
             # Pavelkou: base="Pavelk" → může být Pavelek s vložným e
             if base_lo.endswith('k') and len(base) >= 4:
-                # Seznam kmenů vyžadujících vložné e
-                vlozne_e_patterns = ['hav', 'pav', 'sed', 'koz', 'peš', 'pes', 'vojt', 'maš']
-                stem_without_k = base_lo[:-1]  # "pavel" z "pavelk"
+                # OBECNÉ PRAVIDLO: Příjmení končící na -ek mají v instrumentálu vložné 'e' vypuštěné
+                # Pavelkou (base="Pavelk") → Pavelek (přidat 'e')
+                # Krupičkou (base="Krupičk") → Krupičěk (přidat 'ě' po měkké souhlásce)
 
-                # Zkontroluj jestli kmen vyžaduje vložné e
-                if any(stem_without_k.startswith(p) or stem_without_k.endswith(p) or stem_without_k == p for p in vlozne_e_patterns):
-                    # Pavelkou → Pavelek (vložné e)
-                    return base[:-1] + 'ek'
+                # Zkontroluj jestli předposlednísouhláska je měkká
+                if len(base) >= 2:
+                    prev_char = base[-2].lower()
+                    # Měkké souhlásky: č, š, ž, ř, ď, ť, ň, c, j
+                    soft_consonants = 'čšžřďťňcj'
+
+                    # Pokud je předchozí znak měkká souhláska, přidej 'ě'
+                    if prev_char in soft_consonants:
+                        return base[:-1] + 'ěk'
+                    # Pokud je předchozí znak souhláska, přidej 'e'
+                    elif prev_char in 'bcdfghjklmnpqrstvwxzž':
+                        return base[:-1] + 'ek'
 
             # PRIORITA 2: Mužská příjmení končící na -a v nominativu (normalizovaná bez diakritiky)
             norm = unicodedata.normalize('NFD', base_lo)
@@ -776,6 +784,13 @@ def infer_surname_nominative(obs: str) -> str:
             return obs[:-2] + 'ý'
         elif lo.endswith('ém'):
             return obs[:-2] + 'ý'
+
+    # Neohebná příjmení na -í: instrumentál -ím → -í
+    # Krejčím → Krejčí, Dlouhím → Dlouhí
+    if lo.endswith('ím') and len(obs) > 3:
+        # Kontrola že to není -ským/-ckým (to jsou skutečné přídavné tvary)
+        if not lo.endswith(('ským', 'ckým')):
+            return obs[:-2] + 'í'  # Odstranit "ím", přidat "í"
 
     # -skou/-ckou → -ská/-cká (ženská přídavná)
     if lo.endswith(('skou', 'ckou')):
@@ -2212,6 +2227,27 @@ class Anonymizer:
                 elif last_nom.lower()[-1] in 'bcčdďfghjklmnňpqrřsštťvwxzž':
                     # Končí na souhlásku → přidej -ová
                     last_nom = last_nom + 'ová'
+            elif first_gender == 'M' and last_is_female:
+                # Mužské jméno, ale příjmení je ženské → odstraň -ová/-á
+                last_lo = last_nom.lower()
+                if last_lo.endswith('ová'):
+                    # Jeřábková → Jeřábek (s vložným 'e')
+                    base = last_nom[:-3]  # Odstraň "ová"
+                    # Zkontroluj jestli potřebuje vložné 'e'
+                    if len(base) >= 2 and base[-1].lower() in 'kbc':
+                        prev = base[-2].lower() if len(base) >= 2 else ''
+                        if prev in 'bcdfghjklmnpqrstvwxzž':
+                            # Přidej vložné 'e' před poslední souhláskou
+                            soft = base[-1].lower() in 'čšžřcj'
+                            e_char = 'ě' if soft else 'e'
+                            last_nom = base[:-1] + e_char + base[-1]
+                        else:
+                            last_nom = base
+                    else:
+                        last_nom = base
+                elif last_lo.endswith('á'):
+                    # Malá → Malý, Nová → Nový
+                    last_nom = last_nom[:-1] + 'ý'
 
             # Vytvoř nebo najdi tag pro tuto osobu
             tag = self._ensure_person_tag(first_nom, last_nom)
