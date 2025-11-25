@@ -1255,13 +1255,12 @@ ADDRESS_RE = re.compile(
     r'(?:v\s+ulic[ií]|na\s+(?:adrese|ulici)|v\s+dom[eě])\s+)?'
     r')'
     r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]'
-    r'[a-záčďéěíňóřšťúůýž\s]{2,50}?'
-    r'\s+\d{1,4}(?:/\d{1,4})?'
-    r',\s*'
+    r'[a-záčďéěíňóřšťúůýž ]{2,50}?'  # Změněno: pouze mezera, ne \s (který zahrnuje \n)
+    r'[ \t]+\d{1,4}(?:/\d{1,4})?'  # Změněno: pouze mezera/tab, ne \s
+    r',[ \t]*'  # Změněno: pouze mezera/tab
     r'\d{3}\s?\d{2}'
-    r'\s+'
-    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž\s]{1,30}'
-    r'(?:\s+\d{1,2})?'
+    r'(?:[ \t]+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž ]{1,30})?'  # Změněno: nepovinné město, pouze mezera
+    r'(?:[ \t]+\d{1,2})?'  # Změněno: pouze mezera/tab
     r'(?=\s|$|,|\.|;|:|\n|\r|Rodné|IČO|DIČ|Tel|E-mail|Kontakt|OP|Datum|Narozen)',
     re.IGNORECASE | re.UNICODE
 )
@@ -2295,8 +2294,26 @@ class Anonymizer:
 
             return tag
 
-        text = person_pattern.sub(replace_person, text)
-        return text
+        # ITERATIVNÍ zpracování místo batch sub()
+        # Důvod: Když odstavec obsahuje více pádů stejné osoby (např. "Radek Hofman - pro Radka Hofmana"),
+        # musíme je zpracovat postupně, aby druhý match viděl už vytvořený PERSON_63
+        offset = 0
+        result_text = text
+        for match in person_pattern.finditer(text):
+            # Přepočítej pozici s offsetem (text se mění při nahrazování)
+            start = match.start() + offset
+            end = match.end() + offset
+
+            # Zavolej replace_person s aktuálním matchem
+            replacement = replace_person(match)
+
+            # Nahraď text
+            result_text = result_text[:start] + replacement + result_text[end:]
+
+            # Update offset pro další matche
+            offset += len(replacement) - (end - start)
+
+        return result_text
 
     def anonymize_entities(self, text: str) -> str:
         """Anonymizuje všechny entity (adresy, kontakty, IČO, atd.)."""
@@ -2936,6 +2953,7 @@ class Anonymizer:
                     continue  # Skip PERSON - already handled in OSOBY section
                 if entities:
                     f.write(f"{typ}\n")
+                    f.write("-" * len(typ) + "\n")  # Přidán oddělovač
                     for idx, (original, variants) in enumerate(entities.items(), 1):
                         label = f"[[{typ}_{idx}]]"
                         # Pro citlivá data zobraz jen ***REDACTED*** bez čísla

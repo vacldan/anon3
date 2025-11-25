@@ -1,0 +1,87 @@
+OSOBY
+-----
+[[PERSON_1]]: Ivan Doležal
+  - Ivanem Doležalem
+[[PERSON_2]]: Radovan Jelínek
+[[PERSON_3]]: Pavlína Pokorná
+  - Pavlínou Pokornou
+  - Pavlíny Pokorné
+[[PERSON_4]]: Robert Klíma
+  - Roberta Klímy
+[[PERSON_5]]: Tereza Houfová
+[[PERSON_6]]: Lenka Kratochvílová
+  - Lenkou Kratochvílovou
+[[PERSON_7]]: Šárka Novotná
+  - Šárkou Novotnou
+[[PERSON_8]]: Alžběta Strmisková
+  - Alžbětou Strmiskovou
+[[PERSON_9]]: Sylv Mahdalová
+  - Sylva Mahdalová
+[[PERSON_10]]: Adél Ševčíková
+  - Adéla Ševčíková
+[[PERSON_11]]: Hynek Jůz
+  - Hynek Jůza
+[[PERSON_12]]: Tomáš Štefánek
+  - Tomášem Štefánkem
+[[PERSON_13]]: Viktorie Kučerová
+[[PERSON_14]]: Tobiáš Vrána
+  - Tobiášem Vránou
+[[PERSON_15]]: Mark Prášek
+  - Markem Práškem
+[[PERSON_16]]: Ondřej Valach
+[[PERSON_17]]: Iren Vlašáková
+  - Irena Vlašáková
+[[PERSON_18]]: Luděk Štrunc
+
+ADDRESS
+-------
+[[ADDRESS_1]]: Praha 6, 160 00
+[[ADDRESS_2]]: Karafiátová 28, 779 00 Olomouc
+
+BIRTH_ID
+--------
+[[BIRTH_ID_1]]: 127979/3815
+
+DATE
+----
+[[DATE_1]]: 12. 9. 1979
+
+EMAIL
+-----
+[[EMAIL_1]]: ivan.dolezal@nmsvk.cz
+[[EMAIL_2]]: r.jelinek79@centrum.cz
+
+ICO
+---
+[[ICO_1]]: 00458931
+
+IMEI
+----
+[[IMEI_1]]: 866745032551118
+
+LICENSE_PLATE
+-------------
+[[LICENSE_PLATE_1]]: 7B7 1189
+[[LICENSE_PLATE_2]]: HA44510
+[[LICENSE_PLATE_3]]: 5M4 6629
+
+MAC
+---
+[[MAC_1]]: 00:1C:14:78:AA:22
+[[MAC_2]]: 00:1B:09:5A:FE:90
+[[MAC_3]]: 00:1F:44:AA:11:22
+
+PHONE
+-----
+[[PHONE_1]]: +420 224 881 220
+[[PHONE_2]]: +420 603 225 819
+[[PHONE_3]]: 894552003
+
+USERNAME
+--------
+[[USERNAME_1]]: 112233
+
+VIN
+---
+[[VIN_1]]: TMBJJ7NU0L5199221
+
