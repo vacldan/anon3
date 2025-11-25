@@ -221,17 +221,26 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
         cand = obs[:-2] + 'ek'
         if cand.lower() in CZECH_FIRST_NAMES:
             return cand.capitalize()
+        # FALLBACK: Pokud cand vypadá jako validní mužské jméno (5-6 znaků), použij ho
+        if 5 <= len(cand) <= 6:
+            return cand.capitalize()
         cands.append(cand)
 
     if lo.endswith('la') and len(obs) > 2:
         cand = obs[:-2] + 'el'
         if cand.lower() in CZECH_FIRST_NAMES:
             return cand.capitalize()
+        # FALLBACK: Pokud cand vypadá jako validní mužské jméno
+        if 5 <= len(cand) <= 6:
+            return cand.capitalize()
         cands.append(cand)
 
     if lo.endswith('ce') and len(obs) > 2:
         cand = obs[:-2] + 'ec'
         if cand.lower() in CZECH_FIRST_NAMES:
+            return cand.capitalize()
+        # FALLBACK: Pokud cand vypadá jako validní mužské jméno
+        if 5 <= len(cand) <= 6:
             return cand.capitalize()
         cands.append(cand)
 
@@ -482,6 +491,13 @@ def infer_first_name_nominative(obs: str) -> str:
     # (Roberta je v knihovně jako ženské jméno, ale častěji je to genitiv od Robert)
     if lo == 'roberta':
         return 'Robert'
+
+    # Radka/Marka může být genitiv od Radek/Marek (není v knihovně jmen)
+    # Přidány všechny pádové formy pro tyto dva časté případy
+    if lo in ('radka', 'radku', 'radkem', 'radkovi'):
+        return 'Radek'
+    if lo in ('marka', 'marku', 'markem', 'markovi'):
+        return 'Marek'
 
     # Hany může být genitiv od Hana
     # (Hany může být v knihovně, ale standardní nominativ je Hana)
@@ -1648,6 +1664,12 @@ class Anonymizer:
 
         key = (self._normalize_for_matching(first_nom), self._normalize_for_matching(last_nom))
 
+        # DEBUG
+        debug_names = ['radek', 'radk', 'marek', 'mark', 'hofman', 'chytr']
+        if any(name in first_nom.lower() or name in last_nom.lower() for name in debug_names):
+            exists = key in self.person_index
+            print(f"    [ENSURE] key={key}, exists={exists}")
+
         if key in self.person_index:
             return self.person_index[key]
 
@@ -1920,6 +1942,11 @@ class Anonymizer:
             first_obs = match.group(1)
             last_obs = match.group(2)
 
+            # DEBUG
+            debug_names = ['radek', 'radk', 'marek', 'mark']
+            if any(name in first_obs.lower() or name in last_obs.lower() for name in debug_names):
+                print(f"    [MATCH] first_obs='{first_obs}', last_obs='{last_obs}'")
+
             # ========== A) BLACKLIST NE-OSOB ==========
 
             # 1. Blacklist kritických slov (firmy, instituce, produkty, role)
@@ -2182,6 +2209,9 @@ class Anonymizer:
 
             # Pokud jsme našli existující kmen (STEJNÝ ROD), použij ho místo inference
             if existing_surname_stem:
+                # DEBUG
+                if any(name in last_obs.lower() for name in ['hofman', 'chytr']):
+                    print(f"    [STEM] Using existing surname: '{existing_surname_stem}' instead of '{last_nom}'")
                 last_nom = existing_surname_stem
 
             # Určení rodu podle příjmení
@@ -2212,6 +2242,11 @@ class Anonymizer:
                 elif first_lo.endswith('a'):
                     # Jméno už končí na 'a' → je to pravděpodobně nominativ ženského jména, ponech
                     first_nom = first_obs.capitalize()
+                elif first_lo.endswith('u') and not first_lo.endswith('ou') and len(first_obs) > 2:
+                    # KRITICKÁ OPRAVA: "Martinu" (dativ) s ženským příjmením → "Martina"
+                    # Odstraň 'u', přidej 'a' (Martinu → Martin + a = Martina)
+                    # POZOR: Ne pro 'ou' (instrumental), to nechť řeší inference
+                    first_nom = (first_obs[:-1] + 'a').capitalize()
                 else:
                     # Jiné koncovky → zkus inference
                     first_nom = infer_first_name_nominative(first_obs)
@@ -2226,23 +2261,42 @@ class Anonymizer:
                     else:
                         # Použij inference místo FORCE převodu
                         # Inference má lepší logiku pro rozlišování vzorů (Kamila vs Pavla)
+                        debug_names = ['radka', 'radk', 'marka', 'mark']
+                        if any(name in first_obs.lower() for name in debug_names):
+                            print(f"    [BRANCH-1] Calling infer for male surname, first_obs='{first_obs}'")
                         first_nom = infer_first_name_nominative(first_obs)
+                        if any(name in first_obs.lower() for name in debug_names):
+                            print(f"    [BRANCH-1] first_nom='{first_nom}'")
                 elif first_lo.endswith(('u', 'e', 'em', 'ovi', 'ům', 'y', 'í', 'ou', 'ě', 'i', 'a')):
                     # Typické pádové koncovky → použij inference
                     # Přidáno 'ě' (Zuzaně, Evě), 'i' (Pavlovi, Tomáši)
+                    debug_names = ['radka', 'radk', 'marka', 'mark', 'radku']
+                    if any(name in first_obs.lower() for name in debug_names):
+                        print(f"    [BRANCH-2] Typical endings, first_obs='{first_obs}'")
                     first_nom = infer_first_name_nominative(first_obs)
+                    if any(name in first_obs.lower() for name in debug_names):
+                        print(f"    [BRANCH-2] first_nom='{first_nom}'")
                 elif first_lo in CZECH_FIRST_NAMES:
                     # Jméno je v knihovně → pravděpodobně nominativ
                     first_nom = first_obs.capitalize()
                 else:
                     # Není v knihovně a nemá typickou koncovku → zkus inference
                     # To zachytí Zuzan, Pavl, Radk, Hynk atd.
+                    debug_names = ['radk', 'mark']
+                    if any(name in first_obs.lower() for name in debug_names):
+                        print(f"    [BRANCH-3] Not in library, first_obs='{first_obs}'")
                     inferred = infer_first_name_nominative(first_obs)
+                    if any(name in first_obs.lower() for name in debug_names):
+                        print(f"    [BRANCH-3] inferred='{inferred}'")
                     # Pokud inference vrátila stejný výsledek, použij capitalize
                     if inferred.lower() == first_lo:
                         first_nom = first_obs.capitalize()
+                        if any(name in first_obs.lower() for name in debug_names):
+                            print(f"    [BRANCH-3] Same result, using capitalize: '{first_nom}'")
                     else:
                         first_nom = inferred
+                        if any(name in first_obs.lower() for name in debug_names):
+                            print(f"    [BRANCH-3] Different, using inferred: '{first_nom}'")
 
             # POST-PROCESSING: Oprava příjmení podle pohlaví křestního jména
             # Pokud máme ženské jméno ale mužské příjmení (nebo naopak), oprav to
@@ -2299,13 +2353,27 @@ class Anonymizer:
         # musíme je zpracovat postupně, aby druhý match viděl už vytvořený PERSON_63
         offset = 0
         result_text = text
-        for match in person_pattern.finditer(text):
+        matches_list = list(person_pattern.finditer(text))
+
+        # DEBUG pro Radek/Marek
+        debug_names = ['radek', 'radk', 'marek', 'mark']
+        if any(name in text.lower() for name in debug_names):
+            print(f"\n[DEBUG] Processing text with {len(matches_list)} person matches")
+            for idx, m in enumerate(matches_list):
+                if any(name in m.group(0).lower() for name in debug_names):
+                    print(f"  Match {idx}: '{m.group(0)}'")
+
+        for match in matches_list:
             # Přepočítej pozici s offsetem (text se mění při nahrazování)
             start = match.start() + offset
             end = match.end() + offset
 
             # Zavolej replace_person s aktuálním matchem
             replacement = replace_person(match)
+
+            # DEBUG
+            if any(name in match.group(0).lower() for name in debug_names):
+                print(f"    -> {replacement} (person_index size: {len(self.person_index)})")
 
             # Nahraď text
             result_text = result_text[:start] + replacement + result_text[end:]
