@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-25T14:13:33.438989",
+  "generated_at": "2025-11-25T19:09:28.309575",
   "source_file": "smlouva18.docx",
   "entities": [
     {
@@ -90,7 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_15]]",
-      "original": "Mark Prášek",
+      "original": "Marek Prášek",
       "occurrences": 1
     },
     {
