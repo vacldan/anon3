@@ -488,6 +488,10 @@ def infer_first_name_nominative(obs: str) -> str:
     if lo == 'hany':
         return 'Hana'
 
+    # Alica je spelling varianta Alice (sjednoť je)
+    if lo == 'alica':
+        return 'Alice'
+
     # Dativ/Lokál -ě formy (Unicode normalization může způsobit problémy s endswith)
     # Používám přesný match místo endswith
     dative_e_forms = {
@@ -571,7 +575,7 @@ def infer_first_name_nominative(obs: str) -> str:
         # - Buď je krátké (< 5 písmen)
         # - Nebo končí na typické zkrácené tvary (n, l, k, r po souhlásce)
         looks_truncated = (len(obs) < 5 or
-                          lo.endswith(('zn', 'vl', 'dn', 'rk', 'nk', 'hk')))
+                          lo.endswith(('zn', 'vl', 'dn', 'rk', 'nk', 'hk', 'ol', 'il')))
 
         if looks_truncated:
             # Zkus přidat 'a' (Zuzan → Zuzana, Pavl → Pavla)
@@ -588,7 +592,8 @@ def infer_first_name_nominative(obs: str) -> str:
         known_truncations = {
             'zuzan': 'Zuzana', 'pavl': 'Pavel', 'radk': 'Radek', 'hynk': 'Hynek',
             'radec': 'Radka', 'elišec': 'Eliška', 'šárec': 'Šárka',
-            'jiř': 'Jiří', 'petr': 'Petr', 'jan': 'Jan', 'tom': 'Tomáš'
+            'jiř': 'Jiří', 'petr': 'Petr', 'jan': 'Jan', 'tom': 'Tomáš',
+            'nikol': 'Nikola', 'mark': 'Marek'
         }
         if lo in known_truncations:
             return known_truncations[lo]
@@ -692,6 +697,10 @@ def infer_first_name_nominative(obs: str) -> str:
         # FALLBACK pro běžná ženská jména -ina/-ýna (Martinu→Martina, Pavlinu→Pavlina)
         if stem.lower().endswith(('tin', 'lin', 'rin', 'din', 'nin', 'stýn')):
             return (stem + 'a').capitalize()
+        # REKURZIVNÍ: pokud stem stále vypadá declined (končí -em, -ovi), zpracuj znovu
+        # Renemu → Renem (po strip -u) → Ren (po strip -em)
+        if stem.lower().endswith(('em', 'ovi', 'ím')):
+            return infer_first_name_nominative(stem)
 
     # MUŽSKÁ JMÉNA - genitiv/dativ/instrumentál
     male_nom = _male_genitive_to_nominative(obs)
@@ -851,8 +860,9 @@ def infer_surname_nominative(obs: str) -> str:
     if lo.endswith('ka') and len(obs) > 3 and lo not in MALE_SURNAMES_WITH_A:
         stem = obs[:-2].lower()
         # Pouze pokud kmen vyžaduje vložné e: Hájka → Hájek, Pavelka → Pavelek
-        # Zkontroluj prefix nebo známý kmen
-        if any(stem.startswith(p) or stem.endswith(p) or stem == p for p in vlozne_e_surname_patterns):
+        # NEBO pokud je kmen krátký (≤4 znaky) → pravděpodobně vyžaduje vložné e
+        short_stem = len(stem) <= 4
+        if any(stem.startswith(p) or stem.endswith(p) or stem == p for p in vlozne_e_surname_patterns) or short_stem:
             return obs[:-2] + 'ek'
 
     if lo.endswith('la') and len(obs) > 3 and lo not in MALE_SURNAMES_WITH_A:
@@ -884,13 +894,19 @@ def infer_surname_nominative(obs: str) -> str:
         stem_lo = stem.lower()
 
         # Kontrola pro vložné 'e': příjmení končící na -ňk, -šk, -řk, -žk, -čk
-        # "Vaňk" má vložné 'e' → "Vaněk"
+        # NEBO krátké kmeny (≤4 znaky) končící na -k
+        # "Vaňk" → "Vaněk", "Kotk" → "Kotek"
+        short_k_stem = len(stem) <= 4 and stem_lo.endswith('k')
+
         if stem_lo.endswith(('ňk', 'šk', 'řk', 'žk', 'čk', 'ďk', 'ťk')):
             # Převeď měkkou souhlásku zpět na tvrdou před vložným 'ě'
             if stem_lo[-2] in 'ňďť':
                 hardening = {'ň': 'n', 'ď': 'd', 'ť': 't'}
                 stem = stem[:-2] + hardening[stem[-2]] + stem[-1]
             return stem[:-1] + 'ěk'  # Vaňk → Vaněk
+        elif short_k_stem:
+            # Kotk → Kotek, Hájk → Hájek
+            return stem[:-1] + 'ek'
 
         # Default: jen odstranit -ovi
         return stem
@@ -927,6 +943,10 @@ def infer_surname_nominative(obs: str) -> str:
             # Vaň → Vaněk, Paš → Pašek
             short_soft_endings = len(stem_without_kem) <= 3 and stem_without_kem[-1] in 'ňšř'
 
+            # OBECNÉ PRAVIDLO: Krátké kmeny (≤4 znaky) pravděpodobně vyžadují vložné e
+            # Kotkem → Kotek, Hájkem → Hájek (ne Kotk, Hájk)
+            short_stem = len(stem_without_kem) <= 4
+
             if any(stem_without_kem.endswith(p) for p in long_patterns):
                 # Štefánkem → Štefánek, Šimůnkem → Šimůnek
                 return obs[:-3] + 'ek'
@@ -938,6 +958,9 @@ def infer_surname_nominative(obs: str) -> str:
                     hardening = {'ň': 'n', 'ď': 'd', 'ť': 't'}
                     stem = stem[:-1] + hardening[stem[-1]]
                 return stem + 'ěk'
+            elif short_stem:
+                # Kotkem → Kotek, Hájkem → Hájek
+                return obs[:-3] + 'ek'
             # Default: odstranit jen -em (většina případů)
             else:
                 return obs[:-2]  # Novákem → Novák
@@ -2124,18 +2147,27 @@ class Anonymizer:
                 # Procházka vs Procházková → skip (různý rod) ✗
 
                 # Jednoduché pravidlo: odstraň koncovky -ová, -a, -ek, -el, -ec
+                # A normalizuj vložné 'e' aby Hruška a Hrušěk měly stejný kmen
                 def get_stem(surname):
                     s = surname.lower()
                     if s.endswith('ová'):
                         return s[:-3]  # Procházková → Procházk
+                    elif s.endswith('ěk'):
+                        # Hrušěk → hruš + k = hrušk (kmen bez vložného ě)
+                        return s[:-2] + 'k'
                     elif s.endswith('ek'):
-                        return s[:-2] + 'k'  # Hájek → Hájk
+                        # Hájek → háj + k = hájk (kmen bez vložného e)
+                        return s[:-2] + 'k'
+                    elif s.endswith('ka'):
+                        # Hruška → hruš + k = hrušk (stejný kmen jako Hrušěk!)
+                        # Krupička → krupič + k = krupičk (stejný kmen jako Krupičěk!)
+                        return s[:-2] + 'k'
                     elif s.endswith('el'):
                         return s[:-2] + 'l'  # Havel → Havl
                     elif s.endswith('ec'):
                         return s[:-2] + 'c'  # Němec → Němc
                     elif s.endswith('a'):
-                        return s[:-1]  # Procházka → Procházk
+                        return s[:-1]  # Procházka → Procházk (ale ne -ka!)
                     elif s.endswith('á'):
                         return s[:-1]  # Malá → Mal
                     else:

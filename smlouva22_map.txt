@@ -128,6 +128,7 @@ OSOBY
   - Michalu Gregorovi
 [[PERSON_61]]: Ondřej Vlček
   - Ondřejem Vlčkem
+  - Ondřeji Vlčkovi
 [[PERSON_62]]: Viktor Havel
   - Viktorem Havlem
   - Viktoru Havlovi
@@ -149,6 +150,7 @@ OSOBY
   - Jaroslavovi Černém
 [[PERSON_70]]: Kamil Řezníček
   - Kamila Řezníčka
+  - Kamilu Řezníčkovi
 [[PERSON_71]]: Štěpán Hrubeš
   - Štěpánem Hrubešem
   - Štěpánovi Hrubešovi
@@ -196,6 +198,7 @@ OSOBY
   - Bohuslavu Krejčím
 [[PERSON_86]]: Radim Sedláček
   - Radimem Sedláčkem
+  - Radimu Sedláčkovi
 [[PERSON_87]]: Kryštof Vojta
   - Kryštofem Vojtou
   - Kryštofu Vojtovi
@@ -215,46 +218,44 @@ OSOBY
   - Alexandrem Vlachem
   - Alexandru Vlachovi
 [[PERSON_93]]: Norbert Hruška
-[[PERSON_94]]: Norbert Hrušěk
   - Norbertem Hruškou
   - Norbertu Hruškovi
-[[PERSON_95]]: Samuel Lukáš
+[[PERSON_94]]: Samuel Lukáš
   - Samuelem Lukášem
-[[PERSON_96]]: Samuela Lukášová
-[[PERSON_97]]: Marcel Veselý
+[[PERSON_95]]: Samuela Lukášová
+[[PERSON_96]]: Marcel Veselý
   - Marcelem Veselým
   - Marcelu Veselém
-[[PERSON_98]]: Eduard Krupička
-[[PERSON_99]]: Eduard Krupičěk
+[[PERSON_97]]: Eduard Krupička
   - Eduardem Krupičkou
   - Eduardu Krupičkovi
-[[PERSON_100]]: Milan Křížek
+[[PERSON_98]]: Milan Křížek
   - Milanem Křížkem
-[[PERSON_101]]: Daniel Šteiner
+  - Milanu Křížkovi
+[[PERSON_99]]: Daniel Šteiner
   - Danielem Šteinerem
-[[PERSON_102]]: Daniela Šteinerová
-[[PERSON_103]]: Alan Hájek
+[[PERSON_100]]: Daniela Šteinerová
+[[PERSON_101]]: Alan Hájek
   - Alanem Hájkem
   - Alanu Hájkovi
-[[PERSON_104]]: Otakar Vlna
+[[PERSON_102]]: Otakar Vlna
   - Otakarem Vlnou
   - Otakarovi Vlnovi
-[[PERSON_105]]: Rena Koteková
-[[PERSON_106]]: Ren Kotk
+[[PERSON_103]]: Rena Koteková
+[[PERSON_104]]: Ren Kotek
   - Renem Kotkem
-[[PERSON_107]]: Renem Kotk
   - Renemu Kotkovi
-[[PERSON_108]]: Vojtěch Malý
+[[PERSON_105]]: Vojtěch Malý
   - Vojtěchem Malým
   - Vojtěchu Malém
-[[PERSON_109]]: Ivan Popelka
+[[PERSON_106]]: Ivan Popelka
   - Ivanem Popelkou
   - Ivanu Popelkovi
-[[PERSON_110]]: Marek Chytrý
-[[PERSON_111]]: Mark Chytrý
+[[PERSON_107]]: Marek Chytrý
+[[PERSON_108]]: Mark Chytrý
   - Markem Chytrým
   - Marku Chytrém
-[[PERSON_112]]: Břetislav Kovář
+[[PERSON_109]]: Břetislav Kovář
   - Břetislavem Kovářem
   - Břetislavu Kovářovi
 
