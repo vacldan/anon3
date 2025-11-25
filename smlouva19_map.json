@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-24T07:28:19.913731",
+  "generated_at": "2025-11-25T19:04:30.375317",
   "source_file": "smlouva19.docx",
   "entities": [
     {
@@ -174,13 +174,13 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Praha 10, 102 00\nIČO",
+      "original": "Praha 10, 102 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Křišťanová 19, 779 00 Olomouc\nTelefon",
+      "original": "Křišťanová 19, 779 00 Olomouc",
       "occurrences": 1
     },
     {
