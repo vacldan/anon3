@@ -177,6 +177,11 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
     """
     lo = obs.lower()
 
+    # DEBUG: Trace execution (disabled)
+    debug_this = False  # Set to True to enable debug output
+    if debug_this:
+        print(f"      [_male_gen] INPUT: obs='{obs}', lo='{lo}'")
+
     # FIRST: Hardcoded list of common feminine names that should NEVER be converted
     # This is necessary because the name library is incomplete (missing Martina, etc.)
     common_feminine_names = {
@@ -196,11 +201,18 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
         base = obs[:-1]
         base_lo = base.lower()
 
+        if debug_this:
+            print(f"      [_male_gen] PRIORITA 0: base='{base}', base_lo='{base_lo}'")
+            print(f"      [_male_gen] base_lo in CZECH_FIRST_NAMES: {base_lo in CZECH_FIRST_NAMES}")
+            print(f"      [_male_gen] lo in CZECH_FIRST_NAMES: {lo in CZECH_FIRST_NAMES}")
+
         # Strategie 1: Pokud base je v knihovně a není ženské jméno
         if base_lo in CZECH_FIRST_NAMES:
             # Base existuje - preferuj ho pokud není ženské (nekončí na 'a' v nominativu)
             # nebo je known male name
             if not base_lo.endswith('a') or base_lo in {'kuba', 'míla', 'nikola', 'saša', 'jirka', 'honza'}:
+                if debug_this:
+                    print(f"      [_male_gen] STRATEGIE 1 RETURN: '{base.capitalize()}'")
                 return base.capitalize()
 
         # Strategie 2: Pokud base končí na souhlásku (typické pro mužská jména)
@@ -208,6 +220,8 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
         elif len(base_lo) > 0 and base_lo[-1] not in 'aeiouáéíóúůýě' and lo in CZECH_FIRST_NAMES:
             # "davida" končí na 'a', base "david" končí na 'd' (souhláska)
             # → pravděpodobně genitiv od "David"
+            if debug_this:
+                print(f"      [_male_gen] STRATEGIE 2 RETURN: '{base.capitalize()}'")
             return base.capitalize()
 
     # Also check library if available
@@ -360,12 +374,19 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
     # PRIORITA 5: Genitiv/Akuzativ -a → remove (Petra → Petr, ale i Jana → Jan)
     if lo.endswith('a') and len(obs) > 1:
         cand = obs[:-1]
+        if debug_this:
+            print(f"      [_male_gen] PRIORITA 5: -a branch, cand='{cand}', in library: {cand.lower() in CZECH_FIRST_NAMES}")
         if cand.lower() in CZECH_FIRST_NAMES:
+            if debug_this:
+                print(f"      [_male_gen] PRIORITA 5 RETURN: '{cand.capitalize()}'")
             return cand.capitalize()
         cands.append(cand)
 
     # Vrať první kandidát (pokud existuje)
-    return cands[0].capitalize() if cands else None
+    result = cands[0].capitalize() if cands else None
+    if debug_this:
+        print(f"      [_male_gen] FINAL RETURN: {result}, cands={cands}")
+    return result
 
 def get_first_name_gender(name: str) -> str:
     """Určí rod křestního jména. Vrací 'M' (mužský), 'F' (ženský), nebo 'U' (neznámý)."""
@@ -485,6 +506,11 @@ def infer_first_name_nominative(obs: str) -> str:
 
     lo = obs.lower()
 
+    # DEBUG: Trace execution (disabled)
+    debug_this = False  # Set to True to enable debug output
+    if debug_this:
+        print(f"    [infer_first] INPUT: obs='{obs}', lo='{lo}'")
+
     # SPECIÁLNÍ PŘÍPADY: Některá jména mohou být genitiv od jiného jména
     # Musí být PŘED kontrolou knihovny!
 
@@ -493,12 +519,14 @@ def infer_first_name_nominative(obs: str) -> str:
     if lo == 'roberta':
         return 'Robert'
 
-    # Radka/Marka může být genitiv od Radek/Marek (není v knihovně jmen)
-    # Přidány všechny pádové formy pro tyto dva časté případy
+    # Radka/Marka/Karla může být genitiv od Radek/Marek/Karel (není v knihovně jmen)
+    # Přidány všechny pádové formy pro tyto časté případy
     if lo in ('radka', 'radku', 'radkem', 'radkovi', 'radko'):
         return 'Radek'
     if lo in ('marka', 'marku', 'markem', 'markovi'):
         return 'Marek'
+    if lo in ('karla', 'karlu', 'karlem', 'karlovi', 'karlo'):
+        return 'Karel'
 
     # Jména s vložným 'e/ě' a zdvojením souhlásky
     # Otto: nominativ Otto, genitiv Otta, dativ Ottovi
@@ -546,6 +574,9 @@ def infer_first_name_nominative(obs: str) -> str:
         'radce': 'Radka',
         'elišce': 'Eliška',
         'šárce': 'Šárka',
+        'blance': 'Blanka',  # dativ/lokál -ce → -ka
+        'helze': 'Helga',  # dativ/lokál -ze → -ga
+        'ele': 'Ela',  # dativ/lokál -e → -a
         'andreo': 'Andrea',  # dativ -eo pro -ea jména
         'alicí': 'Alice',  # instrumentál -í → -ie
         'alici': 'Alice',  # dativ/lokál -i → -ie
@@ -577,8 +608,8 @@ def infer_first_name_nominative(obs: str) -> str:
         if stem_a_lo.endswith(female_patterns):
             return stem_a.capitalize()
 
-        # Pattern 2: krátký kmen (≤4 znaky) + 'a' je pravděpodobně ženské
-        if len(stem) <= 4:
+        # Pattern 2: krátký/středně dlouhý kmen (≤6 znaky) + 'a' je pravděpodobně ženské
+        if len(stem) <= 6:
             return stem_a.capitalize()
 
     # PRIORITA: Pokud jméno končí na 'a'/'u' a base forma je v knihovně, preferuj base
@@ -588,38 +619,60 @@ def infer_first_name_nominative(obs: str) -> str:
         base = obs[:-1]
         base_lo = base.lower()
 
+        if debug_this:
+            print(f"    [infer_first] PRIORITA a/u: base='{base}', base_lo='{base_lo}'")
+            print(f"    [infer_first] base_lo in library: {base_lo in CZECH_FIRST_NAMES}")
+            print(f"    [infer_first] lo in library: {lo in CZECH_FIRST_NAMES}")
+
         # Pokud base je v knihovně, preferuj ho
         if base_lo in CZECH_FIRST_NAMES:
+            if debug_this:
+                print(f"    [infer_first] PRIORITA a/u RETURN base: '{base.capitalize()}'")
             return base.capitalize()
 
         # Pokud base končí na souhlásku a obs je v knihovně,
         # pravděpodobně je obs genitiv/dativ od base
         if base_lo[-1] not in 'aeiouáéíóúůýě' and lo in CZECH_FIRST_NAMES:
+            if debug_this:
+                print(f"    [infer_first] PRIORITA a/u RETURN base (consonant): '{base.capitalize()}'")
             return base.capitalize()
 
     # DŮLEŽITÉ: Kontrola, zda už je v nominativu (v knihovně jmen)
     if lo in CZECH_FIRST_NAMES:
+        if debug_this:
+            print(f"    [infer_first] Already in library RETURN: '{obs.capitalize()}'")
         return obs.capitalize()
 
     # Zkontroluj TRUNKACE - pokud jméno vypadá jako zkrácené (končí souhláskou)
     # a přidání 'a'/'el'/'ek' dá známé jméno, preferuj úplnou formu
     # ALE POUZE pokud jméno vypadá zkrácené (krátké nebo končí na typické zkratky)
     if len(obs) >= 3 and obs[-1] not in 'aeiouyáéíóúůýěiu':
+        if debug_this:
+            print(f"    [infer_first] Checking TRUNCATION branch")
         # Kontrola: jméno musí vypadat skutečně zkrácené
         # - Buď je krátké (< 5 písmen)
         # - Nebo končí na typické zkrácené tvary (n, l, k, r po souhlásce)
         looks_truncated = (len(obs) < 5 or
                           lo.endswith(('zn', 'vl', 'dn', 'rk', 'nk', 'hk', 'ol', 'il')))
 
+        if debug_this:
+            print(f"    [infer_first] looks_truncated: {looks_truncated}")
+
         if looks_truncated:
             # Zkus přidat 'a' (Zuzan → Zuzana, Pavl → Pavla)
             if (lo + 'a') in CZECH_FIRST_NAMES:
+                if debug_this:
+                    print(f"    [infer_first] TRUNCATION +a RETURN: '{(obs + 'a').capitalize()}'")
                 return (obs + 'a').capitalize()
             # Zkus přidat 'el' (Pavl → Pavel)
             if (lo + 'el') in CZECH_FIRST_NAMES:
+                if debug_this:
+                    print(f"    [infer_first] TRUNCATION +el RETURN: '{(obs + 'el').capitalize()}'")
                 return (obs + 'el').capitalize()
             # Zkus přidat 'ek' (Radk → Radek, Hynk → Hynek)
             if (lo + 'ek') in CZECH_FIRST_NAMES:
+                if debug_this:
+                    print(f"    [infer_first] TRUNCATION +ek RETURN: '{(obs + 'ek').capitalize()}'")
                 return (obs + 'ek').capitalize()
 
         # FALLBACK: Běžná jména, která nejsou v knihovně
@@ -630,6 +683,8 @@ def infer_first_name_nominative(obs: str) -> str:
             'nikol': 'Nikola', 'mark': 'Marek'
         }
         if lo in known_truncations:
+            if debug_this:
+                print(f"    [infer_first] known_truncations RETURN: '{known_truncations[lo]}'")
             return known_truncations[lo]
 
     # SPECIÁLNÍ VZORY - PRIORITA (před obecnými pravidly)
@@ -671,8 +726,14 @@ def infer_first_name_nominative(obs: str) -> str:
         stem_a = stem + 'a'
         stem_a_lo = stem_a.lower()
 
+        if debug_this:
+            print(f"    [infer_first] FEMALE -y/-ě/-e: stem='{stem}', stem_a='{stem_a}'")
+            print(f"    [infer_first] stem_a_lo in library: {stem_a_lo in CZECH_FIRST_NAMES}")
+
         # PRVNÍ zkontroluj knihovnu
         if stem_a_lo in CZECH_FIRST_NAMES:
+            if debug_this:
+                print(f"    [infer_first] FEMALE -y RETURN (library): '{stem_a.capitalize()}'")
             return stem_a.capitalize()
 
         # FALLBACK: OBECNÁ HEURISTIKA pro ženská jména mimo knihovnu
@@ -683,10 +744,15 @@ def infer_first_name_nominative(obs: str) -> str:
             'éna', 'ána', 'una', 'ia', 'ea'
         )
         if stem_a_lo.endswith(female_patterns):
+            if debug_this:
+                print(f"    [infer_first] FEMALE -y RETURN (pattern): '{stem_a.capitalize()}'")
             return stem_a.capitalize()
 
-        # Pattern 2: krátký kmen (≤4 znaky) + 'a' je pravděpodobně ženské
-        if len(stem) <= 4:
+        # Pattern 2: krátký/středně dlouhý kmen (≤6 znaky) + 'a' je pravděpodobně ženské
+        # Zvýšeno z 4 na 6 pro zachycení jmen jako Vlasta (Vlast=5 znaků), Krista (Krist=5)
+        if len(stem) <= 6:
+            if debug_this:
+                print(f"    [infer_first] FEMALE -y RETURN (short stem): '{stem_a.capitalize()}'")
             return stem_a.capitalize()
 
     # Vokativ: -o → -a (Renato → Renata, Marcelo → Marcela, Petro → Petra)
@@ -710,8 +776,8 @@ def infer_first_name_nominative(obs: str) -> str:
         if stem_a_lo.endswith(female_patterns):
             return stem_a.capitalize()
 
-        # Pattern 2: krátký kmen (≤4 znaky) + 'a' je pravděpodobně ženské
-        if len(stem) <= 4:
+        # Pattern 2: krátký/středně dlouhý kmen (≤6 znaky) + 'a' je pravděpodobně ženské
+        if len(stem) <= 6:
             return stem_a.capitalize()
 
         # Pattern 3: Check for specific problematic patterns like "Radko" → "Radka"
@@ -737,8 +803,14 @@ def infer_first_name_nominative(obs: str) -> str:
             return infer_first_name_nominative(stem)
 
     # MUŽSKÁ JMÉNA - genitiv/dativ/instrumentál
+    if debug_this:
+        print(f"    [infer_first] Calling _male_genitive_to_nominative('{obs}')")
     male_nom = _male_genitive_to_nominative(obs)
+    if debug_this:
+        print(f"    [infer_first] _male_genitive_to_nominative returned: {male_nom}")
     if male_nom:
+        if debug_this:
+            print(f"    [infer_first] RETURN from male branch: '{male_nom}'")
         return male_nom
 
     # POSSESSIVE FORMS - Petřin → Petra, Janin → Jana
@@ -750,7 +822,8 @@ def infer_first_name_nominative(obs: str) -> str:
 
     # Pokud nic nepomohlo, vrať původní tvar s velkým písmenem
     result = obs.capitalize()
-
+    if debug_this:
+        print(f"    [infer_first] FALLBACK RETURN: '{result}'")
 
     return result
 
@@ -1697,11 +1770,11 @@ class Anonymizer:
 
         key = (self._normalize_for_matching(first_nom), self._normalize_for_matching(last_nom))
 
-        # DEBUG
-        debug_names = ['radek', 'radk', 'marek', 'mark', 'hofman', 'chytr']
-        if any(name in first_nom.lower() or name in last_nom.lower() for name in debug_names):
-            exists = key in self.person_index
-            print(f"    [ENSURE] key={key}, exists={exists}")
+        # DEBUG (disabled)
+        # debug_names = ['radek', 'radk', 'marek', 'mark', 'hofman', 'chytr', 'karel', 'karl', 'řehoř']
+        # if any(name in first_nom.lower() or name in last_nom.lower() for name in debug_names):
+        #     exists = key in self.person_index
+        #     print(f"    [ENSURE] first_nom='{first_nom}', last_nom='{last_nom}', key={key}, exists={exists}")
 
         if key in self.person_index:
             return self.person_index[key]
@@ -1975,10 +2048,10 @@ class Anonymizer:
             first_obs = match.group(1)
             last_obs = match.group(2)
 
-            # DEBUG
-            debug_names = ['radek', 'radk', 'marek', 'mark']
-            if any(name in first_obs.lower() or name in last_obs.lower() for name in debug_names):
-                print(f"    [MATCH] first_obs='{first_obs}', last_obs='{last_obs}'")
+            # DEBUG (disabled)
+            # debug_names = ['radek', 'radk', 'marek', 'mark', 'karel', 'karl', 'řehoř', 'blank', 'vlast']
+            # if any(name in first_obs.lower() or name in last_obs.lower() for name in debug_names):
+            #     print(f"    [MATCH] first_obs='{first_obs}', last_obs='{last_obs}'")
 
             # ========== A) BLACKLIST NE-OSOB ==========
 
@@ -2294,7 +2367,7 @@ class Anonymizer:
                     else:
                         # Použij inference místo FORCE převodu
                         # Inference má lepší logiku pro rozlišování vzorů (Kamila vs Pavla)
-                        debug_names = ['radka', 'radk', 'marka', 'mark']
+                        debug_names = ['radka', 'radk', 'marka', 'mark', 'karel', 'karla']
                         if any(name in first_obs.lower() for name in debug_names):
                             print(f"    [BRANCH-1] Calling infer for male surname, first_obs='{first_obs}'")
                         first_nom = infer_first_name_nominative(first_obs)
