@@ -262,7 +262,8 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
 
     # PRIORITA 2b: Dativ/vokativ -i → remove (Tomáši → Tomáš, Aleši → Aleš, Lukáši → Lukáš)
     # Ale ne pro jména končící na -i v nominativu (Igor...)
-    if lo.endswith('i') and len(obs) > 2:
+    # DŮLEŽITÉ: Vylučuje -ovi (to se zpracovává výše)
+    if lo.endswith('i') and not lo.endswith('ovi') and len(obs) > 2:
         cand = obs[:-1]
         # Zkontroluj, zda odstranění -i dává smysl
         if cand.lower() in CZECH_FIRST_NAMES:
@@ -494,10 +495,27 @@ def infer_first_name_nominative(obs: str) -> str:
 
     # Radka/Marka může být genitiv od Radek/Marek (není v knihovně jmen)
     # Přidány všechny pádové formy pro tyto dva časté případy
-    if lo in ('radka', 'radku', 'radkem', 'radkovi'):
+    if lo in ('radka', 'radku', 'radkem', 'radkovi', 'radko'):
         return 'Radek'
     if lo in ('marka', 'marku', 'markem', 'markovi'):
         return 'Marek'
+
+    # Jména s vložným 'e/ě' a zdvojením souhlásky
+    # Otto: nominativ Otto, genitiv Otta, dativ Ottovi
+    if lo in ('otta', 'ottovi', 'ottem', 'otto'):
+        return 'Otto'
+
+    # Zdeněk: nominativ Zdeněk, genitiv Zdeňka (měkčení ě→ň), dativ Zdeňkovi
+    if lo in ('zdeňka', 'zdeňku', 'zdeňkovi', 'zdeňkem', 'zdeněk'):
+        return 'Zdeněk'
+
+    # František: nominativ František, genitiv Františka, dativ Františkovi
+    if lo in ('františka', 'františku', 'františkovi', 'františkem', 'františk'):
+        return 'František'
+
+    # Čeněk: nominativ Čeněk, genitiv Čeňka
+    if lo in ('čeňka', 'čeňku', 'čeňkovi', 'čeňkem', 'čeněk'):
+        return 'Čeněk'
 
     # Hany může být genitiv od Hana
     # (Hany může být v knihovně, ale standardní nominativ je Hana)
@@ -1002,6 +1020,21 @@ def infer_surname_nominative(obs: str) -> str:
                 else:
                     # Běžný instrumentál: Novákem → Novák, Králem → Král, Švecem → Švec
                     return cand
+
+    # ========== GENITIV: -e → REMOVE (mužská příjmení) ==========
+    # Genitiv mužských příjmení končících na souhlásku: Bartoš → Bartoše, Kolář → Koláře
+    # Ale pozor na příjmení, která skutečně končí na -e v nominativu (Nebeský, Nové, atd.)
+    if lo.endswith('e') and len(obs) > 3:
+        # Skip pokud to je přídavné jméno (-ské, -cké, -né)
+        if not lo.endswith(('ské', 'cké', 'né', 'ré', 'lé')):
+            stem = obs[:-1]  # Bartoše → Bartoš, Koláře → Kolář
+            stem_lo = stem.lower()
+
+            # Kontrola: odstranění -e musí dát validní příjmení (končí souhláskou)
+            consonants = 'bcčdďfghjklmnňpqrřsštťvwxzž'
+            if len(stem) >= 3 and stem_lo[-1] in consonants:
+                # Validní genitiv → vrať nominativ bez -e
+                return stem
 
     # ========== GENITIV: -a → CONDITIONAL ==========
     # Mnoho příjmení končí na -a v nominativu (Svoboda, Skála, Liška, atd.)
