@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-27T12:13:31.077742",
+  "generated_at": "2025-11-28T06:08:13.281930",
   "source_file": "smlouva18.docx",
   "entities": [
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_9]]",
-      "original": "Sylv Mahdalová",
+      "original": "Sylva Mahdalová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Adél Ševčíková",
+      "original": "Adéla Ševčíková",
       "occurrences": 1
     },
     {
@@ -78,7 +78,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_13]]",
-      "original": "Viktorie Kučerová",
+      "original": "Viktoria Kučerová",
       "occurrences": 1
     },
     {
@@ -102,7 +102,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_17]]",
-      "original": "Iren Vlašáková",
+      "original": "Irena Vlašáková",
       "occurrences": 1
     },
     {
