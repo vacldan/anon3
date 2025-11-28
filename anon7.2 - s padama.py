@@ -965,7 +965,28 @@ def infer_surname_nominative(obs: str) -> str:
     }
 
     if lo.endswith('ka') and len(obs) > 3 and lo not in MALE_SURNAMES_WITH_A:
-        stem = obs[:-2].lower()
+        stem = obs[:-2]  # Straka → Stra
+
+        # KONTROLA: Pokud příjmení vypadá jako typické české příjmení s -ka
+        # Příklady: Straka (Str+a+ka), Koudelka (Koudel+ka)
+        if len(stem) >= 2:
+            last_char = stem[-1].lower()
+            consonants = 'bcčdďfghjklmnňpqrřsštťvwxzž'
+            vowels = 'aeiouyáéíóúůýě'
+
+            # Pokud stem končí souhláskou (Koudel → 'l'), pravděpodobně je to příjmení s -ka
+            if last_char in consonants and len(stem) >= 4:
+                return obs
+
+            # Pokud stem končí samohláskou (Stra → 'a'), kontroluj znak PŘED ní
+            # Straka: stem="Stra", stem[-2]='r' → souhláska + samohláska + ka
+            if last_char in vowels and len(stem) >= 2:
+                char_before_vowel = stem[-2].lower()
+                if char_before_vowel in consonants:
+                    # Vypadá jako Str+a+ka → zachovej
+                    return obs
+
+        stem = stem.lower()
         # Pouze pokud kmen vyžaduje vložné e: Hájka → Hájek, Pavelka → Pavelek
         # NEBO pokud je kmen krátký (≤4 znaky) → pravděpodobně vyžaduje vložné e
         short_stem = len(stem) <= 4
@@ -1014,6 +1035,17 @@ def infer_surname_nominative(obs: str) -> str:
         elif short_k_stem:
             # Kotk → Kotek, Hájk → Hájek
             return stem[:-1] + 'ek'
+
+        # NOVÁ HEURISTIKA: Pokud stem+'a' dá typické české příjmení, přidej 'a'
+        # Koudelkovi → stem="Koudelk" → candidate_a="Koudelka" (končí -ka) → vrať "Koudelka"
+        candidate_a = stem + 'a'
+        candidate_a_lo = candidate_a.lower()
+        typical_surname_endings = ('ka', 'la', 'na', 'ra', 'ta', 'da', 'ma', 'ba', 'va', 'ha', 'ča', 'ša', 'ga', 'pa')
+        if any(candidate_a_lo.endswith(ending) for ending in typical_surname_endings):
+            # Dodatečná kontrola: stem musí končit souhláskou (ne samohláskou)
+            consonants = 'bcčdďfghjklmnňpqrřsštťvwxzž'
+            if stem_lo[-1] in consonants:
+                return candidate_a
 
         # Default: jen odstranit -ovi
         return stem
@@ -1117,6 +1149,14 @@ def infer_surname_nominative(obs: str) -> str:
         # Protected surnames ending with -a in nominative
         if lo not in MALE_SURNAMES_WITH_A:
             stem_without_a = obs[:-1]
+
+            # NOVÁ KONTROLA: Pokud obs končí na typický vzor pro česká příjmení s -a,
+            # ZACHOVEJ ho jako nominativ (Koudelka, Malina, Straka)
+            typical_surname_endings = ('ka', 'la', 'na', 'ra', 'ta', 'da', 'ma', 'ba', 'va', 'ha', 'ča', 'ša', 'ga', 'pa')
+            if any(lo.endswith(ending) for ending in typical_surname_endings):
+                # Vypadá jako typické příjmení s -a v nominativu → ZACHOVEJ
+                return obs
+
             # Pokud po odstranění -a dostaneme validní příjmení končící na souhlásku
             # (ne na samohlásku), pravděpodobně je to genitiv
             consonants = 'bcčdďfghjklmnňpqrřsštťvwxzž'
@@ -1139,6 +1179,18 @@ def infer_surname_nominative(obs: str) -> str:
             # Heuristika: -y → -a pro příjmení jako Klíma
             if obs[:-1].lower().endswith(('klím', 'dvořák', 'svobod')):
                 return candidate_a
+
+            # NOVÁ HEURISTIKA: Pokud candidate_a končí na typické české příjmenné vzory,
+            # pravděpodobně je to správný nominativ s 'a'
+            # Koudelka (končí -ka), Malina (končí -na), Straka (končí -ka), Bláha (končí -ha)
+            candidate_a_lo = candidate_a.lower()
+            typical_surname_endings = ('ka', 'la', 'na', 'ra', 'ta', 'da', 'ma', 'ba', 'va', 'ha', 'ča', 'ša', 'ga', 'pa')
+            if any(candidate_a_lo.endswith(ending) for ending in typical_surname_endings):
+                # Dodatečná kontrola: stem (bez 'a') musí končit souhláskou
+                stem_without_a = obs[:-1]  # Maliny → Malin (stem před přidáním 'a')
+                consonants = 'bcčdďfghjklmnňpqrřsštťvwxzž'
+                if stem_without_a and stem_without_a[-1].lower() in consonants:
+                    return candidate_a
 
             # Běžný případ: jen odstraň -y (Nováky → Novák)
             return obs[:-1]
