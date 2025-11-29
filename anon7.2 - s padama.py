@@ -507,7 +507,7 @@ def infer_first_name_nominative(obs: str) -> str:
     lo = obs.lower()
 
     # DEBUG: Trace execution (disabled)
-    debug_this = (lo in {'líviie', 'elisca', 'elisce'})  # Enable for problematic names
+    debug_this = (lo in {'milici', 'krista', 'krist'})  # Enable for problematic names
     if debug_this:
         print(f"    [infer_first] INPUT: obs='{obs}', lo='{lo}'")
 
@@ -741,17 +741,32 @@ def infer_first_name_nominative(obs: str) -> str:
             print(f"    [infer_first] stem_lo in library: {stem_lo in CZECH_FIRST_NAMES}")
             print(f"    [infer_first] stem_a_lo in library: {stem_a_lo in CZECH_FIRST_NAMES}")
 
-        # PRIORITA: Pokud stem (bez 'a') je v knihovně, preferuj stem (Miloše → Miloš, Leoše → Leoš)
-        if stem_lo in CZECH_FIRST_NAMES:
-            if debug_this:
-                print(f"    [infer_first] FEMALE -y RETURN stem (in library): '{stem.capitalize()}'")
-            return stem.capitalize()
-
-        # DRUHÁ PRIORITA: zkontroluj stem_a v knihovně
+        # PRIORITA: Pokud stem_a je v knihovně, preferuj stem_a (ženská forma)
+        # Důvod: "Miladě" → stem="Milad" (v knihovně), stem_a="Milada" (v knihovně)
+        # Měli bychom preferovat "Milada" (ženská forma) místo "Milad" (genitiv)
         if stem_a_lo in CZECH_FIRST_NAMES:
             if debug_this:
-                print(f"    [infer_first] FEMALE -y RETURN (library): '{stem_a.capitalize()}'")
+                print(f"    [infer_first] FEMALE -y RETURN stem_a (library): '{stem_a.capitalize()}'")
             return stem_a.capitalize()
+
+        # DRUHÁ PRIORITA: Pokud POUZE stem je v knihovně
+        # VÝJIMKA: Pro vokativ -e (Kriste, Petře) NEPOUŽÍVEJ stem, protože to je pravděpodobně
+        # vokativ od ženského jména (Kriste → Krista), ne mužské jméno (Krist)
+        if stem_lo in CZECH_FIRST_NAMES:
+            # Pro vokativ -e: pokud stem je krátký (≤5 znaků) a končí na typickou mužskou koncovku,
+            # pravděpodobně je to ženský vokativ → zkus stem_a
+            if lo.endswith('e') and len(stem) <= 5:
+                # Zkus stem_a fallback (i když není v knihovně)
+                # Kriste → Krista (preferujeme před Krist)
+                # ALE POUZE pokud stem NENÍ zakončen na typické mužské vzory (š, č, ř, j)
+                if stem[-1].lower() not in 'ščřžj':
+                    if debug_this:
+                        print(f"    [infer_first] FEMALE -e FALLBACK stem_a: '{stem_a.capitalize()}'")
+                    return stem_a.capitalize()
+            # Jinak použij stem (Miloše → Miloš, Leoše → Leoš)
+            if debug_this:
+                print(f"    [infer_first] FEMALE -y RETURN stem (library): '{stem.capitalize()}'")
+            return stem.capitalize()
 
         # FALLBACK: OBECNÁ HEURISTIKA pro ženská jména mimo knihovnu
         # Pattern 1: končí na typické ženské vzory
@@ -826,6 +841,27 @@ def infer_first_name_nominative(obs: str) -> str:
         if stem.lower().endswith(('em', 'ovi', 'ím')):
             return infer_first_name_nominative(stem)
 
+    # Lokál: -i → -a pro ženská jména (Milici → Milica, Kristi → Krista)
+    # MUSÍ být PŘED zpracováním mužských jmen s -i (Tomáši → Tomáš)
+    # A PO zpracování -í/-ií/-ii
+    if lo.endswith('i') and not lo.endswith(('ovi', 'í', 'ií', 'ii')) and len(obs) > 2:
+        stem = obs[:-1]
+        stem_a = stem + 'a'
+        stem_a_lo = stem_a.lower()
+
+        # Zkontroluj, zda stem+a je ženské jméno v knihovně
+        if stem_a_lo in CZECH_FIRST_NAMES:
+            if debug_this:
+                print(f"    [infer_first] LOKÁL -i → -a RETURN: '{stem_a.capitalize()}'")
+            return stem_a.capitalize()
+
+        # FALLBACK: Pokud stem+a končí na typické ženské vzory
+        female_patterns = ('ica', 'ina', 'ana', 'ela', 'ara', 'ona', 'ika', 'ista', 'eta', 'ata')
+        if stem_a_lo.endswith(female_patterns):
+            if debug_this:
+                print(f"    [infer_first] LOKÁL -i RETURN (pattern): '{stem_a.capitalize()}'")
+            return stem_a.capitalize()
+
     # MUŽSKÁ JMÉNA - genitiv/dativ/instrumentál
     # DŮLEŽITÉ: Přeskoč male branch pro invalid tvary (např. "Elisce" s kmene "Elisc")
     invalid_stems_for_male = ('sc', 'ii', 'ií')
@@ -869,13 +905,21 @@ def infer_surname_nominative(obs: str) -> str:
     """
     lo = obs.lower()
 
+    # DEBUG
+    debug_surname = (lo in {'horňákové', 'horňák', 'hladká', 'hladký', 'hladeková'})
+    if debug_surname:
+        print(f"    [infer_surname] INPUT: obs='{obs}', lo='{lo}'")
+
     # ========== ŽENSKÁ PŘÍJMENÍ ==========
 
     # -é → -á (genitiv/dativ/lokál žen: Pokorné → Pokorná, Houfové → Houfová)
     if lo.endswith('é') and len(obs) > 3:
         # Kontrola, že není -ské/-cké (přídavné jméno)
         if not lo.endswith(('ské', 'cké')):
-            return obs[:-1] + 'á'
+            result = obs[:-1] + 'á'
+            if debug_surname:
+                print(f"    [infer_surname] -é → -á RETURN: '{result}'")
+            return result
 
     # -ou → může být -a (mužské příjmení Vrána → Vránou) nebo -á (ženské příjmení)
     # ALE TAKÉ může být -ek (Pavelek → Pavelkou s vložným e)
@@ -886,8 +930,10 @@ def infer_surname_nominative(obs: str) -> str:
             base_lo = base.lower()
 
             # PRIORITA 1: Zkontroluj jestli base končí na 'k' a může být vložné e (Pavelkou → Pavelek)
-            # Pavelkou: base="Pavelk" → může být Pavelek s vložným e
-            if base_lo.endswith('k') and len(base) >= 4:
+            # ALE POUZE pokud stem není příliš krátký (< 6 znaků) - to by bylo spíše -á
+            # Pavelkou: base="Pavelk" (6 znaků) → může být Pavelek s vložným e
+            # Hladkou: base="Hladk" (5 znaků) → pravděpodobně Hladká (ne Hladek) ✓
+            if base_lo.endswith('k') and len(base) >= 6:
                 # OBECNÉ PRAVIDLO: Příjmení končící na -ek mají v instrumentálu vložné 'e' vypuštěné
                 # Pavelkou (base="Pavelk") → Pavelek (přidat 'e')
                 # Krupičkou (base="Krupičk") → Krupičěk (přidat 'ě' po měkké souhlásce)
