@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-01T06:14:58.806733",
+  "generated_at": "2025-12-01T06:46:25.453833",
   "source_file": "smlouva18.docx",
   "entities": [
     {
@@ -78,7 +78,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_13]]",
-      "original": "Viktoria Kučerová",
+      "original": "Viktorie Kučerová",
       "occurrences": 1
     },
     {
