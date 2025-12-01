@@ -587,9 +587,18 @@ def infer_first_name_nominative(obs: str) -> str:
     if lo in dative_e_forms:
         return dative_e_forms[lo]
 
-    # PRIORITA: Jména končící na -ie (Lívie, Lucie) mohou být pády od -ia (Lívia)
-    # Pokud existuje -ia forma, preferuj ji jako nominativ
+    # PRIORITA: Jména končící na -ie (Lívie, Lucie)
+    # Nejdřív zkontroluj, zda -ie forma JE nominativ (Lucie)
+    # Pouze pokud NE, zkus -ia formu (Lívie → Lívia)
     if lo.endswith('ie') and len(obs) > 2:
+        # Pokud -ie forma je v knihovně, je to pravděpodobně nominativ
+        if lo in CZECH_FIRST_NAMES:
+            # Lucie, Marie - to jsou nominativy, ne pády
+            if debug_this:
+                print(f"    [infer_first] -ie is nominativ RETURN: '{obs.capitalize()}'")
+            return obs.capitalize()
+
+        # Pokud -ie forma NENÍ v knihovně, zkus -ia (Lívie → Lívia)
         stem_ia = obs[:-2] + 'ia'
         stem_ia_lo = stem_ia.lower()
         if stem_ia_lo in CZECH_FIRST_NAMES:
@@ -723,11 +732,17 @@ def infer_first_name_nominative(obs: str) -> str:
             stem_ia = obs[:-1] + 'ia'
             stem_ie = obs[:-1] + 'ie'
 
-        # PRIORITA: Zkus -ia (nominativ) před -ie (může být také pád)
-        if stem_ia.lower() in CZECH_FIRST_NAMES:
-            return stem_ia.capitalize()
-        if stem_ie.lower() in CZECH_FIRST_NAMES:
+        # PRIORITA: Preferuj -ie (češtější: Lucie, Marie) před -ia (slovenštější: Lucia, Maria)
+        # VÝJIMKA: Pokud pouze -ia je v knihovně (např. Lívia), použij -ia
+        stem_ia_in_lib = stem_ia.lower() in CZECH_FIRST_NAMES
+        stem_ie_in_lib = stem_ie.lower() in CZECH_FIRST_NAMES
+
+        if stem_ie_in_lib:
+            # -ie forma existuje → preferuj ji (Lucie před Lucia)
             return stem_ie.capitalize()
+        elif stem_ia_in_lib:
+            # Pouze -ia forma existuje → použij ji (Lívia)
+            return stem_ia.capitalize()
 
     # Genitiv/Dativ/Lokál: -y/-ě/-e → -a
     if lo.endswith(('y', 'ě', 'e')):
@@ -841,15 +856,23 @@ def infer_first_name_nominative(obs: str) -> str:
         if stem.lower().endswith(('em', 'ovi', 'ím')):
             return infer_first_name_nominative(stem)
 
-    # Lokál: -i → -a pro ženská jména (Milici → Milica, Kristi → Krista)
+    # Lokál: -i → -a nebo -e pro ženská jména (Milici → Milica, Alici → Alice, Kristi → Krista)
     # MUSÍ být PŘED zpracováním mužských jmen s -i (Tomáši → Tomáš)
     # A PO zpracování -í/-ií/-ii
     if lo.endswith('i') and not lo.endswith(('ovi', 'í', 'ií', 'ii')) and len(obs) > 2:
         stem = obs[:-1]
         stem_a = stem + 'a'
+        stem_e = stem + 'e'
         stem_a_lo = stem_a.lower()
+        stem_e_lo = stem_e.lower()
 
-        # Zkontroluj, zda stem+a je ženské jméno v knihovně
+        # PRIORITA 1: Zkontroluj stem+e (Alice, Beatrice)
+        if stem_e_lo in CZECH_FIRST_NAMES:
+            if debug_this:
+                print(f"    [infer_first] LOKÁL -i → -e RETURN: '{stem_e.capitalize()}'")
+            return stem_e.capitalize()
+
+        # PRIORITA 2: Zkontroluj stem+a (Milica, Krista)
         if stem_a_lo in CZECH_FIRST_NAMES:
             if debug_this:
                 print(f"    [infer_first] LOKÁL -i → -a RETURN: '{stem_a.capitalize()}'")

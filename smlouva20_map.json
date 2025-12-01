@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-11-27T12:14:56.405198",
+  "generated_at": "2025-12-01T06:16:29.484686",
   "source_file": "smlouva20.docx",
   "entities": [
     {
@@ -18,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucie Havelková",
+      "original": "Lucia Havelková",
       "occurrences": 1
     },
     {
@@ -30,235 +30,265 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Martina Jeřábková",
+      "original": "Petru Dohnal",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Tomáš Nguyen",
+      "original": "Martina Jeřábková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Eva Marečková",
+      "original": "Tomáš Nguyen",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "David Šembera",
+      "original": "Eva Marečková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_9]]",
-      "original": "Klára Šustrová",
+      "original": "David Šembera",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Daniel Mlynář",
+      "original": "Davida Šemberá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_11]]",
-      "original": "Daniela Mlynářová",
+      "original": "Klára Šustrová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
-      "original": "Tereza Pavlíková",
+      "original": "Daniel Mlynář",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_13]]",
-      "original": "Robert Vinkler",
+      "original": "Daniela Mlynářová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_14]]",
-      "original": "Simona Trčková",
+      "original": "Tereza Pavlíková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_15]]",
-      "original": "Michal Gregor",
+      "original": "Robert Vinkler",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_16]]",
-      "original": "Lenka Šípková",
+      "original": "Simona Trčková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_17]]",
-      "original": "Ondřej Vlček",
+      "original": "Michal Gregor",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_18]]",
-      "original": "Marcela Bočková",
+      "original": "Lenka Šípková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_19]]",
-      "original": "Viktor Havel",
+      "original": "Ondřej Vlček",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_20]]",
-      "original": "Barbora Němcová",
+      "original": "Marcela Bočková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
-      "original": "Radek Hofman",
+      "original": "Viktor Havel",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
-      "original": "Alžběta Konečná",
+      "original": "Barbora Němcová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_23]]",
-      "original": "Igor Vraný",
+      "original": "Radek Hofman",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_24]]",
-      "original": "Monika Hrabovská",
+      "original": "Alžběta Konečná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_25]]",
-      "original": "Roman Turek",
+      "original": "Igor Vraný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_26]]",
-      "original": "Kateřina Blažková",
+      "original": "Monika Hrabovská",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_27]]",
-      "original": "Filip Švec",
+      "original": "Roman Turek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_28]]",
-      "original": "Adéla Jarošová",
+      "original": "Kateřina Blažková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_29]]",
-      "original": "Jaroslav Černý",
+      "original": "Filip Švec",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_30]]",
-      "original": "Helena Vodičková",
+      "original": "Adéla Jarošová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_31]]",
-      "original": "Kamil Řezníček",
+      "original": "Jaroslav Černý",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_32]]",
-      "original": "Gabriela Pokorná",
+      "original": "Helena Vodičková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_33]]",
-      "original": "Štěpán Hrubeš",
+      "original": "Kamil Řezníček",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_34]]",
-      "original": "Nikola Šťastná",
+      "original": "Kamila Řezníčeková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_35]]",
-      "original": "Miroslav Vaněk",
+      "original": "Gabriela Pokorná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_36]]",
-      "original": "Renata Slámová",
+      "original": "Štěpán Hrubeš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_37]]",
-      "original": "Patrik Holík",
+      "original": "Nikola Šťastná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_38]]",
-      "original": "Markéta Benešová",
+      "original": "Miroslav Vaněk",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_39]]",
-      "original": "Erik Roubal",
+      "original": "Renata Slámová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_40]]",
-      "original": "Sabina Nedvědová",
+      "original": "Patrik Holík",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_41]]",
-      "original": "Aleš Kříž",
+      "original": "Markéta Benešová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_42]]",
-      "original": "Veronika Lacinová",
+      "original": "Erik Roubal",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_43]]",
+      "original": "Sabina Nedvědová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_44]]",
+      "original": "Aleš Kříž",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_45]]",
+      "original": "Aleša Křížová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_46]]",
+      "original": "Veronika Lacinová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_47]]",
       "original": "Adrian Kratochvíl",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_48]]",
+      "original": "Filipa Švecová",
       "occurrences": 1
     },
     {
