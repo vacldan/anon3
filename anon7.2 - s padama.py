@@ -614,12 +614,14 @@ def infer_first_name_nominative(obs: str) -> str:
     if lo in CZECH_FIRST_NAMES:
         # VÝJIMKA 1: Některá jména v knihovně jsou ve skutečnosti pády od jiných jmen
         # "petru" (dativ od Petr), "davida" (ženské jméno, ale také genitiv od David)
-        # Pro tato jména zkontroluj, zda base forma je také v knihovně
+        # Pro tato jména zkontroluj, zda base forma je také v knihovně NEBO je to známé mužské jméno
         ambiguous_in_library = {'petru', 'davida', 'marka', 'pavla', 'tomáše', 'lukáše'}
         if lo in ambiguous_in_library and lo.endswith(('a', 'u')) and len(obs) > 2:
             base = obs[:-1]
             base_lo = base.lower()
-            if base_lo in CZECH_FIRST_NAMES:
+            # Zkontroluj knihovnu nebo známá mužská jména
+            common_male_names = {'petr', 'david', 'marek', 'pavel', 'tomáš', 'lukáš', 'jan', 'jiří'}
+            if base_lo in CZECH_FIRST_NAMES or base_lo in common_male_names:
                 if debug_this:
                     print(f"    [infer_first] Ambiguous form, preferring base RETURN: '{base.capitalize()}'")
                 return base.capitalize()
@@ -1961,7 +1963,17 @@ class Anonymizer:
         if not text: return ""
         n = unicodedata.normalize('NFD', text)
         no_diac = ''.join(c for c in n if not unicodedata.combining(c))
-        return re.sub(r'[^A-Za-z]', '', no_diac).lower()
+        normalized = re.sub(r'[^A-Za-z]', '', no_diac).lower()
+
+        # Slovak→Czech varianty pro matching
+        # Alica→Alice, Lucia→Lucie, aby se považovaly za stejnou osobu
+        slovak_to_czech = {
+            'alica': 'alice',
+            'lucia': 'lucie'
+        }
+        normalized = slovak_to_czech.get(normalized, normalized)
+
+        return normalized
 
     def _ensure_person_tag(self, first_nom: str, last_nom: str) -> str:
         """Zajistí, že pro danou osobu existuje tag a vrátí ho."""
