@@ -398,8 +398,11 @@ def get_first_name_gender(name: str) -> str:
     if lo.endswith(('ie', 'y')) and len(lo) > 2:
         return 'F'
 
-    # Specifická ženská jména bez -a
-    female_exceptions = {'ruth', 'esther', 'carmen', 'mercedes', 'dagmar', 'ingrid', 'margit'}
+    # Specifická ženská jména (včetně těch končících na -e, které nejsou v knihovně)
+    female_exceptions = {
+        'ruth', 'esther', 'carmen', 'mercedes', 'dagmar', 'ingrid', 'margit',
+        'alice', 'beatrice', 'rose', 'marie', 'sophie', 'chloe'
+    }
     if lo in female_exceptions:
         return 'F'
 
@@ -609,6 +612,29 @@ def infer_first_name_nominative(obs: str) -> str:
     # KRITICKY DŮLEŽITÉ: Nejdřív zkontroluj, zda už je v nominativu (v knihovně jmen)
     # MUSÍ být PRVNÍ, aby se předešlo nesprávnému zpracování jako "Eliška" → "Elišk"
     if lo in CZECH_FIRST_NAMES:
+        # VÝJIMKA 1: Některá jména v knihovně jsou ve skutečnosti pády od jiných jmen
+        # "petru" (dativ od Petr), "davida" (ženské jméno, ale také genitiv od David)
+        # Pro tato jména zkontroluj, zda base forma je také v knihovně
+        ambiguous_in_library = {'petru', 'davida', 'marka', 'pavla', 'tomáše', 'lukáše'}
+        if lo in ambiguous_in_library and lo.endswith(('a', 'u')) and len(obs) > 2:
+            base = obs[:-1]
+            base_lo = base.lower()
+            if base_lo in CZECH_FIRST_NAMES:
+                if debug_this:
+                    print(f"    [infer_first] Ambiguous form, preferring base RETURN: '{base.capitalize()}'")
+                return base.capitalize()
+
+        # VÝJIMKA 2: Preferuj české varianty před slovenskými
+        # "alica" (SK) → "alice" (CZ), "lucia" (SK) → "lucie" (CZ)
+        slovak_to_czech = {
+            'alica': 'alice',
+            'lucia': 'lucie'
+        }
+        if lo in slovak_to_czech:
+            if debug_this:
+                print(f"    [infer_first] Slovak variant, preferring Czech RETURN: '{slovak_to_czech[lo].capitalize()}'")
+            return slovak_to_czech[lo].capitalize()
+
         if debug_this:
             print(f"    [infer_first] Already in library RETURN: '{obs.capitalize()}'")
         return obs.capitalize()
@@ -751,6 +777,19 @@ def infer_first_name_nominative(obs: str) -> str:
         stem_a_lo = stem_a.lower()
         stem_lo = stem.lower()
 
+        # SPECIÁLNÍ: Dativ s vložným 'e' (Mirce → Mirka, Stánce → Stánka)
+        # Pokud stem končí na -rc, -nc, -lc → odstraň 'c' a přidej 'ka'
+        if lo.endswith('ce') and len(stem) >= 3:
+            prev_chars = stem[-2:].lower()
+            if prev_chars in ('rc', 'nc', 'lc'):
+                # Mirce: stem="Mirc" → odstraň 'c' → "Mir" + "ka" = "Mirka"
+                stem_without_c = obs[:-2]  # Odstraň 'ce'
+                stem_ka = stem_without_c + 'ka'
+                if stem_ka.lower() in CZECH_FIRST_NAMES:
+                    if debug_this:
+                        print(f"    [infer_first] DATIV -ce → -ka RETURN: '{stem_ka.capitalize()}'")
+                    return stem_ka.capitalize()
+
         if debug_this:
             print(f"    [infer_first] FEMALE -y/-ě/-e: stem='{stem}', stem_a='{stem_a}'")
             print(f"    [infer_first] stem_lo in library: {stem_lo in CZECH_FIRST_NAMES}")
@@ -866,7 +905,15 @@ def infer_first_name_nominative(obs: str) -> str:
         stem_a_lo = stem_a.lower()
         stem_e_lo = stem_e.lower()
 
-        # PRIORITA 1: Zkontroluj stem+e (Alice, Beatrice)
+        # PRIORITA 1a: České varianty končící na -e (i když nejsou v knihovně)
+        # Preferujeme Alice před Alica, Beatrice před Beatrica
+        czech_e_names = {'alice', 'beatrice', 'clarice', 'berenice'}
+        if stem_e_lo in czech_e_names:
+            if debug_this:
+                print(f"    [infer_first] LOKÁL -i → -e (česká varianta) RETURN: '{stem_e.capitalize()}'")
+            return stem_e.capitalize()
+
+        # PRIORITA 1b: Zkontroluj stem+e v knihovně
         if stem_e_lo in CZECH_FIRST_NAMES:
             if debug_this:
                 print(f"    [infer_first] LOKÁL -i → -e RETURN: '{stem_e.capitalize()}'")
@@ -2497,8 +2544,13 @@ class Anonymizer:
                     # Jméno končí na souhlásku → přidej 'a'
                     first_nom = (first_obs + 'a').capitalize()
                 elif first_lo.endswith('a'):
-                    # Jméno už končí na 'a' → je to pravděpodobně nominativ ženského jména, ponech
-                    first_nom = first_obs.capitalize()
+                    # Jméno už končí na 'a' → je to pravděpodobně nominativ ženského jména
+                    # VÝJIMKA: Slovak varianty konvertuj na Czech
+                    slovak_to_czech = {'alica': 'alice', 'lucia': 'lucie'}
+                    if first_lo in slovak_to_czech:
+                        first_nom = slovak_to_czech[first_lo].capitalize()
+                    else:
+                        first_nom = first_obs.capitalize()
                 elif first_lo.endswith('u') and not first_lo.endswith('ou') and len(first_obs) > 2:
                     # KRITICKÁ OPRAVA: "Martinu" (dativ) s ženským příjmením → "Martina"
                     # Odstraň 'u', přidej 'a' (Martinu → Martin + a = Martina)
@@ -2535,7 +2587,8 @@ class Anonymizer:
                         print(f"    [BRANCH-2] first_nom='{first_nom}'")
                 elif first_lo in CZECH_FIRST_NAMES:
                     # Jméno je v knihovně → pravděpodobně nominativ
-                    first_nom = first_obs.capitalize()
+                    # Inference funkce už sama řeší ambiguous forms (petru, davida, atd.)
+                    first_nom = infer_first_name_nominative(first_obs)
                 else:
                     # Není v knihovně a nemá typickou koncovku → zkus inference
                     # To zachytí Zuzan, Pavl, Radk, Hynk atd.
