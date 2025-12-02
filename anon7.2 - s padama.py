@@ -825,32 +825,48 @@ def infer_first_name_nominative(obs: str) -> str:
             print(f"    [infer_first] stem_lo in library: {stem_lo in CZECH_FIRST_NAMES}")
             print(f"    [infer_first] stem_a_lo in library: {stem_a_lo in CZECH_FIRST_NAMES}")
 
-        # PRIORITA: Pokud stem_a je v knihovně, preferuj stem_a (ženská forma)
-        # Důvod: "Miladě" → stem="Milad" (v knihovně), stem_a="Milada" (v knihovně)
-        # Měli bychom preferovat "Milada" (ženská forma) místo "Milad" (genitiv)
-        if stem_a_lo in CZECH_FIRST_NAMES:
-            if debug_this:
-                print(f"    [infer_first] FEMALE -y RETURN stem_a (library): '{stem_a.capitalize()}'")
-            return stem_a.capitalize()
+        # PRIORITA: Rozhodování mezi stem a stem_a
+        # Když OBOJÍ je v knihovně → preferuj stem_a (ženská forma: Milada před Milad)
+        # Když POUZE stem je v knihovně → kontroluj, zda je to mužské nebo ženské jméno
 
-        # DRUHÁ PRIORITA: Pokud POUZE stem je v knihovně
-        # VÝJIMKA: Pro vokativ -e (Kriste, Petře) NEPOUŽÍVEJ stem, protože to je pravděpodobně
-        # vokativ od ženského jména (Kriste → Krista), ne mužské jméno (Krist)
-        if stem_lo in CZECH_FIRST_NAMES:
-            # Pro vokativ -e: pokud stem je krátký (≤5 znaků) a končí na typickou mužskou koncovku,
-            # pravděpodobně je to ženský vokativ → zkus stem_a
-            if lo.endswith('e') and len(stem) <= 5:
-                # Zkus stem_a fallback (i když není v knihovně)
-                # Kriste → Krista (preferujeme před Krist)
-                # ALE POUZE pokud stem NENÍ zakončen na typické mužské vzory (š, č, ř, j)
-                if stem[-1].lower() not in 'ščřžj':
-                    if debug_this:
-                        print(f"    [infer_first] FEMALE -e FALLBACK stem_a: '{stem_a.capitalize()}'")
-                    return stem_a.capitalize()
-            # Jinak použij stem (Miloše → Miloš, Leoše → Leoš)
+        stem_a_in_lib = stem_a_lo in CZECH_FIRST_NAMES
+        stem_in_lib = stem_lo in CZECH_FIRST_NAMES
+
+        if stem_in_lib and stem_a_in_lib:
+            # OBOJÍ v knihovně → preferuj stem_a (ženská forma)
             if debug_this:
-                print(f"    [infer_first] FEMALE -y RETURN stem (library): '{stem.capitalize()}'")
+                print(f"    [infer_first] Both in library, preferring stem_a: '{stem_a.capitalize()}'")
+            return stem_a.capitalize()
+        elif stem_in_lib:
+            # POUZE stem v knihovně
+            # Kontrola: Je to mužské jméno v genitivu (Boris, Tomáš, Aleš)?
+            # Nebo ženský genitiv (Milad od Milada)?
+
+            # Heuristika: Mužská jména v genitivu typicky končí na souhlásky, zejména:
+            # -s (Boris, Tomáš), -š (Aleš, Miloš), -ch (Bedřich), -k, -l, -n, -r
+            male_nom_endings = ('s', 'š', 'č', 'ř', 'ž', 'ch', 'k', 'l', 'n', 'r', 'm', 'd', 't', 'p', 'b', 'v', 'j')
+            if any(stem_lo.endswith(ending) for ending in male_nom_endings) and len(stem) >= 4:
+                # Vypadá jako mužské jméno v nominativu → vrať stem
+                if debug_this:
+                    print(f"    [infer_first] Stem looks like male nom, RETURN stem: '{stem.capitalize()}'")
+                return stem.capitalize()
+
+            # Pro krátká jména (≤4 znaky) nebo jména končící na neobvyklé koncovky → zkus stem_a
+            # Kriste → Krista, Petře → Petra (vokativ)
+            if len(stem) <= 4 or not stem_lo[-1].isalpha():
+                if debug_this:
+                    print(f"    [infer_first] Short stem or unusual ending, FALLBACK stem_a: '{stem_a.capitalize()}'")
+                return stem_a.capitalize()
+
+            # Default: vrať stem
+            if debug_this:
+                print(f"    [infer_first] RETURN stem (in library): '{stem.capitalize()}'")
             return stem.capitalize()
+        elif stem_a_in_lib:
+            # POUZE stem_a v knihovně → vrať stem_a
+            if debug_this:
+                print(f"    [infer_first] Only stem_a in library, RETURN: '{stem_a.capitalize()}'")
+            return stem_a.capitalize()
 
         # FALLBACK: OBECNÁ HEURISTIKA pro ženská jména mimo knihovnu
         # Pattern 1: končí na typické ženské vzory
