@@ -374,12 +374,23 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
     # PRIORITA 5: Genitiv/Akuzativ -a → remove (Petra → Petr, ale i Jana → Jan)
     if lo.endswith('a') and len(obs) > 1:
         cand = obs[:-1]
+        cand_lo = cand.lower()
         if debug_this:
-            print(f"      [_male_gen] PRIORITA 5: -a branch, cand='{cand}', in library: {cand.lower() in CZECH_FIRST_NAMES}")
-        if cand.lower() in CZECH_FIRST_NAMES:
+            print(f"      [_male_gen] PRIORITA 5: -a branch, cand='{cand}', in library: {cand_lo in CZECH_FIRST_NAMES}")
+        if cand_lo in CZECH_FIRST_NAMES:
             if debug_this:
                 print(f"      [_male_gen] PRIORITA 5 RETURN: '{cand.capitalize()}'")
             return cand.capitalize()
+
+        # HEURISTIKA: I když není v knihovně, pokud vypadá jako typické mužské jméno
+        # (končí na -el, -il, -im, -om, -eš, -oš, atd.), je to pravděpodobně genitiv
+        male_name_patterns = ('el', 'il', 'im', 'om', 'eš', 'oš', 'an', 'en', 'on', 'ín', 'ír',
+                             'it', 'át', 'út', 'ek', 'ík', 'ák', 'uk', 'av', 'ev', 'iv', 'oj', 'aj')
+        if any(cand_lo.endswith(pattern) for pattern in male_name_patterns):
+            if debug_this:
+                print(f"      [_male_gen] PRIORITA 5 HEURISTIC RETURN: '{cand.capitalize()}' (matches male pattern)")
+            return cand.capitalize()
+
         cands.append(cand)
 
     # Vrať první kandidát (pokud existuje)
@@ -613,14 +624,14 @@ def infer_first_name_nominative(obs: str) -> str:
     # MUSÍ být PRVNÍ, aby se předešlo nesprávnému zpracování jako "Eliška" → "Elišk"
     if lo in CZECH_FIRST_NAMES:
         # VÝJIMKA 1: Některá jména v knihovně jsou ve skutečnosti pády od jiných jmen
-        # "petru" (dativ od Petr), "davida" (ženské jméno, ale také genitiv od David)
-        # Pro tato jména zkontroluj, zda base forma je také v knihovně NEBO je to známé mužské jméno
-        ambiguous_in_library = {'petru', 'davida', 'marka', 'pavla', 'tomáše', 'lukáše'}
-        if lo in ambiguous_in_library and lo.endswith(('a', 'u')) and len(obs) > 2:
+        # "petru" (dativ od Petr), "davida" (ženské jméno ale genitiv od David), "kamila" (genitiv od Kamil)
+        # Pro VŠECHNA jména končící na -a/-u zkontroluj, zda base forma je také v knihovně
+        if lo.endswith(('a', 'u')) and len(obs) > 2:
             base = obs[:-1]
             base_lo = base.lower()
             # Zkontroluj knihovnu nebo známá mužská jména
-            common_male_names = {'petr', 'david', 'marek', 'pavel', 'tomáš', 'lukáš', 'jan', 'jiří'}
+            common_male_names = {'petr', 'david', 'marek', 'pavel', 'tomáš', 'lukáš', 'jan', 'jiří', 'kamil',
+                               'daniel', 'filip', 'aleš', 'stanislav', 'jaroslav', 'rostislav', 'ladislav'}
             if base_lo in CZECH_FIRST_NAMES or base_lo in common_male_names:
                 if debug_this:
                     print(f"    [infer_first] Ambiguous form, preferring base RETURN: '{base.capitalize()}'")
@@ -681,6 +692,23 @@ def infer_first_name_nominative(obs: str) -> str:
         if base_lo in CZECH_FIRST_NAMES:
             if debug_this:
                 print(f"    [infer_first] PRIORITA a/u RETURN base: '{base.capitalize()}'")
+            return base.capitalize()
+
+        # HEURISTIKA: I když base NENÍ v knihovně, pokud vypadá jako typické mužské jméno
+        # (končí na -el, -il, -im, -om, -eš, -š, -is, -ch atd.), je to pravděpodobně genitiv/dativ
+        # Např. "Daniela" → "Daniel", "Borisa" → "Boris", "Bedřicha" → "Bedřich"
+        male_name_patterns = (
+            'el', 'il', 'im', 'om', 'eš', 'oš', 'aš', 'iš', 'uš', 'yš',
+            'an', 'en', 'on', 'ín', 'ír', 'it', 'át', 'út',
+            'ek', 'ík', 'ák', 'uk', 'av', 'ev', 'iv', 'oj', 'aj', 'ej', 'ij',
+            'áš', 'éš', 'íš', 'óš', 'úš',  # S diakritikou
+            'š', 'ž', 'č', 'ř',  # Samotné měkké souhlásky
+            'is', 'us', 'os', 'as',  # Latinská jména (Boris, Marcus)
+            'ich', 'ích', 'ch'  # Jména jako Bedřich, Jindřich
+        )
+        if any(base_lo.endswith(pattern) for pattern in male_name_patterns) and len(base) >= 3:
+            if debug_this:
+                print(f"    [infer_first] PRIORITA a/u HEURISTIC RETURN base: '{base.capitalize()}' (male pattern)")
             return base.capitalize()
 
     # Zkontroluj TRUNKACE - pokud jméno vypadá jako zkrácené (končí souhláskou)
@@ -922,7 +950,22 @@ def infer_first_name_nominative(obs: str) -> str:
             return stem_e.capitalize()
 
         # PRIORITA 2: Zkontroluj stem+a (Milica, Krista)
+        # ALE: Pokud stem (bez 'a') je také v knihovně nebo je mužské jméno, preferuj stem
+        # Např. "Aleši" → stem="Aleš" (mužské), stem_a="Aleša" (ženské) → preferuj "Aleš"
         if stem_a_lo in CZECH_FIRST_NAMES:
+            # Kontrola: Je stem mužské jméno?
+            stem_lo = stem.lower()
+            if stem_lo in CZECH_FIRST_NAMES:
+                # Obojí je v knihovně → preferuj stem (mužské jméno v dativu)
+                if debug_this:
+                    print(f"    [infer_first] LOKÁL -i: both in library, preferring stem RETURN: '{stem.capitalize()}'")
+                return stem.capitalize()
+            # Pokud stem končí na měkkou souhlásku (š, ž, č, ř), je to pravděpodobně mužské jméno v dativu
+            if stem_lo.endswith(('š', 'ž', 'č', 'ř', 'ň', 'ť', 'ď', 'j')) and len(stem) >= 3:
+                if debug_this:
+                    print(f"    [infer_first] LOKÁL -i: stem ends with soft consonant, preferring stem RETURN: '{stem.capitalize()}'")
+                return stem.capitalize()
+            # Jinak vrať stem+a (ženské jméno)
             if debug_this:
                 print(f"    [infer_first] LOKÁL -i → -a RETURN: '{stem_a.capitalize()}'")
             return stem_a.capitalize()
@@ -2622,39 +2665,79 @@ class Anonymizer:
 
             # POST-PROCESSING: Oprava příjmení podle pohlaví křestního jména
             # Pokud máme ženské jméno ale mužské příjmení (nebo naopak), oprav to
-            first_gender = get_first_name_gender(first_nom)
-            last_is_female = last_nom.lower().endswith(('ová', 'á'))
+            #
+            # KRITICKÁ KONTROLA: Pokud OBOJÍ (jméno i příjmení) vypadají jako pády,
+            # je to pravděpodobně mužská osoba v pádu (např. "Daniela Mlynáře" genitiv)
+            # V takovém případě NEPROVÁDÍME post-processing
+            first_looks_declined = (
+                first_obs.lower() != first_nom.lower() and
+                first_obs.lower().endswith(('a', 'e', 'u', 'y', 'ovi', 'em', 'i', 'ou'))
+            )
+            last_looks_declined = (
+                last_obs.lower() != last_nom.lower() and
+                last_obs.lower().endswith(('a', 'e', 'y', 'ovi', 'em', 'ou', 'ě', 'i'))
+            )
 
-            if first_gender == 'F' and not last_is_female:
-                # Ženské jméno, ale příjmení není ženské → přidej -ová/-á
-                last_lo = last_nom.lower()
-                if last_lo.endswith('a') and last_nom[-1] == 'a':  # končí na krátké 'a'
-                    # Novotna → Novotná, Plíškova → Plíšková, Konečna → Konečná
-                    last_nom = last_nom[:-1] + 'á'
-                elif last_nom.lower()[-1] in 'bcčdďfghjklmnňpqrřsštťvwxzž':
-                    # Končí na souhlásku → přidej -ová
-                    last_nom = last_nom + 'ová'
-            elif first_gender == 'M' and last_is_female:
-                # Mužské jméno, ale příjmení je ženské → odstraň -ová/-á
-                last_lo = last_nom.lower()
-                if last_lo.endswith('ová'):
-                    # Jeřábková → Jeřábek (s vložným 'e')
-                    base = last_nom[:-3]  # Odstraň "ová"
-                    # Zkontroluj jestli potřebuje vložné 'e'
-                    if len(base) >= 2 and base[-1].lower() in 'kbc':
-                        prev = base[-2].lower() if len(base) >= 2 else ''
-                        if prev in 'bcdfghjklmnpqrstvwxzž':
-                            # Přidej vložné 'e' před poslední souhláskou
-                            soft = base[-1].lower() in 'čšžřcj'
-                            e_char = 'ě' if soft else 'e'
-                            last_nom = base[:-1] + e_char + base[-1]
+            # Pokud OBOJÍ vypadají jako pády, je to pravděpodobně mužská osoba v pádu
+            # Inference možná selhala, ale post-processing by to jen zhoršil
+            both_declined = first_looks_declined and last_looks_declined
+
+            # Další kontrola: Pokud first_nom končí na -a, ale first_obs také,
+            # a last_obs končil na pádové koncovce, je to pravděpodobně genitiv
+            # Příklad: "Daniela Mlynáře" → first_nom="Daniela", last_nom="Mlynář"
+            # first_nom končí -a (vypadá žensky), ale je to genitiv od Daniel
+            genitiv_pattern = (
+                first_nom.lower().endswith('a') and
+                first_obs.lower().endswith('a') and
+                last_obs.lower().endswith(('e', 'a', 'y', 'e'))
+            )
+
+            if both_declined or genitiv_pattern:
+                # Pravděpodobně mužská osoba v pádu → inference selhala
+                # NEVYKONÁVEJ post-processing, použij inference znovu nebo nech tak
+                # DEBUG: pro analýzu
+                debug_declined = ['daniel', 'kamil', 'aleš', 'filip', 'samuel', 'stanislav',
+                                'rostislav', 'bedřich', 'vít', 'štefan', 'boris', 'radomír',
+                                'albín', 'jaromír', 'vladimír', 'dalimil', 'lubomír', 'jaroslav', 'bohdan']
+                if any(name in first_nom.lower() for name in debug_declined):
+                    print(f"    [POST-SKIP] Both declined: first_obs='{first_obs}', last_obs='{last_obs}'")
+                    print(f"    [POST-SKIP] Inferred: first_nom='{first_nom}', last_nom='{last_nom}'")
+                    print(f"    [POST-SKIP] Skipping post-processing, likely male in case")
+            else:
+                # Normální post-processing
+                first_gender = get_first_name_gender(first_nom)
+                last_is_female = last_nom.lower().endswith(('ová', 'á'))
+
+                if first_gender == 'F' and not last_is_female:
+                    # Ženské jméno, ale příjmení není ženské → přidej -ová/-á
+                    last_lo = last_nom.lower()
+                    if last_lo.endswith('a') and last_nom[-1] == 'a':  # končí na krátké 'a'
+                        # Novotna → Novotná, Plíškova → Plíšková, Konečna → Konečná
+                        last_nom = last_nom[:-1] + 'á'
+                    elif last_nom.lower()[-1] in 'bcčdďfghjklmnňpqrřsštťvwxzž':
+                        # Končí na souhlásku → přidej -ová
+                        last_nom = last_nom + 'ová'
+                elif first_gender == 'M' and last_is_female:
+                    # Mužské jméno, ale příjmení je ženské → odstraň -ová/-á
+                    last_lo = last_nom.lower()
+                    if last_lo.endswith('ová'):
+                        # Jeřábková → Jeřábek (s vložným 'e')
+                        base = last_nom[:-3]  # Odstraň "ová"
+                        # Zkontroluj jestli potřebuje vložné 'e'
+                        if len(base) >= 2 and base[-1].lower() in 'kbc':
+                            prev = base[-2].lower() if len(base) >= 2 else ''
+                            if prev in 'bcdfghjklmnpqrstvwxzž':
+                                # Přidej vložné 'e' před poslední souhláskou
+                                soft = base[-1].lower() in 'čšžřcj'
+                                e_char = 'ě' if soft else 'e'
+                                last_nom = base[:-1] + e_char + base[-1]
+                            else:
+                                last_nom = base
                         else:
                             last_nom = base
-                    else:
-                        last_nom = base
-                elif last_lo.endswith('á'):
-                    # Malá → Malý, Nová → Nový
-                    last_nom = last_nom[:-1] + 'ý'
+                    elif last_lo.endswith('á'):
+                        # Malá → Malý, Nová → Nový
+                        last_nom = last_nom[:-1] + 'ý'
 
             # Vytvoř nebo najdi tag pro tuto osobu
             tag = self._ensure_person_tag(first_nom, last_nom)
