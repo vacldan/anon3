@@ -272,6 +272,16 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
             # Přidej obě varianty jako kandidáty
             cands.append(cand_with_e)
 
+        # Zkus vložné 'a' na konci (Oldovi → Olda, Renovi → Rena)
+        # POUZE pro krátké kmeny (3-4 znaky) které vypadají jako zdrobněliny
+        if len(cand) <= 4 and len(cand) >= 2:
+            cand_with_a = cand + 'a'
+            if cand_with_a.lower() in CZECH_FIRST_NAMES:
+                return cand_with_a.capitalize()
+            # FALLBACK: Pokud cand_with_a vypadá jako validní jméno (končí na souhláska+a)
+            if cand[-1] not in 'aeiouáéíóúůýě':
+                cands.append(cand_with_a)
+
         cands.append(cand)
 
     # PRIORITA 2b: Dativ/vokativ -i → remove (Tomáši → Tomáš, Aleši → Aleš, Lukáši → Lukáš)
@@ -383,9 +393,10 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
             return cand.capitalize()
 
         # HEURISTIKA: I když není v knihovně, pokud vypadá jako typické mužské jméno
-        # (končí na -el, -il, -im, -om, -eš, -oš, atd.), je to pravděpodobně genitiv
+        # (končí na -el, -il, -im, -om, -eš, -oš, -ch, atd.), je to pravděpodobně genitiv
         male_name_patterns = ('el', 'il', 'im', 'om', 'eš', 'oš', 'an', 'en', 'on', 'ín', 'ír',
-                             'it', 'át', 'út', 'ek', 'ík', 'ák', 'uk', 'av', 'ev', 'iv', 'oj', 'aj')
+                             'it', 'át', 'út', 'ek', 'ík', 'ák', 'uk', 'av', 'ev', 'iv', 'oj', 'aj',
+                             'ch', 'ich', 'ích')
         if any(cand_lo.endswith(pattern) for pattern in male_name_patterns):
             if debug_this:
                 print(f"      [_male_gen] PRIORITA 5 HEURISTIC RETURN: '{cand.capitalize()}' (matches male pattern)")
@@ -408,6 +419,11 @@ def get_first_name_gender(name: str) -> str:
         return 'F'
     if lo.endswith(('ie', 'y')) and len(lo) > 2:
         return 'F'
+
+    # Specifická mužská jména končící na -e (francouzská)
+    male_e_names = {'rene', 'pierre', 'andre', 'antoine'}
+    if lo in male_e_names:
+        return 'M'
 
     # Specifická ženská jména (včetně těch končících na -e, které nejsou v knihovně)
     female_exceptions = {
@@ -568,6 +584,11 @@ def infer_first_name_nominative(obs: str) -> str:
     if lo == 'alica':
         return 'Alice'
 
+    # Rene je mužské francouzské jméno končící na -e (ne "Rena")
+    # "Renem" (instrumentál) → "Rene", ne "Ren"
+    if lo in ('rene', 'renem', 'renemu'):
+        return 'Rene'
+
     # Dativ/Lokál -ě formy (Unicode normalization může způsobit problémy s endswith)
     # Používám přesný match místo endswith
     dative_e_forms = {
@@ -592,6 +613,7 @@ def infer_first_name_nominative(obs: str) -> str:
         'helze': 'Helga',  # dativ/lokál -ze → -ga
         'ele': 'Ela',  # dativ/lokál -e → -a
         'andreo': 'Andrea',  # dativ -eo pro -ea jména
+        'andree': 'Andrea',  # lokál "Andree Říhové" → Andrea
         'alicí': 'Alice',  # instrumentál -í → -ie
         'alici': 'Alice',  # dativ/lokál -i → -ie
         'monice': 'Monika',
