@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-01T07:50:22.176088",
+  "generated_at": "2025-12-02T13:17:08.163909",
   "source_file": "smlouva19.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Daniela Horská",
+      "original": "Daniel Horská",
       "occurrences": 1
     },
     {
@@ -114,7 +114,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_19]]",
-      "original": "Denisa Kadlecová",
+      "original": "Denis Kadlecová",
       "occurrences": 1
     },
     {
@@ -132,7 +132,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
-      "original": "Tamara Štefková",
+      "original": "Tamar Štefková",
       "occurrences": 1
     },
     {
