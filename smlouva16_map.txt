@@ -1,0 +1,224 @@
+OSOBY
+-----
+[[PERSON_1]]: Tomáš Novák
+  - Tomáše Nováka
+[[PERSON_2]]: Jan Nováková
+  - Jana Nováková
+[[PERSON_3]]: Petr Horáková
+  - Petra Horáková
+[[PERSON_4]]: Martin Horák
+[[PERSON_5]]: Robert Svoboda
+[[PERSON_6]]: Martin Svoboda
+[[PERSON_7]]: Pavel Dvořák
+[[PERSON_8]]: Pavel Horák
+[[PERSON_9]]: Eva Svobodová
+[[PERSON_10]]: Tomáš Dvořák
+[[PERSON_11]]: Han Malá
+  - Hana Malá
+[[PERSON_12]]: Petra Nováková
+[[PERSON_13]]: Jana Horáková
+[[PERSON_14]]: Petr Novák
+[[PERSON_15]]: Karel Procházka
+[[PERSON_16]]: Lucie Dvořáková
+[[PERSON_17]]: Han Nováková
+  - Hana Nováková
+[[PERSON_18]]: Tomáš Horák
+[[PERSON_19]]: Pavel Novák
+[[PERSON_20]]: Petr Dvořáková
+  - Petra Dvořáková
+[[PERSON_21]]: Eva Malá
+[[PERSON_22]]: Robert Novák
+[[PERSON_23]]: Petr Svobodová
+  - Petra Svobodová
+[[PERSON_24]]: Tomáš Veselý
+[[PERSON_25]]: Jan Svobodová
+  - Jana Svobodová
+
+ACCOUNT_ID
+----------
+[[ACCOUNT_ID_1]]: 987654321098
+
+ADDRESS
+-------
+[[ADDRESS_1]]: Pařížská 123/45, 110 00 Praha 1
+[[ADDRESS_2]]: Mánesova 67/89, 120 00 Praha 2
+[[ADDRESS_3]]: Evropská 234/56, 160 00 Praha 6
+[[ADDRESS_4]]: Karlovo náměstí 89/34, 120 00 Praha 2
+[[ADDRESS_5]]: Vinohradská 234/78, 130 00 Praha 3
+[[ADDRESS_6]]: Korunní 123/45, 120 00 Praha 2
+[[ADDRESS_7]]: Slezská 67/89, 130 00 Praha 3
+[[ADDRESS_8]]: Mánesova 45/12, 160 00 Praha 6
+[[ADDRESS_9]]: Karlovo náměstí 89/34, Praha 2
+[[ADDRESS_10]]: Pařížská 67, Praha 1
+
+API_KEY
+-------
+[[API_KEY_1]]: s
+[[API_KEY_2]]: AKIAJ7XYZ3EXAMPLE
+[[API_KEY_3]]: _2
+[[API_KEY_4]]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+[[API_KEY_5]]: _4
+
+BANK
+----
+[[BANK_1]]: 9876543210/0800
+[[BANK_2]]: 1234567890/2700
+[[BANK_3]]: 4567890123/5500
+[[BANK_4]]: 7890123456/0800
+[[BANK_5]]: 3456789012/2700
+[[BANK_6]]: 9012345678/0800
+[[BANK_7]]: 5678901234/5500
+[[BANK_8]]: 2345678901/0100
+[[BANK_9]]: 6789012345/0800
+[[BANK_10]]: 8901234567/2700
+[[BANK_11]]: 3456789012/5500
+[[BANK_12]]: 7890123456/0100
+[[BANK_13]]: 8888888888/0800
+
+BIRTH_ID
+--------
+[[BIRTH_ID_1]]: 750615/1234
+[[BIRTH_ID_2]]: 780923/5634
+[[BIRTH_ID_3]]: 785822/6734
+[[BIRTH_ID_4]]: 760512/2314
+[[BIRTH_ID_5]]: 820315/1823
+[[BIRTH_ID_6]]: 900523/4521
+[[BIRTH_ID_7]]: 730812/2314
+[[BIRTH_ID_8]]: 851023/6745
+[[BIRTH_ID_9]]: 680615/1923
+[[BIRTH_ID_10]]: 880712/5634
+[[BIRTH_ID_11]]: 920315/4567
+[[BIRTH_ID_12]]: 950823/6723
+[[BIRTH_ID_13]]: 870512/2314
+[[BIRTH_ID_14]]: 650823/1234
+[[BIRTH_ID_15]]: 875615/4521
+[[BIRTH_ID_16]]: 920315/2314
+[[BIRTH_ID_17]]: 750923/6734
+[[BIRTH_ID_18]]: 680512/1234
+[[BIRTH_ID_19]]: 721108/5634
+[[BIRTH_ID_20]]: 750823/2314
+[[BIRTH_ID_21]]: 900523/6745
+[[BIRTH_ID_22]]: 820923/6745
+
+BIRTH_PLACE
+-----------
+[[BIRTH_PLACE_1]]: Brno
+[[BIRTH_PLACE_2]]: Praha
+
+DATE
+----
+[[DATE_1]]: 15.06.1975
+[[DATE_2]]: 22.08.1978
+[[DATE_3]]: 23.05.1990
+[[DATE_4]]: 23.08.1965
+[[DATE_5]]: 15.06.1987
+[[DATE_6]]: 15.03.1992
+[[DATE_7]]: 23.09.1975
+
+DIC
+---
+[[DIC_1]]: CZ7506151234
+[[DIC_2]]: CZ12345678
+[[DIC_3]]: CZ23456789
+
+EMAIL
+-----
+[[EMAIL_1]]: tomas.novak@personal.cz
+[[EMAIL_2]]: petra.horakova.md@email.cz
+[[EMAIL_3]]: r.svoboda@healthtech-fund.cz
+[[EMAIL_4]]: m.svoboda@medcare.cz
+[[EMAIL_5]]: p.dvorak@kpmg.cz
+[[EMAIL_6]]: j.novakova@medcare.cz
+[[EMAIL_7]]: p.horak@medcare.cz
+[[EMAIL_8]]: e.svobodova@medcare.cz
+[[EMAIL_9]]: t.dvorak@medcare.cz
+[[EMAIL_10]]: p.novak@medcare.cz
+[[EMAIL_11]]: k.prochazka@email.cz
+[[EMAIL_12]]: l.dvorakova@gmail.com
+[[EMAIL_13]]: jana.nova@techsolutions.cz
+[[EMAIL_14]]: m.svoboda@email.cz
+[[EMAIL_15]]: j.horakova@centrum.cz
+[[EMAIL_16]]: it@medcare.cz
+[[EMAIL_17]]: petr.novak@medcare.cz
+[[EMAIL_18]]: martin.svoboda@medcare.cz
+[[EMAIL_19]]: admin@medcare.cz
+[[EMAIL_20]]: eva.mala@gdpr-consult.cz
+[[EMAIL_21]]: p.dvorak@medcenter.cz
+[[EMAIL_22]]: pdvorak@kpmg.cz
+[[EMAIL_23]]: j.svobodova@legalpro.cz
+
+HOST
+----
+[[HOST_1]]: medcare-prod.c9akciq32.eu-central-1.rds.amazonaws.com
+
+IBAN
+----
+[[IBAN_1]]: CZ98 0800 0000 0098 7654 3210
+[[IBAN_2]]: CZ12 2700 0000 0012 3456 7890
+[[IBAN_3]]: CZ45 5500 0000 0045 6789 0123
+[[IBAN_4]]: CZ78 0800 0000 0078 9012 3456
+[[IBAN_5]]: CZ34 2700 0000 0034 5678 9012
+[[IBAN_6]]: CZ90 0800 0000 0090 1234 5678
+[[IBAN_7]]: CZ88 0800 0000 0088 8888 8888
+
+ICO
+---
+[[ICO_1]]: 12345678
+[[ICO_2]]: 23456789
+[[ICO_3]]: 34567890
+
+ID_CARD
+-------
+[[ID_CARD_1]]: 567890123
+[[ID_CARD_2]]: 678901234
+
+INSURANCE_ID
+------------
+[[INSURANCE_ID_1]]: 7506151234
+[[INSURANCE_ID_2]]: 7858226734
+[[INSURANCE_ID_3]]: 8203151823
+[[INSURANCE_ID_4]]: 9005234521
+[[INSURANCE_ID_5]]: 6508231234
+[[INSURANCE_ID_6]]: 8756154521
+[[INSURANCE_ID_7]]: 9203152314
+[[INSURANCE_ID_8]]: 7509236734
+
+LICENSE_PLATE
+-------------
+[[LICENSE_PLATE_1]]: SO27001
+
+PASSWORD
+--------
+[[PASSWORD_1]]: M3dC@re#2024!AdminPass$Secure
+[[PASSWORD_2]]: DbAdm!n#M3dC@re$2024%SecurePass
+[[PASSWORD_3]]: M365#Adm!n$2024%SecurePass
+
+PHONE
+-----
+[[PHONE_1]]: +420 603 456 789
+[[PHONE_2]]: +420 777 234 567
+[[PHONE_3]]: +420 724 567 890
+[[PHONE_4]]: +420 606 789 123
+[[PHONE_5]]: +420 222 123 456
+[[PHONE_6]]: +420 737 456 789
+[[PHONE_7]]: +420 605 345 678
+[[PHONE_8]]: +420 777 567 890
+[[PHONE_9]]: +420 603 678 901
+[[PHONE_10]]: +420 606 234 567
+[[PHONE_11]]: +420 777 345 678
+[[PHONE_12]]: +420 222 456 789
+[[PHONE_13]]: +420 603 567 890
+[[PHONE_14]]: +420 605 678 901
+[[PHONE_15]]: +420 777 890 123
+[[PHONE_16]]: +420 602 345 678
+[[PHONE_17]]: +420 221 112 233
+[[PHONE_18]]: +420 224 123 456
+[[PHONE_19]]: +420 224 567 890
+[[PHONE_20]]: +420 222 345 678
+[[PHONE_21]]: +420 224 890 123
+
+USERNAME
+--------
+[[USERNAME_1]]: admin_system
+[[USERNAME_2]]: db_admin
+
