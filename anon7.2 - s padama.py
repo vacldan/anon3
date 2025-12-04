@@ -537,7 +537,7 @@ def infer_first_name_nominative(obs: str) -> str:
     lo = obs.lower()
 
     # DEBUG: Trace execution (disabled)
-    debug_this = (lo in {'milici', 'krista', 'krist'})  # Enable for problematic names
+    debug_this = False  # Set to True and add names to debug specific cases
     if debug_this:
         print(f"    [infer_first] INPUT: obs='{obs}', lo='{lo}'")
 
@@ -623,9 +623,9 @@ def infer_first_name_nominative(obs: str) -> str:
     if lo in dative_e_forms:
         return dative_e_forms[lo]
 
-    # PRIORITA: Jména končící na -ie (Lívie, Lucie)
-    # Nejdřív zkontroluj, zda -ie forma JE nominativ (Lucie)
-    # Pouze pokud NE, zkus -ia formu (Lívie → Lívia)
+    # PRIORITA: Jména končící na -ie (Julie, Valerie, Antonie, Lucie, Marie)
+    # V ČESKÝCH dokumentech preferuj -ie (Julie) před -ia (Julia)
+    # -ie je českýtvar, -ia je mezinárodní tvar
     if lo.endswith('ie') and len(obs) > 2:
         # Pokud -ie forma je v knihovně, je to pravděpodobně nominativ
         if lo in CZECH_FIRST_NAMES:
@@ -634,13 +634,12 @@ def infer_first_name_nominative(obs: str) -> str:
                 print(f"    [infer_first] -ie is nominativ RETURN: '{obs.capitalize()}'")
             return obs.capitalize()
 
-        # Pokud -ie forma NENÍ v knihovně, zkus -ia (Lívie → Lívia)
-        stem_ia = obs[:-2] + 'ia'
-        stem_ia_lo = stem_ia.lower()
-        if stem_ia_lo in CZECH_FIRST_NAMES:
-            if debug_this:
-                print(f"    [infer_first] -ie → -ia RETURN: '{stem_ia.capitalize()}'")
-            return stem_ia.capitalize()
+        # KRITICKÁ ZMĚNA: Pokud -ie forma NENÍ v knihovně, ZACHOVEJ -ie jako správný český tvar
+        # Julie, Antonie, Valerie, Nadie jsou správné české tvary (i když nejsou v knihovně)
+        # NEKONVERTUJ na -ia (Julia, Antonia, Valeria), to jsou mezinárodní tvary
+        if debug_this:
+            print(f"    [infer_first] -ie not in lib, keeping Czech -ie form RETURN: '{obs.capitalize()}'")
+        return obs.capitalize()
 
     # KRITICKY DŮLEŽITÉ: Nejdřív zkontroluj, zda už je v nominativu (v knihovně jmen)
     # MUSÍ být PRVNÍ, aby se předešlo nesprávnému zpracování jako "Eliška" → "Elišk"
@@ -813,44 +812,99 @@ def infer_first_name_nominative(obs: str) -> str:
         stem_e = stem + 'e'
         stem_a = stem + 'a'
 
-        # PRIORITA: Preferuj -ie (češtější: Lucie, Marie) před -ia (slovenštější: Lucia, Maria)
-        # ROZŠÍŘENO: Také kontroluj -e (Beatrice) a -a (Elvira)
+        # Check library presence
         stem_ia_in_lib = stem_ia.lower() in CZECH_FIRST_NAMES
         stem_ie_in_lib = stem_ie.lower() in CZECH_FIRST_NAMES
         stem_e_in_lib = stem_e.lower() in CZECH_FIRST_NAMES
         stem_a_in_lib = stem_a.lower() in CZECH_FIRST_NAMES
 
+        # KRITICKÁ LOGIKA: Koncovky "ii" a "ií" jsou pády od "-ie" nebo "-ia" jmen
+        # - "ii" je dativ: Julie→Julii (Czech -ie), Otilia→Otilii (international -ia)
+        # - "ií" je instrumentál: Julie→Julií, Otilia→Otilií
+        # POZOR: "Jule" a "Elvir" jsou v knihovně, ale "Julii/Elviri" jsou pády od "Julie/Elvira"!
+        # Řešení: Preferuj stem+"ie" nebo stem+"ia" (co je v knihovně), NIKDY stem+"e"!
+        if lo.endswith(('ii', 'ií')):
+            # Dativ/Instrumentál ending → zkontroluj -ie a -ia (ne -e!)
+            stem_lo = stem.lower()
+
+            # HEURISTIKA: Pokud OBOJÍ (-ie i -ia) jsou v knihovně, rozhoduj podle kmene:
+            # Stem končící na 'il' → preferuj -ia (Otilia, Natalia, Cecilia, Emilia)
+            # Ostatní → preferuj -ie (Julie, Valerie, Antonie, Marie)
+            # Pokud jen jedna forma nebo žádná: VŽDY preferuj -ie (českší vzor)!
+            if stem_ie_in_lib and stem_ia_in_lib:
+                # Obojí v knihovně → použij heuristiku
+                if stem_lo.endswith('il'):
+                    # Otil+ia = Otilia, Natal+ia = Natalia
+                    if debug_this:
+                        print(f"    [infer_first] -ii/-ií + both in lib, stem ends 'il' → stem+ia RETURN: '{stem_ia.capitalize()}'")
+                    return stem_ia.capitalize()
+                else:
+                    # Jul+ie = Julie (i když není v knihovně, Otilie je)
+                    if debug_this:
+                        print(f"    [infer_first] -ii/-ií + both in lib, stem NOT 'il' → stem+ie RETURN: '{stem_ie.capitalize()}'")
+                    return stem_ie.capitalize()
+            else:
+                # Buď jen jedna forma v knihovně, nebo žádná → VŽDY preferuj -ie
+                # "Julií" → "Julie" (i když Julie není v knihovně, ale Julia je)
+                # "Valerií" → "Valerie" (i když Valerie není v knihovně, ale Valeria je)
+                # Důvod: -ie je českší vzor, v českých dokumentech je častější
+                if debug_this:
+                    if stem_ie_in_lib:
+                        print(f"    [infer_first] -ii/-ií + only stem_ie in lib → stem+ie RETURN: '{stem_ie.capitalize()}'")
+                    elif stem_ia_in_lib:
+                        print(f"    [infer_first] -ii/-ií + only stem_ia in lib BUT forcing stem+ie RETURN: '{stem_ie.capitalize()}'")
+                    else:
+                        print(f"    [infer_first] -ii/-ií + neither in lib → stem+ie RETURN: '{stem_ie.capitalize()}'")
+                return stem_ie.capitalize()
+
+        # Pro ostatní případy (-í pouze): použij standardní prioritu
+        # PRIORITA: -ie (češtější) > -e > -ia (slovenštější) > -a
         if stem_ie_in_lib:
             # -ie forma existuje → preferuj ji (Lucie před Lucia)
+            if debug_this:
+                print(f"    [infer_first] stem_ie in lib RETURN: '{stem_ie.capitalize()}'")
             return stem_ie.capitalize()
         elif stem_e_in_lib:
-            # -e forma existuje → použij ji (Beatrice, Elvire)
+            # -e forma existuje → použij ji (Beatrice)
+            if debug_this:
+                print(f"    [infer_first] stem_e in lib RETURN: '{stem_e.capitalize()}'")
             return stem_e.capitalize()
         elif stem_ia_in_lib:
             # -ia forma existuje → použij ji (Lívia, Otilia)
+            if debug_this:
+                print(f"    [infer_first] stem_ia in lib RETURN: '{stem_ia.capitalize()}'")
             return stem_ia.capitalize()
         elif stem_a_in_lib:
             # -a forma existuje → použij ji (Elvira)
+            if debug_this:
+                print(f"    [infer_first] stem_a in lib RETURN: '{stem_a.capitalize()}'")
             return stem_a.capitalize()
         else:
             # FALLBACK: Žádná forma v knihovně → použij heuristiku
             # Preferuj české vzory: -ie > -e > -ia > -a
-            # Pro jména jako Beatrice (stem+'e'), Elvira (stem+'a')
             stem_lo = stem.lower()
 
             # Preferuj -e pokud stem končí na 'ic' (Beatric+e = Beatrice)
             if stem_lo.endswith(('ic', 'íc')):
+                if debug_this:
+                    print(f"    [infer_first] heuristic -ic → stem_e RETURN: '{stem_e.capitalize()}'")
                 return stem_e.capitalize()
 
             # Preferuj -a pokud stem končí na 'ir', 'ur', 'or' (Elvir+a = Elvira)
             if stem_lo.endswith(('ir', 'ur', 'or')):
+                if debug_this:
+                    print(f"    [infer_first] heuristic -ir/-ur/-or → stem_a RETURN: '{stem_a.capitalize()}'")
                 return stem_a.capitalize()
 
             # Preferuj -ia pokud stem končí na 'il', 'ol' (Otil+ia = Otilia)
             if stem_lo.endswith(('il', 'yl', 'ol')):
+                if debug_this:
+                    print(f"    [infer_first] heuristic -il/-ol → stem_ia RETURN: '{stem_ia.capitalize()}'")
                 return stem_ia.capitalize()
 
             # Default: preferuj -ie (nejčastější v češtině)
+            if debug_this:
+                print(f"    [infer_first] default → stem_ie RETURN: '{stem_ie.capitalize()}'")
             return stem_ie.capitalize()
 
     # Genitiv/Dativ/Lokál: -y/-ě/-e → -a
@@ -2093,7 +2147,7 @@ class Anonymizer:
         key = (self._normalize_for_matching(first_nom), self._normalize_for_matching(last_nom))
 
         # DEBUG (disabled)
-        # debug_names = ['radek', 'radk', 'marek', 'mark', 'hofman', 'chytr', 'karel', 'karl', 'řehoř']
+        # debug_names = ['jul', 'valer', 'beatr', 'elvir']
         # if any(name in first_nom.lower() or name in last_nom.lower() for name in debug_names):
         #     exists = key in self.person_index
         #     print(f"    [ENSURE] first_nom='{first_nom}', last_nom='{last_nom}', key={key}, exists={exists}")
@@ -2565,8 +2619,14 @@ class Anonymizer:
 
             # ========== C) INFERENCE KANONICKÉHO JMÉNA ==========
 
+            # DEBUG (disabled)
+            debug_jul = False
+
             # Nejdřív inference příjmení
             last_nom = infer_surname_nominative(last_obs)
+
+            if debug_jul:
+                print(f"    [REPLACE_PERSON] After surname inference: last_nom='{last_nom}'")
 
             # DŮLEŽITÉ: Oprava kanonického příjmení
             # Pokud už máme v canonical_persons nějaký tvar tohoto příjmení (např. "Procházka"),
@@ -2732,6 +2792,10 @@ class Anonymizer:
                         if any(name in first_obs.lower() for name in debug_names):
                             print(f"    [BRANCH-3] Different, using inferred: '{first_nom}'")
 
+            # DEBUG: Log final first_nom for jul names
+            if debug_jul:
+                print(f"    [REPLACE_PERSON] After first name inference: first_nom='{first_nom}'")
+
             # POST-PROCESSING: Oprava příjmení podle pohlaví křestního jména
             # Pokud máme ženské jméno ale mužské příjmení (nebo naopak), oprav to
             #
@@ -2807,6 +2871,10 @@ class Anonymizer:
                     elif last_lo.endswith('á'):
                         # Malá → Malý, Nová → Nový
                         last_nom = last_nom[:-1] + 'ý'
+
+            # DEBUG: Log final values before tag creation for jul names
+            if debug_jul:
+                print(f"    [REPLACE_PERSON] FINAL (before _ensure_person_tag): first_nom='{first_nom}', last_nom='{last_nom}'")
 
             # Vytvoř nebo najdi tag pro tuto osobu
             tag = self._ensure_person_tag(first_nom, last_nom)
