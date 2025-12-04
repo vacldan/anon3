@@ -554,7 +554,7 @@ def infer_first_name_nominative(obs: str) -> str:
     lo = obs.lower()
 
     # DEBUG: Trace execution (disabled)
-    debug_this = False  # Set to True and add names to debug specific cases
+    debug_this = False
     if debug_this:
         print(f"    [infer_first] INPUT: obs='{obs}', lo='{lo}'")
 
@@ -882,18 +882,48 @@ def infer_first_name_nominative(obs: str) -> str:
                         print(f"    [infer_first] -ii/-ií + neither in lib → stem+ie RETURN: '{stem_ie.capitalize()}'")
                 return stem_ie.capitalize()
 
-        # Pro ostatní případy (-í pouze): použij standardní prioritu
-        # PRIORITA: -ie (češtější) > -e > -ia (slovenštější) > -a
-        if stem_ie_in_lib:
-            # -ie forma existuje → preferuj ji (Lucie před Lucia)
-            if debug_this:
-                print(f"    [infer_first] stem_ie in lib RETURN: '{stem_ie.capitalize()}'")
-            return stem_ie.capitalize()
-        elif stem_e_in_lib:
-            # -e forma existuje → použij ji (Beatrice)
-            if debug_this:
-                print(f"    [infer_first] stem_e in lib RETURN: '{stem_e.capitalize()}'")
-            return stem_e.capitalize()
+        # Pro ostatní případy (-í pouze): použij prioritu podle kmene
+        # KRITICKÁ LOGIKA: Pro stem končící na "ic" (Beatric), preferuj -e (Beatrice) před -ie (Beatricie)
+        stem_lo = stem.lower()
+
+        if stem_lo.endswith(('ic', 'íc')):
+            # Pro jména jako Beatrice: preferuj stem+e před stem+ie
+            # Beatricí → Beatrice (ne Beatricie)
+            if stem_e_in_lib:
+                if debug_this:
+                    print(f"    [infer_first] stem ends 'ic', preferring stem_e RETURN: '{stem_e.capitalize()}'")
+                return stem_e.capitalize()
+            elif stem_ie_in_lib:
+                if debug_this:
+                    print(f"    [infer_first] stem ends 'ic', stem_e not in lib, trying stem_ie RETURN: '{stem_ie.capitalize()}'")
+                return stem_ie.capitalize()
+        else:
+            # Pro ostatní jména: preferuj -ie (češtější) před -e
+            # PRIORITA: -ie > -e > -ia > -a
+            if stem_ie_in_lib:
+                # -ie forma existuje → preferuj ji (Lucie před Lucia)
+                if debug_this:
+                    print(f"    [infer_first] stem_ie in lib RETURN: '{stem_ie.capitalize()}'")
+                return stem_ie.capitalize()
+            elif stem_e_in_lib:
+                # -e forma existuje → použij ji
+                if debug_this:
+                    print(f"    [infer_first] stem_e in lib RETURN: '{stem_e.capitalize()}'")
+                return stem_e.capitalize()
+
+        # Pokračování prioritizace pro "-í" endings
+        # KRITICKÁ LOGIKA: Pro stem končící na "ir/ur/or" (Elvir), preferuj -a (Elvira) před -ia
+        if stem_lo.endswith(('ir', 'ur', 'or')):
+            # Pro jména jako Elvira: preferuj stem+a před stem+ia
+            # Elviri → Elvira (ne Elviria)
+            if stem_a_in_lib:
+                if debug_this:
+                    print(f"    [infer_first] stem ends 'ir/ur/or', preferring stem_a RETURN: '{stem_a.capitalize()}'")
+                return stem_a.capitalize()
+            elif stem_ia_in_lib:
+                if debug_this:
+                    print(f"    [infer_first] stem ends 'ir/ur/or', stem_a not in lib, trying stem_ia RETURN: '{stem_ia.capitalize()}'")
+                return stem_ia.capitalize()
         elif stem_ia_in_lib:
             # -ia forma existuje → použij ji (Lívia, Otilia)
             if debug_this:
@@ -1100,9 +1130,18 @@ def infer_first_name_nominative(obs: str) -> str:
         # PRIORITA 2: Zkontroluj stem+a (Milica, Krista)
         # ALE: Pokud stem (bez 'a') je také v knihovně nebo je mužské jméno, preferuj stem
         # Např. "Aleši" → stem="Aleš" (mužské), stem_a="Aleša" (ženské) → preferuj "Aleš"
+        # VÝJIMKA: Pro stem končící na "ir/ur/or" (Elvir → Elvira), preferuj stem+a
         if stem_a_lo in CZECH_FIRST_NAMES:
             # Kontrola: Je stem mužské jméno?
             stem_lo = stem.lower()
+
+            # KRITICKÁ VÝJIMKA: Pro stem končící na "ir/ur/or", VŽDY preferuj stem+a
+            # Elviri → Elvira (ne Elvir)
+            if stem_lo.endswith(('ir', 'ur', 'or')):
+                if debug_this:
+                    print(f"    [infer_first] LOKÁL -i: stem ends 'ir/ur/or', preferring stem_a RETURN: '{stem_a.capitalize()}'")
+                return stem_a.capitalize()
+
             if stem_lo in CZECH_FIRST_NAMES:
                 # Obojí je v knihovně → preferuj stem (mužské jméno v dativu)
                 if debug_this:
