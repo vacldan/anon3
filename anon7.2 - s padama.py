@@ -274,7 +274,37 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
     # PRIORITA 2: Dativ/vokativ -ovi → remove (Petrovi → Petr, Tomášovi → Tomáš)
     if lo.endswith('ovi') and len(obs) > 3:
         cand = obs[:-3]
-        if cand.lower() in CZECH_FIRST_NAMES:
+
+        # EXPLICITNÍ mapování pro problematická zahraniční jména
+        # Marc → Marco (Marc je v knihovně, ale Marcovi je od Marco)
+        explicit_o_forms = {
+            'marc': 'Marco',
+            'hug': 'Hugo',
+            'dieg': 'Diego'
+        }
+        if cand.lower() in explicit_o_forms:
+            return explicit_o_forms[cand.lower()]
+
+        # SPECIÁLNÍ: Zkus NEJPRVE cand+o (Hugovi → Hugo, Marcovi → Marco, Diegovi → Diego)
+        # Priorita cand+o PŘED cand pro zahraniční jména (Marc vs Marco)
+        cand_o = cand + 'o'
+        cand_lo = cand.lower()
+        if cand_o.lower() in CZECH_FIRST_NAMES:
+            return cand_o.capitalize()
+
+        # KRITICKÁ PRIORITA: Pro jména končící na jednotlivé 'c' nebo 'g' (ne 'rc', 'rg', 'ec'),
+        # preferuj cand+o i když cand je v knihovně (Marc → Marco, Hug → Hugo, Dieg → Diego)
+        # Důvod: "Marc" je v knihovně, ale "Marcovi" je dativ od "Marco", ne "Marc"
+        if (len(cand_lo) >= 3 and len(cand_lo) <= 6 and
+            (cand_lo.endswith('c') and not cand_lo.endswith(('rc', 'ec', 'nc')) or
+             cand_lo.endswith('g') and not cand_lo.endswith(('rg', 'ng')) or
+             cand_lo.endswith('ug'))):
+            # Preferuj cand+o i když cand je v knihovně
+            if len(cand_o) >= 4 and len(cand_o) <= 8:
+                return cand_o.capitalize()
+
+        # Standardní check: cand je v knihovně
+        if cand_lo in CZECH_FIRST_NAMES:
             return cand.capitalize()
 
         # Zkus vložné 'e' (Pavlovi → Pavel, Marckovi → Marek)
@@ -734,6 +764,27 @@ def infer_first_name_nominative(obs: str) -> str:
             print(f"    [infer_first] PRIORITA a/u: base='{base}', base_lo='{base_lo}'")
             print(f"    [infer_first] base_lo in library: {base_lo in CZECH_FIRST_NAMES}")
 
+        # SPECIÁLNÍ CHECK: Pro jména končící na 'a', zkus také base+o (Huga → Hugo, Marca → Marco)
+        # PRIORITA 1: Zkus base+o PŘED base (pokud base končí na c/g/n, může to být zahraniční jméno)
+        if lo.endswith('a'):
+            base_o = base + 'o'
+            base_o_lo = base_o.lower()
+            # Priorita base+o pokud: base končí na c/g/n/m/l (Marc→Marco, Hug→Hugo, etc.)
+            # NEBO base+o je v knihovně
+            if base_lo.endswith(('c', 'g', 'n', 'm', 'l')) or base_o_lo in CZECH_FIRST_NAMES:
+                if base_o_lo in CZECH_FIRST_NAMES:
+                    if debug_this:
+                        print(f"    [infer_first] PRIORITA a: base+o in library RETURN: '{base_o.capitalize()}'")
+                    return base_o.capitalize()
+                # Fallback: i když base+o není v knihovně, použij known_truncations
+                known_base_o = {
+                    'marco': 'Marco',  # Marc → Marco (Marc je v knihovně, ale Marco je správnější)
+                }.get(base_o_lo)
+                if known_base_o:
+                    if debug_this:
+                        print(f"    [infer_first] PRIORITA a: known base+o RETURN: '{known_base_o}'")
+                    return known_base_o
+
         # Pokud base je v knihovně, preferuj ho (např. "Petru" → "Petr")
         if base_lo in CZECH_FIRST_NAMES:
             if debug_this:
@@ -742,7 +793,7 @@ def infer_first_name_nominative(obs: str) -> str:
 
         # HEURISTIKA: I když base NENÍ v knihovně, pokud vypadá jako typické mužské jméno
         # (končí na -el, -il, -im, -om, -eš, -š, -is, -ch atd.), je to pravděpodobně genitiv/dativ
-        # Např. "Daniela" → "Daniel", "Borisa" → "Boris", "Bedřicha" → "Bedřich"
+        # Např. "Daniela" → "Daniel", "Borisa" → "Boris", "Bedřicha" → "Bedřich", "Pavla" → "Pavel"
         male_name_patterns = (
             'el', 'il', 'im', 'om', 'eš', 'oš', 'aš', 'iš', 'uš', 'yš',
             'an', 'en', 'on', 'ín', 'ír', 'it', 'át', 'út',
@@ -750,12 +801,29 @@ def infer_first_name_nominative(obs: str) -> str:
             'áš', 'éš', 'íš', 'óš', 'úš',  # S diakritikou
             'š', 'ž', 'č', 'ř',  # Samotné měkké souhlásky
             'is', 'us', 'os', 'as',  # Latinská jména (Boris, Marcus)
-            'ich', 'ích', 'ch'  # Jména jako Bedřich, Jindřich
+            'ich', 'ích', 'ch',  # Jména jako Bedřich, Jindřich
+            'vl', 'rl'  # Pavl (Pavel), Karl (Karel)
         )
         if any(base_lo.endswith(pattern) for pattern in male_name_patterns) and len(base) >= 3:
             if debug_this:
                 print(f"    [infer_first] PRIORITA a/u HEURISTIC RETURN base: '{base.capitalize()}' (male pattern)")
             return base.capitalize()
+
+    # PRIORITA: Jména končící na 'o' - zkontroluj PŘED truncation
+    # Hugo, Diego, Marco, Bruno, atd. by neměly být převedeny na Huga, Diega, atd.
+    if lo.endswith('o') and len(obs) >= 3:
+        if lo in CZECH_FIRST_NAMES:
+            if debug_this:
+                print(f"    [infer_first] Name ending in 'o' found in library RETURN: '{obs.capitalize()}'")
+            return obs.capitalize()
+        # FALLBACK: I když není v knihovně, pokud vypadá jako zahraniční jméno (3-6 písmen, končí na -co/-go/-o)
+        # preferuj zachovat 'o' formu (Marco, Diego, Hugo, Bruno, Ivo, Leo)
+        if len(obs) >= 3 and len(obs) <= 8:
+            # Jména končící na -co/-go/-io/-eo/-ao typicky zůstávají (Marco, Diego, Mario, Leo, Tao)
+            # VÝJIMKA: Krátká jména jako "To", "Po" (≤2) a dlouhá (>8) nezachovávat
+            if debug_this:
+                print(f"    [infer_first] Name ending in 'o' (foreign name pattern) RETURN: '{obs.capitalize()}'")
+            return obs.capitalize()
 
     # Zkontroluj TRUNKACE - pokud jméno vypadá jako zkrácené (končí souhláskou)
     # a přidání 'a'/'el'/'ek' dá známé jméno, preferuj úplnou formu
@@ -773,6 +841,12 @@ def infer_first_name_nominative(obs: str) -> str:
             print(f"    [infer_first] looks_truncated: {looks_truncated}")
 
         if looks_truncated:
+            # Zkus přidat 'o' (Hug → Hugo, Marc → Marco, Dieg → Diego)
+            # PRIORITA 1: 'o' - preferuj před 'a' pro zahraniční jména
+            if (lo + 'o') in CZECH_FIRST_NAMES:
+                if debug_this:
+                    print(f"    [infer_first] TRUNCATION +o RETURN: '{(obs + 'o').capitalize()}'")
+                return (obs + 'o').capitalize()
             # Zkus přidat 'a' (Zuzan → Zuzana, Pavl → Pavla)
             if (lo + 'a') in CZECH_FIRST_NAMES:
                 if debug_this:
@@ -794,7 +868,8 @@ def infer_first_name_nominative(obs: str) -> str:
             'zuzan': 'Zuzana', 'pavl': 'Pavel', 'radk': 'Radek', 'hynk': 'Hynek',
             'radec': 'Radka', 'elišec': 'Eliška', 'šárec': 'Šárka',
             'jiř': 'Jiří', 'petr': 'Petr', 'jan': 'Jan', 'tom': 'Tomáš',
-            'nikol': 'Nikola', 'mark': 'Marek'
+            'nikol': 'Nikola', 'mark': 'Marek',
+            'hug': 'Hugo', 'marc': 'Marco', 'dieg': 'Diego'
         }
         if lo in known_truncations:
             if debug_this:
