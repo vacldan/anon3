@@ -16,6 +16,7 @@ from datetime import datetime
 
 # =============== Globální proměnné ===============
 CZECH_FIRST_NAMES = set()
+CZECH_FIRST_NAMES_GENDER = {}  # {name_lowercase: gender} např. {'irene': 'F', 'pavel': 'M'}
 
 # Mužská příjmení končící na -a v nominativu
 # DŮLEŽITÉ: Používá se v infer_surname_nominative a variants_for_surname
@@ -33,7 +34,9 @@ MALE_SURNAMES_WITH_A = {
 
 # =============== Načítání knihovny jmen ===============
 def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
-    """Načte česká jména z JSON souboru."""
+    """Načte česká jména z JSON souboru a uloží i gender informace."""
+    global CZECH_FIRST_NAMES_GENDER
+
     try:
         script_dir = Path(__file__).parent if '__file__' in globals() else Path.cwd()
         json_file = script_dir / json_path
@@ -48,6 +51,8 @@ def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
         with open(json_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
             names = set()
+            CZECH_FIRST_NAMES_GENDER = {}
+
             if isinstance(data, dict):
                 # Nová struktura: {"firstnames": {"M": [...], "F": [...], "U": [...]}}
                 if 'firstnames' in data:
@@ -55,17 +60,25 @@ def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
                     if isinstance(firstnames, dict):
                         for gender_key in ['M', 'F', 'U']:
                             if gender_key in firstnames:
-                                names.update(firstnames[gender_key])
+                                for name in firstnames[gender_key]:
+                                    names.add(name)
+                                    # Uložení gender informace
+                                    CZECH_FIRST_NAMES_GENDER[name.lower()] = gender_key
                 # Stará struktura: {"male": [...], "female": [...]}
                 else:
-                    names.update(data.get('male', []))
-                    names.update(data.get('female', []))
+                    for name in data.get('male', []):
+                        names.add(name)
+                        CZECH_FIRST_NAMES_GENDER[name.lower()] = 'M'
+                    for name in data.get('female', []):
+                        names.add(name)
+                        CZECH_FIRST_NAMES_GENDER[name.lower()] = 'F'
             elif isinstance(data, list):
                 names.update(data)
+                # Pro list formát nemáme gender info
 
             # Převod na lowercase pro jednodušší porovnávání
             names = {name.lower() for name in names}
-            print(f"✓ Načteno {len(names)} jmen z knihovny")
+            print(f"✓ Načteno {len(names)} jmen z knihovny (gender info: {len(CZECH_FIRST_NAMES_GENDER)})")
             return names
     except Exception as e:
         print(f"⚠️  Chyba při načítání {json_path}: {e}")
@@ -410,36 +423,40 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
         print(f"      [_male_gen] FINAL RETURN: {result}, cands={cands}")
     return result
 
+def _get_gender_from_library(name_lower: str) -> str:
+    """Vrací gender z knihovny jmen ('M', 'F', 'U') nebo '' pokud jméno není v knihovně."""
+    return CZECH_FIRST_NAMES_GENDER.get(name_lower, '')
+
 def get_first_name_gender(name: str) -> str:
     """Určí rod křestního jména. Vrací 'M' (mužský), 'F' (ženský), nebo 'U' (neznámý)."""
     lo = name.lower().strip()
 
+    # PRIORITA 1: Kontrola v knihovně - použij SKUTEČNÝ gender z JSON
+    # Knihovna má strukturu: {"firstnames": {"M": [...], "F": [...], "U": [...]}}
+    gender_from_lib = _get_gender_from_library(lo)
+    if gender_from_lib:
+        return gender_from_lib
+
+    # PRIORITA 2: Specifická mužská jména končící na -e (francouzská)
+    male_e_names = {'rene', 'pierre', 'andre', 'antoine'}
+    if lo in male_e_names:
+        return 'M'
+
+    # PRIORITA 3: Specifická ženská jména (včetně těch končících na -e)
+    female_exceptions = {
+        'ruth', 'esther', 'carmen', 'mercedes', 'dagmar', 'ingrid', 'margit',
+        'alice', 'beatrice', 'rose', 'marie', 'sophie', 'chloe', 'irene',
+        'elvira', 'elena', 'nadie', 'nadia'
+    }
+    if lo in female_exceptions:
+        return 'F'
+
+    # PRIORITA 4: Heuristika podle koncovky
     # Ženská jména typicky končí na -a, -e, -ie
     if lo.endswith('a') and lo not in {'joshua', 'luca', 'nicola', 'andrea'}:
         return 'F'
     if lo.endswith(('ie', 'y')) and len(lo) > 2:
         return 'F'
-
-    # Specifická mužská jména končící na -e (francouzská)
-    male_e_names = {'rene', 'pierre', 'andre', 'antoine'}
-    if lo in male_e_names:
-        return 'M'
-
-    # Specifická ženská jména (včetně těch končících na -e, které nejsou v knihovně)
-    female_exceptions = {
-        'ruth', 'esther', 'carmen', 'mercedes', 'dagmar', 'ingrid', 'margit',
-        'alice', 'beatrice', 'rose', 'marie', 'sophie', 'chloe'
-    }
-    if lo in female_exceptions:
-        return 'F'
-
-    # Mužská jména (většinou)
-    if lo in CZECH_FIRST_NAMES:
-        # Kontrola v knihovně - pokud končí na -a, pravděpodobně ženské
-        if lo.endswith('a'):
-            return 'F'
-        else:
-            return 'M'
 
     # Default: pokud nekončí na -a, pravděpodobně mužské
     return 'M' if not lo.endswith('a') else 'F'
@@ -643,6 +660,14 @@ def infer_first_name_nominative(obs: str) -> str:
 
     # KRITICKY DŮLEŽITÉ: Nejdřív zkontroluj, zda už je v nominativu (v knihovně jmen)
     # MUSÍ být PRVNÍ, aby se předešlo nesprávnému zpracování jako "Eliška" → "Elišk"
+    # PRIORITA: Jména končící na 'e' (Beatrice, Elvira, atd.) - zkontroluj PŘED zpracováním jako genitiv!
+    if lo.endswith('e') and lo in CZECH_FIRST_NAMES:
+        # Jméno končí na 'e' a JE v knihovně → je to nominativ, NE genitiv
+        # Beatrice, Rose, Chloe, atd.
+        if debug_this:
+            print(f"    [infer_first] Name ending in 'e' found in library RETURN: '{obs.capitalize()}'")
+        return obs.capitalize()
+
     if lo in CZECH_FIRST_NAMES:
         # VÝJIMKA 1: Některá jména v knihovně jsou ve skutečnosti pády od jiných jmen
         # "petru" (dativ od Petr), "davida" (ženské jméno ale genitiv od David), "kamila" (genitiv od Kamil)
