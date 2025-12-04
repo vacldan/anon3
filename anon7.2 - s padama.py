@@ -804,23 +804,54 @@ def infer_first_name_nominative(obs: str) -> str:
     # Akuzativ/Lokál/Dativ: -í/-ií/-ii → -ia nebo -ie (Lívii → Lívia, Lucií → Lucie, Marii → Marie)
     if lo.endswith(('í', 'ií', 'ii')) and len(obs) > 2:
         if lo.endswith(('ií', 'ii')):
-            stem_ia = obs[:-2] + 'ia'
-            stem_ie = obs[:-2] + 'ie'
+            stem = obs[:-2]
         else:
-            stem_ia = obs[:-1] + 'ia'
-            stem_ie = obs[:-1] + 'ie'
+            stem = obs[:-1]
+
+        stem_ia = stem + 'ia'
+        stem_ie = stem + 'ie'
+        stem_e = stem + 'e'
+        stem_a = stem + 'a'
 
         # PRIORITA: Preferuj -ie (češtější: Lucie, Marie) před -ia (slovenštější: Lucia, Maria)
-        # VÝJIMKA: Pokud pouze -ia je v knihovně (např. Lívia), použij -ia
+        # ROZŠÍŘENO: Také kontroluj -e (Beatrice) a -a (Elvira)
         stem_ia_in_lib = stem_ia.lower() in CZECH_FIRST_NAMES
         stem_ie_in_lib = stem_ie.lower() in CZECH_FIRST_NAMES
+        stem_e_in_lib = stem_e.lower() in CZECH_FIRST_NAMES
+        stem_a_in_lib = stem_a.lower() in CZECH_FIRST_NAMES
 
         if stem_ie_in_lib:
             # -ie forma existuje → preferuj ji (Lucie před Lucia)
             return stem_ie.capitalize()
+        elif stem_e_in_lib:
+            # -e forma existuje → použij ji (Beatrice, Elvire)
+            return stem_e.capitalize()
         elif stem_ia_in_lib:
-            # Pouze -ia forma existuje → použij ji (Lívia)
+            # -ia forma existuje → použij ji (Lívia, Otilia)
             return stem_ia.capitalize()
+        elif stem_a_in_lib:
+            # -a forma existuje → použij ji (Elvira)
+            return stem_a.capitalize()
+        else:
+            # FALLBACK: Žádná forma v knihovně → použij heuristiku
+            # Preferuj české vzory: -ie > -e > -ia > -a
+            # Pro jména jako Beatrice (stem+'e'), Elvira (stem+'a')
+            stem_lo = stem.lower()
+
+            # Preferuj -e pokud stem končí na 'ic' (Beatric+e = Beatrice)
+            if stem_lo.endswith(('ic', 'íc')):
+                return stem_e.capitalize()
+
+            # Preferuj -a pokud stem končí na 'ir', 'ur', 'or' (Elvir+a = Elvira)
+            if stem_lo.endswith(('ir', 'ur', 'or')):
+                return stem_a.capitalize()
+
+            # Preferuj -ia pokud stem končí na 'il', 'ol' (Otil+ia = Otilia)
+            if stem_lo.endswith(('il', 'yl', 'ol')):
+                return stem_ia.capitalize()
+
+            # Default: preferuj -ie (nejčastější v češtině)
+            return stem_ie.capitalize()
 
     # Genitiv/Dativ/Lokál: -y/-ě/-e → -a
     if lo.endswith(('y', 'ě', 'e')):
@@ -1009,7 +1040,7 @@ def infer_first_name_nominative(obs: str) -> str:
             return stem_a.capitalize()
 
         # FALLBACK: Pokud stem+a končí na typické ženské vzory
-        female_patterns = ('ica', 'ina', 'ana', 'ela', 'ara', 'ona', 'ika', 'ista', 'eta', 'ata')
+        female_patterns = ('ica', 'ina', 'ana', 'ela', 'ara', 'ona', 'ika', 'ista', 'eta', 'ata', 'ira', 'ura', 'ora')
         if stem_a_lo.endswith(female_patterns):
             if debug_this:
                 print(f"    [infer_first] LOKÁL -i RETURN (pattern): '{stem_a.capitalize()}'")
