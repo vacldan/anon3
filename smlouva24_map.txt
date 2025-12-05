@@ -81,9 +81,9 @@ OSOBY
   - Hanou Pivoňkovou
 [[PERSON_51]]: Ema Hrušková
 [[PERSON_52]]: Pavel Zíka
-[[PERSON_53]]: Pavlo Zíka
-  - Pavla Zíky
   - Pavlovi Zíkovi
+[[PERSON_53]]: Pavl Zíka
+  - Pavla Zíky
 [[PERSON_54]]: Václav Holas
   - Václava Holase
   - Václavovi Holasovi
@@ -154,93 +154,89 @@ OSOBY
   - Huga Šindeláře
   - Hugovi Šindelářovi
 [[PERSON_82]]: Ivo Zámyslický
-  - Ivovi Zámyslickému
 [[PERSON_83]]: Iva Zámyslický
-[[PERSON_84]]: Vito Paseka
-[[PERSON_85]]: Vita Paseka
-  - Vita Paseky
-  - Vitovi Pasekovi
-[[PERSON_86]]: Leo Slabý
-[[PERSON_87]]: Lea Slabý
-[[PERSON_88]]: Bruno Hrdina
-  - Brunovi Hrdinovi
-[[PERSON_89]]: Bruna Hrdina
+[[PERSON_84]]: Vita Paseká
+  - Vito Paseka
+[[PERSON_85]]: Lea Slabý
+  - Leo Slabý
+[[PERSON_86]]: Bruno Hrdina
   - Bruna Hrdiny
-[[PERSON_90]]: Marco Jiroušek
+  - Brunovi Hrdinovi
+[[PERSON_87]]: Marcel Jiroušek
   - Marca Jirouška
+  - Marco Jiroušek
+[[PERSON_88]]: Marco Jiroušek
   - Marcovi Jirouškovi
-[[PERSON_91]]: Diego Balcar
+[[PERSON_89]]: Diego Balcar
   - Diega Balcara
   - Diegovi Balcarovi
-[[PERSON_92]]: Maxa Kuchta
+[[PERSON_90]]: Maxa Kuchta
   - Maxe Kuchty
   - Maxovi Kuchtovi
-[[PERSON_93]]: Felix Nezval
+[[PERSON_91]]: Felix Nezval
   - Felixovi Nezvalovi
-[[PERSON_94]]: Felixa Nezval
+[[PERSON_92]]: Felixa Nezval
   - Felixe Nezvala
-[[PERSON_95]]: Alexa Kolíská
+[[PERSON_93]]: Alexa Kolíská
   - Alexe Kolíska
-[[PERSON_96]]: Nicolas Vavra
+[[PERSON_94]]: Nicolas Vavra
   - Nicolasovi Vavrovi
-[[PERSON_97]]: Nicolase Vavra
+[[PERSON_95]]: Nicolase Vavra
   - Nicolase Vavry
-[[PERSON_98]]: Erik Zbořil
+[[PERSON_96]]: Erik Zbořil
   - Erika Zbořila
   - Erikovi Zbořilovi
-[[PERSON_99]]: Odon Krejcar
+[[PERSON_97]]: Odon Krejcar
   - Odona Krejcara
   - Odonovi Krejcarovi
-[[PERSON_100]]: Teodor Přikryl
+[[PERSON_98]]: Teodor Přikryl
   - Teodora Přikryla
   - Teodorovi Přikrylovi
-[[PERSON_101]]: Artur Kolenatý
+[[PERSON_99]]: Artur Kolenatý
   - Arturovi Kolenatému
-[[PERSON_102]]: Artura Kolenatý
-[[PERSON_103]]: Viktor Ronovský
+[[PERSON_100]]: Artura Kolenatý
+[[PERSON_101]]: Viktor Ronovský
   - Viktorovi Ronovskému
-[[PERSON_104]]: Viktora Ronovský
-[[PERSON_105]]: Igor Havelík
+[[PERSON_102]]: Viktora Ronovský
+[[PERSON_103]]: Igor Havelík
   - Igora Havelíka
   - Igorovi Havelíkovi
-[[PERSON_106]]: Albert Jirs
+[[PERSON_104]]: Albert Jirs
   - Albert Jirsa
-  - Alberta Jirsy
-[[PERSON_107]]: Alberto Jirs
   - Albertovi Jirsovi
-[[PERSON_108]]: Emil Konrád
+[[PERSON_105]]: Alberto Jirs
+  - Alberta Jirsy
+[[PERSON_106]]: Emil Konrád
   - Emila Konráda
   - Emilovi Konrádovi
-[[PERSON_109]]: Mihail Chrástek
-[[PERSON_110]]: Mihailo Chrástek
+[[PERSON_107]]: Mihail Chrástek
   - Mihaila Chrástka
   - Mihailovi Chrástkovi
-[[PERSON_111]]: Sergej Havlička
+[[PERSON_108]]: Sergej Havlička
   - Sergeje Havličky
   - Sergejovi Havličkovi
-[[PERSON_112]]: Denis Kralert
+[[PERSON_109]]: Denis Kralert
   - Denisovi Kralertovi
-[[PERSON_113]]: Denise Kralertová
-[[PERSON_114]]: Oleg Rychtera
+[[PERSON_110]]: Denise Kralertová
+[[PERSON_111]]: Oleg Rychtera
   - Olega Rychtery
-[[PERSON_115]]: Olego Rychtera
   - Olegovi Rychterovi
-[[PERSON_116]]: Taras Červinka
+[[PERSON_112]]: Taras Červinka
   - Tarase Červinky
   - Tarasovi Červinkovi
-[[PERSON_117]]: Oleksandr Topol
+[[PERSON_113]]: Oleksandr Topol
   - Oleksandra Topola
   - Oleksandrovi Topolovi
-[[PERSON_118]]: Leon Novak
+[[PERSON_114]]: Leon Novak
   - Leona Novaka
   - Leonovi Novakovi
-[[PERSON_119]]: Tadeáš Hromádka
+[[PERSON_115]]: Tadeáš Hromádka
   - Tadeáše Hromádky
   - Tadeášovi Hromádkovi
-[[PERSON_120]]: Radoslav Horčička
+[[PERSON_116]]: Radoslav Horčička
   - Radoslava Horčičky
   - Radoslavovi Horčičkovi
-[[PERSON_121]]: Lubomír Frydrych
+[[PERSON_117]]: Lubomír Frydrych
   - Lubomíra Frydrycha
   - Lubomírovi Frydrychovi
 
