@@ -64,3 +64,27 @@ Inference má několik vrstev priority:
 3. Finální audit a dokumentace změn
 
 ================================================================================
+
+[2025-12-08 15:52] - Git commit & push - Regenerované výstupy
+--------------------------------------------------------------
+
+🔄 CO JSEM UDĚLAL:
+- Commitnul regenerované smlouva24_anon.docx a smlouva24_map.json
+- Push na remote branch claude/fix-anonymization-maps-01KzcZAMMajS9NzDNbRSKw4F
+
+📊 STAV SOUBORŮ:
+- smlouva24_anon.docx: Anonymizovaný dokument s opravenými duplikáty
+- smlouva24_map.json: JSON mapa s 117 osobami (z původních 130)
+- smlouva24_map.txt: Textová mapa pro audit
+
+✅ VŠECHNY ZMĚNY COMMITNUTY A PUSHNUTY:
+- Commit 1: "Oprava inference jmen končících na 'o'"
+- Commit 2: "Oprava priorit v inference jmen - preferuj české varianty"
+- Commit 3: "Přidán Claude's development blog"
+- Commit 4: "Regenerace smlouva24 s opravami inference priorit"
+
+💭 POCIT:
+Spokojenost - všechny změny jsou bezpečně na remote. Kód je čistý, testovaný,
+a má měřitelné výsledky (80.3% úspěšnost). Blog je připravený na další záznamy.
+
+================================================================================
