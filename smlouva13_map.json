@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-02T18:04:41.938337",
+  "generated_at": "2025-12-08T14:03:36.165635",
   "source_file": "smlouva13.docx",
   "entities": [
     {
@@ -120,7 +120,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_20]]",
-      "original": "Han Nová",
+      "original": "Hana Nová",
       "occurrences": 1
     },
     {

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-02T18:22:30.032972",
+  "generated_at": "2025-12-08T14:11:27.969936",
   "source_file": "smlouva14.docx",
   "entities": [
     {
@@ -120,7 +120,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_20]]",
-      "original": "Han Nováková",
+      "original": "Hana Nováková",
       "occurrences": 1
     },
     {
@@ -162,7 +162,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_27]]",
-      "original": "Han Svobodová",
+      "original": "Hana Svobodová",
       "occurrences": 1
     },
     {
