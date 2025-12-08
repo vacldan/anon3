@@ -573,7 +573,7 @@ def infer_first_name_nominative(obs: str) -> str:
     lo = obs.lower()
 
     # DEBUG: Trace execution for specific names
-    debug_names = ['artur', 'viktor', 'albert', 'alberta', 'alice', 'alica', 'max', 'maxa']
+    debug_names = ['artur', 'viktor', 'albert', 'alberta', 'alice', 'alica', 'max', 'maxa', 'albín', 'albíně', 'elen', 'elena', 'eleně']
     debug_this = any(name in lo for name in debug_names)
     if debug_this:
         print(f"    [infer_first] INPUT: obs='{obs}', lo='{lo}'")
@@ -594,6 +594,11 @@ def infer_first_name_nominative(obs: str) -> str:
         return 'Marek'
     if lo in ('karla', 'karlu', 'karlem', 'karlovi', 'karlo'):
         return 'Karel'
+
+    # Marco: italské jméno, genitiv Marca
+    # Preferuj Marco před Marcel když vidíme "Marca"
+    if lo in ('marca', 'marcovi', 'marcem', 'marco'):
+        return 'Marco'
 
     # Jména s vložným 'e/ě' a zdvojením souhlásky
     # Otto: nominativ Otto, genitiv Otta, dativ Ottovi
@@ -666,6 +671,7 @@ def infer_first_name_nominative(obs: str) -> str:
         'zuzaně': 'Zuzana',
         'barbaře': 'Barbara',
         'heleně': 'Helena',
+        'eleně': 'Elen',  # preferuj kratší formu (Elen vs Elena)
         'simoně': 'Simona',
         'nikole': 'Nikola',
         'gabriele': 'Gabriela',
@@ -1200,9 +1206,16 @@ def infer_first_name_nominative(obs: str) -> str:
 
         if stem_in_lib and stem_a_in_lib:
             # OBOJÍ v knihovně → preferuj stem_a (ženská forma)
-            # VÝJIMKA: Pokud stem končí na mužskou koncovku (x, s, š, l, n, r), preferuj stem
+            # VÝJIMKA 1: Feminizované formy (Albín/Albína, Martín/Martína) → preferuj stem_a
+            if stem_lo.endswith('ín') and stem_a_lo.endswith('ína'):
+                if debug_this:
+                    print(f"    [infer_first] Both in library, feminized pattern (-ín/-ína), preferring stem_a: '{stem_a.capitalize()}'")
+                return stem_a.capitalize()
+
+            # VÝJIMKA 2: Pokud stem končí na mužskou koncovku (x, s, š, l, r), preferuj stem
             # Felix/Felixa → preferuj Felix, Boris/Borisa → preferuj Boris
-            male_endings_both = ('x', 's', 'š', 'l', 'n', 'r', 'ch')
+            # NE 'n' - to je často feminizovaný pattern!
+            male_endings_both = ('x', 's', 'š', 'l', 'r', 'ch')
             if any(stem_lo.endswith(ending) for ending in male_endings_both) and len(stem) >= 4:
                 if debug_this:
                     print(f"    [infer_first] Both in library, but stem looks male, preferring stem: '{stem.capitalize()}'")
@@ -2726,10 +2739,10 @@ class Anonymizer:
             first_obs = match.group(1)
             last_obs = match.group(2)
 
-            # DEBUG (disabled)
-            # debug_names = ['radek', 'radk', 'marek', 'mark', 'karel', 'karl', 'řehoř', 'blank', 'vlast']
-            # if any(name in first_obs.lower() or name in last_obs.lower() for name in debug_names):
-            #     print(f"    [MATCH] first_obs='{first_obs}', last_obs='{last_obs}'")
+            # DEBUG (enabled for Elen)
+            debug_names = ['elen']
+            if any(name in first_obs.lower() or name in last_obs.lower() for name in debug_names):
+                print(f"    [MATCH] first_obs='{first_obs}', last_obs='{last_obs}'")
 
             # ========== A) BLACKLIST NE-OSOB ==========
 
@@ -3035,8 +3048,13 @@ class Anonymizer:
                 # Pravidlo: pokud jméno končí na souhlásku, přidej 'a'
                 # Samohlásky včetně diakritiky: a, á, e, é, ě, i, í, o, ó, u, ú, ů, y, ý
                 if not first_lo.endswith(('a', 'á', 'e', 'é', 'ě', 'i', 'í', 'o', 'ó', 'u', 'ú', 'ů', 'y', 'ý')):
-                    # Jméno končí na souhlásku → přidej 'a'
-                    first_nom = (first_obs + 'a').capitalize()
+                    # Jméno končí na souhlásku
+                    # NEJPRVE check: Je už v knihovně jako ženské jméno? (např. Elen, Carmen)
+                    if first_lo in CZECH_FIRST_NAMES and get_first_name_gender(first_obs) == 'F':
+                        first_nom = first_obs.capitalize()
+                    else:
+                        # Přidej 'a' k vytvoření ženského nominativu (Han → Hana, Martin → Martina)
+                        first_nom = (first_obs + 'a').capitalize()
                 elif first_lo.endswith('a'):
                     # Jméno už končí na 'a' → je to pravděpodobně nominativ ženského jména
                     # VÝJIMKA: Slovak varianty konvertuj na Czech
