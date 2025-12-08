@@ -61,7 +61,7 @@ def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
                         for gender_key in ['M', 'F', 'U']:
                             if gender_key in firstnames:
                                 for name in firstnames[gender_key]:
-                                    names.add(name.lower())  # Ukládej lowercase pro konzistentní check
+                                    names.add(name)
                                     # Uložení gender informace
                                     CZECH_FIRST_NAMES_GENDER[name.lower()] = gender_key
                 # Stará struktura: {"male": [...], "female": [...]}
@@ -740,12 +740,19 @@ def infer_first_name_nominative(obs: str) -> str:
             # Martina (F) → nesmí se změnit na Martin
             # Michaela (F) → nesmí se změnit na Michael
             # Alena (F) → nesmí se změnit na Alen
-            # ALE: "Petra" (pokud není v knihovně jako F) → Petr (pokud Petra je genitiv)
+            # ALE: "Josefa" může být F nebo genitiv od Josef (M) → pokud existuje i mužský variant, je to ambiguous!
+            # Pro ambiguous cases pokračuj dál a nech kontext (příjmení) rozhodnout
             original_gender = CZECH_FIRST_NAMES_GENDER.get(lo)
-            if original_gender == 'F':
-                # Original jméno je v knihovně jako ŽENSKÉ → vrať original, NE base!
+            base_gender = CZECH_FIRST_NAMES_GENDER.get(base_lo)
+
+            if original_gender == 'F' and base_gender != 'M':
+                # Original jméno je v knihovně jako ŽENSKÉ A base NENÍ mužské → vrať original
+                # Jana (F) + Jan (M) → ambiguous, pokračuj dál
+                # Josefa (F) + Josef (M) → ambiguous, pokračuj dál
+                # Michaela (F) + Michael (M) → ambiguous, pokračuj dál
+                # Ale: Elen (F) + bez mužského variantu → vrať Elen
                 if debug_this:
-                    print(f"    [infer_first] Name in library as FEMALE, keeping original RETURN: '{obs.capitalize()}'")
+                    print(f"    [infer_first] Name in library as FEMALE (no male variant), keeping original RETURN: '{obs.capitalize()}'")
                 return obs.capitalize()
 
              # PRIORITA 1: Zkontroluj knihovnu nebo známá mužská jména NEJPRVE
@@ -959,7 +966,16 @@ def infer_first_name_nominative(obs: str) -> str:
     # ALE POUZE pokud jméno vypadá zkrácené (krátké nebo končí na typické zkratky)
     # KRITICKÁ OPRAVA: NESMÍ se aplikovat na platná jména v knihovně!
     # "Jan" je platné mužské jméno, NE truncation od "Jana"!
-    if len(obs) >= 3 and obs[-1] not in 'aeiouyáéíóúůýěiu' and lo not in CZECH_FIRST_NAMES:
+    # Check: jméno musí být buď v knihovně nebo v common_male_names
+    common_male_names_check = {'petr', 'david', 'marek', 'pavel', 'tomáš', 'lukáš', 'jan', 'jiří', 'kamil',
+                               'daniel', 'filip', 'aleš', 'stanislav', 'jaroslav', 'rostislav', 'ladislav',
+                               'josef', 'václav', 'martin', 'tomáš', 'ondřej', 'adam', 'michal', 'jakub'}
+
+    if debug_this:
+        is_valid_name = lo in CZECH_FIRST_NAMES or lo in common_male_names_check
+        print(f"    [infer_first] TRUNCATION check: lo='{lo}', is_valid_name={is_valid_name}")
+
+    if len(obs) >= 3 and obs[-1] not in 'aeiouyáéíóúůýěiu' and lo not in CZECH_FIRST_NAMES and lo not in common_male_names_check:
         if debug_this:
             print(f"    [infer_first] Checking TRUNCATION branch")
         # Kontrola: jméno musí vypadat skutečně zkrácené

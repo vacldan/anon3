@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-08T14:43:58.658695",
+  "generated_at": "2025-12-08T15:04:14.796312",
   "source_file": "smlouva13.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jana Nováková",
+      "original": "Jan Nováková",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Petra Černá",
+      "original": "Petr Černá",
       "occurrences": 1
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Jana Dvořák",
+      "original": "Jan Dvořák",
       "occurrences": 1
     },
     {
@@ -102,7 +102,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_17]]",
-      "original": "Martina Horáková",
+      "original": "Martin Horáková",
       "occurrences": 1
     },
     {
@@ -114,7 +114,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_19]]",
-      "original": "Jana Málková",
+      "original": "Jan Málková",
       "occurrences": 1
     },
     {
@@ -126,7 +126,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
-      "original": "Michaela Kratochvílová",
+      "original": "Michael Kratochvílová",
       "occurrences": 1
     },
     {
@@ -174,7 +174,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_29]]",
-      "original": "Martina Krajíčková",
+      "original": "Martin Krajíčková",
       "occurrences": 1
     },
     {
@@ -186,7 +186,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_31]]",
-      "original": "Jana Malý",
+      "original": "Jan Malý",
       "occurrences": 1
     },
     {
