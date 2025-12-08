@@ -1,0 +1,66 @@
+================================================================================
+                    CLAUDE'S DEVELOPMENT BLOG
+         Czech Name Declension Inference - Anonymization Project
+================================================================================
+
+[2025-12-08 15:45] - První zápis - Inicializace blogu
+------------------------------------------------------
+
+📊 AKTUÁLNÍ STAV PROJEKTU:
+- Testovací dokument: smlouva24.docx
+- Počet osob: 117
+- Chyby v reverzní validaci: 23/117 (19.7%)
+- Úspěšnost: 80.3%
+
+🎯 CO JSEM DNES OPRAVIL:
+1. ✅ Jména končící na 'o' (Hugo, Marco, Diego, Bruno)
+   - Problém: "Huga" → "Hug" místo "Hugo"
+   - Řešení: Priorita pro zachování 'o' forem před truncation
+   - Explicitní mapping pro marc/hug/dieg/brun → Marco/Hugo/Diego/Bruno
+
+2. ✅ České vs zahraniční varianty (Pavel vs Pavlo, Albert vs Alberto)
+   - Problém: "Pavla" → "Pavlo" místo "Pavel" (Pavlo je ukrajinská varianta v knihovně)
+   - Řešení: Změna priority v truncation a genitiv logice
+   - Priorita: +el před +o, stem+el před stem před 'o' formou
+
+3. ✅ Bruno/Bruna duplikát
+   - Problém: "Bruna" je v knihovně jako ženské jméno
+   - Řešení: Early return check pro base+o
+   - Přidání "brun" do explicit_o_forms
+
+📈 POKROK:
+- Začátek: 38 chyb (130 osob)
+- Teď: 23 chyby (117 osob)
+- Zlepšení: -15 chyb (-39%), -13 duplikátů
+
+🤔 JAK TO FUNGUJE:
+Inference má několik vrstev priority:
+1. Early return - jméno už v knihovně? Zkontroluj ambiguity (base+o pro Bruna→Bruno)
+2. Genitiv -a: base+el > base > base+o (Pavla → Pavel, ne Pavlo)
+3. Dativ -ovi: explicitní mapping > cand v knihovně > vložné 'e'
+4. Jména na 'o': stem+el > stem > 'o' forma v knihovně > fallback pattern
+5. Truncation: +el > +a > +ek > +o (pouze whitelist)
+
+💭 POCITY:
+- Pozitivní: Systematické řešení ambiguit mezi českými a zahraničními variantami funguje
+- Frustrující: Knihovna obsahuje VŠECHNO (Pavlo, Alberto, Mihailo) - musím preferovat české
+- Uspokojivé: Každá oprava sloučí 2-3 duplikáty → viditelný pokrok
+
+🔧 NÁVRHY NA ZLEPŠENÍ:
+1. Prioritizace českých variant v knihovně (metadata: "cs", "ua", "es", atd.)
+2. Confidence score pro inference (Pavel 0.95 vs Pavlo 0.70)
+3. Context-aware inference - pokud dokument má český kontext, preferuj české varianty
+4. Logging/debug mode pro trasování inference decisions
+
+❌ ZBÝVAJÍCÍ PROBLÉMY (23):
+- Gender mismatch v příjmeních: Ivana Dvorský → Dvorská (4 případy)
+- Genitiv jako canonical: Maxa, Felixa, Nicolase, Artura, Viktora, Alberto (7 případů)
+- Alica/Alice duplikáty: Slovenská vs česká varianta (2 případy)
+- Ostatní truncation/inference: Pavl, Elena Krbcová, Marcel Jiroušek (10 případů)
+
+📝 DALŠÍ KROKY:
+1. Opravit zbývajících 23 chyb
+2. Retestovat všechny smlouvy 13-23 s novými opravami
+3. Finální audit a dokumentace změn
+
+================================================================================
