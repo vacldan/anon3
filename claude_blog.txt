@@ -88,3 +88,57 @@ Spokojenost - všechny změny jsou bezpečně na remote. Kód je čistý, testov
 a má měřitelné výsledky (80.3% úspěšnost). Blog je připravený na další záznamy.
 
 ================================================================================
+
+[2025-12-08 16:15] - Oprava genitiv -e a male patterns
+------------------------------------------------------
+
+🎯 CO JSEM OPRAVIL:
+1. ✅ Max Kuchta - "Maxe" → "Max" (ne "Maxa")
+   - Problém: Genitiv -e padal do female fallbacku (stem+a)
+   - Řešení: Přidán male_stem_endings check PŘED fallback
+   - male_stem_endings = ('x', 's', 'š', 'k', 'l', 'n', 'r', 'ch')
+
+2. ✅ Alexovi → Alex (ne Alexa)
+   - Problém: -ovi logika zkoušela cand+a i pro jména na 'x'
+   - Řešení: Přidán check `not cand.lower().endswith('x')` pro cand+a
+
+3. 🔧 Male pattern check pro Pavla → Pavel
+   - Implementováno: base_lo.endswith(male_patterns) → zkus base+el
+   - Očekáváno: "Pavla" → "Pavel" (base="Pavl" +el = "Pavel")
+   - NEFUNGUJE: Stále vrací "Pavl" ❌
+
+📈 POKROK:
+- Začátek dnešní session: 23 chyby (117 osob)
+- Po opravách: 20 chyb (115 osob)
+- Zlepšení: -3 chyby (-13%), -2 duplikáty
+- Celková úspěšnost: 82.6% (bylo 80.3%)
+
+❌ REGRESE:
+- Felix Nezval: "Felixe" → "Felixa" místo "Felix"
+  - Možná příčina: Změny v male_nom_endings prioritě
+  - TODO: Prozkoumat proč Felix nefunguje když Max funguje
+
+🤔 TECHNICKÉ POZNATKY:
+- Jména končící na 'x' nejsou v české knihovně (Max, Alex chybí)
+- Felix JE v knihovně, ale genitiv "Felixe" stále selže
+- male_nom_endings check funguje POUZE když stem JE v knihovně (řádek 1129-1141)
+- Pro jména MIMO knihovnu je potřeba male_stem_endings check PŘED fallbackem (řádek 1160-1167)
+
+💭 POCITY:
+- Frustrující: Oprava jednoho problému (Max) vytváří regresi (Felix)
+- Obtížné: Balancovat mezi různými vrstvami priority
+- Poučné: exec() testy nefungovaly kvůli špatně načtené knihovně - musím testovat přímo regenerací
+
+🔧 NÁSTÍN ŘEŠENÍ:
+1. Felix regrese - zkontrolovat proč stem_in_lib branch nefunguje
+2. Pavla → Pavel - možná problém s knihovnou načtenou v male pattern check?
+3. Gender mismatch - Alex Kolíska (příjmení), Ivana Dvorský, atd.
+
+📝 ZBÝVAJÍCÍ CHYBY (20):
+Kategorizace:
+- Gender mismatch v příjmeních: 4 (Ivana Dvorský, Iva Zámyslický, Lea Slabý, Josefa Malý)
+- Genitiv formy: 4 (Artura, Viktora, Alberto, Felixa)
+- Alica/Alice: 2
+- Inference problémy: 10 (Pavl, Aleša, Alois/Aloisa, Rostislav duplikáty, atd.)
+
+================================================================================
