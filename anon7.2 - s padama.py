@@ -573,7 +573,7 @@ def infer_first_name_nominative(obs: str) -> str:
     lo = obs.lower()
 
     # DEBUG: Trace execution for specific names
-    debug_names = ['artur', 'viktor', 'albert', 'alberta', 'alice', 'alica']
+    debug_names = ['artur', 'viktor', 'albert', 'alberta', 'alice', 'alica', 'max', 'maxa']
     debug_this = any(name in lo for name in debug_names)
     if debug_this:
         print(f"    [infer_first] INPUT: obs='{obs}', lo='{lo}'")
@@ -1219,17 +1219,19 @@ def infer_first_name_nominative(obs: str) -> str:
             # Heuristika: Mužská jména v genitivu typicky končí na souhlásky, zejména:
             # -s (Boris, Tomáš), -š (Aleš, Miloš), -ch (Bedřich), -k, -l, -n, -r, -x (Max, Felix, Alex)
             male_nom_endings = ('s', 'š', 'č', 'ř', 'ž', 'ch', 'k', 'l', 'n', 'r', 'm', 'd', 't', 'p', 'b', 'v', 'j', 'x')
-            if any(stem_lo.endswith(ending) for ending in male_nom_endings) and len(stem) >= 4:
-                # Vypadá jako mužské jméno v nominativu → vrať stem
-                if debug_this:
-                    print(f"    [infer_first] Stem looks like male nom, RETURN stem: '{stem.capitalize()}'")
-                return stem.capitalize()
+            if any(stem_lo.endswith(ending) for ending in male_nom_endings):
+                # VÝJIMKA: Velmi krátké stems (≤2) mohou být zkratky, skip
+                if len(stem) >= 3:
+                    # Max (3), Felix (5), Boris (5) → vypadá jako mužské jméno v nominativu
+                    if debug_this:
+                        print(f"    [infer_first] Stem looks like male nom (len={len(stem)}), RETURN stem: '{stem.capitalize()}'")
+                    return stem.capitalize()
 
-            # Pro krátká jména (≤4 znaky) nebo jména končící na neobvyklé koncovky → zkus stem_a
-            # Kriste → Krista, Petře → Petra (vokativ)
-            if len(stem) <= 4 or not stem_lo[-1].isalpha():
+            # Pro velmi krátká jména (≤2 znaky) nebo jména končící na neobvyklé koncovky → zkus stem_a
+            # ALE: jména 3-4 znaků které jsou v knihovně preferuj stem!
+            if len(stem) <= 2 or not stem_lo[-1].isalpha():
                 if debug_this:
-                    print(f"    [infer_first] Short stem or unusual ending, FALLBACK stem_a: '{stem_a.capitalize()}'")
+                    print(f"    [infer_first] Very short or unusual ending, FALLBACK stem_a: '{stem_a.capitalize()}'")
                 return stem_a.capitalize()
 
             # Default: vrať stem

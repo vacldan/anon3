@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-08T12:35:03.291135",
+  "generated_at": "2025-12-08T12:43:15.413968",
   "source_file": "smlouva24.docx",
   "entities": [
     {
@@ -330,7 +330,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_55]]",
-      "original": "Alois Berana",
+      "original": "Alois Beran",
       "occurrences": 1
     },
     {
@@ -474,13 +474,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_79]]",
-      "original": "Marcel Jiroušek",
+      "original": "Marco Jiroušek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_80]]",
-      "original": "Marco Jiroušek",
+      "original": "Marcel Jiroušek",
       "occurrences": 1
     },
     {
@@ -504,7 +504,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_84]]",
-      "original": "Alex Kolíska",
+      "original": "Alex Kolísek",
       "occurrences": 1
     },
     {
