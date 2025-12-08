@@ -573,7 +573,7 @@ def infer_first_name_nominative(obs: str) -> str:
     lo = obs.lower()
 
     # DEBUG: Trace execution for specific names
-    debug_names = ['artur', 'viktor', 'albert', 'alberta']
+    debug_names = ['artur', 'viktor', 'albert', 'alberta', 'alice', 'alica']
     debug_this = any(name in lo for name in debug_names)
     if debug_this:
         print(f"    [infer_first] INPUT: obs='{obs}', lo='{lo}'")
@@ -623,6 +623,32 @@ def infer_first_name_nominative(obs: str) -> str:
         # Zkontroluj, jestli Ivo je v knihovně
         if 'ivo' in CZECH_FIRST_NAMES:
             return 'Ivo'
+
+    # Leo/Lea: Lea může být genitiv od Leo (mužské)
+    # Leo není v knihovně, ale Lea je (F) → musíme preferovat Leo když vidíme declined forms
+    # Leo → Lea (genitiv), Leovi (dativ)
+    if lo in ('lea', 'leovi', 'leom', 'leo'):
+        # Unconditionally return Leo pro tyto formy
+        return 'Leo'
+
+    # Vito/Vita: Vita může být genitiv od Vito (mužské italské jméno)
+    # Vito není v knihovně, ale Vita je (F) → preferuj Vito
+    # Vito → Vita (genitiv), Vitovi (dativ)
+    if lo in ('vita', 'vitovi', 'vitem', 'vito'):
+        return 'Vito'
+
+    # Denis/Denise: Denise může být genitiv od Denis (mužské)
+    # Denis je v knihovně (M), Denise je v knihovně (F)
+    # Denis → Denise (genitiv), Denisovi (dativ)
+    if lo in ('denise', 'denisovi', 'denisem'):
+        if 'denis' in CZECH_FIRST_NAMES:
+            return 'Denis'
+
+    # Alois/Aloise: Aloise je genitiv od Alois (české mužské jméno)
+    # Alois není v knihovně → musíme explicit mapping
+    # Alois → Aloise (genitiv), Aloisovi (dativ)
+    if lo in ('aloise', 'aloisovi', 'aloisem', 'alois'):
+        return 'Alois'
 
     # Alica je spelling varianta Alice (sjednoť je)
     if lo == 'alica':
@@ -1133,6 +1159,19 @@ def infer_first_name_nominative(obs: str) -> str:
         stem_a = stem + 'a'
         stem_a_lo = stem_a.lower()
         stem_lo = stem.lower()
+
+        # PRIORITA 0: Jména končící na -ice/-íce jsou pravděpodobně nominativ (Alice, Beatrice)
+        # Ne declined forms! Vrať je bez změny.
+        if lo.endswith(('ice', 'íce')) and len(obs) >= 4:
+            # Alice, Beatrice, Elvice → jsou nominativ
+            # VÝJIMKA: Pokud stem_a (Alica) je v knihovně a obs není, použij stem_a
+            if stem_a_lo in CZECH_FIRST_NAMES and lo not in CZECH_FIRST_NAMES:
+                # Alica je v knihovně, ale Alice ne → preferuj slovenskou variantu z knihovny?
+                # NE! Preferuj obs (Alice) i když není v knihovně, protože -ice je nominativ pattern
+                pass  # Pokračuj na vrácení obs
+            if debug_this:
+                print(f"    [infer_first] -ice/-íce nominativ pattern RETURN: '{obs.capitalize()}'")
+            return obs.capitalize()
 
         # SPECIÁLNÍ: Dativ s vložným 'e' (Mirce → Mirka, Stánce → Stánka)
         # Pokud stem končí na -rc, -nc, -lc → odstraň 'c' a přidej 'ka'

@@ -31,8 +31,8 @@ OSOBY
 [[PERSON_19]]: Melanie Dvořáková
 [[PERSON_20]]: Irene Panská
   - Irene Panské
-[[PERSON_21]]: Alica Šustrů
-  - Alice Šustrů
+[[PERSON_21]]: Alice Šustrů
+  - Alici Šustrové
 [[PERSON_22]]: Beatrice Vránová
   - Beatricí Vránovou
 [[PERSON_23]]: Julie Řiháková
@@ -152,10 +152,12 @@ OSOBY
 [[PERSON_75]]: Ivo Zámyslický
   - Iva Zámyslického
   - Ivovi Zámyslickému
-[[PERSON_76]]: Vita Paseká
-  - Vito Paseka
-[[PERSON_77]]: Lea Slabý
-  - Leo Slabý
+[[PERSON_76]]: Vito Paseka
+  - Vita Paseky
+  - Vitovi Pasekovi
+[[PERSON_77]]: Leo Slabý
+  - Lea Slabého
+  - Leovi Slabému
 [[PERSON_78]]: Bruno Hrdina
   - Bruna Hrdiny
   - Brunovi Hrdinovi
@@ -211,27 +213,27 @@ OSOBY
   - Sergeje Havličky
   - Sergejovi Havličkovi
 [[PERSON_96]]: Denis Kralert
+  - Denise Kralerta
   - Denisovi Kralertovi
-[[PERSON_97]]: Denise Kralertová
-[[PERSON_98]]: Oleg Rychtera
+[[PERSON_97]]: Oleg Rychtera
   - Olega Rychtery
   - Olegovi Rychterovi
-[[PERSON_99]]: Taras Červinka
+[[PERSON_98]]: Taras Červinka
   - Tarase Červinky
   - Tarasovi Červinkovi
-[[PERSON_100]]: Oleksandr Topol
+[[PERSON_99]]: Oleksandr Topol
   - Oleksandra Topola
   - Oleksandrovi Topolovi
-[[PERSON_101]]: Leon Novak
+[[PERSON_100]]: Leon Novak
   - Leona Novaka
   - Leonovi Novakovi
-[[PERSON_102]]: Tadeáš Hromádka
+[[PERSON_101]]: Tadeáš Hromádka
   - Tadeáše Hromádky
   - Tadeášovi Hromádkovi
-[[PERSON_103]]: Radoslav Horčička
+[[PERSON_102]]: Radoslav Horčička
   - Radoslava Horčičky
   - Radoslavovi Horčičkovi
-[[PERSON_104]]: Lubomír Frydrych
+[[PERSON_103]]: Lubomír Frydrych
   - Lubomíra Frydrycha
   - Lubomírovi Frydrychovi
 

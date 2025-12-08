@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-08T07:13:16.691227",
+  "generated_at": "2025-12-08T12:35:03.291135",
   "source_file": "smlouva24.docx",
   "entities": [
     {
@@ -126,7 +126,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
-      "original": "Alica Šustrů",
+      "original": "Alice Šustrů",
       "occurrences": 1
     },
     {
@@ -456,13 +456,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_76]]",
-      "original": "Vita Paseká",
+      "original": "Vito Paseka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_77]]",
-      "original": "Lea Slabý",
+      "original": "Leo Slabý",
       "occurrences": 1
     },
     {
@@ -582,48 +582,42 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_97]]",
-      "original": "Denise Kralertová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_98]]",
       "original": "Oleg Rychtera",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_99]]",
+      "label": "[[PERSON_98]]",
       "original": "Taras Červinka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_100]]",
+      "label": "[[PERSON_99]]",
       "original": "Oleksandr Topol",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_101]]",
+      "label": "[[PERSON_100]]",
       "original": "Leon Novak",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_102]]",
+      "label": "[[PERSON_101]]",
       "original": "Tadeáš Hromádka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_103]]",
+      "label": "[[PERSON_102]]",
       "original": "Radoslav Horčička",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_104]]",
+      "label": "[[PERSON_103]]",
       "original": "Lubomír Frydrych",
       "occurrences": 1
     }
