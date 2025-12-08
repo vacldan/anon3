@@ -305,7 +305,8 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
 
         # Zkus vložné 'a' na konci (Oldovi → Olda, Renovi → Rena)
         # POUZE pro krátké kmeny (3-4 znaky) které vypadají jako zdrobněliny
-        if len(cand) <= 4 and len(cand) >= 2:
+        # ALE: NE pro jména končící na 'x' (Alexovi → Alex, ne Alexa)
+        if len(cand) >= 2 and len(cand) <= 4 and not cand.lower().endswith('x'):
             cand_with_a = cand + 'a'
             if cand_with_a.lower() in CZECH_FIRST_NAMES:
                 return cand_with_a.capitalize()
@@ -777,6 +778,32 @@ def infer_first_name_nominative(obs: str) -> str:
                 print(f"    [infer_first] PRIORITA a/u RETURN base: '{base.capitalize()}'")
             return base.capitalize()
 
+        # PRIORITA 2.5: Male pattern heuristic PŘED base+o checkem
+        # Pavla → Pavl končí na 'vl' (male pattern) → zkus base+el
+        # To zabezpečí, že Pavla → Pavel, ne Pavlo
+        if lo.endswith('a'):
+            male_name_patterns_check = (
+                'el', 'il', 'im', 'om', 'eš', 'oš', 'aš', 'iš', 'uš', 'yš',
+                'an', 'en', 'on', 'ín', 'ír', 'it', 'át', 'út',
+                'ek', 'ík', 'ák', 'uk', 'av', 'ev', 'iv', 'oj', 'aj', 'ej', 'ij',
+                'áš', 'éš', 'íš', 'óš', 'úš',
+                'š', 'ž', 'č', 'ř',
+                'is', 'us', 'os', 'as',
+                'ich', 'ích', 'ch',
+                'vl', 'rl'
+            )
+            if any(base_lo.endswith(pattern) for pattern in male_name_patterns_check) and len(base) >= 3:
+                # Base vypadá jako mužské jméno → zkus base+el nebo vrať base
+                base_el = base + 'el'
+                if base_el.lower() in CZECH_FIRST_NAMES:
+                    if debug_this:
+                        print(f"    [infer_first] Male pattern, returning base+el: '{base_el.capitalize()}'")
+                    return base_el.capitalize()
+                # Pokud base+el není v knihovně, vrať aspoň base (Pavl lepší než Pavlo)
+                if debug_this:
+                    print(f"    [infer_first] Male pattern, returning base: '{base.capitalize()}'")
+                return base.capitalize()
+
         # PRIORITA 3: Pro jména končící na 'a', zkus base+o (Huga → Hugo, Bruna → Bruno, Marca → Marco)
         # POUZE pro specifické kmeny nebo když base+o je v knihovně a base NENÍ
         if lo.endswith('a'):
@@ -1106,8 +1133,8 @@ def infer_first_name_nominative(obs: str) -> str:
             # Nebo ženský genitiv (Milad od Milada)?
 
             # Heuristika: Mužská jména v genitivu typicky končí na souhlásky, zejména:
-            # -s (Boris, Tomáš), -š (Aleš, Miloš), -ch (Bedřich), -k, -l, -n, -r
-            male_nom_endings = ('s', 'š', 'č', 'ř', 'ž', 'ch', 'k', 'l', 'n', 'r', 'm', 'd', 't', 'p', 'b', 'v', 'j')
+            # -s (Boris, Tomáš), -š (Aleš, Miloš), -ch (Bedřich), -k, -l, -n, -r, -x (Max, Felix, Alex)
+            male_nom_endings = ('s', 'š', 'č', 'ř', 'ž', 'ch', 'k', 'l', 'n', 'r', 'm', 'd', 't', 'p', 'b', 'v', 'j', 'x')
             if any(stem_lo.endswith(ending) for ending in male_nom_endings) and len(stem) >= 4:
                 # Vypadá jako mužské jméno v nominativu → vrať stem
                 if debug_this:
@@ -1131,6 +1158,15 @@ def infer_first_name_nominative(obs: str) -> str:
                 print(f"    [infer_first] Only stem_a in library, RETURN: '{stem_a.capitalize()}'")
             return stem_a.capitalize()
 
+        # PŘED FALLBACKEM: Check pro mužská jména mimo knihovnu
+        # Maxe → Max (max končí na 'x', vypadá jako mužské)
+        # Alexe → Alex (alex končí na 'x', vypadá jako mužské)
+        male_stem_endings = ('x', 's', 'š', 'k', 'l', 'n', 'r', 'ch')
+        if any(stem_lo.endswith(ending) for ending in male_stem_endings) and len(stem) >= 3:
+            if debug_this:
+                print(f"    [infer_first] Stem looks like male (ends with {stem_lo[-1]}), RETURN stem: '{stem.capitalize()}'")
+            return stem.capitalize()
+
         # FALLBACK: OBECNÁ HEURISTIKA pro ženská jména mimo knihovnu
         # Pattern 1: končí na typické ženské vzory
         # DŮLEŽITÉ: Nejdřív kontroluj invalid endings (např. "Líviia", "Elisca")
@@ -1149,10 +1185,16 @@ def infer_first_name_nominative(obs: str) -> str:
         # Pattern 2: krátký/středně dlouhý kmen (≤6 znaky) + 'a' je pravděpodobně ženské
         # Zvýšeno z 4 na 6 pro zachycení jmen jako Vlasta (Vlast=5 znaků), Krista (Krist=5)
         # DŮLEŽITÉ: Kontroluj, že stem nevypadá jako divný (např. "Elisc", "Lívii")
+        # ALE: nekontroluj, pokud stem vypadá jako mužské (např. Max, Alex)
         if len(stem) <= 6:
-            # Nesmí končit na divné kombinace: sc, ii, ií, ...
+            # Nesmí končit na divné kombinace: sc, ii, ií, ... nebo mužské koncovky
             invalid_endings = ('sc', 'ii', 'ií', 'íi', 'iě', 'ýč', 'šc', 'žc')
-            if not stem_a_lo.endswith(invalid_endings) and not stem.lower().endswith(invalid_endings):
+            # NOVÝ CHECK: Pokud stem končí na mužskou koncovku, neskáč do fallbacku
+            if any(stem_lo.endswith(ending) for ending in male_stem_endings):
+                if debug_this:
+                    print(f"    [infer_first] Stem ends with male pattern, skipping female fallback")
+                # Pokračuj dál, nevrátíme stem_a
+            elif not stem_a_lo.endswith(invalid_endings) and not stem.lower().endswith(invalid_endings):
                 if debug_this:
                     print(f"    [infer_first] FEMALE -y RETURN (short stem): '{stem_a.capitalize()}'")
                 return stem_a.capitalize()
