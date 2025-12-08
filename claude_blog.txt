@@ -142,3 +142,95 @@ Kategorizace:
 - Inference problémy: 10 (Pavl, Aleša, Alois/Aloisa, Rostislav duplikáty, atd.)
 
 ================================================================================
+
+[2025-12-08 18:30] - MAJOR BREAKTHROUGH - Indeclinable Surname Bug Fixed
+-----------------------------------------------------------------------
+
+🎯 CO JSEM OPRAVIL:
+
+**HLAVNÍ BUG NALEZEN A OPRAVEN:**
+Příjmení končící na -ý/-í/-cí (indeclinable) způsobovaly nesprávnou inference jmen!
+
+Problém: Pro "Artura Kolenatého" (genitiv):
+1. Příjmení "Kolenatý" končí na 'ý' → is_indeclinable = True
+2. Kód checknul rod POZOROVANÉ formy: get_first_name_gender("Artura")
+3. "Artura" končí na 'a' → heuristika vrátila 'F' (ženský rod!)
+4. is_female_surname = True → kód šel do ŽENSKÉ větve
+5. Ve ženské větvi se "Artura" jen kapitalizuje, NEinferuje
+6. Výsledek: "Artura Kolenatý" (WRONG) místo "Artur Kolenatý"
+
+Řešení (řádek 2966):
+```python
+if is_indeclinable:
+    # KRITICKÁ OPRAVA: Inferuj jméno NEJPRVE, pak check gender!
+    # Artura (genitiv) → Artur (nominativ) → rod M, ne F!
+    first_nom_for_gender = infer_first_name_nominative(first_obs)
+    first_gender = get_first_name_gender(first_nom_for_gender)
+    is_female_surname = (first_gender == 'F')
+```
+
+Teď pro "Artura Kolenatého":
+1. is_indeclinable = True
+2. first_nom_for_gender = infer_first_name_nominative("Artura") = "Artur"
+3. first_gender = get_first_name_gender("Artur") = 'M'
+4. is_female_surname = False → vstoupí do MUŽSKÉ větve ✓
+5. Ve mužské větvi se zavolá inference znovu → "Artur" ✓
+
+**DALŠÍ OPRAVY V TÉTO SESSION:**
+
+1. ✅ Pavl → Pavel (řádek 810-816)
+   - Problem: Pavl + el = "Pavlel" (wrong)
+   - Řešení: Pro 'vl'/'rl' shluky odstraň 'l' a přidej 'el'
+   - Pavl → Pav + el = "Pavel" ✓
+
+2. ✅ Alberto → Albert (řádek 699-717)
+   - Problém: base+o check byl PŘED base checkem
+   - Alberta → Alberto (wrong, protože "alberto" je v knihovně)
+   - Řešení: Swap priority - base check PŘED base+o check
+   - Alberta → Albert ✓ (base "albert" je v knihovně)
+
+3. ✅ Artura, Viktora → Artur, Viktor (indeclinable surname bug)
+   - Sloučeno všechny 3 formy (Artur, Artura, Arturovi) do jedné osoby
+
+📈 POKROK:
+- Začátek session: 19 chyb (114 osob) → 83.3% úspěšnost
+- Teď: 14 chyb (109 osob) → 87.2% úspěšnost
+- Zlepšení: -5 chyb (-26%), -5 duplikátů
+
+📊 CELKOVÝ POKROK OD ZAČÁTKU:
+- Začátek projektu: 38 chyb (130 osob) → 70.8% úspěšnost
+- Teď: 14 chyb (109 osob) → 87.2% úspěšnost
+- Celkové zlepšení: -24 chyb (-63%), -21 duplikátů, +16.4% úspěšnost
+
+❌ ZBÝVAJÍCÍ PROBLÉMY (14):
+1. Alica Šustrů / Alice Šustrová (2) - slovenská vs česká varianta
+2. Rostislav Hrabět / Rostislav Hraběti (2) - duplikáty příjmení
+3. Iv Zámyslický / Iva Zámyslický (2) - gender mismatch + duplikát
+4. Lea Slabý (1) - gender mismatch příjmení
+5. Alex Kolíska (1) - gender mismatch příjmení
+6. Denise Kralertová (1) - Denis/Denise gender
+7. Elena Krbcová (1) - Elen → Elena
+8. Albín Hořák (1) - gender mismatch
+9. Alois Berana (1) - Aloise → Alois genitiv
+10. Vita Paseká (1) - Vito → Vita gender
+11. Marcel Jiroušek (1) - Marco → Marcel
+
+💭 POCITY:
+- Eureka moment! Nalezení indeclinable surname bug byl breakthrough
+- Systematické debugování pomocí debug_names funguje skvěle
+- Každá oprava odhaluje nové edge cases, ale pokrok je stabilní
+- 87.2% je solidní úspěšnost, cíl je 95%+
+
+🔧 TECHNICKÉ POZNATKY:
+- Heuristika rodu podle koncovky (-a = ženské) je nebezpečná pro declined formy
+- Pro indeclinable surnames VŽDY inferuj jméno PŘED gender checkem
+- Priority v inference jsou klíčové: base check PŘED base+o check
+- Concat patterns (vl, rl) vyžadují speciální logiku pro reconstruction
+
+📝 DALŠÍ KROKY:
+1. Opravit zbývajících 14 chyb (gender mismatch, duplikáty)
+2. Cíl: dostat úspěšnost na 95%+
+3. Commit pokroku s těmito fixes
+
+================================================================================
+

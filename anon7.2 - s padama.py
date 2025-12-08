@@ -572,8 +572,9 @@ def infer_first_name_nominative(obs: str) -> str:
 
     lo = obs.lower()
 
-    # DEBUG: Trace execution (disabled)
-    debug_this = False
+    # DEBUG: Trace execution for specific names
+    debug_names = ['artur', 'viktor', 'albert', 'alberta']
+    debug_this = any(name in lo for name in debug_names)
     if debug_this:
         print(f"    [infer_first] INPUT: obs='{obs}', lo='{lo}'")
 
@@ -695,22 +696,25 @@ def infer_first_name_nominative(obs: str) -> str:
             base = obs[:-1]
             base_lo = base.lower()
 
-            # SPECIÁLNÍ: Zkus base+o pro jména jako Bruna → Bruno
+             # PRIORITA 1: Zkontroluj knihovnu nebo známá mužská jména NEJPRVE
+            # Alberta → Albert (base v knihovně), ne Alberto
+            # Bruna → Bruno (base NENÍ v knihovně, ale base+o ANO)
+            common_male_names = {'petr', 'david', 'marek', 'pavel', 'tomáš', 'lukáš', 'jan', 'jiří', 'kamil',
+                               'daniel', 'filip', 'aleš', 'stanislav', 'jaroslav', 'rostislav', 'ladislav'}
+            if base_lo in CZECH_FIRST_NAMES or base_lo in common_male_names:
+                if debug_this:
+                    print(f"    [infer_first] Ambiguous form, base in lib, preferring base RETURN: '{base.capitalize()}'")
+                return base.capitalize()
+
+            # PRIORITA 2: Zkus base+o pro jména jako Bruna → Bruno
+            # POUZE když base NENÍ v knihovně, ale base+o ANO
             # Pokud jak "bruna" (F), tak "bruno" (M) jsou v knihovně, preferuj "bruno"
             if lo.endswith('a'):
                 base_o = base + 'o'
                 if base_o.lower() in CZECH_FIRST_NAMES:
                     if debug_this:
-                        print(f"    [infer_first] Ambiguous form (F in lib), preferring base+o RETURN: '{base_o.capitalize()}'")
+                        print(f"    [infer_first] Ambiguous form (F in lib, base NOT), preferring base+o RETURN: '{base_o.capitalize()}'")
                     return base_o.capitalize()
-
-            # Zkontroluj knihovnu nebo známá mužská jména
-            common_male_names = {'petr', 'david', 'marek', 'pavel', 'tomáš', 'lukáš', 'jan', 'jiří', 'kamil',
-                               'daniel', 'filip', 'aleš', 'stanislav', 'jaroslav', 'rostislav', 'ladislav'}
-            if base_lo in CZECH_FIRST_NAMES or base_lo in common_male_names:
-                if debug_this:
-                    print(f"    [infer_first] Ambiguous form, preferring base RETURN: '{base.capitalize()}'")
-                return base.capitalize()
 
         # VÝJIMKA 2: Preferuj české varianty před slovenskými
         # "alica" (SK) → "alice" (CZ), "lucia" (SK) → "lucie" (CZ)
@@ -793,15 +797,41 @@ def infer_first_name_nominative(obs: str) -> str:
                 'vl', 'rl'
             )
             if any(base_lo.endswith(pattern) for pattern in male_name_patterns_check) and len(base) >= 3:
-                # Base vypadá jako mužské jméno → zkus base+el nebo vrať base
-                base_el = base + 'el'
+                # Base vypadá jako mužské jméno → zkus rekonstruovat
+                # Pro "vl" nebo "rl" shluky: Pavl → Pav+el = Pavel
+                # Pro ostatní: zkus base+el nebo použij known_truncations
+                base_el = None
+
+                # PRIORITA 1: Specifická known_truncations
+                known_male_truncations = {
+                    'pavl': 'Pavel', 'karl': 'Karel', 'petr': 'Petr'
+                }
+                if base_lo in known_male_truncations:
+                    if debug_this:
+                        print(f"    [infer_first] Male pattern known_truncation: '{known_male_truncations[base_lo]}'")
+                    return known_male_truncations[base_lo]
+
+                # PRIORITA 2: Pro souhlásková shluky (vl, rl): odstraň poslední 'l' a přidej 'el'
+                # Pavl → Pav+el = Pavel
+                if base_lo.endswith(('vl', 'rl')) and len(base) >= 4:
+                    base_stem = base[:-1]  # Odstraň poslední 'l'
+                    base_el = base_stem + 'el'
+                    if debug_this:
+                        print(f"    [infer_first] Male vl/rl pattern: '{base}' → '{base_stem}' + 'el' = '{base_el}'")
+
+                # PRIORITA 3: Pro ostatní patterny: zkus base+el
+                if base_el is None:
+                    base_el = base + 'el'
+
+                # Zkontroluj, jestli je base_el v knihovně
                 if base_el.lower() in CZECH_FIRST_NAMES:
                     if debug_this:
-                        print(f"    [infer_first] Male pattern, returning base+el: '{base_el.capitalize()}'")
+                        print(f"    [infer_first] Male pattern, returning base_el: '{base_el.capitalize()}'")
                     return base_el.capitalize()
-                # Pokud base+el není v knihovně, vrať aspoň base (Pavl lepší než Pavlo)
+
+                # FALLBACK: Pokud base+el není v knihovně, vrať aspoň base
                 if debug_this:
-                    print(f"    [infer_first] Male pattern, returning base: '{base.capitalize()}'")
+                    print(f"    [infer_first] Male pattern, base_el NOT in lib, returning base: '{base.capitalize()}'")
                 return base.capitalize()
 
         # PRIORITA 3: Pro jména končící na 'a', zkus base+o (Huga → Hugo, Bruna → Bruno, Marca → Marco)
@@ -1124,6 +1154,14 @@ def infer_first_name_nominative(obs: str) -> str:
 
         if stem_in_lib and stem_a_in_lib:
             # OBOJÍ v knihovně → preferuj stem_a (ženská forma)
+            # VÝJIMKA: Pokud stem končí na mužskou koncovku (x, s, š, l, n, r), preferuj stem
+            # Felix/Felixa → preferuj Felix, Boris/Borisa → preferuj Boris
+            male_endings_both = ('x', 's', 'š', 'l', 'n', 'r', 'ch')
+            if any(stem_lo.endswith(ending) for ending in male_endings_both) and len(stem) >= 4:
+                if debug_this:
+                    print(f"    [infer_first] Both in library, but stem looks male, preferring stem: '{stem.capitalize()}'")
+                return stem.capitalize()
+            # Default: preferuj stem_a
             if debug_this:
                 print(f"    [infer_first] Both in library, preferring stem_a: '{stem_a.capitalize()}'")
             return stem_a.capitalize()
@@ -2921,9 +2959,12 @@ class Anonymizer:
             first_lo = first_obs.lower()
 
             # For indeclinable surnames, determine expected gender from first name
+            # KRITICKÁ OPRAVA: Inferuj jméno NEJPRVE, pak check gender!
+            # Artura (genitiv) → Artur (nominativ) → rod M, ne F!
             if is_indeclinable:
-                # Check if first name appears to be female (ends in -a, or is female in library)
-                first_gender = get_first_name_gender(first_obs)
+                # Infer nominativ first, THEN check gender
+                first_nom_for_gender = infer_first_name_nominative(first_obs)
+                first_gender = get_first_name_gender(first_nom_for_gender)
                 is_female_surname = (first_gender == 'F')
 
             # Pokud příjmení je ženské, jméno musí být ženské
@@ -2961,7 +3002,7 @@ class Anonymizer:
                     else:
                         # Použij inference místo FORCE převodu
                         # Inference má lepší logiku pro rozlišování vzorů (Kamila vs Pavla)
-                        debug_names = ['radka', 'radk', 'marka', 'mark', 'karel', 'karla']
+                        debug_names = ['radka', 'radk', 'marka', 'mark', 'karel', 'karla', 'artur', 'viktor', 'albert']
                         if any(name in first_obs.lower() for name in debug_names):
                             print(f"    [BRANCH-1] Calling infer for male surname, first_obs='{first_obs}'")
                         first_nom = infer_first_name_nominative(first_obs)
@@ -3038,7 +3079,8 @@ class Anonymizer:
                 # DEBUG: pro analýzu
                 debug_declined = ['daniel', 'kamil', 'aleš', 'filip', 'samuel', 'stanislav',
                                 'rostislav', 'bedřich', 'vít', 'štefan', 'boris', 'radomír',
-                                'albín', 'jaromír', 'vladimír', 'dalimil', 'lubomír', 'jaroslav', 'bohdan']
+                                'albín', 'jaromír', 'vladimír', 'dalimil', 'lubomír', 'jaroslav', 'bohdan',
+                                'artur', 'viktor', 'albert']
                 if any(name in first_nom.lower() for name in debug_declined):
                     print(f"    [POST-SKIP] Both declined: first_obs='{first_obs}', last_obs='{last_obs}'")
                     print(f"    [POST-SKIP] Inferred: first_nom='{first_nom}', last_nom='{last_nom}'")
