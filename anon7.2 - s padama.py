@@ -617,6 +617,13 @@ def infer_first_name_nominative(obs: str) -> str:
     if lo == 'hany':
         return 'Hana'
 
+    # Iva může být genitiv od Ivo (mužské jméno)
+    # Ivo → Iva (genitiv), Ivovi (dativ)
+    if lo in ('iva', 'ivovi', 'ivem'):
+        # Zkontroluj, jestli Ivo je v knihovně
+        if 'ivo' in CZECH_FIRST_NAMES:
+            return 'Ivo'
+
     # Alica je spelling varianta Alice (sjednoť je)
     if lo == 'alica':
         return 'Alice'
@@ -1389,9 +1396,18 @@ def infer_surname_nominative(obs: str) -> str:
     lo = obs.lower()
 
     # DEBUG
-    debug_surname = (lo in {'horňákové', 'horňák', 'hladká', 'hladký', 'hladeková'})
+    debug_surname = (lo in {'horňákové', 'horňák', 'hladká', 'hladký', 'hladeková', 'hraběte', 'hraběti', 'hrabě'})
     if debug_surname:
         print(f"    [infer_surname] INPUT: obs='{obs}', lo='{lo}'")
+
+    # ========== SPECIÁLNÍ PŘÍPADY ==========
+
+    # Hrabě: titul/příjmení s nepravidelným skloňováním
+    # N: Hrabě, G: Hraběte, D: Hraběti, A: Hraběte, V: Hrabě, L: Hraběti, I: Hrabětem
+    if lo in ('hraběte', 'hraběti', 'hrabětem', 'hrabě'):
+        if debug_surname:
+            print(f"    [infer_surname] Special case Hrabě RETURN: 'Hrabě'")
+        return 'Hrabě'
 
     # ========== ŽENSKÁ PŘÍJMENÍ ==========
 
@@ -2897,8 +2913,11 @@ class Anonymizer:
                 existing_is_female = existing_last_lo.endswith(('ová', 'á'))
 
                 # MUSÍ být stejný rod!
-                if existing_is_female != current_is_female:
-                    continue  # Různý rod → skip
+                # VÝJIMKA: Pokud jedno končí na 'ů' a druhé na 'ová', může být stejný kmen
+                # Šustrů vs Šustrová → porovnej kmeny i přes různý rod
+                has_u_ending = last_nom.lower().endswith('ů') or existing_last_lo.endswith('ů')
+                if existing_is_female != current_is_female and not has_u_ending:
+                    continue  # Různý rod → skip (pokud není 'ů' exception)
 
                 # Porovnej kmeny příjmení
                 # Procházka vs Procházka → kmen = "Procházk" (oba mužské) ✓
@@ -2925,6 +2944,8 @@ class Anonymizer:
                         return s[:-2] + 'l'  # Havel → Havl
                     elif s.endswith('ec'):
                         return s[:-2] + 'c'  # Němec → Němc
+                    elif s.endswith('ů'):
+                        return s[:-1]  # Šustrů → Šustr (genitiv plurálu)
                     elif s.endswith('a'):
                         return s[:-1]  # Procházka → Procházk (ale ne -ka!)
                     elif s.endswith('á'):
