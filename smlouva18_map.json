@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-02T16:16:23.280779",
+  "generated_at": "2025-12-09T12:20:24.331623",
   "source_file": "smlouva18.docx",
   "entities": [
     {
@@ -66,7 +66,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_11]]",
-      "original": "Hynek Jůz",
+      "original": "Hynek Jůza",
       "occurrences": 1
     },
     {
@@ -84,13 +84,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_14]]",
-      "original": "Tobiáš Vrána",
+      "original": "Tobiáš Vráný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_15]]",
-      "original": "Marek Prášek",
+      "original": "Mark Prášek",
       "occurrences": 1
     },
     {
@@ -114,13 +114,13 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Praha 6, 160 00",
+      "original": "Praha 6, 160 00\nIČO",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Karafiátová 28, 779 00 Olomouc",
+      "original": "Karafiátová 28, 779 00 Olomouc\nTelefon",
       "occurrences": 1
     },
     {

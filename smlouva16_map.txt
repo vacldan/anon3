@@ -2,10 +2,8 @@ OSOBY
 -----
 [[PERSON_1]]: Tomáš Novák
   - Tomáše Nováka
-[[PERSON_2]]: Jan Nováková
-  - Jana Nováková
-[[PERSON_3]]: Petr Horáková
-  - Petra Horáková
+[[PERSON_2]]: Jana Nováková
+[[PERSON_3]]: Petra Horáková
 [[PERSON_4]]: Martin Horák
 [[PERSON_5]]: Robert Svoboda
 [[PERSON_6]]: Martin Svoboda
@@ -13,33 +11,26 @@ OSOBY
 [[PERSON_8]]: Pavel Horák
 [[PERSON_9]]: Eva Svobodová
 [[PERSON_10]]: Tomáš Dvořák
-[[PERSON_11]]: Han Malá
-  - Hana Malá
+[[PERSON_11]]: Hana Malá
 [[PERSON_12]]: Petra Nováková
 [[PERSON_13]]: Jana Horáková
 [[PERSON_14]]: Petr Novák
 [[PERSON_15]]: Karel Procházka
 [[PERSON_16]]: Lucie Dvořáková
-[[PERSON_17]]: Han Nováková
-  - Hana Nováková
+[[PERSON_17]]: Hana Nováková
 [[PERSON_18]]: Tomáš Horák
 [[PERSON_19]]: Pavel Novák
-[[PERSON_20]]: Petr Dvořáková
-  - Petra Dvořáková
+[[PERSON_20]]: Petra Dvořáková
 [[PERSON_21]]: Eva Malá
 [[PERSON_22]]: Robert Novák
-[[PERSON_23]]: Petr Svobodová
-  - Petra Svobodová
+[[PERSON_23]]: Petra Svobodová
 [[PERSON_24]]: Tomáš Veselý
-[[PERSON_25]]: Jan Svobodová
-  - Jana Svobodová
+[[PERSON_25]]: Jana Svobodová
 
 ACCOUNT_ID
-----------
 [[ACCOUNT_ID_1]]: 987654321098
 
 ADDRESS
--------
 [[ADDRESS_1]]: Pařížská 123/45, 110 00 Praha 1
 [[ADDRESS_2]]: Mánesova 67/89, 120 00 Praha 2
 [[ADDRESS_3]]: Evropská 234/56, 160 00 Praha 6
@@ -52,7 +43,6 @@ ADDRESS
 [[ADDRESS_10]]: Pařížská 67, Praha 1
 
 API_KEY
--------
 [[API_KEY_1]]: s
 [[API_KEY_2]]: AKIAJ7XYZ3EXAMPLE
 [[API_KEY_3]]: _2
@@ -60,7 +50,6 @@ API_KEY
 [[API_KEY_5]]: _4
 
 BANK
-----
 [[BANK_1]]: 9876543210/0800
 [[BANK_2]]: 1234567890/2700
 [[BANK_3]]: 4567890123/5500
@@ -76,7 +65,6 @@ BANK
 [[BANK_13]]: 8888888888/0800
 
 BIRTH_ID
---------
 [[BIRTH_ID_1]]: 750615/1234
 [[BIRTH_ID_2]]: 780923/5634
 [[BIRTH_ID_3]]: 785822/6734
@@ -101,12 +89,10 @@ BIRTH_ID
 [[BIRTH_ID_22]]: 820923/6745
 
 BIRTH_PLACE
------------
 [[BIRTH_PLACE_1]]: Brno
 [[BIRTH_PLACE_2]]: Praha
 
 DATE
-----
 [[DATE_1]]: 15.06.1975
 [[DATE_2]]: 22.08.1978
 [[DATE_3]]: 23.05.1990
@@ -116,13 +102,11 @@ DATE
 [[DATE_7]]: 23.09.1975
 
 DIC
----
 [[DIC_1]]: CZ7506151234
 [[DIC_2]]: CZ12345678
 [[DIC_3]]: CZ23456789
 
 EMAIL
------
 [[EMAIL_1]]: tomas.novak@personal.cz
 [[EMAIL_2]]: petra.horakova.md@email.cz
 [[EMAIL_3]]: r.svoboda@healthtech-fund.cz
@@ -148,11 +132,9 @@ EMAIL
 [[EMAIL_23]]: j.svobodova@legalpro.cz
 
 HOST
-----
 [[HOST_1]]: medcare-prod.c9akciq32.eu-central-1.rds.amazonaws.com
 
 IBAN
-----
 [[IBAN_1]]: CZ98 0800 0000 0098 7654 3210
 [[IBAN_2]]: CZ12 2700 0000 0012 3456 7890
 [[IBAN_3]]: CZ45 5500 0000 0045 6789 0123
@@ -162,18 +144,15 @@ IBAN
 [[IBAN_7]]: CZ88 0800 0000 0088 8888 8888
 
 ICO
----
 [[ICO_1]]: 12345678
 [[ICO_2]]: 23456789
 [[ICO_3]]: 34567890
 
 ID_CARD
--------
 [[ID_CARD_1]]: 567890123
 [[ID_CARD_2]]: 678901234
 
 INSURANCE_ID
-------------
 [[INSURANCE_ID_1]]: 7506151234
 [[INSURANCE_ID_2]]: 7858226734
 [[INSURANCE_ID_3]]: 8203151823
@@ -184,17 +163,14 @@ INSURANCE_ID
 [[INSURANCE_ID_8]]: 7509236734
 
 LICENSE_PLATE
--------------
 [[LICENSE_PLATE_1]]: SO27001
 
 PASSWORD
---------
 [[PASSWORD_1]]: M3dC@re#2024!AdminPass$Secure
 [[PASSWORD_2]]: DbAdm!n#M3dC@re$2024%SecurePass
 [[PASSWORD_3]]: M365#Adm!n$2024%SecurePass
 
 PHONE
------
 [[PHONE_1]]: +420 603 456 789
 [[PHONE_2]]: +420 777 234 567
 [[PHONE_3]]: +420 724 567 890
@@ -218,7 +194,6 @@ PHONE
 [[PHONE_21]]: +420 224 890 123
 
 USERNAME
---------
 [[USERNAME_1]]: admin_system
 [[USERNAME_2]]: db_admin
 

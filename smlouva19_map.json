@@ -1,186 +1,204 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-02T16:16:44.934060",
+  "generated_at": "2025-12-09T12:20:36.851195",
   "source_file": "smlouva19.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Adrian Kratochvíl",
+      "original": "Adrian Kratochvílem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Daniel Horská",
+      "original": "Svaté Markét",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucie Novotná",
+      "original": "Daniela Horská",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Gabriela Hrbáčová",
+      "original": "Lucií Novotná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Tomáš Pavlík",
+      "original": "Gabriela Hrbáčová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Filip Šimůnek",
+      "original": "Tomáš Pavlíek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Hana Zbořilová",
+      "original": "Filip Šimůnek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Klára Melichová",
+      "original": "Lucie Novotná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_9]]",
-      "original": "Michaela Růžičková",
+      "original": "Hany Zbořilová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Zora Konečná",
+      "original": "Klára Melichová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_11]]",
-      "original": "Richard Pavelka",
+      "original": "Michaela Růžičková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
-      "original": "Viktorie Benýšková",
+      "original": "Zora Konečná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_13]]",
-      "original": "Nela Kořínková",
+      "original": "Richard Pavelek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_14]]",
-      "original": "Štěpán Hejduk",
+      "original": "Viktorie Benýšková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_15]]",
-      "original": "Martin Dvořák",
+      "original": "Nela Kořínková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_16]]",
-      "original": "Eva Špačková",
+      "original": "Štěpán Hejduk",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_17]]",
-      "original": "Hynek Procházka",
+      "original": "Martin Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_18]]",
-      "original": "Andre Řehořová",
+      "original": "Eva Špačková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_19]]",
-      "original": "Denis Kadlecová",
+      "original": "Hynek Procházka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_20]]",
-      "original": "Erik Dohnal",
+      "original": "Andrea Řehořová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
-      "original": "Erika Řehořová",
+      "original": "Denisa Kadlecová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
-      "original": "Tamar Štefková",
+      "original": "Erik Dohnal",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_23]]",
-      "original": "Monika Pátková",
+      "original": "Erika Řehořová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_24]]",
-      "original": "Radomír Král",
+      "original": "Tamara Štefková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_25]]",
-      "original": "Soňa Mikulková",
+      "original": "Monika Pátková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_26]]",
-      "original": "Tomáš Bartoš",
+      "original": "Radomír Král",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_27]]",
-      "original": "Štěpán Šeda",
+      "original": "Soňa Mikulková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_28]]",
+      "original": "Tomáš Bartoš",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_29]]",
+      "original": "Štěpán Šeda",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_30]]",
       "original": "Pavlína Plíšková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_31]]",
+      "original": "Adrian Kratochvíl",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Praha 10, 102 00",
+      "original": "Praha 10, 102 00\nIČO",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Křišťanová 19, 779 00 Olomouc",
+      "original": "Křišťanová 19, 779 00 Olomouc\nTelefon",
       "occurrences": 1
     },
     {

@@ -1,10 +1,8 @@
 OSOBY
 -----
-[[PERSON_1]]: Martin Svobodová
-  - Martina Svobodová
+[[PERSON_1]]: Martina Svobodová
 [[PERSON_2]]: Jakub Procházka
-[[PERSON_3]]: Petr Procházková
-  - Petra Procházková
+[[PERSON_3]]: Petra Procházková
 [[PERSON_4]]: Eliška Procházková
 [[PERSON_5]]: Matěj Procházka
   - Matěj Procházek
@@ -17,37 +15,34 @@ OSOBY
 [[PERSON_10]]: Eva Málková
 [[PERSON_11]]: Pavel Dvořák
 [[PERSON_12]]: Tomáš Novák
-[[PERSON_13]]: Jan Svobodová
-  - Jana Svobodová
+[[PERSON_13]]: Jana Svobodová
 [[PERSON_14]]: Eva Nováková
 
 ADDRESS
--------
 [[ADDRESS_1]]: Wenceslausovo náměstí 1234/56, 110 00 Praha 1
 [[ADDRESS_2]]: Karlova 45/12, 602 00 Brno
+Přechodný pobyt
 [[ADDRESS_3]]: Vinohradská 1234/89, 130 00 Praha 3
-[[ADDRESS_4]]: Masarykova 123/45, 602 00 Brno
-[[ADDRESS_5]]: Vinohradská 1234/89, Praha 3
-[[ADDRESS_6]]: Na Františku 12/34, 110 00 Praha 1
-[[ADDRESS_7]]: Vinohradská 123, Praha 3
-[[ADDRESS_8]]: Na Poříčí 23, Praha 1
+[[ADDRESS_4]]: Karlova 45/12, 602 00 Brno
+Telefon
+[[ADDRESS_5]]: Masarykova 123/45, 602 00 Brno
+[[ADDRESS_6]]: Vinohradská 1234/89, Praha 3
+[[ADDRESS_7]]: Na Františku 12/34, 110 00 Praha 1
+[[ADDRESS_8]]: Vinohradská 123, Praha 3
+[[ADDRESS_9]]: Na Poříčí 23, Praha 1
 
 API_KEY
--------
 [[API_KEY_1]]: api_key_jp_2024_ghp_Kx7mP2vQ9wR5tYu8iO3nM6lJ4hG1sA
 
 BANK
-----
 [[BANK_1]]: 9876543210/0100
 [[BANK_2]]: 1234567890/0800
 
 BIO_HASH
---------
 [[BIO_HASH_1]]: HASH_BIO_JP_2024_0156
 [[BIO_HASH_2]]: IRIS_20240115_456789
 
 BIRTH_ID
---------
 [[BIRTH_ID_1]]: 850812/1234
 [[BIRTH_ID_2]]: 880305/6745
 [[BIRTH_ID_3]]: 155615/4567
@@ -56,26 +51,21 @@ BIRTH_ID
 [[BIRTH_ID_6]]: 650823/1923
 
 BIRTH_PLACE
------------
 [[BIRTH_PLACE_1]]: Brno
 
 CARD
-----
 [[CARD_1]]: 4532 1234 5678 9012
 
 DATE
-----
 [[DATE_1]]: 12.08.1985
 [[DATE_2]]: 05.03.1988
 [[DATE_3]]: 15.06.2015
 [[DATE_4]]: 22.11.2018
 
 DIC
----
 [[DIC_1]]: CZ28745632
 
 EMAIL
------
 [[EMAIL_1]]: info@centrumpece.cz
 [[EMAIL_2]]: jakub.prochazka85@gmail.com
 [[EMAIL_3]]: petra.prochazkova@email.cz
@@ -84,68 +74,54 @@ EMAIL
 [[EMAIL_6]]: dpo@centrumpece.cz
 
 FACEBOOK
---------
 [[FACEBOOK_1]]: https://facebook.com/jakub.prochazka.85
 
 HOST
-----
 [[HOST_1]]: vpn.centrumpece.cz
 
 IBAN
-----
 [[IBAN_1]]: CZ89 0100 0000 0098 7654 3210
 [[IBAN_2]]: CZ12 0800 0000 0012 3456 7890
 
 ICO
----
 [[ICO_1]]: 28745632
 [[ICO_2]]: 87654321
 [[ICO_3]]: 12345678
 [[ICO_4]]: 00456789
 
 ID_CARD
--------
 [[ID_CARD_1]]: 345678901
 [[ID_CARD_2]]: 123456
 
 IMEI
-----
 [[IMEI_1]]: 123456789012345
 
 INSTAGRAM
----------
 [[INSTAGRAM_1]]: @jakubprochazka_cz
 
 INSURANCE_ID
-------------
 [[INSURANCE_ID_1]]: 8508121234
 
 IP
---
 [[IP_1]]: 78.45.123.156
 [[IP_2]]: 185.56.234.167
 
 LICENSE_PLATE
--------------
 [[LICENSE_PLATE_1]]: 2B3 4567
 [[LICENSE_PLATE_2]]: DL5520
 
 LINKEDIN
---------
 [[LINKEDIN_1]]: https://linkedin.com/in/jakubprochazka85
 
 MAC
----
 [[MAC_1]]: 00:1B:44:11:3A:B7
 [[MAC_2]]: 00:50:56:A1:B2:C3
 [[MAC_3]]: 00:1D:7E:12:34:56
 
 PASSWORD
---------
 [[PASSWORD_1]]: VerySecure!Pass2024
 
 PHONE
------
 [[PHONE_1]]: +420 222 456 789
 [[PHONE_2]]: 987654321
 [[PHONE_3]]: +420 724 567 890
@@ -156,22 +132,17 @@ PHONE
 [[PHONE_8]]: +420 222 456 700
 
 PHOTO_ID
---------
 [[PHOTO_ID_1]]: photo_id_jp_2024.jpg
 
 SKYPE
------
 [[SKYPE_1]]: jakub.prochazka.cz
 
 USERNAME
---------
 [[USERNAME_1]]: j.prochazka
 
 VIN
----
 [[VIN_1]]: TMBCH41Z8J7123456
 
 VOICE_ID
---------
 [[VOICE_ID_1]]: VOICE_ID_JP_2024_123456
 

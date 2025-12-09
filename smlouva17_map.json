@@ -1,12 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-02T18:21:32.500983",
+  "generated_at": "2025-12-09T12:20:50.208727",
   "source_file": "smlouva17.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Martin Svobodová",
+      "original": "Martina Svobodová",
       "occurrences": 1
     },
     {
@@ -18,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Petr Procházková",
+      "original": "Petra Procházková",
       "occurrences": 1
     },
     {
@@ -78,7 +78,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_13]]",
-      "original": "Jan Svobodová",
+      "original": "Jana Svobodová",
       "occurrences": 1
     },
     {
@@ -108,7 +108,7 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Karlova 45/12, 602 00 Brno",
+      "original": "Karlova 45/12, 602 00 Brno\nPřechodný pobyt",
       "occurrences": 1
     },
     {
@@ -120,30 +120,36 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "Masarykova 123/45, 602 00 Brno",
+      "original": "Karlova 45/12, 602 00 Brno\nTelefon",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "Vinohradská 1234/89, Praha 3",
+      "original": "Masarykova 123/45, 602 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "Na Františku 12/34, 110 00 Praha 1",
+      "original": "Vinohradská 1234/89, Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Vinohradská 123, Praha 3",
+      "original": "Na Františku 12/34, 110 00 Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
+      "original": "Vinohradská 123, Praha 3",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_9]]",
       "original": "Na Poříčí 23, Praha 1",
       "occurrences": 1
     },
