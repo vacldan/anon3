@@ -445,11 +445,14 @@ def infer_surname_nominative(obs: str) -> str:
         elif lo.endswith('kem') and len(obs) > 5:
             return obs[:-3] + 'ek'  # např. Práškem → Prášek, Štefánkem → Štefánek
 
-        # Kontrola: není -bem, -dem, -cem, -sem, -šem (součást příjmení)
+        # Kontrola: není -bem, -dem, -chem (součást některých příjmení)
         # POZNÁMKA: -lem a -rem jsou řešeny výše (řádky 431-441)
-        elif not lo.endswith(('bem', 'dem', 'cem', 'sem', 'šem', 'chem', 'gem')):
+        # DŮLEŽITÉ: -cem, -šem, -gem NEJSOU v blacklistu - jsou to běžné instrumentální koncovky
+        # Příklady: Švecem → Švec, Hrubešem → Hrubeš
+        elif not lo.endswith(('bem', 'dem', 'chem')):
             # Novákem → Novák, Procházkou → Procházka
             # Kratochvílem → Kratochvíl, Králem → Král
+            # Švecem → Švec, Hrubešem → Hrubeš
             return obs[:-2]
 
     # ========== GENITIV: -a → NEODSTRAŇUJ! ==========
