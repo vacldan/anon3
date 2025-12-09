@@ -62,16 +62,39 @@ def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
                             if gender_key in firstnames:
                                 for name in firstnames[gender_key]:
                                     names.add(name)
-                                    # Uložení gender informace
-                                    CZECH_FIRST_NAMES_GENDER[name.lower()] = gender_key
+                                    # Uložení gender informace - podpora pro multiple genders (ambiguous names)
+                                    name_lo = name.lower()
+                                    if name_lo in CZECH_FIRST_NAMES_GENDER:
+                                        # Jméno už existuje s jiným rodem → ambiguous
+                                        if isinstance(CZECH_FIRST_NAMES_GENDER[name_lo], set):
+                                            CZECH_FIRST_NAMES_GENDER[name_lo].add(gender_key)
+                                        else:
+                                            # Convert to set
+                                            CZECH_FIRST_NAMES_GENDER[name_lo] = {CZECH_FIRST_NAMES_GENDER[name_lo], gender_key}
+                                    else:
+                                        CZECH_FIRST_NAMES_GENDER[name_lo] = gender_key
                 # Stará struktura: {"male": [...], "female": [...]}
                 else:
                     for name in data.get('male', []):
                         names.add(name)
-                        CZECH_FIRST_NAMES_GENDER[name.lower()] = 'M'
+                        name_lo = name.lower()
+                        if name_lo in CZECH_FIRST_NAMES_GENDER:
+                            if isinstance(CZECH_FIRST_NAMES_GENDER[name_lo], set):
+                                CZECH_FIRST_NAMES_GENDER[name_lo].add('M')
+                            else:
+                                CZECH_FIRST_NAMES_GENDER[name_lo] = {CZECH_FIRST_NAMES_GENDER[name_lo], 'M'}
+                        else:
+                            CZECH_FIRST_NAMES_GENDER[name_lo] = 'M'
                     for name in data.get('female', []):
                         names.add(name)
-                        CZECH_FIRST_NAMES_GENDER[name.lower()] = 'F'
+                        name_lo = name.lower()
+                        if name_lo in CZECH_FIRST_NAMES_GENDER:
+                            if isinstance(CZECH_FIRST_NAMES_GENDER[name_lo], set):
+                                CZECH_FIRST_NAMES_GENDER[name_lo].add('F')
+                            else:
+                                CZECH_FIRST_NAMES_GENDER[name_lo] = {CZECH_FIRST_NAMES_GENDER[name_lo], 'F'}
+                        else:
+                            CZECH_FIRST_NAMES_GENDER[name_lo] = 'F'
             elif isinstance(data, list):
                 names.update(data)
                 # Pro list formát nemáme gender info
@@ -443,8 +466,15 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
     return result
 
 def _get_gender_from_library(name_lower: str) -> str:
-    """Vrací gender z knihovny jmen ('M', 'F', 'U') nebo '' pokud jméno není v knihovně."""
-    return CZECH_FIRST_NAMES_GENDER.get(name_lower, '')
+    """Vrací gender z knihovny jmen ('M', 'F', 'U') nebo '' pokud jméno není v knihovně.
+    Pro ambiguous jména (existující ve více rodech) vrací první nalezený gender."""
+    gender = CZECH_FIRST_NAMES_GENDER.get(name_lower, '')
+    # Handle both string and set (for ambiguous names)
+    if isinstance(gender, set):
+        # Pro ambiguous jména (Alen M+F, Jana F+M) vrátíme prázdný string
+        # Caller bude muset rozhodnout podle kontextu
+        return ''
+    return gender
 
 def get_first_name_gender(name: str) -> str:
     """Určí rod křestního jména. Vrací 'M' (mužský), 'F' (ženský), nebo 'U' (neznámý)."""
@@ -749,7 +779,13 @@ def infer_first_name_nominative(obs: str) -> str:
             if debug_this:
                 print(f"    [infer_first] Ambiguous check: lo='{lo}' gender={original_gender}, base_lo='{base_lo}' gender={base_gender}")
 
-            if original_gender == 'F' and base_gender == 'M':
+            # Handle both string and set values
+            # original_gender může být: 'F', 'M', {'F', 'M'}, nebo None
+            # base_gender může být: 'M', 'F', {'M', 'F'}, nebo None
+            has_female_original = (isinstance(original_gender, set) and 'F' in original_gender) or original_gender == 'F'
+            has_male_base = (isinstance(base_gender, set) and 'M' in base_gender) or base_gender == 'M'
+
+            if has_female_original and has_male_base:
                 # Ambiguous case: obě formy existují v knihovně s různým rodem
                 # Bez kontextu příjmení nemůžeme rozhodnout → vrať original
                 if debug_this:

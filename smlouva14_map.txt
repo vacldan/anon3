@@ -1,10 +1,8 @@
 OSOBY
 -----
-[[PERSON_1]]: Martin Horáková
-  - Martina Horáková
+[[PERSON_1]]: Martina Horáková
 [[PERSON_2]]: Jakub Procházka
-[[PERSON_3]]: Petr Procházková
-  - Petra Procházková
+[[PERSON_3]]: Petra Procházková
 [[PERSON_4]]: Eliška Procházková
 [[PERSON_5]]: Matěj Procházka
 [[PERSON_6]]: Hana Procházková
@@ -12,8 +10,7 @@ OSOBY
 [[PERSON_8]]: Eva Malá
 [[PERSON_9]]: Pavel Novák
 [[PERSON_10]]: Jakub 
-[[PERSON_11]]: Jan Svobodová
-  - Jana Svobodová
+[[PERSON_11]]: Jana Svobodová
 [[PERSON_12]]: Karel Novák
 [[PERSON_13]]: Tomáš Veselý
 [[PERSON_14]]: Alen Dvořáková
@@ -21,8 +18,7 @@ OSOBY
 [[PERSON_15]]: Petr Dvořák
 [[PERSON_16]]: Adam Dvořák
 [[PERSON_17]]: Lucie Dvořáková
-[[PERSON_18]]: Jan Nová
-  - Jana Nová
+[[PERSON_18]]: Jana Nová
 [[PERSON_19]]: Pavel Horák
 [[PERSON_20]]: Hana Nováková
 [[PERSON_21]]: Jana Dvořáková
@@ -30,36 +26,29 @@ OSOBY
 [[PERSON_23]]: Petr Malý
 [[PERSON_24]]: Robert Novák
 [[PERSON_25]]: Martin Procházka
-[[PERSON_26]]: Petr Nováková
-  - Petra Nováková
+[[PERSON_26]]: Petra Nováková
 [[PERSON_27]]: Hana Svobodová
 [[PERSON_28]]: Tomáš Dvořák
-[[PERSON_29]]: Petr Novák
-[[PERSON_30]]: Martin Horák
-[[PERSON_31]]: Petr Svobodová
-  - Petra Svobodová
-[[PERSON_32]]: Jana Novák
-  - Jan Novák
-[[PERSON_33]]: Karel Dvořák
-[[PERSON_34]]: Tomáš Novák
-[[PERSON_35]]: Pavel Svoboda
-[[PERSON_36]]: Martin Svobodová
-  - Martina Svobodová
-[[PERSON_37]]: Jana Svoboda
-  - Jan Svoboda
-[[PERSON_38]]: Tomáš Horák
-[[PERSON_39]]: Eva Svobodová
-[[PERSON_40]]: Tomáš Svoboda
-[[PERSON_41]]: Jana Horák
-  - Jan Horák
-[[PERSON_42]]: Martin Novotný
-[[PERSON_43]]: Eva Málková
-[[PERSON_44]]: Ondřej Bartoš
-[[PERSON_45]]: Jana Horáková
+[[PERSON_29]]: Jan Dvořák
+[[PERSON_30]]: Petr Novák
+[[PERSON_31]]: Martin Horák
+[[PERSON_32]]: Petra Svobodová
+[[PERSON_33]]: Jan Novák
+[[PERSON_34]]: Karel Dvořák
+[[PERSON_35]]: Tomáš Novák
+[[PERSON_36]]: Pavel Svoboda
+[[PERSON_37]]: Martina Svobodová
+[[PERSON_38]]: Jan Svoboda
+[[PERSON_39]]: Tomáš Horák
+[[PERSON_40]]: Eva Svobodová
+[[PERSON_41]]: Tomáš Svoboda
+[[PERSON_42]]: Jan Horák
+[[PERSON_43]]: Martin Novotný
+[[PERSON_44]]: Eva Málková
+[[PERSON_45]]: Ondřej Bartoš
 [[PERSON_46]]: Pavel Dvořák
 [[PERSON_47]]: Jana Nováková
-[[PERSON_48]]: Petr Horáková
-  - Petra Horáková
+[[PERSON_48]]: Petra Horáková
 
 ACCOUNT_ID
 ----------
