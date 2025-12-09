@@ -182,18 +182,40 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
             return cand.capitalize()
         cands.append(cand)
 
-    # PRIORITA 2: Dativ -ovi → remove (Petrovi → Petr)
+    # PRIORITA 2: Dativ -ovi → remove (Petrovi → Petr, Pavlovi → Pavel)
     if lo.endswith('ovi') and len(obs) > 3:
         cand = obs[:-3]
         if cand.lower() in CZECH_FIRST_NAMES:
             return cand.capitalize()
+
+        # Zkus vložné 'e' (Pavlovi → Pavel, Lukášovi → Lukáš)
+        if len(cand) >= 3:
+            vowels = 'aeiouyáéěíóúůý'
+            last_char = cand[-1]
+            if last_char.lower() not in vowels:
+                cand_with_e = cand[:-1] + 'e' + last_char
+                if cand_with_e.lower() in CZECH_FIRST_NAMES:
+                    return cand_with_e.capitalize()
+
         cands.append(cand)
 
-    # PRIORITA 3: Instrumentál -em → remove (Petrem → Petr)
+    # PRIORITA 3: Instrumentál -em → remove (Petrem → Petr, Pavlem → Pavel)
     if lo.endswith('em') and len(obs) > 2:
         cand = obs[:-2]
         if cand.lower() in CZECH_FIRST_NAMES:
             return cand.capitalize()
+
+        # Zkus vložné 'e' (Pavlem → Pavel, Lukášem → Lukáš)
+        # Když "Pavl" není v knihovně, zkus "Pavel" (vložení 'e' před poslední souhlásku)
+        if len(cand) >= 3:
+            vowels = 'aeiouyáéěíóúůý'
+            last_char = cand[-1]
+            if last_char.lower() not in vowels:  # Poslední znak je souhláska
+                # Vlož 'e' před poslední souhlásku: Pavl → Pav + e + l = Pavel
+                cand_with_e = cand[:-1] + 'e' + last_char
+                if cand_with_e.lower() in CZECH_FIRST_NAMES:
+                    return cand_with_e.capitalize()
+
         cands.append(cand)
 
     # PRIORITA 4: Dativ -u → remove (Petru → Petr) - PŘED -a!
