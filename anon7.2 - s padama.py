@@ -392,8 +392,22 @@ def infer_surname_nominative(obs: str) -> str:
     }
 
     if lo.endswith('ka') and len(obs) > 3 and lo not in common_surnames_a:
-        # Hájek → Hájka (genitiv) → návrat na Hájek
-        return obs[:-2] + 'ek'
+        # NOVÁ LOGIKA: Rozlišit dvě situace:
+        # 1. "Hájka" (genitiv od "Hájek") → base bez -ka + ek = "Hájek"
+        # 2. "Dvořáka" (genitiv od "Dvořák") → base bez -a = "Dvořák"
+        base_without_ka = obs[:-2]  # "Hájka" → "Háj", "Dvořáka" → "Dvořá"
+        base_with_ek = base_without_ka + 'ek'
+
+        # Heuristika: pokud base (bez -ka) je krátký (2-5 znaků) a nekončí na samohlásku,
+        # je to pravděpodobně -ek příjmení
+        base_lo_ka = base_without_ka.lower()
+        vowels = ('a', 'á', 'e', 'é', 'ě', 'i', 'í', 'o', 'ó', 'u', 'ú', 'ů', 'y', 'ý')
+        if 2 <= len(base_without_ka) <= 5 and not base_lo_ka.endswith(vowels):
+            return base_with_ek  # "Hájka" → "Hájek"
+        else:
+            # Jinak genitiv od příjmení končícího na souhlásku (dlouhé base nebo končí na samohlásku)
+            # "Dvořáka" → "Dvořák" (odstranění jen -a)
+            return obs[:-1]
 
     if lo.endswith('la') and len(obs) > 3 and lo not in common_surnames_a:
         # Havel → Havla (genitiv) → návrat na Havel

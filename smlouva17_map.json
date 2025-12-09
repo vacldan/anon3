@@ -1,0 +1,493 @@
+{
+  "version": "1.0",
+  "generated_at": "2025-12-02T18:21:32.500983",
+  "source_file": "smlouva17.docx",
+  "entities": [
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Martin Svobodová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Jakub Procházka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Petr Procházková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Eliška Procházková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Matěj Procházka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Karel Procházka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_7]]",
+      "original": "Hana Procházková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_8]]",
+      "original": "Martin Procházka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_9]]",
+      "original": "Jana Procházková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_10]]",
+      "original": "Eva Málková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_11]]",
+      "original": "Pavel Dvořák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_12]]",
+      "original": "Tomáš Novák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_13]]",
+      "original": "Jan Svobodová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_14]]",
+      "original": "Eva Nováková",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_1]]",
+      "original": "CZ89 0100 0000 0098 7654 3210",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_2]]",
+      "original": "CZ12 0800 0000 0012 3456 7890",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Wenceslausovo náměstí 1234/56, 110 00 Praha 1",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Karlova 45/12, 602 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "Vinohradská 1234/89, 130 00 Praha 3",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "Masarykova 123/45, 602 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "Vinohradská 1234/89, Praha 3",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_6]]",
+      "original": "Na Františku 12/34, 110 00 Praha 1",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_7]]",
+      "original": "Vinohradská 123, Praha 3",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_8]]",
+      "original": "Na Poříčí 23, Praha 1",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_1]]",
+      "original": "info@centrumpece.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_2]]",
+      "original": "jakub.prochazka85@gmail.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_3]]",
+      "original": "petra.prochazkova@email.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_4]]",
+      "original": "jakub.backup@gmail.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_5]]",
+      "original": "jakub.prochazka@danovyporadce.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_6]]",
+      "original": "dpo@centrumpece.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_1]]",
+      "original": "9876543210/0100",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_2]]",
+      "original": "1234567890/0800",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_1]]",
+      "original": "+420 222 456 789",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_2]]",
+      "original": "987654321",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_3]]",
+      "original": "+420 724 567 890",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_4]]",
+      "original": "+420 606 345 678",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_5]]",
+      "original": "+420 603 234 567",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_6]]",
+      "original": "+420 605 456 789",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_7]]",
+      "original": "+420 606 234 567",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_8]]",
+      "original": "+420 222 456 700",
+      "occurrences": 1
+    },
+    {
+      "type": "DIC",
+      "label": "[[DIC_1]]",
+      "original": "CZ28745632",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_1]]",
+      "original": "28745632",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_2]]",
+      "original": "87654321",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_3]]",
+      "original": "12345678",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_4]]",
+      "original": "00456789",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_1]]",
+      "original": "12.08.1985",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_2]]",
+      "original": "05.03.1988",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_3]]",
+      "original": "15.06.2015",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_4]]",
+      "original": "22.11.2018",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_1]]",
+      "original": "850812/1234",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_2]]",
+      "original": "880305/6745",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_3]]",
+      "original": "155615/4567",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_4]]",
+      "original": "181122/3421",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_5]]",
+      "original": "600512/1823",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_6]]",
+      "original": "650823/1923",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_1]]",
+      "original": "345678901",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_2]]",
+      "original": "123456",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_PLACE",
+      "label": "[[BIRTH_PLACE_1]]",
+      "original": "Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_1]]",
+      "original": "8508121234",
+      "occurrences": 1
+    },
+    {
+      "type": "BIO_HASH",
+      "label": "[[BIO_HASH_1]]",
+      "original": "HASH_BIO_JP_2024_0156",
+      "occurrences": 1
+    },
+    {
+      "type": "BIO_HASH",
+      "label": "[[BIO_HASH_2]]",
+      "original": "IRIS_20240115_456789",
+      "occurrences": 1
+    },
+    {
+      "type": "VOICE_ID",
+      "label": "[[VOICE_ID_1]]",
+      "original": "VOICE_ID_JP_2024_123456",
+      "occurrences": 1
+    },
+    {
+      "type": "PHOTO_ID",
+      "label": "[[PHOTO_ID_1]]",
+      "original": "photo_id_jp_2024.jpg",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_1]]",
+      "original": "j.prochazka",
+      "occurrences": 1
+    },
+    {
+      "type": "PASSWORD",
+      "label": "[[PASSWORD_1]]",
+      "original": "VerySecure!Pass2024",
+      "occurrences": 1
+    },
+    {
+      "type": "HOST",
+      "label": "[[HOST_1]]",
+      "original": "vpn.centrumpece.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_1]]",
+      "original": "78.45.123.156",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_2]]",
+      "original": "185.56.234.167",
+      "occurrences": 1
+    },
+    {
+      "type": "MAC",
+      "label": "[[MAC_1]]",
+      "original": "00:1B:44:11:3A:B7",
+      "occurrences": 1
+    },
+    {
+      "type": "MAC",
+      "label": "[[MAC_2]]",
+      "original": "00:50:56:A1:B2:C3",
+      "occurrences": 1
+    },
+    {
+      "type": "MAC",
+      "label": "[[MAC_3]]",
+      "original": "00:1D:7E:12:34:56",
+      "occurrences": 1
+    },
+    {
+      "type": "API_KEY",
+      "label": "[[API_KEY_1]]",
+      "original": "api_key_jp_2024_ghp_Kx7mP2vQ9wR5tYu8iO3nM6lJ4hG1sA",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "2B3 4567",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_2]]",
+      "original": "DL5520",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "TMBCH41Z8J7123456",
+      "occurrences": 1
+    },
+    {
+      "type": "IMEI",
+      "label": "[[IMEI_1]]",
+      "original": "123456789012345",
+      "occurrences": 1
+    },
+    {
+      "type": "SKYPE",
+      "label": "[[SKYPE_1]]",
+      "original": "jakub.prochazka.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "LINKEDIN",
+      "label": "[[LINKEDIN_1]]",
+      "original": "https://linkedin.com/in/jakubprochazka85",
+      "occurrences": 1
+    },
+    {
+      "type": "FACEBOOK",
+      "label": "[[FACEBOOK_1]]",
+      "original": "https://facebook.com/jakub.prochazka.85",
+      "occurrences": 1
+    },
+    {
+      "type": "INSTAGRAM",
+      "label": "[[INSTAGRAM_1]]",
+      "original": "@jakubprochazka_cz",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_1]]",
+      "original": "4532 1234 5678 9012",
+      "occurrences": 1
+    }
+  ]
+}
