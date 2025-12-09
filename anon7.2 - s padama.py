@@ -255,6 +255,13 @@ def infer_first_name_nominative(obs: str) -> str:
             return (obs + 'a').capitalize()
 
     # ŽENSKÁ JMÉNA - pádové varianty
+
+    # Dativ: -ce → -ka (Lence → Lenka, Radce → Radka, Elišce → Eliška)
+    if lo.endswith('ce') and len(obs) > 2:
+        stem = obs[:-2]
+        if (stem + 'ka').lower() in CZECH_FIRST_NAMES:
+            return (stem + 'ka').capitalize()
+
     # Genitiv/Dativ/Lokál: -y/-ě/-e → -a
     if lo.endswith(('y', 'ě', 'e')):
         stem = obs[:-1]
@@ -266,6 +273,22 @@ def infer_first_name_nominative(obs: str) -> str:
         stem = obs[:-1]
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
             return (stem + 'a').capitalize()
+
+    # Dativ/Lokál: -ii/-ií → -ie/-ia (Lucii → Lucie, Marii → Marie, Julii → Julie)
+    if lo.endswith(('ii', 'ií')) and len(obs) > 2:
+        stem = obs[:-2]
+        # Zkus -ie (Lucii → Lucie, Marii → Marie)
+        if (stem + 'ie').lower() in CZECH_FIRST_NAMES:
+            return (stem + 'ie').capitalize()
+        # Zkus -ia (Julii → Julia, méně časté)
+        if (stem + 'ia').lower() in CZECH_FIRST_NAMES:
+            return (stem + 'ia').capitalize()
+
+    # Instrumentál: -ici → -ice (Alici → Alice, Beatrici → Beatrice)
+    if lo.endswith('ici') and len(obs) > 3:
+        stem = obs[:-3]
+        if (stem + 'ice').lower() in CZECH_FIRST_NAMES:
+            return (stem + 'ice').capitalize()
 
     # Instrumentál: -ou → -a (Hanou → Hana)
     if lo.endswith('ou') and len(obs) > 2:
