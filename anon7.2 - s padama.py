@@ -735,24 +735,25 @@ def infer_first_name_nominative(obs: str) -> str:
             base = obs[:-1]
             base_lo = base.lower()
 
-            # KRITICKÁ OPRAVA: Nejdřív zkontroluj, zda original jméno je v knihovně jako ŽENSKÉ
-            # Jana (F) → nesmí se změnit na Jan, protože Jana je legitimní ženské jméno
-            # Martina (F) → nesmí se změnit na Martin
-            # Michaela (F) → nesmí se změnit na Michael
-            # Alena (F) → nesmí se změnit na Alen
-            # ALE: "Josefa" může být F nebo genitiv od Josef (M) → pokud existuje i mužský variant, je to ambiguous!
-            # Pro ambiguous cases pokračuj dál a nech kontext (příjmení) rozhodnout
+            # POZN: Pro ambiguous cases (Jana/Jan, Josefa/Josef, Martina/Martin)
+            # nelze rozhodnout bez kontextu příjmení
+            # Kontext příjmení je k dispozici později v kódu (řádky 3046-3099)
+
+            # KRITICKÁ OPRAVA: Check zda je to ambiguous case
+            # Jana (F v knihovně) + Jan (M v knihovně) = ambiguous → vrať original
+            # Josefa (F v knihovně) + Josef (M v knihovně) = ambiguous → vrať original
+            # Alberta (ne v knihovně) + Albert (M v knihovně) = NE ambiguous → vrať base
             original_gender = CZECH_FIRST_NAMES_GENDER.get(lo)
             base_gender = CZECH_FIRST_NAMES_GENDER.get(base_lo)
 
-            if original_gender == 'F' and base_gender != 'M':
-                # Original jméno je v knihovně jako ŽENSKÉ A base NENÍ mužské → vrať original
-                # Jana (F) + Jan (M) → ambiguous, pokračuj dál
-                # Josefa (F) + Josef (M) → ambiguous, pokračuj dál
-                # Michaela (F) + Michael (M) → ambiguous, pokračuj dál
-                # Ale: Elen (F) + bez mužského variantu → vrať Elen
+            if debug_this:
+                print(f"    [infer_first] Ambiguous check: lo='{lo}' gender={original_gender}, base_lo='{base_lo}' gender={base_gender}")
+
+            if original_gender == 'F' and base_gender == 'M':
+                # Ambiguous case: obě formy existují v knihovně s různým rodem
+                # Bez kontextu příjmení nemůžeme rozhodnout → vrať original
                 if debug_this:
-                    print(f"    [infer_first] Name in library as FEMALE (no male variant), keeping original RETURN: '{obs.capitalize()}'")
+                    print(f"    [infer_first] Ambiguous (F+M), returning original RETURN: '{obs.capitalize()}'")
                 return obs.capitalize()
 
              # PRIORITA 1: Zkontroluj knihovnu nebo známá mužská jména NEJPRVE
@@ -2770,9 +2771,9 @@ class Anonymizer:
             first_obs = match.group(1)
             last_obs = match.group(2)
 
-            # DEBUG (enabled for Elen)
-            debug_names = ['elen']
-            if any(name in first_obs.lower() or name in last_obs.lower() for name in debug_names):
+            # DEBUG (enabled for problem names)
+            debug_names = ['jan', 'petr', 'martin', 'alen', 'michael']
+            if any(name in first_obs.lower() for name in debug_names):
                 print(f"    [MATCH] first_obs='{first_obs}', last_obs='{last_obs}'")
 
             # ========== A) BLACKLIST NE-OSOB ==========
@@ -3078,14 +3079,34 @@ class Anonymizer:
                 # Han → Hana, Martin → Martina
                 # Pravidlo: pokud jméno končí na souhlásku, přidej 'a'
                 # Samohlásky včetně diakritiky: a, á, e, é, ě, i, í, o, ó, u, ú, ů, y, ý
+                debug_fem = first_lo in ['jan', 'petr', 'martin', 'alen']
+                if debug_fem:
+                    print(f"    [FEM-SURNAME] first_obs='{first_obs}', first_lo='{first_lo}', last_nom='{last_nom}'")
+
                 if not first_lo.endswith(('a', 'á', 'e', 'é', 'ě', 'i', 'í', 'o', 'ó', 'u', 'ú', 'ů', 'y', 'ý')):
                     # Jméno končí na souhlásku
                     # NEJPRVE check: Je už v knihovně jako ženské jméno? (např. Elen, Carmen)
-                    if first_lo in CZECH_FIRST_NAMES and get_first_name_gender(first_obs) == 'F':
-                        first_nom = first_obs.capitalize()
+                    in_lib = first_lo in CZECH_FIRST_NAMES
+                    if debug_fem:
+                        print(f"    [FEM-SURNAME] first_lo in CZECH_FIRST_NAMES: {in_lib}")
+                    if in_lib:
+                        gender = get_first_name_gender(first_obs)
+                        if debug_fem:
+                            print(f"    [FEM-SURNAME] gender: {gender}")
+                        if gender == 'F':
+                            first_nom = first_obs.capitalize()
+                            if debug_fem:
+                                print(f"    [FEM-SURNAME] Keeping female name: '{first_nom}'")
+                        else:
+                            # Mužské jméno v knihovně + ženské příjmení → přidej 'a'
+                            first_nom = (first_obs + 'a').capitalize()
+                            if debug_fem:
+                                print(f"    [FEM-SURNAME] Male name + female surname, adding 'a': '{first_nom}'")
                     else:
                         # Přidej 'a' k vytvoření ženského nominativu (Han → Hana, Martin → Martina)
                         first_nom = (first_obs + 'a').capitalize()
+                        if debug_fem:
+                            print(f"    [FEM-SURNAME] Not in library, adding 'a': '{first_nom}'")
                 elif first_lo.endswith('a'):
                     # Jméno už končí na 'a' → je to pravděpodobně nominativ ženského jména
                     # VÝJIMKA: Slovak varianty konvertuj na Czech

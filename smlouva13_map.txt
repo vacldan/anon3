@@ -1,32 +1,28 @@
 OSOBY
 -----
 [[PERSON_1]]: Martin Svoboda
-[[PERSON_2]]: Jan Nováková
-  - Jana Nováková
+[[PERSON_2]]: Jana Nováková
 [[PERSON_3]]: Petr Dvořák
   - Petra Dvořáka
 [[PERSON_4]]: Pavel Horák
 [[PERSON_5]]: Lucie Procházková
 [[PERSON_6]]: Tomáš Černý
-[[PERSON_7]]: Petr Černá
-  - Petra Černá
+[[PERSON_7]]: Petra Černá
 [[PERSON_8]]: Milan Novotný
 [[PERSON_9]]: Karolína Svobodová
 [[PERSON_10]]: Jan Dvořák
 [[PERSON_11]]: Robert Kovář
 [[PERSON_12]]: Eva Málková
 [[PERSON_13]]: Petr Svoboda
-[[PERSON_14]]: Alena Svobodová
+[[PERSON_14]]: Alen Svobodová
+  - Alena Svobodová
 [[PERSON_15]]: Eliška Svobodová
 [[PERSON_16]]: Jakub Svoboda
-[[PERSON_17]]: Martin Horáková
-  - Martina Horáková
+[[PERSON_17]]: Martina Horáková
 [[PERSON_18]]: Tomáš Veselý
-[[PERSON_19]]: Jan Málková
-  - Jana Málková
+[[PERSON_19]]: Jana Málková
 [[PERSON_20]]: Hana Nová
-[[PERSON_21]]: Michael Kratochvílová
-  - Michaela Kratochvílová
+[[PERSON_21]]: Michaela Kratochvílová
 [[PERSON_22]]: David Procházka
 [[PERSON_23]]: Michal Horák
 [[PERSON_24]]: Lenka Veselá
@@ -34,8 +30,7 @@ OSOBY
 [[PERSON_26]]: Ondřej Novák
 [[PERSON_27]]: Karel Procházka
 [[PERSON_28]]: Eva Svobodová
-[[PERSON_29]]: Martin Krajíčková
-  - Martina Krajíčková
+[[PERSON_29]]: Martina Krajíčková
 [[PERSON_30]]: Hana Dvořáková
 [[PERSON_31]]: Jan Malý
 [[PERSON_32]]: Petra Veselá
