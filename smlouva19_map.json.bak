@@ -1,12 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-09T12:39:40.638767",
+  "generated_at": "2025-12-09T12:20:36.851195",
   "source_file": "smlouva19.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Adrian Kratochvíl",
+      "original": "Adrian Kratochvílem",
       "occurrences": 1
     },
     {
@@ -181,6 +181,12 @@
       "type": "PERSON",
       "label": "[[PERSON_30]]",
       "original": "Pavlína Plíšková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_31]]",
+      "original": "Adrian Kratochvíl",
       "occurrences": 1
     },
     {

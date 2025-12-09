@@ -1,6 +1,6 @@
 OSOBY
 -----
-[[PERSON_1]]: Adrian Kratochvílem
+[[PERSON_1]]: Adrian Kratochvíl
   - Adrianem Kratochvílem
 [[PERSON_2]]: Svaté Markét
   - Svaté Markéty
@@ -44,7 +44,6 @@ OSOBY
 [[PERSON_29]]: Štěpán Šeda
 [[PERSON_30]]: Pavlína Plíšková
   - Pavlínou Plíškovou
-[[PERSON_31]]: Adrian Kratochvíl
 
 ADDRESS
 [[ADDRESS_1]]: Praha 10, 102 00

@@ -1,10 +1,8 @@
 OSOBY
 -----
-[[PERSON_1]]: Martin Horáková
-  - Martina Horáková
+[[PERSON_1]]: Martina Horáková
 [[PERSON_2]]: Jakub Procházka
-[[PERSON_3]]: Petr Procházková
-  - Petra Procházková
+[[PERSON_3]]: Petra Procházková
 [[PERSON_4]]: Eliška Procházková
 [[PERSON_5]]: Matěj Procházka
 [[PERSON_6]]: Hana Procházková
@@ -12,63 +10,49 @@ OSOBY
 [[PERSON_8]]: Eva Malá
 [[PERSON_9]]: Pavel Novák
 [[PERSON_10]]: Jakub 
-[[PERSON_11]]: Jan Svobodová
-  - Jana Svobodová
+[[PERSON_11]]: Jana Svobodová
 [[PERSON_12]]: Karel Novák
 [[PERSON_13]]: Tomáš Veselý
-[[PERSON_14]]: Alen Dvořáková
-  - Alena Dvořáková
+[[PERSON_14]]: Alena Dvořáková
 [[PERSON_15]]: Petr Dvořák
 [[PERSON_16]]: Adam Dvořák
 [[PERSON_17]]: Lucie Dvořáková
-[[PERSON_18]]: Jan Nová
-  - Jana Nová
+[[PERSON_18]]: Jana Nová
 [[PERSON_19]]: Pavel Horák
-[[PERSON_20]]: Han Nováková
-  - Hana Nováková
+[[PERSON_20]]: Hana Nováková
 [[PERSON_21]]: Jana Dvořáková
 [[PERSON_22]]: Karel Novotný
 [[PERSON_23]]: Petr Malý
 [[PERSON_24]]: Robert Novák
 [[PERSON_25]]: Martin Procházka
-[[PERSON_26]]: Petr Nováková
-  - Petra Nováková
-[[PERSON_27]]: Han Svobodová
-  - Hana Svobodová
+[[PERSON_26]]: Petra Nováková
+[[PERSON_27]]: Hana Svobodová
 [[PERSON_28]]: Tomáš Dvořák
-[[PERSON_29]]: Petr Novák
-[[PERSON_30]]: Martin Horák
-[[PERSON_31]]: Petr Svobodová
-  - Petra Svobodová
-[[PERSON_32]]: Jana Novák
-  - Jan Novák
-[[PERSON_33]]: Karel Dvořák
-[[PERSON_34]]: Tomáš Novák
-[[PERSON_35]]: Pavel Svoboda
-[[PERSON_36]]: Martin Svobodová
-  - Martina Svobodová
-[[PERSON_37]]: Jana Svoboda
-  - Jan Svoboda
-[[PERSON_38]]: Tomáš Horák
-[[PERSON_39]]: Eva Svobodová
-[[PERSON_40]]: Tomáš Svoboda
-[[PERSON_41]]: Jana Horák
-  - Jan Horák
-[[PERSON_42]]: Martin Novotný
-[[PERSON_43]]: Eva Málková
-[[PERSON_44]]: Ondřej Bartoš
-[[PERSON_45]]: Jana Horáková
+[[PERSON_29]]: Jan Dvořák
+[[PERSON_30]]: Petr Novák
+[[PERSON_31]]: Martin Horák
+[[PERSON_32]]: Petra Svobodová
+[[PERSON_33]]: Jan Novák
+[[PERSON_34]]: Karel Dvořák
+[[PERSON_35]]: Tomáš Novák
+[[PERSON_36]]: Pavel Svoboda
+[[PERSON_37]]: Martina Svobodová
+[[PERSON_38]]: Jan Svoboda
+[[PERSON_39]]: Tomáš Horák
+[[PERSON_40]]: Eva Svobodová
+[[PERSON_41]]: Tomáš Svoboda
+[[PERSON_42]]: Jan Horák
+[[PERSON_43]]: Martin Novotný
+[[PERSON_44]]: Eva Málková
+[[PERSON_45]]: Ondřej Bartoš
 [[PERSON_46]]: Pavel Dvořák
 [[PERSON_47]]: Jana Nováková
-[[PERSON_48]]: Petr Horáková
-  - Petra Horáková
+[[PERSON_48]]: Petra Horáková
 
 ACCOUNT_ID
-----------
 [[ACCOUNT_ID_1]]: 123456789012
 
 ADDRESS
--------
 [[ADDRESS_1]]: Karlovo náměstí 12/34, 120 00 Praha 2
 [[ADDRESS_2]]: Slezská 45/9, 130 00 Praha 3
 [[ADDRESS_3]]: Žižkova 123/8, 130 00 Praha 3
@@ -102,12 +86,10 @@ ADDRESS
 [[ADDRESS_31]]: Vinohradská 1234/89, 130 00 Praha 3
 
 API_KEY
--------
 [[API_KEY_1]]: ghp_Kx7mP2vQ9wR5tYu8iO3nM6lJ4hG1sA0dF
 [[API_KEY_2]]: _1
 
 BANK
-----
 [[BANK_1]]: 2345678901/0800
 [[BANK_2]]: 4567890123/0800
 [[BANK_3]]: 9876543210/2700
@@ -125,15 +107,12 @@ BANK
 [[BANK_15]]: 5678901234/2700
 
 BENEFIT_CARD
-------------
 [[BENEFIT_CARD_1]]: 9876543210
 
 BIO_HASH
---------
 [[BIO_HASH_1]]: BIO_JP_0156_2024
 
 BIRTH_ID
---------
 [[BIRTH_ID_1]]: 930715/1245
 [[BIRTH_ID_2]]: 945922/6743
 [[BIRTH_ID_3]]: 200310/4521
@@ -193,16 +172,13 @@ BIRTH_ID
 [[BIRTH_ID_57]]: 820923/6745
 
 BIRTH_PLACE
------------
 [[BIRTH_PLACE_1]]: Brno
 
 CARD
-----
 [[CARD_1]]: 4532 1234 5678 9012
 [[CARD_2]]: 4532 1098 7654 3210
 
 DATE
-----
 [[DATE_1]]: 15.07.1993
 [[DATE_2]]: 22.09.1994
 [[DATE_3]]: 10.03.2020
@@ -224,14 +200,12 @@ DATE
 [[DATE_19]]: 12.08.1985
 
 DIC
----
 [[DIC_1]]: CZ12398745
 [[DIC_2]]: CZ45612378
 [[DIC_3]]: CZ56789012
 [[DIC_4]]: CZ09876543
 
 EMAIL
------
 [[EMAIL_1]]: m.horakova@innovatetech.cz
 [[EMAIL_2]]: jakub.prochazka@gmail.com
 [[EMAIL_3]]: petra.prochazkova@email.cz
@@ -277,12 +251,10 @@ EMAIL
 [[EMAIL_43]]: jana.novakova@nixminds.cz
 
 HOST
-----
 [[HOST_1]]: db-prod-01.cloudmed.cz
 [[HOST_2]]: sftp.backup.cloudmed.cz
 
 IBAN
-----
 [[IBAN_1]]: CZ23 0800 0000 0023 4567 8901
 [[IBAN_2]]: CZ89 0800 0000 0045 6789 0123
 [[IBAN_3]]: CZ12 2700 0000 0098 7654 3210
@@ -293,7 +265,6 @@ IBAN
 [[IBAN_8]]: CZ98 5500 0000 0098 7654 3210
 
 ICO
----
 [[ICO_1]]: 45678901
 [[ICO_2]]: 34567890
 [[ICO_3]]: 23456789
@@ -309,20 +280,17 @@ ICO
 [[ICO_13]]: 00209805
 
 ID_CARD
--------
 [[ID_CARD_1]]: 234567890
 [[ID_CARD_2]]: 345678901
 [[ID_CARD_3]]: 456789012
 
 INSURANCE_ID
-------------
 [[INSURANCE_ID_1]]: 9307151245
 [[INSURANCE_ID_2]]: 7805231245
 [[INSURANCE_ID_3]]: 8956154521
 [[INSURANCE_ID_4]]: 6508231923
 
 IP
---
 [[IP_1]]: 78.45.123.89
 [[IP_2]]: 192.168.10.45
 [[IP_3]]: 192.168.10.46
@@ -331,14 +299,12 @@ IP
 [[IP_6]]: 185.56.234.89
 
 LICENSE_PLATE
--------------
 [[LICENSE_PLATE_1]]: SO27001
 [[LICENSE_PLATE_2]]: SO27701
 [[LICENSE_PLATE_3]]: 3B4 5678
 [[LICENSE_PLATE_4]]: 2B3 4567
 
 PASSWORD
---------
 [[PASSWORD_1]]: ChangeMeNow!2024
 [[PASSWORD_2]]: HC#Pr0d!2024$SecureDB&Pass
 [[PASSWORD_3]]: Adm!n#HCP$2024%Secure
@@ -347,7 +313,6 @@ PASSWORD
 [[PASSWORD_6]]: Demo!2024#Secure$Pass
 
 PHONE
------
 [[PHONE_1]]: +420 724 123 456
 [[PHONE_2]]: 456789012
 [[PHONE_3]]: +420 606 789 123
@@ -387,11 +352,9 @@ PHONE
 [[PHONE_37]]: +420 221 710 111
 
 SECRET
-------
 [[SECRET_1]]: jakub-prochazka-innovate
 
 USERNAME
---------
 [[USERNAME_1]]: jprochazka
 [[USERNAME_2]]: jprochazka@innovatetech
 [[USERNAME_3]]: jprochazka-dev
@@ -408,6 +371,5 @@ USERNAME
 [[USERNAME_14]]: demo-nixminds
 
 VIN
----
 [[VIN_1]]: TMBCF61Z0L7654321
 
