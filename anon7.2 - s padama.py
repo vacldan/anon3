@@ -1623,7 +1623,9 @@ class Anonymizer:
             if is_female_surname:
                 # Han → Hana, Martin → Martina
                 # Pravidlo: pokud jméno končí na souhlásku, přidej 'a'
-                if not first_lo.endswith(('a', 'e', 'i', 'o', 'u', 'y')):
+                # DŮLEŽITÉ: Včetně českých samohlásek s diakritikou (ě, á, í, atd.)
+                czech_vowels = ('a', 'á', 'e', 'é', 'ě', 'i', 'í', 'o', 'ó', 'u', 'ú', 'ů', 'y', 'ý')
+                if not first_lo.endswith(czech_vowels):
                     # Jméno končí na souhlásku → přidej 'a'
                     first_nom = (first_obs + 'a').capitalize()
                 elif first_lo.endswith('a'):
