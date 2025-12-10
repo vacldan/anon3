@@ -1799,8 +1799,9 @@ class Anonymizer:
                     # Jméno končí na souhlásku → přidej 'a'
                     first_nom = (first_obs + 'a').capitalize()
                 elif first_lo.endswith('a'):
-                    # Jméno už končí na 'a' → je to pravděpodobně nominativ ženského jména, ponech
-                    first_nom = first_obs.capitalize()
+                    # Jméno končí na 'a' → může být nominativ nebo pád
+                    # MUSÍME aplikovat inference pro normalizaci variant (Julia→Julie, Maria→Marie)
+                    first_nom = infer_first_name_nominative(first_obs)
                 else:
                     # Jiné koncovky → zkus inference
                     first_nom = infer_first_name_nominative(first_obs)
