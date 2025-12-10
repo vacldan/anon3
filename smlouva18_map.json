@@ -1,12 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-09T17:05:51.903614",
+  "generated_at": "2025-12-10T09:39:14.328955",
   "source_file": "smlouva18.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Ivan Doležal",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Ivanem Doležalem",
       "occurrences": 1
     },
     {
@@ -18,7 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Pavlína Pokorná",
+      "original": "Pavlíny Pokorné",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Pavlínou Pokornou",
       "occurrences": 1
     },
     {
@@ -29,26 +41,38 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Roberta Klímy",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Tereza Houfová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Terezy Houfové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Lenka Kratochvílová",
+      "original": "Lenkou Kratochvílovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Šárka Novotná",
+      "original": "Šárkou Novotnou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Alžběta Strmisková",
+      "original": "Alžbětou Strmiskovou",
       "occurrences": 1
     },
     {
@@ -72,7 +96,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
-      "original": "Tomáš Štefánek",
+      "original": "Tomášem Štefánkem",
       "occurrences": 1
     },
     {
@@ -84,13 +108,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_14]]",
-      "original": "Tobiáš Vráný",
+      "original": "Tobiášem Vránou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_15]]",
-      "original": "Mark Prášek",
+      "original": "Markem Práškem",
       "occurrences": 1
     },
     {
