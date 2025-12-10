@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-09T14:21:57.640365",
+  "generated_at": "2025-12-10T05:58:47.538066",
   "source_file": "smlouva13.docx",
   "entities": [
     {
@@ -13,6 +13,12 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Jana Nováková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Petra Dvořáka",
       "occurrences": 1
     },
     {
