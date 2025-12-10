@@ -349,8 +349,16 @@ def infer_surname_nominative(obs: str) -> str:
 
     # -é → -á (genitiv/dativ/lokál žen: Pokorné → Pokorná, Houfové → Houfová)
     if lo.endswith('é') and len(obs) > 3:
-        # Kontrola, že není -ské/-cké (přídavné jméno)
-        if not lo.endswith(('ské', 'cké')):
+        # SPECIÁLNÍ: "-ské" může být genitiv od "-ská" (Panské → Panská)
+        # nebo přídavné jméno (Novákské zůstává)
+        # Heuristika: pokud je krátké (max 8 znaků) a nezačíná velkým písmenem uvnitř,
+        # je to pravděpodobně genitiv příjmení
+        if lo.endswith('ské'):
+            # Pokud je to krátké slovo bez velkých písmen uprostřed → genitiv příjmení
+            if len(obs) <= 10:  # Krátké příjmení
+                return obs[:-1] + 'á'  # -ské → -ská (Panské → Panská, Horské → Horská)
+        # Pro ostatní -é (ne -ské/-cké)
+        elif not lo.endswith('cké'):
             return obs[:-1] + 'á'
 
     # -ou → může být -á (žena) nebo -ý (muž)
@@ -2307,6 +2315,16 @@ class Anonymizer:
             "entities": []
         }
 
+        # VALIDACE: Načti zdrojový dokument pro kontrolu existence entit
+        from docx import Document as DocxDocument
+        source_doc = DocxDocument(source_file)
+        source_text = '\n'.join([p.text for p in source_doc.paragraphs])
+        # Přidej text z tabulek
+        for table in source_doc.tables:
+            for row in table.rows:
+                for cell in row.cells:
+                    source_text += '\n' + '\n'.join([p.text for p in cell.paragraphs])
+
         # Osoby - ukládáme VŠECHNY původní formy z dokumentu
         for p in self.canonical_persons:
             canonical_full = f'{p["first"]} {p["last"]}'
@@ -2315,25 +2333,29 @@ class Anonymizer:
             original_forms = self.entity_map['PERSON'].get(canonical_full, {canonical_full})
 
             # Pro každou původní formu vytvoř samostatný záznam
+            # ALE POUZE pokud existuje ve zdrojovém dokumentu!
             for original_form in original_forms:
-                json_data["entities"].append({
-                    "type": "PERSON",
-                    "label": p['tag'],
-                    "original": original_form,
-                    "occurrences": 1
-                })
+                if original_form in source_text:
+                    json_data["entities"].append({
+                        "type": "PERSON",
+                        "label": p['tag'],
+                        "original": original_form,
+                        "occurrences": 1
+                    })
 
         # Ostatní entity (kromě PERSON, který už je v canonical_persons)
         for typ, entities in self.entity_map.items():
             if typ == 'PERSON':
                 continue  # Skip PERSON - already handled in canonical_persons
             for idx, (original, variants) in enumerate(entities.items(), 1):
-                json_data["entities"].append({
-                    "type": typ,
-                    "label": f"[[{typ}_{idx}]]",
-                    "original": original,
-                    "occurrences": len(variants)
-                })
+                # VALIDACE: Přidej jen entity které existují ve zdrojovém dokumentu
+                if original in source_text:
+                    json_data["entities"].append({
+                        "type": typ,
+                        "label": f"[[{typ}_{idx}]]",
+                        "original": original,
+                        "occurrences": len(variants)
+                    })
 
         # Ulož JSON
         with open(json_path, 'w', encoding='utf-8') as f:

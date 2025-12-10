@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-10T11:33:29.139893",
+  "generated_at": "2025-12-10T13:33:41.122509",
   "source_file": "smlouva20.docx",
   "entities": [
     {
@@ -30,13 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Lucie Havelková",
+      "original": "Lucii Havelkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Lucii Havelkové",
+      "original": "Lucie Havelková",
       "occurrences": 1
     },
     {
@@ -132,12 +132,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_17]]",
-      "original": "Simona Trčková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_17]]",
       "original": "Simony Trčkové",
       "occurrences": 1
     },
@@ -145,6 +139,12 @@
       "type": "PERSON",
       "label": "[[PERSON_17]]",
       "original": "Simoně Trčkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_17]]",
+      "original": "Simona Trčková",
       "occurrences": 1
     },
     {
@@ -228,13 +228,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_30]]",
-      "original": "Roman Turek",
+      "original": "Romanem Turkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_30]]",
-      "original": "Romanem Turkovi",
+      "original": "Roman Turek",
       "occurrences": 1
     },
     {
@@ -288,19 +288,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_37]]",
-      "original": "Helena Vodičková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_37]]",
       "original": "Heleně Vodičkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_38]]",
-      "original": "Kamil Řezníček",
+      "label": "[[PERSON_37]]",
+      "original": "Helena Vodičková",
       "occurrences": 1
     },
     {
@@ -311,14 +305,20 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_39]]",
-      "original": "Gabriele Pokorné",
+      "label": "[[PERSON_38]]",
+      "original": "Kamil Řezníček",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_39]]",
       "original": "Gabriela Pokorná",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_39]]",
+      "original": "Gabriele Pokorné",
       "occurrences": 1
     },
     {
@@ -354,6 +354,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_44]]",
+      "original": "Renaty Slámové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_44]]",
       "original": "Renatou Slámovou",
       "occurrences": 1
     },
@@ -361,12 +367,6 @@
       "type": "PERSON",
       "label": "[[PERSON_44]]",
       "original": "Renata Slámová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_44]]",
-      "original": "Renaty Slámové",
       "occurrences": 1
     },
     {
@@ -384,25 +384,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_47]]",
-      "original": "Markéty Benešové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_47]]",
       "original": "Markétě Benešové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_48]]",
-      "original": "Erikem Roubalem",
+      "label": "[[PERSON_47]]",
+      "original": "Markéty Benešové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_48]]",
       "original": "Erika Roubala",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_48]]",
+      "original": "Erikem Roubalem",
       "occurrences": 1
     },
     {
@@ -438,13 +438,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_53]]",
-      "original": "Adrianovi Kratochvílovi",
+      "original": "Adrianem Kratochvílem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_53]]",
-      "original": "Adrianem Kratochvílem",
+      "original": "Adrianovi Kratochvílovi",
       "occurrences": 1
     },
     {

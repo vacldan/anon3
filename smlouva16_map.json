@@ -1,18 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-10T11:36:04.951596",
+  "generated_at": "2025-12-10T13:31:11.432843",
   "source_file": "smlouva16.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Tomáš Novák",
+      "original": "Tomáše Nováka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Tomáše Nováka",
+      "original": "Tomáš Novák",
       "occurrences": 1
     },
     {

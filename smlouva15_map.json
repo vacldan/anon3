@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-09T12:28:08.272331",
+  "generated_at": "2025-12-10T13:57:47.306403",
   "source_file": "smlouva15.docx",
   "entities": [
     {
@@ -1933,12 +1933,6 @@
       "type": "API_KEY",
       "label": "[[API_KEY_1]]",
       "original": "ghp_Kx7mP2vQ9wR5tYu8iO3nM6lJ4hG1sA0dF",
-      "occurrences": 1
-    },
-    {
-      "type": "API_KEY",
-      "label": "[[API_KEY_2]]",
-      "original": "_1",
       "occurrences": 1
     },
     {
