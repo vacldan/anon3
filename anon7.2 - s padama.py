@@ -1165,9 +1165,9 @@ class Anonymizer:
         svars = variants_for_surname(last_nom)
         self.person_variants[tag] = {f'{f} {s}' for f in fvars for s in svars}
 
-        # Ulož kanonickou formu do entity_map
+        # NEUKLÁDEJ canonical automaticky - uloží se jen pokud je v dokumentu
         canonical_full = f'{first_nom} {last_nom}'
-        self.entity_map['PERSON'][canonical_full].add(canonical_full)
+        # self.entity_map['PERSON'][canonical_full].add(canonical_full)  # ODSTRANĚNO
         self.entity_index_cache['PERSON'][canonical_full] = self.counter['PERSON']
         self.entity_reverse_map['PERSON'][canonical_full] = canonical_full
 
@@ -2307,15 +2307,21 @@ class Anonymizer:
             "entities": []
         }
 
-        # Osoby
+        # Osoby - ukládáme VŠECHNY původní formy z dokumentu
         for p in self.canonical_persons:
             canonical_full = f'{p["first"]} {p["last"]}'
-            json_data["entities"].append({
-                "type": "PERSON",
-                "label": p['tag'],
-                "original": canonical_full,
-                "occurrences": 1
-            })
+
+            # Získej všechny původní formy z entity_map
+            original_forms = self.entity_map['PERSON'].get(canonical_full, {canonical_full})
+
+            # Pro každou původní formu vytvoř samostatný záznam
+            for original_form in original_forms:
+                json_data["entities"].append({
+                    "type": "PERSON",
+                    "label": p['tag'],
+                    "original": original_form,
+                    "occurrences": 1
+                })
 
         # Ostatní entity (kromě PERSON, který už je v canonical_persons)
         for typ, entities in self.entity_map.items():
