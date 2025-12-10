@@ -80,7 +80,28 @@ def variants_for_first(first: str) -> set:
         if low.endswith('ec'): V.add(f[:-2] + 'ce')
 
     # Bez diakritiky
-    V |= {unicodedata.normalize('NFKD', v).encode('ascii','ignore').decode('ascii') for v in list(V)}
+    ascii_variants = {unicodedata.normalize('NFKD', v).encode('ascii','ignore').decode('ascii') for v in list(V)}
+
+    # DŮLEŽITÉ: Aplikuj normalizaci variant i na ASCII verze!
+    # Julia → Julie, Maria → Marie, atd.
+    name_variants = {
+        'julia': 'julie', 'maria': 'marie', 'alica': 'alice',
+        'beatrica': 'beatrice', 'kornelia': 'kornelie', 'rosalia': 'rosalie',
+        'nadia': 'nadie', 'silvia': 'silvie', 'elea': 'ela',
+        'aurelia': 'aurelie', 'terezia': 'terezie', 'otilia': 'otilie',
+        'sofia': 'sofie', 'valeria': 'valerie', 'amalia': 'amalie',
+        'antonia': 'antonie', 'melania': 'melanie',
+    }
+    normalized_ascii = set()
+    for av in ascii_variants:
+        av_lo = av.lower()
+        if av_lo in name_variants:
+            normalized_ascii.add(name_variants[av_lo])
+            normalized_ascii.add(name_variants[av_lo].capitalize())
+        else:
+            normalized_ascii.add(av)
+
+    V |= normalized_ascii
     return V
 
 def variants_for_surname(surname: str) -> set:
@@ -253,14 +274,9 @@ def infer_first_name_nominative(obs: str) -> str:
     """
     lo = obs.lower()
 
-    # SPECIÁLNÍ PŘÍPAD PRVNÍ: Roberta může být genitiv od Robert
-    # Musí být PŘED kontrolou knihovny, protože Roberta je v knihovně jako ženské jméno!
-    if lo == 'roberta':
-        # Preferujeme Robert (mužské jméno), protože Roberta je častěji genitiv než samostatné jméno
-        return 'Robert'
-
-    # VARIANTY JMEN - musí být PŘED kontrolou knihovny
-    # Normalizace variant jmen na preferovaný tvar
+    # NORMALIZACE VARIANT - ÚPLNĚ PRVNÍ!
+    # Aplikuj normalizaci ještě PŘED jakoukoliv logikou
+    # Důvod: Julia a Julie jsou OBĚ v knihovně, musíme unifikovat
     name_variants = {
         # Mužská jména
         'karl': 'karel',
@@ -288,7 +304,15 @@ def infer_first_name_nominative(obs: str) -> str:
         'otilia': 'otilie',
     }
     if lo in name_variants:
-        return name_variants[lo].capitalize()
+        # VŽDY normalizuj, i když je v knihovně
+        obs = name_variants[lo].capitalize()
+        lo = obs.lower()
+
+    # SPECIÁLNÍ PŘÍPAD: Roberta může být genitiv od Robert
+    # Musí být PŘED kontrolou knihovny, protože Roberta je v knihovně jako ženské jméno!
+    if lo == 'roberta':
+        # Preferujeme Robert (mužské jméno), protože Roberta je častěji genitiv než samostatné jméno
+        return 'Robert'
 
     # DŮLEŽITÉ: Kontrola, zda už je v nominativu (v knihovně jmen)
     if lo in CZECH_FIRST_NAMES:
@@ -1672,21 +1696,9 @@ class Anonymizer:
 
             # Detekce pohlaví podle křestního jména
             # DŮLEŽITÉ: Musíme nejdřív udělat inferenci, protože "Pavla" může být genitiv od "Pavel" (mužské)!
+            # Inference už obsahuje normalizaci variant (Julia→Julie, atd.)
             first_nom_temp = infer_first_name_nominative(first_obs)
             first_nom_temp_lo = first_nom_temp.lower() if first_nom_temp else first_lo
-
-            # Aplikuj normalizaci variant (Julia → Julie, Melania → Melanie, atd.)
-            name_variants_global = {
-                'julia': 'julie', 'melania': 'melanie', 'alica': 'alice',
-                'beatrica': 'beatrice', 'kornelia': 'kornelie', 'rosalia': 'rosalie',
-                'nadia': 'nadie', 'silvia': 'silvie', 'elea': 'ela',
-                'aurelia': 'aurelie', 'terezia': 'terezie', 'otilia': 'otilie',
-                'maria': 'marie', 'sofia': 'sofie', 'valeria': 'valerie',
-                'amália': 'amálie', 'antonia': 'antonie',
-            }
-            if first_nom_temp_lo in name_variants_global:
-                first_nom_temp = name_variants_global[first_nom_temp_lo].capitalize()
-                first_nom_temp_lo = first_nom_temp.lower()
 
             is_female_firstname = False
             if first_nom_temp_lo in CZECH_FIRST_NAMES:
