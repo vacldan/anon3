@@ -231,6 +231,16 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
         cand = obs[:-1]
         if cand.lower() in CZECH_FIRST_NAMES:
             return cand.capitalize()
+
+        # Zkus vložné 'e' (Pavla → Pavel, Lukáša → Lukáš)
+        if len(cand) >= 3:
+            vowels = 'aeiouyáéěíóúůý'
+            last_char = cand[-1]
+            if last_char.lower() not in vowels:
+                cand_with_e = cand[:-1] + 'e' + last_char
+                if cand_with_e.lower() in CZECH_FIRST_NAMES:
+                    return cand_with_e.capitalize()
+
         cands.append(cand)
 
     # Vrať první kandidát (pokud existuje)
@@ -248,6 +258,37 @@ def infer_first_name_nominative(obs: str) -> str:
     if lo == 'roberta':
         # Preferujeme Robert (mužské jméno), protože Roberta je častěji genitiv než samostatné jméno
         return 'Robert'
+
+    # VARIANTY JMEN - musí být PŘED kontrolou knihovny
+    # Normalizace variant jmen na preferovaný tvar
+    name_variants = {
+        # Mužská jména
+        'karl': 'karel',
+        'mark': 'marek',
+        'karlo': 'karel',
+        'marko': 'marek',
+        # Ženská jména -ia → -ie
+        'maria': 'marie',
+        'julia': 'julie',
+        'sofia': 'sofie',
+        'valeria': 'valerie',
+        'amália': 'amálie',
+        'antonia': 'antonie',
+        'melania': 'melanie',
+        'alica': 'alice',
+        'beatrica': 'beatrice',
+        'kornelia': 'kornelie',
+        'rosalia': 'rosalie',
+        'nadia': 'nadie',
+        'silvia': 'silvie',
+        'elea': 'ela',
+        'aurelia': 'aurelie',
+        'terezia': 'terezie',
+        # Různé varianty
+        'otilia': 'otilie',
+    }
+    if lo in name_variants:
+        return name_variants[lo].capitalize()
 
     # DŮLEŽITÉ: Kontrola, zda už je v nominativu (v knihovně jmen)
     if lo in CZECH_FIRST_NAMES:
@@ -285,10 +326,16 @@ def infer_first_name_nominative(obs: str) -> str:
             return (stem + 'ka').capitalize()
 
     # Genitiv/Dativ/Lokál: -y/-ě/-e → -a
-    if lo.endswith(('y', 'ě', 'e')):
+    # Speciální: Bei → Bea (genitiv od Bea)
+    if lo.endswith(('y', 'ě', 'e', 'i')):
         stem = obs[:-1]
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
             return (stem + 'a').capitalize()
+        # Pro -i zkus také bez změny (pokud je to už v nominativu)
+        if lo.endswith('i') and len(stem) >= 2:
+            # Bei → Bea, ale také kontrola zda není už nominativ (Eli zůstává Eli)
+            if stem.lower() in CZECH_FIRST_NAMES:
+                return stem.capitalize()
 
     # Dativ: -u → -a (Hanu → Hana)
     if lo.endswith('u') and len(obs) > 1:
@@ -470,6 +517,13 @@ def infer_surname_nominative(obs: str) -> str:
         # Němec → Němce (genitiv) → návrat na Němec
         return obs[:-2] + 'ec'
 
+    # Genitiv s vložným 'e' - obecné: Holase → Holas, Šídla → Šídel
+    if lo.endswith('se') and len(obs) > 3:
+        # Holase → Holas (odebrat -e)
+        return obs[:-1]
+
+    # Šídla, Havla apod. už řešeno výš (řádek 492)
+
     # ========== DATIV: -ovi → REMOVE ==========
 
     if lo.endswith('ovi') and len(obs) > 5:
@@ -511,6 +565,15 @@ def infer_surname_nominative(obs: str) -> str:
     # ========== GENITIV: -a → NEODSTRAŇUJ! ==========
     # Mnoho příjmení končí na -a v nominativu (Svoboda, Skála, Liška, atd.)
     # Příliš riskantní, necháme to být
+
+    # ========== GENITIV MNOŽNÉHO ČÍSLA: -ů → remove ==========
+    # Šustrů (u Šustrů = u rodiny Šustr) → Šustr nebo Šustrová
+    # Pro ženské příjmení potřebujeme přidat -ová
+    if lo.endswith('ů') and len(obs) > 2:
+        # Šustrů → Šustr (základní tvar)
+        # Ale pro kontext s ženským jménem to bude Šustrová
+        # Prozatím vrátíme základní mužský tvar
+        return obs[:-1]
 
     # ========== GENITIV: -y → -a nebo odstranit -y ==========
     # Klímy → Klíma (genitiv mužů), Procházky → Procházka
@@ -1604,8 +1667,47 @@ class Anonymizer:
 
             # ========== C) INFERENCE KANONICKÉHO JMÉNA ==========
 
+            # NEJDŘÍV zjisti pohlaví podle křestního jména (před inferencí příjmení!)
+            first_lo = first_obs.lower()
+
+            # Detekce pohlaví podle křestního jména
+            # DŮLEŽITÉ: Musíme nejdřív udělat inferenci, protože "Pavla" může být genitiv od "Pavel" (mužské)!
+            first_nom_temp = infer_first_name_nominative(first_obs)
+            first_nom_temp_lo = first_nom_temp.lower() if first_nom_temp else first_lo
+
+            # Aplikuj normalizaci variant (Julia → Julie, Melania → Melanie, atd.)
+            name_variants_global = {
+                'julia': 'julie', 'melania': 'melanie', 'alica': 'alice',
+                'beatrica': 'beatrice', 'kornelia': 'kornelie', 'rosalia': 'rosalie',
+                'nadia': 'nadie', 'silvia': 'silvie', 'elea': 'ela',
+                'aurelia': 'aurelie', 'terezia': 'terezie', 'otilia': 'otilie',
+                'maria': 'marie', 'sofia': 'sofie', 'valeria': 'valerie',
+                'amália': 'amálie', 'antonia': 'antonie',
+            }
+            if first_nom_temp_lo in name_variants_global:
+                first_nom_temp = name_variants_global[first_nom_temp_lo].capitalize()
+                first_nom_temp_lo = first_nom_temp.lower()
+
+            is_female_firstname = False
+            if first_nom_temp_lo in CZECH_FIRST_NAMES:
+                # Jméno je v knihovně - zkontroluj, zda je ženské
+                # Většina ženských jmen končí na -a/-e/-ie
+                is_female_firstname = first_nom_temp_lo.endswith(('a', 'e', 'ie', 'ia'))
+            else:
+                # Není v knihovně - heuristika podle koncovky
+                is_female_firstname = first_lo.endswith(('a', 'e', 'ie', 'ia'))
+
             # Nejdřív inference příjmení
             last_nom = infer_surname_nominative(last_obs)
+
+            # DŮLEŽITÉ: Pokud je křestní jméno ženské a příjmení je v mužském tvaru,
+            # převeď příjmení na ženský tvar (-ová)
+            last_nom_lo = last_nom.lower()
+            if is_female_firstname and not last_nom_lo.endswith(('ová', 'á')):
+                # Příjmení je mužské, ale jméno je ženské → přidej -ová
+                # Novák → Nováková, Šustr → Šustrová
+                if last_nom_lo.endswith(('k', 't', 'r', 's', 'n', 'l', 'c', 'č', 'š', 'ž', 'd', 'ď', 'ť', 'ň')):
+                    last_nom = last_nom + 'ová'
 
             # DŮLEŽITÉ: Oprava kanonického příjmení
             # Pokud už máme v canonical_persons nějaký tvar tohoto příjmení (např. "Procházka"),
@@ -1673,7 +1775,7 @@ class Anonymizer:
             is_female_surname = last_nom.lower().endswith(('ová', 'á'))
 
             # Inference křestního jména podle rodu příjmení
-            first_lo = first_obs.lower()
+            # first_lo už je definováno výše (řádek 1670)
 
             # Pokud příjmení je ženské, jméno musí být ženské
             if is_female_surname:
