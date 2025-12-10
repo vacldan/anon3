@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-09T13:07:08.347216",
+  "generated_at": "2025-12-10T05:56:19.306202",
   "source_file": "smlouva17.docx",
   "entities": [
     {
@@ -30,13 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Matěj Procházka",
+      "original": "Matěj Procházek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Karel Procházka",
+      "original": "Karel Procházek",
       "occurrences": 1
     },
     {
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Martin Procházka",
+      "original": "Martin Procházek",
       "occurrences": 1
     },
     {
