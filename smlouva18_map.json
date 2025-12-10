@@ -1,18 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-10T09:39:14.328955",
+  "generated_at": "2025-12-10T11:32:40.287705",
   "source_file": "smlouva18.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ivan Doležal",
+      "original": "Ivanem Doležalem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ivanem Doležalem",
+      "original": "Ivan Doležal",
       "occurrences": 1
     },
     {
@@ -24,19 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Pavlíny Pokorné",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
       "original": "Pavlínou Pokornou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Robert Klíma",
+      "label": "[[PERSON_3]]",
+      "original": "Pavlíny Pokorné",
       "occurrences": 1
     },
     {
@@ -47,14 +41,20 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Tereza Houfová",
+      "label": "[[PERSON_4]]",
+      "original": "Robert Klíma",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Terezy Houfové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Tereza Houfová",
       "occurrences": 1
     },
     {

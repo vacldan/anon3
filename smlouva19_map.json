@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-09T17:06:15.697407",
+  "generated_at": "2025-12-10T11:31:48.099924",
   "source_file": "smlouva19.docx",
   "entities": [
     {
@@ -11,8 +11,14 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Adrianem Kratochvílem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Svaté Markét",
+      "original": "Svaté Markéty",
       "occurrences": 1
     },
     {
@@ -24,55 +30,61 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Lucie Novotná",
+      "original": "Lucií Novotnou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Lucie Novotné",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Gabriela Hrbáčová",
+      "original": "Gabrielou Hrbáčovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Tomáš Pavlíek",
+      "original": "Tomášem Pavlíkem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Filip Šimůnek",
+      "original": "Filipem Šimůnkem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Hany Zbořilová",
+      "original": "Hany Zbořilové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_9]]",
-      "original": "Klára Melichová",
+      "original": "Kláry Melichové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Michaela Růžičková",
+      "original": "Michaelou Růžičkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_11]]",
-      "original": "Zora Konečná",
+      "original": "Zorou Konečnou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
-      "original": "Richard Pavelek",
+      "original": "Richard Pavelka",
       "occurrences": 1
     },
     {
@@ -132,7 +144,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
-      "original": "Erika Řehořová",
+      "original": "Eriky Řehořové",
       "occurrences": 1
     },
     {
@@ -174,7 +186,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_29]]",
-      "original": "Pavlína Plíšková",
+      "original": "Pavlínou Plíškovou",
       "occurrences": 1
     },
     {
