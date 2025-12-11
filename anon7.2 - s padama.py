@@ -267,6 +267,39 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
     # Vrať první kandidát (pokud existuje)
     return cands[0].capitalize() if cands else None
 
+def normalize_name_variant(obs: str) -> str:
+    """Aplikuje pouze normalizaci variant jmen (Julia→Julie) bez pádové inference."""
+    lo = obs.lower()
+
+    name_variants = {
+        # Mužská jména
+        'karl': 'karel',
+        'mark': 'marek',
+        'karlo': 'karel',
+        'marko': 'marek',
+        # Ženská jména -ia → -ie
+        'maria': 'marie',
+        'julia': 'julie',
+        'sofia': 'sofie',
+        'valeria': 'valerie',
+        'amália': 'amálie',
+        'antonia': 'antonie',
+        'melania': 'melanie',
+        'alica': 'alice',
+        'beatrica': 'beatrice',
+        'kornelia': 'kornelie',
+        'rosalia': 'rosalie',
+        'nadia': 'nadie',
+        'silvia': 'silvie',
+        'elea': 'ela',
+        'aurelia': 'aurelie',
+        'terezia': 'terezie',
+        'otilia': 'otilie',
+    }
+    if lo in name_variants:
+        return name_variants[lo].capitalize()
+    return obs.capitalize()
+
 def infer_first_name_nominative(obs: str) -> str:
     """Odhadne nominativ křestního jména z pozorovaného tvaru.
 
@@ -1244,7 +1277,9 @@ class Anonymizer:
         """Zajistí, že pro danou osobu existuje tag a vrátí ho."""
         # FINÁLNÍ NORMALIZACE - aby canonical_persons obsahovali správné jména
         # Julia → Julie, Maria → Marie, atd.
-        first_normalized = infer_first_name_nominative(first_nom) if first_nom else first_nom
+        # DŮLEŽITÉ: Použij normalize_name_variant (NE infer_first_name_nominative)
+        # protože nechceme vytvářet nové formy jmen, které nejsou v dokumentu!
+        first_normalized = normalize_name_variant(first_nom) if first_nom else first_nom
 
         key = (self._normalize_for_matching(first_normalized), self._normalize_for_matching(last_nom))
 
@@ -1707,7 +1742,6 @@ class Anonymizer:
             is_female_firstname = False
             if first_nom_temp_lo in CZECH_FIRST_NAMES:
                 # Jméno je v knihovně - zkontroluj, zda je ženské
-                # Většina ženských jmen končí na -a/-e/-ie
                 is_female_firstname = first_nom_temp_lo.endswith(('a', 'e', 'ie', 'ia'))
             else:
                 # Není v knihovně - heuristika podle koncovky
@@ -1793,45 +1827,32 @@ class Anonymizer:
             # Inference křestního jména podle rodu příjmení
             # first_lo už je definováno výše (řádek 1670)
 
-            # Pokud příjmení je ženské, jméno musí být ženské
+            # Gender-aware inference založená na příjmení
+            is_female_surname = last_nom.lower().endswith(('ová', 'á'))
+
             if is_female_surname:
-                # Han → Hana, Martin → Martina
-                # Pravidlo: pokud jméno končí na souhlásku, přidej 'a'
-                # DŮLEŽITÉ: Včetně českých samohlásek s diakritikou (ě, á, í, atd.)
-                czech_vowels = ('a', 'á', 'e', 'é', 'ě', 'i', 'í', 'o', 'ó', 'u', 'ú', 'ů', 'y', 'ý')
-                if not first_lo.endswith(czech_vowels):
-                    # Jméno končí na souhlásku → přidej 'a'
-                    first_nom = (first_obs + 'a').capitalize()
-                elif first_lo.endswith('a'):
-                    # Jméno končí na 'a' → může být nominativ nebo pád
-                    # MUSÍME aplikovat inference pro normalizaci variant (Julia→Julie, Maria→Marie)
-                    first_nom = infer_first_name_nominative(first_obs)
-                else:
-                    # Jiné koncovky → zkus inference
-                    first_nom = infer_first_name_nominative(first_obs)
-            else:
-                # Příjmení je mužské, jméno musí být mužské
-                # Jana → Jan, Petra → Petr, Radka → Radek (použij inference!)
-                if first_lo.endswith('a') and len(first_lo) > 2:
-                    # Výjimky - skutečná mužská jména končící na 'a'
-                    male_names_with_a = {'kuba', 'míla', 'nikola', 'saša', 'jirka', 'honza'}
-                    if first_lo in male_names_with_a:
-                        first_nom = first_obs.capitalize()
+                # Příjmení je ženské → jméno musí být ženské
+                first_lo = first_obs.lower() if first_obs else ''
+
+                # Pro pádové koncovky použij inference
+                if first_lo.endswith(('u', 'i', 'ě', 'ou', 'ií')):
+                    # Pavlu→Pavla, Pavli→Pavla, Pavlou→Pavla
+                    inferred = infer_first_name_nominative(first_obs)
+                    # Ale pokud inference vrátila mužské jméno, přidej 'a'
+                    if not inferred.lower().endswith(('a', 'e', 'ie', 'ia', 'y')):
+                        first_nom = (inferred + 'a').capitalize()
                     else:
-                        # FORCE MASCULINE CONVERSION - použij přímo _male_genitive_to_nominative
-                        # Radka → Radek, Jana → Jan, Petra → Petr
-                        male_result = _male_genitive_to_nominative(first_obs)
-                        if male_result:
-                            first_nom = male_result
-                        else:
-                            # Fallback: odstranění 'a'
-                            first_nom = first_obs[:-1].capitalize()
-                elif first_lo.endswith(('u', 'e', 'em', 'ovi', 'ům')):
-                    # Typické pádové koncovky → použij inference
-                    first_nom = infer_first_name_nominative(first_obs)
+                        first_nom = inferred
+                elif first_lo.endswith(('a', 'e', 'ie', 'ia', 'y')):
+                    # Nominativ (končí na typickou ženskou koncovku) → pouze normalizuj varianty
+                    first_nom = normalize_name_variant(first_obs) if first_obs else first_obs
                 else:
-                    # Jiné (pravděpodobně nominativ) → ponech jak je
-                    first_nom = first_obs.capitalize()
+                    # Souhláska → přidej 'a'
+                    first_nom = (first_obs + 'a').capitalize() if first_obs else first_obs
+            else:
+                # Příjmení je mužské → použij standardní inference
+                # To převede Pavla→Pavel, Jana→Jan (protože jsou to pády mužských jmen)
+                first_nom = infer_first_name_nominative(first_obs) if first_obs else first_obs
 
             # Vytvoř nebo najdi tag pro tuto osobu
             tag = self._ensure_person_tag(first_nom, last_nom)
