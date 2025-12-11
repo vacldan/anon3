@@ -1,18 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-10T13:32:38.055723",
+  "generated_at": "2025-12-11T12:42:28.055561",
   "source_file": "smlouva19.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Adrian Kratochvíl",
+      "original": "Adrianem Kratochvílem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Adrianem Kratochvílem",
+      "original": "Adrian Kratochvíl",
       "occurrences": 1
     },
     {

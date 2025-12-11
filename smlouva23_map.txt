@@ -1,338 +1,377 @@
 OSOBY
 -----
 [[PERSON_1]]: Blanka Veselá
-  - Blance Veselé
+[[PERSON_2]]: Blanky Veselá
   - Blanky Veselé
-[[PERSON_2]]: Milena Dvořáčková
+[[PERSON_3]]: Blance Veselá
+  - Blance Veselé
+[[PERSON_4]]: Milena Dvořáčková
   - Milenou Dvořáčkovou
   - Mileně Dvořáčkové
-[[PERSON_3]]: Jaroslava Čechová
-  - Jaroslavy Čechové
+[[PERSON_5]]: Jaroslava Čechová
   - Jaroslavě Čechové
-[[PERSON_4]]: Pavlína Králíčková
-  - Pavlíny Králíčkové
+[[PERSON_6]]: Jaroslavy Čechová
+  - Jaroslavy Čechové
+[[PERSON_7]]: Pavlína Králíčková
   - Pavlíně Králíčkové
-[[PERSON_5]]: Ludmila Pokorná
-  - Ludmile Pokorné
+[[PERSON_8]]: Pavlíny Králíčková
+  - Pavlíny Králíčkové
+[[PERSON_9]]: Ludmila Pokorná
   - Ludmilou Pokornou
-[[PERSON_6]]: Hedvika Urbanová
-  - Hedvice Urbanové
+[[PERSON_10]]: Ludmile Pokorná
+  - Ludmile Pokorné
+[[PERSON_11]]: Hedvika Urbanová
+[[PERSON_12]]: Hedviky Urbanová
   - Hedviky Urbanové
-[[PERSON_7]]: Blanka Hrušková
-  - Blance Hruškové
+[[PERSON_13]]: Hedvice Urbanová
+  - Hedvice Urbanové
+[[PERSON_14]]: Blanka Hrušková
+[[PERSON_15]]: Blanky Hrušková
   - Blanky Hruškové
-[[PERSON_8]]: Milada Řehůřková
+[[PERSON_16]]: Blance Hrušková
+  - Blance Hruškové
+[[PERSON_17]]: Milada Řehůřková
   - Miladou Řehůřkovou
   - Miladě Řehůřkové
-[[PERSON_9]]: Růžena Koutná
-  - Růženy Koutné
+[[PERSON_18]]: Růžena Koutná
   - Růženě Koutné
-[[PERSON_10]]: Božena Procházková
+[[PERSON_19]]: Růženy Koutná
+  - Růženy Koutné
+[[PERSON_20]]: Božena Procházková
   - Boženou Procházkovou
   - Boženě Procházkové
-[[PERSON_11]]: Hana Svatošová
-[[PERSON_12]]: Hany Svatošová
+[[PERSON_21]]: Hana Svatošová
+[[PERSON_22]]: Hany Svatošová
   - Hany Svatošové
-[[PERSON_13]]: Vlasta Doležalová
-  - Vlasty Doležalové
+[[PERSON_23]]: Vlasta Doležalová
   - Vlastě Doležalové
-[[PERSON_14]]: Dana Křížová
+[[PERSON_24]]: Vlasty Doležalová
+  - Vlasty Doležalové
+[[PERSON_25]]: Dana Křížová
   - Danou Křížovou
-[[PERSON_15]]: Marta Blaštíková
+[[PERSON_26]]: Marta Blaštíková
+[[PERSON_27]]: Marty Blaštíková
   - Marty Blaštíkové
-[[PERSON_16]]: Helga Šimáčková
+[[PERSON_28]]: Helga Šimáčková
   - Helgou Šimáčkovou
-[[PERSON_17]]: Helze Šimáčková
+[[PERSON_29]]: Helze Šimáčková
   - Helze Šimáčkové
-[[PERSON_18]]: Blahoslava Kučerová
-  - Blahoslavy Kučerové
+[[PERSON_30]]: Blahoslava Kučerová
   - Blahoslavě Kučerové
-[[PERSON_19]]: Ivona Říhová
+[[PERSON_31]]: Blahoslavy Kučerová
+  - Blahoslavy Kučerové
+[[PERSON_32]]: Ivona Říhová
   - Ivonou Říhovou
-[[PERSON_20]]: Renáta Havelová
-  - Renáty Havelové
+[[PERSON_33]]: Renáta Havelová
   - Renátě Havelové
-[[PERSON_21]]: Sylva Janoušková
+[[PERSON_34]]: Renáty Havelová
+  - Renáty Havelové
+[[PERSON_35]]: Sylva Janoušková
   - Sylvou Janouškovou
-[[PERSON_22]]: Ela Vrbová
+[[PERSON_36]]: Ela Vrbová
+[[PERSON_37]]: Ely Vrbová
   - Ely Vrbové
-[[PERSON_23]]: Elea Vrbová
+[[PERSON_38]]: Ele Vrbová
   - Ele Vrbové
-[[PERSON_24]]: Natálie Vítová
+[[PERSON_39]]: Natálie Vítová
   - Natálie Vítové
+[[PERSON_40]]: Natália Vítová
   - Natálii Vítové
-[[PERSON_25]]: Stáňa Klímová
+[[PERSON_41]]: Stáňa Klímová
   - Stáňou Klímovou
-[[PERSON_26]]: Dagmara Štolbová
+[[PERSON_42]]: Dagmara Štolbová
+[[PERSON_43]]: Dagmary Štolbová
   - Dagmary Štolbové
+[[PERSON_44]]: Dagmaře Štolbová
   - Dagmaře Štolbové
-[[PERSON_27]]: Lenora Pechová
-  - Lenore Pechové
+[[PERSON_45]]: Lenora Pechová
   - Lenorou Pechovou
-[[PERSON_28]]: Sára Čechmanová
+[[PERSON_46]]: Lenore Pechová
+  - Lenore Pechové
+[[PERSON_47]]: Sára Čechmanová
+[[PERSON_48]]: Sáry Čechmanová
   - Sáry Čechmanové
+[[PERSON_49]]: Sáře Čechmanová
   - Sáře Čechmanové
-[[PERSON_29]]: Apolena Zoubková
+[[PERSON_50]]: Apolena Zoubková
   - Apolenou Zoubkovou
   - Apoleně Zoubkové
-[[PERSON_30]]: Beata Hlavatá
+[[PERSON_51]]: Beata Hlavatá
+[[PERSON_52]]: Beaty Hlavatá
   - Beaty Hlavaté
-[[PERSON_31]]: Krista Hladká
-[[PERSON_32]]: Kriste Hladká
+[[PERSON_53]]: Krista Hladká
+[[PERSON_54]]: Kriste Hladká
   - Kriste Hladké
-[[PERSON_33]]: Kristo Hladká
+[[PERSON_55]]: Kristoa Hladká
   - Kristou Hladkou
-[[PERSON_34]]: Otilie Rybářová
+[[PERSON_56]]: Otilie Rybářová
   - Otilie Rybářové
-  - Otilii Rybářové
-[[PERSON_35]]: Judita Zahradníková
+[[PERSON_57]]: Judita Zahradníková
   - Juditou Zahradníkovou
   - Juditě Zahradníkové
-[[PERSON_36]]: Světlana Šindelářová
-  - Světlany Šindelářové
+[[PERSON_58]]: Světlana Šindelářová
   - Světlaně Šindelářové
-[[PERSON_37]]: Eliska Novomeská
+[[PERSON_59]]: Světlany Šindelářová
+  - Světlany Šindelářové
+[[PERSON_60]]: Eliska Novomeská
+[[PERSON_61]]: Elisce Novomeská
   - Elisce Novomeské
-[[PERSON_38]]: Eliska Novomesá
+[[PERSON_62]]: Eliska Novomesá
   - Eliskou Novomeskou
-[[PERSON_39]]: Magda Blažejová
+[[PERSON_63]]: Magda Blažejová
+[[PERSON_64]]: Magdy Blažejová
   - Magdy Blažejové
-[[PERSON_40]]: Rita Holasová
-[[PERSON_41]]: Žanina Kočová
-[[PERSON_42]]: Žaniny Kočová
+[[PERSON_65]]: Rita Holasová
+[[PERSON_66]]: Žanina Kočová
+[[PERSON_67]]: Žaniny Kočová
   - Žaniny Kočové
-[[PERSON_43]]: Žanině Kočová
+[[PERSON_68]]: Žaniněa Kočová
   - Žanině Kočové
-[[PERSON_44]]: Justina Valešová
+[[PERSON_69]]: Justina Valešová
   - Justinou Valešovou
   - Justině Valešové
-[[PERSON_45]]: Jolana Škodová
-  - Jolany Škodové
+[[PERSON_70]]: Jolana Škodová
   - Jolaně Škodové
-[[PERSON_46]]: Milica Horňáková
-  - Milicou Horňákovou
-[[PERSON_47]]: Milici Horňáková
+[[PERSON_71]]: Jolany Škodová
+  - Jolany Škodové
+[[PERSON_72]]: Milica Horňáková
   - Milici Horňákové
-[[PERSON_48]]: Jarmila Sedlářová
-  - Jarmile Sedlářové
+  - Milicou Horňákovou
+[[PERSON_73]]: Jarmila Sedlářová
+[[PERSON_74]]: Jarmily Sedlářová
   - Jarmily Sedlářové
-[[PERSON_49]]: Olívie Švecová
-  - Olívii Švecové
+[[PERSON_75]]: Jarmile Sedlářová
+  - Jarmile Sedlářové
+[[PERSON_76]]: Olívie Švecová
   - Olívií Švecovou
-[[PERSON_50]]: Dominika Hrebenářová
-  - Dominice Hrebenářové
+[[PERSON_77]]: Olívia Švecová
+  - Olívii Švecové
+[[PERSON_78]]: Dominika Hrebenářová
+[[PERSON_79]]: Dominiky Hrebenářová
   - Dominiky Hrebenářové
-[[PERSON_51]]: Blanka Palečková
-  - Blance Palečkové
+[[PERSON_80]]: Dominice Hrebenářová
+  - Dominice Hrebenářové
+[[PERSON_81]]: Blanka Palečková
   - Blankou Palečkovou
-[[PERSON_52]]: Žofie Koutová
+[[PERSON_82]]: Blance Palečková
+  - Blance Palečkové
+[[PERSON_83]]: Žofie Koutová
   - Žofie Koutové
+[[PERSON_84]]: Žofia Koutová
   - Žofii Koutové
-[[PERSON_53]]: Viola Mičková
-  - Viole Mičkové
+[[PERSON_85]]: Viola Mičková
   - Violou Mičkovou
-[[PERSON_54]]: Hana Štroblová
-[[PERSON_55]]: Hany Štroblová
+[[PERSON_86]]: Viole Mičková
+  - Viole Mičkové
+[[PERSON_87]]: Hana Štroblová
+[[PERSON_88]]: Hany Štroblová
   - Hany Štroblové
-[[PERSON_56]]: Karina Fialová
+[[PERSON_89]]: Karina Fialová
   - Karinou Fialovou
   - Karině Fialové
-[[PERSON_57]]: Lívia Králová
-[[PERSON_58]]: Líviie Králová
+[[PERSON_90]]: Lívia Králová
+[[PERSON_91]]: Líviie Králová
   - Líviie Králové
-[[PERSON_59]]: Lívie Králová
+[[PERSON_92]]: Lívie Králová
   - Lívií Králové
-[[PERSON_60]]: Nela Tůmová
-  - Nele Tůmové
+[[PERSON_93]]: Nela Tůmová
   - Nelou Tůmovou
-[[PERSON_61]]: Radmila Hanzlíková
-  - Radmile Hanzlíkové
+[[PERSON_94]]: Nele Tůmová
+  - Nele Tůmové
+[[PERSON_95]]: Radmila Hanzlíková
+[[PERSON_96]]: Radmily Hanzlíková
   - Radmily Hanzlíkové
-[[PERSON_62]]: Irena Bártová
+[[PERSON_97]]: Radmile Hanzlíková
+  - Radmile Hanzlíkové
+[[PERSON_98]]: Irena Bártová
   - Irenou Bártovou
-[[PERSON_63]]: Stanislav Bartoš
+[[PERSON_99]]: Stanislav Bartoš
   - Stanislavovi Bartošovi
-[[PERSON_64]]: Stanislav Bartoše
-  - Stanislava Bartoše
-[[PERSON_65]]: Vít Kolář
+[[PERSON_100]]: Stanislava Bartoše
+[[PERSON_101]]: Vít Kolář
   - Vítovi Kolářovi
-[[PERSON_66]]: Vít Koláře
-  - Víta Koláře
-[[PERSON_67]]: Karel Řehoř
-[[PERSON_68]]: Karl Řehoře
-  - Karla Řehoře
-[[PERSON_69]]: Karla Řehoř
+[[PERSON_102]]: Víta Koláře
+[[PERSON_103]]: Karel Řehoř
+[[PERSON_104]]: Karla Řehoře
+[[PERSON_105]]: Karla Řehoř
   - Karlu Řehořovi
-[[PERSON_70]]: Otto Holubec
-[[PERSON_71]]: Ott Holubec
+[[PERSON_106]]: Otto Holubec
+[[PERSON_107]]: Otta Holubecová
   - Otta Holubce
+[[PERSON_108]]: Ott Holubec
   - Ottovi Holubcovi
-[[PERSON_72]]: Štefan Kubiš
+[[PERSON_109]]: Štefan Kubiš
   - Štefanovi Kubišovi
-[[PERSON_73]]: Štefan Kubiše
-  - Štefana Kubiše
-[[PERSON_74]]: Radim Pazdera
+[[PERSON_110]]: Štefana Kubiše
+[[PERSON_111]]: Radim Pazdera
+[[PERSON_112]]: Radima Pazderová
   - Radima Pazdery
-[[PERSON_75]]: Radima Pazdera
   - Radimu Pazderovi
-[[PERSON_76]]: Lubomír Šimůnek
-  - Lubomíra Šimůnka
+[[PERSON_113]]: Lubomír Šimůnek
   - Lubomírovi Šimůnkovi
-[[PERSON_77]]: Miloš Konečný
+[[PERSON_114]]: Lubomíra Šimůneková
+  - Lubomíra Šimůnka
+[[PERSON_115]]: Miloš Konečný
   - Milošovi Konečnému
-[[PERSON_78]]: Miloše Konečný
+[[PERSON_116]]: Miloše Konečný
   - Miloše Konečného
-[[PERSON_79]]: Zdeněk Havelík
-[[PERSON_80]]: Zdeňk Havelík
+[[PERSON_117]]: Zdeněk Havelík
+[[PERSON_118]]: Zdeňka Havelíková
   - Zdeňka Havelíka
-[[PERSON_81]]: Jaromír Řezáč
+[[PERSON_119]]: Jaromír Řezáč
   - Jaromírovi Řezáčovi
-[[PERSON_82]]: Jaromír Řezáče
-  - Jaromíra Řezáče
-[[PERSON_83]]: Čeněk Blažek
-[[PERSON_84]]: Čeňk Blažek
+[[PERSON_120]]: Jaromíra Řezáče
+[[PERSON_121]]: Čeněk Blažek
+[[PERSON_122]]: Čeňka Blažeková
   - Čeňka Blažka
+[[PERSON_123]]: Čeňk Blažek
   - Čeňkovi Blažkovi
-[[PERSON_85]]: Old Skála
-  - Olda Skála
-  - Oldovi Skálovi
-[[PERSON_86]]: Oldy Skála
+[[PERSON_124]]: Olda Skála
   - Oldy Skály
-[[PERSON_87]]: Leoš Kovařík
+[[PERSON_125]]: Old Skála
+  - Oldovi Skálovi
+[[PERSON_126]]: Leoš Kovařík
   - Leošovi Kovaříkovi
-[[PERSON_88]]: Leoše Kovařík
+[[PERSON_127]]: Leoše Kovaříková
   - Leoše Kovaříka
-[[PERSON_89]]: Radovan Šindelář
+[[PERSON_128]]: Radovan Šindelář
   - Radovanovi Šindelářovi
-[[PERSON_90]]: Radovan Šindeláře
-  - Radovana Šindeláře
-[[PERSON_91]]: Marek Holý
-[[PERSON_92]]: Mark Holý
+[[PERSON_129]]: Radovana Šindeláře
+[[PERSON_130]]: Marek Holý
+[[PERSON_131]]: Marka Holý
   - Marka Holého
-  - Markovi Holému
-[[PERSON_93]]: Adam Vachoušek
+[[PERSON_132]]: Adam Vachoušek
   - Adama Vachouška
   - Adamovi Vachouškovi
-[[PERSON_94]]: Tomáš Řípa
+[[PERSON_133]]: Tomáš Řípa
   - Tomášovi Řípovi
-[[PERSON_95]]: Tomáše Řípa
+[[PERSON_134]]: Tomáše Řípa
   - Tomáše Řípy
-[[PERSON_96]]: Vladimír Šebek
-  - Vladimíra Šebka
+[[PERSON_135]]: Vladimír Šebek
   - Vladimírovi Šebkovi
-[[PERSON_97]]: Bedřich Horský
-  - Bedřicha Horského
+[[PERSON_136]]: Vladimíra Šebeková
+  - Vladimíra Šebka
+[[PERSON_137]]: Bedřich Horský
   - Bedřichovi Horskému
-[[PERSON_98]]: Albín Řehák
-  - Albína Řeháka
+[[PERSON_138]]: Bedřicha Horský
+  - Bedřicha Horského
+[[PERSON_139]]: Albín Řehák
   - Albínovi Řehákovi
-[[PERSON_99]]: Oleg Novák
+[[PERSON_140]]: Albína Řeháková
+  - Albína Řeháka
+[[PERSON_141]]: Oleg Novák
   - Olega Nováka
   - Olegovi Novákovi
-[[PERSON_100]]: Radko Veverka
-[[PERSON_101]]: Radk Veverka
+[[PERSON_142]]: Radko Veverka
+[[PERSON_143]]: Radka Veverková
   - Radka Veverky
-[[PERSON_102]]: Radek Veverka
+[[PERSON_144]]: Radek Veverka
   - Radkovi Veverkovi
-[[PERSON_103]]: Robert Krupičk
+[[PERSON_145]]: Robert Krupičk
   - Robert Krupička
   - Roberta Krupičky
   - Robertovi Krupičkovi
-[[PERSON_104]]: Emil Koudelk
+[[PERSON_146]]: Emil Koudelk
   - Emil Koudelka
-  - Emila Koudelky
   - Emilovi Koudelkovi
-[[PERSON_105]]: Jindřich Malina
-  - Jindřicha Maliny
+[[PERSON_147]]: Emila Koudelková
+  - Emila Koudelky
+[[PERSON_148]]: Jindřich Malina
   - Jindřichovi Malinovi
-[[PERSON_106]]: Vojtěch Strak
+[[PERSON_149]]: Jindřicha Malinová
+  - Jindřicha Maliny
+[[PERSON_150]]: Vojtěch Strak
   - Vojtěch Straka
-  - Vojtěcha Straky
   - Vojtěchovi Strakovi
-[[PERSON_107]]: Luboš Hronek
+[[PERSON_151]]: Vojtěcha Straková
+  - Vojtěcha Straky
+[[PERSON_152]]: Luboš Hronek
   - Lubošovi Hronkovi
-[[PERSON_108]]: Luboše Hronek
+[[PERSON_153]]: Luboše Hroneková
   - Luboše Hronka
-[[PERSON_109]]: Josef Bláha
-  - Josefa Bláhy
+[[PERSON_154]]: Josef Bláha
   - Josefovi Bláhovi
-[[PERSON_110]]: Mikuláš Švarc
+[[PERSON_155]]: Josefa Bláha
+  - Josefa Bláhy
+[[PERSON_156]]: Mikuláš Švarc
   - Mikulášovi Švarcovi
-[[PERSON_111]]: Mikuláše Švarc
+[[PERSON_157]]: Mikuláše Švarecová
   - Mikuláše Švarce
-[[PERSON_112]]: Bogdan Čapek
+[[PERSON_158]]: Bogdan Čapek
   - Bogdana Čapka
   - Bogdanovi Čapkovi
-[[PERSON_113]]: Radko Jančík
-[[PERSON_114]]: Radk Jančík
+[[PERSON_159]]: Radko Jančík
+[[PERSON_160]]: Radka Jančíková
   - Radka Jančíka
-[[PERSON_115]]: Radek Jančík
+[[PERSON_161]]: Radek Jančík
   - Radkovi Jančíkovi
-[[PERSON_116]]: Rostislav Holiš
+[[PERSON_162]]: Rostislav Holiš
   - Rostislavovi Holišovi
-[[PERSON_117]]: Rostislav Holiše
-  - Rostislava Holiše
-[[PERSON_118]]: Dalimil Šenk
-  - Dalimila Šenka
+[[PERSON_163]]: Rostislava Holiše
+[[PERSON_164]]: Dalimil Šenk
   - Dalimilovi Šenkovi
-[[PERSON_119]]: Marek Zástěra
-[[PERSON_120]]: Mark Zástěra
+[[PERSON_165]]: Dalimila Šeneková
+  - Dalimila Šenka
+[[PERSON_166]]: Marek Zástěra
+[[PERSON_167]]: Marka Zástěrová
   - Marka Zástěry
-  - Markovi Zástěrovi
-[[PERSON_121]]: Janek Švarný
+[[PERSON_168]]: Janek Švarný
   - Jankovi Švarnému
-[[PERSON_122]]: Jank Švarný
+[[PERSON_169]]: Janka Švarný
   - Janka Švarného
-[[PERSON_123]]: Bohdan Žídek
-  - Bohdana Žídka
+[[PERSON_170]]: Bohdan Žídek
   - Bohdanovi Žídkovi
-[[PERSON_124]]: Hynek Kubát
+[[PERSON_171]]: Bohdana Žídeková
+  - Bohdana Žídka
+[[PERSON_172]]: Hynek Kubát
   - Hynka Kubáta
   - Hynkovi Kubátovi
-[[PERSON_125]]: Lukáš Čermák
+[[PERSON_173]]: Lukáš Čermák
   - Lukášovi Čermákovi
-[[PERSON_126]]: Lukáše Čermák
+[[PERSON_174]]: Lukáše Čermáková
   - Lukáše Čermáka
-[[PERSON_127]]: František Zábranský
+[[PERSON_175]]: František Zábranský
   - Františkovi Zábranskému
-[[PERSON_128]]: Františk Zábranský
+[[PERSON_176]]: Františka Zábranský
   - Františka Zábranského
-[[PERSON_129]]: Ctibor Hanzal
+[[PERSON_177]]: Ctibor Hanzal
   - Ctibora Hanzala
   - Ctiborovi Hanzalovi
-[[PERSON_130]]: Marek Ženíšek
-[[PERSON_131]]: Mark Ženíšek
+[[PERSON_178]]: Marek Ženíšek
+[[PERSON_179]]: Marka Ženíšeková
   - Marka Ženíška
-  - Markovi Ženíškovi
-[[PERSON_132]]: Přemysl Doležal
+[[PERSON_180]]: Přemysl Doležal
   - Přemysla Doležala
   - Přemyslovi Doležalovi
-[[PERSON_133]]: Alexej Kratochvíl
+[[PERSON_181]]: Alexej Kratochvíl
   - Alexejovi Kratochvílovi
-[[PERSON_134]]: Alexeje Kratochvíl
+[[PERSON_182]]: Alexeje Kratochvíelová
   - Alexeje Kratochvíla
-[[PERSON_135]]: Jaroslav Šubrt
-  - Jaroslava Šubrta
+[[PERSON_183]]: Jaroslav Šubrt
   - Jaroslavovi Šubrtovi
-[[PERSON_136]]: Boris Slavíček
+[[PERSON_184]]: Jaroslava Šubrt
+  - Jaroslava Šubrta
+[[PERSON_185]]: Boris Slavíček
   - Borisovi Slavíčkovi
-[[PERSON_137]]: Borise Slavíček
+[[PERSON_186]]: Borise Slavíčková
   - Borise Slavíčka
-[[PERSON_138]]: Radomír Volf
-  - Radomíra Volfa
+[[PERSON_187]]: Radomír Volf
   - Radomírovi Volfovi
-[[PERSON_139]]: Lukáš Křivánek
+[[PERSON_188]]: Radomíra Volf
+  - Radomíra Volfa
+[[PERSON_189]]: Lukáš Křivánek
   - Lukášovi Křivánkovi
-[[PERSON_140]]: Lukáše Křivánek
+[[PERSON_190]]: Lukáše Křivánková
   - Lukáše Křivánka
-[[PERSON_141]]: Patrik Černota
-  - Patrika Černoty
+[[PERSON_191]]: Patrik Černota
   - Patrikovi Černotovi
-[[PERSON_142]]: Jaroslav Špinar
-  - Jaroslava Špinara
+[[PERSON_192]]: Patrika Černotová
+  - Patrika Černoty
+[[PERSON_193]]: Jaroslav Špinar
   - Jaroslavovi Špinarovi
-[[PERSON_143]]: Marek Turek
-[[PERSON_144]]: Mark Turek
+[[PERSON_194]]: Jaroslava Špinar
+  - Jaroslava Špinara
+[[PERSON_195]]: Marek Turek
+[[PERSON_196]]: Marka Tureková
   - Marka Turka
-  - Markovi Turkovi
 
