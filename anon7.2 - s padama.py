@@ -307,6 +307,12 @@ def normalize_name_variant(obs: str) -> str:
         'hedvice': 'hedvika',  # Dativ od Hedvika
         'amira': 'amira',  # Explicitně
         'amiře': 'amira',  # Dativ/Lokál od Amira
+        'gabriela': 'gabriela',  # Explicitně
+        'gabriele': 'gabriela',  # Dativ od Gabriela
+        'andrea': 'andrea',  # Explicitně
+        'andree': 'andrea',  # Dativ od Andrea
+        'mila': 'mila',  # Explicitně
+        'mile': 'mila',  # Dativ od Mila
     }
     if lo in name_variants:
         return name_variants[lo].capitalize()
@@ -359,6 +365,12 @@ def infer_first_name_nominative(obs: str) -> str:
         'hedvice': 'hedvika',  # Dativ od Hedvika
         'amira': 'amira',  # Explicitně
         'amiře': 'amira',  # Dativ/Lokál od Amira
+        'gabriela': 'gabriela',  # Explicitně
+        'gabriele': 'gabriela',  # Dativ od Gabriela
+        'andrea': 'andrea',  # Explicitně
+        'andree': 'andrea',  # Dativ od Andrea
+        'mila': 'mila',  # Explicitně
+        'mile': 'mila',  # Dativ od Mila
     }
     if lo in name_variants:
         # VŽDY normalizuj, i když je v knihovně
@@ -1869,8 +1881,8 @@ class Anonymizer:
                 first_lo = first_obs.lower() if first_obs else ''
 
                 # Pro pádové koncovky použij inference
-                if first_lo.endswith(('u', 'i', 'ě', 'ou', 'ií')):
-                    # Pavlu→Pavla, Pavli→Pavla, Pavlou→Pavla
+                if first_lo.endswith(('u', 'i', 'ě', 'ou', 'ií', 'n')):
+                    # Pavlu→Pavla, Pavli→Pavla, Pavlou→Pavla, Elen→Elena
                     inferred = infer_first_name_nominative(first_obs)
                     # Ale pokud inference vrátila mužské jméno, přidej 'a'
                     if not inferred.lower().endswith(('a', 'e', 'ie', 'ia', 'y')):
