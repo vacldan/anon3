@@ -287,6 +287,7 @@ def normalize_name_variant(obs: str) -> str:
         'melania': 'melanie',
         'alica': 'alice',
         'beatrica': 'beatrice',
+        'beatricía': 'beatrice',  # Přidáno: Beatricía→Beatrice
         'kornelia': 'kornelie',
         'rosalia': 'rosalie',
         'nadia': 'nadie',
@@ -295,6 +296,17 @@ def normalize_name_variant(obs: str) -> str:
         'aurelia': 'aurelie',
         'terezia': 'terezie',
         'otilia': 'otilie',
+        # Zkrácené varianty
+        'ela': 'ela',  # Explicitně aby se nesloučila s Elena
+        'ele': 'ela',  # Dativ od Ela
+        'elen': 'elena',  # Genitiv od Elena (Elena → Elen)
+        'eleně': 'elena',  # Lokál od Elena
+        'stela': 'stela',  # Explicitně
+        'stele': 'stela',  # Dativ od Stela
+        'hedvika': 'hedvika',  # Explicitně
+        'hedvice': 'hedvika',  # Dativ od Hedvika
+        'amira': 'amira',  # Explicitně
+        'amiře': 'amira',  # Dativ/Lokál od Amira
     }
     if lo in name_variants:
         return name_variants[lo].capitalize()
@@ -326,6 +338,7 @@ def infer_first_name_nominative(obs: str) -> str:
         'melania': 'melanie',
         'alica': 'alice',
         'beatrica': 'beatrice',
+        'beatricía': 'beatrice',  # Přidáno: Beatricía→Beatrice
         'kornelia': 'kornelie',
         'rosalia': 'rosalie',
         'nadia': 'nadie',
@@ -335,6 +348,17 @@ def infer_first_name_nominative(obs: str) -> str:
         'terezia': 'terezie',
         # Různé varianty
         'otilia': 'otilie',
+        # Zkrácené varianty
+        'ela': 'ela',  # Explicitně aby se nesloučila s Elena
+        'ele': 'ela',  # Dativ od Ela
+        'elen': 'elena',  # Genitiv od Elena (Elena → Elen)
+        'eleně': 'elena',  # Lokál od Elena
+        'stela': 'stela',  # Explicitně
+        'stele': 'stela',  # Dativ od Stela
+        'hedvika': 'hedvika',  # Explicitně
+        'hedvice': 'hedvika',  # Dativ od Hedvika
+        'amira': 'amira',  # Explicitně
+        'amiře': 'amira',  # Dativ/Lokál od Amira
     }
     if lo in name_variants:
         # VŽDY normalizuj, i když je v knihovně
@@ -382,12 +406,22 @@ def infer_first_name_nominative(obs: str) -> str:
         if (stem + 'ka').lower() in CZECH_FIRST_NAMES:
             return (stem + 'ka').capitalize()
 
+    # SPECIÁLNÍ: Genitiv bez -y (Elen od Elena, Irén od Irena)
+    if lo.endswith('n') and len(obs) > 2:
+        stem = obs[:-1]  # Elen → Ele
+        if (stem + 'a').lower() in CZECH_FIRST_NAMES:  # Elena
+            return (stem + 'a').capitalize()
+
     # Genitiv/Dativ/Lokál: -y/-ě/-e → -a
     # Speciální: Bei → Bea (genitiv od Bea)
     if lo.endswith(('y', 'ě', 'e', 'i')):
         stem = obs[:-1]
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
             return (stem + 'a').capitalize()
+        # Pro -e: zkus také ponechat stem bez změny (Ele → Ela může už být v knihovně jako Ela)
+        if lo.endswith('e') and len(stem) >= 2:
+            if stem.lower() in CZECH_FIRST_NAMES:
+                return stem.capitalize()
         # Pro -i zkus také bez změny (pokud je to už v nominativu)
         if lo.endswith('i') and len(stem) >= 2:
             # Bei → Bea, ale také kontrola zda není už nominativ (Eli zůstává Eli)
