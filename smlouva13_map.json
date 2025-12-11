@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-11T11:55:48.689666",
+  "generated_at": "2025-12-11T13:35:31.845935",
   "source_file": "smlouva13.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Petr Dvořák",
+      "original": "Petra Dvořáka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Petra Dvořáka",
+      "original": "Petr Dvořák",
       "occurrences": 1
     },
     {

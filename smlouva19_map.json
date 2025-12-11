@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-11T12:42:28.055561",
+  "generated_at": "2025-12-11T13:34:33.316783",
   "source_file": "smlouva19.docx",
   "entities": [
     {
@@ -30,13 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Lucie Novotné",
+      "original": "Lucií Novotnou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Lucií Novotnou",
+      "original": "Lucie Novotné",
       "occurrences": 1
     },
     {
