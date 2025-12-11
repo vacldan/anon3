@@ -1242,7 +1242,11 @@ class Anonymizer:
 
     def _ensure_person_tag(self, first_nom: str, last_nom: str) -> str:
         """Zajistí, že pro danou osobu existuje tag a vrátí ho."""
-        key = (self._normalize_for_matching(first_nom), self._normalize_for_matching(last_nom))
+        # FINÁLNÍ NORMALIZACE - aby canonical_persons obsahovali správné jména
+        # Julia → Julie, Maria → Marie, atd.
+        first_normalized = infer_first_name_nominative(first_nom) if first_nom else first_nom
+
+        key = (self._normalize_for_matching(first_normalized), self._normalize_for_matching(last_nom))
 
         if key in self.person_index:
             return self.person_index[key]
@@ -1251,17 +1255,17 @@ class Anonymizer:
         self.counter['PERSON'] += 1
         tag = f'[[PERSON_{self.counter["PERSON"]}]]'
 
-        # Ulož do indexu
+        # Ulož do indexu s normalizovaným jménem
         self.person_index[key] = tag
-        self.canonical_persons.append({'first': first_nom, 'last': last_nom, 'tag': tag})
+        self.canonical_persons.append({'first': first_normalized, 'last': last_nom, 'tag': tag})
 
-        # Vygeneruj všechny pádové varianty
-        fvars = variants_for_first(first_nom)
+        # Vygeneruj všechny pádové varianty (použij normalizované jméno)
+        fvars = variants_for_first(first_normalized)
         svars = variants_for_surname(last_nom)
         self.person_variants[tag] = {f'{f} {s}' for f in fvars for s in svars}
 
         # NEUKLÁDEJ canonical automaticky - uloží se jen pokud je v dokumentu
-        canonical_full = f'{first_nom} {last_nom}'
+        canonical_full = f'{first_normalized} {last_nom}'
         # self.entity_map['PERSON'][canonical_full].add(canonical_full)  # ODSTRANĚNO
         self.entity_index_cache['PERSON'][canonical_full] = self.counter['PERSON']
         self.entity_reverse_map['PERSON'][canonical_full] = canonical_full
