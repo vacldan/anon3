@@ -1,18 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-11T14:03:46.001835",
+  "generated_at": "2025-12-12T05:34:49.259244",
   "source_file": "smlouva18.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ivan Doležal",
+      "original": "Ivanem Doležalem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ivanem Doležalem",
+      "original": "Ivan Doležal",
       "occurrences": 1
     },
     {
