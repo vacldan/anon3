@@ -539,7 +539,7 @@ def infer_surname_nominative(obs: str) -> str:
 
     # -skou/-ckou → -ská/-cká (ženská přídavná)
     if lo.endswith(('skou', 'ckou')):
-        return obs[:-3] + 'á'
+        return obs[:-3] + 'ká'  # Otradovskou → Otradovská, ne Otradovsá!
 
     # ========== VLOŽNÉ 'E' - Havl/Havla → Havel, Petr/Petra → Petra ==========
 
