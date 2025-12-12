@@ -721,6 +721,23 @@ def infer_surname_nominative(obs: str) -> str:
     if lo.endswith('ře') and len(obs) > 3:
         return obs[:-1]  # Šindeláře → Šindelář, Košíře → Košíř
 
+    # ========== SPECIÁLNÍ PŘÍJMENÍ: -ěte, -ěti → -ě ==========
+    # Hraběte → Hrabě (genitiv), Hraběti → Hrabě (dativ)
+    if lo.endswith('ěte') and len(obs) > 4:
+        return obs[:-2]  # Hraběte → Hrabě
+
+    if lo.endswith('ěti') and len(obs) > 4:
+        return obs[:-2]  # Hraběti → Hrabě
+
+    # ========== PŘÍJMENÍ S VLOŽNÝM 'O': Šídl/Šídlo ==========
+    # Šídla → Šídel nebo Šídlo? Preferuj formu bez vložného 'o'
+    # Kontrola: jestli příjmení končí na -l a má genitiv -la
+    if lo.endswith('lo') and len(obs) > 3:
+        # Šídlo → preferuj základní tvar Šídl (bez vložného 'o')
+        # ale jen pro krátká příjmení (max 6 znaků)
+        if len(obs) <= 6:
+            return obs[:-1]  # Šídlo → Šídl
+
     # ========== GENITIV: -y → -a nebo odstranit -y ==========
     # Klímy → Klíma (genitiv mužů), Procházky → Procházka
     # ALE POUZE pokud to NENÍ přídavné jméno (-ský/-cký/-ný)
