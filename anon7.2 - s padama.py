@@ -334,6 +334,9 @@ def normalize_name_variant(obs: str) -> str:
         'andree': 'andrea',  # Dativ od Andrea
         'mila': 'mila',  # Explicitně
         'mile': 'mila',  # Dativ od Mila
+        # Cizí jména - zkrácené formy
+        'marc': 'marco',  # Marc → Marco
+        'le': 'leo',  # Le → Leo
     }
     if lo in name_variants:
         return name_variants[lo].capitalize()
@@ -392,6 +395,9 @@ def infer_first_name_nominative(obs: str) -> str:
         'andree': 'andrea',  # Dativ od Andrea
         'mila': 'mila',  # Explicitně
         'mile': 'mila',  # Dativ od Mila
+        # Cizí jména - zkrácené formy
+        'marc': 'marco',  # Marc → Marco
+        'le': 'leo',  # Le → Leo
     }
     if lo in name_variants:
         # VŽDY normalizuj, i když je v knihovně
@@ -698,6 +704,15 @@ def infer_surname_nominative(obs: str) -> str:
         # Ale pro kontext s ženským jménem to bude Šustrová
         # Prozatím vrátíme základní mužský tvar
         return obs[:-1]
+
+    # ========== DATIV/LOKÁL: -ři, -ře → odstranit 'i' nebo 'e' ==========
+    # Šindeláři → Šindelář, Šindeláře → Šindelář
+    # Vrátka → Vrát (ne), Šídla → Šídel (dřív), ale Klíči → Klíč, Košíři → Košíř
+    if lo.endswith('ři') and len(obs) > 3:
+        return obs[:-1]  # Šindeláři → Šindelář, Klíči → Klíč
+
+    if lo.endswith('ře') and len(obs) > 3:
+        return obs[:-1]  # Šindeláře → Šindelář, Košíře → Košíř
 
     # ========== GENITIV: -y → -a nebo odstranit -y ==========
     # Klímy → Klíma (genitiv mužů), Procházky → Procházka
