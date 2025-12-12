@@ -218,6 +218,13 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
                 if cand_with_e.lower() in CZECH_FIRST_NAMES:
                     return cand_with_e.capitalize()
 
+        # Cizí jména končící na -o: Hugovi → Hug → Hugo, Ivovi → Iv → Ivo
+        if len(cand) >= 2 and cand[-1].lower() not in 'aeiouyáéěíóúůý':
+            cand_with_o = cand + 'o'
+            foreign_o_names = {'hug', 'iv', 'vit', 'le', 'brun', 'marc', 'dieg'}
+            if cand_with_o.lower() in CZECH_FIRST_NAMES or cand.lower() in foreign_o_names:
+                return cand_with_o.capitalize()
+
         cands.append(cand)
 
     # PRIORITA 3: Instrumentál -em → remove (Petrem → Petr, Pavlem → Pavel)
@@ -236,6 +243,13 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
                 cand_with_e = cand[:-1] + 'e' + last_char
                 if cand_with_e.lower() in CZECH_FIRST_NAMES:
                     return cand_with_e.capitalize()
+
+        # Cizí jména končící na -o: Hugem → Hug → Hugo
+        if len(cand) >= 2 and cand[-1].lower() not in 'aeiouyáéěíóúůý':
+            cand_with_o = cand + 'o'
+            foreign_o_names = {'hug', 'iv', 'vit', 'le', 'brun', 'marc', 'dieg'}
+            if cand_with_o.lower() in CZECH_FIRST_NAMES or cand.lower() in foreign_o_names:
+                return cand_with_o.capitalize()
 
         cands.append(cand)
 
@@ -261,6 +275,13 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
                 cand_with_e = cand[:-1] + 'e' + last_char
                 if cand_with_e.lower() in CZECH_FIRST_NAMES:
                     return cand_with_e.capitalize()
+
+        # Cizí jména končící na -o: Huga → Hug → Hugo, Iva → Iv → Ivo
+        if len(cand) >= 2 and cand[-1].lower() not in 'aeiouyáéěíóúůý':
+            cand_with_o = cand + 'o'
+            foreign_o_names = {'hug', 'iv', 'vit', 'le', 'brun', 'marc', 'dieg'}
+            if cand_with_o.lower() in CZECH_FIRST_NAMES or cand.lower() in foreign_o_names:
+                return cand_with_o.capitalize()
 
         cands.append(cand)
 
