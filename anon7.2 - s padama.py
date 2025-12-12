@@ -337,6 +337,7 @@ def normalize_name_variant(obs: str) -> str:
         # Cizí jména - zkrácené formy
         'marc': 'marco',  # Marc → Marco
         'le': 'leo',  # Le → Leo
+        'lea': 'leo',  # Lea → Leo (ženská forma/genitiv)
     }
     if lo in name_variants:
         return name_variants[lo].capitalize()
@@ -398,6 +399,7 @@ def infer_first_name_nominative(obs: str) -> str:
         # Cizí jména - zkrácené formy
         'marc': 'marco',  # Marc → Marco
         'le': 'leo',  # Le → Leo
+        'lea': 'leo',  # Lea → Leo (ženská forma/genitiv)
     }
     if lo in name_variants:
         # VŽDY normalizuj, i když je v knihovně
@@ -455,12 +457,17 @@ def infer_first_name_nominative(obs: str) -> str:
     # Speciální: Bei → Bea (genitiv od Bea)
     if lo.endswith(('y', 'ě', 'e', 'i')):
         stem = obs[:-1]
-        if (stem + 'a').lower() in CZECH_FIRST_NAMES:
-            return (stem + 'a').capitalize()
-        # Pro -e: zkus také ponechat stem bez změny (Ele → Ela může už být v knihovně jako Ela)
+
+        # Pro -e: zkus nejprve stem bez změny (Denise → Denis, Aleše → Aleš)
         if lo.endswith('e') and len(stem) >= 2:
             if stem.lower() in CZECH_FIRST_NAMES:
                 return stem.capitalize()
+
+        # Pro -y: zkus stem bez změny (může být nominativ jako Boženy → Božen? NE, mělo by být Božena)
+        # Ale zkus stem+a (Boženy → Božena)
+        if (stem + 'a').lower() in CZECH_FIRST_NAMES:
+            return (stem + 'a').capitalize()
+
         # Pro -i zkus také bez změny (pokud je to už v nominativu)
         if lo.endswith('i') and len(stem) >= 2:
             # Bei → Bea, ale také kontrola zda není už nominativ (Eli zůstává Eli)
@@ -1917,15 +1924,15 @@ class Anonymizer:
                 first_lo = first_obs.lower() if first_obs else ''
 
                 # Pro pádové koncovky použij inference
-                if first_lo.endswith(('u', 'i', 'ě', 'ou', 'ií', 'n')):
-                    # Pavlu→Pavla, Pavli→Pavla, Pavlou→Pavla, Elen→Elena
+                if first_lo.endswith(('u', 'i', 'ě', 'ou', 'ií', 'n', 'y', 'e')):
+                    # Pavlu→Pavla, Pavli→Pavla, Pavlou→Pavla, Elen→Elena, Boženy→Božena, Denise→Denis
                     inferred = infer_first_name_nominative(first_obs)
                     # Ale pokud inference vrátila mužské jméno, přidej 'a'
                     if not inferred.lower().endswith(('a', 'e', 'ie', 'ia', 'y')):
                         first_nom = (inferred + 'a').capitalize()
                     else:
                         first_nom = inferred
-                elif first_lo.endswith(('a', 'e', 'ie', 'ia', 'y')):
+                elif first_lo.endswith(('a', 'ie', 'ia')):
                     # Nominativ (končí na typickou ženskou koncovku) → pouze normalizuj varianty
                     first_nom = normalize_name_variant(first_obs) if first_obs else first_obs
                 else:
@@ -1933,8 +1940,44 @@ class Anonymizer:
                     first_nom = (first_obs + 'a').capitalize() if first_obs else first_obs
             else:
                 # Příjmení je mužské → použij standardní inference
-                # To převede Pavla→Pavel, Jana→Jan (protože jsou to pády mužských jmen)
-                first_nom = infer_first_name_nominative(first_obs) if first_obs else first_obs
+                # DŮLEŽITÉ: Kontrola, jestli jméno končící na -a není genitiv od mužského jména
+                # Příklad: "Josefa Malého" → Josef (genitiv), ne Josefa (ženské jméno)
+                first_lo = first_obs.lower() if first_obs else ''
+
+                if first_lo.endswith('a') and len(first_lo) > 2:
+                    # Zkus odstranit -a a podívat se, jestli vznikne mužské jméno
+                    candidate_male = first_obs[:-1]
+                    candidate_male_lo = candidate_male.lower()
+
+                    # Seznam známých mužských jmen, která mají genitiv na -a
+                    male_genitiv_a = {
+                        'josef', 'emil', 'odon', 'štěpán', 'maxim', 'adam',
+                        'matěj', 'jakub', 'lukáš', 'jan', 'petr', 'pavel'
+                    }
+
+                    # Pokud po odstranění -a vznikne známé mužské jméno, použij ho
+                    if candidate_male_lo in male_genitiv_a or candidate_male_lo in CZECH_FIRST_NAMES:
+                        # Ověř, že to není ženské jméno jako Josefa/Emila (která jsou samostatná)
+                        # Pokud existuje jak mužská tak ženská forma, preferuj mužskou u mužského příjmení
+                        first_nom = candidate_male
+                    else:
+                        # Jinak použij standardní inference
+                        first_nom = infer_first_name_nominative(first_obs) if first_obs else first_obs
+                elif first_lo.endswith('e') and len(first_lo) > 2:
+                    # Kontrola pro jména končící na -e (Denise → Denis)
+                    # U mužského příjmení preferuj mužskou formu bez -e
+                    candidate_male = first_obs[:-1]
+                    candidate_male_lo = candidate_male.lower()
+
+                    # Pokud existuje mužská forma bez -e, použij ji
+                    if candidate_male_lo in CZECH_FIRST_NAMES:
+                        first_nom = candidate_male
+                    else:
+                        # Jinak použij standardní inference
+                        first_nom = infer_first_name_nominative(first_obs) if first_obs else first_obs
+                else:
+                    # Standardní inference pro ostatní případy
+                    first_nom = infer_first_name_nominative(first_obs) if first_obs else first_obs
 
             # Vytvoř nebo najdi tag pro tuto osobu
             tag = self._ensure_person_tag(first_nom, last_nom)
