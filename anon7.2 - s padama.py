@@ -625,7 +625,9 @@ def infer_surname_nominative(obs: str) -> str:
         'svoboda', 'skála', 'hora', 'kula', 'hala', 'krejča',
         'liška', 'vrba', 'ryba', 'kočka', 'sluka', 'janda',
         'procházka', 'blaha', 'kafka', 'smetana', 'brabec',
-        'kuřátka', 'kubíčka', 'marečka', 'vašíčka'
+        'kuřátka', 'kubíčka', 'marečka', 'vašíčka',
+        # Další příjmení končící na -ka v nominativu
+        'kuba', 'červinka', 'hromádka', 'horčička', 'straka'
     }
 
     if lo.endswith('ka') and len(obs) > 3 and lo not in common_surnames_a:

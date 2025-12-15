@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-15T07:36:01.037321",
+  "generated_at": "2025-12-15T07:47:26.763495",
   "source_file": "smlouva24.docx",
   "entities": [
     {
@@ -60,13 +60,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Elodií Havránkovou",
+      "original": "Elodii Havránkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Elodii Havránkové",
+      "original": "Elodií Havránkovou",
       "occurrences": 1
     },
     {
@@ -102,13 +102,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_15]]",
-      "original": "Vlastě Partikové",
+      "original": "Vlastou Partikovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_15]]",
-      "original": "Vlastou Partikovou",
+      "original": "Vlastě Partikové",
       "occurrences": 1
     },
     {
@@ -252,13 +252,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_35]]",
-      "original": "Ele Buchtové",
+      "original": "Elou Buchtovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_35]]",
-      "original": "Elou Buchtovou",
+      "original": "Ele Buchtové",
       "occurrences": 1
     },
     {
@@ -306,13 +306,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_42]]",
-      "original": "Karině Plíškové",
+      "original": "Karinou Plíškovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_42]]",
-      "original": "Karinou Plíškovou",
+      "original": "Karině Plíškové",
       "occurrences": 1
     },
     {
@@ -324,13 +324,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_44]]",
-      "original": "Lorenou Pěnkavovou",
+      "original": "Loreně Pěnkavové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_44]]",
-      "original": "Loreně Pěnkavové",
+      "original": "Lorenou Pěnkavovou",
       "occurrences": 1
     },
     {
@@ -372,13 +372,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_51]]",
-      "original": "Pavel Zíka",
+      "original": "Pavlovi Zíkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_51]]",
-      "original": "Pavlovi Zíkovi",
+      "original": "Pavel Zíka",
       "occurrences": 1
     },
     {
@@ -408,19 +408,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_55]]",
-      "original": "Aloise Berana",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_55]]",
       "original": "Aloisovi Beranovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_56]]",
-      "original": "Adama Hrabáka",
+      "label": "[[PERSON_55]]",
+      "original": "Aloise Berana",
       "occurrences": 1
     },
     {
@@ -431,8 +425,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_57]]",
-      "original": "Radima Šídla",
+      "label": "[[PERSON_56]]",
+      "original": "Adama Hrabáka",
       "occurrences": 1
     },
     {
@@ -445,6 +439,12 @@
       "type": "PERSON",
       "label": "[[PERSON_57]]",
       "original": "Radimovi Šídlovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_57]]",
+      "original": "Radima Šídla",
       "occurrences": 1
     },
     {
@@ -534,13 +534,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_65]]",
-      "original": "Štěpánovi Krejzovi",
+      "original": "Štěpána Krejzy",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_65]]",
-      "original": "Štěpána Krejzy",
+      "original": "Štěpánovi Krejzovi",
       "occurrences": 1
     },
     {
@@ -558,25 +558,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_67]]",
-      "original": "Přemyslovi Rendlovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_67]]",
       "original": "Přemysla Rendla",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_68]]",
-      "original": "Oldřicha Šaška",
+      "label": "[[PERSON_67]]",
+      "original": "Přemyslovi Rendlovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_68]]",
       "original": "Oldřichovi Šaškovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_68]]",
+      "original": "Oldřicha Šaška",
       "occurrences": 1
     },
     {
@@ -594,25 +594,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_70]]",
-      "original": "Stanislava Lojdy",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_70]]",
       "original": "Stanislavovi Lojdovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_71]]",
-      "original": "Ctibora Švestky",
+      "label": "[[PERSON_70]]",
+      "original": "Stanislava Lojdy",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_71]]",
       "original": "Ctiborovi Švestkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_71]]",
+      "original": "Ctibora Švestky",
       "occurrences": 1
     },
     {
@@ -636,13 +636,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_73]]",
-      "original": "Hugovi Šindelářovi",
+      "original": "Huga Šindeláře",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_73]]",
-      "original": "Huga Šindeláře",
+      "original": "Hugovi Šindelářovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_74]]",
+      "original": "Ivovi Zámyslickému",
       "occurrences": 1
     },
     {
@@ -653,8 +659,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_74]]",
-      "original": "Ivovi Zámyslickému",
+      "label": "[[PERSON_75]]",
+      "original": "Vito Paseka",
       "occurrences": 1
     },
     {
@@ -667,12 +673,6 @@
       "type": "PERSON",
       "label": "[[PERSON_75]]",
       "original": "Vita Paseky",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_75]]",
-      "original": "Vito Paseka",
       "occurrences": 1
     },
     {
@@ -702,25 +702,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_79]]",
-      "original": "Diegovi Balcarovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_79]]",
       "original": "Diega Balcara",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_80]]",
-      "original": "Maxe Kuchty",
+      "label": "[[PERSON_79]]",
+      "original": "Diegovi Balcarovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_80]]",
       "original": "Maxovi Kuchtovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_80]]",
+      "original": "Maxe Kuchty",
       "occurrences": 1
     },
     {
@@ -750,19 +750,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_83]]",
-      "original": "Nicolase Vavry",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_83]]",
       "original": "Nicolasovi Vavrovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_84]]",
-      "original": "Erika Zbořila",
+      "label": "[[PERSON_83]]",
+      "original": "Nicolase Vavry",
       "occurrences": 1
     },
     {
@@ -773,8 +767,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_85]]",
-      "original": "Odonovi Krejcarovi",
+      "label": "[[PERSON_84]]",
+      "original": "Erika Zbořila",
       "occurrences": 1
     },
     {
@@ -785,8 +779,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_86]]",
-      "original": "Teodora Přikryla",
+      "label": "[[PERSON_85]]",
+      "original": "Odonovi Krejcarovi",
       "occurrences": 1
     },
     {
@@ -797,14 +791,20 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_87]]",
-      "original": "Artura Kolenatého",
+      "label": "[[PERSON_86]]",
+      "original": "Teodora Přikryla",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_87]]",
       "original": "Arturovi Kolenatému",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_87]]",
+      "original": "Artura Kolenatého",
       "occurrences": 1
     },
     {
@@ -822,13 +822,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_89]]",
-      "original": "Igorovi Havelíkovi",
+      "original": "Igora Havelíka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_89]]",
-      "original": "Igora Havelíka",
+      "original": "Igorovi Havelíkovi",
       "occurrences": 1
     },
     {
@@ -876,13 +876,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_93]]",
-      "original": "Sergej Havlička",
+      "original": "Sergeje Havličky",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_93]]",
-      "original": "Sergeje Havličky",
+      "original": "Sergej Havlička",
       "occurrences": 1
     },
     {
@@ -912,19 +912,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_96]]",
-      "original": "Tarase Červinky",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_96]]",
       "original": "Tarasovi Červinkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_96]]",
-      "original": "Taras Červinka",
+      "original": "Tarase Červinky",
       "occurrences": 1
     },
     {
@@ -954,31 +948,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_99]]",
-      "original": "Tadeášovi Hromádkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_99]]",
-      "original": "Tadeáš Hromádka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_99]]",
       "original": "Tadeáše Hromádky",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_99]]",
+      "original": "Tadeášovi Hromádkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_100]]",
       "original": "Radoslavovi Horčičkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_100]]",
-      "original": "Radoslav Horčička",
       "occurrences": 1
     },
     {
