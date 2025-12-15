@@ -708,9 +708,20 @@ def infer_surname_nominative(obs: str) -> str:
     # Pro ženské příjmení potřebujeme přidat -ová
     if lo.endswith('ů') and len(obs) > 2:
         # Šustrů → Šustr (základní tvar)
-        # Ale pro kontext s ženským jménem to bude Šustrová
-        # Prozatím vrátíme základní mužský tvar
-        return obs[:-1]
+        # ALE: Některá příjmení končí na -a: Kubů → Kuba, ne Kub
+        stem = obs[:-1]
+
+        # Seznam kmenů příjmení která mají nominativ na -a (stem bez -a!)
+        # Kubů → stem "Kub" → zkontroluj že je v seznamu → vrať "Kuba"
+        surname_stems_needing_a = {
+            'kub', 'červink', 'hromádk', 'horčičk', 'strak',
+            'kuč', 'bárt', 'procházk', 'klím', 'svobod'
+        }
+
+        if stem.lower() in surname_stems_needing_a:
+            return stem + 'a'  # Kubů → Kuba
+        else:
+            return stem  # Šustrů → Šustr
 
     # ========== DATIV/LOKÁL: -ři, -ře → odstranit 'i' nebo 'e' ==========
     # Šindeláři → Šindelář, Šindeláře → Šindelář
@@ -748,7 +759,10 @@ def infer_surname_nominative(obs: str) -> str:
             protected_a_surnames = {
                 'procházka', 'klíma', 'svoboda', 'skála', 'hora', 'hala',
                 'liška', 'vrba', 'ryba', 'kočka', 'sluka', 'janda',
-                'blaha', 'kafka', 'smetana'
+                'blaha', 'kafka', 'smetana',
+                # Další běžná příjmení na -a
+                'kuba', 'červinka', 'hromádka', 'horčička', 'straka',
+                'kuča', 'bárta', 'slabá', 'malá', 'nová'
             }
 
             # Zkus nejprve -y → -a (pro Klíma, Procházka)
@@ -762,6 +776,15 @@ def infer_surname_nominative(obs: str) -> str:
 
             # Běžný případ: jen odstraň -y (Nováky → Novák)
             return obs[:-1]
+
+    # ========== FINÁLNÍ KONTROLA: Kmeny potřebující -a ==========
+    # Pokud příjmení je kmen který potřebuje -a na konci (Červink → Červinka)
+    surname_stems_needing_a = {
+        'kub', 'červink', 'hromádk', 'horčičk', 'strak',
+        'kuč', 'bárt', 'procházk', 'klím', 'svobod'
+    }
+    if obs.lower() in surname_stems_needing_a:
+        return obs + 'a'  # Červink → Červinka
 
     return obs
 
