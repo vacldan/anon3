@@ -627,7 +627,7 @@ def infer_surname_nominative(obs: str) -> str:
         'procházka', 'blaha', 'kafka', 'smetana', 'brabec',
         'kuřátka', 'kubíčka', 'marečka', 'vašíčka',
         # Další příjmení končící na -ka v nominativu
-        'kuba', 'červinka', 'hromádka', 'horčička', 'straka'
+        'kuba', 'červinka', 'hromádka', 'horčička', 'straka', 'paseka'
     }
 
     if lo.endswith('ka') and len(obs) > 3 and lo not in common_surnames_a:
@@ -667,7 +667,19 @@ def infer_surname_nominative(obs: str) -> str:
 
     if lo.endswith('ovi') and len(obs) > 5:
         # Novákovi → Novák
-        return obs[:-3]
+        stem = obs[:-3]
+        stem_lo = stem.lower()
+
+        # KONTROLA: Některé kmeny potřebují -a (Pasekovi → Paseka, ne Pasek)
+        surname_stems_needing_a = {
+            'kub', 'červink', 'hromádk', 'horčičk', 'strak',
+            'kuč', 'bárt', 'procházk', 'klím', 'svobod', 'pasek'
+        }
+
+        if stem_lo in surname_stems_needing_a:
+            return stem + 'a'  # Pasekovi → Paseka
+        else:
+            return stem  # Novákovi → Novák
 
     # ========== INSTRUMENTÁL: -em → REMOVE ==========
 
@@ -1978,19 +1990,7 @@ class Anonymizer:
                     elif s.endswith('ec'):
                         return s[:-2] + 'c'  # Němec → Němc
                     elif s.endswith('a'):
-                        # DŮLEŽITÉ: Některá příjmení MAJÍ -a v nominativu (Procházka, Kuba, Paseka)
-                        # Pro účely párování je NECHCEME odstraňovat, protože jinak
-                        # "Pasek" a "Paseka" by měly stejný kmen a spojily by se dohromady
-                        # Seznam příjmení která by se NEMĚLA párovat s tvarem bez -a
-                        # POZOR: Přidávat sem JEN pokud se v dokumentu SKUTEČNĚ objevují
-                        # OBĚ formy (s -a i bez -a) jako samostatné výskyty!
-                        surnames_keep_a = {
-                            'paseka'  # V dokumentu je "Pasek" i "Paseka" - jsou to dvě různé osoby
-                        }
-                        if s in surnames_keep_a:
-                            return s  # Zachovej -a, aby "Pasek" ≠ "Paseka"
-                        else:
-                            return s[:-1]  # Procházka → Procházk
+                        return s[:-1]  # Procházka → Procházk, Paseka → Pasek
                     elif s.endswith('á'):
                         return s[:-1]  # Malá → Mal
                     else:
