@@ -1853,13 +1853,57 @@ class Anonymizer:
                 # Není v knihovně - heuristika podle koncovky
                 is_female_firstname = first_lo.endswith(('a', 'e', 'ie', 'ia'))
 
+            # ========== DŮLEŽITÁ KONTROLA: JMÉNO NA -A MŮŽE BÝT GENITIV MUŽSKÉHO JMÉNA! ==========
+            # Před přidáním -ová k příjmení zkontroluj, zda jméno končící na -a není genitiv mužského jména
+            # Příklady: Marka → Marek, Oldřicha → Oldřich, Stanislava → Stanislav, atd.
+            could_be_male_genitive = False
+            if first_lo.endswith('a') and len(first_lo) > 2:
+                # Zkus odstranit -a a podívat se, zda vznikne známé mužské jméno
+                candidate_male = first_obs[:-1]
+                candidate_male_lo = candidate_male.lower()
+
+                # Seznam běžných mužských jmen (nominativ bez -a)
+                common_male_names = {
+                    'marek', 'oldřich', 'bedřich', 'stanislav', 'radoslav', 'václav',
+                    'leon', 'albert', 'erik', 'teodor', 'viktor', 'igor', 'artur',
+                    'oleksandr', 'sergej', 'oleg', 'mihail', 'denis', 'ivan',
+                    'lubomír', 'přemysl', 'tadeáš', 'rostislav', 'ctibor',
+                    # Jména která už jsou v male_genitiv_a (níže)
+                    'josef', 'emil', 'odon', 'štěpán', 'maxim', 'adam',
+                    'matěj', 'jakub', 'lukáš', 'jan', 'petr', 'pavel',
+                    'karel', 'michal', 'tomáš', 'aleš', 'miloš', 'leoš'
+                }
+
+                # Známé genitivní formy mužských jmen (kde odstranění -a nedá správný tvar)
+                # Marka → Marek, Karla → Karel, Michala → Michal
+                male_genitive_forms = {
+                    'marka': 'marek',
+                    'karla': 'karel',
+                    'michala': 'michal',
+                    'vita': 'vito',  # Cizí jména
+                    'bruna': 'bruno',
+                    'lea': 'leo'
+                }
+
+                # Pokud je to známá genitivní forma, je to určitě genitiv mužského jména
+                if first_lo in male_genitive_forms:
+                    could_be_male_genitive = True
+                    is_female_firstname = False  # Override!
+                # Nebo pokud po odstranění -a vznikne známé mužské jméno
+                elif candidate_male_lo in common_male_names or candidate_male_lo in CZECH_FIRST_NAMES:
+                    # Ověř, že kandidát nevypadá jako ženské jméno
+                    if not candidate_male_lo.endswith(('a', 'e', 'ie', 'ia', 'y')):
+                        could_be_male_genitive = True
+                        is_female_firstname = False  # Override! Není to ženské jméno, je to genitiv mužského!
+
             # Nejdřív inference příjmení
             last_nom = infer_surname_nominative(last_obs)
 
             # DŮLEŽITÉ: Pokud je křestní jméno ženské a příjmení je v mužském tvaru,
             # převeď příjmení na ženský tvar (-ová)
+            # ALE POUZE pokud jméno NENÍ pravděpodobně genitiv mužského jména!
             last_nom_lo = last_nom.lower()
-            if is_female_firstname and not last_nom_lo.endswith(('ová', 'á')):
+            if is_female_firstname and not could_be_male_genitive and not last_nom_lo.endswith(('ová', 'á')):
                 # Příjmení je mužské, ale jméno je ženské → přidej -ová
                 # Novák → Nováková, Šustr → Šustrová
                 if last_nom_lo.endswith(('k', 't', 'r', 's', 'n', 'l', 'c', 'č', 'š', 'ž', 'd', 'ď', 'ť', 'ň')):
@@ -1969,14 +2013,35 @@ class Anonymizer:
                     # Seznam známých mužských jmen, která mají genitiv na -a
                     male_genitiv_a = {
                         'josef', 'emil', 'odon', 'štěpán', 'maxim', 'adam',
-                        'matěj', 'jakub', 'lukáš', 'jan', 'petr', 'pavel'
+                        'matěj', 'jakub', 'lukáš', 'jan', 'petr', 'pavel',
+                        'marek', 'oldřich', 'bedřich', 'stanislav', 'radoslav', 'václav',
+                        'leon', 'albert', 'erik', 'teodor', 'viktor', 'igor', 'artur',
+                        'oleksandr', 'sergej', 'oleg', 'mihail', 'denis', 'ivan',
+                        'lubomír', 'přemysl', 'tadeáš', 'rostislav', 'ctibor',
+                        'karel', 'michal', 'tomáš', 'aleš', 'miloš', 'leoš'
                     }
 
-                    # Pokud po odstranění -a vznikne známé mužské jméno, použij ho
-                    if candidate_male_lo in male_genitiv_a or candidate_male_lo in CZECH_FIRST_NAMES:
+                    # Známé genitivní formy (kde odstranění -a nedá správný tvar)
+                    male_genitive_forms = {
+                        'marka': 'marek',
+                        'karla': 'karel',
+                        'michala': 'michal',
+                        'vita': 'vito',
+                        'bruna': 'bruno',
+                        'lea': 'leo'
+                    }
+
+                    # Pokud je to známá genitivní forma s mapováním, použij správný tvar
+                    if first_lo in male_genitive_forms:
+                        first_nom = male_genitive_forms[first_lo].capitalize()
+                    # Nebo pokud po odstranění -a vznikne známé mužské jméno, použij ho
+                    elif candidate_male_lo in male_genitiv_a or candidate_male_lo in CZECH_FIRST_NAMES:
                         # Ověř, že to není ženské jméno jako Josefa/Emila (která jsou samostatná)
                         # Pokud existuje jak mužská tak ženská forma, preferuj mužskou u mužského příjmení
-                        first_nom = candidate_male
+                        if not candidate_male_lo.endswith(('a', 'e', 'ie', 'ia', 'y')):
+                            first_nom = candidate_male
+                        else:
+                            first_nom = infer_first_name_nominative(first_obs) if first_obs else first_obs
                     else:
                         # Jinak použij standardní inference
                         first_nom = infer_first_name_nominative(first_obs) if first_obs else first_obs
