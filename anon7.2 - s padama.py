@@ -763,7 +763,7 @@ def infer_surname_nominative(obs: str) -> str:
                 'liška', 'vrba', 'ryba', 'kočka', 'sluka', 'janda',
                 'blaha', 'kafka', 'smetana',
                 # Další běžná příjmení na -a
-                'kuba', 'červinka', 'hromádka', 'horčička', 'straka',
+                'kuba', 'červinka', 'hromádka', 'horčička', 'straka', 'paseka',
                 'kuča', 'bárta', 'slabá', 'malá', 'nová'
             }
 
@@ -1978,7 +1978,19 @@ class Anonymizer:
                     elif s.endswith('ec'):
                         return s[:-2] + 'c'  # Němec → Němc
                     elif s.endswith('a'):
-                        return s[:-1]  # Procházka → Procházk
+                        # DŮLEŽITÉ: Některá příjmení MAJÍ -a v nominativu (Procházka, Kuba, Paseka)
+                        # Pro účely párování je NECHCEME odstraňovat, protože jinak
+                        # "Pasek" a "Paseka" by měly stejný kmen a spojily by se dohromady
+                        # Seznam příjmení která by se NEMĚLA párovat s tvarem bez -a
+                        # POZOR: Přidávat sem JEN pokud se v dokumentu SKUTEČNĚ objevují
+                        # OBĚ formy (s -a i bez -a) jako samostatné výskyty!
+                        surnames_keep_a = {
+                            'paseka'  # V dokumentu je "Pasek" i "Paseka" - jsou to dvě různé osoby
+                        }
+                        if s in surnames_keep_a:
+                            return s  # Zachovej -a, aby "Pasek" ≠ "Paseka"
+                        else:
+                            return s[:-1]  # Procházka → Procházk
                     elif s.endswith('á'):
                         return s[:-1]  # Malá → Mal
                     else:
