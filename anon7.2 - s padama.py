@@ -172,7 +172,8 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
         'martina', 'jana', 'petra', 'eva', 'anna', 'marie', 'lenka', 'kateřina',
         'alena', 'hana', 'lucie', 'veronika', 'monika', 'jitka', 'zuzana', 'ivana',
         'tereza', 'barbora', 'andrea', 'michaela', 'simona', 'nikola', 'pavla',
-        'daniela', 'alexandra', 'kristýna', 'markéta', 'renata', 'šárka', 'karolína'
+        'daniela', 'alexandra', 'kristýna', 'markéta', 'renata', 'šárka', 'karolína',
+        'krista', 'beata'
     }
 
     if lo in common_feminine_names:
@@ -344,6 +345,10 @@ def normalize_name_variant(obs: str) -> str:
         'hedvice': 'hedvika',  # Dativ od Hedvika
         'amira': 'amira',  # Explicitně
         'amiře': 'amira',  # Dativ/Lokál od Amira
+        # Genitive forms that should normalize to nominative
+        'hany': 'hana',  # Genitiv od Hana
+        'jany': 'jana',  # Genitiv od Jana
+        'evy': 'eva',  # Genitiv od Eva
         'gabriela': 'gabriela',  # Explicitně
         'gabriele': 'gabriela',  # Dativ od Gabriela
         'andrea': 'andrea',  # Explicitně
@@ -470,23 +475,33 @@ def infer_first_name_nominative(obs: str) -> str:
             return (stem + 'a').capitalize()
 
     # Genitiv/Dativ/Lokál: -y/-ě/-e → -a
-    # Speciální: Bei → Bea (genitiv od Bea)
+    # Speciální: Bei → Bea (genitiv od Bea), Helze → Helga (palatalizace)
     if lo.endswith(('y', 'ě', 'e', 'i')):
         stem = obs[:-1]
+
+        # SPECIÁLNÍ: Palatalizace -ze → -ga (Helze → Helga, Olze → Olga)
+        if lo.endswith('ze') and len(stem) >= 3:
+            stem_ga = stem[:-1] + 'ga'
+            if stem_ga.lower() in CZECH_FIRST_NAMES:
+                return stem_ga.capitalize()
+            # Common names with palatalization
+            common_ga_names = {'helga', 'olga', 'inga'}
+            if stem_ga.lower() in common_ga_names:
+                return stem_ga.capitalize()
 
         # Pro -e: zkus nejprve stem bez změny (Denise → Denis, Aleše → Aleš)
         if lo.endswith('e') and len(stem) >= 2:
             if stem.lower() in CZECH_FIRST_NAMES:
                 return stem.capitalize()
 
-        # Pro -y/-ě: zkus stem+a (Boženy → Božena, Žaniny → Žanina, Žanině → Žanina)
+        # Pro -y/-ě: zkus stem+a (Boženy → Božena, Žaniny → Žanina, Žanině → Žanina, Hany → Hana)
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
             return (stem + 'a').capitalize()
 
-        # Common female names ending in -ina/-ína that might be missing from library
-        # Žaniny → Žanin → Žanina, Kristýny → Kristýn → Kristýna
-        common_ina_names = {'žanina', 'kristýna', 'karolína', 'justýna', 'martina', 'Regina', 'Paulína'}
-        if (stem + 'a').lower() in common_ina_names:
+        # Common female names ending in -a/-ina/-ína that might be missing from library
+        # Hany → Hana, Žaniny → Žanina, Kristýny → Kristýna
+        common_a_names = {'hana', 'jana', 'anna', 'eva', 'dana', 'žanina', 'kristýna', 'karolína', 'justýna', 'martina', 'regina', 'paulína'}
+        if (stem + 'a').lower() in common_a_names:
             return (stem + 'a').capitalize()
 
         # Pro -i zkus také bez změny (pokud je to už v nominativu)
@@ -532,10 +547,14 @@ def infer_first_name_nominative(obs: str) -> str:
         if (stem + 'ice').lower() in CZECH_FIRST_NAMES:
             return (stem + 'ice').capitalize()
 
-    # Instrumentál: -ou → -a (Hanou → Hana)
+    # Instrumentál: -ou → -a (Hanou → Hana, Kristou → Krista)
     if lo.endswith('ou') and len(obs) > 2:
         stem = obs[:-2]
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
+            return (stem + 'a').capitalize()
+        # Common female names ending in -a
+        common_ou_names = {'hana', 'jana', 'anna', 'eva', 'dana', 'krista', 'beata'}
+        if (stem + 'a').lower() in common_ou_names:
             return (stem + 'a').capitalize()
 
     # MUŽSKÁ JMÉNA - genitiv/dativ/instrumentál
