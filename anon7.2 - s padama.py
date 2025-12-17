@@ -253,12 +253,28 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
 
         cands.append(cand)
 
-    # PRIORITA 4: Dativ -u → remove (Petru → Petr) - PŘED -a!
+    # PRIORITA 4: Dativ/Akuzativ -u → remove (Petru → Petr, Karlu → Karel) - PŘED -a!
     # Důležité: testovat PŘED -a, protože "Petra" může být "Petr" + -a
     if lo.endswith('u') and len(obs) > 1:
         cand = obs[:-1]
         if cand.lower() in CZECH_FIRST_NAMES:
             return cand.capitalize()
+
+        # Zkus vložné 'e' (Karlu → Karl → Karel, Pavlu → Pavl → Pavel)
+        if len(cand) >= 3:
+            vowels = 'aeiouyáéěíóúůý'
+            last_char = cand[-1]
+            if last_char.lower() not in vowels:
+                cand_with_e = cand[:-1] + 'e' + last_char
+                # Preferuj formu s vložným 'e' i když není v knihovně
+                # Karel, Pavel, Havel jsou běžná jména která mohou chybět v knihovně
+                if cand_with_e.lower() in CZECH_FIRST_NAMES:
+                    return cand_with_e.capitalize()
+                # Known male names with inserted 'e' that might be missing from library
+                common_e_names = {'karel', 'pavel', 'havel', 'marcel'}
+                if cand_with_e.lower() in common_e_names:
+                    return cand_with_e.capitalize()
+
         cands.append(cand)
 
     # PRIORITA 5: Genitiv/Akuzativ -a → remove (Petra → Petr, ale i Jana → Jan)
@@ -463,9 +479,14 @@ def infer_first_name_nominative(obs: str) -> str:
             if stem.lower() in CZECH_FIRST_NAMES:
                 return stem.capitalize()
 
-        # Pro -y: zkus stem bez změny (může být nominativ jako Boženy → Božen? NE, mělo by být Božena)
-        # Ale zkus stem+a (Boženy → Božena)
+        # Pro -y/-ě: zkus stem+a (Boženy → Božena, Žaniny → Žanina, Žanině → Žanina)
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
+            return (stem + 'a').capitalize()
+
+        # Common female names ending in -ina/-ína that might be missing from library
+        # Žaniny → Žanin → Žanina, Kristýny → Kristýn → Kristýna
+        common_ina_names = {'žanina', 'kristýna', 'karolína', 'justýna', 'martina', 'Regina', 'Paulína'}
+        if (stem + 'a').lower() in common_ina_names:
             return (stem + 'a').capitalize()
 
         # Pro -i zkus také bez změny (pokud je to už v nominativu)
@@ -480,14 +501,29 @@ def infer_first_name_nominative(obs: str) -> str:
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
             return (stem + 'a').capitalize()
 
-    # Dativ/Lokál: -ii/-ií → -ie/-ia (Lucii → Lucie, Marii → Marie, Julii → Julie)
+    # Dativ/Genitiv: -iie → -ia (Líviie → Lívia)
+    if lo.endswith('iie') and len(obs) > 3:
+        stem = obs[:-3]
+        # Zkus -ia (Líviie → Lívia)
+        if (stem + 'ia').lower() in CZECH_FIRST_NAMES:
+            return (stem + 'ia').capitalize()
+        # Common names ending in -ia
+        common_ia_names = {'lívia', 'júlia', 'emília', 'cecília'}
+        if (stem + 'ia').lower() in common_ia_names:
+            return (stem + 'ia').capitalize()
+
+    # Dativ/Lokál: -ii/-ií → -ie/-ia (Lucii → Lucie, Marii → Marie, Julii → Julie, Lívií → Lívia)
     if lo.endswith(('ii', 'ií')) and len(obs) > 2:
         stem = obs[:-2]
         # Zkus -ie (Lucii → Lucie, Marii → Marie)
         if (stem + 'ie').lower() in CZECH_FIRST_NAMES:
             return (stem + 'ie').capitalize()
-        # Zkus -ia (Julii → Julia, méně časté)
+        # Zkus -ia (Julii → Julia, Lívií → Lívia, méně časté)
         if (stem + 'ia').lower() in CZECH_FIRST_NAMES:
+            return (stem + 'ia').capitalize()
+        # Common names ending in -ia
+        common_ia_names = {'lívia', 'júlia', 'emília', 'cecília'}
+        if (stem + 'ia').lower() in common_ia_names:
             return (stem + 'ia').capitalize()
 
     # Instrumentál: -ici → -ice (Alici → Alice, Beatrici → Beatrice)
