@@ -1,17 +1,24 @@
 OSOBY
 -----
 [[PERSON_1]]: Marie Bártová
+  - Marii Bártové
 [[PERSON_2]]: Julie Matoušková
+  - Julii Matouškové
   - Julií Matouškovou
 [[PERSON_3]]: Sofie Tichá
+  - Sofii Tiché
 [[PERSON_4]]: Valerie Suchomelová
+  - Valerii Suchomelové
   - Valerií Suchomelovou
 [[PERSON_5]]: Amálie Horská
+  - Amálii Horské
 [[PERSON_6]]: Annie Horová
   - Annie Horové
 [[PERSON_7]]: Marie Chaloupková
+  - Marii Chaloupkové
   - Marií Chaloupkovou
 [[PERSON_8]]: Julie Peroutková
+  - Julii Peroutkové
   - Julií Peroutkovou
 [[PERSON_9]]: Renée Čápová
   - Renée Čápové
@@ -34,17 +41,21 @@ OSOBY
   - Otylii Mandelové
   - Otylií Mandelovou
 [[PERSON_18]]: Antonie Řezáčová
+  - Antonii Řezáčové
 [[PERSON_19]]: Melanie Dvořáková
+  - Melanii Dvořákové
 [[PERSON_20]]: Irene Panská
   - Irene Panské
-[[PERSON_21]]: Alice Šustrová
-  - Alice Šustrů
+[[PERSON_21]]: Alice Šustrů
 [[PERSON_22]]: Beatrice Vránová
+  - Beatrici Vránové
+  - Beatricí Vránovou
 [[PERSON_23]]: Julie Řiháková
   - Julie Řihákové
-[[PERSON_24]]: Elena Krbcová
-  - Elen Krbcová
+  - Julii Řihákové
+[[PERSON_24]]: Elen Krbcová
 [[PERSON_25]]: Kornelie Nosková
+  - Kornelii Noskové
   - Kornelií Noskovou
 [[PERSON_26]]: Stela Sedláčková
   - Stele Sedláčkové
@@ -52,9 +63,8 @@ OSOBY
   - Albínou Hořákovou
   - Albíně Hořákové
 [[PERSON_28]]: Rosalie Fuksová
-[[PERSON_29]]: Otilie Rýdlová
-  - Otilia Rýdlová
-  - Otilií Rýdlovou
+  - Rosalii Fuksové
+[[PERSON_29]]: Otilia Rýdlová
 [[PERSON_30]]: Hedvika Stonová
   - Hedvice Stonové
 [[PERSON_31]]: Kristiana Pencová
@@ -63,14 +73,17 @@ OSOBY
 [[PERSON_32]]: Melita Kudrnová
   - Melitě Kudrnové
 [[PERSON_33]]: Nadie Habrová
+  - Nadii Habrové
   - Nadií Habrovou
 [[PERSON_34]]: Silvie Blahová
+  - Silvii Blahové
 [[PERSON_35]]: Ela Buchtová
   - Ele Buchtové
   - Elou Buchtovou
 [[PERSON_36]]: Amira Kalná
   - Amiře Kalné
 [[PERSON_37]]: Aurelie Hradská
+  - Aurelii Hradské
 [[PERSON_38]]: Bea Lemberková
   - Bei Lemberkové
 [[PERSON_39]]: Gabriela Otradovská
@@ -90,6 +103,7 @@ OSOBY
 [[PERSON_45]]: Andrea Štoková
   - Andree Štokové
 [[PERSON_46]]: Terezie Bohatová
+  - Terezii Bohatové
   - Terezií Bohatovou
 [[PERSON_47]]: Rajna Divišová
 [[PERSON_48]]: Mila Bydžovská
@@ -99,54 +113,50 @@ OSOBY
 [[PERSON_50]]: Ema Hrušková
 [[PERSON_51]]: Pavel Zík
   - Pavel Zíka
-  - Pavlovi Zíkovi
-[[PERSON_52]]: Pavla Zíková
   - Pavla Zíky
-[[PERSON_53]]: Václav Holas
+  - Pavlovi Zíkovi
+[[PERSON_52]]: Václav Holas
   - Václava Holase
   - Václavovi Holasovi
-[[PERSON_54]]: Karel Fichtner
+[[PERSON_53]]: Karel Fichtner
   - Karla Fichtnera
-[[PERSON_55]]: Alois Beran
+  - Karlovi Fichtnerovi
+[[PERSON_54]]: Alois Beran
   - Aloise Berana
   - Aloisovi Beranovi
-[[PERSON_56]]: Adam Hrabák
+[[PERSON_55]]: Adam Hrabák
   - Adama Hrabáka
   - Adamovi Hrabákovi
-[[PERSON_57]]: Radim Šídl
-  - Radim Šídlo
+[[PERSON_56]]: Radim Šídlo
   - Radima Šídla
   - Radimovi Šídlovi
-[[PERSON_58]]: Marek Petřík
+[[PERSON_57]]: Marek Petřík
   - Marka Petříka
-[[PERSON_59]]: Leoš Kuba
-  - Leoš Kubů
-  - Leoše Kubů
-  - Leošovi Kubů
-[[PERSON_60]]: Aleš Havránek
+  - Markovi Petříkovi
+[[PERSON_58]]: Leoš Kubů
+[[PERSON_59]]: Aleš Havránek
   - Aleše Havránka
   - Alešovi Havránkovi
-[[PERSON_61]]: Miloš Jelín
+[[PERSON_60]]: Miloš Jelín
   - Miloše Jelína
   - Milošovi Jelínovi
-[[PERSON_62]]: Josef Malý
+[[PERSON_61]]: Josef Malý
   - Josefa Malého
   - Josefovi Malému
-[[PERSON_63]]: Lukáš Brázda
+[[PERSON_62]]: Lukáš Brázda
   - Lukáše Brázdy
   - Lukášovi Brázdovi
-[[PERSON_64]]: Tomáš Plášil
+[[PERSON_63]]: Tomáš Plášil
   - Tomáše Plášila
   - Tomášovi Plášilovi
-[[PERSON_65]]: Štěpán Krejza
+[[PERSON_64]]: Štěpán Krejza
   - Štěpána Krejzy
   - Štěpánovi Krejzovi
-[[PERSON_66]]: Rostislav Hrabě
+[[PERSON_65]]: Rostislav Hrabě
   - Rostislava Hraběte
   - Rostislavovi Hraběti
-[[PERSON_67]]: Přemysl Rendl
-  - Přemysla Rendla
-  - Přemyslovi Rendlovi
+[[PERSON_66]]: Přemysl Rendl
+[[PERSON_67]]: Přemysla Rendla
 [[PERSON_68]]: Oldřich Šašek
   - Oldřicha Šaška
   - Oldřichovi Šaškovi
@@ -156,10 +166,7 @@ OSOBY
 [[PERSON_70]]: Stanislav Lojda
   - Stanislava Lojdy
   - Stanislavovi Lojdovi
-[[PERSON_71]]: Ctibor Švestek
-  - Ctibor Švestka
-  - Ctibora Švestky
-  - Ctiborovi Švestkovi
+[[PERSON_71]]: Ctibor Švestka
 [[PERSON_72]]: Ivan Dvorský
   - Ivana Dvorského
   - Ivanovi Dvorskému
@@ -174,10 +181,13 @@ OSOBY
   - Vitovi Pasekovi
 [[PERSON_76]]: Leo Slabý
   - Lea Slabého
+  - Leovi Slabému
 [[PERSON_77]]: Bruno Hrdina
   - Bruna Hrdiny
   - Brunovi Hrdinovi
 [[PERSON_78]]: Marco Jiroušek
+  - Marca Jirouška
+  - Marcovi Jirouškovi
 [[PERSON_79]]: Diego Balcar
   - Diega Balcara
   - Diegovi Balcarovi

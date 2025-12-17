@@ -649,8 +649,19 @@ def infer_surname_nominative(obs: str) -> str:
             return obs[:-1]
 
     if lo.endswith('la') and len(obs) > 3 and lo not in common_surnames_a:
-        # Havel → Havla (genitiv) → návrat na Havel
-        return obs[:-2] + 'el'
+        # Rozlišit: Havla → Havel vs Šídla → Šídlo
+        base_without_a = obs[:-1]  # Šídla → Šídl
+        base_lo = base_without_a.lower()
+
+        # Pokud base končí na 'dl', 'zl', 'tl', 'nl' → může být -lo příjmení
+        # Šídlo → Šídla → vrátit Šídlo
+        # Mazlo → Mazla → vrátit Mazlo
+        if base_lo.endswith(('dl', 'zl', 'tl', 'nl', 'sl', 'cl')):
+            return base_without_a + 'o'  # Šídla → Šídl → Šídlo
+        else:
+            # Havel → Havla → vrátit Havel
+            base_without_la = obs[:-2]
+            return base_without_la + 'el'
 
     if lo.endswith('ce') and len(obs) > 3:
         # Němec → Němce (genitiv) → návrat na Němec
@@ -676,7 +687,10 @@ def infer_surname_nominative(obs: str) -> str:
             'kuč', 'bárt', 'procházk', 'klím', 'svobod', 'pasek'
         }
 
-        if stem_lo in surname_stems_needing_a:
+        # KONTROLA: Kmeny končící na -dl, -zl, -tl potřebují -o (Šídlovi → Šídlo)
+        if stem_lo.endswith(('dl', 'zl', 'tl', 'nl', 'sl', 'cl')):
+            return stem + 'o'  # Šídlovi → Šídlo
+        elif stem_lo in surname_stems_needing_a:
             return stem + 'a'  # Pasekovi → Paseka
         else:
             return stem  # Novákovi → Novák
@@ -712,6 +726,13 @@ def infer_surname_nominative(obs: str) -> str:
             # Kratochvílem → Kratochvíl, Králem → Král
             # Švecem → Švec, Hrubešem → Hrubeš
             return obs[:-2]
+
+    # ========== GENITIV: -a pro příjmení končící na -lo ==========
+    # Šídlo → Šídla (genitiv) → vrátit Šídlo
+    # Mazlo → Mazla (genitiv) → vrátit Mazlo
+    if lo.endswith('dla') or lo.endswith('tla') or lo.endswith('zla') or lo.endswith('nla') or lo.endswith('sla') or lo.endswith('cla'):
+        # Šídla → Šídlo (odstranit 'a', přidat 'o')
+        return obs[:-1] + 'o'
 
     # ========== GENITIV: -a → NEODSTRAŇUJ! ==========
     # Mnoho příjmení končí na -a v nominativu (Svoboda, Skála, Liška, atd.)
@@ -754,14 +775,9 @@ def infer_surname_nominative(obs: str) -> str:
     if lo.endswith('ěti') and len(obs) > 4:
         return obs[:-2]  # Hraběti → Hrabě
 
-    # ========== PŘÍJMENÍ S VLOŽNÝM 'O': Šídl/Šídlo ==========
-    # Šídla → Šídel nebo Šídlo? Preferuj formu bez vložného 'o'
-    # Kontrola: jestli příjmení končí na -l a má genitiv -la
-    if lo.endswith('lo') and len(obs) > 3:
-        # Šídlo → preferuj základní tvar Šídl (bez vložného 'o')
-        # ale jen pro krátká příjmení (max 6 znaků)
-        if len(obs) <= 6:
-            return obs[:-1]  # Šídlo → Šídl
+    # ========== PŘÍJMENÍ KONČÍCÍ NA -LO: nechat beze změny ==========
+    # Šídlo je nominativ, neměnit na Šídl!
+    # (odstraněno chybné pravidlo které převádělo Šídlo → Šídl)
 
     # ========== GENITIV: -y → -a nebo odstranit -y ==========
     # Klímy → Klíma (genitiv mužů), Procházky → Procházka
@@ -1365,6 +1381,7 @@ class Anonymizer:
         self.counter = defaultdict(int)
         self.canonical_persons = []  # list of {first, last, tag}
         self.person_index = {}  # (first_norm, last_norm) -> tag
+        self.person_canonical_names = {}  # tag -> canonical full name (as it appears in document)
         self.person_variants = {}  # tag -> set of all variants
         self.entity_map = defaultdict(lambda: defaultdict(set))  # typ -> original -> varianty
         self.entity_index_cache = defaultdict(dict)  # OPTIMIZATION: typ -> original -> idx cache
@@ -1416,8 +1433,18 @@ class Anonymizer:
         no_diac = ''.join(c for c in n if not unicodedata.combining(c))
         return re.sub(r'[^A-Za-z]', '', no_diac).lower()
 
-    def _ensure_person_tag(self, first_nom: str, last_nom: str) -> str:
-        """Zajistí, že pro danou osobu existuje tag a vrátí ho."""
+    def _ensure_person_tag(self, first_nom: str, last_nom: str, first_obs: str = None, last_obs: str = None) -> tuple:
+        """Zajistí, že pro danou osobu existuje tag a vrátí ho spolu s canonical názvem.
+
+        Args:
+            first_nom: Inferred nominative first name (used for matching)
+            last_nom: Inferred nominative last name (used for matching)
+            first_obs: Observed first name from document (used as canonical if this is a new person)
+            last_obs: Observed last name from document (used as canonical if this is a new person)
+
+        Returns:
+            tuple: (tag, canonical_full_name)
+        """
         # FINÁLNÍ NORMALIZACE - aby canonical_persons obsahovali správné jména
         # Julia → Julie, Maria → Marie, atd.
         # DŮLEŽITÉ: Použij normalize_name_variant (NE infer_first_name_nominative)
@@ -1427,7 +1454,10 @@ class Anonymizer:
         key = (self._normalize_for_matching(first_normalized), self._normalize_for_matching(last_nom))
 
         if key in self.person_index:
-            return self.person_index[key]
+            tag = self.person_index[key]
+            # Return existing tag and its canonical name
+            canonical_full = self.person_canonical_names[tag]
+            return tag, canonical_full
 
         # Vytvoř nový tag
         self.counter['PERSON'] += 1
@@ -1435,20 +1465,26 @@ class Anonymizer:
 
         # Ulož do indexu s normalizovaným jménem
         self.person_index[key] = tag
-        self.canonical_persons.append({'first': first_normalized, 'last': last_nom, 'tag': tag})
 
-        # Vygeneruj všechny pádové varianty (použij normalizované jméno)
+        # CANONICAL: Always use INFERRED nominative initially
+        # Post-processing will fix any that aren't in document
+        canonical_first = first_normalized
+        canonical_last = last_nom
+        canonical_full = f'{canonical_first} {canonical_last}'
+
+        self.canonical_persons.append({'first': canonical_first, 'last': canonical_last, 'tag': tag})
+        self.person_canonical_names[tag] = canonical_full  # Store canonical name for this tag
+
+        # Vygeneruj všechny pádové varianty (použij normalizované jméno pro generování variant)
         fvars = variants_for_first(first_normalized)
         svars = variants_for_surname(last_nom)
         self.person_variants[tag] = {f'{f} {s}' for f in fvars for s in svars}
 
-        # NEUKLÁDEJ canonical automaticky - uloží se jen pokud je v dokumentu
-        canonical_full = f'{first_normalized} {last_nom}'
-        # self.entity_map['PERSON'][canonical_full].add(canonical_full)  # ODSTRANĚNO
+        # Store index and reverse map using canonical name (not inferred!)
         self.entity_index_cache['PERSON'][canonical_full] = self.counter['PERSON']
         self.entity_reverse_map['PERSON'][canonical_full] = canonical_full
 
-        return tag
+        return tag, canonical_full
 
     def _apply_known_people(self, text: str) -> str:
         """Aplikuje známé osoby (již detekované) - nahrazuje všechny pádové varianty stejným tagem."""
@@ -1917,6 +1953,7 @@ class Anonymizer:
                     'marka': 'marek',
                     'karla': 'karel',
                     'michala': 'michal',
+                    'pavla': 'pavel',
                     'vita': 'vito',  # Cizí jména
                     'bruna': 'bruno',
                     'lea': 'leo'
@@ -2055,7 +2092,7 @@ class Anonymizer:
                         'leon', 'albert', 'erik', 'teodor', 'viktor', 'igor', 'artur',
                         'oleksandr', 'sergej', 'oleg', 'mihail', 'denis', 'ivan',
                         'lubomír', 'přemysl', 'tadeáš', 'rostislav', 'ctibor',
-                        'karel', 'michal', 'tomáš', 'aleš', 'miloš', 'leoš'
+                        'karel', 'michal', 'tomáš', 'aleš', 'miloš', 'leoš', 'radim'
                     }
 
                     # Známé genitivní formy (kde odstranění -a nedá správný tvar)
@@ -2063,6 +2100,7 @@ class Anonymizer:
                         'marka': 'marek',
                         'karla': 'karel',
                         'michala': 'michal',
+                        'pavla': 'pavel',
                         'vita': 'vito',
                         'bruna': 'bruno',
                         'lea': 'leo'
@@ -2099,11 +2137,11 @@ class Anonymizer:
                     first_nom = infer_first_name_nominative(first_obs) if first_obs else first_obs
 
             # Vytvoř nebo najdi tag pro tuto osobu
-            tag = self._ensure_person_tag(first_nom, last_nom)
+            # PASS OBSERVED FORMS to ensure canonical matches what's in the document!
+            tag, canonical = self._ensure_person_tag(first_nom, last_nom, first_obs, last_obs)
 
             # Ulož původní formu jako variantu (pokud je jiná než kanonická)
             original_form = f"{first_obs} {last_obs}"
-            canonical = f"{first_nom} {last_nom}"
             if original_form.lower() != canonical.lower():
                 self.entity_map['PERSON'][canonical].add(original_form)
 
@@ -2612,6 +2650,46 @@ class Anonymizer:
 
         return text
 
+    def _fix_canonical_names_not_in_document(self):
+        """Fix canonical names that don't appear in the source document.
+
+        Replace them with the first observed variant that does appear.
+        """
+        if not self.source_text:
+            return
+
+        fixed_count = 0
+        for person in self.canonical_persons:
+            canonical_full = f"{person['first']} {person['last']}"
+
+            # Check if canonical is in document
+            if canonical_full in self.source_text:
+                continue  # OK
+
+            # Canonical not in document - find first variant that is
+            tag = person['tag']
+            canonical_key = canonical_full  # Use canonical_full not person_canonical_names
+
+            # Look for variants in entity_map
+            if canonical_key in self.entity_map['PERSON']:
+                variants = self.entity_map['PERSON'][canonical_key]
+
+                # Find first variant that is in source_text
+                for variant in sorted(variants):  # Sort for consistency
+                    if variant in self.source_text:
+                        # Update canonical to this variant
+                        parts = variant.split(' ', 1)
+                        if len(parts) == 2:
+                            person['first'] = parts[0]
+                            person['last'] = parts[1]
+                            if tag in self.person_canonical_names:
+                                self.person_canonical_names[tag] = variant
+                            fixed_count += 1
+                        break
+
+        if fixed_count > 0:
+            print(f"  [DEBUG] Fixed {fixed_count} canonical names not in document")
+
     def anonymize_docx(self, input_path: str, output_path: str, json_map: str, txt_map: str):
         """Hlavní metoda pro anonymizaci DOCX dokumentu."""
         print(f"\n🔍 Zpracovávám: {Path(input_path).name}")
@@ -2621,6 +2699,9 @@ class Anonymizer:
         start_time = time.time()
         doc = Document(input_path)
         print(f"  [DEBUG] Document loaded in {time.time() - start_time:.1f}s")
+
+        # Store source text for validation (check if inferred names are in document)
+        self.source_text = ' '.join([p.text for p in doc.paragraphs])
 
         # Zpracuj všechny odstavce
         start_time = time.time()
@@ -2642,6 +2723,9 @@ class Anonymizer:
 
             if text != original:
                 para.text = text
+
+        # POST-PROCESSING: Fix canonical names that are not in source document
+        self._fix_canonical_names_not_in_document()
 
         print(f"  [DEBUG] Paragraphs processed in {time.time() - start_time:.1f}s")
 
