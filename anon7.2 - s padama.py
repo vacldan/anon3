@@ -922,6 +922,30 @@ def variants_for_first(first: str) -> set:
             V.add(soft_stem + 'e')
             V.add(soft_stem + 'i')
 
+    # ========== Ženská jména končící na -e/-ie (Alice, Otilie, Julie) ==========
+    elif low.endswith(('e', 'ie')):
+        # Pro jména jako Alice, Otilie, Julie
+        # Dativ/Lokál: Alici, Otilii
+        # Akuzativ: Alici, Otilii
+        # Genitiv: Alice/Alici, Otilie/Otilii
+        # Instrumentál: Alicí, Otilií
+        # Vokativ: Alice, Otilie
+
+        # Alice -> Alic + i, Alic + í
+        if low.endswith('e') and not low.endswith('ie'):
+            stem = f[:-1]  # Alice -> Alic
+            V |= {stem+'i', stem+'í', stem+'ii'}
+            # Přivlastňovací: Alicin
+            V |= {stem+s for s in ['in','ina','iny','iné','inu','inou','iným','iných','ino']}
+
+        # Otilie -> Otili + i, Otili + í
+        elif low.endswith('ie'):
+            stem = f[:-1]  # Otilie -> Otili
+            V |= {stem+'i', stem+'í', stem+'ii'}
+            # Přivlastňovací: Otiliin
+            base = f[:-2]  # Otilie -> Otil
+            V |= {base+s for s in ['in','ina','iny','iné','inu','inou','iným','iných','ino']}
+
     # ========== Mužská jména ==========
     else:
         # Základní pády
@@ -1560,7 +1584,7 @@ class Anonymizer:
                         continue
 
                     # Pokud křestní jméno má 3 znaky a nekončí na samohlásku/n/l/r → zkrácený
-                    if len(fv) == 3 and not fv_lo[-1] in 'aeiouyáéíóúůýnlr':
+                    if len(fv) == 3 and not fv_lo[-1] in 'aeiouyáéěíóúůýnlr':
                         continue
 
                 rx = re.compile(r'(?<!\w)'+re.escape(pat)+r'(?!\w)', re.IGNORECASE)
@@ -1740,7 +1764,7 @@ class Anonymizer:
                 if len(first) < 3:
                     return match.group(0)
                 # Pokud má 3 znaky a nekončí na samohlásku ani n/l/r
-                if len(first) == 3 and not first_lo[-1] in 'aeiouyáéíóúůýnlr':
+                if len(first) == 3 and not first_lo[-1] in 'aeiouyáéěíóúůýnlr':
                     return match.group(0)
                 # Zkrácené tvary končící na 'k' (4-5 znaků)
                 if 4 <= len(first) <= 5 and first_lo[-1] == 'k':
@@ -1939,7 +1963,7 @@ class Anonymizer:
                     # Pokud nekončí na samohlásku ani na 'n', 'l', 'r' → zkrácený genitiv
                     # "Jan", "Dan", "Ivo" = OK
                     # "Han" (z "Hana"), "Jev" (z "Eva") = NENÍ OK
-                    if not first_lo[-1] in 'aeiouyáéíóúůýnlr':
+                    if not first_lo[-1] in 'aeiouyáéěíóúůýnlr':
                         return match.group(0)
 
                 # Pokud má 4-5 znaků:
@@ -1948,7 +1972,7 @@ class Anonymizer:
                     if first_lo[-1] == 'k':
                         return match.group(0)
                     # Pokud nekončí na samohlásku ani na typickou mužskou koncovku
-                    if not first_lo[-1] in 'aeiouyáéíóúůýnlršm':
+                    if not first_lo[-1] in 'aeiouyáéěíóúůýnlršm':
                         return match.group(0)
 
             # 8. Detekce rolí ("Ředitelka Centrum")
@@ -2735,10 +2759,26 @@ class Anonymizer:
                         # Update canonical to this variant
                         parts = variant.split(' ', 1)
                         if len(parts) == 2:
+                            old_canonical = canonical_full
+                            new_canonical = variant
+
+                            # Update person
                             person['first'] = parts[0]
                             person['last'] = parts[1]
                             if tag in self.person_canonical_names:
-                                self.person_canonical_names[tag] = variant
+                                self.person_canonical_names[tag] = new_canonical
+
+                            # IMPORTANT: Move entity_map entries from old to new canonical
+                            if old_canonical in self.entity_map['PERSON']:
+                                old_variants = self.entity_map['PERSON'][old_canonical]
+                                # Move to new canonical (merge if already exists)
+                                if new_canonical not in self.entity_map['PERSON']:
+                                    self.entity_map['PERSON'][new_canonical] = set()
+                                self.entity_map['PERSON'][new_canonical] |= old_variants
+                                # Remove old canonical entry if different
+                                if old_canonical != new_canonical:
+                                    del self.entity_map['PERSON'][old_canonical]
+
                             fixed_count += 1
                         break
 
