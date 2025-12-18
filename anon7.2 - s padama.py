@@ -219,12 +219,28 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
                 if cand_with_e.lower() in CZECH_FIRST_NAMES:
                     return cand_with_e.capitalize()
 
-        # Cizí jména končící na -o: Hugovi → Hug → Hugo, Ivovi → Iv → Ivo
+        # Cizí jména končící na -o: Hugovi → Hug → Hugo, Radkovi → Radk → Radko
         if len(cand) >= 2 and cand[-1].lower() not in 'aeiouyáéěíóúůý':
             cand_with_o = cand + 'o'
-            foreign_o_names = {'hug', 'iv', 'vit', 'le', 'brun', 'marc', 'dieg'}
+            foreign_o_names = {'hug', 'iv', 'vit', 'le', 'brun', 'marc', 'dieg', 'radk', 'vald'}
             if cand_with_o.lower() in CZECH_FIRST_NAMES or cand.lower() in foreign_o_names:
                 return cand_with_o.capitalize()
+
+        # Jména končící na -a: Oldovi → Old → Olda
+        if len(cand) >= 2:
+            cand_with_a = cand + 'a'
+            common_a_names = {'old', 'jir', 'kub', 'ondr'}  # Olda, Jirka, Kuba, Ondra
+            if cand_with_a.lower() in CZECH_FIRST_NAMES or cand.lower() in common_a_names:
+                return cand_with_a.capitalize()
+
+        # Jména na -ek: Markovi → Mark → Marek (vložit 'e' před 'k')
+        # Podobně: Jankovi → Jank → Janek
+        if len(cand) >= 2 and cand[-1].lower() not in 'aeiouyáéěíóúůý':
+            # Vlož 'e' před poslední souhlásku
+            cand_with_e_before_last = cand[:-1] + 'e' + cand[-1]
+            common_ek_stems = {'mark', 'jank', 'zdeňk', 'čeňk', 'tomášk', 'vojtěšk'}
+            if cand_with_e_before_last.lower() in CZECH_FIRST_NAMES or cand.lower() in common_ek_stems:
+                return cand_with_e_before_last.capitalize()
 
         cands.append(cand)
 
@@ -314,6 +330,7 @@ def normalize_name_variant(obs: str) -> str:
         'karl': 'karel',
         'karla': 'karel',  # Genitiv od Karel
         'karlo': 'karel',
+        'mark': 'marek',  # Mark je v knihovně, ale normalizuj na Marek
         'stanislava': 'stanislav',  # Genitiv od Stanislav
         'zdeňka': 'zdeněk',  # Genitiv od Zdeněk
         'čeňka': 'čeněk',  # Genitiv od Čeněk
@@ -336,6 +353,8 @@ def normalize_name_variant(obs: str) -> str:
         'elea': 'ela',
         'aurelia': 'aurelie',
         'terezia': 'terezie',
+        'lívia': 'lívia',  # Explicitně - není v knihovně, nechť zůstane
+        'lívie': 'lívia',  # Lívie je v knihovně, ale normalizuj na Lívia
         'otilia': 'otilie',
         # Zkrácené varianty
         'ela': 'ela',  # Explicitně aby se nesloučila s Elena
@@ -383,6 +402,7 @@ def infer_first_name_nominative(obs: str) -> str:
         'karl': 'karel',
         'karla': 'karel',  # Genitiv od Karel
         'karlo': 'karel',
+        'mark': 'marek',  # Mark je v knihovně, ale normalizuj na Marek
         'stanislava': 'stanislav',  # Genitiv od Stanislav
         'zdeňka': 'zdeněk',  # Genitiv od Zdeněk
         'čeňka': 'čeněk',  # Genitiv od Čeněk
@@ -408,6 +428,8 @@ def infer_first_name_nominative(obs: str) -> str:
         'elea': 'ela',
         'aurelia': 'aurelie',
         'terezia': 'terezie',
+        'lívia': 'lívia',  # Explicitně - není v knihovně, nechť zůstane
+        'lívie': 'lívia',  # Lívie je v knihovně, ale normalizuj na Lívia
         # Různé varianty
         'otilia': 'otilie',
         # Zkrácené varianty
@@ -434,7 +456,11 @@ def infer_first_name_nominative(obs: str) -> str:
     }
     if lo in name_variants:
         # VŽDY normalizuj, i když je v knihovně
-        obs = name_variants[lo].capitalize()
+        normalized = name_variants[lo].capitalize()
+        # Pokud mapování ukazuje na sebe sama (lívia→lívia), je to nominativ - vrať to
+        if name_variants[lo] == lo:
+            return normalized
+        obs = normalized
         lo = obs.lower()
 
     # SPECIÁLNÍ PŘÍPAD: Roberta může být genitiv od Robert
@@ -779,6 +805,9 @@ def infer_surname_nominative(obs: str) -> str:
             return stem + 'o'  # Šídlovi → Šídlo
         elif stem_lo in surname_stems_needing_a:
             return stem + 'a'  # Pasekovi → Paseka
+        # NOVÉ: Zkontroluj jestli stem + 'a' je známé příjmení na -ka (Veverkovi → Veverka)
+        elif (stem_lo + 'a') in animal_plant_surnames or (stem_lo + 'a') in common_surnames_a:
+            return stem + 'a'  # Veverkovi → Veverka
         else:
             return stem  # Novákovi → Novák
 
@@ -2951,8 +2980,10 @@ class Anonymizer:
                 by_nominative[key].append(person)
 
             # Debug: check specific duplicates
-            if any(name in canonical for name in ['Karel Řehoř', 'Karla Řehoř', 'Radko Veverka', 'Radka Veverky', 'Radkovi Veverkovi']):
-                print(f"  [DEDUP] {canonical} -> keys: {keys}")
+            debug_names = ['Karel Řehoř', 'Karla Řehoř', 'Radko Veverka', 'Radka Veverky', 'Radkovi Veverkovi',
+                          'Lívia Králová', 'Lívií Králové', 'Marek Holý', 'Markovi Holému']
+            if any(name in canonical for name in debug_names):
+                print(f"  [DEDUP] {canonical} -> inferred: {first_nom} {last_nom} -> keys: {keys}")
 
         # Debug: print groups with duplicates
         dup_groups = [(k, g) for k, g in by_nominative.items() if len(g) > 1]
