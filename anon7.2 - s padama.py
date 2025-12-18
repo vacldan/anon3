@@ -310,11 +310,14 @@ def normalize_name_variant(obs: str) -> str:
     lo = obs.lower()
 
     name_variants = {
-        # Mužská jména
+        # Mužská jména (včetně genitivů)
         'karl': 'karel',
-        'mark': 'marek',
+        'karla': 'karel',  # Genitiv od Karel
         'karlo': 'karel',
-        'marko': 'marek',
+        'stanislava': 'stanislav',  # Genitiv od Stanislav
+        'zdeňka': 'zdeněk',  # Genitiv od Zdeněk
+        'čeňka': 'čeněk',  # Genitiv od Čeněk
+        'františka': 'františek',  # Genitiv od František
         # Ženská jména -ia → -ie
         'maria': 'marie',
         'julia': 'julie',
@@ -375,11 +378,18 @@ def infer_first_name_nominative(obs: str) -> str:
     # Aplikuj normalizaci ještě PŘED jakoukoliv logikou
     # Důvod: Julia a Julie jsou OBĚ v knihovně, musíme unifikovat
     name_variants = {
-        # Mužská jména
+        # Mužská jména (včetně genitivů)
+        # POUZE jednoznačné mapování! Nepoužívat pro jména která mohou být i ženská.
         'karl': 'karel',
-        'mark': 'marek',
+        'karla': 'karel',  # Genitiv od Karel
         'karlo': 'karel',
-        'marko': 'marek',
+        'stanislava': 'stanislav',  # Genitiv od Stanislav
+        'zdeňka': 'zdeněk',  # Genitiv od Zdeněk
+        'čeňka': 'čeněk',  # Genitiv od Čeněk
+        'františka': 'františek',  # Genitiv od František
+        # NEPOUŽÍVAT: 'radka' (může být Radko nebo Radek!)
+        # NEPOUŽÍVAT: 'janka' (může být Janek nebo ženské jméno Janka!)
+        # NEPOUŽÍVAT: 'marka' (může být Marek nebo ženské jméno Marka!)
         # Ženská jména -ia → -ie
         'maria': 'marie',
         'julia': 'julie',
@@ -844,6 +854,11 @@ def infer_surname_nominative(obs: str) -> str:
     if lo.endswith('ře') and len(obs) > 3:
         return obs[:-1]  # Šindeláře → Šindelář, Košíře → Košíř
 
+    # ========== GENITIV: -še, -že, -če → -š, -ž, -č ==========
+    # Bartoše → Bartoš, Čapkože → Čapko ž, Vachouškě → Vachoušek
+    if lo.endswith(('še', 'že', 'če')) and len(obs) > 3:
+        return obs[:-1]  # Odstraň 'e': Bartoše → Bartoš
+
     # ========== SPECIÁLNÍ PŘÍJMENÍ: -ěte, -ěti → -ě ==========
     # Hraběte → Hrabě (genitiv), Hraběti → Hrabě (dativ)
     if lo.endswith('ěte') and len(obs) > 4:
@@ -855,6 +870,22 @@ def infer_surname_nominative(obs: str) -> str:
     # ========== PŘÍJMENÍ KONČÍCÍ NA -LO: nechat beze změny ==========
     # Šídlo je nominativ, neměnit na Šídl!
     # (odstraněno chybné pravidlo které převádělo Šídlo → Šídl)
+
+    # ========== GENITIV: -ky → -ka (před obecným -y) ==========
+    # Veverky → Veverka (genitiv příjmení na -ka)
+    # Musí být PŘED obecným -y pravidlem!
+    if lo.endswith('ky') and len(obs) > 4:
+        candidate_ka = obs[:-1] + 'a'  # Veverky → Veverka
+        candidate_ka_lo = candidate_ka.lower()
+
+        # Zkontroluj jestli -ka forma je známé příjmení
+        # Buď v animal_plant_surnames nebo v common_surnames_a
+        if candidate_ka_lo in animal_plant_surnames or candidate_ka_lo in common_surnames_a:
+            return candidate_ka  # Veverky → Veverka
+
+        # Nebo pokud kandidát končí na běžný vzor -ička, -ička, -ůčka, -ečka
+        if candidate_ka_lo.endswith(('ička', 'ůčka', 'ečka', 'očka')):
+            return candidate_ka
 
     # ========== GENITIV: -y → -a nebo odstranit -y ==========
     # Klímy → Klíma (genitiv mužů), Procházky → Procházka
@@ -2807,6 +2838,168 @@ class Anonymizer:
         if fixed_count > 0:
             print(f"  [DEBUG] Fixed {fixed_count} canonical names not in document")
 
+    def _deduplicate_persons(self):
+        """Sloučí duplicitní osoby se stejným inferred nominativem nebo sdílenými variantami.
+
+        Tento krok je důležitý protože různé pádové formy (Karel/Karla/Karlu)
+        mohou vytvořit separátní osoby pokud nejsou správně detekované jako varianty.
+        """
+        from collections import defaultdict
+
+        print(f"  [DEDUP] Starting deduplication, {len(self.canonical_persons)} persons to check")
+
+        # PHASE 1: Group by shared variants in entity_map
+        # If person A has "Radka Veverky" as variant and person B is "Radka Veverky", merge them
+        to_merge = []  # List of (primary_idx, duplicate_idx) pairs
+
+        for i, person_a in enumerate(self.canonical_persons):
+            canonical_a = f"{person_a['first']} {person_a['last']}"
+            variants_a = self.entity_map['PERSON'].get(canonical_a, set())
+
+            for j, person_b in enumerate(self.canonical_persons):
+                if i >= j:  # Only check each pair once
+                    continue
+
+                canonical_b = f"{person_b['first']} {person_b['last']}"
+
+                # Check if canonical_b is in variants_a (person B's canonical is a variant of A)
+                if canonical_b in variants_a:
+                    print(f"  [DEDUP] Found variant overlap: '{canonical_a}' has variant '{canonical_b}'")
+                    to_merge.append((i, j))
+                    continue
+
+                # Check if canonical_a is in variants_b (person A's canonical is a variant of B)
+                variants_b = self.entity_map['PERSON'].get(canonical_b, set())
+                if canonical_a in variants_b:
+                    print(f"  [DEDUP] Found variant overlap: '{canonical_b}' has variant '{canonical_a}'")
+                    to_merge.append((i, j))
+                    continue
+
+        # Merge persons from Phase 1 (variant overlap)
+        merged_count_phase1 = 0
+        merged_indices = set()  # Track which indices have been merged
+
+        for primary_idx, dup_idx in to_merge:
+            # Skip if either has already been merged
+            if primary_idx in merged_indices or dup_idx in merged_indices:
+                continue
+
+            primary = self.canonical_persons[primary_idx]
+            duplicate = self.canonical_persons[dup_idx]
+
+            primary_canonical = f"{primary['first']} {primary['last']}"
+            dup_canonical = f"{duplicate['first']} {duplicate['last']}"
+
+            # Merge entity_map variants
+            if dup_canonical in self.entity_map['PERSON']:
+                dup_variants = self.entity_map['PERSON'][dup_canonical]
+                if primary_canonical not in self.entity_map['PERSON']:
+                    self.entity_map['PERSON'][primary_canonical] = set()
+                self.entity_map['PERSON'][primary_canonical] |= dup_variants
+                del self.entity_map['PERSON'][dup_canonical]
+
+            # Mark duplicate for removal (can't remove during iteration)
+            merged_indices.add(dup_idx)
+            merged_count_phase1 += 1
+
+        # Remove merged persons (do this after collecting all indices)
+        if merged_indices:
+            self.canonical_persons = [p for i, p in enumerate(self.canonical_persons) if i not in merged_indices]
+            print(f"  [DEDUP] Phase 1: Merged {merged_count_phase1} persons based on variant overlap")
+
+        # PHASE 2: Group persons by their inferred nominative
+        by_nominative = defaultdict(list)
+        person_keys = {}  # person -> list of keys
+
+        for person in self.canonical_persons:
+            canonical = f"{person['first']} {person['last']}"
+
+            # Infer nominative from canonical form
+            first_nom = infer_first_name_nominative(person['first'])
+            last_nom = infer_surname_nominative(person['last'])
+
+            # Normalize for matching
+            first_norm = normalize_name_variant(first_nom) if first_nom else first_nom
+            key1 = (self._normalize_for_matching(first_norm), self._normalize_for_matching(last_nom))
+
+            # For ambiguous names ending in -a (could be female OR male genitive), try BOTH
+            # Example: "Radka" could be female name OR genitive of "Radko"
+            keys = [key1]
+
+            if person['first'].lower().endswith('a') and len(person['first']) > 2:
+                # Try removing -a to get potential male name
+                potential_male = person['first'][:-1]
+                # Try with -o ending (foreign names: Radka -> Radko, Iva -> Ivo)
+                if potential_male[-1].lower() not in 'aeiouyáéěíóúůý':
+                    potential_male_o = potential_male + 'o'
+                    key2 = (self._normalize_for_matching(potential_male_o), self._normalize_for_matching(last_nom))
+                    keys.append(key2)
+
+            # Handle dative forms ending in -ovi (Radkovi -> try both Radko and Radek)
+            if person['first'].lower().endswith('ovi') and len(person['first']) > 4:
+                stem = person['first'][:-3]  # Remove -ovi
+                # Try with -o ending (Radkovi -> Radko)
+                if stem[-1].lower() not in 'aeiouyáéěíóúůý':
+                    stem_o = stem + 'o'
+                    key3 = (self._normalize_for_matching(stem_o), self._normalize_for_matching(last_nom))
+                    if key3 not in keys:
+                        keys.append(key3)
+
+            # Store all keys for this person
+            person_keys[canonical] = keys
+            for key in keys:
+                by_nominative[key].append(person)
+
+            # Debug: check specific duplicates
+            if any(name in canonical for name in ['Karel Řehoř', 'Karla Řehoř', 'Radko Veverka', 'Radka Veverky', 'Radkovi Veverkovi']):
+                print(f"  [DEDUP] {canonical} -> keys: {keys}")
+
+        # Debug: print groups with duplicates
+        dup_groups = [(k, g) for k, g in by_nominative.items() if len(g) > 1]
+        print(f"  [DEDUP] Total unique keys: {len(by_nominative)}, Groups with duplicates: {len(dup_groups)}")
+        if dup_groups:
+            print(f"  [DEDUP] Found {len(dup_groups)} groups with duplicates:")
+            for key, group in dup_groups[:10]:  # Show first 10
+                print(f"    {key}: {[(p['first'], p['last']) for p in group]}")
+
+        # Find and merge duplicates
+        merged_count = 0
+        for key, group in by_nominative.items():
+            if len(group) <= 1:
+                continue  # No duplicates
+
+            # Keep first person, merge others into it
+            primary = group[0]
+            primary_tag = primary['tag']
+            primary_canonical = f"{primary['first']} {primary['last']}"
+
+            for duplicate in group[1:]:
+                dup_tag = duplicate['tag']
+                dup_canonical = f"{duplicate['first']} {duplicate['last']}"
+
+                # Merge entity_map variants
+                if dup_canonical in self.entity_map['PERSON']:
+                    dup_variants = self.entity_map['PERSON'][dup_canonical]
+                    if primary_canonical not in self.entity_map['PERSON']:
+                        self.entity_map['PERSON'][primary_canonical] = set()
+                    self.entity_map['PERSON'][primary_canonical] |= dup_variants
+                    del self.entity_map['PERSON'][dup_canonical]
+
+                # Remove duplicate from canonical_persons
+                self.canonical_persons.remove(duplicate)
+
+                # Update person_canonical_names if needed
+                if dup_tag in self.person_canonical_names:
+                    del self.person_canonical_names[dup_tag]
+
+                merged_count += 1
+
+        total_merged = merged_count_phase1 + merged_count
+        if merged_count > 0:
+            print(f"  [DEDUP] Phase 2: Merged {merged_count} persons based on inferred nominative")
+        if total_merged > 0:
+            print(f"  [DEBUG] Total merged: {total_merged} duplicate persons")
+
     def anonymize_docx(self, input_path: str, output_path: str, json_map: str, txt_map: str):
         """Hlavní metoda pro anonymizaci DOCX dokumentu."""
         print(f"\n🔍 Zpracovávám: {Path(input_path).name}")
@@ -2843,6 +3036,9 @@ class Anonymizer:
 
         # POST-PROCESSING: Fix canonical names that are not in source document
         self._fix_canonical_names_not_in_document()
+
+        # POST-PROCESSING: Deduplicate persons with same inferred nominative
+        self._deduplicate_persons()
 
         print(f"  [DEBUG] Paragraphs processed in {time.time() - start_time:.1f}s")
 
