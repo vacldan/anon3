@@ -437,6 +437,10 @@ def infer_first_name_nominative(obs: str) -> str:
     if lo in CZECH_FIRST_NAMES:
         return obs.capitalize()
 
+    # SPECIÁLNÍ: Jména na -ňa/-ťa jsou pravděpodobně nominativ (Stáňa, Káťa)
+    if lo.endswith(('ňa', 'ťa')) and len(obs) >= 4:
+        return obs.capitalize()
+
     # SPECIÁLNÍ VZORY - PRIORITA (před obecnými pravidly)
 
     # 1. ice → ika (Anice → Anika, Clarice → Clarika)
@@ -474,6 +478,16 @@ def infer_first_name_nominative(obs: str) -> str:
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:  # Elena
             return (stem + 'a').capitalize()
 
+    # SPECIÁLNÍ: Akuzativ -ii od jmen na -ie (Natálii → Natálie, Julii → Julie)
+    if lo.endswith('ii') and len(obs) > 3:
+        stem_ie = obs[:-2] + 'ie'
+        if stem_ie.lower() in CZECH_FIRST_NAMES:
+            return stem_ie.capitalize()
+        # Common -ie names
+        common_ie_names = {'natálie', 'julie', 'rosalie', 'aurélie', 'amélie', 'otilie', 'kornelie'}
+        if stem_ie.lower() in common_ie_names:
+            return stem_ie.capitalize()
+
     # Genitiv/Dativ/Lokál: -y/-ě/-e → -a
     # Speciální: Bei → Bea (genitiv od Bea), Helze → Helga (palatalizace)
     if lo.endswith(('y', 'ě', 'e', 'i')):
@@ -498,9 +512,17 @@ def infer_first_name_nominative(obs: str) -> str:
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
             return (stem + 'a').capitalize()
 
+        # SPECIÁLNÍ: Palatalizace n → ň v dativu (Stáně → Stáňa, ne Stána)
+        # MUSÍ BÝT PŘED common_a_names, protože preferujeme variantu s 'ň'
+        # Když vidíme -ně a stem končí na 'n', zkus nahradit 'n' za 'ň'
+        common_a_names = {'hana', 'jana', 'anna', 'eva', 'dana', 'žanina', 'kristýna', 'karolína', 'justýna', 'martina', 'regina', 'paulína', 'stáňa', 'stána', 'máňa', 'mána', 'táňa', 'tána'}
+        if lo.endswith('ně') and len(stem) >= 2 and stem[-1].lower() == 'n':
+            stem_nha = stem[:-1] + 'ň' + 'a'
+            if stem_nha.lower() in common_a_names or stem_nha.lower() in CZECH_FIRST_NAMES:
+                return stem_nha.capitalize()
+
         # Common female names ending in -a/-ina/-ína that might be missing from library
-        # Hany → Hana, Žaniny → Žanina, Kristýny → Kristýna
-        common_a_names = {'hana', 'jana', 'anna', 'eva', 'dana', 'žanina', 'kristýna', 'karolína', 'justýna', 'martina', 'regina', 'paulína'}
+        # Hany → Hana, Žaniny → Žanina, Kristýny → Kristýna, Stáně → Stána/Stáňa
         if (stem + 'a').lower() in common_a_names:
             return (stem + 'a').capitalize()
 
