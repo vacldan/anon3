@@ -350,6 +350,10 @@ def normalize_name_variant(obs: str) -> str:
         'miroslavovi': 'miroslav',  # Dativ od Miroslav
         'václavovi': 'václav',  # Dativ od Václav
         'ladislavovi': 'ladislav',  # Dativ od Ladislav
+        # Varianty jmen které jsou v knihovně ale jsou tvary jiných jmen
+        'alexandru': 'alexandr',  # Alexandru je dativ od Alexandr (nebo variant)
+        'renem': 'rene',  # Instrumentál od Rene
+        'renemu': 'rene',  # Dativ od Rene
         # Ženská jména -ia → -ie
         'maria': 'marie',
         'julia': 'julie',
@@ -484,6 +488,10 @@ def infer_first_name_nominative(obs: str) -> str:
         'marc': 'marco',  # Marc → Marco
         'le': 'leo',  # Le → Leo
         'lea': 'leo',  # Lea → Leo (ženská forma/genitiv)
+        # Varianty jmen které jsou v knihovně ale jsou tvary jiných jmen
+        'alexandru': 'alexandr',  # Alexandru je dativ od Alexandr (nebo variant)
+        'renem': 'rene',  # Instrumentál od Rene (reno je v knihovně, ale prioritizuj rene)
+        'renemu': 'rene',  # Dativ od Rene
     }
     if lo in name_variants:
         # VŽDY normalizuj, i když je v knihovně
@@ -583,7 +591,14 @@ def infer_first_name_nominative(obs: str) -> str:
             if (stem + 'a').lower() in common_e_to_a:
                 return (stem + 'a').capitalize()
 
-        # Pro -y/-ě: zkus stem+a (Boženy → Božena, Žaniny → Žanina, Žanině → Žanina, Hany → Hana)
+        # Pro -i: zkus nejprve stem (MALE names - Aleši → Aleš, Petrovi → Petr)
+        # Pak zkus stem+a (FEMALE names - Hany → Hana)
+        if lo.endswith('i') and len(stem) >= 2:
+            # FIRST: Check if stem is a male name (Aleši → Aleš)
+            if stem.lower() in CZECH_FIRST_NAMES:
+                return stem.capitalize()
+
+        # Pro -y/-ě/-i: zkus stem+a (Boženy → Božena, Žaniny → Žanina, Žanině → Žanina, Hany → Hana)
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
             return (stem + 'a').capitalize()
 
@@ -607,9 +622,15 @@ def infer_first_name_nominative(obs: str) -> str:
             if stem.lower() in CZECH_FIRST_NAMES:
                 return stem.capitalize()
 
-    # Dativ: -u → -a (Hanu → Hana)
+    # Dativ: -u → remove for MALE names first (Danielu → Daniel), then try -u → -a for FEMALE names (Hanu → Hana)
     if lo.endswith('u') and len(obs) > 1:
         stem = obs[:-1]
+
+        # FIRST: Check if stem is a male name (Danielu → Daniel, Robertu → Robert, Michalu → Michal)
+        if stem.lower() in CZECH_FIRST_NAMES:
+            return stem.capitalize()
+
+        # SECOND: Check if stem + 'a' is a female name (Hanu → Hana, Danu → Dana)
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
             return (stem + 'a').capitalize()
 
@@ -794,7 +815,8 @@ def infer_surname_nominative(obs: str) -> str:
         'kuřátka', 'kubíčka', 'marečka', 'vašíčka',
         # Další příjmení končící na -ka v nominativu
         'kuba', 'červinka', 'hromádka', 'horčička', 'straka', 'paseka',
-        'krupička', 'koudelka', 'řezníčka', 'urbanek'  # Přidáno
+        'krupička', 'koudelka', 'řezníčka', 'urbanek',  # Přidáno
+        'pavelka', 'popelka', 'hruška', 'kotek'  # Přidáno pro smlouva22
     }
 
     if lo.endswith('ka') and len(obs) > 3 and lo not in common_surnames_a:
@@ -918,11 +940,11 @@ def infer_surname_nominative(obs: str) -> str:
         elif lo.endswith('kem') and len(obs) > 5:
             return obs[:-3] + 'ek'  # např. Práškem → Prášek, Štefánkem → Štefánek
 
-        # Kontrola: není -bem, -dem, -chem (součást některých příjmení)
+        # Kontrola: není -bem, -dem (součást některých příjmení)
         # POZNÁMKA: -lem a -rem jsou řešeny výše (řádky 431-441)
-        # DŮLEŽITÉ: -cem, -šem, -gem NEJSOU v blacklistu - jsou to běžné instrumentální koncovky
-        # Příklady: Švecem → Švec, Hrubešem → Hrubeš
-        elif not lo.endswith(('bem', 'dem', 'chem')):
+        # DŮLEŽITÉ: -cem, -chem, -šem, -gem NEJSOU v blacklistu - jsou to běžné instrumentální koncovky
+        # Příklady: Švecem → Švec, Hrubešem → Hrubeš, Vlachem → Vlach
+        elif not lo.endswith(('bem', 'dem')):
             # Novákem → Novák, Procházkou → Procházka
             # Kratochvílem → Kratochvíl, Králem → Král
             # Švecem → Švec, Hrubešem → Hrubeš
@@ -2995,14 +3017,26 @@ class Anonymizer:
                 inferred_b_first = infer_first_name_nominative(person_b['first'])
                 inferred_b_last = infer_surname_nominative(person_b['last'])
 
+                # DEBUG for Daniel
+                if ('daniel' in canonical_a.lower() and 'mlynář' in canonical_a.lower()) or \
+                   ('daniel' in canonical_b.lower() and 'mlynář' in canonical_b.lower()):
+                    print(f"  [DEBUG-DAN] Comparing:")
+                    print(f"    A: '{canonical_a}' (first='{person_a['first']}', last='{person_a['last']}') -> inferred: ({inferred_a_first}, {inferred_a_last})")
+                    print(f"    B: '{canonical_b}' (first='{person_b['first']}', last='{person_b['last']}') -> inferred: ({inferred_b_first}, {inferred_b_last})")
+
                 # Normalize inferred forms
                 inferred_a_first_norm = normalize_name_variant(inferred_a_first) if inferred_a_first else inferred_a_first
                 inferred_b_first_norm = normalize_name_variant(inferred_b_first) if inferred_b_first else inferred_b_first
 
                 # Compare normalized inferred forms
-                if (self._normalize_for_matching(inferred_a_first_norm) == self._normalize_for_matching(inferred_b_first_norm) and
-                    self._normalize_for_matching(inferred_a_last) == self._normalize_for_matching(inferred_b_last)):
+                key_a_first = self._normalize_for_matching(inferred_a_first_norm)
+                key_a_last = self._normalize_for_matching(inferred_a_last)
+                key_b_first = self._normalize_for_matching(inferred_b_first_norm)
+                key_b_last = self._normalize_for_matching(inferred_b_last)
+
+                if (key_a_first == key_b_first and key_a_last == key_b_last):
                     print(f"  [DEDUP] Found inferred match: '{canonical_a}' ({inferred_a_first_norm} {inferred_a_last}) == '{canonical_b}' ({inferred_b_first_norm} {inferred_b_last})")
+                    print(f"          Keys: ({key_a_first},{key_a_last}) == ({key_b_first},{key_b_last})")
                     to_merge.append((i, j))
                     continue
 
