@@ -342,6 +342,14 @@ def normalize_name_variant(obs: str) -> str:
         'tomášu': 'tomáš',  # Dativ od Tomáš
         'lukášu': 'lukáš',  # Dativ od Lukáš
         'jakubu': 'jakub',  # Dativ od Jakub
+        # Dativy mužských jmen -ovi (pokud jsou v knihovně jako samostatná jména)
+        'albínovi': 'albín',  # Dativ od Albín
+        'radomírovi': 'radomír',  # Dativ od Radomír
+        'jaroslavovi': 'jaroslav',  # Dativ od Jaroslav
+        'stanislavovi': 'stanislav',  # Dativ od Stanislav
+        'miroslavovi': 'miroslav',  # Dativ od Miroslav
+        'václavovi': 'václav',  # Dativ od Václav
+        'ladislavovi': 'ladislav',  # Dativ od Ladislav
         # Ženská jména -ia → -ie
         'maria': 'marie',
         'julia': 'julie',
@@ -414,6 +422,14 @@ def infer_first_name_nominative(obs: str) -> str:
         'zdeňka': 'zdeněk',  # Genitiv od Zdeněk
         'čeňka': 'čeněk',  # Genitiv od Čeněk
         'františka': 'františek',  # Genitiv od František
+        # Dativy mužských jmen -ovi (pokud jsou v knihovně jako samostatná jména)
+        'albínovi': 'albín',  # Dativ od Albín
+        'radomírovi': 'radomír',  # Dativ od Radomír
+        'jaroslavovi': 'jaroslav',  # Dativ od Jaroslav
+        'stanislavovi': 'stanislav',  # Dativ od Stanislav
+        'miroslavovi': 'miroslav',  # Dativ od Miroslav
+        'václavovi': 'václav',  # Dativ od Václav
+        'ladislavovi': 'ladislav',  # Dativ od Ladislav
         # NEPOUŽÍVAT: 'radka' (může být Radko nebo Radek!)
         # NEPOUŽÍVAT: 'janka' (může být Janek nebo ženské jméno Janka!)
         # NEPOUŽÍVAT: 'marka' (může být Marek nebo ženské jméno Marka!)
@@ -833,15 +849,30 @@ def infer_surname_nominative(obs: str) -> str:
             return stem + 'a'  # Veverkovi → Veverka
         # NOVÉ: Zkontroluj jestli stem + 'ek' dává smysl (Hájkovi → Hájek)
         # Nebo vlož 'e' pokud končí na souhlásku-souhlásku (Blažkovi → Blažek)
-        elif 2 <= len(stem_lo) <= 5 and stem_lo[-1] not in 'aeiouyáéěíóúůý':
-            # Pokud končí na dvě souhlásky, vlož 'e' mezi ně
+        # DŮLEŽITÉ: Aplikuj POUZE na kmeny kde chybí vložné 'e'!
+        elif stem_lo[-1] not in 'aeiouyáéěíóúůý' and 2 <= len(stem_lo) <= 5:
+            # Specifické vzory které vyžadují vložné 'e'
+            # Příklady: Hájk → Hájek, Blažk → Blažek, Krčk → Krček
             consonants = 'bcčdďfghjklmnňpqrřsštťvwxzž'
+
+            # Zkontroluj, jestli končí na specifickou kombinaci souhlásek která potřebuje 'e'
             if len(stem) >= 2 and stem_lo[-2] in consonants and stem_lo[-1] in consonants:
-                return stem[:-1] + 'e' + stem[-1]  # Blažkovi → Blažk → Blažek
+                # Specifické vzory které VŽDY potřebují vložné 'e': -jk, -žk, -čk, -rk, -šk
+                needs_e_patterns = ['jk', 'žk', 'čk', 'rk', 'šk', 'tk', 'dk', 'ck', 'nk']
+                last_two = stem_lo[-2:]
+
+                if last_two in needs_e_patterns:
+                    # Vložné 'e' je potřeba
+                    return stem[:-1] + 'e' + stem[-1]  # Hájkovi → Hájk → Hájek, Blažkovi → Blažk → Blažek
+                else:
+                    # Jiné kombinace (lf, rt, etc.) → pravděpodobně úplné jméno
+                    return stem  # Volfovi → Volf, Šubrtovi → Šubrt
             else:
-                return stem + 'ek'  # Hájkovi → Hájek
+                # Nekončí na dvě souhlásky → vrať stem
+                return stem  # Řehákovi → Řehák
         else:
-            return stem  # Novákovi → Novák
+            # Pro delší kmeny (6+ znaků) nebo kmeny končící na samohlásku, vrať stem
+            return stem  # Novákovi → Novák, Špinarovi → Špinar
 
     # ========== INSTRUMENTÁL: -em → REMOVE ==========
 
