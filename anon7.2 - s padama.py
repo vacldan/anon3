@@ -430,6 +430,13 @@ def infer_first_name_nominative(obs: str) -> str:
         'terezia': 'terezie',
         'lívia': 'lívia',  # Explicitně - není v knihovně, nechť zůstane
         'lívie': 'lívia',  # Lívie je v knihovně, ale normalizuj na Lívia
+        # Dativ ženských jmen na -e → -a
+        'adéle': 'adéla',
+        'tereze': 'tereza',
+        'lenky': 'lenka', # Should be 'lence'
+        'petra': 'petr',  # Could be genitive of Petr OR female name Petra - ambiguous
+        'petře': 'petra',
+        'alici': 'alice',
         # Různé varianty
         'otilia': 'otilie',
         # Zkrácené varianty
@@ -540,9 +547,17 @@ def infer_first_name_nominative(obs: str) -> str:
                 return stem_ga.capitalize()
 
         # Pro -e: zkus nejprve stem bez změny (Denise → Denis, Aleše → Aleš)
+        # Pak zkus stem+a (Adéle → Adéla, Tereze → Tereza)
         if lo.endswith('e') and len(stem) >= 2:
             if stem.lower() in CZECH_FIRST_NAMES:
                 return stem.capitalize()
+            # Zkus stem + a pro ženská jména (Adéle → Adéla)
+            if (stem + 'a').lower() in CZECH_FIRST_NAMES:
+                return (stem + 'a').capitalize()
+            # Common names ending in -a
+            common_e_to_a = {'adéla', 'tereza', 'lenka', 'petra', 'eliška', 'aneta', 'veronika', 'monika'}
+            if (stem + 'a').lower() in common_e_to_a:
+                return (stem + 'a').capitalize()
 
         # Pro -y/-ě: zkus stem+a (Boženy → Božena, Žaniny → Žanina, Žanině → Žanina, Hany → Hana)
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
@@ -2904,6 +2919,24 @@ class Anonymizer:
                     to_merge.append((i, j))
                     continue
 
+                # NEW: Check if inferred forms match (catches cases where inference doesn't work during initial detection)
+                # Example: "Adéla Jarošová" (infers to itself) vs "Adéle Jarošové" (should infer to "Adéla Jarošová")
+                inferred_a_first = infer_first_name_nominative(person_a['first'])
+                inferred_a_last = infer_surname_nominative(person_a['last'])
+                inferred_b_first = infer_first_name_nominative(person_b['first'])
+                inferred_b_last = infer_surname_nominative(person_b['last'])
+
+                # Normalize inferred forms
+                inferred_a_first_norm = normalize_name_variant(inferred_a_first) if inferred_a_first else inferred_a_first
+                inferred_b_first_norm = normalize_name_variant(inferred_b_first) if inferred_b_first else inferred_b_first
+
+                # Compare normalized inferred forms
+                if (self._normalize_for_matching(inferred_a_first_norm) == self._normalize_for_matching(inferred_b_first_norm) and
+                    self._normalize_for_matching(inferred_a_last) == self._normalize_for_matching(inferred_b_last)):
+                    print(f"  [DEDUP] Found inferred match: '{canonical_a}' ({inferred_a_first_norm} {inferred_a_last}) == '{canonical_b}' ({inferred_b_first_norm} {inferred_b_last})")
+                    to_merge.append((i, j))
+                    continue
+
         # Merge persons from Phase 1 (variant overlap)
         merged_count_phase1 = 0
         merged_indices = set()  # Track which indices have been merged
@@ -2974,6 +3007,27 @@ class Anonymizer:
                     if key3 not in keys:
                         keys.append(key3)
 
+            # ALSO generate keys from ALL variants of this person
+            # This catches cases where inference doesn't work properly
+            variants = self.entity_map['PERSON'].get(canonical, set())
+            for variant in variants:
+                # Parse variant into first and last
+                variant_parts = variant.split()
+                if len(variant_parts) >= 2:
+                    var_first = variant_parts[0]
+                    var_last = variant_parts[-1]
+
+                    # Infer nominative from variant
+                    var_first_nom = infer_first_name_nominative(var_first)
+                    var_last_nom = infer_surname_nominative(var_last)
+
+                    # Create key
+                    var_first_norm = normalize_name_variant(var_first_nom) if var_first_nom else var_first_nom
+                    var_key = (self._normalize_for_matching(var_first_norm), self._normalize_for_matching(var_last_nom))
+
+                    if var_key not in keys:
+                        keys.append(var_key)
+
             # Store all keys for this person
             person_keys[canonical] = keys
             for key in keys:
@@ -2981,7 +3035,8 @@ class Anonymizer:
 
             # Debug: check specific duplicates
             debug_names = ['Karel Řehoř', 'Karla Řehoř', 'Radko Veverka', 'Radka Veverky', 'Radkovi Veverkovi',
-                          'Lívia Králová', 'Lívií Králové', 'Marek Holý', 'Markovi Holému']
+                          'Lívia Králová', 'Lívií Králové', 'Marek Holý', 'Markovi Holému',
+                          'Adéla Jarošová', 'Adéle Jarošové', 'Petr Dohnal', 'Petru Dohnal']
             if any(name in canonical for name in debug_names):
                 print(f"  [DEDUP] {canonical} -> inferred: {first_nom} {last_nom} -> keys: {keys}")
 
