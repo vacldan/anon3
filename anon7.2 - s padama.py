@@ -335,6 +335,13 @@ def normalize_name_variant(obs: str) -> str:
         'zdeňka': 'zdeněk',  # Genitiv od Zdeněk
         'čeňka': 'čeněk',  # Genitiv od Čeněk
         'františka': 'františek',  # Genitiv od František
+        # Dativy mužských jmen (pokud jsou v knihovně jako samostatná jména)
+        'petru': 'petr',  # Dativ od Petr (pokud je petru v knihovně)
+        'filipu': 'filip',  # Dativ od Filip
+        'pavlu': 'pavel',  # Dativ od Pavel
+        'tomášu': 'tomáš',  # Dativ od Tomáš
+        'lukášu': 'lukáš',  # Dativ od Lukáš
+        'jakubu': 'jakub',  # Dativ od Jakub
         # Ženská jména -ia → -ie
         'maria': 'marie',
         'julia': 'julie',
