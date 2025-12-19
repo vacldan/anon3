@@ -755,7 +755,8 @@ def infer_surname_nominative(obs: str) -> str:
         'procházka', 'blaha', 'kafka', 'smetana', 'brabec',
         'kuřátka', 'kubíčka', 'marečka', 'vašíčka',
         # Další příjmení končící na -ka v nominativu
-        'kuba', 'červinka', 'hromádka', 'horčička', 'straka', 'paseka'
+        'kuba', 'červinka', 'hromádka', 'horčička', 'straka', 'paseka',
+        'krupička', 'koudelka', 'řezníčka', 'urbanek'  # Přidáno
     }
 
     if lo.endswith('ka') and len(obs) > 3 and lo not in common_surnames_a:
@@ -823,6 +824,15 @@ def infer_surname_nominative(obs: str) -> str:
         # NOVÉ: Zkontroluj jestli stem + 'a' je známé příjmení na -ka (Veverkovi → Veverka)
         elif (stem_lo + 'a') in animal_plant_surnames or (stem_lo + 'a') in common_surnames_a:
             return stem + 'a'  # Veverkovi → Veverka
+        # NOVÉ: Zkontroluj jestli stem + 'ek' dává smysl (Hájkovi → Hájek)
+        # Nebo vlož 'e' pokud končí na souhlásku-souhlásku (Blažkovi → Blažek)
+        elif 2 <= len(stem_lo) <= 5 and stem_lo[-1] not in 'aeiouyáéěíóúůý':
+            # Pokud končí na dvě souhlásky, vlož 'e' mezi ně
+            consonants = 'bcčdďfghjklmnňpqrřsštťvwxzž'
+            if len(stem) >= 2 and stem_lo[-2] in consonants and stem_lo[-1] in consonants:
+                return stem[:-1] + 'e' + stem[-1]  # Blažkovi → Blažk → Blažek
+            else:
+                return stem + 'ek'  # Hájkovi → Hájek
         else:
             return stem  # Novákovi → Novák
 
