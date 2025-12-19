@@ -1737,7 +1737,7 @@ class Anonymizer:
             surname_nom = infer_surname_nominative(surname)
 
             # Vytvoř tag pro příjmení (použijeme prázdné křestní jméno jako marker)
-            tag = self._ensure_person_tag("", surname_nom)
+            tag, _ = self._ensure_person_tag("", surname_nom)
 
             return f"({prefix} {tag})"
 
@@ -1760,7 +1760,7 @@ class Anonymizer:
             surname_nom = infer_surname_nominative(surname)
 
             # Vytvoř tag (prázdné křestní jméno pro standalone příjmení)
-            tag = self._ensure_person_tag("", surname_nom)
+            tag, _ = self._ensure_person_tag("", surname_nom)
 
             if prefix:
                 return f"{prefix} {tag}"
@@ -1801,7 +1801,7 @@ class Anonymizer:
                 return match.group(0)
 
             # Vytvoř/najdi tag pro samostatné křestní jméno
-            tag = self._ensure_person_tag(name, "")
+            tag, _ = self._ensure_person_tag(name, "")
 
             return tag
 
@@ -1887,11 +1887,10 @@ class Anonymizer:
             # Vytvoř/najdi tag pro osobu (s inferencí nominativu)
             last_nom = infer_surname_nominative(last)
             first_nom = infer_first_name_nominative(first) or first
-            tag = self._ensure_person_tag(first_nom, last_nom)
+            tag, canonical = self._ensure_person_tag(first_nom, last_nom)
 
             # Ulož původní formu jako variantu (pokud je jiná než kanonická)
             original_form = f"{first} {last}"
-            canonical = f"{first_nom} {last_nom}"
             if original_form.lower() != canonical.lower():
                 self.entity_map['PERSON'][canonical].add(original_form)
 
