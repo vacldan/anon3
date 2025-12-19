@@ -459,7 +459,8 @@ def infer_first_name_nominative(obs: str) -> str:
         'lenky': 'lenka', # Should be 'lence'
         'petra': 'petr',  # Could be genitive of Petr OR female name Petra - ambiguous
         'petře': 'petra',
-        'alici': 'alice',
+        'alici': 'alice',  # Dativ od Alice
+        'alicí': 'alice',  # Instrumentál od Alice
         # Různé varianty
         'otilia': 'otilie',
         # Zkrácené varianty
@@ -642,6 +643,20 @@ def infer_first_name_nominative(obs: str) -> str:
         stem = obs[:-3]
         if (stem + 'ice').lower() in CZECH_FIRST_NAMES:
             return (stem + 'ice').capitalize()
+
+    # Instrumentál: -í → -e nebo -ice (Alicí → Alice, Marií → Marie)
+    # Ženská jména na -ice mají instrumentál -icí (Alice → Alicí)
+    # Ženská jména na -ie mají instrumentál -ií (Marie → Marií)
+    if lo.endswith('í') and len(obs) > 2:
+        stem = obs[:-1]
+
+        # Zkus stem + 'e' (Alicí → Alic → Alice)
+        if (stem + 'e').lower() in CZECH_FIRST_NAMES:
+            return (stem + 'e').capitalize()
+
+        # Zkus stem (pro případ že je to už základní tvar - Jiří)
+        if stem.lower() in CZECH_FIRST_NAMES:
+            return stem.capitalize()
 
     # Instrumentál: -ou → -a (Hanou → Hana, Kristou → Krista)
     if lo.endswith('ou') and len(obs) > 2:
@@ -873,6 +888,13 @@ def infer_surname_nominative(obs: str) -> str:
         else:
             # Pro delší kmeny (6+ znaků) nebo kmeny končící na samohlásku, vrať stem
             return stem  # Novákovi → Novák, Špinarovi → Špinar
+
+    # ========== INSTRUMENTÁL: -ím → -í ==========
+    # Krejčím → Krejčí, Košíkem → Košík
+    # Příjmení končící na -í/-ý mají instrumentál -ím/-ým
+    if lo.endswith('ím') and len(obs) > 3:
+        # Krejčím → Krejčí
+        return obs[:-1]  # Odstranň 'm'
 
     # ========== INSTRUMENTÁL: -em → REMOVE ==========
 
