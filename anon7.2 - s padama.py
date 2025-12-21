@@ -2934,58 +2934,12 @@ class Anonymizer:
     def _fix_canonical_names_not_in_document(self):
         """Fix canonical names that don't appear in the source document.
 
-        Replace them with the first observed variant that does appear.
+        DISABLED: Canonical names should ALWAYS be in nominative case,
+        even if nominative doesn't appear in the document.
+        This ensures consistency and correct deduplication.
         """
-        if not self.source_text:
-            return
-
-        fixed_count = 0
-        for person in self.canonical_persons:
-            canonical_full = f"{person['first']} {person['last']}"
-
-            # Check if canonical is in document
-            if canonical_full in self.source_text:
-                continue  # OK
-
-            # Canonical not in document - find first variant that is
-            tag = person['tag']
-            canonical_key = canonical_full  # Use canonical_full not person_canonical_names
-
-            # Look for variants in entity_map
-            if canonical_key in self.entity_map['PERSON']:
-                variants = self.entity_map['PERSON'][canonical_key]
-
-                # Find first variant that is in source_text
-                for variant in sorted(variants):  # Sort for consistency
-                    if variant in self.source_text:
-                        # Update canonical to this variant
-                        parts = variant.split(' ', 1)
-                        if len(parts) == 2:
-                            old_canonical = canonical_full
-                            new_canonical = variant
-
-                            # Update person
-                            person['first'] = parts[0]
-                            person['last'] = parts[1]
-                            if tag in self.person_canonical_names:
-                                self.person_canonical_names[tag] = new_canonical
-
-                            # IMPORTANT: Move entity_map entries from old to new canonical
-                            if old_canonical in self.entity_map['PERSON']:
-                                old_variants = self.entity_map['PERSON'][old_canonical]
-                                # Move to new canonical (merge if already exists)
-                                if new_canonical not in self.entity_map['PERSON']:
-                                    self.entity_map['PERSON'][new_canonical] = set()
-                                self.entity_map['PERSON'][new_canonical] |= old_variants
-                                # Remove old canonical entry if different
-                                if old_canonical != new_canonical:
-                                    del self.entity_map['PERSON'][old_canonical]
-
-                            fixed_count += 1
-                        break
-
-        if fixed_count > 0:
-            print(f"  [DEBUG] Fixed {fixed_count} canonical names not in document")
+        # Do nothing - keep inferred nominative as canonical
+        return
 
     def _deduplicate_persons(self):
         """Sloučí duplicitní osoby se stejným inferred nominativem nebo sdílenými variantami.
