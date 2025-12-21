@@ -775,9 +775,9 @@ def infer_surname_nominative(obs: str) -> str:
         stem_without_a = lo[:-1]  # např. "havl" z "havla"
         if stem_without_a in vlozne_e_stems:
             # Vlož 'e' před poslední souhlásku
-            # Havl → Havel (vložit před 'l')
-            # Petr → Petra (vložit před 'r')
-            return obs[:-1] + 'e' + obs[-1]  # "Havl" + "e" + "a" → není správně
+            # Havla → Havl → Havel (vložit 'e' před 'l')
+            stem = obs[:-1]  # "Havla" → "Havl"
+            return stem[:-1] + 'e' + stem[-1]  # "Hav" + "e" + "l" → "Havel"
 
     # Lepší implementace vložného e:
     # Pokud stem končí na souhlásku-souhlásku, vlož 'e' mezi ně
@@ -853,8 +853,18 @@ def infer_surname_nominative(obs: str) -> str:
             return base_without_la + 'el'
 
     if lo.endswith('ce') and len(obs) > 3:
-        # Němec → Němce (genitiv) → návrat na Němec
-        return obs[:-2] + 'ec'
+        # Two patterns:
+        # 1. Němec → Němce (genitiv with vložné 'e') → Němce → Němec
+        # 2. Švec → Švece (genitiv without vložné 'e') → Švece → Švec
+
+        # Known surnames without vložné 'e' (just remove -e)
+        simple_c_surnames = {'švec', 'rybec', 'chlebec', 'holec'}
+        base_with_c = obs[:-1].lower()  # "Švece" → "švec"
+
+        if base_with_c in simple_c_surnames:
+            return obs[:-1]  # Švece → Švec
+        else:
+            return obs[:-2] + 'ec'  # Němce → Němec
 
     # Genitiv s vložným 'e' - obecné: Holase → Holas, Šídla → Šídel
     if lo.endswith('se') and len(obs) > 3:
@@ -884,6 +894,10 @@ def infer_surname_nominative(obs: str) -> str:
         # NOVÉ: Zkontroluj jestli stem + 'a' je známé příjmení na -ka (Veverkovi → Veverka)
         elif (stem_lo + 'a') in animal_plant_surnames or (stem_lo + 'a') in common_surnames_a:
             return stem + 'a'  # Veverkovi → Veverka
+        # NOVÉ: Zkontroluj jestli stem je v vlozne_e_stems (Havlovi → Havel)
+        elif stem_lo in vlozne_e_stems:
+            # Vlož 'e' před poslední souhlásku
+            return stem[:-1] + 'e' + stem[-1]  # Havlovi → Havl → Havel
         # NOVÉ: Zkontroluj jestli stem + 'ek' dává smysl (Hájkovi → Hájek)
         # Nebo vlož 'e' pokud končí na souhlásku-souhlásku (Blažkovi → Blažek)
         # DŮLEŽITÉ: Aplikuj POUZE na kmeny kde chybí vložné 'e'!
