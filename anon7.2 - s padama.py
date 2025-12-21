@@ -3186,6 +3186,61 @@ class Anonymizer:
         total_merged = merged_count_phase1 + merged_count
         if merged_count > 0:
             print(f"  [DEDUP] Phase 2: Merged {merged_count} persons based on inferred nominative")
+
+        # PHASE 3: Fix ambiguous female/male names with male surnames
+        # Example: "Radka Hofman" (female name + male surname) should be "Radek Hofman" (male)
+        # This happens when "Radka" is genitiv of "Radek" but is detected as female name
+        merged_count_phase3 = 0
+        ambiguous_names = {'radka': 'radek', 'janka': 'janek', 'mirka': 'mirek', 'petra': 'petr'}
+
+        persons_to_remove = []
+        for person in self.canonical_persons:
+            first_lo = person['first'].lower()
+            last_lo = person['last'].lower()
+
+            # Check if this is an ambiguous female name with male surname
+            if first_lo in ambiguous_names and not last_lo.endswith(('ová', 'á')):
+                # This might be a genitiv - check if male version exists
+                male_first = ambiguous_names[first_lo].capitalize()
+                male_canonical = f"{male_first} {person['last']}"
+
+                # Find if male version exists in canonical_persons
+                male_person = None
+                for p in self.canonical_persons:
+                    if f"{p['first']} {p['last']}" == male_canonical:
+                        male_person = p
+                        break
+
+                if male_person:
+                    # Merge female version into male version
+                    female_canonical = f"{person['first']} {person['last']}"
+                    print(f"  [DEDUP] Phase 3: Merging ambiguous '{female_canonical}' → '{male_canonical}'")
+
+                    # Merge entity_map variants
+                    if female_canonical in self.entity_map['PERSON']:
+                        female_variants = self.entity_map['PERSON'][female_canonical]
+                        if male_canonical not in self.entity_map['PERSON']:
+                            self.entity_map['PERSON'][male_canonical] = set()
+                        self.entity_map['PERSON'][male_canonical] |= female_variants
+                        del self.entity_map['PERSON'][female_canonical]
+
+                    # Mark for removal
+                    persons_to_remove.append(person)
+
+                    # Update person_canonical_names
+                    if person['tag'] in self.person_canonical_names:
+                        del self.person_canonical_names[person['tag']]
+
+                    merged_count_phase3 += 1
+
+        # Remove merged persons
+        for person in persons_to_remove:
+            self.canonical_persons.remove(person)
+
+        if merged_count_phase3 > 0:
+            print(f"  [DEDUP] Phase 3: Merged {merged_count_phase3} persons based on ambiguous male/female names")
+
+        total_merged = merged_count_phase1 + merged_count + merged_count_phase3
         if total_merged > 0:
             print(f"  [DEBUG] Total merged: {total_merged} duplicate persons")
 
