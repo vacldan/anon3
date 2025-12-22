@@ -2,52 +2,48 @@ OSOBY
 -----
 [[PERSON_1]]: Adrian Kratochvíl
   - Adrianem Kratochvílem
-[[PERSON_2]]: Svaté Markét
-  - Svaté Markéty
-[[PERSON_3]]: Daniela Horská
-[[PERSON_4]]: Lucie Novotná
+[[PERSON_2]]: Daniela Horská
+[[PERSON_3]]: Lucie Novotná
   - Lucie Novotné
   - Lucií Novotnou
-[[PERSON_5]]: Gabriela Hrbáčová
+[[PERSON_4]]: Gabriela Hrbáčová
   - Gabrielou Hrbáčovou
-[[PERSON_6]]: Tomáš Pavlíek
+[[PERSON_5]]: Tomáš Pavlíek
   - Tomášem Pavlíkem
-[[PERSON_7]]: Filip Šimůnek
+[[PERSON_6]]: Filip Šimůnek
   - Filipem Šimůnkem
-[[PERSON_8]]: Hana Zbořilová
+[[PERSON_7]]: Hana Zbořilová
   - Hany Zbořilové
-[[PERSON_9]]: Klára Melichová
+[[PERSON_8]]: Klára Melichová
   - Kláry Melichové
-[[PERSON_10]]: Michaela Růžičková
+[[PERSON_9]]: Michaela Růžičková
   - Michaelou Růžičkovou
-[[PERSON_11]]: Zora Konečná
+[[PERSON_10]]: Zora Konečná
   - Zorou Konečnou
-[[PERSON_12]]: Richard Pavelka
-[[PERSON_13]]: Viktorie Benýšková
-[[PERSON_14]]: Nela Kořínková
-[[PERSON_15]]: Štěpán Hejduk
-[[PERSON_16]]: Martin Dvořák
-[[PERSON_17]]: Eva Špačková
-[[PERSON_18]]: Hynek Procházka
-[[PERSON_19]]: Andrea Řehořová
-[[PERSON_20]]: Denisa Kadlecová
-[[PERSON_21]]: Erik Dohnal
-[[PERSON_22]]: Erika Řehořová
+[[PERSON_11]]: Richard Pavelka
+[[PERSON_12]]: Viktorie Benýšková
+[[PERSON_13]]: Nela Kořínková
+[[PERSON_14]]: Štěpán Hejduk
+[[PERSON_15]]: Martin Dvořák
+[[PERSON_16]]: Eva Špačková
+[[PERSON_17]]: Hynek Procházka
+[[PERSON_18]]: Andrea Řehořová
+[[PERSON_19]]: Denisa Kadlecová
+[[PERSON_20]]: Erik Dohnal
+[[PERSON_21]]: Erika Řehořová
   - Eriky Řehořové
-[[PERSON_23]]: Tamara Štefková
-[[PERSON_24]]: Monika Pátková
-[[PERSON_25]]: Radomír Král
-[[PERSON_26]]: Soňa Mikulková
-[[PERSON_27]]: Tomáš Bartoš
-[[PERSON_28]]: Štěpán Šeda
-[[PERSON_29]]: Pavlína Plíšková
+[[PERSON_22]]: Tamara Štefková
+[[PERSON_23]]: Monika Pátková
+[[PERSON_24]]: Radomír Král
+[[PERSON_25]]: Soňa Mikulková
+[[PERSON_26]]: Tomáš Bartoš
+[[PERSON_27]]: Štěpán Šeda
+[[PERSON_28]]: Pavlína Plíšková
   - Pavlínou Plíškovou
 
 ADDRESS
-[[ADDRESS_1]]: Praha 10, 102 00
-IČO
+[[ADDRESS_1]]: Nad Kampusem 821/4, Praha 10
 [[ADDRESS_2]]: Křišťanová 19, 779 00 Olomouc
-Telefon
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 856126/5529

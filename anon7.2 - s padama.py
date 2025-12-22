@@ -1329,9 +1329,9 @@ ADDRESS_RE = re.compile(
     r'\s+\d{1,4}(?:/\d{1,4})?'
     r',\s*'
     r'\d{3}\s?\d{2}'
-    r'\s+'
-    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž\s]{1,30}'
-    r'(?:\s+\d{1,2})?'
+    r'[ \t]+'
+    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
+    r'(?:[ \t]+\d{1,2})?'
     r'(?=\s|$|,|\.|;|:|\n|\r|Rodné|IČO|DIČ|Tel|E-mail|Kontakt|OP|Datum|Narozen)',
     re.IGNORECASE | re.UNICODE
 )
@@ -2106,6 +2106,9 @@ class Anonymizer:
                 # Company/organization words
                 r'\b(společnost[ií]?)\b',  # Společností, společnosti, společnost
                 r'\b(někter[ýáéěí])\b',  # Některý, některá, některé, některí
+                # Religious/Place names
+                r'\b(svat[éého]|svatá)\b',  # Svaté, Svatého, Svatá (Saint)
+                r'\b(kostel|chrám|kaple|církev)\b',  # Church, temple, chapel
                 # Company suffixes když jsou uprostřed
                 r'\b(group|company|corp|ltd|gmbh|inc|services?)\b'
             ]
