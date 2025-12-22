@@ -25,15 +25,14 @@ OSOBY
 [[PERSON_14]]: Tobiáš Vráný
   - Tobiášem Vránou
 [[PERSON_15]]: Marek Prášek
+  - Markem Práškem
 [[PERSON_16]]: Ondřej Valach
 [[PERSON_17]]: Irena Vlašáková
 [[PERSON_18]]: Luděk Štrunc
 
 ADDRESS
-[[ADDRESS_1]]: Praha 6, 160 00
-IČO
+[[ADDRESS_1]]: Sanatoria 1120/18, Praha 6
 [[ADDRESS_2]]: Karafiátová 28, 779 00 Olomouc
-Telefon
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 127979/3815
