@@ -1608,8 +1608,9 @@ PHOTO_ID_RE = re.compile(
 )
 
 # Enhanced API Key - zachytí i složitější formáty
+# Minimální délka 8 znaků, aby se předešlo false positives jako "e" nebo "ERP"
 API_KEY_ENHANCED_RE = re.compile(
-    r'(?:API\s+klíč|API\s+Key|api_key)\s*[:\-=]?\s*([A-Za-z0-9_\-]+)',
+    r'(?:API\s+klíč|API\s+Key|api_key)\s*[:\-=]?\s*([A-Za-z0-9_\-]{8,})',
     re.IGNORECASE
 )
 
@@ -2090,6 +2091,9 @@ class Anonymizer:
                 r'\b(team|hub|enterprise|premium|standard|professional)\b',
                 r'\b(google|amazon|microsoft|apple|facebook|splunk|cisco)\b',
                 r'\b(repository|authenticator|vision|protection|security)\b',
+                # Tech brands/phones
+                r'\b(samsung|huawei|xiaomi|nokia|sony|lg|motorola|oppo|vivo)\b',
+                r'\b(galaxy|iphone|pixel|nexus|xperia)\b',
                 # Finance/Investment
                 r'\b(capital|equity|value|investment|fund|holdings|assets)\b',
                 r'\b(crescendo|ventures|partners|portfolio)\b',
@@ -2099,6 +2103,9 @@ class Anonymizer:
                 # Products/Medical
                 r'\b(symbicort|turbuhaler|spirometr|jaeger)\b',
                 r'\b(pharma|pharmaceutical|medical)\b',
+                # Company/organization words
+                r'\b(společnost[ií]?)\b',  # Společností, společnosti, společnost
+                r'\b(někter[ýáéěí])\b',  # Některý, některá, některé, některí
                 # Company suffixes když jsou uprostřed
                 r'\b(group|company|corp|ltd|gmbh|inc|services?)\b'
             ]
