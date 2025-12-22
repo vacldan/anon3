@@ -294,6 +294,14 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
 
         cands.append(cand)
 
+    # PRIORITA 4.5: Genitiv ženských jmen -y → remove (Nikoly → Nikola, Radky → Radka)
+    # MUSÍ být PŘED -a, protože "Nikoly" obsahuje 'a' uvnitř
+    if lo.endswith('y') and len(obs) > 2:
+        cand = obs[:-1] + 'a'  # Nikoly → Nikola, Radky → Radka
+        if cand.lower() in CZECH_FIRST_NAMES:
+            return cand.capitalize()
+        cands.append(cand)
+
     # PRIORITA 5: Genitiv/Akuzativ -a → remove (Petra → Petr, ale i Jana → Jan)
     if lo.endswith('a') and len(obs) > 1:
         cand = obs[:-1]
@@ -1018,6 +1026,22 @@ def infer_surname_nominative(obs: str) -> str:
     # Bartoše → Bartoš, Čapkože → Čapko ž, Vachouškě → Vachoušek
     if lo.endswith(('še', 'že', 'če')) and len(obs) > 3:
         return obs[:-1]  # Odstraň 'e': Bartoše → Bartoš
+
+    # ========== VOKATIV: -le, -re, -ne, -de, -te, -ke → odstranit -e ==========
+    # Chýle → Chýl (vokativ), Havle → Havel (ale už řešeno výš)
+    # Musíme být opatrní - některá příjmení končí na -e v nominativu (Hrabě)
+    if lo.endswith('e') and len(obs) > 2:
+        base = obs[:-1]
+        base_lo = base.lower()
+
+        # Kontrola: Jestli base končí na souhlásku + typické vokativní vzory
+        # Pro příjmení jako Chýl, Král, Srp končící na souhlásku
+        if base_lo.endswith(('l', 'r', 'n', 'd', 't', 'k', 'p', 's', 'm', 'v')):
+            # VÝJIMKY: příjmení která skutečně končí na -e v nominativu
+            if base_lo not in {'hrab', 'knež', 'pán'}:  # Hrabě, Kněže, Páně
+                # Kontrola délky: base musí být alespoň 3 znaky
+                if len(base) >= 3:
+                    return base  # Chýle → Chýl
 
     # ========== SPECIÁLNÍ PŘÍJMENÍ: -ěte, -ěti → -ě ==========
     # Hraběte → Hrabě (genitiv), Hraběti → Hrabě (dativ)
@@ -2141,6 +2165,9 @@ class Anonymizer:
                 # Religious/Place names
                 r'\b(svat[éého]|svatá)\b',  # Svaté, Svatého, Svatá (Saint)
                 r'\b(kostel|chrám|kaple|církev)\b',  # Church, temple, chapel
+                # Czech cities and places
+                r'\b(nový\s+jičín|nové\s+město|staré\s+město)\b',
+                r'\b(mladá\s+boleslav|české\s+budějovice|hradec\s+králové)\b',
                 # Company suffixes když jsou uprostřed
                 r'\b(group|company|corp|ltd|gmbh|inc|services?)\b'
             ]
