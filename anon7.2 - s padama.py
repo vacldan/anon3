@@ -1130,6 +1130,22 @@ def infer_surname_nominative(obs: str) -> str:
     if obs.lower() in surname_stems_needing_a:
         return obs + 'a'  # Červink → Červinka
 
+    # ========== TYPO/OCR CORRECTION: Opravy běžných chyb ==========
+    # Fiael → Fiala, Růžiček → Růžička (pokud je to typo)
+    typo_corrections = {
+        'fiael': 'fiala',
+        'fial': 'fiala',
+        'růžiček': 'růžička',
+        'ruzicek': 'růžička',
+        'novk': 'novák',
+        'dvork': 'dvořák',
+        'prochzka': 'procházka',
+        'cern': 'černý',
+        'horak': 'horák',
+    }
+    if lo in typo_corrections:
+        return typo_corrections[lo].capitalize()
+
     return obs
 
 # =============== Varianty pro nahrazování ===============
@@ -1740,7 +1756,10 @@ class Anonymizer:
 
         # Speciální cleanup pro ADDRESS - odstraň prefixy "Sídlo:", "Trvalé bydliště:", "Trvalý pobyt:" atd.
         if typ == 'ADDRESS':
+            # Odstraň prefix s dvojtečkou (Sídlo:, Adresa:, atd.)
             orig_norm = re.sub(r'^(Sídlo|Trvalé\s+bydliště|Trvalý\s+pobyt|Bydliště|Adresa|Místo\s+podnikání|Se\s+sídlem|Bytem)\s*:\s*', '', orig_norm, flags=re.IGNORECASE)
+            # Odstraň prefix bez dvojtečky na začátku (adrese, bytem) - instrumentál/lokál
+            orig_norm = re.sub(r'^(adrese|adresa|bytem|bydlišti|sídle)\s+', '', orig_norm, flags=re.IGNORECASE)
 
         # OPTIMIZATION: Use reverse_map for O(1) lookup instead of O(n) iteration
         # Check if this variant already exists
@@ -2107,7 +2126,26 @@ class Anonymizer:
                 # Pozice/role
                 'jednatel', 'jednatelka', 'ředitel', 'ředitelka',
                 'auditor', 'manager', 'consultant', 'specialist',
-                'assistant', 'coordinator', 'analyst', 'pacient',
+                'assistant', 'coordinator', 'analyst',
+                # CRITICAL: Tituly a role před jmény ve smlouvách
+                'pan', 'paní', 'pán', 'pani',
+                'pacient', 'pacientka', 'pacientek',
+                'obžalovaný', 'obžalovaná', 'obžalované', 'obžalovaného',
+                'zaměstnanec', 'zaměstnankyně', 'zaměstnance',
+                'kupující', 'prodávající', 'prodávajícího',
+                'stavebník', 'stavebníka',
+                'investor', 'investora',
+                'dlužník', 'dlužníka', 'věřitel', 'věřitele',
+                'odsouzený', 'odsouzená', 'odsouzeného',
+                'žák', 'žákyně', 'žáka',
+                'rodina', 'rodině', 'rodiny',
+                'manžel', 'manželka', 'manžele', 'manželky',
+                'přítel', 'přítelkyně', 'kolega', 'kolegyně',
+                'majitel', 'majitelka', 'účastník', 'účastnice',
+                'svědek', 'svědkyně', 'svědka',
+                'předseda', 'předsedkyně', 'člen', 'členka',
+                'věznice', 'věznici', 'vězení',  # prison - IMPORTANT!
+                # Ostatní
                 'scrum', 'master', 'developer', 'architect', 'engineer',
                 'officer', 'professional', 'certified', 'advanced',
                 'management', 'legal', 'counsel', 'executive',
@@ -3277,6 +3315,48 @@ class Anonymizer:
         if merged_count_phase3 > 0:
             print(f"  [DEDUP] Phase 3: Merged {merged_count_phase3} persons based on ambiguous male/female names")
 
+        # PHASE 4: Typo/OCR error correction - rename typo canonicals to correct forms
+        # Example: "Fiael" → "Fiala", "Růžiček" → "Růžička"
+        corrected_count_phase4 = 0
+        typo_corrections = {
+            'fiael': 'fiala', 'fial': 'fiala',
+            'růžiček': 'růžička', 'ruzicek': 'růžička',
+            'novk': 'novák', 'dvork': 'dvořák',
+            'prochzka': 'procházka', 'cern': 'černý', 'horak': 'horák',
+        }
+
+        for person in self.canonical_persons:
+            last_lo = person['last'].lower()
+
+            # Check if surname is a known typo
+            if last_lo in typo_corrections:
+                correct_surname = typo_corrections[last_lo]
+                typo_canonical = f"{person['first']} {person['last']}"
+                correct_canonical = f"{person['first']} {correct_surname.capitalize()}"
+
+                print(f"  [DEDUP] Phase 4: Correcting typo '{typo_canonical}' → '{correct_canonical}'")
+
+                # Update person's last name
+                person['last'] = correct_surname.capitalize()
+
+                # Update entity_map key
+                if typo_canonical in self.entity_map['PERSON']:
+                    variants = self.entity_map['PERSON'][typo_canonical]
+                    # Move variants to correct key
+                    if correct_canonical not in self.entity_map['PERSON']:
+                        self.entity_map['PERSON'][correct_canonical] = set()
+                    self.entity_map['PERSON'][correct_canonical] |= variants
+                    del self.entity_map['PERSON'][typo_canonical]
+
+                # Update person_canonical_names mapping
+                if person['tag'] in self.person_canonical_names:
+                    self.person_canonical_names[person['tag']] = correct_canonical
+
+                corrected_count_phase4 += 1
+
+        if corrected_count_phase4 > 0:
+            print(f"  [DEDUP] Phase 4: Corrected {corrected_count_phase4} typo surnames")
+
         total_merged = merged_count_phase1 + merged_count + merged_count_phase3
         if total_merged > 0:
             print(f"  [DEBUG] Total merged: {total_merged} duplicate persons")
@@ -3318,9 +3398,6 @@ class Anonymizer:
         # POST-PROCESSING: Fix canonical names that are not in source document
         self._fix_canonical_names_not_in_document()
 
-        # POST-PROCESSING: Deduplicate persons with same inferred nominative
-        self._deduplicate_persons()
-
         print(f"  [DEBUG] Paragraphs processed in {time.time() - start_time:.1f}s")
 
         # Zpracuj tabulky
@@ -3338,6 +3415,9 @@ class Anonymizer:
 
                         if text != original:
                             para.text = text
+
+        # POST-PROCESSING: Deduplicate persons AFTER all extraction (including tables)
+        self._deduplicate_persons()
 
         # Ulož dokument
         start_time = time.time()
