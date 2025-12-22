@@ -1,0 +1,83 @@
+OSOBY
+-----
+[[PERSON_1]]: Karel Voříšek
+  - Karla Voříška
+  - Karlem Voříškem
+[[PERSON_2]]: Lenka Pešková
+  - Lenkou Peškovou
+  - Lenky Peškové
+[[PERSON_3]]: Michal Bureš
+  - Michala Bureše
+  - Michalu Burešovi
+[[PERSON_4]]: Petra Loudová
+  - Petře Loudové
+[[PERSON_5]]: Radim Konečný
+  - Radimem Konečným
+[[PERSON_6]]: Jan Klícha
+  - Jana Klíchu
+[[PERSON_7]]: Simona Valešová
+  - Simonou Valešovou
+[[PERSON_8]]: Tomáš Šerý
+  - Tomáši Šerému
+[[PERSON_9]]: Hana Doležalová
+  - Hany Doležalové
+[[PERSON_10]]: Pavel Jura
+  - Pavla Jury
+  - Pavlem Jurou
+[[PERSON_11]]: Martina Holubcová
+  - Martiny Holubcové
+[[PERSON_12]]: Roman Šimůnek
+  - Romana Šimůnka
+  - Romanem Šimůnkem
+[[PERSON_13]]: Ivana Prokešová
+  - Ivanou Prokešovou
+[[PERSON_14]]: Ondřej Kříž
+  - Ondřeji Křížovi
+[[PERSON_15]]: Radka Horská
+  - Radku Horskou
+  - Radky Horské
+[[PERSON_16]]: Václav Sýkora
+  - Václava Sýkoru
+[[PERSON_17]]: Monika Trávníčková
+  - Monice Trávníčkové
+
+BANK
+[[BANK_1]]: 2109987711/2010
+[[BANK_2]]: 1078821199/0300
+[[BANK_3]]: 2400998811/2010
+[[BANK_4]]: 1900772211/0100
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 885412/3321
+[[BIRTH_ID_2]]: 790225/1189
+
+EMAIL
+[[EMAIL_1]]: karel.vorisek82@mail.cz
+[[EMAIL_2]]: jan.klicha@firma.cz
+[[EMAIL_3]]: hana.dolezalova@post.cz
+[[EMAIL_4]]: r.simunek@it.cz
+[[EMAIL_5]]: kriz.ondrej@server.cz
+[[EMAIL_6]]: monika.travnickova@office.cz
+
+ICO
+[[ICO_1]]: 09177281
+[[ICO_2]]: 10477829
+
+ID_CARD
+[[ID_CARD_1]]: 447788221
+[[ID_CARD_2]]: 339911882
+
+IP
+[[IP_1]]: 185.44.91.72
+[[IP_2]]: 10.14.88.21
+[[IP_3]]: 192.168.1.44
+[[IP_4]]: 89.203.44.18
+
+PHONE
+[[PHONE_1]]: +420 602 881 774
+[[PHONE_2]]: +420 739 441 228
+[[PHONE_3]]: +420 728 550 441
+[[PHONE_4]]: +420 777 662 118
+[[PHONE_5]]: +420 603 992 771
+[[PHONE_6]]: +420 736 118 990
+

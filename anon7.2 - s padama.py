@@ -732,18 +732,28 @@ def infer_surname_nominative(obs: str) -> str:
         elif not lo.endswith('cké'):
             return obs[:-1] + 'á'
 
-    # -ou → může být -á (žena) nebo -ý (muž)
+    # -ou → může být -a (mužské příjmení), -á (žena) nebo -ý (muž)
     if lo.endswith('ou') and len(obs) > 3:
         # Kontrola, že není -skou/-ckou (přídavné jméno)
         if not lo.endswith(('skou', 'ckou')):
             # Heuristika: pokud základ končí na souhlásku + typický vzor
             base = obs[:-2]
+
+            # PRIORITA 1: Mužská příjmení končící na -a (Jura, Skála, Liška, Vrba, Svoboda)
+            # Instrumentál: -ou → -a (Jurou → Jura, Skálou → Skála)
+            masculine_a_stems = {'jur', 'skál', 'lišk', 'vrb', 'svobod', 'háb', 'kár',
+                                 'forejt', 'korbel', 'machač', 'sedlač', 'ouhel',
+                                 'hrab', 'kub', 'kunc', 'másl', 'slíž'}
+            if base.lower() in masculine_a_stems or base.lower().endswith(('čk', 'šk', 'nk')):
+                return base + 'a'
+
+            # PRIORITA 2: Mužská přídavná jména (Vráný, Novotný)
             # Pro příjmení jako "Vránou" → může být "Vráný" (muž) nebo "Vráná" (žena)
-            # Zkusíme nejprve mužský tvar
             if base.lower().endswith(('vrán', 'novot', 'malý', 'černý', 'bilý', 'vesel')):
                 return base + 'ý'
-            # Jinak ženský tvar
-            return obs[:-2] + 'á'
+
+            # PRIORITA 3: Ženský tvar (defaultní)
+            return base + 'á'
 
     # ========== PŘÍDAVNÁ JMÉNA (-ský, -cký, -ý) ==========
 
@@ -1064,6 +1074,28 @@ def infer_surname_nominative(obs: str) -> str:
 
             # Běžný případ: jen odstraň -y (Nováky → Novák)
             return obs[:-1]
+
+    # ========== AKUZATIV/DATIV: -u → -a (příjmení končící na -a) ==========
+    # Sýkoru → Sýkora, Klíchu → Klícha, Krejču → Krejča
+    # Toto platí pro mužská příjmení končící na -a (Sýkora, Klícha, Jura, etc.)
+    if lo.endswith('u') and len(obs) > 2:
+        base = obs[:-1]
+        base_lo = base.lower()
+
+        # PRIORITA 1: Známá příjmení končící na -a
+        known_a_surnames = {'sýkor', 'klích', 'krejč', 'hofman', 'jur',
+                           'šíd', 'kord', 'hrab', 'pavelk', 'forejt'}
+        if base_lo in known_a_surnames:
+            return base + 'a'
+
+        # PRIORITA 2: Heuristika - pokud base končí na typický vzor mužského příjmení na -a
+        # Typické koncovky: -ka, -ra, -la, -na, -da, -ta, -ša, -ča
+        if base_lo.endswith(('k', 'r', 'l', 'n', 'd', 't', 'š', 'č', 'ř', 'c', 'b', 'v', 'j')):
+            # Kontrola délky: base musí být alespoň 3 znaky (Jur-u, ne Kr-u)
+            if len(base) >= 3:
+                return base + 'a'
+
+        # Jinak nechej bez změny (může to být něco jiného)
 
     # ========== FINÁLNÍ KONTROLA: Kmeny potřebující -a ==========
     # Pokud příjmení je kmen který potřebuje -a na konci (Červink → Červinka)
