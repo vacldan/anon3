@@ -3522,10 +3522,14 @@ class Anonymizer:
                 for cell in row.cells:
                     source_text += '\n' + '\n'.join([p.text for p in cell.paragraphs])
 
-        # ========== KRITICKÁ VALIDACE: Kanonická jména nebo jejich varianty musí být ve smlouvě! ==========
-        print("\n🔍 VALIDACE: Kontroluji že kanonická jména mají varianty ve smlouvě...")
-        invalid_names = []
-        for person in self.canonical_persons:
+
+        # ========== AUTOMATICKÁ OPRAVA: Kanonická jména musí mít varianty ve smlouvě! ==========
+        print("\n🔍 AUTO-OPRAVA: Kontroluji a opravuji kanonická jména...")
+
+        persons_to_delete = []  # Persons that are completely invalid
+        fixed_count = 0
+
+        for i, person in enumerate(self.canonical_persons):
             canonical_first = person['first']
             canonical_last = person['last']
             canonical_full = f"{canonical_first} {canonical_last}"
@@ -3537,39 +3541,107 @@ class Anonymizer:
             found_in_doc = canonical_full in source_text or canonical_first in source_text
 
             # Pokud kanonické není, zkontroluj varianty (celé jméno i křestní jméno)
-            if not found_in_doc:
+            if not found_in_doc and variants:
+                # Find which variant is actually in the document
+                found_variant = None
                 for variant in variants:
-                    # Check full variant name first, then just first name
                     if variant in source_text:
-                        found_in_doc = True
+                        found_variant = variant
                         break
                     # Also check just the first name
                     variant_first = variant.split(' ', 1)[0] if ' ' in variant else variant
                     if variant_first in source_text:
-                        found_in_doc = True
+                        found_variant = variant
                         break
 
-            if not found_in_doc:
-                variants_str = ', '.join(sorted(variants)) if variants else '(žádné varianty)'
-                invalid_names.append(
-                    f"❌ '{canonical_first}' (z osoby '{canonical_full}')\n"
-                    f"   Varianty: {variants_str}\n"
-                    f"   → Ani kanonické jméno ani žádná varianta NENÍ ve smlouvě!"
-                )
+                if found_variant:
+                    found_in_doc = True
 
-        if invalid_names:
-            print("\n" + "="*80)
-            print("⚠️  KRITICKÁ CHYBA: Některé osoby nemají ŽÁDNOU variantu ve smlouvě!")
-            print("="*80)
-            for msg in invalid_names:
-                print(msg)
-            print("="*80)
-            print("❌ Toto je BUG v inferenci nebo detekci!")
-            print("   Buď špatně inferované jméno, nebo špatně detekovaná osoba.")
-            print("="*80 + "\n")
-            raise ValueError(f"Validation failed: {len(invalid_names)} persons have no variants in source document")
+            # Decision: Fix or Delete?
+            if not found_in_doc:
+                if variants:
+                    # Has variants but none in doc → Try to fix from most common variant
+                    print(f"  ⚠️  '{canonical_full}' není ve smlouvě, ale má varianty: {variants}")
+                    print(f"      → Pokouším se opravit z nejčastější varianty...")
+
+                    # Count occurrences of each variant
+                    variant_counts = {}
+                    for variant in variants:
+                        count = source_text.count(variant)
+                        if count > 0:
+                            variant_counts[variant] = count
+
+                    if variant_counts:
+                        # Pick most common variant and infer nominative
+                        best_variant = max(variant_counts, key=variant_counts.get)
+                        parts = best_variant.split(' ', 1)
+                        if len(parts) == 2:
+                            corrected_first = infer_first_name_nominative(parts[0])
+                            corrected_last = infer_surname_nominative(parts[1])
+                            print(f"      ✅ OPRAVENO: '{canonical_full}' → '{corrected_first} {corrected_last}' (z varianty '{best_variant}')")
+
+                            person['first'] = corrected_first
+                            person['last'] = corrected_last
+
+                            # Update person_canonical_names
+                            new_canonical = f"{corrected_first} {corrected_last}"
+                            if person['tag'] in self.person_canonical_names:
+                                self.person_canonical_names[person['tag']] = new_canonical
+
+                            # Update entity_map
+                            if canonical_full != new_canonical and canonical_full in self.entity_map['PERSON']:
+                                old_variants = self.entity_map['PERSON'][canonical_full]
+                                if new_canonical not in self.entity_map['PERSON']:
+                                    self.entity_map['PERSON'][new_canonical] = set()
+                                self.entity_map['PERSON'][new_canonical] |= old_variants
+                                del self.entity_map['PERSON'][canonical_full]
+
+                            fixed_count += 1
+                        else:
+                            print(f"      ❌ Nelze opravit - chybný formát varianty")
+                            persons_to_delete.append(i)
+                    else:
+                        # No variant is in document → completely invalid
+                        print(f"  ❌ '{canonical_full}' - žádná varianta ve smlouvě → MAŽU!")
+                        persons_to_delete.append(i)
+                else:
+                    # No variants at all → completely made up
+                    print(f"  ❌ '{canonical_full}' - žádné varianty, vymyšlená osoba → MAŽU!")
+                    persons_to_delete.append(i)
+
+        # Delete invalid persons (reverse order to preserve indices)
+        for i in reversed(persons_to_delete):
+            person = self.canonical_persons[i]
+            canonical_full = f"{person['first']} {person['last']}"
+            tag = person['tag']
+
+            print(f"  🗑️  Mažu neplatnou osobu: {canonical_full} ({tag})")
+
+            # Remove from canonical_persons
+            del self.canonical_persons[i]
+
+            # Remove from entity_map
+            if canonical_full in self.entity_map['PERSON']:
+                del self.entity_map['PERSON'][canonical_full]
+
+            # Remove from person_canonical_names
+            if tag in self.person_canonical_names:
+                del self.person_canonical_names[tag]
+
+            # Remove from person_index
+            for key, value in list(self.person_index.items()):
+                if value == tag:
+                    del self.person_index[key]
+
+        if fixed_count > 0 or persons_to_delete:
+            print(f"\n  ✅ AUTO-OPRAVA dokončena:")
+            if fixed_count > 0:
+                print(f"     - Opraveno: {fixed_count} osob")
+            if persons_to_delete:
+                print(f"     - Smazáno: {len(persons_to_delete)} neplatných osob")
+            print()
         else:
-            print("✅ VALIDACE OK: Všechny osoby mají varianty ve smlouvě!\n")
+            print("  ✅ Všechna kanonická jména jsou v pořádku!\n")
 
         # Osoby - ukládáme VŠECHNY původní formy z dokumentu
         for p in self.canonical_persons:
