@@ -398,6 +398,7 @@ def normalize_name_variant(obs: str) -> str:
         'hany': 'hana',  # Genitiv od Hana
         'jany': 'jana',  # Genitiv od Jana
         'evy': 'eva',  # Genitiv od Eva
+        'dany': 'dana',  # Genitiv od Dana
         'gabriela': 'gabriela',  # Explicitně
         'gabriele': 'gabriela',  # Dativ od Gabriela
         'andrea': 'andrea',  # Explicitně
@@ -469,6 +470,11 @@ def infer_first_name_nominative(obs: str) -> str:
         'adéle': 'adéla',
         'tereze': 'tereza',
         'lenky': 'lenka', # Should be 'lence'
+        # Genitivy ženských jmen na -y → -a
+        'dany': 'dana',  # Genitiv od Dana
+        'hany': 'hana',  # Genitiv od Hana
+        'jany': 'jana',  # Genitiv od Jana
+        'evy': 'eva',  # Genitiv od Eva
         'petra': 'petr',  # Could be genitive of Petr OR female name Petra - ambiguous
         'petře': 'petra',
         'alici': 'alice',  # Dativ od Alice
@@ -3041,12 +3047,60 @@ class Anonymizer:
     def _fix_canonical_names_not_in_document(self):
         """Fix canonical names that don't appear in the source document.
 
-        DISABLED: Canonical names should ALWAYS be in nominative case,
-        even if nominative doesn't appear in the document.
-        This ensures consistency and correct deduplication.
+        If the inferred canonical name doesn't actually exist in the document,
+        replace it with the most common variant that DOES exist.
+        This prevents cases like "Danya" (not in doc) instead of "Dana" (in doc).
         """
-        # Do nothing - keep inferred nominative as canonical
-        return
+        if not self.source_text:
+            return
+
+        fixed_count = 0
+        for person in self.canonical_persons:
+            canonical_full = f"{person['first']} {person['last']}"
+
+            # Check if canonical first name appears in document
+            first_in_doc = person['first'] in self.source_text
+
+            if not first_in_doc:
+                # Find the most common variant that IS in the document
+                variants = self.entity_map['PERSON'].get(canonical_full, set())
+
+                # Count occurrences of each variant's first name
+                first_name_counts = {}
+                for variant in variants:
+                    parts = variant.split(' ', 1)
+                    if len(parts) == 2:
+                        first_variant = parts[0]
+                        # Count occurrences in source_text
+                        count = self.source_text.count(first_variant)
+                        if count > 0:
+                            first_name_counts[first_variant] = count
+
+                # Pick the most common variant and INFER its nominative
+                if first_name_counts:
+                    best_first_variant = max(first_name_counts, key=first_name_counts.get)
+                    # Infer nominative from the variant (e.g., "Dany" → "Dana")
+                    best_first = infer_first_name_nominative(best_first_variant)
+                    print(f"  [FIX] Canonical '{person['first']}' not in document, using '{best_first}' (inferred from '{best_first_variant}' which appears {first_name_counts[best_first_variant]}x)")
+                    person['first'] = best_first
+
+                    # Update canonical name in person_canonical_names
+                    new_canonical_full = f"{best_first} {person['last']}"
+                    if person['tag'] in self.person_canonical_names:
+                        self.person_canonical_names[person['tag']] = new_canonical_full
+
+                    # Update entity_map key
+                    if canonical_full in self.entity_map['PERSON']:
+                        variants = self.entity_map['PERSON'][canonical_full]
+                        if new_canonical_full not in self.entity_map['PERSON']:
+                            self.entity_map['PERSON'][new_canonical_full] = set()
+                        self.entity_map['PERSON'][new_canonical_full] |= variants
+                        del self.entity_map['PERSON'][canonical_full]
+
+                    fixed_count += 1
+
+        if fixed_count > 0:
+            print(f"  [FIX] Fixed {fixed_count} canonical names not in document")
 
     def _deduplicate_persons(self):
         """Sloučí duplicitní osoby se stejným inferred nominativem nebo sdílenými variantami.
