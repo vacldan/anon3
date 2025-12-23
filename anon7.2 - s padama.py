@@ -3089,13 +3089,14 @@ class Anonymizer:
                     if person['tag'] in self.person_canonical_names:
                         self.person_canonical_names[person['tag']] = new_canonical_full
 
-                    # Update entity_map key
-                    if canonical_full in self.entity_map['PERSON']:
-                        variants = self.entity_map['PERSON'][canonical_full]
-                        if new_canonical_full not in self.entity_map['PERSON']:
-                            self.entity_map['PERSON'][new_canonical_full] = set()
-                        self.entity_map['PERSON'][new_canonical_full] |= variants
-                        del self.entity_map['PERSON'][canonical_full]
+                    # Update entity_map key (only if different!)
+                    if canonical_full != new_canonical_full:
+                        if canonical_full in self.entity_map['PERSON']:
+                            variants = self.entity_map['PERSON'][canonical_full]
+                            if new_canonical_full not in self.entity_map['PERSON']:
+                                self.entity_map['PERSON'][new_canonical_full] = set()
+                            self.entity_map['PERSON'][new_canonical_full] |= variants
+                            del self.entity_map['PERSON'][canonical_full]
 
                     fixed_count += 1
 
@@ -3520,6 +3521,55 @@ class Anonymizer:
             for row in table.rows:
                 for cell in row.cells:
                     source_text += '\n' + '\n'.join([p.text for p in cell.paragraphs])
+
+        # ========== KRITICKÁ VALIDACE: Kanonická jména nebo jejich varianty musí být ve smlouvě! ==========
+        print("\n🔍 VALIDACE: Kontroluji že kanonická jména mají varianty ve smlouvě...")
+        invalid_names = []
+        for person in self.canonical_persons:
+            canonical_first = person['first']
+            canonical_last = person['last']
+            canonical_full = f"{canonical_first} {canonical_last}"
+
+            # Získej všechny varianty této osoby
+            variants = self.entity_map['PERSON'].get(canonical_full, set())
+
+            # Kontrola: Je kanonické jméno NEBO alespoň jedna varianta ve smlouvě?
+            found_in_doc = canonical_full in source_text or canonical_first in source_text
+
+            # Pokud kanonické není, zkontroluj varianty (celé jméno i křestní jméno)
+            if not found_in_doc:
+                for variant in variants:
+                    # Check full variant name first, then just first name
+                    if variant in source_text:
+                        found_in_doc = True
+                        break
+                    # Also check just the first name
+                    variant_first = variant.split(' ', 1)[0] if ' ' in variant else variant
+                    if variant_first in source_text:
+                        found_in_doc = True
+                        break
+
+            if not found_in_doc:
+                variants_str = ', '.join(sorted(variants)) if variants else '(žádné varianty)'
+                invalid_names.append(
+                    f"❌ '{canonical_first}' (z osoby '{canonical_full}')\n"
+                    f"   Varianty: {variants_str}\n"
+                    f"   → Ani kanonické jméno ani žádná varianta NENÍ ve smlouvě!"
+                )
+
+        if invalid_names:
+            print("\n" + "="*80)
+            print("⚠️  KRITICKÁ CHYBA: Některé osoby nemají ŽÁDNOU variantu ve smlouvě!")
+            print("="*80)
+            for msg in invalid_names:
+                print(msg)
+            print("="*80)
+            print("❌ Toto je BUG v inferenci nebo detekci!")
+            print("   Buď špatně inferované jméno, nebo špatně detekovaná osoba.")
+            print("="*80 + "\n")
+            raise ValueError(f"Validation failed: {len(invalid_names)} persons have no variants in source document")
+        else:
+            print("✅ VALIDACE OK: Všechny osoby mají varianty ve smlouvě!\n")
 
         # Osoby - ukládáme VŠECHNY původní formy z dokumentu
         for p in self.canonical_persons:

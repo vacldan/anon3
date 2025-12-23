@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-23T07:21:36.667873",
+  "generated_at": "2025-12-23T07:48:39.525329",
   "source_file": "smlouva27.docx",
   "entities": [
     {
@@ -65,14 +65,38 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_11]]",
+      "original": "Pavlu Pokornému",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_12]]",
       "original": "Adama Pokorného",
       "occurrences": 1
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_13]]",
+      "original": "Elišky Pokorné",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_14]]",
       "original": "Roman Málek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_15]]",
+      "original": "Hanou Novotnou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_16]]",
+      "original": "Dany Holubové",
       "occurrences": 1
     },
     {
