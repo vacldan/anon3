@@ -1,0 +1,211 @@
+OSOBY
+-----
+[[PERSON_1]]: Pojištěnec Martin
+[[PERSON_2]]: Petra Havlíčková
+[[PERSON_3]]: Ivana Musilová
+[[PERSON_4]]: Kamila Horská
+[[PERSON_5]]: Lucie Blažková
+[[PERSON_6]]: Marek Tichý
+[[PERSON_7]]: Klient Rená
+  - Klient René
+[[PERSON_8]]: Miroslava Beranová
+[[PERSON_9]]: Pavel Říha
+[[PERSON_10]]: Obviněná Veronik
+  - Obviněná Veronika
+[[PERSON_11]]: Lukáš Horák
+[[PERSON_12]]: Pachatel Igor
+[[PERSON_13]]: Radovan Kolínský
+[[PERSON_14]]: Karlova Var
+  - Karlovy Vary
+[[PERSON_15]]: Bedřich Vávra
+[[PERSON_16]]: Žalobkyně Renata
+[[PERSON_17]]: Miroslav Kubíek
+  - Miroslavem Kubíkem
+[[PERSON_18]]: Matěj Kubíek
+  - Matěje Kubíka
+[[PERSON_19]]: Sára Kubíková
+  - Sáry Kubíkové
+[[PERSON_20]]: Vladimír Staněk
+[[PERSON_21]]: Bohumil Sedlák
+  - Bohumila Sedláka
+[[PERSON_22]]: Dalibor Kozák
+[[PERSON_23]]: Eduard Šimek
+[[PERSON_24]]: Marcela Hrubá
+[[PERSON_25]]: Dana Pokorná
+  - Dany Pokorné
+[[PERSON_26]]: Augustin Klíma
+[[PERSON_27]]: Lenka Gregorová
+[[PERSON_28]]: Vratislav Čížek
+[[PERSON_29]]: Blanka Nováková
+[[PERSON_30]]: Ladislav Souček
+[[PERSON_31]]: Klára Součková
+  - Kláru Součkovou
+[[PERSON_33]]: Milena Havelová
+[[PERSON_34]]: Ctibor Havel
+[[PERSON_35]]: Milada Kadlecová
+[[PERSON_36]]: Radovan Šindelář
+[[PERSON_37]]: Alena Burešová
+[[PERSON_38]]: Oldřich Moravec
+[[PERSON_39]]: Zdenka Fialová
+[[PERSON_40]]: Ervín Kopecký
+[[PERSON_41]]: Pavla Sýkorová
+[[PERSON_42]]: Emil Vondráček
+[[PERSON_43]]: Drahomíra Holubová
+[[PERSON_44]]: Stanislav Horáková
+  - Stanislava Horáková
+[[PERSON_45]]: Čeněk Liška
+[[PERSON_46]]: Jarmila Krausová
+[[PERSON_47]]: Petr Kraus
+[[PERSON_48]]: Hynek Říha
+[[PERSON_49]]: Božena Marková
+[[PERSON_50]]: Aleš Urbanec
+[[PERSON_51]]: Libuše Sedláčková
+[[PERSON_52]]: Svatomír Novák
+[[PERSON_53]]: Jitka Málková
+[[PERSON_54]]: Ondřej Málek
+  - Ondřeje Málka
+[[PERSON_55]]: Bořivoj Šimek
+[[PERSON_56]]: Milena Kuželová
+[[PERSON_57]]: Lumír Kadlec
+[[PERSON_58]]: Štěpánka Horská
+[[PERSON_59]]: Bronislav Vávra
+[[PERSON_60]]: Růžena Málková
+[[PERSON_61]]: Arnošt Bureš
+[[PERSON_62]]: Marcela Vávrová
+[[PERSON_63]]: Bohumír Sedláček
+[[PERSON_64]]: Helena Koubková
+[[PERSON_65]]: Gustav Šťastný
+[[PERSON_66]]: Sylva Hrubá
+[[PERSON_67]]: Vlasta Říhová
+[[PERSON_68]]: František Toman
+[[PERSON_69]]: Naděžda Bartošová
+
+ADDRESS
+[[ADDRESS_1]]: Vinohradská 142/7, Praha 10
+[[ADDRESS_2]]: Slunečná 89, Brno
+[[ADDRESS_3]]: Zahradní 34, Ostrava
+[[ADDRESS_4]]: Krátká 34, Brno
+
+BANK
+[[BANK_1]]: 9876543210/2010
+[[BANK_2]]: 5678901234/0300
+[[BANK_3]]: 7890123456/0600
+[[BANK_4]]: 3456789012/2700
+[[BANK_5]]: 7890123456/0800
+[[BANK_6]]: 4567890123/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 820714/9234
+[[BIRTH_ID_2]]: 856329/8123
+[[BIRTH_ID_3]]: 730825/6734
+[[BIRTH_ID_4]]: 815629/7234
+[[BIRTH_ID_5]]: 870623/5623
+[[BIRTH_ID_6]]: 925814/7890
+[[BIRTH_ID_7]]: 790412/8934
+[[BIRTH_ID_8]]: 905624/7823
+[[BIRTH_ID_9]]: 750923/6712
+[[BIRTH_ID_10]]: 785629/8901
+[[BIRTH_ID_11]]: 680314/7823
+[[BIRTH_ID_12]]: 750825/9123
+[[BIRTH_ID_13]]: 845723/8234
+[[BIRTH_ID_14]]: 820914/6745
+[[BIRTH_ID_15]]: 130425/7890
+[[BIRTH_ID_16]]: 160712/8901
+[[BIRTH_ID_17]]: 750623/8912
+[[BIRTH_ID_18]]: 450814/7823
+[[BIRTH_ID_19]]: 720518/9234
+[[BIRTH_ID_20]]: 780924/6712
+[[BIRTH_ID_21]]: 835629/7823
+[[BIRTH_ID_22]]: 690723/8912
+[[BIRTH_ID_23]]: 895723/8234
+[[BIRTH_ID_24]]: 680514/7823
+[[BIRTH_ID_25]]: 875623/8945
+[[BIRTH_ID_26]]: 770825/6712
+[[BIRTH_ID_27]]: 915824/7234
+[[BIRTH_ID_28]]: 690623/8923
+[[BIRTH_ID_29]]: 135624/7890
+[[BIRTH_ID_30]]: 855729/8012
+[[BIRTH_ID_31]]: 520814/7623
+[[BIRTH_ID_32]]: 585629/7834
+[[BIRTH_ID_33]]: 735624/8923
+[[BIRTH_ID_34]]: 810623/7812
+[[BIRTH_ID_35]]: 630925/6734
+[[BIRTH_ID_36]]: 925814/7845
+[[BIRTH_ID_37]]: 740512/8923
+[[BIRTH_ID_38]]: 875629/7234
+[[BIRTH_ID_39]]: 550723/8012
+[[BIRTH_ID_40]]: 835724/8923
+[[BIRTH_ID_41]]: 905623/7845
+[[BIRTH_ID_42]]: 480814/7623
+[[BIRTH_ID_43]]: 715629/8234
+[[BIRTH_ID_44]]: 750923/7812
+[[BIRTH_ID_45]]: 820512/6734
+[[BIRTH_ID_46]]: 565724/8923
+[[BIRTH_ID_47]]: 790625/7823
+[[BIRTH_ID_48]]: 855629/8012
+[[BIRTH_ID_49]]: 720814/7623
+[[BIRTH_ID_50]]: 915724/8234
+[[BIRTH_ID_51]]: 155623/7890
+[[BIRTH_ID_52]]: 600925/7812
+[[BIRTH_ID_53]]: 825623/7845
+[[BIRTH_ID_54]]: 770512/6734
+[[BIRTH_ID_55]]: 895729/8012
+[[BIRTH_ID_56]]: 680814/7623
+[[BIRTH_ID_57]]: 645729/8234
+[[BIRTH_ID_58]]: 580814/7123
+[[BIRTH_ID_59]]: 915824/6790
+[[BIRTH_ID_60]]: 720623/8945
+[[BIRTH_ID_61]]: 885629/7245
+[[BIRTH_ID_62]]: 670925/6734
+[[BIRTH_ID_63]]: 935724/8012
+[[BIRTH_ID_64]]: 795623/8934
+[[BIRTH_ID_65]]: 530814/7823
+[[BIRTH_ID_66]]: 865629/7423
+
+DIC
+[[DIC_1]]: CZ45678912
+
+EMAIL
+[[EMAIL_1]]: m.havlicek@centrum.cz
+[[EMAIL_2]]: v.blazek@email.cz
+[[EMAIL_3]]: r.kubikova@seznam.cz
+[[EMAIL_4]]: s.gregorova@firma.cz
+[[EMAIL_5]]: l.gregorova@email.cz
+[[EMAIL_6]]: a.buresova@centrum.cz
+[[EMAIL_7]]: a.urbanec@firma.cz
+[[EMAIL_8]]: b.vavra@email.cz
+
+ICO
+[[ICO_1]]: 45678912
+[[ICO_2]]: 06789234
+[[ICO_3]]: 78945612
+[[ICO_4]]: 08945623
+[[ICO_5]]: 26349981
+[[ICO_6]]: 25621351
+[[ICO_7]]: 67823451
+
+ID_CARD
+[[ID_CARD_1]]: GH890123
+[[ID_CARD_2]]: IJ012345
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: 5A7 8901
+
+PHONE
+[[PHONE_1]]: 887799001
+[[PHONE_2]]: +420 603 456 789
+[[PHONE_3]]: +420 774 123 987
+[[PHONE_4]]: 334455667
+[[PHONE_5]]: +420 731 987 654
+[[PHONE_6]]: 456789123
+[[PHONE_7]]: 998877665
+[[PHONE_8]]: +420 725 654 321
+[[PHONE_9]]: 445566778
+[[PHONE_10]]: +420 608 321 654
+[[PHONE_11]]: +420 736 789 012
+[[PHONE_12]]: +420 605 432 789
+[[PHONE_13]]: +420 721 456 789
+[[PHONE_14]]: 567890234
+[[PHONE_15]]: +420 608 789 456
+[[PHONE_16]]: +420 731 654 987
+
