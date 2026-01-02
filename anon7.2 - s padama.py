@@ -2122,6 +2122,7 @@ class Anonymizer:
                 # Místa
                 'staré', 'město', 'nové', 'město', 'malá', 'strana',
                 'václavské', 'náměstí', 'hlavní', 'nádraží',
+                'karlovy', 'vary', 'karlova', 'var',  # Karlovy Vary city
                 # Organizace/instituce klíčová slova
                 'česká', 'spořitelna', 'komerční', 'banka', 'raiffeisen',
                 'credit', 'bank', 'financial', 'global', 'senior',
@@ -2145,6 +2146,11 @@ class Anonymizer:
                 'odsouzený', 'odsouzená', 'odsouzeného',
                 'žák', 'žákyně', 'žáka',
                 'rodina', 'rodině', 'rodiny',
+                'pojištěnec', 'pojištěnce', 'pojištěná', 'pojištěné',  # insured person
+                'klient', 'klienta', 'klientka', 'klientky',  # client
+                'obviněná', 'obviněné', 'obviněného',  # accused (female)
+                'pachatel', 'pachatele', 'pachatelka',  # perpetrator
+                'žalobkyně', 'žalobce', 'žalovaný', 'žalovaná',  # plaintiff/defendant
                 'manžel', 'manželka', 'manžele', 'manželky',
                 'přítel', 'přítelkyně', 'kolega', 'kolegyně',
                 'majitel', 'majitelka', 'účastník', 'účastnice',
@@ -3103,6 +3109,61 @@ class Anonymizer:
         if fixed_count > 0:
             print(f"  [FIX] Fixed {fixed_count} canonical names not in document")
 
+    def _fix_gender_mismatches(self):
+        """Fix gender mismatches between first and last names.
+
+        Example: "Stanislav Horáková" (male first + female last) → "Stanislava Horáková"
+        """
+        if not self.source_text:
+            return
+
+        fixed_count = 0
+        for person in self.canonical_persons:
+            first = person['first']
+            last = person['last']
+            canonical_full = f"{first} {last}"
+
+            # Check gender consistency
+            first_is_male = not first.lower().endswith('a')  # Rough heuristic: -a is usually female
+            last_is_female = last.lower().endswith(('ová', 'á'))  # Female surname endings
+
+            # Mismatch: male first name + female surname
+            if first_is_male and last_is_female:
+                # Try to find female version of first name in variants
+                variants = self.entity_map['PERSON'].get(canonical_full, set())
+
+                for variant in variants:
+                    parts = variant.split(' ', 1)
+                    if len(parts) == 2:
+                        variant_first = parts[0]
+                        # Check if variant has female first name (ends with -a)
+                        if variant_first.lower().endswith('a') and variant_first.lower() != first.lower():
+                            # Check if female version is in document
+                            if variant_first in self.source_text or variant in self.source_text:
+                                print(f"  [GENDER-FIX] '{canonical_full}' má gender mismatch!")
+                                print(f"              → OPRAVUJI na '{variant_first} {last}' (z varianty '{variant}')")
+
+                                person['first'] = variant_first
+
+                                # Update person_canonical_names
+                                new_canonical = f"{variant_first} {last}"
+                                if person['tag'] in self.person_canonical_names:
+                                    self.person_canonical_names[person['tag']] = new_canonical
+
+                                # Update entity_map
+                                if canonical_full != new_canonical and canonical_full in self.entity_map['PERSON']:
+                                    old_variants = self.entity_map['PERSON'][canonical_full]
+                                    if new_canonical not in self.entity_map['PERSON']:
+                                        self.entity_map['PERSON'][new_canonical] = set()
+                                    self.entity_map['PERSON'][new_canonical] |= old_variants
+                                    del self.entity_map['PERSON'][canonical_full]
+
+                                fixed_count += 1
+                                break
+
+        if fixed_count > 0:
+            print(f"  [GENDER-FIX] Opraveno {fixed_count} gender mismatchů\n")
+
     def _deduplicate_persons(self):
         """Sloučí duplicitní osoby se stejným inferred nominativem nebo sdílenými variantami.
 
@@ -3452,6 +3513,9 @@ class Anonymizer:
 
         # POST-PROCESSING: Fix canonical names that are not in source document
         self._fix_canonical_names_not_in_document()
+
+        # POST-PROCESSING: Fix gender mismatches (e.g., Stanislav Horáková → Stanislava Horáková)
+        self._fix_gender_mismatches()
 
         print(f"  [DEBUG] Paragraphs processed in {time.time() - start_time:.1f}s")
 
