@@ -1,12 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-01-02T20:34:10.502342",
+  "generated_at": "2026-01-02T21:05:34.268608",
   "source_file": "smlouva29.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ladislav Konečný",
+      "original": "Konečnému",
       "occurrences": 1
     },
     {
@@ -18,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Benedikt Mencl",
+      "original": "Menclovi",
       "occurrences": 1
     },
     {
@@ -36,13 +36,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Anežka Fischerová",
+      "original": "Fischerové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Norbert Šulc",
+      "original": "Šulcovi",
       "occurrences": 1
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Zikmund Hruška",
+      "original": "Hruškovi",
       "occurrences": 1
     },
     {
@@ -72,7 +72,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
-      "original": "Dominik Vaculík",
+      "original": "Vaculíkovi",
       "occurrences": 1
     },
     {
@@ -90,13 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_15]]",
-      "original": "Hedvika Dostálová",
+      "original": "Dostálové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_16]]",
-      "original": "Leopold Matoušek",
+      "original": "Matouškovi",
       "occurrences": 1
     },
     {
@@ -126,13 +126,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
+      "original": "Nové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_21]]",
       "original": "Cecílii Novou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
-      "original": "Viola Kadlecová",
+      "original": "Kadlecové",
       "occurrences": 1
     },
     {
@@ -162,7 +168,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_27]]",
-      "original": "Teodora Mlynářová",
+      "original": "Mlynářové",
       "occurrences": 1
     },
     {
@@ -415,6 +421,60 @@
       "type": "PERSON",
       "label": "[[PERSON_69]]",
       "original": "Slavomír Heřman",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Lázeňská 145/8, Teplice 415 01",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Nemovitost na adrese Slezská 67, Opava 746 01",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "Mánesova 89/12, Chomutov 430 01",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "Tylova 34/6, Karlovy Vary 360 01",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "bytemRevoluční 67/9, Děčín 405 02",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_6]]",
+      "original": "Sadová 56/3, Kladno 272 01",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_7]]",
+      "original": "Sportovní 45, Mladá Boleslav 293 01",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_8]]",
+      "original": "Polní 89, Děčín 405 02",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_9]]",
+      "original": "Zahradní 34, Chomutov 430 01",
       "occurrences": 1
     },
     {

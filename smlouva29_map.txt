@@ -1,21 +1,29 @@
 OSOBY
 -----
 [[PERSON_1]]: Ladislav Konečný
+  - Konečnému
 [[PERSON_2]]: Dagmar Konečná
 [[PERSON_3]]: Benedikt Mencl
+  - Menclovi
 [[PERSON_4]]: Liběna Menclová
 [[PERSON_5]]: Hubert Rybář
 [[PERSON_6]]: Anežka Fischerová
+  - Fischerové
 [[PERSON_7]]: Norbert Šulc
+  - Šulcovi
 [[PERSON_8]]: Agáta Šulcová
 [[PERSON_9]]: Patricie Dlouhá
 [[PERSON_10]]: Zikmund Hruška
+  - Hruškovi
 [[PERSON_11]]: Maxmilián Benda
 [[PERSON_12]]: Dominik Vaculík
+  - Vaculíkovi
 [[PERSON_13]]: Rostislav Vaculík
 [[PERSON_14]]: Valdemar Vlk
 [[PERSON_15]]: Hedvika Dostálová
+  - Dostálové
 [[PERSON_16]]: Leopold Matoušek
+  - Matouškovi
 [[PERSON_17]]: Jolana Matoušková
 [[PERSON_18]]: Cyril Tesař
 [[PERSON_19]]: Emílie Tesařová
@@ -23,12 +31,15 @@ OSOBY
 [[PERSON_20]]: Metoděj Strnad
 [[PERSON_21]]: Cecílie Nová
   - Cecílii Novou
+  - Nové
 [[PERSON_22]]: Viola Kadlecová
+  - Kadlecové
 [[PERSON_23]]: Aneta Kadlecová
 [[PERSON_24]]: Bruno Kadlec
 [[PERSON_25]]: Tamara Kadlecová
 [[PERSON_26]]: Oliver Kadlec
 [[PERSON_27]]: Teodora Mlynářová
+  - Mlynářové
 [[PERSON_28]]: Servác Mlynář
 [[PERSON_29]]: Gizela Šimková
 [[PERSON_30]]: Svatopluk Procházka
@@ -72,6 +83,17 @@ OSOBY
 [[PERSON_67]]: Kvido Schneider
 [[PERSON_68]]: Doubravka Váňová
 [[PERSON_69]]: Slavomír Heřman
+
+ADDRESS
+[[ADDRESS_1]]: Lázeňská 145/8, Teplice 415 01
+[[ADDRESS_2]]: Nemovitost na adrese Slezská 67, Opava 746 01
+[[ADDRESS_3]]: Mánesova 89/12, Chomutov 430 01
+[[ADDRESS_4]]: Tylova 34/6, Karlovy Vary 360 01
+[[ADDRESS_5]]: bytemRevoluční 67/9, Děčín 405 02
+[[ADDRESS_6]]: Sadová 56/3, Kladno 272 01
+[[ADDRESS_7]]: Sportovní 45, Mladá Boleslav 293 01
+[[ADDRESS_8]]: Polní 89, Děčín 405 02
+[[ADDRESS_9]]: Zahradní 34, Chomutov 430 01
 
 BANK
 [[BANK_1]]: 2910384756/0100

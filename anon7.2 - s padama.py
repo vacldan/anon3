@@ -1399,6 +1399,9 @@ def variants_for_surname(surname: str) -> set:
 # =============== Regexy ===============
 
 # Vylepšený ADDRESS_RE - zachytává adresy i bez prefixů
+# Podporuje DVA formáty:
+# 1. "ulice číslo, PSČ město" (např. "Lázeňská 145/8, 415 01 Teplice")
+# 2. "ulice číslo, město PSČ" (např. "Mánesova 89/12, Chomutov 430 01")
 ADDRESS_RE = re.compile(
     r'(?<!\[)'
     r'(?:'
@@ -1413,10 +1416,18 @@ ADDRESS_RE = re.compile(
     r'[a-záčďéěíňóřšťúůýž\s]{2,50}?'
     r'\s+\d{1,4}(?:/\d{1,4})?'
     r',\s*'
-    r'\d{3}\s?\d{2}'
-    r'[ \t]+'
-    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
-    r'(?:[ \t]+\d{1,2})?'
+    r'(?:'
+        # VARIANTA 1: PSČ město (např. "415 01 Teplice")
+        r'\d{3}\s?\d{2}'
+        r'[ \t]+'
+        r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
+        r'(?:[ \t]+\d{1,2})?'
+    r'|'
+        # VARIANTA 2: město PSČ (např. "Chomutov 430 01")
+        r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
+        r'[ \t]+'
+        r'\d{3}\s?\d{2}'
+    r')'
     r'(?=\s|$|,|\.|;|:|\n|\r|Rodné|IČO|DIČ|Tel|E-mail|Kontakt|OP|Datum|Narozen)',
     re.IGNORECASE | re.UNICODE
 )
@@ -2860,6 +2871,50 @@ class Anonymizer:
 
         # Pak zpracuj běžný 2-slovný pattern (Jméno Příjmení)
         text = person_pattern.sub(replace_person, text)
+
+        # ========== NOVÝ: Detekce samostatných příjmení ==========
+        # Po zpracování celých jmen, hledej samostatně se vyskytující příjmení
+        # Např: "Podnikatel Benedikt Mencl (...) Menclovi bylo doporučeno..."
+        # "Menclovi" (dativ od "Mencl") by mělo být [[PERSON_X]]
+
+        # Vytvoř slovník: příjmení_varianta → (tag, canonical_full)
+        surname_to_person = {}
+        for tag, canonical_full in self.person_canonical_names.items():
+            canonical_parts = canonical_full.split()
+            if len(canonical_parts) >= 2:  # Has both first and last name
+                surname = canonical_parts[-1]
+                # Generuj všechny pádové varianty příjmení
+                surname_variants = variants_for_surname(surname)
+                for variant in surname_variants:
+                    # Pokud varianta ještě není v mapě, přidej ji
+                    if variant.lower() not in surname_to_person:
+                        surname_to_person[variant.lower()] = (tag, canonical_full)
+
+        # Pattern pro samostatné velké slovo (pravděpodobně příjmení)
+        # POZOR: Musíme vyloučit slova, která jsou už anonymizovaná nebo jsou běžná slova
+        standalone_word_pattern = re.compile(
+            r'(?<!\w)([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]{2,})(?!\w)',
+            re.UNICODE
+        )
+
+        def replace_standalone_surname(match):
+            word = match.group(1)
+            word_lo = word.lower()
+
+            # Zkontroluj, jestli je to známé příjmení
+            if word_lo in surname_to_person:
+                tag, canonical_full = surname_to_person[word_lo]
+                # Zaznamenej tuto variantu
+                if word != canonical_full:
+                    self.entity_map['PERSON'][canonical_full].add(word)
+                return tag
+
+            # Není známé příjmení → vrať originál
+            return match.group(0)
+
+        # Aplikuj pattern na text
+        text = standalone_word_pattern.sub(replace_standalone_surname, text)
+
         return text
 
     def anonymize_entities(self, text: str) -> str:
