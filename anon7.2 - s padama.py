@@ -2081,13 +2081,203 @@ class Anonymizer:
         # Pak běžný pattern pro jména bez titulu
         titles = r'(?:Ing\.|Mgr\.|Bc\.|MUDr\.|JUDr\.|PhDr\.|RNDr\.|Ph\.D\.|MBA|CSc\.|DrSc\.)'
 
-        # Pattern pro jméno příjmení
+        # ========== NOVÝ: Pattern pro "Titul Jméno Příjmení" (3 slova) ==========
+        # Tento pattern musí být PŘED běžným 2-slovným patternem!
+        # Detekuje např: "Klient Ladislav Konečný", "Žadatel Jan Novák", atd.
+        role_person_pattern = re.compile(
+            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'  # Potenciální titul/role
+            r'\s+'
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'  # Křestní jméno
+            r'\s+'
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\b',  # Příjmení
+            re.UNICODE
+        )
+
+        # Pattern pro jméno příjmení (2 slova)
         person_pattern = re.compile(
             r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'
             r'\s+'
             r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\b',
             re.UNICODE
         )
+
+        # Všechny ignore_words pro rychlé ověření (budeme je potřebovat v obou handlerech)
+        # Definujeme ignore_words ZDE, aby byl dostupný v obou funkcích
+        ignore_words = {
+            # Běžná slova ve smlouvách
+            'místo', 'datum', 'částku', 'bytem', 'sídlo', 'adresa',
+            'číslo', 'kontakt', 'telefon', 'email', 'rodné', 'narozena',
+            'vydán', 'uzavřena', 'podepsána', 'smlouva', 'dohoda',
+            # Místa
+            'staré', 'město', 'nové', 'město', 'malá', 'strana',
+            'václavské', 'náměstí', 'hlavní', 'nádraží',
+            'karlovy', 'vary', 'karlova', 'var',  # Karlovy Vary city
+            # Organizace/instituce klíčová slova
+            'česká', 'spořitelna', 'komerční', 'banka', 'raiffeisen',
+            'credit', 'bank', 'financial', 'global', 'senior',
+            'junior', 'lead', 'chief', 'head', 'director',
+            # Finance/Investment
+            'capital', 'equity', 'value', 'crescendo', 'investment',
+            'fund', 'holdings', 'partners', 'assets', 'portfolio',
+            # Pozice/role
+            'jednatel', 'jednatelka', 'ředitel', 'ředitelka',
+            'auditor', 'manager', 'consultant', 'specialist',
+            'assistant', 'coordinator', 'analyst',
+            # CRITICAL: Tituly a role před jmény ve smlouvách
+            'pan', 'paní', 'pán', 'pani',
+            'pacient', 'pacientka', 'pacientek',
+            'obžalovaný', 'obžalovaná', 'obžalované', 'obžalovaného',
+            'zaměstnanec', 'zaměstnankyně', 'zaměstnance',
+            'kupující', 'prodávající', 'prodávajícího',
+            'stavebník', 'stavebníka',
+            'investor', 'investora',
+            'dlužník', 'dlužníka', 'věřitel', 'věřitele',
+            'odsouzený', 'odsouzená', 'odsouzeného',
+            # === KOMPLETNÍ SEZNAM PRÁVNÍCH, ZDRAVOTNICKÝCH A ADMINISTRATIVNÍCH TERMÍNŮ (605 termínů) ===
+            # Právní, ekonomické, zdravotnické, pracovněprávní, rodinné, sociální, vzdělávací a ostatní termíny
+            # které se mohou vyskytovat před jmény osob a nesmí být detekovány jako křestní jména
+            'absolvent', 'absolventa', 'absolventce', 'absolventek', 'absolventem', 'absolventka', 'absolventkou', 'absolventky',
+            'absolventovi', 'absolventů', 'azylant', 'azylanta', 'azylantce', 'azylantek', 'azylantem', 'azylantka',
+            'azylantkou', 'azylantky', 'azylantovi', 'azylantu', 'azylantů', 'beneficient', 'beneficienta', 'beneficientem',
+            'beneficientka', 'beneficientky', 'beneficientovi', 'beneficientů', 'cizince', 'cizincem', 'cizinci', 'cizinců',
+            'cizinec', 'cizinek', 'cizinka', 'cizinkou', 'cizinky', 'dlužnic', 'dlužnice', 'dlužnicí',
+            'dlužník', 'dlužníka', 'dlužníkem', 'dlužníkovi', 'dlužníku', 'dlužníky', 'dlužníků', 'dotčenou',
+            'dotčená', 'dotčené', 'dotčeného', 'dotčenému', 'dotčený', 'dotčených', 'dotčeným', 'držitel',
+            'držitelce', 'držitele', 'držitelek', 'držitelem', 'držiteli', 'držitelka', 'držitelkou', 'držitelky',
+            'držitelů', 'dárce', 'dárci', 'dárců', 'dárkyni', 'dárkyní', 'dárkyně', 'důchodce',
+            'důchodci', 'důchodců', 'důchodkyni', 'důchodkyně', 'důchodkyň', 'evidovanou', 'evidovaná', 'evidované',
+            'evidovaného', 'evidovanému', 'evidovaný', 'evidovaných', 'evidovaným', 'hospitalizovanou', 'hospitalizovaná', 'hospitalizované',
+            'hospitalizovaného', 'hospitalizovanému', 'hospitalizovaný', 'hospitalizovaných', 'hospitalizovaným', 'invalidní', 'invalidních', 'invalidního',
+            'invalidním', 'invalidnímu', 'investor', 'investora', 'investorce', 'investorek', 'investorem', 'investorka',
+            'investorkou', 'investorky', 'investorovi', 'investorů', 'investoři', 'jednotlivce', 'jednotlivcem', 'jednotlivci',
+            'jednotlivců', 'jednotlivec', 'jmenovanou', 'jmenovaná', 'jmenované', 'jmenovaného', 'jmenovanému', 'jmenovaný',
+            'jmenovaných', 'jmenovaným', 'klient', 'klienta', 'klientce', 'klientek', 'klientem', 'klientka',
+            'klientkou', 'klientky', 'klientovi', 'klientu', 'klientů', 'kontrolovanou', 'kontrolovaná', 'kontrolované',
+            'kontrolovaného', 'kontrolovanému', 'kontrolovaný', 'kontrolovaných', 'kontrolovaným', 'kupující', 'kupujících', 'kupujícího',
+            'kupujícím', 'kupujícímu', 'léčenou', 'léčená', 'léčené', 'léčeného', 'léčenému', 'léčený',
+            'léčených', 'léčeným', 'léčenými', 'manžel', 'manžela', 'manželce', 'manželek', 'manželem',
+            'manželka', 'manželkou', 'manželky', 'manželovi', 'manželé', 'manželů', 'nemocnou', 'nemocná',
+            'nemocné', 'nemocného', 'nemocném', 'nemocnému', 'nemocný', 'nemocných', 'nemocným', 'nemocnými',
+            'nezletilou', 'nezletilá', 'nezletilé', 'nezletilého', 'nezletilému', 'nezletilý', 'nezletilých', 'nezletilým',
+            'obviněnou', 'obviněná', 'obviněné', 'obviněného', 'obviněném', 'obviněnému', 'obviněný', 'obviněných',
+            'obviněným', 'obviněnými', 'občan', 'občana', 'občance', 'občanek', 'občanem', 'občanka',
+            'občankou', 'občanky', 'občanovi', 'občanu', 'občané', 'občanů', 'obžalovanou', 'obžalovaná',
+            'obžalované', 'obžalovaného', 'obžalovaném', 'obžalovanému', 'obžalovaný', 'obžalovaných', 'obžalovaným', 'obžalovanými',
+            'odsouzenou', 'odsouzená', 'odsouzené', 'odsouzeného', 'odsouzeném', 'odsouzenému', 'odsouzený', 'odsouzených',
+            'odsouzeným', 'odsouzenými', 'opatrovnic', 'opatrovnice', 'opatrovnicí', 'opatrovník', 'opatrovníka', 'opatrovníkem',
+            'opatrovníkovi', 'opatrovníku', 'opatrovníků', 'operovanou', 'operovaná', 'operované', 'operovaného', 'operovanému',
+            'operovaný', 'operovaných', 'operovaným', 'operovanými', 'oprávněnou', 'oprávněná', 'oprávněné', 'oprávněného',
+            'oprávněnému', 'oprávněný', 'oprávněných', 'oprávněným', 'osob', 'osoba', 'osobami', 'osobou',
+            'osoby', 'osobám', 'osobě', 'osvojitel', 'osvojitelce', 'osvojitele', 'osvojitelem', 'osvojiteli',
+            'osvojitelka', 'osvojitelky', 'osvojitelů', 'ošetřenou', 'ošetřená', 'ošetřené', 'ošetřeného', 'ošetřenému',
+            'ošetřený', 'ošetřených', 'ošetřeným', 'ošetřenými', 'pachatel', 'pachatelce', 'pachatele', 'pachatelek',
+            'pachateli', 'pachatelka', 'pachatelky', 'pachatelů', 'pacient', 'pacienta', 'pacientce', 'pacientek',
+            'pacientem', 'pacientka', 'pacientkou', 'pacientky', 'pacientovi', 'pacientu', 'pacientů', 'pečující',
+            'pečujících', 'pečujícího', 'pečujícím', 'pečujícímu', 'plátce', 'plátci', 'plátců', 'plátkyní',
+            'plátkyně', 'podezřelou', 'podezřelá', 'podezřelé', 'podezřelého', 'podezřelém', 'podezřelému', 'podezřelý',
+            'podezřelých', 'podezřelým', 'podezřelými', 'podnikatel', 'podnikatelce', 'podnikatele', 'podnikatelek', 'podnikateli',
+            'podnikatelka', 'podnikatelky', 'podnikatelů', 'pojištěnce', 'pojištěncem', 'pojištěnci', 'pojištěnců', 'pojištěnec',
+            'pojištěnek', 'pojištěnka', 'pojištěnkou', 'pojištěnky', 'poručnic', 'poručnice', 'poručnicí', 'poručník',
+            'poručníka', 'poručníkem', 'poručníkovi', 'poručníku', 'poručníků', 'poškozenou', 'poškozená', 'poškozené',
+            'poškozeného', 'poškozeném', 'poškozenému', 'poškozený', 'poškozených', 'poškozeným', 'poškozenými', 'prodávající',
+            'prodávajících', 'prodávajícího', 'prodávajícím', 'prodávajícímu', 'propuštěnou', 'propuštěná', 'propuštěné', 'propuštěného',
+            'propuštěném', 'propuštěnému', 'propuštěný', 'propuštěných', 'propuštěným', 'propuštěnými', 'přihlášenou', 'přihlášená',
+            'přihlášené', 'přihlášeného', 'přihlášenému', 'přihlášený', 'přihlášených', 'přihlášeným', 'přijatou', 'přijatá',
+            'přijatého', 'přijatému', 'přijatévé', 'přijatý', 'přijatých', 'přijatým', 'příjemce', 'příjemci',
+            'příjemců', 'příjemkyní', 'příjemkyně', 'registrovanou', 'registrovaná', 'registrované', 'registrovaného', 'registrovanému',
+            'registrovaný', 'registrovaných', 'registrovaným', 'rodič', 'rodiče', 'rodičem', 'rodiči', 'rodička',
+            'rodičky', 'rodičů', 'rodina', 'rodině', 'rodiny', 'rozvedenou', 'rozvedená', 'rozvedené', 'rozvedeného',
+            'rozvedenému', 'rozvedený', 'rozvedených', 'rozvedeným', 'ručitel', 'ručitelce', 'ručitele', 'ručitelek', 'ručitelem',
+            'ručiteli', 'ručitelka', 'ručitelkou', 'ručitelky', 'ručitelů', 'samoživitel', 'samoživitele', 'samoživitelka',
+            'samoživitelky', 'stavebnice', 'stavebnicí', 'stavebník', 'stavebníka', 'stavebníkem', 'stavebníkovi', 'stavebníku',
+            'stavebníků', 'student', 'studenta', 'studentce', 'studentek', 'studentem', 'studenti', 'studentka',
+            'studentkou', 'studentky', 'studentovi', 'studentů', 'stěžovatel', 'stěžovatele', 'stěžovatelek', 'stěžovateli',
+            'stěžovatelka', 'stěžovatelky', 'stěžovatelů', 'svědek', 'svědka', 'svědkovi', 'svědkyni', 'svědkyní',
+            'svědkyně', 'svědků', 'transplantovanou', 'transplantovaná', 'transplantované', 'transplantovaného', 'transplantovanému', 'transplantovaný',
+            'transplantovaným', 'uchazeč', 'uchazeče', 'uchazeči', 'uchazečka', 'uchazečky', 'uchazečů', 'uprchlice',
+            'uprchlicí', 'uprchlík', 'uprchlíka', 'uprchlíkem', 'uprchlíkovi', 'uprchlíku', 'uprchlíkyně', 'uprchlíků',
+            'uvedenou', 'uvedená', 'uvedené', 'uvedeného', 'uvedenému', 'uvedený', 'uvedených', 'uvedeným',
+            'vybranou', 'vybraná', 'vybrané', 'vybraného', 'vybranému', 'vybraný', 'vybraných', 'vybraným',
+            'vyloučenou', 'vyloučená', 'vyloučené', 'vyloučeného', 'vyloučenému', 'vyloučený', 'vyloučených', 'vyloučeným',
+            'vyšetřenou', 'vyšetřená', 'vyšetřené', 'vyšetřeného', 'vyšetřenému', 'vyšetřený', 'vyšetřených', 'vyšetřeným',
+            'vyšetřenými', 'vyšetřovanou', 'vyšetřovaná', 'vyšetřované', 'vyšetřovaného', 'vyšetřovanému', 'vyšetřovaný', 'vyšetřovaných',
+            'vyšetřovaným', 'vyšetřovanými', 'věřitel', 'věřitelce', 'věřitele', 'věřitelek', 'věřiteli', 'věřitelka',
+            'věřitelky', 'věřitelů', 'zadrženou', 'zadržená', 'zadržené', 'zadrženého', 'zadrženém', 'zadrženému',
+            'zadržený', 'zadržených', 'zadrženým', 'zadrženými', 'zaměstnance', 'zaměstnancem', 'zaměstnanci', 'zaměstnanců',
+            'zaměstnanec', 'zaměstnankyni', 'zaměstnankyní', 'zaměstnankyně', 'zaměstnankyň', 'zaměstnavatel', 'zaměstnavatele', 'zaměstnavatelem',
+            'zaměstnavateli', 'zaměstnavatelka', 'zaměstnavatelky', 'zaměstnavatelů', 'zletilou', 'zletilá', 'zletilé', 'zletilého',
+            'zletilému', 'zletilý', 'účastnic', 'účastnice', 'účastnicí', 'účastník', 'účastníka', 'účastníkem',
+            'účastníkovi', 'účastníku', 'účastníků', 'žadatel', 'žadatelce', 'žadatele', 'žadatelek', 'žadateli',
+            'žadatelka', 'žadatelky', 'žadatelů', 'žalobce', 'žalobci', 'žalobců', 'žalobkyni', 'žalobkyní',
+            'žalobkyně', 'žalovanou', 'žalovaná', 'žalované', 'žalovaného', 'žalovaném', 'žalovanému', 'žalovaný',
+            'žalovaných', 'žalovaným', 'žalovanými', 'žáci', 'žák', 'žáka', 'žákem', 'žákovi',
+            'žáku', 'žákyni', 'žákyní', 'žákyně', 'žákyň', 'žáků',
+            # Další termíny
+            'přítel', 'přítelkyně', 'kolega', 'kolegyně',
+            'majitel', 'majitelka',
+            'předseda', 'předsedkyně', 'člen', 'členka',
+            'věznice', 'věznici', 'vězení',  # prison - IMPORTANT!
+            # Ostatní
+            'scrum', 'master', 'developer', 'architect', 'engineer',
+            'officer', 'professional', 'certified', 'advanced',
+            'management', 'legal', 'counsel', 'executive',
+            # Pozdravy/oslovení
+            'ahoj', 'dobrý', 'den', 'vážený', 'vážená',
+            # Značky aut
+            'škoda', 'octavia', 'fabia', 'superb', 'kodiaq',
+            'volkswagen', 'toyota', 'ford', 'bmw', 'audi',
+            # Technologie a software
+            'google', 'amazon', 'microsoft', 'apple', 'facebook',
+            'cloud', 'web', 'tech', 'solutions', 'data', 'digital',
+            'software', 'enterprise', 'premium', 'standard',
+            'analytics', 'computer', 'vision', 'protection',
+            'security', 'authenticator', 'repository', 'access',
+            'personal', 'hub', 'book', 'pro', 'series', 'launch',
+            'team', 'development', 'react', 'splunk', 'innovate',
+            'ventures', 'credo', 'mayo', 'clinic', 'met', 'london',
+            'avenue', 'contractual', 'plánovaná', 'diagno',
+            'cisco', 'processing', 'notářská',
+            # Zdravotnictví + Léky/Produkty
+            'nemocnice', 'poliklinika', 'polikliniek', 'nemocniec',
+            'healthcare', 'symbicort', 'turbuhaler', 'spirometr',
+            'jaeger', 'medical', 'health', 'pharma', 'pharmaceutical',
+            # Další
+            'care', 'plus', 'minus', 'service', 'services',
+            'group', 'company', 'corp', 'ltd', 'gmbh', 'inc'
+        }
+
+        # ========== Handler pro "Titul Jméno Příjmení" (3 slova) ==========
+        def replace_role_person(match):
+            """
+            Zpracuje pattern "Titul Jméno Příjmení" (např. "Klient Ladislav Konečný").
+            Pokud první slovo je titul/role v ignore_words, anonymizuje 2. a 3. slovo jako osobu.
+            """
+            role_word = match.group(1)
+            first_obs = match.group(2)
+            last_obs = match.group(3)
+
+            # Zkontroluj, jestli první slovo je titul/role
+            if role_word.lower() not in ignore_words:
+                # První slovo NENÍ titul → vrať original (nechť to zpracuje běžný 2-slovný pattern)
+                return match.group(0)
+
+            # První slovo JE titul → anonymizuj jméno a příjmení
+            # Použij stejnou logiku jako u běžných osob
+
+            # Infer nominative
+            last_nom = infer_surname_nominative(last_obs)
+            first_nom = infer_first_name_nominative(first_obs) or first_obs
+
+            # Create/find person tag
+            tag, canonical = self._ensure_person_tag(first_nom, last_nom)
+
+            # Save variant if different from canonical
+            original_form = f"{first_obs} {last_obs}"
+            if original_form.lower() != canonical.lower():
+                self.entity_map['PERSON'][canonical].add(original_form)
+
+            # Return: "Titul [[PERSON_X]]"
+            return f"{role_word} {tag}"
 
         def replace_person(match):
             first_obs = match.group(1)
@@ -2625,6 +2815,11 @@ class Anonymizer:
 
             return tag
 
+        # DŮLEŽITÉ: Zpracuj 3-slovný pattern (Titul Jméno Příjmení) NEJPRVE!
+        # To zajistí, že "Klient Ladislav Konečný" bude správně detekován jako celé jméno
+        text = role_person_pattern.sub(replace_role_person, text)
+
+        # Pak zpracuj běžný 2-slovný pattern (Jméno Příjmení)
         text = person_pattern.sub(replace_person, text)
         return text
 
