@@ -1,0 +1,156 @@
+OSOBY
+-----
+[[PERSON_1]]: Izák Bárta
+[[PERSON_2]]: Augustýn Fojtík
+[[PERSON_3]]: Ctislav Machael
+  - Ctislav Machala
+[[PERSON_4]]: Vendelín Novotný
+[[PERSON_5]]: Silvie Kadlecová
+[[PERSON_6]]: Evžen Moravec
+[[PERSON_7]]: Žofie Pechová
+[[PERSON_8]]: Lubomír Zeman
+[[PERSON_9]]: Šimon Liška
+[[PERSON_10]]: Oldřiška Tesařová
+[[PERSON_11]]: Sabina Hrubešová
+[[PERSON_12]]: Zlata Voráčková
+[[PERSON_13]]: Leoš Voráček
+[[PERSON_14]]: Sára Voráčková
+  - Sáru Voráčkovou
+[[PERSON_15]]: Xenie Voráčková
+  - Xenie Voráčkovou
+[[PERSON_16]]: Radomír Šmíd
+[[PERSON_17]]: Matylda Fialová
+  - Matyldu Fialovou
+[[PERSON_18]]: Alan Kratochvíl
+[[PERSON_19]]: Marián Zahradník
+[[PERSON_20]]: Judita Moravcová
+[[PERSON_21]]: Dita Moravcová
+[[PERSON_22]]: Lýdie Burešová
+[[PERSON_23]]: Zina Burešová
+[[PERSON_24]]: Liliana Vaňková
+[[PERSON_25]]: Dorota Bartošová
+[[PERSON_26]]: Ljuba Havlová
+[[PERSON_27]]: Květoslav Němec
+[[PERSON_28]]: Anastázie Marková
+[[PERSON_29]]: Kliment Suchý
+[[PERSON_30]]: Vavřinec Horský
+[[PERSON_31]]: Elena Bílá
+[[PERSON_32]]: Bohdana Králová
+[[PERSON_33]]: Hanuš Urban
+[[PERSON_34]]: Gita Holubová
+[[PERSON_35]]: Slavoj Kučera
+[[PERSON_36]]: Svatoslav Mareš
+[[PERSON_37]]: Nela Zemanová
+[[PERSON_38]]: Tadeáš Novotný
+[[PERSON_39]]: Marina Dvořáková
+[[PERSON_40]]: Lubor Pech
+[[PERSON_41]]: Apolena Fišerová
+[[PERSON_42]]: Vladislava Krausová
+[[PERSON_43]]: Vilém Šebesta
+[[PERSON_44]]: Blažena Říhová
+[[PERSON_45]]: Pravoslav Malík
+[[PERSON_46]]: Karina Bílková
+[[PERSON_47]]: Samuel Štěpán
+[[PERSON_48]]: Stela Pospíšilová
+[[PERSON_49]]: Jáchym Horák
+[[PERSON_50]]: Otmar Doubek
+[[PERSON_51]]: Xaver Klein
+[[PERSON_52]]: Beáta Zemanová
+[[PERSON_53]]: Artur Říha
+
+ADDRESS
+[[ADDRESS_1]]: Krátká 89/12, Brno
+[[ADDRESS_2]]: Slezská 89/6, Ostrava
+[[ADDRESS_3]]: Polní 34, Brno
+
+BANK
+[[BANK_1]]: 8901234567/2700
+[[BANK_2]]: 5678901234/5500
+[[BANK_3]]: 3456789012/0800
+[[BANK_4]]: 6789012345/2700
+[[BANK_5]]: 8901234567/0100
+[[BANK_6]]: 9012345678/2700
+[[BANK_7]]: 1234567890/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 820614/7923
+[[BIRTH_ID_2]]: 750823/6912
+[[BIRTH_ID_3]]: 790512/8134
+[[BIRTH_ID_4]]: 885629/7945
+[[BIRTH_ID_5]]: 760825/6734
+[[BIRTH_ID_6]]: 755624/8234
+[[BIRTH_ID_7]]: 780925/6734
+[[BIRTH_ID_8]]: 850714/7823
+[[BIRTH_ID_9]]: 620825/7623
+[[BIRTH_ID_10]]: 825629/7945
+[[BIRTH_ID_11]]: 780625/7823
+[[BIRTH_ID_12]]: 155624/7890
+[[BIRTH_ID_13]]: 175823/8901
+[[BIRTH_ID_14]]: 805629/8134
+[[BIRTH_ID_15]]: 750814/7623
+[[BIRTH_ID_16]]: 385629/8912
+[[BIRTH_ID_17]]: 830625/7823
+[[BIRTH_ID_18]]: 900512/8134
+[[BIRTH_ID_19]]: 555624/8912
+[[BIRTH_ID_20]]: 855723/8245
+[[BIRTH_ID_21]]: 115624/7890
+[[BIRTH_ID_22]]: 875629/8134
+[[BIRTH_ID_23]]: 795624/7823
+[[BIRTH_ID_24]]: 835629/8245
+[[BIRTH_ID_25]]: 885629/8134
+[[BIRTH_ID_26]]: 720625/7623
+[[BIRTH_ID_27]]: 790814/8134
+[[BIRTH_ID_28]]: 755629/8245
+[[BIRTH_ID_29]]: 825724/8134
+[[BIRTH_ID_30]]: 680512/7623
+[[BIRTH_ID_31]]: 845629/8134
+[[BIRTH_ID_32]]: 770714/7823
+[[BIRTH_ID_33]]: 520825/6734
+[[BIRTH_ID_34]]: 065624/7890
+[[BIRTH_ID_35]]: 000512/7823
+[[BIRTH_ID_36]]: 805629/8245
+[[BIRTH_ID_37]]: 740714/7623
+[[BIRTH_ID_38]]: 985624/8134
+[[BIRTH_ID_39]]: 680825/7623
+[[BIRTH_ID_40]]: 770825/7623
+[[BIRTH_ID_41]]: 720625/7823
+[[BIRTH_ID_42]]: 925724/8134
+[[BIRTH_ID_43]]: 810714/7823
+[[BIRTH_ID_44]]: 550825/6734
+[[BIRTH_ID_45]]: 865629/8245
+[[BIRTH_ID_46]]: 955724/8912
+[[BIRTH_ID_47]]: 630714/7623
+
+EMAIL
+[[EMAIL_1]]: i.barta@firma.cz
+[[EMAIL_2]]: l.zeman@firma.cz
+[[EMAIL_3]]: l.voracek@centrum.cz
+[[EMAIL_4]]: a.kratochvil@firma.cz
+[[EMAIL_5]]: l.buresova@email.cz
+[[EMAIL_6]]: k.nemec@firma.cz
+[[EMAIL_7]]: h.urban@invest.cz
+[[EMAIL_8]]: a.fiserova@email.cz
+
+ICO
+[[ICO_1]]: 68947123
+[[ICO_2]]: 47856912
+[[ICO_3]]: 78945612
+[[ICO_4]]: 89012345
+[[ICO_5]]: 67823451
+
+ID_CARD
+[[ID_CARD_1]]: ST789012
+
+PHONE
+[[PHONE_1]]: 678901234
+[[PHONE_2]]: +420 605 789 123
+[[PHONE_3]]: +420 731 456 789
+[[PHONE_4]]: +420 602 147 258
+[[PHONE_5]]: 334455667
+[[PHONE_6]]: 667788990
+[[PHONE_7]]: +420 608 369 147
+[[PHONE_8]]: +420 775 456 789
+[[PHONE_9]]: +420 608 147 258
+[[PHONE_10]]: +420 731 369 258
+[[PHONE_11]]: 889900112
+
