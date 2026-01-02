@@ -2155,9 +2155,11 @@ class Anonymizer:
                 'rodina', 'rodině', 'rodiny',
                 'pojištěnec', 'pojištěnce', 'pojištěná', 'pojištěné',  # insured person
                 'klient', 'klienta', 'klientka', 'klientky',  # client
-                'obviněná', 'obviněné', 'obviněného',  # accused (female)
+                'obviněná', 'obviněné', 'obviněného', 'obviněný',  # accused
                 'pachatel', 'pachatele', 'pachatelka',  # perpetrator
                 'žalobkyně', 'žalobce', 'žalovaný', 'žalovaná',  # plaintiff/defendant
+                'žadatel', 'žadatele', 'žadatelka', 'žadatelky',  # applicant/claimant
+                'podnikatel', 'podnikatele', 'podnikatelka', 'podnikatelky',  # entrepreneur
                 'manžel', 'manželka', 'manžele', 'manželky',
                 'přítel', 'přítelkyně', 'kolega', 'kolegyně',
                 'majitel', 'majitelka', 'účastník', 'účastnice',
