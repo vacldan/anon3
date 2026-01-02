@@ -2457,7 +2457,44 @@ class Anonymizer:
             }
 
             # Kontrola proti ignore listu
-            if first_obs.lower() in ignore_words or last_obs.lower() in ignore_words:
+            # NOVÁ LOGIKA: Pokud první slovo je titul a druhé je příjmení → anonymizuj příjmení
+            if first_obs.lower() in ignore_words:
+                # První slovo je titul → může to být "Titul Příjmení" (bez křestního jména)
+                # Zkontroluj, zda druhé slovo není také v ignore_words
+                if last_obs.lower() in ignore_words:
+                    return match.group(0)  # Obě slova jsou ignorovaná → není osoba
+
+                # První slovo = titul, druhé = příjmení → anonymizuj příjmení
+                # Pokud existuje osoba s tímto příjmením, anonymizuj ji
+                # Infer nominative of surname
+                last_nom = infer_surname_nominative(last_obs)
+
+                # Try to find existing person with this surname
+                tag = None
+                canonical_full = None
+                for existing_tag, existing_canonical in self.person_canonical_names.items():
+                    # Check if surname matches
+                    canonical_parts = existing_canonical.split()
+                    if len(canonical_parts) >= 2:  # Has both first and last name
+                        existing_surname = canonical_parts[-1]
+                        if existing_surname.lower() == last_nom.lower():
+                            tag = existing_tag
+                            canonical_full = existing_canonical
+                            # Save variant if different from canonical surname
+                            if last_obs.lower() != existing_surname.lower():
+                                self.entity_map['PERSON'][canonical_full].add(last_obs)
+                            break
+
+                # If existing person found, anonymize it
+                if tag:
+                    return f"{first_obs} {tag}"
+                else:
+                    # No existing person with this surname → don't anonymize
+                    # (We can't create a person with just a surname)
+                    return match.group(0)
+
+            # Pokud druhé slovo je v ignore_words (ale první ne) → není osoba
+            if last_obs.lower() in ignore_words:
                 return match.group(0)
 
             # 3. Detekce firem, produktů, institucí (neměly by být PERSON)

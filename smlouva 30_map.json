@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-01-02T20:43:20.483159",
+  "generated_at": "2026-01-02T20:52:29.675992",
   "source_file": "smlouva 30.docx",
   "entities": [
     {
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Lubomír Zeman",
+      "original": "Zemanovi",
       "occurrences": 1
     },
     {
@@ -102,13 +102,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_17]]",
+      "original": "Fialové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_17]]",
       "original": "Matyldu Fialovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_18]]",
-      "original": "Alan Kratochvíl",
+      "original": "Kratochvílovi",
       "occurrences": 1
     },
     {
