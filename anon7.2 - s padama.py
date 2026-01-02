@@ -973,10 +973,17 @@ def infer_surname_nominative(obs: str) -> str:
             elif lo.endswith('ilem'):
                 return obs[:-2]  # ?ilem → ?il
 
-        # Speciální případ: -kem → -ek (Štefánkem → Štefánek, Práškem → Prášek)
-        # Musíme přidat 'e' zpět: -kem → -ek (odstraň -em, nechej -k, přidej e před k)
+        # Speciální případ: -kem → -ek nebo -ík
+        # Musíme rozlišit:
+        # 1) -íkem → -ík (Kubíkem → Kubík, Novíkem → Novík)
+        # 2) -áškem, -ékem, atd. → -ášek, -ének (Práškem → Prášek, Štefánkem → Štefánek)
         elif lo.endswith('kem') and len(obs) > 5:
-            return obs[:-3] + 'ek'  # např. Práškem → Prášek, Štefánkem → Štefánek
+            # Pokud před -kem je -í, je to pravděpodobně -ík v nominativu
+            if lo.endswith('íkem'):
+                return obs[:-2]  # Kubíkem → Kubík (odstranit -em)
+            else:
+                # Jinak použij pravidlo -kem → -ek
+                return obs[:-3] + 'ek'  # Práškem → Prášek, Štefánkem → Štefánek
 
         # Kontrola: není -bem, -dem (součást některých příjmení)
         # POZNÁMKA: -lem a -rem jsou řešeny výše (řádky 431-441)
