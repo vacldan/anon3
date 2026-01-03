@@ -1538,7 +1538,7 @@ BIRTH_ID_RE = re.compile(
 ID_CARD_RE = re.compile(
     r'(?:'
     r'\b([A-Z]{2}\s?\d{6})\b|'  # Standardní formát: AB 123456
-    r'(?:OP|pas|pas\.|pas\.č\.|č\.OP)\s*[:\-]?\s*(\d{6,9})'  # OP: 123456789 nebo Pas: 123456
+    r'(?:OP|pas|pas\.|pas\.č\.|č\.OP)(?:\s+č\.?)?\s*[:\-]?\s*(\d{6,9})'  # OP: 123456789, OP č. 123456, Pas: 123456
     r')',
     re.IGNORECASE
 )
@@ -2213,6 +2213,9 @@ class Anonymizer:
             'odsouzeným', 'odsouzenými', 'opatrovnic', 'opatrovnice', 'opatrovnicí', 'opatrovník', 'opatrovníka', 'opatrovníkem',
             'opatrovníkovi', 'opatrovníku', 'opatrovníků', 'opatrovanec', 'opatrovance', 'opatrovanci', 'opatrovancem', 'opatrovanců',
             'opatrovanka', 'opatrovanky', 'opatrovankou', 'opatrovanek',
+            # Řidič (driver - CRITICAL for proper 3-word pattern matching!)
+            'řidič', 'řidiče', 'řidiči', 'řidičem', 'řidičů', 'řidičům', 'řidičích',
+            'řidička', 'řidičky', 'řidičce', 'řidičkou', 'řidiček', 'řidičkám', 'řidičkách',
             # Náboženské a rodinné tituly
             'matka', 'matky', 'matce', 'matkou', 'matek', 'matkám', 'matkách', 'matkama',
             # Pěstounská péče
@@ -2813,6 +2816,9 @@ class Anonymizer:
                 'odsouzeným', 'odsouzenými', 'opatrovnic', 'opatrovnice', 'opatrovnicí', 'opatrovník', 'opatrovníka', 'opatrovníkem',
                 'opatrovníkovi', 'opatrovníku', 'opatrovníků', 'opatrovanec', 'opatrovance', 'opatrovanci', 'opatrovancem', 'opatrovanců',
                 'opatrovanka', 'opatrovanky', 'opatrovankou', 'opatrovanek',
+                # Řidič (driver - CRITICAL for proper 3-word pattern matching!)
+                'řidič', 'řidiče', 'řidiči', 'řidičem', 'řidičů', 'řidičům', 'řidičích',
+                'řidička', 'řidičky', 'řidičce', 'řidičkou', 'řidiček', 'řidičkám', 'řidičkách',
             # Náboženské a rodinné tituly
             'matka', 'matky', 'matce', 'matkou', 'matek', 'matkám', 'matkách', 'matkama',
             # Pěstounská péče
