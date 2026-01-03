@@ -2243,10 +2243,82 @@ class Anonymizer:
             'příjemců', 'příjemkyní', 'příjemkyně', 'registrovanou', 'registrovaná', 'registrované', 'registrovaného', 'registrovanému',
             'registrovaný', 'registrovaných', 'registrovaným', 'rodič', 'rodiče', 'rodičem', 'rodiči', 'rodička',
             'rodičky', 'rodičů', 'rodina', 'rodině', 'rodiny',
-            # Rodinné vztahy
+            # Rodinné vztahy - VELMI ROZŠÍŘENÉ
             'dítě', 'dítěte', 'dítěti', 'dítětem', 'děti', 'dětí', 'dětem', 'dětmi',
             'sourozenec', 'sourozence', 'sourozenci', 'sourozencem', 'sourozenci', 'sourozencům', 'sourozencích', 'sourozenci',
             'sourozenka', 'sourozence', 'sourozenkou', 'sourozenci', 'sourozenek', 'sourozenkyně',
+            # Matka - varianty (základní forma už existuje výše)
+            'maminka', 'maminky', 'mamince', 'maminkou', 'maminek', 'maminkám', 'maminkách',
+            'máma', 'mámy', 'mámě', 'mámou', 'mám', 'mámám', 'mámách',
+            # Otec
+            'otec', 'otce', 'otci', 'otcem', 'otcové', 'otců', 'otcům', 'otcích', 'otci',
+            'tatínek', 'tatínka', 'tatínkovi', 'tatínku', 'tatínkem', 'tatínkové', 'tatínků', 'tatínkům', 'tatíncích',
+            'táta', 'táty', 'tátovi', 'tátu', 'tátou', 'tátové', 'tátů', 'tátům', 'tátech',
+            # Rodička - rozšíření (rodič už existuje)
+            'rodičku', 'rodičkou', 'rodiček', 'rodičkám', 'rodičkách', 'rodičům', 'rodičích',
+            # Bratr a sestra
+            'bratr', 'bratra', 'bratru', 'bratrovi', 'bratrem', 'bratři', 'bratrů', 'bratrům', 'bratrech',
+            'nevlastní bratr', 'nevlastního bratra', 'nevlastnímu bratrovi',
+            'adoptivní bratr', 'adoptivního bratra', 'adoptivnímu bratrovi',
+            'sestra', 'sestry', 'sestře', 'sestrou', 'sester', 'sestrám', 'sestrách',
+            'nevlastní sestra', 'nevlastní sestry', 'nevlastní sestře', 'nevlastní sestrou',
+            'adoptivní sestra', 'adoptivní sestry', 'adoptivní sestře', 'adoptivní sestrou',
+            # Syn a dcera
+            'syn', 'syna', 'synovi', 'synu', 'synem', 'synové', 'synů', 'synům', 'synech',
+            'dcera', 'dcery', 'dceři', 'dcerou', 'dcer', 'dcerám', 'dcerách',
+            # Vnuci
+            'vnuk', 'vnuka', 'vnukovi', 'vnuku', 'vnukem', 'vnuci', 'vnuků', 'vnukům', 'vnucích',
+            'vnučka', 'vnučky', 'vnučce', 'vnučkou', 'vnuček', 'vnučkám', 'vnučkách',
+            # Prarodiče
+            'dědeček', 'dědečka', 'dědečkovi', 'dědečku', 'dědečkem', 'dědečkové', 'dědečků', 'dědečkům', 'dědečcích',
+            'děda', 'dědy', 'dědovi', 'dědu', 'dědou', 'dědové', 'dědů', 'dědům', 'dědech',
+            'babička', 'babičky', 'babičce', 'babičkou', 'babiček', 'babičkám', 'babičkách',
+            'bába', 'báby', 'bábě', 'bábou', 'báb', 'bábám', 'bábách',
+            # Strýc, teta, bratranci
+            'strýc', 'strýce', 'strýci', 'strýcem', 'strýcové', 'strýců', 'strýcům', 'strýcích',
+            'teta', 'tety', 'tetě', 'tetou', 'tet', 'tetám', 'tetách',
+            'bratranec', 'bratrance', 'bratranci', 'bratrancem', 'bratranci', 'bratranců', 'bratrancům', 'bratrancích',
+            'sestřenice', 'sestřenici', 'sestřenicí', 'sestřenic', 'sestřenicím', 'sestřenicích',
+            # Tchán, tchýně, švagr, švagrová
+            'švagr', 'švagra', 'švagrovi', 'švagru', 'švagram', 'švagrové', 'švagrů', 'švagrům', 'švagrech',
+            'švagrová', 'švagrové', 'švagrovou', 'švagrových', 'švagrovám', 'švagrovách',
+            'tchán', 'tchána', 'tchánovi', 'tchánů', 'tchánům', 'tchánech',
+            'tchýně', 'tchýni', 'tchýní', 'tchyň', 'tchyním', 'tchyních',
+            'zeť', 'zeti', 'zetě', 'zeťi', 'zeťů', 'zeťům', 'zeťích',
+            'snacha', 'snachy', 'snače', 'snachou', 'snach', 'snachám', 'snachách',
+            # Partnerské vztahy
+            'manžel', 'manžela', 'manželovi', 'manželu', 'manželem', 'manželé', 'manželů', 'manželům', 'manželech',
+            'manželka', 'manželky', 'manželce', 'manželkou', 'manželek', 'manželkám', 'manželkách',
+            'choť', 'choť', 'choti', 'chotě', 'chotí', 'choť', 'chotí', 'chotím', 'chotích',
+            'partner', 'partnera', 'partnerovi', 'partneru', 'partnerem', 'partneři', 'partnerů', 'partnerům', 'partnerech',
+            'partnerka', 'partnerky', 'partnerce', 'partnerkou', 'partnerek', 'partnerkám', 'partnerkách',
+            'druh', 'druha', 'druhovi', 'druhu', 'druhem', 'druhové', 'druhů', 'druhům', 'druzích',
+            'družka', 'družky', 'družce', 'družkou', 'družek', 'družkám', 'družkách',
+            'snoubenec', 'snoubence', 'snoubenci', 'snoubencem', 'snoubenci', 'snoubenců', 'snoubencům', 'snoubencích',
+            'snoubenka', 'snoubenky', 'snoubence', 'snoubenkou', 'snoubenek', 'snoubenkám', 'snoubenkách',
+            'přítele', 'příteli', 'přítelem', 'přátelé', 'přátel', 'přátelům', 'přátelích',
+            'přítelkyní', 'přítelkyň', 'přítelkyním', 'přítelkyních',
+            # Ex-manželé a rozvedení
+            'ex-manžel', 'ex-manžela', 'ex-manželovi', 'ex-manželu', 'ex-manželem',
+            'bývalý manžel', 'bývalého manžela', 'bývalému manželovi',
+            'ex-manželka', 'ex-manželky', 'ex-manželce', 'ex-manželkou',
+            'bývalá manželka', 'bývalé manželky', 'bývalé manželce', 'bývalou manželkou',
+            'rozvedenou', 'rozvedená', 'rozvedené', 'rozvedeného',
+            'rozvedenému manželovi', 'rozvedeného manžela', 'rozvedený manžel',
+            'rozvedená manželka', 'rozvedené manželky', 'rozvedené manželce',
+            'vdovec', 'vdovce', 'vdovci', 'vdovcem', 'vdovci', 'vdovců', 'vdovcům', 'vdovcích',
+            'vdova', 'vdovy', 'vdově', 'vdovou', 'vdov', 'vdovám', 'vdovách',
+            # Děti a věk
+            'nezletilý', 'nezletilého', 'nezletilému', 'nezletilém', 'nezletilým', 'nezletilých', 'nezletilými',
+            'nezletilá', 'nezletilé', 'nezletilou',
+            'potomek', 'potomka', 'potomkovi', 'potomku', 'potomkem', 'potomci', 'potomků', 'potomkům', 'potomcích',
+            'narozený', 'narozeného', 'narozenému', 'narozeném', 'narozeným', 'narozených', 'narozenými',
+            'narozená', 'narozené', 'narozenou',
+            'novorozenec', 'novorozence', 'novorozenci', 'novorozencem', 'novorozenci', 'novorozenců', 'novorozencům', 'novorozencích',
+            'mladistvý', 'mladistvého', 'mladistvému', 'mladistvém', 'mladistvým', 'mladistvých', 'mladistvými',
+            'mladistvá', 'mladistvé', 'mladistvou',
+            'dospělý', 'dospělého', 'dospělému', 'dospělém', 'dospělým', 'dospělých', 'dospělými',
+            'dospělá', 'dospělé', 'dospělou',
             'rozvedenou', 'rozvedená', 'rozvedené', 'rozvedeného',
             'rozvedenému', 'rozvedený', 'rozvedených', 'rozvedeným', 'ručitel', 'ručitelce', 'ručitele', 'ručitelek', 'ručitelem',
             'ručiteli', 'ručitelka', 'ručitelkou', 'ručitelky', 'ručitelů', 'samoživitel', 'samoživitele', 'samoživitelka',
@@ -2265,8 +2337,49 @@ class Anonymizer:
             'vyšetřovaným', 'vyšetřovanými', 'věřitel', 'věřitelce', 'věřitele', 'věřitelek', 'věřiteli', 'věřitelka',
             'věřitelky', 'věřitelů', 'zadrženou', 'zadržená', 'zadržené', 'zadrženého', 'zadrženém', 'zadrženému',
             'zadržený', 'zadržených', 'zadrženým', 'zadrženými',
-            # Zdravotní/fyzický stav
+            # Zdravotní/fyzický stav - ROZŠÍŘENÉ
             'zraněnou', 'zraněná', 'zraněné', 'zraněného', 'zraněném', 'zraněnému', 'zraněný', 'zraněných', 'zraněným', 'zraněnými',
+            # Lehce/těžce zraněný
+            'lehce zraněný', 'lehce zraněná', 'lehce zraněné', 'lehce zraněného', 'lehce zraněnému', 'lehce zraněném', 'lehce zraněným',
+            'těžce zraněný', 'těžce zraněná', 'těžce zraněné', 'těžce zraněného', 'těžce zraněnému', 'těžce zraněném', 'těžce zraněným',
+            # Nemocný
+            'nemocný', 'nemocného', 'nemocnému', 'nemocném', 'nemocným',
+            'nemocná', 'nemocné', 'nemocnou', 'nemocnými', 'nemocných',
+            'těžce nemocný', 'těžce nemocná', 'těžce nemocné', 'těžce nemocného', 'těžce nemocnému', 'těžce nemocném', 'těžce nemocným',
+            'chronicky nemocný', 'chronicky nemocná', 'chronicky nemocné', 'chronicky nemocného',
+            'duševně nemocný', 'duševně nemocná', 'duševně nemocné', 'duševně nemocného',
+            # Hospitalizovaný a další zdravotní stavy
+            'hospitalizovaný', 'hospitalizovaného', 'hospitalizovanému', 'hospitalizovaném', 'hospitalizovaným', 'hospitalizovanými', 'hospitalizovaných',
+            'hospitalizovaná', 'hospitalizované', 'hospitalizovanou',
+            'transportovaný', 'transportovaného', 'transportovanému', 'transportovaném', 'transportovaným', 'transportovanými', 'transportovaných',
+            'transportovaná', 'transportované', 'transportovanou',
+            'intubovaný', 'intubovaného', 'intubovanému', 'intubovaném', 'intubovaným', 'intubovanými', 'intubovaných',
+            'intubovaná', 'intubované', 'intubovanou',
+            'resuscitovaný', 'resuscitovaného', 'resuscitovanému', 'resuscitovaném', 'resuscitovaným', 'resuscitovanými', 'resuscitovaných',
+            'resuscitovaná', 'resuscitované', 'resuscitovanou',
+            'stabilizovaný', 'stabilizovaného', 'stabilizovanému', 'stabilizovaném', 'stabilizovaným', 'stabilizovanými', 'stabilizovaných',
+            'stabilizovaná', 'stabilizované', 'stabilizovanou',
+            'léčený', 'léčeného', 'léčenému', 'léčeném', 'léčeným', 'léčenými', 'léčených',
+            'léčená', 'léčené', 'léčenou',
+            'amputovaný', 'amputovaného', 'amputovanému', 'amputovaném', 'amputovaným', 'amputovanými', 'amputovaných',
+            'amputovaná', 'amputované', 'amputovanou',
+            # Dárce (transplantace)
+            'dárce', 'dárci', 'dárců', 'dárcem', 'dárcům', 'dárcích', 'dárkyně', 'dárkyní', 'dárkyň', 'dárkyni',
+            # Specifické zdravotní stavy
+            'tetraplegie', 'tetraplegik', 'tetraplegika', 'paraplegik', 'paraplegika',
+            'imobilní', 'imobilního', 'imobilnímu', 'imobilním', 'imobilních',
+            'komatózní', 'komatózního', 'komatóznímu', 'komatózním', 'komatózních',
+            'bezvědomý', 'bezvědomého', 'bezvědomému', 'bezvědomém', 'bezvědomým', 'bezvědomých', 'bezvědomými',
+            'bezvědomá', 'bezvědomé', 'bezvědomou',
+            'umírající', 'umírajícího', 'umírajícímu', 'umírajícím', 'umírajících',
+            # Mrtvý/zemřelý/zesnulý
+            'mrtvý', 'mrtvého', 'mrtvému', 'mrtvém', 'mrtvým', 'mrtvých', 'mrtvými',
+            'mrtvá', 'mrtvé', 'mrtvou',
+            'zemřelý', 'zemřelého', 'zemřelému', 'zemřelém', 'zemřelým', 'zemřelých', 'zemřelými',
+            'zemřelá', 'zemřelé', 'zemřelou',
+            'zesnulý', 'zesnulého', 'zesnulému', 'zesnulém', 'zesnulým', 'zesnulých', 'zesnulými',
+            'zesnulá', 'zesnulé', 'zesnulou',
+            'deceased', 'exitus',
             'zaměstnance', 'zaměstnancem', 'zaměstnanci', 'zaměstnanců',
             'zaměstnanec', 'zaměstnankyni', 'zaměstnankyní', 'zaměstnankyně', 'zaměstnankyň', 'zaměstnavatel', 'zaměstnavatele', 'zaměstnavatelem',
             'zaměstnavateli', 'zaměstnavatelka', 'zaměstnavatelky', 'zaměstnavatelů', 'zletilou', 'zletilá', 'zletilé', 'zletilého',
@@ -2305,6 +2418,267 @@ class Anonymizer:
             'nemocnice', 'poliklinika', 'polikliniek', 'nemocniec',
             'healthcare', 'symbicort', 'turbuhaler', 'spirometr',
             'jaeger', 'medical', 'health', 'pharma', 'pharmaceutical',
+            # ===================================================================
+            # OPATROVNICTVÍ A PÉČE - ROZŠÍŘENÉ
+            # ===================================================================
+            # Svěřenec/svěřenka (opatrovník už existuje výše)
+            'svěřenec', 'svěřence', 'svěřenci', 'svěřencem', 'svěřenci', 'svěřenců', 'svěřencům', 'svěřencích',
+            'svěřenka', 'svěřenky', 'svěřence', 'svěřenkou', 'svěřenek', 'svěřenkám', 'svěřenkách',
+            # Osvojenec/osvojenka (osvojitel už existuje výše)
+            'osvojenec', 'osvojence', 'osvojenci', 'osvojencem', 'osvojenci', 'osvojenců', 'osvojencům', 'osvojencích',
+            'osvojenka', 'osvojenky', 'osvojence', 'osvojenkou', 'osvojenek', 'osvojenkám', 'osvojenkách',
+            # Pečovatel/pečovatelka
+            'pečovatel', 'pečovatele', 'pečovateli', 'pečovatelem', 'pečovatelé', 'pečovatelů', 'pečovatelům', 'pečovatelích',
+            'pečovatelka', 'pečovatelky', 'pečovatelce', 'pečovatelkou', 'pečovatelek', 'pečovatelkám', 'pečovatelkách',
+            # Ošetřující/ošetřovatel
+            'ošetřující', 'ošetřujícího', 'ošetřujícímu', 'ošetřujícím', 'ošetřujících',
+            'ošetřovatel', 'ošetřovatele', 'ošetřovateli', 'ošetřovatelem', 'ošetřovatelé', 'ošetřovatelů', 'ošetřovatelům', 'ošetřovatelích',
+            'ošetřovatelka', 'ošetřovatelky', 'ošetřovatelce', 'ošetřovatelkou', 'ošetřovatelek', 'ošetřovatelkám', 'ošetřovatelkách',
+            # Opatrovatel/opatrovatelka
+            'opatrovatel', 'opatrovatele', 'opatrovateli', 'opatrovatelem', 'opatrovatelé', 'opatrovatelů', 'opatrovatelům', 'opatrovatelích',
+            'opatrovatelka', 'opatrovatelky', 'opatrovatelce', 'opatrovatelkou', 'opatrovatelek', 'opatrovatelkám', 'opatrovatelkách',
+            # Zákonný zástupce
+            'zákonný zástupce', 'zákonného zástupce', 'zákonnému zástupci', 'zákonném zástupci', 'zákonným zástupcem',
+            'zákonná zástupkyně', 'zákonné zástupkyně', 'zákonné zástupkyni', 'zákonnou zástupkyní',
+            # Kontaktní osoba
+            'kontaktní osoba', 'kontaktní osoby', 'kontaktní osobě', 'kontaktní osobou',
+            'kontaktní', 'kontaktního', 'kontaktnímu', 'kontaktním', 'kontaktních',
+            # ===================================================================
+            # ZAMĚSTNÁNÍ A FUNKCE - ROZŠÍŘENÉ
+            # ===================================================================
+            # Pracovník/pracovnice
+            'pracovník', 'pracovníka', 'pracovníkovi', 'pracovníku', 'pracovníkem', 'pracovníci', 'pracovníků', 'pracovníkům', 'pracovnících',
+            'pracovnice', 'pracovnici', 'pracovnicí', 'pracovnic', 'pracovnicím', 'pracovnicích',
+            # Dělník/dělnice
+            'dělník', 'dělníka', 'dělníkovi', 'dělníku', 'dělníkem', 'dělníci', 'dělníků', 'dělníkům', 'dělnících',
+            'dělnice', 'dělnici', 'dělnicí', 'dělnic', 'dělnicím', 'dělnicích',
+            # Úředník/úřednice
+            'úředník', 'úředníka', 'úředníkovi', 'úředníku', 'úředníkem', 'úředníci', 'úředníků', 'úředníkům', 'úřednících',
+            'úřednice', 'úřednici', 'úřednicí', 'úřednic', 'úřednicím', 'úřednicích',
+            # Ředitel/ředitelka (rozšíření)
+            'ředitel', 'ředitele', 'řediteli', 'ředitelem', 'ředitelé', 'ředitelů', 'ředitelům', 'ředitelích',
+            'ředitelka', 'ředitelky', 'ředitelce', 'ředitelkou', 'ředitelek', 'ředitelkám', 'ředitelkách',
+            'ředitel školy', 'ředitele školy', 'řediteli školy', 'ředitelem školy',
+            'ředitelka školy', 'ředitelky školy', 'ředitelce školy', 'ředitelkou školy',
+            # Jednatel/jednatelka
+            'jednatel', 'jednatele', 'jednateli', 'jednatelem', 'jednatelé', 'jednatelů', 'jednatelům', 'jednatelích',
+            'jednatelka', 'jednatelky', 'jednatelce', 'jednatelkou', 'jednatelek', 'jednatelkám', 'jednatelkách',
+            'jednatel společnosti',
+            # Předseda rozšíření (základní forma už existuje)
+            'předsedy', 'předsedovi', 'předsedou', 'předsedů', 'předsedům', 'předsedech',
+            'předsedkyni', 'předsedkyní', 'předsedkyň', 'předsedkyním', 'předsedkyních',
+            'předseda senátu', 'předsedy senátu', 'předsedovi senátu', 'předsedou senátu',
+            # Místopředseda/místopředsedkyně
+            'místopředseda', 'místopředsedy', 'místopředsedovi', 'místopředsedou', 'místopředsedové', 'místopředsedů', 'místopředsedům', 'místopředsedech',
+            'místopředsedkyně', 'místopředsedkyni', 'místopředsedkyní', 'místopředsedkyň', 'místopředsedkyním', 'místopředsedkyních',
+            # Manažer/manažerka
+            'manažer', 'manažera', 'manažerovi', 'manažeru', 'manažerem', 'manažeři', 'manažerů', 'manažerům', 'manažerech',
+            'manažerka', 'manažerky', 'manažerce', 'manažerkou', 'manažerek', 'manažerkám', 'manažerkách',
+            # Vedoucí
+            'vedoucí', 'vedoucího', 'vedoucímu', 'vedoucím', 'vedoucích',
+            # Vlastník/vlastnice (majitel už existuje)
+            'vlastník', 'vlastníka', 'vlastníkovi', 'vlastníku', 'vlastníkem', 'vlastníci', 'vlastníků', 'vlastníkům', 'vlastnících',
+            'vlastnice', 'vlastnici', 'vlastnicí', 'vlastnic', 'vlastnicím', 'vlastnicích',
+            'vlastník nemovitosti', 'vlastníka nemovitosti', 'vlastníkovi nemovitosti', 'vlastníkem nemovitosti',
+            # Spoluvlastník/spoluvlastnice
+            'spoluvlastník', 'spoluvlastníka', 'spoluvlastníkovi', 'spoluvlastníku', 'spoluvlastníkem', 'spoluvlastníci', 'spoluvlastníků', 'spoluvlastníkům', 'spoluvlastnících',
+            'spoluvlastnice', 'spoluvlastnici', 'spoluvlastnicí', 'spoluvlastnic', 'spoluvlastnicím', 'spoluvlastnicích',
+            'spoluvlastník bytu', 'spoluvlastníka bytu', 'spoluvlastníkovi bytu', 'spoluvlastníkem bytu',
+            'podílový spoluvlastník', 'podílového spoluvlastníka', 'podílovému spoluvlastníkovi', 'podílovým spoluvlastníkem',
+            # Akcionář/akcionářka
+            'akcionář', 'akcionáře', 'akcionáři', 'akcionářem', 'akcionáři', 'akcionářů', 'akcionářům', 'akcionářích',
+            'akcionářka', 'akcionářky', 'akcionářce', 'akcionářkou', 'akcionářek', 'akcionářkám', 'akcionářkách',
+            # Společník/společnice
+            'společník', 'společníka', 'společníkovi', 'společníku', 'společníkem', 'společníci', 'společníků', 'společníkům', 'společnících',
+            'společnice', 'společnici', 'společnicí', 'společnic', 'společnicím', 'společnicích',
+            # Statutární zástupce
+            'statutární zástupce', 'statutárního zástupce', 'statutárnímu zástupci', 'statutárním zástupcem',
+            # Prokurist/prokuristka
+            'prokurist', 'prokurista', 'prokuristovi', 'prokuristu', 'prokuristem', 'prokuristé', 'prokuristů', 'prokuristům', 'prokuristech',
+            'prokuristka', 'prokuristky', 'prokuristce', 'prokuristkou', 'prokuristek', 'prokuristkám', 'prokuristkách',
+            # Zmocněnec/zmocněnkyně
+            'zmocněnec', 'zmocněnce', 'zmocněnci', 'zmocněncem', 'zmocněnci', 'zmocněnců', 'zmocněncům', 'zmocněncích',
+            'zmocněnkyně', 'zmocněnkyni', 'zmocněnkyní', 'zmocněnkyň', 'zmocněnkyním', 'zmocněnkyních',
+            # ===================================================================
+            # PRÁVNÍ OZNAČENÍ - VELMI ROZŠÍŘENÉ
+            # ===================================================================
+            # Dotčený/zúčastněný
+            'dotčený', 'dotčeného', 'dotčenému', 'dotčeném', 'dotčeným', 'dotčených', 'dotčenými',
+            'dotčená', 'dotčené', 'dotčenou',
+            'zúčastněný', 'zúčastněného', 'zúčastněnému', 'zúčastněném', 'zúčastněným', 'zúčastněných', 'zúčastněnými',
+            'zúčastněná', 'zúčastněné', 'zúčastněnou',
+            # Zastupující/zástupce rozšíření
+            'zastupující', 'zastupujícího', 'zastupujícímu', 'zastupujícím', 'zastupujících',
+            'zástupce', 'zástupci', 'zástupcem', 'zástupců', 'zástupcům', 'zástupcích',
+            'zástupkyně', 'zástupkyni', 'zástupkyní', 'zástupkyň', 'zástupkyním', 'zástupkyních',
+            'zástupce ředitele', 'zástupci ředitele', 'zástupcem ředitele',
+            # Advokát/advokátka
+            'advokát', 'advokáta', 'advokátovi', 'advokátu', 'advokátem', 'advokáti', 'advokátů', 'advokátům', 'advokátech',
+            'advokátka', 'advokátky', 'advokátce', 'advokátkou', 'advokátek', 'advokátkám', 'advokátkách',
+            # Obhájce/obhájkyně
+            'obhájce', 'obhájci', 'obhájcem', 'obhájců', 'obhájcům', 'obhájcích',
+            'obhájkyně', 'obhájkyni', 'obhájkyní', 'obhájkyň', 'obhájkyním', 'obhájkyních',
+            # Právní zástupce
+            'právní zástupce', 'právního zástupce', 'právnímu zástupci', 'právním zástupcem',
+            # Znalec/znalkyně
+            'znalec', 'znalce', 'znalci', 'znalcem', 'znalci', 'znalců', 'znalcům', 'znalcích',
+            'znalkyně', 'znalkyni', 'znalkyní', 'znalkyň', 'znalkyním', 'znalkyních',
+            'soudní znalec', 'soudního znalce', 'soudnímu znalci', 'soudním znalcem',
+            # Expert/expertka, odborník/odbornice
+            'expert', 'experta', 'expertovi', 'expertu', 'expertem', 'experti', 'expertů', 'expertům', 'expertech',
+            'expertka', 'expertky', 'expertce', 'expertkou', 'expertek', 'expertkám', 'expertkách',
+            'odborník', 'odborníka', 'odborníkovi', 'odborníku', 'odborníkem', 'odborníci', 'odborníků', 'odborníkům', 'odbornicích',
+            'odbornice', 'odbornici', 'odbornicí', 'odbornic', 'odbornicím', 'odbornicích',
+            # Soudce/soudkyně
+            'soudce', 'soudci', 'soudcem', 'soudců', 'soudcům', 'soudcích',
+            'soudkyně', 'soudkyni', 'soudkyní', 'soudkyň', 'soudkyním', 'soudkyních',
+            'samosoudce', 'samosoudci', 'samosoudcem', 'samosoudců', 'samosoudcům', 'samosoudcích',
+            'samosoudkyně', 'samosoudkyni', 'samosoudkyní', 'samosoudkyň', 'samosoudkyním', 'samosoudkyních',
+            # Státní zástupce/prokurátorka
+            'státní zástupce', 'státního zástupce', 'státnímu zástupci', 'státním zástupcem',
+            'státní zástupkyně', 'státní zástupkyni', 'státní zástupkyní',
+            'prokurátor', 'prokurátora', 'prokurátorovi', 'prokurátoři', 'prokurátorů', 'prokurátorům', 'prokurátorech',
+            'prokurátorka', 'prokurátorky', 'prokurátorce', 'prokurátorkou', 'prokurátorek', 'prokurátorkám', 'prokurátorkách',
+            # Insolvenční správce
+            'insolvenční správce', 'insolvenčního správce', 'insolvenčnímu správci', 'insolvenčním správcem',
+            'insolvenční správkyně', 'insolvenční správkyni', 'insolvenční správkyní',
+            'správce konkursní podstaty', 'správce konkursní podstaty', 'správci konkursní podstaty', 'správcem konkursní podstaty',
+            # Probační úředník, kurátor
+            'probační úředník', 'probačního úředníka', 'probačnímu úředníkovi', 'probačním úředníkem',
+            'probační úřednice', 'probační úřednici', 'probační úřednicí',
+            'kurátor', 'kurátora', 'kurátorovi', 'kurátoři', 'kurátorů', 'kurátorům', 'kurátorech',
+            'kurátorka', 'kurátorky', 'kurátorce', 'kurátorkou', 'kurátorek', 'kurátorkám', 'kurátorkách',
+            'sociální kurátor', 'sociálního kurátora', 'sociálnímu kurátorovi', 'sociálním kurátorem',
+            # ===================================================================
+            # NEMOVITOSTI
+            # ===================================================================
+            # Nájemce/nájemkyně
+            'nájemce', 'nájemci', 'nájemcem', 'nájemců', 'nájemcům', 'nájemcích',
+            'nájemkyně', 'nájemkyni', 'nájemkyní', 'nájemkyň', 'nájemkyním', 'nájemkyních',
+            'nájemce bytu', 'nájemci bytu', 'nájemcem bytu',
+            # Podnájemce/podnájemkyně
+            'podnájemce', 'podnájemci', 'podnájemcem', 'podnájemců', 'podnájemcům', 'podnájemcích',
+            'podnájemkyně', 'podnájemkyni', 'podnájemkyní', 'podnájemkyň', 'podnájemkyním', 'podnájemkyních',
+            # Pronajímatel/pronajímatelka
+            'pronajímatel', 'pronajímatele', 'pronajímateli', 'pronajímatelem', 'pronajímatelé', 'pronajímatelů', 'pronajímatelům', 'pronajímatelích',
+            'pronajímatelka', 'pronajímatelky', 'pronajímatelce', 'pronajímatelkou', 'pronajímatelek', 'pronajímatelkám', 'pronajímatelkách',
+            # Uživatel/uživatelka
+            'uživatel', 'uživatele', 'uživateli', 'uživatelem', 'uživatelé', 'uživatelů', 'uživatelům', 'uživatelích',
+            'uživatelka', 'uživatelky', 'uživatelce', 'uživatelkou', 'uživatelek', 'uživatelkám', 'uživatelkách',
+            'oprávněný uživatel', 'oprávněného uživatele', 'oprávněnému uživateli', 'oprávněným uživatelem',
+            'neoprávněný uživatel', 'neoprávněného uživatele', 'neoprávněnému uživateli', 'neoprávněným uživatelem',
+            # Investor stavby
+            'investor stavby', 'investora stavby', 'investorovi stavby', 'investorem stavby',
+            # ===================================================================
+            # ŠKOLSTVÍ - ROZŠÍŘENÉ
+            # ===================================================================
+            # Absolvent/absolventka
+            'absolvent', 'absolventa', 'absolventovi', 'absolventu', 'absolventem', 'absolventi', 'absolventů', 'absolventům', 'absolventech',
+            'absolventka', 'absolventky', 'absolventce', 'absolventkou', 'absolventek', 'absolventkám', 'absolventkách',
+            # Učitel/učitelka
+            'učitel', 'učitele', 'učiteli', 'učitelem', 'učitelé', 'učitelů', 'učitelům', 'učitelích',
+            'učitelka', 'učitelky', 'učitelce', 'učitelkou', 'učitelek', 'učitelkám', 'učitelkách',
+            'třídní učitel', 'třídního učitele', 'třídnímu učiteli', 'třídním učitelem',
+            'třídní učitelka', 'třídní učitelky', 'třídní učitelce', 'třídní učitelkou',
+            # Pedagog/pedagožka
+            'pedagog', 'pedagoga', 'pedagogovi', 'pedagogu', 'pedagogem', 'pedagogové', 'pedagogů', 'pedagogům', 'pedagogech',
+            'pedagožka', 'pedagožky', 'pedagožce', 'pedagožkou', 'pedagožek', 'pedagožkám', 'pedagožkách',
+            # Vyučující
+            'vyučující', 'vyučujícího', 'vyučujícímu', 'vyučujícím', 'vyučujících',
+            # Lektor/lektorka
+            'lektor', 'lektora', 'lektorovi', 'lektoru', 'lektorem', 'lektoři', 'lektorů', 'lektorům', 'lektorech',
+            'lektorka', 'lektorky', 'lektorce', 'lektorkou', 'lektorek', 'lektorkám', 'lektorkách',
+            # ===================================================================
+            # SPECIFICKÉ SITUACE
+            # ===================================================================
+            # Osoba identifikovaná, fyzická osoba
+            'osoba identifikovaná jako', 'osoby identifikované jako', 'osobě identifikované jako',
+            'osoba jménem', 'osoby jménem', 'osobě jménem', 'osobou jménem',
+            'fyzická osoba', 'fyzické osoby', 'fyzické osobě', 'fyzickou osobou',
+            # Občan (rozšíření - základní formy už existují)
+            'občan', 'občana', 'občanovi', 'občanu', 'občanem', 'občané', 'občanů', 'občanům', 'občanech',
+            'občanka', 'občanky', 'občance',
+            # Přítomný/nepřítomný
+            'přítomný', 'přítomného', 'přítomněm u', 'přítomném', 'přítomným', 'přítomných', 'přítomným i',
+            'přítomná', 'přítomné', 'přítomnou',
+            'nepřítomný', 'nepřítomného', 'nepřítomněm u', 'nepřítomném', 'nepřítomným', 'nepřítomných', 'nepřítomným i',
+            'nepřítomná', 'nepřítomné', 'nepřítomnou',
+            'dostavivší se', 'dostavivšího se', 'dostavivšímu se', 'dostavivším se', 'dostavivších se',
+            # Jmenovaný/uvedený
+            'jmenovaný', 'jmenovaného', 'jmenovanému', 'jmenovaném', 'jmenovaným', 'jmenovaných', 'jmenovanými',
+            'jmenovaná', 'jmenované', 'jmenovanou',
+            'jmenovaný do funkce', 'jmenovaného do funkce', 'jmenovanému do funkce', 'jmenovaným do funkce',
+            'výše uvedený', 'výše uvedeného', 'výše uvedenému', 'výše uvedeném', 'výše uvedeným',
+            'výše uvedená', 'výše uvedené', 'výše uvedenou',
+            'níže uvedený', 'níže uvedeného', 'níže uvedenému', 'níže uvedeném', 'níže uvedeným',
+            'níže uvedená', 'níže uvedené', 'níže uvedenou',
+            'shora uvedený', 'shora uvedeného', 'shora uvedenému', 'shora uvedeném', 'shora uvedeným',
+            'shora uvedená', 'shora uvedené', 'shora uvedenou',
+            # Zvolený/pověřený/delegovaný
+            'zvolený', 'zvoleného', 'zvolenému', 'zvoleném', 'zvoleným', 'zvolených', 'zvoleným i',
+            'zvolená', 'zvolené', 'zvolenou',
+            'pověřený', 'pověřeného', 'pověřenému', 'pověřeném', 'pověřeným', 'pověřených', 'pověřenými',
+            'pověřená', 'pověřené', 'pověřenou',
+            'delegovaný', 'delegovaného', 'delegovanému', 'delegovaném', 'delegovaným', 'delegovaných', 'delegovanými',
+            'delegovaná', 'delegované', 'delegovanou',
+            # Zbavený/odvolaný (vyloučený už existuje)
+            'zbavený', 'zbaveného', 'zbavenému', 'zbaveném', 'zbaveným', 'zbavených', 'zbavenými',
+            'zbavená', 'zbavené', 'zbavenou',
+            'odvolaný', 'odvolaného', 'odvolanému', 'odvolaném', 'odvolaným', 'odvolaných', 'odvolanými',
+            'odvolaná', 'odvolané', 'odvolanou',
+            # Azylant/emigrant/imigrant (uprchlík už existuje)
+            'azylant', 'azylanta', 'azylantovi', 'azylantu', 'azylantem', 'azylanti', 'azylantů', 'azylantům', 'azylantech',
+            'azylantka', 'azylantky', 'azylantce', 'azylantkou', 'azylantek', 'azylantkám', 'azylantkách',
+            'emigrant', 'emigranta', 'emigrantovi', 'emigrantu', 'emigrantem', 'emigranti', 'emigrantů', 'emigrantům', 'emigrantech',
+            'emigrantka', 'emigrantky', 'emigrantce', 'emigrantkou', 'emigrantek', 'emigrantkám', 'emigrantkách',
+            'imigrant', 'imigranta', 'imigrantovi', 'imigrantu', 'imigrantem', 'imigranti', 'imigrantů', 'imigrantům', 'imigrantech',
+            'imigrantka', 'imigrantky', 'imigrantce', 'imigrantkou', 'imigrantek', 'imigrantkám', 'imigrantkách',
+            'žadatel o azyl', 'žadatele o azyl', 'žadateli o azyl', 'žadatelem o azyl',
+            'cizinec', 'cizince', 'cizinci', 'cizincem', 'cizinci', 'cizinců', 'cizincům', 'cizincích',
+            'cizinka', 'cizinky', 'cizince', 'cizinkou', 'cizinek', 'cizinkám', 'cizinkách',
+            # Senior/důchodce (rozšíření)
+            'senior', 'seniora', 'seniorovi', 'senioru', 'seniorem', 'senioři', 'seniorů', 'seniorům', 'seniorech',
+            'seniorka', 'seniorky', 'seniorce', 'seniorkou', 'seniorek', 'seniorkám', 'seniorkách',
+            'důchodce', 'důchodci', 'důchodcem', 'důchodců', 'důchodcům', 'důchodcích',
+            'důchodkyně', 'důchodkyni', 'důchodkyní', 'důchodkyň', 'důchodkyním', 'důchodkyních',
+            # Těhotná/gravidní/rodička
+            'těhotná', 'těhotné', 'těhotnou', 'těhotných', 'těhotným', 'těhotnými',
+            'gravidní', 'gravidní', 'gravidních', 'gravidním', 'gravidními',
+            'porodnice', 'porodnici', 'porodnicí', 'porodnic', 'porodnicím', 'porodnicích',
+            # Pozůstalý/dědic
+            'pozůstalý', 'pozůstalého', 'pozůstalému', 'pozůstalém', 'pozůstalým', 'pozůstalých', 'pozůstalými',
+            'pozůstalá', 'pozůstalé', 'pozůstalou',
+            'dědic', 'dědice', 'dědici', 'dědicem', 'dědici', 'dědiců', 'dědicům', 'dědicích',
+            'dědička', 'dědičky', 'dědičce', 'dědičkou', 'dědiček', 'dědičkám', 'dědičkách',
+            'odkázaný', 'odkázaného', 'odkázanému', 'odkázaném', 'odkázaným', 'odkázaných', 'odkázanými',
+            'odkázaná', 'odkázané', 'odkázanou',
+            # Bývalý/původní/nový
+            'bývalý', 'bývalého', 'bývalému', 'bývalém', 'bývalým', 'bývalých', 'bývalými',
+            'bývalá', 'bývalé', 'bývalou',
+            'původní', 'původního', 'původnímu', 'původním', 'původních',
+            'předchozí', 'předchozího', 'předchozímu', 'předchozím', 'předchozích',
+            'nový', 'nového', 'novému', 'novém', 'novým', 'nových', 'novými',
+            'nová', 'nové', 'novou',
+            'nynější', 'nynějšího', 'nynějšímu', 'nynějším', 'nynějších',
+            'současný', 'současného', 'současnému', 'současném', 'současným', 'současných', 'současnými',
+            'současná', 'současné', 'současnou',
+            # ===================================================================
+            # KOMBINOVANÉ TERMÍNY
+            # ===================================================================
+            # Manželé/rodiče/sourozenci (plurály)
+            'manželé', 'manželů', 'manželům', 'manželích', 'manželi',
+            # Pan/paní (rozšíření)
+            'pan', 'pana', 'panovi', 'panu', 'panem', 'pánové', 'pánů', 'pánům', 'pánech',
+            'paní', 'paní', 'paním', 'paních',
+            'pán', 'pána', 'pánovi', 'pánu', 'pánom',
+            'pani', 'pani', 'paním', 'paních',
+            # S tituly
+            'pan doktor', 'pana doktora', 'panu doktorovi', 'panem doktorem',
+            'paní doktorka', 'paní doktorky', 'paní doktorce', 'paní doktorkou',
+            'pan profesor', 'pana profesora', 'panu profesorovi', 'panem profesorem',
+            'paní profesorka', 'paní profesorky', 'paní profesorce', 'paní profesorkou',
+            'pan inženýr', 'pana inženýra', 'panu inženýrovi', 'panem inženýrem',
+            'paní inženýrka', 'paní inženýrky', 'paní inženýrce', 'paní inženýrkou',
             # Další
             'care', 'plus', 'minus', 'service', 'services',
             'group', 'company', 'corp', 'ltd', 'gmbh', 'inc'
@@ -2469,10 +2843,82 @@ class Anonymizer:
                 'příjemců', 'příjemkyní', 'příjemkyně', 'registrovanou', 'registrovaná', 'registrované', 'registrovaného', 'registrovanému',
                 'registrovaný', 'registrovaných', 'registrovaným', 'rodič', 'rodiče', 'rodičem', 'rodiči', 'rodička',
                 'rodičky', 'rodičů', 'rodina', 'rodině', 'rodiny',
-                # Rodinné vztahy
+                # Rodinné vztahy - VELMI ROZŠÍŘENÉ
                 'dítě', 'dítěte', 'dítěti', 'dítětem', 'děti', 'dětí', 'dětem', 'dětmi',
                 'sourozenec', 'sourozence', 'sourozenci', 'sourozencem', 'sourozenci', 'sourozencům', 'sourozencích', 'sourozenci',
                 'sourozenka', 'sourozence', 'sourozenkou', 'sourozenci', 'sourozenek', 'sourozenkyně',
+                # Matka - varianty (základní forma už existuje výše)
+                'maminka', 'maminky', 'mamince', 'maminkou', 'maminek', 'maminkám', 'maminkách',
+                'máma', 'mámy', 'mámě', 'mámou', 'mám', 'mámám', 'mámách',
+                # Otec
+                'otec', 'otce', 'otci', 'otcem', 'otcové', 'otců', 'otcům', 'otcích', 'otci',
+                'tatínek', 'tatínka', 'tatínkovi', 'tatínku', 'tatínkem', 'tatínkové', 'tatínků', 'tatínkům', 'tatíncích',
+                'táta', 'táty', 'tátovi', 'tátu', 'tátou', 'tátové', 'tátů', 'tátům', 'tátech',
+                # Rodička - rozšíření (rodič už existuje)
+                'rodičku', 'rodičkou', 'rodiček', 'rodičkám', 'rodičkách', 'rodičům', 'rodičích',
+                # Bratr a sestra
+                'bratr', 'bratra', 'bratru', 'bratrovi', 'bratrem', 'bratři', 'bratrů', 'bratrům', 'bratrech',
+                'nevlastní bratr', 'nevlastního bratra', 'nevlastnímu bratrovi',
+                'adoptivní bratr', 'adoptivního bratra', 'adoptivnímu bratrovi',
+                'sestra', 'sestry', 'sestře', 'sestrou', 'sester', 'sestrám', 'sestrách',
+                'nevlastní sestra', 'nevlastní sestry', 'nevlastní sestře', 'nevlastní sestrou',
+                'adoptivní sestra', 'adoptivní sestry', 'adoptivní sestře', 'adoptivní sestrou',
+                # Syn a dcera
+                'syn', 'syna', 'synovi', 'synu', 'synem', 'synové', 'synů', 'synům', 'synech',
+                'dcera', 'dcery', 'dceři', 'dcerou', 'dcer', 'dcerám', 'dcerách',
+                # Vnuci
+                'vnuk', 'vnuka', 'vnukovi', 'vnuku', 'vnukem', 'vnuci', 'vnuků', 'vnukům', 'vnucích',
+                'vnučka', 'vnučky', 'vnučce', 'vnučkou', 'vnuček', 'vnučkám', 'vnučkách',
+                # Prarodiče
+                'dědeček', 'dědečka', 'dědečkovi', 'dědečku', 'dědečkem', 'dědečkové', 'dědečků', 'dědečkům', 'dědečcích',
+                'děda', 'dědy', 'dědovi', 'dědu', 'dědou', 'dědové', 'dědů', 'dědům', 'dědech',
+                'babička', 'babičky', 'babičce', 'babičkou', 'babiček', 'babičkám', 'babičkách',
+                'bába', 'báby', 'bábě', 'bábou', 'báb', 'bábám', 'bábách',
+                # Strýc, teta, bratranci
+                'strýc', 'strýce', 'strýci', 'strýcem', 'strýcové', 'strýců', 'strýcům', 'strýcích',
+                'teta', 'tety', 'tetě', 'tetou', 'tet', 'tetám', 'tetách',
+                'bratranec', 'bratrance', 'bratranci', 'bratrancem', 'bratranci', 'bratranců', 'bratrancům', 'bratrancích',
+                'sestřenice', 'sestřenici', 'sestřenicí', 'sestřenic', 'sestřenicím', 'sestřenicích',
+                # Tchán, tchýně, švagr, švagrová
+                'švagr', 'švagra', 'švagrovi', 'švagru', 'švagram', 'švagrové', 'švagrů', 'švagrům', 'švagrech',
+                'švagrová', 'švagrové', 'švagrovou', 'švagrových', 'švagrovám', 'švagrovách',
+                'tchán', 'tchána', 'tchánovi', 'tchánů', 'tchánům', 'tchánech',
+                'tchýně', 'tchýni', 'tchýní', 'tchyň', 'tchyním', 'tchyních',
+                'zeť', 'zeti', 'zetě', 'zeťi', 'zeťů', 'zeťům', 'zeťích',
+                'snacha', 'snachy', 'snače', 'snachou', 'snach', 'snachám', 'snachách',
+                # Partnerské vztahy
+                'manžel', 'manžela', 'manželovi', 'manželu', 'manželem', 'manželé', 'manželů', 'manželům', 'manželech',
+                'manželka', 'manželky', 'manželce', 'manželkou', 'manželek', 'manželkám', 'manželkách',
+                'choť', 'choť', 'choti', 'chotě', 'chotí', 'choť', 'chotí', 'chotím', 'chotích',
+                'partner', 'partnera', 'partnerovi', 'partneru', 'partnerem', 'partneři', 'partnerů', 'partnerům', 'partnerech',
+                'partnerka', 'partnerky', 'partnerce', 'partnerkou', 'partnerek', 'partnerkám', 'partnerkách',
+                'druh', 'druha', 'druhovi', 'druhu', 'druhem', 'druhové', 'druhů', 'druhům', 'druzích',
+                'družka', 'družky', 'družce', 'družkou', 'družek', 'družkám', 'družkách',
+                'snoubenec', 'snoubence', 'snoubenci', 'snoubencem', 'snoubenci', 'snoubenců', 'snoubencům', 'snoubencích',
+                'snoubenka', 'snoubenky', 'snoubence', 'snoubenkou', 'snoubenek', 'snoubenkám', 'snoubenkách',
+                'přítele', 'příteli', 'přítelem', 'přátelé', 'přátel', 'přátelům', 'přátelích',
+                'přítelkyní', 'přítelkyň', 'přítelkyním', 'přítelkyních',
+                # Ex-manželé a rozvedení
+                'ex-manžel', 'ex-manžela', 'ex-manželovi', 'ex-manželu', 'ex-manželem',
+                'bývalý manžel', 'bývalého manžela', 'bývalému manželovi',
+                'ex-manželka', 'ex-manželky', 'ex-manželce', 'ex-manželkou',
+                'bývalá manželka', 'bývalé manželky', 'bývalé manželce', 'bývalou manželkou',
+                'rozvedenou', 'rozvedená', 'rozvedené', 'rozvedeného',
+                'rozvedenému manželovi', 'rozvedeného manžela', 'rozvedený manžel',
+                'rozvedená manželka', 'rozvedené manželky', 'rozvedené manželce',
+                'vdovec', 'vdovce', 'vdovci', 'vdovcem', 'vdovci', 'vdovců', 'vdovcům', 'vdovcích',
+                'vdova', 'vdovy', 'vdově', 'vdovou', 'vdov', 'vdovám', 'vdovách',
+                # Děti a věk
+                'nezletilý', 'nezletilého', 'nezletilému', 'nezletilém', 'nezletilým', 'nezletilých', 'nezletilými',
+                'nezletilá', 'nezletilé', 'nezletilou',
+                'potomek', 'potomka', 'potomkovi', 'potomku', 'potomkem', 'potomci', 'potomků', 'potomkům', 'potomcích',
+                'narozený', 'narozeného', 'narozenému', 'narozeném', 'narozeným', 'narozených', 'narozenými',
+                'narozená', 'narozené', 'narozenou',
+                'novorozenec', 'novorozence', 'novorozenci', 'novorozencem', 'novorozenci', 'novorozenců', 'novorozencům', 'novorozencích',
+                'mladistvý', 'mladistvého', 'mladistvému', 'mladistvém', 'mladistvým', 'mladistvých', 'mladistvými',
+                'mladistvá', 'mladistvé', 'mladistvou',
+                'dospělý', 'dospělého', 'dospělému', 'dospělém', 'dospělým', 'dospělých', 'dospělými',
+                'dospělá', 'dospělé', 'dospělou',
                 'rozvedenou', 'rozvedená', 'rozvedené', 'rozvedeného',
                 'rozvedenému', 'rozvedený', 'rozvedených', 'rozvedeným', 'ručitel', 'ručitelce', 'ručitele', 'ručitelek', 'ručitelem',
                 'ručiteli', 'ručitelka', 'ručitelkou', 'ručitelky', 'ručitelů', 'samoživitel', 'samoživitele', 'samoživitelka',
@@ -2491,8 +2937,49 @@ class Anonymizer:
                 'vyšetřovaným', 'vyšetřovanými', 'věřitel', 'věřitelce', 'věřitele', 'věřitelek', 'věřiteli', 'věřitelka',
                 'věřitelky', 'věřitelů', 'zadrženou', 'zadržená', 'zadržené', 'zadrženého', 'zadrženém', 'zadrženému',
                 'zadržený', 'zadržených', 'zadrženým', 'zadrženými',
-                # Zdravotní/fyzický stav
+                # Zdravotní/fyzický stav - ROZŠÍŘENÉ
                 'zraněnou', 'zraněná', 'zraněné', 'zraněného', 'zraněném', 'zraněnému', 'zraněný', 'zraněných', 'zraněným', 'zraněnými',
+                # Lehce/těžce zraněný
+                'lehce zraněný', 'lehce zraněná', 'lehce zraněné', 'lehce zraněného', 'lehce zraněnému', 'lehce zraněném', 'lehce zraněným',
+                'těžce zraněný', 'těžce zraněná', 'těžce zraněné', 'těžce zraněného', 'těžce zraněnému', 'těžce zraněném', 'těžce zraněným',
+                # Nemocný
+                'nemocný', 'nemocného', 'nemocnému', 'nemocném', 'nemocným',
+                'nemocná', 'nemocné', 'nemocnou', 'nemocnými', 'nemocných',
+                'těžce nemocný', 'těžce nemocná', 'těžce nemocné', 'těžce nemocného', 'těžce nemocnému', 'těžce nemocném', 'těžce nemocným',
+                'chronicky nemocný', 'chronicky nemocná', 'chronicky nemocné', 'chronicky nemocného',
+                'duševně nemocný', 'duševně nemocná', 'duševně nemocné', 'duševně nemocného',
+                # Hospitalizovaný a další zdravotní stavy
+                'hospitalizovaný', 'hospitalizovaného', 'hospitalizovanému', 'hospitalizovaném', 'hospitalizovaným', 'hospitalizovanými', 'hospitalizovaných',
+                'hospitalizovaná', 'hospitalizované', 'hospitalizovanou',
+                'transportovaný', 'transportovaného', 'transportovanému', 'transportovaném', 'transportovaným', 'transportovanými', 'transportovaných',
+                'transportovaná', 'transportované', 'transportovanou',
+                'intubovaný', 'intubovaného', 'intubovanému', 'intubovaném', 'intubovaným', 'intubovanými', 'intubovaných',
+                'intubovaná', 'intubované', 'intubovanou',
+                'resuscitovaný', 'resuscitovaného', 'resuscitovanému', 'resuscitovaném', 'resuscitovaným', 'resuscitovanými', 'resuscitovaných',
+                'resuscitovaná', 'resuscitované', 'resuscitovanou',
+                'stabilizovaný', 'stabilizovaného', 'stabilizovanému', 'stabilizovaném', 'stabilizovaným', 'stabilizovanými', 'stabilizovaných',
+                'stabilizovaná', 'stabilizované', 'stabilizovanou',
+                'léčený', 'léčeného', 'léčenému', 'léčeném', 'léčeným', 'léčenými', 'léčených',
+                'léčená', 'léčené', 'léčenou',
+                'amputovaný', 'amputovaného', 'amputovanému', 'amputovaném', 'amputovaným', 'amputovanými', 'amputovaných',
+                'amputovaná', 'amputované', 'amputovanou',
+                # Dárce (transplantace)
+                'dárce', 'dárci', 'dárců', 'dárcem', 'dárcům', 'dárcích', 'dárkyně', 'dárkyní', 'dárkyň', 'dárkyni',
+                # Specifické zdravotní stavy
+                'tetraplegie', 'tetraplegik', 'tetraplegika', 'paraplegik', 'paraplegika',
+                'imobilní', 'imobilního', 'imobilnímu', 'imobilním', 'imobilních',
+                'komatózní', 'komatózního', 'komatóznímu', 'komatózním', 'komatózních',
+                'bezvědomý', 'bezvědomého', 'bezvědomému', 'bezvědomém', 'bezvědomým', 'bezvědomých', 'bezvědomými',
+                'bezvědomá', 'bezvědomé', 'bezvědomou',
+                'umírající', 'umírajícího', 'umírajícímu', 'umírajícím', 'umírajících',
+                # Mrtvý/zemřelý/zesnulý
+                'mrtvý', 'mrtvého', 'mrtvému', 'mrtvém', 'mrtvým', 'mrtvých', 'mrtvými',
+                'mrtvá', 'mrtvé', 'mrtvou',
+                'zemřelý', 'zemřelého', 'zemřelému', 'zemřelém', 'zemřelým', 'zemřelých', 'zemřelými',
+                'zemřelá', 'zemřelé', 'zemřelou',
+                'zesnulý', 'zesnulého', 'zesnulému', 'zesnulém', 'zesnulým', 'zesnulých', 'zesnulými',
+                'zesnulá', 'zesnulé', 'zesnulou',
+                'deceased', 'exitus',
                 'zaměstnance', 'zaměstnancem', 'zaměstnanci', 'zaměstnanců',
                 'zaměstnanec', 'zaměstnankyni', 'zaměstnankyní', 'zaměstnankyně', 'zaměstnankyň', 'zaměstnavatel', 'zaměstnavatele', 'zaměstnavatelem',
                 'zaměstnavateli', 'zaměstnavatelka', 'zaměstnavatelky', 'zaměstnavatelů', 'zletilou', 'zletilá', 'zletilé', 'zletilého',
@@ -2531,6 +3018,267 @@ class Anonymizer:
                 'nemocnice', 'poliklinika', 'polikliniek', 'nemocniec',
                 'healthcare', 'symbicort', 'turbuhaler', 'spirometr',
                 'jaeger', 'medical', 'health', 'pharma', 'pharmaceutical',
+                # ===================================================================
+                # OPATROVNICTVÍ A PÉČE - ROZŠÍŘENÉ
+                # ===================================================================
+                # Svěřenec/svěřenka (opatrovník už existuje výše)
+                'svěřenec', 'svěřence', 'svěřenci', 'svěřencem', 'svěřenci', 'svěřenců', 'svěřencům', 'svěřencích',
+                'svěřenka', 'svěřenky', 'svěřence', 'svěřenkou', 'svěřenek', 'svěřenkám', 'svěřenkách',
+                # Osvojenec/osvojenka (osvojitel už existuje výše)
+                'osvojenec', 'osvojence', 'osvojenci', 'osvojencem', 'osvojenci', 'osvojenců', 'osvojencům', 'osvojencích',
+                'osvojenka', 'osvojenky', 'osvojence', 'osvojenkou', 'osvojenek', 'osvojenkám', 'osvojenkách',
+                # Pečovatel/pečovatelka
+                'pečovatel', 'pečovatele', 'pečovateli', 'pečovatelem', 'pečovatelé', 'pečovatelů', 'pečovatelům', 'pečovatelích',
+                'pečovatelka', 'pečovatelky', 'pečovatelce', 'pečovatelkou', 'pečovatelek', 'pečovatelkám', 'pečovatelkách',
+                # Ošetřující/ošetřovatel
+                'ošetřující', 'ošetřujícího', 'ošetřujícímu', 'ošetřujícím', 'ošetřujících',
+                'ošetřovatel', 'ošetřovatele', 'ošetřovateli', 'ošetřovatelem', 'ošetřovatelé', 'ošetřovatelů', 'ošetřovatelům', 'ošetřovatelích',
+                'ošetřovatelka', 'ošetřovatelky', 'ošetřovatelce', 'ošetřovatelkou', 'ošetřovatelek', 'ošetřovatelkám', 'ošetřovatelkách',
+                # Opatrovatel/opatrovatelka
+                'opatrovatel', 'opatrovatele', 'opatrovateli', 'opatrovatelem', 'opatrovatelé', 'opatrovatelů', 'opatrovatelům', 'opatrovatelích',
+                'opatrovatelka', 'opatrovatelky', 'opatrovatelce', 'opatrovatelkou', 'opatrovatelek', 'opatrovatelkám', 'opatrovatelkách',
+                # Zákonný zástupce
+                'zákonný zástupce', 'zákonného zástupce', 'zákonnému zástupci', 'zákonném zástupci', 'zákonným zástupcem',
+                'zákonná zástupkyně', 'zákonné zástupkyně', 'zákonné zástupkyni', 'zákonnou zástupkyní',
+                # Kontaktní osoba
+                'kontaktní osoba', 'kontaktní osoby', 'kontaktní osobě', 'kontaktní osobou',
+                'kontaktní', 'kontaktního', 'kontaktnímu', 'kontaktním', 'kontaktních',
+                # ===================================================================
+                # ZAMĚSTNÁNÍ A FUNKCE - ROZŠÍŘENÉ
+                # ===================================================================
+                # Pracovník/pracovnice
+                'pracovník', 'pracovníka', 'pracovníkovi', 'pracovníku', 'pracovníkem', 'pracovníci', 'pracovníků', 'pracovníkům', 'pracovnících',
+                'pracovnice', 'pracovnici', 'pracovnicí', 'pracovnic', 'pracovnicím', 'pracovnicích',
+                # Dělník/dělnice
+                'dělník', 'dělníka', 'dělníkovi', 'dělníku', 'dělníkem', 'dělníci', 'dělníků', 'dělníkům', 'dělnících',
+                'dělnice', 'dělnici', 'dělnicí', 'dělnic', 'dělnicím', 'dělnicích',
+                # Úředník/úřednice
+                'úředník', 'úředníka', 'úředníkovi', 'úředníku', 'úředníkem', 'úředníci', 'úředníků', 'úředníkům', 'úřednících',
+                'úřednice', 'úřednici', 'úřednicí', 'úřednic', 'úřednicím', 'úřednicích',
+                # Ředitel/ředitelka (rozšíření)
+                'ředitel', 'ředitele', 'řediteli', 'ředitelem', 'ředitelé', 'ředitelů', 'ředitelům', 'ředitelích',
+                'ředitelka', 'ředitelky', 'ředitelce', 'ředitelkou', 'ředitelek', 'ředitelkám', 'ředitelkách',
+                'ředitel školy', 'ředitele školy', 'řediteli školy', 'ředitelem školy',
+                'ředitelka školy', 'ředitelky školy', 'ředitelce školy', 'ředitelkou školy',
+                # Jednatel/jednatelka
+                'jednatel', 'jednatele', 'jednateli', 'jednatelem', 'jednatelé', 'jednatelů', 'jednatelům', 'jednatelích',
+                'jednatelka', 'jednatelky', 'jednatelce', 'jednatelkou', 'jednatelek', 'jednatelkám', 'jednatelkách',
+                'jednatel společnosti',
+                # Předseda rozšíření (základní forma už existuje)
+                'předsedy', 'předsedovi', 'předsedou', 'předsedů', 'předsedům', 'předsedech',
+                'předsedkyni', 'předsedkyní', 'předsedkyň', 'předsedkyním', 'předsedkyních',
+                'předseda senátu', 'předsedy senátu', 'předsedovi senátu', 'předsedou senátu',
+                # Místopředseda/místopředsedkyně
+                'místopředseda', 'místopředsedy', 'místopředsedovi', 'místopředsedou', 'místopředsedové', 'místopředsedů', 'místopředsedům', 'místopředsedech',
+                'místopředsedkyně', 'místopředsedkyni', 'místopředsedkyní', 'místopředsedkyň', 'místopředsedkyním', 'místopředsedkyních',
+                # Manažer/manažerka
+                'manažer', 'manažera', 'manažerovi', 'manažeru', 'manažerem', 'manažeři', 'manažerů', 'manažerům', 'manažerech',
+                'manažerka', 'manažerky', 'manažerce', 'manažerkou', 'manažerek', 'manažerkám', 'manažerkách',
+                # Vedoucí
+                'vedoucí', 'vedoucího', 'vedoucímu', 'vedoucím', 'vedoucích',
+                # Vlastník/vlastnice (majitel už existuje)
+                'vlastník', 'vlastníka', 'vlastníkovi', 'vlastníku', 'vlastníkem', 'vlastníci', 'vlastníků', 'vlastníkům', 'vlastnících',
+                'vlastnice', 'vlastnici', 'vlastnicí', 'vlastnic', 'vlastnicím', 'vlastnicích',
+                'vlastník nemovitosti', 'vlastníka nemovitosti', 'vlastníkovi nemovitosti', 'vlastníkem nemovitosti',
+                # Spoluvlastník/spoluvlastnice
+                'spoluvlastník', 'spoluvlastníka', 'spoluvlastníkovi', 'spoluvlastníku', 'spoluvlastníkem', 'spoluvlastníci', 'spoluvlastníků', 'spoluvlastníkům', 'spoluvlastnících',
+                'spoluvlastnice', 'spoluvlastnici', 'spoluvlastnicí', 'spoluvlastnic', 'spoluvlastnicím', 'spoluvlastnicích',
+                'spoluvlastník bytu', 'spoluvlastníka bytu', 'spoluvlastníkovi bytu', 'spoluvlastníkem bytu',
+                'podílový spoluvlastník', 'podílového spoluvlastníka', 'podílovému spoluvlastníkovi', 'podílovým spoluvlastníkem',
+                # Akcionář/akcionářka
+                'akcionář', 'akcionáře', 'akcionáři', 'akcionářem', 'akcionáři', 'akcionářů', 'akcionářům', 'akcionářích',
+                'akcionářka', 'akcionářky', 'akcionářce', 'akcionářkou', 'akcionářek', 'akcionářkám', 'akcionářkách',
+                # Společník/společnice
+                'společník', 'společníka', 'společníkovi', 'společníku', 'společníkem', 'společníci', 'společníků', 'společníkům', 'společnících',
+                'společnice', 'společnici', 'společnicí', 'společnic', 'společnicím', 'společnicích',
+                # Statutární zástupce
+                'statutární zástupce', 'statutárního zástupce', 'statutárnímu zástupci', 'statutárním zástupcem',
+                # Prokurist/prokuristka
+                'prokurist', 'prokurista', 'prokuristovi', 'prokuristu', 'prokuristem', 'prokuristé', 'prokuristů', 'prokuristům', 'prokuristech',
+                'prokuristka', 'prokuristky', 'prokuristce', 'prokuristkou', 'prokuristek', 'prokuristkám', 'prokuristkách',
+                # Zmocněnec/zmocněnkyně
+                'zmocněnec', 'zmocněnce', 'zmocněnci', 'zmocněncem', 'zmocněnci', 'zmocněnců', 'zmocněncům', 'zmocněncích',
+                'zmocněnkyně', 'zmocněnkyni', 'zmocněnkyní', 'zmocněnkyň', 'zmocněnkyním', 'zmocněnkyních',
+                # ===================================================================
+                # PRÁVNÍ OZNAČENÍ - VELMI ROZŠÍŘENÉ
+                # ===================================================================
+                # Dotčený/zúčastněný
+                'dotčený', 'dotčeného', 'dotčenému', 'dotčeném', 'dotčeným', 'dotčených', 'dotčenými',
+                'dotčená', 'dotčené', 'dotčenou',
+                'zúčastněný', 'zúčastněného', 'zúčastněnému', 'zúčastněném', 'zúčastněným', 'zúčastněných', 'zúčastněnými',
+                'zúčastněná', 'zúčastněné', 'zúčastněnou',
+                # Zastupující/zástupce rozšíření
+                'zastupující', 'zastupujícího', 'zastupujícímu', 'zastupujícím', 'zastupujících',
+                'zástupce', 'zástupci', 'zástupcem', 'zástupců', 'zástupcům', 'zástupcích',
+                'zástupkyně', 'zástupkyni', 'zástupkyní', 'zástupkyň', 'zástupkyním', 'zástupkyních',
+                'zástupce ředitele', 'zástupci ředitele', 'zástupcem ředitele',
+                # Advokát/advokátka
+                'advokát', 'advokáta', 'advokátovi', 'advokátu', 'advokátem', 'advokáti', 'advokátů', 'advokátům', 'advokátech',
+                'advokátka', 'advokátky', 'advokátce', 'advokátkou', 'advokátek', 'advokátkám', 'advokátkách',
+                # Obhájce/obhájkyně
+                'obhájce', 'obhájci', 'obhájcem', 'obhájců', 'obhájcům', 'obhájcích',
+                'obhájkyně', 'obhájkyni', 'obhájkyní', 'obhájkyň', 'obhájkyním', 'obhájkyních',
+                # Právní zástupce
+                'právní zástupce', 'právního zástupce', 'právnímu zástupci', 'právním zástupcem',
+                # Znalec/znalkyně
+                'znalec', 'znalce', 'znalci', 'znalcem', 'znalci', 'znalců', 'znalcům', 'znalcích',
+                'znalkyně', 'znalkyni', 'znalkyní', 'znalkyň', 'znalkyním', 'znalkyních',
+                'soudní znalec', 'soudního znalce', 'soudnímu znalci', 'soudním znalcem',
+                # Expert/expertka, odborník/odbornice
+                'expert', 'experta', 'expertovi', 'expertu', 'expertem', 'experti', 'expertů', 'expertům', 'expertech',
+                'expertka', 'expertky', 'expertce', 'expertkou', 'expertek', 'expertkám', 'expertkách',
+                'odborník', 'odborníka', 'odborníkovi', 'odborníku', 'odborníkem', 'odborníci', 'odborníků', 'odborníkům', 'odbornicích',
+                'odbornice', 'odbornici', 'odbornicí', 'odbornic', 'odbornicím', 'odbornicích',
+                # Soudce/soudkyně
+                'soudce', 'soudci', 'soudcem', 'soudců', 'soudcům', 'soudcích',
+                'soudkyně', 'soudkyni', 'soudkyní', 'soudkyň', 'soudkyním', 'soudkyních',
+                'samosoudce', 'samosoudci', 'samosoudcem', 'samosoudců', 'samosoudcům', 'samosoudcích',
+                'samosoudkyně', 'samosoudkyni', 'samosoudkyní', 'samosoudkyň', 'samosoudkyním', 'samosoudkyních',
+                # Státní zástupce/prokurátorka
+                'státní zástupce', 'státního zástupce', 'státnímu zástupci', 'státním zástupcem',
+                'státní zástupkyně', 'státní zástupkyni', 'státní zástupkyní',
+                'prokurátor', 'prokurátora', 'prokurátorovi', 'prokurátoři', 'prokurátorů', 'prokurátorům', 'prokurátorech',
+                'prokurátorka', 'prokurátorky', 'prokurátorce', 'prokurátorkou', 'prokurátorek', 'prokurátorkám', 'prokurátorkách',
+                # Insolvenční správce
+                'insolvenční správce', 'insolvenčního správce', 'insolvenčnímu správci', 'insolvenčním správcem',
+                'insolvenční správkyně', 'insolvenční správkyni', 'insolvenční správkyní',
+                'správce konkursní podstaty', 'správce konkursní podstaty', 'správci konkursní podstaty', 'správcem konkursní podstaty',
+                # Probační úředník, kurátor
+                'probační úředník', 'probačního úředníka', 'probačnímu úředníkovi', 'probačním úředníkem',
+                'probační úřednice', 'probační úřednici', 'probační úřednicí',
+                'kurátor', 'kurátora', 'kurátorovi', 'kurátoři', 'kurátorů', 'kurátorům', 'kurátorech',
+                'kurátorka', 'kurátorky', 'kurátorce', 'kurátorkou', 'kurátorek', 'kurátorkám', 'kurátorkách',
+                'sociální kurátor', 'sociálního kurátora', 'sociálnímu kurátorovi', 'sociálním kurátorem',
+                # ===================================================================
+                # NEMOVITOSTI
+                # ===================================================================
+                # Nájemce/nájemkyně
+                'nájemce', 'nájemci', 'nájemcem', 'nájemců', 'nájemcům', 'nájemcích',
+                'nájemkyně', 'nájemkyni', 'nájemkyní', 'nájemkyň', 'nájemkyním', 'nájemkyních',
+                'nájemce bytu', 'nájemci bytu', 'nájemcem bytu',
+                # Podnájemce/podnájemkyně
+                'podnájemce', 'podnájemci', 'podnájemcem', 'podnájemců', 'podnájemcům', 'podnájemcích',
+                'podnájemkyně', 'podnájemkyni', 'podnájemkyní', 'podnájemkyň', 'podnájemkyním', 'podnájemkyních',
+                # Pronajímatel/pronajímatelka
+                'pronajímatel', 'pronajímatele', 'pronajímateli', 'pronajímatelem', 'pronajímatelé', 'pronajímatelů', 'pronajímatelům', 'pronajímatelích',
+                'pronajímatelka', 'pronajímatelky', 'pronajímatelce', 'pronajímatelkou', 'pronajímatelek', 'pronajímatelkám', 'pronajímatelkách',
+                # Uživatel/uživatelka
+                'uživatel', 'uživatele', 'uživateli', 'uživatelem', 'uživatelé', 'uživatelů', 'uživatelům', 'uživatelích',
+                'uživatelka', 'uživatelky', 'uživatelce', 'uživatelkou', 'uživatelek', 'uživatelkám', 'uživatelkách',
+                'oprávněný uživatel', 'oprávněného uživatele', 'oprávněnému uživateli', 'oprávněným uživatelem',
+                'neoprávněný uživatel', 'neoprávněného uživatele', 'neoprávněnému uživateli', 'neoprávněným uživatelem',
+                # Investor stavby
+                'investor stavby', 'investora stavby', 'investorovi stavby', 'investorem stavby',
+                # ===================================================================
+                # ŠKOLSTVÍ - ROZŠÍŘENÉ
+                # ===================================================================
+                # Absolvent/absolventka
+                'absolvent', 'absolventa', 'absolventovi', 'absolventu', 'absolventem', 'absolventi', 'absolventů', 'absolventům', 'absolventech',
+                'absolventka', 'absolventky', 'absolventce', 'absolventkou', 'absolventek', 'absolventkám', 'absolventkách',
+                # Učitel/učitelka
+                'učitel', 'učitele', 'učiteli', 'učitelem', 'učitelé', 'učitelů', 'učitelům', 'učitelích',
+                'učitelka', 'učitelky', 'učitelce', 'učitelkou', 'učitelek', 'učitelkám', 'učitelkách',
+                'třídní učitel', 'třídního učitele', 'třídnímu učiteli', 'třídním učitelem',
+                'třídní učitelka', 'třídní učitelky', 'třídní učitelce', 'třídní učitelkou',
+                # Pedagog/pedagožka
+                'pedagog', 'pedagoga', 'pedagogovi', 'pedagogu', 'pedagogem', 'pedagogové', 'pedagogů', 'pedagogům', 'pedagogech',
+                'pedagožka', 'pedagožky', 'pedagožce', 'pedagožkou', 'pedagožek', 'pedagožkám', 'pedagožkách',
+                # Vyučující
+                'vyučující', 'vyučujícího', 'vyučujícímu', 'vyučujícím', 'vyučujících',
+                # Lektor/lektorka
+                'lektor', 'lektora', 'lektorovi', 'lektoru', 'lektorem', 'lektoři', 'lektorů', 'lektorům', 'lektorech',
+                'lektorka', 'lektorky', 'lektorce', 'lektorkou', 'lektorek', 'lektorkám', 'lektorkách',
+                # ===================================================================
+                # SPECIFICKÉ SITUACE
+                # ===================================================================
+                # Osoba identifikovaná, fyzická osoba
+                'osoba identifikovaná jako', 'osoby identifikované jako', 'osobě identifikované jako',
+                'osoba jménem', 'osoby jménem', 'osobě jménem', 'osobou jménem',
+                'fyzická osoba', 'fyzické osoby', 'fyzické osobě', 'fyzickou osobou',
+                # Občan (rozšíření - základní formy už existují)
+                'občan', 'občana', 'občanovi', 'občanu', 'občanem', 'občané', 'občanů', 'občanům', 'občanech',
+                'občanka', 'občanky', 'občance',
+                # Přítomný/nepřítomný
+                'přítomný', 'přítomného', 'přítomněm u', 'přítomném', 'přítomným', 'přítomných', 'přítomným i',
+                'přítomná', 'přítomné', 'přítomnou',
+                'nepřítomný', 'nepřítomného', 'nepřítomněm u', 'nepřítomném', 'nepřítomným', 'nepřítomných', 'nepřítomným i',
+                'nepřítomná', 'nepřítomné', 'nepřítomnou',
+                'dostavivší se', 'dostavivšího se', 'dostavivšímu se', 'dostavivším se', 'dostavivších se',
+                # Jmenovaný/uvedený
+                'jmenovaný', 'jmenovaného', 'jmenovanému', 'jmenovaném', 'jmenovaným', 'jmenovaných', 'jmenovanými',
+                'jmenovaná', 'jmenované', 'jmenovanou',
+                'jmenovaný do funkce', 'jmenovaného do funkce', 'jmenovanému do funkce', 'jmenovaným do funkce',
+                'výše uvedený', 'výše uvedeného', 'výše uvedenému', 'výše uvedeném', 'výše uvedeným',
+                'výše uvedená', 'výše uvedené', 'výše uvedenou',
+                'níže uvedený', 'níže uvedeného', 'níže uvedenému', 'níže uvedeném', 'níže uvedeným',
+                'níže uvedená', 'níže uvedené', 'níže uvedenou',
+                'shora uvedený', 'shora uvedeného', 'shora uvedenému', 'shora uvedeném', 'shora uvedeným',
+                'shora uvedená', 'shora uvedené', 'shora uvedenou',
+                # Zvolený/pověřený/delegovaný
+                'zvolený', 'zvoleného', 'zvolenému', 'zvoleném', 'zvoleným', 'zvolených', 'zvoleným i',
+                'zvolená', 'zvolené', 'zvolenou',
+                'pověřený', 'pověřeného', 'pověřenému', 'pověřeném', 'pověřeným', 'pověřených', 'pověřenými',
+                'pověřená', 'pověřené', 'pověřenou',
+                'delegovaný', 'delegovaného', 'delegovanému', 'delegovaném', 'delegovaným', 'delegovaných', 'delegovanými',
+                'delegovaná', 'delegované', 'delegovanou',
+                # Zbavený/odvolaný (vyloučený už existuje)
+                'zbavený', 'zbaveného', 'zbavenému', 'zbaveném', 'zbaveným', 'zbavených', 'zbavenými',
+                'zbavená', 'zbavené', 'zbavenou',
+                'odvolaný', 'odvolaného', 'odvolanému', 'odvolaném', 'odvolaným', 'odvolaných', 'odvolanými',
+                'odvolaná', 'odvolané', 'odvolanou',
+                # Azylant/emigrant/imigrant (uprchlík už existuje)
+                'azylant', 'azylanta', 'azylantovi', 'azylantu', 'azylantem', 'azylanti', 'azylantů', 'azylantům', 'azylantech',
+                'azylantka', 'azylantky', 'azylantce', 'azylantkou', 'azylantek', 'azylantkám', 'azylantkách',
+                'emigrant', 'emigranta', 'emigrantovi', 'emigrantu', 'emigrantem', 'emigranti', 'emigrantů', 'emigrantům', 'emigrantech',
+                'emigrantka', 'emigrantky', 'emigrantce', 'emigrantkou', 'emigrantek', 'emigrantkám', 'emigrantkách',
+                'imigrant', 'imigranta', 'imigrantovi', 'imigrantu', 'imigrantem', 'imigranti', 'imigrantů', 'imigrantům', 'imigrantech',
+                'imigrantka', 'imigrantky', 'imigrantce', 'imigrantkou', 'imigrantek', 'imigrantkám', 'imigrantkách',
+                'žadatel o azyl', 'žadatele o azyl', 'žadateli o azyl', 'žadatelem o azyl',
+                'cizinec', 'cizince', 'cizinci', 'cizincem', 'cizinci', 'cizinců', 'cizincům', 'cizincích',
+                'cizinka', 'cizinky', 'cizince', 'cizinkou', 'cizinek', 'cizinkám', 'cizinkách',
+                # Senior/důchodce (rozšíření)
+                'senior', 'seniora', 'seniorovi', 'senioru', 'seniorem', 'senioři', 'seniorů', 'seniorům', 'seniorech',
+                'seniorka', 'seniorky', 'seniorce', 'seniorkou', 'seniorek', 'seniorkám', 'seniorkách',
+                'důchodce', 'důchodci', 'důchodcem', 'důchodců', 'důchodcům', 'důchodcích',
+                'důchodkyně', 'důchodkyni', 'důchodkyní', 'důchodkyň', 'důchodkyním', 'důchodkyních',
+                # Těhotná/gravidní/rodička
+                'těhotná', 'těhotné', 'těhotnou', 'těhotných', 'těhotným', 'těhotnými',
+                'gravidní', 'gravidní', 'gravidních', 'gravidním', 'gravidními',
+                'porodnice', 'porodnici', 'porodnicí', 'porodnic', 'porodnicím', 'porodnicích',
+                # Pozůstalý/dědic
+                'pozůstalý', 'pozůstalého', 'pozůstalému', 'pozůstalém', 'pozůstalým', 'pozůstalých', 'pozůstalými',
+                'pozůstalá', 'pozůstalé', 'pozůstalou',
+                'dědic', 'dědice', 'dědici', 'dědicem', 'dědici', 'dědiců', 'dědicům', 'dědicích',
+                'dědička', 'dědičky', 'dědičce', 'dědičkou', 'dědiček', 'dědičkám', 'dědičkách',
+                'odkázaný', 'odkázaného', 'odkázanému', 'odkázaném', 'odkázaným', 'odkázaných', 'odkázanými',
+                'odkázaná', 'odkázané', 'odkázanou',
+                # Bývalý/původní/nový
+                'bývalý', 'bývalého', 'bývalému', 'bývalém', 'bývalým', 'bývalých', 'bývalými',
+                'bývalá', 'bývalé', 'bývalou',
+                'původní', 'původního', 'původnímu', 'původním', 'původních',
+                'předchozí', 'předchozího', 'předchozímu', 'předchozím', 'předchozích',
+                'nový', 'nového', 'novému', 'novém', 'novým', 'nových', 'novými',
+                'nová', 'nové', 'novou',
+                'nynější', 'nynějšího', 'nynějšímu', 'nynějším', 'nynějších',
+                'současný', 'současného', 'současnému', 'současném', 'současným', 'současných', 'současnými',
+                'současná', 'současné', 'současnou',
+                # ===================================================================
+                # KOMBINOVANÉ TERMÍNY
+                # ===================================================================
+                # Manželé/rodiče/sourozenci (plurály)
+                'manželé', 'manželů', 'manželům', 'manželích', 'manželi',
+                # Pan/paní (rozšíření)
+                'pan', 'pana', 'panovi', 'panu', 'panem', 'pánové', 'pánů', 'pánům', 'pánech',
+                'paní', 'paní', 'paním', 'paních',
+                'pán', 'pána', 'pánovi', 'pánu', 'pánom',
+                'pani', 'pani', 'paním', 'paních',
+                # S tituly
+                'pan doktor', 'pana doktora', 'panu doktorovi', 'panem doktorem',
+                'paní doktorka', 'paní doktorky', 'paní doktorce', 'paní doktorkou',
+                'pan profesor', 'pana profesora', 'panu profesorovi', 'panem profesorem',
+                'paní profesorka', 'paní profesorky', 'paní profesorce', 'paní profesorkou',
+                'pan inženýr', 'pana inženýra', 'panu inženýrovi', 'panem inženýrem',
+                'paní inženýrka', 'paní inženýrky', 'paní inženýrce', 'paní inženýrkou',
                 # Další
                 'care', 'plus', 'minus', 'service', 'services',
                 'group', 'company', 'corp', 'ltd', 'gmbh', 'inc'
