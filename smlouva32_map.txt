@@ -2,76 +2,69 @@ OSOBY
 -----
 [[PERSON_1]]: Dalibor Šťastný
   - Dalibora Šťastného
+  - Šťastnému
   - Šťastný
 [[PERSON_2]]: Alžběta Šťastná
-[[PERSON_3]]: Zraněném Šťastný
-  - Zraněnému Šťastnému
-[[PERSON_4]]: Ljuba Dvořáková
-[[PERSON_5]]: Stela Dvořáková
-[[PERSON_6]]: Zraněné Dvořáková
-  - Zraněné Dvořákové
-[[PERSON_7]]: Vilém Horák
-  - Horák
-[[PERSON_8]]: Radomír Pech
-[[PERSON_9]]: Zraněném Horák
-  - Zraněnému Horákovi
-[[PERSON_10]]: Nela Burešová
+[[PERSON_3]]: Ljuba Dvořáková
+  - Dvořákové
+[[PERSON_4]]: Stela Dvořáková
+[[PERSON_5]]: Vilém Horák
+  - Horákovi
+[[PERSON_6]]: Radomír Pech
+[[PERSON_7]]: Nela Burešová
   - Burešové
-[[PERSON_11]]: Berenika Burešová
-[[PERSON_12]]: Dítěti Bereniec
-  - Dítěti Berenice
-[[PERSON_13]]: Čeněk Moravec
-[[PERSON_14]]: Lumír Moravec
-[[PERSON_15]]: Ervín Tesař
-[[PERSON_16]]: Miloslava Kadlecová
+[[PERSON_8]]: Berenika Burešová
+[[PERSON_9]]: Čeněk Moravec
+[[PERSON_10]]: Lumír Moravec
+[[PERSON_11]]: Ervín Tesař
+[[PERSON_12]]: Miloslava Kadlecová
   - Kadlecové
-[[PERSON_17]]: Slavomil Kadlec
-[[PERSON_18]]: Anastázie Kadlecová
-[[PERSON_19]]: Pankrác Kolínský
+[[PERSON_13]]: Slavomil Kadlec
+[[PERSON_14]]: Anastázie Kadlecová
+[[PERSON_15]]: Pankrác Kolínský
   - Kolínskému
-[[PERSON_20]]: Ctibor Vlk
-[[PERSON_21]]: Regína Kolínská
-[[PERSON_22]]: Oldřich Bárta
+[[PERSON_16]]: Ctibor Vlk
+[[PERSON_17]]: Regína Kolínská
+[[PERSON_18]]: Oldřich Bárta
   - Bártovi
-[[PERSON_23]]: Hubert Říha
-[[PERSON_24]]: Emílie Bártová
-[[PERSON_25]]: Doubravka Fialová
+[[PERSON_19]]: Hubert Říha
+[[PERSON_20]]: Emílie Bártová
+[[PERSON_21]]: Doubravka Fialová
   - Fialové
-[[PERSON_26]]: Vlastimil Sedlák
+[[PERSON_22]]: Vlastimil Sedlák
   - Sedlákovi
-[[PERSON_27]]: Augustýn Novák
-[[PERSON_28]]: Hermína Sedláková
-[[PERSON_29]]: Zdenka Horáková
-[[PERSON_30]]: Radovan Liška
-[[PERSON_31]]: Blažej Horák
-[[PERSON_32]]: Laura Horáková
-[[PERSON_33]]: Sourozenec Matyáš
-[[PERSON_34]]: Viola Vaculíková
-[[PERSON_35]]: Pravoslav Doubek
-[[PERSON_36]]: Samuel Vaculík
-[[PERSON_37]]: Servác Bureš
-[[PERSON_38]]: Světlana Burešová
-[[PERSON_39]]: Metoděj Kolman
-[[PERSON_40]]: Justýna Burešová
-[[PERSON_41]]: Gita Malíková
-[[PERSON_42]]: Anastázie Dvořáková
-[[PERSON_43]]: Liběna Novotná
+[[PERSON_23]]: Augustýn Novák
+[[PERSON_24]]: Hermína Sedláková
+[[PERSON_25]]: Zdenka Horáková
+[[PERSON_26]]: Radovan Liška
+[[PERSON_27]]: Blažej Horák
+[[PERSON_28]]: Laura Horáková
+[[PERSON_29]]: Matyáš Horák
+[[PERSON_30]]: Viola Vaculíková
+[[PERSON_31]]: Pravoslav Doubek
+[[PERSON_32]]: Samuel Vaculík
+[[PERSON_33]]: Servác Bureš
+[[PERSON_34]]: Světlana Burešová
+[[PERSON_35]]: Metoděj Kolman
+[[PERSON_36]]: Justýna Burešová
+[[PERSON_37]]: Gita Malíková
+[[PERSON_38]]: Anastázie Dvořáková
+[[PERSON_39]]: Liběna Novotná
   - Novotná
   - Novotné
-[[PERSON_44]]: Svatopluk Novotný
-[[PERSON_45]]: Izabela Novotná
-[[PERSON_46]]: Oliver Novotný
-[[PERSON_47]]: Xenie Novotná
-[[PERSON_48]]: Cecílie Bartošová
+[[PERSON_40]]: Svatopluk Novotný
+[[PERSON_41]]: Izabela Novotná
+[[PERSON_42]]: Oliver Novotný
+[[PERSON_43]]: Xenie Novotná
+[[PERSON_44]]: Cecílie Bartošová
   - Bartošová
   - Bartošové
-[[PERSON_49]]: Valdemar Šmíd
-[[PERSON_50]]: Marina Bartošová
-[[PERSON_51]]: Bonifác Bartoš
-[[PERSON_52]]: Matyáš Horák
-[[PERSON_53]]: Izák Vávra
-[[PERSON_54]]: Kvido Tesař
-[[PERSON_55]]: Hedvika Fischerová
+[[PERSON_45]]: Valdemar Šmíd
+[[PERSON_46]]: Marina Bartošová
+[[PERSON_47]]: Bonifác Bartoš
+[[PERSON_48]]: Izák Vávra
+[[PERSON_49]]: Kvido Tesař
+[[PERSON_50]]: Hedvika Fischerová
 
 ADDRESS
 [[ADDRESS_1]]: Polní 145/18, Brno 602 00
