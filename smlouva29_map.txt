@@ -90,10 +90,18 @@ ADDRESS
 [[ADDRESS_3]]: Mánesova 89/12, Chomutov 430 01
 [[ADDRESS_4]]: Tylova 34/6, Karlovy Vary 360 01
 [[ADDRESS_5]]: bytemRevoluční 67/9, Děčín 405 02
-[[ADDRESS_6]]: Sadová 56/3, Kladno 272 01
-[[ADDRESS_7]]: Sportovní 45, Mladá Boleslav 293 01
-[[ADDRESS_8]]: Polní 89, Děčín 405 02
-[[ADDRESS_9]]: Zahradní 34, Chomutov 430 01
+[[ADDRESS_6]]: Krátká 23, Most 434 01
+[[ADDRESS_7]]: Hlavní 89, Ústí nad Labem 400 01
+[[ADDRESS_8]]: Sadová 56/3, Kladno 272 01
+[[ADDRESS_9]]: Polní 12, Trutnov 541 01
+[[ADDRESS_10]]: Sportovní 45, Mladá Boleslav 293 01
+[[ADDRESS_11]]: Lázeňská 78, Poděbrady 290 01
+[[ADDRESS_12]]: Krátká 12, Hradec Králové 500 02
+[[ADDRESS_13]]: Polní 89, Děčín 405 02
+[[ADDRESS_14]]: Zahradní 34, Chomutov 430 01
+[[ADDRESS_15]]: Krátká 45, Teplice 415 01
+[[ADDRESS_16]]: Zahradní 78, Chomutov 430 01
+[[ADDRESS_17]]: Lázeňská 89, Karlovy Vary 360 01
 
 BANK
 [[BANK_1]]: 2910384756/0100

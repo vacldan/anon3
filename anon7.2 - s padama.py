@@ -1398,37 +1398,72 @@ def variants_for_surname(surname: str) -> set:
 
 # =============== Regexy ===============
 
-# Vylepšený ADDRESS_RE - zachytává adresy i bez prefixů
-# Podporuje DVA formáty:
-# 1. "ulice číslo, PSČ město" (např. "Lázeňská 145/8, 415 01 Teplice")
-# 2. "ulice číslo, město PSČ" (např. "Mánesova 89/12, Chomutov 430 01")
+# Vylepšený ADDRESS_RE - zachytává adresy v JAKÉMKOLIV formátu
+# Podporuje všechny možné kombinace:
+# 1. "bytem ulice číslo, PSČ město" (např. "bytem Lázeňská 145/8, 415 01 Teplice")
+# 2. "bytem ulice číslo, město PSČ" (např. "bytem Mánesova 89/12, Chomutov 430 01")
+# 3. "ulice číslo, město" (např. "Slezská 67, Opava" - bez PSČ, BEZ prefixu - město POVINNÉ)
+# 4. "bytem ulice číslo" (např. "bytem Karlova 12" - s prefixem, město volitelné)
 ADDRESS_RE = re.compile(
     r'(?<!\[)'
     r'(?:'
-    r'(?:(?:trvale\s+)?bytem\s+|'
-    r'(?:trvalé\s+)?bydlišt[eě]\s*:\s*|'
-    r'(?:sídlo(?:\s+podnikání)?|se\s+sídlem)\s*:\s*|'
-    r'(?:místo\s+podnikání)\s*:\s*|'
-    r'(?:adresa|trvalý\s+pobyt)\s*:\s*|'
-    r'(?:v\s+ulic[ií]|na\s+(?:adrese|ulici)|v\s+dom[eě])\s+)?'
-    r')'
-    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]'
-    r'[a-záčďéěíňóřšťúůýž\s]{2,50}?'
-    r'\s+\d{1,4}(?:/\d{1,4})?'
-    r',\s*'
-    r'(?:'
-        # VARIANTA 1: PSČ město (např. "415 01 Teplice")
-        r'\d{3}\s?\d{2}'
-        r'[ \t]+'
-        r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
-        r'(?:[ \t]+\d{1,2})?'
+        # SKUPINA 1: S prefixem - město je VOLITELNÉ
+        r'(?:'
+            r'(?:(?:trvale\s+)?bytem\s+|'
+            r'(?:trvalé\s+)?bydlišt[eě]\s*:\s*|'
+            r'(?:sídlo(?:\s+podnikání)?|se\s+sídlem)\s*:\s*|'
+            r'(?:místo\s+podnikání)\s*:\s*|'
+            r'(?:adresa|trvalý\s+pobyt|na\s+adrese)\s*:\s*|'
+            r'(?:v\s+ulic[ií]|na\s+ulici|v\s+dom[eě])\s+)'
+            r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]'
+            r'[a-záčďéěíňóřšťúůýž\s]{2,50}?'
+            r'\s+\d{1,4}(?:/\d{1,4})?'  # Číslo domu (povinné)
+            r'(?:'  # Nepovinná část s městem/PSČ (jen s prefixem!)
+                r',\s*'
+                r'(?:'
+                    # PSČ město
+                    r'\d{3}\s?\d{2}'
+                    r'[ \t]+'
+                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
+                    r'(?:[ \t]+\d{1,2})?'
+                r'|'
+                    # město PSČ
+                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
+                    r'[ \t]+'
+                    r'\d{3}\s?\d{2}'
+                r'|'
+                    # jen město
+                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
+                    r'(?:[ \t]+\d{1,2})?'
+                r')'
+            r')?'
+        r')'
     r'|'
-        # VARIANTA 2: město PSČ (např. "Chomutov 430 01")
-        r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
-        r'[ \t]+'
-        r'\d{3}\s?\d{2}'
+        # SKUPINA 2: BEZ prefixu - město je POVINNÉ (aby se nechytaly náhodná slova)
+        r'(?:'
+            r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]'
+            r'[a-záčďéěíňóřšťúůýž\s]{2,50}?'
+            r'\s+\d{1,4}(?:/\d{1,4})?'  # Číslo domu
+            r',\s*'  # Čárka (povinná!)
+            r'(?:'
+                # PSČ město
+                r'\d{3}\s?\d{2}'
+                r'[ \t]+'
+                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
+                r'(?:[ \t]+\d{1,2})?'
+            r'|'
+                # město PSČ
+                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
+                r'[ \t]+'
+                r'\d{3}\s?\d{2}'
+            r'|'
+                # jen město (BEZ PSČ, ale město MUSÍ být!)
+                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
+                r'(?:[ \t]+\d{1,2})?'
+            r')'
+        r')'
     r')'
-    r'(?=\s|$|,|\.|;|:|\n|\r|Rodné|IČO|DIČ|Tel|E-mail|Kontakt|OP|Datum|Narozen)',
+    r'(?=\s|$|,|\.|;|:|\n|\r|Rodné|IČO|DIČ|Tel|E-mail|Kontakt|OP|Datum|Narozen|\))',
     re.IGNORECASE | re.UNICODE
 )
 
@@ -3366,11 +3401,13 @@ class Anonymizer:
         text = birth_place_pattern.sub(replace_birth_place, text)
 
         # POST-PASS: Jednoduché adresy (ulice číslo, město) které unikly ADDRESS_RE
-        # Pattern: Ulice 123/45, Praha 3  (bez PSČ nebo kontextu)
+        # Pattern: Ulice 123/45, Praha 3  (bez PSČ nebo kontextu "bytem", "sídlo:" apod.)
+        # ROZŠÍŘENO: Teď podporuje JAKÉKOLIV město, ne jen Praha/Brno/Ostrava/Plzeň
         simple_addr_pattern = re.compile(
             r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+(?:\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)?)\s+'  # Ulice (1-2 slova)
             r'(\d+(?:/\d+)?)\s*,\s*'  # Číslo
-            r'(Praha\s+\d+|Brno|Ostrava|Plzeň)',  # Město
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+(?:\s+\d+)?)'  # Město (jakékoliv + volitelné číslo obvodu)
+            r'(?=\s|$|,|\.|;|:|\n|\r)',  # Lookahead - konec nebo interpunkce
             re.IGNORECASE
         )
         def replace_simple_addr(match):

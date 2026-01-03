@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-01-02T21:05:34.268608",
+  "generated_at": "2026-01-03T10:16:28.823364",
   "source_file": "smlouva29.docx",
   "entities": [
     {
@@ -456,25 +456,73 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "Sadová 56/3, Kladno 272 01",
+      "original": "Krátká 23, Most 434 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Sportovní 45, Mladá Boleslav 293 01",
+      "original": "Hlavní 89, Ústí nad Labem 400 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Polní 89, Děčín 405 02",
+      "original": "Sadová 56/3, Kladno 272 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_9]]",
+      "original": "Polní 12, Trutnov 541 01",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_10]]",
+      "original": "Sportovní 45, Mladá Boleslav 293 01",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_11]]",
+      "original": "Lázeňská 78, Poděbrady 290 01",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_12]]",
+      "original": "Krátká 12, Hradec Králové 500 02",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_13]]",
+      "original": "Polní 89, Děčín 405 02",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_14]]",
       "original": "Zahradní 34, Chomutov 430 01",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_15]]",
+      "original": "Krátká 45, Teplice 415 01",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_16]]",
+      "original": "Zahradní 78, Chomutov 430 01",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_17]]",
+      "original": "Lázeňská 89, Karlovy Vary 360 01",
       "occurrences": 1
     },
     {
