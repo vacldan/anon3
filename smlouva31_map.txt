@@ -10,6 +10,7 @@ OSOBY
 [[PERSON_5]]: Ctibor Novotný
   - Novotnému
 [[PERSON_6]]: Augustýn Horák
+  - Horákovým
 [[PERSON_7]]: Hedvika Dvořáková
   - Dvořákové
 [[PERSON_8]]: Jolana Dvořáková
@@ -24,7 +25,6 @@ OSOBY
   - Šmídovi
 [[PERSON_16]]: Xaver Horák
 [[PERSON_17]]: Amálie Bartošová
-  - Bartošová
   - Bartošové
 [[PERSON_18]]: Bonifác Hruška
   - Hruškovi
@@ -38,43 +38,34 @@ OSOBY
 [[PERSON_25]]: Liliana Šimková
 [[PERSON_26]]: Otmar Doubek
 [[PERSON_27]]: Kliment Kolář
-[[PERSON_28]]: Matek Dorota
-  - Matka Dorota
+[[PERSON_28]]: Dorota Bartošová
 [[PERSON_29]]: Nela Bartošová
 [[PERSON_30]]: Tadeáš Bartoš
   - Bartoš
 [[PERSON_31]]: Marina Bartošová
-[[PERSON_32]]: Matec Bartošová
-  - Matce Bartošové
-[[PERSON_33]]: Vlastislav Horák
-[[PERSON_34]]: Blažena Horáková
-[[PERSON_35]]: Světlana Nová
-[[PERSON_36]]: Pěstounům Horákový
-  - Pěstounům Horákovým
-[[PERSON_37]]: Slavoj Novotný
-[[PERSON_38]]: Artur Vlk
-[[PERSON_39]]: Anastázie Novotná
+[[PERSON_32]]: Vlastislav Horák
+[[PERSON_33]]: Blažena Horáková
+[[PERSON_34]]: Světlana Nová
+[[PERSON_35]]: Slavoj Novotný
+[[PERSON_36]]: Artur Vlk
+[[PERSON_37]]: Anastázie Novotná
   - Anastázie Novotnou
-[[PERSON_40]]: Xenie Novotná
+[[PERSON_38]]: Xenie Novotná
   - Xenii Novotnou
-[[PERSON_41]]: Zina Novotná
+[[PERSON_39]]: Zina Novotná
   - Zinu Novotnou
-[[PERSON_42]]: Radomír Tesař
-[[PERSON_43]]: Cyril Malík
-[[PERSON_44]]: Ervín Pospíšil
+[[PERSON_40]]: Radomír Tesař
+[[PERSON_41]]: Cyril Malík
+[[PERSON_42]]: Ervín Pospíšil
   - Pospíšilovi
-[[PERSON_45]]: Dorota Bartošová
-[[PERSON_46]]: Exekutor Ostrava
-[[PERSON_47]]: Exekutora Karviná
-  - Exekutor Karviná
-[[PERSON_48]]: Evžen Moravec
-[[PERSON_49]]: Vendelín Novotný
-[[PERSON_50]]: Izák Bárta
-[[PERSON_51]]: Silvie Kadlecová
-[[PERSON_52]]: Žofie Pechová
-[[PERSON_53]]: Lubomír Zeman
-[[PERSON_54]]: Šimon Liška
-[[PERSON_55]]: Oldřiška Tesařová
+[[PERSON_43]]: Evžen Moravec
+[[PERSON_44]]: Vendelín Novotný
+[[PERSON_45]]: Izák Bárta
+[[PERSON_46]]: Silvie Kadlecová
+[[PERSON_47]]: Žofie Pechová
+[[PERSON_48]]: Lubomír Zeman
+[[PERSON_49]]: Šimon Liška
+[[PERSON_50]]: Oldřiška Tesařová
 
 ADDRESS
 [[ADDRESS_1]]: Vinohradská 245/18, Praha 2

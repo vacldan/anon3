@@ -2212,7 +2212,16 @@ class Anonymizer:
             'odsouzenou', 'odsouzená', 'odsouzené', 'odsouzeného', 'odsouzeném', 'odsouzenému', 'odsouzený', 'odsouzených',
             'odsouzeným', 'odsouzenými', 'opatrovnic', 'opatrovnice', 'opatrovnicí', 'opatrovník', 'opatrovníka', 'opatrovníkem',
             'opatrovníkovi', 'opatrovníku', 'opatrovníků', 'opatrovanec', 'opatrovance', 'opatrovanci', 'opatrovancem', 'opatrovanců',
-            'opatrovanka', 'opatrovanky', 'opatrovankou', 'opatrovanek', 'operovanou', 'operovaná', 'operované', 'operovaného', 'operovanému',
+            'opatrovanka', 'opatrovanky', 'opatrovankou', 'opatrovanek',
+            # Náboženské a rodinné tituly
+            'matka', 'matky', 'matce', 'matkou', 'matek', 'matkám', 'matkách', 'matkama',
+            # Pěstounská péče
+            'pěstoun', 'pěstouna', 'pěstounovi', 'pěstounu', 'pěstounem', 'pěstouni', 'pěstounů', 'pěstounům', 'pěstounech', 'pěstouny',
+            'pěstounka', 'pěstounky', 'pěstounce', 'pěstounkou', 'pěstounek', 'pěstounkám', 'pěstounkách', 'pěstounkami',
+            # Exekutoři / bailiffs
+            'exekutor', 'exekutora', 'exekutorovi', 'exekutoru', 'exekutorem', 'exekutoři', 'exekutorů', 'exekutorům', 'exekutorech', 'exekutory',
+            'exekutorka', 'exekutorky', 'exekutorce', 'exekutorkou', 'exekutorek', 'exekutorkám', 'exekutorkách', 'exekutorkami',
+            'operovanou', 'operovaná', 'operované', 'operovaného', 'operovanému',
             'operovaný', 'operovaných', 'operovaným', 'operovanými', 'oprávněnou', 'oprávněná', 'oprávněné', 'oprávněného',
             'oprávněnému', 'oprávněný', 'oprávněných', 'oprávněným', 'osob', 'osoba', 'osobami', 'osobou',
             'osoby', 'osobám', 'osobě', 'osvojitel', 'osvojitelce', 'osvojitele', 'osvojitelem', 'osvojiteli',
@@ -2421,7 +2430,16 @@ class Anonymizer:
                 'odsouzenou', 'odsouzená', 'odsouzené', 'odsouzeného', 'odsouzeném', 'odsouzenému', 'odsouzený', 'odsouzených',
                 'odsouzeným', 'odsouzenými', 'opatrovnic', 'opatrovnice', 'opatrovnicí', 'opatrovník', 'opatrovníka', 'opatrovníkem',
                 'opatrovníkovi', 'opatrovníku', 'opatrovníků', 'opatrovanec', 'opatrovance', 'opatrovanci', 'opatrovancem', 'opatrovanců',
-                'opatrovanka', 'opatrovanky', 'opatrovankou', 'opatrovanek', 'operovanou', 'operovaná', 'operované', 'operovaného', 'operovanému',
+                'opatrovanka', 'opatrovanky', 'opatrovankou', 'opatrovanek',
+            # Náboženské a rodinné tituly
+            'matka', 'matky', 'matce', 'matkou', 'matek', 'matkám', 'matkách', 'matkama',
+            # Pěstounská péče
+            'pěstoun', 'pěstouna', 'pěstounovi', 'pěstounu', 'pěstounem', 'pěstouni', 'pěstounů', 'pěstounům', 'pěstounech', 'pěstouny',
+            'pěstounka', 'pěstounky', 'pěstounce', 'pěstounkou', 'pěstounek', 'pěstounkám', 'pěstounkách', 'pěstounkami',
+            # Exekutoři / bailiffs
+            'exekutor', 'exekutora', 'exekutorovi', 'exekutoru', 'exekutorem', 'exekutoři', 'exekutorů', 'exekutorům', 'exekutorech', 'exekutory',
+            'exekutorka', 'exekutorky', 'exekutorce', 'exekutorkou', 'exekutorek', 'exekutorkám', 'exekutorkách', 'exekutorkami',
+            'operovanou', 'operovaná', 'operované', 'operovaného', 'operovanému',
                 'operovaný', 'operovaných', 'operovaným', 'operovanými', 'oprávněnou', 'oprávněná', 'oprávněné', 'oprávněného',
                 'oprávněnému', 'oprávněný', 'oprávněných', 'oprávněným', 'osob', 'osoba', 'osobami', 'osobou',
                 'osoby', 'osobám', 'osobě', 'osvojitel', 'osvojitelce', 'osvojitele', 'osvojitelem', 'osvojiteli',
