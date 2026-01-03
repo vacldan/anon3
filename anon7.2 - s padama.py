@@ -2213,9 +2213,6 @@ class Anonymizer:
             'odsouzeným', 'odsouzenými', 'opatrovnic', 'opatrovnice', 'opatrovnicí', 'opatrovník', 'opatrovníka', 'opatrovníkem',
             'opatrovníkovi', 'opatrovníku', 'opatrovníků', 'opatrovanec', 'opatrovance', 'opatrovanci', 'opatrovancem', 'opatrovanců',
             'opatrovanka', 'opatrovanky', 'opatrovankou', 'opatrovanek',
-            # Řidič (driver - CRITICAL for proper 3-word pattern matching!)
-            'řidič', 'řidiče', 'řidiči', 'řidičem', 'řidičů', 'řidičům', 'řidičích',
-            'řidička', 'řidičky', 'řidičce', 'řidičkou', 'řidiček', 'řidičkám', 'řidičkách',
             # Náboženské a rodinné tituly
             'matka', 'matky', 'matce', 'matkou', 'matek', 'matkám', 'matkách', 'matkama',
             # Pěstounská péče
@@ -2816,9 +2813,6 @@ class Anonymizer:
                 'odsouzeným', 'odsouzenými', 'opatrovnic', 'opatrovnice', 'opatrovnicí', 'opatrovník', 'opatrovníka', 'opatrovníkem',
                 'opatrovníkovi', 'opatrovníku', 'opatrovníků', 'opatrovanec', 'opatrovance', 'opatrovanci', 'opatrovancem', 'opatrovanců',
                 'opatrovanka', 'opatrovanky', 'opatrovankou', 'opatrovanek',
-                # Řidič (driver - CRITICAL for proper 3-word pattern matching!)
-                'řidič', 'řidiče', 'řidiči', 'řidičem', 'řidičů', 'řidičům', 'řidičích',
-                'řidička', 'řidičky', 'řidičce', 'řidičkou', 'řidiček', 'řidičkám', 'řidičkách',
             # Náboženské a rodinné tituly
             'matka', 'matky', 'matce', 'matkou', 'matek', 'matkám', 'matkách', 'matkama',
             # Pěstounská péče
@@ -3688,12 +3682,68 @@ class Anonymizer:
 
             return tag
 
-        # DŮLEŽITÉ: Zpracuj 3-slovný pattern (Titul Jméno Příjmení) NEJPRVE!
-        # To zajistí, že "Klient Ladislav Konečný" bude správně detekován jako celé jméno
-        text = role_person_pattern.sub(replace_role_person, text)
+        # ========== ELEGANTNÍ ŘEŠENÍ: finditer() + filtrace ==========
+        # Místo sekvenčního sub() najdeme VŠECHNY matche a vyfiltrujeme nevalidní
 
-        # Pak zpracuj běžný 2-slovný pattern (Jméno Příjmení)
-        text = person_pattern.sub(replace_person, text)
+        # Definice role slov (která nejsou křestní jména)
+        role_words = {
+            'ředitelka', 'ředitel', 'jednatel', 'jednatelka',
+            'manager', 'director', 'chief', 'officer',
+            'specialist', 'consultant', 'coordinator',
+            'developer', 'architect', 'engineer', 'analyst',
+            'řidič', 'řidička', 'řidiče', 'řidiči', 'řidičem',  # všechny pády
+            'klient', 'klienta', 'klientka', 'klientky', 'klientovi',
+            'pacient', 'pacienta', 'pacientka', 'pacientky',
+            'žadatel', 'žadatele', 'žadatelka', 'žadatelky'
+        }
+
+        # 1. Najdi všechny 3-slovné matche
+        matches_3word = []
+        for match in role_person_pattern.finditer(text):
+            role_word = match.group(1)
+            # Platný match pouze pokud první slovo JE v ignore_words (je to titul/role)
+            if role_word.lower() in ignore_words:
+                matches_3word.append(match)
+
+        # 2. Najdi všechny 2-slovné matche
+        matches_2word = []
+        for match in person_pattern.finditer(text):
+            first_obs = match.group(1)
+            # Platný match pouze pokud první slovo NENÍ role word
+            # (tj. vypadá jako křestní jméno, ne jako "Řidič", "Klient", atd.)
+            if first_obs.lower() not in role_words:
+                matches_2word.append(match)
+
+        # 3. Kombinuj matche a odstraň překryvy (preferuj delší = 3-slovné)
+        all_matches = []
+
+        # Přidej 3-slovné (mají prioritu)
+        for match in matches_3word:
+            all_matches.append(('3word', match))
+
+        # Přidej 2-slovné, ale pouze pokud se nepřekrývají s 3-slovnými
+        for match in matches_2word:
+            overlaps = False
+            for _, m3 in [m for m in all_matches if m[0] == '3word']:
+                # Překryv = matche sdílejí nějaký znak
+                if not (match.end() <= m3.start() or match.start() >= m3.end()):
+                    overlaps = True
+                    break
+            if not overlaps:
+                all_matches.append(('2word', match))
+
+        # 4. Seřaď podle pozice (od konce, aby se neposunuly indexy při nahrazování)
+        all_matches.sort(key=lambda x: x[1].start(), reverse=True)
+
+        # 5. Aplikuj replacementy od konce
+        for match_type, match in all_matches:
+            if match_type == '3word':
+                replacement = replace_role_person(match)
+            else:  # '2word'
+                replacement = replace_person(match)
+
+            # Nahraď v textu
+            text = text[:match.start()] + replacement + text[match.end():]
 
         # ========== NOVÝ: Detekce samostatných příjmení ==========
         # Po zpracování celých jmen, hledej samostatně se vyskytující příjmení
