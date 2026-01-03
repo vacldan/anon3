@@ -3697,22 +3697,35 @@ class Anonymizer:
             'žadatel', 'žadatele', 'žadatelka', 'žadatelky'
         }
 
-        # 1. Najdi všechny 3-slovné matche
+        # 1. Najdi všechny 3-slovné matche (včetně překrývajících se!)
+        # DŮLEŽITÉ: finditer() nenachází překryvy, musíme hledat manuálně
         matches_3word = []
-        for match in role_person_pattern.finditer(text):
+        pos = 0
+        while pos < len(text):
+            match = role_person_pattern.search(text, pos)
+            if not match:
+                break
             role_word = match.group(1)
             # Platný match pouze pokud první slovo JE v ignore_words (je to titul/role)
             if role_word.lower() in ignore_words:
                 matches_3word.append(match)
+            # Posun o 1 znak pro nalezení překrývajících se matchů
+            pos = match.start() + 1
 
-        # 2. Najdi všechny 2-slovné matche
+        # 2. Najdi všechny 2-slovné matche (včetně překrývajících se!)
         matches_2word = []
-        for match in person_pattern.finditer(text):
+        pos = 0
+        while pos < len(text):
+            match = person_pattern.search(text, pos)
+            if not match:
+                break
             first_obs = match.group(1)
             # Platný match pouze pokud první slovo NENÍ role word
             # (tj. vypadá jako křestní jméno, ne jako "Řidič", "Klient", atd.)
             if first_obs.lower() not in role_words:
                 matches_2word.append(match)
+            # Posun o 1 znak pro nalezení překrývajících se matchů
+            pos = match.start() + 1
 
         # 3. Kombinuj matche a odstraň překryvy (preferuj delší = 3-slovné)
         all_matches = []
