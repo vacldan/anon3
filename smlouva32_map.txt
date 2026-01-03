@@ -1,0 +1,177 @@
+OSOBY
+-----
+[[PERSON_1]]: Dalibor Šťastný
+  - Dalibora Šťastného
+  - Šťastný
+[[PERSON_2]]: Alžběta Šťastná
+[[PERSON_3]]: Zraněném Šťastný
+  - Zraněnému Šťastnému
+[[PERSON_4]]: Ljuba Dvořáková
+[[PERSON_5]]: Stela Dvořáková
+[[PERSON_6]]: Zraněné Dvořáková
+  - Zraněné Dvořákové
+[[PERSON_7]]: Vilém Horák
+  - Horák
+[[PERSON_8]]: Radomír Pech
+[[PERSON_9]]: Zraněném Horák
+  - Zraněnému Horákovi
+[[PERSON_10]]: Nela Burešová
+  - Burešové
+[[PERSON_11]]: Berenika Burešová
+[[PERSON_12]]: Dítěti Bereniec
+  - Dítěti Berenice
+[[PERSON_13]]: Čeněk Moravec
+[[PERSON_14]]: Lumír Moravec
+[[PERSON_15]]: Ervín Tesař
+[[PERSON_16]]: Miloslava Kadlecová
+  - Kadlecové
+[[PERSON_17]]: Slavomil Kadlec
+[[PERSON_18]]: Anastázie Kadlecová
+[[PERSON_19]]: Pankrác Kolínský
+  - Kolínskému
+[[PERSON_20]]: Ctibor Vlk
+[[PERSON_21]]: Regína Kolínská
+[[PERSON_22]]: Oldřich Bárta
+  - Bártovi
+[[PERSON_23]]: Hubert Říha
+[[PERSON_24]]: Emílie Bártová
+[[PERSON_25]]: Doubravka Fialová
+  - Fialové
+[[PERSON_26]]: Vlastimil Sedlák
+  - Sedlákovi
+[[PERSON_27]]: Augustýn Novák
+[[PERSON_28]]: Hermína Sedláková
+[[PERSON_29]]: Zdenka Horáková
+[[PERSON_30]]: Radovan Liška
+[[PERSON_31]]: Blažej Horák
+[[PERSON_32]]: Laura Horáková
+[[PERSON_33]]: Sourozenec Matyáš
+[[PERSON_34]]: Viola Vaculíková
+[[PERSON_35]]: Pravoslav Doubek
+[[PERSON_36]]: Samuel Vaculík
+[[PERSON_37]]: Servác Bureš
+[[PERSON_38]]: Světlana Burešová
+[[PERSON_39]]: Metoděj Kolman
+[[PERSON_40]]: Justýna Burešová
+[[PERSON_41]]: Gita Malíková
+[[PERSON_42]]: Anastázie Dvořáková
+[[PERSON_43]]: Liběna Novotná
+  - Novotná
+  - Novotné
+[[PERSON_44]]: Svatopluk Novotný
+[[PERSON_45]]: Izabela Novotná
+[[PERSON_46]]: Oliver Novotný
+[[PERSON_47]]: Xenie Novotná
+[[PERSON_48]]: Cecílie Bartošová
+  - Bartošová
+  - Bartošové
+[[PERSON_49]]: Valdemar Šmíd
+[[PERSON_50]]: Marina Bartošová
+[[PERSON_51]]: Bonifác Bartoš
+[[PERSON_52]]: Matyáš Horák
+[[PERSON_53]]: Izák Vávra
+[[PERSON_54]]: Kvido Tesař
+[[PERSON_55]]: Hedvika Fischerová
+
+ADDRESS
+[[ADDRESS_1]]: Polní 145/18, Brno 602 00
+[[ADDRESS_2]]: Lázeňská 89/4, Brno 602 00
+[[ADDRESS_3]]: Zahradní 67, Jihlava 586 01
+[[ADDRESS_4]]: Krátká 23, Znojmo 669 02
+[[ADDRESS_5]]: Vinohradská 245/18, Praha 2
+[[ADDRESS_6]]: Lázeňská 89, Karlovy Vary 360 01
+[[ADDRESS_7]]: Polní 67/12, Olomouc 779 00
+[[ADDRESS_8]]: Krátká 145/8, Praha 4
+[[ADDRESS_9]]: Slezská 67, Opava 746 01
+[[ADDRESS_10]]: Zahradní 89, Hradec Králové 500 02
+[[ADDRESS_11]]: Polní 45/18, Brno 602 00
+[[ADDRESS_12]]: Lázeňská 89, Teplice 415 01
+[[ADDRESS_13]]: Zahradní 67, Pardubice 530 02
+[[ADDRESS_14]]: stadium 7, zbaven způsobilosti
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 780625/7923
+[[BIRTH_ID_2]]: 825629/8134
+[[BIRTH_ID_3]]: 855724/8245
+[[BIRTH_ID_4]]: 905629/7890
+[[BIRTH_ID_5]]: 720625/7623
+[[BIRTH_ID_6]]: 830714/8134
+[[BIRTH_ID_7]]: 885629/8134
+[[BIRTH_ID_8]]: 155623/7890
+[[BIRTH_ID_9]]: 380825/6734
+[[BIRTH_ID_10]]: 705629/7823
+[[BIRTH_ID_11]]: 750714/7623
+[[BIRTH_ID_12]]: 485629/8134
+[[BIRTH_ID_13]]: 480714/7623
+[[BIRTH_ID_14]]: 805629/7890
+[[BIRTH_ID_15]]: 620825/7623
+[[BIRTH_ID_16]]: 665629/8245
+[[BIRTH_ID_17]]: 750625/7923
+[[BIRTH_ID_18]]: 805629/8134
+[[BIRTH_ID_19]]: 755629/8245
+[[BIRTH_ID_20]]: 680512/7623
+[[BIRTH_ID_21]]: 725629/8134
+[[BIRTH_ID_22]]: 145623/7890
+[[BIRTH_ID_23]]: 855629/8245
+[[BIRTH_ID_24]]: 165824/8901
+[[BIRTH_ID_25]]: 820714/7623
+[[BIRTH_ID_26]]: 155724/8901
+[[BIRTH_ID_27]]: 845629/8134
+[[BIRTH_ID_28]]: 135624/7890
+[[BIRTH_ID_29]]: 790625/7623
+[[BIRTH_ID_30]]: 825629/8245
+[[BIRTH_ID_31]]: 835724/8134
+[[BIRTH_ID_32]]: 790714/7623
+[[BIRTH_ID_33]]: 185629/8912
+[[BIRTH_ID_34]]: 885629/8245
+[[BIRTH_ID_35]]: 175824/8901
+[[BIRTH_ID_36]]: 820625/7623
+[[BIRTH_ID_37]]: 780714/7623
+[[BIRTH_ID_38]]: 690714/7623
+[[BIRTH_ID_39]]: 750625/7823
+[[BIRTH_ID_40]]: 780625/7623
+[[BIRTH_ID_41]]: 720714/7623
+[[BIRTH_ID_42]]: 780825/7623
+[[BIRTH_ID_43]]: 690825/7623
+[[BIRTH_ID_44]]: 720625/7823
+
+EMAIL
+[[EMAIL_1]]: d.stastny@techcorp.cz
+[[EMAIL_2]]: l.dvorakova@uni.cz
+[[EMAIL_3]]: n.buresova@lekarna.cz
+[[EMAIL_4]]: p.kolinsky@phil.upol.cz
+[[EMAIL_5]]: o.barta@holding.cz
+[[EMAIL_6]]: d.fialova@centrum.cz
+[[EMAIL_7]]: z.horakova@email.cz
+[[EMAIL_8]]: cecilie.incognito@secureemail.cz
+
+ICO
+[[ICO_1]]: 78945612
+
+ID_CARD
+[[ID_CARD_1]]: AB456789
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: 5B7 8901
+[[LICENSE_PLATE_2]]: 3T9 4567
+[[LICENSE_PLATE_3]]: 7A5 6789
+[[LICENSE_PLATE_4]]: NB2004
+
+PHONE
+[[PHONE_1]]: 234567890
+[[PHONE_2]]: +420 603 789 456
+[[PHONE_3]]: +420 731 456 789
+[[PHONE_4]]: 445566778
+[[PHONE_5]]: +420 608 147 258
+[[PHONE_6]]: +420 605 789 123
+[[PHONE_7]]: +420 774 369 258
+[[PHONE_8]]: 778899001
+[[PHONE_9]]: 112233445
+[[PHONE_10]]: +420 603 456 789
+[[PHONE_11]]: 667788990
+[[PHONE_12]]: +420 731 789 456
+[[PHONE_13]]: 889900112
+[[PHONE_14]]: +420 605 147 258
+[[PHONE_15]]: 334455667
+[[PHONE_16]]: +420 608 369 258
+
