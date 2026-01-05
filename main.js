@@ -269,8 +269,15 @@ ipcMain.handle("anonymize-document", async (evt, filePath) => {
   const mapJson = path.join(dir, `${base}_map.json`);
   const mapTxt = path.join(dir, `${base}_map.txt`);
 
-  const cli = resolvePy("anonymize_cli.py");
-  if (!fs.existsSync(cli)) return { success: false, error: `CLI script not found: ${cli}` };
+  // TURBO MODE: Use turbo CLI for maximum speed (unless verbose mode)
+  const cliName = VERBOSE_PY ? "anonymize_cli.py" : "anonymize_cli_turbo.py";
+  let cli = resolvePy(cliName);
+  if (!fs.existsSync(cli)) {
+    // Fallback to regular CLI if turbo not found
+    const fallback = resolvePy("anonymize_cli.py");
+    if (!fs.existsSync(fallback)) return { success: false, error: `CLI script not found: ${cli}` };
+    cli = fallback;
+  }
 
   const startedMs = Date.now();
   sendProgress("Spouštím anonymizaci...");
