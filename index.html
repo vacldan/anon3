@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SKRYI Document Suite</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #d6e7f0 30%, #bfdbfe 70%, #e0f2fe 100%);
+            position: relative;
+            overflow-x: hidden;
+            z-index: 0;
+            color: #1e293b;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%; left: 50%;
+            width: 1000px; height: 1000px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(
+                circle,
+                rgba(147, 197, 253, 0.28) 0%,
+                rgba(59, 130, 246, 0.2) 30%,
+                rgba(37, 99, 235, 0.14) 50%,
+                rgba(29, 78, 216, 0.1) 70%,
+                rgba(30, 64, 175, 0.05) 85%,
+                rgba(0, 0, 0, 0) 100%
+            );
+
+            /* VYPNUTO: pulsování pozadí (šetří výkon) */
+            animation: none;
+
+            z-index: -1; pointer-events: none; filter: blur(40px);
+        }
+        @keyframes pulseOrb { 0%,100%{transform:translate(-50%,-50%) scale(0.8);opacity:.6} 50%{transform:translate(-50%,-50%) scale(1.3);opacity:1} }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 40px; min-height: 100vh; position: relative; z-index: 1; }
+
+        .header { text-align: center; margin-bottom: 80px; animation: fadeInUp 1s ease-out; }
+        .language-switcher {
+            position: absolute; top: 40px; right: 40px; display: flex; gap: 0; z-index: 100;
+            background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(20px) saturate(180%);
+            border-radius: 12px; padding: 4px; border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
+        .lang-btn { background: transparent; border: none; color: #64748b; padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all .3s cubic-bezier(.4,0,.2,1); }
+        .lang-btn:hover { color: #334155; background: rgba(59,130,246,.1); }
+        .lang-btn.active { background: rgba(59,130,246,.15); color:#3b82f6; font-weight:600; box-shadow: 0 2px 8px rgba(59,130,246,.2); }
+
+        .logo { font-size: 72px; font-weight: 800; background: linear-gradient(135deg,#1e293b 0%,#475569 50%,#64748b 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom: 10px; letter-spacing:-.04em; line-height:1; }
+
+        /* NOVÉ: logo pod nadpisem */
+        .app-logo {
+            display: block;
+            margin: 6px auto 22px auto;
+            max-width: 150px;
+            height: auto;
+            opacity: 0.96;
+            filter: drop-shadow(0 10px 24px rgba(0,0,0,0.10));
+        }
+
+        .subtitle { font-size: 24px; font-weight: 400; margin-bottom: 32px; background: linear-gradient(135deg,#1e293b 0%,#475569 50%,#64748b 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; line-height:1.4; max-width:600px; margin-left:auto; margin-right:auto; }
+        .version-badge { display:inline-flex; align-items:center; background: rgba(255,255,255,.4); backdrop-filter: blur(20px) saturate(180%); border:1px solid rgba(255,255,255,.3); padding:12px 24px; border-radius:24px; font-size:15px; font-weight:500; background:linear-gradient(135deg,#1e293b 0%,#475569 50%,#64748b 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; box-shadow:0 8px 32px rgba(0,0,0,.08);}
+
+        .mode-selector { background: rgba(255,255,255,.4); backdrop-filter: blur(40px) saturate(180%); border: 1px solid rgba(255,255,255,.3); padding: 48px; margin: 48px 0; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,.08); animation: fadeInUp 1s ease-out .2s both; }
+        .mode-selector h3 { font-size: 28px; font-weight: 700; margin-bottom: 40px; text-align: center; background: linear-gradient(135deg,#1e293b 0%,#475569 50%,#64748b 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; letter-spacing: -.02em; }
+        .mode-buttons { display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin:40px 0; }
+        .mode-btn { background: rgba(255,255,255,.8); backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(255,255,255,.3); background: linear-gradient(135deg,#1e293b 0%,#475569 50%,#64748b 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; padding:32px 24px; font-size:18px; font-weight:600; border-radius:20px; cursor:pointer; transition: all .4s cubic-bezier(.4,0,.2,1); text-align:center; position:relative; overflow:hidden; }
+        .mode-btn::before { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background: linear-gradient(90deg,transparent,rgba(59,130,246,.1),transparent); transition:left .8s ease; }
+        .mode-btn:hover::before { left:100%; }
+        .mode-btn:hover { background: rgba(255,255,255,.9); border-color: rgba(59,130,246,.3); background:linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#334155 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,.15); }
+        .mode-btn.active { background: linear-gradient(135deg, rgba(59,130,246,.1) 0%, rgba(147,197,253,.1) 100%); border-color: rgba(59,130,246,.4); background:linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#334155 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; transform: translateY(-4px); box-shadow:0 20px 40px rgba(59,130,246,.2); }
+
+        .section { background: rgba(255,255,255,.4); backdrop-filter: blur(40px) saturate(180%); border:1px solid rgba(255,255,255,.3); padding:40px; margin:32px 0; border-radius:24px; box-shadow:0 20px 40px rgba(0,0,0,.08); animation: fadeInUp .8s ease-out var(--delay,0s) both; }
+        .section h3 { font-size:22px; font-weight:700; margin-bottom:24px; background:linear-gradient(135deg,#1e293b 0%,#475569 50%,#64748b 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; display:flex; align-items:center; gap:12px; letter-spacing:-.01em; }
+
+        .btn, .btn.pdf, .btn.secondary {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 197, 253, 0.1) 100%);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            background: linear-gradient(135deg, #1e293b 0%, #475569 50%, #64748b 100%);
+            background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            border-radius: 16px; padding: 16px 32px; font-size: 16px; font-weight: 600; cursor: pointer;
+            transition: all .3s cubic-bezier(.4,0,.2,1); margin: 12px; font-family: inherit; display:inline-flex; align-items:center; gap:8px;
+            box-shadow: 0 20px 40px rgba(59,130,246,.2); position: relative; overflow: hidden; transform: translateY(-4px);
+        }
+        .btn::before, .btn.pdf::before, .btn.secondary::before {
+            content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
+            background: linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);
+            transition:left .6s ease;
+        }
+        .btn:hover::before, .btn.pdf:hover::before, .btn.secondary:hover::before { left:100%; }
+        .btn:hover, .btn.pdf:hover, .btn.secondary:hover {
+            background: linear-gradient(135deg, rgba(59,130,246,.15) 0%, rgba(147,197,253,.15) 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            transform: translateY(-6px); box-shadow:0 24px 48px rgba(59,130,246,.3);
+        }
+        .btn:active, .btn.pdf:active, .btn.secondary:active { transform: translateY(-2px); box-shadow:0 16px 32px rgba(59,130,246,.25); }
+        .btn.secondary { background: rgba(255,255,255,.8); border: 1px solid rgba(255,255,255,.3); background: linear-gradient(135deg, #1e293b 0%, #475569 50%, #64748b 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; box-shadow:0 8px 24px rgba(0,0,0,.1); }
+        .btn.secondary:hover { background: rgba(255,255,255,.9); background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; box-shadow:0 12px 32px rgba(0,0,0,.15); }
+        .btn:disabled { background: rgba(148,163,184,.4); background: linear-gradient(135deg,#94a3b8 0%,#cbd5e1 50%,#e2e8f0 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; cursor:not-allowed; transform:none; box-shadow:none; }
+
+        .file-info, .file-selection {
+            background: rgba(248,250,252,.8); backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(226,232,240,.5); padding: 24px; border-radius: 16px; margin: 20px 0;
+            font-family: 'SF Mono','Monaco','Menlo',monospace; font-size: 14px;
+            background: linear-gradient(135deg, #475569 0%, #64748b 50%, #94a3b8 100%);
+            background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: slideInUp .4s ease-out; box-shadow: 0 4px 16px rgba(0,0,0,.05);
+        }
+        .file-selection { font-size: 13px; padding: 20px; }
+
+        .status { padding: 20px 24px; margin: 20px 0; border-radius: 16px; font-weight: 600; font-size:15px; animation: slideInUp .4s ease-out; backdrop-filter: blur(20px) saturate(180%); border:1px solid; }
+        .status.success { background: rgba(248,250,252,.8); border-color: rgba(226,232,240,.5); background: linear-gradient(135deg,#22c55e 0%,#16a34a 50%,#15803d 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; box-shadow:0 8px 24px rgba(34,197,94,.1);}
+        .status.error   { background: rgba(248,250,252,.8); border-color: rgba(226,232,240,.5); background: linear-gradient(135deg,#ef4444 0%,#dc2626 50%,#b91c1c 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; box-shadow:0 8px 24px rgba(239,68,68,.1);}
+        .status.working {
+            background: rgba(248,250,252,.8);
+            border-color: rgba(226,232,240,.5);
+            background: linear-gradient(135deg,#f59e0b 0%,#d97706 50%,#b45309 100%);
+            background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+
+            /* VYPNUTO: pulsování statusu (šetří výkon) */
+            animation: none;
+
+            box-shadow:0 8px 24px rgba(245,158,11,.1);
+        }
+
+        .file-indicator { display:inline-flex; align-items:center; padding:12px 20px; margin:12px; background: rgba(248,250,252,.8); backdrop-filter: blur(20px) saturate(180%); border:1px solid rgba(226,232,240,.5); border-radius:24px; font-size:14px; font-weight:600; background: linear-gradient(135deg,#22c55e 0%,#16a34a 50%,#15803d 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation: fadeIn .4s ease-out; box-shadow: 0 8px 24px rgba(34,197,94,.1); }
+
+        .progress-log {
+            background: rgba(15,23,42,.95); backdrop-filter: blur(20px);
+            border: 1px solid rgba(51,65,85,.3); border-radius: 16px; padding: 20px;
+            margin: 20px 0; font-family: 'SF Mono','Monaco','Menlo',monospace;
+            font-size: 12px; max-height: 300px; overflow-y: auto;
+            color: #94a3b8; animation: slideInUp .4s ease-out;
+        }
+        .progress-log .log-line { margin: 4px 0; padding: 2px 0; border-left: 3px solid transparent; padding-left: 8px; }
+        .progress-log .log-line.success { border-left-color: #22c55e; color: #86efac; }
+        .progress-log .log-line.error { border-left-color: #ef4444; color: #fca5a5; }
+        .progress-log .log-line.working { border-left-color: #f59e0b; color: #fde047; }
+
+        .results-panel {
+            background: rgba(34,197,94,.1); backdrop-filter: blur(20px);
+            border: 1px solid rgba(34,197,94,.3); border-radius: 16px; padding: 24px;
+            margin: 20px 0; animation: slideInUp .4s ease-out;
+        }
+        .results-panel h4 { color: #15803d; font-weight: 700; margin-bottom: 16px; font-size: 18px; }
+        .results-panel .file-path {
+            font-family: 'SF Mono','Monaco','Menlo',monospace;
+            background: rgba(255,255,255,.6); padding: 8px 12px;
+            border-radius: 8px; margin: 8px 0; font-size: 13px;
+            word-break: break-all; color: #475569;
+        }
+
+        .hidden{display:none!important}
+
+        @keyframes fadeInUp { from{opacity:0; transform:translateY(40px)} to{opacity:1; transform:translateY(0)} }
+        @keyframes slideInUp { from{opacity:0; transform:translateY(20px)} to{opacity:1; transform:translateY(0)} }
+        @keyframes fadeIn{from{opacity:0} to{opacity:1}}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.8}}
+
+        @media (max-width: 768px) {
+            .container { padding: 40px 20px; }
+            .logo { font-size: 48px; }
+            .app-logo { max-width: 120px; margin: 6px auto 18px auto; }
+            .subtitle { font-size: 20px; }
+            .mode-buttons { grid-template-columns: 1fr; gap: 16px; }
+            .mode-btn { padding: 24px 20px; font-size: 16px; }
+            .section { padding: 32px 24px; margin: 24px 0; }
+            .language-switcher { position: relative; top: auto; right: auto; margin-bottom: 40px; justify-self: center; }
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(248,250,252,.5); }
+        ::-webkit-scrollbar-thumb { background: rgba(148,163,184,.4); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(148,163,184,.6); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="cs">CZ</button>
+                <button class="lang-btn" data-lang="en">ENG</button>
+            </div>
+
+            <div class="logo">SKRYI</div>
+
+            <!-- Logo (fallback loader nastaví src tak, aby to fungovalo v rootu i v assets) -->
+            <img class="app-logo" id="appLogo" alt="SKRYI logo" />
+
+            <div class="subtitle">Kompletní řešení pro zpracování citlivých dokumentů</div>
+            <div class="version-badge">DOCUMENT SUITE v2.1</div>
+        </div>
+
+        <div class="mode-selector">
+            <h3>Vyberte režim práce</h3>
+            <div class="mode-buttons">
+                <button class="mode-btn" id="pdfMode">PDF → DOCX</button>
+                <button class="mode-btn active" id="anonymizeMode">Anonymizace</button>
+                <button class="mode-btn" id="deanonymizeMode">Deanonymizace</button>
+            </div>
+        </div>
+
+        <!-- Anonymization panel -->
+        <div id="anonymizationPanel">
+            <div class="section" style="--delay: 0.1s">
+                <h3>1. Výběr dokumentu k anonymizaci</h3>
+                <button class="btn" id="selectBtn">Procházet DOCX soubory</button>
+                <div id="fileInfo" class="file-info hidden">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span id="fileName"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" style="--delay: 0.2s">
+                <h3>2. Anonymizace citlivých údajů</h3>
+                <button class="btn" id="anonymizeBtn" disabled>Spustit anonymizaci</button>
+                <div id="status" class="status hidden"></div>
+
+                <div id="progressLog" class="progress-log hidden">
+                    <div style="margin-bottom: 10px; color: #e2e8f0; font-weight: 600;">Průběh zpracování:</div>
+                    <div id="logContent"></div>
+                </div>
+
+                <div id="resultsPanel" class="results-panel hidden">
+                    <h4>Výsledky anonymizace</h4>
+                    <div>
+                        <strong>Výstupní DOCX:</strong>
+                        <div class="file-path" id="outputPath"></div>
+                    </div>
+                    <div>
+                        <strong>TXT Mapa:</strong>
+                        <div class="file-path" id="mapTxtPath"></div>
+                    </div>
+                    <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
+                        <button class="btn secondary" id="openOutputBtn">Otevřít výsledek ve složce</button>
+                        <button class="btn secondary" id="openMapBtn">Otevřít TXT mapu ve složce</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PDF panel -->
+        <div id="pdfPanel" class="hidden">
+            <div class="section">
+                <h3>PDF konverze</h3>
+                <p>PDF konverze zatím není implementována.</p>
+            </div>
+        </div>
+
+        <!-- Deanonymization panel -->
+        <div id="deanonymizationPanel" class="hidden">
+            <div class="section">
+                <h3>Deanonymizace</h3>
+                <p>Deanonymizace zatím není implementována.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Robust logo loader (root + assets + build variants) ---
+        (function () {
+            const img = document.getElementById("appLogo");
+            if (!img) return;
+
+            // funguje v dev i ve většině buildů (asar/app)
+            const candidates = [
+                "assets/logo.png",
+                "./assets/logo.png",
+                "logo.png",
+                "./logo.png"
+            ];
+
+            let idx = 0;
+            img.onerror = () => {
+                idx++;
+                if (idx >= candidates.length) {
+                    console.warn("Logo not found in any candidate path:", candidates);
+                    img.style.display = "none";
+                    return;
+                }
+                img.src = candidates[idx];
+            };
+
+            img.src = candidates[0];
+        })();
+
+        console.log('SKRYI - Script initialization starting...');
+
+        // GLOBALS
+        let ipcRenderer = null;
+        let selectedFile = null;
+        let currentMode = 'anonymize';
+        let lastOutputFile = null;
+        let lastMapTxtFile = null;
+
+        // PROGRESS LOGGING
+        function addProgressLog(message, type = 'info') {
+            console.log(`[${type.toUpperCase()}] ${message}`);
+
+            const logContent = document.getElementById('logContent');
+            const logLine = document.createElement('div');
+            logLine.className = `log-line ${type}`;
+
+            const timestamp = new Date().toLocaleTimeString();
+            logLine.textContent = `[${timestamp}] ${message}`;
+
+            logContent.appendChild(logLine);
+            logContent.scrollTop = logContent.scrollHeight;
+
+            document.getElementById('progressLog').classList.remove('hidden');
+        }
+
+        function clearProgressLog() {
+            document.getElementById('logContent').innerHTML = '';
+            document.getElementById('progressLog').classList.add('hidden');
+        }
+
+        // MODE SWITCHING
+        function switchMode(mode){
+            console.log(`Switching to mode: ${mode}`);
+            currentMode = mode;
+
+            document.querySelectorAll('.mode-btn').forEach(b=>b.classList.remove('active'));
+            document.querySelectorAll('[id$="Panel"]').forEach(p=>p.classList.add('hidden'));
+
+            if(mode === 'pdf'){
+                document.getElementById('pdfMode').classList.add('active');
+                setTimeout(()=>document.getElementById('pdfPanel').classList.remove('hidden'), 100);
+            } else if(mode === 'anonymize'){
+                document.getElementById('anonymizeMode').classList.add('active');
+                setTimeout(()=>document.getElementById('anonymizationPanel').classList.remove('hidden'), 100);
+            } else {
+                document.getElementById('deanonymizeMode').classList.add('active');
+                setTimeout(()=>document.getElementById('deanonymizationPanel').classList.remove('hidden'), 100);
+            }
+        }
+
+        // FILE OPERATIONS - OPRAVENO pro jediné volání
+        async function selectFile(){
+            console.log('selectFile() called');
+
+            if (!ipcRenderer) {
+                console.error('ipcRenderer not available');
+                addProgressLog('IPC není dostupný', 'error');
+                return;
+            }
+
+            try {
+                clearProgressLog();
+                addProgressLog('Otevírám dialog pro výběr souboru...', 'info');
+
+                const filePath = await ipcRenderer.invoke('select-file');
+                console.log('File selection result:', filePath);
+
+                if(filePath){
+                    selectedFile = filePath;
+                    const fileName = filePath.split(/[\\\/]/).pop();
+                    document.getElementById('fileName').textContent = fileName;
+                    document.getElementById('fileInfo').classList.remove('hidden');
+                    document.getElementById('anonymizeBtn').disabled = false;
+
+                    document.getElementById('resultsPanel').classList.add('hidden');
+                    lastOutputFile = null;
+                    lastMapTxtFile = null;
+
+                    addProgressLog(`Vybrán soubor: ${fileName}`, 'success');
+                } else {
+                    console.log('No file selected');
+                    addProgressLog('Výběr souboru zrušen', 'working');
+                }
+            } catch (error) {
+                console.error('selectFile error:', error);
+                addProgressLog(`Chyba při výběru souboru: ${error.message}`, 'error');
+            }
+        }
+
+        async function anonymizeDocument(){
+            console.log('anonymizeDocument() called');
+
+            if (!selectedFile) {
+                addProgressLog('Není vybrán žádný soubor', 'error');
+                return;
+            }
+
+            if (!ipcRenderer) {
+                addProgressLog('IPC není dostupný', 'error');
+                return;
+            }
+
+            try {
+                const statusEl = document.getElementById('status');
+                statusEl.textContent = 'Anonymizace probíhá...';
+                statusEl.className = 'status working';
+                statusEl.classList.remove('hidden');
+
+                document.getElementById('resultsPanel').classList.add('hidden');
+                clearProgressLog();
+                lastOutputFile = null;
+                lastMapTxtFile = null;
+
+                addProgressLog('Spouštím anonymizaci...', 'working');
+                addProgressLog(`Zpracovávám soubor: ${selectedFile.split(/[\\\/]/).pop()}`, 'info');
+
+                const result = await ipcRenderer.invoke('anonymize-document', selectedFile);
+                console.log('Anonymization result:', result);
+
+                if(result && result.success){
+                    lastOutputFile = result.outputFile;
+                    lastMapTxtFile = result.mapTxt;
+
+                    statusEl.textContent = 'Anonymizace úspěšně dokončena!';
+                    statusEl.className = 'status success';
+
+                    addProgressLog('Anonymizace úspěšně dokončena!', 'success');
+                    addProgressLog(`Výstup: ${lastOutputFile}`, 'success');
+                    addProgressLog(`TXT mapa: ${lastMapTxtFile}`, 'success');
+
+                    document.getElementById('outputPath').textContent = lastOutputFile || '';
+                    document.getElementById('mapTxtPath').textContent = lastMapTxtFile || '';
+                    document.getElementById('resultsPanel').classList.remove('hidden');
+
+                    document.getElementById('openOutputBtn').onclick = async () => {
+                        if(lastOutputFile) {
+                            await ipcRenderer.invoke('show-folder', lastOutputFile);
+                        }
+                    };
+                    document.getElementById('openMapBtn').onclick = async () => {
+                        if(lastMapTxtFile) {
+                            await ipcRenderer.invoke('show-folder', lastMapTxtFile);
+                        }
+                    };
+                } else {
+                    const errorMsg = (result && result.error) ? result.error : 'Anonymizace selhala';
+                    statusEl.textContent = `Chyba: ${errorMsg}`;
+                    statusEl.className = 'status error';
+                    addProgressLog(`Chyba: ${errorMsg}`, 'error');
+
+                    console.error('Anonymization failed:', errorMsg);
+                }
+            } catch (error) {
+                console.error('Critical anonymization error:', error);
+                addProgressLog(`Kritická chyba: ${error.message}`, 'error');
+
+                const statusEl = document.getElementById('status');
+                statusEl.textContent = `Chyba: ${error.message}`;
+                statusEl.className = 'status error';
+            }
+        }
+
+        // INITIALIZATION
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM loaded, initializing application...');
+
+            // Test IPC connection
+            if (typeof require !== 'undefined') {
+                console.log('require is available');
+                try {
+                    const electron = require('electron');
+                    ipcRenderer = electron.ipcRenderer;
+                    console.log('ipcRenderer successfully imported');
+
+                    ipcRenderer.invoke('get-app-version').then(version => {
+                        console.log('IPC test successful, app version:', version);
+                        addProgressLog(`Aplikace připravena (v${version})`, 'success');
+                    }).catch(err => {
+                        console.error('IPC test failed:', err);
+                        addProgressLog('IPC test selhání', 'error');
+                    });
+                } catch (error) {
+                    console.error('Error importing ipcRenderer:', error);
+                    addProgressLog(`IPC import chyba: ${error.message}`, 'error');
+                }
+            } else {
+                console.error('require not available - not in Electron context?');
+                addProgressLog('Aplikace není spuštěna v Electron prostředí', 'error');
+            }
+
+            switchMode('anonymize');
+
+            console.log('Setting up event listeners...');
+
+            // Mode switching
+            document.getElementById('pdfMode').addEventListener('click', () => switchMode('pdf'));
+            document.getElementById('anonymizeMode').addEventListener('click', () => switchMode('anonymize'));
+            document.getElementById('deanonymizeMode').addEventListener('click', () => switchMode('deanonymize'));
+
+            // Select docx
+            const selectBtn = document.getElementById('selectBtn');
+            if (selectBtn) {
+                selectBtn.addEventListener('click', selectFile);
+            } else {
+                console.error('CRITICAL: selectBtn element not found!');
+                addProgressLog('KRITICKÁ CHYBA: selectBtn element nenalezen', 'error');
+            }
+
+            // Anonymize
+            const anonymizeBtn = document.getElementById('anonymizeBtn');
+            if (anonymizeBtn) {
+                anonymizeBtn.addEventListener('click', anonymizeDocument);
+            }
+
+            // IPC Progress listener
+            if (ipcRenderer) {
+                ipcRenderer.on('progress-update', (event, message) => {
+                    if (!message || typeof message !== 'string') return;
+
+                    const msg = message.trim();
+                    if (!msg) return;
+
+                    let type = 'info';
+                    if (msg.includes('úspěšně') || msg.includes('dokončena') || msg.includes('SUCCESS')) {
+                        type = 'success';
+                    } else if (msg.includes('ERROR') || msg.includes('Chyba') || msg.includes('chyba')) {
+                        type = 'error';
+                    } else if (msg.includes('Zpracovávám') || msg.includes('probíhá')) {
+                        type = 'working';
+                    }
+
+                    addProgressLog(msg, type);
+                });
+            }
+
+            addProgressLog('Frontend inicializován', 'success');
+        });
+
+        // GLOBAL ERROR HANDLING
+        window.addEventListener('error', (event) => {
+            console.error('Global JavaScript error:', event.error);
+            addProgressLog(`JavaScript chyba: ${event.error.message}`, 'error');
+        });
+
+        console.log('Script initialization complete');
+    </script>
+</body>
+</html>
