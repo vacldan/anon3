@@ -1,30 +1,30 @@
 {
   "version": "1.0",
-  "generated_at": "2026-01-03T10:16:28.823364",
+  "generated_at": "2026-01-07T14:54:51.890892",
   "source_file": "smlouva29.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Konečnému",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Dagmar Konečná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Konečnému",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Menclovi",
+      "original": "Liběna Menclová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Liběna Menclová",
+      "original": "Menclovi",
       "occurrences": 1
     },
     {
@@ -42,13 +42,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Šulcovi",
+      "original": "Agáta Šulcová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Agáta Šulcová",
+      "original": "Šulcovi",
       "occurrences": 1
     },
     {
@@ -60,13 +60,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Hruškovi",
+      "original": "Maxmilián Benda",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_11]]",
-      "original": "Maxmilián Benda",
+      "original": "Hruškovi",
       "occurrences": 1
     },
     {
@@ -78,7 +78,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_13]]",
-      "original": "Rostislav Vaculík",
+      "original": "Dominik Vaculík",
       "occurrences": 1
     },
     {
@@ -96,25 +96,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_16]]",
-      "original": "Matouškovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_17]]",
       "original": "Jolana Matoušková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_17]]",
+      "original": "Matouškovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_18]]",
-      "original": "Cyril Tesař",
+      "original": "Emílie Tesařové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_19]]",
-      "original": "Emílie Tesařové",
+      "original": "Cyril Tesař",
       "occurrences": 1
     },
     {
@@ -126,13 +126,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
-      "original": "Nové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_21]]",
-      "original": "Cecílii Novou",
+      "original": "Oliver Kadlec",
       "occurrences": 1
     },
     {
@@ -144,25 +138,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_23]]",
-      "original": "Aneta Kadlecová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_24]]",
       "original": "Bruno Kadlec",
       "occurrences": 1
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_24]]",
+      "original": "Aneta Kadlecová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_25]]",
-      "original": "Tamara Kadlecová",
+      "original": "Viola Kadlecová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_26]]",
-      "original": "Oliver Kadlec",
+      "original": "Servác Mlynář",
       "occurrences": 1
     },
     {
@@ -174,49 +168,49 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_28]]",
-      "original": "Servác Mlynář",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_29]]",
       "original": "Gizela Šimková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_30]]",
+      "label": "[[PERSON_29]]",
       "original": "Svatopluk Procházka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_31]]",
+      "label": "[[PERSON_30]]",
       "original": "Jolana Burešová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_32]]",
+      "label": "[[PERSON_31]]",
       "original": "Laura Hájková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_33]]",
+      "label": "[[PERSON_32]]",
       "original": "Jarmil Vávra",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_34]]",
+      "label": "[[PERSON_33]]",
       "original": "Berta Fleková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_35]]",
+      "label": "[[PERSON_34]]",
       "original": "Dobroslav Čížek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_35]]",
+      "original": "Izabelu Kolářovou",
       "occurrences": 1
     },
     {
@@ -228,301 +222,295 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_37]]",
-      "original": "Izabelu Kolářovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_38]]",
       "original": "Gita Pilná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_39]]",
+      "label": "[[PERSON_38]]",
       "original": "Věnceslav Pilný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_40]]",
+      "label": "[[PERSON_39]]",
       "original": "Slavěna Žáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_41]]",
+      "label": "[[PERSON_40]]",
       "original": "Medard Šesták",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_42]]",
+      "label": "[[PERSON_41]]",
       "original": "Justýna Horáčková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_43]]",
+      "label": "[[PERSON_42]]",
       "original": "Drahoslav Polák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_44]]",
+      "label": "[[PERSON_43]]",
       "original": "Apolena Machová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_45]]",
+      "label": "[[PERSON_44]]",
       "original": "Roland Stránský",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_46]]",
+      "label": "[[PERSON_45]]",
       "original": "Evženie Morávková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_47]]",
+      "label": "[[PERSON_46]]",
       "original": "Ctibor Urban",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_48]]",
+      "label": "[[PERSON_47]]",
       "original": "Emilie Kučerová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_49]]",
+      "label": "[[PERSON_48]]",
       "original": "Vlastislav Šíma",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_50]]",
+      "label": "[[PERSON_49]]",
       "original": "Darja Beranová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_51]]",
+      "label": "[[PERSON_50]]",
       "original": "Ilona Petráková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_52]]",
+      "label": "[[PERSON_51]]",
       "original": "Alois Kopecký",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_53]]",
+      "label": "[[PERSON_52]]",
       "original": "Gita Procházková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_54]]",
+      "label": "[[PERSON_53]]",
       "original": "Blažej Sýkora",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_55]]",
+      "label": "[[PERSON_54]]",
       "original": "Světlana Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_56]]",
+      "label": "[[PERSON_55]]",
       "original": "Antonín Beneš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_57]]",
+      "label": "[[PERSON_56]]",
       "original": "Libuše Vaňková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_58]]",
+      "label": "[[PERSON_57]]",
       "original": "Oldřich Kolman",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_59]]",
+      "label": "[[PERSON_58]]",
       "original": "Edita Urbanová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_60]]",
+      "label": "[[PERSON_59]]",
       "original": "Klaudie Horníková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_61]]",
+      "label": "[[PERSON_60]]",
       "original": "Ferdinand Bílý",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_62]]",
+      "label": "[[PERSON_61]]",
       "original": "Regína Baštová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_63]]",
+      "label": "[[PERSON_62]]",
       "original": "Pankrác Kolman",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_64]]",
+      "label": "[[PERSON_63]]",
       "original": "Nora Majerová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_65]]",
+      "label": "[[PERSON_64]]",
       "original": "Bonifác Tesař",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_66]]",
+      "label": "[[PERSON_65]]",
       "original": "Amálie Šimůnková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_67]]",
+      "label": "[[PERSON_66]]",
       "original": "Kvido Schneider",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_68]]",
+      "label": "[[PERSON_67]]",
       "original": "Doubravka Váňová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_69]]",
+      "label": "[[PERSON_68]]",
       "original": "Slavomír Heřman",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Lázeňská 145/8, Teplice 415 01",
+      "original": " Lázeňská 145/8, Teplice 415 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Nemovitost na adrese Slezská 67, Opava 746 01",
+      "original": "Slezská 67, Opava 746 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Mánesova 89/12, Chomutov 430 01",
+      "original": " Mánesova 89/12, Chomutov 430 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "Tylova 34/6, Karlovy Vary 360 01",
+      "original": " Tylova 34/6, Karlovy Vary 360 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "bytemRevoluční 67/9, Děčín 405 02",
+      "original": "Revoluční 67/9, Děčín 405 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "Krátká 23, Most 434 01",
+      "original": " Krátká 23, Most 434 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Hlavní 89, Ústí nad Labem 400 01",
+      "original": " Hlavní 89, Ústí nad Labem 400 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Sadová 56/3, Kladno 272 01",
+      "original": " Sadová 56/3, Kladno 272 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_9]]",
-      "original": "Polní 12, Trutnov 541 01",
+      "original": " Polní 12, Trutnov 541 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_10]]",
-      "original": "Sportovní 45, Mladá Boleslav 293 01",
+      "original": " Sportovní 45, Mladá Boleslav 293 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_11]]",
-      "original": "Lázeňská 78, Poděbrady 290 01",
+      "original": " Lázeňská 78, Poděbrady 290 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_12]]",
-      "original": "Krátká 12, Hradec Králové 500 02",
+      "original": " Krátká 12, Hradec Králové 500 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_13]]",
-      "original": "Polní 89, Děčín 405 02",
+      "original": " Polní 89, Děčín 405 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_14]]",
-      "original": "Zahradní 34, Chomutov 430 01",
+      "original": " Zahradní 34, Chomutov 430 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_15]]",
-      "original": "Krátká 45, Teplice 415 01",
+      "original": " Krátká 45, Teplice 415 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_16]]",
-      "original": "Zahradní 78, Chomutov 430 01",
+      "original": " Zahradní 78, Chomutov 430 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_17]]",
-      "original": "Lázeňská 89, Karlovy Vary 360 01",
+      "original": " Lázeňská 89, Karlovy Vary 360 01",
       "occurrences": 1
     },
     {
@@ -1000,98 +988,116 @@
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_1]]",
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_1]]",
       "original": "345678901",
       "occurrences": 1
     },
     {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_2]]",
+      "original": "KL456789",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_3]]",
+      "original": "MN890123",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_4]]",
+      "original": "OP123456",
+      "occurrences": 1
+    },
+    {
       "type": "PHONE",
-      "label": "[[PHONE_2]]",
+      "label": "[[PHONE_1]]",
       "original": "+420 602 147 258",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_3]]",
+      "label": "[[PHONE_2]]",
       "original": "+420 775 369 147",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_4]]",
+      "label": "[[PHONE_3]]",
       "original": "556677889",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_5]]",
+      "label": "[[PHONE_4]]",
       "original": "778899112",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_6]]",
+      "label": "[[PHONE_5]]",
       "original": "+420 608 258 369",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_7]]",
+      "label": "[[PHONE_6]]",
       "original": "+420 731 456 789",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_8]]",
+      "label": "[[PHONE_7]]",
       "original": "112233445",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_9]]",
+      "label": "[[PHONE_8]]",
       "original": "+420 721 369 258",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_10]]",
+      "label": "[[PHONE_9]]",
       "original": "889900112",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_11]]",
+      "label": "[[PHONE_10]]",
       "original": "+420 605 147 258",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_12]]",
+      "label": "[[PHONE_11]]",
       "original": "+420 736 258 147",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_13]]",
+      "label": "[[PHONE_12]]",
       "original": "+420 731 258 369",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_14]]",
+      "label": "[[PHONE_13]]",
       "original": "+420 608 147 258",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_15]]",
+      "label": "[[PHONE_14]]",
       "original": "+420 602 369 147",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_16]]",
+      "label": "[[PHONE_15]]",
       "original": "+420 731 147 258",
       "occurrences": 1
     },
@@ -1111,24 +1117,6 @@
       "type": "ICO",
       "label": "[[ICO_2]]",
       "original": "07823456",
-      "occurrences": 1
-    },
-    {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_1]]",
-      "original": "KL456789",
-      "occurrences": 1
-    },
-    {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_2]]",
-      "original": "MN890123",
-      "occurrences": 1
-    },
-    {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_3]]",
-      "original": "OP123456",
       "occurrences": 1
     },
     {

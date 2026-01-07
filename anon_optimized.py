@@ -1842,10 +1842,16 @@ class Anonymizer:
 
         # Speciální cleanup pro ADDRESS - odstraň prefixy "Sídlo:", "Trvalé bydliště:", "Trvalý pobyt:" atd.
         if typ == 'ADDRESS':
+            # Odstraň dlouhé prefixy jako "hneiderovi byla zabavena nemovitost na adrese Polní 89"
+            # Hledáme pattern: "...na adrese ADRESA" nebo "...byla zabavena nemovitost na adrese ADRESA"
+            orig_norm = re.sub(r'^.*?\b(?:na\s+adrese|byla\s+zabavena\s+nemovitost\s+na\s+adrese)\s+', '', orig_norm, flags=re.IGNORECASE)
+
             # Odstraň prefix s dvojtečkou (Sídlo:, Adresa:, atd.)
             orig_norm = re.sub(r'^(Sídlo|Trvalé\s+bydliště|Trvalý\s+pobyt|Bydliště|Adresa|Místo\s+podnikání|Se\s+sídlem|Bytem)\s*:\s*', '', orig_norm, flags=re.IGNORECASE)
+
             # Odstraň prefix bez dvojtečky na začátku (adrese, bytem) - instrumentál/lokál
-            orig_norm = re.sub(r'^(adrese|adresa|bytem|bydlišti|sídle)\s+', '', orig_norm, flags=re.IGNORECASE)
+            # UPRAVENO: Odstraň i případy bez mezery jako "bytemRevoluční" -> "Revoluční"
+            orig_norm = re.sub(r'^(adrese|adresa|bytem|bydlišti|sídle)(?=\s+|[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ])', '', orig_norm, flags=re.IGNORECASE)
 
         # OPTIMIZATION: Use reverse_map for O(1) lookup instead of O(n) iteration
         # Check if this variant already exists
