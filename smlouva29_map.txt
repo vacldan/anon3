@@ -1,107 +1,104 @@
 OSOBY
 -----
-[[PERSON_1]]: Ladislav Konečný
+[[PERSON_1]]: Dagmar Konečná
+[[PERSON_2]]: Ladislav Konečný
   - Konečnému
-[[PERSON_2]]: Dagmar Konečná
-[[PERSON_3]]: Benedikt Mencl
+[[PERSON_3]]: Liběna Menclová
+[[PERSON_4]]: Benedikt Mencl
   - Menclovi
-[[PERSON_4]]: Liběna Menclová
 [[PERSON_5]]: Hubert Rybář
 [[PERSON_6]]: Anežka Fischerová
   - Fischerové
-[[PERSON_7]]: Norbert Šulc
+[[PERSON_7]]: Agáta Šulcová
+[[PERSON_8]]: Norbert Šulc
   - Šulcovi
-[[PERSON_8]]: Agáta Šulcová
 [[PERSON_9]]: Patricie Dlouhá
-[[PERSON_10]]: Zikmund Hruška
+[[PERSON_10]]: Maxmilián Benda
+[[PERSON_11]]: Zikmund Hruška
   - Hruškovi
-[[PERSON_11]]: Maxmilián Benda
-[[PERSON_12]]: Dominik Vaculík
+[[PERSON_12]]: Rostislav Vaculík
   - Vaculíkovi
-[[PERSON_13]]: Rostislav Vaculík
+[[PERSON_13]]: Dominik Vaculík
 [[PERSON_14]]: Valdemar Vlk
 [[PERSON_15]]: Hedvika Dostálová
   - Dostálové
-[[PERSON_16]]: Leopold Matoušek
+[[PERSON_16]]: Jolana Matoušková
+[[PERSON_17]]: Leopold Matoušek
   - Matouškovi
-[[PERSON_17]]: Jolana Matoušková
-[[PERSON_18]]: Cyril Tesař
-[[PERSON_19]]: Emílie Tesařová
+[[PERSON_18]]: Emílie Tesařová
   - Emílie Tesařové
+[[PERSON_19]]: Cyril Tesař
 [[PERSON_20]]: Metoděj Strnad
-[[PERSON_21]]: Cecílie Nová
-  - Cecílii Novou
-  - Nové
-[[PERSON_22]]: Viola Kadlecová
+[[PERSON_21]]: Oliver Kadlec
+[[PERSON_22]]: Tamara Kadlecová
   - Kadlecové
-[[PERSON_23]]: Aneta Kadlecová
-[[PERSON_24]]: Bruno Kadlec
-[[PERSON_25]]: Tamara Kadlecová
-[[PERSON_26]]: Oliver Kadlec
+[[PERSON_23]]: Bruno Kadlec
+[[PERSON_24]]: Aneta Kadlecová
+[[PERSON_25]]: Viola Kadlecová
+[[PERSON_26]]: Servác Mlynář
 [[PERSON_27]]: Teodora Mlynářová
   - Mlynářové
-[[PERSON_28]]: Servác Mlynář
-[[PERSON_29]]: Gizela Šimková
-[[PERSON_30]]: Svatopluk Procházka
-[[PERSON_31]]: Jolana Burešová
-[[PERSON_32]]: Laura Hájková
-[[PERSON_33]]: Jarmil Vávra
-[[PERSON_34]]: Berta Fleková
-[[PERSON_35]]: Dobroslav Čížek
-[[PERSON_36]]: Hermína Kolářová
-[[PERSON_37]]: Izabel Kolářová
+[[PERSON_28]]: Gizela Šimková
+[[PERSON_29]]: Svatopluk Procházka
+[[PERSON_30]]: Jolana Burešová
+[[PERSON_31]]: Laura Hájková
+[[PERSON_32]]: Jarmil Vávra
+[[PERSON_33]]: Berta Fleková
+[[PERSON_34]]: Dobroslav Čížek
+[[PERSON_35]]: Izabel Kolářová
   - Izabelu Kolářovou
-[[PERSON_38]]: Gita Pilná
-[[PERSON_39]]: Věnceslav Pilný
-[[PERSON_40]]: Slavěna Žáková
-[[PERSON_41]]: Medard Šesták
-[[PERSON_42]]: Justýna Horáčková
-[[PERSON_43]]: Drahoslav Polák
-[[PERSON_44]]: Apolena Machová
-[[PERSON_45]]: Roland Stránský
-[[PERSON_46]]: Evženie Morávková
-[[PERSON_47]]: Ctibor Urban
-[[PERSON_48]]: Emilie Kučerová
-[[PERSON_49]]: Vlastislav Šíma
-[[PERSON_50]]: Darja Beranová
-[[PERSON_51]]: Ilona Petráková
-[[PERSON_52]]: Alois Kopecký
-[[PERSON_53]]: Gita Procházková
-[[PERSON_54]]: Blažej Sýkora
-[[PERSON_55]]: Světlana Dvořáková
-[[PERSON_56]]: Antonín Beneš
-[[PERSON_57]]: Libuše Vaňková
-[[PERSON_58]]: Oldřich Kolman
-[[PERSON_59]]: Edita Urbanová
-[[PERSON_60]]: Klaudie Horníková
-[[PERSON_61]]: Ferdinand Bílý
-[[PERSON_62]]: Regína Baštová
-[[PERSON_63]]: Pankrác Kolman
-[[PERSON_64]]: Nora Majerová
-[[PERSON_65]]: Bonifác Tesař
-[[PERSON_66]]: Amálie Šimůnková
-[[PERSON_67]]: Kvido Schneider
-[[PERSON_68]]: Doubravka Váňová
-[[PERSON_69]]: Slavomír Heřman
+[[PERSON_36]]: Hermína Kolářová
+[[PERSON_37]]: Gita Pilná
+[[PERSON_38]]: Věnceslav Pilný
+[[PERSON_39]]: Slavěna Žáková
+[[PERSON_40]]: Medard Šesták
+[[PERSON_41]]: Justýna Horáčková
+[[PERSON_42]]: Drahoslav Polák
+[[PERSON_43]]: Apolena Machová
+[[PERSON_44]]: Roland Stránský
+[[PERSON_45]]: Evženie Morávková
+[[PERSON_46]]: Ctibor Urban
+[[PERSON_47]]: Emilie Kučerová
+[[PERSON_48]]: Vlastislav Šíma
+[[PERSON_49]]: Darja Beranová
+[[PERSON_50]]: Ilona Petráková
+[[PERSON_51]]: Alois Kopecký
+[[PERSON_52]]: Gita Procházková
+[[PERSON_53]]: Blažej Sýkora
+[[PERSON_54]]: Světlana Dvořáková
+[[PERSON_55]]: Antonín Beneš
+[[PERSON_56]]: Libuše Vaňková
+[[PERSON_57]]: Oldřich Kolman
+[[PERSON_58]]: Edita Urbanová
+[[PERSON_59]]: Klaudie Horníková
+[[PERSON_60]]: Ferdinand Bílý
+[[PERSON_61]]: Regína Baštová
+[[PERSON_62]]: Pankrác Kolman
+[[PERSON_63]]: Nora Majerová
+[[PERSON_64]]: Bonifác Tesař
+[[PERSON_65]]: Amálie Šimůnková
+[[PERSON_66]]: Kvido Schneider
+[[PERSON_67]]: Doubravka Váňová
+[[PERSON_68]]: Slavomír Heřman
 
 ADDRESS
-[[ADDRESS_1]]: Lázeňská 145/8, Teplice 415 01
-[[ADDRESS_2]]: Nemovitost na adrese Slezská 67, Opava 746 01
-[[ADDRESS_3]]: Mánesova 89/12, Chomutov 430 01
-[[ADDRESS_4]]: Tylova 34/6, Karlovy Vary 360 01
-[[ADDRESS_5]]: bytemRevoluční 67/9, Děčín 405 02
-[[ADDRESS_6]]: Krátká 23, Most 434 01
-[[ADDRESS_7]]: Hlavní 89, Ústí nad Labem 400 01
-[[ADDRESS_8]]: Sadová 56/3, Kladno 272 01
-[[ADDRESS_9]]: Polní 12, Trutnov 541 01
-[[ADDRESS_10]]: Sportovní 45, Mladá Boleslav 293 01
-[[ADDRESS_11]]: Lázeňská 78, Poděbrady 290 01
-[[ADDRESS_12]]: Krátká 12, Hradec Králové 500 02
-[[ADDRESS_13]]: Polní 89, Děčín 405 02
-[[ADDRESS_14]]: Zahradní 34, Chomutov 430 01
-[[ADDRESS_15]]: Krátká 45, Teplice 415 01
-[[ADDRESS_16]]: Zahradní 78, Chomutov 430 01
-[[ADDRESS_17]]: Lázeňská 89, Karlovy Vary 360 01
+[[ADDRESS_1]]:  Lázeňská 145/8, Teplice 415 01
+[[ADDRESS_2]]: Slezská 67, Opava 746 01
+[[ADDRESS_3]]:  Mánesova 89/12, Chomutov 430 01
+[[ADDRESS_4]]:  Tylova 34/6, Karlovy Vary 360 01
+[[ADDRESS_5]]: Revoluční 67/9, Děčín 405 02
+[[ADDRESS_6]]:  Krátká 23, Most 434 01
+[[ADDRESS_7]]:  Hlavní 89, Ústí nad Labem 400 01
+[[ADDRESS_8]]:  Sadová 56/3, Kladno 272 01
+[[ADDRESS_9]]:  Polní 12, Trutnov 541 01
+[[ADDRESS_10]]:  Sportovní 45, Mladá Boleslav 293 01
+[[ADDRESS_11]]:  Lázeňská 78, Poděbrady 290 01
+[[ADDRESS_12]]:  Krátká 12, Hradec Králové 500 02
+[[ADDRESS_13]]:  Polní 89, Děčín 405 02
+[[ADDRESS_14]]:  Zahradní 34, Chomutov 430 01
+[[ADDRESS_15]]:  Krátká 45, Teplice 415 01
+[[ADDRESS_16]]:  Zahradní 78, Chomutov 430 01
+[[ADDRESS_17]]:  Lázeňská 89, Karlovy Vary 360 01
 
 BANK
 [[BANK_1]]: 2910384756/0100
@@ -199,25 +196,25 @@ ICO
 [[ICO_2]]: 07823456
 
 ID_CARD
-[[ID_CARD_1]]: KL456789
-[[ID_CARD_2]]: MN890123
-[[ID_CARD_3]]: OP123456
+[[ID_CARD_1]]: 345678901
+[[ID_CARD_2]]: KL456789
+[[ID_CARD_3]]: MN890123
+[[ID_CARD_4]]: OP123456
 
 PHONE
-[[PHONE_1]]: 345678901
-[[PHONE_2]]: +420 602 147 258
-[[PHONE_3]]: +420 775 369 147
-[[PHONE_4]]: 556677889
-[[PHONE_5]]: 778899112
-[[PHONE_6]]: +420 608 258 369
-[[PHONE_7]]: +420 731 456 789
-[[PHONE_8]]: 112233445
-[[PHONE_9]]: +420 721 369 258
-[[PHONE_10]]: 889900112
-[[PHONE_11]]: +420 605 147 258
-[[PHONE_12]]: +420 736 258 147
-[[PHONE_13]]: +420 731 258 369
-[[PHONE_14]]: +420 608 147 258
-[[PHONE_15]]: +420 602 369 147
-[[PHONE_16]]: +420 731 147 258
+[[PHONE_1]]: +420 602 147 258
+[[PHONE_2]]: +420 775 369 147
+[[PHONE_3]]: 556677889
+[[PHONE_4]]: 778899112
+[[PHONE_5]]: +420 608 258 369
+[[PHONE_6]]: +420 731 456 789
+[[PHONE_7]]: 112233445
+[[PHONE_8]]: +420 721 369 258
+[[PHONE_9]]: 889900112
+[[PHONE_10]]: +420 605 147 258
+[[PHONE_11]]: +420 736 258 147
+[[PHONE_12]]: +420 731 258 369
+[[PHONE_13]]: +420 608 147 258
+[[PHONE_14]]: +420 602 369 147
+[[PHONE_15]]: +420 731 147 258
 

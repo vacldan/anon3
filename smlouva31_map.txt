@@ -17,6 +17,7 @@ OSOBY
 [[PERSON_9]]: Ladislav Schneider
 [[PERSON_10]]: Viola Tesařová
 [[PERSON_11]]: Klaudie Fischerová
+  - Fischerová
 [[PERSON_12]]: Kolman 
 [[PERSON_13]]: Pravoslav Kolman
   - Kolmanovi
@@ -32,17 +33,18 @@ OSOBY
 [[PERSON_20]]: Regína Málková
   - Málkové
 [[PERSON_21]]: Valdemar Říha
-[[PERSON_22]]: Medard Vaculík
-[[PERSON_23]]: Gita Vaculíková
+[[PERSON_22]]: Gita Vaculíková
+[[PERSON_23]]: Medard Vaculík
 [[PERSON_24]]: Hanuš Šimek
 [[PERSON_25]]: Liliana Šimková
+  - Šimková
 [[PERSON_26]]: Otmar Doubek
 [[PERSON_27]]: Kliment Kolář
-[[PERSON_28]]: Dorota Bartošová
-[[PERSON_29]]: Nela Bartošová
-[[PERSON_30]]: Tadeáš Bartoš
+[[PERSON_28]]: Marina Bartošová
+[[PERSON_29]]: Tadeáš Bartoš
   - Bartoš
-[[PERSON_31]]: Marina Bartošová
+[[PERSON_30]]: Nela Bartošová
+[[PERSON_31]]: Dorota Bartošová
 [[PERSON_32]]: Vlastislav Horák
 [[PERSON_33]]: Blažena Horáková
 [[PERSON_34]]: Světlana Nová
@@ -50,10 +52,10 @@ OSOBY
 [[PERSON_36]]: Artur Vlk
 [[PERSON_37]]: Anastázie Novotná
   - Anastázie Novotnou
-[[PERSON_38]]: Xenie Novotná
-  - Xenii Novotnou
-[[PERSON_39]]: Zina Novotná
+[[PERSON_38]]: Zina Novotná
   - Zinu Novotnou
+[[PERSON_39]]: Xenie Novotná
+  - Xenii Novotnou
 [[PERSON_40]]: Radomír Tesař
 [[PERSON_41]]: Cyril Malík
 [[PERSON_42]]: Ervín Pospíšil
@@ -68,26 +70,26 @@ OSOBY
 [[PERSON_50]]: Oldřiška Tesařová
 
 ADDRESS
-[[ADDRESS_1]]: Vinohradská 245/18, Praha 2
-[[ADDRESS_2]]: Lázeňská 89/4, Karlovy Vary 360 01
-[[ADDRESS_3]]: Polní 67/12, Brno 602 00
-[[ADDRESS_4]]: Zahradní 45, Pardubice 530 02
-[[ADDRESS_5]]: Krátká 23, Olomouc 779 00
-[[ADDRESS_6]]: Slezská 145/7, Opava 746 01
-[[ADDRESS_7]]: hneiderovi byla zabavena nemovitost na adrese Polní 89, Ostrava
-[[ADDRESS_8]]: Lázeňská 67/3, Teplice 415 01
-[[ADDRESS_9]]: Zahradní 123, Hradec Králové 500 02
-[[ADDRESS_10]]: Krátká 89/12, Brno 602 00
-[[ADDRESS_11]]: Polní 45/8, Pardubice 530 02
-[[ADDRESS_12]]: Lázeňská 123, Karlovy Vary 360 01
-[[ADDRESS_13]]: Slezská 67, Opava 746 01
-[[ADDRESS_14]]: Revoluční 45/9, Ústí nad Labem 400 01
-[[ADDRESS_15]]: Zahradní 34, Děčín 405 02
-[[ADDRESS_16]]: Krátká 67, Most 434 01
-[[ADDRESS_17]]: Polní 89/4, Chomutov 430 01
-[[ADDRESS_18]]: Vinohradská 245, Praha 2
-[[ADDRESS_19]]: Lázeňská 89, Praha 1
-[[ADDRESS_20]]: Krátká 123, Havířov 736 01
+[[ADDRESS_1]]:  Vinohradská 245/18, Praha 2
+[[ADDRESS_2]]:  Lázeňská 89/4, Karlovy Vary 360 01
+[[ADDRESS_3]]:  Polní 67/12, Brno 602 00
+[[ADDRESS_4]]:  Zahradní 45, Pardubice 530 02
+[[ADDRESS_5]]:  Krátká 23, Olomouc 779 00
+[[ADDRESS_6]]:  Slezská 145/7, Opava 746 01
+[[ADDRESS_7]]: Polní 89, Ostrava
+[[ADDRESS_8]]:  Lázeňská 67/3, Teplice 415 01
+[[ADDRESS_9]]:  Zahradní 123, Hradec Králové 500 02
+[[ADDRESS_10]]:  Krátká 89/12, Brno 602 00
+[[ADDRESS_11]]:  Polní 45/8, Pardubice 530 02
+[[ADDRESS_12]]:  Lázeňská 123, Karlovy Vary 360 01
+[[ADDRESS_13]]:  Slezská 67, Opava 746 01
+[[ADDRESS_14]]:  Revoluční 45/9, Ústí nad Labem 400 01
+[[ADDRESS_15]]:  Zahradní 34, Děčín 405 02
+[[ADDRESS_16]]:  Krátká 67, Most 434 01
+[[ADDRESS_17]]:  Polní 89/4, Chomutov 430 01
+[[ADDRESS_18]]:  Vinohradská 245, Praha 2
+[[ADDRESS_19]]:  Lázeňská 89, Praha 1
+[[ADDRESS_20]]:  Krátká 123, Havířov 736 01
 
 BANK
 [[BANK_1]]: 9876543210/0100
@@ -158,29 +160,29 @@ ICO
 [[ICO_3]]: 78945612
 
 ID_CARD
-[[ID_CARD_1]]: ST456789
+[[ID_CARD_1]]: 789456123
+[[ID_CARD_2]]: ST456789
+[[ID_CARD_3]]: 456789012
 
 PHONE
-[[PHONE_1]]: 789456123
-[[PHONE_2]]: +420 603 789 456
-[[PHONE_3]]: +420 725 147 258
-[[PHONE_4]]: +420 774 369 258
-[[PHONE_5]]: +420 608 456 789
-[[PHONE_6]]: +420 731 258 369
-[[PHONE_7]]: +420 605 789 123
-[[PHONE_8]]: 456789012
-[[PHONE_9]]: +420 602 369 147
-[[PHONE_10]]: +420 731 456 789
-[[PHONE_11]]: +420 775 147 258
-[[PHONE_12]]: 112233445
-[[PHONE_13]]: +420 608 369 258
-[[PHONE_14]]: 667788990
-[[PHONE_15]]: +420 731 789 456
-[[PHONE_16]]: 889900112
-[[PHONE_17]]: +420 605 258 147
-[[PHONE_18]]: 445566778
-[[PHONE_19]]: 334455667
-[[PHONE_20]]: +420 608 147 258
-[[PHONE_21]]: 778899001
-[[PHONE_22]]: +420 736 789 456
+[[PHONE_1]]: +420 603 789 456
+[[PHONE_2]]: +420 725 147 258
+[[PHONE_3]]: +420 774 369 258
+[[PHONE_4]]: +420 608 456 789
+[[PHONE_5]]: +420 731 258 369
+[[PHONE_6]]: +420 605 789 123
+[[PHONE_7]]: +420 602 369 147
+[[PHONE_8]]: +420 731 456 789
+[[PHONE_9]]: +420 775 147 258
+[[PHONE_10]]: 112233445
+[[PHONE_11]]: +420 608 369 258
+[[PHONE_12]]: 667788990
+[[PHONE_13]]: +420 731 789 456
+[[PHONE_14]]: 889900112
+[[PHONE_15]]: +420 605 258 147
+[[PHONE_16]]: 445566778
+[[PHONE_17]]: 334455667
+[[PHONE_18]]: +420 608 147 258
+[[PHONE_19]]: 778899001
+[[PHONE_20]]: +420 736 789 456
 
