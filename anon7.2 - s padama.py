@@ -2162,6 +2162,7 @@ class Anonymizer:
             'staré', 'město', 'nové', 'město', 'malá', 'strana',
             'václavské', 'náměstí', 'hlavní', 'nádraží',
             'karlovy', 'vary', 'karlova', 'var',  # Karlovy Vary city
+            'hradec', 'hradci', 'králové',  # Hradec Králové city
             # Organizace/instituce klíčová slova
             'česká', 'spořitelna', 'komerční', 'banka', 'raiffeisen',
             'credit', 'bank', 'financial', 'global', 'senior',
@@ -2762,6 +2763,7 @@ class Anonymizer:
                 'staré', 'město', 'nové', 'město', 'malá', 'strana',
                 'václavské', 'náměstí', 'hlavní', 'nádraží',
                 'karlovy', 'vary', 'karlova', 'var',  # Karlovy Vary city
+                'hradec', 'hradci', 'králové',  # Hradec Králové city
                 # Organizace/instituce klíčová slova
                 'česká', 'spořitelna', 'komerční', 'banka', 'raiffeisen',
                 'credit', 'bank', 'financial', 'global', 'senior',
@@ -3356,7 +3358,7 @@ class Anonymizer:
                 r'\b(kostel|chrám|kaple|církev)\b',  # Church, temple, chapel
                 # Czech cities and places
                 r'\b(nový\s+jičín|nové\s+město|staré\s+město)\b',
-                r'\b(mladá\s+boleslav|české\s+budějovice|hradec\s+králové)\b',
+                r'\b(mladá\s+boleslav|české\s+budějovice|hradec\s+králové|hradci\s+králové)\b',
                 # Company suffixes když jsou uprostřed
                 r'\b(group|company|corp|ltd|gmbh|inc|services?)\b'
             ]
