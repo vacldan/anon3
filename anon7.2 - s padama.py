@@ -3929,7 +3929,12 @@ class Anonymizer:
 
         # 9. ADRESY (před jmény, aby "Novákova 45" nebylo osobou)
         def replace_address(match):
-            return self._get_or_create_label('ADDRESS', match.group(0))
+            matched_text = match.group(0)
+            # Filter out medical/technical terms that are not addresses
+            medical_terms = ['hla', 'kompatibilní', 'donor', 'recipient', 'transfuze']
+            if any(term in matched_text.lower() for term in medical_terms):
+                return matched_text  # Not an address, return unchanged
+            return self._get_or_create_label('ADDRESS', matched_text)
         text = ADDRESS_RE.sub(replace_address, text)
 
         # 10. EMAILY (před ostatními, protože obsahují speciální znaky)
