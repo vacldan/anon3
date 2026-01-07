@@ -8,17 +8,20 @@ OSOBY
 [[PERSON_5]]: Silvie Kadlecová
 [[PERSON_6]]: Evžen Moravec
 [[PERSON_7]]: Žofie Pechová
+  - Pechová
 [[PERSON_8]]: Lubomír Zeman
+  - Zeman
   - Zemanovi
 [[PERSON_9]]: Šimon Liška
 [[PERSON_10]]: Oldřiška Tesařová
 [[PERSON_11]]: Sabina Hrubešová
 [[PERSON_12]]: Zlata Voráčková
-[[PERSON_13]]: Leoš Voráček
+[[PERSON_13]]: Xenie Voráčková
+  - Xenie Voráčkovou
 [[PERSON_14]]: Sára Voráčková
   - Sáru Voráčkovou
-[[PERSON_15]]: Xenie Voráčková
-  - Xenie Voráčkovou
+[[PERSON_15]]: Leoš Voráček
+  - Voráček
 [[PERSON_16]]: Radomír Šmíd
 [[PERSON_17]]: Matylda Fialová
   - Fialové
@@ -62,9 +65,20 @@ OSOBY
 [[PERSON_53]]: Artur Říha
 
 ADDRESS
-[[ADDRESS_1]]: Krátká 89/12, Brno
-[[ADDRESS_2]]: Slezská 89/6, Ostrava
-[[ADDRESS_3]]: Polní 34, Brno
+[[ADDRESS_1]]:  Polní 45, Náchod 547 01
+[[ADDRESS_2]]:  Slezská 89, Opava 746 01
+[[ADDRESS_3]]:  Lesní 67/3, Jihlava 586 01
+[[ADDRESS_4]]:  Zahradní 45, Hradec Králové 500 02
+[[ADDRESS_5]]:  Krátká 89/12, Brno 602 00
+[[ADDRESS_6]]:  Lázeňská 34, Teplice 415 01
+[[ADDRESS_7]]:  Polní 67, Pardubice 530 02
+[[ADDRESS_8]]:  Krátká 45, Olomouc 779 00
+[[ADDRESS_9]]:  Zahradní 12, Přerov 750 02
+[[ADDRESS_10]]:  Slezská 89/6, Ostrava 708 00
+[[ADDRESS_11]]:  Krátká 23, Havířov 736 01
+[[ADDRESS_12]]:  Polní 67
+[[ADDRESS_13]]:  Lázeňská 45, Karlovy Vary 360 01
+[[ADDRESS_14]]:  Polní 34, Brno 602 00
 
 BANK
 [[BANK_1]]: 8901234567/2700
@@ -142,18 +156,18 @@ ICO
 [[ICO_5]]: 67823451
 
 ID_CARD
-[[ID_CARD_1]]: ST789012
+[[ID_CARD_1]]: 678901234
+[[ID_CARD_2]]: ST789012
 
 PHONE
-[[PHONE_1]]: 678901234
-[[PHONE_2]]: +420 605 789 123
-[[PHONE_3]]: +420 731 456 789
-[[PHONE_4]]: +420 602 147 258
-[[PHONE_5]]: 334455667
-[[PHONE_6]]: 667788990
-[[PHONE_7]]: +420 608 369 147
-[[PHONE_8]]: +420 775 456 789
-[[PHONE_9]]: +420 608 147 258
-[[PHONE_10]]: +420 731 369 258
-[[PHONE_11]]: 889900112
+[[PHONE_1]]: +420 605 789 123
+[[PHONE_2]]: +420 731 456 789
+[[PHONE_3]]: +420 602 147 258
+[[PHONE_4]]: 334455667
+[[PHONE_5]]: 667788990
+[[PHONE_6]]: +420 608 369 147
+[[PHONE_7]]: +420 775 456 789
+[[PHONE_8]]: +420 608 147 258
+[[PHONE_9]]: +420 731 369 258
+[[PHONE_10]]: 889900112
 

@@ -1,768 +1,732 @@
 {
   "version": "1.0",
-  "generated_at": "2026-01-07T15:12:54.278605",
-  "source_file": "smlouva 30.docx",
+  "generated_at": "2026-01-07T15:10:03.808830",
+  "source_file": "smlouva33.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Izák Bárta",
+      "original": "Dvořák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Radomil Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Augustýn Fojtík",
+      "original": "Drahomíra Dvořáková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Ctislav Machala",
+      "original": "Liška",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Svatomír Liška",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Liškovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Vendelín Novotný",
+      "original": "Růžena Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Silvie Kadlecová",
+      "original": "Timoté Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Evžen Moravec",
+      "original": "Sylva Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Pechová",
+      "original": "Miloslava Fischerová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Zeman",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Zemanovi",
+      "original": "Svatava Lišková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_9]]",
-      "original": "Šimon Liška",
+      "original": "Hradci Králové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Oldřiška Tesařová",
+      "original": "Ctibor Liška",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_11]]",
-      "original": "Sabina Hrubešová",
+      "original": "Justýna Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
-      "original": "Zlata Voráčková",
+      "original": "Marcela Burešová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_12]]",
+      "original": "Burešové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_13]]",
-      "original": "Xenie Voráčkovou",
+      "original": "Bureš",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_13]]",
+      "original": "Pavel Bureš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_14]]",
-      "original": "Sáru Voráčkovou",
+      "original": "Rostislav Bureš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_15]]",
-      "original": "Voráček",
+      "original": "Květoslava Tesařová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_16]]",
-      "original": "Radomír Šmíd",
+      "original": "Alan Bureš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_17]]",
-      "original": "Fialové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_17]]",
-      "original": "Matyldu Fialovou",
+      "original": "Beáta Burešová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_18]]",
-      "original": "Kratochvílovi",
+      "original": "Ilona Malíková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_19]]",
-      "original": "Marián Zahradník",
+      "original": "Arnošt Malík",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_20]]",
-      "original": "Judita Moravcová",
+      "original": "Radana Malíková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
-      "original": "Dita Moravcová",
+      "original": "Cyril Malík",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
-      "original": "Lýdie Burešová",
+      "original": "Vendelín Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_23]]",
-      "original": "Zina Burešová",
+      "original": "Slavoj Sedlák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_23]]",
+      "original": "Slavoje Sedláka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_23]]",
+      "original": "Sedlákovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_24]]",
-      "original": "Liliana Vaňková",
+      "original": "Oldřich Sedlák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_24]]",
+      "original": "Oldřicha Sedláka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_25]]",
-      "original": "Dorota Bartošová",
+      "original": "Evžen Sedlák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_26]]",
-      "original": "Ljuba Havlová",
+      "original": "Miloslava Sedláková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_27]]",
-      "original": "Květoslav Němec",
+      "original": "Anastázie Sedláková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_28]]",
-      "original": "Anastázie Marková",
+      "original": "Matouš Sedlák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_29]]",
-      "original": "Kliment Suchý",
+      "original": "Klaudie Nová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_30]]",
-      "original": "Vavřinec Horský",
+      "original": "Čeněk Sedlák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_31]]",
-      "original": "Elena Bílá",
+      "original": "Hedvika Sedláková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_32]]",
-      "original": "Bohdana Králová",
+      "original": "Kučerovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_32]]",
+      "original": "Methoděj Kučera",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_33]]",
-      "original": "Hanuš Urban",
+      "original": "Viola Kučerová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_34]]",
-      "original": "Gita Holubová",
+      "original": "Pravdomil Kučera",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_35]]",
-      "original": "Slavoj Kučera",
+      "original": "Hermína Kučerová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_36]]",
-      "original": "Svatoslav Mareš",
+      "original": "Ctibor Pech",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_37]]",
-      "original": "Nela Zemanová",
+      "original": "Pechové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_37]]",
+      "original": "Libuše Pechová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_38]]",
-      "original": "Tadeáš Novotný",
+      "original": "Bohumil Novotný",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_38]]",
+      "original": "Novotné",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_38]]",
+      "original": "Novotnému",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_39]]",
-      "original": "Marina Dvořáková",
+      "original": "Anežka Novotná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_40]]",
-      "original": "Lubor Pech",
+      "original": "Doubravka Novotná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_41]]",
-      "original": "Apolena Fišerová",
+      "original": "Valdemar Novotný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_42]]",
-      "original": "Vladislava Krausová",
+      "original": "Sylva Novotná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_43]]",
-      "original": "Vilém Šebesta",
+      "original": "Bartošové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_43]]",
+      "original": "Gizela Bartošová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_44]]",
-      "original": "Blažena Říhová",
+      "original": "Jolana Fišerová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_45]]",
-      "original": "Pravoslav Malík",
+      "original": "Bonifác Bartoš",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_45]]",
+      "original": "Bartošovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_46]]",
-      "original": "Karina Bílková",
+      "original": "Květoslava Malá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_47]]",
-      "original": "Samuel Štěpán",
+      "original": "Timoté Bartoš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_48]]",
-      "original": "Stela Pospíšilová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_49]]",
-      "original": "Jáchym Horák",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_50]]",
-      "original": "Otmar Doubek",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_51]]",
-      "original": "Xaver Klein",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_52]]",
-      "original": "Beáta Zemanová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_53]]",
-      "original": "Artur Říha",
+      "original": "Radana Bartošová",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": " Polní 45, Náchod 547 01",
+      "original": " Polní 145/18, Hradec Králové 500 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": " Slezská 89, Opava 746 01",
+      "original": " Zahradní 67, Pardubice 530 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": " Lesní 67/3, Jihlava 586 01",
+      "original": " Krátká 23, Nový Bydžov 504 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": " Zahradní 45, Hradec Králové 500 02",
+      "original": " Polní 89, Pardubice 530 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": " Krátká 89/12, Brno 602 00",
+      "original": " Lázeňská 89/4, Brno 602 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": " Lázeňská 34, Teplice 415 01",
+      "original": " Slezská 67, Opava 746 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": " Polní 67, Pardubice 530 02",
+      "original": " Zahradní 45, Hradec Králové 500 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": " Krátká 45, Olomouc 779 00",
+      "original": " Polní 245/18, Ostrava 708 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_9]]",
-      "original": " Zahradní 12, Přerov 750 02",
+      "original": " Krátká 67, Ostrava 708 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_10]]",
-      "original": " Slezská 89/6, Ostrava 708 00",
+      "original": " Zahradní 89, Ostrava 708 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_11]]",
-      "original": " Krátká 23, Havířov 736 01",
+      "original": " Polní 145/18, Olomouc 779 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_12]]",
-      "original": " Polní 67",
+      "original": " Lázeňská 67, Přerov 750 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_13]]",
-      "original": " Lázeňská 45, Karlovy Vary 360 01",
+      "original": " Krátká 45, Brno 602 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_14]]",
-      "original": " Polní 34, Brno 602 00",
+      "original": " Vinohradská 245, Praha 2",
       "occurrences": 1
     },
     {
-      "type": "EMAIL",
-      "label": "[[EMAIL_1]]",
-      "original": "i.barta@firma.cz",
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_15]]",
+      "original": " Lázeňská 89, Praha 1",
       "occurrences": 1
     },
     {
-      "type": "EMAIL",
-      "label": "[[EMAIL_2]]",
-      "original": "l.zeman@firma.cz",
-      "occurrences": 1
-    },
-    {
-      "type": "EMAIL",
-      "label": "[[EMAIL_3]]",
-      "original": "l.voracek@centrum.cz",
-      "occurrences": 1
-    },
-    {
-      "type": "EMAIL",
-      "label": "[[EMAIL_4]]",
-      "original": "a.kratochvil@firma.cz",
-      "occurrences": 1
-    },
-    {
-      "type": "EMAIL",
-      "label": "[[EMAIL_5]]",
-      "original": "l.buresova@email.cz",
-      "occurrences": 1
-    },
-    {
-      "type": "EMAIL",
-      "label": "[[EMAIL_6]]",
-      "original": "k.nemec@firma.cz",
-      "occurrences": 1
-    },
-    {
-      "type": "EMAIL",
-      "label": "[[EMAIL_7]]",
-      "original": "h.urban@invest.cz",
-      "occurrences": 1
-    },
-    {
-      "type": "EMAIL",
-      "label": "[[EMAIL_8]]",
-      "original": "a.fiserova@email.cz",
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_16]]",
+      "original": "plně HLA kompatibilní 6/6, odmítá darování",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_1]]",
-      "original": "820614/7923",
+      "original": "780625/7923",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_2]]",
-      "original": "750823/6912",
+      "original": "825629/8134",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_3]]",
-      "original": "790512/8134",
+      "original": "145623/7890",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_4]]",
-      "original": "885629/7945",
+      "original": "165824/8901",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_5]]",
-      "original": "760825/6734",
+      "original": "185629/8912",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_6]]",
-      "original": "755624/8234",
+      "original": "750714/7623",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_7]]",
-      "original": "780925/6734",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_8]]",
-      "original": "850714/7823",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_9]]",
-      "original": "620825/7623",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_10]]",
-      "original": "825629/7945",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_11]]",
-      "original": "780625/7823",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_12]]",
-      "original": "155624/7890",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_13]]",
-      "original": "175823/8901",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_14]]",
-      "original": "805629/8134",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_15]]",
-      "original": "750814/7623",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_16]]",
-      "original": "385629/8912",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_17]]",
-      "original": "830625/7823",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_18]]",
-      "original": "900512/8134",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_19]]",
-      "original": "555624/8912",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_20]]",
-      "original": "855723/8245",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_21]]",
-      "original": "115624/7890",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_22]]",
-      "original": "875629/8134",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_23]]",
-      "original": "795624/7823",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_24]]",
-      "original": "835629/8245",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_25]]",
-      "original": "885629/8134",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_26]]",
-      "original": "720625/7623",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_27]]",
-      "original": "790814/8134",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_28]]",
-      "original": "755629/8245",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_29]]",
-      "original": "825724/8134",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_30]]",
-      "original": "680512/7623",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_31]]",
-      "original": "845629/8134",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_32]]",
-      "original": "770714/7823",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_33]]",
-      "original": "520825/6734",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_34]]",
-      "original": "065624/7890",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_35]]",
-      "original": "000512/7823",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_36]]",
       "original": "805629/8245",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_8]]",
+      "original": "455629/7845",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_9]]",
+      "original": "480825/6734",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_10]]",
+      "original": "855724/8245",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_11]]",
+      "original": "520714/6734",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_12]]",
+      "original": "830625/7823",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_13]]",
+      "original": "155623/7890",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_14]]",
+      "original": "175824/8901",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_15]]",
+      "original": "155724/8901",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_16]]",
+      "original": "855629/8134",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_17]]",
+      "original": "820714/7623",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_18]]",
+      "original": "175623/7890",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_19]]",
+      "original": "750825/7923",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_20]]",
+      "original": "780714/8134",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_21]]",
+      "original": "820625/7623",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_22]]",
+      "original": "855629/8245",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_23]]",
+      "original": "885724/8134",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_24]]",
+      "original": "535629/7845",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_25]]",
+      "original": "500825/6734",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_26]]",
+      "original": "680625/7923",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_27]]",
+      "original": "725629/8245",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_28]]",
+      "original": "005623/7890",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_29]]",
+      "original": "025824/8901",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_30]]",
+      "original": "555724/8134",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_31]]",
+      "original": "780625/7623",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_32]]",
+      "original": "720625/7923",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_33]]",
+      "original": "775629/8245",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_34]]",
+      "original": "985623/7890",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_35]]",
+      "original": "005824/8901",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_36]]",
+      "original": "025629/8912",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_37]]",
-      "original": "740714/7623",
+      "original": "835724/8134",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_38]]",
-      "original": "985624/8134",
+      "original": "790714/7623",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_39]]",
-      "original": "680825/7623",
+      "original": "720625/7623",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_40]]",
-      "original": "770825/7623",
+      "original": "780825/7623",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_41]]",
-      "original": "720625/7823",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_42]]",
-      "original": "925724/8134",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_43]]",
-      "original": "810714/7823",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_44]]",
-      "original": "550825/6734",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_45]]",
-      "original": "865629/8245",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_46]]",
-      "original": "955724/8912",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_47]]",
-      "original": "630714/7623",
-      "occurrences": 1
-    },
-    {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_1]]",
-      "original": "678901234",
-      "occurrences": 1
-    },
-    {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_2]]",
-      "original": "ST789012",
+      "original": "805629/8134",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_1]]",
-      "original": "+420 605 789 123",
+      "original": "+420 603 456 789",
       "occurrences": 1
     },
     {
@@ -774,121 +738,103 @@
     {
       "type": "PHONE",
       "label": "[[PHONE_3]]",
-      "original": "+420 602 147 258",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_4]]",
-      "original": "334455667",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_5]]",
-      "original": "667788990",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_6]]",
-      "original": "+420 608 369 147",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "+420 775 456 789",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_8]]",
       "original": "+420 608 147 258",
       "occurrences": 1
     },
     {
       "type": "PHONE",
+      "label": "[[PHONE_4]]",
+      "original": "112233445",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_5]]",
+      "original": "+420 605 789 123",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_6]]",
+      "original": "+420 731 789 456",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_7]]",
+      "original": "667788990",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_8]]",
+      "original": "+420 603 789 456",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
       "label": "[[PHONE_9]]",
-      "original": "+420 731 369 258",
+      "original": "334455667",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_10]]",
-      "original": "889900112",
+      "original": "+420 608 789 123",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_1]]",
-      "original": "8901234567/2700",
+      "type": "PHONE",
+      "label": "[[PHONE_11]]",
+      "original": "778899001",
       "occurrences": 1
     },
     {
-      "type": "BANK",
-      "label": "[[BANK_2]]",
-      "original": "5678901234/5500",
-      "occurrences": 1
-    },
-    {
-      "type": "BANK",
-      "label": "[[BANK_3]]",
-      "original": "3456789012/0800",
-      "occurrences": 1
-    },
-    {
-      "type": "BANK",
-      "label": "[[BANK_4]]",
-      "original": "6789012345/2700",
-      "occurrences": 1
-    },
-    {
-      "type": "BANK",
-      "label": "[[BANK_5]]",
-      "original": "8901234567/0100",
-      "occurrences": 1
-    },
-    {
-      "type": "BANK",
-      "label": "[[BANK_6]]",
-      "original": "9012345678/2700",
-      "occurrences": 1
-    },
-    {
-      "type": "BANK",
-      "label": "[[BANK_7]]",
-      "original": "1234567890/5500",
+      "type": "PHONE",
+      "label": "[[PHONE_12]]",
+      "original": "+420 605 147 258",
       "occurrences": 1
     },
     {
       "type": "ICO",
       "label": "[[ICO_1]]",
-      "original": "68947123",
-      "occurrences": 1
-    },
-    {
-      "type": "ICO",
-      "label": "[[ICO_2]]",
-      "original": "47856912",
-      "occurrences": 1
-    },
-    {
-      "type": "ICO",
-      "label": "[[ICO_3]]",
       "original": "78945612",
       "occurrences": 1
     },
     {
       "type": "ICO",
-      "label": "[[ICO_4]]",
-      "original": "89012345",
+      "label": "[[ICO_2]]",
+      "original": "89456123",
       "occurrences": 1
     },
     {
-      "type": "ICO",
-      "label": "[[ICO_5]]",
-      "original": "67823451",
+      "type": "EMAIL",
+      "label": "[[EMAIL_1]]",
+      "original": "m.buresova@email.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_2]]",
+      "original": "m.kucera@holding.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_3]]",
+      "original": "b.novotny@holding.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_1]]",
+      "original": "789456123",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_1]]",
+      "original": "9876543210/0100",
       "occurrences": 1
     }
   ]

@@ -3,7 +3,6 @@ OSOBY
 [[PERSON_1]]: Dalibor Šťastný
   - Dalibora Šťastného
   - Šťastnému
-  - Šťastný
 [[PERSON_2]]: Alžběta Šťastná
 [[PERSON_3]]: Ljuba Dvořáková
   - Dvořákové
@@ -11,9 +10,9 @@ OSOBY
 [[PERSON_5]]: Vilém Horák
   - Horákovi
 [[PERSON_6]]: Radomír Pech
-[[PERSON_7]]: Nela Burešová
+[[PERSON_7]]: Berenika Burešová
   - Burešové
-[[PERSON_8]]: Berenika Burešová
+[[PERSON_8]]: Nela Burešová
 [[PERSON_9]]: Čeněk Moravec
 [[PERSON_10]]: Lumír Moravec
 [[PERSON_11]]: Ervín Tesař
@@ -38,8 +37,8 @@ OSOBY
 [[PERSON_25]]: Zdenka Horáková
 [[PERSON_26]]: Radovan Liška
 [[PERSON_27]]: Blažej Horák
-[[PERSON_28]]: Laura Horáková
-[[PERSON_29]]: Matyáš Horák
+[[PERSON_28]]: Matyáš Horák
+[[PERSON_29]]: Laura Horáková
 [[PERSON_30]]: Viola Vaculíková
 [[PERSON_31]]: Pravoslav Doubek
 [[PERSON_32]]: Samuel Vaculík
@@ -49,37 +48,35 @@ OSOBY
 [[PERSON_36]]: Justýna Burešová
 [[PERSON_37]]: Gita Malíková
 [[PERSON_38]]: Anastázie Dvořáková
-[[PERSON_39]]: Liběna Novotná
-  - Novotná
+[[PERSON_39]]: Xenie Novotná
   - Novotné
-[[PERSON_40]]: Svatopluk Novotný
+[[PERSON_40]]: Oliver Novotný
 [[PERSON_41]]: Izabela Novotná
-[[PERSON_42]]: Oliver Novotný
-[[PERSON_43]]: Xenie Novotná
+[[PERSON_42]]: Liběna Novotná
+[[PERSON_43]]: Svatopluk Novotný
 [[PERSON_44]]: Cecílie Bartošová
-  - Bartošová
   - Bartošové
 [[PERSON_45]]: Valdemar Šmíd
-[[PERSON_46]]: Marina Bartošová
-[[PERSON_47]]: Bonifác Bartoš
+[[PERSON_46]]: Bonifác Bartoš
+[[PERSON_47]]: Marina Bartošová
 [[PERSON_48]]: Izák Vávra
 [[PERSON_49]]: Kvido Tesař
 [[PERSON_50]]: Hedvika Fischerová
 
 ADDRESS
-[[ADDRESS_1]]: Polní 145/18, Brno 602 00
-[[ADDRESS_2]]: Lázeňská 89/4, Brno 602 00
-[[ADDRESS_3]]: Zahradní 67, Jihlava 586 01
-[[ADDRESS_4]]: Krátká 23, Znojmo 669 02
-[[ADDRESS_5]]: Vinohradská 245/18, Praha 2
-[[ADDRESS_6]]: Lázeňská 89, Karlovy Vary 360 01
-[[ADDRESS_7]]: Polní 67/12, Olomouc 779 00
-[[ADDRESS_8]]: Krátká 145/8, Praha 4
-[[ADDRESS_9]]: Slezská 67, Opava 746 01
-[[ADDRESS_10]]: Zahradní 89, Hradec Králové 500 02
-[[ADDRESS_11]]: Polní 45/18, Brno 602 00
-[[ADDRESS_12]]: Lázeňská 89, Teplice 415 01
-[[ADDRESS_13]]: Zahradní 67, Pardubice 530 02
+[[ADDRESS_1]]:  Polní 145/18, Brno 602 00
+[[ADDRESS_2]]:  Lázeňská 89/4, Brno 602 00
+[[ADDRESS_3]]:  Zahradní 67, Jihlava 586 01
+[[ADDRESS_4]]:  Krátká 23, Znojmo 669 02
+[[ADDRESS_5]]:  Vinohradská 245/18, Praha 2
+[[ADDRESS_6]]:  Lázeňská 89, Karlovy Vary 360 01
+[[ADDRESS_7]]:  Polní 67/12, Olomouc 779 00
+[[ADDRESS_8]]:  Krátká 145/8, Praha 4
+[[ADDRESS_9]]:  Slezská 67, Opava 746 01
+[[ADDRESS_10]]:  Zahradní 89, Hradec Králové 500 02
+[[ADDRESS_11]]:  Polní 45/18, Brno 602 00
+[[ADDRESS_12]]:  Lázeňská 89, Teplice 415 01
+[[ADDRESS_13]]:  Zahradní 67, Pardubice 530 02
 [[ADDRESS_14]]: stadium 7, zbaven způsobilosti
 
 BIRTH_ID
@@ -142,7 +139,8 @@ ICO
 [[ICO_1]]: 78945612
 
 ID_CARD
-[[ID_CARD_1]]: AB456789
+[[ID_CARD_1]]: 234567890
+[[ID_CARD_2]]: AB456789
 
 LICENSE_PLATE
 [[LICENSE_PLATE_1]]: 5B7 8901
@@ -151,20 +149,19 @@ LICENSE_PLATE
 [[LICENSE_PLATE_4]]: NB2004
 
 PHONE
-[[PHONE_1]]: 234567890
-[[PHONE_2]]: +420 603 789 456
-[[PHONE_3]]: +420 731 456 789
-[[PHONE_4]]: 445566778
-[[PHONE_5]]: +420 608 147 258
-[[PHONE_6]]: +420 605 789 123
-[[PHONE_7]]: +420 774 369 258
-[[PHONE_8]]: 778899001
-[[PHONE_9]]: 112233445
-[[PHONE_10]]: +420 603 456 789
-[[PHONE_11]]: 667788990
-[[PHONE_12]]: +420 731 789 456
-[[PHONE_13]]: 889900112
-[[PHONE_14]]: +420 605 147 258
-[[PHONE_15]]: 334455667
-[[PHONE_16]]: +420 608 369 258
+[[PHONE_1]]: +420 603 789 456
+[[PHONE_2]]: +420 731 456 789
+[[PHONE_3]]: 445566778
+[[PHONE_4]]: +420 608 147 258
+[[PHONE_5]]: +420 605 789 123
+[[PHONE_6]]: +420 774 369 258
+[[PHONE_7]]: 778899001
+[[PHONE_8]]: 112233445
+[[PHONE_9]]: +420 603 456 789
+[[PHONE_10]]: 667788990
+[[PHONE_11]]: +420 731 789 456
+[[PHONE_12]]: 889900112
+[[PHONE_13]]: +420 605 147 258
+[[PHONE_14]]: 334455667
+[[PHONE_15]]: +420 608 369 258
 

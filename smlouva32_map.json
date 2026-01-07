@@ -1,14 +1,8 @@
 {
   "version": "1.0",
-  "generated_at": "2026-01-03T16:43:31.228512",
+  "generated_at": "2026-01-07T15:14:30.278014",
   "source_file": "smlouva32.docx",
   "entities": [
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Šťastný",
-      "occurrences": 1
-    },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
@@ -18,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Dalibor Šťastný",
+      "original": "Šťastnému",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Šťastnému",
+      "original": "Dalibor Šťastný",
       "occurrences": 1
     },
     {
@@ -72,7 +66,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Nela Burešová",
+      "original": "Berenika Burešová",
       "occurrences": 1
     },
     {
@@ -84,7 +78,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Berenika Burešová",
+      "original": "Nela Burešová",
       "occurrences": 1
     },
     {
@@ -108,13 +102,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
-      "original": "Kadlecové",
+      "original": "Miloslava Kadlecová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
-      "original": "Miloslava Kadlecová",
+      "original": "Kadlecové",
       "occurrences": 1
     },
     {
@@ -180,25 +174,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
-      "original": "Doubravka Fialová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_21]]",
       "original": "Fialové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_22]]",
-      "original": "Sedlákovi",
+      "label": "[[PERSON_21]]",
+      "original": "Doubravka Fialová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
       "original": "Vlastimil Sedlák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_22]]",
+      "original": "Sedlákovi",
       "occurrences": 1
     },
     {
@@ -234,13 +228,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_28]]",
-      "original": "Laura Horáková",
+      "original": "Matyáš Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_29]]",
-      "original": "Matyáš Horák",
+      "original": "Laura Horáková",
       "occurrences": 1
     },
     {
@@ -300,25 +294,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_39]]",
-      "original": "Novotná",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_39]]",
-      "original": "Liběna Novotná",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_39]]",
       "original": "Novotné",
       "occurrences": 1
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_39]]",
+      "original": "Xenie Novotná",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_40]]",
-      "original": "Svatopluk Novotný",
+      "original": "Oliver Novotný",
       "occurrences": 1
     },
     {
@@ -330,31 +318,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_42]]",
-      "original": "Oliver Novotný",
+      "original": "Liběna Novotná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_43]]",
-      "original": "Xenie Novotná",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_44]]",
-      "original": "Cecílie Bartošová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_44]]",
-      "original": "Bartošová",
+      "original": "Svatopluk Novotný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_44]]",
       "original": "Bartošové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_44]]",
+      "original": "Cecílie Bartošová",
       "occurrences": 1
     },
     {
@@ -366,13 +348,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_46]]",
-      "original": "Marina Bartošová",
+      "original": "Bonifác Bartoš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_47]]",
-      "original": "Bonifác Bartoš",
+      "original": "Marina Bartošová",
       "occurrences": 1
     },
     {
@@ -396,79 +378,79 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Polní 145/18, Brno 602 00",
+      "original": " Polní 145/18, Brno 602 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Lázeňská 89/4, Brno 602 00",
+      "original": " Lázeňská 89/4, Brno 602 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Zahradní 67, Jihlava 586 01",
+      "original": " Zahradní 67, Jihlava 586 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "Krátká 23, Znojmo 669 02",
+      "original": " Krátká 23, Znojmo 669 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "Vinohradská 245/18, Praha 2",
+      "original": " Vinohradská 245/18, Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "Lázeňská 89, Karlovy Vary 360 01",
+      "original": " Lázeňská 89, Karlovy Vary 360 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Polní 67/12, Olomouc 779 00",
+      "original": " Polní 67/12, Olomouc 779 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Krátká 145/8, Praha 4",
+      "original": " Krátká 145/8, Praha 4",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_9]]",
-      "original": "Slezská 67, Opava 746 01",
+      "original": " Slezská 67, Opava 746 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_10]]",
-      "original": "Zahradní 89, Hradec Králové 500 02",
+      "original": " Zahradní 89, Hradec Králové 500 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_11]]",
-      "original": "Polní 45/18, Brno 602 00",
+      "original": " Polní 45/18, Brno 602 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_12]]",
-      "original": "Lázeňská 89, Teplice 415 01",
+      "original": " Lázeňská 89, Teplice 415 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_13]]",
-      "original": "Zahradní 67, Pardubice 530 02",
+      "original": " Zahradní 67, Pardubice 530 02",
       "occurrences": 1
     },
     {
@@ -790,98 +772,104 @@
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_1]]",
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_1]]",
       "original": "234567890",
       "occurrences": 1
     },
     {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_2]]",
+      "original": "AB456789",
+      "occurrences": 1
+    },
+    {
       "type": "PHONE",
-      "label": "[[PHONE_2]]",
+      "label": "[[PHONE_1]]",
       "original": "+420 603 789 456",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_3]]",
+      "label": "[[PHONE_2]]",
       "original": "+420 731 456 789",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_4]]",
+      "label": "[[PHONE_3]]",
       "original": "445566778",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_5]]",
+      "label": "[[PHONE_4]]",
       "original": "+420 608 147 258",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_6]]",
+      "label": "[[PHONE_5]]",
       "original": "+420 605 789 123",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_7]]",
+      "label": "[[PHONE_6]]",
       "original": "+420 774 369 258",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_8]]",
+      "label": "[[PHONE_7]]",
       "original": "778899001",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_9]]",
+      "label": "[[PHONE_8]]",
       "original": "112233445",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_10]]",
+      "label": "[[PHONE_9]]",
       "original": "+420 603 456 789",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_11]]",
+      "label": "[[PHONE_10]]",
       "original": "667788990",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_12]]",
+      "label": "[[PHONE_11]]",
       "original": "+420 731 789 456",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_13]]",
+      "label": "[[PHONE_12]]",
       "original": "889900112",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_14]]",
+      "label": "[[PHONE_13]]",
       "original": "+420 605 147 258",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_15]]",
+      "label": "[[PHONE_14]]",
       "original": "334455667",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_16]]",
+      "label": "[[PHONE_15]]",
       "original": "+420 608 369 258",
       "occurrences": 1
     },
@@ -907,12 +895,6 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_4]]",
       "original": "NB2004",
-      "occurrences": 1
-    },
-    {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_1]]",
-      "original": "AB456789",
       "occurrences": 1
     },
     {

@@ -78,7 +78,8 @@ OSOBY
 [[PERSON_26]]: Apolena Zoubková
   - Apolenou Zoubkovou
   - Apoleně Zoubkové
-[[PERSON_27]]: Beata Hlavatá
+[[PERSON_27]]: Beáta Hlavatá
+  - Beata Hlavatá
   - Beaty Hlavaté
   - Beátě Hlavaté
 [[PERSON_28]]: Krista Hladká
@@ -100,6 +101,7 @@ OSOBY
   - Magdy Blažejové
   - Magdě Blažejové
 [[PERSON_34]]: Rita Holasová
+  - Holasovou
   - Ritě Holasové
 [[PERSON_35]]: Žanina Kočová
   - Žaniny Kočové
@@ -158,145 +160,162 @@ OSOBY
 [[PERSON_53]]: Karel Řehoř
   - Karla Řehoře
   - Karlu Řehořovi
-[[PERSON_54]]: Otto Holubec
+[[PERSON_54]]: Otto Holubc
   - Otta Holubce
+  - Otto Holubec
   - Ottovi Holubcovi
 [[PERSON_55]]: Štefan Kubiš
   - Štefana Kubiše
   - Štefanovi Kubišovi
-[[PERSON_56]]: Radim Pazdera
+[[PERSON_56]]: Radim Pazder
+  - Radim Pazdera
   - Radima Pazdery
   - Radimu Pazderovi
-[[PERSON_58]]: Lubomír Šimůnek
+[[PERSON_57]]: Lubomír Šimůnk
+  - Lubomír Šimůnek
   - Lubomíra Šimůnka
   - Lubomírovi Šimůnkovi
-[[PERSON_59]]: Miloš Konečný
+[[PERSON_58]]: Miloš Konečný
   - Miloše Konečného
   - Milošovi Konečnému
-[[PERSON_60]]: Zdeněk Havelík
+[[PERSON_59]]: Zdeněk Havelík
   - Zdeňka Havelíka
   - Zdeňkovi Havelíkovi
-[[PERSON_61]]: Jaromír Řezáč
+[[PERSON_60]]: Jaromír Řezáč
   - Jaromíra Řezáče
   - Jaromírovi Řezáčovi
-[[PERSON_62]]: Čeněk Blažek
+[[PERSON_61]]: Čeněk Blažeková
   - Čeňka Blažka
   - Čeňkovi Blažkovi
-[[PERSON_64]]: Olda Skála
+[[PERSON_63]]: Olda Skála
   - Oldovi Skálovi
   - Oldy Skály
-[[PERSON_65]]: Leoš Kovařík
+[[PERSON_64]]: Leoš Kovařík
   - Leoše Kovaříka
   - Leošovi Kovaříkovi
-[[PERSON_66]]: Radovan Šindelář
+[[PERSON_65]]: Radovan Šindelář
   - Radovana Šindeláře
   - Radovanovi Šindelářovi
-[[PERSON_67]]: Marek Holý
+[[PERSON_66]]: Marek Holý
   - Marka Holého
   - Markovi Holému
-[[PERSON_68]]: Adam Vachoušek
+[[PERSON_67]]: Adam Vachoušk
+  - Adam Vachoušek
   - Adama Vachouška
   - Adamovi Vachouškovi
-[[PERSON_69]]: Tomáš Řípa
+[[PERSON_68]]: Tomáš Říp
+  - Tomáš Řípa
   - Tomáše Řípy
   - Tomášovi Řípovi
-[[PERSON_70]]: Vladimír Šebek
+[[PERSON_69]]: Vladimír Šebk
+  - Vladimír Šebek
   - Vladimíra Šebka
   - Vladimírovi Šebkovi
-[[PERSON_71]]: Bedřich Horský
+[[PERSON_70]]: Bedřich Horský
   - Bedřicha Horského
   - Bedřichovi Horskému
-[[PERSON_72]]: Albín Řehák
+[[PERSON_71]]: Albín Řehák
   - Albína Řeháka
   - Albínovi Řehákovi
-[[PERSON_73]]: Oleg Novák
+[[PERSON_72]]: Oleg Novák
   - Olega Nováka
   - Olegovi Novákovi
-[[PERSON_74]]: Radko Veverka
+[[PERSON_73]]: Radek Veverka
   - Radka Veverky
   - Radkovi Veverkovi
-[[PERSON_77]]: Robert Krupička
+[[PERSON_76]]: Robert Krupička
   - Roberta Krupičky
   - Robertovi Krupičkovi
-[[PERSON_78]]: Emil Koudelka
+[[PERSON_77]]: Emil Koudelka
   - Emila Koudelky
   - Emilovi Koudelkovi
-[[PERSON_79]]: Jindřich Malina
+[[PERSON_78]]: Jindřich Malin
+  - Jindřich Malina
   - Jindřicha Maliny
   - Jindřichovi Malinovi
-[[PERSON_80]]: Vojtěch Straka
+[[PERSON_79]]: Vojtěch Straka
   - Vojtěcha Straky
   - Vojtěchovi Strakovi
-[[PERSON_81]]: Luboš Hronek
+[[PERSON_80]]: Luboš Hronek
   - Luboše Hronka
   - Lubošovi Hronkovi
-[[PERSON_82]]: Josef Bláha
+[[PERSON_81]]: Josef Bláh
+  - Josef Bláha
   - Josefa Bláhy
   - Josefovi Bláhovi
-[[PERSON_83]]: Mikuláš Švarc
+[[PERSON_82]]: Mikuláš Švarc
   - Mikuláše Švarce
   - Mikulášovi Švarcovi
-[[PERSON_84]]: Bogdan Čapek
+[[PERSON_83]]: Bogdan Čapk
+  - Bogdan Čapek
   - Bogdana Čapka
   - Bogdanovi Čapkovi
-[[PERSON_85]]: Radko Jančík
-  - Radka Jančíka
+[[PERSON_84]]: Radek Jančík
   - Radkovi Jančíkovi
-[[PERSON_88]]: Rostislav Holiš
+[[PERSON_85]]: Radka Jančíková
+  - Radka Jančíka
+[[PERSON_86]]: Radko Jančík
+[[PERSON_87]]: Rostislav Holiš
   - Rostislava Holiše
   - Rostislavovi Holišovi
-[[PERSON_89]]: Dalimil Šenk
+[[PERSON_88]]: Dalimil Šenek
+  - Dalimil Šenk
   - Dalimila Šenka
   - Dalimilovi Šenkovi
-[[PERSON_90]]: Marek Zástěra
+[[PERSON_89]]: Marek Zástěr
+  - Marek Zástěra
   - Marka Zástěry
   - Markovi Zástěrovi
-[[PERSON_91]]: Janek Švarný
+[[PERSON_90]]: Janek Švarný
+  - Janka Švarného
   - Jankovi Švarnému
-[[PERSON_92]]: Janka Švarného
-[[PERSON_93]]: Bohdan Žídek
+[[PERSON_92]]: Bohdan Žídek
   - Bohdana Žídka
   - Bohdanovi Žídkovi
-[[PERSON_94]]: Hynek Kubát
+[[PERSON_93]]: Hynek Kubát
   - Hynka Kubáta
   - Hynkovi Kubátovi
-[[PERSON_95]]: Lukáš Čermák
+[[PERSON_94]]: Lukáš Čermák
   - Lukáše Čermáka
   - Lukášovi Čermákovi
-[[PERSON_96]]: František Zábranský
+[[PERSON_95]]: František Zábranský
   - Františka Zábranského
   - Františkovi Zábranskému
-[[PERSON_97]]: Ctibor Hanzal
+[[PERSON_96]]: Ctibor Hanzal
   - Ctibora Hanzala
   - Ctiborovi Hanzalovi
-[[PERSON_98]]: Marek Ženíšek
+[[PERSON_97]]: Marek Ženíšk
+  - Marek Ženíšek
   - Marka Ženíška
   - Markovi Ženíškovi
-[[PERSON_99]]: Přemysl Doležal
+[[PERSON_98]]: Přemysl Doležal
   - Přemysla Doležala
   - Přemyslovi Doležalovi
-[[PERSON_100]]: Alexej Kratochvíl
+[[PERSON_99]]: Alexej Kratochvíl
   - Alexeje Kratochvíla
   - Alexejovi Kratochvílovi
-[[PERSON_101]]: Jaroslav Šubrt
+[[PERSON_100]]: Jaroslav Šubrt
   - Jaroslava Šubrta
   - Jaroslavovi Šubrtovi
-[[PERSON_102]]: Boris Slavíček
+[[PERSON_101]]: Boris Slavíčk
+  - Boris Slavíček
   - Borise Slavíčka
   - Borisovi Slavíčkovi
-[[PERSON_103]]: Radomír Volf
+[[PERSON_102]]: Radomír Volf
   - Radomíra Volfa
   - Radomírovi Volfovi
-[[PERSON_104]]: Lukáš Křivánek
+[[PERSON_103]]: Lukáš Křivánk
+  - Lukáš Křivánek
   - Lukáše Křivánka
   - Lukášovi Křivánkovi
-[[PERSON_105]]: Patrik Černota
+[[PERSON_104]]: Patrik Černot
+  - Patrik Černota
   - Patrika Černoty
   - Patrikovi Černotovi
-[[PERSON_106]]: Jaroslav Špinar
+[[PERSON_105]]: Jaroslav Špinar
   - Jaroslava Špinara
   - Jaroslavovi Špinarovi
-[[PERSON_107]]: Marek Turek
+[[PERSON_106]]: Marek Turek
   - Marka Turka
   - Markovi Turkovi
 
