@@ -10,19 +10,22 @@ import os
 import argparse
 import json
 from pathlib import Path
-from io import StringIO
 
 # Ensure the script directory is in the path for imports
 script_dir = Path(__file__).parent
 if str(script_dir) not in sys.path:
     sys.path.insert(0, str(script_dir))
 
-# Import the optimized anonymizer
-try:
-    from anon_optimized import Anonymizer, load_names_library, CZECH_FIRST_NAMES
-except ImportError:
-    print("❌ Error: anon_optimized.py not found")
-    sys.exit(1)
+# Import the anonymizer from anon7.2 (original working version)
+import importlib.util
+spec = importlib.util.spec_from_file_location("anon72", "anon7.2 - s padama.py")
+anon72 = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(anon72)
+
+# Use the classes from anon7.2
+Anonymizer = anon72.Anonymizer
+load_names_library = anon72.load_names_library
+CZECH_FIRST_NAMES = anon72.CZECH_FIRST_NAMES
 
 
 def main():
@@ -48,18 +51,12 @@ def main():
         return 1
 
     try:
-        # TURBO MODE: Redirect stdout to suppress all print statements
-        # Only final JSON result will be printed
-        if not args.verbose:
-            old_stdout = sys.stdout
-            sys.stdout = StringIO()
-
-        # Load names library
+        # Load names library (silently in turbo mode)
         global CZECH_FIRST_NAMES
         CZECH_FIRST_NAMES = load_names_library("cz_names.v1.json")
 
         # Create anonymizer instance
-        anonymizer = Anonymizer(verbose=False)
+        anonymizer = Anonymizer(verbose=args.verbose)
 
         # Run anonymization
         anonymizer.anonymize_docx(
@@ -68,10 +65,6 @@ def main():
             args.map,
             args.map_txt
         )
-
-        # Restore stdout for final output
-        if not args.verbose:
-            sys.stdout = old_stdout
 
         # Output JSON result for Electron to parse
         result = {
@@ -92,10 +85,6 @@ def main():
         return 0
 
     except Exception as e:
-        # Restore stdout in case of error
-        if not args.verbose:
-            sys.stdout = old_stdout
-
         print(f"\n❌ CHYBA: {e}")
 
         # Output error JSON

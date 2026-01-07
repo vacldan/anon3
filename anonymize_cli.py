@@ -16,14 +16,16 @@ script_dir = Path(__file__).parent
 if str(script_dir) not in sys.path:
     sys.path.insert(0, str(script_dir))
 
-# Import the optimized anonymizer
-try:
-    from anon_optimized import Anonymizer, load_names_library, CZECH_FIRST_NAMES
-except ImportError:
-    # Fallback to original if optimized version doesn't exist yet
-    print("⚠️  Optimized version not found, using original...")
-    from sys import exit
-    exit(1)
+# Import the anonymizer from anon7.2 (original working version)
+import importlib.util
+spec = importlib.util.spec_from_file_location("anon72", "anon7.2 - s padama.py")
+anon72 = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(anon72)
+
+# Use the classes from anon7.2
+Anonymizer = anon72.Anonymizer
+load_names_library = anon72.load_names_library
+CZECH_FIRST_NAMES = anon72.CZECH_FIRST_NAMES
 
 
 def main():

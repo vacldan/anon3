@@ -1801,6 +1801,7 @@ class Anonymizer:
         self.entity_index_cache = defaultdict(dict)  # OPTIMIZATION: typ -> original -> idx cache
         self.entity_reverse_map = defaultdict(dict)  # OPTIMIZATION: typ -> variant -> original
         self.source_text = ""  # Store original text for validation
+        self._regex_cache = {}  # PERFORMANCE: Cache compiled regex patterns
 
     def _get_or_create_label(self, typ: str, original: str, store_value: bool = True) -> str:
         """Vrátí existující nebo vytvoří nový štítek pro entitu.
@@ -1925,7 +1926,10 @@ class Anonymizer:
                     if len(fv) == 3 and not fv_lo[-1] in 'aeiouyáéěíóúůýnlr':
                         continue
 
-                rx = re.compile(r'(?<!\w)'+re.escape(pat)+r'(?!\w)', re.IGNORECASE)
+                # PERFORMANCE: Cache compiled regex patterns
+                if pat not in self._regex_cache:
+                    self._regex_cache[pat] = re.compile(r'(?<!\w)'+re.escape(pat)+r'(?!\w)', re.IGNORECASE)
+                rx = self._regex_cache[pat]
 
                 def repl(m):
                     surf = m.group(0)
