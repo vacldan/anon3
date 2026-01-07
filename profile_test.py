@@ -6,9 +6,16 @@ import cProfile
 import pstats
 from io import StringIO
 import sys
+import importlib.util
 
-# Import the optimized version
-from anon_optimized import Anonymizer, load_names_library, CZECH_FIRST_NAMES
+# Import anon7.2
+spec = importlib.util.spec_from_file_location("anon72", "anon7.2 - s padama.py")
+anon72 = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(anon72)
+
+Anonymizer = anon72.Anonymizer
+load_names_library = anon72.load_names_library
+CZECH_FIRST_NAMES = anon72.CZECH_FIRST_NAMES
 
 def run_anonymization():
     """Run anonymization with profiling"""
