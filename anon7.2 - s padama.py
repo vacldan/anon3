@@ -1877,6 +1877,21 @@ class Anonymizer:
             canonical_full = self.person_canonical_names[tag]
             return tag, canonical_full
 
+        # SPECIÁLNÍ PŘÍPAD: Standalone příjmení (prázdné křestní jméno)
+        # Pokud už existuje osoba se stejným příjmením, použij její tag
+        if not first_normalized or first_normalized.strip() == '':
+            last_normalized = self._normalize_for_matching(last_nom)
+            # Hledej existující osobu s matching příjmením
+            for existing_key, existing_tag in self.person_index.items():
+                existing_first_norm, existing_last_norm = existing_key
+                if existing_last_norm == last_normalized:
+                    # Našli jsme existující osobu se stejným příjmením!
+                    # Přidej standalone příjmení jako variantu k této osobě
+                    canonical_full = self.person_canonical_names[existing_tag]
+                    # Přidej standalone příjmení do entity_map jako variantu
+                    self.entity_map['PERSON'][canonical_full].add(last_nom)
+                    return existing_tag, canonical_full
+
         # Vytvoř nový tag
         self.counter['PERSON'] += 1
         tag = f'[[PERSON_{self.counter["PERSON"]}]]'
