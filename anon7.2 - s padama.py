@@ -3946,7 +3946,12 @@ class Anonymizer:
         def replace_address(match):
             matched_text = match.group(0)
             # Filter out medical/technical terms that are not addresses
-            medical_terms = ['hla', 'kompatibilní', 'donor', 'recipient', 'transfuze']
+            medical_terms = [
+                'hla', 'kompatibilní', 'donor', 'recipient', 'transfuze',
+                'stadium', 'zbaven', 'způsobilosti', 'demence', 'diagnóza',
+                'nemoc', 'onemocnění', 'léčba', 'terapie', 'pacient',
+                'darování', 'odmítá', 'psychologických'
+            ]
             if any(term in matched_text.lower() for term in medical_terms):
                 return matched_text  # Not an address, return unchanged
             return self._get_or_create_label('ADDRESS', matched_text)
@@ -4289,6 +4294,15 @@ class Anonymizer:
         )
         def replace_simple_addr(match):
             addr = match.group(0)
+            # Filter out medical/technical terms
+            medical_terms = [
+                'hla', 'kompatibilní', 'donor', 'recipient', 'transfuze',
+                'stadium', 'zbaven', 'způsobilosti', 'demence', 'diagnóza',
+                'nemoc', 'onemocnění', 'léčba', 'terapie', 'pacient',
+                'darování', 'odmítá', 'psychologických'
+            ]
+            if any(term in addr.lower() for term in medical_terms):
+                return addr  # Not an address, return unchanged
             # Přeskoč pokud už je tagovaná
             if '[[ADDRESS_' not in text[max(0, match.start()-10):min(len(text), match.end()+10)]:
                 return self._get_or_create_label('ADDRESS', addr)
