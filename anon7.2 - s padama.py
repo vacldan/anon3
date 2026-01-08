@@ -57,6 +57,9 @@ def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
         print(f"⚠️  Chyba při načítání {json_path}: {e}")
         return set()
 
+# Load names library at module import time
+CZECH_FIRST_NAMES = load_names_library()
+
 # =============== Varianty pro nahrazování ===============
 def variants_for_first(first: str) -> set:
     """Generuje základní pádové varianty křestního jména (optimalizováno pro výkon)."""
