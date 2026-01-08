@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-01-08T18:02:09.002582",
+  "generated_at": "2026-01-08T18:37:26.129103",
   "source_file": "smlouva33.docx",
   "entities": [
     {
@@ -23,18 +23,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Dvořáková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Liška",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Liškovi",
       "occurrences": 1
@@ -47,331 +35,325 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Růžena Dvořáková",
+      "label": "[[PERSON_3]]",
+      "original": "Liška",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Timoté Dvořák",
+      "original": "Růžena Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Sylva Dvořáková",
+      "original": "Timoté Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Miloslava Fischerová",
+      "original": "Sylva Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Svatava Lišková",
+      "original": "Miloslava Fischerová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_9]]",
-      "original": "Ctibor Liška",
+      "original": "Svatava Lišková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
+      "original": "Ctibor Liška",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_11]]",
       "original": "Justýna Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_11]]",
+      "label": "[[PERSON_12]]",
       "original": "Marcela Burešová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_11]]",
-      "original": "Burešové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_12]]",
+      "label": "[[PERSON_14]]",
       "original": "Bureš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_12]]",
+      "label": "[[PERSON_14]]",
       "original": "Pavel Bureš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_13]]",
+      "label": "[[PERSON_15]]",
       "original": "Rostislav Bureš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_14]]",
+      "label": "[[PERSON_16]]",
       "original": "Květoslava Tesařová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_15]]",
+      "label": "[[PERSON_17]]",
       "original": "Alan Bureš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_16]]",
+      "label": "[[PERSON_18]]",
       "original": "Beáta Burešová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_17]]",
+      "label": "[[PERSON_19]]",
       "original": "Ilona Malíková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_18]]",
+      "label": "[[PERSON_20]]",
       "original": "Arnošt Malík",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_19]]",
+      "label": "[[PERSON_21]]",
       "original": "Radana Malíková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_20]]",
+      "label": "[[PERSON_22]]",
       "original": "Cyril Malík",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_21]]",
+      "label": "[[PERSON_23]]",
       "original": "Vendelín Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_22]]",
-      "original": "Sedlákovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_22]]",
-      "original": "Slavoj Sedlák",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_22]]",
+      "label": "[[PERSON_24]]",
       "original": "Slavoje Sedláka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_23]]",
-      "original": "Oldřich Sedlák",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_23]]",
-      "original": "Oldřicha Sedláka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_24]]",
-      "original": "Evžen Sedlák",
+      "label": "[[PERSON_25]]",
+      "original": "Sedlákovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_25]]",
-      "original": "Miloslava Sedláková",
+      "original": "Sedlák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_25]]",
+      "original": "Oldřich Sedlák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_25]]",
+      "original": "Oldřicha Sedláka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_26]]",
-      "original": "Anastázie Sedláková",
+      "original": "Evžen Sedlák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_27]]",
-      "original": "Matouš Sedlák",
+      "original": "Miloslava Sedláková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_28]]",
-      "original": "Klaudie Nová",
+      "original": "Anastázie Sedláková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_29]]",
-      "original": "Čeněk Sedlák",
+      "original": "Matouš Sedlák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_30]]",
-      "original": "Hedvika Sedláková",
+      "original": "Klaudie Nová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_31]]",
-      "original": "Kučerovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_31]]",
-      "original": "Methoděj Kučera",
+      "original": "Slavoj Sedlák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_32]]",
-      "original": "Viola Kučerová",
+      "original": "Hedvika Sedláková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_33]]",
-      "original": "Pravdomil Kučera",
+      "original": "Methoděj Kučera",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_33]]",
+      "original": "Kučerovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_34]]",
-      "original": "Hermína Kučerová",
+      "original": "Viola Kučerová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_35]]",
+      "original": "Pravdomil Kučera",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_36]]",
+      "original": "Hermína Kučerová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_37]]",
       "original": "Ctibor Pech",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_36]]",
+      "label": "[[PERSON_38]]",
       "original": "Libuše Pechová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_36]]",
+      "label": "[[PERSON_38]]",
       "original": "Pechové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_37]]",
-      "original": "Bohumil Novotný",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_37]]",
-      "original": "Novotnému",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_37]]",
+      "label": "[[PERSON_39]]",
       "original": "Novotné",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_38]]",
-      "original": "Anežka Novotná",
+      "label": "[[PERSON_39]]",
+      "original": "Novotnému",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_39]]",
-      "original": "Doubravka Novotná",
+      "original": "Bohumil Novotný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_40]]",
-      "original": "Valdemar Novotný",
+      "original": "Anežka Novotná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_41]]",
-      "original": "Sylva Novotná",
+      "original": "Doubravka Novotná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_42]]",
-      "original": "Gizela Bartošová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_42]]",
-      "original": "Bartošové",
+      "original": "Valdemar Novotný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_43]]",
-      "original": "Jolana Fišerová",
+      "original": "Sylva Novotná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_44]]",
-      "original": "Bartošovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_44]]",
-      "original": "Bonifác Bartoš",
+      "original": "Gizela Bartošová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_45]]",
-      "original": "Květoslava Malá",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_46]]",
-      "original": "Timoté Bartoš",
+      "original": "Jolana Fišerová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_47]]",
+      "original": "Bartošovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_47]]",
+      "original": "Bonifác Bartoš",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_48]]",
+      "original": "Květoslava Malá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_49]]",
+      "original": "Timoté Bartoš",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_50]]",
       "original": "Radana Bartošová",
       "occurrences": 1
     },

@@ -3,65 +3,63 @@ OSOBY
 [[PERSON_1]]: Radomil Dvořák
   - Dvořák
 [[PERSON_2]]: Drahomíra Dvořáková
-  - Dvořáková
 [[PERSON_3]]: Svatomír Liška
   - Liška
   - Liškovi
-[[PERSON_4]]: Růžena Dvořáková
-[[PERSON_5]]: Timoté Dvořák
-[[PERSON_6]]: Sylva Dvořáková
-[[PERSON_7]]: Miloslava Fischerová
-[[PERSON_8]]: Svatava Lišková
-[[PERSON_9]]: Ctibor Liška
-[[PERSON_10]]: Justýna Dvořáková
-[[PERSON_11]]: Marcela Burešová
-  - Burešové
-[[PERSON_12]]: Pavel Bureš
+[[PERSON_5]]: Růžena Dvořáková
+[[PERSON_6]]: Timoté Dvořák
+[[PERSON_7]]: Sylva Dvořáková
+[[PERSON_8]]: Miloslava Fischerová
+[[PERSON_9]]: Svatava Lišková
+[[PERSON_10]]: Ctibor Liška
+[[PERSON_11]]: Justýna Dvořáková
+[[PERSON_12]]: Marcela Burešová
+[[PERSON_14]]: Pavel Bureš
   - Bureš
-[[PERSON_13]]: Rostislav Bureš
-[[PERSON_14]]: Květoslava Tesařová
-[[PERSON_15]]: Alan Bureš
-[[PERSON_16]]: Beáta Burešová
-[[PERSON_17]]: Ilona Malíková
-[[PERSON_18]]: Arnošt Malík
-[[PERSON_19]]: Radana Malíková
-[[PERSON_20]]: Cyril Malík
-[[PERSON_21]]: Vendelín Horák
-[[PERSON_22]]: Slavoj Sedlák
-  - Sedlákovi
+[[PERSON_15]]: Rostislav Bureš
+[[PERSON_16]]: Květoslava Tesařová
+[[PERSON_17]]: Alan Bureš
+[[PERSON_18]]: Beáta Burešová
+[[PERSON_19]]: Ilona Malíková
+[[PERSON_20]]: Arnošt Malík
+[[PERSON_21]]: Radana Malíková
+[[PERSON_22]]: Cyril Malík
+[[PERSON_23]]: Vendelín Horák
+[[PERSON_24]]: Slavoje Sedláková
   - Slavoje Sedláka
-[[PERSON_23]]: Oldřich Sedlák
+[[PERSON_25]]: Oldřich Sedlák
   - Oldřicha Sedláka
-[[PERSON_24]]: Evžen Sedlák
-[[PERSON_25]]: Miloslava Sedláková
-[[PERSON_26]]: Anastázie Sedláková
-[[PERSON_27]]: Matouš Sedlák
-[[PERSON_28]]: Klaudie Nová
-[[PERSON_29]]: Čeněk Sedlák
-[[PERSON_30]]: Hedvika Sedláková
-[[PERSON_31]]: Methoděj Kučera
+  - Sedlák
+  - Sedlákovi
+[[PERSON_26]]: Evžen Sedlák
+[[PERSON_27]]: Miloslava Sedláková
+[[PERSON_28]]: Anastázie Sedláková
+[[PERSON_29]]: Matouš Sedlák
+[[PERSON_30]]: Klaudie Nová
+[[PERSON_31]]: Slavoj Sedlák
+[[PERSON_32]]: Hedvika Sedláková
+[[PERSON_33]]: Methoděj Kučera
   - Kučerovi
-[[PERSON_32]]: Viola Kučerová
-[[PERSON_33]]: Pravdomil Kučera
-[[PERSON_34]]: Hermína Kučerová
-[[PERSON_35]]: Ctibor Pech
-[[PERSON_36]]: Libuše Pechová
+[[PERSON_34]]: Viola Kučerová
+[[PERSON_35]]: Pravdomil Kučera
+[[PERSON_36]]: Hermína Kučerová
+[[PERSON_37]]: Ctibor Pech
+[[PERSON_38]]: Libuše Pechová
   - Pechové
-[[PERSON_37]]: Bohumil Novotný
+[[PERSON_39]]: Bohumil Novotný
   - Novotné
   - Novotnému
-[[PERSON_38]]: Anežka Novotná
-[[PERSON_39]]: Doubravka Novotná
-[[PERSON_40]]: Valdemar Novotný
-[[PERSON_41]]: Sylva Novotná
-[[PERSON_42]]: Gizela Bartošová
-  - Bartošové
-[[PERSON_43]]: Jolana Fišerová
-[[PERSON_44]]: Bonifác Bartoš
+[[PERSON_40]]: Anežka Novotná
+[[PERSON_41]]: Doubravka Novotná
+[[PERSON_42]]: Valdemar Novotný
+[[PERSON_43]]: Sylva Novotná
+[[PERSON_44]]: Gizela Bartošová
+[[PERSON_45]]: Jolana Fišerová
+[[PERSON_47]]: Bonifác Bartoš
   - Bartošovi
-[[PERSON_45]]: Květoslava Malá
-[[PERSON_46]]: Timoté Bartoš
-[[PERSON_47]]: Radana Bartošová
+[[PERSON_48]]: Květoslava Malá
+[[PERSON_49]]: Timoté Bartoš
+[[PERSON_50]]: Radana Bartošová
 
 ADDRESS
 [[ADDRESS_1]]: Polní 145/18, Hradec Králové 500 02
