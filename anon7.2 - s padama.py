@@ -2146,6 +2146,20 @@ class Anonymizer:
         # Pak běžný pattern pro jména bez titulu
         titles = r'(?:Ing\.|Mgr\.|Bc\.|MUDr\.|JUDr\.|PhDr\.|RNDr\.|Ph\.D\.|MBA|CSc\.|DrSc\.)'
 
+        # ========== NOVÝ: Pattern pro "Přídavné Role Jméno Příjmení" (4 slova) ==========
+        # Detekuje např: "Mrtvá matka Drahomíra Dvořáková", "Zemřelý otec Jan Novák", atd.
+        # Tento pattern musí být PŘED 3-slovným patternem!
+        double_role_person_pattern = re.compile(
+            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'  # První role/přídavné jméno
+            r'\s+'
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'  # Druhá role/podstatné jméno
+            r'\s+'
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'  # Křestní jméno
+            r'\s+'
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\b',  # Příjmení
+            re.UNICODE
+        )
+
         # ========== NOVÝ: Pattern pro "Titul Jméno Příjmení" (3 slova) ==========
         # Tento pattern musí být PŘED běžným 2-slovným patternem!
         # Detekuje např: "Klient Ladislav Konečný", "Žadatel Jan Novák", atd.
@@ -2703,6 +2717,38 @@ class Anonymizer:
             'care', 'plus', 'minus', 'service', 'services',
             'group', 'company', 'corp', 'ltd', 'gmbh', 'inc'
         }
+
+        # ========== Handler pro "Přídavné Role Jméno Příjmení" (4 slova) ==========
+        def replace_double_role_person(match):
+            """
+            Zpracuje pattern "Přídavné Role Jméno Příjmení" (např. "Mrtvá matka Drahomíra Dvořáková").
+            Pokud první DVĚ slova jsou v ignore_words, anonymizuje 3. a 4. slovo jako osobu.
+            """
+            role_word1 = match.group(1)  # "Mrtvá"
+            role_word2 = match.group(2)  # "matka"
+            first_obs = match.group(3)   # "Drahomíra"
+            last_obs = match.group(4)    # "Dvořáková"
+
+            # Zkontroluj, jestli první DVĚ slova jsou v ignore_words
+            if role_word1.lower() not in ignore_words or role_word2.lower() not in ignore_words:
+                # Pokud ne, vrať original (nechť to zpracuje jiný pattern)
+                return match.group(0)
+
+            # Oba slova JSOU v ignore_words → anonymizuj jméno a příjmení
+            # Infer nominative
+            last_nom = infer_surname_nominative(last_obs)
+            first_nom = infer_first_name_nominative(first_obs) or first_obs
+
+            # Create/find person tag
+            tag, canonical = self._ensure_person_tag(first_nom, last_nom)
+
+            # Save variant if different from canonical
+            original_form = f"{first_obs} {last_obs}"
+            if original_form.lower() != canonical.lower():
+                self.entity_map['PERSON'][canonical].add(original_form)
+
+            # Return: "Přídavné Role [[PERSON_X]]"
+            return f"{role_word1} {role_word2} {tag}"
 
         # ========== Handler pro "Titul Jméno Příjmení" (3 slova) ==========
         def replace_role_person(match):
@@ -3718,7 +3764,23 @@ class Anonymizer:
             'žadatel', 'žadatele', 'žadatelka', 'žadatelky'
         }
 
-        # 1. Najdi všechny 3-slovné matche (včetně překrývajících se!)
+        # 1. Najdi všechny 4-slovné matche (včetně překrývajících se!)
+        # Např: "Mrtvá matka Drahomíra Dvořáková"
+        matches_4word = []
+        pos = 0
+        while pos < len(text):
+            match = double_role_person_pattern.search(text, pos)
+            if not match:
+                break
+            role_word1 = match.group(1)
+            role_word2 = match.group(2)
+            # Platný match pouze pokud první DVĚ slova JSOU v ignore_words
+            if role_word1.lower() in ignore_words and role_word2.lower() in ignore_words:
+                matches_4word.append(match)
+            # Posun o 1 znak pro nalezení překrývajících se matchů
+            pos = match.start() + 1
+
+        # 2. Najdi všechny 3-slovné matche (včetně překrývajících se!)
         # DŮLEŽITÉ: finditer() nenachází překryvy, musíme hledat manuálně
         matches_3word = []
         pos = 0
@@ -3733,7 +3795,7 @@ class Anonymizer:
             # Posun o 1 znak pro nalezení překrývajících se matchů
             pos = match.start() + 1
 
-        # 2. Najdi všechny 2-slovné matche (včetně překrývajících se!)
+        # 3. Najdi všechny 2-slovné matche (včetně překrývajících se!)
         matches_2word = []
         pos = 0
         while pos < len(text):
@@ -3748,30 +3810,43 @@ class Anonymizer:
             # Posun o 1 znak pro nalezení překrývajících se matchů
             pos = match.start() + 1
 
-        # 3. Kombinuj matche a odstraň překryvy (preferuj delší = 3-slovné)
+        # 4. Kombinuj matche a odstraň překryvy (preferuj delší = 4-slovné > 3-slovné > 2-slovné)
         all_matches = []
 
-        # Přidej 3-slovné (mají prioritu)
-        for match in matches_3word:
-            all_matches.append(('3word', match))
+        # Přidej 4-slovné (mají nejvyšší prioritu)
+        for match in matches_4word:
+            all_matches.append(('4word', match))
 
-        # Přidej 2-slovné, ale pouze pokud se nepřekrývají s 3-slovnými
+        # Přidej 3-slovné, ale pouze pokud se nepřekrývají s 4-slovnými
+        for match in matches_3word:
+            overlaps = False
+            for _, m4 in [m for m in all_matches if m[0] == '4word']:
+                # Překryv = matche sdílejí nějaký znak
+                if not (match.end() <= m4.start() or match.start() >= m4.end()):
+                    overlaps = True
+                    break
+            if not overlaps:
+                all_matches.append(('3word', match))
+
+        # Přidej 2-slovné, ale pouze pokud se nepřekrývají s 4-slovnými nebo 3-slovnými
         for match in matches_2word:
             overlaps = False
-            for _, m3 in [m for m in all_matches if m[0] == '3word']:
+            for _, m_higher in [m for m in all_matches if m[0] in ('4word', '3word')]:
                 # Překryv = matche sdílejí nějaký znak
-                if not (match.end() <= m3.start() or match.start() >= m3.end()):
+                if not (match.end() <= m_higher.start() or match.start() >= m_higher.end()):
                     overlaps = True
                     break
             if not overlaps:
                 all_matches.append(('2word', match))
 
-        # 4. Seřaď podle pozice (od konce, aby se neposunuly indexy při nahrazování)
+        # 5. Seřaď podle pozice (od konce, aby se neposunuly indexy při nahrazování)
         all_matches.sort(key=lambda x: x[1].start(), reverse=True)
 
-        # 5. Aplikuj replacementy od konce
+        # 6. Aplikuj replacementy od konce
         for match_type, match in all_matches:
-            if match_type == '3word':
+            if match_type == '4word':
+                replacement = replace_double_role_person(match)
+            elif match_type == '3word':
                 replacement = replace_role_person(match)
             else:  # '2word'
                 replacement = replace_person(match)
