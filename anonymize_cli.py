@@ -74,9 +74,9 @@ def main():
         # Output JSON result for Electron to parse
         result = {
             "success": True,
-            "output": args.output,
-            "map_json": args.map,
-            "map_txt": args.map_txt,
+            "output": str(Path(args.output).absolute()),
+            "map_json": str(Path(args.map).absolute()),
+            "map_txt": str(Path(args.map_txt).absolute()),
             "persons_found": len(anonymizer.canonical_persons),
             "entities_total": sum(len(entities) for entities in anonymizer.entity_map.values())
         }

@@ -312,10 +312,21 @@ ipcMain.handle("anonymize-document", async (evt, filePath) => {
       (code, used, stdoutBuf) => {
         const elapsed = Math.round((Date.now() - startedMs) / 1000);
 
-        let actual = null;
+        // Try to parse JSON output from CLI first
         const payload = parseJsonFromOutput(stdoutBuf);
-        if (payload && payload.output) actual = payload.output;
 
+        // Use paths from CLI output if available
+        let actual = null;
+        let actualMapJson = null;
+        let actualMapTxt = null;
+
+        if (payload && payload.output) {
+          actual = payload.output;
+          actualMapJson = payload.map_json || null;
+          actualMapTxt = payload.map_txt || null;
+        }
+
+        // Fallback: try to find files if CLI didn't return paths
         if (!actual || !fs.existsSync(actual)) {
           if (fs.existsSync(requestedOut)) actual = requestedOut;
           else {
@@ -330,13 +341,21 @@ ipcMain.handle("anonymize-document", async (evt, filePath) => {
           actual = findLatest(inTmp, startedMs - 2000) || actual;
         }
 
+        // Fallback for maps if not in JSON output
+        if (!actualMapJson || !fs.existsSync(actualMapJson)) {
+          actualMapJson = fs.existsSync(mapJson) ? mapJson : null;
+        }
+        if (!actualMapTxt || !fs.existsSync(actualMapTxt)) {
+          actualMapTxt = fs.existsSync(mapTxt) ? mapTxt : null;
+        }
+
         if (actual && fs.existsSync(actual)) {
           sendProgress(`Anonymizace dokončena (${elapsed}s)`);
           resolve({
             success: true,
             outputFile: actual,
-            mapJson: fs.existsSync(mapJson) ? mapJson : null,
-            mapTxt: fs.existsSync(mapTxt) ? mapTxt : null,
+            mapJson: actualMapJson,
+            mapTxt: actualMapTxt,
           });
         } else {
           const error = code === 0
