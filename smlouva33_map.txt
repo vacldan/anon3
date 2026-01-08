@@ -12,76 +12,73 @@ OSOBY
 [[PERSON_6]]: Sylva Dvořáková
 [[PERSON_7]]: Miloslava Fischerová
 [[PERSON_8]]: Svatava Lišková
-[[PERSON_9]]: Hradci Králová
-  - Hradci Králové
-[[PERSON_10]]: Ctibor Liška
-[[PERSON_11]]: Justýna Dvořáková
-[[PERSON_12]]: Marcela Burešová
+[[PERSON_9]]: Ctibor Liška
+[[PERSON_10]]: Justýna Dvořáková
+[[PERSON_11]]: Marcela Burešová
   - Burešové
-[[PERSON_13]]: Pavel Bureš
+[[PERSON_12]]: Pavel Bureš
   - Bureš
-[[PERSON_14]]: Rostislav Bureš
-[[PERSON_15]]: Květoslava Tesařová
-[[PERSON_16]]: Alan Bureš
-[[PERSON_17]]: Beáta Burešová
-[[PERSON_18]]: Ilona Malíková
-[[PERSON_19]]: Arnošt Malík
-[[PERSON_20]]: Radana Malíková
-[[PERSON_21]]: Cyril Malík
-[[PERSON_22]]: Vendelín Horák
-[[PERSON_23]]: Slavoj Sedlák
+[[PERSON_13]]: Rostislav Bureš
+[[PERSON_14]]: Květoslava Tesařová
+[[PERSON_15]]: Alan Bureš
+[[PERSON_16]]: Beáta Burešová
+[[PERSON_17]]: Ilona Malíková
+[[PERSON_18]]: Arnošt Malík
+[[PERSON_19]]: Radana Malíková
+[[PERSON_20]]: Cyril Malík
+[[PERSON_21]]: Vendelín Horák
+[[PERSON_22]]: Slavoj Sedlák
   - Sedlákovi
   - Slavoje Sedláka
-[[PERSON_24]]: Oldřich Sedlák
+[[PERSON_23]]: Oldřich Sedlák
   - Oldřicha Sedláka
-[[PERSON_25]]: Evžen Sedlák
-[[PERSON_26]]: Miloslava Sedláková
-[[PERSON_27]]: Anastázie Sedláková
-[[PERSON_28]]: Matouš Sedlák
-[[PERSON_29]]: Klaudie Nová
-[[PERSON_30]]: Čeněk Sedlák
-[[PERSON_31]]: Hedvika Sedláková
-[[PERSON_32]]: Methoděj Kučera
+[[PERSON_24]]: Evžen Sedlák
+[[PERSON_25]]: Miloslava Sedláková
+[[PERSON_26]]: Anastázie Sedláková
+[[PERSON_27]]: Matouš Sedlák
+[[PERSON_28]]: Klaudie Nová
+[[PERSON_29]]: Čeněk Sedlák
+[[PERSON_30]]: Hedvika Sedláková
+[[PERSON_31]]: Methoděj Kučera
   - Kučerovi
-[[PERSON_33]]: Viola Kučerová
-[[PERSON_34]]: Pravdomil Kučera
-[[PERSON_35]]: Hermína Kučerová
-[[PERSON_36]]: Ctibor Pech
-[[PERSON_37]]: Libuše Pechová
+[[PERSON_32]]: Viola Kučerová
+[[PERSON_33]]: Pravdomil Kučera
+[[PERSON_34]]: Hermína Kučerová
+[[PERSON_35]]: Ctibor Pech
+[[PERSON_36]]: Libuše Pechová
   - Pechové
-[[PERSON_38]]: Bohumil Novotný
+[[PERSON_37]]: Bohumil Novotný
   - Novotné
   - Novotnému
-[[PERSON_39]]: Anežka Novotná
-[[PERSON_40]]: Doubravka Novotná
-[[PERSON_41]]: Valdemar Novotný
-[[PERSON_42]]: Sylva Novotná
-[[PERSON_43]]: Gizela Bartošová
+[[PERSON_38]]: Anežka Novotná
+[[PERSON_39]]: Doubravka Novotná
+[[PERSON_40]]: Valdemar Novotný
+[[PERSON_41]]: Sylva Novotná
+[[PERSON_42]]: Gizela Bartošová
   - Bartošové
-[[PERSON_44]]: Jolana Fišerová
-[[PERSON_45]]: Bonifác Bartoš
+[[PERSON_43]]: Jolana Fišerová
+[[PERSON_44]]: Bonifác Bartoš
   - Bartošovi
-[[PERSON_46]]: Květoslava Malá
-[[PERSON_47]]: Timoté Bartoš
-[[PERSON_48]]: Radana Bartošová
+[[PERSON_45]]: Květoslava Malá
+[[PERSON_46]]: Timoté Bartoš
+[[PERSON_47]]: Radana Bartošová
 
 ADDRESS
-[[ADDRESS_1]]:  Polní 145/18, Hradec Králové 500 02
-[[ADDRESS_2]]:  Zahradní 67, Pardubice 530 02
-[[ADDRESS_3]]:  Krátká 23, Nový Bydžov 504 01
-[[ADDRESS_4]]:  Polní 89, Pardubice 530 02
-[[ADDRESS_5]]:  Lázeňská 89/4, Brno 602 00
-[[ADDRESS_6]]:  Slezská 67, Opava 746 01
-[[ADDRESS_7]]:  Zahradní 45, Hradec Králové 500 02
-[[ADDRESS_8]]:  Polní 245/18, Ostrava 708 00
-[[ADDRESS_9]]:  Krátká 67, Ostrava 708 00
-[[ADDRESS_10]]:  Zahradní 89, Ostrava 708 00
-[[ADDRESS_11]]:  Polní 145/18, Olomouc 779 00
-[[ADDRESS_12]]:  Lázeňská 67, Přerov 750 02
-[[ADDRESS_13]]:  Krátká 45, Brno 602 00
-[[ADDRESS_14]]:  Vinohradská 245, Praha 2
-[[ADDRESS_15]]:  Lázeňská 89, Praha 1
-[[ADDRESS_16]]: plně HLA kompatibilní 6/6, odmítá darování
+[[ADDRESS_1]]: Polní 145/18, Hradec Králové 500 02
+[[ADDRESS_2]]: Zahradní 67, Pardubice 530 02
+[[ADDRESS_3]]: Krátká 23, Nový Bydžov 504 01
+[[ADDRESS_4]]: Polní 89, Pardubice 530 02
+[[ADDRESS_5]]: Lázeňská 89/4, Brno 602 00
+[[ADDRESS_6]]: Slezská 67, Opava 746 01
+[[ADDRESS_7]]: Zahradní 45, Hradec Králové 500 02
+[[ADDRESS_8]]: Polní 245/18, Ostrava 708 00
+[[ADDRESS_9]]: Krátká 67, Ostrava 708 00
+[[ADDRESS_10]]: Zahradní 89, Ostrava 708 00
+[[ADDRESS_11]]: Polní 145/18, Olomouc 779 00
+[[ADDRESS_12]]: Lázeňská 67, Přerov 750 02
+[[ADDRESS_13]]: Krátká 45, Brno 602 00
+[[ADDRESS_14]]: Vinohradská 245, Praha 2
+[[ADDRESS_15]]: Lázeňská 89, Praha 1
 
 BANK
 [[BANK_1]]: 9876543210/0100

@@ -16,7 +16,8 @@ OSOBY
   - Tomášem Nguyenem
 [[PERSON_7]]: Eva Marečková
   - Evy Marečkové
-[[PERSON_8]]: David Šembera
+[[PERSON_8]]: David Šember
+  - David Šembera
   - Davida Šembery
 [[PERSON_9]]: Klára Šustrová
   - Kláru Šustrovou
@@ -42,12 +43,14 @@ OSOBY
   - Viktoru Havlovi
 [[PERSON_19]]: Barbora Němcová
   - Barbory Němcové
-[[PERSON_20]]: Radek Hofman
+[[PERSON_21]]: Radek Hofmana
+  - Radek Hofman
   - Radka Hofmana
 [[PERSON_22]]: Alžběta Konečná
   - Alžbětou Konečnou
 [[PERSON_23]]: Igor Vraný
   - Igoru Vranému
+  - Vraný
 [[PERSON_24]]: Monika Hrabovská
   - Monice Hrabovské
   - Monikou Hrabovskou
@@ -63,22 +66,24 @@ OSOBY
   - Adéle Jarošové
 [[PERSON_29]]: Jaroslav Černý
   - Jaroslavem Černým
+  - Černého
 [[PERSON_30]]: Helena Vodičková
   - Helenou Vodičkovou
   - Heleně Vodičkové
-[[PERSON_31]]: Kamil Řezníček
+[[PERSON_31]]: Kamil Řezníčka
+  - Kamil Řezníček
   - Kamila Řezníčka
 [[PERSON_32]]: Gabriela Pokorná
   - Gabriele Pokorné
 [[PERSON_33]]: Štěpán Hrubeš
   - Štěpánem Hrubešem
-[[PERSON_34]]: Nikola Šťastná
-  - Nikol Šťastná
+[[PERSON_34]]: Nikol Šťastná
   - Nikol Šťastné
-[[PERSON_35]]: Miroslav Vaněk
+[[PERSON_35]]: Miroslav Vaňk
   - Miroslavem Vaňkem
   - Miroslavu Vaňkovi
-[[PERSON_37]]: Renata Slámová
+[[PERSON_37]]: Renato Slámová
+  - Renata Slámová
   - Renatou Slámovou
   - Renaty Slámové
 [[PERSON_39]]: Patrik Holík
@@ -102,7 +107,8 @@ OSOBY
   - Adrianovi Kratochvílovi
 
 ADDRESS
-[[ADDRESS_1]]: Kapslovně 881/11, Praha 3
+[[ADDRESS_1]]: se sídlem V Kapslovně 881/11, Praha 3
+[[ADDRESS_2]]: Obvodním soudem pro Prahu 3, sp
 
 BANK
 [[BANK_1]]: 112882351/0300

@@ -64,20 +64,18 @@ OSOBY
 [[PERSON_50]]: Hedvika Fischerová
 
 ADDRESS
-[[ADDRESS_1]]:  Polní 145/18, Brno 602 00
-[[ADDRESS_2]]:  Lázeňská 89/4, Brno 602 00
-[[ADDRESS_3]]:  Zahradní 67, Jihlava 586 01
-[[ADDRESS_4]]:  Krátká 23, Znojmo 669 02
-[[ADDRESS_5]]:  Vinohradská 245/18, Praha 2
-[[ADDRESS_6]]:  Lázeňská 89, Karlovy Vary 360 01
-[[ADDRESS_7]]:  Polní 67/12, Olomouc 779 00
-[[ADDRESS_8]]:  Krátká 145/8, Praha 4
-[[ADDRESS_9]]:  Slezská 67, Opava 746 01
-[[ADDRESS_10]]:  Zahradní 89, Hradec Králové 500 02
-[[ADDRESS_11]]:  Polní 45/18, Brno 602 00
-[[ADDRESS_12]]:  Lázeňská 89, Teplice 415 01
-[[ADDRESS_13]]:  Zahradní 67, Pardubice 530 02
-[[ADDRESS_14]]: stadium 7, zbaven způsobilosti
+[[ADDRESS_1]]: Polní 145/18, Brno 602 00
+[[ADDRESS_2]]: Lázeňská 89/4, Brno 602 00
+[[ADDRESS_3]]: Krátká 23, Znojmo 669 02
+[[ADDRESS_4]]: Vinohradská 245/18, Praha 2
+[[ADDRESS_5]]: Lázeňská 89, Karlovy Vary 360 01
+[[ADDRESS_6]]: Polní 67/12, Olomouc 779 00
+[[ADDRESS_7]]: Krátká 145/8, Praha 4
+[[ADDRESS_8]]: Slezská 67, Opava 746 01
+[[ADDRESS_9]]: Zahradní 89, Hradec Králové 500 02
+[[ADDRESS_10]]: Polní 45/18, Brno 602 00
+[[ADDRESS_11]]: Lázeňská 89, Teplice 415 01
+[[ADDRESS_12]]: Zahradní 67, Pardubice 530 02
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 780625/7923
