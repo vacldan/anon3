@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-01-08T18:01:39.139477",
+  "generated_at": "2026-01-13T16:10:16.504780",
   "source_file": "smlouva32.docx",
   "entities": [
     {
@@ -30,13 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Dvořákové",
+      "original": "Ljuba Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Ljuba Dvořáková",
+      "original": "Dvořákové",
       "occurrences": 1
     },
     {
@@ -48,13 +48,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Vilém Horák",
+      "original": "Horákovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Horákovi",
+      "original": "Vilém Horák",
       "occurrences": 1
     },
     {
@@ -126,13 +126,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_15]]",
-      "original": "Kolínskému",
+      "original": "Pankrác Kolínský",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_15]]",
-      "original": "Pankrác Kolínský",
+      "original": "Kolínskému",
       "occurrences": 1
     },
     {
@@ -186,13 +186,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
-      "original": "Sedlákovi",
+      "original": "Vlastimil Sedlák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
-      "original": "Vlastimil Sedlák",
+      "original": "Sedlákovi",
       "occurrences": 1
     },
     {
@@ -294,13 +294,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_39]]",
-      "original": "Novotné",
+      "original": "Xenie Novotná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_39]]",
-      "original": "Xenie Novotná",
+      "original": "Novotné",
       "occurrences": 1
     },
     {
