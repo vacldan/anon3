@@ -31,6 +31,7 @@ def _flatten_mapping(obj):
     Podporuje:
     - { "[[TAG]]": "value", ... }
     - { "mapping": { ... } }
+    - { "entities": [{"label": "[[TAG]]", "original": "value"}, ...] }
     - listy dvojic, nebo listy dictů
     - vnořené dicty (projde rekurzivně)
     """
@@ -42,6 +43,16 @@ def _flatten_mapping(obj):
 
         # Nejčastější případ: dict
         if isinstance(x, dict):
+            # Pokud je to náš formát s entities
+            if "entities" in x and isinstance(x["entities"], list):
+                for entity in x["entities"]:
+                    if isinstance(entity, dict) and "label" in entity and "original" in entity:
+                        label = entity["label"]
+                        original = entity["original"]
+                        if isinstance(label, str) and label.startswith("[[") and label.endswith("]]"):
+                            flat[label] = str(original)
+                return
+
             # Pokud je to "obal" s mapping klíčem
             if "mapping" in x and isinstance(x["mapping"], (dict, list)):
                 walk(x["mapping"])
@@ -62,8 +73,14 @@ def _flatten_mapping(obj):
         # List: buď list dictů nebo list párů
         if isinstance(x, list):
             for item in x:
+                # Zkontroluj jestli to není náš formát entity
+                if isinstance(item, dict) and "label" in item and "original" in item:
+                    label = item["label"]
+                    original = item["original"]
+                    if isinstance(label, str) and label.startswith("[[") and label.endswith("]]"):
+                        flat[label] = str(original)
                 # ["[[TAG]]","value"]
-                if isinstance(item, (list, tuple)) and len(item) == 2 and isinstance(item[0], str):
+                elif isinstance(item, (list, tuple)) and len(item) == 2 and isinstance(item[0], str):
                     k = item[0]
                     v = item[1]
                     if isinstance(k, str) and k.startswith("[[") and k.endswith("]]"):
