@@ -1,0 +1,2 @@
+python-docx>=0.8.11
+pdf2docx>=0.5.6
