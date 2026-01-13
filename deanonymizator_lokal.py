@@ -367,12 +367,41 @@ def main():
         IN_MAP = Path("smlouva_map.json")
         OUT_DOC = Path("smlouva_deanon.docx")
 
+        # AUTOMATICKÁ DETEKCE: pokud je jen 1 argument, odvozuj ostatní
+        if len(args) == 1 and not args[0].startswith("--"):
+            input_file = Path(args[0])
+            print("  → Detekuji pouze 1 argument, automaticky odvozuji ostatní soubory...")
+
+            # Odvoď cestu k mapě a outputu
+            # Např: smlouva29_anon.docx -> smlouva29_map.json, smlouva29_deanon.docx
+            stem = input_file.stem  # smlouva29_anon
+            parent = input_file.parent  # složka
+
+            # Nahraď _anon za _map/_deanon
+            if stem.endswith("_anon"):
+                base = stem[:-5]  # smlouva29
+                map_name = f"{base}_map.json"
+                output_name = f"{base}_deanon.docx"
+            else:
+                # Fallback: přidej _map/_deanon
+                base = stem
+                map_name = f"{base}_map.json"
+                output_name = f"{base}_deanon.docx"
+
+            IN_DOC = input_file
+            IN_MAP = parent / map_name
+            OUT_DOC = parent / output_name
+
+            print(f"    Input:  {IN_DOC.name}")
+            print(f"    Mapa:   {IN_MAP.name}")
+            print(f"    Output: {OUT_DOC.name}")
+
         # 3 poziční argumenty
-        if len(args) >= 3 and not args[0].startswith("--"):
+        elif len(args) >= 3 and not args[0].startswith("--"):
             IN_DOC = Path(args[0])
             IN_MAP = Path(args[1])
             OUT_DOC = Path(args[2])
-            print("  → Použity poziční argumenty")
+            print("  → Použity 3 poziční argumenty")
         else:
             # jednoduchý parser pro --input --map --output
             def get_flag(flag):
@@ -415,10 +444,15 @@ def main():
             print(f"✗ CHYBA: Anonymní dokument neexistuje!")
             print(f"  Cesta: {IN_DOC}")
             print(f"  Aktuální složka: {os.getcwd()}")
-            print(f"\nSoubory v aktuální složce:")
+            print(f"\n.docx soubory v aktuální složce:")
             try:
-                for f in sorted(Path.cwd().glob("*.docx"))[:10]:
-                    print(f"    - {f.name}")
+                docx_files = sorted(Path(IN_DOC).parent.glob("*.docx"))[:15]
+                if docx_files:
+                    for f in docx_files:
+                        marker = " ← TEN" if f.name == IN_DOC.name else ""
+                        print(f"    - {f.name}{marker}")
+                else:
+                    print("    (žádné .docx soubory)")
             except:
                 pass
             return False
@@ -430,10 +464,15 @@ def main():
             print(f"✗ CHYBA: Mapa neexistuje!")
             print(f"  Cesta: {IN_MAP}")
             print(f"  Aktuální složka: {os.getcwd()}")
-            print(f"\nJSON soubory v aktuální složce:")
+            print(f"\n.json soubory v aktuální složce:")
             try:
-                for f in sorted(Path.cwd().glob("*.json"))[:10]:
-                    print(f"    - {f.name}")
+                json_files = sorted(Path(IN_MAP).parent.glob("*.json"))[:15]
+                if json_files:
+                    for f in json_files:
+                        marker = " ← TEN" if f.name == IN_MAP.name else ""
+                        print(f"    - {f.name}{marker}")
+                else:
+                    print("    (žádné .json soubory)")
             except:
                 pass
             return False
