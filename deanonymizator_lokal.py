@@ -9,6 +9,7 @@ Verze s podrobným logováním pro diagnostiku problémů
 import sys
 import os
 import json
+import re
 import time
 import tempfile
 import shutil
@@ -394,9 +395,16 @@ def _flatten_mapping(obj):
     - { "entities": [{"label": "[[TAG]]", "original": "value"}, ...] }
     - listy dvojic, nebo listy dictů
     - vnořené dicty (projde rekurzivně)
+
+    DŮLEŽITÉ: Pro PERSON entity používá základní hodnotu pro všechny tagy.
+    Např. pokud [[PERSON_2]]: "Martin Havlíček", všechny tagy PERSON_2*
+    (včetně variant) budou mít hodnotu "Martin Havlíček".
     """
     print("  → Parsuju strukturu mappingu...")
     flat = {}
+
+    # Slovník pro základní hodnoty PERSON entit: "PERSON_2" -> "Martin Havlíček"
+    person_base_values = {}
 
     def walk(x):
         if x is None:
@@ -407,6 +415,24 @@ def _flatten_mapping(obj):
             # Pokud je to náš formát s entities
             if "entities" in x and isinstance(x["entities"], list):
                 print(f"    Nalezen formát 'entities' s {len(x['entities'])} záznamy")
+
+                # FÁZE 1: Načti základní hodnoty pro PERSON entity (např. [[PERSON_2]])
+                for entity in x["entities"]:
+                    if isinstance(entity, dict) and "label" in entity and "original" in entity:
+                        label = entity["label"]
+                        original = entity["original"]
+                        entity_type = entity.get("type", "")
+
+                        if entity_type == "PERSON" and isinstance(label, str) and isinstance(original, str):
+                            # Extrahuj base tag (např. "PERSON_2" z "[[PERSON_2]]")
+                            match = re.match(r'\[\[(PERSON_\d+)\]\]$', label)
+                            if match:
+                                base_tag = match.group(1)  # "PERSON_2"
+                                # Normalizuj do nominativu a ulož jako základní hodnotu
+                                normalized = normalize_person_name(original)
+                                person_base_values[base_tag] = normalized
+
+                # FÁZE 2: Vytvoř mapping pro všechny entity
                 person_count = 0
                 for entity in x["entities"]:
                     if isinstance(entity, dict) and "label" in entity and "original" in entity:
@@ -415,18 +441,37 @@ def _flatten_mapping(obj):
                         entity_type = entity.get("type", "")
 
                         if isinstance(label, str) and label.startswith("[[") and label.endswith("]]"):
-                            # Použij pouze první výskyt (základní tvar), ignoruj ostatní varianty
+                            # Použij pouze první výskyt, ignoruj duplicity
                             if label not in flat:
-                                # NORMALIZACE: Pro PERSON entity normalizuj jméno do nominativu
+                                # NORMALIZACE: Pro PERSON entity použij základní hodnotu
                                 if entity_type == "PERSON" and isinstance(original, str):
-                                    normalized = normalize_person_name(original)
-                                    if normalized != original:
-                                        person_count += 1
-                                    flat[label] = normalized
+                                    # Zkus najít base tag (např. "PERSON_2" z "[[PERSON_2_gen]]")
+                                    match = re.match(r'\[\[(PERSON_\d+)(?:_[a-z]+)?\]\]$', label)
+                                    if match:
+                                        base_tag = match.group(1)  # "PERSON_2"
+                                        # Použij základní hodnotu, pokud existuje
+                                        if base_tag in person_base_values:
+                                            flat[label] = person_base_values[base_tag]
+                                            if person_base_values[base_tag] != original:
+                                                person_count += 1
+                                        else:
+                                            # Fallback: normalizuj aktuální hodnotu
+                                            normalized = normalize_person_name(original)
+                                            flat[label] = normalized
+                                            if normalized != original:
+                                                person_count += 1
+                                    else:
+                                        # Fallback pro nestandardní formát
+                                        normalized = normalize_person_name(original)
+                                        flat[label] = normalized
+                                        if normalized != original:
+                                            person_count += 1
                                 else:
                                     flat[label] = str(original)
+
                 if person_count > 0:
-                    print(f"    Normalizováno {person_count} jmen osob do nominativu")
+                    print(f"    Použito {len(person_base_values)} základních hodnot pro PERSON entity")
+                    print(f"    Normalizováno/sjednoceno {person_count} variant")
                 return
 
             # Pokud je to "obal" s mapping klíčem
