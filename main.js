@@ -462,8 +462,18 @@ ipcMain.handle("deanonymize-document", async (evt, anonFile, mapFile) => {
       (code, used, stdoutBuf) => {
         const elapsed = Math.round((Date.now() - startedMs) / 1000);
 
+        if (DEBUG) {
+          console.log(`[DEANON] Exit code: ${code}`);
+          console.log(`[DEANON] Output file exists: ${fs.existsSync(requestedOut)}`);
+          console.log(`[DEANON] Output path: ${requestedOut}`);
+        }
+
         if (code === 0 && fs.existsSync(requestedOut)) {
-          sendProgress(`Deanonymizace dokončena (${elapsed}s)`);
+          // DŮLEŽITÉ: Použij win.webContents.send přímo pro finální zprávu
+          // aby se nepotlačila throttlingem
+          if (win) {
+            win.webContents.send("progress-update", `Deanonymizace dokončena (${elapsed}s)`);
+          }
           resolve({
             success: true,
             outputFile: requestedOut,
@@ -472,7 +482,10 @@ ipcMain.handle("deanonymize-document", async (evt, anonFile, mapFile) => {
           const error = code === 0
             ? "Deanonymizace skončila bez výstupu."
             : `Deanonymizace selhala s kódem ${code}.`;
-          sendProgress(`ERROR: ${error} (${elapsed}s)`);
+          // DŮLEŽITÉ: Použij win.webContents.send přímo pro chybovou zprávu
+          if (win) {
+            win.webContents.send("progress-update", `ERROR: ${error} (${elapsed}s)`);
+          }
           resolve({ success: false, error });
         }
       }

@@ -513,6 +513,9 @@ if __name__ == "__main__":
     print(f"Konec: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print()
 
-    # PAUZA - aby se okno nezavřelo
-    input("\n>>> Stiskni ENTER pro ukončení...")
+    # PAUZA - pouze když je spuštěno interaktivně v terminálu
+    # V Electron aplikaci nesmíme čekat na input, jinak proces nikdy neskončí!
+    if sys.stdin.isatty():
+        input("\n>>> Stiskni ENTER pro ukončení...")
+
     sys.exit(0 if result else 1)
