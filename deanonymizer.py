@@ -35,58 +35,14 @@ def deanonymize_document(anon_doc_path, map_path, output_path):
         mapping = {}
         if isinstance(map_data, dict) and "entities" in map_data:
             # Nový formát s entities
-            # Pro každý tag shromáždi všechny varianty
-            tag_variants = {}
+            # Použij pouze první výskyt každého tagu (základní tvar)
             for entity in map_data["entities"]:
                 label = entity["label"]
                 original = entity["original"]
-                entity_type = entity.get("type", "")
 
-                if label not in tag_variants:
-                    tag_variants[label] = {"type": entity_type, "variants": []}
-                tag_variants[label]["variants"].append(original)
-
-            # Pro každý tag vyberi kanonickou formu
-            for label, data in tag_variants.items():
-                variants = data["variants"]
-                entity_type = data["type"]
-
-                if entity_type == "PERSON":
-                    # Pro osoby: vyberi celé jméno (obsahuje mezeru) v nominativu
-                    full_names = [v for v in variants if ' ' in v]
-                    if full_names:
-                        # Preferuj nominativ: křestní jméno NEKONČÍ na "-a" (pro mužská jména)
-                        # nebo příjmení NEKONČÍ na "-ové/-ého" (pro genitiv)
-                        nominative_candidates = []
-                        for name in full_names:
-                            parts = name.split()
-                            if len(parts) >= 2:
-                                first_name = parts[0]
-                                last_name = parts[-1]
-                                # Heuristika: nominativ mužského jména nekončí na "a",
-                                # ženského jména ano, takže kontrolujeme jen koncovky příjmení
-                                # Genitiv mužských příjmení: -a (Nováka), -ého (Novotného)
-                                # Dativ: -ovi (Novákovi), -ému (Novotnému)
-                                is_likely_nominative = not (
-                                    last_name.endswith('ovi') or
-                                    last_name.endswith('ému') or
-                                    last_name.endswith('ého') or
-                                    (last_name.endswith('a') and first_name.endswith('a'))  # Oba končí na -a = genitiv
-                                )
-                                if is_likely_nominative:
-                                    nominative_candidates.append(name)
-
-                        # Vybrat nejdelší nominativní tvar, nebo nejdelší celkový pokud není nominativ
-                        if nominative_candidates:
-                            mapping[label] = max(nominative_candidates, key=len)
-                        else:
-                            mapping[label] = max(full_names, key=len)
-                    else:
-                        # Pokud není celé jméno, vybrat nejdelší variantu
-                        mapping[label] = max(variants, key=len)
-                else:
-                    # Pro ostatní entity: vybrat nejdelší variantu
-                    mapping[label] = max(variants, key=len)
+                # Použij pouze první výskyt (základní tvar), ignoruj ostatní varianty
+                if label not in mapping:
+                    mapping[label] = original
         else:
             # Starý jednoduchý formát
             mapping = map_data

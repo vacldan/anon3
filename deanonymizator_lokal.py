@@ -115,7 +115,9 @@ def _flatten_mapping(obj):
                         label = entity["label"]
                         original = entity["original"]
                         if isinstance(label, str) and label.startswith("[[") and label.endswith("]]"):
-                            flat[label] = str(original)
+                            # Použij pouze první výskyt (základní tvar), ignoruj ostatní varianty
+                            if label not in flat:
+                                flat[label] = str(original)
                 return
 
             # Pokud je to "obal" s mapping klíčem
@@ -148,7 +150,9 @@ def _flatten_mapping(obj):
                     label = item["label"]
                     original = item["original"]
                     if isinstance(label, str) and label.startswith("[[") and label.endswith("]]"):
-                        flat[label] = str(original)
+                        # Použij pouze první výskyt (základní tvar)
+                        if label not in flat:
+                            flat[label] = str(original)
                 # ["[[TAG]]","value"]
                 elif isinstance(item, (list, tuple)) and len(item) == 2 and isinstance(item[0], str):
                     k = item[0]
