@@ -481,9 +481,11 @@ def _flatten_mapping(obj, txt_base_values=None):
                             match = re.match(r'\[\[(PERSON_\d+)\]\]$', label)
                             if match:
                                 base_tag = match.group(1)  # "PERSON_2"
-                                # Normalizuj do nominativu a ulož jako základní hodnotu
-                                normalized = normalize_person_name(original)
-                                person_base_values[base_tag] = normalized
+                                # DŮLEŽITÉ: Neprepisuj hodnoty z TXT mapy!
+                                if base_tag not in person_base_values:
+                                    # Normalizuj do nominativu a ulož jako základní hodnotu
+                                    normalized = normalize_person_name(original)
+                                    person_base_values[base_tag] = normalized
 
                 # FÁZE 2: Vytvoř mapping pro všechny entity
                 person_count = 0

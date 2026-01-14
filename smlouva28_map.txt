@@ -1,80 +1,117 @@
 OSOBY
 -----
 [[PERSON_1]]: Petra Havlíčková
-[[PERSON_2]]: Ivana Musilová
-[[PERSON_3]]: Kamila Horská
-[[PERSON_4]]: Lucie Blažková
-[[PERSON_5]]: Marek Tichý
-[[PERSON_6]]: Miroslava Beranová
-[[PERSON_7]]: Pavel Říha
-[[PERSON_8]]: Lukáš Horák
-[[PERSON_9]]: Radovan Kolínský
-[[PERSON_10]]: Bedřich Vávra
-[[PERSON_11]]: Miroslav Kubík
-  - Miroslavem Kubíkem
-[[PERSON_12]]: Matěj Kubík
-  - Matěje Kubíka
-[[PERSON_13]]: Sára Kubíková
+[[PERSON_2]]: Martin Havlíček
+  - Havlíčkovi
+[[PERSON_3]]: Ivana Musilová
+[[PERSON_4]]: Aleš Krejčí
+[[PERSON_5]]: Kamila Horská
+[[PERSON_6]]: Lucie Blažková
+[[PERSON_7]]: Vojtěch Blažek
+  - Blažka
+[[PERSON_8]]: René Sýkora
+  - Sýkorovi
+[[PERSON_9]]: Miroslava Beranová
+[[PERSON_10]]: Pavel Říha
+  - Říha
+  - Říhovi
+[[PERSON_11]]: Veronika Štefková
+  - Štefkové
+[[PERSON_12]]: Lukáš Horák
+[[PERSON_13]]: Igor Rusňák
+  - Rusňákovi
+[[PERSON_14]]: Radovan Kolínský
+[[PERSON_15]]: Gabriela Pražáková
+  - Pražákové
+[[PERSON_16]]: Bedřich Vávra
+  - Vávrovi
+[[PERSON_17]]: Otakar Vávra
+[[PERSON_18]]: Sára Kubíková
   - Sáry Kubíkové
-[[PERSON_14]]: Vladimír Staněk
-[[PERSON_15]]: Bohumil Sedlák
+[[PERSON_19]]: Matěje Kubíková
+  - Matěje Kubíka
+[[PERSON_20]]: Miroslav Kubík
+  - Miroslavem Kubíkem
+[[PERSON_21]]: Renata Kubíková
+[[PERSON_22]]: Vladimír Staněk
+[[PERSON_23]]: Bohumila Sedláková
   - Bohumila Sedláka
-[[PERSON_16]]: Dalibor Kozák
-[[PERSON_17]]: Eduard Šimek
-[[PERSON_18]]: Marcela Hrubá
-[[PERSON_19]]: Dana Pokorná
+[[PERSON_24]]: Dalibor Kozák
+[[PERSON_25]]: Bronislav Macháček
+  - Macháčkovi
+[[PERSON_26]]: Soňa Gregorová
+  - Gregorové
+[[PERSON_27]]: Eduard Šimek
+[[PERSON_28]]: Bohuslav Říha
+[[PERSON_29]]: Marcela Hrubá
+[[PERSON_30]]: Dan Pokorná
   - Dany Pokorné
-[[PERSON_20]]: Augustin Klíma
-[[PERSON_21]]: Lenka Gregorová
-[[PERSON_22]]: Vratislav Čížek
-[[PERSON_23]]: Blanka Nováková
-[[PERSON_24]]: Ladislav Souček
-[[PERSON_25]]: Klára Součková
+  - Pokorné
+[[PERSON_31]]: Augustin Klíma
+[[PERSON_32]]: Lenka Gregorová
+[[PERSON_33]]: Vratislav Čížek
+[[PERSON_34]]: Blanka Nováková
+[[PERSON_35]]: Klár Součková
   - Kláru Součkovou
-[[PERSON_27]]: Milena Havelová
-[[PERSON_28]]: Ctibor Havel
-[[PERSON_29]]: Milada Kadlecová
-[[PERSON_30]]: Radovan Šindelář
-[[PERSON_31]]: Alena Burešová
-[[PERSON_32]]: Oldřich Moravec
-[[PERSON_33]]: Zdenka Fialová
-[[PERSON_34]]: Ervín Kopecký
-[[PERSON_35]]: Pavla Sýkorová
-[[PERSON_36]]: Emil Vondráček
-[[PERSON_37]]: Drahomíra Holubová
-[[PERSON_38]]: Stanislava Horáková
-[[PERSON_39]]: Čeněk Liška
-[[PERSON_40]]: Jarmila Krausová
-[[PERSON_41]]: Petr Kraus
-[[PERSON_42]]: Hynek Říha
-[[PERSON_43]]: Božena Marková
-[[PERSON_44]]: Aleš Urbanec
-[[PERSON_45]]: Libuše Sedláčková
-[[PERSON_46]]: Svatomír Novák
-[[PERSON_47]]: Jitka Málková
-[[PERSON_48]]: Ondřej Málek
+[[PERSON_36]]: Ladislav Souček
+[[PERSON_38]]: Milena Havelová
+[[PERSON_39]]: Ctibor Havel
+[[PERSON_40]]: Milada Kadlecová
+[[PERSON_41]]: Radovan Šindelář
+[[PERSON_42]]: Alena Burešová
+[[PERSON_43]]: Oldřich Moravec
+[[PERSON_44]]: Zdenka Fialová
+[[PERSON_45]]: Ervín Kopecký
+[[PERSON_46]]: Pavla Sýkorová
+[[PERSON_47]]: Emil Vondráček
+[[PERSON_48]]: Drahomíra Holubová
+[[PERSON_49]]: Stanislava Horáková
+[[PERSON_50]]: Petr Kraus
+[[PERSON_51]]: Jarmila Krausová
+[[PERSON_52]]: Božena Marková
+[[PERSON_53]]: Aleš Urbanec
+[[PERSON_54]]: Libuše Sedláčková
+[[PERSON_55]]: Svatomír Novák
+[[PERSON_56]]: Ondřeje Máleková
   - Ondřeje Málka
-[[PERSON_49]]: Bořivoj Šimek
-[[PERSON_50]]: Milena Kuželová
-[[PERSON_51]]: Lumír Kadlec
-[[PERSON_52]]: Štěpánka Horská
-[[PERSON_53]]: Bronislav Vávra
-[[PERSON_54]]: Růžena Málková
-[[PERSON_55]]: Arnošt Bureš
-[[PERSON_56]]: Marcela Vávrová
-[[PERSON_57]]: Bohumír Sedláček
-[[PERSON_58]]: Helena Koubková
-[[PERSON_59]]: Gustav Šťastný
-[[PERSON_60]]: Sylva Hrubá
-[[PERSON_61]]: Vlasta Říhová
-[[PERSON_62]]: František Toman
-[[PERSON_63]]: Naděžda Bartošová
+[[PERSON_57]]: Jitka Málková
+[[PERSON_58]]: Bořivoj Šimek
+[[PERSON_59]]: Milena Kuželová
+[[PERSON_60]]: Lumír Kadlec
+[[PERSON_61]]: Štěpánka Horská
+[[PERSON_62]]: Bronislav Vávra
+[[PERSON_63]]: Růžena Málková
+[[PERSON_64]]: Arnošt Bureš
+[[PERSON_65]]: Marcela Vávrová
+[[PERSON_66]]: Bohumír Sedláček
+[[PERSON_67]]: Helena Koubková
+[[PERSON_68]]: Gustav Šťastný
+[[PERSON_69]]: Sylva Hrubá
+[[PERSON_70]]: Vlasta Říhová
+[[PERSON_71]]: František Toman
+[[PERSON_72]]: Naděžda Bartošová
 
 ADDRESS
 [[ADDRESS_1]]: Vinohradská 142/7, Praha 10
-[[ADDRESS_2]]: Slunečná 89, Brno
-[[ADDRESS_3]]: Zahradní 34, Ostrava
-[[ADDRESS_4]]: Krátká 34, Brno
+[[ADDRESS_2]]: Slunečná 89, Brno 602 00
+[[ADDRESS_3]]: Krátká 15/3, Ústí nad Labem 400 01
+[[ADDRESS_4]]: Revoluční 67, Liberec 460 01
+[[ADDRESS_5]]: Zahradní 34, Ostrava 708 00
+[[ADDRESS_6]]: Lázeňská 78/12, Karlovy Vary 360 01
+[[ADDRESS_7]]: Sportovní 23, Zlín 760 01
+[[ADDRESS_8]]: Polní 56, Jihlava 586 01
+[[ADDRESS_9]]: Klostermannova 89, České Budějovice 370 01
+[[ADDRESS_10]]: Zahradní 12, Pardubice 530 02
+[[ADDRESS_11]]: Tovární 67, Mladá Boleslav 293 01
+[[ADDRESS_12]]: Krátká 89, Havířov 736 01
+[[ADDRESS_13]]: Polní 34, Přerov 750 02
+[[ADDRESS_14]]: Hlavní 45, Přerov 750 02
+[[ADDRESS_15]]: Krátká 89, Zlín 760 01
+[[ADDRESS_16]]: Zahradní 67, Pardubice 530 02
+[[ADDRESS_17]]: Polní 12, Olomouc 779 00
+[[ADDRESS_18]]: Krátká 34, Brno 602 00
+[[ADDRESS_19]]: Školní 89, Tábor 390 01
+[[ADDRESS_20]]: Exekuce 8, celkem
 
 BANK
 [[BANK_1]]: 9876543210/2010
@@ -175,8 +212,10 @@ ICO
 [[ICO_7]]: 67823451
 
 ID_CARD
-[[ID_CARD_1]]: GH890123
-[[ID_CARD_2]]: IJ012345
+[[ID_CARD_1]]: 456789123
+[[ID_CARD_2]]: GH890123
+[[ID_CARD_3]]: 567890234
+[[ID_CARD_4]]: IJ012345
 
 LICENSE_PLATE
 [[LICENSE_PLATE_1]]: 5A7 8901
@@ -187,15 +226,13 @@ PHONE
 [[PHONE_3]]: +420 774 123 987
 [[PHONE_4]]: 334455667
 [[PHONE_5]]: +420 731 987 654
-[[PHONE_6]]: 456789123
-[[PHONE_7]]: 998877665
-[[PHONE_8]]: +420 725 654 321
-[[PHONE_9]]: 445566778
-[[PHONE_10]]: +420 608 321 654
-[[PHONE_11]]: +420 736 789 012
-[[PHONE_12]]: +420 605 432 789
-[[PHONE_13]]: +420 721 456 789
-[[PHONE_14]]: 567890234
-[[PHONE_15]]: +420 608 789 456
-[[PHONE_16]]: +420 731 654 987
+[[PHONE_6]]: 998877665
+[[PHONE_7]]: +420 725 654 321
+[[PHONE_8]]: 445566778
+[[PHONE_9]]: +420 608 321 654
+[[PHONE_10]]: +420 736 789 012
+[[PHONE_11]]: +420 605 432 789
+[[PHONE_12]]: +420 721 456 789
+[[PHONE_13]]: +420 608 789 456
+[[PHONE_14]]: +420 731 654 987
 
