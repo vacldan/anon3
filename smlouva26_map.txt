@@ -1,0 +1,117 @@
+OSOBY
+-----
+[[PERSON_1]]: Adam Vrba
+  - Adama Vrby
+  - Adamem Vrbou
+[[PERSON_2]]: Lucie Žákovská
+  - Lucií Žákovskou
+[[PERSON_3]]: Milan Krupauer
+  - Milana Krupauera
+[[PERSON_4]]: Renata Jírová
+  - Renaty Jírové
+[[PERSON_5]]: Petr Lněničk
+  - Petr Lněnička
+  - Petrem Lněničkou
+[[PERSON_6]]: Ivana Rendlová
+  - Ivanu Rendlovou
+[[PERSON_7]]: Roman Jeřábek
+  - Romana Jeřábka
+[[PERSON_8]]: Martina Kyselová
+  - Martiny Kyselové
+  - Martině Kyselové
+[[PERSON_9]]: Ondřej Patoček
+  - Ondřej Patočka
+  - Ondřeje Patočku
+[[PERSON_10]]: Hana Blažková
+  - Hanou Blažkovou
+[[PERSON_11]]: Jaromír Kotek
+  - Jaromíra Kotka
+[[PERSON_12]]: Veronika Plzáková
+  - Veronice Plzákové
+[[PERSON_13]]: Radovan Chýl
+  - Radovan Chýle
+  - Radovanem Chýlem
+[[PERSON_14]]: Alžběta Malíková
+  - Alžběty Malíkové
+[[PERSON_15]]: Tomáš Havelek
+  - Tomáš Havelka
+  - Tomáše Havelku
+[[PERSON_16]]: Radka Pospíšilová
+  - Radkou Pospíšilovou
+[[PERSON_18]]: Zdeněk Špiček
+  - Zdeněk Špička
+  - Zdeňka Špičku
+[[PERSON_19]]: Kateřina Vítková
+  - Kateřině Vítkové
+[[PERSON_20]]: Lukáš Pecek
+  - Lukáš Pecka
+  - Lukáši Peckovi
+[[PERSON_21]]: Nikola Soukupová
+  - Nikoly Soukupové
+[[PERSON_22]]: Marek Štolba
+[[PERSON_23]]: Tereza Kalinová
+[[PERSON_24]]: Václav Dufek
+[[PERSON_25]]: Monika Bártová
+[[PERSON_26]]: Patrik Veleba
+[[PERSON_27]]: Jana Roučková
+[[PERSON_28]]: Filip Kameník
+[[PERSON_29]]: Lenka Brýdlová
+[[PERSON_30]]: Oldřich Hanzal
+[[PERSON_31]]: Simona Králíková
+[[PERSON_32]]: David Záruba
+[[PERSON_33]]: Barbora Kmentová
+[[PERSON_34]]: Jiří Kolařík
+[[PERSON_35]]: Petra Měchurová
+[[PERSON_36]]: Štěpán Liška
+[[PERSON_37]]: Andrea Vránová
+[[PERSON_38]]: Pavel Horčička
+[[PERSON_39]]: Kristýna Tůmová
+[[PERSON_40]]: Michal Plíva
+[[PERSON_41]]: Soňa Nedbalová
+
+BANK
+[[BANK_1]]: 2100887711/2010
+[[BANK_2]]: 2400991188/2010
+[[BANK_3]]: 1900772288/0100
+[[BANK_4]]: 2101449988/2010
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 915412/7712
+[[BIRTH_ID_2]]: 840912/3319
+[[BIRTH_ID_3]]: 926118/4402
+[[BIRTH_ID_4]]: 905331/1188
+
+EMAIL
+[[EMAIL_1]]: adam.vrba@kontakt.cz
+[[EMAIL_2]]: milan.krupauer@firma.cz
+[[EMAIL_3]]: ivana.rendlova@post.cz
+[[EMAIL_4]]: op@legal.cz
+[[EMAIL_5]]: veronika.plzakova@mail.cz
+[[EMAIL_6]]: a.malikova@firma.cz
+[[EMAIL_7]]: zdenek.spicka@office.cz
+[[EMAIL_8]]: nikola.soukupova@post.cz
+
+ICO
+[[ICO_1]]: 09188211
+
+ID_CARD
+[[ID_CARD_1]]: 447882119
+[[ID_CARD_2]]: 332118889
+[[ID_CARD_3]]: 449998112
+[[ID_CARD_4]]: 551229988
+
+IP
+[[IP_1]]: 185.44.18.92
+[[IP_2]]: 10.1.44.91
+[[IP_3]]: 192.168.0.77
+[[IP_4]]: 178.77.22.41
+
+PHONE
+[[PHONE_1]]: +420 603 118 771
+[[PHONE_2]]: +420 728 441 990
+[[PHONE_3]]: +420 777 551 118
+[[PHONE_4]]: +420 603 771 009
+[[PHONE_5]]: +420 739 118 442
+[[PHONE_6]]: +420 728 992 881
+[[PHONE_7]]: +420 603 889 114
+

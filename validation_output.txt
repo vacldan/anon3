@@ -1,0 +1,58 @@
+================================================================================
+🔍 RYCHLÁ VALIDACE EXISTUJÍCÍCH MAP (smlouvy 13-24)
+================================================================================
+✅ smlouva13: 190 osob, 0 chyb = 100.0%
+❌ smlouva14: 324 osob, 1 chyb = 99.7%
+   - _1
+❌ smlouva15: 324 osob, 1 chyb = 99.7%
+   - _1
+❌ smlouva16: 159 osob, 2 chyb = 98.7%
+   - _2
+   - _4
+❌ smlouva17: 82 osob, 3 chyb = 96.3%
+   - Matěj Procházka
+   - Karel Procházka
+   - Martin Procházka
+❌ smlouva18: 37 osob, 7 chyb = 81.1%
+   - Pavlína Pokorná
+   - Lenka Kratochvílová
+   - Šárka Novotná
+   ... a 4 dalších
+❌ smlouva19: 48 osob, 13 chyb = 72.9%
+   - Adrian Kratochvílem
+   - Lucií Novotná
+   - Gabriela Hrbáčová
+   ... a 10 dalších
+❌ smlouva20: 76 osob, 19 chyb = 75.0%
+   - Adam Králem
+   - Lucii Havelková
+   - Daniela Mlynář
+   ... a 16 dalších
+❌ smlouva21: 96 osob, 43 chyb = 55.2%
+   - Luciía Havelková
+   - Lucii Havelková
+   - Simoněa Trčková
+   ... a 40 dalších
+❌ smlouva22: 196 osob, 95 chyb = 51.5%
+   - Luciía Havelková
+   - Lucii Havelková
+   - Simoněa Trčková
+   ... a 92 dalších
+❌ smlouva23: 167 osob, 63 chyb = 62.3%
+   - Blanca Veselá
+   - Mileněa Dvořáčková
+   - Jaroslavěa Čechová
+   ... a 60 dalších
+❌ smlouva24: 177 osob, 68 chyb = 61.6%
+   - Marii Bártová
+   - Julii Matoušková
+   - Juliía Matoušková
+   ... a 65 dalších
+
+================================================================================
+📊 CELKOVÁ STATISTIKA
+================================================================================
+Celkem osob: 1876
+Celkem chyb: 315
+Celková úspěšnost: 83.2%
+================================================================================

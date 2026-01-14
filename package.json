@@ -1,0 +1,70 @@
+{
+  "name": "nixminds-document-suite",
+  "version": "2.1.0",
+  "description": "Nixminds Document Anonymization Suite - Production Ready",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --enable-logging",
+    "build": "electron-builder",
+    "dist": "electron-builder --publish=never",
+    "pack": "electron-builder --dir",
+    "test": "node test/test-python.js"
+  },
+  "author": {
+    "name": "Nixminds",
+    "email": "info@nixminds.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^22.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.nixminds.document-suite",
+    "productName": "Nixminds Document Suite",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!test/**/*",
+      "!.git/**/*",
+      "!README.md"
+    ],
+    "extraResources": [
+      {
+        "from": "python/",
+        "to": "python/",
+        "filter": ["**/*.py"]
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    }
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nixminds/document-suite.git"
+  },
+  "keywords": [
+    "anonymization",
+    "document-processing",
+    "privacy",
+    "czech",
+    "gdpr",
+    "pii"
+  ]
+}

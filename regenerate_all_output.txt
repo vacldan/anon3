@@ -1,0 +1,256 @@
+
+================================================================================
+Regenerating smlouva13.docx...
+================================================================================
+✓ Načteno 7117 jmen z knihovny
+
+🔍 Zpracovávám: smlouva13.docx
+  [DEBUG] Document loaded in 0.0s
+  [DEBUG] Paragraphs processed in 91.4s
+  [DEBUG] Document saved in 0.0s
+  [DEBUG] Maps created in 0.0s
+✅ Hotovo! Nalezeno 35 osob
+
+✅ Výstupy:
+ - smlouva13_anon.docx
+ - smlouva13_map.json
+ - smlouva13_map.txt
+
+📊 Statistiky:
+ - Nalezeno osob: 35
+ - Celkem entit: 161
+
+================================================================================
+Regenerating smlouva14.docx...
+================================================================================
+✓ Načteno 7117 jmen z knihovny
+
+🔍 Zpracovávám: smlouva14.docx
+  [DEBUG] Document loaded in 0.0s
+  [DEBUG] Paragraphs processed in 490.0s
+  [DEBUG] Document saved in 0.0s
+  [DEBUG] Maps created in 0.0s
+✅ Hotovo! Nalezeno 48 osob
+
+✅ Výstupy:
+ - smlouva14_anon.docx
+ - smlouva14_map.json
+ - smlouva14_map.txt
+
+📊 Statistiky:
+ - Nalezeno osob: 48
+ - Celkem entit: 304
+
+================================================================================
+Regenerating smlouva15.docx...
+================================================================================
+✓ Načteno 7117 jmen z knihovny
+
+🔍 Zpracovávám: smlouva15.docx
+  [DEBUG] Document loaded in 0.0s
+  [DEBUG] Paragraphs processed in 488.6s
+  [DEBUG] Document saved in 0.0s
+  [DEBUG] Maps created in 0.1s
+✅ Hotovo! Nalezeno 48 osob
+
+✅ Výstupy:
+ - smlouva15_anon.docx
+ - smlouva15_map.json
+ - smlouva15_map.txt
+
+📊 Statistiky:
+ - Nalezeno osob: 48
+ - Celkem entit: 304
+
+================================================================================
+Regenerating smlouva16.docx...
+================================================================================
+✓ Načteno 7117 jmen z knihovny
+
+🔍 Zpracovávám: smlouva16.docx
+  [DEBUG] Document loaded in 0.0s
+  [DEBUG] Paragraphs processed in 222.9s
+  [DEBUG] Document saved in 0.0s
+  [DEBUG] Maps created in 0.0s
+✅ Hotovo! Nalezeno 25 osob
+
+✅ Výstupy:
+ - smlouva16_anon.docx
+ - smlouva16_map.json
+ - smlouva16_map.txt
+
+📊 Statistiky:
+ - Nalezeno osob: 25
+ - Celkem entit: 148
+
+================================================================================
+Regenerating smlouva17.docx...
+================================================================================
+✓ Načteno 7117 jmen z knihovny
+
+🔍 Zpracovávám: smlouva17.docx
+  [DEBUG] Document loaded in 0.0s
+  [DEBUG] Paragraphs processed in 48.7s
+  [DEBUG] Document saved in 0.0s
+  [DEBUG] Maps created in 0.0s
+✅ Hotovo! Nalezeno 14 osob
+
+✅ Výstupy:
+ - smlouva17_anon.docx
+ - smlouva17_map.json
+ - smlouva17_map.txt
+
+📊 Statistiky:
+ - Nalezeno osob: 14
+ - Celkem entit: 74
+
+================================================================================
+Regenerating smlouva18.docx...
+================================================================================
+✓ Načteno 7117 jmen z knihovny
+
+🔍 Zpracovávám: smlouva18.docx
+  [DEBUG] Document loaded in 0.0s
+  [DEBUG] Paragraphs processed in 13.1s
+  [DEBUG] Document saved in 0.0s
+  [DEBUG] Maps created in 0.0s
+✅ Hotovo! Nalezeno 18 osob
+
+✅ Výstupy:
+ - smlouva18_anon.docx
+ - smlouva18_map.json
+ - smlouva18_map.txt
+
+📊 Statistiky:
+ - Nalezeno osob: 18
+ - Celkem entit: 30
+
+================================================================================
+Regenerating smlouva19.docx...
+================================================================================
+✓ Načteno 7117 jmen z knihovny
+
+🔍 Zpracovávám: smlouva19.docx
+  [DEBUG] Document loaded in 0.0s
+  [DEBUG] Paragraphs processed in 24.0s
+  [DEBUG] Document saved in 0.0s
+  [DEBUG] Maps created in 0.0s
+✅ Hotovo! Nalezeno 29 osob
+
+✅ Výstupy:
+ - smlouva19_anon.docx
+ - smlouva19_map.json
+ - smlouva19_map.txt
+
+📊 Statistiky:
+ - Nalezeno osob: 29
+ - Celkem entit: 31
+
+================================================================================
+Regenerating smlouva20.docx...
+================================================================================
+✓ Načteno 7117 jmen z knihovny
+
+🔍 Zpracovávám: smlouva20.docx
+  [DEBUG] Document loaded in 0.0s
+  [DEBUG] Paragraphs processed in 62.8s
+  [DEBUG] Document saved in 0.0s
+  [DEBUG] Maps created in 0.0s
+✅ Hotovo! Nalezeno 57 osob
+
+✅ Výstupy:
+ - smlouva20_anon.docx
+ - smlouva20_map.json
+ - smlouva20_map.txt
+
+📊 Statistiky:
+ - Nalezeno osob: 57
+ - Celkem entit: 65
+
+================================================================================
+Regenerating smlouva21.docx...
+================================================================================
+✓ Načteno 7117 jmen z knihovny
+
+🔍 Zpracovávám: smlouva21.docx
+  [DEBUG] Document loaded in 0.0s
+  [DEBUG] Paragraphs processed in 16.6s
+  [DEBUG] Document saved in 0.0s
+  [DEBUG] Maps created in 0.0s
+✅ Hotovo! Nalezeno 77 osob
+
+✅ Výstupy:
+ - smlouva21_anon.docx
+ - smlouva21_map.json
+ - smlouva21_map.txt
+
+📊 Statistiky:
+ - Nalezeno osob: 77
+ - Celkem entit: 71
+
+================================================================================
+Regenerating smlouva22.docx...
+================================================================================
+✓ Načteno 7117 jmen z knihovny
+
+🔍 Zpracovávám: smlouva22.docx
+  [DEBUG] Document loaded in 0.0s
+  [DEBUG] Paragraphs processed in 65.2s
+  [DEBUG] Document saved in 0.0s
+  [DEBUG] Maps created in 0.0s
+✅ Hotovo! Nalezeno 160 osob
+
+✅ Výstupy:
+ - smlouva22_anon.docx
+ - smlouva22_map.json
+ - smlouva22_map.txt
+
+📊 Statistiky:
+ - Nalezeno osob: 160
+ - Celkem entit: 148
+
+================================================================================
+Regenerating smlouva23.docx...
+================================================================================
+✓ Načteno 7117 jmen z knihovny
+
+🔍 Zpracovávám: smlouva23.docx
+  [DEBUG] Document loaded in 0.0s
+  [DEBUG] Paragraphs processed in 59.7s
+  [DEBUG] Document saved in 0.0s
+  [DEBUG] Maps created in 0.0s
+✅ Hotovo! Nalezeno 144 osob
+
+✅ Výstupy:
+ - smlouva23_anon.docx
+ - smlouva23_map.json
+ - smlouva23_map.txt
+
+📊 Statistiky:
+ - Nalezeno osob: 144
+ - Celkem entit: 129
+
+================================================================================
+Regenerating smlouva24.docx...
+================================================================================
+✓ Načteno 7117 jmen z knihovny
+
+🔍 Zpracovávám: smlouva24.docx
+  [DEBUG] Document loaded in 0.0s
+  [DEBUG] Paragraphs processed in 60.2s
+  [DEBUG] Document saved in 0.0s
+  [DEBUG] Maps created in 0.0s
+✅ Hotovo! Nalezeno 136 osob
+
+✅ Výstupy:
+ - smlouva24_anon.docx
+ - smlouva24_map.json
+ - smlouva24_map.txt
+
+📊 Statistiky:
+ - Nalezeno osob: 136
+ - Celkem entit: 116
+
+================================================================================
+✅ All contracts regenerated successfully!
+================================================================================

@@ -1,0 +1,5 @@
+__pycache__/
+batch_output.log
+batch_regenerate.log
+*_regen.log
+batch_final.log
