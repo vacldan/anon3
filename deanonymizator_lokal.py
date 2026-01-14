@@ -12,14 +12,299 @@ import json
 import time
 import tempfile
 import shutil
+import unicodedata
 from pathlib import Path
 from datetime import datetime
+
+
+# -------------------- Normalizace jmen do nominativu --------------------
+# Globální proměnná pro knihovnu jmen
+CZECH_FIRST_NAMES = set()
+
+def load_names_library(json_path="cz_names.v1.json"):
+    """Načte českou knihovnu jmen z JSON"""
+    global CZECH_FIRST_NAMES
+    try:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        names = set()
+        for gender in ['M', 'F']:
+            for name in data.get('firstnames', {}).get(gender, []):
+                names.add(name.lower())
+        CZECH_FIRST_NAMES = names
+        return names
+    except:
+        # Pokud se nepodaří načíst, použij prázdnou množinu
+        CZECH_FIRST_NAMES = set()
+        return set()
+
+def remove_diacritics(text):
+    """Odstraní diakritiku z textu"""
+    return ''.join(
+        c for c in unicodedata.normalize('NFD', text)
+        if unicodedata.category(c) != 'Mn'
+    )
+
+def infer_first_name_nominative(name):
+    """Převede křestní jméno do nominativu (1. pádu)"""
+    if not name or len(name) < 2:
+        return name
+
+    obs = name.strip()
+    lo = obs.lower()
+
+    # SPECIÁLNÍ PŘÍPAD PRVNÍ: Roberta může být genitiv od Robert
+    if lo == 'roberta':
+        return 'Robert'
+
+    # Pokud je jméno přímo v knihovně, vrátíme ho
+    if lo in CZECH_FIRST_NAMES:
+        return obs.capitalize()
+
+    # Ochrana běžných jmen která končí na typické deklinační koncovky
+    protected_female_names = {
+        'martina', 'kristina', 'pavlína', 'karolína', 'jana', 'hana',
+        'eva', 'anna', 'petra', 'daniela', 'michaela', 'andrea',
+        'lenka', 'tereza', 'barbora', 'veronika', 'nikola', 'viktorie',
+        'irena', 'sylva', 'šárka', 'alžběta', 'adéla', 'sára', 'lucie',
+        'marie', 'kateřina', 'markéta', 'ivana', 'zuzana'
+    }
+    protected_male_names = {
+        'david', 'martin', 'jakub', 'tomáš', 'jan', 'petr', 'pavel',
+        'ivan', 'robert', 'ondřej', 'hynek', 'luděk', 'radovan', 'marek',
+        'tobiáš', 'mark', 'radek', 'miroslav', 'matěj', 'bohumil',
+        'milan', 'jiří', 'josef', 'václav', 'karel', 'lukáš', 'michal',
+        'filip', 'adam', 'daniel', 'vojtěch', 'stanislav'
+    }
+
+    if lo in protected_female_names:
+        return obs
+
+    # Genitiv/Akuzativ mužských jmen: -a → odstranit (Ivana → Ivan, Roberta → Robert, Matěje → Matěj)
+    if lo.endswith('a') and len(obs) > 3:
+        base = obs[:-1]
+        base_lo = base.lower()
+
+        # Zkontroluj, zda základ je mužské jméno
+        if base_lo in protected_male_names:
+            return base.capitalize()
+        if base_lo in CZECH_FIRST_NAMES:
+            return base.capitalize()
+        if CZECH_FIRST_NAMES and remove_diacritics(base_lo) in {remove_diacritics(n) for n in CZECH_FIRST_NAMES}:
+            return base.capitalize()
+
+    # Genitiv -e → odstranit (Matěje → Matěj, Martine → Martin)
+    if lo.endswith('e') and len(obs) > 3 and not lo.endswith(('ové', 'ice', 'ové')):
+        base = obs[:-1]
+        base_lo = base.lower()
+        # Kontrola: pokud je to známé mužské jméno
+        common_male_e = {'matěj', 'martin', 'bohumil', 'milan', 'dan', 'jan', 'stan'}
+        if base_lo in common_male_e or base_lo in protected_male_names:
+            return base.capitalize()
+        if CZECH_FIRST_NAMES and base_lo in CZECH_FIRST_NAMES:
+            return base.capitalize()
+
+    # Dativ -u → odstranit (Martinu → Martin, Pavlu → Pavel)
+    if lo.endswith('u') and len(obs) > 3:
+        base = obs[:-1]
+        base_lo = base.lower()
+        if base_lo in protected_male_names or (CZECH_FIRST_NAMES and base_lo in CZECH_FIRST_NAMES):
+            return base.capitalize()
+
+    # Genitiv ženských jmen: -y → -a (Pavlíny → Pavlína)
+    if lo.endswith('y') and len(obs) > 3:
+        base = obs[:-1] + 'a'
+        if base.lower() in CZECH_FIRST_NAMES or base.lower() in protected_female_names:
+            return base
+
+    # Instrumentál ženských jmen: -ou → -a (Pavlínou → Pavlína)
+    if lo.endswith('ou') and len(obs) > 4:
+        base = obs[:-2] + 'a'
+        if base.lower() in CZECH_FIRST_NAMES or base.lower() in protected_female_names:
+            return base
+
+    # Dativ/Lokál: -ovi, -emu → odstranit (Ivanovi → Ivan)
+    if lo.endswith('ovi') and len(obs) > 5:
+        base = obs[:-3]
+        if CZECH_FIRST_NAMES and (base.lower() in CZECH_FIRST_NAMES or remove_diacritics(base.lower()) in {remove_diacritics(n) for n in CZECH_FIRST_NAMES}):
+            return base.capitalize()
+
+    # Instrumentál mužských jmen: -em → odstranit (Ivanem → Ivan, Tomášem → Tomáš)
+    if lo.endswith('em') and len(obs) > 4:
+        base = obs[:-2]
+        base_lo = base.lower()
+
+        # Speciální: jména končící na souhlásku+v → pravděpodobně potřebují normalizaci
+        # Miroslavem → Miroslav (ne Miroslavem)
+        # Břetislavem → Břetislav
+        if base_lo.endswith(('slav', 'stav', 'měr')):
+            return base.capitalize()
+
+        # Běžná kontrola přes knihovnu jmen
+        if CZECH_FIRST_NAMES and (base_lo in CZECH_FIRST_NAMES or base_lo in protected_male_names or remove_diacritics(base_lo) in {remove_diacritics(n) for n in CZECH_FIRST_NAMES}):
+            return base.capitalize()
+
+    return obs
+
+def infer_surname_nominative(surname):
+    """Převede příjmení do nominativu (1. pádu)"""
+    if not surname or len(surname) < 3:
+        return surname
+
+    obs = surname.strip()
+    lo = obs.lower()
+
+    # Ochrana příjmení, která končí na deklinační vzory ale jsou už v nominativu
+    protected_surnames = {
+        'procházka', 'němec', 'sedláček', 'kučera', 'fiala', 'dušek',
+        'kozel', 'šembera', 'havel', 'pavel', 'klíma', 'svoboda',
+        'valach', 'štrunc', 'jůza'
+    }
+    if lo in protected_surnames:
+        return obs
+
+    # Genitiv/Dativ/Lokál žen: -é → -á (Pokorné → Pokorná, Houfové → Houfová)
+    if lo.endswith('é') and len(obs) > 3:
+        return obs[:-1] + 'á'
+
+    # Instrumentál: -ou → může být -á (žena) nebo -ý (muž)
+    if lo.endswith('ou') and len(obs) > 4:
+        base = obs[:-2]
+        # Pro příjmení jako "Vránou" → může být "Vráný" (muž) nebo "Vráná" (žena)
+        if base.lower().endswith(('vrán', 'novot', 'malý', 'černý')):
+            return base + 'ý'
+        # Jinak ženský tvar
+        return obs[:-2] + 'á'
+
+    # Genitiv mužů: -y → -a (Klímy → Klíma, ale ne Nováky → Novák)
+    if lo.endswith('y') and len(obs) > 3:
+        # Kontrola: příjmení na -a v nominativu (Klíma, Procházka)
+        base_a = obs[:-1] + 'a'
+        if base_a.lower() in protected_surnames:
+            return base_a
+        # Obecná heuristika: -y → -a pro příjmení jako Klíma
+        if obs[:-1].lower().endswith(('klím', 'dvořák', 'svobod')):
+            return base_a
+        # Jinak jen odstraň -y (Nováky → Novák)
+        return obs[:-1]
+
+    # Genitiv mužů: -a → odstranit (Nováka → Novák)
+    if lo.endswith('a') and len(obs) > 3 and lo not in protected_surnames:
+        base = obs[:-1]
+        return base
+
+    # Dativ/Lokál: -ovi → odstranit (Novákovi → Novák)
+    if lo.endswith('ovi') and len(obs) > 5:
+        base = obs[:-3]
+        base_lo = base.lower()
+
+        # Speciální: příjmení na -Xkovi → pravděpodobně -Xček nebo -Xšek v nominativu
+        # Havlíčkovi → Havlíček (ne Havlíčk!)
+        # Vašíčkovi → Vašíček
+        # Kubíkovi → Kubík (ale toto už je správně, končí na -bík)
+        if base_lo.endswith('k') and len(base) > 2:
+            # Pokud před 'k' je "č", "š", "ž" nebo samohláska s háčkem
+            # pravděpodobně potřebujeme přidat 'e' před 'k'
+            # Havlíčk → Havlíček (před k je č)
+            # Vašíčk → Vašíček
+            before_k = base_lo[-2] if len(base_lo) >= 2 else ''
+            if before_k in ('č', 'š', 'ž', 'ť', 'ď', 'ň', 'ř'):
+                # Přidej 'e' před 'k'
+                return base[:-1] + 'ek'
+
+        # Jinak jen odstraň -ovi
+        return base
+
+    # Instrumentál mužů: -em → odstranit
+    if lo.endswith('em') and len(obs) > 4:
+        # Speciální: -alem, -elem, -olem (Doležalem → Doležal)
+        if lo.endswith(('alem', 'elem', 'olem', 'ilem')):
+            return obs[:-2]
+        # Kontrola: -kem → -ek nebo -ík (Práškem → Prášek, Kubíkem → Kubík)
+        if lo.endswith('kem') and len(obs) > 5:
+            # Pokud před -kem je "í", pravděpodobně -ík (Kubíkem → Kubík)
+            if obs[-4] in ('í', 'ý'):
+                return obs[:-2]  # Kubíkem → Kubík (odstraň -em, nechej Kubík)
+            else:
+                return obs[:-3] + 'ek'  # Práškem → Prášek
+        # Běžný instrumentál (Novákem → Novák)
+        elif not lo.endswith(('lem', 'rem', 'sem', 'šem', 'cem', 'dem', 'nem', 'bem', 'gem', 'chem')):
+            return obs[:-2]
+
+    # Genitiv -ka → -ek (Hájka → Hájek, Štefánka → Štefánek)
+    if lo.endswith('ka') and len(obs) > 4:
+        # Kontrola: ne pro ženská příjmení jako "Procházková"
+        if not lo.endswith(('ková', 'ská', 'ná')):
+            return obs[:-2] + 'ek'
+
+    return obs
+
+def normalize_person_name(full_name):
+    """
+    Normalizuje celé jméno osoby do nominativu (1. pádu).
+    Pokud je jméno ve tvaru "Křestní Příjmení", normalizuje obě části.
+    """
+    if not full_name:
+        return full_name
+
+    full_name = full_name.strip()
+
+    # Detekuj, jestli je to tag (začíná [[) - ty neupravujeme
+    if full_name.startswith('[['):
+        return full_name
+
+    # Rozděl jméno na části
+    parts = full_name.split()
+
+    if len(parts) == 0:
+        return full_name
+    elif len(parts) == 1:
+        # Pouze jedno slovo - může to být křestní jméno nebo příjmení
+        # Zkusíme nejprve jako křestní jméno, pak jako příjmení
+        nom_first = infer_first_name_nominative(parts[0])
+        if nom_first != parts[0]:
+            return nom_first
+        return infer_surname_nominative(parts[0])
+    elif len(parts) == 2:
+        # Standardní formát: Křestní Příjmení
+        first_nom = infer_first_name_nominative(parts[0])
+        last_nom = infer_surname_nominative(parts[1])
+        return f"{first_nom} {last_nom}"
+    else:
+        # Více než 2 části (např. více křestních jmen)
+        # Normalizuj první část jako křestní jméno, poslední jako příjmení
+        normalized_parts = []
+        for i, part in enumerate(parts):
+            if i == len(parts) - 1:
+                # Poslední část = příjmení
+                normalized_parts.append(infer_surname_nominative(part))
+            else:
+                # Ostatní části = křestní jména
+                normalized_parts.append(infer_first_name_nominative(part))
+        return " ".join(normalized_parts)
 
 
 print("=" * 80)
 print("DEANONYMIZÁTOR - LOKÁLNÍ DEBUG VERZE")
 print("=" * 80)
 print(f"Start: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+print()
+
+# -------------------- Načtení knihovny jmen --------------------
+print(">>> Načítám knihovnu českých jmen...")
+try:
+    # Zkus načíst knihovnu jmen ze stejné složky jako script
+    script_dir = Path(__file__).parent
+    names_path = script_dir / "cz_names.v1.json"
+    if names_path.exists():
+        load_names_library(str(names_path))
+        print(f"✓ Knihovna jmen načtena: {len(CZECH_FIRST_NAMES)} jmen")
+    else:
+        print(f"⚠ Knihovna jmen nenalezena na: {names_path}")
+        print(f"  Normalizace bude fungovat s omezenými heuristikami")
+except Exception as e:
+    print(f"⚠ Chyba při načítání knihovny jmen: {e}")
+    print(f"  Normalizace bude fungovat s omezenými heuristikami")
 print()
 
 # -------------------- Info o prostředí --------------------
@@ -122,14 +407,26 @@ def _flatten_mapping(obj):
             # Pokud je to náš formát s entities
             if "entities" in x and isinstance(x["entities"], list):
                 print(f"    Nalezen formát 'entities' s {len(x['entities'])} záznamy")
+                person_count = 0
                 for entity in x["entities"]:
                     if isinstance(entity, dict) and "label" in entity and "original" in entity:
                         label = entity["label"]
                         original = entity["original"]
+                        entity_type = entity.get("type", "")
+
                         if isinstance(label, str) and label.startswith("[[") and label.endswith("]]"):
                             # Použij pouze první výskyt (základní tvar), ignoruj ostatní varianty
                             if label not in flat:
-                                flat[label] = str(original)
+                                # NORMALIZACE: Pro PERSON entity normalizuj jméno do nominativu
+                                if entity_type == "PERSON" and isinstance(original, str):
+                                    normalized = normalize_person_name(original)
+                                    if normalized != original:
+                                        person_count += 1
+                                    flat[label] = normalized
+                                else:
+                                    flat[label] = str(original)
+                if person_count > 0:
+                    print(f"    Normalizováno {person_count} jmen osob do nominativu")
                 return
 
             # Pokud je to "obal" s mapping klíčem
