@@ -441,6 +441,8 @@ ipcMain.handle("deanonymize-document", async (evt, anonFile, mapFile) => {
       "--output", requestedOut,
     ];
 
+    let stderrBuffer = "";
+
     spawnPython(
       args,
       { cwd: path.dirname(cli) },
@@ -454,9 +456,14 @@ ipcMain.handle("deanonymize-document", async (evt, anonFile, mapFile) => {
       },
       (e) => {
         const msg = Buffer.isBuffer(e) ? e.toString("utf8") : String(e || "");
-        if (DEBUG && msg.trim()) console.log("[PY STDERR]", msg.trim());
-        if (msg.toLowerCase().includes("error") || msg.toLowerCase().includes("chyba")) {
-          sendProgress(`ERROR: ${msg.trim()}`);
+        if (msg.trim()) {
+          stderrBuffer += msg;
+          if (DEBUG) console.log("[PY STDERR]", msg.trim());
+          // Zobraz všechny chybové zprávy
+          if (msg.toLowerCase().includes("error") || msg.toLowerCase().includes("chyba") ||
+              msg.includes("✗") || msg.includes("CRITICAL") || msg.includes("KRITICK")) {
+            sendProgress(msg.trim());
+          }
         }
       },
       (code, used, stdoutBuf) => {
@@ -466,6 +473,7 @@ ipcMain.handle("deanonymize-document", async (evt, anonFile, mapFile) => {
           console.log(`[DEANON] Exit code: ${code}`);
           console.log(`[DEANON] Output file exists: ${fs.existsSync(requestedOut)}`);
           console.log(`[DEANON] Output path: ${requestedOut}`);
+          console.log(`[DEANON] Stderr buffer length: ${stderrBuffer.length}`);
         }
 
         if (code === 0 && fs.existsSync(requestedOut)) {
@@ -479,12 +487,27 @@ ipcMain.handle("deanonymize-document", async (evt, anonFile, mapFile) => {
             outputFile: requestedOut,
           });
         } else {
-          const error = code === 0
+          let error = code === 0
             ? "Deanonymizace skončila bez výstupu."
             : `Deanonymizace selhala s kódem ${code}.`;
+
+          // Pokud máme stderr výstup, přidej ho do chybové zprávy
+          if (stderrBuffer.trim()) {
+            error += `\n\nChybový výstup:\n${stderrBuffer.trim()}`;
+          }
+
           // DŮLEŽITÉ: Použij win.webContents.send přímo pro chybovou zprávu
           if (win) {
-            win.webContents.send("progress-update", `ERROR: ${error} (${elapsed}s)`);
+            win.webContents.send("progress-update", `ERROR: ${error.split('\n')[0]} (${elapsed}s)`);
+            // Pokud je stderr, pošli ho jako další zprávu
+            if (stderrBuffer.trim()) {
+              const stderrLines = stderrBuffer.trim().split('\n').slice(0, 10); // max 10 řádků
+              stderrLines.forEach(line => {
+                if (line.trim()) {
+                  win.webContents.send("progress-update", line.trim());
+                }
+              });
+            }
           }
           resolve({ success: false, error });
         }

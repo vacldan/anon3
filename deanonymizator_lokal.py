@@ -27,14 +27,23 @@ print(f"Script cesta: {os.path.abspath(__file__)}")
 print()
 
 # -------------------- UTF-8 pro Windows konzoli --------------------
-print(">>> Nastavuji UTF-8 pro konzoli...")
+# DŮLEŽITÉ: Když jsme voláni z Electronu (přes spawn), stdout/stderr jsou už pipe objekty
+# a encoding je nastaven přes PYTHONIOENCODING. Detach() by způsobil chybu!
+# UTF-8 wrapping použijeme pouze v interaktivním TTY režimu.
+print(">>> Kontroluji encoding...")
 try:
     import io
-    sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding="utf-8")
-    sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding="utf-8")
-    print("✓ UTF-8 konzole nastavena")
+    # Pokud je stdout TTY (interaktivní konzole), nastavíme UTF-8 wrapping
+    if sys.stdout.isatty():
+        sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding="utf-8")
+        sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding="utf-8")
+        print("✓ UTF-8 wrapping nastaven (TTY režim)")
+    else:
+        # Pipe režim (Electron) - encoding je už nastaven přes PYTHONIOENCODING
+        print("✓ Pipe režim detekován, encoding nastaven přes prostředí")
 except Exception as e:
-    print(f"⚠ UTF-8 konzole se nepodařilo nastavit: {e}")
+    print(f"⚠ UTF-8 wrapping se nepodařilo nastavit: {e}")
+    print(f"  Používám výchozí encoding: {sys.stdout.encoding}")
 print()
 
 # -------------------- Kontrola knihoven --------------------
