@@ -372,3 +372,110 @@ ipcMain.handle("anonymize-document", async (evt, filePath) => {
 ipcMain.handle("show-folder", async (evt, filePath) => {
   if (filePath && fs.existsSync(filePath)) shell.showItemInFolder(filePath);
 });
+
+ipcMain.handle("select-anon-file", async () => {
+  if (dialogOpen) return null;
+  dialogOpen = true;
+
+  try {
+    const res = await dialog.showOpenDialog(win, {
+      title: "Vyber anonymizovaný DOCX k deanonymizaci",
+      properties: ["openFile"],
+      filters: [
+        { name: "Word dokumenty", extensions: ["docx"] },
+        { name: "Všechny soubory", extensions: ["*"] },
+      ],
+    });
+
+    if (res.canceled || !res.filePaths.length) return null;
+    return res.filePaths[0];
+  } finally {
+    dialogOpen = false;
+  }
+});
+
+ipcMain.handle("select-map-file", async () => {
+  if (dialogOpen) return null;
+  dialogOpen = true;
+
+  try {
+    const res = await dialog.showOpenDialog(win, {
+      title: "Vyber JSON mapu",
+      properties: ["openFile"],
+      filters: [
+        { name: "JSON soubory", extensions: ["json"] },
+        { name: "Všechny soubory", extensions: ["*"] },
+      ],
+    });
+
+    if (res.canceled || !res.filePaths.length) return null;
+    return res.filePaths[0];
+  } finally {
+    dialogOpen = false;
+  }
+});
+
+ipcMain.handle("deanonymize-document", async (evt, anonFile, mapFile) => {
+  if (!anonFile || !mapFile) return { success: false, error: "Chybí vstupní soubory" };
+
+  const dir = path.dirname(anonFile);
+  const base = path.basename(anonFile, path.extname(anonFile));
+
+  // Remove _anon suffix if present to get the original base name
+  const cleanBase = base.endsWith("_anon") ? base.slice(0, -5) : base;
+  const requestedOut = path.join(dir, `${cleanBase}_deanon.docx`);
+
+  const cli = resolvePy("deanonymizator_lokal.py");
+  if (!fs.existsSync(cli)) {
+    return { success: false, error: `Deanonymizátor nenalezen: ${cli}` };
+  }
+
+  const startedMs = Date.now();
+  sendProgress("Spouštím deanonymizaci...");
+
+  return new Promise((resolve) => {
+    const args = [
+      cli,
+      "--input", anonFile,
+      "--map", mapFile,
+      "--output", requestedOut,
+    ];
+
+    spawnPython(
+      args,
+      { cwd: path.dirname(cli) },
+      (d) => {
+        const msg = d.toString("utf8");
+        for (const line of msg.split("\n")) {
+          const clean = line.trim();
+          if (!clean) continue;
+          sendProgress(clean);
+        }
+      },
+      (e) => {
+        const msg = Buffer.isBuffer(e) ? e.toString("utf8") : String(e || "");
+        if (DEBUG && msg.trim()) console.log("[PY STDERR]", msg.trim());
+        if (msg.toLowerCase().includes("error") || msg.toLowerCase().includes("chyba")) {
+          sendProgress(`ERROR: ${msg.trim()}`);
+        }
+      },
+      (code, used, stdoutBuf) => {
+        const elapsed = Math.round((Date.now() - startedMs) / 1000);
+
+        if (code === 0 && fs.existsSync(requestedOut)) {
+          sendProgress(`Deanonymizace dokončena (${elapsed}s)`);
+          resolve({
+            success: true,
+            outputFile: requestedOut,
+          });
+        } else {
+          const error = code === 0
+            ? "Deanonymizace skončila bez výstupu."
+            : `Deanonymizace selhala s kódem ${code}.`;
+          sendProgress(`ERROR: ${error} (${elapsed}s)`);
+          resolve({ success: false, error });
+        }
+      }
+    );
+  });
+});

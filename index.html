@@ -261,9 +261,46 @@
 
         <!-- Deanonymization panel -->
         <div id="deanonymizationPanel" class="hidden">
-            <div class="section">
-                <h3>Deanonymizace</h3>
-                <p>Deanonymizace zatím není implementována.</p>
+            <div class="section" style="--delay: 0.1s">
+                <h3>1. Výběr anonymizovaného dokumentu</h3>
+                <button class="btn" id="selectAnonBtn">Procházet anonymizované DOCX</button>
+                <div id="anonFileInfo" class="file-info hidden">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span id="anonFileName"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" style="--delay: 0.2s">
+                <h3>2. Výběr JSON mapy</h3>
+                <button class="btn" id="selectMapBtn" disabled>Procházet JSON mapy</button>
+                <div id="mapFileInfo" class="file-info hidden">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span id="mapFileName"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" style="--delay: 0.3s">
+                <h3>3. Deanonymizace dokumentu</h3>
+                <button class="btn" id="deanonymizeBtn" disabled>Spustit deanonymizaci</button>
+                <div id="deanonStatus" class="status hidden"></div>
+
+                <div id="deanonProgressLog" class="progress-log hidden">
+                    <div style="margin-bottom: 10px; color: #e2e8f0; font-weight: 600;">Průběh zpracování:</div>
+                    <div id="deanonLogContent"></div>
+                </div>
+
+                <div id="deanonResultsPanel" class="results-panel hidden">
+                    <h4>Výsledky deanonymizace</h4>
+                    <div>
+                        <strong>Deanonymizovaný DOCX:</strong>
+                        <div class="file-path" id="deanonOutputPath"></div>
+                    </div>
+                    <div style="margin-top:16px;">
+                        <button class="btn secondary" id="openDeanonOutputBtn">Otevřít výsledek ve složce</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -305,6 +342,11 @@
         let lastOutputFile = null;
         let lastMapTxtFile = null;
 
+        // DEANONYMIZATION GLOBALS
+        let selectedAnonFile = null;
+        let selectedMapFile = null;
+        let lastDeanonOutputFile = null;
+
         // PROGRESS LOGGING
         function addProgressLog(message, type = 'info') {
             console.log(`[${type.toUpperCase()}] ${message}`);
@@ -325,6 +367,28 @@
         function clearProgressLog() {
             document.getElementById('logContent').innerHTML = '';
             document.getElementById('progressLog').classList.add('hidden');
+        }
+
+        // DEANONYMIZATION PROGRESS LOGGING
+        function addDeanonProgressLog(message, type = 'info') {
+            console.log(`[DEANON ${type.toUpperCase()}] ${message}`);
+
+            const logContent = document.getElementById('deanonLogContent');
+            const logLine = document.createElement('div');
+            logLine.className = `log-line ${type}`;
+
+            const timestamp = new Date().toLocaleTimeString();
+            logLine.textContent = `[${timestamp}] ${message}`;
+
+            logContent.appendChild(logLine);
+            logContent.scrollTop = logContent.scrollHeight;
+
+            document.getElementById('deanonProgressLog').classList.remove('hidden');
+        }
+
+        function clearDeanonProgressLog() {
+            document.getElementById('deanonLogContent').innerHTML = '';
+            document.getElementById('deanonProgressLog').classList.add('hidden');
         }
 
         // MODE SWITCHING
@@ -459,6 +523,153 @@
             }
         }
 
+        // DEANONYMIZATION FILE OPERATIONS
+        async function selectAnonFile() {
+            console.log('selectAnonFile() called');
+
+            if (!ipcRenderer) {
+                console.error('ipcRenderer not available');
+                addDeanonProgressLog('IPC není dostupný', 'error');
+                return;
+            }
+
+            try {
+                clearDeanonProgressLog();
+                addDeanonProgressLog('Otevírám dialog pro výběr anonymizovaného souboru...', 'info');
+
+                const filePath = await ipcRenderer.invoke('select-anon-file');
+                console.log('Anon file selection result:', filePath);
+
+                if (filePath) {
+                    selectedAnonFile = filePath;
+                    const fileName = filePath.split(/[\\\/]/).pop();
+                    document.getElementById('anonFileName').textContent = fileName;
+                    document.getElementById('anonFileInfo').classList.remove('hidden');
+                    document.getElementById('selectMapBtn').disabled = false;
+
+                    // Try to auto-detect map file
+                    const dir = filePath.substring(0, filePath.lastIndexOf(/[\\\/]/));
+                    const base = fileName.replace(/_anon\.docx$/i, '');
+                    const mapPath = `${dir}${filePath.includes('\\') ? '\\' : '/'}${base}_map.json`;
+
+                    console.log('Trying to auto-detect map:', mapPath);
+                    // We'll check if it exists when user clicks deanonymize
+
+                    document.getElementById('deanonResultsPanel').classList.add('hidden');
+                    lastDeanonOutputFile = null;
+
+                    addDeanonProgressLog(`Vybrán soubor: ${fileName}`, 'success');
+                } else {
+                    console.log('No file selected');
+                    addDeanonProgressLog('Výběr souboru zrušen', 'working');
+                }
+            } catch (error) {
+                console.error('selectAnonFile error:', error);
+                addDeanonProgressLog(`Chyba při výběru souboru: ${error.message}`, 'error');
+            }
+        }
+
+        async function selectMapFile() {
+            console.log('selectMapFile() called');
+
+            if (!ipcRenderer) {
+                console.error('ipcRenderer not available');
+                addDeanonProgressLog('IPC není dostupný', 'error');
+                return;
+            }
+
+            try {
+                addDeanonProgressLog('Otevírám dialog pro výběr JSON mapy...', 'info');
+
+                const filePath = await ipcRenderer.invoke('select-map-file');
+                console.log('Map file selection result:', filePath);
+
+                if (filePath) {
+                    selectedMapFile = filePath;
+                    const fileName = filePath.split(/[\\\/]/).pop();
+                    document.getElementById('mapFileName').textContent = fileName;
+                    document.getElementById('mapFileInfo').classList.remove('hidden');
+                    document.getElementById('deanonymizeBtn').disabled = false;
+
+                    document.getElementById('deanonResultsPanel').classList.add('hidden');
+                    lastDeanonOutputFile = null;
+
+                    addDeanonProgressLog(`Vybrána mapa: ${fileName}`, 'success');
+                } else {
+                    console.log('No map file selected');
+                    addDeanonProgressLog('Výběr mapy zrušen', 'working');
+                }
+            } catch (error) {
+                console.error('selectMapFile error:', error);
+                addDeanonProgressLog(`Chyba při výběru mapy: ${error.message}`, 'error');
+            }
+        }
+
+        async function deanonymizeDocument() {
+            console.log('deanonymizeDocument() called');
+
+            if (!selectedAnonFile || !selectedMapFile) {
+                addDeanonProgressLog('Nejsou vybrány všechny potřebné soubory', 'error');
+                return;
+            }
+
+            if (!ipcRenderer) {
+                addDeanonProgressLog('IPC není dostupný', 'error');
+                return;
+            }
+
+            try {
+                const statusEl = document.getElementById('deanonStatus');
+                statusEl.textContent = 'Deanonymizace probíhá...';
+                statusEl.className = 'status working';
+                statusEl.classList.remove('hidden');
+
+                document.getElementById('deanonResultsPanel').classList.add('hidden');
+                clearDeanonProgressLog();
+                lastDeanonOutputFile = null;
+
+                addDeanonProgressLog('Spouštím deanonymizaci...', 'working');
+                addDeanonProgressLog(`Anonymizovaný dokument: ${selectedAnonFile.split(/[\\\/]/).pop()}`, 'info');
+                addDeanonProgressLog(`JSON mapa: ${selectedMapFile.split(/[\\\/]/).pop()}`, 'info');
+
+                const result = await ipcRenderer.invoke('deanonymize-document', selectedAnonFile, selectedMapFile);
+                console.log('Deanonymization result:', result);
+
+                if (result && result.success) {
+                    lastDeanonOutputFile = result.outputFile;
+
+                    statusEl.textContent = 'Deanonymizace úspěšně dokončena!';
+                    statusEl.className = 'status success';
+
+                    addDeanonProgressLog('Deanonymizace úspěšně dokončena!', 'success');
+                    addDeanonProgressLog(`Výstup: ${lastDeanonOutputFile}`, 'success');
+
+                    document.getElementById('deanonOutputPath').textContent = lastDeanonOutputFile || '';
+                    document.getElementById('deanonResultsPanel').classList.remove('hidden');
+
+                    document.getElementById('openDeanonOutputBtn').onclick = async () => {
+                        if (lastDeanonOutputFile) {
+                            await ipcRenderer.invoke('show-folder', lastDeanonOutputFile);
+                        }
+                    };
+                } else {
+                    const errorMsg = (result && result.error) ? result.error : 'Deanonymizace selhala';
+                    statusEl.textContent = `Chyba: ${errorMsg}`;
+                    statusEl.className = 'status error';
+                    addDeanonProgressLog(`Chyba: ${errorMsg}`, 'error');
+
+                    console.error('Deanonymization failed:', errorMsg);
+                }
+            } catch (error) {
+                console.error('Critical deanonymization error:', error);
+                addDeanonProgressLog(`Kritická chyba: ${error.message}`, 'error');
+
+                const statusEl = document.getElementById('deanonStatus');
+                statusEl.textContent = `Chyba: ${error.message}`;
+                statusEl.className = 'status error';
+            }
+        }
+
         // INITIALIZATION
         document.addEventListener('DOMContentLoaded', () => {
             console.log('DOM loaded, initializing application...');
@@ -511,6 +722,22 @@
                 anonymizeBtn.addEventListener('click', anonymizeDocument);
             }
 
+            // Deanonymize buttons
+            const selectAnonBtn = document.getElementById('selectAnonBtn');
+            if (selectAnonBtn) {
+                selectAnonBtn.addEventListener('click', selectAnonFile);
+            }
+
+            const selectMapBtn = document.getElementById('selectMapBtn');
+            if (selectMapBtn) {
+                selectMapBtn.addEventListener('click', selectMapFile);
+            }
+
+            const deanonymizeBtn = document.getElementById('deanonymizeBtn');
+            if (deanonymizeBtn) {
+                deanonymizeBtn.addEventListener('click', deanonymizeDocument);
+            }
+
             // IPC Progress listener
             if (ipcRenderer) {
                 ipcRenderer.on('progress-update', (event, message) => {
@@ -520,15 +747,20 @@
                     if (!msg) return;
 
                     let type = 'info';
-                    if (msg.includes('úspěšně') || msg.includes('dokončena') || msg.includes('SUCCESS')) {
+                    if (msg.includes('úspěšně') || msg.includes('dokončena') || msg.includes('dokončen') || msg.includes('SUCCESS') || msg.includes('✓')) {
                         type = 'success';
-                    } else if (msg.includes('ERROR') || msg.includes('Chyba') || msg.includes('chyba')) {
+                    } else if (msg.includes('ERROR') || msg.includes('Chyba') || msg.includes('chyba') || msg.includes('✗')) {
                         type = 'error';
-                    } else if (msg.includes('Zpracovávám') || msg.includes('probíhá')) {
+                    } else if (msg.includes('Zpracovávám') || msg.includes('probíhá') || msg.includes('Spouštím')) {
                         type = 'working';
                     }
 
-                    addProgressLog(msg, type);
+                    // Route to appropriate log based on current mode
+                    if (currentMode === 'deanonymize') {
+                        addDeanonProgressLog(msg, type);
+                    } else {
+                        addProgressLog(msg, type);
+                    }
                 });
             }
 
