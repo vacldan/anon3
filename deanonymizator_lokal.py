@@ -366,6 +366,54 @@ if not libraries_ok:
 
 
 # -------------------- Helpers --------------------
+def _load_txt_map_base_values(txt_path: Path):
+    """
+    Načte základní hodnoty PERSON entit z TXT mapy.
+    Vrací dictionary: "PERSON_2" -> "Martin Havlíček"
+
+    Formát TXT mapy:
+    [[PERSON_2]]: Martin Havlíček
+      - Havlíčkovi
+    """
+    base_values = {}
+
+    if not txt_path.exists():
+        return base_values
+
+    print(f"  → Načítám TXT mapu: {txt_path}")
+
+    try:
+        with open(txt_path, 'r', encoding='utf-8') as f:
+            current_tag = None
+            for line in f:
+                line = line.rstrip('\n\r')
+
+                # Řádek s hlavním tagem: [[PERSON_2]]: Martin Havlíček
+                if line.startswith('[[PERSON_') and ']]:' in line:
+                    match = re.match(r'\[\[(PERSON_\d+)\]\]:\s*(.+)', line)
+                    if match:
+                        tag = match.group(1)  # "PERSON_2"
+                        value = match.group(2).strip()  # "Martin Havlíček"
+                        base_values[tag] = value
+                        current_tag = tag
+
+                # Řádek s variantou (začíná "  - ")
+                elif line.startswith('  - ') and current_tag:
+                    # Ignorujeme varianty, máme už základní hodnotu
+                    pass
+
+                # Prázdný řádek nebo sekce
+                elif not line.strip() or not line.startswith(' '):
+                    current_tag = None
+
+        print(f"  ✓ TXT mapa načtena: {len(base_values)} základních PERSON hodnot")
+        return base_values
+
+    except Exception as e:
+        print(f"  ⚠ Chyba při načítání TXT mapy: {e}")
+        return base_values
+
+
 def _load_json(path: Path):
     """Načte JSON soubor s error handlingem"""
     print(f"  → Načítám JSON: {path}")
@@ -386,7 +434,7 @@ def _load_json(path: Path):
         raise
 
 
-def _flatten_mapping(obj):
+def _flatten_mapping(obj, txt_base_values=None):
     """
     Vytáhne mapping tag->original i z nestandardních JSON struktur.
     Podporuje:
@@ -399,12 +447,17 @@ def _flatten_mapping(obj):
     DŮLEŽITÉ: Pro PERSON entity používá základní hodnotu pro všechny tagy.
     Např. pokud [[PERSON_2]]: "Martin Havlíček", všechny tagy PERSON_2*
     (včetně variant) budou mít hodnotu "Martin Havlíček".
+
+    Args:
+        obj: JSON objekt s entitami
+        txt_base_values: dict s hodnotami z TXT mapy ("PERSON_2" -> "Martin Havlíček")
     """
     print("  → Parsuju strukturu mappingu...")
     flat = {}
 
     # Slovník pro základní hodnoty PERSON entit: "PERSON_2" -> "Martin Havlíček"
-    person_base_values = {}
+    # PREFERUJ hodnoty z TXT mapy, pokud jsou dostupné!
+    person_base_values = txt_base_values.copy() if txt_base_values else {}
 
     def walk(x):
         if x is None:
@@ -588,6 +641,24 @@ def deanonymize_document(anon_doc_path: Path, map_path: Path, output_path: Path)
     print(f"Výstupní dokument: {output_path}")
     print()
 
+    # Krok 0.5: Načtení TXT mapy (pokud existuje) pro správné základní hodnoty
+    print(">>> KROK 0.5: Hledám TXT mapu pro správné základní hodnoty")
+    txt_base_values = {}
+    try:
+        # Vytvoř cestu k TXT mapě (změní .json na .txt)
+        txt_map_path = map_path.with_suffix('.txt')
+        if txt_map_path.exists():
+            txt_base_values = _load_txt_map_base_values(txt_map_path)
+            if txt_base_values:
+                print(f"  ✓ Použiji základní hodnoty z TXT mapy: {len(txt_base_values)} osob")
+        else:
+            print(f"  ⚠ TXT mapa nenalezena: {txt_map_path}")
+            print(f"    Použiji hodnoty z JSON (mohou být ve skloněném tvaru)")
+    except Exception as e:
+        print(f"  ⚠ Chyba při načítání TXT mapy: {e}")
+        print(f"    Použiji hodnoty z JSON")
+    print()
+
     # Krok 1: Načtení mapy
     print(">>> KROK 1: Načítání JSON mapy")
     try:
@@ -602,7 +673,7 @@ def deanonymize_document(anon_doc_path: Path, map_path: Path, output_path: Path)
     # Krok 2: Parsování mapy
     print("\n>>> KROK 2: Parsování struktury mapy")
     try:
-        mapping = _flatten_mapping(raw)
+        mapping = _flatten_mapping(raw, txt_base_values)
         if not mapping:
             print("✗ CHYBA: Mapa je prázdná nebo nemá tagy ve formátu [[...]]")
             print("  Zkontroluj, jestli JSON obsahuje správnou strukturu")
