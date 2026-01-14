@@ -5089,9 +5089,24 @@ class Anonymizer:
             # Získej všechny původní formy z entity_map
             original_forms = self.entity_map['PERSON'].get(canonical_full, {canonical_full})
 
-            # Pro každou původní formu vytvoř samostatný záznam
-            # ALE POUZE pokud existuje ve zdrojovém dokumentu!
+            # DŮLEŽITÉ: Kanonický tvar (základní nominativ) MUSÍ být první!
+            # Deanonymizátor používá první výskyt jako základní tvar.
+
+            # Nejdřív přidej kanonický tvar (pokud existuje v dokumentu)
+            if canonical_full in source_text:
+                json_data["entities"].append({
+                    "type": "PERSON",
+                    "label": p['tag'],
+                    "original": canonical_full,
+                    "occurrences": 1
+                })
+
+            # Pak teprve přidej ostatní varianty (skloněné tvary)
             for original_form in original_forms:
+                # Skip kanonický tvar - už jsme ho přidali
+                if original_form == canonical_full:
+                    continue
+
                 if original_form in source_text:
                     json_data["entities"].append({
                         "type": "PERSON",
