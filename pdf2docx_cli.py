@@ -62,7 +62,8 @@ def main():
     if len(sys.argv) < 2:
         print("ERROR: Nebyl zadán PDF soubor")
         print("Použití: python pdf2docx_cli.py <cesta_k_pdf>")
-        sys.exit(1)
+        input("Stiskněte Enter pro ukončení...")
+        return
     
     success_count = 0
     total_count = 0
