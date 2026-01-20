@@ -515,3 +515,79 @@ ipcMain.handle("deanonymize-document", async (evt, anonFile, mapFile) => {
     );
   });
 });
+
+// PDF to DOCX conversion handler
+ipcMain.handle("convert-pdf-to-docx", async (evt, pdfPath) => {
+  if (!pdfPath) return { success: false, error: "No PDF file provided" };
+
+  const dir = path.dirname(pdfPath);
+  const base = path.basename(pdfPath, path.extname(pdfPath));
+  const expectedDocx = path.join(dir, `${base}.docx`);
+
+  const cli = resolvePy("pdf2docx_cli.py");
+  if (!fs.existsSync(cli)) {
+    return { success: false, error: `PDF converter script not found: ${cli}` };
+  }
+
+  const startedMs = Date.now();
+  sendProgress("Spouštím PDF → DOCX konverzi...");
+
+  return new Promise((resolve) => {
+    const args = [cli, pdfPath];
+
+    spawnPython(
+      args,
+      {
+        cwd: path.dirname(cli),
+        env: {
+          ...process.env,
+          PYTHONIOENCODING: "utf-8",
+          PYTHONUTF8: "1",
+          NO_PAUSE: "1",
+        }
+      },
+      (d) => {
+        const msg = d.toString("utf8");
+        for (const line of msg.split("\n")) {
+          const clean = line.trim();
+          if (!clean) continue;
+          if (clean.includes("[INFO]") || clean.includes("====")) continue;
+          sendProgress(clean);
+        }
+      },
+      (e) => {
+        const msg = Buffer.isBuffer(e) ? e.toString("utf8") : String(e || "");
+        if (DEBUG && msg.trim()) console.log("[PDF2DOCX STDERR]", msg.trim());
+        if (msg.toLowerCase().includes("error")) sendProgress(`ERROR: ${msg.trim()}`);
+      },
+      (code) => {
+        const elapsed = Math.round((Date.now() - startedMs) / 1000);
+
+        if (code === 0 && fs.existsSync(expectedDocx)) {
+          sendProgress(`✅ PDF převedeno úspěšně (${elapsed}s)`);
+          resolve({
+            success: true,
+            outputFile: expectedDocx,
+          });
+        } else {
+          const error = code === 0
+            ? "Výstupní DOCX soubor nebyl vytvořen"
+            : `Python skript skončil s chybou (exit code ${code})`;
+          sendProgress(`ERROR: ${error}`);
+          resolve({ success: false, error });
+        }
+      }
+    );
+  });
+});
+
+// Handler for selecting PDF file
+ipcMain.handle("select-pdf-file", async () => {
+  const result = await dialog.showOpenDialog(win, {
+    title: "Vyberte PDF soubor",
+    filters: [{ name: "PDF soubory", extensions: ["pdf"] }],
+    properties: ["openFile"],
+  });
+  if (result.canceled || !result.filePaths.length) return null;
+  return result.filePaths[0];
+});

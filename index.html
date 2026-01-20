@@ -253,9 +253,27 @@
 
         <!-- PDF panel -->
         <div id="pdfPanel" class="hidden">
-            <div class="section">
-                <h3>PDF konverze</h3>
-                <p>PDF konverze zatím není implementována.</p>
+            <div class="section" style="--delay: 0.1s">
+                <h3>1. Výběr PDF souboru</h3>
+                <button class="btn" id="selectPdfBtn">Procházet PDF soubory</button>
+                <div id="pdfFileDisplay" class="file-display"></div>
+            </div>
+
+            <div class="section" style="--delay: 0.2s">
+                <h3>2. Konverze</h3>
+                <button class="btn btn-primary" id="convertPdfBtn" disabled>Převést PDF → DOCX</button>
+            </div>
+
+            <div class="section" style="--delay: 0.3s">
+                <h3>3. Výsledky konverze</h3>
+                <div id="pdfProgress" class="progress-log"></div>
+                <div id="pdfResults" class="results hidden">
+                    <div class="result-item">
+                        <span class="label">Převedený dokument:</span>
+                        <span class="value" id="pdfOutputPath"></span>
+                        <button class="btn-small" id="pdfShowFolder">Zobrazit ve složce</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -347,6 +365,10 @@
         let selectedMapFile = null;
         let lastDeanonOutputFile = null;
 
+        // PDF CONVERSION GLOBALS
+        let selectedPdfFile = null;
+        let lastPdfOutput = null;
+
         // PROGRESS LOGGING
         function addProgressLog(message, type = 'info') {
             console.log(`[${type.toUpperCase()}] ${message}`);
@@ -389,6 +411,24 @@
         function clearDeanonProgressLog() {
             document.getElementById('deanonLogContent').innerHTML = '';
             document.getElementById('deanonProgressLog').classList.add('hidden');
+        }
+
+        function addPdfProgressLog(message, type = 'info') {
+            console.log(`[PDF ${type.toUpperCase()}] ${message}`);
+
+            const logContent = document.getElementById('pdfProgress');
+            const logLine = document.createElement('div');
+            logLine.className = `log-line ${type}`;
+
+            const timestamp = new Date().toLocaleTimeString();
+            logLine.textContent = `[${timestamp}] ${message}`;
+
+            logContent.appendChild(logLine);
+            logContent.scrollTop = logContent.scrollHeight;
+        }
+
+        function clearPdfProgressLog() {
+            document.getElementById('pdfProgress').innerHTML = '';
         }
 
         // MODE SWITCHING
@@ -670,6 +710,86 @@
             }
         }
 
+        // PDF CONVERSION FUNCTIONS
+        async function selectPdfFile() {
+            console.log('selectPdfFile() called');
+
+            if (!ipcRenderer) {
+                addPdfProgressLog('IPC není dostupný', 'error');
+                return;
+            }
+
+            try {
+                const filePath = await ipcRenderer.invoke('select-pdf-file');
+                console.log('Selected PDF file:', filePath);
+
+                if (filePath) {
+                    selectedPdfFile = filePath;
+                    const fileName = filePath.split(/[\\\/]/).pop();
+
+                    document.getElementById('pdfFileDisplay').innerHTML = `
+                        <div class="file-info">
+                            <span class="file-icon">📄</span>
+                            <span class="file-name">${fileName}</span>
+                            <span class="file-path">${filePath}</span>
+                        </div>
+                    `;
+
+                    document.getElementById('convertPdfBtn').disabled = false;
+                    addPdfProgressLog(`Vybrán soubor: ${fileName}`, 'success');
+                }
+            } catch (error) {
+                console.error('Error selecting PDF file:', error);
+                addPdfProgressLog(`Chyba při výběru souboru: ${error.message}`, 'error');
+            }
+        }
+
+        async function convertPdfToDocx() {
+            console.log('convertPdfToDocx() called');
+
+            if (!selectedPdfFile) {
+                addPdfProgressLog('Není vybrán PDF soubor', 'error');
+                return;
+            }
+
+            if (!ipcRenderer) {
+                addPdfProgressLog('IPC není dostupný', 'error');
+                return;
+            }
+
+            try {
+                document.getElementById('convertPdfBtn').disabled = true;
+                document.getElementById('pdfResults').classList.add('hidden');
+                clearPdfProgressLog();
+                lastPdfOutput = null;
+
+                addPdfProgressLog('Spouštím konverzi PDF → DOCX...', 'working');
+                addPdfProgressLog(`PDF soubor: ${selectedPdfFile.split(/[\\\/]/).pop()}`, 'info');
+
+                const result = await ipcRenderer.invoke('convert-pdf-to-docx', selectedPdfFile);
+                console.log('PDF conversion result:', result);
+
+                if (result && result.success) {
+                    lastPdfOutput = result.outputFile;
+
+                    addPdfProgressLog('Konverze úspěšně dokončena!', 'success');
+                    addPdfProgressLog(`Výstupní soubor: ${lastPdfOutput}`, 'success');
+
+                    document.getElementById('pdfOutputPath').textContent = lastPdfOutput || '';
+                    document.getElementById('pdfResults').classList.remove('hidden');
+                } else {
+                    const errorMsg = (result && result.error) ? result.error : 'Konverze selhala';
+                    addPdfProgressLog(`Chyba: ${errorMsg}`, 'error');
+                    console.error('PDF conversion failed:', errorMsg);
+                }
+            } catch (error) {
+                console.error('Critical PDF conversion error:', error);
+                addPdfProgressLog(`Kritická chyba: ${error.message}`, 'error');
+            } finally {
+                document.getElementById('convertPdfBtn').disabled = false;
+            }
+        }
+
         // INITIALIZATION
         document.addEventListener('DOMContentLoaded', () => {
             console.log('DOM loaded, initializing application...');
@@ -738,6 +858,26 @@
                 deanonymizeBtn.addEventListener('click', deanonymizeDocument);
             }
 
+            // PDF conversion buttons
+            const selectPdfBtn = document.getElementById('selectPdfBtn');
+            if (selectPdfBtn) {
+                selectPdfBtn.addEventListener('click', selectPdfFile);
+            }
+
+            const convertPdfBtn = document.getElementById('convertPdfBtn');
+            if (convertPdfBtn) {
+                convertPdfBtn.addEventListener('click', convertPdfToDocx);
+            }
+
+            const pdfShowFolder = document.getElementById('pdfShowFolder');
+            if (pdfShowFolder) {
+                pdfShowFolder.addEventListener('click', () => {
+                    if (lastPdfOutput) {
+                        ipcRenderer.invoke('show-folder', lastPdfOutput);
+                    }
+                });
+            }
+
             // IPC Progress listener
             if (ipcRenderer) {
                 ipcRenderer.on('progress-update', (event, message) => {
@@ -758,6 +898,8 @@
                     // Route to appropriate log based on current mode
                     if (currentMode === 'deanonymize') {
                         addDeanonProgressLog(msg, type);
+                    } else if (currentMode === 'pdf') {
+                        addPdfProgressLog(msg, type);
                     } else {
                         addProgressLog(msg, type);
                     }
