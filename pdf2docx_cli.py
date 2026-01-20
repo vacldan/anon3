@@ -103,9 +103,9 @@ def main():
         print("⚠️  Některé soubory nebyly převedeny")
         exit_code = 1
 
-    # Pokud je skript spuštěn interaktivně (drag & drop), počkej na Enter
-    # Při volání z Electronu nebo v pipe režimu se toto přeskočí
-    if sys.stdin.isatty():
+    # Počkej na Enter před ukončením (pro drag & drop režim)
+    # Pokud je nastavena proměnná NO_PAUSE (z Electronu), přeskoč čekání
+    if not os.environ.get('NO_PAUSE'):
         try:
             input("\nStiskni Enter pro ukončení...")
         except (EOFError, KeyboardInterrupt):
