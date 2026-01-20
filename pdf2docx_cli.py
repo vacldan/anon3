@@ -94,13 +94,24 @@ def main():
     
     print("\n" + "=" * 50)
     print(f"VÝSLEDEK: {success_count}/{total_count} souborů úspěšně převedeno")
-    
+
+    exit_code = 0
     if success_count == total_count and total_count > 0:
         print("✅ Všechny soubory byly úspěšně převedeny!")
-        sys.exit(0)
+        exit_code = 0
     else:
         print("⚠️  Některé soubory nebyly převedeny")
-        sys.exit(1)
+        exit_code = 1
+
+    # Pokud je skript spuštěn interaktivně (drag & drop), počkej na Enter
+    # Při volání z Electronu nebo v pipe režimu se toto přeskočí
+    if sys.stdin.isatty():
+        try:
+            input("\nStiskni Enter pro ukončení...")
+        except (EOFError, KeyboardInterrupt):
+            pass
+
+    sys.exit(exit_code)
 
 if __name__ == "__main__":
     main()
