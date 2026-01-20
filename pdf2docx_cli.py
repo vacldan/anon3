@@ -3,10 +3,16 @@ import sys
 import os
 from pathlib import Path
 
-# Set UTF-8 encoding for Windows
-import io
-sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8')
-sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding='utf-8')
+# Set UTF-8 encoding - safe cross-platform approach
+if sys.platform == 'win32':
+    # Only reconfigure on Windows if needed
+    import io
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+        sys.stderr.reconfigure(encoding='utf-8')
+else:
+    # On Unix/Linux, ensure PYTHONIOENCODING is set via environment
+    pass
 
 try:
     from pdf2docx import Converter
@@ -62,8 +68,7 @@ def main():
     if len(sys.argv) < 2:
         print("ERROR: Nebyl zadán PDF soubor")
         print("Použití: python pdf2docx_cli.py <cesta_k_pdf>")
-        input("Stiskněte Enter pro ukončení...")
-        return
+        sys.exit(1)
     
     success_count = 0
     total_count = 0
