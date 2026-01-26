@@ -28,20 +28,20 @@ os.chdir(SCRIPT_DIR)
 print(f"[DEBUG] sys.path: {sys.path[:3]}", file=sys.stderr)
 
 try:
-    print(f"[DEBUG] Trying to import from Licencing...", file=sys.stderr)
-    from Licencing.license_validator import validate_license, get_license_info
-    from Licencing.hw_fingerprint import get_hardware_id, format_hw_id
-    print(f"[DEBUG] Import from Licencing successful!", file=sys.stderr)
+    print(f"[DEBUG] Trying to import from licensing (lowercase)...", file=sys.stderr)
+    from licensing.license_validator import validate_license, get_license_info
+    from licensing.hw_fingerprint import get_hardware_id, format_hw_id
+    print(f"[DEBUG] Import from licensing successful!", file=sys.stderr)
 except ImportError as e:
-    print(f"[DEBUG] Import from Licencing failed: {e}", file=sys.stderr)
-    # Fallback pokud jsou moduly ve složce licensing (lowercase)
+    print(f"[DEBUG] Import from licensing failed: {e}", file=sys.stderr)
+    # Fallback pokud jsou moduly ve složce Licencing (capital L)
     try:
-        print(f"[DEBUG] Trying to import from licensing...", file=sys.stderr)
-        from licensing.license_validator import validate_license, get_license_info
-        from licensing.hw_fingerprint import get_hardware_id, format_hw_id
-        print(f"[DEBUG] Import from licensing successful!", file=sys.stderr)
+        print(f"[DEBUG] Trying to import from Licencing...", file=sys.stderr)
+        from Licencing.license_validator import validate_license, get_license_info
+        from Licencing.hw_fingerprint import get_hardware_id, format_hw_id
+        print(f"[DEBUG] Import from Licencing successful!", file=sys.stderr)
     except ImportError as e2:
-        print(f"[DEBUG] Import from licensing also failed: {e2}", file=sys.stderr)
+        print(f"[DEBUG] Import from Licencing also failed: {e2}", file=sys.stderr)
         print(json.dumps({
             "valid": False,
             "message": f"Licensing moduly nenalezeny: {e}",
