@@ -1,7 +1,7 @@
 {
   "name": "nixminds-document-suite",
-  "version": "2.1.0",
-  "description": "Nixminds Document Anonymization Suite - Production Ready",
+  "version": "3.0.0",
+  "description": "Nixminds Document Anonymization Suite - Production Ready with Offline Licensing",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -30,13 +30,34 @@
       "**/*",
       "!test/**/*",
       "!.git/**/*",
-      "!README.md"
+      "!README.md",
+      "!dist_obfuscated/**/*",
+      "!backup_original/**/*",
+      "!build_obfuscated.py",
+      "!deploy_obfuscated.py",
+      "!build_js_obfuscated.py",
+      "!PYARMOR_README.md",
+      "!RELEASE_NOTES.md",
+      "licensing/**/*",
+      "pyarmor_runtime_000000/**/*",
+      "*.py",
+      "*.lic"
     ],
     "extraResources": [
       {
         "from": "python/",
         "to": "python/",
         "filter": ["**/*.py"]
+      },
+      {
+        "from": "licensing/",
+        "to": "licensing/",
+        "filter": ["**/*"]
+      },
+      {
+        "from": "pyarmor_runtime_000000/",
+        "to": "pyarmor_runtime_000000/",
+        "filter": ["**/*"]
       }
     ],
     "win": {
