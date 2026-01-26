@@ -772,8 +772,10 @@
                 if (result && result.success) {
                     lastPdfOutput = result.outputFile;
 
-                    addPdfProgressLog('Konverze úspěšně dokončena!', 'success');
-                    addPdfProgressLog(`Výstupní soubor: ${lastPdfOutput}`, 'success');
+                    addPdfProgressLog('', 'info');
+                    addPdfProgressLog('✅ KONVERZE DOKONČENA ÚSPĚŠNĚ!', 'success');
+                    addPdfProgressLog(`📄 Výstupní DOCX: ${lastPdfOutput}`, 'success');
+                    addPdfProgressLog('', 'info');
 
                     document.getElementById('pdfOutputPath').textContent = lastPdfOutput || '';
                     document.getElementById('pdfResults').classList.remove('hidden');
@@ -887,7 +889,7 @@
                     if (!msg) return;
 
                     let type = 'info';
-                    if (msg.includes('úspěšně') || msg.includes('dokončena') || msg.includes('dokončen') || msg.includes('SUCCESS') || msg.includes('✓')) {
+                    if (msg.includes('úspěšně') || msg.includes('dokončena') || msg.includes('dokončen') || msg.includes('SUCCESS') || msg.includes('✓') || msg.includes('✅') || msg.includes('převedeno') || msg.includes('převedeny')) {
                         type = 'success';
                     } else if (msg.includes('ERROR') || msg.includes('Chyba') || msg.includes('chyba') || msg.includes('✗')) {
                         type = 'error';
