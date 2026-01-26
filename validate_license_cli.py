@@ -11,21 +11,37 @@ import os
 # Získej absolutní cestu k root složce projektu (tam kde je tento skript)
 SCRIPT_DIR = Path(__file__).parent.absolute()
 
+# DEBUG: Vypiš info o prostředí PŘED importem
+print(f"[DEBUG] Python executable: {sys.executable}", file=sys.stderr)
+print(f"[DEBUG] __file__: {__file__}", file=sys.stderr)
+print(f"[DEBUG] SCRIPT_DIR: {SCRIPT_DIR}", file=sys.stderr)
+print(f"[DEBUG] Current working dir: {os.getcwd()}", file=sys.stderr)
+print(f"[DEBUG] Licencing folder exists: {(SCRIPT_DIR / 'Licencing').exists()}", file=sys.stderr)
+print(f"[DEBUG] licensing folder exists: {(SCRIPT_DIR / 'licensing').exists()}", file=sys.stderr)
+
 # Přidej root složku do path pro import modulů
 sys.path.insert(0, str(SCRIPT_DIR))
 
 # Změň working directory na root projektu
 os.chdir(SCRIPT_DIR)
 
+print(f"[DEBUG] sys.path: {sys.path[:3]}", file=sys.stderr)
+
 try:
+    print(f"[DEBUG] Trying to import from Licencing...", file=sys.stderr)
     from Licencing.license_validator import validate_license, get_license_info
     from Licencing.hw_fingerprint import get_hardware_id, format_hw_id
+    print(f"[DEBUG] Import from Licencing successful!", file=sys.stderr)
 except ImportError as e:
+    print(f"[DEBUG] Import from Licencing failed: {e}", file=sys.stderr)
     # Fallback pokud jsou moduly ve složce licensing (lowercase)
     try:
+        print(f"[DEBUG] Trying to import from licensing...", file=sys.stderr)
         from licensing.license_validator import validate_license, get_license_info
         from licensing.hw_fingerprint import get_hardware_id, format_hw_id
-    except ImportError:
+        print(f"[DEBUG] Import from licensing successful!", file=sys.stderr)
+    except ImportError as e2:
+        print(f"[DEBUG] Import from licensing also failed: {e2}", file=sys.stderr)
         print(json.dumps({
             "valid": False,
             "message": f"Licensing moduly nenalezeny: {e}",
