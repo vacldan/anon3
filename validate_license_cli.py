@@ -132,10 +132,26 @@ def main():
     # Získej cestu k licenci (volitelný argument)
     # Pokud není zadána cesta, hledej v root projektu
     if len(sys.argv) > 1:
-        license_path = sys.argv[1]
+        provided_path = sys.argv[1]
+        # DEBUG
+        print(f"[DEBUG] Provided path: {provided_path}", file=sys.stderr)
+        print(f"[DEBUG] Path exists: {Path(provided_path).exists()}", file=sys.stderr)
+
+        # Pokud poskytnutá cesta existuje, použij ji
+        if Path(provided_path).exists():
+            license_path = provided_path
+        else:
+            # Jinak zkus v SCRIPT_DIR
+            license_path = str(SCRIPT_DIR / "license.lic")
+            print(f"[DEBUG] Falling back to: {license_path}", file=sys.stderr)
     else:
         # Defaultně hledej license.lic v root projektu (tam kde je tento skript)
         license_path = str(SCRIPT_DIR / "license.lic")
+        print(f"[DEBUG] Using default path: {license_path}", file=sys.stderr)
+
+    print(f"[DEBUG] Final license path: {license_path}", file=sys.stderr)
+    print(f"[DEBUG] License file exists: {Path(license_path).exists()}", file=sys.stderr)
+    print(f"[DEBUG] SCRIPT_DIR: {SCRIPT_DIR}", file=sys.stderr)
 
     # Zkontroluj licenci
     result = check_license(license_path)
