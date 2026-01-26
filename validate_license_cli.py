@@ -6,23 +6,31 @@ Slouží jako interface mezi Electron (Node.js) a Python licensing systémem
 import sys
 import json
 from pathlib import Path
+import os
 
-# Přidej licensing modul do path
-sys.path.insert(0, str(Path(__file__).parent))
+# Získej absolutní cestu k root složce projektu (tam kde je tento skript)
+SCRIPT_DIR = Path(__file__).parent.absolute()
+
+# Přidej root složku do path pro import modulů
+sys.path.insert(0, str(SCRIPT_DIR))
+
+# Změň working directory na root projektu
+os.chdir(SCRIPT_DIR)
 
 try:
-    from licensing.license_validator import validate_license, get_license_info
-    from licensing.hw_fingerprint import get_hardware_id, format_hw_id
+    from Licencing.license_validator import validate_license, get_license_info
+    from Licencing.hw_fingerprint import get_hardware_id, format_hw_id
 except ImportError as e:
-    # Fallback pokud jsou moduly ve složce Licencing (Windows)
+    # Fallback pokud jsou moduly ve složce licensing (lowercase)
     try:
-        from Licencing.license_validator import validate_license, get_license_info
-        from Licencing.hw_fingerprint import get_hardware_id, format_hw_id
+        from licensing.license_validator import validate_license, get_license_info
+        from licensing.hw_fingerprint import get_hardware_id, format_hw_id
     except ImportError:
         print(json.dumps({
             "valid": False,
-            "error": f"Licensing modules not found: {e}",
-            "needs_activation": True
+            "message": f"Licensing moduly nenalezeny: {e}",
+            "needs_activation": True,
+            "hw_id": "N/A"
         }), flush=True)
         sys.exit(1)
 
@@ -47,8 +55,13 @@ def check_license(license_path="license.lic"):
     """
     try:
         # Získej HW ID
-        hw_id = get_hardware_id()
-        hw_id_formatted = format_hw_id(hw_id)
+        try:
+            hw_id = get_hardware_id()
+            hw_id_formatted = format_hw_id(hw_id)
+        except Exception as hw_error:
+            hw_id = "UNKNOWN"
+            hw_id_formatted = "UNKNOWN"
+            print(f"[DEBUG] HW ID error: {hw_error}", file=sys.stderr)
 
         # Validuj licenci
         is_valid, message, license_data = validate_license(license_path, verbose=False)
@@ -83,18 +96,26 @@ def check_license(license_path="license.lic"):
         return result
 
     except FileNotFoundError:
+        try:
+            hw_id_fallback = format_hw_id(get_hardware_id())
+        except:
+            hw_id_fallback = "UNKNOWN"
         return {
             "valid": False,
             "message": "Licenční soubor nenalezen",
             "needs_activation": True,
-            "hw_id": format_hw_id(get_hardware_id())
+            "hw_id": hw_id_fallback
         }
     except Exception as e:
+        try:
+            hw_id_fallback = format_hw_id(get_hardware_id())
+        except:
+            hw_id_fallback = "UNKNOWN"
         return {
             "valid": False,
             "message": f"Chyba při kontrole licence: {str(e)}",
             "needs_activation": True,
-            "hw_id": format_hw_id(get_hardware_id())
+            "hw_id": hw_id_fallback
         }
 
 
@@ -109,7 +130,12 @@ def main():
         JSON na stdout
     """
     # Získej cestu k licenci (volitelný argument)
-    license_path = sys.argv[1] if len(sys.argv) > 1 else "license.lic"
+    # Pokud není zadána cesta, hledej v root projektu
+    if len(sys.argv) > 1:
+        license_path = sys.argv[1]
+    else:
+        # Defaultně hledej license.lic v root projektu (tam kde je tento skript)
+        license_path = str(SCRIPT_DIR / "license.lic")
 
     # Zkontroluj licenci
     result = check_license(license_path)
