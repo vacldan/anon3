@@ -27,7 +27,9 @@
       "output": "dist"
     },
     "files": [
-      "**/*",
+      "main.js",
+      "index.html",
+      "package.json",
       "!test/**/*",
       "!.git/**/*",
       "!README.md",
@@ -38,10 +40,21 @@
       "!build_js_obfuscated.py",
       "!PYARMOR_README.md",
       "!RELEASE_NOTES.md",
+      "!*.log",
+      "!*_backup*",
+      "!*_kopie*",
+      "!debug_*.py",
+      "!test_*.py",
+      "!*_test.py",
+      "validate_license_cli.py",
+      "get_hw_id.py",
+      "anonymize_cli.py",
+      "deanonymizator_lokal.py",
+      "pdf2docx_cli.py",
+      "anon7.2 - s padama.py",
+      "cz_names.v1.json",
       "licensing/**/*",
-      "pyarmor_runtime_000000/**/*",
-      "*.py",
-      "*.lic"
+      "pyarmor_runtime_000000/**/*"
     ],
     "extraResources": [
       {
