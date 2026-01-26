@@ -138,7 +138,21 @@ def interactive_generator():
     # Získej vstupní data
     customer_name = input("Jméno zákazníka: ").strip()
     customer_email = input("Email zákazníka: ").strip()
-    hw_id = input("Hardware ID (16 hex znaků, např. 8A3F-2BC1-E9D4-5678): ").strip()
+    hw_id_raw = input("Hardware ID (s nebo bez pomlček, např. 8A3F-2BC1-E9D4-5678): ").strip()
+
+    # Normalizuj HW ID - odstraň pomlčky, mezery, uppercase
+    hw_id = hw_id_raw.replace('-', '').replace(' ', '').upper()
+
+    # Validace délky
+    if len(hw_id) != 16:
+        print(f"\n⚠️  VAROVÁNÍ: HW ID by měl mít 16 znaků, má {len(hw_id)}")
+        print(f"   Zadáno: {hw_id}")
+        confirm = input("   Pokračovat i přesto? (ano/ne): ").strip().lower()
+        if confirm not in ['ano', 'a', 'yes', 'y']:
+            print("Zrušeno.")
+            return
+
+    print(f"\n✓ HW ID normalizováno: {hw_id}")
 
     print("\nTypy licencí:")
     print("  1) trial       - Zkušební (30 dní)")
