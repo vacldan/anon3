@@ -4,3 +4,8 @@ batch_regenerate.log
 *_regen.log
 batch_final.log
 *_deanon_test.docx
+
+# PyArmor build artifacts
+dist_obfuscated/
+backup_original/
+pyarmor_runtime_*/
