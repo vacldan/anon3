@@ -25,82 +25,82 @@ def convert_pdf(pdf_path: Path):
     """Convert PDF to DOCX"""
     try:
         docx_path = pdf_path.with_suffix('.docx')
-        
-        print(f"Zpracovavam PDF: {pdf_path.name}")
-        print(f"Vystupni DOCX: {docx_path.name}")
-        
+
+        print(f"Zpracovavam PDF: {pdf_path.name}", flush=True)
+        print(f"Vystupni DOCX: {docx_path.name}", flush=True)
+
         # Check if PDF exists
         if not pdf_path.exists():
-            print(f"ERROR: PDF soubor neexistuje: {pdf_path}")
+            print(f"ERROR: PDF soubor neexistuje: {pdf_path}", flush=True)
             return False
-            
+
         # Check if PDF is readable
         if pdf_path.stat().st_size == 0:
-            print(f"ERROR: PDF soubor je prázdný: {pdf_path}")
+            print(f"ERROR: PDF soubor je prázdný: {pdf_path}", flush=True)
             return False
-            
-        print("Spoustim konverzi...")
-        
+
+        print("Spoustim konverzi...", flush=True)
+
         # Create converter
         cv = Converter(str(pdf_path))
-        
+
         # Convert with progress feedback
         cv.convert(str(docx_path), start=0, end=None)
         cv.close()
-        
+
         # Verify output
         if docx_path.exists() and docx_path.stat().st_size > 0:
-            print(f"✅ Uspesne prevedeno: {docx_path.name}")
-            print(f"Velikost vystupniho souboru: {docx_path.stat().st_size} bytů")
+            print(f"✅ Uspesne prevedeno: {docx_path.name}", flush=True)
+            print(f"Velikost vystupniho souboru: {docx_path.stat().st_size} bytů", flush=True)
             return True
         else:
-            print("ERROR: DOCX soubor nebyl vytvořen nebo je prázdný")
+            print("ERROR: DOCX soubor nebyl vytvořen nebo je prázdný", flush=True)
             return False
-            
+
     except Exception as e:
-        print(f"ERROR: Chyba při konverzi: {e}")
+        print(f"ERROR: Chyba při konverzi: {e}", flush=True)
         return False
 
 def main():
-    print("PDF to DOCX Converter - Nixminds Document Suite")
-    print("=" * 50)
-    
+    print("PDF to DOCX Converter - Nixminds Document Suite", flush=True)
+    print("=" * 50, flush=True)
+
     if len(sys.argv) < 2:
-        print("ERROR: Nebyl zadán PDF soubor")
-        print("Použití: python pdf2docx_cli.py <cesta_k_pdf>")
+        print("ERROR: Nebyl zadán PDF soubor", flush=True)
+        print("Použití: python pdf2docx_cli.py <cesta_k_pdf>", flush=True)
         sys.exit(1)
-    
+
     success_count = 0
     total_count = 0
-    
+
     for pdf_arg in sys.argv[1:]:
         total_count += 1
         pdf_path = Path(pdf_arg)
-        
-        print(f"\nZpracovavam ({total_count}): {pdf_path.name}")
-        
+
+        print(f"\nZpracovavam ({total_count}): {pdf_path.name}", flush=True)
+
         if not pdf_path.exists():
-            print(f"⚠️  Soubor neexistuje: {pdf_path}")
+            print(f"⚠️  Soubor neexistuje: {pdf_path}", flush=True)
             continue
-            
+
         if pdf_path.suffix.lower() != ".pdf":
-            print(f"⚠️  Soubor není PDF: {pdf_path}")
+            print(f"⚠️  Soubor není PDF: {pdf_path}", flush=True)
             continue
-            
+
         if convert_pdf(pdf_path):
             success_count += 1
         else:
-            print(f"❌ Konverze selhala pro: {pdf_path.name}")
-    
-    print("\n" + "=" * 50)
-    print(f"VÝSLEDEK: {success_count}/{total_count} souborů úspěšně převedeno")
+            print(f"❌ Konverze selhala pro: {pdf_path.name}", flush=True)
+
+    print("\n" + "=" * 50, flush=True)
+    print(f"VÝSLEDEK: {success_count}/{total_count} souborů úspěšně převedeno", flush=True)
 
     exit_code = 0
     if success_count == total_count and total_count > 0:
-        print("✅ Všechny soubory byly úspěšně převedeny!")
+        print("✅ Všechny soubory byly úspěšně převedeny!", flush=True)
         exit_code = 0
     else:
-        print("⚠️  Některé soubory nebyly převedeny")
+        print("⚠️  Některé soubory nebyly převedeny", flush=True)
         exit_code = 1
 
     # Počkej na Enter před ukončením (pro drag & drop režim)

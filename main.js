@@ -543,6 +543,7 @@ ipcMain.handle("convert-pdf-to-docx", async (evt, pdfPath) => {
           ...process.env,
           PYTHONIOENCODING: "utf-8",
           PYTHONUTF8: "1",
+          PYTHONUNBUFFERED: "1",
           NO_PAUSE: "1",
         }
       },
