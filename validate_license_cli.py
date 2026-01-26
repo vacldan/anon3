@@ -8,22 +8,33 @@ import json
 from pathlib import Path
 import os
 
-# Získej absolutní cestu k root složce projektu (tam kde je tento skript)
+# Získej absolutní cestu k root složce projektu
+# Pokud je skript v podsložce (např. python/), jdi o level výš
 SCRIPT_DIR = Path(__file__).parent.absolute()
+
+# Zkontroluj jestli je skript v podsložce - pokud ano, jdi do parent
+if SCRIPT_DIR.name == "python" or not (SCRIPT_DIR / "licensing").exists():
+    # Zkus parent directory (root projektu)
+    ROOT_DIR = SCRIPT_DIR.parent
+    print(f"[DEBUG] Script in subdirectory, using parent: {ROOT_DIR}", file=sys.stderr)
+else:
+    ROOT_DIR = SCRIPT_DIR
+    print(f"[DEBUG] Script in root directory: {ROOT_DIR}", file=sys.stderr)
 
 # DEBUG: Vypiš info o prostředí PŘED importem
 print(f"[DEBUG] Python executable: {sys.executable}", file=sys.stderr)
 print(f"[DEBUG] __file__: {__file__}", file=sys.stderr)
 print(f"[DEBUG] SCRIPT_DIR: {SCRIPT_DIR}", file=sys.stderr)
+print(f"[DEBUG] ROOT_DIR: {ROOT_DIR}", file=sys.stderr)
 print(f"[DEBUG] Current working dir: {os.getcwd()}", file=sys.stderr)
-print(f"[DEBUG] Licencing folder exists: {(SCRIPT_DIR / 'Licencing').exists()}", file=sys.stderr)
-print(f"[DEBUG] licensing folder exists: {(SCRIPT_DIR / 'licensing').exists()}", file=sys.stderr)
+print(f"[DEBUG] licensing folder exists: {(ROOT_DIR / 'licensing').exists()}", file=sys.stderr)
+print(f"[DEBUG] Licencing folder exists: {(ROOT_DIR / 'Licencing').exists()}", file=sys.stderr)
 
 # Přidej root složku do path pro import modulů
-sys.path.insert(0, str(SCRIPT_DIR))
+sys.path.insert(0, str(ROOT_DIR))
 
 # Změň working directory na root projektu
-os.chdir(SCRIPT_DIR)
+os.chdir(ROOT_DIR)
 
 print(f"[DEBUG] sys.path: {sys.path[:3]}", file=sys.stderr)
 
@@ -157,17 +168,18 @@ def main():
         if Path(provided_path).exists():
             license_path = provided_path
         else:
-            # Jinak zkus v SCRIPT_DIR
-            license_path = str(SCRIPT_DIR / "license.lic")
+            # Jinak zkus v ROOT_DIR
+            license_path = str(ROOT_DIR / "license.lic")
             print(f"[DEBUG] Falling back to: {license_path}", file=sys.stderr)
     else:
-        # Defaultně hledej license.lic v root projektu (tam kde je tento skript)
-        license_path = str(SCRIPT_DIR / "license.lic")
+        # Defaultně hledej license.lic v root projektu
+        license_path = str(ROOT_DIR / "license.lic")
         print(f"[DEBUG] Using default path: {license_path}", file=sys.stderr)
 
     print(f"[DEBUG] Final license path: {license_path}", file=sys.stderr)
     print(f"[DEBUG] License file exists: {Path(license_path).exists()}", file=sys.stderr)
     print(f"[DEBUG] SCRIPT_DIR: {SCRIPT_DIR}", file=sys.stderr)
+    print(f"[DEBUG] ROOT_DIR: {ROOT_DIR}", file=sys.stderr)
 
     # Zkontroluj licenci
     result = check_license(license_path)
