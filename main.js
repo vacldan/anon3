@@ -551,7 +551,9 @@ ipcMain.handle("convert-pdf-to-docx", async (evt, pdfPath) => {
         for (const line of msg.split("\n")) {
           const clean = line.trim();
           if (!clean) continue;
-          if (clean.includes("[INFO]") || clean.includes("====")) continue;
+          // Skip technical info but allow success messages
+          if (clean.includes("[INFO]")) continue;
+          if (clean.includes("====") && !clean.includes("✅") && !clean.includes("VÝSLEDEK")) continue;
           sendProgress(clean);
         }
       },
