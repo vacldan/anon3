@@ -12,7 +12,7 @@ from .hw_fingerprint import get_hardware_id
 
 
 # MASTER SECRET KEY - MUSÍ BÝT STEJNÝ JAKO V GENERÁTORU!
-MASTER_SECRET = "SKRYI_2024_MASTER_KEY_CHANGE_THIS_TO_YOUR_OWN_RANDOM_STRING_XYZ789"
+MASTER_SECRET = "NixMinds_Secure_2026_!_8k9Pq2LzWvRt5XyN_Anonymizer_Secret_Key_99"
 
 
 def verify_signature(license_data):

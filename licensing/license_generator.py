@@ -13,7 +13,7 @@ import base64
 
 # MASTER SECRET KEY - ZMĚŇ TOTO NA VLASTNÍ DLOUHÝ NÁHODNÝ STRING!
 # Tento klíč nesmí nikdy uniknout. Drž ho v bezpečí.
-MASTER_SECRET = "SKRYI_2024_MASTER_KEY_CHANGE_THIS_TO_YOUR_OWN_RANDOM_STRING_XYZ789"
+MASTER_SECRET = "NixMinds_Secure_2026_!_8k9Pq2LzWvRt5XyN_Anonymizer_Secret_Key_99"
 
 
 def generate_license_key():
