@@ -74,7 +74,7 @@ def load_license_file(license_path):
         return None
 
 
-def validate_license(license_path="license.lic", verbose=True):
+def validate_license(license_path="license.lic", verbose=False):
     """
     Ověří platnost licence
 

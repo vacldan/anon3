@@ -14,21 +14,9 @@ SCRIPT_DIR = Path(__file__).parent.absolute()
 
 # Zkontroluj jestli je skript v podsložce - pokud ano, jdi do parent
 if SCRIPT_DIR.name == "python" or not (SCRIPT_DIR / "licensing").exists():
-    # Zkus parent directory (root projektu)
     ROOT_DIR = SCRIPT_DIR.parent
-    print(f"[DEBUG] Script in subdirectory, using parent: {ROOT_DIR}", file=sys.stderr)
 else:
     ROOT_DIR = SCRIPT_DIR
-    print(f"[DEBUG] Script in root directory: {ROOT_DIR}", file=sys.stderr)
-
-# DEBUG: Vypiš info o prostředí PŘED importem
-print(f"[DEBUG] Python executable: {sys.executable}", file=sys.stderr)
-print(f"[DEBUG] __file__: {__file__}", file=sys.stderr)
-print(f"[DEBUG] SCRIPT_DIR: {SCRIPT_DIR}", file=sys.stderr)
-print(f"[DEBUG] ROOT_DIR: {ROOT_DIR}", file=sys.stderr)
-print(f"[DEBUG] Current working dir: {os.getcwd()}", file=sys.stderr)
-print(f"[DEBUG] licensing folder exists: {(ROOT_DIR / 'licensing').exists()}", file=sys.stderr)
-print(f"[DEBUG] Licencing folder exists: {(ROOT_DIR / 'Licencing').exists()}", file=sys.stderr)
 
 # Přidej root složku do path pro import modulů
 sys.path.insert(0, str(ROOT_DIR))
@@ -36,23 +24,16 @@ sys.path.insert(0, str(ROOT_DIR))
 # Změň working directory na root projektu
 os.chdir(ROOT_DIR)
 
-print(f"[DEBUG] sys.path: {sys.path[:3]}", file=sys.stderr)
-
+# Import licensing modulů
 try:
-    print(f"[DEBUG] Trying to import from licensing (lowercase)...", file=sys.stderr)
     from licensing.license_validator import validate_license, get_license_info
     from licensing.hw_fingerprint import get_hardware_id, format_hw_id
-    print(f"[DEBUG] Import from licensing successful!", file=sys.stderr)
 except ImportError as e:
-    print(f"[DEBUG] Import from licensing failed: {e}", file=sys.stderr)
     # Fallback pokud jsou moduly ve složce Licencing (capital L)
     try:
-        print(f"[DEBUG] Trying to import from Licencing...", file=sys.stderr)
         from Licencing.license_validator import validate_license, get_license_info
         from Licencing.hw_fingerprint import get_hardware_id, format_hw_id
-        print(f"[DEBUG] Import from Licencing successful!", file=sys.stderr)
-    except ImportError as e2:
-        print(f"[DEBUG] Import from Licencing also failed: {e2}", file=sys.stderr)
+    except ImportError:
         print(json.dumps({
             "valid": False,
             "message": f"Licensing moduly nenalezeny: {e}",
@@ -85,10 +66,9 @@ def check_license(license_path="license.lic"):
         try:
             hw_id = get_hardware_id()
             hw_id_formatted = format_hw_id(hw_id)
-        except Exception as hw_error:
+        except Exception:
             hw_id = "UNKNOWN"
             hw_id_formatted = "UNKNOWN"
-            print(f"[DEBUG] HW ID error: {hw_error}", file=sys.stderr)
 
         # Validuj licenci
         is_valid, message, license_data = validate_license(license_path, verbose=False)
@@ -157,29 +137,17 @@ def main():
         JSON na stdout
     """
     # Získej cestu k licenci (volitelný argument)
-    # Pokud není zadána cesta, hledej v root projektu
     if len(sys.argv) > 1:
         provided_path = sys.argv[1]
-        # DEBUG
-        print(f"[DEBUG] Provided path: {provided_path}", file=sys.stderr)
-        print(f"[DEBUG] Path exists: {Path(provided_path).exists()}", file=sys.stderr)
-
         # Pokud poskytnutá cesta existuje, použij ji
         if Path(provided_path).exists():
             license_path = provided_path
         else:
             # Jinak zkus v ROOT_DIR
             license_path = str(ROOT_DIR / "license.lic")
-            print(f"[DEBUG] Falling back to: {license_path}", file=sys.stderr)
     else:
         # Defaultně hledej license.lic v root projektu
         license_path = str(ROOT_DIR / "license.lic")
-        print(f"[DEBUG] Using default path: {license_path}", file=sys.stderr)
-
-    print(f"[DEBUG] Final license path: {license_path}", file=sys.stderr)
-    print(f"[DEBUG] License file exists: {Path(license_path).exists()}", file=sys.stderr)
-    print(f"[DEBUG] SCRIPT_DIR: {SCRIPT_DIR}", file=sys.stderr)
-    print(f"[DEBUG] ROOT_DIR: {ROOT_DIR}", file=sys.stderr)
 
     # Zkontroluj licenci
     result = check_license(license_path)

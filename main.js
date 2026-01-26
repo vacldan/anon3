@@ -183,15 +183,7 @@ async function checkLicense() {
 
   try {
     const args = PY.isPyLauncher ? ["-3", licenseScript, licenseFile] : [licenseScript, licenseFile];
-
     const result = await spawnQuick(PY.cmd, args);
-
-    // Vyprintuj stderr (DEBUG zprávy)
-    if (result.err) {
-      console.log("[LICENSE] Python stderr:");
-      console.log(result.err);
-    }
-
     const output = result.out.trim();
 
     if (output) {
@@ -201,11 +193,9 @@ async function checkLicense() {
         return licenseData;
       } catch (e) {
         console.error("[LICENSE] Failed to parse JSON:", e);
-        console.error("[LICENSE] Raw output:", output);
         return { valid: false, message: "Chyba při parsování licence", needs_activation: true };
       }
     } else {
-      console.error("[LICENSE] No output from Python script");
       return { valid: false, message: "License check returned no output", needs_activation: true };
     }
   } catch (error) {
@@ -694,19 +684,11 @@ ipcMain.handle("get-license-info", async () => {
 
   try {
     const result = await spawnQuick(PY.cmd, args);
-
-    // Vyprintuj stderr (DEBUG zprávy)
-    if (result.err) {
-      console.log("[LICENSE-INFO] Python stderr:");
-      console.log(result.err);
-    }
-
     const output = result.out.trim();
 
     if (output) {
       return JSON.parse(output);
     }
-    console.error("[LICENSE-INFO] No output from license check");
     return { valid: false, message: "No output from license check" };
   } catch (error) {
     console.error("[LICENSE-INFO] Error:", error);
