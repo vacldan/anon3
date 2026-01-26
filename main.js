@@ -169,6 +169,73 @@ function createWindow() {
 }
 
 // ----------------------- APP LIFECYCLE -----------------------
+// ----------------------- LICENSE VALIDATION -----------------------
+async function checkLicense() {
+  console.log("[LICENSE] Checking license...");
+
+  const licenseScript = resolvePy("validate_license_cli.py");
+  if (!fs.existsSync(licenseScript)) {
+    console.warn("[LICENSE] validate_license_cli.py not found, skipping validation");
+    return { valid: true, skipValidation: true };
+  }
+
+  const licenseFile = path.join(__dirname, "license.lic");
+
+  try {
+    const args = PY.isPyLauncher ? ["-3", licenseScript, licenseFile] : [licenseScript, licenseFile];
+
+    const result = await spawnQuick(PY.cmd, args);
+    const output = result.out.trim();
+
+    if (output) {
+      try {
+        const licenseData = JSON.parse(output);
+        console.log(`[LICENSE] Valid: ${licenseData.valid}, Message: ${licenseData.message}`);
+        return licenseData;
+      } catch (e) {
+        console.error("[LICENSE] Failed to parse JSON:", e);
+        return { valid: false, message: "Chyba při parsování licence", needs_activation: true };
+      }
+    } else {
+      return { valid: false, message: "License check returned no output", needs_activation: true };
+    }
+  } catch (error) {
+    console.error("[LICENSE] Error checking license:", error);
+    return { valid: false, message: `Chyba: ${error.message}`, needs_activation: true };
+  }
+}
+
+function showLicenseError(licenseData) {
+  const hwId = licenseData.hw_id || "UNKNOWN";
+  const message = licenseData.message || "Neplatná nebo chybějící licence";
+
+  const buttons = ["Ukončit aplikaci", "Pokračovat bez licence"];
+  const buttonIndex = dialog.showMessageBoxSync({
+    type: "error",
+    title: "Aktivace požadována - SKRYI",
+    message: "Aplikace vyžaduje platnou licenci",
+    detail: `${message}\n\n` +
+            `Váš Hardware ID: ${hwId}\n\n` +
+            `Pro aktivaci:\n` +
+            `1. Pošlete Hardware ID prodejci\n` +
+            `2. Obdržíte soubor license.lic\n` +
+            `3. Umístěte ho do složky s aplikací\n` +
+            `4. Restartujte aplikaci`,
+    buttons: buttons,
+    defaultId: 0,
+    cancelId: 0
+  });
+
+  if (buttonIndex === 0) {
+    console.log("[LICENSE] User chose to exit");
+    app.quit();
+    return false;
+  } else {
+    console.warn("[LICENSE] User chose to continue without license (demo mode)");
+    return true; // Continue in demo mode
+  }
+}
+
 app.whenReady().then(async () => {
   PY = await discoverPythonOnce();
   if (!PY) {
@@ -176,6 +243,17 @@ app.whenReady().then(async () => {
     app.quit();
     return;
   }
+
+  // Check license before creating window
+  const licenseData = await checkLicense();
+
+  if (!licenseData.valid && !licenseData.skipValidation) {
+    const continueAnyway = showLicenseError(licenseData);
+    if (!continueAnyway) {
+      return; // User chose to exit
+    }
+  }
+
   createWindow();
 });
 
@@ -593,4 +671,27 @@ ipcMain.handle("select-pdf-file", async () => {
   });
   if (result.canceled || !result.filePaths.length) return null;
   return result.filePaths[0];
+});
+
+// License info handler
+ipcMain.handle("get-license-info", async () => {
+  const licenseScript = resolvePy("validate_license_cli.py");
+  if (!fs.existsSync(licenseScript)) {
+    return { valid: false, message: "License validation not available" };
+  }
+
+  const licenseFile = path.join(__dirname, "license.lic");
+  const args = PY.isPyLauncher ? ["-3", licenseScript, licenseFile] : [licenseScript, licenseFile];
+
+  try {
+    const result = await spawnQuick(PY.cmd, args);
+    const output = result.out.trim();
+
+    if (output) {
+      return JSON.parse(output);
+    }
+    return { valid: false, message: "No output from license check" };
+  } catch (error) {
+    return { valid: false, message: `Error: ${error.message}` };
+  }
 });

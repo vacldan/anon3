@@ -202,6 +202,7 @@
                 <button class="mode-btn" id="pdfMode">PDF → DOCX</button>
                 <button class="mode-btn active" id="anonymizeMode">Anonymizace</button>
                 <button class="mode-btn" id="deanonymizeMode">Deanonymizace</button>
+                <button class="mode-btn" id="licenseMode">🔐 Licence</button>
             </div>
         </div>
 
@@ -311,6 +312,76 @@
                     </div>
                     <div style="margin-top:16px;">
                         <button class="btn secondary" id="openDeanonOutputBtn">Otevřít výsledek ve složce</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- License panel -->
+        <div id="licensePanel" class="hidden">
+            <div class="section" style="--delay: 0.1s">
+                <h3>🔐 Informace o licenci</h3>
+                <button class="btn" id="refreshLicenseBtn">Obnovit informace</button>
+
+                <div id="licenseInfo" style="margin-top: 24px;">
+                    <div class="loading">Načítám informace o licenci...</div>
+                </div>
+
+                <div id="licenseDetails" class="hidden">
+                    <div class="file-info" style="margin-top: 24px;">
+                        <div style="margin-bottom: 16px;">
+                            <strong style="color: #1e293b;">Status:</strong>
+                            <span id="licenseStatus" style="margin-left: 8px; font-weight: 600;"></span>
+                        </div>
+                        <div style="margin-bottom: 12px;">
+                            <strong style="color: #1e293b;">Zákazník:</strong>
+                            <span id="licenseCustomer" style="margin-left: 8px;"></span>
+                        </div>
+                        <div style="margin-bottom: 12px;">
+                            <strong style="color: #1e293b;">Licenční klíč:</strong>
+                            <span id="licenseKey" style="margin-left: 8px; font-family: monospace;"></span>
+                        </div>
+                        <div style="margin-bottom: 12px;">
+                            <strong style="color: #1e293b;">Typ:</strong>
+                            <span id="licenseType" style="margin-left: 8px;"></span>
+                        </div>
+                        <div style="margin-bottom: 12px;">
+                            <strong style="color: #1e293b;">Platnost do:</strong>
+                            <span id="licenseExpires" style="margin-left: 8px;"></span>
+                        </div>
+                        <div style="margin-bottom: 12px;">
+                            <strong style="color: #1e293b;">Zbývající dny:</strong>
+                            <span id="licenseDaysRemaining" style="margin-left: 8px; font-weight: 600;"></span>
+                        </div>
+                        <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e2e8f0;">
+                            <strong style="color: #1e293b;">Váš Hardware ID:</strong>
+                            <div id="licenseHwId" style="margin-top: 8px; font-family: monospace; font-size: 18px; color: #3b82f6; font-weight: 600;"></div>
+                            <div style="margin-top: 8px; font-size: 13px; color: #64748b;">
+                                (Tento ID potřebujete při objednávce licence)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="licenseError" class="hidden">
+                    <div class="file-info" style="margin-top: 24px; border-left: 4px solid #ef4444;">
+                        <div style="color: #dc2626; font-weight: 600; margin-bottom: 12px;">
+                            ⚠️ Licence není platná
+                        </div>
+                        <div id="licenseErrorMessage" style="margin-bottom: 16px;"></div>
+                        <div style="margin-top: 16px;">
+                            <strong>Váš Hardware ID:</strong>
+                            <div id="licenseErrorHwId" style="margin-top: 8px; font-family: monospace; font-size: 16px; color: #3b82f6; font-weight: 600;"></div>
+                        </div>
+                        <div style="margin-top: 20px; padding: 16px; background: #f8fafc; border-radius: 8px;">
+                            <strong style="color: #1e293b;">Pro aktivaci:</strong>
+                            <ol style="margin: 8px 0 0 20px; color: #475569; line-height: 1.6;">
+                                <li>Pošlete Hardware ID prodejci</li>
+                                <li>Obdržíte soubor <code>license.lic</code></li>
+                                <li>Umístěte ho do složky s aplikací</li>
+                                <li>Restartujte aplikaci</li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -439,9 +510,15 @@
             } else if(mode === 'anonymize'){
                 document.getElementById('anonymizeMode').classList.add('active');
                 setTimeout(()=>document.getElementById('anonymizationPanel').classList.remove('hidden'), 100);
-            } else {
+            } else if(mode === 'deanonymize'){
                 document.getElementById('deanonymizeMode').classList.add('active');
                 setTimeout(()=>document.getElementById('deanonymizationPanel').classList.remove('hidden'), 100);
+            } else if(mode === 'license'){
+                document.getElementById('licenseMode').classList.add('active');
+                setTimeout(()=>{
+                    document.getElementById('licensePanel').classList.remove('hidden');
+                    loadLicenseInfo();
+                }, 100);
             }
         }
 
@@ -786,6 +863,66 @@
             }
         }
 
+        // LICENSE FUNCTIONS
+        async function loadLicenseInfo() {
+            console.log('loadLicenseInfo() called');
+
+            if (!ipcRenderer) {
+                document.getElementById('licenseInfo').innerHTML =
+                    '<div class="file-info" style="border-left: 4px solid #ef4444;">' +
+                    '⚠️ IPC není dostupný - spusťte aplikaci přes Electron' +
+                    '</div>';
+                return;
+            }
+
+            // Show loading
+            document.getElementById('licenseInfo').innerHTML =
+                '<div class="loading">Načítám informace o licenci...</div>';
+            document.getElementById('licenseDetails').classList.add('hidden');
+            document.getElementById('licenseError').classList.add('hidden');
+
+            try {
+                const licenseData = await ipcRenderer.invoke('get-license-info');
+                console.log('License data:', licenseData);
+
+                document.getElementById('licenseInfo').innerHTML = '';
+
+                if (licenseData.valid) {
+                    // Show license details
+                    const info = licenseData.license_info;
+
+                    document.getElementById('licenseStatus').textContent = '✅ PLATNÁ';
+                    document.getElementById('licenseStatus').style.color = '#10b981';
+
+                    document.getElementById('licenseCustomer').textContent = info.customer_name;
+                    document.getElementById('licenseKey').textContent = info.license_key;
+                    document.getElementById('licenseType').textContent = info.type;
+                    document.getElementById('licenseExpires').textContent = info.expires_at;
+
+                    const daysRemaining = info.days_remaining;
+                    document.getElementById('licenseDaysRemaining').textContent = daysRemaining + ' dní';
+                    document.getElementById('licenseDaysRemaining').style.color =
+                        daysRemaining > 30 ? '#10b981' : daysRemaining > 7 ? '#f59e0b' : '#ef4444';
+
+                    document.getElementById('licenseHwId').textContent = licenseData.hw_id;
+
+                    document.getElementById('licenseDetails').classList.remove('hidden');
+                } else {
+                    // Show error
+                    document.getElementById('licenseErrorMessage').textContent = licenseData.message;
+                    document.getElementById('licenseErrorHwId').textContent = licenseData.hw_id || 'N/A';
+                    document.getElementById('licenseError').classList.remove('hidden');
+                }
+
+            } catch (error) {
+                console.error('Error loading license info:', error);
+                document.getElementById('licenseInfo').innerHTML =
+                    '<div class="file-info" style="border-left: 4px solid #ef4444;">' +
+                    `⚠️ Chyba při načítání: ${error.message}` +
+                    '</div>';
+            }
+        }
+
         // INITIALIZATION
         document.addEventListener('DOMContentLoaded', () => {
             console.log('DOM loaded, initializing application...');
@@ -822,6 +959,7 @@
             document.getElementById('pdfMode').addEventListener('click', () => switchMode('pdf'));
             document.getElementById('anonymizeMode').addEventListener('click', () => switchMode('anonymize'));
             document.getElementById('deanonymizeMode').addEventListener('click', () => switchMode('deanonymize'));
+            document.getElementById('licenseMode').addEventListener('click', () => switchMode('license'));
 
             // Select docx
             const selectBtn = document.getElementById('selectBtn');
@@ -863,6 +1001,12 @@
             const convertPdfBtn = document.getElementById('convertPdfBtn');
             if (convertPdfBtn) {
                 convertPdfBtn.addEventListener('click', convertPdfToDocx);
+            }
+
+            // License buttons
+            const refreshLicenseBtn = document.getElementById('refreshLicenseBtn');
+            if (refreshLicenseBtn) {
+                refreshLicenseBtn.addEventListener('click', loadLicenseInfo);
             }
 
             const pdfShowFolder = document.getElementById('pdfShowFolder');
