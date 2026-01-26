@@ -20,6 +20,7 @@ ROOT = Path(__file__).parent
 FILES_TO_OBFUSCATE = [
     "validate_license_cli.py",
     "anonymize_cli.py",
+    "anon7.2 - s padama.py",  # CORE anonymizační algoritmy!
     "deanonymizator_lokal.py",
     "pdf2docx_cli.py",
 ]

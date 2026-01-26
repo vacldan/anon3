@@ -9,3 +9,4 @@ batch_final.log
 dist_obfuscated/
 backup_original/
 pyarmor_runtime_*/
+pyarmor.bug.log
