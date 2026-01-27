@@ -79,14 +79,24 @@
     },
     "nsis": {
       "oneClick": false,
+      "perMachine": false,
       "allowToChangeInstallationDirectory": true,
       "allowElevation": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
+      "menuCategory": true,
+      "runAfterFinish": true,
       "shortcutName": "Nixminds Document Suite",
       "installerIcon": "assets/icon.ico",
       "uninstallerIcon": "assets/icon.ico",
-      "license": "LICENSE"
+      "installerHeader": "assets/icon.ico",
+      "installerSidebar": "assets/icon.ico",
+      "uninstallerSidebar": "assets/icon.ico",
+      "license": "LICENSE",
+      "artifactName": "${productName}-Setup-${version}.${ext}",
+      "deleteAppDataOnUninstall": false,
+      "include": "build/installer.nsh",
+      "warningsAsErrors": false
     },
     "mac": {
       "target": "dmg",
