@@ -172,9 +172,10 @@ function createWindow() {
 async function checkLicense() {
   console.log("[LICENSE] Checking license...");
 
-  const licenseScript = resolvePy("validate_license_cli.py");
+  // Use standalone version (no dependencies on licensing/ module)
+  const licenseScript = resolvePy("validate_license_standalone.py");
   if (!fs.existsSync(licenseScript)) {
-    console.warn("[LICENSE] validate_license_cli.py not found, skipping validation");
+    console.warn("[LICENSE] validate_license_standalone.py not found, skipping validation");
     return { valid: true, skipValidation: true };
   }
 
