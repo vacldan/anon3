@@ -1,0 +1,71 @@
+{
+  "_comment": "MINIMALNI BEZPECNA KONFIGURACE - zadne ikony, zadny custom NSIS",
+  "build": {
+    "appId": "com.nixminds.documentsuite",
+    "productName": "Nixminds Document Suite",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "package.json",
+
+      "validate_license_standalone.py",
+      "anonymize_cli.py",
+      "deanonymizator.py",
+      "pdf2docx_cli.py",
+      "anon7.2 - s padama.py",
+
+      "cz_names.v1.json",
+
+      "licensing/__init__.py",
+      "licensing/hw_fingerprint.py",
+      "licensing/license_validator.py",
+
+      "pyarmor_runtime_*/**/*",
+
+      "assets/logo.png",
+
+      "!**/*.docx",
+      "!**/*.txt",
+      "!**/*.md",
+      "!**/*.log",
+      "!**/__pycache__/**",
+      "!**/*.pyc",
+      "!**/test*/**",
+      "!**/.git/**",
+      "!**/dist/**",
+      "!**/node_modules/**",
+      "!**/python/**",
+      "!**/smlouva*",
+      "!**/historie*",
+      "!**/History*",
+      "!**/audit*",
+      "!**/Claude_code*",
+      "!**/build/*.nsh",
+      "!**/build/*.bmp",
+      "!**/build/*.json"
+    ],
+    "asarUnpack": [
+      "**/*.py",
+      "licensing/**/*",
+      "pyarmor_runtime_*/**/*",
+      "cz_names.v1.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "sign": null,
+      "verifyUpdateCodeSignature": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Nixminds Document Suite"
+    }
+  }
+}
