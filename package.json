@@ -65,8 +65,7 @@
       "displayLanguageSelector": false,
       "installerLanguages": ["en_US"],
       "language": "1033",
-      "multiLanguageInstaller": false,
-      "include": "build/installer.nsh"
+      "multiLanguageInstaller": false
     },
     "mac": {
       "target": "dmg",
