@@ -1,0 +1,17 @@
+POTŘEBNÝ SOUBOR: logo.png
+
+Aby se zobrazilo logo pod nadpisem "SKRYI", musíte přidat soubor:
+assets/logo.png
+
+Tento soubor musí být:
+- Formát: PNG s transparentním pozadím
+- Velikost: cca 150x150px (automaticky se škáluje)
+- Design: Logo oko nebo SKRYI branding
+
+Jak vytvořit:
+1. Stáhněte ikonu oka z free icon stránky (Flaticon, Icons8, Iconfinder)
+2. Konvertujte na PNG 150x150px
+3. Uložte jako assets/logo.png
+4. Restartujte aplikaci
+
+Pokud soubor chybí, aplikace skryje logo element a zapíše warning do konzole.

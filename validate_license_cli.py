@@ -1,0 +1,120 @@
+"""
+License Validation CLI - Wrapper pro Electron
+Slouží jako interface mezi Electron (Node.js) a Python licensing systémem
+"""
+
+import sys
+import json
+from pathlib import Path
+
+# Přidej licensing modul do path
+sys.path.insert(0, str(Path(__file__).parent))
+
+try:
+    from licensing.license_validator import validate_license, get_license_info
+    from licensing.hw_fingerprint import get_hardware_id, format_hw_id
+except ImportError as e:
+    print(json.dumps({
+        "valid": False,
+        "error": f"Licensing modules not found: {e}",
+        "needs_activation": True
+    }), flush=True)
+    sys.exit(1)
+
+
+def check_license(license_path="license.lic"):
+    """
+    Zkontroluje licenci a vrátí JSON výsledek
+
+    Returns JSON:
+    {
+        "valid": true/false,
+        "message": "...",
+        "license_info": {
+            "customer_name": "...",
+            "license_key": "...",
+            "type": "standard",
+            "expires_at": "2025-01-26",
+            "days_remaining": 364
+        },
+        "hw_id": "8A3F-2BC1-E9D4-5678"
+    }
+    """
+    try:
+        # Získej HW ID
+        hw_id = get_hardware_id()
+        hw_id_formatted = format_hw_id(hw_id)
+
+        # Validuj licenci
+        is_valid, message, license_data = validate_license(license_path, verbose=False)
+
+        result = {
+            "valid": is_valid,
+            "message": message,
+            "hw_id": hw_id_formatted,
+            "needs_activation": not is_valid
+        }
+
+        # Pokud je licence platná, přidej detaily
+        if is_valid and license_data:
+            result["license_info"] = {
+                "customer_name": license_data.get('customer', {}).get('name', 'N/A'),
+                "customer_email": license_data.get('customer', {}).get('email', 'N/A'),
+                "license_key": license_data.get('license_key', 'N/A'),
+                "type": license_data.get('type', 'standard'),
+                "issued_at": license_data.get('issued_at', 'N/A'),
+                "expires_at": license_data.get('expires_at', 'N/A'),
+            }
+
+            # Spočítej zbývající dny
+            try:
+                from datetime import datetime
+                expires_at = datetime.fromisoformat(license_data['expires_at'])
+                days_remaining = (expires_at - datetime.now()).days
+                result["license_info"]["days_remaining"] = max(0, days_remaining)
+            except:
+                result["license_info"]["days_remaining"] = 0
+
+        return result
+
+    except FileNotFoundError:
+        return {
+            "valid": False,
+            "message": "Licenční soubor nenalezen",
+            "needs_activation": True,
+            "hw_id": format_hw_id(get_hardware_id())
+        }
+    except Exception as e:
+        return {
+            "valid": False,
+            "message": f"Chyba při kontrole licence: {str(e)}",
+            "needs_activation": True,
+            "hw_id": format_hw_id(get_hardware_id())
+        }
+
+
+def main():
+    """
+    CLI interface pro Electron
+
+    Usage:
+        python validate_license_cli.py [license_path]
+
+    Output:
+        JSON na stdout
+    """
+    # Získej cestu k licenci (volitelný argument)
+    license_path = sys.argv[1] if len(sys.argv) > 1 else "license.lic"
+
+    # Zkontroluj licenci
+    result = check_license(license_path)
+
+    # Vyprintuj JSON výsledek
+    print(json.dumps(result, indent=2, ensure_ascii=False), flush=True)
+
+    # Exit code: 0 = platná, 1 = neplatná
+    sys.exit(0 if result["valid"] else 1)
+
+
+if __name__ == "__main__":
+    main()
