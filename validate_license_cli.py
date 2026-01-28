@@ -5,21 +5,29 @@ Slouží jako interface mezi Electron (Node.js) a Python licensing systémem
 
 import sys
 import json
+import os
 from pathlib import Path
 
-# Přidej licensing modul do path
-sys.path.insert(0, str(Path(__file__).parent))
+# DŮLEŽITÉ: Přidej licensing modul do path
+# V nainstalované aplikaci může být struktura jiná
+script_dir = Path(__file__).parent.absolute()
+sys.path.insert(0, str(script_dir))
+
+# Fallback pokud není v root, zkus resources
+if hasattr(sys, '_MEIPASS'):
+    # PyInstaller bundle
+    sys.path.insert(0, sys._MEIPASS)
+elif 'resources' in str(script_dir):
+    # Electron asar
+    sys.path.insert(0, str(script_dir.parent))
 
 try:
     from licensing.license_validator import validate_license, get_license_info
     from licensing.hw_fingerprint import get_hardware_id, format_hw_id
+    MODULES_OK = True
 except ImportError as e:
-    print(json.dumps({
-        "valid": False,
-        "error": f"Licensing modules not found: {e}",
-        "needs_activation": True
-    }), flush=True)
-    sys.exit(1)
+    MODULES_OK = False
+    IMPORT_ERROR = str(e)
 
 
 def check_license(license_path="license.lic"):
@@ -40,6 +48,26 @@ def check_license(license_path="license.lic"):
         "hw_id": "8A3F-2BC1-E9D4-5678"
     }
     """
+    # Pokud se nepodařilo naimportovat moduly, vrať error
+    if not MODULES_OK:
+        try:
+            # Zkus získat HW ID i bez modulů (fallback)
+            import uuid
+            import hashlib
+            mac = uuid.getnode()
+            hw_id_fallback = hashlib.sha256(str(mac).encode()).hexdigest()[:16].upper()
+            hw_id_formatted = '-'.join([hw_id_fallback[i:i+4] for i in range(0, 16, 4)])
+        except:
+            hw_id_formatted = "UNKNOWN"
+
+        return {
+            "valid": False,
+            "message": f"Licensing modules not found: {IMPORT_ERROR}",
+            "hw_id": hw_id_formatted,
+            "needs_activation": True,
+            "debug_path": str(script_dir)
+        }
+
     try:
         # Získej HW ID
         hw_id = get_hardware_id()
@@ -101,19 +129,33 @@ def main():
         python validate_license_cli.py [license_path]
 
     Output:
-        JSON na stdout
+        JSON na stdout (VŽDY vrátí nějaký JSON, i při chybě)
     """
-    # Získej cestu k licenci (volitelný argument)
-    license_path = sys.argv[1] if len(sys.argv) > 1 else "license.lic"
+    try:
+        # Získej cestu k licenci (volitelný argument)
+        license_path = sys.argv[1] if len(sys.argv) > 1 else "license.lic"
 
-    # Zkontroluj licenci
-    result = check_license(license_path)
+        # Zkontroluj licenci
+        result = check_license(license_path)
 
-    # Vyprintuj JSON výsledek
-    print(json.dumps(result, indent=2, ensure_ascii=False), flush=True)
+        # Vyprintuj JSON výsledek
+        print(json.dumps(result, indent=2, ensure_ascii=False), flush=True)
 
-    # Exit code: 0 = platná, 1 = neplatná
-    sys.exit(0 if result["valid"] else 1)
+        # Exit code: 0 = platná, 1 = neplatná
+        sys.exit(0 if result["valid"] else 1)
+
+    except Exception as e:
+        # FALLBACK: I při fatální chybě vrať JSON
+        error_result = {
+            "valid": False,
+            "message": f"Fatální chyba: {str(e)}",
+            "hw_id": "UNKNOWN",
+            "needs_activation": True,
+            "error_type": type(e).__name__,
+            "script_dir": str(script_dir)
+        }
+        print(json.dumps(error_result, indent=2, ensure_ascii=False), flush=True)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
