@@ -43,7 +43,6 @@
     ],
     "win": {
       "target": "nsis",
-      "icon": "build/icon.ico",
       "sign": null,
       "verifyUpdateCodeSignature": false
     },
@@ -57,15 +56,8 @@
       "menuCategory": true,
       "runAfterFinish": true,
       "shortcutName": "Nixminds Document Suite",
-      "installerIcon": "build/icon.ico",
-      "uninstallerIcon": "build/icon.ico",
       "artifactName": "${productName}-Setup-${version}.${ext}",
-      "deleteAppDataOnUninstall": false,
-      "warningsAsErrors": false,
-      "displayLanguageSelector": false,
-      "installerLanguages": ["en_US"],
-      "language": "1033",
-      "multiLanguageInstaller": false
+      "deleteAppDataOnUninstall": false
     },
     "mac": {
       "target": "dmg",
