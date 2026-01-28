@@ -1,7 +1,7 @@
 {
   "name": "nixminds-document-suite",
-  "version": "2.1.0",
-  "description": "Nixminds Document Anonymization Suite - Production Ready",
+  "version": "3.0.0",
+  "description": "Nixminds Document Anonymization Suite - Production Ready with Offline Licensing",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -27,21 +27,46 @@
       "output": "dist"
     },
     "files": [
-      "**/*",
+      "main.js",
+      "preload.js",
+      "index.html",
+      "renderer.js",
+      "styles.css",
+      "*.py",
+      "cz_names.v1.json",
+      "assets/**/*",
+      "licensing/**/*",
+      "!licensing/__pycache__",
+      "!**/*.pyc",
       "!test/**/*",
-      "!.git/**/*",
-      "!README.md"
-    ],
-    "extraResources": [
-      {
-        "from": "python/",
-        "to": "python/",
-        "filter": ["**/*.py"]
-      }
+      "!.git/**/*"
     ],
     "win": {
       "target": "nsis",
-      "icon": "assets/icon.ico"
+      "icon": "build/icon.ico",
+      "sign": null,
+      "verifyUpdateCodeSignature": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "menuCategory": true,
+      "runAfterFinish": true,
+      "shortcutName": "Nixminds Document Suite",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "artifactName": "${productName}-Setup-${version}.${ext}",
+      "deleteAppDataOnUninstall": false,
+      "warningsAsErrors": false,
+      "displayLanguageSelector": false,
+      "installerLanguages": ["en_US"],
+      "language": "1033",
+      "multiLanguageInstaller": false,
+      "include": "build/installer.nsh"
     },
     "mac": {
       "target": "dmg",
@@ -65,6 +90,7 @@
     "privacy",
     "czech",
     "gdpr",
-    "pii"
+    "pii",
+    "licensing"
   ]
 }
