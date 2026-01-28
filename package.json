@@ -42,6 +42,11 @@
       "!test/**/*",
       "!.git/**/*"
     ],
+    "asarUnpack": [
+      "**/*.py",
+      "licensing/**/*",
+      "cz_names.v1.json"
+    ],
     "win": {
       "target": "nsis",
       "sign": null,

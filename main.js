@@ -261,12 +261,20 @@ app.on("activate", () => {
 // ----------------------- HELPERS -----------------------
 function resolvePy(scriptName) {
   const cands = [
-    path.join(__dirname, "python", scriptName),
+    // Production: Python files are in app.asar.unpacked
+    path.join(__dirname, "..", "app.asar.unpacked", scriptName),
+    // Dev: Python files in root
     path.join(__dirname, scriptName),
+    // Fallback: python subfolder
+    path.join(__dirname, "python", scriptName),
   ];
   for (const p of cands) {
-    if (fs.existsSync(p)) return p;
+    if (fs.existsSync(p)) {
+      if (DEBUG) console.log(`[PY] Resolved ${scriptName} to: ${p}`);
+      return p;
+    }
   }
+  console.warn(`[PY] Script not found: ${scriptName}, tried:`, cands);
   return cands[0];
 }
 
