@@ -425,7 +425,7 @@ ipcMain.handle("deanonymize-document", async (evt, anonFile, mapFile) => {
   const cleanBase = base.endsWith("_anon") ? base.slice(0, -5) : base;
   const requestedOut = path.join(dir, `${cleanBase}_deanon.docx`);
 
-  const cli = resolvePy("deanonymizator_lokal.py");
+  const cli = resolvePy("deanonymizator.py");
   if (!fs.existsSync(cli)) {
     return { success: false, error: `Deanonymizátor nenalezen: ${cli}` };
   }
