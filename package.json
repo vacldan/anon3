@@ -37,6 +37,7 @@
       "cz_names.v1.json",
       "assets/**/*",
       "licensing/**/*",
+      "pyarmor_runtime_*/**/*",
       "!licensing/__pycache__",
       "!**/*.pyc",
       "!test/**/*",
@@ -45,6 +46,7 @@
     "asarUnpack": [
       "**/*.py",
       "licensing/**/*",
+      "pyarmor_runtime_*/**/*",
       "cz_names.v1.json"
     ],
     "win": {
