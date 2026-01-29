@@ -72,16 +72,18 @@ def format_hw_id(hw_id):
 
 # ==================== LICENSE VALIDATION ====================
 def verify_signature(license_data):
-    data_to_sign = (
-        f"{license_data['hw_id']}:"
-        f"{license_data['customer']['name']}:"
-        f"{license_data['customer']['email']}:"
-        f"{license_data['license_key']}:"
-        f"{license_data['type']}:"
-        f"{license_data['issued_at']}:"
-        f"{license_data['expires_at']}"
+    """
+    Ověří podpis licence - MUSÍ odpovídat formátu v license_generator.py!
+    Generátor používá: f"{license_key}|{hw_id}|{expires_at}|{license_type}|{MASTER_SECRET}"
+    """
+    sign_string = (
+        f"{license_data['license_key']}|"
+        f"{license_data['hw_id']}|"
+        f"{license_data['expires_at']}|"
+        f"{license_data['type']}"
     )
-    expected_signature = hashlib.sha256((data_to_sign + MASTER_SECRET).encode()).hexdigest()
+    combined = f"{sign_string}|{MASTER_SECRET}"
+    expected_signature = hashlib.sha256(combined.encode('utf-8')).hexdigest()
     return license_data.get('signature') == expected_signature
 
 
