@@ -29,11 +29,12 @@ function candidatePythonBins() {
   return bins;
 }
 
-function spawnQuick(cmd, args) {
+function spawnQuick(cmd, args, options = {}) {
   return new Promise((resolve) => {
     const child = spawn(cmd, args, {
       shell: false,
       windowsHide: true,
+      cwd: options.cwd || undefined,
       env: {
         ...process.env,
         PYTHONIOENCODING: "utf-8",
@@ -197,13 +198,17 @@ async function checkLicense() {
   console.log(`[LICENSE] License exists: ${fs.existsSync(licenseFile)}`);
 
   try {
-    // Spusť script - předej cestu k licenci jako argument
-    const args = PY.isPyLauncher
-      ? ["-3", licenseScript, licenseFile]
-      : [licenseScript, licenseFile];
+    // Spusť script z jeho vlastního adresáře (důležité pro PyArmor)
+    const scriptDir = path.dirname(licenseScript);
+    const scriptName = path.basename(licenseScript);
 
+    const args = PY.isPyLauncher
+      ? ["-3", scriptName, licenseFile]
+      : [scriptName, licenseFile];
+
+    console.log(`[LICENSE] Running from: ${scriptDir}`);
     console.log(`[LICENSE] Running: ${PY.cmd} ${args.join(' ')}`);
-    const result = await spawnQuick(PY.cmd, args);
+    const result = await spawnQuick(PY.cmd, args, { cwd: scriptDir });
 
     console.log(`[LICENSE] Script output: ${result.out}`);
     console.log(`[LICENSE] Script stderr: ${result.err}`);
@@ -734,10 +739,12 @@ ipcMain.handle("get-license-info", async () => {
 
   const appRoot = getAppRootDir();
   const licenseFile = path.join(appRoot, "license.lic");
-  const args = PY.isPyLauncher ? ["-3", licenseScript, licenseFile] : [licenseScript, licenseFile];
+  const scriptDir = path.dirname(licenseScript);
+  const scriptName = path.basename(licenseScript);
+  const args = PY.isPyLauncher ? ["-3", scriptName, licenseFile] : [scriptName, licenseFile];
 
   try {
-    const result = await spawnQuick(PY.cmd, args);
+    const result = await spawnQuick(PY.cmd, args, { cwd: scriptDir });
     const output = result.out.trim();
 
     if (output) {
