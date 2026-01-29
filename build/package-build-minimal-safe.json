@@ -20,10 +20,6 @@
 
       "cz_names.v1.json",
 
-      "licensing/__init__.py",
-      "licensing/hw_fingerprint.py",
-      "licensing/license_validator.py",
-
       "pyarmor_runtime_*/**/*",
 
       "assets/logo.png",
@@ -50,7 +46,6 @@
     ],
     "asarUnpack": [
       "**/*.py",
-      "licensing/**/*",
       "pyarmor_runtime_*/**/*",
       "cz_names.v1.json"
     ],
