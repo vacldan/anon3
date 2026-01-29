@@ -173,9 +173,9 @@ function createWindow() {
 async function checkLicense() {
   console.log("[LICENSE] Checking license...");
 
-  const licenseScript = resolvePy("validate_license_cli.py");
+  const licenseScript = resolvePy("validate_license_standalone.py");
   if (!fs.existsSync(licenseScript)) {
-    console.warn("[LICENSE] validate_license_cli.py not found, skipping validation");
+    console.warn("[LICENSE] validate_license_standalone.py not found, skipping validation");
     return { valid: true, skipValidation: true };
   }
 
@@ -674,7 +674,7 @@ ipcMain.handle("select-pdf-file", async () => {
 
 // License info handler
 ipcMain.handle("get-license-info", async () => {
-  const licenseScript = resolvePy("validate_license_cli.py");
+  const licenseScript = resolvePy("validate_license_standalone.py");
   if (!fs.existsSync(licenseScript)) {
     return { valid: false, message: "License validation not available" };
   }
