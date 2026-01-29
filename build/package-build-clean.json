@@ -1,0 +1,74 @@
+{
+  "_comment": "CLEAN BUILD CONFIG - Only includes necessary files, excludes test data",
+  "build": {
+    "appId": "com.nixminds.documentsuite",
+    "productName": "Nixminds Document Suite",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "package.json",
+
+      "validate_license_standalone.py",
+      "anonymize_cli.py",
+      "deanonymizator.py",
+      "pdf2docx_cli.py",
+      "anon7.2 - s padama.py",
+
+      "cz_names.v1.json",
+
+      "licensing/**/*",
+      "!licensing/__pycache__/**",
+
+      "pyarmor_runtime_*/**/*",
+
+      "assets/**/*",
+      "build/icon.ico",
+
+      "!**/*.docx",
+      "!**/*.txt",
+      "!**/*.md",
+      "!**/*.log",
+      "!**/__pycache__/**",
+      "!**/*.pyc",
+      "!**/test/**",
+      "!**/tests/**",
+      "!**/.git/**",
+      "!**/dist/**",
+      "!**/dist_obfuscated/**",
+      "!**/backup_original/**",
+      "!**/node_modules/**",
+      "!**/*.map",
+      "!**/smlouva*",
+      "!**/historie*",
+      "!**/History*",
+      "!**/audit*",
+      "!**/Claude_code*"
+    ],
+    "asarUnpack": [
+      "**/*.py",
+      "licensing/**/*",
+      "pyarmor_runtime_*/**/*",
+      "cz_names.v1.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico",
+      "sign": null,
+      "verifyUpdateCodeSignature": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Nixminds Document Suite",
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    }
+  }
+}

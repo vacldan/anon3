@@ -1,0 +1,75 @@
+{
+  "name": "nixminds-document-suite",
+  "version": "3.0.0",
+  "description": "Nixminds Document Anonymization Suite",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --enable-logging",
+    "dist": "electron-builder --publish=never",
+    "obfuscate": "python build/build_with_trial_pyarmor.py"
+  },
+  "author": {
+    "name": "Nixminds",
+    "email": "info@nixminds.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^22.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.nixminds.document-suite",
+    "productName": "Nixminds Document Suite",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "package.json",
+      "validate_license_standalone.py",
+      "anonymize_cli.py",
+      "deanonymizator_lokal.py",
+      "pdf2docx_cli.py",
+      "anon7.2 - s padama.py",
+      "cz_names.v1.json",
+      "pyarmor_runtime_*/**/*",
+      "!**/*.docx",
+      "!**/*.txt",
+      "!**/smlouva*",
+      "!**/historie*",
+      "!**/History*",
+      "!**/test*",
+      "!**/debug*",
+      "!**/*_test.py",
+      "!**/*_anon.docx",
+      "!**/*_map.*",
+      "!**/licensing/**",
+      "!**/dist/**",
+      "!**/dist_obfuscated/**",
+      "!**/node_modules/**",
+      "!**/.git/**"
+    ],
+    "asarUnpack": [
+      "**/*.py",
+      "pyarmor_runtime_*/**/*",
+      "cz_names.v1.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "sign": null
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Nixminds Document Suite",
+      "artifactName": "${productName}-Setup-${version}.${ext}",
+      "warningsAsErrors": false
+    }
+  }
+}
