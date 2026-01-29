@@ -170,6 +170,15 @@ function createWindow() {
 
 // ----------------------- APP LIFECYCLE -----------------------
 // ----------------------- LICENSE VALIDATION -----------------------
+function getAppRootDir() {
+  // V produkci: složka kde je .exe
+  // Ve vývoji: __dirname
+  if (app.isPackaged) {
+    return path.dirname(app.getPath('exe'));
+  }
+  return __dirname;
+}
+
 async function checkLicense() {
   console.log("[LICENSE] Checking license...");
 
@@ -179,11 +188,26 @@ async function checkLicense() {
     return { valid: true, skipValidation: true };
   }
 
-  const licenseFile = path.join(__dirname, "license.lic");
+  // Hledej licenci ve složce s .exe (ne v resources)
+  const appRoot = getAppRootDir();
+  const licenseFile = path.join(appRoot, "license.lic");
+
+  console.log(`[LICENSE] App root: ${appRoot}`);
+  console.log(`[LICENSE] Looking for license at: ${licenseFile}`);
+  console.log(`[LICENSE] License exists: ${fs.existsSync(licenseFile)}`);
 
   try {
-    const args = PY.isPyLauncher ? ["-3", licenseScript, licenseFile] : [licenseScript, licenseFile];
+    // Spusť script - předej cestu k licenci jako argument
+    const args = PY.isPyLauncher
+      ? ["-3", licenseScript, licenseFile]
+      : [licenseScript, licenseFile];
+
+    console.log(`[LICENSE] Running: ${PY.cmd} ${args.join(' ')}`);
     const result = await spawnQuick(PY.cmd, args);
+
+    console.log(`[LICENSE] Script output: ${result.out}`);
+    console.log(`[LICENSE] Script stderr: ${result.err}`);
+
     const output = result.out.trim();
 
     if (output) {
@@ -196,13 +220,36 @@ async function checkLicense() {
         return { valid: false, message: "Chyba při parsování licence", needs_activation: true };
       }
     } else {
-      return { valid: false, message: "License check returned no output", needs_activation: true };
+      // Spočítej HW ID i když script selhal
+      const hwResult = await spawnQuick(PY.cmd,
+        PY.isPyLauncher ? ["-3", "-c", HW_ID_SCRIPT] : ["-c", HW_ID_SCRIPT]
+      );
+      const hwId = hwResult.out.trim() || "UNKNOWN";
+      return {
+        valid: false,
+        message: "License check returned no output",
+        needs_activation: true,
+        hw_id: hwId
+      };
     }
   } catch (error) {
     console.error("[LICENSE] Error checking license:", error);
     return { valid: false, message: `Chyba: ${error.message}`, needs_activation: true };
   }
 }
+
+// Inline script pro získání HW ID
+const HW_ID_SCRIPT = `
+import hashlib, uuid, subprocess
+try:
+    cpu = subprocess.check_output('wmic cpu get ProcessorId', shell=True).decode().split('\\n')[1].strip()
+    mac = ':'.join(['{:02x}'.format((uuid.getnode() >> i) & 0xff) for i in range(0, 48, 8)][::-1])
+    disk = subprocess.check_output('wmic diskdrive get SerialNumber', shell=True).decode().split('\\n')[1].strip()
+    hw = hashlib.sha256(f'{cpu}:{mac}:{disk}'.encode()).hexdigest()[:16].upper()
+    print(f'{hw[:4]}-{hw[4:8]}-{hw[8:12]}-{hw[12:16]}')
+except:
+    print('UNKNOWN')
+`.trim();
 
 function showLicenseError(licenseData) {
   const hwId = licenseData.hw_id || "UNKNOWN";
@@ -672,7 +719,8 @@ ipcMain.handle("get-license-info", async () => {
     return { valid: false, message: "License validation not available" };
   }
 
-  const licenseFile = path.join(__dirname, "license.lic");
+  const appRoot = getAppRootDir();
+  const licenseFile = path.join(appRoot, "license.lic");
   const args = PY.isPyLauncher ? ["-3", licenseScript, licenseFile] : [licenseScript, licenseFile];
 
   try {
