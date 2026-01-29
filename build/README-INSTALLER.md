@@ -1,5 +1,38 @@
 # Nixminds Document Suite - Installer Setup
 
+## PyArmor Trial License Workaround
+
+**PROBLEM**: PyArmor trial verze má limity na velikost souborů. Soubor `anon7.2 - s padama.py` (100KB) je příliš velký.
+
+**ŘEŠENÍ**: Použij nový build script který obfuskuje pouze kritické soubory:
+
+```cmd
+# Spusti build script pro trial verzi
+python build/build_with_trial_pyarmor.py
+
+# Zkopiruj obfuskovane soubory
+copy dist_obfuscated\validate_license_standalone.py .
+copy dist_obfuscated\anonymize_cli.py .
+copy dist_obfuscated\deanonymizator.py .
+copy dist_obfuscated\pdf2docx_cli.py .
+xcopy dist_obfuscated\pyarmor_runtime_* pyarmor_runtime_*\ /E /I /Y
+
+# Build installer
+npm run dist
+```
+
+**CO JE CHRÁNĚNO**:
+- `validate_license_standalone.py` - OBFUSKOVÁN (obsahuje MASTER_SECRET)
+- `anonymize_cli.py` - OBFUSKOVÁN (pokud trial dovolí)
+- `deanonymizator.py` - OBFUSKOVÁN (pokud trial dovolí)
+
+**CO NENÍ CHRÁNĚNO** (trial limit):
+- `anon7.2 - s padama.py` - zkopírován jako je (příliš velký)
+
+Pro plnou ochranu: Kup PyArmor Pro licenci ($70-200)
+
+---
+
 ## PROBLEM: Installer obsahuje zbytecne soubory
 
 Puvodni konfigurace `"files": ["**/*"]` balila VSECHNO vcetne:
