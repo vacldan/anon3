@@ -208,8 +208,7 @@ function showLicenseError(licenseData) {
   const hwId = licenseData.hw_id || "UNKNOWN";
   const message = licenseData.message || "Neplatná nebo chybějící licence";
 
-  const buttons = ["Ukončit aplikaci", "Pokračovat bez licence"];
-  const buttonIndex = dialog.showMessageBoxSync({
+  dialog.showMessageBoxSync({
     type: "error",
     title: "Aktivace požadována - SKRYI",
     message: "Aplikace vyžaduje platnou licenci",
@@ -220,19 +219,13 @@ function showLicenseError(licenseData) {
             `2. Obdržíte soubor license.lic\n` +
             `3. Umístěte ho do složky s aplikací\n` +
             `4. Restartujte aplikaci`,
-    buttons: buttons,
-    defaultId: 0,
-    cancelId: 0
+    buttons: ["Ukončit aplikaci"],
+    defaultId: 0
   });
 
-  if (buttonIndex === 0) {
-    console.log("[LICENSE] User chose to exit");
-    app.quit();
-    return false;
-  } else {
-    console.warn("[LICENSE] User chose to continue without license (demo mode)");
-    return true; // Continue in demo mode
-  }
+  console.log("[LICENSE] Application closing - no valid license");
+  app.quit();
+  return false;
 }
 
 app.whenReady().then(async () => {
