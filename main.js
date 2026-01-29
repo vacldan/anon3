@@ -306,13 +306,26 @@ app.on("activate", () => {
 
 // ----------------------- HELPERS -----------------------
 function resolvePy(scriptName) {
+  // V zabaleném Electron app jsou Python soubory v app.asar.unpacked, ne v app.asar
+  const unpackedDir = __dirname.replace('app.asar', 'app.asar.unpacked');
+
   const cands = [
-    path.join(__dirname, "python", scriptName),
+    // Nejdřív hledej v unpacked složce (pro produkci)
+    path.join(unpackedDir, scriptName),
+    path.join(unpackedDir, "python", scriptName),
+    // Pak v __dirname (pro vývoj)
     path.join(__dirname, scriptName),
+    path.join(__dirname, "python", scriptName),
   ];
+
   for (const p of cands) {
-    if (fs.existsSync(p)) return p;
+    if (fs.existsSync(p)) {
+      console.log(`[RESOLVE] Found ${scriptName} at: ${p}`);
+      return p;
+    }
   }
+
+  console.warn(`[RESOLVE] ${scriptName} not found in any location`);
   return cands[0];
 }
 
