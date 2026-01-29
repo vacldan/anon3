@@ -20,7 +20,7 @@
   },
   "build": {
     "appId": "com.nixminds.document-suite",
-    "productName": "Nixminds Document Suite",
+    "productName": "SKRYI Document Suite",
     "directories": {
       "output": "dist"
     },
@@ -28,6 +28,7 @@
       "main.js",
       "index.html",
       "package.json",
+      "logo.png",
       "validate_license_standalone.py",
       "anonymize_cli.py",
       "deanonymizator_lokal.py",
@@ -58,7 +59,8 @@
     ],
     "win": {
       "target": "nsis",
-      "sign": null
+      "sign": null,
+      "icon": "build/icon.ico"
     },
     "nsis": {
       "oneClick": false,
@@ -67,9 +69,11 @@
       "allowElevation": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "Nixminds Document Suite",
-      "artifactName": "${productName}-Setup-${version}.${ext}",
-      "warningsAsErrors": false
+      "shortcutName": "SKRYI Document Suite",
+      "artifactName": "SKRYI-Setup-${version}.${ext}",
+      "warningsAsErrors": false,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico"
     }
   }
 }
