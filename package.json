@@ -29,7 +29,6 @@
       "main.js",
       "index.html",
       "package.json",
-      "logo.png",
       "validate_license_standalone.exe",
       "validate_license_standalone.py",
       "anonymize_cli.exe",
@@ -68,8 +67,7 @@
     ],
     "win": {
       "target": "nsis",
-      "sign": null,
-      "icon": "build/icon.ico"
+      "sign": null
     },
     "nsis": {
       "oneClick": false,
@@ -80,9 +78,7 @@
       "createStartMenuShortcut": true,
       "shortcutName": "SKRYI Document Suite",
       "artifactName": "SKRYI-Setup-${version}.${ext}",
-      "warningsAsErrors": false,
-      "installerIcon": "build/icon.ico",
-      "uninstallerIcon": "build/icon.ico"
+      "warningsAsErrors": false
     }
   }
 }
