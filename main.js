@@ -183,9 +183,9 @@ function getAppRootDir() {
 async function checkLicense() {
   console.log("[LICENSE] Checking license...");
 
-  const licenseScript = resolvePy("validate_license_standalone.py");
-  if (!fs.existsSync(licenseScript)) {
-    console.warn("[LICENSE] validate_license_standalone.py not found, skipping validation");
+  const script = resolveScript("validate_license_standalone.py");
+  if (!fs.existsSync(script.path)) {
+    console.warn("[LICENSE] License validator not found, skipping validation");
     return { valid: true, skipValidation: true };
   }
 
@@ -196,19 +196,25 @@ async function checkLicense() {
   console.log(`[LICENSE] App root: ${appRoot}`);
   console.log(`[LICENSE] Looking for license at: ${licenseFile}`);
   console.log(`[LICENSE] License exists: ${fs.existsSync(licenseFile)}`);
+  console.log(`[LICENSE] Using compiled exe: ${script.isExe}`);
 
   try {
-    // Spusť script z jeho vlastního adresáře (důležité pro PyArmor)
-    const scriptDir = path.dirname(licenseScript);
-    const scriptName = path.basename(licenseScript);
+    const scriptDir = path.dirname(script.path);
+    let result;
 
-    const args = PY.isPyLauncher
-      ? ["-3", scriptName, licenseFile]
-      : [scriptName, licenseFile];
-
-    console.log(`[LICENSE] Running from: ${scriptDir}`);
-    console.log(`[LICENSE] Running: ${PY.cmd} ${args.join(' ')}`);
-    const result = await spawnQuick(PY.cmd, args, { cwd: scriptDir });
+    if (script.isExe) {
+      // Nuitka compiled .exe - run directly
+      console.log(`[LICENSE] Running exe: ${script.path} ${licenseFile}`);
+      result = await spawnQuick(script.path, [licenseFile], { cwd: scriptDir });
+    } else {
+      // Python script - run via interpreter
+      const scriptName = path.basename(script.path);
+      const args = PY.isPyLauncher
+        ? ["-3", scriptName, licenseFile]
+        : [scriptName, licenseFile];
+      console.log(`[LICENSE] Running: ${PY.cmd} ${args.join(' ')}`);
+      result = await spawnQuick(PY.cmd, args, { cwd: scriptDir });
+    }
 
     console.log(`[LICENSE] Script output: ${result.out}`);
     console.log(`[LICENSE] Script stderr: ${result.err}`);
@@ -310,28 +316,49 @@ app.on("activate", () => {
 });
 
 // ----------------------- HELPERS -----------------------
-function resolvePy(scriptName) {
-  // V zabaleném Electron app jsou Python soubory v app.asar.unpacked, ne v app.asar
+// Resolve script - prefers .exe (Nuitka compiled), falls back to .py
+function resolveScript(baseName) {
   const unpackedDir = __dirname.replace('app.asar', 'app.asar.unpacked');
+  const exeName = baseName.replace('.py', '.exe');
+  const pyName = baseName;
 
-  const cands = [
-    // Nejdřív hledej v unpacked složce (pro produkci)
-    path.join(unpackedDir, scriptName),
-    path.join(unpackedDir, "python", scriptName),
-    // Pak v __dirname (pro vývoj)
-    path.join(__dirname, scriptName),
-    path.join(__dirname, "python", scriptName),
+  // First look for compiled .exe (Nuitka)
+  const exeCands = [
+    path.join(unpackedDir, exeName),
+    path.join(__dirname, exeName),
   ];
 
-  for (const p of cands) {
+  for (const p of exeCands) {
     if (fs.existsSync(p)) {
-      console.log(`[RESOLVE] Found ${scriptName} at: ${p}`);
-      return p;
+      console.log(`[RESOLVE] Found compiled ${exeName} at: ${p}`);
+      return { path: p, isExe: true };
     }
   }
 
-  console.warn(`[RESOLVE] ${scriptName} not found in any location`);
-  return cands[0];
+  // Fallback to .py script
+  const pyCands = [
+    path.join(unpackedDir, pyName),
+    path.join(unpackedDir, "python", pyName),
+    path.join(__dirname, pyName),
+    path.join(__dirname, "python", pyName),
+  ];
+
+  for (const p of pyCands) {
+    if (fs.existsSync(p)) {
+      console.log(`[RESOLVE] Found script ${pyName} at: ${p}`);
+      return { path: p, isExe: false };
+    }
+  }
+
+  console.warn(`[RESOLVE] ${baseName} not found in any location`);
+  return { path: pyCands[0], isExe: false };
+}
+
+// Legacy function for compatibility
+function resolvePy(scriptName) {
+  const result = resolveScript(scriptName);
+  return result.path;
+}
 }
 
 function parseJsonFromOutput(stdoutBuf) {
@@ -732,21 +759,26 @@ ipcMain.handle("select-pdf-file", async () => {
 
 // License info handler
 ipcMain.handle("get-license-info", async () => {
-  const licenseScript = resolvePy("validate_license_standalone.py");
-  if (!fs.existsSync(licenseScript)) {
+  const script = resolveScript("validate_license_standalone.py");
+  if (!fs.existsSync(script.path)) {
     return { valid: false, message: "License validation not available" };
   }
 
   const appRoot = getAppRootDir();
   const licenseFile = path.join(appRoot, "license.lic");
-  const scriptDir = path.dirname(licenseScript);
-  const scriptName = path.basename(licenseScript);
-  const args = PY.isPyLauncher ? ["-3", scriptName, licenseFile] : [scriptName, licenseFile];
+  const scriptDir = path.dirname(script.path);
 
   try {
-    const result = await spawnQuick(PY.cmd, args, { cwd: scriptDir });
-    const output = result.out.trim();
+    let result;
+    if (script.isExe) {
+      result = await spawnQuick(script.path, [licenseFile], { cwd: scriptDir });
+    } else {
+      const scriptName = path.basename(script.path);
+      const args = PY.isPyLauncher ? ["-3", scriptName, licenseFile] : [scriptName, licenseFile];
+      result = await spawnQuick(PY.cmd, args, { cwd: scriptDir });
+    }
 
+    const output = result.out.trim();
     if (output) {
       return JSON.parse(output);
     }

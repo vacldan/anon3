@@ -7,6 +7,7 @@
     "start": "electron .",
     "dev": "electron . --enable-logging",
     "dist": "electron-builder --publish=never",
+    "compile": "python build/build_with_nuitka.py",
     "obfuscate": "python build/build_with_trial_pyarmor.py"
   },
   "author": {
@@ -29,11 +30,16 @@
       "index.html",
       "package.json",
       "logo.png",
+      "validate_license_standalone.exe",
       "validate_license_standalone.py",
+      "anonymize_cli.exe",
       "anonymize_cli.py",
+      "deanonymizator_lokal.exe",
       "deanonymizator_lokal.py",
+      "pdf2docx_cli.exe",
       "pdf2docx_cli.py",
       "anon7.2 - s padama.py",
+      "anon7.2 - s padama.pyd",
       "cz_names.v1.json",
       "pyarmor_runtime_*/**/*",
       "!**/*.docx",
@@ -49,10 +55,13 @@
       "!**/licensing/**",
       "!**/dist/**",
       "!**/dist_obfuscated/**",
+      "!**/dist_nuitka/**",
       "!**/node_modules/**",
       "!**/.git/**"
     ],
     "asarUnpack": [
+      "**/*.exe",
+      "**/*.pyd",
       "**/*.py",
       "pyarmor_runtime_*/**/*",
       "cz_names.v1.json"
