@@ -1,125 +1,125 @@
-================================================================================
-                         LICENČNÍ PODMÍNKY
+﻿================================================================================
+                         LICENCNI PODMINKY
                       SKRYI Document Suite
 ================================================================================
 
-1. ÚVODNÍ USTANOVENÍ
+1. UVODNI USTANOVENI
 --------------------
 
-Tyto licenční podmínky („EULA") upravují práva a povinnosti mezi společností
-Nixminds s.r.o. („Poskytovatel") a uživatelem („Uživatel") při používání
-softwaru SKRYI Document Suite („Software").
+Tyto licencni podminky ("EULA") upravuji prava a povinnosti mezi spolecnosti
+Nixminds s.r.o. ("Poskytovatel") a uzivatelem ("Uzivatel") pri pouzivani
+softwaru SKRYI Document Suite ("Software").
 
-Instalací, spuštěním nebo používáním Software Uživatel potvrzuje, že se
-s těmito podmínkami seznámil a souhlasí s nimi.
+Instalaci, spustenim nebo pouzivanim Software Uzivatel potvrzuje, ze se
+s temito podminkami seznamil a souhlasi s nimi.
 
 
 2. LICENCE
 ----------
 
-Poskytovatel uděluje Uživateli nevýhradní, nepřenosnou a časově omezenou
-licenci k užívání Software v rozsahu odpovídajícím zakoupenému licenčnímu typu.
+Poskytovatel udeluje Uzivateli nevyhradni, neprenosnou a casove omezenou
+licenci k uzivani Software v rozsahu odpovidajicim zakoupenemu licencnimu typu.
 
 Licence je:
-  • vázána na konkrétní zařízení (hardware-bound)
-  • určena výhradně pro interní potřeby Uživatele
-  • nepřenosná na třetí osoby
+  - vazana na konkretni zarizeni (hardware-bound)
+  - urcena vyhradne pro interni potreby Uzivatele
+  - neprenosna na treti osoby
 
-Bez výslovného písemného souhlasu Poskytovatele není dovoleno:
-  • Software dále šířit, pronajímat nebo sublicencovat
-  • obcházet licenční ochrany
-  • provádět reverse engineering, dekompilaci nebo jiné pokusy o získání
-    zdrojového kódu
+Bez vyslovneho pisemneho souhlasu Poskytovatele neni dovoleno:
+  - Software dale sirit, pronajímat nebo sublicencovat
+  - obchazet licencni ochrany
+  - provadet reverse engineering, dekompilaci nebo jine pokusy o ziskani
+    zdrojoveho kodu
 
 
-3. ÚČEL SOFTWARE
+3. UCEL SOFTWARE
 ----------------
 
-Software slouží jako podpůrný nástroj pro anonymizaci dokumentů obsahujících
-osobní údaje.
+Software slouzi jako podpurny nastroj pro anonymizaci dokumentu obsahujicich
+osobni udaje.
 
 Software:
-  • automatizuje vybrané procesy anonymizace
-  • nenahrazuje odborný úsudek Uživatele
-  • není náhradou právní nebo odborné kontroly dokumentu
+  - automatizuje vybrane procesy anonymizace
+  - nenahrazuje odborny usudek Uzivatele
+  - neni nahradou pravni nebo odborne kontroly dokumentu
 
 
-4. ODPOVĚDNOST UŽIVATELE
+4. ODPOVEDNOST UZIVATELE
 ------------------------
 
-Uživatel bere na vědomí, že:
-  • výsledky anonymizace je nutné před dalším použitím nebo zveřejněním
+Uzivatel bere na vedomi, ze:
+  - vysledky anonymizace je nutne pred dalsim pouzitim nebo zverejnenim
     zkontrolovat
-  • konečná odpovědnost za obsah dokumentu zůstává vždy na Uživateli
+  - konecna odpovednost za obsah dokumentu zustava vzdy na Uzivateli
 
-Uživatel odpovídá za:
-  • správnost vstupních dat
-  • způsob použití výstupů Software
-  • dodržení právních předpisů (včetně GDPR)
+Uzivatel odpovida za:
+  - spravnost vstupnich dat
+  - zpusob pouziti vystupu Software
+  - dodrzeni pravnich predpisu (vcetne GDPR)
 
 
-5. OMEZENÍ ODPOVĚDNOSTI POSKYTOVATELE
+5. OMEZENI ODPOVEDNOSTI POSKYTOVATELE
 -------------------------------------
 
-Software je poskytován „tak, jak je" (AS IS).
+Software je poskytovan "tak, jak je" (AS IS).
 
 Poskytovatel:
-  • negarantuje, že Software bude bezchybný nebo vhodný pro všechny
-    specifické účely
-  • nenese odpovědnost za:
-      - nepřímé škody
-      - ušlý zisk
-      - ztrátu dat
-      - sankce, pokuty nebo jiné postihy uložené třetími stranami nebo
-        orgány veřejné moci
+  - negarantuje, ze Software bude bezchybny nebo vhodny pro vsechny
+    specificke ucely
+  - nenese odpovednost za:
+      - neprime skody
+      - usly zisk
+      - ztratu dat
+      - sankce, pokuty nebo jine postihy ulozene tretimi stranami nebo
+        organy verejne moci
 
-Celková odpovědnost Poskytovatele za škodu vzniklou v souvislosti s užíváním
-Software je omezena maximálně do výše zaplaceného licenčního poplatku za dané
-licenční období.
+Celkova odpovednost Poskytovatele za skodu vzniklou v souvislosti s pouzivanim
+Software je omezena maximalne do vyse zaplaceneho licencniho poplatku za dane
+licencni obdobi.
 
 
 6. PODPORA A AKTUALIZACE
 ------------------------
 
-Poskytovatel může poskytovat:
-  • aktualizace
-  • opravy chyb
-  • technickou podporu
+Poskytovatel muze poskytovat:
+  - aktualizace
+  - opravy chyb
+  - technickou podporu
 
-Rozsah podpory závisí na typu zakoupené licence a není automaticky garantován.
+Rozsah podpory zavisi na typu zakoupene licence a neni automaticky garantovan.
 
 
 7. OCHRANA DAT
 --------------
 
-Software funguje v offline režimu a nezajišťuje přenos dat na servery
+Software funguje v offline rezimu a nezajistuje prenos dat na servery
 Poskytovatele.
 
 Poskytovatel:
-  • nezpracovává osobní údaje obsažené v dokumentech Uživatele
-  • nenese odpovědnost za nakládání s daty mimo Software
+  - nezpracovava osobni udaje obsazene v dokumentech Uzivatele
+  - nenese odpovednost za nakladani s daty mimo Software
 
 
-8. UKONČENÍ LICENCE
+8. UKONCENI LICENCE
 -------------------
 
-Licence zaniká:
-  • uplynutím licenční doby
-  • porušením těchto podmínek
-  • ukončením smluvního vztahu
+Licence zanika:
+  - uplynutim licencni doby
+  - porusenim techto podminek
+  - ukoncenim smluvniho vztahu
 
-Po ukončení licence je Uživatel povinen Software dále nepoužívat.
+Po ukonceni licence je Uzivatel povinen Software dale nepouzivat.
 
 
-9. ZÁVĚREČNÁ USTANOVENÍ
+9. ZAVERECNA USTANOVENI
 -----------------------
 
-Tyto licenční podmínky se řídí právním řádem České republiky.
+Tyto licencni podminky se ridi pravnim radem Ceske republiky.
 
-Veškeré spory budou řešeny příslušnými soudy České republiky.
+Veskere spory budou reseny prislusnymi soudy Ceske republiky.
 
 
 ================================================================================
-                    © 2026 Nixminds s.r.o.
-                   Všechna práva vyhrazena
+                    (c) 2026 Nixminds s.r.o.
+                   Vsechna prava vyhrazena
 ================================================================================
