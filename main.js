@@ -359,7 +359,6 @@ function resolvePy(scriptName) {
   const result = resolveScript(scriptName);
   return result.path;
 }
-}
 
 function parseJsonFromOutput(stdoutBuf) {
   if (!stdoutBuf) return null;
