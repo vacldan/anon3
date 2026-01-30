@@ -687,7 +687,43 @@ Metoda je aplikovatelná na **všechny inflektivní jazyky**:
 
 ---
 
-# 14. PATENTOVÉ NÁROKY
+# 14. PRÁVNÍ OCHRANA A EULA
+
+## 14.1 Licenční podmínky (EULA)
+
+Software je distribuován s licenčními podmínkami (EULA.txt), které:
+- Zobrazují se během instalace (vyžadován souhlas)
+- Jsou dostupné v instalační složce
+- Definují práva a povinnosti uživatele
+
+## 14.2 Klíčové body EULA
+
+**Licence:**
+- Nevýhradní, nepřenosná, časově omezená
+- Vázána na konkrétní hardware (HW ID)
+- Pouze pro interní potřeby uživatele
+
+**Odpovědnost uživatele:**
+- Kontrola výstupů před použitím
+- Dodržení právních předpisů (GDPR)
+- Správnost vstupních dat
+
+**Omezení odpovědnosti poskytovatele:**
+- Software poskytován "tak, jak je" (AS IS)
+- Negarantuje bezchybnost
+- Odpovědnost omezena na výši licenčního poplatku
+- Vyloučení nepřímých škod, sankcí, pokut
+
+## 14.3 Upozornění pro uživatele
+
+V aplikaci se zobrazuje:
+
+> „Výstup anonymizace je nutné před použitím zkontrolovat.
+> Software slouží jako podpůrný nástroj."
+
+---
+
+# 15. PATENTOVÉ NÁROKY
 
 ### Nárok 1 (hlavní)
 Způsob automatické anonymizace osobních jmen v textových dokumentech v inflektivních jazycích, vyznačující se tím, že:
@@ -725,7 +761,7 @@ Počítačový program obsahující instrukce pro provedení způsobu podle nár
 
 **Výrobce:** Nixminds s.r.o.
 **Email:** info@nixminds.com
-**Verze dokumentace:** 3.1.0
+**Verze dokumentace:** 3.2.0
 **Datum:** 30. ledna 2026
 **Klasifikace:** G06F 40/00 (zpracování přirozeného jazyka), G06F 21/62 (ochrana osobních údajů)
 

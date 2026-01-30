@@ -1,0 +1,125 @@
+================================================================================
+                         LICENČNÍ PODMÍNKY
+                      SKRYI Document Suite
+================================================================================
+
+1. ÚVODNÍ USTANOVENÍ
+--------------------
+
+Tyto licenční podmínky („EULA") upravují práva a povinnosti mezi společností
+Nixminds s.r.o. („Poskytovatel") a uživatelem („Uživatel") při používání
+softwaru SKRYI Document Suite („Software").
+
+Instalací, spuštěním nebo používáním Software Uživatel potvrzuje, že se
+s těmito podmínkami seznámil a souhlasí s nimi.
+
+
+2. LICENCE
+----------
+
+Poskytovatel uděluje Uživateli nevýhradní, nepřenosnou a časově omezenou
+licenci k užívání Software v rozsahu odpovídajícím zakoupenému licenčnímu typu.
+
+Licence je:
+  • vázána na konkrétní zařízení (hardware-bound)
+  • určena výhradně pro interní potřeby Uživatele
+  • nepřenosná na třetí osoby
+
+Bez výslovného písemného souhlasu Poskytovatele není dovoleno:
+  • Software dále šířit, pronajímat nebo sublicencovat
+  • obcházet licenční ochrany
+  • provádět reverse engineering, dekompilaci nebo jiné pokusy o získání
+    zdrojového kódu
+
+
+3. ÚČEL SOFTWARE
+----------------
+
+Software slouží jako podpůrný nástroj pro anonymizaci dokumentů obsahujících
+osobní údaje.
+
+Software:
+  • automatizuje vybrané procesy anonymizace
+  • nenahrazuje odborný úsudek Uživatele
+  • není náhradou právní nebo odborné kontroly dokumentu
+
+
+4. ODPOVĚDNOST UŽIVATELE
+------------------------
+
+Uživatel bere na vědomí, že:
+  • výsledky anonymizace je nutné před dalším použitím nebo zveřejněním
+    zkontrolovat
+  • konečná odpovědnost za obsah dokumentu zůstává vždy na Uživateli
+
+Uživatel odpovídá za:
+  • správnost vstupních dat
+  • způsob použití výstupů Software
+  • dodržení právních předpisů (včetně GDPR)
+
+
+5. OMEZENÍ ODPOVĚDNOSTI POSKYTOVATELE
+-------------------------------------
+
+Software je poskytován „tak, jak je" (AS IS).
+
+Poskytovatel:
+  • negarantuje, že Software bude bezchybný nebo vhodný pro všechny
+    specifické účely
+  • nenese odpovědnost za:
+      - nepřímé škody
+      - ušlý zisk
+      - ztrátu dat
+      - sankce, pokuty nebo jiné postihy uložené třetími stranami nebo
+        orgány veřejné moci
+
+Celková odpovědnost Poskytovatele za škodu vzniklou v souvislosti s užíváním
+Software je omezena maximálně do výše zaplaceného licenčního poplatku za dané
+licenční období.
+
+
+6. PODPORA A AKTUALIZACE
+------------------------
+
+Poskytovatel může poskytovat:
+  • aktualizace
+  • opravy chyb
+  • technickou podporu
+
+Rozsah podpory závisí na typu zakoupené licence a není automaticky garantován.
+
+
+7. OCHRANA DAT
+--------------
+
+Software funguje v offline režimu a nezajišťuje přenos dat na servery
+Poskytovatele.
+
+Poskytovatel:
+  • nezpracovává osobní údaje obsažené v dokumentech Uživatele
+  • nenese odpovědnost za nakládání s daty mimo Software
+
+
+8. UKONČENÍ LICENCE
+-------------------
+
+Licence zaniká:
+  • uplynutím licenční doby
+  • porušením těchto podmínek
+  • ukončením smluvního vztahu
+
+Po ukončení licence je Uživatel povinen Software dále nepoužívat.
+
+
+9. ZÁVĚREČNÁ USTANOVENÍ
+-----------------------
+
+Tyto licenční podmínky se řídí právním řádem České republiky.
+
+Veškeré spory budou řešeny příslušnými soudy České republiky.
+
+
+================================================================================
+                    © 2026 Nixminds s.r.o.
+                   Všechna práva vyhrazena
+================================================================================

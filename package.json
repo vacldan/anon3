@@ -29,6 +29,7 @@
       "main.js",
       "index.html",
       "package.json",
+      "EULA.txt",
       "validate_license_standalone.exe",
       "validate_license_standalone.py",
       "anonymize_cli.exe",
@@ -42,7 +43,9 @@
       "cz_names.v1.json",
       "pyarmor_runtime_*/**/*",
       "!**/*.docx",
-      "!**/*.txt",
+      "!**/historie*.txt",
+      "!**/History*.txt",
+      "!**/audit.txt",
       "!**/smlouva*",
       "!**/historie*",
       "!**/History*",
@@ -78,7 +81,8 @@
       "createStartMenuShortcut": true,
       "shortcutName": "SKRYI Document Suite",
       "artifactName": "SKRYI-Setup-${version}.${ext}",
-      "warningsAsErrors": false
+      "warningsAsErrors": false,
+      "license": "EULA.txt"
     }
   }
 }
