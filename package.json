@@ -1,0 +1,88 @@
+{
+  "name": "nixminds-document-suite",
+  "version": "3.0.0",
+  "description": "Nixminds Document Anonymization Suite",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --enable-logging",
+    "dist": "electron-builder --publish=never",
+    "compile": "python build/build_with_nuitka.py",
+    "obfuscate": "python build/build_with_trial_pyarmor.py"
+  },
+  "author": {
+    "name": "Nixminds",
+    "email": "info@nixminds.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^22.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.nixminds.document-suite",
+    "productName": "SKRYI Document Suite",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "package.json",
+      "logo.png",
+      "validate_license_standalone.exe",
+      "validate_license_standalone.py",
+      "anonymize_cli.exe",
+      "anonymize_cli.py",
+      "deanonymizator_lokal.exe",
+      "deanonymizator_lokal.py",
+      "pdf2docx_cli.exe",
+      "pdf2docx_cli.py",
+      "anon7.2 - s padama.py",
+      "anon7.2 - s padama.pyd",
+      "cz_names.v1.json",
+      "pyarmor_runtime_*/**/*",
+      "!**/*.docx",
+      "!**/*.txt",
+      "!**/smlouva*",
+      "!**/historie*",
+      "!**/History*",
+      "!**/test*",
+      "!**/debug*",
+      "!**/*_test.py",
+      "!**/*_anon.docx",
+      "!**/*_map.*",
+      "!**/licensing/**",
+      "!**/dist/**",
+      "!**/dist_obfuscated/**",
+      "!**/dist_nuitka/**",
+      "!**/node_modules/**",
+      "!**/.git/**"
+    ],
+    "asarUnpack": [
+      "**/*.exe",
+      "**/*.pyd",
+      "**/*.py",
+      "pyarmor_runtime_*/**/*",
+      "cz_names.v1.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "sign": null,
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "SKRYI Document Suite",
+      "artifactName": "SKRYI-Setup-${version}.${ext}",
+      "warningsAsErrors": false,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico"
+    }
+  }
+}

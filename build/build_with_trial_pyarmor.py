@@ -20,7 +20,7 @@ CRITICAL_FILES = [
 # Files to obfuscate if trial allows (may fail for large files)
 OPTIONAL_FILES = [
     "anonymize_cli.py",
-    "deanonymizator.py",
+    "deanonymizator_lokal.py",
     "pdf2docx_cli.py",
 ]
 
