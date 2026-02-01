@@ -38,6 +38,10 @@
       "deanonymizator_lokal.py",
       "pdf2docx_cli.exe",
       "pdf2docx_cli.py",
+      "skryi_watcher.exe",
+      "skryi_watcher.py",
+      "skryi_tray.exe",
+      "skryi_tray.pyw",
       "anon7.2 - s padama.py",
       "anon7.2 - s padama.pyd",
       "cz_names.v1.json",
@@ -65,6 +69,7 @@
       "**/*.exe",
       "**/*.pyd",
       "**/*.py",
+      "**/*.pyw",
       "pyarmor_runtime_*/**/*",
       "cz_names.v1.json"
     ],

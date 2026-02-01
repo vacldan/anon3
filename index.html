@@ -202,6 +202,7 @@
                 <button class="mode-btn" id="pdfMode">PDF → DOCX</button>
                 <button class="mode-btn active" id="anonymizeMode">Anonymizace</button>
                 <button class="mode-btn" id="deanonymizeMode">Deanonymizace</button>
+                <button class="mode-btn" id="folderMode">📁 Složkový režim</button>
                 <button class="mode-btn" id="licenseMode">🔐 Licence</button>
             </div>
         </div>
@@ -386,6 +387,74 @@
                 </div>
             </div>
         </div>
+
+        <!-- Folder Mode panel -->
+        <div id="folderPanel" class="hidden">
+            <div class="section" style="--delay: 0.1s">
+                <h3>📁 Automatický složkový režim</h3>
+                <p style="margin-bottom: 24px; color: #475569; line-height: 1.6;">
+                    Vložte dokumenty do složky <strong>IN</strong> a automaticky se anonymizují.
+                    Výsledky najdete ve složce <strong>OUT</strong>.
+                </p>
+
+                <div id="folderStatus" class="file-info" style="margin-bottom: 24px;">
+                    <div style="margin-bottom: 12px;">
+                        <strong style="color: #1e293b;">Status služby:</strong>
+                        <span id="watcherStatus" style="margin-left: 8px; font-weight: 600;">Kontroluji...</span>
+                    </div>
+                    <div style="margin-bottom: 12px;">
+                        <strong style="color: #1e293b;">IN složka:</strong>
+                        <span id="inFolderPath" style="margin-left: 8px; font-family: monospace; font-size: 13px;"></span>
+                    </div>
+                    <div style="margin-bottom: 12px;">
+                        <strong style="color: #1e293b;">OUT složka:</strong>
+                        <span id="outFolderPath" style="margin-left: 8px; font-family: monospace; font-size: 13px;"></span>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px;">
+                    <button class="btn" id="openInFolderBtn">📂 Otevřít IN složku</button>
+                    <button class="btn" id="openOutFolderBtn">📂 Otevřít OUT složku</button>
+                    <button class="btn secondary" id="openSkryiFolderBtn">📁 Otevřít SKRYI složku</button>
+                </div>
+
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="btn" id="startWatcherBtn">▶️ Spustit službu</button>
+                    <button class="btn secondary" id="stopWatcherBtn">⏹️ Zastavit službu</button>
+                </div>
+            </div>
+
+            <div class="section" style="--delay: 0.2s">
+                <h3>📋 Jak to funguje</h3>
+                <div style="color: #475569; line-height: 1.8;">
+                    <ol style="margin-left: 20px;">
+                        <li><strong>Přetáhněte</strong> dokument (DOCX nebo PDF) do složky <code>IN</code></li>
+                        <li>SKRYI automaticky <strong>detekuje</strong> nový soubor</li>
+                        <li>Dokument se <strong>anonymizuje</strong> (PDF se nejprve převede na DOCX)</li>
+                        <li>Výsledky najdete ve složce <strong>OUT</strong>:
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li><code>dokument_anon.docx</code> - anonymizovaný dokument</li>
+                                <li><code>dokument_map.json</code> - mapa pro deanonymizaci</li>
+                                <li><code>dokument_map.txt</code> - čitelný přehled náhrad</li>
+                            </ul>
+                        </li>
+                        <li>Při chybě se soubor přesune do složky <strong>ERROR</strong></li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="section" style="--delay: 0.3s">
+                <h3>⚙️ Nastavení automatického spuštění</h3>
+                <p style="margin-bottom: 16px; color: #475569;">
+                    Služba se může spouštět automaticky při startu Windows.
+                </p>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="btn" id="enableAutostartBtn">✅ Povolit autostart</button>
+                    <button class="btn secondary" id="disableAutostartBtn">❌ Zakázat autostart</button>
+                </div>
+                <div id="autostartStatus" style="margin-top: 12px; color: #64748b; font-size: 14px;"></div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -513,6 +582,12 @@
             } else if(mode === 'deanonymize'){
                 document.getElementById('deanonymizeMode').classList.add('active');
                 setTimeout(()=>document.getElementById('deanonymizationPanel').classList.remove('hidden'), 100);
+            } else if(mode === 'folder'){
+                document.getElementById('folderMode').classList.add('active');
+                setTimeout(()=>{
+                    document.getElementById('folderPanel').classList.remove('hidden');
+                    loadFolderStatus();
+                }, 100);
             } else if(mode === 'license'){
                 document.getElementById('licenseMode').classList.add('active');
                 setTimeout(()=>{
@@ -863,6 +938,112 @@
             }
         }
 
+        // FOLDER MODE FUNCTIONS
+        async function loadFolderStatus() {
+            console.log('loadFolderStatus() called');
+
+            if (!ipcRenderer) {
+                document.getElementById('watcherStatus').textContent = 'IPC nedostupné';
+                document.getElementById('watcherStatus').style.color = '#ef4444';
+                return;
+            }
+
+            try {
+                const status = await ipcRenderer.invoke('get-folder-status');
+                console.log('Folder status:', status);
+
+                // Update paths
+                document.getElementById('inFolderPath').textContent = status.inFolder || 'N/A';
+                document.getElementById('outFolderPath').textContent = status.outFolder || 'N/A';
+
+                // Update watcher status
+                const watcherStatusEl = document.getElementById('watcherStatus');
+                if (status.watcherRunning) {
+                    watcherStatusEl.textContent = '✅ Běží';
+                    watcherStatusEl.style.color = '#10b981';
+                } else {
+                    watcherStatusEl.textContent = '⏹️ Zastaveno';
+                    watcherStatusEl.style.color = '#f59e0b';
+                }
+
+                // Update autostart status
+                const autostartEl = document.getElementById('autostartStatus');
+                if (status.autostartEnabled) {
+                    autostartEl.textContent = '✅ Autostart je povolen';
+                    autostartEl.style.color = '#10b981';
+                } else {
+                    autostartEl.textContent = '❌ Autostart je zakázán';
+                    autostartEl.style.color = '#64748b';
+                }
+            } catch (error) {
+                console.error('Error loading folder status:', error);
+                document.getElementById('watcherStatus').textContent = 'Chyba';
+                document.getElementById('watcherStatus').style.color = '#ef4444';
+            }
+        }
+
+        async function openInFolder() {
+            if (ipcRenderer) {
+                await ipcRenderer.invoke('open-in-folder');
+            }
+        }
+
+        async function openOutFolder() {
+            if (ipcRenderer) {
+                await ipcRenderer.invoke('open-out-folder');
+            }
+        }
+
+        async function openSkryiFolder() {
+            if (ipcRenderer) {
+                await ipcRenderer.invoke('open-skryi-folder');
+            }
+        }
+
+        async function startWatcher() {
+            if (ipcRenderer) {
+                const result = await ipcRenderer.invoke('start-watcher');
+                if (result.success) {
+                    document.getElementById('watcherStatus').textContent = '✅ Běží';
+                    document.getElementById('watcherStatus').style.color = '#10b981';
+                } else {
+                    alert('Chyba při spuštění služby: ' + result.error);
+                }
+            }
+        }
+
+        async function stopWatcher() {
+            if (ipcRenderer) {
+                const result = await ipcRenderer.invoke('stop-watcher');
+                if (result.success) {
+                    document.getElementById('watcherStatus').textContent = '⏹️ Zastaveno';
+                    document.getElementById('watcherStatus').style.color = '#f59e0b';
+                }
+            }
+        }
+
+        async function enableAutostart() {
+            if (ipcRenderer) {
+                const result = await ipcRenderer.invoke('enable-autostart');
+                if (result.success) {
+                    document.getElementById('autostartStatus').textContent = '✅ Autostart je povolen';
+                    document.getElementById('autostartStatus').style.color = '#10b981';
+                } else {
+                    alert('Chyba: ' + result.error);
+                }
+            }
+        }
+
+        async function disableAutostart() {
+            if (ipcRenderer) {
+                const result = await ipcRenderer.invoke('disable-autostart');
+                if (result.success) {
+                    document.getElementById('autostartStatus').textContent = '❌ Autostart je zakázán';
+                    document.getElementById('autostartStatus').style.color = '#64748b';
+                }
+            }
+        }
+
         // LICENSE FUNCTIONS
         async function loadLicenseInfo() {
             console.log('loadLicenseInfo() called');
@@ -959,7 +1140,17 @@
             document.getElementById('pdfMode').addEventListener('click', () => switchMode('pdf'));
             document.getElementById('anonymizeMode').addEventListener('click', () => switchMode('anonymize'));
             document.getElementById('deanonymizeMode').addEventListener('click', () => switchMode('deanonymize'));
+            document.getElementById('folderMode').addEventListener('click', () => switchMode('folder'));
             document.getElementById('licenseMode').addEventListener('click', () => switchMode('license'));
+
+            // Folder mode buttons
+            document.getElementById('openInFolderBtn').addEventListener('click', openInFolder);
+            document.getElementById('openOutFolderBtn').addEventListener('click', openOutFolder);
+            document.getElementById('openSkryiFolderBtn').addEventListener('click', openSkryiFolder);
+            document.getElementById('startWatcherBtn').addEventListener('click', startWatcher);
+            document.getElementById('stopWatcherBtn').addEventListener('click', stopWatcher);
+            document.getElementById('enableAutostartBtn').addEventListener('click', enableAutostart);
+            document.getElementById('disableAutostartBtn').addEventListener('click', disableAutostart);
 
             // Select docx
             const selectBtn = document.getElementById('selectBtn');

@@ -787,3 +787,182 @@ ipcMain.handle("get-license-info", async () => {
     return { valid: false, message: `Error: ${error.message}` };
   }
 });
+
+// ----------------------- FOLDER MODE HANDLERS -----------------------
+// Get SKRYI folders path
+function getSkryiFolders() {
+  const documents = app.getPath('documents');
+  const baseFolder = path.join(documents, 'SKRYI');
+  return {
+    base: baseFolder,
+    in: path.join(baseFolder, 'IN'),
+    out: path.join(baseFolder, 'OUT'),
+    error: path.join(baseFolder, 'ERROR'),
+    logs: path.join(baseFolder, 'LOGS')
+  };
+}
+
+// Ensure folders exist
+function ensureSkryiFolders() {
+  const folders = getSkryiFolders();
+  for (const folder of Object.values(folders)) {
+    if (!fs.existsSync(folder)) {
+      fs.mkdirSync(folder, { recursive: true });
+    }
+  }
+  return folders;
+}
+
+// Watcher process reference
+let watcherProcess = null;
+
+// Get folder status
+ipcMain.handle("get-folder-status", async () => {
+  const folders = ensureSkryiFolders();
+
+  // Check if watcher is running
+  const watcherRunning = watcherProcess !== null && watcherProcess.exitCode === null;
+
+  // Check autostart registry (Windows only)
+  let autostartEnabled = false;
+  if (process.platform === 'win32') {
+    try {
+      const { execSync } = require('child_process');
+      const result = execSync('reg query "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run" /v SKRYIWatcher 2>nul', { encoding: 'utf8' });
+      autostartEnabled = result.includes('SKRYIWatcher');
+    } catch {
+      autostartEnabled = false;
+    }
+  }
+
+  return {
+    baseFolder: folders.base,
+    inFolder: folders.in,
+    outFolder: folders.out,
+    errorFolder: folders.error,
+    logsFolder: folders.logs,
+    watcherRunning,
+    autostartEnabled
+  };
+});
+
+// Open folders
+ipcMain.handle("open-in-folder", async () => {
+  const folders = ensureSkryiFolders();
+  shell.openPath(folders.in);
+});
+
+ipcMain.handle("open-out-folder", async () => {
+  const folders = ensureSkryiFolders();
+  shell.openPath(folders.out);
+});
+
+ipcMain.handle("open-skryi-folder", async () => {
+  const folders = ensureSkryiFolders();
+  shell.openPath(folders.base);
+});
+
+// Start watcher
+ipcMain.handle("start-watcher", async () => {
+  if (watcherProcess && watcherProcess.exitCode === null) {
+    return { success: true, message: "Watcher is already running" };
+  }
+
+  const watcherScript = resolveScript("skryi_watcher.py");
+
+  if (!fs.existsSync(watcherScript.path)) {
+    return { success: false, error: "Watcher script not found" };
+  }
+
+  try {
+    if (watcherScript.isExe) {
+      watcherProcess = spawn(watcherScript.path, [], {
+        detached: true,
+        stdio: 'ignore',
+        windowsHide: true
+      });
+    } else {
+      const args = PY.isPyLauncher
+        ? ["-3", watcherScript.path]
+        : [watcherScript.path];
+
+      watcherProcess = spawn(PY.cmd, args, {
+        detached: true,
+        stdio: 'ignore',
+        windowsHide: true
+      });
+    }
+
+    watcherProcess.unref();
+    console.log("[WATCHER] Started with PID:", watcherProcess.pid);
+
+    return { success: true, pid: watcherProcess.pid };
+  } catch (error) {
+    console.error("[WATCHER] Start error:", error);
+    return { success: false, error: error.message };
+  }
+});
+
+// Stop watcher
+ipcMain.handle("stop-watcher", async () => {
+  if (watcherProcess) {
+    try {
+      // On Windows, use taskkill to ensure the process is terminated
+      if (process.platform === 'win32') {
+        const { execSync } = require('child_process');
+        execSync(`taskkill /PID ${watcherProcess.pid} /F 2>nul`, { encoding: 'utf8' });
+      } else {
+        watcherProcess.kill('SIGTERM');
+      }
+      watcherProcess = null;
+      return { success: true };
+    } catch (error) {
+      console.error("[WATCHER] Stop error:", error);
+      watcherProcess = null;
+      return { success: true }; // Consider it stopped even if error
+    }
+  }
+  return { success: true, message: "Watcher was not running" };
+});
+
+// Enable autostart (Windows only)
+ipcMain.handle("enable-autostart", async () => {
+  if (process.platform !== 'win32') {
+    return { success: false, error: "Autostart only supported on Windows" };
+  }
+
+  try {
+    const watcherScript = resolveScript("skryi_watcher.py");
+    let command;
+
+    if (watcherScript.isExe) {
+      command = `"${watcherScript.path}"`;
+    } else {
+      command = `"${PY.cmd}" "${watcherScript.path}"`;
+    }
+
+    const { execSync } = require('child_process');
+    execSync(`reg add "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run" /v SKRYIWatcher /t REG_SZ /d "${command}" /f`, { encoding: 'utf8' });
+
+    return { success: true };
+  } catch (error) {
+    console.error("[AUTOSTART] Enable error:", error);
+    return { success: false, error: error.message };
+  }
+});
+
+// Disable autostart (Windows only)
+ipcMain.handle("disable-autostart", async () => {
+  if (process.platform !== 'win32') {
+    return { success: false, error: "Autostart only supported on Windows" };
+  }
+
+  try {
+    const { execSync } = require('child_process');
+    execSync('reg delete "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run" /v SKRYIWatcher /f 2>nul', { encoding: 'utf8' });
+    return { success: true };
+  } catch (error) {
+    // Key might not exist, that's OK
+    return { success: true };
+  }
+});
