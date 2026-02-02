@@ -70,15 +70,42 @@ def setup_logging():
 # ZPRACOVÁNÍ DOKUMENTŮ
 # =============================================================================
 
+def get_app_install_path():
+    """Najde instalační složku SKRYI Document Suite."""
+    possible_paths = [
+        # Standardní instalace x64
+        Path(os.environ.get('PROGRAMFILES', 'C:\\Program Files')) / 'SKRYI Document Suite' / 'resources' / 'app.asar.unpacked',
+        # Instalace x86
+        Path(os.environ.get('PROGRAMFILES(X86)', 'C:\\Program Files (x86)')) / 'SKRYI Document Suite' / 'resources' / 'app.asar.unpacked',
+        # LocalAppData (portable/user install)
+        Path(os.environ.get('LOCALAPPDATA', '')) / 'SKRYI Document Suite' / 'resources' / 'app.asar.unpacked',
+    ]
+
+    for p in possible_paths:
+        if p.exists():
+            return p
+    return None
+
 def get_script_path(script_name):
     """Najde cestu ke skriptu (preferuje .exe před .py)."""
+    exe_name = script_name.replace('.py', '.exe')
+
     # Zkusíme najít v různých lokacích
-    possible_paths = [
-        Path(__file__).parent / script_name.replace('.py', '.exe'),
-        Path(__file__).parent / script_name,
-        Path(sys.executable).parent / script_name.replace('.py', '.exe'),
-        Path(sys.executable).parent / script_name,
-    ]
+    possible_paths = []
+
+    # 1. V instalační složce aplikace (PRIORITA pro nainstalovanou verzi)
+    install_path = get_app_install_path()
+    if install_path:
+        possible_paths.append(install_path / exe_name)
+        possible_paths.append(install_path / script_name)
+
+    # 2. Vedle tohoto skriptu
+    possible_paths.append(Path(__file__).parent / exe_name)
+    possible_paths.append(Path(__file__).parent / script_name)
+
+    # 3. Vedle sys.executable (pro zkompilovanou verzi)
+    possible_paths.append(Path(sys.executable).parent / exe_name)
+    possible_paths.append(Path(sys.executable).parent / script_name)
 
     for p in possible_paths:
         if p.exists():
@@ -144,8 +171,11 @@ def process_document(file_path, logger):
         anonymize_script = get_script_path('anonymize_cli.py')
 
         if not anonymize_script or not anonymize_script.exists():
-            logger.error("anonymize_cli nenalezen")
+            install_path = get_app_install_path()
+            logger.error(f"anonymize_cli nenalezen! Install path: {install_path}")
             return False
+
+        logger.info(f"Pouzivam CLI: {anonymize_script}")
 
         if anonymize_script.suffix == '.exe':
             result = subprocess.run(
