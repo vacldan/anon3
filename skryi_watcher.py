@@ -177,30 +177,39 @@ def process_document(file_path, logger):
 
         logger.info(f"Pouzivam CLI: {anonymize_script}")
 
+        # Připrav výstupní cesty
+        base_name = working_file.stem
+        input_dir = working_file.parent
+        anon_file = input_dir / f"{base_name}_anon.docx"
+        map_json = input_dir / f"{base_name}_map.json"
+        map_txt = input_dir / f"{base_name}_map.txt"
+
+        # Volání s korektními argumenty
+        cli_args = [
+            str(anonymize_script),
+            "--input", str(working_file),
+            "--output", str(anon_file),
+            "--map", str(map_json),
+            "--map_txt", str(map_txt)
+        ]
+
         if anonymize_script.suffix == '.exe':
             result = subprocess.run(
-                [str(anonymize_script), str(working_file)],
+                cli_args,
                 capture_output=True, text=True, timeout=600
             )
         else:
             result = subprocess.run(
-                [sys.executable, str(anonymize_script), str(working_file)],
+                [sys.executable] + cli_args,
                 capture_output=True, text=True, timeout=600
             )
 
         if result.returncode != 0:
             logger.error(f"Anonymizace selhala: {result.stderr}")
+            logger.error(f"STDOUT: {result.stdout}")
             return False
 
-        # Najdi výstupní soubory
-        base_name = working_file.stem
-        input_dir = working_file.parent
-
-        anon_file = input_dir / f"{base_name}_anon.docx"
-        map_json = input_dir / f"{base_name}_map.json"
-        map_txt = input_dir / f"{base_name}_map.txt"
-
-        # Přesuň výstupy do OUT složky
+        # Přesuň výstupy do OUT složky (anon_file, map_json, map_txt už definovány výše)
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 
         files_moved = []
