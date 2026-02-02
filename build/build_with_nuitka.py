@@ -27,7 +27,7 @@ COMPILE_TO_EXE = [
 
 # Large files that are imported by other scripts (compile as module)
 COMPILE_TO_MODULE = [
-    "anon7.2 - s padama.py",
+    "anon72.py",  # Renamed from "anon7.2 - s padama.py" to fix Nuitka compilation
 ]
 
 # Data files to include

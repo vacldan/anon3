@@ -21,34 +21,17 @@ exe_dir = Path(sys.executable).parent
 if str(exe_dir) not in sys.path:
     sys.path.insert(0, str(exe_dir))
 
-# Import the anonymizer from anon7.2 (original working version)
-import importlib.util
-
-# Find anon7.2 file - try multiple locations
-anon72_filename = "anon7.2 - s padama.py"
-possible_paths = [
-    script_dir / anon72_filename,      # Next to this script
-    exe_dir / anon72_filename,         # Next to compiled exe
-    Path(anon72_filename),             # Current directory
-]
-
-anon72_path = None
-for p in possible_paths:
-    if p.exists():
-        anon72_path = p
-        break
-
-if anon72_path is None:
-    print(f"FATAL: {anon72_filename} not found in any of:")
-    for p in possible_paths:
-        print(f"  - {p}")
+# Direct import - works with Nuitka compilation
+try:
+    import anon72
+except ImportError:
+    print("FATAL: anon72 module not found!")
+    print(f"Script dir: {script_dir}")
+    print(f"Exe dir: {exe_dir}")
+    print(f"sys.path: {sys.path}")
     sys.exit(1)
 
-spec = importlib.util.spec_from_file_location("anon72", str(anon72_path))
-anon72 = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(anon72)
-
-# Use the classes from anon7.2
+# Use the classes from anon72
 Anonymizer = anon72.Anonymizer
 load_names_library = anon72.load_names_library
 CZECH_FIRST_NAMES = anon72.CZECH_FIRST_NAMES
