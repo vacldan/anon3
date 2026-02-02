@@ -16,9 +16,35 @@ script_dir = Path(__file__).parent
 if str(script_dir) not in sys.path:
     sys.path.insert(0, str(script_dir))
 
+# For compiled exe, also check the exe's directory
+exe_dir = Path(sys.executable).parent
+if str(exe_dir) not in sys.path:
+    sys.path.insert(0, str(exe_dir))
+
 # Import the anonymizer from anon7.2 (original working version)
 import importlib.util
-spec = importlib.util.spec_from_file_location("anon72", "anon7.2 - s padama.py")
+
+# Find anon7.2 file - try multiple locations
+anon72_filename = "anon7.2 - s padama.py"
+possible_paths = [
+    script_dir / anon72_filename,      # Next to this script
+    exe_dir / anon72_filename,         # Next to compiled exe
+    Path(anon72_filename),             # Current directory
+]
+
+anon72_path = None
+for p in possible_paths:
+    if p.exists():
+        anon72_path = p
+        break
+
+if anon72_path is None:
+    print(f"FATAL: {anon72_filename} not found in any of:")
+    for p in possible_paths:
+        print(f"  - {p}")
+    sys.exit(1)
+
+spec = importlib.util.spec_from_file_location("anon72", str(anon72_path))
 anon72 = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(anon72)
 
