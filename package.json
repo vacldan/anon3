@@ -44,6 +44,7 @@
       "skryi_tray.pyw",
       "anon72.py",
       "anon72.pyd",
+      "anon72.*.pyd",
       "cz_names.v1.json",
       "pyarmor_runtime_*/**/*",
       "!**/*.docx",
