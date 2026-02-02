@@ -87,7 +87,8 @@ def compile_to_exe(filepath, output_dir):
         "--remove-output",              # Clean build folders
         "--output-dir=" + str(output_dir),
         "--output-filename=" + output_name + ".exe",
-        "--windows-console-mode=disable",  # No console window
+        # Console mode: attach to existing console (for CLI tools called from Electron)
+        "--windows-console-mode=attach",
         str(filepath)
     ]
 
