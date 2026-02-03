@@ -57,9 +57,6 @@ def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
         print(f"⚠️  Chyba při načítání {json_path}: {e}")
         return set()
 
-# Load names library at module import time
-CZECH_FIRST_NAMES = load_names_library()
-
 # =============== Varianty pro nahrazování ===============
 def variants_for_first(first: str) -> set:
     """Generuje základní pádové varianty křestního jména (optimalizováno pro výkon)."""
@@ -1880,21 +1877,6 @@ class Anonymizer:
             canonical_full = self.person_canonical_names[tag]
             return tag, canonical_full
 
-        # SPECIÁLNÍ PŘÍPAD: Standalone příjmení (prázdné křestní jméno)
-        # Pokud už existuje osoba se stejným příjmením, použij její tag
-        if not first_normalized or first_normalized.strip() == '':
-            last_normalized = self._normalize_for_matching(last_nom)
-            # Hledej existující osobu s matching příjmením
-            for existing_key, existing_tag in self.person_index.items():
-                existing_first_norm, existing_last_norm = existing_key
-                if existing_last_norm == last_normalized:
-                    # Našli jsme existující osobu se stejným příjmením!
-                    # Přidej standalone příjmení jako variantu k této osobě
-                    canonical_full = self.person_canonical_names[existing_tag]
-                    # Přidej standalone příjmení do entity_map jako variantu
-                    self.entity_map['PERSON'][canonical_full].add(last_nom)
-                    return existing_tag, canonical_full
-
         # Vytvoř nový tag
         self.counter['PERSON'] += 1
         tag = f'[[PERSON_{self.counter["PERSON"]}]]'
@@ -2149,20 +2131,6 @@ class Anonymizer:
         # Pak běžný pattern pro jména bez titulu
         titles = r'(?:Ing\.|Mgr\.|Bc\.|MUDr\.|JUDr\.|PhDr\.|RNDr\.|Ph\.D\.|MBA|CSc\.|DrSc\.)'
 
-        # ========== NOVÝ: Pattern pro "Přídavné Role Jméno Příjmení" (4 slova) ==========
-        # Detekuje např: "Mrtvá matka Drahomíra Dvořáková", "Zemřelý otec Jan Novák", atd.
-        # Tento pattern musí být PŘED 3-slovným patternem!
-        double_role_person_pattern = re.compile(
-            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'  # První role/přídavné jméno
-            r'\s+'
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'  # Druhá role/podstatné jméno
-            r'\s+'
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'  # Křestní jméno
-            r'\s+'
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\b',  # Příjmení
-            re.UNICODE
-        )
-
         # ========== NOVÝ: Pattern pro "Titul Jméno Příjmení" (3 slova) ==========
         # Tento pattern musí být PŘED běžným 2-slovným patternem!
         # Detekuje např: "Klient Ladislav Konečný", "Žadatel Jan Novák", atd.
@@ -2246,7 +2214,6 @@ class Anonymizer:
             'obviněným', 'obviněnými', 'občan', 'občana', 'občance', 'občanek', 'občanem', 'občanka',
             'občankou', 'občanky', 'občanovi', 'občanu', 'občané', 'občanů', 'obžalovanou', 'obžalovaná',
             'obžalované', 'obžalovaného', 'obžalovaném', 'obžalovanému', 'obžalovaný', 'obžalovaných', 'obžalovaným', 'obžalovanými',
-            'oběť', 'oběti', 'obětí', 'obětem', 'obětech', 'oběťmi', 'oběťmi',
             'odsouzenou', 'odsouzená', 'odsouzené', 'odsouzeného', 'odsouzeném', 'odsouzenému', 'odsouzený', 'odsouzených',
             'odsouzeným', 'odsouzenými', 'opatrovnic', 'opatrovnice', 'opatrovnicí', 'opatrovník', 'opatrovníka', 'opatrovníkem',
             'opatrovníkovi', 'opatrovníku', 'opatrovníků', 'opatrovanec', 'opatrovance', 'opatrovanci', 'opatrovancem', 'opatrovanců',
@@ -2722,38 +2689,6 @@ class Anonymizer:
             'group', 'company', 'corp', 'ltd', 'gmbh', 'inc'
         }
 
-        # ========== Handler pro "Přídavné Role Jméno Příjmení" (4 slova) ==========
-        def replace_double_role_person(match):
-            """
-            Zpracuje pattern "Přídavné Role Jméno Příjmení" (např. "Mrtvá matka Drahomíra Dvořáková").
-            Pokud první DVĚ slova jsou v ignore_words, anonymizuje 3. a 4. slovo jako osobu.
-            """
-            role_word1 = match.group(1)  # "Mrtvá"
-            role_word2 = match.group(2)  # "matka"
-            first_obs = match.group(3)   # "Drahomíra"
-            last_obs = match.group(4)    # "Dvořáková"
-
-            # Zkontroluj, jestli první DVĚ slova jsou v ignore_words
-            if role_word1.lower() not in ignore_words or role_word2.lower() not in ignore_words:
-                # Pokud ne, vrať original (nechť to zpracuje jiný pattern)
-                return match.group(0)
-
-            # Oba slova JSOU v ignore_words → anonymizuj jméno a příjmení
-            # Infer nominative
-            last_nom = infer_surname_nominative(last_obs)
-            first_nom = infer_first_name_nominative(first_obs) or first_obs
-
-            # Create/find person tag
-            tag, canonical = self._ensure_person_tag(first_nom, last_nom)
-
-            # Save variant if different from canonical
-            original_form = f"{first_obs} {last_obs}"
-            if original_form.lower() != canonical.lower():
-                self.entity_map['PERSON'][canonical].add(original_form)
-
-            # Return: "Přídavné Role [[PERSON_X]]"
-            return f"{role_word1} {role_word2} {tag}"
-
         # ========== Handler pro "Titul Jméno Příjmení" (3 slova) ==========
         def replace_role_person(match):
             """
@@ -2880,7 +2815,6 @@ class Anonymizer:
                 'obviněným', 'obviněnými', 'občan', 'občana', 'občance', 'občanek', 'občanem', 'občanka',
                 'občankou', 'občanky', 'občanovi', 'občanu', 'občané', 'občanů', 'obžalovanou', 'obžalovaná',
                 'obžalované', 'obžalovaného', 'obžalovaném', 'obžalovanému', 'obžalovaný', 'obžalovaných', 'obžalovaným', 'obžalovanými',
-                'oběť', 'oběti', 'obětí', 'obětem', 'obětech', 'oběťmi', 'oběťmi',
                 'odsouzenou', 'odsouzená', 'odsouzené', 'odsouzeného', 'odsouzeném', 'odsouzenému', 'odsouzený', 'odsouzených',
                 'odsouzeným', 'odsouzenými', 'opatrovnic', 'opatrovnice', 'opatrovnicí', 'opatrovník', 'opatrovníka', 'opatrovníkem',
                 'opatrovníkovi', 'opatrovníku', 'opatrovníků', 'opatrovanec', 'opatrovance', 'opatrovanci', 'opatrovancem', 'opatrovanců',
@@ -3769,23 +3703,7 @@ class Anonymizer:
             'žadatel', 'žadatele', 'žadatelka', 'žadatelky'
         }
 
-        # 1. Najdi všechny 4-slovné matche (včetně překrývajících se!)
-        # Např: "Mrtvá matka Drahomíra Dvořáková"
-        matches_4word = []
-        pos = 0
-        while pos < len(text):
-            match = double_role_person_pattern.search(text, pos)
-            if not match:
-                break
-            role_word1 = match.group(1)
-            role_word2 = match.group(2)
-            # Platný match pouze pokud první DVĚ slova JSOU v ignore_words
-            if role_word1.lower() in ignore_words and role_word2.lower() in ignore_words:
-                matches_4word.append(match)
-            # Posun o 1 znak pro nalezení překrývajících se matchů
-            pos = match.start() + 1
-
-        # 2. Najdi všechny 3-slovné matche (včetně překrývajících se!)
+        # 1. Najdi všechny 3-slovné matche (včetně překrývajících se!)
         # DŮLEŽITÉ: finditer() nenachází překryvy, musíme hledat manuálně
         matches_3word = []
         pos = 0
@@ -3800,7 +3718,7 @@ class Anonymizer:
             # Posun o 1 znak pro nalezení překrývajících se matchů
             pos = match.start() + 1
 
-        # 3. Najdi všechny 2-slovné matche (včetně překrývajících se!)
+        # 2. Najdi všechny 2-slovné matche (včetně překrývajících se!)
         matches_2word = []
         pos = 0
         while pos < len(text):
@@ -3815,43 +3733,30 @@ class Anonymizer:
             # Posun o 1 znak pro nalezení překrývajících se matchů
             pos = match.start() + 1
 
-        # 4. Kombinuj matche a odstraň překryvy (preferuj delší = 4-slovné > 3-slovné > 2-slovné)
+        # 3. Kombinuj matche a odstraň překryvy (preferuj delší = 3-slovné)
         all_matches = []
 
-        # Přidej 4-slovné (mají nejvyšší prioritu)
-        for match in matches_4word:
-            all_matches.append(('4word', match))
-
-        # Přidej 3-slovné, ale pouze pokud se nepřekrývají s 4-slovnými
+        # Přidej 3-slovné (mají prioritu)
         for match in matches_3word:
-            overlaps = False
-            for _, m4 in [m for m in all_matches if m[0] == '4word']:
-                # Překryv = matche sdílejí nějaký znak
-                if not (match.end() <= m4.start() or match.start() >= m4.end()):
-                    overlaps = True
-                    break
-            if not overlaps:
-                all_matches.append(('3word', match))
+            all_matches.append(('3word', match))
 
-        # Přidej 2-slovné, ale pouze pokud se nepřekrývají s 4-slovnými nebo 3-slovnými
+        # Přidej 2-slovné, ale pouze pokud se nepřekrývají s 3-slovnými
         for match in matches_2word:
             overlaps = False
-            for _, m_higher in [m for m in all_matches if m[0] in ('4word', '3word')]:
+            for _, m3 in [m for m in all_matches if m[0] == '3word']:
                 # Překryv = matche sdílejí nějaký znak
-                if not (match.end() <= m_higher.start() or match.start() >= m_higher.end()):
+                if not (match.end() <= m3.start() or match.start() >= m3.end()):
                     overlaps = True
                     break
             if not overlaps:
                 all_matches.append(('2word', match))
 
-        # 5. Seřaď podle pozice (od konce, aby se neposunuly indexy při nahrazování)
+        # 4. Seřaď podle pozice (od konce, aby se neposunuly indexy při nahrazování)
         all_matches.sort(key=lambda x: x[1].start(), reverse=True)
 
-        # 6. Aplikuj replacementy od konce
+        # 5. Aplikuj replacementy od konce
         for match_type, match in all_matches:
-            if match_type == '4word':
-                replacement = replace_double_role_person(match)
-            elif match_type == '3word':
+            if match_type == '3word':
                 replacement = replace_role_person(match)
             else:  # '2word'
                 replacement = replace_person(match)
@@ -4026,12 +3931,7 @@ class Anonymizer:
         def replace_address(match):
             matched_text = match.group(0)
             # Filter out medical/technical terms that are not addresses
-            medical_terms = [
-                'hla', 'kompatibilní', 'donor', 'recipient', 'transfuze',
-                'stadium', 'zbaven', 'způsobilosti', 'demence', 'diagnóza',
-                'nemoc', 'onemocnění', 'léčba', 'terapie', 'pacient',
-                'darování', 'odmítá', 'psychologických'
-            ]
+            medical_terms = ['hla', 'kompatibilní', 'donor', 'recipient', 'transfuze']
             if any(term in matched_text.lower() for term in medical_terms):
                 return matched_text  # Not an address, return unchanged
             return self._get_or_create_label('ADDRESS', matched_text)
@@ -4374,15 +4274,6 @@ class Anonymizer:
         )
         def replace_simple_addr(match):
             addr = match.group(0)
-            # Filter out medical/technical terms
-            medical_terms = [
-                'hla', 'kompatibilní', 'donor', 'recipient', 'transfuze',
-                'stadium', 'zbaven', 'způsobilosti', 'demence', 'diagnóza',
-                'nemoc', 'onemocnění', 'léčba', 'terapie', 'pacient',
-                'darování', 'odmítá', 'psychologických'
-            ]
-            if any(term in addr.lower() for term in medical_terms):
-                return addr  # Not an address, return unchanged
             # Přeskoč pokud už je tagovaná
             if '[[ADDRESS_' not in text[max(0, match.start()-10):min(len(text), match.end()+10)]:
                 return self._get_or_create_label('ADDRESS', addr)
@@ -5089,24 +4980,9 @@ class Anonymizer:
             # Získej všechny původní formy z entity_map
             original_forms = self.entity_map['PERSON'].get(canonical_full, {canonical_full})
 
-            # DŮLEŽITÉ: Kanonický tvar (základní nominativ) MUSÍ být první!
-            # Deanonymizátor používá první výskyt jako základní tvar.
-
-            # Nejdřív přidej kanonický tvar (pokud existuje v dokumentu)
-            if canonical_full in source_text:
-                json_data["entities"].append({
-                    "type": "PERSON",
-                    "label": p['tag'],
-                    "original": canonical_full,
-                    "occurrences": 1
-                })
-
-            # Pak teprve přidej ostatní varianty (skloněné tvary)
+            # Pro každou původní formu vytvoř samostatný záznam
+            # ALE POUZE pokud existuje ve zdrojovém dokumentu!
             for original_form in original_forms:
-                # Skip kanonický tvar - už jsme ho přidali
-                if original_form == canonical_full:
-                    continue
-
                 if original_form in source_text:
                     json_data["entities"].append({
                         "type": "PERSON",
