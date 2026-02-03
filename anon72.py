@@ -28,7 +28,7 @@ def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
             json_file = Path.cwd() / json_path
 
         if not json_file.exists():
-            print(f"⚠️  Varování: {json_path} nenalezen, používám prázdnou knihovnu!")
+            print(f"[!] Varovani: {json_path} nenalezen, pouzivam prazdnou knihovnu!")
             return set()
 
         with open(json_file, 'r', encoding='utf-8') as f:
@@ -51,10 +51,10 @@ def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
 
             # Převod na lowercase pro jednodušší porovnávání
             names = {name.lower() for name in names}
-            print(f"✓ Načteno {len(names)} jmen z knihovny")
+            print(f"[OK] Nacteno {len(names)} jmen z knihovny")
             return names
     except Exception as e:
-        print(f"⚠️  Chyba při načítání {json_path}: {e}")
+        print(f"[!] Chyba pri nacitani {json_path}: {e}")
         return set()
 
 # Load names library at module import time
@@ -4854,7 +4854,7 @@ class Anonymizer:
 
     def anonymize_docx(self, input_path: str, output_path: str, json_map: str, txt_map: str):
         """Hlavní metoda pro anonymizaci DOCX dokumentu."""
-        print(f"\n🔍 Zpracovávám: {Path(input_path).name}")
+        print(f"\n[INFO] Zpracovavam: {Path(input_path).name}")
 
         # Načti dokument
         import time
@@ -4923,7 +4923,7 @@ class Anonymizer:
         self._create_maps(json_map, txt_map, input_path, doc)
         print(f"  [DEBUG] Maps created in {time.time() - start_time:.1f}s")
 
-        print(f"✅ Hotovo! Nalezeno {len(self.canonical_persons)} osob")
+        print(f"[OK] Hotovo! Nalezeno {len(self.canonical_persons)} osob")
 
     def _create_maps(self, json_path: str, txt_path: str, source_file: str, doc=None):
         """Vytvoří JSON a TXT mapy náhrad."""
@@ -4963,7 +4963,7 @@ class Anonymizer:
 
 
         # ========== AUTOMATICKÁ OPRAVA: Kanonická jména musí mít varianty ve smlouvě! ==========
-        print("\n🔍 AUTO-OPRAVA: Kontroluji a opravuji kanonická jména...")
+        print("\n[INFO] AUTO-OPRAVA: Kontroluji a opravuji kanonicka jmena...")
 
         persons_to_delete = []  # Persons that are completely invalid
         fixed_count = 0
@@ -5000,7 +5000,7 @@ class Anonymizer:
             if not found_in_doc:
                 if variants:
                     # Has variants but none in doc → Try to fix from most common variant
-                    print(f"  ⚠️  '{canonical_full}' není ve smlouvě, ale má varianty: {variants}")
+                    print(f"  [!] '{canonical_full}' neni ve smlouve, ale ma varianty: {variants}")
                     print(f"      → Pokouším se opravit z nejčastější varianty...")
 
                     # Count occurrences of each variant
@@ -5017,7 +5017,7 @@ class Anonymizer:
                         if len(parts) == 2:
                             corrected_first = infer_first_name_nominative(parts[0])
                             corrected_last = infer_surname_nominative(parts[1])
-                            print(f"      ✅ OPRAVENO: '{canonical_full}' → '{corrected_first} {corrected_last}' (z varianty '{best_variant}')")
+                            print(f"      [OK] OPRAVENO: '{canonical_full}' -> '{corrected_first} {corrected_last}' (z varianty '{best_variant}')")
 
                             person['first'] = corrected_first
                             person['last'] = corrected_last
@@ -5037,15 +5037,15 @@ class Anonymizer:
 
                             fixed_count += 1
                         else:
-                            print(f"      ❌ Nelze opravit - chybný formát varianty")
+                            print(f"      [X] Nelze opravit - chybny format varianty")
                             persons_to_delete.append(i)
                     else:
                         # No variant is in document → completely invalid
-                        print(f"  ❌ '{canonical_full}' - žádná varianta ve smlouvě → MAŽU!")
+                        print(f"  [X] '{canonical_full}' - zadna varianta ve smlouve -> MAZU!")
                         persons_to_delete.append(i)
                 else:
                     # No variants at all → completely made up
-                    print(f"  ❌ '{canonical_full}' - žádné varianty, vymyšlená osoba → MAŽU!")
+                    print(f"  [X] '{canonical_full}' - zadne varianty, vymyslena osoba -> MAZU!")
                     persons_to_delete.append(i)
 
         # Delete invalid persons (reverse order to preserve indices)
@@ -5073,14 +5073,14 @@ class Anonymizer:
                     del self.person_index[key]
 
         if fixed_count > 0 or persons_to_delete:
-            print(f"\n  ✅ AUTO-OPRAVA dokončena:")
+            print(f"\n  [OK] AUTO-OPRAVA dokoncena:")
             if fixed_count > 0:
                 print(f"     - Opraveno: {fixed_count} osob")
             if persons_to_delete:
                 print(f"     - Smazáno: {len(persons_to_delete)} neplatných osob")
             print()
         else:
-            print("  ✅ Všechna kanonická jména jsou v pořádku!\n")
+            print("  [OK] Vsechna kanonicka jmena jsou v poradku!\n")
 
         # Osoby - ukládáme VŠECHNY původní formy z dokumentu
         for p in self.canonical_persons:
@@ -5190,9 +5190,9 @@ def batch_anonymize(folder_path, names_json="cz_names.v1.json"):
         try:
             a = Anonymizer(verbose=False)
             a.anonymize_docx(str(path), str(out_docx), str(out_json), str(out_txt))
-            print(f"✅ Výstupy: {out_docx.name}, {out_json.name}, {out_txt.name}")
+            print(f"[OK] Vystupy: {out_docx.name}, {out_json.name}, {out_txt.name}")
         except Exception as e:
-            print(f"❌ CHYBA při zpracování {path.name}: {e}")
+            print(f"[X] CHYBA pri zpracovani {path.name}: {e}")
             import traceback
             traceback.print_exc()
 
@@ -5220,13 +5220,13 @@ def main():
 
         # Single file mode
         if not args.docx_path:
-            print("❌ Chybí cesta k souboru. Použij: python script.py <soubor.docx>")
+            print("[X] Chybi cesta k souboru. Pouzij: python script.py <soubor.docx>")
             print("   Nebo: python script.py --batch <adresář>")
             return 2
 
         path = Path(args.docx_path)
         if not path.exists():
-            print(f"❌ Soubor nenalezen: {path}")
+            print(f"[X] Soubor nenalezen: {path}")
             return 2
 
         base = path.stem
@@ -5250,24 +5250,24 @@ def main():
             out_docx = path.parent / f"{base}_anon_{timestamp}.docx"
             out_json = path.parent / f"{base}_map_{timestamp}.json"
             out_txt = path.parent / f"{base}_map_{timestamp}.txt"
-            print(f"\n⚠️  Výstupní soubory jsou otevřené v jiné aplikaci!")
+            print(f"\n[!] Vystupni soubory jsou otevrene v jine aplikaci!")
             print(f"   Vytvářím nové soubory s časovým razítkem: {timestamp}\n")
 
         a = Anonymizer(verbose=False)
         a.anonymize_docx(str(path), str(out_docx), str(out_json), str(out_txt))
 
-        print(f"\n✅ Výstupy:")
+        print(f"\n[OK] Vystupy:")
         print(f" - {out_docx}")
         print(f" - {out_json}")
         print(f" - {out_txt}")
-        print(f"\n📊 Statistiky:")
+        print(f"\n[INFO] Statistiky:")
         print(f" - Nalezeno osob: {len(a.canonical_persons)}")
         print(f" - Celkem entit: {sum(len(e) for e in a.entity_map.values())}")
 
         return 0
 
     except Exception as e:
-        print(f"\n❌ CHYBA: {e}")
+        print(f"\n[X] CHYBA: {e}")
         import traceback
         traceback.print_exc()
         return 1
