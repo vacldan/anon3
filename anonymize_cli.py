@@ -21,6 +21,13 @@ exe_dir = Path(sys.executable).parent
 if str(exe_dir) not in sys.path:
     sys.path.insert(0, str(exe_dir))
 
+# CRITICAL: For Nuitka --onefile mode, the exe extracts to a temp folder
+# but we need to find modules in the ORIGINAL directory where the exe is located
+# sys.argv[0] contains the original exe path, not the temp extraction path
+original_exe_dir = Path(os.path.abspath(sys.argv[0])).parent
+if str(original_exe_dir) not in sys.path:
+    sys.path.insert(0, str(original_exe_dir))
+
 # Direct import - works with Nuitka compilation
 try:
     import anon72
@@ -28,6 +35,7 @@ except ImportError:
     print("FATAL: anon72 module not found!")
     print(f"Script dir: {script_dir}")
     print(f"Exe dir: {exe_dir}")
+    print(f"Original exe dir: {original_exe_dir}")
     print(f"sys.path: {sys.path}")
     sys.exit(1)
 
