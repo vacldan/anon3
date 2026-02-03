@@ -432,30 +432,75 @@ ipcMain.handle("anonymize-document", async (evt, filePath) => {
 
   // TURBO MODE: Use turbo CLI for maximum speed (unless verbose mode)
   const cliName = VERBOSE_PY ? "anonymize_cli.py" : "anonymize_cli_turbo.py";
-  let cli = resolvePy(cliName);
-  if (!fs.existsSync(cli)) {
+  let cliScript = resolveScript(cliName);
+  if (!fs.existsSync(cliScript.path)) {
     // Fallback to regular CLI if turbo not found
-    const fallback = resolvePy("anonymize_cli.py");
-    if (!fs.existsSync(fallback)) return { success: false, error: `CLI script not found: ${cli}` };
-    cli = fallback;
+    cliScript = resolveScript("anonymize_cli.py");
+    if (!fs.existsSync(cliScript.path)) return { success: false, error: `CLI script not found: ${cliScript.path}` };
   }
 
   const startedMs = Date.now();
   sendProgress("Spouštím anonymizaci...");
 
+  // Build CLI arguments
+  const cliArgs = [
+    "--input", filePath,
+    "--output", requestedOut,
+    "--map", mapJson,
+    "--map_txt", mapTxt,
+  ];
+  if (VERBOSE_PY) cliArgs.push("--verbose");
+
+  const cwd = path.dirname(cliScript.path);
+
+  // If it's a compiled EXE, run directly; otherwise use Python interpreter
+  if (cliScript.isExe) {
+    console.log(`[ANON] Running EXE directly: ${cliScript.path}`);
+    return new Promise((resolve) => {
+      const child = spawn(cliScript.path, cliArgs, {
+        cwd,
+        env: { ...process.env, PYTHONIOENCODING: "utf-8", PYTHONUTF8: "1" },
+        shell: false,
+        windowsHide: true,
+      });
+
+      let stdoutBuf = "";
+
+      child.stdout.on("data", (d) => {
+        const msg = d.toString("utf8");
+        stdoutBuf += msg;
+        for (const line of msg.split("\n")) {
+          const clean = line.trim();
+          if (!clean) continue;
+          if (clean.startsWith("{") && clean.endsWith("}")) continue;
+          sendProgress(clean);
+        }
+      });
+
+      child.stderr.on("data", (e) => {
+        const msg = Buffer.isBuffer(e) ? e.toString("utf8") : String(e || "");
+        if (DEBUG && msg.trim()) console.log("[PY STDERR]", msg.trim());
+        if (msg.toLowerCase().includes("error")) sendProgress(`ERROR: ${msg.trim()}`);
+      });
+
+      child.on("error", (err) => {
+        console.error("[ANON] Spawn error:", err);
+        resolve({ success: false, error: err.message });
+      });
+
+      child.on("close", (code) => {
+        handleAnonymizeResult(code, stdoutBuf, startedMs, dir, base, requestedOut, mapJson, mapTxt, resolve);
+      });
+    });
+  }
+
+  // Fallback: Python script mode
   return new Promise((resolve) => {
-    const args = [
-      cli,
-      "--input", filePath,
-      "--output", requestedOut,
-      "--map", mapJson,
-      "--map_txt", mapTxt,
-    ];
-    if (VERBOSE_PY) args.push("--verbose");
+    const args = [cliScript.path, ...cliArgs];
 
     spawnPython(
       args,
-      { cwd: path.dirname(cli) },
+      { cwd },
       (d) => {
         const msg = d.toString("utf8");
         for (const line of msg.split("\n")) {
@@ -471,64 +516,69 @@ ipcMain.handle("anonymize-document", async (evt, filePath) => {
         if (msg.toLowerCase().includes("error")) sendProgress(`ERROR: ${msg.trim()}`);
       },
       (code, used, stdoutBuf) => {
-        const elapsed = Math.round((Date.now() - startedMs) / 1000);
-
-        // Try to parse JSON output from CLI first
-        const payload = parseJsonFromOutput(stdoutBuf);
-
-        // Use paths from CLI output if available
-        let actual = null;
-        let actualMapJson = null;
-        let actualMapTxt = null;
-
-        if (payload && payload.output) {
-          actual = payload.output;
-          actualMapJson = payload.map_json || null;
-          actualMapTxt = payload.map_txt || null;
-        }
-
-        // Fallback: try to find files if CLI didn't return paths
-        if (!actual || !fs.existsSync(actual)) {
-          if (fs.existsSync(requestedOut)) actual = requestedOut;
-          else {
-            const inDir = listAnonDocx(dir, base);
-            actual = findLatest(inDir, startedMs - 2000) || actual;
-          }
-        }
-
-        if (!actual || !fs.existsSync(actual)) {
-          const tmp = os.tmpdir();
-          const inTmp = listAnonDocx(tmp, base);
-          actual = findLatest(inTmp, startedMs - 2000) || actual;
-        }
-
-        // Fallback for maps if not in JSON output
-        if (!actualMapJson || !fs.existsSync(actualMapJson)) {
-          actualMapJson = fs.existsSync(mapJson) ? mapJson : null;
-        }
-        if (!actualMapTxt || !fs.existsSync(actualMapTxt)) {
-          actualMapTxt = fs.existsSync(mapTxt) ? mapTxt : null;
-        }
-
-        if (actual && fs.existsSync(actual)) {
-          sendProgress(`Anonymizace dokončena (${elapsed}s)`);
-          resolve({
-            success: true,
-            outputFile: actual,
-            mapJson: actualMapJson,
-            mapTxt: actualMapTxt,
-          });
-        } else {
-          const error = code === 0
-            ? "Anonymizace skončila bez výstupu. Zkontroluj, jestli není soubor otevřený."
-            : `Python script failed with code ${code}.`;
-          sendProgress(`ERROR: ${error} (${elapsed}s)`);
-          resolve({ success: false, error });
-        }
+        handleAnonymizeResult(code, stdoutBuf, startedMs, dir, base, requestedOut, mapJson, mapTxt, resolve);
       }
     );
   });
 });
+
+// Helper function for anonymization result handling
+function handleAnonymizeResult(code, stdoutBuf, startedMs, dir, base, requestedOut, mapJson, mapTxt, resolve) {
+  const elapsed = Math.round((Date.now() - startedMs) / 1000);
+
+  // Try to parse JSON output from CLI first
+  const payload = parseJsonFromOutput(stdoutBuf);
+
+  // Use paths from CLI output if available
+  let actual = null;
+  let actualMapJson = null;
+  let actualMapTxt = null;
+
+  if (payload && payload.output) {
+    actual = payload.output;
+    actualMapJson = payload.map_json || null;
+    actualMapTxt = payload.map_txt || null;
+  }
+
+  // Fallback: try to find files if CLI didn't return paths
+  if (!actual || !fs.existsSync(actual)) {
+    if (fs.existsSync(requestedOut)) actual = requestedOut;
+    else {
+      const inDir = listAnonDocx(dir, base);
+      actual = findLatest(inDir, startedMs - 2000) || actual;
+    }
+  }
+
+  if (!actual || !fs.existsSync(actual)) {
+    const tmp = os.tmpdir();
+    const inTmp = listAnonDocx(tmp, base);
+    actual = findLatest(inTmp, startedMs - 2000) || actual;
+  }
+
+  // Fallback for maps if not in JSON output
+  if (!actualMapJson || !fs.existsSync(actualMapJson)) {
+    actualMapJson = fs.existsSync(mapJson) ? mapJson : null;
+  }
+  if (!actualMapTxt || !fs.existsSync(actualMapTxt)) {
+    actualMapTxt = fs.existsSync(mapTxt) ? mapTxt : null;
+  }
+
+  if (actual && fs.existsSync(actual)) {
+    sendProgress(`Anonymizace dokončena (${elapsed}s)`);
+    resolve({
+      success: true,
+      outputFile: actual,
+      mapJson: actualMapJson,
+      mapTxt: actualMapTxt,
+    });
+  } else {
+    const error = code === 0
+      ? "Anonymizace skončila bez výstupu. Zkontroluj, jestli není soubor otevřený."
+      : `Python script failed with code ${code}.`;
+    sendProgress(`ERROR: ${error} (${elapsed}s)`);
+    resolve({ success: false, error });
+  }
+}
 
 ipcMain.handle("show-folder", async (evt, filePath) => {
   if (filePath && fs.existsSync(filePath)) shell.showItemInFolder(filePath);
