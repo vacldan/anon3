@@ -52,24 +52,24 @@ def main():
     # Validate input file
     input_path = Path(args.input)
     if not input_path.exists():
-        print(f" Chyba: Vstupní soubor neexistuje: {input_path}")
+        print(f"CHYBA: Vstupni soubor neexistuje: {input_path}")
         return 1
 
     if not input_path.suffix.lower() == '.docx':
-        print(f" Chyba: Vstupní soubor musí být .docx formát")
+        print(f"CHYBA: Vstupni soubor musi byt .docx format")
         return 1
 
     try:
         # Load names library
-        print(" Načítám knihovnu českých jmen...")
+        print("[INFO] Nacitam knihovnu ceskych jmen...")
         global CZECH_FIRST_NAMES
         CZECH_FIRST_NAMES = load_names_library("cz_names.v1.json")
 
         if not CZECH_FIRST_NAMES:
-            print(" Varování: Knihovna jmen je prázdná, detekce bude omezená")
+            print("[VAROVANI] Knihovna jmen je prazdna, detekce bude omezena")
 
         # Create anonymizer instance
-        print(f"\n Zpracovávám: {input_path.name}")
+        print(f"\n[INFO] Zpracovavam: {input_path.name}")
         anonymizer = Anonymizer(verbose=args.verbose)
 
         # Run anonymization
@@ -90,9 +90,9 @@ def main():
             "entities_total": sum(len(entities) for entities in anonymizer.entity_map.values())
         }
 
-        print(f"\n Anonymizace dokončena!")
-        print(f" Nalezeno osob: {result['persons_found']}")
-        print(f" Celkem entit: {result['entities_total']}")
+        print(f"\n[OK] Anonymizace dokoncena!")
+        print(f"[INFO] Nalezeno osob: {result['persons_found']}")
+        print(f"[INFO] Celkem entit: {result['entities_total']}")
 
         # Output JSON on last line for parsing
         print(json.dumps(result))
@@ -100,7 +100,7 @@ def main():
         return 0
 
     except Exception as e:
-        print(f"\n CHYBA: {e}")
+        print(f"\n[CHYBA] {e}")
         import traceback
         traceback.print_exc()
 
@@ -115,4 +115,3 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
-
