@@ -158,6 +158,15 @@ def main():
         if filepath.exists():
             if compile_to_module(filepath, output_dir):
                 success_count += 1
+                # CRITICAL: Also copy .pyd with simple name for Nuitka onefile mode
+                # Nuitka onefile extracts to temp folder and can't find platform-specific
+                # names like anon72.cp311-win_amd64.pyd, so we also need anon72.pyd
+                module_name = filepath.stem  # e.g., "anon72"
+                for pyd_file in output_dir.glob(f"{module_name}*.pyd"):
+                    simple_pyd = output_dir / f"{module_name}.pyd"
+                    if pyd_file != simple_pyd:
+                        shutil.copy(pyd_file, simple_pyd)
+                        print(f"  Also copied as: {simple_pyd.name}")
             else:
                 # If module compilation fails, copy as-is
                 print(f"INFO: Copying {filename} as-is (compilation failed)")
