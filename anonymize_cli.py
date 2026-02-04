@@ -68,10 +68,24 @@ def main():
         return 1
 
     try:
-        # Load names library
+        # Load names library - find it in the same directory as the executable
         print("[INFO] Nacitam knihovnu ceskych jmen...")
         global CZECH_FIRST_NAMES
-        CZECH_FIRST_NAMES = load_names_library("cz_names.v1.json")
+
+        # Find cz_names.v1.json in executable directory
+        names_json_path = None
+        for search_dir in [original_exe_dir, exe_dir, script_dir]:
+            candidate = search_dir / "cz_names.v1.json"
+            if candidate.exists():
+                names_json_path = str(candidate)
+                break
+
+        if names_json_path:
+            print(f"[INFO] Knihovna nalezena: {names_json_path}")
+            CZECH_FIRST_NAMES = load_names_library(names_json_path)
+        else:
+            print("[VAROVANI] cz_names.v1.json nenalezeno, zkousim relativni cestu...")
+            CZECH_FIRST_NAMES = load_names_library("cz_names.v1.json")
 
         if not CZECH_FIRST_NAMES:
             print("[VAROVANI] Knihovna jmen je prazdna, detekce bude omezena")
