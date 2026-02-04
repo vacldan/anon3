@@ -178,12 +178,12 @@ def process_document(file_path, logger):
 
         logger.info(f"Pouzivam CLI: {anonymize_script}")
 
-        # Připrav výstupní cesty
+        # Připrav výstupní cesty - přímo do OUT složky (ne do IN!)
         base_name = working_file.stem
-        input_dir = working_file.parent
-        anon_file = input_dir / f"{base_name}_anon.docx"
-        map_json = input_dir / f"{base_name}_map.json"
-        map_txt = input_dir / f"{base_name}_map.txt"
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        anon_file = OUT_FOLDER / f"{base_name}_{timestamp}_anon.docx"
+        map_json = OUT_FOLDER / f"{base_name}_{timestamp}_map.json"
+        map_txt = OUT_FOLDER / f"{base_name}_{timestamp}_map.txt"
 
         # Volání s korektními argumenty
         cli_args = [
@@ -210,26 +210,18 @@ def process_document(file_path, logger):
             logger.error(f"STDOUT: {result.stdout}")
             return False
 
-        # Přesuň výstupy do OUT složky (anon_file, map_json, map_txt už definovány výše)
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-
-        files_moved = []
+        # Zkontroluj výstupy (jsou přímo v OUT složce)
+        files_created = []
 
         if anon_file.exists():
-            dest = OUT_FOLDER / f"{base_name}_{timestamp}_anon.docx"
-            shutil.move(str(anon_file), str(dest))
-            files_moved.append(dest.name)
-            logger.info(f"Výstup: {dest.name}")
+            files_created.append(anon_file.name)
+            logger.info(f"Výstup: {anon_file.name}")
 
         if map_json.exists():
-            dest = OUT_FOLDER / f"{base_name}_{timestamp}_map.json"
-            shutil.move(str(map_json), str(dest))
-            files_moved.append(dest.name)
+            files_created.append(map_json.name)
 
         if map_txt.exists():
-            dest = OUT_FOLDER / f"{base_name}_{timestamp}_map.txt"
-            shutil.move(str(map_txt), str(dest))
-            files_moved.append(dest.name)
+            files_created.append(map_txt.name)
 
         # Smaž originál z IN (nebo přesuň do PROCESSED)
         if file_path.exists():
@@ -240,7 +232,7 @@ def process_document(file_path, logger):
         if working_file != file_path and working_file.exists():
             working_file.unlink()
 
-        logger.info(f"Úspěšně zpracováno: {file_path.name} -> {len(files_moved)} souborů")
+        logger.info(f"Úspěšně zpracováno: {file_path.name} -> {len(files_created)} souborů")
         return True
 
     except subprocess.TimeoutExpired:
@@ -294,6 +286,10 @@ class SKRYIHandler(FileSystemEventHandler):
 
         # Ignoruj dočasné soubory
         if file_path.name.startswith('~') or file_path.name.startswith('.'):
+            return
+
+        # Ignoruj výstupní soubory (prevence zpracování vlastního výstupu)
+        if '_anon' in file_path.stem or '_map' in file_path.stem:
             return
 
         self.logger.info(f"Nový soubor detekován: {file_path.name}")
