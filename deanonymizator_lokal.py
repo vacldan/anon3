@@ -1010,8 +1010,8 @@ if __name__ == "__main__":
     print()
 
     # PAUZA - pouze když je spuštěno interaktivně v terminálu
-    # V Electron aplikaci nesmíme čekat na input, jinak proces nikdy neskončí!
-    if sys.stdin.isatty():
+    # V Electron aplikaci nebo watcher režimu nesmíme čekat na input!
+    if sys.stdin.isatty() and not os.environ.get('NO_PAUSE'):
         input("\n>>> Stiskni ENTER pro ukončení...")
 
     sys.exit(0 if result else 1)
