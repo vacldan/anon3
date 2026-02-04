@@ -198,8 +198,9 @@ def process_document(file_path, logger):
         else:
             base = stem
 
-        input_dir = file_path.parent
-        output_file = input_dir / f"{base}_deanon.docx"
+        # Vystup primo do OUT_FOLDER s timestampem
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        output_file = OUT_FOLDER / f"{base}_{timestamp}_deanon.docx"
 
         # Volani s korektnimi argumenty
         cli_args = [
@@ -232,16 +233,12 @@ def process_document(file_path, logger):
             logger.error(f"STDOUT: {result.stdout}")
             return False
 
-        # Presun vystupy do OUT slozky
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-
-        files_moved = []
-
+        # Kontrola vystupu
         if output_file.exists():
-            dest = OUT_FOLDER / f"{base}_{timestamp}_deanon.docx"
-            shutil.move(str(output_file), str(dest))
-            files_moved.append(dest.name)
-            logger.info(f"Vystup: {dest.name}")
+            logger.info(f"Vystup: {output_file.name}")
+        else:
+            logger.error(f"Vystupni soubor nebyl vytvoren: {output_file}")
+            return False
 
         # Smaz originaly z IN
         if file_path.exists():
@@ -258,7 +255,7 @@ def process_document(file_path, logger):
             txt_map.unlink()
             logger.info(f"TXT mapa smazana: {txt_map.name}")
 
-        logger.info(f"Uspesne zpracovano: {file_path.name} -> {len(files_moved)} souboru")
+        logger.info(f"Uspesne zpracovano: {file_path.name} -> {output_file.name}")
         return True
 
     except subprocess.TimeoutExpired:
