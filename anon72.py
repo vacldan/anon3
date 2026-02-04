@@ -4951,15 +4951,15 @@ class Anonymizer:
             "entities": []
         }
 
-        # VALIDACE: Načti zdrojový dokument pro kontrolu existence entit
-        from docx import Document as DocxDocument
-        source_doc = DocxDocument(source_file)
-        source_text = '\n'.join([p.text for p in source_doc.paragraphs])
-        # Přidej text z tabulek
-        for table in source_doc.tables:
-            for row in table.rows:
-                for cell in row.cells:
-                    source_text += '\n' + '\n'.join([p.text for p in cell.paragraphs])
+        # VALIDACE: Použij už načtený zdrojový text (nečti soubor znovu - může být smazaný)
+        # self.source_text byl uložen na začátku anonymize_docx
+        source_text = getattr(self, 'source_text', '')
+        # Přidej text z tabulek pokud máme doc objekt
+        if doc:
+            for table in doc.tables:
+                for row in table.rows:
+                    for cell in row.cells:
+                        source_text += '\n' + '\n'.join([p.text for p in cell.paragraphs])
 
 
         # ========== AUTOMATICKÁ OPRAVA: Kanonická jména musí mít varianty ve smlouvě! ==========
