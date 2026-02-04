@@ -108,7 +108,7 @@ def save_license_file(license_data, output_path="license.lic"):
     with open(output_path, 'w') as f:
         f.write(encoded)
 
-    print(f"✅ Licence uložena do: {output_path}")
+    print(f"[OK] Licence uložena do: {output_path}")
 
 
 def print_license_info(license_data):
@@ -145,14 +145,14 @@ def interactive_generator():
 
     # Validace délky
     if len(hw_id) != 16:
-        print(f"\n⚠️  VAROVÁNÍ: HW ID by měl mít 16 znaků, má {len(hw_id)}")
+        print(f"\n[!]  VAROVÁNÍ: HW ID by měl mít 16 znaků, má {len(hw_id)}")
         print(f"   Zadáno: {hw_id}")
         confirm = input("   Pokračovat i přesto? (ano/ne): ").strip().lower()
         if confirm not in ['ano', 'a', 'yes', 'y']:
             print("Zrušeno.")
             return
 
-    print(f"\n✓ HW ID normalizováno: {hw_id}")
+    print(f"\n[OK] HW ID normalizováno: {hw_id}")
 
     print("\nTypy licencí:")
     print("  1) trial       - Zkušební (30 dní)")
@@ -199,7 +199,7 @@ def interactive_generator():
     filename = f"license_{safe_name}_{license_data['license_key'][:8]}.lic"
     save_license_file(license_data, filename)
 
-    print(f"\n✅ Hotovo! Pošlete soubor '{filename}' zákazníkovi.")
+    print(f"\n[OK] Hotovo! Pošlete soubor '{filename}' zákazníkovi.")
     print("   Zákazník ho umístí do složky s aplikací.")
 
 
@@ -208,6 +208,6 @@ if __name__ == "__main__":
     try:
         interactive_generator()
     except KeyboardInterrupt:
-        print("\n\n❌ Zrušeno")
+        print("\n\n[X] Zrušeno")
     except Exception as e:
-        print(f"\n❌ Chyba: {e}")
+        print(f"\n[X] Chyba: {e}")

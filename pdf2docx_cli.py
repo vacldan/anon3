@@ -50,7 +50,7 @@ def convert_pdf(pdf_path: Path):
 
         # Verify output
         if docx_path.exists() and docx_path.stat().st_size > 0:
-            print(f"✅ Uspesne prevedeno: {docx_path.name}", flush=True)
+            print(f"[OK] Uspesne prevedeno: {docx_path.name}", flush=True)
             print(f"Velikost vystupniho souboru: {docx_path.stat().st_size} bytů", flush=True)
             return True
         else:
@@ -80,27 +80,27 @@ def main():
         print(f"\nZpracovavam ({total_count}): {pdf_path.name}", flush=True)
 
         if not pdf_path.exists():
-            print(f"⚠️  Soubor neexistuje: {pdf_path}", flush=True)
+            print(f"[!] Soubor neexistuje: {pdf_path}", flush=True)
             continue
 
         if pdf_path.suffix.lower() != ".pdf":
-            print(f"⚠️  Soubor není PDF: {pdf_path}", flush=True)
+            print(f"[!] Soubor neni PDF: {pdf_path}", flush=True)
             continue
 
         if convert_pdf(pdf_path):
             success_count += 1
         else:
-            print(f"❌ Konverze selhala pro: {pdf_path.name}", flush=True)
+            print(f"[X] Konverze selhala pro: {pdf_path.name}", flush=True)
 
     print("\n" + "=" * 50, flush=True)
     print(f"VÝSLEDEK: {success_count}/{total_count} souborů úspěšně převedeno", flush=True)
 
     exit_code = 0
     if success_count == total_count and total_count > 0:
-        print("✅ Všechny soubory byly úspěšně převedeny!", flush=True)
+        print("[OK] Vsechny soubory byly uspesne prevedeny!", flush=True)
         exit_code = 0
     else:
-        print("⚠️  Některé soubory nebyly převedeny", flush=True)
+        print("[!] Nektere soubory nebyly prevedeny", flush=True)
         exit_code = 1
 
     # Počkej na Enter před ukončením (pro drag & drop režim)

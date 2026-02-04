@@ -299,12 +299,12 @@ try:
     names_path = script_dir / "cz_names.v1.json"
     if names_path.exists():
         load_names_library(str(names_path))
-        print(f"✓ Knihovna jmen načtena: {len(CZECH_FIRST_NAMES)} jmen")
+        print(f"[OK] Knihovna jmen načtena: {len(CZECH_FIRST_NAMES)} jmen")
     else:
-        print(f"⚠ Knihovna jmen nenalezena na: {names_path}")
+        print(f"[!] Knihovna jmen nenalezena na: {names_path}")
         print(f"  Normalizace bude fungovat s omezenými heuristikami")
 except Exception as e:
-    print(f"⚠ Chyba při načítání knihovny jmen: {e}")
+    print(f"[!] Chyba při načítání knihovny jmen: {e}")
     print(f"  Normalizace bude fungovat s omezenými heuristikami")
 print()
 
@@ -326,12 +326,12 @@ try:
     if sys.stdout.isatty():
         sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding="utf-8")
         sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding="utf-8")
-        print("✓ UTF-8 wrapping nastaven (TTY režim)")
+        print("[OK] UTF-8 wrapping nastaven (TTY režim)")
     else:
         # Pipe režim (Electron) - encoding je už nastaven přes PYTHONIOENCODING
-        print("✓ Pipe režim detekován, encoding nastaven přes prostředí")
+        print("[OK] Pipe režim detekován, encoding nastaven přes prostředí")
 except Exception as e:
-    print(f"⚠ UTF-8 wrapping se nepodařilo nastavit: {e}")
+    print(f"[!] UTF-8 wrapping se nepodařilo nastavit: {e}")
     print(f"  Používám výchozí encoding: {sys.stdout.encoding}")
 print()
 
@@ -341,18 +341,18 @@ libraries_ok = True
 
 try:
     from docx import Document
-    print("✓ python-docx je nainstalována")
+    print("[OK] python-docx je nainstalována")
 except ImportError as e:
-    print(f"✗ CHYBA: python-docx není nainstalována!")
+    print(f"[X] CHYBA: python-docx není nainstalována!")
     print(f"  Detaily: {e}")
     print(f"  Řešení: pip install python-docx")
     libraries_ok = False
 
 try:
     import json
-    print("✓ json je dostupný (standardní knihovna)")
+    print("[OK] json je dostupný (standardní knihovna)")
 except ImportError as e:
-    print(f"✗ CHYBA: json není dostupný: {e}")
+    print(f"[X] CHYBA: json není dostupný: {e}")
     libraries_ok = False
 
 print()
@@ -406,11 +406,11 @@ def _load_txt_map_base_values(txt_path: Path):
                 elif not line.strip() or not line.startswith(' '):
                     current_tag = None
 
-        print(f"  ✓ TXT mapa načtena: {len(base_values)} základních PERSON hodnot")
+        print(f"  [OK] TXT mapa načtena: {len(base_values)} základních PERSON hodnot")
         return base_values
 
     except Exception as e:
-        print(f"  ⚠ Chyba při načítání TXT mapy: {e}")
+        print(f"  [!] Chyba při načítání TXT mapy: {e}")
         return base_values
 
 
@@ -420,17 +420,17 @@ def _load_json(path: Path):
     try:
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
-        print(f"  ✓ JSON načten úspěšně")
+        print(f"  [OK] JSON načten úspěšně")
         return data
     except FileNotFoundError:
-        print(f"  ✗ CHYBA: Soubor nenalezen!")
+        print(f"  [X] CHYBA: Soubor nenalezen!")
         raise
     except json.JSONDecodeError as e:
-        print(f"  ✗ CHYBA: Neplatný JSON formát!")
+        print(f"  [X] CHYBA: Neplatný JSON formát!")
         print(f"    Řádek {e.lineno}, sloupec {e.colno}: {e.msg}")
         raise
     except Exception as e:
-        print(f"  ✗ CHYBA: {type(e).__name__}: {e}")
+        print(f"  [X] CHYBA: {type(e).__name__}: {e}")
         raise
 
 
@@ -576,7 +576,7 @@ def _flatten_mapping(obj, txt_base_values=None):
         return
 
     walk(obj)
-    print(f"  ✓ Celkem nalezeno {len(flat)} tagů")
+    print(f"  [OK] Celkem nalezeno {len(flat)} tagů")
 
     # Vypíšeme prvních 5 tagů jako ukázku
     if flat:
@@ -594,7 +594,7 @@ def _sorted_replacements(mapping: dict):
     print("  → Třídím tagy podle délky...")
     items = [(k, str(v)) for k, v in mapping.items()]
     items.sort(key=lambda x: len(x[0]), reverse=True)
-    print(f"  ✓ Seřazeno {len(items)} tagů")
+    print(f"  [OK] Seřazeno {len(items)} tagů")
     return items
 
 
@@ -652,12 +652,12 @@ def deanonymize_document(anon_doc_path: Path, map_path: Path, output_path: Path)
         if txt_map_path.exists():
             txt_base_values = _load_txt_map_base_values(txt_map_path)
             if txt_base_values:
-                print(f"  ✓ Použiji základní hodnoty z TXT mapy: {len(txt_base_values)} osob")
+                print(f"  [OK] Použiji základní hodnoty z TXT mapy: {len(txt_base_values)} osob")
         else:
-            print(f"  ⚠ TXT mapa nenalezena: {txt_map_path}")
+            print(f"  [!] TXT mapa nenalezena: {txt_map_path}")
             print(f"    Použiji hodnoty z JSON (mohou být ve skloněném tvaru)")
     except Exception as e:
-        print(f"  ⚠ Chyba při načítání TXT mapy: {e}")
+        print(f"  [!] Chyba při načítání TXT mapy: {e}")
         print(f"    Použiji hodnoty z JSON")
     print()
 
@@ -665,9 +665,9 @@ def deanonymize_document(anon_doc_path: Path, map_path: Path, output_path: Path)
     print(">>> KROK 1: Načítání JSON mapy")
     try:
         raw = _load_json(map_path)
-        print(f"  ✓ JSON načten, velikost: {len(str(raw))} znaků")
+        print(f"  [OK] JSON načten, velikost: {len(str(raw))} znaků")
     except Exception as e:
-        print(f"\n✗✗✗ KRITICKÁ CHYBA při načítání mapy ✗✗✗")
+        print(f"\n[X][X][X] KRITICKÁ CHYBA při načítání mapy [X][X][X]")
         print(f"Typ chyby: {type(e).__name__}")
         print(f"Popis: {e}")
         return False
@@ -677,11 +677,11 @@ def deanonymize_document(anon_doc_path: Path, map_path: Path, output_path: Path)
     try:
         mapping = _flatten_mapping(raw, txt_base_values)
         if not mapping:
-            print("✗ CHYBA: Mapa je prázdná nebo nemá tagy ve formátu [[...]]")
+            print("[X] CHYBA: Mapa je prázdná nebo nemá tagy ve formátu [[...]]")
             print("  Zkontroluj, jestli JSON obsahuje správnou strukturu")
             return False
     except Exception as e:
-        print(f"\n✗✗✗ CHYBA při parsování mapy ✗✗✗")
+        print(f"\n[X][X][X] CHYBA při parsování mapy [X][X][X]")
         print(f"Typ chyby: {type(e).__name__}")
         print(f"Popis: {e}")
         return False
@@ -691,7 +691,7 @@ def deanonymize_document(anon_doc_path: Path, map_path: Path, output_path: Path)
     try:
         rep_items = _sorted_replacements(mapping)
     except Exception as e:
-        print(f"✗ CHYBA při třídění tagů: {e}")
+        print(f"[X] CHYBA při třídění tagů: {e}")
         return False
 
     # Krok 4: Načtení dokumentu
@@ -701,11 +701,11 @@ def deanonymize_document(anon_doc_path: Path, map_path: Path, output_path: Path)
         doc = Document(str(anon_doc_path))
         para_count = len(doc.paragraphs)
         table_count = len(doc.tables)
-        print(f"  ✓ Dokument načten")
+        print(f"  [OK] Dokument načten")
         print(f"    Počet odstavců: {para_count}")
         print(f"    Počet tabulek: {table_count}")
     except Exception as e:
-        print(f"\n✗✗✗ CHYBA při načítání dokumentu ✗✗✗")
+        print(f"\n[X][X][X] CHYBA při načítání dokumentu [X][X][X]")
         print(f"Typ chyby: {type(e).__name__}")
         print(f"Popis: {e}")
         return False
@@ -722,7 +722,7 @@ def deanonymize_document(anon_doc_path: Path, map_path: Path, output_path: Path)
             if (i + 1) % 50 == 0:
                 print(f"    Zpracováno {i + 1}/{para_count} odstavců...")
 
-        print(f"  ✓ Hlavní odstavce hotovo")
+        print(f"  [OK] Hlavní odstavce hotovo")
 
         # Tables
         if table_count > 0:
@@ -732,12 +732,12 @@ def deanonymize_document(anon_doc_path: Path, map_path: Path, output_path: Path)
                     for cell in row.cells:
                         for para in cell.paragraphs:
                             total_changed_paras += _apply_to_paragraph(para, rep_items)
-            print(f"  ✓ Tabulky hotovo")
+            print(f"  [OK] Tabulky hotovo")
 
-        print(f"  ✓ Celkem změněno {total_changed_paras} odstavců")
+        print(f"  [OK] Celkem změněno {total_changed_paras} odstavců")
 
     except Exception as e:
-        print(f"\n✗✗✗ CHYBA při nahrazování textů ✗✗✗")
+        print(f"\n[X][X][X] CHYBA při nahrazování textů [X][X][X]")
         print(f"Typ chyby: {type(e).__name__}")
         print(f"Popis: {e}")
         import traceback
@@ -757,11 +757,11 @@ def deanonymize_document(anon_doc_path: Path, map_path: Path, output_path: Path)
             try:
                 # Zkus smazat soubor (pokud je otevřený, selže)
                 output_path.unlink()
-                print(f"  ✓ Starý soubor úspěšně smazán")
+                print(f"  [OK] Starý soubor úspěšně smazán")
 
             except PermissionError:
                 # Soubor je pravděpodobně otevřený v jiném programu
-                print(f"  ⚠ VAROVÁNÍ: Nelze smazat existující soubor (je otevřený?)")
+                print(f"  [!] VAROVÁNÍ: Nelze smazat existující soubor (je otevřený?)")
                 print(f"  → Ukládám do dočasného souboru...")
 
                 # Ulož do dočasného souboru v TEMP složce
@@ -771,7 +771,7 @@ def deanonymize_document(anon_doc_path: Path, map_path: Path, output_path: Path)
 
                 print(f"  → Dočasná cesta: {temp_path}")
                 doc.save(str(temp_path))
-                print(f"  ✓ Dokument uložen do dočasného souboru")
+                print(f"  [OK] Dokument uložen do dočasného souboru")
 
                 # Zkus přejmenovat dočasný soubor na finální název
                 try:
@@ -779,32 +779,32 @@ def deanonymize_document(anon_doc_path: Path, map_path: Path, output_path: Path)
                     output_path.unlink()
                     # Přesuň dočasný soubor na finální místo
                     shutil.move(str(temp_path), str(output_path))
-                    print(f"  ✓ Dočasný soubor přesunut na finální místo")
+                    print(f"  [OK] Dočasný soubor přesunut na finální místo")
                 except Exception as move_err:
-                    print(f"  ⚠ Nepodařilo se přesunout na finální místo")
+                    print(f"  [!] Nepodařilo se přesunout na finální místo")
                     print(f"  → Výstupní soubor je dostupný zde: {temp_path}")
                     # Použij dočasnou cestu jako výstup
                     output_path = temp_path
 
             except Exception as del_err:
-                print(f"  ⚠ VAROVÁNÍ: Chyba při mazání souboru: {del_err}")
+                print(f"  [!] VAROVÁNÍ: Chyba při mazání souboru: {del_err}")
 
         # Pokud soubor neexistuje nebo byl úspěšně smazán, ulož normálně
         if not output_path.exists():
             print(f"  → Ukládám do: {output_path}")
             doc.save(str(output_path))
-            print(f"  ✓ Dokument úspěšně uložen")
+            print(f"  [OK] Dokument úspěšně uložen")
 
         # Ověření existence
         if output_path.exists():
             size = output_path.stat().st_size
-            print(f"  ✓ Výstupní soubor existuje, velikost: {size:,} bytů")
+            print(f"  [OK] Výstupní soubor existuje, velikost: {size:,} bytů")
         else:
-            print(f"  ⚠ VAROVÁNÍ: Výstupní soubor nebyl vytvořen!")
+            print(f"  [!] VAROVÁNÍ: Výstupní soubor nebyl vytvořen!")
             return False
 
     except PermissionError as perm_err:
-        print(f"\n✗✗✗ CHYBA OPRÁVNĚNÍ při ukládání dokumentu ✗✗✗")
+        print(f"\n[X][X][X] CHYBA OPRÁVNĚNÍ při ukládání dokumentu [X][X][X]")
         print(f"Soubor: {output_path}")
         print(f"Popis: {perm_err}")
         print(f"\nMožné příčiny:")
@@ -821,7 +821,7 @@ def deanonymize_document(anon_doc_path: Path, map_path: Path, output_path: Path)
         return False
 
     except Exception as e:
-        print(f"\n✗✗✗ CHYBA při ukládání dokumentu ✗✗✗")
+        print(f"\n[X][X][X] CHYBA při ukládání dokumentu [X][X][X]")
         print(f"Typ chyby: {type(e).__name__}")
         print(f"Popis: {e}")
         import traceback
@@ -831,7 +831,7 @@ def deanonymize_document(anon_doc_path: Path, map_path: Path, output_path: Path)
 
     # Finální report
     print("\n" + "=" * 80)
-    print("✓✓✓ DEANONYMIZACE DOKONČENA ÚSPĚŠNĚ ✓✓✓")
+    print("[OK][OK][OK] DEANONYMIZACE DOKONČENA ÚSPĚŠNĚ [OK][OK][OK]")
     print("=" * 80)
     print(f"Změněné odstavce: {total_changed_paras}")
     print(f"Celkem tagů v mapě: {len(mapping)}")
@@ -930,7 +930,7 @@ def main():
         print(">>> KONTROLA VSTUPNÍCH SOUBORŮ")
 
         if not IN_DOC.exists():
-            print(f"✗ CHYBA: Anonymní dokument neexistuje!")
+            print(f"[X] CHYBA: Anonymní dokument neexistuje!")
             print(f"  Cesta: {IN_DOC}")
             print(f"  Aktuální složka: {os.getcwd()}")
             print(f"\n.docx soubory v aktuální složce:")
@@ -946,11 +946,11 @@ def main():
                 pass
             return False
 
-        print(f"✓ Anonymní dokument existuje")
+        print(f"[OK] Anonymní dokument existuje")
         print(f"  Velikost: {IN_DOC.stat().st_size:,} bytů")
 
         if not IN_MAP.exists():
-            print(f"✗ CHYBA: Mapa neexistuje!")
+            print(f"[X] CHYBA: Mapa neexistuje!")
             print(f"  Cesta: {IN_MAP}")
             print(f"  Aktuální složka: {os.getcwd()}")
             print(f"\n.json soubory v aktuální složce:")
@@ -966,7 +966,7 @@ def main():
                 pass
             return False
 
-        print(f"✓ JSON mapa existuje")
+        print(f"[OK] JSON mapa existuje")
         print(f"  Velikost: {IN_MAP.stat().st_size:,} bytů")
         print()
 
@@ -976,7 +976,7 @@ def main():
 
     except Exception as e:
         print("\n" + "=" * 80)
-        print("✗✗✗ NEOČEKÁVANÁ CHYBA ✗✗✗")
+        print("[X][X][X] NEOČEKÁVANÁ CHYBA [X][X][X]")
         print("=" * 80)
         print(f"Typ: {type(e).__name__}")
         print(f"Popis: {e}")
