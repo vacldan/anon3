@@ -886,8 +886,19 @@ function getSkryiFolders() {
   const baseFolder = path.join(documents, 'SKRYI');
   return {
     base: baseFolder,
-    in: path.join(baseFolder, 'IN'),
-    out: path.join(baseFolder, 'OUT'),
+    // 01_ANONYMIZACE
+    anonFolder: path.join(baseFolder, '01_ANONYMIZACE'),
+    anonIn: path.join(baseFolder, '01_ANONYMIZACE', 'IN'),
+    anonOut: path.join(baseFolder, '01_ANONYMIZACE', 'OUT'),
+    // 02_DEANONYMIZACE
+    deanonFolder: path.join(baseFolder, '02_DEANONYMIZACE'),
+    deanonIn: path.join(baseFolder, '02_DEANONYMIZACE', 'IN'),
+    deanonOut: path.join(baseFolder, '02_DEANONYMIZACE', 'OUT'),
+    // 03_KONVERZE_PDF
+    pdfFolder: path.join(baseFolder, '03_KONVERZE_PDF'),
+    pdfIn: path.join(baseFolder, '03_KONVERZE_PDF', 'IN'),
+    pdfOut: path.join(baseFolder, '03_KONVERZE_PDF', 'OUT'),
+    // Shared
     error: path.join(baseFolder, 'ERROR'),
     logs: path.join(baseFolder, 'LOGS')
   };
@@ -904,15 +915,22 @@ function ensureSkryiFolders() {
   return folders;
 }
 
-// Watcher process reference
-let watcherProcess = null;
+// Watcher process references (for all 3 watchers)
+let watcherProcesses = {
+  anon: null,
+  deanon: null,
+  pdf: null
+};
+
+// Helper to check if a watcher is running
+function isWatcherRunning(type) {
+  const proc = watcherProcesses[type];
+  return proc !== null && proc.exitCode === null;
+}
 
 // Get folder status
 ipcMain.handle("get-folder-status", async () => {
   const folders = ensureSkryiFolders();
-
-  // Check if watcher is running
-  const watcherRunning = watcherProcess !== null && watcherProcess.exitCode === null;
 
   // Check autostart registry (Windows only)
   let autostartEnabled = false;
@@ -928,24 +946,41 @@ ipcMain.handle("get-folder-status", async () => {
 
   return {
     baseFolder: folders.base,
-    inFolder: folders.in,
-    outFolder: folders.out,
+    // 01_ANONYMIZACE
+    anonInFolder: folders.anonIn,
+    anonOutFolder: folders.anonOut,
+    anonWatcherRunning: isWatcherRunning('anon'),
+    // 02_DEANONYMIZACE
+    deanonInFolder: folders.deanonIn,
+    deanonOutFolder: folders.deanonOut,
+    deanonWatcherRunning: isWatcherRunning('deanon'),
+    // 03_KONVERZE_PDF
+    pdfInFolder: folders.pdfIn,
+    pdfOutFolder: folders.pdfOut,
+    pdfWatcherRunning: isWatcherRunning('pdf'),
+    // Shared
     errorFolder: folders.error,
     logsFolder: folders.logs,
-    watcherRunning,
     autostartEnabled
   };
 });
 
-// Open folders
-ipcMain.handle("open-in-folder", async () => {
+// Open folders - unified handler
+ipcMain.handle("open-folder", async (event, folderType) => {
   const folders = ensureSkryiFolders();
-  shell.openPath(folders.in);
-});
-
-ipcMain.handle("open-out-folder", async () => {
-  const folders = ensureSkryiFolders();
-  shell.openPath(folders.out);
+  const folderMap = {
+    'anon-in': folders.anonIn,
+    'anon-out': folders.anonOut,
+    'deanon-in': folders.deanonIn,
+    'deanon-out': folders.deanonOut,
+    'pdf-in': folders.pdfIn,
+    'pdf-out': folders.pdfOut,
+    'error': folders.error
+  };
+  const folderPath = folderMap[folderType];
+  if (folderPath) {
+    shell.openPath(folderPath);
+  }
 });
 
 ipcMain.handle("open-skryi-folder", async () => {
@@ -953,21 +988,37 @@ ipcMain.handle("open-skryi-folder", async () => {
   shell.openPath(folders.base);
 });
 
-// Start watcher
-ipcMain.handle("start-watcher", async () => {
-  if (watcherProcess && watcherProcess.exitCode === null) {
-    return { success: true, message: "Watcher is already running" };
+// Watcher scripts mapping
+const WATCHER_SCRIPTS = {
+  anon: 'skryi_watcher.py',
+  deanon: 'deanon_watcher.py',
+  pdf: 'pdf2docx_watcher.py'
+};
+
+// Start watcher - unified handler
+ipcMain.handle("start-watcher", async (event, watcherType) => {
+  // Default to 'anon' for backward compatibility
+  const type = watcherType || 'anon';
+
+  if (isWatcherRunning(type)) {
+    return { success: true, message: `${type} watcher is already running` };
   }
 
-  const watcherScript = resolveScript("skryi_watcher.py");
+  const scriptName = WATCHER_SCRIPTS[type];
+  if (!scriptName) {
+    return { success: false, error: `Unknown watcher type: ${type}` };
+  }
+
+  const watcherScript = resolveScript(scriptName);
 
   if (!fs.existsSync(watcherScript.path)) {
-    return { success: false, error: "Watcher script not found" };
+    return { success: false, error: `Watcher script not found: ${scriptName}` };
   }
 
   try {
+    let proc;
     if (watcherScript.isExe) {
-      watcherProcess = spawn(watcherScript.path, [], {
+      proc = spawn(watcherScript.path, [], {
         detached: true,
         stdio: 'ignore',
         windowsHide: true
@@ -977,43 +1028,48 @@ ipcMain.handle("start-watcher", async () => {
         ? ["-3", watcherScript.path]
         : [watcherScript.path];
 
-      watcherProcess = spawn(PY.cmd, args, {
+      proc = spawn(PY.cmd, args, {
         detached: true,
         stdio: 'ignore',
         windowsHide: true
       });
     }
 
-    watcherProcess.unref();
-    console.log("[WATCHER] Started with PID:", watcherProcess.pid);
+    proc.unref();
+    watcherProcesses[type] = proc;
+    console.log(`[WATCHER-${type.toUpperCase()}] Started with PID:`, proc.pid);
 
-    return { success: true, pid: watcherProcess.pid };
+    return { success: true, pid: proc.pid };
   } catch (error) {
-    console.error("[WATCHER] Start error:", error);
+    console.error(`[WATCHER-${type.toUpperCase()}] Start error:`, error);
     return { success: false, error: error.message };
   }
 });
 
-// Stop watcher
-ipcMain.handle("stop-watcher", async () => {
-  if (watcherProcess) {
+// Stop watcher - unified handler
+ipcMain.handle("stop-watcher", async (event, watcherType) => {
+  // Default to 'anon' for backward compatibility
+  const type = watcherType || 'anon';
+  const proc = watcherProcesses[type];
+
+  if (proc) {
     try {
       // On Windows, use taskkill to ensure the process is terminated
       if (process.platform === 'win32') {
         const { execSync } = require('child_process');
-        execSync(`taskkill /PID ${watcherProcess.pid} /F 2>nul`, { encoding: 'utf8' });
+        execSync(`taskkill /PID ${proc.pid} /F 2>nul`, { encoding: 'utf8' });
       } else {
-        watcherProcess.kill('SIGTERM');
+        proc.kill('SIGTERM');
       }
-      watcherProcess = null;
+      watcherProcesses[type] = null;
       return { success: true };
     } catch (error) {
-      console.error("[WATCHER] Stop error:", error);
-      watcherProcess = null;
+      console.error(`[WATCHER-${type.toUpperCase()}] Stop error:`, error);
+      watcherProcesses[type] = null;
       return { success: true }; // Consider it stopped even if error
     }
   }
-  return { success: true, message: "Watcher was not running" };
+  return { success: true, message: `${type} watcher was not running` };
 });
 
 // Enable autostart (Windows only)

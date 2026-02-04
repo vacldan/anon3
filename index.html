@@ -390,69 +390,95 @@
 
         <!-- Folder Mode panel -->
         <div id="folderPanel" class="hidden">
+            <!-- 01_ANONYMIZACE -->
             <div class="section" style="--delay: 0.1s">
-                <h3>📁 Automatický složkový režim</h3>
-                <p style="margin-bottom: 24px; color: #475569; line-height: 1.6;">
-                    Vložte dokumenty do složky <strong>IN</strong> a automaticky se anonymizují.
-                    Výsledky najdete ve složce <strong>OUT</strong>.
+                <h3>📁 01_ANONYMIZACE</h3>
+                <p style="margin-bottom: 16px; color: #475569; line-height: 1.6;">
+                    Vložte dokument (DOCX/PDF) do složky <strong>IN</strong> → automaticky se anonymizuje do <strong>OUT</strong>
                 </p>
-
-                <div id="folderStatus" class="file-info" style="margin-bottom: 24px;">
-                    <div style="margin-bottom: 12px;">
-                        <strong style="color: #1e293b;">Status služby:</strong>
-                        <span id="watcherStatus" style="margin-left: 8px; font-weight: 600;">Kontroluji...</span>
+                <div id="anonFolderStatus" class="file-info" style="margin-bottom: 16px;">
+                    <div style="margin-bottom: 8px;">
+                        <strong style="color: #1e293b;">Status:</strong>
+                        <span id="anonWatcherStatus" style="margin-left: 8px; font-weight: 600;">Kontroluji...</span>
                     </div>
-                    <div style="margin-bottom: 12px;">
-                        <strong style="color: #1e293b;">IN složka:</strong>
-                        <span id="inFolderPath" style="margin-left: 8px; font-family: monospace; font-size: 13px;"></span>
-                    </div>
-                    <div style="margin-bottom: 12px;">
-                        <strong style="color: #1e293b;">OUT složka:</strong>
-                        <span id="outFolderPath" style="margin-left: 8px; font-family: monospace; font-size: 13px;"></span>
+                    <div style="font-size: 12px; color: #64748b;">
+                        IN: <span id="anonInPath">...</span><br>
+                        OUT: <span id="anonOutPath">...</span>
                     </div>
                 </div>
-
-                <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px;">
-                    <button class="btn" id="openInFolderBtn">📂 Otevřít IN složku</button>
-                    <button class="btn" id="openOutFolderBtn">📂 Otevřít OUT složku</button>
-                    <button class="btn secondary" id="openSkryiFolderBtn">📁 Otevřít SKRYI složku</button>
-                </div>
-
-                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                    <button class="btn" id="startWatcherBtn">▶️ Spustit službu</button>
-                    <button class="btn secondary" id="stopWatcherBtn">⏹️ Zastavit službu</button>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <button class="btn" id="openAnonInBtn">📂 IN</button>
+                    <button class="btn" id="openAnonOutBtn">📂 OUT</button>
+                    <button class="btn" id="startAnonWatcherBtn">▶️ Spustit</button>
+                    <button class="btn secondary" id="stopAnonWatcherBtn">⏹️ Zastavit</button>
                 </div>
             </div>
 
+            <!-- 02_DEANONYMIZACE -->
             <div class="section" style="--delay: 0.2s">
-                <h3>📋 Jak to funguje</h3>
-                <div style="color: #475569; line-height: 1.8;">
-                    <ol style="margin-left: 20px;">
-                        <li><strong>Přetáhněte</strong> dokument (DOCX nebo PDF) do složky <code>IN</code></li>
-                        <li>SKRYI automaticky <strong>detekuje</strong> nový soubor</li>
-                        <li>Dokument se <strong>anonymizuje</strong> (PDF se nejprve převede na DOCX)</li>
-                        <li>Výsledky najdete ve složce <strong>OUT</strong>:
-                            <ul style="margin-left: 20px; margin-top: 8px;">
-                                <li><code>dokument_anon.docx</code> - anonymizovaný dokument</li>
-                                <li><code>dokument_map.json</code> - mapa pro deanonymizaci</li>
-                                <li><code>dokument_map.txt</code> - čitelný přehled náhrad</li>
-                            </ul>
-                        </li>
-                        <li>Při chybě se soubor přesune do složky <strong>ERROR</strong></li>
-                    </ol>
+                <h3>📁 02_DEANONYMIZACE</h3>
+                <p style="margin-bottom: 16px; color: #475569; line-height: 1.6;">
+                    Vložte anonymizovaný DOCX + JSON mapu do <strong>IN</strong> → automaticky se deanonymizuje do <strong>OUT</strong>
+                </p>
+                <div id="deanonFolderStatus" class="file-info" style="margin-bottom: 16px;">
+                    <div style="margin-bottom: 8px;">
+                        <strong style="color: #1e293b;">Status:</strong>
+                        <span id="deanonWatcherStatus" style="margin-left: 8px; font-weight: 600;">Kontroluji...</span>
+                    </div>
+                    <div style="font-size: 12px; color: #64748b;">
+                        IN: <span id="deanonInPath">...</span><br>
+                        OUT: <span id="deanonOutPath">...</span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <button class="btn" id="openDeanonInBtn">📂 IN</button>
+                    <button class="btn" id="openDeanonOutBtn">📂 OUT</button>
+                    <button class="btn" id="startDeanonWatcherBtn">▶️ Spustit</button>
+                    <button class="btn secondary" id="stopDeanonWatcherBtn">⏹️ Zastavit</button>
                 </div>
             </div>
 
+            <!-- 03_KONVERZE_PDF -->
             <div class="section" style="--delay: 0.3s">
-                <h3>⚙️ Nastavení automatického spuštění</h3>
-                <p style="margin-bottom: 16px; color: #475569;">
-                    Služba se může spouštět automaticky při startu Windows.
+                <h3>📁 03_KONVERZE_PDF</h3>
+                <p style="margin-bottom: 16px; color: #475569; line-height: 1.6;">
+                    Vložte PDF do <strong>IN</strong> → automaticky se převede na DOCX do <strong>OUT</strong>
                 </p>
-                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                    <button class="btn" id="enableAutostartBtn">✅ Povolit autostart</button>
-                    <button class="btn secondary" id="disableAutostartBtn">❌ Zakázat autostart</button>
+                <div id="pdfFolderStatus" class="file-info" style="margin-bottom: 16px;">
+                    <div style="margin-bottom: 8px;">
+                        <strong style="color: #1e293b;">Status:</strong>
+                        <span id="pdfWatcherStatus" style="margin-left: 8px; font-weight: 600;">Kontroluji...</span>
+                    </div>
+                    <div style="font-size: 12px; color: #64748b;">
+                        IN: <span id="pdfInPath">...</span><br>
+                        OUT: <span id="pdfOutPath">...</span>
+                    </div>
                 </div>
-                <div id="autostartStatus" style="margin-top: 12px; color: #64748b; font-size: 14px;"></div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <button class="btn" id="openPdfInBtn">📂 IN</button>
+                    <button class="btn" id="openPdfOutBtn">📂 OUT</button>
+                    <button class="btn" id="startPdfWatcherBtn">▶️ Spustit</button>
+                    <button class="btn secondary" id="stopPdfWatcherBtn">⏹️ Zastavit</button>
+                </div>
+            </div>
+
+            <!-- Společné ovládání -->
+            <div class="section" style="--delay: 0.4s">
+                <h3>⚙️ Společné ovládání</h3>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px;">
+                    <button class="btn secondary" id="openSkryiFolderBtn">📁 Otevřít SKRYI složku</button>
+                    <button class="btn secondary" id="openErrorFolderBtn">📁 Otevřít ERROR složku</button>
+                </div>
+                <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #e2e8f0;">
+                    <p style="margin-bottom: 12px; color: #475569; font-size: 14px;">
+                        Automatické spuštění při startu Windows:
+                    </p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <button class="btn" id="enableAutostartBtn">✅ Povolit autostart</button>
+                        <button class="btn secondary" id="disableAutostartBtn">❌ Zakázat autostart</button>
+                    </div>
+                    <div id="autostartStatus" style="margin-top: 12px; color: #64748b; font-size: 14px;"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -943,8 +969,10 @@
             console.log('loadFolderStatus() called');
 
             if (!ipcRenderer) {
-                document.getElementById('watcherStatus').textContent = 'IPC nedostupné';
-                document.getElementById('watcherStatus').style.color = '#ef4444';
+                ['anonWatcherStatus', 'deanonWatcherStatus', 'pdfWatcherStatus'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) { el.textContent = 'IPC nedostupné'; el.style.color = '#ef4444'; }
+                });
                 return;
             }
 
@@ -952,21 +980,22 @@
                 const status = await ipcRenderer.invoke('get-folder-status');
                 console.log('Folder status:', status);
 
-                // Update paths
-                document.getElementById('inFolderPath').textContent = status.inFolder || 'N/A';
-                document.getElementById('outFolderPath').textContent = status.outFolder || 'N/A';
+                // 01_ANONYMIZACE
+                document.getElementById('anonInPath').textContent = status.anonInFolder || 'N/A';
+                document.getElementById('anonOutPath').textContent = status.anonOutFolder || 'N/A';
+                updateWatcherStatusUI('anonWatcherStatus', status.anonWatcherRunning);
 
-                // Update watcher status
-                const watcherStatusEl = document.getElementById('watcherStatus');
-                if (status.watcherRunning) {
-                    watcherStatusEl.textContent = '✅ Běží';
-                    watcherStatusEl.style.color = '#10b981';
-                } else {
-                    watcherStatusEl.textContent = '⏹️ Zastaveno';
-                    watcherStatusEl.style.color = '#f59e0b';
-                }
+                // 02_DEANONYMIZACE
+                document.getElementById('deanonInPath').textContent = status.deanonInFolder || 'N/A';
+                document.getElementById('deanonOutPath').textContent = status.deanonOutFolder || 'N/A';
+                updateWatcherStatusUI('deanonWatcherStatus', status.deanonWatcherRunning);
 
-                // Update autostart status
+                // 03_KONVERZE_PDF
+                document.getElementById('pdfInPath').textContent = status.pdfInFolder || 'N/A';
+                document.getElementById('pdfOutPath').textContent = status.pdfOutFolder || 'N/A';
+                updateWatcherStatusUI('pdfWatcherStatus', status.pdfWatcherRunning);
+
+                // Autostart status
                 const autostartEl = document.getElementById('autostartStatus');
                 if (status.autostartEnabled) {
                     autostartEl.textContent = '✅ Autostart je povolen';
@@ -977,20 +1006,25 @@
                 }
             } catch (error) {
                 console.error('Error loading folder status:', error);
-                document.getElementById('watcherStatus').textContent = 'Chyba';
-                document.getElementById('watcherStatus').style.color = '#ef4444';
             }
         }
 
-        async function openInFolder() {
-            if (ipcRenderer) {
-                await ipcRenderer.invoke('open-in-folder');
+        function updateWatcherStatusUI(elementId, isRunning) {
+            const el = document.getElementById(elementId);
+            if (!el) return;
+            if (isRunning) {
+                el.textContent = '✅ Běží';
+                el.style.color = '#10b981';
+            } else {
+                el.textContent = '⏹️ Zastaveno';
+                el.style.color = '#f59e0b';
             }
         }
 
-        async function openOutFolder() {
+        // Folder open functions
+        async function openFolder(folderType) {
             if (ipcRenderer) {
-                await ipcRenderer.invoke('open-out-folder');
+                await ipcRenderer.invoke('open-folder', folderType);
             }
         }
 
@@ -1000,24 +1034,23 @@
             }
         }
 
-        async function startWatcher() {
+        // Watcher control functions
+        async function startWatcher(watcherType) {
             if (ipcRenderer) {
-                const result = await ipcRenderer.invoke('start-watcher');
+                const result = await ipcRenderer.invoke('start-watcher', watcherType);
                 if (result.success) {
-                    document.getElementById('watcherStatus').textContent = '✅ Běží';
-                    document.getElementById('watcherStatus').style.color = '#10b981';
+                    updateWatcherStatusUI(watcherType + 'WatcherStatus', true);
                 } else {
                     alert('Chyba při spuštění služby: ' + result.error);
                 }
             }
         }
 
-        async function stopWatcher() {
+        async function stopWatcher(watcherType) {
             if (ipcRenderer) {
-                const result = await ipcRenderer.invoke('stop-watcher');
+                const result = await ipcRenderer.invoke('stop-watcher', watcherType);
                 if (result.success) {
-                    document.getElementById('watcherStatus').textContent = '⏹️ Zastaveno';
-                    document.getElementById('watcherStatus').style.color = '#f59e0b';
+                    updateWatcherStatusUI(watcherType + 'WatcherStatus', false);
                 }
             }
         }
@@ -1143,12 +1176,27 @@
             document.getElementById('folderMode').addEventListener('click', () => switchMode('folder'));
             document.getElementById('licenseMode').addEventListener('click', () => switchMode('license'));
 
-            // Folder mode buttons
-            document.getElementById('openInFolderBtn').addEventListener('click', openInFolder);
-            document.getElementById('openOutFolderBtn').addEventListener('click', openOutFolder);
+            // Folder mode buttons - 01_ANONYMIZACE
+            document.getElementById('openAnonInBtn').addEventListener('click', () => openFolder('anon-in'));
+            document.getElementById('openAnonOutBtn').addEventListener('click', () => openFolder('anon-out'));
+            document.getElementById('startAnonWatcherBtn').addEventListener('click', () => startWatcher('anon'));
+            document.getElementById('stopAnonWatcherBtn').addEventListener('click', () => stopWatcher('anon'));
+
+            // Folder mode buttons - 02_DEANONYMIZACE
+            document.getElementById('openDeanonInBtn').addEventListener('click', () => openFolder('deanon-in'));
+            document.getElementById('openDeanonOutBtn').addEventListener('click', () => openFolder('deanon-out'));
+            document.getElementById('startDeanonWatcherBtn').addEventListener('click', () => startWatcher('deanon'));
+            document.getElementById('stopDeanonWatcherBtn').addEventListener('click', () => stopWatcher('deanon'));
+
+            // Folder mode buttons - 03_KONVERZE_PDF
+            document.getElementById('openPdfInBtn').addEventListener('click', () => openFolder('pdf-in'));
+            document.getElementById('openPdfOutBtn').addEventListener('click', () => openFolder('pdf-out'));
+            document.getElementById('startPdfWatcherBtn').addEventListener('click', () => startWatcher('pdf'));
+            document.getElementById('stopPdfWatcherBtn').addEventListener('click', () => stopWatcher('pdf'));
+
+            // Common folder buttons
             document.getElementById('openSkryiFolderBtn').addEventListener('click', openSkryiFolder);
-            document.getElementById('startWatcherBtn').addEventListener('click', startWatcher);
-            document.getElementById('stopWatcherBtn').addEventListener('click', stopWatcher);
+            document.getElementById('openErrorFolderBtn').addEventListener('click', () => openFolder('error'));
             document.getElementById('enableAutostartBtn').addEventListener('click', enableAutostart);
             document.getElementById('disableAutostartBtn').addEventListener('click', disableAutostart);
 
