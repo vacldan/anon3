@@ -22,7 +22,9 @@ COMPILE_TO_EXE = [
     "anonymize_cli.py",
     "deanonymizator_lokal.py",
     "pdf2docx_cli.py",
-    "skryi_watcher.py",  # Folder watcher service
+    "skryi_watcher.py",      # Folder watcher - anonymization
+    "deanon_watcher.py",     # Folder watcher - deanonymization
+    "pdf2docx_watcher.py",   # Folder watcher - PDF conversion
 ]
 
 # Large files that are imported by other scripts (compile as module)
