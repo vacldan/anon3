@@ -294,14 +294,25 @@ print()
 # -------------------- Načtení knihovny jmen --------------------
 print(">>> Načítám knihovnu českých jmen...")
 try:
-    # Zkus načíst knihovnu jmen ze stejné složky jako script
-    script_dir = Path(__file__).parent
-    names_path = script_dir / "cz_names.v1.json"
-    if names_path.exists():
+    # Pro Nuitka onefile - najdi cz_names.v1.json v ruznych lokacich
+    script_dir = Path(__file__).parent if '__file__' in dir() else Path.cwd()
+    exe_dir = Path(sys.executable).parent
+    original_exe_dir = Path(os.path.abspath(sys.argv[0])).parent
+
+    names_path = None
+    for search_dir in [original_exe_dir, exe_dir, script_dir]:
+        candidate = search_dir / "cz_names.v1.json"
+        if candidate.exists():
+            names_path = candidate
+            break
+
+    if names_path and names_path.exists():
         load_names_library(str(names_path))
         print(f"[OK] Knihovna jmen načtena: {len(CZECH_FIRST_NAMES)} jmen")
+        print(f"  Cesta: {names_path}")
     else:
-        print(f"[!] Knihovna jmen nenalezena na: {names_path}")
+        print(f"[!] Knihovna jmen nenalezena!")
+        print(f"  Hledano v: {original_exe_dir}, {exe_dir}, {script_dir}")
         print(f"  Normalizace bude fungovat s omezenými heuristikami")
 except Exception as e:
     print(f"[!] Chyba při načítání knihovny jmen: {e}")
