@@ -4,7 +4,18 @@ node_modules/
 # Build outputs
 dist/
 dist_obfuscated/
+dist_nuitka/
 pyarmor_runtime_*/
+
+# Nuitka build artifacts
+*.build/
+*.dist/
+*.onefile-build/
+anon72.build/
+anon72.dist/
+anon72.onefile-build/
+*.cp311-win_amd64/
+anon72.cp311-win_amd64/
 
 # Test files
 *.docx
