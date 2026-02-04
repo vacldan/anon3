@@ -636,49 +636,72 @@ ipcMain.handle("deanonymize-document", async (evt, anonFile, mapFile) => {
   const cleanBase = base.endsWith("_anon") ? base.slice(0, -5) : base;
   const requestedOut = path.join(dir, `${cleanBase}_deanon.docx`);
 
-  const cli = resolvePy("deanonymizator_lokal.py");
-  if (!fs.existsSync(cli)) {
-    return { success: false, error: `Deanonymizátor nenalezen: ${cli}` };
+  const script = resolveScript("deanonymizator_lokal.py");
+  if (!fs.existsSync(script.path)) {
+    return { success: false, error: `Deanonymizator nenalezen: ${script.path}` };
   }
 
   const startedMs = Date.now();
-  sendProgress("Spouštím deanonymizaci...");
+  sendProgress("Spoustim deanonymizaci...");
 
   return new Promise((resolve) => {
-    const args = [
-      cli,
+    let stderrBuffer = "";
+    let stdoutBuffer = "";
+    let child;
+
+    const cliArgs = [
       "--input", anonFile,
       "--map", mapFile,
       "--output", requestedOut,
     ];
 
-    let stderrBuffer = "";
+    // Spawn directly for exe, or via Python for .py
+    if (script.isExe) {
+      child = spawn(script.path, cliArgs, {
+        cwd: path.dirname(script.path),
+        env: { ...process.env, PYTHONIOENCODING: "utf-8" },
+        shell: false,
+        windowsHide: true,
+      });
+    } else {
+      const pythonEnv = {
+        ...process.env,
+        PYTHONIOENCODING: "utf-8",
+        PYTHONUTF8: "1",
+        PYTHONPATH: path.dirname(script.path),
+      };
+      const pyArgs = PY.isPyLauncher ? ["-3", script.path, ...cliArgs] : [script.path, ...cliArgs];
+      child = spawn(PY.cmd, pyArgs, {
+        cwd: path.dirname(script.path),
+        env: pythonEnv,
+        shell: false,
+        windowsHide: true,
+      });
+    }
 
-    spawnPython(
-      args,
-      { cwd: path.dirname(cli) },
-      (d) => {
-        const msg = d.toString("utf8");
-        for (const line of msg.split("\n")) {
-          const clean = line.trim();
-          if (!clean) continue;
-          sendProgress(clean);
+    child.stdout.on("data", (d) => {
+      const msg = d.toString("utf8");
+      stdoutBuffer += msg;
+      for (const line of msg.split("\n")) {
+        const clean = line.trim();
+        if (!clean) continue;
+        sendProgress(clean);
+      }
+    });
+
+    child.stderr.on("data", (e) => {
+      const msg = Buffer.isBuffer(e) ? e.toString("utf8") : String(e || "");
+      if (msg.trim()) {
+        stderrBuffer += msg;
+        if (DEBUG) console.log("[DEANON STDERR]", msg.trim());
+        if (msg.toLowerCase().includes("error") || msg.toLowerCase().includes("chyba")) {
+          sendProgress(msg.trim());
         }
-      },
-      (e) => {
-        const msg = Buffer.isBuffer(e) ? e.toString("utf8") : String(e || "");
-        if (msg.trim()) {
-          stderrBuffer += msg;
-          if (DEBUG) console.log("[PY STDERR]", msg.trim());
-          // Zobraz všechny chybové zprávy
-          if (msg.toLowerCase().includes("error") || msg.toLowerCase().includes("chyba") ||
-              msg.includes("✗") || msg.includes("CRITICAL") || msg.includes("KRITICK")) {
-            sendProgress(msg.trim());
-          }
-        }
-      },
-      (code, used, stdoutBuf) => {
-        const elapsed = Math.round((Date.now() - startedMs) / 1000);
+      }
+    });
+
+    child.on("close", (code) => {
+      const elapsed = Math.round((Date.now() - startedMs) / 1000);
 
         if (DEBUG) {
           console.log(`[DEANON] Exit code: ${code}`);
@@ -722,8 +745,7 @@ ipcMain.handle("deanonymize-document", async (evt, anonFile, mapFile) => {
           }
           resolve({ success: false, error });
         }
-      }
-    );
+    });
   });
 });
 
@@ -735,63 +757,82 @@ ipcMain.handle("convert-pdf-to-docx", async (evt, pdfPath) => {
   const base = path.basename(pdfPath, path.extname(pdfPath));
   const expectedDocx = path.join(dir, `${base}.docx`);
 
-  const cli = resolvePy("pdf2docx_cli.py");
-  if (!fs.existsSync(cli)) {
-    return { success: false, error: `PDF converter script not found: ${cli}` };
+  const script = resolveScript("pdf2docx_cli.py");
+  if (!fs.existsSync(script.path)) {
+    return { success: false, error: `PDF converter script not found: ${script.path}` };
   }
 
   const startedMs = Date.now();
-  sendProgress("Spouštím PDF → DOCX konverzi...");
+  sendProgress("Spoustim PDF -> DOCX konverzi...");
 
   return new Promise((resolve) => {
-    const args = [cli, pdfPath];
+    let child;
+    const cliArgs = [pdfPath];
 
-    spawnPython(
-      args,
-      {
-        cwd: path.dirname(cli),
+    // Spawn directly for exe, or via Python for .py
+    if (script.isExe) {
+      child = spawn(script.path, cliArgs, {
+        cwd: path.dirname(script.path),
         env: {
           ...process.env,
           PYTHONIOENCODING: "utf-8",
-          PYTHONUTF8: "1",
-          PYTHONUNBUFFERED: "1",
           NO_PAUSE: "1",
-        }
-      },
-      (d) => {
-        const msg = d.toString("utf8");
-        for (const line of msg.split("\n")) {
-          const clean = line.trim();
-          if (!clean) continue;
-          // Skip technical info but allow success messages
-          if (clean.includes("[INFO]")) continue;
-          if (clean.includes("====") && !clean.includes("✅") && !clean.includes("VÝSLEDEK")) continue;
-          sendProgress(clean);
-        }
-      },
-      (e) => {
-        const msg = Buffer.isBuffer(e) ? e.toString("utf8") : String(e || "");
-        if (DEBUG && msg.trim()) console.log("[PDF2DOCX STDERR]", msg.trim());
-        if (msg.toLowerCase().includes("error")) sendProgress(`ERROR: ${msg.trim()}`);
-      },
-      (code) => {
-        const elapsed = Math.round((Date.now() - startedMs) / 1000);
+        },
+        shell: false,
+        windowsHide: true,
+      });
+    } else {
+      const pythonEnv = {
+        ...process.env,
+        PYTHONIOENCODING: "utf-8",
+        PYTHONUTF8: "1",
+        PYTHONUNBUFFERED: "1",
+        NO_PAUSE: "1",
+      };
+      const pyArgs = PY.isPyLauncher ? ["-3", script.path, ...cliArgs] : [script.path, ...cliArgs];
+      child = spawn(PY.cmd, pyArgs, {
+        cwd: path.dirname(script.path),
+        env: pythonEnv,
+        shell: false,
+        windowsHide: true,
+      });
+    }
 
-        if (code === 0 && fs.existsSync(expectedDocx)) {
-          sendProgress(`✅ PDF převedeno úspěšně (${elapsed}s)`);
-          resolve({
-            success: true,
-            outputFile: expectedDocx,
-          });
-        } else {
-          const error = code === 0
-            ? "Výstupní DOCX soubor nebyl vytvořen"
-            : `Python skript skončil s chybou (exit code ${code})`;
-          sendProgress(`ERROR: ${error}`);
-          resolve({ success: false, error });
-        }
+    child.stdout.on("data", (d) => {
+      const msg = d.toString("utf8");
+      for (const line of msg.split("\n")) {
+        const clean = line.trim();
+        if (!clean) continue;
+        // Skip technical info but allow success messages
+        if (clean.includes("[INFO]")) continue;
+        if (clean.includes("====") && !clean.includes("[OK]") && !clean.includes("VYSLEDEK")) continue;
+        sendProgress(clean);
       }
-    );
+    });
+
+    child.stderr.on("data", (e) => {
+      const msg = Buffer.isBuffer(e) ? e.toString("utf8") : String(e || "");
+      if (DEBUG && msg.trim()) console.log("[PDF2DOCX STDERR]", msg.trim());
+      if (msg.toLowerCase().includes("error")) sendProgress(`ERROR: ${msg.trim()}`);
+    });
+
+    child.on("close", (code) => {
+      const elapsed = Math.round((Date.now() - startedMs) / 1000);
+
+      if (code === 0 && fs.existsSync(expectedDocx)) {
+        sendProgress(`[OK] PDF prevedeno uspesne (${elapsed}s)`);
+        resolve({
+          success: true,
+          outputFile: expectedDocx,
+        });
+      } else {
+        const error = code === 0
+          ? "Vystupni DOCX soubor nebyl vytvoren"
+          : `Skript skoncil s chybou (exit code ${code})`;
+        sendProgress(`ERROR: ${error}`);
+        resolve({ success: false, error });
+      }
+    });
   });
 });
 
