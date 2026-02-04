@@ -76,7 +76,8 @@
     ],
     "win": {
       "target": "nsis",
-      "sign": null
+      "sign": null,
+      "icon": "build/icon.ico"
     },
     "nsis": {
       "oneClick": false,
