@@ -35,8 +35,9 @@ def get_skryi_base_folder():
     return documents / "SKRYI"
 
 BASE_FOLDER = get_skryi_base_folder()
-IN_FOLDER = BASE_FOLDER / "IN"
-OUT_FOLDER = BASE_FOLDER / "OUT"
+ANON_FOLDER = BASE_FOLDER / "01_ANONYMIZACE"
+IN_FOLDER = ANON_FOLDER / "IN"
+OUT_FOLDER = ANON_FOLDER / "OUT"
 ERROR_FOLDER = BASE_FOLDER / "ERROR"
 LOGS_FOLDER = BASE_FOLDER / "LOGS"
 
@@ -338,27 +339,21 @@ class SKRYIHandler(FileSystemEventHandler):
 # =============================================================================
 
 def create_folders():
-    """Vytvoří potřebné složky."""
-    for folder in [BASE_FOLDER, IN_FOLDER, OUT_FOLDER, ERROR_FOLDER, LOGS_FOLDER]:
+    """Vytvori potrebne slozky."""
+    for folder in [BASE_FOLDER, ANON_FOLDER, IN_FOLDER, OUT_FOLDER, ERROR_FOLDER, LOGS_FOLDER]:
         folder.mkdir(parents=True, exist_ok=True)
 
-    # Vytvoř info soubor
-    info_file = BASE_FOLDER / "POUZITI.txt"
+    # Vytvor info soubor v IN slozce
+    info_file = IN_FOLDER / "POUZITI.txt"
     if not info_file.exists():
         with open(info_file, 'w', encoding='utf-8') as f:
-            f.write("SKRYI Document Suite - Automaticka anonymizace\n")
+            f.write("SKRYI Document Suite - 01_ANONYMIZACE\n")
             f.write("=" * 50 + "\n\n")
             f.write("JAK POUZIVAT:\n")
             f.write("-" * 50 + "\n")
-            f.write("1. Vloz dokument (DOCX nebo PDF) do slozky IN\n")
+            f.write("1. Vloz dokument (DOCX nebo PDF) do teto slozky\n")
             f.write("2. Pockej par sekund\n")
-            f.write("3. Anonymizovany dokument najdes ve slozce OUT\n\n")
-            f.write("SLOZKY:\n")
-            f.write("-" * 50 + "\n")
-            f.write(f"IN    - Sem vloz dokumenty k anonymizaci\n")
-            f.write(f"OUT   - Zde najdes vysledky\n")
-            f.write(f"ERROR - Dokumenty, ktere se nepodarilo zpracovat\n")
-            f.write(f"LOGS  - Zaznamy o zpracovani\n\n")
+            f.write("3. Anonymizovany dokument + JSON mapu najdes ve slozce OUT\n\n")
             f.write("(c) 2026 Nixminds s.r.o.\n")
 
 def write_status(status, message=""):
@@ -377,18 +372,18 @@ def write_status(status, message=""):
         pass
 
 def main():
-    """Hlavní funkce - spustí watcher."""
+    """Hlavni funkce - spusti watcher."""
     print("=" * 60)
-    print("SKRYI Document Suite - Folder Watcher")
+    print("SKRYI Document Suite - Anonymization Folder Watcher")
     print("=" * 60)
 
-    # Vytvoř složky
+    # Vytvor slozky
     create_folders()
-    print(f"\nSložky vytvořeny v: {BASE_FOLDER}")
-    print(f"  IN:    {IN_FOLDER}")
-    print(f"  OUT:   {OUT_FOLDER}")
-    print(f"  ERROR: {ERROR_FOLDER}")
-    print(f"  LOGS:  {LOGS_FOLDER}")
+    print(f"\nSlozky vytvoreny v: {BASE_FOLDER}")
+    print(f"  01_ANONYMIZACE/IN:  {IN_FOLDER}")
+    print(f"  01_ANONYMIZACE/OUT: {OUT_FOLDER}")
+    print(f"  ERROR:              {ERROR_FOLDER}")
+    print(f"  LOGS:               {LOGS_FOLDER}")
 
     # Nastav logging
     logger = setup_logging()

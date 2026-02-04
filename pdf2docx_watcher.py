@@ -40,9 +40,10 @@ def get_skryi_base_folder():
     return documents / "SKRYI"
 
 BASE_FOLDER = get_skryi_base_folder()
-IN_FOLDER = BASE_FOLDER / "PDF_IN"
-OUT_FOLDER = BASE_FOLDER / "PDF_OUT"
-ERROR_FOLDER = BASE_FOLDER / "PDF_ERROR"
+PDF_FOLDER = BASE_FOLDER / "03_KONVERZE_PDF"
+IN_FOLDER = PDF_FOLDER / "IN"
+OUT_FOLDER = PDF_FOLDER / "OUT"
+ERROR_FOLDER = BASE_FOLDER / "ERROR"
 LOGS_FOLDER = BASE_FOLDER / "LOGS"
 
 # Podporovane formaty
@@ -308,23 +309,22 @@ class PDFHandler(FileSystemEventHandler):
 
 def create_folders():
     """Vytvori potrebne slozky."""
-    for folder in [BASE_FOLDER, IN_FOLDER, OUT_FOLDER, ERROR_FOLDER, LOGS_FOLDER]:
+    for folder in [BASE_FOLDER, PDF_FOLDER, IN_FOLDER, OUT_FOLDER, ERROR_FOLDER, LOGS_FOLDER]:
         folder.mkdir(parents=True, exist_ok=True)
 
-    # Vytvor info soubor
+    # Vytvor info soubor v IN slozce
     info_file = IN_FOLDER / "POUZITI.txt"
     if not info_file.exists():
         with open(info_file, 'w', encoding='utf-8') as f:
-            f.write("SKRYI Document Suite - Automaticky prevod PDF na DOCX\n")
+            f.write("SKRYI Document Suite - 03_KONVERZE_PDF\n")
             f.write("=" * 50 + "\n\n")
             f.write("JAK POUZIVAT:\n")
             f.write("-" * 50 + "\n")
             f.write("1. Vloz PDF soubor do teto slozky\n")
             f.write("2. Pockej par sekund\n")
-            f.write("3. Prevedeny DOCX najdes ve slozce PDF_OUT\n\n")
+            f.write("3. Prevedeny DOCX najdes ve slozce OUT\n\n")
             f.write("POZNAMKY:\n")
             f.write("-" * 50 + "\n")
-            f.write("- Podporuje vetsinuporovany formaty: PDF\n")
             f.write("- Konverze zachovava formatovani pokud mozno\n")
             f.write("- Slozite tabulky mohou vyzadovat rucni upravu\n\n")
             f.write("(c) 2026 Nixminds s.r.o.\n")
@@ -353,10 +353,10 @@ def main():
     # Vytvor slozky
     create_folders()
     print(f"\nSlozky vytvoreny v: {BASE_FOLDER}")
-    print(f"  PDF_IN:    {IN_FOLDER}")
-    print(f"  PDF_OUT:   {OUT_FOLDER}")
-    print(f"  PDF_ERROR: {ERROR_FOLDER}")
-    print(f"  LOGS:      {LOGS_FOLDER}")
+    print(f"  03_KONVERZE_PDF/IN:  {IN_FOLDER}")
+    print(f"  03_KONVERZE_PDF/OUT: {OUT_FOLDER}")
+    print(f"  ERROR:               {ERROR_FOLDER}")
+    print(f"  LOGS:                {LOGS_FOLDER}")
 
     # Nastav logging
     logger = setup_logging()

@@ -40,9 +40,10 @@ def get_skryi_base_folder():
     return documents / "SKRYI"
 
 BASE_FOLDER = get_skryi_base_folder()
-IN_FOLDER = BASE_FOLDER / "DEANON_IN"
-OUT_FOLDER = BASE_FOLDER / "DEANON_OUT"
-ERROR_FOLDER = BASE_FOLDER / "DEANON_ERROR"
+DEANON_FOLDER = BASE_FOLDER / "02_DEANONYMIZACE"
+IN_FOLDER = DEANON_FOLDER / "IN"
+OUT_FOLDER = DEANON_FOLDER / "OUT"
+ERROR_FOLDER = BASE_FOLDER / "ERROR"
 LOGS_FOLDER = BASE_FOLDER / "LOGS"
 
 # Podporovane formaty
@@ -386,21 +387,21 @@ class DeanonHandler(FileSystemEventHandler):
 
 def create_folders():
     """Vytvori potrebne slozky."""
-    for folder in [BASE_FOLDER, IN_FOLDER, OUT_FOLDER, ERROR_FOLDER, LOGS_FOLDER]:
+    for folder in [BASE_FOLDER, DEANON_FOLDER, IN_FOLDER, OUT_FOLDER, ERROR_FOLDER, LOGS_FOLDER]:
         folder.mkdir(parents=True, exist_ok=True)
 
-    # Vytvor info soubor
+    # Vytvor info soubor v IN slozce
     info_file = IN_FOLDER / "POUZITI.txt"
     if not info_file.exists():
         with open(info_file, 'w', encoding='utf-8') as f:
-            f.write("SKRYI Document Suite - Automaticka DEANONYMIZACE\n")
+            f.write("SKRYI Document Suite - 02_DEANONYMIZACE\n")
             f.write("=" * 50 + "\n\n")
             f.write("JAK POUZIVAT:\n")
             f.write("-" * 50 + "\n")
             f.write("1. Vloz anonymizovany dokument (*_anon.docx) do teto slozky\n")
             f.write("2. Vloz odpovidajici mapu (*_map.json) do teto slozky\n")
             f.write("3. Pockej par sekund\n")
-            f.write("4. Deanonymizovany dokument najdes ve slozce DEANON_OUT\n\n")
+            f.write("4. Deanonymizovany dokument najdes ve slozce OUT\n\n")
             f.write("DULEZITE:\n")
             f.write("-" * 50 + "\n")
             f.write("- Nazvy souboru musi odpovidat:\n")
@@ -432,10 +433,10 @@ def main():
     # Vytvor slozky
     create_folders()
     print(f"\nSlozky vytvoreny v: {BASE_FOLDER}")
-    print(f"  DEANON_IN:    {IN_FOLDER}")
-    print(f"  DEANON_OUT:   {OUT_FOLDER}")
-    print(f"  DEANON_ERROR: {ERROR_FOLDER}")
-    print(f"  LOGS:         {LOGS_FOLDER}")
+    print(f"  02_DEANONYMIZACE/IN:  {IN_FOLDER}")
+    print(f"  02_DEANONYMIZACE/OUT: {OUT_FOLDER}")
+    print(f"  ERROR:                {ERROR_FOLDER}")
+    print(f"  LOGS:                 {LOGS_FOLDER}")
 
     # Nastav logging
     logger = setup_logging()
