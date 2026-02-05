@@ -4516,7 +4516,7 @@ class Anonymizer:
                             # Check if female version is in document
                             if variant_first in self.source_text or variant in self.source_text:
                                 print(f"  [GENDER-FIX] '{canonical_full}' má gender mismatch!")
-                                print(f"              → OPRAVUJI na '{variant_first} {last}' (z varianty '{variant}')")
+                                print(f"              -> OPRAVUJI na '{variant_first} {last}' (z varianty '{variant}')")
 
                                 person['first'] = variant_first
 
@@ -4780,7 +4780,7 @@ class Anonymizer:
                 if male_person:
                     # Merge female version into male version
                     female_canonical = f"{person['first']} {person['last']}"
-                    print(f"  [DEDUP] Phase 3: Merging ambiguous '{female_canonical}' → '{male_canonical}'")
+                    print(f"  [DEDUP] Phase 3: Merging ambiguous '{female_canonical}' -> '{male_canonical}'")
 
                     # Merge entity_map variants
                     if female_canonical in self.entity_map['PERSON']:
@@ -4825,7 +4825,7 @@ class Anonymizer:
                 typo_canonical = f"{person['first']} {person['last']}"
                 correct_canonical = f"{person['first']} {correct_surname.capitalize()}"
 
-                print(f"  [DEDUP] Phase 4: Correcting typo '{typo_canonical}' → '{correct_canonical}'")
+                print(f"  [DEDUP] Phase 4: Correcting typo '{typo_canonical}' -> '{correct_canonical}'")
 
                 # Update person's last name
                 person['last'] = correct_surname.capitalize()
@@ -5001,7 +5001,7 @@ class Anonymizer:
                 if variants:
                     # Has variants but none in doc → Try to fix from most common variant
                     print(f"  [!] '{canonical_full}' neni ve smlouve, ale ma varianty: {variants}")
-                    print(f"      → Pokouším se opravit z nejčastější varianty...")
+                    print(f"      -> Pokousim se opravit z nejcastejsi varianty...")
 
                     # Count occurrences of each variant
                     variant_counts = {}
