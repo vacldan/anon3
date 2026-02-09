@@ -60,58 +60,6 @@ def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
 # Load names library at module import time
 CZECH_FIRST_NAMES = load_names_library()
 
-# =============== OCR Korekce ===============
-# Globální slovníky pro OCR korekce (načtené z JSON nebo výchozí)
-OCR_SURNAME_CORRECTIONS = {}
-OCR_FIRSTNAME_CORRECTIONS = {}
-
-def load_ocr_corrections(json_path: str = "ocr_corrections.json") -> tuple:
-    """Načte OCR korekce z JSON souboru.
-
-    Returns:
-        tuple: (surname_corrections, firstname_corrections)
-    """
-    # Výchozí vestavěné korekce (fallback)
-    default_surnames = {
-        'fiael': 'fiala', 'fial': 'fiala',
-        'růžiček': 'růžička', 'ruzicek': 'růžička',
-        'novk': 'novák', 'dvork': 'dvořák',
-        'prochzka': 'procházka', 'cern': 'černý', 'horak': 'horák',
-    }
-    default_firstnames = {}
-
-    try:
-        script_dir = Path(__file__).parent if '__file__' in globals() else Path.cwd()
-        json_file = script_dir / json_path
-
-        if not json_file.exists():
-            json_file = Path.cwd() / json_path
-
-        if not json_file.exists():
-            print(f"[!] OCR korekce: {json_path} nenalezen, pouzivam vychozi slovnik")
-            return default_surnames, default_firstnames
-
-        with open(json_file, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-
-        surnames = data.get('surnames', default_surnames)
-        firstnames = data.get('firstnames', default_firstnames)
-
-        # Normalizuj klíče na lowercase
-        surnames = {k.lower(): v.lower() for k, v in surnames.items()}
-        firstnames = {k.lower(): v.lower() for k, v in firstnames.items()}
-
-        total = len(surnames) + len(firstnames)
-        print(f"[OK] OCR korekce: nacteno {len(surnames)} prijmeni, {len(firstnames)} krestnich jmen")
-        return surnames, firstnames
-
-    except Exception as e:
-        print(f"[!] Chyba pri nacitani OCR korekci: {e}")
-        return default_surnames, default_firstnames
-
-# Načti OCR korekce při importu modulu
-OCR_SURNAME_CORRECTIONS, OCR_FIRSTNAME_CORRECTIONS = load_ocr_corrections()
-
 # =============== Varianty pro nahrazování ===============
 def variants_for_first(first: str) -> set:
     """Generuje základní pádové varianty křestního jména (optimalizováno pro výkon)."""
@@ -770,11 +718,6 @@ def infer_first_name_nominative(obs: str) -> str:
         if (stem + 'a').lower() in CZECH_FIRST_NAMES:
             return (stem + 'a').capitalize()
 
-    # ========== TYPO/OCR CORRECTION: Opravy běžných chyb ==========
-    # Použij globální slovník OCR korekcí pro křestní jména
-    if lo in OCR_FIRSTNAME_CORRECTIONS:
-        return OCR_FIRSTNAME_CORRECTIONS[lo].capitalize()
-
     # Pokud nic nepomohlo, vrať původní tvar s velkým písmenem
     return obs.capitalize()
 
@@ -1204,9 +1147,20 @@ def infer_surname_nominative(obs: str) -> str:
         return obs + 'a'  # Červink → Červinka
 
     # ========== TYPO/OCR CORRECTION: Opravy běžných chyb ==========
-    # Použij globální slovník OCR korekcí (načtený z ocr_corrections.json)
-    if lo in OCR_SURNAME_CORRECTIONS:
-        return OCR_SURNAME_CORRECTIONS[lo].capitalize()
+    # Fiael → Fiala, Růžiček → Růžička (pokud je to typo)
+    typo_corrections = {
+        'fiael': 'fiala',
+        'fial': 'fiala',
+        'růžiček': 'růžička',
+        'ruzicek': 'růžička',
+        'novk': 'novák',
+        'dvork': 'dvořák',
+        'prochzka': 'procházka',
+        'cern': 'černý',
+        'horak': 'horák',
+    }
+    if lo in typo_corrections:
+        return typo_corrections[lo].capitalize()
 
     return obs
 
@@ -1839,9 +1793,8 @@ BENEFIT_CARD_RE = re.compile(
 
 # =============== Třída Anonymizer ===============
 class Anonymizer:
-    def __init__(self, verbose=False, dry_run=False):
+    def __init__(self, verbose=False):
         self.verbose = verbose
-        self.dry_run = dry_run  # DRY RUN: Pouze analýza, bez zápisu souborů
         self.counter = defaultdict(int)
         self.canonical_persons = []  # list of {first, last, tag}
         self.person_index = {}  # (first_norm, last_norm) -> tag
@@ -1852,7 +1805,6 @@ class Anonymizer:
         self.entity_reverse_map = defaultdict(dict)  # OPTIMIZATION: typ -> variant -> original
         self.source_text = ""  # Store original text for validation
         self._regex_cache = {}  # PERFORMANCE: Cache compiled regex patterns
-        self.dry_run_results = {}  # DRY RUN: Výsledky analýzy pro náhled
 
     def _get_or_create_label(self, typ: str, original: str, store_value: bool = True) -> str:
         """Vrátí existující nebo vytvoří nový štítek pro entitu.
@@ -4587,84 +4539,6 @@ class Anonymizer:
         if fixed_count > 0:
             print(f"  [GENDER-FIX] Opraveno {fixed_count} gender mismatchů\n")
 
-    def _generate_dry_run_results(self, input_path: str, doc=None):
-        """Generuje výsledky dry-run analýzy bez zápisu souborů.
-
-        Vytvoří strukturovaný přehled všech detekovaných entit pro náhled.
-        """
-        print(f"\n{'='*60}")
-        print(f"  DRY RUN REŽIM - NÁHLED DETEKOVANÝCH ENTIT")
-        print(f"{'='*60}")
-        print(f"\n  Soubor: {Path(input_path).name}")
-
-        # Statistiky
-        total_entities = sum(len(entities) for entities in self.entity_map.values())
-        total_persons = len(self.canonical_persons)
-
-        print(f"\n  SHRNUTÍ:")
-        print(f"  - Celkem detekovaných osob: {total_persons}")
-        print(f"  - Celkem entit (všechny typy): {total_entities}")
-
-        # Detailní přehled osob
-        if self.canonical_persons:
-            print(f"\n  DETEKOVANÉ OSOBY ({total_persons}):")
-            print(f"  {'-'*50}")
-            for i, person in enumerate(self.canonical_persons, 1):
-                canonical = f"{person['first']} {person['last']}"
-                variants = self.entity_map['PERSON'].get(canonical, set())
-                print(f"  {i:3}. {canonical} (tag: {person['tag']})")
-                if variants and variants != {canonical}:
-                    variant_list = sorted([v for v in variants if v != canonical])[:5]
-                    if variant_list:
-                        print(f"       Varianty: {', '.join(variant_list)}")
-                        if len(variants) > 6:
-                            print(f"       ... a {len(variants) - 6} dalších")
-
-        # Detailní přehled ostatních entit
-        entity_types = ['ADDRESS', 'EMAIL', 'PHONE', 'ICO', 'DIC', 'BANK_ACCOUNT',
-                        'DATE', 'BIRTH_NUMBER', 'ID_CARD', 'PASSPORT', 'PASSWORD',
-                        'IP_ADDRESS', 'API_KEY', 'URL']
-
-        for ent_type in entity_types:
-            if ent_type in self.entity_map and self.entity_map[ent_type]:
-                entities = self.entity_map[ent_type]
-                print(f"\n  {ent_type} ({len(entities)}):")
-                print(f"  {'-'*50}")
-                for j, (original, variants) in enumerate(list(entities.items())[:10], 1):
-                    # Zkrácení dlouhých hodnot
-                    display_val = original[:60] + "..." if len(original) > 60 else original
-                    print(f"  {j:3}. {display_val}")
-                if len(entities) > 10:
-                    print(f"       ... a {len(entities) - 10} dalších")
-
-        # Připrav strukturovaná data pro programatický přístup
-        self.dry_run_results = {
-            "source_file": Path(input_path).name,
-            "summary": {
-                "total_persons": total_persons,
-                "total_entities": total_entities,
-            },
-            "persons": [
-                {
-                    "canonical": f"{p['first']} {p['last']}",
-                    "first": p['first'],
-                    "last": p['last'],
-                    "tag": p['tag'],
-                    "variants": list(self.entity_map['PERSON'].get(f"{p['first']} {p['last']}", set()))
-                }
-                for p in self.canonical_persons
-            ],
-            "entities": {
-                ent_type: list(self.entity_map[ent_type].keys())
-                for ent_type in self.entity_map
-                if ent_type != 'PERSON'
-            }
-        }
-
-        print(f"\n{'='*60}")
-        print(f"  DRY RUN DOKONČEN - ŽÁDNÉ SOUBORY NEBYLY ZAPSÁNY")
-        print(f"{'='*60}\n")
-
     def _deduplicate_persons(self):
         """Sloučí duplicitní osoby se stejným inferred nominativem nebo sdílenými variantami.
 
@@ -4933,36 +4807,28 @@ class Anonymizer:
             print(f"  [DEDUP] Phase 3: Merged {merged_count_phase3} persons based on ambiguous male/female names")
 
         # PHASE 4: Typo/OCR error correction - rename typo canonicals to correct forms
-        # Example: "Fiael" → "Fiala", "Růžiček" → "Růžička", "Jaan" → "Jan"
-        # Používá globální slovníky OCR_SURNAME_CORRECTIONS a OCR_FIRSTNAME_CORRECTIONS
+        # Example: "Fiael" → "Fiala", "Růžiček" → "Růžička"
         corrected_count_phase4 = 0
+        typo_corrections = {
+            'fiael': 'fiala', 'fial': 'fiala',
+            'růžiček': 'růžička', 'ruzicek': 'růžička',
+            'novk': 'novák', 'dvork': 'dvořák',
+            'prochzka': 'procházka', 'cern': 'černý', 'horak': 'horák',
+        }
 
         for person in self.canonical_persons:
             last_lo = person['last'].lower()
-            first_lo = person['first'].lower()
-            needs_update = False
-            new_first = person['first']
-            new_last = person['last']
 
             # Check if surname is a known typo
-            if last_lo in OCR_SURNAME_CORRECTIONS:
-                new_last = OCR_SURNAME_CORRECTIONS[last_lo].capitalize()
-                needs_update = True
-
-            # Check if first name is a known typo
-            if first_lo in OCR_FIRSTNAME_CORRECTIONS:
-                new_first = OCR_FIRSTNAME_CORRECTIONS[first_lo].capitalize()
-                needs_update = True
-
-            if needs_update:
+            if last_lo in typo_corrections:
+                correct_surname = typo_corrections[last_lo]
                 typo_canonical = f"{person['first']} {person['last']}"
-                correct_canonical = f"{new_first} {new_last}"
+                correct_canonical = f"{person['first']} {correct_surname.capitalize()}"
 
-                print(f"  [DEDUP] Phase 4: Correcting OCR typo '{typo_canonical}' -> '{correct_canonical}'")
+                print(f"  [DEDUP] Phase 4: Correcting typo '{typo_canonical}' -> '{correct_canonical}'")
 
-                # Update person's names
-                person['first'] = new_first
-                person['last'] = new_last
+                # Update person's last name
+                person['last'] = correct_surname.capitalize()
 
                 # Update entity_map key
                 if typo_canonical in self.entity_map['PERSON']:
@@ -4980,7 +4846,7 @@ class Anonymizer:
                 corrected_count_phase4 += 1
 
         if corrected_count_phase4 > 0:
-            print(f"  [DEDUP] Phase 4: Corrected {corrected_count_phase4} OCR typos (surnames and first names)")
+            print(f"  [DEDUP] Phase 4: Corrected {corrected_count_phase4} typo surnames")
 
         total_merged = merged_count_phase1 + merged_count + merged_count_phase3
         if total_merged > 0:
@@ -5046,11 +4912,6 @@ class Anonymizer:
 
         # POST-PROCESSING: Deduplicate persons AFTER all extraction (including tables)
         self._deduplicate_persons()
-
-        # DRY RUN: Pouze analýza, bez zápisu souborů
-        if self.dry_run:
-            self._generate_dry_run_results(input_path, doc)
-            return
 
         # Ulož dokument
         start_time = time.time()

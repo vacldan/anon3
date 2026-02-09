@@ -54,8 +54,6 @@ def main():
     parser.add_argument("--map", required=True, help="Output JSON map file path")
     parser.add_argument("--map_txt", required=True, help="Output TXT map file path")
     parser.add_argument("--verbose", action="store_true", help="Enable verbose output")
-    parser.add_argument("--dry-run", action="store_true", dest="dry_run",
-                        help="Pouze analyza bez zapisu souboru - zobrazi nahled detekovanych entit")
 
     args = parser.parse_args()
 
@@ -94,9 +92,7 @@ def main():
 
         # Create anonymizer instance
         print(f"\n[INFO] Zpracovavam: {input_path.name}")
-        if args.dry_run:
-            print("[INFO] DRY RUN rezim - soubory nebudou zapsany")
-        anonymizer = Anonymizer(verbose=args.verbose, dry_run=args.dry_run)
+        anonymizer = Anonymizer(verbose=args.verbose)
 
         # Run anonymization
         anonymizer.anonymize_docx(
@@ -107,28 +103,16 @@ def main():
         )
 
         # Output JSON result for Electron to parse
-        if args.dry_run:
-            # DRY RUN: Vrať strukturovaná data z analýzy
-            result = {
-                "success": True,
-                "dry_run": True,
-                "persons_found": len(anonymizer.canonical_persons),
-                "entities_total": sum(len(entities) for entities in anonymizer.entity_map.values()),
-                "preview": anonymizer.dry_run_results
-            }
-            print(f"\n[OK] DRY RUN analyza dokoncena!")
-        else:
-            result = {
-                "success": True,
-                "dry_run": False,
-                "output": str(Path(args.output).absolute()),
-                "map_json": str(Path(args.map).absolute()),
-                "map_txt": str(Path(args.map_txt).absolute()),
-                "persons_found": len(anonymizer.canonical_persons),
-                "entities_total": sum(len(entities) for entities in anonymizer.entity_map.values())
-            }
-            print(f"\n[OK] Anonymizace dokoncena!")
+        result = {
+            "success": True,
+            "output": str(Path(args.output).absolute()),
+            "map_json": str(Path(args.map).absolute()),
+            "map_txt": str(Path(args.map_txt).absolute()),
+            "persons_found": len(anonymizer.canonical_persons),
+            "entities_total": sum(len(entities) for entities in anonymizer.entity_map.values())
+        }
 
+        print(f"\n[OK] Anonymizace dokoncena!")
         print(f"[INFO] Nalezeno osob: {result['persons_found']}")
         print(f"[INFO] Celkem entit: {result['entities_total']}")
 
