@@ -1,73 +1,226 @@
-# pdf2docx_cli.py - Enhanced for Electron integration
+# pdf2docx_cli.py - PDF to DOCX converter with OCR fallback for scanned documents
 import sys
 import os
+import re
+import subprocess
 from pathlib import Path
 
 # Set UTF-8 encoding - safe cross-platform approach
 if sys.platform == 'win32':
-    # Only reconfigure on Windows if needed
     import io
     if hasattr(sys.stdout, 'reconfigure'):
         sys.stdout.reconfigure(encoding='utf-8')
         sys.stderr.reconfigure(encoding='utf-8')
-else:
-    # On Unix/Linux, ensure PYTHONIOENCODING is set via environment
-    pass
 
+# --- Kontrola závislostí ---
+
+_has_pdf2docx = False
 try:
     from pdf2docx import Converter
+    _has_pdf2docx = True
 except ImportError:
-    print("ERROR: pdf2docx library není nainstalována!")
-    print("Nainstalujte pomocí: pip install pdf2docx")
+    pass
+
+_has_ocr = False
+try:
+    import pytesseract
+    from pdf2image import convert_from_path
+    from PIL import Image
+    from docx import Document
+    from docx.shared import Pt
+    _has_ocr = True
+except ImportError:
+    pass
+
+if not _has_pdf2docx and not _has_ocr:
+    print("ERROR: Zadna knihovna pro konverzi PDF neni nainstalována!", flush=True)
+    print("Pro textove PDF:    pip install pdf2docx", flush=True)
+    print("Pro skenovane PDF:  pip install pytesseract pdf2image Pillow python-docx", flush=True)
+    print("                    apt install tesseract-ocr tesseract-ocr-ces poppler-utils", flush=True)
     sys.exit(1)
 
-def convert_pdf(pdf_path: Path):
-    """Convert PDF to DOCX"""
+
+# --- Detekce typu PDF ---
+
+def is_scanned_pdf(pdf_path: Path) -> bool:
+    """
+    Zjistí, zda je PDF skenované (obrázkové) nebo textové.
+
+    Textové PDF → pdftotext vytáhne text, není potřeba OCR.
+    Skenované PDF → pdftotext nevytáhne skoro nic, potřeba OCR.
+    """
     try:
-        docx_path = pdf_path.with_suffix('.docx')
+        result = subprocess.run(
+            ['pdftotext', str(pdf_path), '-'],
+            capture_output=True, text=True, timeout=30
+        )
+        text = result.stdout.strip()
+        # Méně než 50 znaků na celý dokument = pravděpodobně sken
+        return len(text) < 50
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        # pdftotext není dostupný nebo timeout → zkus OCR pro jistotu
+        return True
 
-        print(f"Zpracovavam PDF: {pdf_path.name}", flush=True)
-        print(f"Vystupni DOCX: {docx_path.name}", flush=True)
 
-        # Check if PDF exists
-        if not pdf_path.exists():
-            print(f"ERROR: PDF soubor neexistuje: {pdf_path}", flush=True)
-            return False
+# --- Konverze textového PDF (pdf2docx) ---
 
-        # Check if PDF is readable
-        if pdf_path.stat().st_size == 0:
-            print(f"ERROR: PDF soubor je prázdný: {pdf_path}", flush=True)
-            return False
+def convert_text_pdf(pdf_path: Path, docx_path: Path) -> bool:
+    """Převede textové PDF do DOCX přes knihovnu pdf2docx."""
+    if not _has_pdf2docx:
+        return False
 
-        print("Spoustim konverzi...", flush=True)
-
-        # Create converter
+    try:
+        print("  Metoda: pdf2docx (textove PDF)", flush=True)
         cv = Converter(str(pdf_path))
-
-        # Convert with progress feedback
         cv.convert(str(docx_path), start=0, end=None)
         cv.close()
 
-        # Verify output
         if docx_path.exists() and docx_path.stat().st_size > 0:
-            print(f"[OK] Uspesne prevedeno: {docx_path.name}", flush=True)
-            print(f"Velikost vystupniho souboru: {docx_path.stat().st_size} bytů", flush=True)
             return True
-        else:
-            print("ERROR: DOCX soubor nebyl vytvořen nebo je prázdný", flush=True)
-            return False
+        return False
 
     except Exception as e:
-        print(f"ERROR: Chyba při konverzi: {e}", flush=True)
+        print(f"  pdf2docx selhalo: {e}", flush=True)
         return False
+
+
+# --- Konverze skenovaného PDF (OCR) ---
+
+def cleanup_ocr_text(text: str) -> str:
+    """Vyčistí běžné OCR artefakty."""
+    lines = text.split('\n')
+    cleaned = []
+    for line in lines:
+        stripped = line.strip()
+        if stripped and re.match(r'^[|_\-=~*#@!]+$', stripped):
+            continue
+        cleaned.append(line)
+
+    text = '\n'.join(cleaned)
+    text = re.sub(r'  +', ' ', text)
+    text = re.sub(r'(\w)-\n(\w)', r'\1\2', text)
+    return text
+
+
+def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
+                        lang: str = "ces+eng", dpi: int = 300) -> bool:
+    """Převede skenované PDF do DOCX přes Tesseract OCR."""
+    if not _has_ocr:
+        print("  OCR neni dostupne! Nainstalujte:", flush=True)
+        print("    pip install pytesseract pdf2image Pillow python-docx", flush=True)
+        print("    apt install tesseract-ocr tesseract-ocr-ces poppler-utils", flush=True)
+        return False
+
+    try:
+        print(f"  Metoda: Tesseract OCR (skenovane PDF)", flush=True)
+        print(f"  Jazyk: {lang}, Rozliseni: {dpi} DPI", flush=True)
+
+        # 1. PDF → obrázky
+        print("  Prevadim stranky na obrazky...", flush=True)
+        images = convert_from_path(str(pdf_path), dpi=dpi)
+        print(f"  Nalezeno {len(images)} stranek", flush=True)
+
+        # 2. OCR každé stránky → text
+        doc = Document()
+        style = doc.styles['Normal']
+        style.font.name = 'Calibri'
+        style.font.size = Pt(11)
+
+        total_chars = 0
+
+        for i, image in enumerate(images, 1):
+            pct = int(i / len(images) * 100)
+            print(f"\r  OCR: {i}/{len(images)} stranek ({pct}%)", end='', flush=True)
+
+            page_text = pytesseract.image_to_string(
+                image, lang=lang, config="--oem 3 --psm 6"
+            )
+            page_text = cleanup_ocr_text(page_text)
+            total_chars += len(page_text)
+
+            # 3. Text → DOCX odstavce
+            for para_text in page_text.split('\n'):
+                doc.add_paragraph(para_text.strip() if para_text.strip() else '')
+
+            if i < len(images):
+                doc.add_page_break()
+
+        print(flush=True)
+
+        doc.save(str(docx_path))
+        print(f"  OCR hotovo, rozpoznano {total_chars:,} znaku", flush=True)
+
+        return docx_path.exists() and docx_path.stat().st_size > 0
+
+    except Exception as e:
+        print(f"  OCR selhalo: {e}", flush=True)
+        return False
+
+
+# --- Hlavní konverzní funkce ---
+
+def convert_pdf(pdf_path: Path) -> bool:
+    """
+    Převede PDF do DOCX - automaticky zvolí správnou metodu.
+
+    Textové PDF  → pdf2docx (zachová formátování)
+    Skenované PDF → Tesseract OCR (přečte text z obrázku)
+    """
+    docx_path = pdf_path.with_suffix('.docx')
+
+    print(f"Zpracovavam PDF: {pdf_path.name}", flush=True)
+    print(f"Vystupni DOCX: {docx_path.name}", flush=True)
+
+    if not pdf_path.exists():
+        print(f"ERROR: PDF soubor neexistuje: {pdf_path}", flush=True)
+        return False
+
+    if pdf_path.stat().st_size == 0:
+        print(f"ERROR: PDF soubor je prazdny: {pdf_path}", flush=True)
+        return False
+
+    # Detekce: textové nebo skenované?
+    scanned = is_scanned_pdf(pdf_path)
+
+    if scanned:
+        print("  Detekovano: SKENOVANE PDF (obrazek)", flush=True)
+        success = convert_scanned_pdf(pdf_path, docx_path)
+    else:
+        print("  Detekovano: TEXTOVE PDF", flush=True)
+        success = convert_text_pdf(pdf_path, docx_path)
+
+        # Fallback: pokud pdf2docx selhalo a máme OCR, zkus OCR
+        if not success and _has_ocr:
+            print("  Zkousim fallback pres OCR...", flush=True)
+            success = convert_scanned_pdf(pdf_path, docx_path)
+
+    if success:
+        print(f"[OK] Uspesne prevedeno: {docx_path.name}", flush=True)
+        print(f"Velikost: {docx_path.stat().st_size} bytu", flush=True)
+    else:
+        print("ERROR: Konverze selhala", flush=True)
+
+    return success
+
 
 def main():
     print("PDF to DOCX Converter - Nixminds Document Suite", flush=True)
     print("=" * 50, flush=True)
 
+    # Informace o dostupných metodách
+    if _has_pdf2docx:
+        print("  [+] pdf2docx: dostupne (textove PDF)", flush=True)
+    else:
+        print("  [-] pdf2docx: neni (pip install pdf2docx)", flush=True)
+
+    if _has_ocr:
+        print("  [+] Tesseract OCR: dostupne (skenovane PDF)", flush=True)
+    else:
+        print("  [-] Tesseract OCR: neni (pip install pytesseract pdf2image Pillow)", flush=True)
+
     if len(sys.argv) < 2:
-        print("ERROR: Nebyl zadán PDF soubor", flush=True)
-        print("Použití: python pdf2docx_cli.py <cesta_k_pdf>", flush=True)
+        print("\nERROR: Nebyl zadan PDF soubor", flush=True)
+        print("Pouziti: python pdf2docx_cli.py <cesta_k_pdf>", flush=True)
         sys.exit(1)
 
     success_count = 0
@@ -93,25 +246,23 @@ def main():
             print(f"[X] Konverze selhala pro: {pdf_path.name}", flush=True)
 
     print("\n" + "=" * 50, flush=True)
-    print(f"VÝSLEDEK: {success_count}/{total_count} souborů úspěšně převedeno", flush=True)
+    print(f"VYSLEDEK: {success_count}/{total_count} souboru uspesne prevedeno", flush=True)
 
     exit_code = 0
     if success_count == total_count and total_count > 0:
         print("[OK] Vsechny soubory byly uspesne prevedeny!", flush=True)
-        exit_code = 0
     else:
         print("[!] Nektere soubory nebyly prevedeny", flush=True)
         exit_code = 1
 
-    # Počkej na Enter před ukončením (pro drag & drop režim)
-    # Pokud je nastavena proměnná NO_PAUSE (z Electronu), přeskoč čekání
     if not os.environ.get('NO_PAUSE'):
         try:
-            input("\nStiskni Enter pro ukončení...")
+            input("\nStiskni Enter pro ukonceni...")
         except (EOFError, KeyboardInterrupt):
             pass
 
     sys.exit(exit_code)
+
 
 if __name__ == "__main__":
     main()
