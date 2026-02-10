@@ -90,23 +90,25 @@ def preprocess_image(image):
     """Předzpracuje obrázek pro lepší OCR kvalitu.
 
     - Převod na odstíny šedi
-    - Zvýšení kontrastu
+    - Upscale 2x (zvětší diacritiku - háčky, čárky)
+    - Jemné zvýšení kontrastu
     - Zaostření
-    - Binarizace (černobílý threshold)
+    - BEZ binarizace (ta ničí drobné detaily jako háčky)
     """
     # Převeď na šedou
     img = image.convert('L')
 
-    # Zvýšení kontrastu (2x)
+    # Upscale 2x - zvětší háčky a čárky, Tesseract je pak lépe rozpozná
+    w, h = img.size
+    img = img.resize((w * 2, h * 2), Image.LANCZOS)
+
+    # Jemné zvýšení kontrastu (1.5x)
     enhancer = ImageEnhance.Contrast(img)
+    img = enhancer.enhance(1.5)
+
+    # Zvýšení ostrosti (2x)
+    enhancer = ImageEnhance.Sharpness(img)
     img = enhancer.enhance(2.0)
-
-    # Zaostření
-    img = img.filter(ImageFilter.SHARPEN)
-
-    # Binarizace - čistý černobílý obraz, lepší pro Tesseract
-    threshold = 140
-    img = img.point(lambda x: 255 if x > threshold else 0, '1')
 
     return img
 
@@ -161,7 +163,7 @@ def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
             processed = preprocess_image(image)
 
             page_text = pytesseract.image_to_string(
-                processed, lang=lang, config="--oem 3 --psm 3"
+                processed, lang=lang, config="--oem 1 --psm 3"
             )
             page_text = cleanup_ocr_text(page_text)
             total_chars += len(page_text)
