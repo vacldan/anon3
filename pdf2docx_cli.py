@@ -120,12 +120,13 @@ def is_scanned_pdf(pdf_path: Path) -> bool:
     try:
         result = subprocess.run(
             ['pdftotext', str(pdf_path), '-'],
-            capture_output=True, text=True, timeout=30
+            capture_output=True, timeout=30,
+            encoding='utf-8', errors='replace'
         )
-        text = result.stdout.strip()
+        text = (result.stdout or '').strip()
         # Méně než 50 znaků na celý dokument = pravděpodobně sken
         return len(text) < 50
-    except (FileNotFoundError, subprocess.TimeoutExpired):
+    except (FileNotFoundError, subprocess.TimeoutExpired, OSError):
         # pdftotext není dostupný nebo timeout → zkus OCR pro jistotu
         return True
 
