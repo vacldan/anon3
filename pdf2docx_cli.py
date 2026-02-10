@@ -12,6 +12,64 @@ if sys.platform == 'win32':
         sys.stdout.reconfigure(encoding='utf-8')
         sys.stderr.reconfigure(encoding='utf-8')
 
+
+# --- Auto-detekce Tesseract a Poppler na Windows ---
+
+def _setup_windows_paths():
+    """Najde Tesseract a Poppler na běžných Windows cestách a přidá do PATH."""
+    if sys.platform != 'win32':
+        return
+
+    # Běžné cesty k Tesseract
+    tesseract_dirs = [
+        r"C:\Program Files\Tesseract-OCR",
+        r"C:\Program Files (x86)\Tesseract-OCR",
+        r"C:\Tesseract-OCR",
+    ]
+    for d in tesseract_dirs:
+        exe = os.path.join(d, "tesseract.exe")
+        if os.path.isfile(exe):
+            if d not in os.environ.get("PATH", ""):
+                os.environ["PATH"] = d + ";" + os.environ.get("PATH", "")
+            break
+
+    # Běžné cesty k Poppler (pdftoppm, pdftotext)
+    poppler_dirs = []
+    for drive in ["C:"]:
+        base = drive + "\\"
+        try:
+            for name in os.listdir(base):
+                if name.lower().startswith("poppler"):
+                    lib_bin = os.path.join(base, name, "Library", "bin")
+                    if os.path.isdir(lib_bin):
+                        poppler_dirs.append(lib_bin)
+                    plain_bin = os.path.join(base, name, "bin")
+                    if os.path.isdir(plain_bin):
+                        poppler_dirs.append(plain_bin)
+        except OSError:
+            pass
+    # Také zkontroluj Program Files
+    for pf in [r"C:\Program Files", r"C:\Program Files (x86)"]:
+        try:
+            for name in os.listdir(pf):
+                if name.lower().startswith("poppler"):
+                    lib_bin = os.path.join(pf, name, "Library", "bin")
+                    if os.path.isdir(lib_bin):
+                        poppler_dirs.append(lib_bin)
+                    plain_bin = os.path.join(pf, name, "bin")
+                    if os.path.isdir(plain_bin):
+                        poppler_dirs.append(plain_bin)
+        except OSError:
+            pass
+
+    for d in poppler_dirs:
+        if d not in os.environ.get("PATH", ""):
+            os.environ["PATH"] = d + ";" + os.environ.get("PATH", "")
+            break
+
+
+_setup_windows_paths()
+
 # --- Kontrola závislostí ---
 
 _has_pdf2docx = False
@@ -29,6 +87,16 @@ try:
     from docx import Document
     from docx.shared import Pt
     _has_ocr = True
+
+    # Explicitně nastav cestu k tesseract.exe na Windows
+    if sys.platform == 'win32':
+        for d in [r"C:\Program Files\Tesseract-OCR",
+                   r"C:\Program Files (x86)\Tesseract-OCR",
+                   r"C:\Tesseract-OCR"]:
+            exe = os.path.join(d, "tesseract.exe")
+            if os.path.isfile(exe):
+                pytesseract.pytesseract.tesseract_cmd = exe
+                break
 except ImportError:
     pass
 
