@@ -122,10 +122,9 @@ def cleanup_ocr_text(text: str) -> str:
     text = re.sub(r'(\w)-\n(\w)', r'\1\2', text)
 
     # Sloučí osamocené číslo bodu (např. "2.2\n\nJakou nemovitou...")
-    # s následujícím neprázdným řádkem
-    # Vzor: řádek obsahuje jen číslo typu "2.2" nebo "2.3'" nebo "24" → připoj k dalšímu textu
+    # s následujícím řádkem POUZE pokud ten začíná písmenem (ne dalším číslem)
     text = re.sub(
-        r'^(\d{1,3}[\.\)]{0,1}\d{0,2}[\'\'"]?)\s*\n+(?=\S)',
+        r'^(\d{1,3}[\.\)]{0,1}\d{0,2}[\'\'"]?)\s*\n+(?=[A-Za-z\u00C0-\u024F])',
         r'\1 ',
         text,
         flags=re.MULTILINE
