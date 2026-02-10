@@ -89,26 +89,15 @@ def convert_text_pdf(pdf_path: Path, docx_path: Path) -> bool:
 def preprocess_image(image):
     """Předzpracuje obrázek pro lepší OCR kvalitu.
 
-    - Převod na odstíny šedi
-    - Upscale 2x (zvětší diacritiku - háčky, čárky)
-    - Jemné zvýšení kontrastu
-    - Zaostření
-    - BEZ binarizace (ta ničí drobné detaily jako háčky)
+    Minimální zásah - jen převod na šedou a jemné zvýšení kontrastu.
+    Upscale ani binarizace se nedělá (amplifikuje šum / ničí diacritiku).
     """
     # Převeď na šedou
     img = image.convert('L')
 
-    # Upscale 2x - zvětší háčky a čárky, Tesseract je pak lépe rozpozná
-    w, h = img.size
-    img = img.resize((w * 2, h * 2), Image.LANCZOS)
-
-    # Jemné zvýšení kontrastu (1.5x)
+    # Jemné zvýšení kontrastu
     enhancer = ImageEnhance.Contrast(img)
-    img = enhancer.enhance(1.5)
-
-    # Zvýšení ostrosti (2x)
-    enhancer = ImageEnhance.Sharpness(img)
-    img = enhancer.enhance(2.0)
+    img = enhancer.enhance(1.3)
 
     return img
 
@@ -130,7 +119,7 @@ def cleanup_ocr_text(text: str) -> str:
 
 
 def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
-                        lang: str = "ces+eng", dpi: int = 300) -> bool:
+                        lang: str = "ces", dpi: int = 300) -> bool:
     """Převede skenované PDF do DOCX přes Tesseract OCR."""
     if not _has_ocr:
         print("  OCR neni dostupne! Nainstalujte:", flush=True)
@@ -189,7 +178,7 @@ def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
 
 # --- Hlavní konverzní funkce ---
 
-def convert_pdf(pdf_path: Path, dpi: int = 300, lang: str = "ces+eng") -> bool:
+def convert_pdf(pdf_path: Path, dpi: int = 300, lang: str = "ces") -> bool:
     """
     Převede PDF do DOCX - automaticky zvolí správnou metodu.
 
@@ -251,7 +240,7 @@ def main():
     # Parsuj argumenty - podpora --dpi a --lang
     args = sys.argv[1:]
     dpi = 300
-    lang = "ces+eng"
+    lang = "ces"
     pdf_files = []
 
     i = 0
