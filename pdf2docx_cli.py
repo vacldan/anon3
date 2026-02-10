@@ -108,13 +108,29 @@ def cleanup_ocr_text(text: str) -> str:
     cleaned = []
     for line in lines:
         stripped = line.strip()
+        # Odstraň řádky s jen symboly (artefakty skenování)
         if stripped and re.match(r'^[|_\-=~*#@!]+$', stripped):
             continue
         cleaned.append(line)
 
     text = '\n'.join(cleaned)
+
+    # Oprav dvojité mezery
     text = re.sub(r'  +', ' ', text)
+
+    # Oprav rozlomená slova na konci řádku (čes-\nký → český)
     text = re.sub(r'(\w)-\n(\w)', r'\1\2', text)
+
+    # Sloučí osamocené číslo bodu (např. "2.2\n\nJakou nemovitou...")
+    # s následujícím neprázdným řádkem
+    # Vzor: řádek obsahuje jen číslo typu "2.2" nebo "2.3'" nebo "24" → připoj k dalšímu textu
+    text = re.sub(
+        r'^(\d{1,3}[\.\)]{0,1}\d{0,2}[\'\'"]?)\s*\n+(?=\S)',
+        r'\1 ',
+        text,
+        flags=re.MULTILINE
+    )
+
     return text
 
 
