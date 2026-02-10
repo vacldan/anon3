@@ -177,11 +177,27 @@ def cleanup_ocr_text(text: str) -> str:
     for line in lines:
         stripped = line.strip()
         # Odstraň řádky s jen symboly (artefakty skenování)
-        if stripped and re.match(r'^[|_\-=~*#@!]+$', stripped):
+        if stripped and re.match(r'^[|_\-=~*#@!—–―]+$', stripped):
             continue
+        # Odstraň řádky kde většina znaků jsou speciální/nesmyslné (artefakty loga, čárových kódů)
+        if stripped and len(stripped) > 3:
+            alnum = sum(1 for c in stripped if c.isalnum() or c in ' .,;:')
+            if alnum < len(stripped) * 0.4:
+                continue
+        # Odstraň zápatí s kódy dokumentu (HYVS01. 20190322 cs41000...)
+        if stripped and re.match(r'^[A-Z]{2,6}\d{2,4}[\.\s]', stripped) and len(stripped) < 60:
+            if sum(1 for c in stripped if c.isdigit()) > len(stripped) * 0.3:
+                continue
         cleaned.append(line)
 
     text = '\n'.join(cleaned)
+
+    # Odstraň šum na úplném začátku (před prvním smysluplným textem)
+    # Typicky 1-2 znaky jako "Pp", "B ň" apod.
+    lines = text.split('\n')
+    while lines and lines[0].strip() and len(lines[0].strip()) <= 3:
+        lines.pop(0)
+    text = '\n'.join(lines)
 
     # Oprav dvojité mezery
     text = re.sub(r'  +', ' ', text)
@@ -199,6 +215,48 @@ def cleanup_ocr_text(text: str) -> str:
     )
 
     return text
+
+
+def _merge_lines_to_paragraphs(text: str) -> list:
+    """Sloučí OCR řádky do logických odstavců.
+
+    OCR produkuje řádky podle vizuálního zlomu na stránce.
+    Tato funkce je sloučí do odstavců - nový odstavec začíná při:
+    prázdném řádku, čísle oddílu, (a)/(b), odrážce -.
+    """
+    lines = text.split('\n')
+    paragraphs = []
+    current = []
+
+    for line in lines:
+        stripped = line.strip()
+
+        if not stripped:
+            # Prázdný řádek = konec odstavce
+            if current:
+                paragraphs.append(' '.join(current))
+                current = []
+            paragraphs.append('')  # zachovej prázdný řádek
+            continue
+
+        # Nový odstavec začíná při: číslo oddílu, (a)/(b), odrážka -, nadpis velkými
+        is_new_para = (
+            re.match(r'^\d{1,2}[\.\)]\s*\d{0,2}', stripped) or  # 2.1, 3., 4)
+            re.match(r'^\([a-z]\)', stripped) or                  # (a), (b)
+            re.match(r'^-\s', stripped) or                        # - odrážka
+            re.match(r'^[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]{3,}', stripped)    # NADPIS
+        )
+
+        if is_new_para and current:
+            paragraphs.append(' '.join(current))
+            current = []
+
+        current.append(stripped)
+
+    if current:
+        paragraphs.append(' '.join(current))
+
+    return paragraphs
 
 
 def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
@@ -240,8 +298,9 @@ def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
             page_text = cleanup_ocr_text(page_text)
             total_chars += len(page_text)
 
-            # 3. Text → DOCX odstavce s odsazením
-            for para_text in page_text.split('\n'):
+            # 3. Text → DOCX odstavce (sloučené řádky + odsazení)
+            merged_paragraphs = _merge_lines_to_paragraphs(page_text)
+            for para_text in merged_paragraphs:
                 text = para_text.strip()
                 para = doc.add_paragraph(text if text else '')
                 if text:
