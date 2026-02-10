@@ -257,9 +257,15 @@ def _merge_lines_to_paragraphs(text: str) -> list:
                     # začíná malým písmenem nebo spojkou → sloučit
                     continues = (
                         prev_text and
-                        not prev_text[-1] in '.!?:' and
                         next_stripped and
-                        (next_stripped[0].islower() or next_stripped in ('a', 'i', 'nebo'))
+                        (
+                            # Předchozí nekončí větnou interpunkcí, další začíná malým písmenem
+                            (not prev_text[-1] in '.!?:' and
+                             (next_stripped[0].islower() or next_stripped in ('a', 'i', 'nebo')))
+                            or
+                            # Další začíná pokračovací interpunkcí (: , ;)
+                            next_stripped[0] in ':,;'
+                        )
                     )
                     if continues:
                         i += 1
@@ -310,13 +316,13 @@ def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
         images = convert_from_path(str(pdf_path), dpi=dpi)
         print(f"  Nalezeno {len(images)} stranek", flush=True)
 
-        # 2. OCR každé stránky → text
+        # 2. OCR každé stránky → text, sloučit do celku
         doc = Document()
         style = doc.styles['Normal']
         style.font.name = 'Calibri'
         style.font.size = Pt(11)
 
-        total_chars = 0
+        all_text_parts = []
 
         for i, image in enumerate(images, 1):
             pct = int(i / len(images) * 100)
@@ -329,24 +335,28 @@ def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
                 processed, lang=lang, config=f"--oem 1 --psm {psm}"
             )
             page_text = cleanup_ocr_text(page_text)
-            total_chars += len(page_text)
-
-            # 3. Text → DOCX odstavce (sloučené řádky + odsazení)
-            merged_paragraphs = _merge_lines_to_paragraphs(page_text)
-            for para_text in merged_paragraphs:
-                text = para_text.strip()
-                para = doc.add_paragraph(text if text else '')
-                if text:
-                    # Odsazení pro (a), (b), (c)... a odrážky -
-                    if re.match(r'^\([a-z]\)', text):
-                        para.paragraph_format.left_indent = Cm(1.0)
-                    elif re.match(r'^-\s', text):
-                        para.paragraph_format.left_indent = Cm(1.5)
-
-            if i < len(images):
-                doc.add_page_break()
+            all_text_parts.append(page_text)
 
         print(flush=True)
+
+        # Sloučit text ze všech stránek do jednoho celku
+        full_text = '\n'.join(all_text_parts)
+        total_chars = len(full_text)
+
+        # Odstraň nadbytečné prázdné řádky (3+ za sebou → max 2)
+        full_text = re.sub(r'\n{3,}', '\n\n', full_text)
+
+        # 3. Text → DOCX odstavce (sloučené řádky + odsazení)
+        merged_paragraphs = _merge_lines_to_paragraphs(full_text)
+        for para_text in merged_paragraphs:
+            text = para_text.strip()
+            para = doc.add_paragraph(text if text else '')
+            if text:
+                # Odsazení pro (a), (b), (c)... a odrážky -
+                if re.match(r'^\([a-z]\)', text):
+                    para.paragraph_format.left_indent = Cm(1.0)
+                elif re.match(r'^-\s', text):
+                    para.paragraph_format.left_indent = Cm(1.5)
 
         doc.save(str(docx_path))
         print(f"  OCR hotovo, rozpoznano {total_chars:,} znaku", flush=True)
