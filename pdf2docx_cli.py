@@ -134,7 +134,7 @@ def cleanup_ocr_text(text: str) -> str:
 
 
 def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
-                        lang: str = "ces", dpi: int = 300) -> bool:
+                        lang: str = "ces", dpi: int = 300, psm: int = 1) -> bool:
     """Převede skenované PDF do DOCX přes Tesseract OCR."""
     if not _has_ocr:
         print("  OCR neni dostupne! Nainstalujte:", flush=True)
@@ -144,7 +144,7 @@ def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
 
     try:
         print(f"  Metoda: Tesseract OCR (skenovane PDF)", flush=True)
-        print(f"  Jazyk: {lang}, Rozliseni: {dpi} DPI", flush=True)
+        print(f"  Jazyk: {lang}, Rozliseni: {dpi} DPI, PSM: {psm}", flush=True)
 
         # 1. PDF → obrázky
         print("  Prevadim stranky na obrazky...", flush=True)
@@ -167,7 +167,7 @@ def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
             processed = preprocess_image(image)
 
             page_text = pytesseract.image_to_string(
-                processed, lang=lang, config="--oem 1 --psm 1"
+                processed, lang=lang, config=f"--oem 1 --psm {psm}"
             )
             page_text = cleanup_ocr_text(page_text)
             total_chars += len(page_text)
@@ -193,7 +193,7 @@ def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
 
 # --- Hlavní konverzní funkce ---
 
-def convert_pdf(pdf_path: Path, dpi: int = 300, lang: str = "ces") -> bool:
+def convert_pdf(pdf_path: Path, dpi: int = 300, lang: str = "ces", psm: int = 1) -> bool:
     """
     Převede PDF do DOCX - automaticky zvolí správnou metodu.
 
@@ -218,7 +218,7 @@ def convert_pdf(pdf_path: Path, dpi: int = 300, lang: str = "ces") -> bool:
 
     if scanned:
         print("  Detekovano: SKENOVANE PDF (obrazek)", flush=True)
-        success = convert_scanned_pdf(pdf_path, docx_path, lang=lang, dpi=dpi)
+        success = convert_scanned_pdf(pdf_path, docx_path, lang=lang, dpi=dpi, psm=psm)
     else:
         print("  Detekovano: TEXTOVE PDF", flush=True)
         success = convert_text_pdf(pdf_path, docx_path)
@@ -226,7 +226,7 @@ def convert_pdf(pdf_path: Path, dpi: int = 300, lang: str = "ces") -> bool:
         # Fallback: pokud pdf2docx selhalo a máme OCR, zkus OCR
         if not success and _has_ocr:
             print("  Zkousim fallback pres OCR...", flush=True)
-            success = convert_scanned_pdf(pdf_path, docx_path, lang=lang, dpi=dpi)
+            success = convert_scanned_pdf(pdf_path, docx_path, lang=lang, dpi=dpi, psm=psm)
 
     if success:
         print(f"[OK] Uspesne prevedeno: {docx_path.name}", flush=True)
@@ -252,10 +252,11 @@ def main():
     else:
         print("  [-] Tesseract OCR: neni (pip install pytesseract pdf2image Pillow)", flush=True)
 
-    # Parsuj argumenty - podpora --dpi a --lang
+    # Parsuj argumenty - podpora --dpi, --lang, --psm
     args = sys.argv[1:]
     dpi = 300
     lang = "ces"
+    psm = 1
     pdf_files = []
 
     i = 0
@@ -266,13 +267,16 @@ def main():
         elif args[i] == '--lang' and i + 1 < len(args):
             lang = args[i + 1]
             i += 2
+        elif args[i] == '--psm' and i + 1 < len(args):
+            psm = int(args[i + 1])
+            i += 2
         else:
             pdf_files.append(args[i])
             i += 1
 
     if not pdf_files:
         print("\nERROR: Nebyl zadan PDF soubor", flush=True)
-        print("Pouziti: python pdf2docx_cli.py <cesta_k_pdf> [--dpi 400] [--lang ces+eng]", flush=True)
+        print("Pouziti: python pdf2docx_cli.py <cesta_k_pdf> [--dpi 400] [--lang ces] [--psm 1]", flush=True)
         sys.exit(1)
 
     success_count = 0
@@ -292,7 +296,7 @@ def main():
             print(f"[!] Soubor neni PDF: {pdf_path}", flush=True)
             continue
 
-        if convert_pdf(pdf_path, dpi=dpi, lang=lang):
+        if convert_pdf(pdf_path, dpi=dpi, lang=lang, psm=psm):
             success_count += 1
         else:
             print(f"[X] Konverze selhala pro: {pdf_path.name}", flush=True)
