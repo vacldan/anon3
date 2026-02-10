@@ -85,7 +85,7 @@ try:
     from pdf2image import convert_from_path
     from PIL import Image, ImageEnhance, ImageFilter
     from docx import Document
-    from docx.shared import Pt
+    from docx.shared import Pt, Cm
     _has_ocr = True
 
     # Explicitně nastav cestu k tesseract.exe na Windows
@@ -240,9 +240,16 @@ def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
             page_text = cleanup_ocr_text(page_text)
             total_chars += len(page_text)
 
-            # 3. Text → DOCX odstavce
+            # 3. Text → DOCX odstavce s odsazením
             for para_text in page_text.split('\n'):
-                doc.add_paragraph(para_text.strip() if para_text.strip() else '')
+                text = para_text.strip()
+                para = doc.add_paragraph(text if text else '')
+                if text:
+                    # Odsazení pro (a), (b), (c)... a odrážky -
+                    if re.match(r'^\([a-z]\)', text):
+                        para.paragraph_format.left_indent = Cm(1.0)
+                    elif re.match(r'^-\s', text):
+                        para.paragraph_format.left_indent = Cm(1.5)
 
             if i < len(images):
                 doc.add_page_break()
