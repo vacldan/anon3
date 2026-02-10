@@ -134,7 +134,7 @@ def cleanup_ocr_text(text: str) -> str:
 
 
 def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
-                        lang: str = "ces", dpi: int = 300, psm: int = 1) -> bool:
+                        lang: str = "ces", dpi: int = 300, psm: int = 3) -> bool:
     """Převede skenované PDF do DOCX přes Tesseract OCR."""
     if not _has_ocr:
         print("  OCR neni dostupne! Nainstalujte:", flush=True)
@@ -193,7 +193,7 @@ def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
 
 # --- Hlavní konverzní funkce ---
 
-def convert_pdf(pdf_path: Path, dpi: int = 300, lang: str = "ces", psm: int = 1) -> bool:
+def convert_pdf(pdf_path: Path, dpi: int = 300, lang: str = "ces", psm: int = 3) -> bool:
     """
     Převede PDF do DOCX - automaticky zvolí správnou metodu.
 
@@ -256,7 +256,7 @@ def main():
     args = sys.argv[1:]
     dpi = 300
     lang = "ces"
-    psm = 1
+    psm = 3
     pdf_files = []
 
     i = 0
@@ -276,7 +276,7 @@ def main():
 
     if not pdf_files:
         print("\nERROR: Nebyl zadan PDF soubor", flush=True)
-        print("Pouziti: python pdf2docx_cli.py <cesta_k_pdf> [--dpi 400] [--lang ces] [--psm 1]", flush=True)
+        print("Pouziti: python pdf2docx_cli.py <cesta_k_pdf> [--dpi 400] [--lang ces] [--psm 3]", flush=True)
         sys.exit(1)
 
     success_count = 0
