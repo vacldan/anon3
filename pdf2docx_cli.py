@@ -167,7 +167,7 @@ def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
             processed = preprocess_image(image)
 
             page_text = pytesseract.image_to_string(
-                processed, lang=lang, config="--oem 1 --psm 3"
+                processed, lang=lang, config="--oem 1 --psm 1"
             )
             page_text = cleanup_ocr_text(page_text)
             total_chars += len(page_text)
