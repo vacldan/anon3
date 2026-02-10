@@ -767,6 +767,8 @@ ipcMain.handle("convert-pdf-to-docx", async (evt, pdfPath) => {
 
   return new Promise((resolve) => {
     let child;
+    let stderrBuf = "";
+    let lastStdoutLines = [];
     const cliArgs = [pdfPath];
 
     // Spawn directly for exe, or via Python for .py
@@ -803,6 +805,9 @@ ipcMain.handle("convert-pdf-to-docx", async (evt, pdfPath) => {
       for (const line of msg.split("\n")) {
         const clean = line.trim();
         if (!clean) continue;
+        // Keep last stdout lines for error diagnostics
+        lastStdoutLines.push(clean);
+        if (lastStdoutLines.length > 20) lastStdoutLines.shift();
         // Skip technical info but allow success messages
         if (clean.includes("[INFO]")) continue;
         if (clean.includes("====") && !clean.includes("[OK]") && !clean.includes("VYSLEDEK")) continue;
@@ -812,7 +817,8 @@ ipcMain.handle("convert-pdf-to-docx", async (evt, pdfPath) => {
 
     child.stderr.on("data", (e) => {
       const msg = Buffer.isBuffer(e) ? e.toString("utf8") : String(e || "");
-      if (DEBUG && msg.trim()) console.log("[PDF2DOCX STDERR]", msg.trim());
+      stderrBuf += msg;
+      if (msg.trim()) console.log("[PDF2DOCX STDERR]", msg.trim());
       if (msg.toLowerCase().includes("error")) sendProgress(`ERROR: ${msg.trim()}`);
     });
 
@@ -826,9 +832,18 @@ ipcMain.handle("convert-pdf-to-docx", async (evt, pdfPath) => {
           outputFile: expectedDocx,
         });
       } else {
-        const error = code === 0
+        // Build detailed error message
+        let error = code === 0
           ? "Vystupni DOCX soubor nebyl vytvoren"
           : `Skript skoncil s chybou (exit code ${code})`;
+
+        // Include stderr and last stdout lines for diagnostics
+        const details = [];
+        if (stderrBuf.trim()) details.push(stderrBuf.trim().slice(-500));
+        const errorLines = lastStdoutLines.filter(l => l.includes("ERROR") || l.includes("selhalo") || l.includes("neni"));
+        if (errorLines.length) details.push(errorLines.join("; "));
+        if (details.length) error += " | " + details.join(" | ");
+
         sendProgress(`ERROR: ${error}`);
         resolve({ success: false, error });
       }

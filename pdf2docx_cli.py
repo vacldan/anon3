@@ -321,4 +321,10 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        import traceback
+        print(f"\nERROR: Neocekavana chyba: {e}", flush=True)
+        print(traceback.format_exc(), flush=True)
+        sys.exit(1)
