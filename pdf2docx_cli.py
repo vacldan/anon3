@@ -188,16 +188,23 @@ def cleanup_ocr_text(text: str) -> str:
         if stripped and re.match(r'^[A-Z]{2,6}\d{2,4}[\.\s]', stripped) and len(stripped) < 60:
             if sum(1 for c in stripped if c.isdigit()) > len(stripped) * 0.3:
                 continue
+        # Odstraň nesmyslné řádky z hlavičky/loga (hodně krátkých uppercase slov za sebou)
+        if stripped and len(stripped) > 10:
+            words = stripped.split()
+            if len(words) >= 4:
+                short_upper = sum(1 for w in words if w.isupper() and len(w) <= 4 and not re.match(r'^\d', w))
+                if short_upper >= len(words) * 0.6:
+                    continue
+        # Odstraň krátké artefakty (1-3 znaky, které nejsou čísla oddílů ani písmena v závorkách)
+        if stripped and len(stripped) <= 3:
+            if not re.match(r'^\d+[\.\)]?$', stripped) and not re.match(r'^\([a-z]\)$', stripped) and stripped != 'a':
+                continue
         cleaned.append(line)
 
     text = '\n'.join(cleaned)
 
-    # Odstraň šum na úplném začátku (před prvním smysluplným textem)
-    # Typicky 1-2 znaky jako "Pp", "B ň" apod.
-    lines = text.split('\n')
-    while lines and lines[0].strip() and len(lines[0].strip()) <= 3:
-        lines.pop(0)
-    text = '\n'.join(lines)
+    # Odstraň | na začátku řádků (OCR artefakt svislých čar)
+    text = re.sub(r'^\|\s*', '', text, flags=re.MULTILINE)
 
     # Oprav dvojité mezery
     text = re.sub(r'  +', ' ', text)
@@ -223,20 +230,45 @@ def _merge_lines_to_paragraphs(text: str) -> list:
     OCR produkuje řádky podle vizuálního zlomu na stránce.
     Tato funkce je sloučí do odstavců - nový odstavec začíná při:
     prázdném řádku, čísle oddílu, (a)/(b), odrážce -.
+    Pokud text plynule pokračuje přes prázdný řádek (předchozí nekončí
+    tečkou a další začíná malým písmenem), sloučí se.
     """
     lines = text.split('\n')
     paragraphs = []
     current = []
 
-    for line in lines:
-        stripped = line.strip()
+    i = 0
+    while i < len(lines):
+        stripped = lines[i].strip()
 
         if not stripped:
-            # Prázdný řádek = konec odstavce
+            # Prázdný řádek - podívej se jestli text pokračuje plynule
+            # (předchozí nekončí tečkou/dvojtečkou a další začíná malým písmenem)
             if current:
+                # Najdi další neprázdný řádek
+                next_idx = i + 1
+                while next_idx < len(lines) and not lines[next_idx].strip():
+                    next_idx += 1
+
+                if next_idx < len(lines):
+                    next_stripped = lines[next_idx].strip()
+                    prev_text = current[-1] if current else ''
+                    # Pokud předchozí text nekončí větnou interpunkcí a další
+                    # začíná malým písmenem nebo spojkou → sloučit
+                    continues = (
+                        prev_text and
+                        not prev_text[-1] in '.!?:' and
+                        next_stripped and
+                        (next_stripped[0].islower() or next_stripped in ('a', 'i', 'nebo'))
+                    )
+                    if continues:
+                        i += 1
+                        continue
+
                 paragraphs.append(' '.join(current))
                 current = []
             paragraphs.append('')  # zachovej prázdný řádek
+            i += 1
             continue
 
         # Nový odstavec začíná při: číslo oddílu, (a)/(b), odrážka -, nadpis velkými
@@ -252,6 +284,7 @@ def _merge_lines_to_paragraphs(text: str) -> list:
             current = []
 
         current.append(stripped)
+        i += 1
 
     if current:
         paragraphs.append(' '.join(current))
