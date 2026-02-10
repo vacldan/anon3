@@ -25,7 +25,7 @@ _has_ocr = False
 try:
     import pytesseract
     from pdf2image import convert_from_path
-    from PIL import Image
+    from PIL import Image, ImageEnhance, ImageFilter
     from docx import Document
     from docx.shared import Pt
     _has_ocr = True
@@ -86,6 +86,31 @@ def convert_text_pdf(pdf_path: Path, docx_path: Path) -> bool:
 
 # --- Konverze skenovaného PDF (OCR) ---
 
+def preprocess_image(image):
+    """Předzpracuje obrázek pro lepší OCR kvalitu.
+
+    - Převod na odstíny šedi
+    - Zvýšení kontrastu
+    - Zaostření
+    - Binarizace (černobílý threshold)
+    """
+    # Převeď na šedou
+    img = image.convert('L')
+
+    # Zvýšení kontrastu (2x)
+    enhancer = ImageEnhance.Contrast(img)
+    img = enhancer.enhance(2.0)
+
+    # Zaostření
+    img = img.filter(ImageFilter.SHARPEN)
+
+    # Binarizace - čistý černobílý obraz, lepší pro Tesseract
+    threshold = 140
+    img = img.point(lambda x: 255 if x > threshold else 0, '1')
+
+    return img
+
+
 def cleanup_ocr_text(text: str) -> str:
     """Vyčistí běžné OCR artefakty."""
     lines = text.split('\n')
@@ -132,8 +157,11 @@ def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
             pct = int(i / len(images) * 100)
             print(f"\r  OCR: {i}/{len(images)} stranek ({pct}%)", end='', flush=True)
 
+            # Předzpracování obrázku pro lepší kvalitu OCR
+            processed = preprocess_image(image)
+
             page_text = pytesseract.image_to_string(
-                image, lang=lang, config="--oem 3 --psm 6"
+                processed, lang=lang, config="--oem 3 --psm 3"
             )
             page_text = cleanup_ocr_text(page_text)
             total_chars += len(page_text)
@@ -159,7 +187,7 @@ def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
 
 # --- Hlavní konverzní funkce ---
 
-def convert_pdf(pdf_path: Path) -> bool:
+def convert_pdf(pdf_path: Path, dpi: int = 300, lang: str = "ces+eng") -> bool:
     """
     Převede PDF do DOCX - automaticky zvolí správnou metodu.
 
@@ -184,7 +212,7 @@ def convert_pdf(pdf_path: Path) -> bool:
 
     if scanned:
         print("  Detekovano: SKENOVANE PDF (obrazek)", flush=True)
-        success = convert_scanned_pdf(pdf_path, docx_path)
+        success = convert_scanned_pdf(pdf_path, docx_path, lang=lang, dpi=dpi)
     else:
         print("  Detekovano: TEXTOVE PDF", flush=True)
         success = convert_text_pdf(pdf_path, docx_path)
@@ -192,7 +220,7 @@ def convert_pdf(pdf_path: Path) -> bool:
         # Fallback: pokud pdf2docx selhalo a máme OCR, zkus OCR
         if not success and _has_ocr:
             print("  Zkousim fallback pres OCR...", flush=True)
-            success = convert_scanned_pdf(pdf_path, docx_path)
+            success = convert_scanned_pdf(pdf_path, docx_path, lang=lang, dpi=dpi)
 
     if success:
         print(f"[OK] Uspesne prevedeno: {docx_path.name}", flush=True)
@@ -218,15 +246,33 @@ def main():
     else:
         print("  [-] Tesseract OCR: neni (pip install pytesseract pdf2image Pillow)", flush=True)
 
-    if len(sys.argv) < 2:
+    # Parsuj argumenty - podpora --dpi a --lang
+    args = sys.argv[1:]
+    dpi = 300
+    lang = "ces+eng"
+    pdf_files = []
+
+    i = 0
+    while i < len(args):
+        if args[i] == '--dpi' and i + 1 < len(args):
+            dpi = int(args[i + 1])
+            i += 2
+        elif args[i] == '--lang' and i + 1 < len(args):
+            lang = args[i + 1]
+            i += 2
+        else:
+            pdf_files.append(args[i])
+            i += 1
+
+    if not pdf_files:
         print("\nERROR: Nebyl zadan PDF soubor", flush=True)
-        print("Pouziti: python pdf2docx_cli.py <cesta_k_pdf>", flush=True)
+        print("Pouziti: python pdf2docx_cli.py <cesta_k_pdf> [--dpi 400] [--lang ces+eng]", flush=True)
         sys.exit(1)
 
     success_count = 0
     total_count = 0
 
-    for pdf_arg in sys.argv[1:]:
+    for pdf_arg in pdf_files:
         total_count += 1
         pdf_path = Path(pdf_arg)
 
@@ -240,7 +286,7 @@ def main():
             print(f"[!] Soubor neni PDF: {pdf_path}", flush=True)
             continue
 
-        if convert_pdf(pdf_path):
+        if convert_pdf(pdf_path, dpi=dpi, lang=lang):
             success_count += 1
         else:
             print(f"[X] Konverze selhala pro: {pdf_path.name}", flush=True)
