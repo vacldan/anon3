@@ -116,6 +116,13 @@ def main():
         print(f"[INFO] Nalezeno osob: {result['persons_found']}")
         print(f"[INFO] Celkem entit: {result['entities_total']}")
 
+        # Zaloguj statistiku
+        try:
+            from skryi_stats import log_anonymization
+            log_anonymization(persons_found=result['persons_found'], entities_total=result['entities_total'])
+        except Exception:
+            pass  # Statistiky nejsou kritické
+
         # Output JSON on last line for parsing
         print(json.dumps(result))
 

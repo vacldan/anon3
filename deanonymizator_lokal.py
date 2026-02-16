@@ -849,6 +849,13 @@ def deanonymize_document(anon_doc_path: Path, map_path: Path, output_path: Path)
     print(f"Výstupní soubor: {output_path}")
     print("=" * 80)
 
+    # Zaloguj statistiku
+    try:
+        from skryi_stats import log_deanonymization
+        log_deanonymization()
+    except Exception:
+        pass
+
     return True
 
 

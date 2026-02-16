@@ -207,6 +207,16 @@
             </div>
         </div>
 
+        <!-- Stats bar -->
+        <div id="statsBar" style="display:flex; gap:24px; padding:12px 20px; margin-bottom:16px; background:rgba(15,23,42,0.4); border-radius:12px; border:1px solid rgba(255,255,255,0.06); font-size:13px; color:#94a3b8; flex-wrap:wrap;">
+            <span>Anonymizováno: <strong style="color:#e2e8f0" id="statAnon">0</strong> dok.</span>
+            <span>Osob nalezeno: <strong style="color:#e2e8f0" id="statPersons">0</strong></span>
+            <span>PDF převedeno: <strong style="color:#e2e8f0" id="statPdf">0</strong></span>
+            <span>z toho OCR: <strong style="color:#e2e8f0" id="statOcr">0</strong></span>
+            <span>Deanonymizováno: <strong style="color:#e2e8f0" id="statDeanon">0</strong></span>
+            <span style="margin-left:auto; font-size:11px; color:#64748b;" id="statMonth"></span>
+        </div>
+
         <!-- Anonymization panel -->
         <div id="anonymizationPanel">
             <div class="section" style="--delay: 0.1s">
@@ -706,6 +716,7 @@
                     document.getElementById('outputPath').textContent = lastOutputFile || '';
                     document.getElementById('mapTxtPath').textContent = lastMapTxtFile || '';
                     document.getElementById('resultsPanel').classList.remove('hidden');
+                    loadStats(); // Refresh stats after anonymization
 
                     document.getElementById('openOutputBtn').onclick = async () => {
                         if(lastOutputFile) {
@@ -854,6 +865,7 @@
                     statusEl.className = 'status success';
 
                     addDeanonProgressLog('Deanonymizace úspěšně dokončena!', 'success');
+                    loadStats(); // Refresh stats after deanonymization
                     addDeanonProgressLog(`Výstup: ${lastDeanonOutputFile}`, 'success');
 
                     document.getElementById('deanonOutputPath').textContent = lastDeanonOutputFile || '';
@@ -946,6 +958,7 @@
 
                     addPdfProgressLog('', 'info');
                     addPdfProgressLog('✅ KONVERZE DOKONČENA ÚSPĚŠNĚ!', 'success');
+                    loadStats(); // Refresh stats after PDF conversion
                     addPdfProgressLog(`📄 Výstupní DOCX: ${lastPdfOutput}`, 'success');
                     addPdfProgressLog('', 'info');
 
@@ -1286,7 +1299,31 @@
             }
 
             addProgressLog('Frontend inicializován', 'success');
+            loadStats();
         });
+
+        // STATS
+        async function loadStats() {
+            if (!ipcRenderer) return;
+            try {
+                const s = await ipcRenderer.invoke('get-stats');
+                const now = new Date();
+                const monthKey = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}`;
+                document.getElementById('statAnon').textContent = s.total_anonymized || 0;
+                document.getElementById('statPersons').textContent = s.total_persons_found || 0;
+                document.getElementById('statPdf').textContent = s.total_pdf_converted || 0;
+                document.getElementById('statOcr').textContent = s.total_pdf_ocr || 0;
+                document.getElementById('statDeanon').textContent = s.total_deanonymized || 0;
+                const m = (s.monthly || {})[monthKey];
+                if (m) {
+                    const parts = [];
+                    if (m.anonymized) parts.push(`${m.anonymized} anon.`);
+                    if (m.pdf_converted) parts.push(`${m.pdf_converted} PDF`);
+                    if (m.deanonymized) parts.push(`${m.deanonymized} deanon.`);
+                    document.getElementById('statMonth').textContent = parts.length ? `Tento mesic: ${parts.join(', ')}` : '';
+                }
+            } catch(e) { console.log('Stats load error:', e); }
+        }
 
         // GLOBAL ERROR HANDLING
         window.addEventListener('error', (event) => {

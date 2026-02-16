@@ -852,6 +852,27 @@ ipcMain.handle("convert-pdf-to-docx", async (evt, pdfPath) => {
 });
 
 // Handler for selecting PDF file
+// Stats handler - read statistics from skryi_stats.json
+ipcMain.handle("get-stats", async () => {
+  try {
+    const statsPath = path.join(__dirname, "skryi_stats.json");
+    if (fs.existsSync(statsPath)) {
+      const data = fs.readFileSync(statsPath, "utf8");
+      return JSON.parse(data);
+    }
+  } catch (e) {
+    console.log("[STATS] Error reading stats:", e.message);
+  }
+  return {
+    total_anonymized: 0,
+    total_deanonymized: 0,
+    total_pdf_converted: 0,
+    total_pdf_ocr: 0,
+    total_persons_found: 0,
+    monthly: {},
+  };
+});
+
 ipcMain.handle("select-pdf-file", async () => {
   const result = await dialog.showOpenDialog(win, {
     title: "Vyberte PDF soubor",
