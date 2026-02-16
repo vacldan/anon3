@@ -409,12 +409,6 @@ def convert_pdf(pdf_path: Path, dpi: int = 300, lang: str = "ces", psm: int = 6)
     if success:
         print(f"[OK] Uspesne prevedeno: {docx_path.name}", flush=True)
         print(f"Velikost: {docx_path.stat().st_size} bytu", flush=True)
-        # Zaloguj statistiku
-        try:
-            from skryi_stats import log_pdf_conversion
-            log_pdf_conversion(ocr=scanned)
-        except Exception:
-            pass
     else:
         print("ERROR: Konverze selhala", flush=True)
 

@@ -565,6 +565,7 @@ function handleAnonymizeResult(code, stdoutBuf, startedMs, dir, base, requestedO
 
   if (actual && fs.existsSync(actual)) {
     sendProgress(`Anonymizace dokončena (${elapsed}s)`);
+    logStat("anonymize", { persons: payload ? (payload.persons_found || 0) : 0 });
     resolve({
       success: true,
       outputFile: actual,
@@ -716,6 +717,7 @@ ipcMain.handle("deanonymize-document", async (evt, anonFile, mapFile) => {
           if (win) {
             win.webContents.send("progress-update", `Deanonymizace dokončena (${elapsed}s)`);
           }
+          logStat("deanonymize");
           resolve({
             success: true,
             outputFile: requestedOut,
@@ -827,6 +829,9 @@ ipcMain.handle("convert-pdf-to-docx", async (evt, pdfPath) => {
 
       if (code === 0 && fs.existsSync(expectedDocx)) {
         sendProgress(`[OK] PDF prevedeno uspesne (${elapsed}s)`);
+        // Detect if OCR was used from stdout
+        const usedOcr = lastStdoutLines.some(l => l.includes("OCR") || l.includes("SKENOVANE"));
+        logStat("pdf", { ocr: usedOcr });
         resolve({
           success: true,
           outputFile: expectedDocx,
@@ -852,26 +857,56 @@ ipcMain.handle("convert-pdf-to-docx", async (evt, pdfPath) => {
 });
 
 // Handler for selecting PDF file
-// Stats handler - read statistics from skryi_stats.json
-ipcMain.handle("get-stats", async () => {
+// ----------------------- STATS -----------------------
+const STATS_FILE = path.join(__dirname, "skryi_stats.json");
+
+function readStats() {
   try {
-    const statsPath = path.join(__dirname, "skryi_stats.json");
-    if (fs.existsSync(statsPath)) {
-      const data = fs.readFileSync(statsPath, "utf8");
-      return JSON.parse(data);
+    if (fs.existsSync(STATS_FILE)) {
+      return JSON.parse(fs.readFileSync(STATS_FILE, "utf8"));
     }
-  } catch (e) {
-    console.log("[STATS] Error reading stats:", e.message);
-  }
+  } catch (e) { /* ignore */ }
   return {
-    total_anonymized: 0,
-    total_deanonymized: 0,
-    total_pdf_converted: 0,
-    total_pdf_ocr: 0,
-    total_persons_found: 0,
-    monthly: {},
+    total_anonymized: 0, total_deanonymized: 0,
+    total_pdf_converted: 0, total_pdf_ocr: 0,
+    total_persons_found: 0, monthly: {},
   };
-});
+}
+
+function saveStats(stats) {
+  try {
+    fs.writeFileSync(STATS_FILE, JSON.stringify(stats, null, 2), "utf8");
+  } catch (e) { console.log("[STATS] Write error:", e.message); }
+}
+
+function logStat(type, extra = {}) {
+  const stats = readStats();
+  const now = new Date();
+  const month = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}`;
+  if (!stats.monthly) stats.monthly = {};
+  if (!stats.monthly[month]) stats.monthly[month] = {};
+  const m = stats.monthly[month];
+
+  if (type === "anonymize") {
+    stats.total_anonymized = (stats.total_anonymized || 0) + 1;
+    stats.total_persons_found = (stats.total_persons_found || 0) + (extra.persons || 0);
+    m.anonymized = (m.anonymized || 0) + 1;
+    m.persons_found = (m.persons_found || 0) + (extra.persons || 0);
+  } else if (type === "deanonymize") {
+    stats.total_deanonymized = (stats.total_deanonymized || 0) + 1;
+    m.deanonymized = (m.deanonymized || 0) + 1;
+  } else if (type === "pdf") {
+    stats.total_pdf_converted = (stats.total_pdf_converted || 0) + 1;
+    m.pdf_converted = (m.pdf_converted || 0) + 1;
+    if (extra.ocr) {
+      stats.total_pdf_ocr = (stats.total_pdf_ocr || 0) + 1;
+      m.pdf_ocr = (m.pdf_ocr || 0) + 1;
+    }
+  }
+  saveStats(stats);
+}
+
+ipcMain.handle("get-stats", async () => readStats());
 
 ipcMain.handle("select-pdf-file", async () => {
   const result = await dialog.showOpenDialog(win, {
