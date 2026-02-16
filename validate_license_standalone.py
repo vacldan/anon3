@@ -103,6 +103,79 @@ def get_hardware_id():
     return hashlib.sha256(combined.encode()).hexdigest()[:16].upper()
 
 
+def get_all_hardware_ids():
+    """
+    Vrátí seznam všech možných HW ID - pro zpětnou kompatibilitu.
+    Starší licence mohly být vygenerovány s fallback hodnotami (když WMIC nefungoval).
+    """
+    mac = get_mac_address()
+    hw_ids = set()
+
+    # Sbírání všech CPU variant
+    cpu_variants = []
+    if platform.system() == "Windows":
+        # WMIC
+        try:
+            result = subprocess.check_output("wmic cpu get ProcessorId", shell=True, stderr=subprocess.DEVNULL)
+            val = result.decode().split('\n')[1].strip()
+            if val and val != 'ProcessorId':
+                cpu_variants.append(val)
+        except:
+            pass
+        # PowerShell
+        try:
+            result = subprocess.check_output(
+                ['powershell', '-NoProfile', '-Command',
+                 'Get-CimInstance -ClassName Win32_Processor | Select-Object -ExpandProperty ProcessorId'],
+                shell=False, stderr=subprocess.DEVNULL
+            )
+            val = result.decode().strip()
+            if val and val not in cpu_variants:
+                cpu_variants.append(val)
+        except:
+            pass
+    # Fallback - vždy přidat jako poslední
+    fallback_cpu = platform.processor()
+    if fallback_cpu and fallback_cpu not in cpu_variants:
+        cpu_variants.append(fallback_cpu)
+
+    # Sbírání všech DISK variant
+    disk_variants = []
+    if platform.system() == "Windows":
+        # WMIC
+        try:
+            result = subprocess.check_output("wmic diskdrive get SerialNumber", shell=True, stderr=subprocess.DEVNULL)
+            lines = [l.strip() for l in result.decode().split('\n') if l.strip() and l.strip() != 'SerialNumber']
+            if lines and lines[0]:
+                disk_variants.append(lines[0])
+        except:
+            pass
+        # PowerShell
+        try:
+            result = subprocess.check_output(
+                ['powershell', '-NoProfile', '-Command',
+                 '(Get-CimInstance -ClassName Win32_DiskDrive | Select-Object -First 1).SerialNumber'],
+                shell=False, stderr=subprocess.DEVNULL
+            )
+            val = result.decode().strip()
+            if val and val not in disk_variants:
+                disk_variants.append(val)
+        except:
+            pass
+    # Fallback - vždy přidat
+    if "UNKNOWN" not in disk_variants:
+        disk_variants.append("UNKNOWN")
+
+    # Všechny kombinace CPU x DISK
+    for cpu in cpu_variants:
+        for disk in disk_variants:
+            combined = f"{cpu}:{mac}:{disk}"
+            hw = hashlib.sha256(combined.encode()).hexdigest()[:16].upper()
+            hw_ids.add(hw)
+
+    return list(hw_ids)
+
+
 def format_hw_id(hw_id):
     return '-'.join([hw_id[i:i+4] for i in range(0, 16, 4)])
 
@@ -142,10 +215,12 @@ def validate_license(license_path):
     if not verify_signature(license_data):
         return False, "Neplatný podpis licence - možná padělané!", None
 
-    current_hw_id = get_hardware_id()
+    # Zkus všechny možné HW ID varianty (zpětná kompatibilita se starými licencemi)
+    all_hw_ids = get_all_hardware_ids()
     license_hw_id = license_data.get('hw_id', '').replace('-', '').upper()
 
-    if current_hw_id != license_hw_id:
+    if license_hw_id not in all_hw_ids:
+        current_hw_id = get_hardware_id()
         return False, f"Licence je vázána na jiný počítač", None
 
     expires_at = datetime.fromisoformat(license_data['expires_at'])
