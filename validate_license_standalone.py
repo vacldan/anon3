@@ -22,18 +22,36 @@ MASTER_SECRET = "NixMinds_Secure_2026_!_8k9Pq2LzWvRt5XyN_Anonymizer_Secret_Key_9
 
 # ==================== HW FINGERPRINT ====================
 def get_cpu_id():
-    try:
-        if platform.system() == "Windows":
+    if platform.system() == "Windows":
+        # Zkus WMIC (starší Windows)
+        try:
             result = subprocess.check_output("wmic cpu get ProcessorId", shell=True, stderr=subprocess.DEVNULL)
-            return result.decode().split('\n')[1].strip()
-        elif platform.system() == "Linux":
+            val = result.decode().split('\n')[1].strip()
+            if val and val != 'ProcessorId':
+                return val
+        except:
+            pass
+        # Fallback: PowerShell (Windows 11 bez WMIC)
+        try:
+            result = subprocess.check_output(
+                ['powershell', '-NoProfile', '-Command',
+                 'Get-CimInstance -ClassName Win32_Processor | Select-Object -ExpandProperty ProcessorId'],
+                shell=False, stderr=subprocess.DEVNULL
+            )
+            val = result.decode().strip()
+            if val:
+                return val
+        except:
+            pass
+    elif platform.system() == "Linux":
+        try:
             with open('/proc/cpuinfo', 'r') as f:
                 for line in f:
                     if 'Serial' in line or 'model name' in line:
                         return line.split(':')[1].strip()
-        return platform.processor()
-    except:
-        return platform.processor()
+        except:
+            pass
+    return platform.processor()
 
 
 def get_mac_address():
@@ -45,17 +63,36 @@ def get_mac_address():
 
 
 def get_disk_serial():
-    try:
-        if platform.system() == "Windows":
+    if platform.system() == "Windows":
+        # Zkus WMIC (starší Windows)
+        try:
             result = subprocess.check_output("wmic diskdrive get SerialNumber", shell=True, stderr=subprocess.DEVNULL)
             lines = [l.strip() for l in result.decode().split('\n') if l.strip() and l.strip() != 'SerialNumber']
-            return lines[0] if lines else "UNKNOWN"
-        elif platform.system() == "Linux":
+            if lines and lines[0]:
+                return lines[0]
+        except:
+            pass
+        # Fallback: PowerShell (Windows 11 bez WMIC)
+        try:
+            result = subprocess.check_output(
+                ['powershell', '-NoProfile', '-Command',
+                 '(Get-CimInstance -ClassName Win32_DiskDrive | Select-Object -First 1).SerialNumber'],
+                shell=False, stderr=subprocess.DEVNULL
+            )
+            val = result.decode().strip()
+            if val:
+                return val
+        except:
+            pass
+    elif platform.system() == "Linux":
+        try:
             result = subprocess.check_output("lsblk -o SERIAL | head -2 | tail -1", shell=True, stderr=subprocess.DEVNULL)
-            return result.decode().strip() or "UNKNOWN"
-        return "UNKNOWN"
-    except:
-        return "UNKNOWN"
+            val = result.decode().strip()
+            if val:
+                return val
+        except:
+            pass
+    return "UNKNOWN"
 
 
 def get_hardware_id():

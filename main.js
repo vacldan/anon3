@@ -278,8 +278,9 @@ async function checkLicense() {
       result = await spawnQuick(PY.cmd, args, { cwd: scriptDir });
     }
 
+    console.log(`[LICENSE] Script ok: ${result.ok}`);
     console.log(`[LICENSE] Script output: ${result.out}`);
-    console.log(`[LICENSE] Script stderr: ${result.err}`);
+    if (result.err) console.log(`[LICENSE] Script stderr: ${result.err}`);
 
     const output = result.out.trim();
 
@@ -299,6 +300,34 @@ async function checkLicense() {
         return { valid: false, message: "Chyba při parsování licence", needs_activation: true };
       }
     } else {
+      // .exe selhal bez výstupu - možná antivirus blokuje, nebo WMIC chybí
+      console.error("[LICENSE] Validator produced no output! Possible causes: antivirus blocking .exe, missing wmic, or crash");
+      if (result.err) console.error(`[LICENSE] Stderr: ${result.err}`);
+
+      // Zkus fallback: spusť Python script přímo pokud .exe selhalo
+      if (script.isExe && PY && PY.cmd) {
+        console.log("[LICENSE] Trying Python fallback...");
+        const pyScript = path.join(scriptDir, "validate_license_standalone.py");
+        const pyScriptAlt = path.join(__dirname, "validate_license_standalone.py");
+        const pyPath = fs.existsSync(pyScript) ? pyScript : (fs.existsSync(pyScriptAlt) ? pyScriptAlt : null);
+
+        if (pyPath) {
+          const pyArgs = PY.isPyLauncher
+            ? ["-3", pyPath, licenseFile]
+            : [pyPath, licenseFile];
+          const pyResult = await spawnQuick(PY.cmd, pyArgs, { cwd: path.dirname(pyPath) });
+          const pyOutput = pyResult.out.trim();
+          if (pyOutput) {
+            try {
+              const licenseData = JSON.parse(pyOutput);
+              console.log(`[LICENSE] Python fallback succeeded: ${licenseData.valid}`);
+              if (licenseData.valid) copyLicenseToUserData(licenseFile);
+              return licenseData;
+            } catch (e) { /* fall through */ }
+          }
+        }
+      }
+
       // Spočítej HW ID i když script selhal
       const hwResult = await spawnQuick(PY.cmd,
         PY.isPyLauncher ? ["-3", "-c", HW_ID_SCRIPT] : ["-c", HW_ID_SCRIPT]
@@ -306,7 +335,8 @@ async function checkLicense() {
       const hwId = hwResult.out.trim() || "UNKNOWN";
       return {
         valid: false,
-        message: "License check returned no output",
+        message: "Validátor licence nevrátil výstup. Možné příčiny: antivirus blokuje .exe, chybí wmic, nebo pád programu." +
+                 (result.err ? ` Chyba: ${result.err.substring(0, 200)}` : ""),
         needs_activation: true,
         hw_id: hwId
       };
@@ -317,13 +347,44 @@ async function checkLicense() {
   }
 }
 
-// Inline script pro získání HW ID
+// Inline script pro získání HW ID (s PowerShell fallbackem pro Windows 11 bez WMIC)
 const HW_ID_SCRIPT = `
-import hashlib, uuid, subprocess
+import hashlib, uuid, subprocess, platform
+
+def get_cpu():
+    try:
+        r = subprocess.check_output('wmic cpu get ProcessorId', shell=True, stderr=subprocess.DEVNULL)
+        v = r.decode().split('\\n')[1].strip()
+        if v and v != 'ProcessorId': return v
+    except: pass
+    try:
+        r = subprocess.check_output(['powershell', '-NoProfile', '-Command',
+            'Get-CimInstance -ClassName Win32_Processor | Select-Object -ExpandProperty ProcessorId'],
+            shell=False, stderr=subprocess.DEVNULL)
+        v = r.decode().strip()
+        if v: return v
+    except: pass
+    return platform.processor()
+
+def get_disk():
+    try:
+        r = subprocess.check_output('wmic diskdrive get SerialNumber', shell=True, stderr=subprocess.DEVNULL)
+        lines = [l.strip() for l in r.decode().split('\\n') if l.strip() and l.strip() != 'SerialNumber']
+        if lines: return lines[0]
+    except: pass
+    try:
+        r = subprocess.check_output(['powershell', '-NoProfile', '-Command',
+            '(Get-CimInstance -ClassName Win32_DiskDrive | Select-Object -First 1).SerialNumber'],
+            shell=False, stderr=subprocess.DEVNULL)
+        v = r.decode().strip()
+        if v: return v
+    except: pass
+    return 'UNKNOWN'
+
 try:
-    cpu = subprocess.check_output('wmic cpu get ProcessorId', shell=True).decode().split('\\n')[1].strip()
+    cpu = get_cpu()
     mac = ':'.join(['{:02x}'.format((uuid.getnode() >> i) & 0xff) for i in range(0, 48, 8)][::-1])
-    disk = subprocess.check_output('wmic diskdrive get SerialNumber', shell=True).decode().split('\\n')[1].strip()
+    disk = get_disk()
     hw = hashlib.sha256(f'{cpu}:{mac}:{disk}'.encode()).hexdigest()[:16].upper()
     print(f'{hw[:4]}-{hw[4:8]}-{hw[8:12]}-{hw[12:16]}')
 except:
