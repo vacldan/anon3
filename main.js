@@ -180,6 +180,47 @@ function getAppRootDir() {
   return __dirname;
 }
 
+function findLicenseFile() {
+  // Hledej license.lic ve více lokacích
+  const appRoot = getAppRootDir();
+  const userData = app.getPath('userData');
+  const unpackedDir = __dirname.replace('app.asar', 'app.asar.unpacked');
+
+  const candidates = [
+    path.join(appRoot, "license.lic"),          // Složka s .exe (produkce) nebo __dirname (vývoj)
+    path.join(userData, "license.lic"),          // AppData - přežije reinstalace
+    path.join(unpackedDir, "license.lic"),       // resources/app.asar.unpacked
+    path.join(__dirname, "license.lic"),         // Uvnitř app.asar (fallback)
+  ];
+
+  console.log("[LICENSE] Searching for license.lic in:");
+  for (const c of candidates) {
+    const exists = fs.existsSync(c);
+    console.log(`[LICENSE]   ${exists ? "FOUND" : "     "} ${c}`);
+    if (exists) return c;
+  }
+
+  console.log("[LICENSE] license.lic not found in any location");
+  return null;
+}
+
+function copyLicenseToUserData(sourcePath) {
+  // Zkopíruj licenci do AppData, aby přežila reinstalace
+  try {
+    const userData = app.getPath('userData');
+    const targetPath = path.join(userData, "license.lic");
+    if (sourcePath !== targetPath) {
+      if (!fs.existsSync(userData)) {
+        fs.mkdirSync(userData, { recursive: true });
+      }
+      fs.copyFileSync(sourcePath, targetPath);
+      console.log(`[LICENSE] License copied to AppData: ${targetPath}`);
+    }
+  } catch (e) {
+    console.warn(`[LICENSE] Could not copy license to AppData: ${e.message}`);
+  }
+}
+
 async function checkLicense() {
   console.log("[LICENSE] Checking license...");
 
@@ -189,14 +230,35 @@ async function checkLicense() {
     return { valid: true, skipValidation: true };
   }
 
-  // Hledej licenci ve složce s .exe (ne v resources)
+  // Hledej licenci ve více složkách
+  const licenseFile = findLicenseFile();
   const appRoot = getAppRootDir();
-  const licenseFile = path.join(appRoot, "license.lic");
 
   console.log(`[LICENSE] App root: ${appRoot}`);
-  console.log(`[LICENSE] Looking for license at: ${licenseFile}`);
-  console.log(`[LICENSE] License exists: ${fs.existsSync(licenseFile)}`);
+  console.log(`[LICENSE] License file: ${licenseFile || "NOT FOUND"}`);
   console.log(`[LICENSE] Using compiled exe: ${script.isExe}`);
+
+  if (!licenseFile) {
+    // Licence nenalezena - zjisti HW ID pro aktivaci
+    let hwId = "UNKNOWN";
+    try {
+      const hwResult = await spawnQuick(PY.cmd,
+        PY.isPyLauncher ? ["-3", "-c", HW_ID_SCRIPT] : ["-c", HW_ID_SCRIPT]
+      );
+      hwId = hwResult.out.trim() || "UNKNOWN";
+    } catch (e) { /* ignore */ }
+
+    return {
+      valid: false,
+      message: "Licenční soubor nenalezen",
+      needs_activation: true,
+      hw_id: hwId,
+      search_paths: [
+        path.join(appRoot, "license.lic"),
+        path.join(app.getPath('userData'), "license.lic"),
+      ]
+    };
+  }
 
   try {
     const scriptDir = path.dirname(script.path);
@@ -225,6 +287,12 @@ async function checkLicense() {
       try {
         const licenseData = JSON.parse(output);
         console.log(`[LICENSE] Valid: ${licenseData.valid}, Message: ${licenseData.message}`);
+
+        // Pokud je licence platná, zkopíruj ji do AppData (přežije reinstalace)
+        if (licenseData.valid) {
+          copyLicenseToUserData(licenseFile);
+        }
+
         return licenseData;
       } catch (e) {
         console.error("[LICENSE] Failed to parse JSON:", e);
@@ -265,6 +333,15 @@ except:
 function showLicenseError(licenseData) {
   const hwId = licenseData.hw_id || "UNKNOWN";
   const message = licenseData.message || "Neplatná nebo chybějící licence";
+  const appRoot = getAppRootDir();
+  const userData = app.getPath('userData');
+
+  // Ukáž přesné cesty kam umístit licenci
+  const paths = [
+    appRoot,
+    userData,
+  ];
+  const pathsList = paths.map(p => `  • ${p}`).join('\n');
 
   dialog.showMessageBoxSync({
     type: "error",
@@ -275,13 +352,14 @@ function showLicenseError(licenseData) {
             `Pro aktivaci:\n` +
             `1. Pošlete Hardware ID prodejci\n` +
             `2. Obdržíte soubor license.lic\n` +
-            `3. Umístěte ho do složky s aplikací\n` +
+            `3. Umístěte ho do jedné z těchto složek:\n${pathsList}\n` +
             `4. Restartujte aplikaci`,
     buttons: ["Ukončit aplikaci"],
     defaultId: 0
   });
 
   console.log("[LICENSE] Application closing - no valid license");
+  console.log(`[LICENSE] Place license.lic in one of: ${paths.join(' OR ')}`);
   app.quit();
   return false;
 }
