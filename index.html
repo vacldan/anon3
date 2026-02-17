@@ -10,514 +10,1110 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #f0f4f8 0%, #d6e7f0 30%, #bfdbfe 70%, #e0f2fe 100%);
-            position: relative;
-            overflow-x: hidden;
-            z-index: 0;
-            color: #1e293b;
+            background: #0a0f1e;
+            color: #e2e8f0;
             margin: 0;
             padding: 0;
             min-height: 100vh;
+            display: flex;
+            overflow: hidden;
         }
-        body::before {
-            content: "";
+
+        /* ============================================
+           SIDEBAR
+           ============================================ */
+        .sidebar {
+            width: 240px;
+            min-width: 240px;
+            background: #0d1528;
+            border-right: 1px solid #1e3a5f;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
             position: fixed;
-            top: 50%; left: 50%;
-            width: 1000px; height: 1000px;
-            transform: translate(-50%, -50%);
+            left: 0;
+            top: 0;
+            z-index: 100;
+        }
+
+        .sidebar-logo {
+            padding: 24px 20px;
+            border-bottom: 1px solid #1e3a5f;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .sidebar-logo img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 8px rgba(59, 139, 255, 0.4));
+        }
+        .sidebar-logo .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: #e2e8f0;
+            letter-spacing: -0.02em;
+        }
+
+        .sidebar-nav {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px 0;
+        }
+
+        .nav-section {
+            margin-bottom: 8px;
+        }
+        .nav-section-title {
+            padding: 8px 20px 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #3b8bff;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #94a3b8;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+            position: relative;
+        }
+        .nav-item:hover {
+            color: #e2e8f0;
+            background: rgba(59, 139, 255, 0.06);
+        }
+        .nav-item.active {
+            color: #e2e8f0;
+            background: rgba(59, 139, 255, 0.1);
+            border-left-color: #3b8bff;
+        }
+        .nav-item .nav-icon {
+            font-size: 16px;
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .sidebar-footer {
+            padding: 16px 20px;
+            border-top: 1px solid #1e3a5f;
+            font-size: 12px;
+            color: #475569;
+        }
+
+        /* ============================================
+           TOP BAR
+           ============================================ */
+        .topbar {
+            height: 52px;
+            background: #0d1528;
+            border-bottom: 1px solid #1e3a5f;
+            display: flex;
+            align-items: center;
+            padding: 0 28px;
+            gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .topbar-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #64748b;
+            padding: 4px 12px;
+            background: rgba(59, 139, 255, 0.06);
+            border: 1px solid #1e3a5f;
+            border-radius: 6px;
+        }
+        .topbar-status .dot {
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
-            background: radial-gradient(
-                circle,
-                rgba(147, 197, 253, 0.28) 0%,
-                rgba(59, 130, 246, 0.2) 30%,
-                rgba(37, 99, 235, 0.14) 50%,
-                rgba(29, 78, 216, 0.1) 70%,
-                rgba(30, 64, 175, 0.05) 85%,
-                rgba(0, 0, 0, 0) 100%
-            );
-
-            /* VYPNUTO: pulsování pozadí (šetří výkon) */
-            animation: none;
-
-            z-index: -1; pointer-events: none; filter: blur(40px);
+            background: #22c55e;
         }
-        @keyframes pulseOrb { 0%,100%{transform:translate(-50%,-50%) scale(0.8);opacity:.6} 50%{transform:translate(-50%,-50%) scale(1.3);opacity:1} }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 60px 40px; min-height: 100vh; position: relative; z-index: 1; }
+        .topbar-spacer { flex: 1; }
 
-        .header { text-align: center; margin-bottom: 80px; animation: fadeInUp 1s ease-out; }
         .language-switcher {
-            position: absolute; top: 40px; right: 40px; display: flex; gap: 0; z-index: 100;
-            background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(20px) saturate(180%);
-            border-radius: 12px; padding: 4px; border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            display: flex;
+            gap: 0;
+            background: rgba(30, 58, 95, 0.4);
+            border-radius: 8px;
+            padding: 2px;
+            border: 1px solid #1e3a5f;
         }
-        .lang-btn { background: transparent; border: none; color: #64748b; padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all .3s cubic-bezier(.4,0,.2,1); }
-        .lang-btn:hover { color: #334155; background: rgba(59,130,246,.1); }
-        .lang-btn.active { background: rgba(59,130,246,.15); color:#3b82f6; font-weight:600; box-shadow: 0 2px 8px rgba(59,130,246,.2); }
-
-        .logo { font-size: 72px; font-weight: 800; color: #000000; margin-bottom: 10px; letter-spacing:-.04em; line-height:1; }
-
-        /* NOVÉ: logo pod nadpisem */
-        .app-logo {
-            display: block;
-            margin: 6px auto 22px auto;
-            max-width: 150px;
-            height: auto;
-            opacity: 0.96;
-            filter: drop-shadow(0 10px 24px rgba(0,0,0,0.10));
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: #64748b;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lang-btn:hover { color: #e2e8f0; }
+        .lang-btn.active {
+            background: rgba(59, 139, 255, 0.2);
+            color: #3b8bff;
+            font-weight: 600;
         }
 
-        .subtitle { font-size: 24px; font-weight: 400; margin-bottom: 32px; background: linear-gradient(135deg,#1e293b 0%,#475569 50%,#64748b 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; line-height:1.4; max-width:600px; margin-left:auto; margin-right:auto; }
-        .version-badge { display:inline-flex; align-items:center; background: rgba(255,255,255,.4); backdrop-filter: blur(20px) saturate(180%); border:1px solid rgba(255,255,255,.3); padding:12px 24px; border-radius:24px; font-size:15px; font-weight:500; background:linear-gradient(135deg,#1e293b 0%,#475569 50%,#64748b 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; box-shadow:0 8px 32px rgba(0,0,0,.08);}
-
-        .mode-selector { background: rgba(255,255,255,.4); backdrop-filter: blur(40px) saturate(180%); border: 1px solid rgba(255,255,255,.3); padding: 48px; margin: 48px 0; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,.08); animation: fadeInUp 1s ease-out .2s both; }
-        .mode-selector h3 { font-size: 28px; font-weight: 700; margin-bottom: 40px; text-align: center; background: linear-gradient(135deg,#1e293b 0%,#475569 50%,#64748b 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; letter-spacing: -.02em; }
-        .mode-buttons { display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin:40px 0; }
-        .mode-btn { background: rgba(255,255,255,.65); backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(255,255,255,.3); background: linear-gradient(135deg,#1e293b 0%,#475569 50%,#64748b 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; padding:32px 24px; font-size:18px; font-weight:600; border-radius:20px; cursor:pointer; transition: all .4s cubic-bezier(.4,0,.2,1); text-align:center; position:relative; overflow:hidden; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
-        .mode-btn::before { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background: linear-gradient(90deg,transparent,rgba(59,130,246,.1),transparent); transition:left .8s ease; }
-        .mode-btn:hover::before { left:100%; }
-        .mode-btn:hover { background: rgba(255,255,255,.9); border-color: rgba(59,130,246,.3); background:linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#334155 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,.15); }
-        .mode-btn.active { background: rgba(255,255,255,.95); border: 2px solid rgba(59,130,246,.6); background:linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#334155 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; transform: translateY(-6px) scale(1.02); box-shadow: 0 30px 60px rgba(59,130,246,.4), 0 0 0 3px rgba(59,130,246,.15), inset 0 0 30px rgba(59,130,246,.05); }
-
-        .section { background: rgba(255,255,255,.4); backdrop-filter: blur(40px) saturate(180%); border:1px solid rgba(255,255,255,.3); padding:40px; margin:32px 0; border-radius:24px; box-shadow:0 20px 40px rgba(0,0,0,.08); animation: fadeInUp .8s ease-out var(--delay,0s) both; }
-        .section h3 { font-size:22px; font-weight:700; margin-bottom:24px; background:linear-gradient(135deg,#1e293b 0%,#475569 50%,#64748b 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; display:flex; align-items:center; gap:12px; letter-spacing:-.01em; }
-
-        .btn, .btn.pdf, .btn.secondary {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 197, 253, 0.1) 100%);
-            backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(59, 130, 246, 0.4);
-            background: linear-gradient(135deg, #1e293b 0%, #475569 50%, #64748b 100%);
-            background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            border-radius: 16px; padding: 16px 32px; font-size: 16px; font-weight: 600; cursor: pointer;
-            transition: all .3s cubic-bezier(.4,0,.2,1); margin: 12px; font-family: inherit; display:inline-flex; align-items:center; gap:8px;
-            box-shadow: 0 20px 40px rgba(59,130,246,.2); position: relative; overflow: hidden; transform: translateY(-4px);
+        /* ============================================
+           MAIN CONTENT
+           ============================================ */
+        .main-wrapper {
+            margin-left: 240px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
-        .btn::before, .btn.pdf::before, .btn.secondary::before {
-            content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
-            background: linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);
-            transition:left .6s ease;
-        }
-        .btn:hover::before, .btn.pdf:hover::before, .btn.secondary:hover::before { left:100%; }
-        .btn:hover, .btn.pdf:hover, .btn.secondary:hover {
-            background: linear-gradient(135deg, rgba(59,130,246,.15) 0%, rgba(147,197,253,.15) 100%);
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-            background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            transform: translateY(-6px); box-shadow:0 24px 48px rgba(59,130,246,.3);
-        }
-        .btn:active, .btn.pdf:active, .btn.secondary:active { transform: translateY(-2px); box-shadow:0 16px 32px rgba(59,130,246,.25); }
-        .btn.secondary { background: rgba(255,255,255,.8); border: 1px solid rgba(255,255,255,.3); background: linear-gradient(135deg, #1e293b 0%, #475569 50%, #64748b 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; box-shadow:0 8px 24px rgba(0,0,0,.1); }
-        .btn.secondary:hover { background: rgba(255,255,255,.9); background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; box-shadow:0 12px 32px rgba(0,0,0,.15); }
-        .btn:disabled { background: rgba(148,163,184,.4); background: linear-gradient(135deg,#94a3b8 0%,#cbd5e1 50%,#e2e8f0 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; cursor:not-allowed; transform:none; box-shadow:none; }
 
+        .main-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px 28px 40px;
+        }
+
+        /* ============================================
+           STATS CARDS
+           ============================================ */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: #131d35;
+            border: 1px solid #1e3a5f;
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .stat-card .stat-icon {
+            font-size: 22px;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: rgba(59, 139, 255, 0.1);
+            flex-shrink: 0;
+        }
+        .stat-card .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #e2e8f0;
+            line-height: 1.1;
+        }
+        .stat-card .stat-label {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 2px;
+        }
+        .stat-month {
+            font-size: 11px;
+            color: #475569;
+            grid-column: 1 / -1;
+            text-align: right;
+            padding-top: 4px;
+        }
+
+        /* ============================================
+           PANEL / SECTION CARDS
+           ============================================ */
+        .panel-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #e2e8f0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section {
+            background: #131d35;
+            border: 1px solid #1e3a5f;
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            animation: fadeInUp 0.5s ease-out both;
+        }
+        .section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section h3 .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: rgba(59, 139, 255, 0.15);
+            color: #3b8bff;
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ============================================
+           BUTTONS
+           ============================================ */
+        .btn {
+            background: rgba(59, 139, 255, 0.1);
+            border: 1px solid rgba(59, 139, 255, 0.3);
+            color: #e2e8f0;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn:hover {
+            background: rgba(59, 139, 255, 0.2);
+            border-color: rgba(59, 139, 255, 0.5);
+            transform: translateY(-1px);
+        }
+        .btn:active {
+            transform: translateY(0);
+        }
+        .btn:disabled {
+            background: rgba(100, 116, 139, 0.1);
+            border-color: rgba(100, 116, 139, 0.2);
+            color: #475569;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn.secondary {
+            background: rgba(100, 116, 139, 0.1);
+            border-color: rgba(100, 116, 139, 0.3);
+            color: #94a3b8;
+        }
+        .btn.secondary:hover {
+            background: rgba(100, 116, 139, 0.2);
+            border-color: rgba(100, 116, 139, 0.5);
+            color: #e2e8f0;
+        }
+
+        /* Play (start) button - green */
+        .btn.play {
+            background: rgba(34, 197, 94, 0.1);
+            border-color: rgba(34, 197, 94, 0.3);
+            color: #22c55e;
+        }
+        .btn.play:hover {
+            background: rgba(34, 197, 94, 0.2);
+            border-color: rgba(34, 197, 94, 0.5);
+        }
+        .btn.play svg { fill: #22c55e; }
+
+        /* Stop button - red */
+        .btn.stop {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+        }
+        .btn.stop:hover {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: rgba(239, 68, 68, 0.5);
+        }
+        .btn.stop svg { fill: #ef4444; }
+
+        .btn-small {
+            background: rgba(59, 139, 255, 0.1);
+            border: 1px solid rgba(59, 139, 255, 0.2);
+            color: #94a3b8;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+        .btn-small:hover {
+            background: rgba(59, 139, 255, 0.2);
+            color: #e2e8f0;
+        }
+
+        /* ============================================
+           FILE INFO / RESULTS
+           ============================================ */
         .file-info, .file-selection {
-            background: rgba(248,250,252,.8); backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(226,232,240,.5); padding: 24px; border-radius: 16px; margin: 20px 0;
-            font-family: 'SF Mono','Monaco','Menlo',monospace; font-size: 14px;
-            background: linear-gradient(135deg, #475569 0%, #64748b 50%, #94a3b8 100%);
-            background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            animation: slideInUp .4s ease-out; box-shadow: 0 4px 16px rgba(0,0,0,.05);
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid #1e3a5f;
+            padding: 16px 20px;
+            border-radius: 10px;
+            margin: 12px 0;
+            font-family: 'SF Mono','Monaco','Menlo', monospace;
+            font-size: 13px;
+            color: #94a3b8;
         }
-        .file-selection { font-size: 13px; padding: 20px; }
 
-        .status { padding: 20px 24px; margin: 20px 0; border-radius: 16px; font-weight: 600; font-size:15px; animation: slideInUp .4s ease-out; backdrop-filter: blur(20px) saturate(180%); border:1px solid; }
-        .status.success { background: rgba(248,250,252,.8); border-color: rgba(226,232,240,.5); background: linear-gradient(135deg,#22c55e 0%,#16a34a 50%,#15803d 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; box-shadow:0 8px 24px rgba(34,197,94,.1);}
-        .status.error   { background: rgba(248,250,252,.8); border-color: rgba(226,232,240,.5); background: linear-gradient(135deg,#ef4444 0%,#dc2626 50%,#b91c1c 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; box-shadow:0 8px 24px rgba(239,68,68,.1);}
+        .status {
+            padding: 14px 20px;
+            margin: 12px 0;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            border: 1px solid;
+        }
+        .status.success {
+            background: rgba(34, 197, 94, 0.08);
+            border-color: rgba(34, 197, 94, 0.3);
+            color: #22c55e;
+        }
+        .status.error {
+            background: rgba(239, 68, 68, 0.08);
+            border-color: rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+        }
         .status.working {
-            background: rgba(248,250,252,.8);
-            border-color: rgba(226,232,240,.5);
-            background: linear-gradient(135deg,#f59e0b 0%,#d97706 50%,#b45309 100%);
-            background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-
-            /* VYPNUTO: pulsování statusu (šetří výkon) */
-            animation: none;
-
-            box-shadow:0 8px 24px rgba(245,158,11,.1);
+            background: rgba(245, 158, 11, 0.08);
+            border-color: rgba(245, 158, 11, 0.3);
+            color: #f59e0b;
         }
-
-        .file-indicator { display:inline-flex; align-items:center; padding:12px 20px; margin:12px; background: rgba(248,250,252,.8); backdrop-filter: blur(20px) saturate(180%); border:1px solid rgba(226,232,240,.5); border-radius:24px; font-size:14px; font-weight:600; background: linear-gradient(135deg,#22c55e 0%,#16a34a 50%,#15803d 100%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation: fadeIn .4s ease-out; box-shadow: 0 8px 24px rgba(34,197,94,.1); }
 
         .progress-log {
-            background: rgba(15,23,42,.95); backdrop-filter: blur(20px);
-            border: 1px solid rgba(51,65,85,.3); border-radius: 16px; padding: 20px;
-            margin: 20px 0; font-family: 'SF Mono','Monaco','Menlo',monospace;
-            font-size: 12px; max-height: 300px; overflow-y: auto;
-            color: #94a3b8; animation: slideInUp .4s ease-out;
+            background: #080d1a;
+            border: 1px solid #1e3a5f;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 12px 0;
+            font-family: 'SF Mono','Monaco','Menlo', monospace;
+            font-size: 12px;
+            max-height: 280px;
+            overflow-y: auto;
+            color: #64748b;
         }
-        .progress-log .log-line { margin: 4px 0; padding: 2px 0; border-left: 3px solid transparent; padding-left: 8px; }
+        .progress-log .log-line {
+            margin: 3px 0;
+            padding: 2px 0;
+            border-left: 3px solid transparent;
+            padding-left: 8px;
+        }
         .progress-log .log-line.success { border-left-color: #22c55e; color: #86efac; }
         .progress-log .log-line.error { border-left-color: #ef4444; color: #fca5a5; }
         .progress-log .log-line.working { border-left-color: #f59e0b; color: #fde047; }
 
         .results-panel {
-            background: rgba(34,197,94,.1); backdrop-filter: blur(20px);
-            border: 1px solid rgba(34,197,94,.3); border-radius: 16px; padding: 24px;
-            margin: 20px 0; animation: slideInUp .4s ease-out;
+            background: rgba(34, 197, 94, 0.05);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 12px 0;
         }
-        .results-panel h4 { color: #15803d; font-weight: 700; margin-bottom: 16px; font-size: 18px; }
+        .results-panel h4 {
+            color: #22c55e;
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
         .results-panel .file-path {
-            font-family: 'SF Mono','Monaco','Menlo',monospace;
-            background: rgba(255,255,255,.6); padding: 8px 12px;
-            border-radius: 8px; margin: 8px 0; font-size: 13px;
-            word-break: break-all; color: #475569;
+            font-family: 'SF Mono','Monaco','Menlo', monospace;
+            background: rgba(15, 23, 42, 0.6);
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin: 6px 0;
+            font-size: 12px;
+            word-break: break-all;
+            color: #94a3b8;
         }
 
-        .hidden{display:none!important}
-
-        @keyframes fadeInUp { from{opacity:0; transform:translateY(40px)} to{opacity:1; transform:translateY(0)} }
-        @keyframes slideInUp { from{opacity:0; transform:translateY(20px)} to{opacity:1; transform:translateY(0)} }
-        @keyframes fadeIn{from{opacity:0} to{opacity:1}}
-        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.8}}
-
-        @media (max-width: 768px) {
-            .container { padding: 40px 20px; }
-            .logo { font-size: 48px; }
-            .app-logo { max-width: 120px; margin: 6px auto 18px auto; }
-            .subtitle { font-size: 20px; }
-            .mode-buttons { grid-template-columns: 1fr; gap: 16px; }
-            .mode-btn { padding: 24px 20px; font-size: 16px; }
-            .section { padding: 32px 24px; margin: 24px 0; }
-            .language-switcher { position: relative; top: auto; right: auto; margin-bottom: 40px; justify-self: center; }
+        .file-indicator {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            margin: 8px;
+            background: rgba(34, 197, 94, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #22c55e;
         }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: rgba(248,250,252,.5); }
-        ::-webkit-scrollbar-thumb { background: rgba(148,163,184,.4); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(148,163,184,.6); }
+
+        /* ============================================
+           FOLDER MODE
+           ============================================ */
+        .watcher-card {
+            background: #131d35;
+            border: 1px solid #1e3a5f;
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+        }
+        .watcher-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+        .watcher-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .watcher-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .watcher-status-badge.running {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #22c55e;
+        }
+        .watcher-status-badge.stopped {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+        .status-dot.green {
+            background: #22c55e;
+            box-shadow: 0 0 6px rgba(34, 197, 94, 0.5);
+        }
+        .status-dot.red {
+            background: #ef4444;
+            box-shadow: 0 0 6px rgba(239, 68, 68, 0.5);
+        }
+
+        .watcher-desc {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }
+        .watcher-paths {
+            font-size: 11px;
+            color: #475569;
+            font-family: 'SF Mono','Monaco','Menlo', monospace;
+            margin-bottom: 14px;
+            padding: 10px 14px;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 8px;
+            border: 1px solid rgba(30, 58, 95, 0.5);
+        }
+        .watcher-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        /* Play / Stop inline SVG icons */
+        .icon-play, .icon-stop {
+            width: 14px;
+            height: 14px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* ============================================
+           LICENSE PANEL
+           ============================================ */
+        .license-grid {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 8px 16px;
+            font-size: 14px;
+        }
+        .license-grid .lbl {
+            color: #64748b;
+            font-weight: 500;
+        }
+        .license-grid .val {
+            color: #e2e8f0;
+            font-weight: 600;
+        }
+        .license-grid .val.mono {
+            font-family: 'SF Mono','Monaco','Menlo', monospace;
+        }
+        .hw-id-box {
+            margin-top: 16px;
+            padding: 16px;
+            background: rgba(59, 139, 255, 0.06);
+            border: 1px solid rgba(59, 139, 255, 0.2);
+            border-radius: 10px;
+        }
+        .hw-id-box .hw-id-value {
+            font-family: 'SF Mono','Monaco','Menlo', monospace;
+            font-size: 18px;
+            color: #3b8bff;
+            font-weight: 700;
+            margin-top: 6px;
+        }
+        .hw-id-box .hw-id-hint {
+            font-size: 12px;
+            color: #475569;
+            margin-top: 4px;
+        }
+
+        .activation-box {
+            margin-top: 16px;
+            padding: 16px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid #1e3a5f;
+            border-radius: 10px;
+        }
+        .activation-box ol {
+            margin: 8px 0 0 20px;
+            color: #94a3b8;
+            line-height: 1.8;
+            font-size: 13px;
+        }
+        .activation-box code {
+            background: rgba(59, 139, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #3b8bff;
+        }
+
+        /* ============================================
+           UTILITY
+           ============================================ */
+        .hidden { display: none !important; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.3); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(100, 116, 139, 0.5); }
+
+        /* Bottom bar */
+        .bottom-bar {
+            padding: 10px 28px;
+            border-top: 1px solid #1e3a5f;
+            font-size: 11px;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #0d1528;
+        }
+        .bottom-bar .dot-green {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #22c55e;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">SKRYI</div>
 
-            <!-- Logo (fallback loader nastaví src tak, aby to fungovalo v rootu i v assets) -->
-            <img class="app-logo" id="appLogo" alt="SKRYI logo" />
-
-            <div class="subtitle">Kompletní řešení pro zpracování citlivých dokumentů</div>
+    <!-- ============================================
+         SIDEBAR
+         ============================================ -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img id="appLogo" alt="SKRYI" />
+            <span class="logo-text">SKRYI</span>
         </div>
 
-        <div class="mode-selector">
-            <h3>Vyberte režim práce</h3>
-            <div class="mode-buttons">
-                <button class="mode-btn" id="pdfMode">PDF → DOCX</button>
-                <button class="mode-btn active" id="anonymizeMode">Anonymizace</button>
-                <button class="mode-btn" id="deanonymizeMode">Deanonymizace</button>
-                <button class="mode-btn" id="folderMode">📁 Složkový režim</button>
-                <button class="mode-btn" id="licenseMode">🔐 Licence</button>
-            </div>
-        </div>
-
-        <!-- Stats bar -->
-        <div id="statsBar" style="display:flex; gap:24px; padding:12px 20px; margin-bottom:16px; background:rgba(15,23,42,0.4); border-radius:12px; border:1px solid rgba(255,255,255,0.06); font-size:13px; color:#94a3b8; flex-wrap:wrap;">
-            <span>Anonymizováno: <strong style="color:#e2e8f0" id="statAnon">0</strong> dok.</span>
-            <span>Osob nalezeno: <strong style="color:#e2e8f0" id="statPersons">0</strong></span>
-            <span>PDF převedeno: <strong style="color:#e2e8f0" id="statPdf">0</strong></span>
-            <span>z toho OCR: <strong style="color:#e2e8f0" id="statOcr">0</strong></span>
-            <span>Deanonymizováno: <strong style="color:#e2e8f0" id="statDeanon">0</strong></span>
-            <span style="margin-left:auto; font-size:11px; color:#64748b;" id="statMonth"></span>
-        </div>
-
-        <!-- Anonymization panel -->
-        <div id="anonymizationPanel">
-            <div class="section" style="--delay: 0.1s">
-                <h3>1. Výběr dokumentu k anonymizaci</h3>
-                <button class="btn" id="selectBtn">Procházet DOCX soubory</button>
-                <div id="fileInfo" class="file-info hidden">
-                    <div style="display:flex;align-items:center;gap:12px;">
-                        <span id="fileName"></span>
-                    </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <div class="nav-section-title">Zpracov&aacute;n&iacute;</div>
+                <div class="nav-item active" id="anonymizeMode">
+                    <span class="nav-icon">&#128196;</span>
+                    Nov&aacute; anonymizace
+                </div>
+                <div class="nav-item" id="pdfMode">
+                    <span class="nav-icon">&#128195;</span>
+                    PDF &rarr; DOCX
+                </div>
+                <div class="nav-item" id="deanonymizeMode">
+                    <span class="nav-icon">&#128194;</span>
+                    Deanonymizace
                 </div>
             </div>
 
-            <div class="section" style="--delay: 0.2s">
-                <h3>2. Anonymizace citlivých údajů</h3>
-                <button class="btn" id="anonymizeBtn" disabled>Spustit anonymizaci</button>
-                <div id="status" class="status hidden"></div>
-
-                <div id="progressLog" class="progress-log hidden">
-                    <div style="margin-bottom: 10px; color: #e2e8f0; font-weight: 600;">Průběh zpracování:</div>
-                    <div id="logContent"></div>
+            <div class="nav-section">
+                <div class="nav-section-title">Slo&#382;kov&yacute; re&#382;im</div>
+                <div class="nav-item" id="folderMode">
+                    <span class="nav-icon">&#128193;</span>
+                    Hromadn&eacute; zpracov&aacute;n&iacute;
                 </div>
+            </div>
 
-                <div id="resultsPanel" class="results-panel hidden">
-                    <h4>Výsledky anonymizace</h4>
+            <div class="nav-section">
+                <div class="nav-section-title">Spr&aacute;va</div>
+                <div class="nav-item" id="licenseMode">
+                    <span class="nav-icon">&#128274;</span>
+                    Licence
+                </div>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            SKRYI <span id="appVersionLabel">v3.0.0</span>
+        </div>
+    </aside>
+
+    <!-- ============================================
+         MAIN WRAPPER
+         ============================================ -->
+    <div class="main-wrapper">
+
+        <!-- Top bar -->
+        <header class="topbar">
+            <div class="topbar-status">
+                <span class="dot"></span>
+                Offline re&#382;im
+            </div>
+            <div class="topbar-status">
+                &#128274; GDPR
+            </div>
+            <div class="topbar-spacer"></div>
+            <div class="language-switcher">
+                <button class="lang-btn active" onclick="setLang('cz')">CZ</button>
+                <button class="lang-btn" onclick="setLang('en')">EN</button>
+            </div>
+        </header>
+
+        <!-- Scrollable content -->
+        <main class="main-content">
+
+            <!-- Stats row -->
+            <div class="stats-row" id="statsBar">
+                <div class="stat-card">
+                    <div class="stat-icon">&#128196;</div>
                     <div>
-                        <strong>Výstupní DOCX:</strong>
-                        <div class="file-path" id="outputPath"></div>
+                        <div class="stat-value" id="statAnon">0</div>
+                        <div class="stat-label">Anonymizov&aacute;no</div>
                     </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">&#128269;</div>
                     <div>
-                        <strong>TXT Mapa:</strong>
-                        <div class="file-path" id="mapTxtPath"></div>
-                    </div>
-                    <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
-                        <button class="btn secondary" id="openOutputBtn">Otevřít výsledek ve složce</button>
-                        <button class="btn secondary" id="openMapBtn">Otevřít TXT mapu ve složce</button>
+                        <div class="stat-value" id="statPersons">0</div>
+                        <div class="stat-label">Entit nalezeno</div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- PDF panel -->
-        <div id="pdfPanel" class="hidden">
-            <div class="section" style="--delay: 0.1s">
-                <h3>1. Výběr PDF souboru</h3>
-                <button class="btn" id="selectPdfBtn">Procházet PDF soubory</button>
-                <div id="pdfFileDisplay" class="file-display"></div>
-            </div>
-
-            <div class="section" style="--delay: 0.2s">
-                <h3>2. Konverze</h3>
-                <button class="btn btn-primary" id="convertPdfBtn" disabled>Převést PDF → DOCX</button>
-            </div>
-
-            <div class="section" style="--delay: 0.3s">
-                <h3>3. Výsledky konverze</h3>
-                <div id="pdfProgress" class="progress-log"></div>
-                <div id="pdfResults" class="results hidden">
-                    <div class="result-item">
-                        <span class="label">Převedený dokument:</span>
-                        <span class="value" id="pdfOutputPath"></span>
-                        <button class="btn-small" id="pdfShowFolder">Zobrazit ve složce</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Deanonymization panel -->
-        <div id="deanonymizationPanel" class="hidden">
-            <div class="section" style="--delay: 0.1s">
-                <h3>1. Výběr anonymizovaného dokumentu</h3>
-                <button class="btn" id="selectAnonBtn">Procházet anonymizované DOCX</button>
-                <div id="anonFileInfo" class="file-info hidden">
-                    <div style="display:flex;align-items:center;gap:12px;">
-                        <span id="anonFileName"></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section" style="--delay: 0.2s">
-                <h3>2. Výběr JSON mapy</h3>
-                <button class="btn" id="selectMapBtn" disabled>Procházet JSON mapy</button>
-                <div id="mapFileInfo" class="file-info hidden">
-                    <div style="display:flex;align-items:center;gap:12px;">
-                        <span id="mapFileName"></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section" style="--delay: 0.3s">
-                <h3>3. Deanonymizace dokumentu</h3>
-                <button class="btn" id="deanonymizeBtn" disabled>Spustit deanonymizaci</button>
-                <div id="deanonStatus" class="status hidden"></div>
-
-                <div id="deanonProgressLog" class="progress-log hidden">
-                    <div style="margin-bottom: 10px; color: #e2e8f0; font-weight: 600;">Průběh zpracování:</div>
-                    <div id="deanonLogContent"></div>
-                </div>
-
-                <div id="deanonResultsPanel" class="results-panel hidden">
-                    <h4>Výsledky deanonymizace</h4>
+                <div class="stat-card">
+                    <div class="stat-icon">&#128209;</div>
                     <div>
-                        <strong>Deanonymizovaný DOCX:</strong>
-                        <div class="file-path" id="deanonOutputPath"></div>
+                        <div class="stat-value" id="statPdf">0</div>
+                        <div class="stat-label">PDF p&#345;evedeno</div>
                     </div>
-                    <div style="margin-top:16px;">
-                        <button class="btn secondary" id="openDeanonOutputBtn">Otevřít výsledek ve složce</button>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">&#128065;</div>
+                    <div>
+                        <div class="stat-value" id="statOcr">0</div>
+                        <div class="stat-label">z toho OCR</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">&#128260;</div>
+                    <div>
+                        <div class="stat-value" id="statDeanon">0</div>
+                        <div class="stat-label">Deanonymizov&aacute;no</div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="stat-month" id="statMonth"></div>
 
-        <!-- License panel -->
-        <div id="licensePanel" class="hidden">
-            <div class="section" style="--delay: 0.1s">
-                <h3>🔐 Informace o licenci</h3>
-                <button class="btn" id="refreshLicenseBtn">Obnovit informace</button>
+            <!-- ============================================
+                 ANONYMIZATION PANEL
+                 ============================================ -->
+            <div id="anonymizationPanel">
+                <div class="panel-title">Nov&aacute; anonymizace</div>
 
-                <div id="licenseInfo" style="margin-top: 24px;">
-                    <div class="loading">Načítám informace o licenci...</div>
+                <div class="section">
+                    <h3><span class="step-num">1</span> V&yacute;b&#283;r dokumentu</h3>
+                    <button class="btn" id="selectBtn">Proch&aacute;zet DOCX soubory</button>
+                    <div id="fileInfo" class="file-info hidden">
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <span id="fileName"></span>
+                        </div>
+                    </div>
                 </div>
 
-                <div id="licenseDetails" class="hidden">
-                    <div class="file-info" style="margin-top: 24px;">
-                        <div style="margin-bottom: 16px;">
-                            <strong style="color: #1e293b;">Status:</strong>
-                            <span id="licenseStatus" style="margin-left: 8px; font-weight: 600;"></span>
+                <div class="section">
+                    <h3><span class="step-num">2</span> Anonymizace citliv&yacute;ch &uacute;daj&#367;</h3>
+                    <button class="btn" id="anonymizeBtn" disabled>Spustit anonymizaci</button>
+                    <div id="status" class="status hidden"></div>
+
+                    <div id="progressLog" class="progress-log hidden">
+                        <div style="margin-bottom: 8px; color: #e2e8f0; font-weight: 600;">Pr&#367;b&#283;h zpracov&aacute;n&iacute;:</div>
+                        <div id="logContent"></div>
+                    </div>
+
+                    <div id="resultsPanel" class="results-panel hidden">
+                        <h4>V&yacute;sledky anonymizace</h4>
+                        <div>
+                            <strong style="color:#94a3b8">V&yacute;stupn&iacute; DOCX:</strong>
+                            <div class="file-path" id="outputPath"></div>
                         </div>
-                        <div style="margin-bottom: 12px;">
-                            <strong style="color: #1e293b;">Zákazník:</strong>
-                            <span id="licenseCustomer" style="margin-left: 8px;"></span>
+                        <div>
+                            <strong style="color:#94a3b8">TXT Mapa:</strong>
+                            <div class="file-path" id="mapTxtPath"></div>
                         </div>
-                        <div style="margin-bottom: 12px;">
-                            <strong style="color: #1e293b;">Licenční klíč:</strong>
-                            <span id="licenseKey" style="margin-left: 8px; font-family: monospace;"></span>
+                        <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+                            <button class="btn secondary" id="openOutputBtn">Otev&#345;&iacute;t v&yacute;sledek ve slo&#382;ce</button>
+                            <button class="btn secondary" id="openMapBtn">Otev&#345;&iacute;t TXT mapu ve slo&#382;ce</button>
                         </div>
-                        <div style="margin-bottom: 12px;">
-                            <strong style="color: #1e293b;">Typ:</strong>
-                            <span id="licenseType" style="margin-left: 8px;"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 PDF PANEL
+                 ============================================ -->
+            <div id="pdfPanel" class="hidden">
+                <div class="panel-title">PDF &rarr; DOCX konverze</div>
+
+                <div class="section">
+                    <h3><span class="step-num">1</span> V&yacute;b&#283;r PDF souboru</h3>
+                    <button class="btn" id="selectPdfBtn">Proch&aacute;zet PDF soubory</button>
+                    <div id="pdfFileDisplay" class="file-display"></div>
+                </div>
+
+                <div class="section">
+                    <h3><span class="step-num">2</span> Konverze</h3>
+                    <button class="btn" id="convertPdfBtn" disabled>P&#345;ev&eacute;st PDF &rarr; DOCX</button>
+                </div>
+
+                <div class="section">
+                    <h3><span class="step-num">3</span> V&yacute;sledky konverze</h3>
+                    <div id="pdfProgress" class="progress-log"></div>
+                    <div id="pdfResults" class="results-panel hidden">
+                        <div class="result-item">
+                            <span style="color:#94a3b8">P&#345;eveden&yacute; dokument:</span>
+                            <span class="file-path" id="pdfOutputPath"></span>
+                            <button class="btn-small" id="pdfShowFolder" style="margin-top:8px">Zobrazit ve slo&#382;ce</button>
                         </div>
-                        <div style="margin-bottom: 12px;">
-                            <strong style="color: #1e293b;">Platnost do:</strong>
-                            <span id="licenseExpires" style="margin-left: 8px;"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 DEANONYMIZATION PANEL
+                 ============================================ -->
+            <div id="deanonymizationPanel" class="hidden">
+                <div class="panel-title">Deanonymizace</div>
+
+                <div class="section">
+                    <h3><span class="step-num">1</span> V&yacute;b&#283;r anonymizovan&eacute;ho dokumentu</h3>
+                    <button class="btn" id="selectAnonBtn">Proch&aacute;zet anonymizovan&eacute; DOCX</button>
+                    <div id="anonFileInfo" class="file-info hidden">
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <span id="anonFileName"></span>
                         </div>
-                        <div style="margin-bottom: 12px;">
-                            <strong style="color: #1e293b;">Zbývající dny:</strong>
-                            <span id="licenseDaysRemaining" style="margin-left: 8px; font-weight: 600;"></span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3><span class="step-num">2</span> V&yacute;b&#283;r JSON mapy</h3>
+                    <button class="btn" id="selectMapBtn" disabled>Proch&aacute;zet JSON mapy</button>
+                    <div id="mapFileInfo" class="file-info hidden">
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <span id="mapFileName"></span>
                         </div>
-                        <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e2e8f0;">
-                            <strong style="color: #1e293b;">Váš Hardware ID:</strong>
-                            <div id="licenseHwId" style="margin-top: 8px; font-family: monospace; font-size: 18px; color: #3b82f6; font-weight: 600;"></div>
-                            <div style="margin-top: 8px; font-size: 13px; color: #64748b;">
-                                (Tento ID potřebujete při objednávce licence)
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3><span class="step-num">3</span> Deanonymizace dokumentu</h3>
+                    <button class="btn" id="deanonymizeBtn" disabled>Spustit deanonymizaci</button>
+                    <div id="deanonStatus" class="status hidden"></div>
+
+                    <div id="deanonProgressLog" class="progress-log hidden">
+                        <div style="margin-bottom: 8px; color: #e2e8f0; font-weight: 600;">Pr&#367;b&#283;h zpracov&aacute;n&iacute;:</div>
+                        <div id="deanonLogContent"></div>
+                    </div>
+
+                    <div id="deanonResultsPanel" class="results-panel hidden">
+                        <h4>V&yacute;sledky deanonymizace</h4>
+                        <div>
+                            <strong style="color:#94a3b8">Deanonymizovan&yacute; DOCX:</strong>
+                            <div class="file-path" id="deanonOutputPath"></div>
+                        </div>
+                        <div style="margin-top:14px;">
+                            <button class="btn secondary" id="openDeanonOutputBtn">Otev&#345;&iacute;t v&yacute;sledek ve slo&#382;ce</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 LICENSE PANEL
+                 ============================================ -->
+            <div id="licensePanel" class="hidden">
+                <div class="panel-title">&#128274; Informace o licenci</div>
+
+                <div class="section">
+                    <button class="btn" id="refreshLicenseBtn" style="margin-bottom:16px">Obnovit informace</button>
+
+                    <div id="licenseInfo" style="margin-top: 8px;">
+                        <div style="color:#64748b">Na&#269;&iacute;t&aacute;m informace o licenci...</div>
+                    </div>
+
+                    <div id="licenseDetails" class="hidden" style="margin-top:16px">
+                        <div class="license-grid">
+                            <span class="lbl">Status:</span>
+                            <span class="val" id="licenseStatus"></span>
+
+                            <span class="lbl">Z&aacute;kazn&iacute;k:</span>
+                            <span class="val" id="licenseCustomer"></span>
+
+                            <span class="lbl">Licen&#269;n&iacute; kl&iacute;&#269;:</span>
+                            <span class="val mono" id="licenseKey"></span>
+
+                            <span class="lbl">Typ:</span>
+                            <span class="val" id="licenseType"></span>
+
+                            <span class="lbl">Platnost do:</span>
+                            <span class="val" id="licenseExpires"></span>
+
+                            <span class="lbl">Zb&yacute;vaj&iacute;c&iacute; dny:</span>
+                            <span class="val" id="licenseDaysRemaining"></span>
+                        </div>
+
+                        <div class="hw-id-box">
+                            <div style="color:#94a3b8;font-weight:600;font-size:13px">V&aacute;&#353; Hardware ID:</div>
+                            <div class="hw-id-value" id="licenseHwId"></div>
+                            <div class="hw-id-hint">(Tento ID pot&#345;ebujete p&#345;i objedn&aacute;vce licence)</div>
+                        </div>
+                    </div>
+
+                    <div id="licenseError" class="hidden" style="margin-top:16px">
+                        <div style="padding:16px;background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);border-radius:10px;">
+                            <div style="color:#ef4444;font-weight:600;margin-bottom:10px">
+                                &#9888;&#65039; Licence nen&iacute; platn&aacute;
+                            </div>
+                            <div id="licenseErrorMessage" style="color:#94a3b8;margin-bottom:12px"></div>
+
+                            <div class="hw-id-box">
+                                <div style="color:#94a3b8;font-weight:600;font-size:13px">V&aacute;&#353; Hardware ID:</div>
+                                <div class="hw-id-value" id="licenseErrorHwId"></div>
+                            </div>
+
+                            <div class="activation-box">
+                                <strong style="color:#e2e8f0">Pro aktivaci:</strong>
+                                <ol>
+                                    <li>Po&#353;lete Hardware ID prodejci</li>
+                                    <li>Obdr&#382;&iacute;te soubor <code>license.lic</code></li>
+                                    <li>Um&iacute;st&#283;te ho do slo&#382;ky s aplikac&iacute;</li>
+                                    <li>Restartujte aplikaci</li>
+                                </ol>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div id="licenseError" class="hidden">
-                    <div class="file-info" style="margin-top: 24px; border-left: 4px solid #ef4444;">
-                        <div style="color: #dc2626; font-weight: 600; margin-bottom: 12px;">
-                            ⚠️ Licence není platná
-                        </div>
-                        <div id="licenseErrorMessage" style="margin-bottom: 16px;"></div>
-                        <div style="margin-top: 16px;">
-                            <strong>Váš Hardware ID:</strong>
-                            <div id="licenseErrorHwId" style="margin-top: 8px; font-family: monospace; font-size: 16px; color: #3b82f6; font-weight: 600;"></div>
-                        </div>
-                        <div style="margin-top: 20px; padding: 16px; background: #f8fafc; border-radius: 8px;">
-                            <strong style="color: #1e293b;">Pro aktivaci:</strong>
-                            <ol style="margin: 8px 0 0 20px; color: #475569; line-height: 1.6;">
-                                <li>Pošlete Hardware ID prodejci</li>
-                                <li>Obdržíte soubor <code>license.lic</code></li>
-                                <li>Umístěte ho do složky s aplikací</li>
-                                <li>Restartujte aplikaci</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
 
-        <!-- Folder Mode panel -->
-        <div id="folderPanel" class="hidden">
-            <!-- 01_ANONYMIZACE -->
-            <div class="section" style="--delay: 0.1s">
-                <h3>📁 01_ANONYMIZACE</h3>
-                <p style="margin-bottom: 16px; color: #475569; line-height: 1.6;">
-                    Vložte dokument (DOCX/PDF) do složky <strong>IN</strong> → automaticky se anonymizuje do <strong>OUT</strong>
-                </p>
-                <div id="anonFolderStatus" class="file-info" style="margin-bottom: 16px;">
-                    <div style="margin-bottom: 8px;">
-                        <strong style="color: #1e293b;">Status:</strong>
-                        <span id="anonWatcherStatus" style="margin-left: 8px; font-weight: 600;">Kontroluji...</span>
+            <!-- ============================================
+                 FOLDER MODE PANEL
+                 ============================================ -->
+            <div id="folderPanel" class="hidden">
+                <div class="panel-title">&#128193; Hromadn&eacute; zpracov&aacute;n&iacute; (Slo&#382;kov&yacute; re&#382;im)</div>
+
+                <!-- 01_ANONYMIZACE -->
+                <div class="watcher-card" id="anonFolderStatus">
+                    <div class="watcher-header">
+                        <div class="watcher-title">
+                            &#128196; 01_ANONYMIZACE
+                        </div>
+                        <div class="watcher-status-badge stopped" id="anonStatusBadge">
+                            <span class="status-dot red"></span>
+                            <span id="anonWatcherStatus">Kontroluji...</span>
+                        </div>
                     </div>
-                    <div style="font-size: 12px; color: #64748b;">
+                    <div class="watcher-desc">
+                        Vlo&#382;te dokument (DOCX/PDF) do slo&#382;ky <strong style="color:#e2e8f0">IN</strong> &rarr; automaticky se anonymizuje do <strong style="color:#e2e8f0">OUT</strong>
+                    </div>
+                    <div class="watcher-paths">
                         IN: <span id="anonInPath">...</span><br>
                         OUT: <span id="anonOutPath">...</span>
                     </div>
-                </div>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                    <button class="btn" id="openAnonInBtn">📂 IN</button>
-                    <button class="btn" id="openAnonOutBtn">📂 OUT</button>
-                    <button class="btn" id="startAnonWatcherBtn">▶️ Spustit</button>
-                    <button class="btn secondary" id="stopAnonWatcherBtn">⏹️ Zastavit</button>
-                </div>
-            </div>
-
-            <!-- 02_DEANONYMIZACE -->
-            <div class="section" style="--delay: 0.2s">
-                <h3>📁 02_DEANONYMIZACE</h3>
-                <p style="margin-bottom: 16px; color: #475569; line-height: 1.6;">
-                    Vložte anonymizovaný DOCX + JSON mapu do <strong>IN</strong> → automaticky se deanonymizuje do <strong>OUT</strong>
-                </p>
-                <div id="deanonFolderStatus" class="file-info" style="margin-bottom: 16px;">
-                    <div style="margin-bottom: 8px;">
-                        <strong style="color: #1e293b;">Status:</strong>
-                        <span id="deanonWatcherStatus" style="margin-left: 8px; font-weight: 600;">Kontroluji...</span>
+                    <div class="watcher-actions">
+                        <button class="btn secondary" id="openAnonInBtn">&#128194; IN</button>
+                        <button class="btn secondary" id="openAnonOutBtn">&#128194; OUT</button>
+                        <button class="btn play" id="startAnonWatcherBtn">
+                            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" /></svg>
+                            Spustit
+                        </button>
+                        <button class="btn stop" id="stopAnonWatcherBtn">
+                            <svg class="icon-stop" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" /></svg>
+                            Zastavit
+                        </button>
                     </div>
-                    <div style="font-size: 12px; color: #64748b;">
+                </div>
+
+                <!-- 02_DEANONYMIZACE -->
+                <div class="watcher-card" id="deanonFolderStatus">
+                    <div class="watcher-header">
+                        <div class="watcher-title">
+                            &#128194; 02_DEANONYMIZACE
+                        </div>
+                        <div class="watcher-status-badge stopped" id="deanonStatusBadge">
+                            <span class="status-dot red"></span>
+                            <span id="deanonWatcherStatus">Kontroluji...</span>
+                        </div>
+                    </div>
+                    <div class="watcher-desc">
+                        Vlo&#382;te anonymizovan&yacute; DOCX + JSON mapu do <strong style="color:#e2e8f0">IN</strong> &rarr; automaticky se deanonymizuje do <strong style="color:#e2e8f0">OUT</strong>
+                    </div>
+                    <div class="watcher-paths">
                         IN: <span id="deanonInPath">...</span><br>
                         OUT: <span id="deanonOutPath">...</span>
                     </div>
-                </div>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                    <button class="btn" id="openDeanonInBtn">📂 IN</button>
-                    <button class="btn" id="openDeanonOutBtn">📂 OUT</button>
-                    <button class="btn" id="startDeanonWatcherBtn">▶️ Spustit</button>
-                    <button class="btn secondary" id="stopDeanonWatcherBtn">⏹️ Zastavit</button>
-                </div>
-            </div>
-
-            <!-- 03_KONVERZE_PDF -->
-            <div class="section" style="--delay: 0.3s">
-                <h3>📁 03_KONVERZE_PDF</h3>
-                <p style="margin-bottom: 16px; color: #475569; line-height: 1.6;">
-                    Vložte PDF do <strong>IN</strong> → automaticky se převede na DOCX do <strong>OUT</strong>
-                </p>
-                <div id="pdfFolderStatus" class="file-info" style="margin-bottom: 16px;">
-                    <div style="margin-bottom: 8px;">
-                        <strong style="color: #1e293b;">Status:</strong>
-                        <span id="pdfWatcherStatus" style="margin-left: 8px; font-weight: 600;">Kontroluji...</span>
+                    <div class="watcher-actions">
+                        <button class="btn secondary" id="openDeanonInBtn">&#128194; IN</button>
+                        <button class="btn secondary" id="openDeanonOutBtn">&#128194; OUT</button>
+                        <button class="btn play" id="startDeanonWatcherBtn">
+                            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" /></svg>
+                            Spustit
+                        </button>
+                        <button class="btn stop" id="stopDeanonWatcherBtn">
+                            <svg class="icon-stop" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" /></svg>
+                            Zastavit
+                        </button>
                     </div>
-                    <div style="font-size: 12px; color: #64748b;">
+                </div>
+
+                <!-- 03_KONVERZE_PDF -->
+                <div class="watcher-card" id="pdfFolderStatus">
+                    <div class="watcher-header">
+                        <div class="watcher-title">
+                            &#128209; 03_KONVERZE_PDF
+                        </div>
+                        <div class="watcher-status-badge stopped" id="pdfStatusBadge">
+                            <span class="status-dot red"></span>
+                            <span id="pdfWatcherStatus">Kontroluji...</span>
+                        </div>
+                    </div>
+                    <div class="watcher-desc">
+                        Vlo&#382;te PDF do <strong style="color:#e2e8f0">IN</strong> &rarr; automaticky se p&#345;evede na DOCX do <strong style="color:#e2e8f0">OUT</strong>
+                    </div>
+                    <div class="watcher-paths">
                         IN: <span id="pdfInPath">...</span><br>
                         OUT: <span id="pdfOutPath">...</span>
                     </div>
+                    <div class="watcher-actions">
+                        <button class="btn secondary" id="openPdfInBtn">&#128194; IN</button>
+                        <button class="btn secondary" id="openPdfOutBtn">&#128194; OUT</button>
+                        <button class="btn play" id="startPdfWatcherBtn">
+                            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" /></svg>
+                            Spustit
+                        </button>
+                        <button class="btn stop" id="stopPdfWatcherBtn">
+                            <svg class="icon-stop" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" /></svg>
+                            Zastavit
+                        </button>
+                    </div>
                 </div>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                    <button class="btn" id="openPdfInBtn">📂 IN</button>
-                    <button class="btn" id="openPdfOutBtn">📂 OUT</button>
-                    <button class="btn" id="startPdfWatcherBtn">▶️ Spustit</button>
-                    <button class="btn secondary" id="stopPdfWatcherBtn">⏹️ Zastavit</button>
+
+                <!-- Spolecne ovladani -->
+                <div class="section">
+                    <h3>&#9881;&#65039; Spole&#269;n&eacute; ovl&aacute;d&aacute;n&iacute;</h3>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+                        <button class="btn secondary" id="openSkryiFolderBtn">&#128193; Otev&#345;&iacute;t SKRYI slo&#382;ku</button>
+                        <button class="btn secondary" id="openErrorFolderBtn">&#128193; Otev&#345;&iacute;t ERROR slo&#382;ku</button>
+                    </div>
+                    <div style="padding-top:14px;border-top:1px solid #1e3a5f;">
+                        <div style="margin-bottom:10px;color:#64748b;font-size:13px">
+                            Automatick&eacute; spu&#353;t&#283;n&iacute; p&#345;i startu Windows:
+                        </div>
+                        <div style="display:flex;gap:8px;flex-wrap:wrap">
+                            <button class="btn play" id="enableAutostartBtn">Povolit autostart</button>
+                            <button class="btn stop" id="disableAutostartBtn">Zak&aacute;zat autostart</button>
+                        </div>
+                        <div id="autostartStatus" style="margin-top:10px;color:#64748b;font-size:13px"></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Společné ovládání -->
-            <div class="section" style="--delay: 0.4s">
-                <h3>⚙️ Společné ovládání</h3>
-                <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px;">
-                    <button class="btn secondary" id="openSkryiFolderBtn">📁 Otevřít SKRYI složku</button>
-                    <button class="btn secondary" id="openErrorFolderBtn">📁 Otevřít ERROR složku</button>
-                </div>
-                <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #e2e8f0;">
-                    <p style="margin-bottom: 12px; color: #475569; font-size: 14px;">
-                        Automatické spuštění při startu Windows:
-                    </p>
-                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                        <button class="btn" id="enableAutostartBtn">✅ Povolit autostart</button>
-                        <button class="btn secondary" id="disableAutostartBtn">❌ Zakázat autostart</button>
-                    </div>
-                    <div id="autostartStatus" style="margin-top: 12px; color: #64748b; font-size: 14px;"></div>
-                </div>
-            </div>
+        </main>
+
+        <!-- Bottom bar -->
+        <div class="bottom-bar">
+            <span class="dot-green"></span>
+            Offline &middot; V&#353;echna data zpracov&aacute;na lok&aacute;ln&#283; &middot; GDPR compliant
         </div>
     </div>
 
     <script>
-        // --- Robust logo loader (root + assets + build variants) ---
+        // --- Robust logo loader ---
         (function () {
             const img = document.getElementById("appLogo");
             if (!img) return;
-
-            // funguje v dev i ve většině buildů (asar/app)
             const candidates = [
                 "assets/logo.png",
                 "./assets/logo.png",
                 "logo.png",
                 "./logo.png"
             ];
-
             let idx = 0;
             img.onerror = () => {
                 idx++;
                 if (idx >= candidates.length) {
-                    console.warn("Logo not found in any candidate path:", candidates);
+                    console.warn("Logo not found:", candidates);
                     img.style.display = "none";
                     return;
                 }
                 img.src = candidates[idx];
             };
-
             img.src = candidates[0];
         })();
 
@@ -542,17 +1138,13 @@
         // PROGRESS LOGGING
         function addProgressLog(message, type = 'info') {
             console.log(`[${type.toUpperCase()}] ${message}`);
-
             const logContent = document.getElementById('logContent');
             const logLine = document.createElement('div');
             logLine.className = `log-line ${type}`;
-
             const timestamp = new Date().toLocaleTimeString();
             logLine.textContent = `[${timestamp}] ${message}`;
-
             logContent.appendChild(logLine);
             logContent.scrollTop = logContent.scrollHeight;
-
             document.getElementById('progressLog').classList.remove('hidden');
         }
 
@@ -561,20 +1153,15 @@
             document.getElementById('progressLog').classList.add('hidden');
         }
 
-        // DEANONYMIZATION PROGRESS LOGGING
         function addDeanonProgressLog(message, type = 'info') {
             console.log(`[DEANON ${type.toUpperCase()}] ${message}`);
-
             const logContent = document.getElementById('deanonLogContent');
             const logLine = document.createElement('div');
             logLine.className = `log-line ${type}`;
-
             const timestamp = new Date().toLocaleTimeString();
             logLine.textContent = `[${timestamp}] ${message}`;
-
             logContent.appendChild(logLine);
             logContent.scrollTop = logContent.scrollHeight;
-
             document.getElementById('deanonProgressLog').classList.remove('hidden');
         }
 
@@ -585,14 +1172,11 @@
 
         function addPdfProgressLog(message, type = 'info') {
             console.log(`[PDF ${type.toUpperCase()}] ${message}`);
-
             const logContent = document.getElementById('pdfProgress');
             const logLine = document.createElement('div');
             logLine.className = `log-line ${type}`;
-
             const timestamp = new Date().toLocaleTimeString();
             logLine.textContent = `[${timestamp}] ${message}`;
-
             logContent.appendChild(logLine);
             logContent.scrollTop = logContent.scrollHeight;
         }
@@ -602,144 +1186,114 @@
         }
 
         // MODE SWITCHING
-        function switchMode(mode){
+        function switchMode(mode) {
             console.log(`Switching to mode: ${mode}`);
             currentMode = mode;
 
-            document.querySelectorAll('.mode-btn').forEach(b=>b.classList.remove('active'));
-            document.querySelectorAll('[id$="Panel"]').forEach(p=>p.classList.add('hidden'));
+            document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('[id$="Panel"]').forEach(p => p.classList.add('hidden'));
 
-            if(mode === 'pdf'){
+            if (mode === 'pdf') {
                 document.getElementById('pdfMode').classList.add('active');
-                setTimeout(()=>document.getElementById('pdfPanel').classList.remove('hidden'), 100);
-            } else if(mode === 'anonymize'){
+                setTimeout(() => document.getElementById('pdfPanel').classList.remove('hidden'), 50);
+            } else if (mode === 'anonymize') {
                 document.getElementById('anonymizeMode').classList.add('active');
-                setTimeout(()=>document.getElementById('anonymizationPanel').classList.remove('hidden'), 100);
-            } else if(mode === 'deanonymize'){
+                setTimeout(() => document.getElementById('anonymizationPanel').classList.remove('hidden'), 50);
+            } else if (mode === 'deanonymize') {
                 document.getElementById('deanonymizeMode').classList.add('active');
-                setTimeout(()=>document.getElementById('deanonymizationPanel').classList.remove('hidden'), 100);
-            } else if(mode === 'folder'){
+                setTimeout(() => document.getElementById('deanonymizationPanel').classList.remove('hidden'), 50);
+            } else if (mode === 'folder') {
                 document.getElementById('folderMode').classList.add('active');
-                setTimeout(()=>{
+                setTimeout(() => {
                     document.getElementById('folderPanel').classList.remove('hidden');
                     loadFolderStatus();
-                }, 100);
-            } else if(mode === 'license'){
+                }, 50);
+            } else if (mode === 'license') {
                 document.getElementById('licenseMode').classList.add('active');
-                setTimeout(()=>{
+                setTimeout(() => {
                     document.getElementById('licensePanel').classList.remove('hidden');
                     loadLicenseInfo();
-                }, 100);
+                }, 50);
             }
         }
 
-        // FILE OPERATIONS - OPRAVENO pro jediné volání
-        async function selectFile(){
+        // FILE OPERATIONS
+        async function selectFile() {
             console.log('selectFile() called');
-
             if (!ipcRenderer) {
                 console.error('ipcRenderer not available');
-                addProgressLog('IPC není dostupný', 'error');
+                addProgressLog('IPC nen\u00ed dostupn\u00fd', 'error');
                 return;
             }
-
             try {
                 clearProgressLog();
-                addProgressLog('Otevírám dialog pro výběr souboru...', 'info');
-
+                addProgressLog('Otev\u00edr\u00e1m dialog pro v\u00fdb\u011br souboru...', 'info');
                 const filePath = await ipcRenderer.invoke('select-file');
                 console.log('File selection result:', filePath);
-
-                if(filePath){
+                if (filePath) {
                     selectedFile = filePath;
                     const fileName = filePath.split(/[\\\/]/).pop();
                     document.getElementById('fileName').textContent = fileName;
                     document.getElementById('fileInfo').classList.remove('hidden');
                     document.getElementById('anonymizeBtn').disabled = false;
-
                     document.getElementById('resultsPanel').classList.add('hidden');
                     lastOutputFile = null;
                     lastMapTxtFile = null;
-
-                    addProgressLog(`Vybrán soubor: ${fileName}`, 'success');
+                    addProgressLog(`Vybr\u00e1n soubor: ${fileName}`, 'success');
                 } else {
                     console.log('No file selected');
-                    addProgressLog('Výběr souboru zrušen', 'working');
+                    addProgressLog('V\u00fdb\u011br souboru zru\u0161en', 'working');
                 }
             } catch (error) {
                 console.error('selectFile error:', error);
-                addProgressLog(`Chyba při výběru souboru: ${error.message}`, 'error');
+                addProgressLog(`Chyba p\u0159i v\u00fdb\u011bru souboru: ${error.message}`, 'error');
             }
         }
 
-        async function anonymizeDocument(){
+        async function anonymizeDocument() {
             console.log('anonymizeDocument() called');
-
-            if (!selectedFile) {
-                addProgressLog('Není vybrán žádný soubor', 'error');
-                return;
-            }
-
-            if (!ipcRenderer) {
-                addProgressLog('IPC není dostupný', 'error');
-                return;
-            }
-
+            if (!selectedFile) { addProgressLog('Nen\u00ed vybr\u00e1n \u017e\u00e1dn\u00fd soubor', 'error'); return; }
+            if (!ipcRenderer) { addProgressLog('IPC nen\u00ed dostupn\u00fd', 'error'); return; }
             try {
                 const statusEl = document.getElementById('status');
-                statusEl.textContent = 'Anonymizace probíhá...';
+                statusEl.textContent = 'Anonymizace prob\u00edh\u00e1...';
                 statusEl.className = 'status working';
                 statusEl.classList.remove('hidden');
-
                 document.getElementById('resultsPanel').classList.add('hidden');
                 clearProgressLog();
                 lastOutputFile = null;
                 lastMapTxtFile = null;
-
-                addProgressLog('Spouštím anonymizaci...', 'working');
-                addProgressLog(`Zpracovávám soubor: ${selectedFile.split(/[\\\/]/).pop()}`, 'info');
-
+                addProgressLog('Spoušt\u00edm anonymizaci...', 'working');
+                addProgressLog(`Zpracov\u00e1v\u00e1m soubor: ${selectedFile.split(/[\\\/]/).pop()}`, 'info');
                 const result = await ipcRenderer.invoke('anonymize-document', selectedFile);
                 console.log('Anonymization result:', result);
-
-                if(result && result.success){
+                if (result && result.success) {
                     lastOutputFile = result.outputFile;
                     lastMapTxtFile = result.mapTxt;
-
-                    statusEl.textContent = 'Anonymizace úspěšně dokončena!';
+                    statusEl.textContent = 'Anonymizace \u00fasp\u011b\u0161n\u011b dokon\u010dena!';
                     statusEl.className = 'status success';
-
-                    addProgressLog('Anonymizace úspěšně dokončena!', 'success');
-                    addProgressLog(`Výstup: ${lastOutputFile}`, 'success');
+                    addProgressLog('Anonymizace \u00fasp\u011b\u0161n\u011b dokon\u010dena!', 'success');
+                    addProgressLog(`V\u00fdstup: ${lastOutputFile}`, 'success');
                     addProgressLog(`TXT mapa: ${lastMapTxtFile}`, 'success');
-
                     document.getElementById('outputPath').textContent = lastOutputFile || '';
                     document.getElementById('mapTxtPath').textContent = lastMapTxtFile || '';
                     document.getElementById('resultsPanel').classList.remove('hidden');
-                    loadStats(); // Refresh stats after anonymization
-
+                    loadStats();
                     document.getElementById('openOutputBtn').onclick = async () => {
-                        if(lastOutputFile) {
-                            await ipcRenderer.invoke('show-folder', lastOutputFile);
-                        }
+                        if (lastOutputFile) await ipcRenderer.invoke('show-folder', lastOutputFile);
                     };
                     document.getElementById('openMapBtn').onclick = async () => {
-                        if(lastMapTxtFile) {
-                            await ipcRenderer.invoke('show-folder', lastMapTxtFile);
-                        }
+                        if (lastMapTxtFile) await ipcRenderer.invoke('show-folder', lastMapTxtFile);
                     };
                 } else {
                     const errorMsg = (result && result.error) ? result.error : 'Anonymizace selhala';
                     statusEl.textContent = `Chyba: ${errorMsg}`;
                     statusEl.className = 'status error';
                     addProgressLog(`Chyba: ${errorMsg}`, 'error');
-
-                    console.error('Anonymization failed:', errorMsg);
                 }
             } catch (error) {
                 console.error('Critical anonymization error:', error);
-                addProgressLog(`Kritická chyba: ${error.message}`, 'error');
-
+                addProgressLog(`Kritick\u00e1 chyba: ${error.message}`, 'error');
                 const statusEl = document.getElementById('status');
                 statusEl.textContent = `Chyba: ${error.message}`;
                 statusEl.className = 'status error';
@@ -749,145 +1303,87 @@
         // DEANONYMIZATION FILE OPERATIONS
         async function selectAnonFile() {
             console.log('selectAnonFile() called');
-
-            if (!ipcRenderer) {
-                console.error('ipcRenderer not available');
-                addDeanonProgressLog('IPC není dostupný', 'error');
-                return;
-            }
-
+            if (!ipcRenderer) { addDeanonProgressLog('IPC nen\u00ed dostupn\u00fd', 'error'); return; }
             try {
                 clearDeanonProgressLog();
-                addDeanonProgressLog('Otevírám dialog pro výběr anonymizovaného souboru...', 'info');
-
+                addDeanonProgressLog('Otev\u00edr\u00e1m dialog pro v\u00fdb\u011br anonymizovan\u00e9ho souboru...', 'info');
                 const filePath = await ipcRenderer.invoke('select-anon-file');
-                console.log('Anon file selection result:', filePath);
-
                 if (filePath) {
                     selectedAnonFile = filePath;
                     const fileName = filePath.split(/[\\\/]/).pop();
                     document.getElementById('anonFileName').textContent = fileName;
                     document.getElementById('anonFileInfo').classList.remove('hidden');
                     document.getElementById('selectMapBtn').disabled = false;
-
-                    // Try to auto-detect map file
-                    const dir = filePath.substring(0, filePath.lastIndexOf(/[\\\/]/));
-                    const base = fileName.replace(/_anon\.docx$/i, '');
-                    const mapPath = `${dir}${filePath.includes('\\') ? '\\' : '/'}${base}_map.json`;
-
-                    console.log('Trying to auto-detect map:', mapPath);
-                    // We'll check if it exists when user clicks deanonymize
-
                     document.getElementById('deanonResultsPanel').classList.add('hidden');
                     lastDeanonOutputFile = null;
-
-                    addDeanonProgressLog(`Vybrán soubor: ${fileName}`, 'success');
+                    addDeanonProgressLog(`Vybr\u00e1n soubor: ${fileName}`, 'success');
                 } else {
-                    console.log('No file selected');
-                    addDeanonProgressLog('Výběr souboru zrušen', 'working');
+                    addDeanonProgressLog('V\u00fdb\u011br souboru zru\u0161en', 'working');
                 }
             } catch (error) {
-                console.error('selectAnonFile error:', error);
-                addDeanonProgressLog(`Chyba při výběru souboru: ${error.message}`, 'error');
+                addDeanonProgressLog(`Chyba p\u0159i v\u00fdb\u011bru souboru: ${error.message}`, 'error');
             }
         }
 
         async function selectMapFile() {
             console.log('selectMapFile() called');
-
-            if (!ipcRenderer) {
-                console.error('ipcRenderer not available');
-                addDeanonProgressLog('IPC není dostupný', 'error');
-                return;
-            }
-
+            if (!ipcRenderer) { addDeanonProgressLog('IPC nen\u00ed dostupn\u00fd', 'error'); return; }
             try {
-                addDeanonProgressLog('Otevírám dialog pro výběr JSON mapy...', 'info');
-
+                addDeanonProgressLog('Otev\u00edr\u00e1m dialog pro v\u00fdb\u011br JSON mapy...', 'info');
                 const filePath = await ipcRenderer.invoke('select-map-file');
-                console.log('Map file selection result:', filePath);
-
                 if (filePath) {
                     selectedMapFile = filePath;
                     const fileName = filePath.split(/[\\\/]/).pop();
                     document.getElementById('mapFileName').textContent = fileName;
                     document.getElementById('mapFileInfo').classList.remove('hidden');
                     document.getElementById('deanonymizeBtn').disabled = false;
-
                     document.getElementById('deanonResultsPanel').classList.add('hidden');
                     lastDeanonOutputFile = null;
-
-                    addDeanonProgressLog(`Vybrána mapa: ${fileName}`, 'success');
+                    addDeanonProgressLog(`Vybr\u00e1na mapa: ${fileName}`, 'success');
                 } else {
-                    console.log('No map file selected');
-                    addDeanonProgressLog('Výběr mapy zrušen', 'working');
+                    addDeanonProgressLog('V\u00fdb\u011br mapy zru\u0161en', 'working');
                 }
             } catch (error) {
-                console.error('selectMapFile error:', error);
-                addDeanonProgressLog(`Chyba při výběru mapy: ${error.message}`, 'error');
+                addDeanonProgressLog(`Chyba p\u0159i v\u00fdb\u011bru mapy: ${error.message}`, 'error');
             }
         }
 
         async function deanonymizeDocument() {
             console.log('deanonymizeDocument() called');
-
-            if (!selectedAnonFile || !selectedMapFile) {
-                addDeanonProgressLog('Nejsou vybrány všechny potřebné soubory', 'error');
-                return;
-            }
-
-            if (!ipcRenderer) {
-                addDeanonProgressLog('IPC není dostupný', 'error');
-                return;
-            }
-
+            if (!selectedAnonFile || !selectedMapFile) { addDeanonProgressLog('Nejsou vybr\u00e1ny v\u0161echny pot\u0159ebn\u00e9 soubory', 'error'); return; }
+            if (!ipcRenderer) { addDeanonProgressLog('IPC nen\u00ed dostupn\u00fd', 'error'); return; }
             try {
                 const statusEl = document.getElementById('deanonStatus');
-                statusEl.textContent = 'Deanonymizace probíhá...';
+                statusEl.textContent = 'Deanonymizace prob\u00edh\u00e1...';
                 statusEl.className = 'status working';
                 statusEl.classList.remove('hidden');
-
                 document.getElementById('deanonResultsPanel').classList.add('hidden');
                 clearDeanonProgressLog();
                 lastDeanonOutputFile = null;
-
-                addDeanonProgressLog('Spouštím deanonymizaci...', 'working');
-                addDeanonProgressLog(`Anonymizovaný dokument: ${selectedAnonFile.split(/[\\\/]/).pop()}`, 'info');
+                addDeanonProgressLog('Spoušt\u00edm deanonymizaci...', 'working');
+                addDeanonProgressLog(`Anonymizovan\u00fd dokument: ${selectedAnonFile.split(/[\\\/]/).pop()}`, 'info');
                 addDeanonProgressLog(`JSON mapa: ${selectedMapFile.split(/[\\\/]/).pop()}`, 'info');
-
                 const result = await ipcRenderer.invoke('deanonymize-document', selectedAnonFile, selectedMapFile);
-                console.log('Deanonymization result:', result);
-
                 if (result && result.success) {
                     lastDeanonOutputFile = result.outputFile;
-
-                    statusEl.textContent = 'Deanonymizace úspěšně dokončena!';
+                    statusEl.textContent = 'Deanonymizace \u00fasp\u011b\u0161n\u011b dokon\u010dena!';
                     statusEl.className = 'status success';
-
-                    addDeanonProgressLog('Deanonymizace úspěšně dokončena!', 'success');
-                    loadStats(); // Refresh stats after deanonymization
-                    addDeanonProgressLog(`Výstup: ${lastDeanonOutputFile}`, 'success');
-
+                    addDeanonProgressLog('Deanonymizace \u00fasp\u011b\u0161n\u011b dokon\u010dena!', 'success');
+                    loadStats();
+                    addDeanonProgressLog(`V\u00fdstup: ${lastDeanonOutputFile}`, 'success');
                     document.getElementById('deanonOutputPath').textContent = lastDeanonOutputFile || '';
                     document.getElementById('deanonResultsPanel').classList.remove('hidden');
-
                     document.getElementById('openDeanonOutputBtn').onclick = async () => {
-                        if (lastDeanonOutputFile) {
-                            await ipcRenderer.invoke('show-folder', lastDeanonOutputFile);
-                        }
+                        if (lastDeanonOutputFile) await ipcRenderer.invoke('show-folder', lastDeanonOutputFile);
                     };
                 } else {
                     const errorMsg = (result && result.error) ? result.error : 'Deanonymizace selhala';
                     statusEl.textContent = `Chyba: ${errorMsg}`;
                     statusEl.className = 'status error';
                     addDeanonProgressLog(`Chyba: ${errorMsg}`, 'error');
-
-                    console.error('Deanonymization failed:', errorMsg);
                 }
             } catch (error) {
-                console.error('Critical deanonymization error:', error);
-                addDeanonProgressLog(`Kritická chyba: ${error.message}`, 'error');
-
+                addDeanonProgressLog(`Kritick\u00e1 chyba: ${error.message}`, 'error');
                 const statusEl = document.getElementById('deanonStatus');
                 statusEl.textContent = `Chyba: ${error.message}`;
                 statusEl.className = 'status error';
@@ -897,81 +1393,52 @@
         // PDF CONVERSION FUNCTIONS
         async function selectPdfFile() {
             console.log('selectPdfFile() called');
-
-            if (!ipcRenderer) {
-                addPdfProgressLog('IPC není dostupný', 'error');
-                return;
-            }
-
+            if (!ipcRenderer) { addPdfProgressLog('IPC nen\u00ed dostupn\u00fd', 'error'); return; }
             try {
                 const filePath = await ipcRenderer.invoke('select-pdf-file');
-                console.log('Selected PDF file:', filePath);
-
                 if (filePath) {
                     selectedPdfFile = filePath;
                     const fileName = filePath.split(/[\\\/]/).pop();
-
                     document.getElementById('pdfFileDisplay').innerHTML = `
                         <div class="file-info">
-                            <span class="file-icon">📄</span>
-                            <span class="file-name">${fileName}</span>
-                            <span class="file-path">${filePath}</span>
+                            <span style="margin-right:8px">\ud83d\udcc4</span>
+                            <span>${fileName}</span>
                         </div>
                     `;
-
                     document.getElementById('convertPdfBtn').disabled = false;
-                    addPdfProgressLog(`Vybrán soubor: ${fileName}`, 'success');
+                    addPdfProgressLog(`Vybr\u00e1n soubor: ${fileName}`, 'success');
                 }
             } catch (error) {
-                console.error('Error selecting PDF file:', error);
-                addPdfProgressLog(`Chyba při výběru souboru: ${error.message}`, 'error');
+                addPdfProgressLog(`Chyba p\u0159i v\u00fdb\u011bru souboru: ${error.message}`, 'error');
             }
         }
 
         async function convertPdfToDocx() {
             console.log('convertPdfToDocx() called');
-
-            if (!selectedPdfFile) {
-                addPdfProgressLog('Není vybrán PDF soubor', 'error');
-                return;
-            }
-
-            if (!ipcRenderer) {
-                addPdfProgressLog('IPC není dostupný', 'error');
-                return;
-            }
-
+            if (!selectedPdfFile) { addPdfProgressLog('Nen\u00ed vybr\u00e1n PDF soubor', 'error'); return; }
+            if (!ipcRenderer) { addPdfProgressLog('IPC nen\u00ed dostupn\u00fd', 'error'); return; }
             try {
                 document.getElementById('convertPdfBtn').disabled = true;
                 document.getElementById('pdfResults').classList.add('hidden');
                 clearPdfProgressLog();
                 lastPdfOutput = null;
-
-                addPdfProgressLog('Spouštím konverzi PDF → DOCX...', 'working');
+                addPdfProgressLog('Spoušt\u00edm konverzi PDF \u2192 DOCX...', 'working');
                 addPdfProgressLog(`PDF soubor: ${selectedPdfFile.split(/[\\\/]/).pop()}`, 'info');
-
                 const result = await ipcRenderer.invoke('convert-pdf-to-docx', selectedPdfFile);
-                console.log('PDF conversion result:', result);
-
                 if (result && result.success) {
                     lastPdfOutput = result.outputFile;
-
                     addPdfProgressLog('', 'info');
-                    addPdfProgressLog('✅ KONVERZE DOKONČENA ÚSPĚŠNĚ!', 'success');
-                    loadStats(); // Refresh stats after PDF conversion
-                    addPdfProgressLog(`📄 Výstupní DOCX: ${lastPdfOutput}`, 'success');
-                    addPdfProgressLog('', 'info');
-
+                    addPdfProgressLog('\u2705 KONVERZE DOKON\u010cENA \u00dasp\u011b\u0160N\u011a!', 'success');
+                    loadStats();
+                    addPdfProgressLog(`\ud83d\udcc4 V\u00fdstupn\u00ed DOCX: ${lastPdfOutput}`, 'success');
                     document.getElementById('pdfOutputPath').textContent = lastPdfOutput || '';
                     document.getElementById('pdfResults').classList.remove('hidden');
                 } else {
                     const errorMsg = (result && result.error) ? result.error : 'Konverze selhala';
                     addPdfProgressLog(`Chyba: ${errorMsg}`, 'error');
-                    console.error('PDF conversion failed:', errorMsg);
                 }
             } catch (error) {
-                console.error('Critical PDF conversion error:', error);
-                addPdfProgressLog(`Kritická chyba: ${error.message}`, 'error');
+                addPdfProgressLog(`Kritick\u00e1 chyba: ${error.message}`, 'error');
             } finally {
                 document.getElementById('convertPdfBtn').disabled = false;
             }
@@ -980,41 +1447,31 @@
         // FOLDER MODE FUNCTIONS
         async function loadFolderStatus() {
             console.log('loadFolderStatus() called');
-
             if (!ipcRenderer) {
                 ['anonWatcherStatus', 'deanonWatcherStatus', 'pdfWatcherStatus'].forEach(id => {
                     const el = document.getElementById(id);
-                    if (el) { el.textContent = 'IPC nedostupné'; el.style.color = '#ef4444'; }
+                    if (el) { el.textContent = 'IPC nedostupn\u00e9'; }
                 });
                 return;
             }
-
             try {
                 const status = await ipcRenderer.invoke('get-folder-status');
                 console.log('Folder status:', status);
-
-                // 01_ANONYMIZACE
                 document.getElementById('anonInPath').textContent = status.anonInFolder || 'N/A';
                 document.getElementById('anonOutPath').textContent = status.anonOutFolder || 'N/A';
-                updateWatcherStatusUI('anonWatcherStatus', status.anonWatcherRunning);
-
-                // 02_DEANONYMIZACE
+                updateWatcherStatusUI('anon', status.anonWatcherRunning);
                 document.getElementById('deanonInPath').textContent = status.deanonInFolder || 'N/A';
                 document.getElementById('deanonOutPath').textContent = status.deanonOutFolder || 'N/A';
-                updateWatcherStatusUI('deanonWatcherStatus', status.deanonWatcherRunning);
-
-                // 03_KONVERZE_PDF
+                updateWatcherStatusUI('deanon', status.deanonWatcherRunning);
                 document.getElementById('pdfInPath').textContent = status.pdfInFolder || 'N/A';
                 document.getElementById('pdfOutPath').textContent = status.pdfOutFolder || 'N/A';
-                updateWatcherStatusUI('pdfWatcherStatus', status.pdfWatcherRunning);
-
-                // Autostart status
+                updateWatcherStatusUI('pdf', status.pdfWatcherRunning);
                 const autostartEl = document.getElementById('autostartStatus');
                 if (status.autostartEnabled) {
-                    autostartEl.textContent = '✅ Autostart je povolen';
-                    autostartEl.style.color = '#10b981';
+                    autostartEl.textContent = '\u2705 Autostart je povolen';
+                    autostartEl.style.color = '#22c55e';
                 } else {
-                    autostartEl.textContent = '❌ Autostart je zakázán';
+                    autostartEl.textContent = '\u274c Autostart je zak\u00e1z\u00e1n';
                     autostartEl.style.color = '#64748b';
                 }
             } catch (error) {
@@ -1022,39 +1479,42 @@
             }
         }
 
-        function updateWatcherStatusUI(elementId, isRunning) {
-            const el = document.getElementById(elementId);
-            if (!el) return;
+        function updateWatcherStatusUI(prefix, isRunning) {
+            const statusEl = document.getElementById(prefix + 'WatcherStatus');
+            const badgeEl = document.getElementById(prefix + 'StatusBadge');
+            if (!statusEl) return;
+
             if (isRunning) {
-                el.textContent = '✅ Běží';
-                el.style.color = '#10b981';
+                statusEl.textContent = 'B\u011b\u017e\u00ed';
+                if (badgeEl) {
+                    badgeEl.className = 'watcher-status-badge running';
+                    const dot = badgeEl.querySelector('.status-dot');
+                    if (dot) { dot.className = 'status-dot green'; }
+                }
             } else {
-                el.textContent = '⏹️ Zastaveno';
-                el.style.color = '#f59e0b';
+                statusEl.textContent = 'Zastaveno';
+                if (badgeEl) {
+                    badgeEl.className = 'watcher-status-badge stopped';
+                    const dot = badgeEl.querySelector('.status-dot');
+                    if (dot) { dot.className = 'status-dot red'; }
+                }
             }
         }
 
-        // Folder open functions
         async function openFolder(folderType) {
-            if (ipcRenderer) {
-                await ipcRenderer.invoke('open-folder', folderType);
-            }
+            if (ipcRenderer) await ipcRenderer.invoke('open-folder', folderType);
         }
-
         async function openSkryiFolder() {
-            if (ipcRenderer) {
-                await ipcRenderer.invoke('open-skryi-folder');
-            }
+            if (ipcRenderer) await ipcRenderer.invoke('open-skryi-folder');
         }
 
-        // Watcher control functions
         async function startWatcher(watcherType) {
             if (ipcRenderer) {
                 const result = await ipcRenderer.invoke('start-watcher', watcherType);
                 if (result.success) {
-                    updateWatcherStatusUI(watcherType + 'WatcherStatus', true);
+                    updateWatcherStatusUI(watcherType, true);
                 } else {
-                    alert('Chyba při spuštění služby: ' + result.error);
+                    alert('Chyba p\u0159i spu\u0161t\u011bn\u00ed slu\u017eby: ' + result.error);
                 }
             }
         }
@@ -1063,7 +1523,7 @@
             if (ipcRenderer) {
                 const result = await ipcRenderer.invoke('stop-watcher', watcherType);
                 if (result.success) {
-                    updateWatcherStatusUI(watcherType + 'WatcherStatus', false);
+                    updateWatcherStatusUI(watcherType, false);
                 }
             }
         }
@@ -1072,8 +1532,8 @@
             if (ipcRenderer) {
                 const result = await ipcRenderer.invoke('enable-autostart');
                 if (result.success) {
-                    document.getElementById('autostartStatus').textContent = '✅ Autostart je povolen';
-                    document.getElementById('autostartStatus').style.color = '#10b981';
+                    document.getElementById('autostartStatus').textContent = '\u2705 Autostart je povolen';
+                    document.getElementById('autostartStatus').style.color = '#22c55e';
                 } else {
                     alert('Chyba: ' + result.error);
                 }
@@ -1084,7 +1544,7 @@
             if (ipcRenderer) {
                 const result = await ipcRenderer.invoke('disable-autostart');
                 if (result.success) {
-                    document.getElementById('autostartStatus').textContent = '❌ Autostart je zakázán';
+                    document.getElementById('autostartStatus').textContent = '\u274c Autostart je zak\u00e1z\u00e1n';
                     document.getElementById('autostartStatus').style.color = '#64748b';
                 }
             }
@@ -1093,96 +1553,77 @@
         // LICENSE FUNCTIONS
         async function loadLicenseInfo() {
             console.log('loadLicenseInfo() called');
-
             if (!ipcRenderer) {
                 document.getElementById('licenseInfo').innerHTML =
-                    '<div class="file-info" style="border-left: 4px solid #ef4444;">' +
-                    '⚠️ IPC není dostupný - spusťte aplikaci přes Electron' +
-                    '</div>';
+                    '<div style="color:#ef4444">\u26a0\ufe0f IPC nen\u00ed dostupn\u00fd</div>';
                 return;
             }
-
-            // Show loading
             document.getElementById('licenseInfo').innerHTML =
-                '<div class="loading">Načítám informace o licenci...</div>';
+                '<div style="color:#64748b">Na\u010d\u00edt\u00e1m informace o licenci...</div>';
             document.getElementById('licenseDetails').classList.add('hidden');
             document.getElementById('licenseError').classList.add('hidden');
-
             try {
                 const licenseData = await ipcRenderer.invoke('get-license-info');
                 console.log('License data:', licenseData);
-
                 document.getElementById('licenseInfo').innerHTML = '';
-
                 if (licenseData.valid) {
-                    // Show license details
                     const info = licenseData.license_info;
-
-                    document.getElementById('licenseStatus').textContent = '✅ PLATNÁ';
-                    document.getElementById('licenseStatus').style.color = '#10b981';
-
+                    document.getElementById('licenseStatus').textContent = '\u2705 PLATN\u00c1';
+                    document.getElementById('licenseStatus').style.color = '#22c55e';
                     document.getElementById('licenseCustomer').textContent = info.customer_name;
                     document.getElementById('licenseKey').textContent = info.license_key;
                     document.getElementById('licenseType').textContent = info.type;
                     document.getElementById('licenseExpires').textContent = info.expires_at;
-
                     const daysRemaining = info.days_remaining;
-                    document.getElementById('licenseDaysRemaining').textContent = daysRemaining + ' dní';
+                    document.getElementById('licenseDaysRemaining').textContent = daysRemaining + ' dn\u00ed';
                     document.getElementById('licenseDaysRemaining').style.color =
-                        daysRemaining > 30 ? '#10b981' : daysRemaining > 7 ? '#f59e0b' : '#ef4444';
-
+                        daysRemaining > 30 ? '#22c55e' : daysRemaining > 7 ? '#f59e0b' : '#ef4444';
                     document.getElementById('licenseHwId').textContent = licenseData.hw_id;
-
                     document.getElementById('licenseDetails').classList.remove('hidden');
                 } else {
-                    // Show error
                     document.getElementById('licenseErrorMessage').textContent = licenseData.message;
                     document.getElementById('licenseErrorHwId').textContent = licenseData.hw_id || 'N/A';
                     document.getElementById('licenseError').classList.remove('hidden');
                 }
-
             } catch (error) {
                 console.error('Error loading license info:', error);
                 document.getElementById('licenseInfo').innerHTML =
-                    '<div class="file-info" style="border-left: 4px solid #ef4444;">' +
-                    `⚠️ Chyba při načítání: ${error.message}` +
-                    '</div>';
+                    `<div style="color:#ef4444">\u26a0\ufe0f Chyba p\u0159i na\u010d\u00edt\u00e1n\u00ed: ${error.message}</div>`;
             }
+        }
+
+        // LANG (placeholder)
+        function setLang(lang) {
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
         }
 
         // INITIALIZATION
         document.addEventListener('DOMContentLoaded', () => {
             console.log('DOM loaded, initializing application...');
 
-            // Test IPC connection
             if (typeof require !== 'undefined') {
-                console.log('require is available');
                 try {
                     const electron = require('electron');
                     ipcRenderer = electron.ipcRenderer;
                     console.log('ipcRenderer successfully imported');
-
                     ipcRenderer.invoke('get-app-version').then(version => {
                         console.log('IPC test successful, app version:', version);
-                        addProgressLog(`Aplikace připravena (v${version})`, 'success');
+                        document.getElementById('appVersionLabel').textContent = `v${version}`;
+                        addProgressLog(`Aplikace p\u0159ipravena (v${version})`, 'success');
                     }).catch(err => {
                         console.error('IPC test failed:', err);
-                        addProgressLog('IPC test selhání', 'error');
                     });
                 } catch (error) {
                     console.error('Error importing ipcRenderer:', error);
-                    addProgressLog(`IPC import chyba: ${error.message}`, 'error');
                 }
             } else {
-                console.error('require not available - not in Electron context?');
-                addProgressLog('Aplikace není spuštěna v Electron prostředí', 'error');
+                console.error('require not available');
             }
 
             switchMode('anonymize');
 
-            console.log('Setting up event listeners...');
-
-            // Mode switching
+            // Mode switching - sidebar nav
             document.getElementById('pdfMode').addEventListener('click', () => switchMode('pdf'));
             document.getElementById('anonymizeMode').addEventListener('click', () => switchMode('anonymize'));
             document.getElementById('deanonymizeMode').addEventListener('click', () => switchMode('deanonymize'));
@@ -1213,60 +1654,34 @@
             document.getElementById('enableAutostartBtn').addEventListener('click', enableAutostart);
             document.getElementById('disableAutostartBtn').addEventListener('click', disableAutostart);
 
-            // Select docx
+            // Anonymization
             const selectBtn = document.getElementById('selectBtn');
-            if (selectBtn) {
-                selectBtn.addEventListener('click', selectFile);
-            } else {
-                console.error('CRITICAL: selectBtn element not found!');
-                addProgressLog('KRITICKÁ CHYBA: selectBtn element nenalezen', 'error');
-            }
-
-            // Anonymize
+            if (selectBtn) selectBtn.addEventListener('click', selectFile);
             const anonymizeBtn = document.getElementById('anonymizeBtn');
-            if (anonymizeBtn) {
-                anonymizeBtn.addEventListener('click', anonymizeDocument);
-            }
+            if (anonymizeBtn) anonymizeBtn.addEventListener('click', anonymizeDocument);
 
-            // Deanonymize buttons
+            // Deanonymization
             const selectAnonBtn = document.getElementById('selectAnonBtn');
-            if (selectAnonBtn) {
-                selectAnonBtn.addEventListener('click', selectAnonFile);
-            }
-
+            if (selectAnonBtn) selectAnonBtn.addEventListener('click', selectAnonFile);
             const selectMapBtn = document.getElementById('selectMapBtn');
-            if (selectMapBtn) {
-                selectMapBtn.addEventListener('click', selectMapFile);
-            }
-
+            if (selectMapBtn) selectMapBtn.addEventListener('click', selectMapFile);
             const deanonymizeBtn = document.getElementById('deanonymizeBtn');
-            if (deanonymizeBtn) {
-                deanonymizeBtn.addEventListener('click', deanonymizeDocument);
-            }
+            if (deanonymizeBtn) deanonymizeBtn.addEventListener('click', deanonymizeDocument);
 
-            // PDF conversion buttons
+            // PDF conversion
             const selectPdfBtn = document.getElementById('selectPdfBtn');
-            if (selectPdfBtn) {
-                selectPdfBtn.addEventListener('click', selectPdfFile);
-            }
-
+            if (selectPdfBtn) selectPdfBtn.addEventListener('click', selectPdfFile);
             const convertPdfBtn = document.getElementById('convertPdfBtn');
-            if (convertPdfBtn) {
-                convertPdfBtn.addEventListener('click', convertPdfToDocx);
-            }
+            if (convertPdfBtn) convertPdfBtn.addEventListener('click', convertPdfToDocx);
 
-            // License buttons
+            // License
             const refreshLicenseBtn = document.getElementById('refreshLicenseBtn');
-            if (refreshLicenseBtn) {
-                refreshLicenseBtn.addEventListener('click', loadLicenseInfo);
-            }
+            if (refreshLicenseBtn) refreshLicenseBtn.addEventListener('click', loadLicenseInfo);
 
             const pdfShowFolder = document.getElementById('pdfShowFolder');
             if (pdfShowFolder) {
                 pdfShowFolder.addEventListener('click', () => {
-                    if (lastPdfOutput) {
-                        ipcRenderer.invoke('show-folder', lastPdfOutput);
-                    }
+                    if (lastPdfOutput) ipcRenderer.invoke('show-folder', lastPdfOutput);
                 });
             }
 
@@ -1274,20 +1689,16 @@
             if (ipcRenderer) {
                 ipcRenderer.on('progress-update', (event, message) => {
                     if (!message || typeof message !== 'string') return;
-
                     const msg = message.trim();
                     if (!msg) return;
-
                     let type = 'info';
-                    if (msg.includes('úspěšně') || msg.includes('dokončena') || msg.includes('dokončen') || msg.includes('SUCCESS') || msg.includes('✓') || msg.includes('✅') || msg.includes('převedeno') || msg.includes('převedeny')) {
+                    if (msg.includes('\u00fasp\u011b\u0161n\u011b') || msg.includes('dokon\u010dena') || msg.includes('dokon\u010den') || msg.includes('SUCCESS') || msg.includes('\u2713') || msg.includes('\u2705') || msg.includes('p\u0159evedeno') || msg.includes('p\u0159evedeny')) {
                         type = 'success';
-                    } else if (msg.includes('ERROR') || msg.includes('Chyba') || msg.includes('chyba') || msg.includes('✗')) {
+                    } else if (msg.includes('ERROR') || msg.includes('Chyba') || msg.includes('chyba') || msg.includes('\u2717')) {
                         type = 'error';
-                    } else if (msg.includes('Zpracovávám') || msg.includes('probíhá') || msg.includes('Spouštím')) {
+                    } else if (msg.includes('Zpracov\u00e1v\u00e1m') || msg.includes('prob\u00edh\u00e1') || msg.includes('Spoušt\u00edm')) {
                         type = 'working';
                     }
-
-                    // Route to appropriate log based on current mode
                     if (currentMode === 'deanonymize') {
                         addDeanonProgressLog(msg, type);
                     } else if (currentMode === 'pdf') {
@@ -1298,7 +1709,7 @@
                 });
             }
 
-            addProgressLog('Frontend inicializován', 'success');
+            addProgressLog('Frontend inicializov\u00e1n', 'success');
             loadStats();
         });
 
@@ -1320,7 +1731,7 @@
                     if (m.anonymized) parts.push(`${m.anonymized} anon.`);
                     if (m.pdf_converted) parts.push(`${m.pdf_converted} PDF`);
                     if (m.deanonymized) parts.push(`${m.deanonymized} deanon.`);
-                    document.getElementById('statMonth').textContent = parts.length ? `Tento mesic: ${parts.join(', ')}` : '';
+                    document.getElementById('statMonth').textContent = parts.length ? `Tento m\u011bs\u00edc: ${parts.join(', ')}` : '';
                 }
             } catch(e) { console.log('Stats load error:', e); }
         }
@@ -1328,7 +1739,6 @@
         // GLOBAL ERROR HANDLING
         window.addEventListener('error', (event) => {
             console.error('Global JavaScript error:', event.error);
-            addProgressLog(`JavaScript chyba: ${event.error.message}`, 'error');
         });
 
         console.log('Script initialization complete');
