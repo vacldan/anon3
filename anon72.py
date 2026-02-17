@@ -1427,16 +1427,16 @@ ADDRESS_RE = re.compile(
                     # PSČ město
                     r'\d{3}\s?\d{2}'
                     r'[ \t]+'
-                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
+                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
                     r'(?:[ \t]+\d{1,2})?'
                 r'|'
                     # město PSČ
-                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
+                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
                     r'[ \t]+'
                     r'\d{3}\s?\d{2}'
                 r'|'
                     # jen město
-                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
+                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
                     r'(?:[ \t]+\d{1,2})?'
                 r')'
             r')?'
@@ -1452,16 +1452,16 @@ ADDRESS_RE = re.compile(
                 # PSČ město
                 r'\d{3}\s?\d{2}'
                 r'[ \t]+'
-                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
+                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
                 r'(?:[ \t]+\d{1,2})?'
             r'|'
                 # město PSČ
-                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
+                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
                 r'[ \t]+'
                 r'\d{3}\s?\d{2}'
             r'|'
                 # jen město (BEZ PSČ, ale město MUSÍ být!)
-                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
+                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
                 r'(?:[ \t]+\d{1,2})?'
             r')'
         r')'
