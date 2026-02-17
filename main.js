@@ -997,12 +997,23 @@ ipcMain.handle("convert-pdf-to-docx", async (evt, pdfPath) => {
 
 // Handler for selecting PDF file
 // ----------------------- STATS -----------------------
-const STATS_FILE = path.join(__dirname, "skryi_stats.json");
+function getStatsFile() {
+  // V produkci: AppData (zapisovatelné), ve vývoji: __dirname
+  if (app.isPackaged) {
+    const userData = app.getPath('userData');
+    if (!fs.existsSync(userData)) {
+      fs.mkdirSync(userData, { recursive: true });
+    }
+    return path.join(userData, "skryi_stats.json");
+  }
+  return path.join(__dirname, "skryi_stats.json");
+}
 
 function readStats() {
   try {
-    if (fs.existsSync(STATS_FILE)) {
-      return JSON.parse(fs.readFileSync(STATS_FILE, "utf8"));
+    const statsFile = getStatsFile();
+    if (fs.existsSync(statsFile)) {
+      return JSON.parse(fs.readFileSync(statsFile, "utf8"));
     }
   } catch (e) { /* ignore */ }
   return {
@@ -1014,7 +1025,9 @@ function readStats() {
 
 function saveStats(stats) {
   try {
-    fs.writeFileSync(STATS_FILE, JSON.stringify(stats, null, 2), "utf8");
+    const statsFile = getStatsFile();
+    fs.writeFileSync(statsFile, JSON.stringify(stats, null, 2), "utf8");
+    console.log(`[STATS] Saved to: ${statsFile}`);
   } catch (e) { console.log("[STATS] Write error:", e.message); }
 }
 
