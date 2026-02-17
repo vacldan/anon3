@@ -81,13 +81,6 @@
       "cz_names.v1.json",
       "assets/**/*"
     ],
-    "extraFiles": [
-      {
-        "from": ".",
-        "to": ".",
-        "filter": ["license.lic"]
-      }
-    ],
     "win": {
       "target": "nsis",
       "sign": null,
