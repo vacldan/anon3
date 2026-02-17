@@ -1530,7 +1530,7 @@ DIC_RE = re.compile(
 # Regex má 2 capture groups - první pro context match, druhý pro standalone
 BIRTH_ID_RE = re.compile(
     r'(?:'
-    r'(?:RČ|Rodné\s+číslo|r\.?\s?č\.?|nar\.|narozen[aáý]?|Narození)\s*:?\s*(\d{6}/?\d{3,4})|'  # S kontextem (CAPTURE GROUP 1)
+    r'(?:RČ|Rodné\s+číslo|r\.?\s?č\.?|nar\.|narozen[aáý]?|[Nn]arození|[Dd]atum\s+narození).{0,30}?(\d{6}/?\d{3,4})|'  # S kontextem - povolí text mezi (CAPTURE GROUP 1)
     r'(?<!FÚ-)(?<!KS-)(?<!VS-)(?<!čj-)(?<!\d)(\d{6}/\d{3,4})(?!\d)'  # Bez kontextu, ale ne po FÚ-/KS-/VS- (CAPTURE GROUP 2)
     r')',
     re.IGNORECASE
