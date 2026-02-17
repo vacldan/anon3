@@ -349,18 +349,21 @@ async function checkLicense() {
 
 // Inline script pro získání HW ID (s PowerShell fallbackem pro Windows 11 bez WMIC)
 const HW_ID_SCRIPT = `
-import hashlib, uuid, subprocess, platform
+import hashlib, uuid, subprocess, platform, sys
+
+# Skrytí konzolových oken sub-procesů na Windows
+_cf = {'creationflags': 0x08000000} if sys.platform == 'win32' else {}
 
 def get_cpu():
     try:
-        r = subprocess.check_output('wmic cpu get ProcessorId', shell=True, stderr=subprocess.DEVNULL)
+        r = subprocess.check_output('wmic cpu get ProcessorId', shell=True, stderr=subprocess.DEVNULL, **_cf)
         v = r.decode().split('\\n')[1].strip()
         if v and v != 'ProcessorId': return v
     except: pass
     try:
         r = subprocess.check_output(['powershell', '-NoProfile', '-Command',
             'Get-CimInstance -ClassName Win32_Processor | Select-Object -ExpandProperty ProcessorId'],
-            shell=False, stderr=subprocess.DEVNULL)
+            shell=False, stderr=subprocess.DEVNULL, **_cf)
         v = r.decode().strip()
         if v: return v
     except: pass
@@ -368,14 +371,14 @@ def get_cpu():
 
 def get_disk():
     try:
-        r = subprocess.check_output('wmic diskdrive get SerialNumber', shell=True, stderr=subprocess.DEVNULL)
+        r = subprocess.check_output('wmic diskdrive get SerialNumber', shell=True, stderr=subprocess.DEVNULL, **_cf)
         lines = [l.strip() for l in r.decode().split('\\n') if l.strip() and l.strip() != 'SerialNumber']
         if lines: return lines[0]
     except: pass
     try:
         r = subprocess.check_output(['powershell', '-NoProfile', '-Command',
             '(Get-CimInstance -ClassName Win32_DiskDrive | Select-Object -First 1).SerialNumber'],
-            shell=False, stderr=subprocess.DEVNULL)
+            shell=False, stderr=subprocess.DEVNULL, **_cf)
         v = r.decode().strip()
         if v: return v
     except: pass

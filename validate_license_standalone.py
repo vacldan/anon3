@@ -15,6 +15,11 @@ import os
 from datetime import datetime
 from pathlib import Path
 
+# Skrytí konzolových oken sub-procesů na Windows
+_SUBPROCESS_KWARGS = {}
+if platform.system() == "Windows":
+    _SUBPROCESS_KWARGS['creationflags'] = 0x08000000  # CREATE_NO_WINDOW
+
 
 # ==================== MASTER SECRET ====================
 MASTER_SECRET = "NixMinds_Secure_2026_!_8k9Pq2LzWvRt5XyN_Anonymizer_Secret_Key_99"
@@ -25,7 +30,7 @@ def get_cpu_id():
     if platform.system() == "Windows":
         # Zkus WMIC (starší Windows)
         try:
-            result = subprocess.check_output("wmic cpu get ProcessorId", shell=True, stderr=subprocess.DEVNULL)
+            result = subprocess.check_output("wmic cpu get ProcessorId", shell=True, stderr=subprocess.DEVNULL, **_SUBPROCESS_KWARGS)
             val = result.decode().split('\n')[1].strip()
             if val and val != 'ProcessorId':
                 return val
@@ -36,7 +41,7 @@ def get_cpu_id():
             result = subprocess.check_output(
                 ['powershell', '-NoProfile', '-Command',
                  'Get-CimInstance -ClassName Win32_Processor | Select-Object -ExpandProperty ProcessorId'],
-                shell=False, stderr=subprocess.DEVNULL
+                shell=False, stderr=subprocess.DEVNULL, **_SUBPROCESS_KWARGS
             )
             val = result.decode().strip()
             if val:
@@ -66,7 +71,7 @@ def get_disk_serial():
     if platform.system() == "Windows":
         # Zkus WMIC (starší Windows)
         try:
-            result = subprocess.check_output("wmic diskdrive get SerialNumber", shell=True, stderr=subprocess.DEVNULL)
+            result = subprocess.check_output("wmic diskdrive get SerialNumber", shell=True, stderr=subprocess.DEVNULL, **_SUBPROCESS_KWARGS)
             lines = [l.strip() for l in result.decode().split('\n') if l.strip() and l.strip() != 'SerialNumber']
             if lines and lines[0]:
                 return lines[0]
@@ -77,7 +82,7 @@ def get_disk_serial():
             result = subprocess.check_output(
                 ['powershell', '-NoProfile', '-Command',
                  '(Get-CimInstance -ClassName Win32_DiskDrive | Select-Object -First 1).SerialNumber'],
-                shell=False, stderr=subprocess.DEVNULL
+                shell=False, stderr=subprocess.DEVNULL, **_SUBPROCESS_KWARGS
             )
             val = result.decode().strip()
             if val:
@@ -116,7 +121,7 @@ def get_all_hardware_ids():
     if platform.system() == "Windows":
         # WMIC
         try:
-            result = subprocess.check_output("wmic cpu get ProcessorId", shell=True, stderr=subprocess.DEVNULL)
+            result = subprocess.check_output("wmic cpu get ProcessorId", shell=True, stderr=subprocess.DEVNULL, **_SUBPROCESS_KWARGS)
             val = result.decode().split('\n')[1].strip()
             if val and val != 'ProcessorId':
                 cpu_variants.append(val)
@@ -127,7 +132,7 @@ def get_all_hardware_ids():
             result = subprocess.check_output(
                 ['powershell', '-NoProfile', '-Command',
                  'Get-CimInstance -ClassName Win32_Processor | Select-Object -ExpandProperty ProcessorId'],
-                shell=False, stderr=subprocess.DEVNULL
+                shell=False, stderr=subprocess.DEVNULL, **_SUBPROCESS_KWARGS
             )
             val = result.decode().strip()
             if val and val not in cpu_variants:
@@ -144,7 +149,7 @@ def get_all_hardware_ids():
     if platform.system() == "Windows":
         # WMIC
         try:
-            result = subprocess.check_output("wmic diskdrive get SerialNumber", shell=True, stderr=subprocess.DEVNULL)
+            result = subprocess.check_output("wmic diskdrive get SerialNumber", shell=True, stderr=subprocess.DEVNULL, **_SUBPROCESS_KWARGS)
             lines = [l.strip() for l in result.decode().split('\n') if l.strip() and l.strip() != 'SerialNumber']
             if lines and lines[0]:
                 disk_variants.append(lines[0])
@@ -155,7 +160,7 @@ def get_all_hardware_ids():
             result = subprocess.check_output(
                 ['powershell', '-NoProfile', '-Command',
                  '(Get-CimInstance -ClassName Win32_DiskDrive | Select-Object -First 1).SerialNumber'],
-                shell=False, stderr=subprocess.DEVNULL
+                shell=False, stderr=subprocess.DEVNULL, **_SUBPROCESS_KWARGS
             )
             val = result.decode().strip()
             if val and val not in disk_variants:
