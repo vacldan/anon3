@@ -2196,6 +2196,8 @@ class Anonymizer:
             'karlovy', 'vary', 'karlova', 'var',  # Karlovy Vary city
             'hradec', 'hradci', 'králové',  # Hradec Králové city
             # Organizace/instituce klíčová slova
+            'ombudsman', 'ombudsmana', 'ombudsmanem', 'ombudsmanovi', 'ombudsmanů',
+            'finanční', 'finančního', 'finančním', 'arbitr', 'arbitra',
             'česká', 'spořitelna', 'komerční', 'banka', 'raiffeisen',
             'credit', 'bank', 'financial', 'global', 'senior',
             'junior', 'lead', 'chief', 'head', 'director',
@@ -2803,6 +2805,8 @@ class Anonymizer:
                 'university', 'univerzita', 'fakulta', 'klinika', 'nemocnice',
                 'centrum', 'ústav', 'institute', 'academy', 'akademie',
                 'motol', 'bulovka', 'thomayer', 'center',
+                'ombudsman', 'ombudsmana', 'ombudsmanem', 'ombudsmanovi', 'ombudsmanů',
+                'finanční', 'finančního', 'finančním', 'arbitr', 'arbitra',
                 # Produkty/Software
                 'kaspersky', 'endpoint', 'latitude', 'archer', 'classic',
                 'windows', 'linux', 'android', 'ios', 'office', 'excel',
