@@ -2721,7 +2721,182 @@ class Anonymizer:
             'paní inženýrka', 'paní inženýrky', 'paní inženýrce', 'paní inženýrkou',
             # Další
             'care', 'plus', 'minus', 'service', 'services',
-            'group', 'company', 'corp', 'ltd', 'gmbh', 'inc'
+            'group', 'company', 'corp', 'ltd', 'gmbh', 'inc',
+            # ===================================================================
+            # TITULY A AKADEMICKÉ ROLE
+            # ===================================================================
+            'bakalář', 'bakaláře', 'bakaláři', 'bakalářem', 'bakaláři', 'bakalářů', 'bakalářům', 'bakalářích',
+            'bakalářka', 'bakalářky', 'bakalářce', 'bakalářkou', 'bakalářek', 'bakalářkám', 'bakalářkách',
+            'magistr', 'magistra', 'magistrovi', 'magistru', 'magistrem', 'magistři', 'magistrů', 'magistrům', 'magistrech',
+            'inženýr', 'inženýra', 'inženýrovi', 'inženýru', 'inženýrem', 'inženýři', 'inženýrů', 'inženýrům', 'inženýrech',
+            'inženýrka', 'inženýrky', 'inženýrce', 'inženýrkou', 'inženýrek', 'inženýrkám', 'inženýrkách',
+            'docent', 'docenta', 'docentovi', 'docentu', 'docentem', 'docenti', 'docentů', 'docentům', 'docentech',
+            'docentka', 'docentky', 'docentce', 'docentkou', 'docentek', 'docentkám', 'docentkách',
+            'profesor', 'profesora', 'profesorovi', 'profesoru', 'profesorem', 'profesoři', 'profesorů', 'profesorům', 'profesorech',
+            'profesorka', 'profesorky', 'profesorce', 'profesorkou', 'profesorek', 'profesorkám', 'profesorkách',
+            'koncipient', 'koncipienta', 'koncipientovi', 'koncipientu', 'koncipientem', 'koncipienti', 'koncipientů', 'koncipientům', 'koncipientech',
+            'koncipientka', 'koncipientky', 'koncipientce', 'koncipientkou', 'koncipientek', 'koncipientkám', 'koncipientkách',
+            'doktorand', 'doktoranda', 'doktorandovi', 'doktorandu', 'doktorandem', 'doktorandi', 'doktorandů', 'doktorandům', 'doktorandech',
+            'doktorandka', 'doktorandky', 'doktorandce', 'doktorandkou', 'doktorandek', 'doktorandkám', 'doktorandkách',
+            'praktik', 'praktika', 'praktikovi', 'praktiku', 'praktikem', 'praktici', 'praktiků', 'praktikům', 'prakticích',
+            'specialista', 'specialisty', 'specialistovi', 'specialistu', 'specialistou', 'specialisté', 'specialistů', 'specialistům', 'specialistech',
+            'specialistka', 'specialistky', 'specialistce', 'specialistkou', 'specialistek', 'specialistkám', 'specialistkách',
+            'školitel', 'školitele', 'školiteli', 'školitelem', 'školitelé', 'školitelů', 'školitelům', 'školitelích',
+            'školitelka', 'školitelky', 'školitelce', 'školitelkou', 'školitlek', 'školitelkám', 'školitelkách',
+            # ===================================================================
+            # PRÁVNÍ ROLE - DOPLNĚNÍ
+            # ===================================================================
+            'notář', 'notáře', 'notáři', 'notářem', 'notáři', 'notářů', 'notářům', 'notářích',
+            'notářka', 'notářky', 'notářce', 'notářkou', 'notářek', 'notářkám', 'notářkách',
+            'likvidátor', 'likvidátora', 'likvidátorovi', 'likvidátoru', 'likvidátorem', 'likvidátoři', 'likvidátorů', 'likvidátorům', 'likvidátorech',
+            'likvidátorka', 'likvidátorky', 'likvidátorce', 'likvidátorkou', 'likvidátorek', 'likvidátorkám', 'likvidátorkách',
+            'správce', 'správci', 'správcem', 'správců', 'správcům', 'správcích',
+            'správkyně', 'správkyni', 'správkyní', 'správkyň', 'správkyním', 'správkyních',
+            'mediátor', 'mediátora', 'mediátorovi', 'mediátoru', 'mediátorem', 'mediátoři', 'mediátorů', 'mediátorům', 'mediátorech',
+            'mediátorka', 'mediátorky', 'mediátorce', 'mediátorkou', 'mediátorek', 'mediátorkám', 'mediátorkách',
+            'rozhodce', 'rozhodci', 'rozhodcem', 'rozhodců', 'rozhodcům', 'rozhodcích',
+            'rozhodkyně', 'rozhodkyni', 'rozhodkyní', 'rozhodkyň', 'rozhodkyním', 'rozhodkyních',
+            'přísedící', 'přísedícího', 'přísedícímu', 'přísedícím', 'přísedících',
+            'zapisovatel', 'zapisovatele', 'zapisovateli', 'zapisovatelem', 'zapisovatelé', 'zapisovatelů', 'zapisovatelům', 'zapisovatelích',
+            'zapisovatelka', 'zapisovatelky', 'zapisovatelce', 'zapisovatelkou', 'zapisovatelek', 'zapisovatelkám', 'zapisovatelkách',
+            'odhadce', 'odhadci', 'odhadcem', 'odhadců', 'odhadcům', 'odhadcích',
+            'odhadkyně', 'odhadkyni', 'odhadkyní', 'odhadkyň', 'odhadkyním', 'odhadkyních',
+            'tlumočník', 'tlumočníka', 'tlumočníkovi', 'tlumočníku', 'tlumočníkem', 'tlumočníci', 'tlumočníků', 'tlumočníkům', 'tlumočnících',
+            'tlumočnice', 'tlumočnici', 'tlumočnicí', 'tlumočnic', 'tlumočnicím', 'tlumočnicích',
+            'revizor', 'revizora', 'revizorovi', 'revizoru', 'revizorem', 'revizoři', 'revizorů', 'revizorům', 'revizorech',
+            'revizorka', 'revizorky', 'revizorce', 'revizorkou', 'revizorek', 'revizorkám', 'revizorkách',
+            'navrhovatel', 'navrhovatele', 'navrhovateli', 'navrhovatelem', 'navrhovatelé', 'navrhovatelů', 'navrhovatelům', 'navrhovatelích',
+            'navrhovatelka', 'navrhovatelky', 'navrhovatelce', 'navrhovatelkou', 'navrhovatelek', 'navrhovatelkám', 'navrhovatelkách',
+            'odpůrce', 'odpůrci', 'odpůrcem', 'odpůrců', 'odpůrcům', 'odpůrcích',
+            'odpůrkyně', 'odpůrkyni', 'odpůrkyní', 'odpůrkyň', 'odpůrkyním', 'odpůrkyních',
+            'oznamovatel', 'oznamovatele', 'oznamovateli', 'oznamovatelem', 'oznamovatelé', 'oznamovatelů', 'oznamovatelům', 'oznamovatelích',
+            'oznamovatelka', 'oznamovatelky', 'oznamovatelce', 'oznamovatelkou', 'oznamovatelek', 'oznamovatelkám', 'oznamovatelkách',
+            'podatel', 'podatele', 'podateli', 'podatelem', 'podatelé', 'podatelů', 'podatelům', 'podatelích',
+            'zmocnitel', 'zmocnitele', 'zmocniteli', 'zmocnitelem', 'zmocnitelé', 'zmocnitelů', 'zmocnitelům', 'zmocnitelích',
+            'povinný', 'povinného', 'povinnému', 'povinném', 'povinným', 'povinných', 'povinnými',
+            'povinná', 'povinné', 'povinnou',
+            # ===================================================================
+            # ZDRAVOTNICKÉ ROLE - DOPLNĚNÍ
+            # ===================================================================
+            'primář', 'primáře', 'primáři', 'primářem', 'primáři', 'primářů', 'primářům', 'primářích',
+            'primářka', 'primářky', 'primářce', 'primářkou', 'primářek', 'primářkám', 'primářkách',
+            'přednosta', 'přednosty', 'přednostovi', 'přednostu', 'přednostou', 'přednostové', 'přednostů', 'přednostům', 'přednostech',
+            'přednostka', 'přednostky', 'přednostce', 'přednostkou', 'přednostek', 'přednostkám', 'přednostkách',
+            'sanitář', 'sanitáře', 'sanitáři', 'sanitářem', 'sanitáři', 'sanitářů', 'sanitářům', 'sanitářích',
+            'sanitářka', 'sanitářky', 'sanitářce', 'sanitářkou', 'sanitářek', 'sanitářkám', 'sanitářkách',
+            'záchranář', 'záchranáře', 'záchranáři', 'záchranářem', 'záchranáři', 'záchranářů', 'záchranářům', 'záchranářích',
+            'záchranářka', 'záchranářky', 'záchranářce', 'záchranářkou', 'záchranářek', 'záchranářkám', 'záchranářkách',
+            'laborant', 'laboranta', 'laborantovi', 'laborantu', 'laborantem', 'laboranti', 'laborantů', 'laborantům', 'laborantech',
+            'laborantka', 'laborantky', 'laborantce', 'laborantkou', 'laborantek', 'laborantkám', 'laborantkách',
+            'fyzioterapeut', 'fyzioterapeuta', 'fyzioterapeutovi', 'fyzioterapeutu', 'fyzioterapeutem', 'fyzioterapeuti', 'fyzioterapeutů', 'fyzioterapeutům', 'fyzioterapeutech',
+            'fyzioterapeutka', 'fyzioterapeutky', 'fyzioterapeutce', 'fyzioterapeutkou', 'fyzioterapeutek', 'fyzioterapeutkám', 'fyzioterapeutkách',
+            'lékárník', 'lékárníka', 'lékárníkovi', 'lékárníku', 'lékárníkem', 'lékárníci', 'lékárníků', 'lékárníkům', 'lékárnících',
+            'lékárnice', 'lékárnici', 'lékárnicí', 'lékárnic', 'lékárnicím', 'lékárnicích',
+            'patolog', 'patologa', 'patologovi', 'patologu', 'patologem', 'patologové', 'patologů', 'patologům', 'patologech',
+            'patoložka', 'patoložky', 'patoložce', 'patoložkou', 'patoložek', 'patoložkám', 'patoložkách',
+            'operatér', 'operatéra', 'operatérovi', 'operatéru', 'operatérem', 'operatéři', 'operatérů', 'operatérům', 'operatérech',
+            'operatérka', 'operatérky', 'operatérce', 'operatérkou', 'operatérek', 'operatérkám', 'operatérkách',
+            'konziliář', 'konziliáře', 'konziliáři', 'konziliářem', 'konziliáři', 'konziliářů', 'konziliářům', 'konziliářích',
+            # ===================================================================
+            # VEŘEJNÁ SPRÁVA
+            # ===================================================================
+            'starosta', 'starosty', 'starostovi', 'starostu', 'starostou', 'starostové', 'starostů', 'starostům', 'starostech',
+            'starostka', 'starostky', 'starostce', 'starostkou', 'starostek', 'starostkám', 'starostkách',
+            'místostarosta', 'místostarosty', 'místostarostovi', 'místostarostu', 'místostarostou', 'místostarostové', 'místostarostů', 'místostarostům', 'místostarostech',
+            'místostarostka', 'místostarostky', 'místostarostce', 'místostarostkou', 'místostarostek', 'místostarostkám', 'místostarostkách',
+            'radní', 'radního', 'radnímu', 'radním', 'radních',
+            'zastupitel', 'zastupitele', 'zastupiteli', 'zastupitelem', 'zastupitelé', 'zastupitelů', 'zastupitelům', 'zastupitelích',
+            'zastupitelka', 'zastupitelky', 'zastupitelce', 'zastupitelkou', 'zastupitelek', 'zastupitelkám', 'zastupitelkách',
+            'hejtman', 'hejtmana', 'hejtmanovi', 'hejtmanu', 'hejtmanem', 'hejtmani', 'hejtmanů', 'hejtmanům', 'hejtmanech',
+            'hejtmanka', 'hejtmanky', 'hejtmance', 'hejtmankou', 'hejtmanek', 'hejtmankám', 'hejtmankách',
+            'ministr', 'ministra', 'ministrovi', 'ministru', 'ministrem', 'ministři', 'ministrů', 'ministrům', 'ministrech',
+            'ministryně', 'ministryni', 'ministryní', 'ministryň', 'ministryním', 'ministryních',
+            'tajemník', 'tajemníka', 'tajemníkovi', 'tajemníku', 'tajemníkem', 'tajemníci', 'tajemníků', 'tajemníkům', 'tajemnících',
+            'tajemnice', 'tajemnici', 'tajemnicí', 'tajemnic', 'tajemnicím', 'tajemnicích',
+            'mluvčí', 'mluvčího', 'mluvčímu', 'mluvčím', 'mluvčích',
+            'komisař', 'komisaře', 'komisaři', 'komisařem', 'komisaři', 'komisařů', 'komisařům', 'komisařích',
+            'komisařka', 'komisařky', 'komisařce', 'komisařkou', 'komisařek', 'komisařkám', 'komisařkách',
+            'inspektor', 'inspektora', 'inspektorovi', 'inspektoru', 'inspektorem', 'inspektoři', 'inspektorů', 'inspektorům', 'inspektorech',
+            'inspektorka', 'inspektorky', 'inspektorce', 'inspektorkou', 'inspektorek', 'inspektorkám', 'inspektorkách',
+            'strážník', 'strážníka', 'strážníkovi', 'strážníku', 'strážníkem', 'strážníci', 'strážníků', 'strážníkům', 'strážnících',
+            'strážnice', 'strážnici', 'strážnicí', 'strážnic', 'strážnicím', 'strážnicích',
+            'referent', 'referenta', 'referentovi', 'referentu', 'referentem', 'referenti', 'referentů', 'referentům', 'referentech',
+            'referentka', 'referentky', 'referentce', 'referentkou', 'referentek', 'referentkám', 'referentkách',
+            # ===================================================================
+            # KORPORÁT / SMLUVNÍ ROLE - DOPLNĚNÍ
+            # ===================================================================
+            'mentor', 'mentora', 'mentorovi', 'mentoru', 'mentorem', 'mentoři', 'mentorů', 'mentorům', 'mentorech',
+            'mentorka', 'mentorky', 'mentorce', 'mentorkou', 'mentorek', 'mentorkám', 'mentorkách',
+            'kouč', 'kouče', 'kouči', 'koučem', 'kouči', 'koučů', 'koučům', 'koučích',
+            'koučka', 'koučky', 'koučce', 'koučkou', 'kouček', 'koučkám', 'koučkách',
+            'garant', 'garanta', 'garantovi', 'garantu', 'garantem', 'garanti', 'garantů', 'garantům', 'garantech',
+            'garantka', 'garantky', 'garantce', 'garantkou', 'garantek', 'garantkám', 'garantkách',
+            'podnájemník', 'podnájemníka', 'podnájemníkovi', 'podnájemníku', 'podnájemníkem', 'podnájemníci', 'podnájemníků', 'podnájemníkům', 'podnájemnících',
+            'podnájemnice', 'podnájemnici', 'podnájemnicí', 'podnájemnic', 'podnájemnicím', 'podnájemnicích',
+            'pojistník', 'pojistníka', 'pojistníkovi', 'pojistníku', 'pojistníkem', 'pojistníci', 'pojistníků', 'pojistníkům', 'pojistnících',
+            'pojistnice', 'pojistnici', 'pojistnicí', 'pojistnic', 'pojistnicím', 'pojistnicích',
+            'obdarovaný', 'obdarovaného', 'obdarovanému', 'obdarovaném', 'obdarovaným', 'obdarovaných', 'obdarovanými',
+            'obdarovaná', 'obdarované', 'obdarovanou',
+            'objednatel', 'objednatele', 'objednateli', 'objednatelem', 'objednatelé', 'objednatelů', 'objednatelům', 'objednatelích',
+            'objednatelka', 'objednatelky', 'objednatelce', 'objednatelkou', 'objednatelek', 'objednatelkám', 'objednatelkách',
+            'zhotovitel', 'zhotovitele', 'zhotoviteli', 'zhotovitelem', 'zhotovitelé', 'zhotovitelů', 'zhotovitelům', 'zhotovitelích',
+            'zhotovitelka', 'zhotovitelky', 'zhotovitelce', 'zhotovitelkou', 'zhotovitelek', 'zhotovitelkám', 'zhotovitelkách',
+            'poskytovatel', 'poskytovatele', 'poskytovateli', 'poskytovatelem', 'poskytovatelé', 'poskytovatelů', 'poskytovatelům', 'poskytovatelích',
+            'poskytovatelka', 'poskytovatelky', 'poskytovatelce', 'poskytovatelkou', 'poskytovatele k', 'poskytovatelkám', 'poskytovatelkách',
+            'provozovatel', 'prozovovatele', 'prozovovateli', 'prozovovatelem', 'provozovatelé', 'provozovatelů', 'provozovatelům', 'provozovatelích',
+            'provozovatelka', 'provozovatelky', 'provozovatelce', 'provozovatelkou', 'provozovatelek', 'provozovatelkám', 'provozovatelkách',
+            'distributor', 'distributora', 'distributorovi', 'distributoru', 'distributorem', 'distributoři', 'distributorů', 'distributorům', 'distributorech',
+            'distributorka', 'distributorky', 'distributorce', 'distributorkou', 'distributorek', 'distributorkám', 'distributorkách',
+            'odběratel', 'odběratele', 'odběrateli', 'odběratelem', 'odběratelé', 'odběratelů', 'odběratelům', 'odběratelích',
+            'odběratelka', 'odběratelky', 'odběratelce', 'odběratelkou', 'odběratelek', 'odběratelkám', 'odběratelkách',
+            # ===================================================================
+            # ORGANIZAČNÍ ROLE
+            # ===================================================================
+            'nadřízený', 'nadřízeného', 'nadřízenému', 'nadřízeném', 'nadřízeným', 'nadřízených', 'nadřízenými',
+            'nadřízená', 'nadřízené', 'nadřízenou',
+            'podřízený', 'podřízeného', 'podřízenému', 'podřízeném', 'podřízeným', 'podřízených', 'podřízenými',
+            'podřízená', 'podřízené', 'podřízenou',
+            'spolupracovník', 'spolupracovníka', 'spolupracovníkovi', 'spolupracovníku', 'spolupracovníkem', 'spolupracovníci', 'spolupracovníků', 'spolupracovníkům', 'spolupracovnících',
+            'spolupracovnice', 'spolupracovnici', 'spolupracovnicí', 'spolupracovnic', 'spolupracovnicím', 'spolupracovnicích',
+            'náhradník', 'náhradníka', 'náhradníkovi', 'náhradníku', 'náhradníkem', 'náhradníci', 'náhradníků', 'náhradníkům', 'náhradnících',
+            'náhradnice', 'náhradnici', 'náhradnicí', 'náhradnic', 'náhradnicím', 'náhradnicích',
+            'delegát', 'delegáta', 'delegátovi', 'delegátu', 'delegátem', 'delegáti', 'delegátů', 'delegátům', 'delegátech',
+            'delegátka', 'delegátky', 'delegátce', 'delegátkou', 'delegátek', 'delegátkám', 'delegátkách',
+            'koordinátor', 'koordinátora', 'koordinátorovi', 'koordinátoru', 'koordinátorem', 'koordinátoři', 'koordinátorů', 'koordinátorům', 'koordinátorech',
+            'koordinátorka', 'koordinátorky', 'koordinátorce', 'koordinátorkou', 'koordinátorek', 'koordinátorkám', 'koordinátorkách',
+            # ===================================================================
+            # SOCIÁLNÍ ROLE
+            # ===================================================================
+            'kamarád', 'kamaráda', 'kamarádovi', 'kamarádu', 'kamarádem', 'kamarádi', 'kamarádů', 'kamarádům', 'kamarádech',
+            'kamarádka', 'kamarádky', 'kamarádce', 'kamarádkou', 'kamarádek', 'kamarádkám', 'kamarádkách',
+            'soused', 'souseda', 'sousedovi', 'sousedu', 'sousedem', 'sousedé', 'sousedů', 'sousedům', 'sousedech',
+            'sousedka', 'sousedky', 'sousedce', 'sousedkou', 'sousedek', 'sousedkám', 'sousedkách',
+            'spolubydlící', 'spolubydlícího', 'spolubydlícímu', 'spolubydlícím', 'spolubydlících',
+            'doprovod', 'doprovodu', 'doprovody', 'doprovodem', 'doprovodů', 'doprovodům', 'doprovodech',
+            'návštěvník', 'návštěvníka', 'návštěvníkovi', 'návštěvníku', 'návštěvníkem', 'návštěvníci', 'návštěvníků', 'návštěvníkům', 'návštěvnících',
+            'návštěvnice', 'návštěvnici', 'návštěvnicí', 'návštěvnic', 'návštěvnicím', 'návštěvnicích',
+            # ===================================================================
+            # BEZPEČNOSTNÍ ROLE
+            # ===================================================================
+            'oznamující', 'oznamujícího', 'oznamujícímu', 'oznamujícím', 'oznamujících',
+            'zasahující', 'zasahujícího', 'zasahujícímu', 'zasahujícím', 'zasahujících',
+            'hlídkující', 'hlídkujícího', 'hlídkujícímu', 'hlídkujícím', 'hlídkujících',
+            # ===================================================================
+            # PARTICIPIA / ADJEKTIVNÍ ROLE
+            # ===================================================================
+            'zastoupený', 'zastoupeného', 'zastoupenému', 'zastoupeném', 'zastoupeným', 'zastoupených', 'zastoupenými',
+            'zastoupená', 'zastoupené', 'zastoupenou',
+            'jednající', 'jednajícího', 'jednajícímu', 'jednajícím', 'jednajících',
+            'podepisující', 'podepisujícího', 'podepisujícímu', 'podepisujícím', 'podepisujících',
+            # ===================================================================
+            # OSLOVENÍ
+            # ===================================================================
+            'ctěný', 'ctěného', 'ctěnému', 'ctěném', 'ctěným', 'ctěných', 'ctěnými',
+            'ctěná', 'ctěné', 'ctěnou',
+            'dotyčný', 'dotyčného', 'dotyčnému', 'dotyčném', 'dotyčným', 'dotyčných', 'dotyčnými',
+            'dotyčná', 'dotyčné', 'dotyčnou',
+            'výšeuvedený', 'výšeuvedeného', 'výšeuvedenému', 'výšeuvedeném', 'výšeuvedeným', 'výšeuvedených', 'výšeuvedenými',
+            'výšeuvedená', 'výšeuvedené', 'výšeuvedenou'
         }
 
         # ========== Handler pro "Přídavné Role Jméno Příjmení" (4 slova) ==========
@@ -3357,7 +3532,182 @@ class Anonymizer:
                 'paní inženýrka', 'paní inženýrky', 'paní inženýrce', 'paní inženýrkou',
                 # Další
                 'care', 'plus', 'minus', 'service', 'services',
-                'group', 'company', 'corp', 'ltd', 'gmbh', 'inc'
+                'group', 'company', 'corp', 'ltd', 'gmbh', 'inc',
+                # ===================================================================
+                # TITULY A AKADEMICKÉ ROLE
+                # ===================================================================
+                'bakalář', 'bakaláře', 'bakaláři', 'bakalářem', 'bakaláři', 'bakalářů', 'bakalářům', 'bakalářích',
+                'bakalářka', 'bakalářky', 'bakalářce', 'bakalářkou', 'bakalářek', 'bakalářkám', 'bakalářkách',
+                'magistr', 'magistra', 'magistrovi', 'magistru', 'magistrem', 'magistři', 'magistrů', 'magistrům', 'magistrech',
+                'inženýr', 'inženýra', 'inženýrovi', 'inženýru', 'inženýrem', 'inženýři', 'inženýrů', 'inženýrům', 'inženýrech',
+                'inženýrka', 'inženýrky', 'inženýrce', 'inženýrkou', 'inženýrek', 'inženýrkám', 'inženýrkách',
+                'docent', 'docenta', 'docentovi', 'docentu', 'docentem', 'docenti', 'docentů', 'docentům', 'docentech',
+                'docentka', 'docentky', 'docentce', 'docentkou', 'docentek', 'docentkám', 'docentkách',
+                'profesor', 'profesora', 'profesorovi', 'profesoru', 'profesorem', 'profesoři', 'profesorů', 'profesorům', 'profesorech',
+                'profesorka', 'profesorky', 'profesorce', 'profesorkou', 'profesorek', 'profesorkám', 'profesorkách',
+                'koncipient', 'koncipienta', 'koncipientovi', 'koncipientu', 'koncipientem', 'koncipienti', 'koncipientů', 'koncipientům', 'koncipientech',
+                'koncipientka', 'koncipientky', 'koncipientce', 'koncipientkou', 'koncipientek', 'koncipientkám', 'koncipientkách',
+                'doktorand', 'doktoranda', 'doktorandovi', 'doktorandu', 'doktorandem', 'doktorandi', 'doktorandů', 'doktorandům', 'doktorandech',
+                'doktorandka', 'doktorandky', 'doktorandce', 'doktorandkou', 'doktorandek', 'doktorandkám', 'doktorandkách',
+                'praktik', 'praktika', 'praktikovi', 'praktiku', 'praktikem', 'praktici', 'praktiků', 'praktikům', 'prakticích',
+                'specialista', 'specialisty', 'specialistovi', 'specialistu', 'specialistou', 'specialisté', 'specialistů', 'specialistům', 'specialistech',
+                'specialistka', 'specialistky', 'specialistce', 'specialistkou', 'specialistek', 'specialistkám', 'specialistkách',
+                'školitel', 'školitele', 'školiteli', 'školitelem', 'školitelé', 'školitelů', 'školitelům', 'školitelích',
+                'školitelka', 'školitelky', 'školitelce', 'školitelkou', 'školitlek', 'školitelkám', 'školitelkách',
+                # ===================================================================
+                # PRÁVNÍ ROLE - DOPLNĚNÍ
+                # ===================================================================
+                'notář', 'notáře', 'notáři', 'notářem', 'notáři', 'notářů', 'notářům', 'notářích',
+                'notářka', 'notářky', 'notářce', 'notářkou', 'notářek', 'notářkám', 'notářkách',
+                'likvidátor', 'likvidátora', 'likvidátorovi', 'likvidátoru', 'likvidátorem', 'likvidátoři', 'likvidátorů', 'likvidátorům', 'likvidátorech',
+                'likvidátorka', 'likvidátorky', 'likvidátorce', 'likvidátorkou', 'likvidátorek', 'likvidátorkám', 'likvidátorkách',
+                'správce', 'správci', 'správcem', 'správců', 'správcům', 'správcích',
+                'správkyně', 'správkyni', 'správkyní', 'správkyň', 'správkyním', 'správkyních',
+                'mediátor', 'mediátora', 'mediátorovi', 'mediátoru', 'mediátorem', 'mediátoři', 'mediátorů', 'mediátorům', 'mediátorech',
+                'mediátorka', 'mediátorky', 'mediátorce', 'mediátorkou', 'mediátorek', 'mediátorkám', 'mediátorkách',
+                'rozhodce', 'rozhodci', 'rozhodcem', 'rozhodců', 'rozhodcům', 'rozhodcích',
+                'rozhodkyně', 'rozhodkyni', 'rozhodkyní', 'rozhodkyň', 'rozhodkyním', 'rozhodkyních',
+                'přísedící', 'přísedícího', 'přísedícímu', 'přísedícím', 'přísedících',
+                'zapisovatel', 'zapisovatele', 'zapisovateli', 'zapisovatelem', 'zapisovatelé', 'zapisovatelů', 'zapisovatelům', 'zapisovatelích',
+                'zapisovatelka', 'zapisovatelky', 'zapisovatelce', 'zapisovatelkou', 'zapisovatelek', 'zapisovatelkám', 'zapisovatelkách',
+                'odhadce', 'odhadci', 'odhadcem', 'odhadců', 'odhadcům', 'odhadcích',
+                'odhadkyně', 'odhadkyni', 'odhadkyní', 'odhadkyň', 'odhadkyním', 'odhadkyních',
+                'tlumočník', 'tlumočníka', 'tlumočníkovi', 'tlumočníku', 'tlumočníkem', 'tlumočníci', 'tlumočníků', 'tlumočníkům', 'tlumočnících',
+                'tlumočnice', 'tlumočnici', 'tlumočnicí', 'tlumočnic', 'tlumočnicím', 'tlumočnicích',
+                'revizor', 'revizora', 'revizorovi', 'revizoru', 'revizorem', 'revizoři', 'revizorů', 'revizorům', 'revizorech',
+                'revizorka', 'revizorky', 'revizorce', 'revizorkou', 'revizorek', 'revizorkám', 'revizorkách',
+                'navrhovatel', 'navrhovatele', 'navrhovateli', 'navrhovatelem', 'navrhovatelé', 'navrhovatelů', 'navrhovatelům', 'navrhovatelích',
+                'navrhovatelka', 'navrhovatelky', 'navrhovatelce', 'navrhovatelkou', 'navrhovatelek', 'navrhovatelkám', 'navrhovatelkách',
+                'odpůrce', 'odpůrci', 'odpůrcem', 'odpůrců', 'odpůrcům', 'odpůrcích',
+                'odpůrkyně', 'odpůrkyni', 'odpůrkyní', 'odpůrkyň', 'odpůrkyním', 'odpůrkyních',
+                'oznamovatel', 'oznamovatele', 'oznamovateli', 'oznamovatelem', 'oznamovatelé', 'oznamovatelů', 'oznamovatelům', 'oznamovatelích',
+                'oznamovatelka', 'oznamovatelky', 'oznamovatelce', 'oznamovatelkou', 'oznamovatelek', 'oznamovatelkám', 'oznamovatelkách',
+                'podatel', 'podatele', 'podateli', 'podatelem', 'podatelé', 'podatelů', 'podatelům', 'podatelích',
+                'zmocnitel', 'zmocnitele', 'zmocniteli', 'zmocnitelem', 'zmocnitelé', 'zmocnitelů', 'zmocnitelům', 'zmocnitelích',
+                'povinný', 'povinného', 'povinnému', 'povinném', 'povinným', 'povinných', 'povinnými',
+                'povinná', 'povinné', 'povinnou',
+                # ===================================================================
+                # ZDRAVOTNICKÉ ROLE - DOPLNĚNÍ
+                # ===================================================================
+                'primář', 'primáře', 'primáři', 'primářem', 'primáři', 'primářů', 'primářům', 'primářích',
+                'primářka', 'primářky', 'primářce', 'primářkou', 'primářek', 'primářkám', 'primářkách',
+                'přednosta', 'přednosty', 'přednostovi', 'přednostu', 'přednostou', 'přednostové', 'přednostů', 'přednostům', 'přednostech',
+                'přednostka', 'přednostky', 'přednostce', 'přednostkou', 'přednostek', 'přednostkám', 'přednostkách',
+                'sanitář', 'sanitáře', 'sanitáři', 'sanitářem', 'sanitáři', 'sanitářů', 'sanitářům', 'sanitářích',
+                'sanitářka', 'sanitářky', 'sanitářce', 'sanitářkou', 'sanitářek', 'sanitářkám', 'sanitářkách',
+                'záchranář', 'záchranáře', 'záchranáři', 'záchranářem', 'záchranáři', 'záchranářů', 'záchranářům', 'záchranářích',
+                'záchranářka', 'záchranářky', 'záchranářce', 'záchranářkou', 'záchranářek', 'záchranářkám', 'záchranářkách',
+                'laborant', 'laboranta', 'laborantovi', 'laborantu', 'laborantem', 'laboranti', 'laborantů', 'laborantům', 'laborantech',
+                'laborantka', 'laborantky', 'laborantce', 'laborantkou', 'laborantek', 'laborantkám', 'laborantkách',
+                'fyzioterapeut', 'fyzioterapeuta', 'fyzioterapeutovi', 'fyzioterapeutu', 'fyzioterapeutem', 'fyzioterapeuti', 'fyzioterapeutů', 'fyzioterapeutům', 'fyzioterapeutech',
+                'fyzioterapeutka', 'fyzioterapeutky', 'fyzioterapeutce', 'fyzioterapeutkou', 'fyzioterapeutek', 'fyzioterapeutkám', 'fyzioterapeutkách',
+                'lékárník', 'lékárníka', 'lékárníkovi', 'lékárníku', 'lékárníkem', 'lékárníci', 'lékárníků', 'lékárníkům', 'lékárnících',
+                'lékárnice', 'lékárnici', 'lékárnicí', 'lékárnic', 'lékárnicím', 'lékárnicích',
+                'patolog', 'patologa', 'patologovi', 'patologu', 'patologem', 'patologové', 'patologů', 'patologům', 'patologech',
+                'patoložka', 'patoložky', 'patoložce', 'patoložkou', 'patoložek', 'patoložkám', 'patoložkách',
+                'operatér', 'operatéra', 'operatérovi', 'operatéru', 'operatérem', 'operatéři', 'operatérů', 'operatérům', 'operatérech',
+                'operatérka', 'operatérky', 'operatérce', 'operatérkou', 'operatérek', 'operatérkám', 'operatérkách',
+                'konziliář', 'konziliáře', 'konziliáři', 'konziliářem', 'konziliáři', 'konziliářů', 'konziliářům', 'konziliářích',
+                # ===================================================================
+                # VEŘEJNÁ SPRÁVA
+                # ===================================================================
+                'starosta', 'starosty', 'starostovi', 'starostu', 'starostou', 'starostové', 'starostů', 'starostům', 'starostech',
+                'starostka', 'starostky', 'starostce', 'starostkou', 'starostek', 'starostkám', 'starostkách',
+                'místostarosta', 'místostarosty', 'místostarostovi', 'místostarostu', 'místostarostou', 'místostarostové', 'místostarostů', 'místostarostům', 'místostarostech',
+                'místostarostka', 'místostarostky', 'místostarostce', 'místostarostkou', 'místostarostek', 'místostarostkám', 'místostarostkách',
+                'radní', 'radního', 'radnímu', 'radním', 'radních',
+                'zastupitel', 'zastupitele', 'zastupiteli', 'zastupitelem', 'zastupitelé', 'zastupitelů', 'zastupitelům', 'zastupitelích',
+                'zastupitelka', 'zastupitelky', 'zastupitelce', 'zastupitelkou', 'zastupitelek', 'zastupitelkám', 'zastupitelkách',
+                'hejtman', 'hejtmana', 'hejtmanovi', 'hejtmanu', 'hejtmanem', 'hejtmani', 'hejtmanů', 'hejtmanům', 'hejtmanech',
+                'hejtmanka', 'hejtmanky', 'hejtmance', 'hejtmankou', 'hejtmanek', 'hejtmankám', 'hejtmankách',
+                'ministr', 'ministra', 'ministrovi', 'ministru', 'ministrem', 'ministři', 'ministrů', 'ministrům', 'ministrech',
+                'ministryně', 'ministryni', 'ministryní', 'ministryň', 'ministryním', 'ministryních',
+                'tajemník', 'tajemníka', 'tajemníkovi', 'tajemníku', 'tajemníkem', 'tajemníci', 'tajemníků', 'tajemníkům', 'tajemnících',
+                'tajemnice', 'tajemnici', 'tajemnicí', 'tajemnic', 'tajemnicím', 'tajemnicích',
+                'mluvčí', 'mluvčího', 'mluvčímu', 'mluvčím', 'mluvčích',
+                'komisař', 'komisaře', 'komisaři', 'komisařem', 'komisaři', 'komisařů', 'komisařům', 'komisařích',
+                'komisařka', 'komisařky', 'komisařce', 'komisařkou', 'komisařek', 'komisařkám', 'komisařkách',
+                'inspektor', 'inspektora', 'inspektorovi', 'inspektoru', 'inspektorem', 'inspektoři', 'inspektorů', 'inspektorům', 'inspektorech',
+                'inspektorka', 'inspektorky', 'inspektorce', 'inspektorkou', 'inspektorek', 'inspektorkám', 'inspektorkách',
+                'strážník', 'strážníka', 'strážníkovi', 'strážníku', 'strážníkem', 'strážníci', 'strážníků', 'strážníkům', 'strážnících',
+                'strážnice', 'strážnici', 'strážnicí', 'strážnic', 'strážnicím', 'strážnicích',
+                'referent', 'referenta', 'referentovi', 'referentu', 'referentem', 'referenti', 'referentů', 'referentům', 'referentech',
+                'referentka', 'referentky', 'referentce', 'referentkou', 'referentek', 'referentkám', 'referentkách',
+                # ===================================================================
+                # KORPORÁT / SMLUVNÍ ROLE - DOPLNĚNÍ
+                # ===================================================================
+                'mentor', 'mentora', 'mentorovi', 'mentoru', 'mentorem', 'mentoři', 'mentorů', 'mentorům', 'mentorech',
+                'mentorka', 'mentorky', 'mentorce', 'mentorkou', 'mentorek', 'mentorkám', 'mentorkách',
+                'kouč', 'kouče', 'kouči', 'koučem', 'kouči', 'koučů', 'koučům', 'koučích',
+                'koučka', 'koučky', 'koučce', 'koučkou', 'kouček', 'koučkám', 'koučkách',
+                'garant', 'garanta', 'garantovi', 'garantu', 'garantem', 'garanti', 'garantů', 'garantům', 'garantech',
+                'garantka', 'garantky', 'garantce', 'garantkou', 'garantek', 'garantkám', 'garantkách',
+                'podnájemník', 'podnájemníka', 'podnájemníkovi', 'podnájemníku', 'podnájemníkem', 'podnájemníci', 'podnájemníků', 'podnájemníkům', 'podnájemnících',
+                'podnájemnice', 'podnájemnici', 'podnájemnicí', 'podnájemnic', 'podnájemnicím', 'podnájemnicích',
+                'pojistník', 'pojistníka', 'pojistníkovi', 'pojistníku', 'pojistníkem', 'pojistníci', 'pojistníků', 'pojistníkům', 'pojistnících',
+                'pojistnice', 'pojistnici', 'pojistnicí', 'pojistnic', 'pojistnicím', 'pojistnicích',
+                'obdarovaný', 'obdarovaného', 'obdarovanému', 'obdarovaném', 'obdarovaným', 'obdarovaných', 'obdarovanými',
+                'obdarovaná', 'obdarované', 'obdarovanou',
+                'objednatel', 'objednatele', 'objednateli', 'objednatelem', 'objednatelé', 'objednatelů', 'objednatelům', 'objednatelích',
+                'objednatelka', 'objednatelky', 'objednatelce', 'objednatelkou', 'objednatelek', 'objednatelkám', 'objednatelkách',
+                'zhotovitel', 'zhotovitele', 'zhotoviteli', 'zhotovitelem', 'zhotovitelé', 'zhotovitelů', 'zhotovitelům', 'zhotovitelích',
+                'zhotovitelka', 'zhotovitelky', 'zhotovitelce', 'zhotovitelkou', 'zhotovitelek', 'zhotovitelkám', 'zhotovitelkách',
+                'poskytovatel', 'poskytovatele', 'poskytovateli', 'poskytovatelem', 'poskytovatelé', 'poskytovatelů', 'poskytovatelům', 'poskytovatelích',
+                'poskytovatelka', 'poskytovatelky', 'poskytovatelce', 'poskytovatelkou', 'poskytovatele k', 'poskytovatelkám', 'poskytovatelkách',
+                'provozovatel', 'prozovovatele', 'prozovovateli', 'prozovovatelem', 'provozovatelé', 'provozovatelů', 'provozovatelům', 'provozovatelích',
+                'provozovatelka', 'provozovatelky', 'provozovatelce', 'provozovatelkou', 'provozovatelek', 'provozovatelkám', 'provozovatelkách',
+                'distributor', 'distributora', 'distributorovi', 'distributoru', 'distributorem', 'distributoři', 'distributorů', 'distributorům', 'distributorech',
+                'distributorka', 'distributorky', 'distributorce', 'distributorkou', 'distributorek', 'distributorkám', 'distributorkách',
+                'odběratel', 'odběratele', 'odběrateli', 'odběratelem', 'odběratelé', 'odběratelů', 'odběratelům', 'odběratelích',
+                'odběratelka', 'odběratelky', 'odběratelce', 'odběratelkou', 'odběratelek', 'odběratelkám', 'odběratelkách',
+                # ===================================================================
+                # ORGANIZAČNÍ ROLE
+                # ===================================================================
+                'nadřízený', 'nadřízeného', 'nadřízenému', 'nadřízeném', 'nadřízeným', 'nadřízených', 'nadřízenými',
+                'nadřízená', 'nadřízené', 'nadřízenou',
+                'podřízený', 'podřízeného', 'podřízenému', 'podřízeném', 'podřízeným', 'podřízených', 'podřízenými',
+                'podřízená', 'podřízené', 'podřízenou',
+                'spolupracovník', 'spolupracovníka', 'spolupracovníkovi', 'spolupracovníku', 'spolupracovníkem', 'spolupracovníci', 'spolupracovníků', 'spolupracovníkům', 'spolupracovnících',
+                'spolupracovnice', 'spolupracovnici', 'spolupracovnicí', 'spolupracovnic', 'spolupracovnicím', 'spolupracovnicích',
+                'náhradník', 'náhradníka', 'náhradníkovi', 'náhradníku', 'náhradníkem', 'náhradníci', 'náhradníků', 'náhradníkům', 'náhradnících',
+                'náhradnice', 'náhradnici', 'náhradnicí', 'náhradnic', 'náhradnicím', 'náhradnicích',
+                'delegát', 'delegáta', 'delegátovi', 'delegátu', 'delegátem', 'delegáti', 'delegátů', 'delegátům', 'delegátech',
+                'delegátka', 'delegátky', 'delegátce', 'delegátkou', 'delegátek', 'delegátkám', 'delegátkách',
+                'koordinátor', 'koordinátora', 'koordinátorovi', 'koordinátoru', 'koordinátorem', 'koordinátoři', 'koordinátorů', 'koordinátorům', 'koordinátorech',
+                'koordinátorka', 'koordinátorky', 'koordinátorce', 'koordinátorkou', 'koordinátorek', 'koordinátorkám', 'koordinátorkách',
+                # ===================================================================
+                # SOCIÁLNÍ ROLE
+                # ===================================================================
+                'kamarád', 'kamaráda', 'kamarádovi', 'kamarádu', 'kamarádem', 'kamarádi', 'kamarádů', 'kamarádům', 'kamarádech',
+                'kamarádka', 'kamarádky', 'kamarádce', 'kamarádkou', 'kamarádek', 'kamarádkám', 'kamarádkách',
+                'soused', 'souseda', 'sousedovi', 'sousedu', 'sousedem', 'sousedé', 'sousedů', 'sousedům', 'sousedech',
+                'sousedka', 'sousedky', 'sousedce', 'sousedkou', 'sousedek', 'sousedkám', 'sousedkách',
+                'spolubydlící', 'spolubydlícího', 'spolubydlícímu', 'spolubydlícím', 'spolubydlících',
+                'doprovod', 'doprovodu', 'doprovody', 'doprovodem', 'doprovodů', 'doprovodům', 'doprovodech',
+                'návštěvník', 'návštěvníka', 'návštěvníkovi', 'návštěvníku', 'návštěvníkem', 'návštěvníci', 'návštěvníků', 'návštěvníkům', 'návštěvnících',
+                'návštěvnice', 'návštěvnici', 'návštěvnicí', 'návštěvnic', 'návštěvnicím', 'návštěvnicích',
+                # ===================================================================
+                # BEZPEČNOSTNÍ ROLE
+                # ===================================================================
+                'oznamující', 'oznamujícího', 'oznamujícímu', 'oznamujícím', 'oznamujících',
+                'zasahující', 'zasahujícího', 'zasahujícímu', 'zasahujícím', 'zasahujících',
+                'hlídkující', 'hlídkujícího', 'hlídkujícímu', 'hlídkujícím', 'hlídkujících',
+                # ===================================================================
+                # PARTICIPIA / ADJEKTIVNÍ ROLE
+                # ===================================================================
+                'zastoupený', 'zastoupeného', 'zastoupenému', 'zastoupeném', 'zastoupeným', 'zastoupených', 'zastoupenými',
+                'zastoupená', 'zastoupené', 'zastoupenou',
+                'jednající', 'jednajícího', 'jednajícímu', 'jednajícím', 'jednajících',
+                'podepisující', 'podepisujícího', 'podepisujícímu', 'podepisujícím', 'podepisujících',
+                # ===================================================================
+                # OSLOVENÍ
+                # ===================================================================
+                'ctěný', 'ctěného', 'ctěnému', 'ctěném', 'ctěným', 'ctěných', 'ctěnými',
+                'ctěná', 'ctěné', 'ctěnou',
+                'dotyčný', 'dotyčného', 'dotyčnému', 'dotyčném', 'dotyčným', 'dotyčných', 'dotyčnými',
+                'dotyčná', 'dotyčné', 'dotyčnou',
+                'výšeuvedený', 'výšeuvedeného', 'výšeuvedenému', 'výšeuvedeném', 'výšeuvedeným', 'výšeuvedených', 'výšeuvedenými',
+                'výšeuvedená', 'výšeuvedené', 'výšeuvedenou'
             }
 
             # Kontrola proti ignore listu
