@@ -155,18 +155,38 @@ def convert_text_pdf(pdf_path: Path, docx_path: Path) -> bool:
 
 # --- Konverze skenovaného PDF (OCR) ---
 
-def preprocess_image(image):
+def preprocess_image(image, is_photo=False):
     """Předzpracuje obrázek pro lepší OCR kvalitu.
 
-    Minimální zásah - jen převod na šedou a jemné zvýšení kontrastu.
-    Upscale ani binarizace se nedělá (amplifikuje šum / ničí diacritiku).
+    is_photo=False (sken z PDF): Minimální zásah - šedá + jemný kontrast.
+    is_photo=True (fotka): Agresivnější - resize, ostření, adaptivní práh.
     """
     # Převeď na šedou
     img = image.convert('L')
 
-    # Jemné zvýšení kontrastu
-    enhancer = ImageEnhance.Contrast(img)
-    img = enhancer.enhance(1.3)
+    if is_photo:
+        # Fotky potřebují víc práce - stíny, perspektiva, nerovné osvětlení
+
+        # 1. Upscale malé obrázky (pod 2000px šířka) pro lepší OCR
+        w, h = img.size
+        if w < 2000:
+            scale = 2000 / w
+            img = img.resize((int(w * scale), int(h * scale)), Image.LANCZOS)
+
+        # 2. Ostření - fotky bývají rozmazané
+        img = img.filter(ImageFilter.SHARPEN)
+
+        # 3. Silnější kontrast
+        enhancer = ImageEnhance.Contrast(img)
+        img = enhancer.enhance(1.8)
+
+        # 4. Zvýšení jasu (fotky bývají tmavší)
+        enhancer = ImageEnhance.Brightness(img)
+        img = enhancer.enhance(1.2)
+    else:
+        # Sken z PDF - minimální zásah
+        enhancer = ImageEnhance.Contrast(img)
+        img = enhancer.enhance(1.3)
 
     return img
 
@@ -374,8 +394,11 @@ def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
 IMAGE_EXTENSIONS = {'.png', '.jpg', '.jpeg', '.tiff', '.tif', '.bmp', '.webp'}
 
 
-def convert_image(image_path: Path, lang: str = "ces", psm: int = 6) -> bool:
-    """Převede obrázek (PNG/JPG/TIFF/BMP) do DOCX přes Tesseract OCR."""
+def convert_image(image_path: Path, lang: str = "ces", psm: int = 3) -> bool:
+    """Převede obrázek (PNG/JPG/TIFF/BMP) do DOCX přes Tesseract OCR.
+
+    Používá PSM 3 (plně automatická segmentace) - nejlepší pro fotky celých stránek.
+    """
     if not _has_ocr:
         print("  OCR neni dostupne! Nainstalujte:", flush=True)
         print("    pip install pytesseract Pillow python-docx", flush=True)
@@ -385,15 +408,22 @@ def convert_image(image_path: Path, lang: str = "ces", psm: int = 6) -> bool:
     docx_path = image_path.with_suffix('.docx')
 
     try:
-        print(f"  Metoda: Tesseract OCR (obrazek)", flush=True)
-        print(f"  Jazyk: {lang}, PSM: {psm}", flush=True)
+        print(f"  Metoda: Tesseract OCR (fotografie/obrazek)", flush=True)
+        print(f"  Jazyk: {lang}, PSM: {psm} (auto segmentace)", flush=True)
 
         # 1. Načti obrázek
         image = Image.open(str(image_path))
+        # EXIF rotace - fotky z mobilu bývají otočené
+        try:
+            from PIL import ImageOps
+            image = ImageOps.exif_transpose(image)
+        except Exception:
+            pass
         print(f"  Obrazek: {image.size[0]}x{image.size[1]} px", flush=True)
 
-        # 2. Předzpracování
-        processed = preprocess_image(image)
+        # 2. Předzpracování (agresivnější pro fotky)
+        processed = preprocess_image(image, is_photo=True)
+        print(f"  Predzpracovano: {processed.size[0]}x{processed.size[1]} px", flush=True)
 
         # 3. OCR
         print("  Spoustim OCR...", flush=True)
