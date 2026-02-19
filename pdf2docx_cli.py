@@ -369,42 +369,111 @@ def convert_scanned_pdf(pdf_path: Path, docx_path: Path,
         return False
 
 
+# --- Konverze obrázku (PNG/JPG/TIFF/BMP) přes OCR ---
+
+IMAGE_EXTENSIONS = {'.png', '.jpg', '.jpeg', '.tiff', '.tif', '.bmp', '.webp'}
+
+
+def convert_image(image_path: Path, lang: str = "ces", psm: int = 6) -> bool:
+    """Převede obrázek (PNG/JPG/TIFF/BMP) do DOCX přes Tesseract OCR."""
+    if not _has_ocr:
+        print("  OCR neni dostupne! Nainstalujte:", flush=True)
+        print("    pip install pytesseract Pillow python-docx", flush=True)
+        print("    apt install tesseract-ocr tesseract-ocr-ces", flush=True)
+        return False
+
+    docx_path = image_path.with_suffix('.docx')
+
+    try:
+        print(f"  Metoda: Tesseract OCR (obrazek)", flush=True)
+        print(f"  Jazyk: {lang}, PSM: {psm}", flush=True)
+
+        # 1. Načti obrázek
+        image = Image.open(str(image_path))
+        print(f"  Obrazek: {image.size[0]}x{image.size[1]} px", flush=True)
+
+        # 2. Předzpracování
+        processed = preprocess_image(image)
+
+        # 3. OCR
+        print("  Spoustim OCR...", flush=True)
+        page_text = pytesseract.image_to_string(
+            processed, lang=lang, config=f"--oem 1 --psm {psm}"
+        )
+        page_text = cleanup_ocr_text(page_text)
+        total_chars = len(page_text)
+
+        # Odstraň nadbytečné prázdné řádky
+        page_text = re.sub(r'\n{3,}', '\n\n', page_text)
+
+        # 4. Text → DOCX
+        doc = Document()
+        style = doc.styles['Normal']
+        style.font.name = 'Calibri'
+        style.font.size = Pt(11)
+
+        merged_paragraphs = _merge_lines_to_paragraphs(page_text)
+        for para_text in merged_paragraphs:
+            text = para_text.strip()
+            para = doc.add_paragraph(text if text else '')
+            if text:
+                if re.match(r'^\([a-z]\)', text):
+                    para.paragraph_format.left_indent = Cm(1.0)
+                elif re.match(r'^-\s', text):
+                    para.paragraph_format.left_indent = Cm(1.5)
+
+        doc.save(str(docx_path))
+        print(f"  OCR hotovo, rozpoznano {total_chars:,} znaku", flush=True)
+
+        return docx_path.exists() and docx_path.stat().st_size > 0
+
+    except Exception as e:
+        print(f"  OCR obrazku selhalo: {e}", flush=True)
+        return False
+
+
 # --- Hlavní konverzní funkce ---
 
-def convert_pdf(pdf_path: Path, dpi: int = 300, lang: str = "ces", psm: int = 6) -> bool:
+def convert_file(file_path: Path, dpi: int = 300, lang: str = "ces", psm: int = 6) -> bool:
     """
-    Převede PDF do DOCX - automaticky zvolí správnou metodu.
+    Převede PDF nebo obrázek do DOCX - automaticky zvolí správnou metodu.
 
     Textové PDF  → pdf2docx (zachová formátování)
     Skenované PDF → Tesseract OCR (přečte text z obrázku)
+    Obrázek (PNG/JPG/TIFF/BMP) → Tesseract OCR
     """
-    docx_path = pdf_path.with_suffix('.docx')
+    docx_path = file_path.with_suffix('.docx')
 
-    print(f"Zpracovavam PDF: {pdf_path.name}", flush=True)
+    print(f"Zpracovavam: {file_path.name}", flush=True)
     print(f"Vystupni DOCX: {docx_path.name}", flush=True)
 
-    if not pdf_path.exists():
-        print(f"ERROR: PDF soubor neexistuje: {pdf_path}", flush=True)
+    if not file_path.exists():
+        print(f"ERROR: Soubor neexistuje: {file_path}", flush=True)
         return False
 
-    if pdf_path.stat().st_size == 0:
-        print(f"ERROR: PDF soubor je prazdny: {pdf_path}", flush=True)
+    if file_path.stat().st_size == 0:
+        print(f"ERROR: Soubor je prazdny: {file_path}", flush=True)
         return False
 
-    # Detekce: textové nebo skenované?
-    scanned = is_scanned_pdf(pdf_path)
-
-    if scanned:
-        print("  Detekovano: SKENOVANE PDF (obrazek)", flush=True)
-        success = convert_scanned_pdf(pdf_path, docx_path, lang=lang, dpi=dpi, psm=psm)
+    # Obrázek → OCR přímo
+    if file_path.suffix.lower() in IMAGE_EXTENSIONS:
+        print("  Detekovano: OBRAZEK", flush=True)
+        success = convert_image(file_path, lang=lang, psm=psm)
     else:
-        print("  Detekovano: TEXTOVE PDF", flush=True)
-        success = convert_text_pdf(pdf_path, docx_path)
+        # PDF → detekce textové/skenované
+        scanned = is_scanned_pdf(file_path)
 
-        # Fallback: pokud pdf2docx selhalo a máme OCR, zkus OCR
-        if not success and _has_ocr:
-            print("  Zkousim fallback pres OCR...", flush=True)
-            success = convert_scanned_pdf(pdf_path, docx_path, lang=lang, dpi=dpi, psm=psm)
+        if scanned:
+            print("  Detekovano: SKENOVANE PDF (obrazek)", flush=True)
+            success = convert_scanned_pdf(file_path, docx_path, lang=lang, dpi=dpi, psm=psm)
+        else:
+            print("  Detekovano: TEXTOVE PDF", flush=True)
+            success = convert_text_pdf(file_path, docx_path)
+
+            # Fallback: pokud pdf2docx selhalo a máme OCR, zkus OCR
+            if not success and _has_ocr:
+                print("  Zkousim fallback pres OCR...", flush=True)
+                success = convert_scanned_pdf(file_path, docx_path, lang=lang, dpi=dpi, psm=psm)
 
     if success:
         print(f"[OK] Uspesne prevedeno: {docx_path.name}", flush=True)
@@ -413,6 +482,11 @@ def convert_pdf(pdf_path: Path, dpi: int = 300, lang: str = "ces", psm: int = 6)
         print("ERROR: Konverze selhala", flush=True)
 
     return success
+
+
+# Zpětná kompatibilita
+def convert_pdf(pdf_path: Path, dpi: int = 300, lang: str = "ces", psm: int = 6) -> bool:
+    return convert_file(pdf_path, dpi=dpi, lang=lang, psm=psm)
 
 
 def main():
@@ -452,9 +526,12 @@ def main():
             pdf_files.append(args[i])
             i += 1
 
+    SUPPORTED_EXTENSIONS = {'.pdf'} | IMAGE_EXTENSIONS
+
     if not pdf_files:
-        print("\nERROR: Nebyl zadan PDF soubor", flush=True)
-        print("Pouziti: python pdf2docx_cli.py <cesta_k_pdf> [--dpi 400] [--lang ces] [--psm 6]", flush=True)
+        print("\nERROR: Nebyl zadan soubor", flush=True)
+        print("Pouziti: python pdf2docx_cli.py <soubor> [--dpi 400] [--lang ces] [--psm 6]", flush=True)
+        print("Podporovane formaty: PDF, PNG, JPG, JPEG, TIFF, TIF, BMP, WEBP", flush=True)
         sys.exit(1)
 
     success_count = 0
@@ -462,22 +539,23 @@ def main():
 
     for pdf_arg in pdf_files:
         total_count += 1
-        pdf_path = Path(pdf_arg)
+        file_path = Path(pdf_arg)
 
-        print(f"\nZpracovavam ({total_count}): {pdf_path.name}", flush=True)
+        print(f"\nZpracovavam ({total_count}): {file_path.name}", flush=True)
 
-        if not pdf_path.exists():
-            print(f"[!] Soubor neexistuje: {pdf_path}", flush=True)
+        if not file_path.exists():
+            print(f"[!] Soubor neexistuje: {file_path}", flush=True)
             continue
 
-        if pdf_path.suffix.lower() != ".pdf":
-            print(f"[!] Soubor neni PDF: {pdf_path}", flush=True)
+        if file_path.suffix.lower() not in SUPPORTED_EXTENSIONS:
+            print(f"[!] Nepodporovany format: {file_path.suffix}", flush=True)
+            print(f"    Podporovane: {', '.join(sorted(SUPPORTED_EXTENSIONS))}", flush=True)
             continue
 
-        if convert_pdf(pdf_path, dpi=dpi, lang=lang, psm=psm):
+        if convert_file(file_path, dpi=dpi, lang=lang, psm=psm):
             success_count += 1
         else:
-            print(f"[X] Konverze selhala pro: {pdf_path.name}", flush=True)
+            print(f"[X] Konverze selhala pro: {file_path.name}", flush=True)
 
     print("\n" + "=" * 50, flush=True)
     print(f"VYSLEDEK: {success_count}/{total_count} souboru uspesne prevedeno", flush=True)

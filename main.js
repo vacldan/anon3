@@ -895,7 +895,7 @@ ipcMain.handle("deanonymize-document", async (evt, anonFile, mapFile) => {
 
 // PDF to DOCX conversion handler
 ipcMain.handle("convert-pdf-to-docx", async (evt, pdfPath) => {
-  if (!pdfPath) return { success: false, error: "No PDF file provided" };
+  if (!pdfPath) return { success: false, error: "No file provided" };
 
   const dir = path.dirname(pdfPath);
   const base = path.basename(pdfPath, path.extname(pdfPath));
@@ -907,7 +907,9 @@ ipcMain.handle("convert-pdf-to-docx", async (evt, pdfPath) => {
   }
 
   const startedMs = Date.now();
-  sendProgress("Spoustim PDF -> DOCX konverzi...");
+  const ext = path.extname(pdfPath).toLowerCase();
+  const isImage = ['.png', '.jpg', '.jpeg', '.tiff', '.tif', '.bmp', '.webp'].includes(ext);
+  sendProgress(isImage ? "Spoustim OCR konverzi obrazku..." : "Spoustim PDF -> DOCX konverzi...");
 
   return new Promise((resolve) => {
     let child;
@@ -1065,8 +1067,12 @@ ipcMain.handle("get-stats", async () => readStats());
 
 ipcMain.handle("select-pdf-file", async () => {
   const result = await dialog.showOpenDialog(win, {
-    title: "Vyberte PDF soubor",
-    filters: [{ name: "PDF soubory", extensions: ["pdf"] }],
+    title: "Vyberte PDF nebo obrázek",
+    filters: [
+      { name: "Podporované soubory", extensions: ["pdf", "png", "jpg", "jpeg", "tiff", "tif", "bmp", "webp"] },
+      { name: "PDF soubory", extensions: ["pdf"] },
+      { name: "Obrázky", extensions: ["png", "jpg", "jpeg", "tiff", "tif", "bmp", "webp"] },
+    ],
     properties: ["openFile"],
   });
   if (result.canceled || !result.filePaths.length) return null;
