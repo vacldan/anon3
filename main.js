@@ -1086,9 +1086,12 @@ ipcMain.handle("get-license-info", async () => {
     return { valid: false, message: "License validation not available" };
   }
 
-  const appRoot = getAppRootDir();
-  const licenseFile = path.join(appRoot, "license.lic");
+  const licenseFile = findLicenseFile();
   const scriptDir = path.dirname(script.path);
+
+  if (!licenseFile) {
+    return { valid: false, message: "Licenční soubor nenalezen" };
+  }
 
   try {
     let result;
