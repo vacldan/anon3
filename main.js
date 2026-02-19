@@ -571,6 +571,7 @@ ipcMain.handle("anonymize-document", async (evt, filePath) => {
   const requestedOut = path.join(dir, `${base}_anon.docx`);
   const mapJson = path.join(dir, `${base}_map.json`);
   const mapTxt = path.join(dir, `${base}_map.txt`);
+  const reportPdf = path.join(dir, `${base}_report.pdf`);
 
   // TURBO MODE: Use turbo CLI for maximum speed (unless verbose mode)
   const cliName = VERBOSE_PY ? "anonymize_cli.py" : "anonymize_cli_turbo.py";
@@ -590,6 +591,7 @@ ipcMain.handle("anonymize-document", async (evt, filePath) => {
     "--output", requestedOut,
     "--map", mapJson,
     "--map_txt", mapTxt,
+    "--report", reportPdf,
   ];
   if (VERBOSE_PY) cliArgs.push("--verbose");
 
@@ -631,7 +633,7 @@ ipcMain.handle("anonymize-document", async (evt, filePath) => {
       });
 
       child.on("close", (code) => {
-        handleAnonymizeResult(code, stdoutBuf, startedMs, dir, base, requestedOut, mapJson, mapTxt, resolve);
+        handleAnonymizeResult(code, stdoutBuf, startedMs, dir, base, requestedOut, mapJson, mapTxt, reportPdf, resolve);
       });
     });
   }
@@ -658,14 +660,14 @@ ipcMain.handle("anonymize-document", async (evt, filePath) => {
         if (msg.toLowerCase().includes("error")) sendProgress(`ERROR: ${msg.trim()}`);
       },
       (code, used, stdoutBuf) => {
-        handleAnonymizeResult(code, stdoutBuf, startedMs, dir, base, requestedOut, mapJson, mapTxt, resolve);
+        handleAnonymizeResult(code, stdoutBuf, startedMs, dir, base, requestedOut, mapJson, mapTxt, reportPdf, resolve);
       }
     );
   });
 });
 
 // Helper function for anonymization result handling
-function handleAnonymizeResult(code, stdoutBuf, startedMs, dir, base, requestedOut, mapJson, mapTxt, resolve) {
+function handleAnonymizeResult(code, stdoutBuf, startedMs, dir, base, requestedOut, mapJson, mapTxt, reportPdf, resolve) {
   const elapsed = Math.round((Date.now() - startedMs) / 1000);
 
   // Try to parse JSON output from CLI first
@@ -675,11 +677,13 @@ function handleAnonymizeResult(code, stdoutBuf, startedMs, dir, base, requestedO
   let actual = null;
   let actualMapJson = null;
   let actualMapTxt = null;
+  let actualReportPdf = null;
 
   if (payload && payload.output) {
     actual = payload.output;
     actualMapJson = payload.map_json || null;
     actualMapTxt = payload.map_txt || null;
+    actualReportPdf = payload.report_pdf || null;
   }
 
   // Fallback: try to find files if CLI didn't return paths
@@ -697,12 +701,15 @@ function handleAnonymizeResult(code, stdoutBuf, startedMs, dir, base, requestedO
     actual = findLatest(inTmp, startedMs - 2000) || actual;
   }
 
-  // Fallback for maps if not in JSON output
+  // Fallback for maps and report if not in JSON output
   if (!actualMapJson || !fs.existsSync(actualMapJson)) {
     actualMapJson = fs.existsSync(mapJson) ? mapJson : null;
   }
   if (!actualMapTxt || !fs.existsSync(actualMapTxt)) {
     actualMapTxt = fs.existsSync(mapTxt) ? mapTxt : null;
+  }
+  if (!actualReportPdf || !fs.existsSync(actualReportPdf)) {
+    actualReportPdf = (reportPdf && fs.existsSync(reportPdf)) ? reportPdf : null;
   }
 
   if (actual && fs.existsSync(actual)) {
@@ -713,6 +720,7 @@ function handleAnonymizeResult(code, stdoutBuf, startedMs, dir, base, requestedO
       outputFile: actual,
       mapJson: actualMapJson,
       mapTxt: actualMapTxt,
+      reportPdf: actualReportPdf,
     });
   } else {
     const error = code === 0

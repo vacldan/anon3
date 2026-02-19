@@ -7,7 +7,7 @@ Czech DOCX Anonymizer – Complete v7.0
 Výstupy: <basename>_anon.docx / _map.json / _map.txt
 """
 
-import sys, re, json, unicodedata
+import sys, re, json, unicodedata, hashlib, time as _time
 from typing import Optional, Set
 from pathlib import Path
 from collections import defaultdict, OrderedDict
@@ -5206,12 +5206,25 @@ class Anonymizer:
         if total_merged > 0:
             print(f"  [DEBUG] Total merged: {total_merged} duplicate persons")
 
-    def anonymize_docx(self, input_path: str, output_path: str, json_map: str, txt_map: str):
+    def anonymize_docx(self, input_path: str, output_path: str, json_map: str, txt_map: str, pdf_report: str = None):
         """Hlavní metoda pro anonymizaci DOCX dokumentu."""
         print(f"\n[INFO] Zpracovavam: {Path(input_path).name}")
 
-        # Načti dokument
+        # Track overall timing for PDF report
         import time
+        overall_start = time.time()
+
+        # Compute source file hash and size for PDF report
+        input_p = Path(input_path)
+        self._source_size = input_p.stat().st_size
+        sha = hashlib.sha256()
+        with open(input_path, 'rb') as fh:
+            for chunk in iter(lambda: fh.read(65536), b''):
+                sha.update(chunk)
+        self._source_hash = sha.hexdigest()
+        self._report_start_ts = overall_start
+
+        # Načti dokument
         start_time = time.time()
         doc = Document(input_path)
         print(f"  [DEBUG] Document loaded in {time.time() - start_time:.1f}s")
@@ -5274,13 +5287,13 @@ class Anonymizer:
 
         # Vytvoř mapy (předej doc a path aby se nečetl znovu)
         start_time = time.time()
-        self._create_maps(json_map, txt_map, input_path, doc)
+        self._create_maps(json_map, txt_map, input_path, doc, pdf_report)
         print(f"  [DEBUG] Maps created in {time.time() - start_time:.1f}s")
 
         print(f"[OK] Hotovo! Nalezeno {len(self.canonical_persons)} osob")
 
-    def _create_maps(self, json_path: str, txt_path: str, source_file: str, doc=None):
-        """Vytvoří JSON a TXT mapy náhrad."""
+    def _create_maps(self, json_path: str, txt_path: str, source_file: str, doc=None, pdf_report: str = None):
+        """Vytvoří JSON a TXT mapy náhrad (a volitelně PDF report)."""
 
         # Cleanup nepoužitých tagů před vytvořením map
         # Použij předaný dokument nebo načti z disku
@@ -5519,6 +5532,268 @@ class Anonymizer:
                         f.write(f"{label}: {display_value}\n")
                     f.write("\n")
 
+        # PDF report (volitelný)
+        if pdf_report:
+            duration = _time.time() - getattr(self, '_report_start_ts', _time.time())
+            try:
+                _generate_pdf_report(
+                    pdf_path=pdf_report,
+                    source_file=source_file,
+                    source_size=getattr(self, '_source_size', 0),
+                    source_hash=getattr(self, '_source_hash', 'N/A'),
+                    canonical_persons=self.canonical_persons,
+                    entity_map=self.entity_map,
+                    person_canonical_names=self.person_canonical_names,
+                    start_ts=getattr(self, '_report_start_ts', _time.time()),
+                    duration_secs=duration,
+                    json_data=json_data,
+                )
+            except Exception as e:
+                print(f"[WARN] PDF report generation failed: {e}")
+
+# =============== PDF Report Generator ===============
+_ENTITY_CATEGORY_MAP = {
+    'PERSON':       ('Osoby (Jména)',        'OSOBA'),
+    'ADDRESS':      ('Lokace (Adresy)',      'ADRESA'),
+    'RC':           ('Rodná čísla',          'RC'),
+    'BIRTH_DATE':   ('Data narození',         'DATUM_NAR'),
+    'BANK_ACCOUNT': ('Bankovní účty',        'UCET'),
+    'IBAN':         ('IBAN',                 'IBAN'),
+    'CARD':         ('Platební karty',       'KARTA'),
+    'ICO':          ('IČO',                  'ICO'),
+    'DIC':          ('DIČ',                  'DIC'),
+    'PHONE':        ('Kontakty (Telefon)',   'TEL'),
+    'EMAIL':        ('Kontakty (E-mail)',    'EMAIL'),
+    'PASSPORT':     ('Cestovní pasy',        'PAS'),
+    'ID_CARD':      ('Občanské průkazy',     'OP'),
+    'DRIVER_LICENSE':('Řidičské průkazy',    'RP'),
+    'LICENSE_PLATE':('SPZ',                  'SPZ'),
+    'VIN':          ('VIN',                  'VIN'),
+    'IP':           ('IP adresy',            'IP'),
+    'USERNAME':     ('Uživatelská jména',    'USERNAME'),
+    'PASSWORD':     ('Hesla',                'HESLO'),
+    'API_KEY':      ('API klíče',            'API_KEY'),
+    'SECRET':       ('Secrets',              'SECRET'),
+    'SSH_KEY':      ('SSH klíče',            'SSH_KEY'),
+    'HOST':         ('Hostnames',            'HOST'),
+    'INSURANCE_ID': ('Čísla pojištěnce',    'POJISTENEC'),
+    'RFID':         ('RFID/Badge',           'RFID'),
+    'LINKEDIN':     ('LinkedIn',             'LINKEDIN'),
+    'FACEBOOK':     ('Facebook',             'FACEBOOK'),
+    'INSTAGRAM':    ('Instagram',            'INSTAGRAM'),
+    'SKYPE':        ('Skype',                'SKYPE'),
+}
+
+
+def _generate_pdf_report(pdf_path: str, source_file: str, source_size: int,
+                         source_hash: str, canonical_persons: list,
+                         entity_map: dict, person_canonical_names: dict,
+                         start_ts: float, duration_secs: float,
+                         json_data: dict):
+    """Vygeneruje PDF report (Certifikát o provedené anonymizaci)."""
+    try:
+        from fpdf import FPDF
+    except ImportError:
+        print("[WARN] fpdf2 not installed, skipping PDF report")
+        return
+
+    # ------ Fonts ------
+    FONT_DIR = '/usr/share/fonts/truetype/dejavu/'
+    FONT_FALLBACK = None
+    # On Windows, DejaVu may be elsewhere
+    if not Path(FONT_DIR).exists():
+        for candidate in [
+            Path(sys.executable).parent / 'fonts',
+            Path(__file__).parent / 'fonts',
+            Path(r'C:\Windows\Fonts'),
+        ]:
+            if candidate.exists():
+                FONT_FALLBACK = str(candidate)
+                break
+
+    class ReportPDF(FPDF):
+        def __init__(self):
+            super().__init__()
+            self._register_fonts()
+
+        def _register_fonts(self):
+            font_dir = FONT_DIR if Path(FONT_DIR).exists() else FONT_FALLBACK
+            if font_dir:
+                self.add_font('DejaVu', '', str(Path(font_dir) / 'DejaVuSans.ttf'), uni=True)
+                self.add_font('DejaVu', 'B', str(Path(font_dir) / 'DejaVuSans-Bold.ttf'), uni=True)
+                self.font_family_name = 'DejaVu'
+            else:
+                self.font_family_name = 'Helvetica'
+
+        def _f(self, style='', size=10):
+            self.set_font(self.font_family_name, style, size)
+
+        def header(self):
+            self._f('B', 10)
+            self.set_text_color(120, 120, 120)
+            self.cell(0, 6, 'SKRYI Document Suite', new_x='LMARGIN', new_y='NEXT')
+            self.set_draw_color(180, 180, 180)
+            self.line(10, self.get_y(), 200, self.get_y())
+            self.ln(4)
+
+        def footer(self):
+            self.set_y(-30)
+            self.set_draw_color(180, 180, 180)
+            self.line(10, self.get_y(), 200, self.get_y())
+            self.ln(3)
+            self._f('', 7)
+            self.set_text_color(100, 100, 100)
+            disclaimer = (
+                'Prohlášení: Tento report slouží jako technický doklad o provedení procesu '
+                'anonymizace technologií SKRYI. Software pracuje na principu algoritmické detekce, '
+                'která navzdory vysoké přesnosti vyžaduje finální kontrolu člověkem. Uživatel jako '
+                'správce dat nese plnou odpovědnost za shodu výsledného dokumentu s nařízením GDPR. '
+                'Více informací v EULA.'
+            )
+            self.multi_cell(0, 3.5, disclaimer)
+            self._f('', 7)
+            self.cell(0, 4, f'Strana {self.page_no()}/{{nb}}', align='C')
+
+    pdf = ReportPDF()
+    pdf.alias_nb_pages()
+    pdf.add_page()
+    pdf.set_auto_page_break(auto=True, margin=35)
+
+    # ------ Report ID ------
+    report_id = f"REP-{datetime.now().strftime('%Y-%m%d-%H%M%S')}"
+
+    # ====== 1. HLAVICKA ======
+    pdf._f('B', 18)
+    pdf.set_text_color(30, 30, 30)
+    pdf.cell(0, 12, 'CERTIFIKÁT O PROVEDENÉ ANONYMIZACI', new_x='LMARGIN', new_y='NEXT', align='C')
+    pdf.ln(2)
+    pdf._f('', 10)
+    pdf.set_text_color(80, 80, 80)
+    pdf.cell(0, 6, f'ID Reportu: {report_id}', new_x='LMARGIN', new_y='NEXT', align='C')
+    pdf.ln(6)
+
+    # Helper for label:value rows
+    def kv_row(label, value, bold_val=False):
+        pdf._f('B', 9)
+        pdf.set_text_color(60, 60, 60)
+        pdf.cell(55, 6, label, new_x='RIGHT')
+        pdf._f('B' if bold_val else '', 9)
+        pdf.set_text_color(30, 30, 30)
+        pdf.cell(0, 6, str(value), new_x='LMARGIN', new_y='NEXT')
+
+    def section_title(title):
+        pdf.ln(4)
+        pdf.set_fill_color(240, 240, 240)
+        pdf._f('B', 11)
+        pdf.set_text_color(30, 30, 30)
+        pdf.cell(0, 8, f'  {title}', new_x='LMARGIN', new_y='NEXT', fill=True)
+        pdf.ln(2)
+
+    # ====== 2. IDENTIFIKACE ZDROJOVEHO SOUBORU ======
+    section_title('Identifikace zdrojového souboru')
+    kv_row('Název souboru:', Path(source_file).name)
+    size_mb = source_size / (1024 * 1024)
+    size_str = f"{size_mb:.2f} MB" if size_mb >= 1 else f"{source_size / 1024:.1f} KB"
+    kv_row('Velikost souboru:', size_str)
+    kv_row('Digitální otisk (SHA-256):', source_hash[:64])
+
+    # ====== 3. DETAILY PROCESU ======
+    section_title('Detaily procesu')
+    start_dt = datetime.fromtimestamp(start_ts)
+    kv_row('Čas zahájení:', start_dt.strftime('%d. %m. %Y, %H:%M:%S'))
+    kv_row('Doba zpracování:', f'{duration_secs:.1f} sekundy')
+    kv_row('Verze Enginu:', 'SKRYI Core v3.0 (Morfologická inference CZ/SK)')
+    kv_row('Režim zpracování:', 'Lokální / Offline (Data neopustila stanici)')
+
+    # ====== 4. STATISTICKY PREHLED ======
+    section_title('Statistický přehled (Výsledek analýzy)')
+
+    # Build category stats from entity_map + canonical_persons
+    category_stats = []
+
+    # Persons
+    person_count = 0
+    person_labels = []
+    for p in canonical_persons:
+        person_count += 1
+        canonical_full = f'{p["first"]} {p["last"]}'
+        variants = entity_map.get('PERSON', {}).get(canonical_full, set())
+        person_count += len(variants)  # includes declension variants
+        person_labels.append(p['tag'])
+    if canonical_persons:
+        category_stats.append(('Osoby (Jména)', len(canonical_persons), ', '.join(person_labels[:4])))
+
+    # Other entity types
+    for typ, entities in sorted(entity_map.items()):
+        if typ == 'PERSON':
+            continue
+        if not entities:
+            continue
+        cat_name, tag_prefix = _ENTITY_CATEGORY_MAP.get(typ, (typ, typ))
+        total_occurrences = sum(max(len(v), 1) if isinstance(v, set) else 1 for v in entities.values())
+        labels = [f'[[{tag_prefix}_{i}]]' for i in range(1, min(len(entities) + 1, 4))]
+        category_stats.append((cat_name, total_occurrences, ', '.join(labels)))
+
+    # Count total variant forms (pádové varianty)
+    total_padove = 0
+    for p in canonical_persons:
+        canonical_full = f'{p["first"]} {p["last"]}'
+        variants = entity_map.get('PERSON', {}).get(canonical_full, set())
+        total_padove += len(variants)
+
+    # Draw table
+    if category_stats:
+        # Table header
+        pdf.set_fill_color(50, 50, 50)
+        pdf.set_text_color(255, 255, 255)
+        pdf._f('B', 8)
+        col_w = [70, 25, 95]
+        headers = ['Kategorie entity', 'Počet', 'Příklady štítků']
+        for i, h in enumerate(headers):
+            pdf.cell(col_w[i], 7, h, border=1, fill=True, align='C')
+        pdf.ln()
+
+        # Table rows
+        pdf.set_text_color(30, 30, 30)
+        fill = False
+        for cat_name, count, labels in category_stats:
+            pdf.set_fill_color(248, 248, 248) if fill else pdf.set_fill_color(255, 255, 255)
+            pdf._f('', 8)
+            pdf.cell(col_w[0], 6, cat_name, border=1, fill=True)
+            pdf.cell(col_w[1], 6, str(count), border=1, fill=True, align='C')
+            pdf._f('', 7)
+            pdf.cell(col_w[2], 6, labels, border=1, fill=True)
+            pdf.ln()
+            fill = not fill
+
+        pdf.ln(3)
+
+    # Total entities
+    total_entities = sum(
+        len(entities) for typ, entities in entity_map.items() if typ != 'PERSON'
+    ) + len(canonical_persons)
+    pdf._f('B', 9)
+    pdf.set_text_color(30, 30, 30)
+    pdf.cell(55, 6, 'Celkem nahrazených entit:', new_x='RIGHT')
+    pdf._f('B', 10)
+    pdf.cell(0, 6, str(total_entities), new_x='LMARGIN', new_y='NEXT')
+
+    if total_padove > 0:
+        pdf._f('', 9)
+        pdf.cell(55, 6, 'Detekovaných pádových variant:', new_x='RIGHT')
+        pdf._f('B', 10)
+        pdf.cell(0, 6, str(total_padove), new_x='LMARGIN', new_y='NEXT')
+
+    # ====== 5. TECHNICKE POTVRZENI BEZPECNOSTI ======
+    section_title('Technické potvrzení bezpečnosti')
+    kv_row('Mapa náhrad:', 'Uložena v souboru .json')
+    kv_row('Metoda anonymizace:', 'Pseudonymizace s možností reverzního procesu')
+
+    # Save
+    pdf.output(pdf_path)
+    print(f"  [OK] PDF report ulozen: {Path(pdf_path).name}")
+
+
 # =============== Batch processing ===============
 def batch_anonymize(folder_path, names_json="cz_names.v1.json"):
     """Zpracuje všechny DOCX soubory v adresáři."""
@@ -5540,11 +5815,12 @@ def batch_anonymize(folder_path, names_json="cz_names.v1.json"):
         out_docx = path.parent / f"{base}_anon.docx"
         out_json = path.parent / f"{base}_map.json"
         out_txt = path.parent / f"{base}_map.txt"
+        out_pdf = path.parent / f"{base}_report.pdf"
 
         try:
             a = Anonymizer(verbose=False)
-            a.anonymize_docx(str(path), str(out_docx), str(out_json), str(out_txt))
-            print(f"[OK] Vystupy: {out_docx.name}, {out_json.name}, {out_txt.name}")
+            a.anonymize_docx(str(path), str(out_docx), str(out_json), str(out_txt), pdf_report=str(out_pdf))
+            print(f"[OK] Vystupy: {out_docx.name}, {out_json.name}, {out_txt.name}, {out_pdf.name}")
         except Exception as e:
             print(f"[X] CHYBA pri zpracovani {path.name}: {e}")
             import traceback
@@ -5587,6 +5863,7 @@ def main():
         out_docx = path.parent / f"{base}_anon.docx"
         out_json = path.parent / f"{base}_map.json"
         out_txt = path.parent / f"{base}_map.txt"
+        out_pdf = path.parent / f"{base}_report.pdf"
 
         # Kontrola zamčených souborů
         files_locked = False
@@ -5604,16 +5881,18 @@ def main():
             out_docx = path.parent / f"{base}_anon_{timestamp}.docx"
             out_json = path.parent / f"{base}_map_{timestamp}.json"
             out_txt = path.parent / f"{base}_map_{timestamp}.txt"
+            out_pdf = path.parent / f"{base}_report_{timestamp}.pdf"
             print(f"\n[!] Vystupni soubory jsou otevrene v jine aplikaci!")
             print(f"   Vytvářím nové soubory s časovým razítkem: {timestamp}\n")
 
         a = Anonymizer(verbose=False)
-        a.anonymize_docx(str(path), str(out_docx), str(out_json), str(out_txt))
+        a.anonymize_docx(str(path), str(out_docx), str(out_json), str(out_txt), pdf_report=str(out_pdf))
 
         print(f"\n[OK] Vystupy:")
         print(f" - {out_docx}")
         print(f" - {out_json}")
         print(f" - {out_txt}")
+        print(f" - {out_pdf}")
         print(f"\n[INFO] Statistiky:")
         print(f" - Nalezeno osob: {len(a.canonical_persons)}")
         print(f" - Celkem entit: {sum(len(e) for e in a.entity_map.values())}")

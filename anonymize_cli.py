@@ -53,6 +53,7 @@ def main():
     parser.add_argument("--output", required=True, help="Output anonymized DOCX file path")
     parser.add_argument("--map", required=True, help="Output JSON map file path")
     parser.add_argument("--map_txt", required=True, help="Output TXT map file path")
+    parser.add_argument("--report", default=None, help="Output PDF report file path")
     parser.add_argument("--verbose", action="store_true", help="Enable verbose output")
 
     args = parser.parse_args()
@@ -94,12 +95,18 @@ def main():
         print(f"\n[INFO] Zpracovavam: {input_path.name}")
         anonymizer = Anonymizer(verbose=args.verbose)
 
+        # Determine PDF report path (auto-generate if not provided)
+        report_path = args.report
+        if not report_path:
+            report_path = str(Path(args.output).parent / (Path(args.output).stem.replace('_anon', '') + '_report.pdf'))
+
         # Run anonymization
         anonymizer.anonymize_docx(
             str(input_path),
             args.output,
             args.map,
-            args.map_txt
+            args.map_txt,
+            pdf_report=report_path
         )
 
         # Output JSON result for Electron to parse
@@ -108,6 +115,7 @@ def main():
             "output": str(Path(args.output).absolute()),
             "map_json": str(Path(args.map).absolute()),
             "map_txt": str(Path(args.map_txt).absolute()),
+            "report_pdf": str(Path(report_path).absolute()) if report_path and Path(report_path).exists() else None,
             "persons_found": len(anonymizer.canonical_persons),
             "entities_total": sum(len(entities) for entities in anonymizer.entity_map.values())
         }
