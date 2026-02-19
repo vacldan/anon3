@@ -47,7 +47,7 @@ ERROR_FOLDER = BASE_FOLDER / "ERROR"
 LOGS_FOLDER = BASE_FOLDER / "LOGS"
 
 # Podporovane formaty
-SUPPORTED_EXTENSIONS = {'.pdf'}
+SUPPORTED_EXTENSIONS = {'.pdf', '.png', '.jpg', '.jpeg', '.tiff', '.tif', '.bmp', '.webp'}
 
 # Delay pred zpracovanim (cekame az se soubor dokonci kopirovat)
 PROCESS_DELAY_SECONDS = 2
@@ -139,8 +139,9 @@ def process_document(file_path, logger):
             logger.warning(f"Nepodporovany format: {file_path.suffix}")
             return False
 
-        # PDF -> DOCX konverze
-        logger.info("Konvertuji PDF na DOCX...")
+        # PDF/obrazek -> DOCX konverze
+        is_image = file_path.suffix.lower() in {'.png', '.jpg', '.jpeg', '.tiff', '.tif', '.bmp', '.webp'}
+        logger.info(f"Konvertuji {'obrazek' if is_image else 'PDF'} na DOCX...")
         pdf2docx_script = get_script_path('pdf2docx_cli.py')
 
         if not pdf2docx_script or not pdf2docx_script.exists():
@@ -186,14 +187,14 @@ def process_document(file_path, logger):
                 )
 
             if result.returncode != 0:
-                logger.error(f"PDF konverze selhala: {result.stderr}")
+                logger.error(f"Konverze selhala: {result.stderr}")
                 logger.error(f"STDOUT: {result.stdout}")
                 return False
 
         # Najdi vytvoreny DOCX
         docx_path = file_path.with_suffix('.docx')
         if not docx_path.exists():
-            logger.error("DOCX soubor nebyl vytvoren po PDF konverzi")
+            logger.error("DOCX soubor nebyl vytvoren po konverzi")
             return False
 
         # Presun vystup do OUT slozky
@@ -320,9 +321,13 @@ def create_folders():
             f.write("=" * 50 + "\n\n")
             f.write("JAK POUZIVAT:\n")
             f.write("-" * 50 + "\n")
-            f.write("1. Vloz PDF soubor do teto slozky\n")
+            f.write("1. Vloz PDF nebo obrazek do teto slozky\n")
             f.write("2. Pockej par sekund\n")
             f.write("3. Prevedeny DOCX najdes ve slozce OUT\n\n")
+            f.write("PODPOROVANE FORMATY:\n")
+            f.write("-" * 50 + "\n")
+            f.write("- PDF (textove i skenovane)\n")
+            f.write("- Obrazky: PNG, JPG, JPEG, TIFF, TIF, BMP, WEBP\n\n")
             f.write("POZNAMKY:\n")
             f.write("-" * 50 + "\n")
             f.write("- Konverze zachovava formatovani pokud mozno\n")
@@ -372,7 +377,8 @@ def main():
     write_status('running', 'Monitoruji slozku PDF_IN')
 
     print(f"\nMonitoruji slozku: {IN_FOLDER}")
-    print("Vlozte PDF soubor do slozky PDF_IN pro konverzi na DOCX.")
+    print("Vlozte PDF nebo obrazek do slozky IN pro konverzi na DOCX.")
+    print("Podporovane: PDF, PNG, JPG, JPEG, TIFF, TIF, BMP, WEBP")
     print("Pro ukonceni stisknete Ctrl+C\n")
 
     try:
