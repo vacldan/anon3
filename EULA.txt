@@ -1,122 +1,124 @@
-﻿================================================================================
-                         LICENCNI PODMINKY
-                      SKRYI Document Suite
 ================================================================================
+     LICENCNI UJEDNANI S KONCOVYM UZIVATELEM (EULA)
+                   SKRYI Document Suite
+================================================================================
+
 
 1. UVODNI USTANOVENI
 --------------------
 
-Tyto licencni podminky ("EULA") upravuji prava a povinnosti mezi spolecnosti
-Nixminds s.r.o. ("Poskytovatel") a uzivatelem ("Uzivatel") pri pouzivani
-softwaru SKRYI Document Suite ("Software").
+* Toto Licencni ujednani (dale jen "Smlouva") je pravni smlouvou mezi vami
+  (fyzickou nebo pravnickou osobou, dale jen "Uzivatel") a spolecnosti
+  Nixminds s.r.o. (nebo aktualnim pravnim subjektem/OSVC, dale jen
+  "Poskytovatel").
 
-Instalaci, spustenim nebo pouzivanim Software Uzivatel potvrzuje, ze se
-s temito podminkami seznamil a souhlasi s nimi.
+* Predmetem Smlouvy je poskytnuti prava k uziti pocitacoveho programu
+  SKRYI Document Suite (dale jen "Software").
 
-
-2. LICENCE
-----------
-
-Poskytovatel udeluje Uzivateli nevyhradni, neprenosnou a casove omezenou
-licenci k uzivani Software v rozsahu odpovidajicim zakoupenemu licencnimu typu.
-
-Licence je:
-  - vazana na konkretni zarizeni (hardware-bound)
-  - urcena vyhradne pro interni potreby Uzivatele
-  - neprenosna na treti osoby
-
-Bez vyslovneho pisemneho souhlasu Poskytovatele neni dovoleno:
-  - Software dale sirit, pronajímat nebo sublicencovat
-  - obchazet licencni ochrany
-  - provadet reverse engineering, dekompilaci nebo jine pokusy o ziskani
-    zdrojoveho kodu
+* Instalaci, kopirovanim nebo jinym uzitim Softwaru vyjadruje Uzivatel
+  souhlas s podminkami teto Smlouvy.
 
 
-3. UCEL SOFTWARE
-----------------
+2. ROZSAH LICENCE
+-----------------
 
-Software slouzi jako podpurny nastroj pro anonymizaci dokumentu obsahujicich
-osobni udaje.
+* Poskytovatel udeluje Uzivateli nevyhradni, neprenosnou a casove omezenou
+  licenci k uziti Softwaru.
 
-Software:
-  - automatizuje vybrane procesy anonymizace
-  - nenahrazuje odborny usudek Uzivatele
-  - neni nahradou pravni nebo odborne kontroly dokumentu
+* Licence je technicky vazana na unikatni identifikator hardwaru
+  (Hardware ID) a nesmi byt bez souhlasu Poskytovatele uzivana na jinem
+  zarizeni.
+
+* Uzivateli je zakazano Software dale sirit, provadet zpetne inzenyrstvi
+  (reverse engineering), dekompilovat nebo se pokousel o vyvoj odvozenych
+  del.
 
 
-4. ODPOVEDNOST UZIVATELE
-------------------------
+3. UCEL SOFTWARU A POVAHA TECHNOLOGIE
+--------------------------------------
 
-Uzivatel bere na vedomi, ze:
-  - vysledky anonymizace je nutne pred dalsim pouzitim nebo zverejnenim
-    zkontrolovat
-  - konecna odpovednost za obsah dokumentu zustava vzdy na Uzivateli
+* Software je technologicky nastroj urceny k usnadneni procesu anonymizace
+  dokumentu pomoci algoritmicke a morfologicke analyzy textu.
 
-Uzivatel odpovida za:
-  - spravnost vstupnich dat
-  - zpusob pouziti vystupu Software
-  - dodrzeni pravnich predpisu (vcetne GDPR)
+* Software neni pravni sluzbou ani automatizovanym rozhodovacim systemem
+  s pravnimi ucinky; slouzi vyhradne jako asistence pro lidskeho operatora.
+
+* Uzivatel bere na vedomi, ze Software pracuje v plne offline rezimu,
+  neodesila zadna data k Poskytovateli a neodpovida za kvalitu vstupnich
+  dat (napr. nekvalitni skeny).
+
+
+4. ODPOVEDNOST UZIVATELE (GDPR COMPLIANCE)
+-------------------------------------------
+
+* Uzivatel nese vyhradni roli Spravce osobnich udaju ve smyslu narizeni
+  GDPR.
+
+* Uzivatel je povinen provest finalni vizualni kontrolu kazdeho vystupu
+  (anonymizovaneho dokumentu) pred jeho zverejnenim nebo predanim tretim
+  stranam.
+
+* Automatizovane rozpoznani entit nenahrazuje odborny usudek a nezbavuje
+  Uzivatele odpovednosti za ochranu citlivych udaju.
 
 
 5. OMEZENI ODPOVEDNOSTI POSKYTOVATELE
--------------------------------------
+--------------------------------------
 
-Software je poskytovan "tak, jak je" (AS IS).
+* Software je poskytovan "tak, jak stoji a lezi" (AS IS). Poskytovatel
+  negarantuje 100% uspesnost detekce vsech osobnich udaju vzhledem
+  k lingvisticke slozitosti a kontextove promenlivosti ceskeho
+  a slovenskeho jazyka.
 
-Poskytovatel:
-  - negarantuje, ze Software bude bezchybny nebo vhodny pro vsechny
-    specificke ucely
-  - nenese odpovednost za:
-      - neprime skody
-      - usly zisk
-      - ztratu dat
-      - sankce, pokuty nebo jine postihy ulozene tretimi stranami nebo
-        organy verejne moci
+* Celkova odpovednost Poskytovatele za jakekoli prime ci neprime skody
+  (vcetne spravnich pokut udelenych dozorovymi urady) je omezena
+  maximalni castkou odpovidajici vysi zaplaceneho licencniho poplatku
+  za dane obdobi.
 
-Celkova odpovednost Poskytovatele za skodu vzniklou v souvislosti s pouzivanim
-Software je omezena maximalne do vyse zaplaceneho licencniho poplatku za dane
-licencni obdobi.
+* Poskytovatel neodpovida za ztratu dat, zisku nebo jine ekonomicke ztraty
+  vznikle v souvislosti s uzitim Softwaru.
 
 
-6. PODPORA A AKTUALIZACE
-------------------------
+6. OCHRANA OSOBNICH UDAJU A DUVERNOST
+--------------------------------------
 
-Poskytovatel muze poskytovat:
-  - aktualizace
-  - opravy chyb
-  - technickou podporu
+* Poskytovatel prohlasuje, ze Software neposila zadne dokumenty, metadata
+  ani mapy nahrad na externi servery.
 
-Rozsah podpory zavisi na typu zakoupene licence a neni automaticky garantovan.
+* Veskere zpracovani probiha lokalne na infrastrukture Uzivatele, cimz je
+  zajistena maximalni uroven zabezpeceni citlivych informaci.
 
 
-7. OCHRANA DAT
---------------
+7. PODPORA A AKTUALIZACE
+-------------------------
 
-Software funguje v offline rezimu a nezajistuje prenos dat na servery
-Poskytovatele.
+* Poskytovatel muze vydavat aktualizace softwaru za ucelem vylepseni
+  funkci nebo opravy chyb.
 
-Poskytovatel:
-  - nezpracovava osobni udaje obsazene v dokumentech Uzivatele
-  - nenese odpovednost za nakladani s daty mimo Software
+* Narok na technickou podporu a aktualizace se ridi typem zakoupene
+  licence.
 
 
 8. UKONCENI LICENCE
--------------------
+--------------------
 
-Licence zanika:
-  - uplynutim licencni doby
-  - porusenim techto podminek
-  - ukoncenim smluvniho vztahu
+* Licence zanika uplynutim sjednane doby, neuhrazenim licencniho poplatku
+  nebo porusenim podminek teto Smlouvy Uzivatelem.
 
-Po ukonceni licence je Uzivatel povinen Software dale nepouzivat.
+* Pri ukonceni licence je Uzivatel povinen ukoncit uzivani Softwaru
+  a odstranit jej ze sveho zarizeni.
 
 
 9. ZAVERECNA USTANOVENI
------------------------
+------------------------
 
-Tyto licencni podminky se ridi pravnim radem Ceske republiky.
+* Tato Smlouva se ridi pravnim radem Ceske republiky.
 
-Veskere spory budou reseny prislusnymi soudy Ceske republiky.
+* Pripadne spory budou reseny vecne a mistne prislusnymi soudy v Ceske
+  republice.
+
+* Pokud se nektere ustanoveni stane neplatnym, ostatni ustanoveni Smlouvy
+  zustavaji v platnosti.
 
 
 ================================================================================
