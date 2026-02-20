@@ -5534,6 +5534,7 @@ class Anonymizer:
 
         # PDF report (volitelný)
         if pdf_report:
+            print(f"  [INFO] Generuji PDF report: {Path(pdf_report).name}")
             duration = _time.time() - getattr(self, '_report_start_ts', _time.time())
             try:
                 _generate_pdf_report(
@@ -5550,6 +5551,8 @@ class Anonymizer:
                 )
             except Exception as e:
                 print(f"[WARN] PDF report generation failed: {e}")
+                import traceback
+                traceback.print_exc()
 
 # =============== PDF Report Generator ===============
 _ENTITY_CATEGORY_MAP = {
@@ -5598,18 +5601,18 @@ def _generate_pdf_report(pdf_path: str, source_file: str, source_size: int,
         return
 
     # ------ Fonts ------
-    FONT_DIR = '/usr/share/fonts/truetype/dejavu/'
-    FONT_FALLBACK = None
-    # On Windows, DejaVu may be elsewhere
-    if not Path(FONT_DIR).exists():
-        for candidate in [
-            Path(sys.executable).parent / 'fonts',
-            Path(__file__).parent / 'fonts',
-            Path(r'C:\Windows\Fonts'),
-        ]:
-            if candidate.exists():
-                FONT_FALLBACK = str(candidate)
-                break
+    # Hledej DejaVu fonty v několika lokacích (prioritně bundled ve složce fonts/)
+    FONT_DIR = None
+    _font_candidates = [
+        Path(__file__).parent / 'fonts',                          # Bundled s aplikací (dev)
+        Path(sys.executable).parent / 'fonts',                    # Bundled s exe (Nuitka)
+        Path(sys.argv[0]).resolve().parent / 'fonts',             # Original exe dir (Nuitka onefile)
+        Path('/usr/share/fonts/truetype/dejavu'),                 # Linux
+    ]
+    for candidate in _font_candidates:
+        if candidate.exists() and (candidate / 'DejaVuSans.ttf').exists():
+            FONT_DIR = str(candidate)
+            break
 
     class ReportPDF(FPDF):
         def __init__(self):
@@ -5617,7 +5620,7 @@ def _generate_pdf_report(pdf_path: str, source_file: str, source_size: int,
             self._register_fonts()
 
         def _register_fonts(self):
-            font_dir = FONT_DIR if Path(FONT_DIR).exists() else FONT_FALLBACK
+            font_dir = FONT_DIR
             if font_dir:
                 self.add_font('DejaVu', '', str(Path(font_dir) / 'DejaVuSans.ttf'), uni=True)
                 self.add_font('DejaVu', 'B', str(Path(font_dir) / 'DejaVuSans-Bold.ttf'), uni=True)
