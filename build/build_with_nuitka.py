@@ -37,6 +37,19 @@ DATA_FILES = [
     "cz_names.v1.json",
 ]
 
+# Directories to include alongside executables
+DATA_DIRS = [
+    "fonts",  # DejaVu fonts for PDF report generation
+]
+
+# Extra Nuitka flags per script (e.g. include packages)
+EXTRA_FLAGS = {
+    "anonymize_cli.py": [
+        "--include-package=fpdf",      # PDF report generation (fpdf2)
+        "--include-package=fonttools",  # Required by fpdf2 for TTF fonts
+    ],
+}
+
 
 def run_command(cmd, description):
     """Run a command and return success status"""
@@ -91,8 +104,13 @@ def compile_to_exe(filepath, output_dir):
         "--output-filename=" + output_name + ".exe",
         # Console mode: disable console window (Electron communicates via pipes)
         "--windows-console-mode=disable",
-        str(filepath)
     ]
+
+    # Add extra flags for specific scripts (e.g. --include-package)
+    extra = EXTRA_FLAGS.get(filename, [])
+    cmd.extend(extra)
+
+    cmd.append(str(filepath))
 
     return run_command(cmd, f"Compiling {filename} to .exe")
 
@@ -174,7 +192,7 @@ def main():
                 print(f"INFO: Copying {filename} as-is (compilation failed)")
                 shutil.copy(filepath, output_dir / filename)
 
-    # Phase 3: Copy data files
+    # Phase 3: Copy data files and directories
     print("\n" + "=" * 60)
     print("  PHASE 3: Copying data files")
     print("=" * 60)
@@ -184,6 +202,15 @@ def main():
         if filepath.exists():
             shutil.copy(filepath, output_dir / filename)
             print(f"  Copied: {filename}")
+
+    for dirname in DATA_DIRS:
+        dirpath = project_root / dirname
+        if dirpath.exists():
+            dest = output_dir / dirname
+            if dest.exists():
+                shutil.rmtree(dest)
+            shutil.copytree(dirpath, dest)
+            print(f"  Copied directory: {dirname}/")
 
     # Summary
     print("\n" + "=" * 60)
