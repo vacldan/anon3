@@ -1,4 +1,4 @@
-# SKRYI Document Suite - Technická dokumentace v3.1
+# SKRYI Document Suite - Technická dokumentace v3.2
 
 ## Systém pro morfologicky inteligentní anonymizaci dokumentů v inflektivních jazycích
 
@@ -10,18 +10,22 @@
 **SKRYI Document Suite** - Offline anonymizační systém pro GDPR compliance
 
 ## 1.2 Verze
-**3.0.0** (Production Ready)
+**3.1.0** (Production Ready)
 
 ## 1.3 Účel
-Automatická anonymizace osobních údajů v dokumentech (DOCX, PDF) s podporou českého jazyka včetně morfologických variant (skloňování). Systém je navržen pro **plně offline provoz** - žádná data neopouštějí zařízení uživatele.
+Automatická anonymizace osobních údajů v dokumentech (DOCX, PDF, obrázky) s podporou českého a slovenského jazyka včetně morfologických variant (skloňování). Systém je navržen pro **plně offline provoz** - žádná data neopouštějí zařízení uživatele.
 
 ## 1.4 Klíčové vlastnosti
 - **100% Offline** - žádná data na internet
 - **GDPR Compliant** - splňuje požadavky nařízení
 - **Morfologická inteligence** - rozpoznává pádové varianty jmen
 - **Reverzibilní anonymizace** - možnost deanonymizace s klíčem
-- **Hardware-bound licence** - ochrana proti neoprávněnému kopírování
+- **OCR konverze** - převod PDF a obrázků (PNG, JPG, TIFF, BMP, WEBP) na DOCX pomocí Tesseract
+- **Složkový režim** - automatický watcher pro hromadné zpracování
+- **PDF report** - automatický Certifikát o provedené anonymizaci (SHA-256, statistiky, GDPR doložka)
+- **Hardware-bound licence** - ochrana proti neoprávněnému kopírování s AppData persistencí
 - **Nativní kompilace** - zdrojový kód chráněn před reverzním inženýrstvím
+- **Rozšířený blacklist** - 350+ českých slov chráněných před falešnou detekcí (tituly, profese, právní role)
 
 ## 1.5 Oblast techniky
 Vynález se týká oblasti zpracování přirozeného jazyka (NLP), konkrétně automatizované anonymizace osobních údajů v textových dokumentech. Technologie je primárně určena pro **inflektivní jazyky** (čeština, slovenština, polština, ruština), kde se slova skloňují podle gramatických pádů.
@@ -103,7 +107,8 @@ SKRYI Document Suite/
         ├── validate_license_standalone.exe  # Validace licence
         ├── anonymize_cli.exe               # Anonymizace
         ├── deanonymizator_lokal.exe        # Deanonymizace
-        ├── pdf2docx_cli.exe                # PDF konverze
+        ├── pdf2docx_cli.exe                # PDF/Obrázky → DOCX (OCR)
+        ├── pdf2docx_watcher.exe            # Složkový režim (watcher)
         └── cz_names.v1.json                # Databáze českých jmen (224 000)
 ```
 
@@ -157,6 +162,7 @@ SKRYI Document Suite/
 │  ├─ In-place náhrada v DOCX (zachování struktury)       │
 │  ├─ Generování JSON mapy (strojově čitelná)             │
 │  ├─ Generování TXT mapy (lidsky čitelná)                │
+│  ├─ Generování PDF reportu (certifikát anonymizace)     │
 │  └─ Uložení anonymizovaného dokumentu                   │
 └───────────────────────┬─────────────────────────────────┘
                         │
@@ -165,7 +171,8 @@ SKRYI Document Suite/
 │  OUTPUT:                                                │
 │  ├─ dokument_anon.docx (anonymizovaný dokument)         │
 │  ├─ dokument_map.json (mapa náhrad - JSON)              │
-│  └─ dokument_map.txt (mapa náhrad - čitelná)            │
+│  ├─ dokument_map.txt (mapa náhrad - čitelná)            │
+│  └─ dokument_report.pdf (certifikát o anonymizaci)      │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -177,16 +184,29 @@ SKRYI Document Suite/
 
 | Kategorie | Příklady | Štítek |
 |-----------|----------|--------|
-| Jména osob | Jan Novák, Petra Svobodová | `[[UŽIVATEL_1]]` |
-| Adresy | Hlavní 123, Praha 1, 110 00 | `[[ADRESA_1]]` |
+| Jména osob | Jan Novák, Petra Svobodová | `[[OSOBA_1]]` |
+| Adresy | Hlavní 123, Praha 1, 110 00 | `[[ADDRESS_1]]` |
 | E-maily | jan.novak@email.cz | `[[EMAIL_1]]` |
-| Telefony | +420 777 123 456 | `[[TELEFON_1]]` |
-| Rodná čísla | 850101/1234 | `[[RČ_1]]` |
-| Čísla účtů | 123456789/0100 | `[[ÚČET_1]]` |
+| Telefony | +420 777 123 456 | `[[PHONE_1]]` |
+| Rodná čísla | 850101/1234 | `[[RC_1]]` |
+| Data narození | 15.03.1985 | `[[BIRTH_DATE_1]]` |
+| Čísla účtů | 123456789/0100 | `[[BANK_ACCOUNT_1]]` |
 | IBAN | CZ6508000000192000145399 | `[[IBAN_1]]` |
-| IČO/DIČ | 12345678, CZ12345678 | `[[IČ_1]]`, `[[DIČ_1]]` |
-| SPZ | 1A2 3456 | `[[SPZ_1]]` |
-| OP/Pasy | 123456789 | `[[OP_1]]`, `[[PAS_1]]` |
+| Platební karty | 4111 1111 1111 1111 | `[[CARD_1]]` |
+| IČO/DIČ | 12345678, CZ12345678 | `[[ICO_1]]`, `[[DIC_1]]` |
+| SPZ | 1A2 3456 | `[[LICENSE_PLATE_1]]` |
+| VIN | WBA3A5C50CF256789 | `[[VIN_1]]` |
+| OP/Pasy | 123456789 | `[[ID_CARD_1]]`, `[[PASSPORT_1]]` |
+| Řidičské průkazy | EA 123456 | `[[DRIVER_LICENSE_1]]` |
+| Čísla pojištěnce | 8501011234 | `[[INSURANCE_ID_1]]` |
+| IP adresy | 192.168.1.1 | `[[IP_1]]` |
+| Uživatelská jména | admin, user123 | `[[USERNAME_1]]` |
+| Hesla | P@ssword123! | `[[PASSWORD_1]]` |
+| API klíče | sk-abc123def456 | `[[API_KEY_1]]` |
+| SSH klíče | ssh-rsa AAAA... | `[[SSH_KEY_1]]` |
+| Hostnames | server.company.cz | `[[HOST_1]]` |
+| RFID/Badge | RFID:A1B2C3D4 | `[[RFID_1]]` |
+| Sociální sítě | linkedin.com/in/user | `[[LINKEDIN_1]]`, `[[FACEBOOK_1]]`, `[[INSTAGRAM_1]]` |
 
 ## 4.2 INOVACE #1: Bidirekcionalní morfologická inference
 
@@ -509,13 +529,20 @@ Licenční soubor (`license.lic`) obsahuje Base64 encoded JSON:
 ## 7.3 Ověření licence
 
 ```
-1. Načti license.lic ze složky aplikace
+1. Hledej license.lic ve 4 lokacích (prioritně):
+   a) Složka s .exe (appRoot)
+   b) %AppData%\SKRYI Document Suite\ (přežije reinstalace)
+   c) resources/app.asar.unpacked
+   d) Uvnitř app.asar (fallback)
 2. Dekóduj Base64 → JSON
 3. Ověř podpis (HMAC-SHA256 s MASTER_SECRET)
 4. Porovnej HW ID v licenci s aktuálním HW ID počítače
 5. Zkontroluj expiraci (expires_at > now)
-6. Pokud vše OK → spusť aplikaci
+6. Pokud vše OK → zkopíruj licenci do AppData (persistence) → spusť aplikaci
 ```
+
+### AppData persistence
+Při úspěšné validaci se licence automaticky kopíruje do `%AppData%\SKRYI Document Suite\license.lic`. Díky tomu **licence přežije reinstalaci** aplikace na stejném počítači — uživatel nemusí po reinstalaci znovu umisťovat licenční soubor.
 
 ## 7.4 Aktivační proces zákazníka
 
@@ -525,7 +552,7 @@ Licenční soubor (`license.lic`) obsahuje Base64 encoded JSON:
 4. Prodejce vygeneruje licenci pomocí license_generator.py
 5. Zákazník obdrží soubor license.lic
 6. Zákazník umístí license.lic do složky s aplikací
-7. Aplikace se spustí
+7. Aplikace se spustí (licence se automaticky zkopíruje do AppData)
 
 ## 7.5 Typy licencí
 
@@ -559,7 +586,8 @@ Python zdrojové kódy jsou kompilovány do **nativních Windows executable**.
 | `validate_license_standalone.exe` | MASTER_SECRET, HW ID algoritmus |
 | `anonymize_cli.exe` | Anonymizační logika |
 | `deanonymizator_lokal.exe` | Deanonymizační logika |
-| `pdf2docx_cli.exe` | PDF konverze |
+| `pdf2docx_cli.exe` | PDF/Obrázky → DOCX (OCR) |
+| `pdf2docx_watcher.exe` | Složkový režim (watcher) |
 
 ---
 
@@ -571,33 +599,44 @@ Python zdrojové kódy jsou kompilovány do **nativních Windows executable**.
 - Python 3.11
 - Nuitka (`pip install nuitka`)
 - C++ kompilátor (Nuitka si stáhne automaticky)
+- Tesseract OCR (pro PDF/obrázky → DOCX konverzi)
+- Python závislosti: `python-docx`, `fpdf2`, `Pillow`, `pytesseract`, `pdf2image`, `watchdog`
 
 ## 9.2 Kompletní build
 
 ```bash
 cd C:\Nixminds\skryi-clean
 
-# 1. Instalace závislostí
+# 1. Stáhni poslední verzi z GitHubu
+git pull origin main
+
+# 2. Instalace Node.js závislostí
 npm install
 
-# 2. Kompilace Python → .exe
+# 3. Instalace Python závislostí
+pip install python-docx fpdf2 Pillow pytesseract pdf2image watchdog nuitka
+
+# 4. Kompilace Python → .exe (5 souborů)
 python build/build_with_nuitka.py
 
-# 3. Kopírování zkompilovaných souborů
+# 5. Kopírování zkompilovaných souborů
 copy dist_nuitka\*.exe . /Y
 
-# 4. Smazání originálních .py souborů
+# 6. Smazání originálních .py souborů
 del validate_license_standalone.py
 del anonymize_cli.py
 del deanonymizator_lokal.py
 del pdf2docx_cli.py
-del "anon7.2 - s padama.py"
+del pdf2docx_watcher.py
+del anon72.py
 
-# 5. Build Windows installer
+# 7. Build Windows installer
 npm run dist
 
-# Výsledek: dist/SKRYI-Setup-3.0.0.exe
+# Výsledek: dist/SKRYI-Setup-3.1.0.exe
 ```
+
+**Poznámka k Nuitka buildu:** Při kompilaci `anonymize_cli.exe` je nutné zahrnout balíček `fpdf2` pro generování PDF reportů: `--include-package=fpdf`.
 
 ---
 
@@ -605,33 +644,67 @@ npm run dist
 
 ## 10.1 Instalace
 
-1. Spusťte `SKRYI-Setup-3.0.0.exe`
-2. Zvolte instalační složku
-3. Dokončete instalaci
-4. Při prvním spuštění zadejte licenci
+1. Spusťte `SKRYI-Setup-3.1.0.exe`
+2. Odsouhlaste licenční podmínky (EULA)
+3. Zvolte instalační složku
+4. Dokončete instalaci
+5. Při prvním spuštění zadejte licenci (nebo se načte automaticky z AppData při reinstalaci)
 
 ## 10.2 Anonymizace dokumentu
 
-1. Klikněte na **"Anonymizace"**
-2. Vyberte DOCX soubor
-3. Klikněte **"Anonymizovat"**
-4. Výsledky:
+1. V levém menu klikněte na **"Nová anonymizace"**
+2. Klikněte **"Procházet DOCX"** a vyberte vstupní soubor
+3. Ověřte nastavení entity typů k anonymizaci (Jména, Adresy, E-maily, atd.)
+4. Klikněte **"Spustit anonymizaci"**
+5. Výsledky (4 soubory ve složce originálu):
    - `dokument_anon.docx` - anonymizovaný dokument
-   - `dokument_map.json` - klíč pro deanonymizaci
+   - `dokument_map.json` - klíč pro deanonymizaci (strojově čitelný)
    - `dokument_map.txt` - čitelný přehled náhrad
+   - `dokument_report.pdf` - Certifikát o provedené anonymizaci (PDF report)
 
 ## 10.3 Deanonymizace dokumentu
 
 1. Klikněte na **"Deanonymizace"**
-2. Vyberte anonymizovaný DOCX
+2. Vyberte anonymizovaný DOCX (`_anon.docx`)
 3. Vyberte příslušný `_map.json` soubor
 4. Klikněte **"Deanonymizovat"**
 
-## 10.4 Konverze PDF → DOCX
+## 10.4 Konverze PDF / Obrázky → DOCX (OCR)
 
-1. Klikněte na **"PDF → DOCX"**
-2. Vyberte PDF soubor
-3. Výsledek: DOCX soubor ve stejné složce
+1. Klikněte na **"PDF / Obrázky → DOCX"**
+2. Vyberte PDF soubor nebo obrázek (PNG, JPG, TIFF, BMP, WEBP)
+3. Systém provede OCR pomocí Tesseract (české rozpoznávání)
+4. Výsledek: DOCX soubor ve stejné složce
+
+**Podporované formáty:**
+- PDF (skenované dokumenty, vícestránkové)
+- PNG, JPG/JPEG, TIFF/TIF, BMP, WEBP (fotografie dokumentů)
+
+**Inteligentní preprocessing:**
+- Pro skenované PDF: standardní contrast enhancement (1.3×)
+- Pro fotografované dokumenty: upscale na 2000px, ostření, contrast 1.8×, brightness 1.2×, automatická EXIF rotace
+
+## 10.5 Složkový režim (Hromadné zpracování)
+
+1. Klikněte na **"Hromadné zpracování"** v levém menu
+2. Spusťte watcher - systém vytvoří složky `PDF_IN` a `PDF_OUT` v Dokumentech
+3. Vložte PDF nebo obrázky do složky `PDF_IN`
+4. Watcher automaticky převede soubory na DOCX do `PDF_OUT`
+
+Podporuje tytéž formáty jako jednorázová konverze (PDF, PNG, JPG, TIFF, BMP, WEBP).
+
+## 10.6 PDF Report (Certifikát o anonymizaci)
+
+Při každé anonymizaci se automaticky generuje PDF report (`_report.pdf`) obsahující:
+
+| Sekce | Obsah |
+|-------|-------|
+| **Hlavička** | Logo SKRYI, nadpis "Certifikát o provedené anonymizaci", ID reportu |
+| **Zdrojový soubor** | Název, velikost, SHA-256 digitální otisk |
+| **Detaily procesu** | Čas zahájení, doba zpracování, verze enginu, offline režim |
+| **Statistický přehled** | Tabulka: kategorie entity, počet výskytů, příklady štítků |
+| **Bezpečnostní potvrzení** | Informace o mapě náhrad a metodě anonymizace |
+| **Právní doložka** | GDPR disclaimer, upozornění na nutnost lidské kontroly |
 
 ---
 
@@ -646,6 +719,11 @@ npm run dist
 | **Přesnost** | 60-70% | **95-98%** |
 | **Zpětná de-anonymizace** | Nekonzistentní | Jednotná mapa |
 | **Offline provoz** | Většinou cloud | 100% offline |
+| **Typy PII** | 5-8 kategorií | **23+ kategorií** |
+| **OCR vstup** | Pouze text/DOCX | PDF, PNG, JPG, TIFF, BMP, WEBP |
+| **Audit trail** | Žádný | PDF certifikát (SHA-256) |
+| **Hromadné zpracování** | Ruční | Automatický watcher |
+| **Blacklist** | Základní | 350+ slov s českými deklinacemi |
 
 ---
 
@@ -689,37 +767,45 @@ Metoda je aplikovatelná na **všechny inflektivní jazyky**:
 
 # 14. PRÁVNÍ OCHRANA A EULA
 
-## 14.1 Licenční podmínky (EULA)
+## 14.1 Licenční ujednání (EULA)
 
-Software je distribuován s licenčními podmínkami (EULA.txt), které:
-- Zobrazují se během instalace (vyžadován souhlas)
-- Jsou dostupné v instalační složce
-- Definují práva a povinnosti uživatele
+Software je distribuován s Licenčním ujednáním s koncovým uživatelem (EULA.txt), které:
+- Zobrazuje se během instalace (vyžadován souhlas)
+- Je dostupné v instalační složce
+- Definuje práva a povinnosti uživatele v 9 článcích
 
 ## 14.2 Klíčové body EULA
 
-**Licence:**
+**Licence (čl. 2):**
 - Nevýhradní, nepřenosná, časově omezená
-- Vázána na konkrétní hardware (HW ID)
-- Pouze pro interní potřeby uživatele
+- Technicky vázána na unikátní identifikátor hardwaru (Hardware ID)
+- Zákaz šíření, reverse engineeringu, dekompilace a odvozených děl
 
-**Odpovědnost uživatele:**
-- Kontrola výstupů před použitím
-- Dodržení právních předpisů (GDPR)
-- Správnost vstupních dat
+**Účel a povaha technologie (čl. 3):**
+- Software není právní službou ani automatizovaným rozhodovacím systémem
+- Slouží výhradně jako asistence pro lidského operátora
+- Plně offline režim, neodesílá data k Poskytovateli
 
-**Omezení odpovědnosti poskytovatele:**
-- Software poskytován "tak, jak je" (AS IS)
-- Negarantuje bezchybnost
+**Odpovědnost uživatele / GDPR Compliance (čl. 4):**
+- Uživatel nese roli Správce osobních údajů (GDPR)
+- Povinnost finální vizuální kontroly každého výstupu
+- Automatizované rozpoznání nenahrazuje odborný úsudek
+
+**Omezení odpovědnosti poskytovatele (čl. 5):**
+- Software poskytován "tak, jak stojí a leží" (AS IS)
+- Negarantuje 100% úspěšnost detekce (lingvistická složitost CZ/SK)
 - Odpovědnost omezena na výši licenčního poplatku
-- Vyloučení nepřímých škod, sankcí, pokut
+- Vyloučení nepřímých škod, správních pokut
+
+**Ochrana dat (čl. 6):**
+- Žádné dokumenty, metadata ani mapy náhrad neopouštějí zařízení
+- Veškeré zpracování probíhá lokálně
 
 ## 14.3 Upozornění pro uživatele
 
 V aplikaci se zobrazuje:
 
-> „Výstup anonymizace je nutné před použitím zkontrolovat.
-> Software slouží jako podpůrný nástroj."
+> „Všechna data zpracována lokálně · GDPR compliant"
 
 ---
 
@@ -761,8 +847,8 @@ Počítačový program obsahující instrukce pro provedení způsobu podle nár
 
 **Výrobce:** Nixminds s.r.o.
 **Email:** info@nixminds.com
-**Verze dokumentace:** 3.2.0
-**Datum:** 30. ledna 2026
+**Verze dokumentace:** 3.3.0
+**Datum:** 20. února 2026
 **Klasifikace:** G06F 40/00 (zpracování přirozeného jazyka), G06F 21/62 (ochrana osobních údajů)
 
 *© 2026 Nixminds s.r.o. Všechna práva vyhrazena.*
