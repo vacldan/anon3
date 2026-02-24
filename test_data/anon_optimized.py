@@ -7,7 +7,7 @@ Czech DOCX Anonymizer – Complete v7.0
 Výstupy: <basename>_anon.docx / _map.json / _map.txt
 """
 
-import sys, re, json, unicodedata, hashlib, time as _time
+import sys, re, json, unicodedata
 from typing import Optional, Set
 from pathlib import Path
 from collections import defaultdict, OrderedDict
@@ -28,7 +28,7 @@ def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
             json_file = Path.cwd() / json_path
 
         if not json_file.exists():
-            print(f"[!] Varovani: {json_path} nenalezen, pouzivam prazdnou knihovnu!")
+            print(f"⚠️  Varování: {json_path} nenalezen, používám prázdnou knihovnu!")
             return set()
 
         with open(json_file, 'r', encoding='utf-8') as f:
@@ -42,18 +42,8 @@ def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
                         for gender_key in ['M', 'F', 'U']:
                             if gender_key in firstnames:
                                 names.update(firstnames[gender_key])
-                # Také načti firstnames_no_diac (bezdiakritické tvary)
-                # Důvod: firstnames neobsahuje tvary bez diakritiky (např. "Jan", "Karel",
-                # "David"), protože obsahuje pouze originální tvary s diakritikou ("Ján").
-                # Bez tohoto by se "Jan" nerozpoznal jako křestní jméno.
-                if 'firstnames_no_diac' in data:
-                    nd = data['firstnames_no_diac']
-                    if isinstance(nd, dict):
-                        for gender_key in ['M', 'F', 'U']:
-                            if gender_key in nd:
-                                names.update(nd[gender_key])
                 # Stará struktura: {"male": [...], "female": [...]}
-                if 'firstnames' not in data and 'firstnames_no_diac' not in data:
+                else:
                     names.update(data.get('male', []))
                     names.update(data.get('female', []))
             elif isinstance(data, list):
@@ -61,14 +51,11 @@ def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
 
             # Převod na lowercase pro jednodušší porovnávání
             names = {name.lower() for name in names}
-            print(f"[OK] Nacteno {len(names)} jmen z knihovny")
+            print(f"✓ Načteno {len(names)} jmen z knihovny")
             return names
     except Exception as e:
-        print(f"[!] Chyba pri nacitani {json_path}: {e}")
+        print(f"⚠️  Chyba při načítání {json_path}: {e}")
         return set()
-
-# Load names library at module import time
-CZECH_FIRST_NAMES = load_names_library()
 
 # =============== Varianty pro nahrazování ===============
 def variants_for_first(first: str) -> set:
@@ -181,12 +168,10 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
 
     # FIRST: Hardcoded list of common feminine names that should NEVER be converted
     # This is necessary because the name library is incomplete (missing Martina, etc.)
-    # NOTE: Names that are also genitive of common male names (jana→jan, petra→petr, pavla→pavel)
-    # are excluded from this list - they are handled by the genitive stripping rules below.
     common_feminine_names = {
-        'martina', 'eva', 'anna', 'marie', 'lenka', 'kateřina',
+        'martina', 'jana', 'petra', 'eva', 'anna', 'marie', 'lenka', 'kateřina',
         'alena', 'hana', 'lucie', 'veronika', 'monika', 'jitka', 'zuzana', 'ivana',
-        'tereza', 'barbora', 'andrea', 'michaela', 'simona', 'nikola',
+        'tereza', 'barbora', 'andrea', 'michaela', 'simona', 'nikola', 'pavla',
         'daniela', 'alexandra', 'kristýna', 'markéta', 'renata', 'šárka', 'karolína',
         'krista', 'beata'
     }
@@ -194,20 +179,9 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
     if lo in common_feminine_names:
         return None  # Don't convert feminine names to masculine
 
-    # Check library - BUT if stripping -a yields a valid male name, prefer that
-    # (e.g. "Jana" → "Jan", "Petra" → "Petr", "Pavla" → "Pavel")
+    # Also check library if available
     if lo in CZECH_FIRST_NAMES and lo.endswith('a'):
-        male_cand = obs[:-1]  # Jana → Jan
-        if male_cand.lower() in CZECH_FIRST_NAMES:
-            return male_cand.capitalize()
-        # Vložné 'e': Pavla → Pavl → Pavel
-        if len(male_cand) >= 3:
-            last_char = male_cand[-1]
-            if last_char.lower() not in 'aeiouyáéěíóúůý':
-                with_e = male_cand[:-1] + 'e' + last_char
-                if with_e.lower() in CZECH_FIRST_NAMES:
-                    return with_e.capitalize()
-        return None  # It's a feminine name, don't convert
+        return None  # Don't convert, let the caller handle it
 
     cands = []
 
@@ -1440,7 +1414,6 @@ ADDRESS_RE = re.compile(
             r'(?:sídlo(?:\s+podnikání)?|se\s+sídlem)\s*:\s*|'
             r'(?:místo\s+podnikání)\s*:\s*|'
             r'(?:adresa|trvalý\s+pobyt|na\s+adrese)\s*:\s*|'
-            r'(?:na\s+adresu|adresy|adresu)\s+|'
             r'(?:v\s+ulic[ií]|na\s+ulici|v\s+dom[eě])\s+)'
             r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]'
             r'[a-záčďéěíňóřšťúůýž\s]{2,50}?'
@@ -1451,16 +1424,16 @@ ADDRESS_RE = re.compile(
                     # PSČ město
                     r'\d{3}\s?\d{2}'
                     r'[ \t]+'
-                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
+                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
                     r'(?:[ \t]+\d{1,2})?'
                 r'|'
                     # město PSČ
-                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
+                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
                     r'[ \t]+'
                     r'\d{3}\s?\d{2}'
                 r'|'
                     # jen město
-                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
+                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
                     r'(?:[ \t]+\d{1,2})?'
                 r')'
             r')?'
@@ -1476,16 +1449,16 @@ ADDRESS_RE = re.compile(
                 # PSČ město
                 r'\d{3}\s?\d{2}'
                 r'[ \t]+'
-                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
+                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
                 r'(?:[ \t]+\d{1,2})?'
             r'|'
                 # město PSČ
-                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
+                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
                 r'[ \t]+'
                 r'\d{3}\s?\d{2}'
             r'|'
                 # jen město (BEZ PSČ, ale město MUSÍ být!)
-                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
+                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž \t]{1,30}'
                 r'(?:[ \t]+\d{1,2})?'
             r')'
         r')'
@@ -1554,7 +1527,7 @@ DIC_RE = re.compile(
 # Regex má 2 capture groups - první pro context match, druhý pro standalone
 BIRTH_ID_RE = re.compile(
     r'(?:'
-    r'(?:RČ|Rodné\s+číslo|r\.?\s?č\.?|nar\.|narozen[aáý]?|[Nn]arození|[Dd]atum\s+narození).{0,30}?(\d{6}/?\d{3,4})|'  # S kontextem - povolí text mezi (CAPTURE GROUP 1)
+    r'(?:RČ|Rodné\s+číslo|r\.?\s?č\.?|nar\.|narozen[aáý]?|Narození)\s*:?\s*(\d{6}/?\d{3,4})|'  # S kontextem (CAPTURE GROUP 1)
     r'(?<!FÚ-)(?<!KS-)(?<!VS-)(?<!čj-)(?<!\d)(\d{6}/\d{3,4})(?!\d)'  # Bez kontextu, ale ne po FÚ-/KS-/VS- (CAPTURE GROUP 2)
     r')',
     re.IGNORECASE
@@ -1845,8 +1818,8 @@ class Anonymizer:
         if typ == 'ADDRESS':
             # Odstraň prefix s dvojtečkou (Sídlo:, Adresa:, atd.)
             orig_norm = re.sub(r'^(Sídlo|Trvalé\s+bydliště|Trvalý\s+pobyt|Bydliště|Adresa|Místo\s+podnikání|Se\s+sídlem|Bytem)\s*:\s*', '', orig_norm, flags=re.IGNORECASE)
-            # Odstraň prefix bez dvojtečky na začátku (adrese, bytem, adresy, na adresu) - všechny pády
-            orig_norm = re.sub(r'^(na\s+adresu|adrese|adresa|adresy|adresu|bytem|bydlišti|sídle)\s+', '', orig_norm, flags=re.IGNORECASE)
+            # Odstraň prefix bez dvojtečky na začátku (adrese, bytem) - instrumentál/lokál
+            orig_norm = re.sub(r'^(adrese|adresa|bytem|bydlišti|sídle)\s+', '', orig_norm, flags=re.IGNORECASE)
 
         # OPTIMIZATION: Use reverse_map for O(1) lookup instead of O(n) iteration
         # Check if this variant already exists
@@ -1903,21 +1876,6 @@ class Anonymizer:
             # Return existing tag and its canonical name
             canonical_full = self.person_canonical_names[tag]
             return tag, canonical_full
-
-        # SPECIÁLNÍ PŘÍPAD: Standalone příjmení (prázdné křestní jméno)
-        # Pokud už existuje osoba se stejným příjmením, použij její tag
-        if not first_normalized or first_normalized.strip() == '':
-            last_normalized = self._normalize_for_matching(last_nom)
-            # Hledej existující osobu s matching příjmením
-            for existing_key, existing_tag in self.person_index.items():
-                existing_first_norm, existing_last_norm = existing_key
-                if existing_last_norm == last_normalized:
-                    # Našli jsme existující osobu se stejným příjmením!
-                    # Přidej standalone příjmení jako variantu k této osobě
-                    canonical_full = self.person_canonical_names[existing_tag]
-                    # Přidej standalone příjmení do entity_map jako variantu
-                    self.entity_map['PERSON'][canonical_full].add(last_nom)
-                    return existing_tag, canonical_full
 
         # Vytvoř nový tag
         self.counter['PERSON'] += 1
@@ -2173,20 +2131,6 @@ class Anonymizer:
         # Pak běžný pattern pro jména bez titulu
         titles = r'(?:Ing\.|Mgr\.|Bc\.|MUDr\.|JUDr\.|PhDr\.|RNDr\.|Ph\.D\.|MBA|CSc\.|DrSc\.)'
 
-        # ========== NOVÝ: Pattern pro "Přídavné Role Jméno Příjmení" (4 slova) ==========
-        # Detekuje např: "Mrtvá matka Drahomíra Dvořáková", "Zemřelý otec Jan Novák", atd.
-        # Tento pattern musí být PŘED 3-slovným patternem!
-        double_role_person_pattern = re.compile(
-            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'  # První role/přídavné jméno
-            r'\s+'
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'  # Druhá role/podstatné jméno
-            r'\s+'
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'  # Křestní jméno
-            r'\s+'
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\b',  # Příjmení
-            re.UNICODE
-        )
-
         # ========== NOVÝ: Pattern pro "Titul Jméno Příjmení" (3 slova) ==========
         # Tento pattern musí být PŘED běžným 2-slovným patternem!
         # Detekuje např: "Klient Ladislav Konečný", "Žadatel Jan Novák", atd.
@@ -2220,8 +2164,6 @@ class Anonymizer:
             'karlovy', 'vary', 'karlova', 'var',  # Karlovy Vary city
             'hradec', 'hradci', 'králové',  # Hradec Králové city
             # Organizace/instituce klíčová slova
-            'ombudsman', 'ombudsmana', 'ombudsmanem', 'ombudsmanovi', 'ombudsmanů',
-            'finanční', 'finančního', 'finančním', 'arbitr', 'arbitra',
             'česká', 'spořitelna', 'komerční', 'banka', 'raiffeisen',
             'credit', 'bank', 'financial', 'global', 'senior',
             'junior', 'lead', 'chief', 'head', 'director',
@@ -2272,7 +2214,6 @@ class Anonymizer:
             'obviněným', 'obviněnými', 'občan', 'občana', 'občance', 'občanek', 'občanem', 'občanka',
             'občankou', 'občanky', 'občanovi', 'občanu', 'občané', 'občanů', 'obžalovanou', 'obžalovaná',
             'obžalované', 'obžalovaného', 'obžalovaném', 'obžalovanému', 'obžalovaný', 'obžalovaných', 'obžalovaným', 'obžalovanými',
-            'oběť', 'oběti', 'obětí', 'obětem', 'obětech', 'oběťmi', 'oběťmi',
             'odsouzenou', 'odsouzená', 'odsouzené', 'odsouzeného', 'odsouzeném', 'odsouzenému', 'odsouzený', 'odsouzených',
             'odsouzeným', 'odsouzenými', 'opatrovnic', 'opatrovnice', 'opatrovnicí', 'opatrovník', 'opatrovníka', 'opatrovníkem',
             'opatrovníkovi', 'opatrovníku', 'opatrovníků', 'opatrovanec', 'opatrovance', 'opatrovanci', 'opatrovancem', 'opatrovanců',
@@ -2745,215 +2686,8 @@ class Anonymizer:
             'paní inženýrka', 'paní inženýrky', 'paní inženýrce', 'paní inženýrkou',
             # Další
             'care', 'plus', 'minus', 'service', 'services',
-            'group', 'company', 'corp', 'ltd', 'gmbh', 'inc',
-            # ===================================================================
-            # TITULY A AKADEMICKÉ ROLE
-            # ===================================================================
-            'bakalář', 'bakaláře', 'bakaláři', 'bakalářem', 'bakaláři', 'bakalářů', 'bakalářům', 'bakalářích',
-            'bakalářka', 'bakalářky', 'bakalářce', 'bakalářkou', 'bakalářek', 'bakalářkám', 'bakalářkách',
-            'magistr', 'magistra', 'magistrovi', 'magistru', 'magistrem', 'magistři', 'magistrů', 'magistrům', 'magistrech',
-            'inženýr', 'inženýra', 'inženýrovi', 'inženýru', 'inženýrem', 'inženýři', 'inženýrů', 'inženýrům', 'inženýrech',
-            'inženýrka', 'inženýrky', 'inženýrce', 'inženýrkou', 'inženýrek', 'inženýrkám', 'inženýrkách',
-            'docent', 'docenta', 'docentovi', 'docentu', 'docentem', 'docenti', 'docentů', 'docentům', 'docentech',
-            'docentka', 'docentky', 'docentce', 'docentkou', 'docentek', 'docentkám', 'docentkách',
-            'profesor', 'profesora', 'profesorovi', 'profesoru', 'profesorem', 'profesoři', 'profesorů', 'profesorům', 'profesorech',
-            'profesorka', 'profesorky', 'profesorce', 'profesorkou', 'profesorek', 'profesorkám', 'profesorkách',
-            'koncipient', 'koncipienta', 'koncipientovi', 'koncipientu', 'koncipientem', 'koncipienti', 'koncipientů', 'koncipientům', 'koncipientech',
-            'koncipientka', 'koncipientky', 'koncipientce', 'koncipientkou', 'koncipientek', 'koncipientkám', 'koncipientkách',
-            'doktorand', 'doktoranda', 'doktorandovi', 'doktorandu', 'doktorandem', 'doktorandi', 'doktorandů', 'doktorandům', 'doktorandech',
-            'doktorandka', 'doktorandky', 'doktorandce', 'doktorandkou', 'doktorandek', 'doktorandkám', 'doktorandkách',
-            'praktik', 'praktika', 'praktikovi', 'praktiku', 'praktikem', 'praktici', 'praktiků', 'praktikům', 'prakticích',
-            'specialista', 'specialisty', 'specialistovi', 'specialistu', 'specialistou', 'specialisté', 'specialistů', 'specialistům', 'specialistech',
-            'specialistka', 'specialistky', 'specialistce', 'specialistkou', 'specialistek', 'specialistkám', 'specialistkách',
-            'školitel', 'školitele', 'školiteli', 'školitelem', 'školitelé', 'školitelů', 'školitelům', 'školitelích',
-            'školitelka', 'školitelky', 'školitelce', 'školitelkou', 'školitlek', 'školitelkám', 'školitelkách',
-            # ===================================================================
-            # PRÁVNÍ ROLE - DOPLNĚNÍ
-            # ===================================================================
-            'notář', 'notáře', 'notáři', 'notářem', 'notáři', 'notářů', 'notářům', 'notářích',
-            'notářka', 'notářky', 'notářce', 'notářkou', 'notářek', 'notářkám', 'notářkách',
-            'likvidátor', 'likvidátora', 'likvidátorovi', 'likvidátoru', 'likvidátorem', 'likvidátoři', 'likvidátorů', 'likvidátorům', 'likvidátorech',
-            'likvidátorka', 'likvidátorky', 'likvidátorce', 'likvidátorkou', 'likvidátorek', 'likvidátorkám', 'likvidátorkách',
-            'správce', 'správci', 'správcem', 'správců', 'správcům', 'správcích',
-            'správkyně', 'správkyni', 'správkyní', 'správkyň', 'správkyním', 'správkyních',
-            'mediátor', 'mediátora', 'mediátorovi', 'mediátoru', 'mediátorem', 'mediátoři', 'mediátorů', 'mediátorům', 'mediátorech',
-            'mediátorka', 'mediátorky', 'mediátorce', 'mediátorkou', 'mediátorek', 'mediátorkám', 'mediátorkách',
-            'rozhodce', 'rozhodci', 'rozhodcem', 'rozhodců', 'rozhodcům', 'rozhodcích',
-            'rozhodkyně', 'rozhodkyni', 'rozhodkyní', 'rozhodkyň', 'rozhodkyním', 'rozhodkyních',
-            'přísedící', 'přísedícího', 'přísedícímu', 'přísedícím', 'přísedících',
-            'zapisovatel', 'zapisovatele', 'zapisovateli', 'zapisovatelem', 'zapisovatelé', 'zapisovatelů', 'zapisovatelům', 'zapisovatelích',
-            'zapisovatelka', 'zapisovatelky', 'zapisovatelce', 'zapisovatelkou', 'zapisovatelek', 'zapisovatelkám', 'zapisovatelkách',
-            'odhadce', 'odhadci', 'odhadcem', 'odhadců', 'odhadcům', 'odhadcích',
-            'odhadkyně', 'odhadkyni', 'odhadkyní', 'odhadkyň', 'odhadkyním', 'odhadkyních',
-            'tlumočník', 'tlumočníka', 'tlumočníkovi', 'tlumočníku', 'tlumočníkem', 'tlumočníci', 'tlumočníků', 'tlumočníkům', 'tlumočnících',
-            'tlumočnice', 'tlumočnici', 'tlumočnicí', 'tlumočnic', 'tlumočnicím', 'tlumočnicích',
-            'revizor', 'revizora', 'revizorovi', 'revizoru', 'revizorem', 'revizoři', 'revizorů', 'revizorům', 'revizorech',
-            'revizorka', 'revizorky', 'revizorce', 'revizorkou', 'revizorek', 'revizorkám', 'revizorkách',
-            'navrhovatel', 'navrhovatele', 'navrhovateli', 'navrhovatelem', 'navrhovatelé', 'navrhovatelů', 'navrhovatelům', 'navrhovatelích',
-            'navrhovatelka', 'navrhovatelky', 'navrhovatelce', 'navrhovatelkou', 'navrhovatelek', 'navrhovatelkám', 'navrhovatelkách',
-            'odpůrce', 'odpůrci', 'odpůrcem', 'odpůrců', 'odpůrcům', 'odpůrcích',
-            'odpůrkyně', 'odpůrkyni', 'odpůrkyní', 'odpůrkyň', 'odpůrkyním', 'odpůrkyních',
-            'oznamovatel', 'oznamovatele', 'oznamovateli', 'oznamovatelem', 'oznamovatelé', 'oznamovatelů', 'oznamovatelům', 'oznamovatelích',
-            'oznamovatelka', 'oznamovatelky', 'oznamovatelce', 'oznamovatelkou', 'oznamovatelek', 'oznamovatelkám', 'oznamovatelkách',
-            'podatel', 'podatele', 'podateli', 'podatelem', 'podatelé', 'podatelů', 'podatelům', 'podatelích',
-            'zmocnitel', 'zmocnitele', 'zmocniteli', 'zmocnitelem', 'zmocnitelé', 'zmocnitelů', 'zmocnitelům', 'zmocnitelích',
-            'povinný', 'povinného', 'povinnému', 'povinném', 'povinným', 'povinných', 'povinnými',
-            'povinná', 'povinné', 'povinnou',
-            # ===================================================================
-            # ZDRAVOTNICKÉ ROLE - DOPLNĚNÍ
-            # ===================================================================
-            'primář', 'primáře', 'primáři', 'primářem', 'primáři', 'primářů', 'primářům', 'primářích',
-            'primářka', 'primářky', 'primářce', 'primářkou', 'primářek', 'primářkám', 'primářkách',
-            'přednosta', 'přednosty', 'přednostovi', 'přednostu', 'přednostou', 'přednostové', 'přednostů', 'přednostům', 'přednostech',
-            'přednostka', 'přednostky', 'přednostce', 'přednostkou', 'přednostek', 'přednostkám', 'přednostkách',
-            'sanitář', 'sanitáře', 'sanitáři', 'sanitářem', 'sanitáři', 'sanitářů', 'sanitářům', 'sanitářích',
-            'sanitářka', 'sanitářky', 'sanitářce', 'sanitářkou', 'sanitářek', 'sanitářkám', 'sanitářkách',
-            'záchranář', 'záchranáře', 'záchranáři', 'záchranářem', 'záchranáři', 'záchranářů', 'záchranářům', 'záchranářích',
-            'záchranářka', 'záchranářky', 'záchranářce', 'záchranářkou', 'záchranářek', 'záchranářkám', 'záchranářkách',
-            'laborant', 'laboranta', 'laborantovi', 'laborantu', 'laborantem', 'laboranti', 'laborantů', 'laborantům', 'laborantech',
-            'laborantka', 'laborantky', 'laborantce', 'laborantkou', 'laborantek', 'laborantkám', 'laborantkách',
-            'fyzioterapeut', 'fyzioterapeuta', 'fyzioterapeutovi', 'fyzioterapeutu', 'fyzioterapeutem', 'fyzioterapeuti', 'fyzioterapeutů', 'fyzioterapeutům', 'fyzioterapeutech',
-            'fyzioterapeutka', 'fyzioterapeutky', 'fyzioterapeutce', 'fyzioterapeutkou', 'fyzioterapeutek', 'fyzioterapeutkám', 'fyzioterapeutkách',
-            'lékárník', 'lékárníka', 'lékárníkovi', 'lékárníku', 'lékárníkem', 'lékárníci', 'lékárníků', 'lékárníkům', 'lékárnících',
-            'lékárnice', 'lékárnici', 'lékárnicí', 'lékárnic', 'lékárnicím', 'lékárnicích',
-            'patolog', 'patologa', 'patologovi', 'patologu', 'patologem', 'patologové', 'patologů', 'patologům', 'patologech',
-            'patoložka', 'patoložky', 'patoložce', 'patoložkou', 'patoložek', 'patoložkám', 'patoložkách',
-            'operatér', 'operatéra', 'operatérovi', 'operatéru', 'operatérem', 'operatéři', 'operatérů', 'operatérům', 'operatérech',
-            'operatérka', 'operatérky', 'operatérce', 'operatérkou', 'operatérek', 'operatérkám', 'operatérkách',
-            'konziliář', 'konziliáře', 'konziliáři', 'konziliářem', 'konziliáři', 'konziliářů', 'konziliářům', 'konziliářích',
-            # ===================================================================
-            # VEŘEJNÁ SPRÁVA
-            # ===================================================================
-            'starosta', 'starosty', 'starostovi', 'starostu', 'starostou', 'starostové', 'starostů', 'starostům', 'starostech',
-            'starostka', 'starostky', 'starostce', 'starostkou', 'starostek', 'starostkám', 'starostkách',
-            'místostarosta', 'místostarosty', 'místostarostovi', 'místostarostu', 'místostarostou', 'místostarostové', 'místostarostů', 'místostarostům', 'místostarostech',
-            'místostarostka', 'místostarostky', 'místostarostce', 'místostarostkou', 'místostarostek', 'místostarostkám', 'místostarostkách',
-            'radní', 'radního', 'radnímu', 'radním', 'radních',
-            'zastupitel', 'zastupitele', 'zastupiteli', 'zastupitelem', 'zastupitelé', 'zastupitelů', 'zastupitelům', 'zastupitelích',
-            'zastupitelka', 'zastupitelky', 'zastupitelce', 'zastupitelkou', 'zastupitelek', 'zastupitelkám', 'zastupitelkách',
-            'hejtman', 'hejtmana', 'hejtmanovi', 'hejtmanu', 'hejtmanem', 'hejtmani', 'hejtmanů', 'hejtmanům', 'hejtmanech',
-            'hejtmanka', 'hejtmanky', 'hejtmance', 'hejtmankou', 'hejtmanek', 'hejtmankám', 'hejtmankách',
-            'ministr', 'ministra', 'ministrovi', 'ministru', 'ministrem', 'ministři', 'ministrů', 'ministrům', 'ministrech',
-            'ministryně', 'ministryni', 'ministryní', 'ministryň', 'ministryním', 'ministryních',
-            'tajemník', 'tajemníka', 'tajemníkovi', 'tajemníku', 'tajemníkem', 'tajemníci', 'tajemníků', 'tajemníkům', 'tajemnících',
-            'tajemnice', 'tajemnici', 'tajemnicí', 'tajemnic', 'tajemnicím', 'tajemnicích',
-            'mluvčí', 'mluvčího', 'mluvčímu', 'mluvčím', 'mluvčích',
-            'komisař', 'komisaře', 'komisaři', 'komisařem', 'komisaři', 'komisařů', 'komisařům', 'komisařích',
-            'komisařka', 'komisařky', 'komisařce', 'komisařkou', 'komisařek', 'komisařkám', 'komisařkách',
-            'inspektor', 'inspektora', 'inspektorovi', 'inspektoru', 'inspektorem', 'inspektoři', 'inspektorů', 'inspektorům', 'inspektorech',
-            'inspektorka', 'inspektorky', 'inspektorce', 'inspektorkou', 'inspektorek', 'inspektorkám', 'inspektorkách',
-            'strážník', 'strážníka', 'strážníkovi', 'strážníku', 'strážníkem', 'strážníci', 'strážníků', 'strážníkům', 'strážnících',
-            'strážnice', 'strážnici', 'strážnicí', 'strážnic', 'strážnicím', 'strážnicích',
-            'referent', 'referenta', 'referentovi', 'referentu', 'referentem', 'referenti', 'referentů', 'referentům', 'referentech',
-            'referentka', 'referentky', 'referentce', 'referentkou', 'referentek', 'referentkám', 'referentkách',
-            # ===================================================================
-            # KORPORÁT / SMLUVNÍ ROLE - DOPLNĚNÍ
-            # ===================================================================
-            'mentor', 'mentora', 'mentorovi', 'mentoru', 'mentorem', 'mentoři', 'mentorů', 'mentorům', 'mentorech',
-            'mentorka', 'mentorky', 'mentorce', 'mentorkou', 'mentorek', 'mentorkám', 'mentorkách',
-            'kouč', 'kouče', 'kouči', 'koučem', 'kouči', 'koučů', 'koučům', 'koučích',
-            'koučka', 'koučky', 'koučce', 'koučkou', 'kouček', 'koučkám', 'koučkách',
-            'garant', 'garanta', 'garantovi', 'garantu', 'garantem', 'garanti', 'garantů', 'garantům', 'garantech',
-            'garantka', 'garantky', 'garantce', 'garantkou', 'garantek', 'garantkám', 'garantkách',
-            'podnájemník', 'podnájemníka', 'podnájemníkovi', 'podnájemníku', 'podnájemníkem', 'podnájemníci', 'podnájemníků', 'podnájemníkům', 'podnájemnících',
-            'podnájemnice', 'podnájemnici', 'podnájemnicí', 'podnájemnic', 'podnájemnicím', 'podnájemnicích',
-            'pojistník', 'pojistníka', 'pojistníkovi', 'pojistníku', 'pojistníkem', 'pojistníci', 'pojistníků', 'pojistníkům', 'pojistnících',
-            'pojistnice', 'pojistnici', 'pojistnicí', 'pojistnic', 'pojistnicím', 'pojistnicích',
-            'obdarovaný', 'obdarovaného', 'obdarovanému', 'obdarovaném', 'obdarovaným', 'obdarovaných', 'obdarovanými',
-            'obdarovaná', 'obdarované', 'obdarovanou',
-            'objednatel', 'objednatele', 'objednateli', 'objednatelem', 'objednatelé', 'objednatelů', 'objednatelům', 'objednatelích',
-            'objednatelka', 'objednatelky', 'objednatelce', 'objednatelkou', 'objednatelek', 'objednatelkám', 'objednatelkách',
-            'zhotovitel', 'zhotovitele', 'zhotoviteli', 'zhotovitelem', 'zhotovitelé', 'zhotovitelů', 'zhotovitelům', 'zhotovitelích',
-            'zhotovitelka', 'zhotovitelky', 'zhotovitelce', 'zhotovitelkou', 'zhotovitelek', 'zhotovitelkám', 'zhotovitelkách',
-            'poskytovatel', 'poskytovatele', 'poskytovateli', 'poskytovatelem', 'poskytovatelé', 'poskytovatelů', 'poskytovatelům', 'poskytovatelích',
-            'poskytovatelka', 'poskytovatelky', 'poskytovatelce', 'poskytovatelkou', 'poskytovatele k', 'poskytovatelkám', 'poskytovatelkách',
-            'provozovatel', 'prozovovatele', 'prozovovateli', 'prozovovatelem', 'provozovatelé', 'provozovatelů', 'provozovatelům', 'provozovatelích',
-            'provozovatelka', 'provozovatelky', 'provozovatelce', 'provozovatelkou', 'provozovatelek', 'provozovatelkám', 'provozovatelkách',
-            'distributor', 'distributora', 'distributorovi', 'distributoru', 'distributorem', 'distributoři', 'distributorů', 'distributorům', 'distributorech',
-            'distributorka', 'distributorky', 'distributorce', 'distributorkou', 'distributorek', 'distributorkám', 'distributorkách',
-            'odběratel', 'odběratele', 'odběrateli', 'odběratelem', 'odběratelé', 'odběratelů', 'odběratelům', 'odběratelích',
-            'odběratelka', 'odběratelky', 'odběratelce', 'odběratelkou', 'odběratelek', 'odběratelkám', 'odběratelkách',
-            # ===================================================================
-            # ORGANIZAČNÍ ROLE
-            # ===================================================================
-            'nadřízený', 'nadřízeného', 'nadřízenému', 'nadřízeném', 'nadřízeným', 'nadřízených', 'nadřízenými',
-            'nadřízená', 'nadřízené', 'nadřízenou',
-            'podřízený', 'podřízeného', 'podřízenému', 'podřízeném', 'podřízeným', 'podřízených', 'podřízenými',
-            'podřízená', 'podřízené', 'podřízenou',
-            'spolupracovník', 'spolupracovníka', 'spolupracovníkovi', 'spolupracovníku', 'spolupracovníkem', 'spolupracovníci', 'spolupracovníků', 'spolupracovníkům', 'spolupracovnících',
-            'spolupracovnice', 'spolupracovnici', 'spolupracovnicí', 'spolupracovnic', 'spolupracovnicím', 'spolupracovnicích',
-            'náhradník', 'náhradníka', 'náhradníkovi', 'náhradníku', 'náhradníkem', 'náhradníci', 'náhradníků', 'náhradníkům', 'náhradnících',
-            'náhradnice', 'náhradnici', 'náhradnicí', 'náhradnic', 'náhradnicím', 'náhradnicích',
-            'delegát', 'delegáta', 'delegátovi', 'delegátu', 'delegátem', 'delegáti', 'delegátů', 'delegátům', 'delegátech',
-            'delegátka', 'delegátky', 'delegátce', 'delegátkou', 'delegátek', 'delegátkám', 'delegátkách',
-            'koordinátor', 'koordinátora', 'koordinátorovi', 'koordinátoru', 'koordinátorem', 'koordinátoři', 'koordinátorů', 'koordinátorům', 'koordinátorech',
-            'koordinátorka', 'koordinátorky', 'koordinátorce', 'koordinátorkou', 'koordinátorek', 'koordinátorkám', 'koordinátorkách',
-            # ===================================================================
-            # SOCIÁLNÍ ROLE
-            # ===================================================================
-            'kamarád', 'kamaráda', 'kamarádovi', 'kamarádu', 'kamarádem', 'kamarádi', 'kamarádů', 'kamarádům', 'kamarádech',
-            'kamarádka', 'kamarádky', 'kamarádce', 'kamarádkou', 'kamarádek', 'kamarádkám', 'kamarádkách',
-            'soused', 'souseda', 'sousedovi', 'sousedu', 'sousedem', 'sousedé', 'sousedů', 'sousedům', 'sousedech',
-            'sousedka', 'sousedky', 'sousedce', 'sousedkou', 'sousedek', 'sousedkám', 'sousedkách',
-            'spolubydlící', 'spolubydlícího', 'spolubydlícímu', 'spolubydlícím', 'spolubydlících',
-            'doprovod', 'doprovodu', 'doprovody', 'doprovodem', 'doprovodů', 'doprovodům', 'doprovodech',
-            'návštěvník', 'návštěvníka', 'návštěvníkovi', 'návštěvníku', 'návštěvníkem', 'návštěvníci', 'návštěvníků', 'návštěvníkům', 'návštěvnících',
-            'návštěvnice', 'návštěvnici', 'návštěvnicí', 'návštěvnic', 'návštěvnicím', 'návštěvnicích',
-            # ===================================================================
-            # BEZPEČNOSTNÍ ROLE
-            # ===================================================================
-            'oznamující', 'oznamujícího', 'oznamujícímu', 'oznamujícím', 'oznamujících',
-            'zasahující', 'zasahujícího', 'zasahujícímu', 'zasahujícím', 'zasahujících',
-            'hlídkující', 'hlídkujícího', 'hlídkujícímu', 'hlídkujícím', 'hlídkujících',
-            # ===================================================================
-            # PARTICIPIA / ADJEKTIVNÍ ROLE
-            # ===================================================================
-            'zastoupený', 'zastoupeného', 'zastoupenému', 'zastoupeném', 'zastoupeným', 'zastoupených', 'zastoupenými',
-            'zastoupená', 'zastoupené', 'zastoupenou',
-            'jednající', 'jednajícího', 'jednajícímu', 'jednajícím', 'jednajících',
-            'podepisující', 'podepisujícího', 'podepisujícímu', 'podepisujícím', 'podepisujících',
-            # ===================================================================
-            # OSLOVENÍ
-            # ===================================================================
-            'ctěný', 'ctěného', 'ctěnému', 'ctěném', 'ctěným', 'ctěných', 'ctěnými',
-            'ctěná', 'ctěné', 'ctěnou',
-            'dotyčný', 'dotyčného', 'dotyčnému', 'dotyčném', 'dotyčným', 'dotyčných', 'dotyčnými',
-            'dotyčná', 'dotyčné', 'dotyčnou',
-            'výšeuvedený', 'výšeuvedeného', 'výšeuvedenému', 'výšeuvedeném', 'výšeuvedeným', 'výšeuvedených', 'výšeuvedenými',
-            'výšeuvedená', 'výšeuvedené', 'výšeuvedenou'
+            'group', 'company', 'corp', 'ltd', 'gmbh', 'inc'
         }
-
-        # ========== Handler pro "Přídavné Role Jméno Příjmení" (4 slova) ==========
-        def replace_double_role_person(match):
-            """
-            Zpracuje pattern "Přídavné Role Jméno Příjmení" (např. "Mrtvá matka Drahomíra Dvořáková").
-            Pokud první DVĚ slova jsou v ignore_words, anonymizuje 3. a 4. slovo jako osobu.
-            """
-            role_word1 = match.group(1)  # "Mrtvá"
-            role_word2 = match.group(2)  # "matka"
-            first_obs = match.group(3)   # "Drahomíra"
-            last_obs = match.group(4)    # "Dvořáková"
-
-            # Zkontroluj, jestli první DVĚ slova jsou v ignore_words
-            if role_word1.lower() not in ignore_words or role_word2.lower() not in ignore_words:
-                # Pokud ne, vrať original (nechť to zpracuje jiný pattern)
-                return match.group(0)
-
-            # Oba slova JSOU v ignore_words → anonymizuj jméno a příjmení
-            # Infer nominative
-            last_nom = infer_surname_nominative(last_obs)
-            first_nom = infer_first_name_nominative(first_obs) or first_obs
-
-            # Create/find person tag
-            tag, canonical = self._ensure_person_tag(first_nom, last_nom)
-
-            # Save variant if different from canonical
-            original_form = f"{first_obs} {last_obs}"
-            if original_form.lower() != canonical.lower():
-                self.entity_map['PERSON'][canonical].add(original_form)
-
-            # Return: "Přídavné Role [[PERSON_X]]"
-            return f"{role_word1} {role_word2} {tag}"
 
         # ========== Handler pro "Titul Jméno Příjmení" (3 slova) ==========
         def replace_role_person(match):
@@ -3004,8 +2738,6 @@ class Anonymizer:
                 'university', 'univerzita', 'fakulta', 'klinika', 'nemocnice',
                 'centrum', 'ústav', 'institute', 'academy', 'akademie',
                 'motol', 'bulovka', 'thomayer', 'center',
-                'ombudsman', 'ombudsmana', 'ombudsmanem', 'ombudsmanovi', 'ombudsmanů',
-                'finanční', 'finančního', 'finančním', 'arbitr', 'arbitra',
                 # Produkty/Software
                 'kaspersky', 'endpoint', 'latitude', 'archer', 'classic',
                 'windows', 'linux', 'android', 'ios', 'office', 'excel',
@@ -3083,7 +2815,6 @@ class Anonymizer:
                 'obviněným', 'obviněnými', 'občan', 'občana', 'občance', 'občanek', 'občanem', 'občanka',
                 'občankou', 'občanky', 'občanovi', 'občanu', 'občané', 'občanů', 'obžalovanou', 'obžalovaná',
                 'obžalované', 'obžalovaného', 'obžalovaném', 'obžalovanému', 'obžalovaný', 'obžalovaných', 'obžalovaným', 'obžalovanými',
-                'oběť', 'oběti', 'obětí', 'obětem', 'obětech', 'oběťmi', 'oběťmi',
                 'odsouzenou', 'odsouzená', 'odsouzené', 'odsouzeného', 'odsouzeném', 'odsouzenému', 'odsouzený', 'odsouzených',
                 'odsouzeným', 'odsouzenými', 'opatrovnic', 'opatrovnice', 'opatrovnicí', 'opatrovník', 'opatrovníka', 'opatrovníkem',
                 'opatrovníkovi', 'opatrovníku', 'opatrovníků', 'opatrovanec', 'opatrovance', 'opatrovanci', 'opatrovancem', 'opatrovanců',
@@ -3556,182 +3287,7 @@ class Anonymizer:
                 'paní inženýrka', 'paní inženýrky', 'paní inženýrce', 'paní inženýrkou',
                 # Další
                 'care', 'plus', 'minus', 'service', 'services',
-                'group', 'company', 'corp', 'ltd', 'gmbh', 'inc',
-                # ===================================================================
-                # TITULY A AKADEMICKÉ ROLE
-                # ===================================================================
-                'bakalář', 'bakaláře', 'bakaláři', 'bakalářem', 'bakaláři', 'bakalářů', 'bakalářům', 'bakalářích',
-                'bakalářka', 'bakalářky', 'bakalářce', 'bakalářkou', 'bakalářek', 'bakalářkám', 'bakalářkách',
-                'magistr', 'magistra', 'magistrovi', 'magistru', 'magistrem', 'magistři', 'magistrů', 'magistrům', 'magistrech',
-                'inženýr', 'inženýra', 'inženýrovi', 'inženýru', 'inženýrem', 'inženýři', 'inženýrů', 'inženýrům', 'inženýrech',
-                'inženýrka', 'inženýrky', 'inženýrce', 'inženýrkou', 'inženýrek', 'inženýrkám', 'inženýrkách',
-                'docent', 'docenta', 'docentovi', 'docentu', 'docentem', 'docenti', 'docentů', 'docentům', 'docentech',
-                'docentka', 'docentky', 'docentce', 'docentkou', 'docentek', 'docentkám', 'docentkách',
-                'profesor', 'profesora', 'profesorovi', 'profesoru', 'profesorem', 'profesoři', 'profesorů', 'profesorům', 'profesorech',
-                'profesorka', 'profesorky', 'profesorce', 'profesorkou', 'profesorek', 'profesorkám', 'profesorkách',
-                'koncipient', 'koncipienta', 'koncipientovi', 'koncipientu', 'koncipientem', 'koncipienti', 'koncipientů', 'koncipientům', 'koncipientech',
-                'koncipientka', 'koncipientky', 'koncipientce', 'koncipientkou', 'koncipientek', 'koncipientkám', 'koncipientkách',
-                'doktorand', 'doktoranda', 'doktorandovi', 'doktorandu', 'doktorandem', 'doktorandi', 'doktorandů', 'doktorandům', 'doktorandech',
-                'doktorandka', 'doktorandky', 'doktorandce', 'doktorandkou', 'doktorandek', 'doktorandkám', 'doktorandkách',
-                'praktik', 'praktika', 'praktikovi', 'praktiku', 'praktikem', 'praktici', 'praktiků', 'praktikům', 'prakticích',
-                'specialista', 'specialisty', 'specialistovi', 'specialistu', 'specialistou', 'specialisté', 'specialistů', 'specialistům', 'specialistech',
-                'specialistka', 'specialistky', 'specialistce', 'specialistkou', 'specialistek', 'specialistkám', 'specialistkách',
-                'školitel', 'školitele', 'školiteli', 'školitelem', 'školitelé', 'školitelů', 'školitelům', 'školitelích',
-                'školitelka', 'školitelky', 'školitelce', 'školitelkou', 'školitlek', 'školitelkám', 'školitelkách',
-                # ===================================================================
-                # PRÁVNÍ ROLE - DOPLNĚNÍ
-                # ===================================================================
-                'notář', 'notáře', 'notáři', 'notářem', 'notáři', 'notářů', 'notářům', 'notářích',
-                'notářka', 'notářky', 'notářce', 'notářkou', 'notářek', 'notářkám', 'notářkách',
-                'likvidátor', 'likvidátora', 'likvidátorovi', 'likvidátoru', 'likvidátorem', 'likvidátoři', 'likvidátorů', 'likvidátorům', 'likvidátorech',
-                'likvidátorka', 'likvidátorky', 'likvidátorce', 'likvidátorkou', 'likvidátorek', 'likvidátorkám', 'likvidátorkách',
-                'správce', 'správci', 'správcem', 'správců', 'správcům', 'správcích',
-                'správkyně', 'správkyni', 'správkyní', 'správkyň', 'správkyním', 'správkyních',
-                'mediátor', 'mediátora', 'mediátorovi', 'mediátoru', 'mediátorem', 'mediátoři', 'mediátorů', 'mediátorům', 'mediátorech',
-                'mediátorka', 'mediátorky', 'mediátorce', 'mediátorkou', 'mediátorek', 'mediátorkám', 'mediátorkách',
-                'rozhodce', 'rozhodci', 'rozhodcem', 'rozhodců', 'rozhodcům', 'rozhodcích',
-                'rozhodkyně', 'rozhodkyni', 'rozhodkyní', 'rozhodkyň', 'rozhodkyním', 'rozhodkyních',
-                'přísedící', 'přísedícího', 'přísedícímu', 'přísedícím', 'přísedících',
-                'zapisovatel', 'zapisovatele', 'zapisovateli', 'zapisovatelem', 'zapisovatelé', 'zapisovatelů', 'zapisovatelům', 'zapisovatelích',
-                'zapisovatelka', 'zapisovatelky', 'zapisovatelce', 'zapisovatelkou', 'zapisovatelek', 'zapisovatelkám', 'zapisovatelkách',
-                'odhadce', 'odhadci', 'odhadcem', 'odhadců', 'odhadcům', 'odhadcích',
-                'odhadkyně', 'odhadkyni', 'odhadkyní', 'odhadkyň', 'odhadkyním', 'odhadkyních',
-                'tlumočník', 'tlumočníka', 'tlumočníkovi', 'tlumočníku', 'tlumočníkem', 'tlumočníci', 'tlumočníků', 'tlumočníkům', 'tlumočnících',
-                'tlumočnice', 'tlumočnici', 'tlumočnicí', 'tlumočnic', 'tlumočnicím', 'tlumočnicích',
-                'revizor', 'revizora', 'revizorovi', 'revizoru', 'revizorem', 'revizoři', 'revizorů', 'revizorům', 'revizorech',
-                'revizorka', 'revizorky', 'revizorce', 'revizorkou', 'revizorek', 'revizorkám', 'revizorkách',
-                'navrhovatel', 'navrhovatele', 'navrhovateli', 'navrhovatelem', 'navrhovatelé', 'navrhovatelů', 'navrhovatelům', 'navrhovatelích',
-                'navrhovatelka', 'navrhovatelky', 'navrhovatelce', 'navrhovatelkou', 'navrhovatelek', 'navrhovatelkám', 'navrhovatelkách',
-                'odpůrce', 'odpůrci', 'odpůrcem', 'odpůrců', 'odpůrcům', 'odpůrcích',
-                'odpůrkyně', 'odpůrkyni', 'odpůrkyní', 'odpůrkyň', 'odpůrkyním', 'odpůrkyních',
-                'oznamovatel', 'oznamovatele', 'oznamovateli', 'oznamovatelem', 'oznamovatelé', 'oznamovatelů', 'oznamovatelům', 'oznamovatelích',
-                'oznamovatelka', 'oznamovatelky', 'oznamovatelce', 'oznamovatelkou', 'oznamovatelek', 'oznamovatelkám', 'oznamovatelkách',
-                'podatel', 'podatele', 'podateli', 'podatelem', 'podatelé', 'podatelů', 'podatelům', 'podatelích',
-                'zmocnitel', 'zmocnitele', 'zmocniteli', 'zmocnitelem', 'zmocnitelé', 'zmocnitelů', 'zmocnitelům', 'zmocnitelích',
-                'povinný', 'povinného', 'povinnému', 'povinném', 'povinným', 'povinných', 'povinnými',
-                'povinná', 'povinné', 'povinnou',
-                # ===================================================================
-                # ZDRAVOTNICKÉ ROLE - DOPLNĚNÍ
-                # ===================================================================
-                'primář', 'primáře', 'primáři', 'primářem', 'primáři', 'primářů', 'primářům', 'primářích',
-                'primářka', 'primářky', 'primářce', 'primářkou', 'primářek', 'primářkám', 'primářkách',
-                'přednosta', 'přednosty', 'přednostovi', 'přednostu', 'přednostou', 'přednostové', 'přednostů', 'přednostům', 'přednostech',
-                'přednostka', 'přednostky', 'přednostce', 'přednostkou', 'přednostek', 'přednostkám', 'přednostkách',
-                'sanitář', 'sanitáře', 'sanitáři', 'sanitářem', 'sanitáři', 'sanitářů', 'sanitářům', 'sanitářích',
-                'sanitářka', 'sanitářky', 'sanitářce', 'sanitářkou', 'sanitářek', 'sanitářkám', 'sanitářkách',
-                'záchranář', 'záchranáře', 'záchranáři', 'záchranářem', 'záchranáři', 'záchranářů', 'záchranářům', 'záchranářích',
-                'záchranářka', 'záchranářky', 'záchranářce', 'záchranářkou', 'záchranářek', 'záchranářkám', 'záchranářkách',
-                'laborant', 'laboranta', 'laborantovi', 'laborantu', 'laborantem', 'laboranti', 'laborantů', 'laborantům', 'laborantech',
-                'laborantka', 'laborantky', 'laborantce', 'laborantkou', 'laborantek', 'laborantkám', 'laborantkách',
-                'fyzioterapeut', 'fyzioterapeuta', 'fyzioterapeutovi', 'fyzioterapeutu', 'fyzioterapeutem', 'fyzioterapeuti', 'fyzioterapeutů', 'fyzioterapeutům', 'fyzioterapeutech',
-                'fyzioterapeutka', 'fyzioterapeutky', 'fyzioterapeutce', 'fyzioterapeutkou', 'fyzioterapeutek', 'fyzioterapeutkám', 'fyzioterapeutkách',
-                'lékárník', 'lékárníka', 'lékárníkovi', 'lékárníku', 'lékárníkem', 'lékárníci', 'lékárníků', 'lékárníkům', 'lékárnících',
-                'lékárnice', 'lékárnici', 'lékárnicí', 'lékárnic', 'lékárnicím', 'lékárnicích',
-                'patolog', 'patologa', 'patologovi', 'patologu', 'patologem', 'patologové', 'patologů', 'patologům', 'patologech',
-                'patoložka', 'patoložky', 'patoložce', 'patoložkou', 'patoložek', 'patoložkám', 'patoložkách',
-                'operatér', 'operatéra', 'operatérovi', 'operatéru', 'operatérem', 'operatéři', 'operatérů', 'operatérům', 'operatérech',
-                'operatérka', 'operatérky', 'operatérce', 'operatérkou', 'operatérek', 'operatérkám', 'operatérkách',
-                'konziliář', 'konziliáře', 'konziliáři', 'konziliářem', 'konziliáři', 'konziliářů', 'konziliářům', 'konziliářích',
-                # ===================================================================
-                # VEŘEJNÁ SPRÁVA
-                # ===================================================================
-                'starosta', 'starosty', 'starostovi', 'starostu', 'starostou', 'starostové', 'starostů', 'starostům', 'starostech',
-                'starostka', 'starostky', 'starostce', 'starostkou', 'starostek', 'starostkám', 'starostkách',
-                'místostarosta', 'místostarosty', 'místostarostovi', 'místostarostu', 'místostarostou', 'místostarostové', 'místostarostů', 'místostarostům', 'místostarostech',
-                'místostarostka', 'místostarostky', 'místostarostce', 'místostarostkou', 'místostarostek', 'místostarostkám', 'místostarostkách',
-                'radní', 'radního', 'radnímu', 'radním', 'radních',
-                'zastupitel', 'zastupitele', 'zastupiteli', 'zastupitelem', 'zastupitelé', 'zastupitelů', 'zastupitelům', 'zastupitelích',
-                'zastupitelka', 'zastupitelky', 'zastupitelce', 'zastupitelkou', 'zastupitelek', 'zastupitelkám', 'zastupitelkách',
-                'hejtman', 'hejtmana', 'hejtmanovi', 'hejtmanu', 'hejtmanem', 'hejtmani', 'hejtmanů', 'hejtmanům', 'hejtmanech',
-                'hejtmanka', 'hejtmanky', 'hejtmance', 'hejtmankou', 'hejtmanek', 'hejtmankám', 'hejtmankách',
-                'ministr', 'ministra', 'ministrovi', 'ministru', 'ministrem', 'ministři', 'ministrů', 'ministrům', 'ministrech',
-                'ministryně', 'ministryni', 'ministryní', 'ministryň', 'ministryním', 'ministryních',
-                'tajemník', 'tajemníka', 'tajemníkovi', 'tajemníku', 'tajemníkem', 'tajemníci', 'tajemníků', 'tajemníkům', 'tajemnících',
-                'tajemnice', 'tajemnici', 'tajemnicí', 'tajemnic', 'tajemnicím', 'tajemnicích',
-                'mluvčí', 'mluvčího', 'mluvčímu', 'mluvčím', 'mluvčích',
-                'komisař', 'komisaře', 'komisaři', 'komisařem', 'komisaři', 'komisařů', 'komisařům', 'komisařích',
-                'komisařka', 'komisařky', 'komisařce', 'komisařkou', 'komisařek', 'komisařkám', 'komisařkách',
-                'inspektor', 'inspektora', 'inspektorovi', 'inspektoru', 'inspektorem', 'inspektoři', 'inspektorů', 'inspektorům', 'inspektorech',
-                'inspektorka', 'inspektorky', 'inspektorce', 'inspektorkou', 'inspektorek', 'inspektorkám', 'inspektorkách',
-                'strážník', 'strážníka', 'strážníkovi', 'strážníku', 'strážníkem', 'strážníci', 'strážníků', 'strážníkům', 'strážnících',
-                'strážnice', 'strážnici', 'strážnicí', 'strážnic', 'strážnicím', 'strážnicích',
-                'referent', 'referenta', 'referentovi', 'referentu', 'referentem', 'referenti', 'referentů', 'referentům', 'referentech',
-                'referentka', 'referentky', 'referentce', 'referentkou', 'referentek', 'referentkám', 'referentkách',
-                # ===================================================================
-                # KORPORÁT / SMLUVNÍ ROLE - DOPLNĚNÍ
-                # ===================================================================
-                'mentor', 'mentora', 'mentorovi', 'mentoru', 'mentorem', 'mentoři', 'mentorů', 'mentorům', 'mentorech',
-                'mentorka', 'mentorky', 'mentorce', 'mentorkou', 'mentorek', 'mentorkám', 'mentorkách',
-                'kouč', 'kouče', 'kouči', 'koučem', 'kouči', 'koučů', 'koučům', 'koučích',
-                'koučka', 'koučky', 'koučce', 'koučkou', 'kouček', 'koučkám', 'koučkách',
-                'garant', 'garanta', 'garantovi', 'garantu', 'garantem', 'garanti', 'garantů', 'garantům', 'garantech',
-                'garantka', 'garantky', 'garantce', 'garantkou', 'garantek', 'garantkám', 'garantkách',
-                'podnájemník', 'podnájemníka', 'podnájemníkovi', 'podnájemníku', 'podnájemníkem', 'podnájemníci', 'podnájemníků', 'podnájemníkům', 'podnájemnících',
-                'podnájemnice', 'podnájemnici', 'podnájemnicí', 'podnájemnic', 'podnájemnicím', 'podnájemnicích',
-                'pojistník', 'pojistníka', 'pojistníkovi', 'pojistníku', 'pojistníkem', 'pojistníci', 'pojistníků', 'pojistníkům', 'pojistnících',
-                'pojistnice', 'pojistnici', 'pojistnicí', 'pojistnic', 'pojistnicím', 'pojistnicích',
-                'obdarovaný', 'obdarovaného', 'obdarovanému', 'obdarovaném', 'obdarovaným', 'obdarovaných', 'obdarovanými',
-                'obdarovaná', 'obdarované', 'obdarovanou',
-                'objednatel', 'objednatele', 'objednateli', 'objednatelem', 'objednatelé', 'objednatelů', 'objednatelům', 'objednatelích',
-                'objednatelka', 'objednatelky', 'objednatelce', 'objednatelkou', 'objednatelek', 'objednatelkám', 'objednatelkách',
-                'zhotovitel', 'zhotovitele', 'zhotoviteli', 'zhotovitelem', 'zhotovitelé', 'zhotovitelů', 'zhotovitelům', 'zhotovitelích',
-                'zhotovitelka', 'zhotovitelky', 'zhotovitelce', 'zhotovitelkou', 'zhotovitelek', 'zhotovitelkám', 'zhotovitelkách',
-                'poskytovatel', 'poskytovatele', 'poskytovateli', 'poskytovatelem', 'poskytovatelé', 'poskytovatelů', 'poskytovatelům', 'poskytovatelích',
-                'poskytovatelka', 'poskytovatelky', 'poskytovatelce', 'poskytovatelkou', 'poskytovatele k', 'poskytovatelkám', 'poskytovatelkách',
-                'provozovatel', 'prozovovatele', 'prozovovateli', 'prozovovatelem', 'provozovatelé', 'provozovatelů', 'provozovatelům', 'provozovatelích',
-                'provozovatelka', 'provozovatelky', 'provozovatelce', 'provozovatelkou', 'provozovatelek', 'provozovatelkám', 'provozovatelkách',
-                'distributor', 'distributora', 'distributorovi', 'distributoru', 'distributorem', 'distributoři', 'distributorů', 'distributorům', 'distributorech',
-                'distributorka', 'distributorky', 'distributorce', 'distributorkou', 'distributorek', 'distributorkám', 'distributorkách',
-                'odběratel', 'odběratele', 'odběrateli', 'odběratelem', 'odběratelé', 'odběratelů', 'odběratelům', 'odběratelích',
-                'odběratelka', 'odběratelky', 'odběratelce', 'odběratelkou', 'odběratelek', 'odběratelkám', 'odběratelkách',
-                # ===================================================================
-                # ORGANIZAČNÍ ROLE
-                # ===================================================================
-                'nadřízený', 'nadřízeného', 'nadřízenému', 'nadřízeném', 'nadřízeným', 'nadřízených', 'nadřízenými',
-                'nadřízená', 'nadřízené', 'nadřízenou',
-                'podřízený', 'podřízeného', 'podřízenému', 'podřízeném', 'podřízeným', 'podřízených', 'podřízenými',
-                'podřízená', 'podřízené', 'podřízenou',
-                'spolupracovník', 'spolupracovníka', 'spolupracovníkovi', 'spolupracovníku', 'spolupracovníkem', 'spolupracovníci', 'spolupracovníků', 'spolupracovníkům', 'spolupracovnících',
-                'spolupracovnice', 'spolupracovnici', 'spolupracovnicí', 'spolupracovnic', 'spolupracovnicím', 'spolupracovnicích',
-                'náhradník', 'náhradníka', 'náhradníkovi', 'náhradníku', 'náhradníkem', 'náhradníci', 'náhradníků', 'náhradníkům', 'náhradnících',
-                'náhradnice', 'náhradnici', 'náhradnicí', 'náhradnic', 'náhradnicím', 'náhradnicích',
-                'delegát', 'delegáta', 'delegátovi', 'delegátu', 'delegátem', 'delegáti', 'delegátů', 'delegátům', 'delegátech',
-                'delegátka', 'delegátky', 'delegátce', 'delegátkou', 'delegátek', 'delegátkám', 'delegátkách',
-                'koordinátor', 'koordinátora', 'koordinátorovi', 'koordinátoru', 'koordinátorem', 'koordinátoři', 'koordinátorů', 'koordinátorům', 'koordinátorech',
-                'koordinátorka', 'koordinátorky', 'koordinátorce', 'koordinátorkou', 'koordinátorek', 'koordinátorkám', 'koordinátorkách',
-                # ===================================================================
-                # SOCIÁLNÍ ROLE
-                # ===================================================================
-                'kamarád', 'kamaráda', 'kamarádovi', 'kamarádu', 'kamarádem', 'kamarádi', 'kamarádů', 'kamarádům', 'kamarádech',
-                'kamarádka', 'kamarádky', 'kamarádce', 'kamarádkou', 'kamarádek', 'kamarádkám', 'kamarádkách',
-                'soused', 'souseda', 'sousedovi', 'sousedu', 'sousedem', 'sousedé', 'sousedů', 'sousedům', 'sousedech',
-                'sousedka', 'sousedky', 'sousedce', 'sousedkou', 'sousedek', 'sousedkám', 'sousedkách',
-                'spolubydlící', 'spolubydlícího', 'spolubydlícímu', 'spolubydlícím', 'spolubydlících',
-                'doprovod', 'doprovodu', 'doprovody', 'doprovodem', 'doprovodů', 'doprovodům', 'doprovodech',
-                'návštěvník', 'návštěvníka', 'návštěvníkovi', 'návštěvníku', 'návštěvníkem', 'návštěvníci', 'návštěvníků', 'návštěvníkům', 'návštěvnících',
-                'návštěvnice', 'návštěvnici', 'návštěvnicí', 'návštěvnic', 'návštěvnicím', 'návštěvnicích',
-                # ===================================================================
-                # BEZPEČNOSTNÍ ROLE
-                # ===================================================================
-                'oznamující', 'oznamujícího', 'oznamujícímu', 'oznamujícím', 'oznamujících',
-                'zasahující', 'zasahujícího', 'zasahujícímu', 'zasahujícím', 'zasahujících',
-                'hlídkující', 'hlídkujícího', 'hlídkujícímu', 'hlídkujícím', 'hlídkujících',
-                # ===================================================================
-                # PARTICIPIA / ADJEKTIVNÍ ROLE
-                # ===================================================================
-                'zastoupený', 'zastoupeného', 'zastoupenému', 'zastoupeném', 'zastoupeným', 'zastoupených', 'zastoupenými',
-                'zastoupená', 'zastoupené', 'zastoupenou',
-                'jednající', 'jednajícího', 'jednajícímu', 'jednajícím', 'jednajících',
-                'podepisující', 'podepisujícího', 'podepisujícímu', 'podepisujícím', 'podepisujících',
-                # ===================================================================
-                # OSLOVENÍ
-                # ===================================================================
-                'ctěný', 'ctěného', 'ctěnému', 'ctěném', 'ctěným', 'ctěných', 'ctěnými',
-                'ctěná', 'ctěné', 'ctěnou',
-                'dotyčný', 'dotyčného', 'dotyčnému', 'dotyčném', 'dotyčným', 'dotyčných', 'dotyčnými',
-                'dotyčná', 'dotyčné', 'dotyčnou',
-                'výšeuvedený', 'výšeuvedeného', 'výšeuvedenému', 'výšeuvedeném', 'výšeuvedeným', 'výšeuvedených', 'výšeuvedenými',
-                'výšeuvedená', 'výšeuvedené', 'výšeuvedenou'
+                'group', 'company', 'corp', 'ltd', 'gmbh', 'inc'
             }
 
             # Kontrola proti ignore listu
@@ -4147,23 +3703,7 @@ class Anonymizer:
             'žadatel', 'žadatele', 'žadatelka', 'žadatelky'
         }
 
-        # 1. Najdi všechny 4-slovné matche (včetně překrývajících se!)
-        # Např: "Mrtvá matka Drahomíra Dvořáková"
-        matches_4word = []
-        pos = 0
-        while pos < len(text):
-            match = double_role_person_pattern.search(text, pos)
-            if not match:
-                break
-            role_word1 = match.group(1)
-            role_word2 = match.group(2)
-            # Platný match pouze pokud první DVĚ slova JSOU v ignore_words
-            if role_word1.lower() in ignore_words and role_word2.lower() in ignore_words:
-                matches_4word.append(match)
-            # Posun o 1 znak pro nalezení překrývajících se matchů
-            pos = match.start() + 1
-
-        # 2. Najdi všechny 3-slovné matche (včetně překrývajících se!)
+        # 1. Najdi všechny 3-slovné matche (včetně překrývajících se!)
         # DŮLEŽITÉ: finditer() nenachází překryvy, musíme hledat manuálně
         matches_3word = []
         pos = 0
@@ -4178,7 +3718,7 @@ class Anonymizer:
             # Posun o 1 znak pro nalezení překrývajících se matchů
             pos = match.start() + 1
 
-        # 3. Najdi všechny 2-slovné matche (včetně překrývajících se!)
+        # 2. Najdi všechny 2-slovné matche (včetně překrývajících se!)
         matches_2word = []
         pos = 0
         while pos < len(text):
@@ -4193,43 +3733,30 @@ class Anonymizer:
             # Posun o 1 znak pro nalezení překrývajících se matchů
             pos = match.start() + 1
 
-        # 4. Kombinuj matche a odstraň překryvy (preferuj delší = 4-slovné > 3-slovné > 2-slovné)
+        # 3. Kombinuj matche a odstraň překryvy (preferuj delší = 3-slovné)
         all_matches = []
 
-        # Přidej 4-slovné (mají nejvyšší prioritu)
-        for match in matches_4word:
-            all_matches.append(('4word', match))
-
-        # Přidej 3-slovné, ale pouze pokud se nepřekrývají s 4-slovnými
+        # Přidej 3-slovné (mají prioritu)
         for match in matches_3word:
-            overlaps = False
-            for _, m4 in [m for m in all_matches if m[0] == '4word']:
-                # Překryv = matche sdílejí nějaký znak
-                if not (match.end() <= m4.start() or match.start() >= m4.end()):
-                    overlaps = True
-                    break
-            if not overlaps:
-                all_matches.append(('3word', match))
+            all_matches.append(('3word', match))
 
-        # Přidej 2-slovné, ale pouze pokud se nepřekrývají s 4-slovnými nebo 3-slovnými
+        # Přidej 2-slovné, ale pouze pokud se nepřekrývají s 3-slovnými
         for match in matches_2word:
             overlaps = False
-            for _, m_higher in [m for m in all_matches if m[0] in ('4word', '3word')]:
+            for _, m3 in [m for m in all_matches if m[0] == '3word']:
                 # Překryv = matche sdílejí nějaký znak
-                if not (match.end() <= m_higher.start() or match.start() >= m_higher.end()):
+                if not (match.end() <= m3.start() or match.start() >= m3.end()):
                     overlaps = True
                     break
             if not overlaps:
                 all_matches.append(('2word', match))
 
-        # 5. Seřaď podle pozice (od konce, aby se neposunuly indexy při nahrazování)
+        # 4. Seřaď podle pozice (od konce, aby se neposunuly indexy při nahrazování)
         all_matches.sort(key=lambda x: x[1].start(), reverse=True)
 
-        # 6. Aplikuj replacementy od konce
+        # 5. Aplikuj replacementy od konce
         for match_type, match in all_matches:
-            if match_type == '4word':
-                replacement = replace_double_role_person(match)
-            elif match_type == '3word':
+            if match_type == '3word':
                 replacement = replace_role_person(match)
             else:  # '2word'
                 replacement = replace_person(match)
@@ -4404,12 +3931,7 @@ class Anonymizer:
         def replace_address(match):
             matched_text = match.group(0)
             # Filter out medical/technical terms that are not addresses
-            medical_terms = [
-                'hla', 'kompatibilní', 'donor', 'recipient', 'transfuze',
-                'stadium', 'zbaven', 'způsobilosti', 'demence', 'diagnóza',
-                'nemoc', 'onemocnění', 'léčba', 'terapie', 'pacient',
-                'darování', 'odmítá', 'psychologických'
-            ]
+            medical_terms = ['hla', 'kompatibilní', 'donor', 'recipient', 'transfuze']
             if any(term in matched_text.lower() for term in medical_terms):
                 return matched_text  # Not an address, return unchanged
             return self._get_or_create_label('ADDRESS', matched_text)
@@ -4492,28 +4014,7 @@ class Anonymizer:
             return self._get_or_create_label('BIRTH_DATE', match.group(1))
         text = BIRTH_DATE_RE.sub(replace_birth_date, text)
 
-        # 16.7. OBECNÁ DATA (podpisy, uzavření smlouvy, platnost, atd.)
-        # MUSÍ být PO datum narození a birth_id, aby se nepřebíjely
-        def replace_date(match):
-            date_str = match.group(1)
-            # Validace: zkontroluj rozsah den (1-31) a měsíc (1-12)
-            parts = re.split(r'\.\s?', date_str.strip('.'))
-            if len(parts) >= 2:
-                try:
-                    day, month = int(parts[0]), int(parts[1])
-                    if day < 1 or day > 31 or month < 1 or month > 12:
-                        return match.group(0)  # Neplatné datum, ponech beze změny
-                except (ValueError, IndexError):
-                    pass
-            return self._get_or_create_label('DATE', date_str)
-        text = DATE_RE.sub(replace_date, text)
-
-        # 16.7b. DATUM SLOVNĚ (např. "15. března 2024", "5. července 2026")
-        def replace_date_words(match):
-            return self._get_or_create_label('DATE', match.group(1))
-        text = DATE_WORDS_RE.sub(replace_date_words, text)
-
-        # 16.8. ČÍSLO PASU
+        # 16.7. ČÍSLO PASU
         def replace_passport(match):
             return self._get_or_create_label('PASSPORT', match.group(1))
         text = PASSPORT_RE.sub(replace_passport, text)
@@ -4773,15 +4274,6 @@ class Anonymizer:
         )
         def replace_simple_addr(match):
             addr = match.group(0)
-            # Filter out medical/technical terms
-            medical_terms = [
-                'hla', 'kompatibilní', 'donor', 'recipient', 'transfuze',
-                'stadium', 'zbaven', 'způsobilosti', 'demence', 'diagnóza',
-                'nemoc', 'onemocnění', 'léčba', 'terapie', 'pacient',
-                'darování', 'odmítá', 'psychologických'
-            ]
-            if any(term in addr.lower() for term in medical_terms):
-                return addr  # Not an address, return unchanged
             # Přeskoč pokud už je tagovaná
             if '[[ADDRESS_' not in text[max(0, match.start()-10):min(len(text), match.end()+10)]:
                 return self._get_or_create_label('ADDRESS', addr)
@@ -4915,7 +4407,7 @@ class Anonymizer:
                             # Check if female version is in document
                             if variant_first in self.source_text or variant in self.source_text:
                                 print(f"  [GENDER-FIX] '{canonical_full}' má gender mismatch!")
-                                print(f"              -> OPRAVUJI na '{variant_first} {last}' (z varianty '{variant}')")
+                                print(f"              → OPRAVUJI na '{variant_first} {last}' (z varianty '{variant}')")
 
                                 person['first'] = variant_first
 
@@ -4943,13 +4435,8 @@ class Anonymizer:
 
         Tento krok je důležitý protože různé pádové formy (Karel/Karla/Karlu)
         mohou vytvořit separátní osoby pokud nejsou správně detekované jako varianty.
-
-        Returns:
-            dict: Tag remap dictionary {old_tag: new_tag} for updating document text.
         """
         from collections import defaultdict
-
-        tag_remap = {}  # old_tag -> new_tag (for replacing in document text after dedup)
 
         print(f"  [DEDUP] Starting deduplication, {len(self.canonical_persons)} persons to check")
 
@@ -5032,9 +4519,6 @@ class Anonymizer:
                     self.entity_map['PERSON'][primary_canonical] = set()
                 self.entity_map['PERSON'][primary_canonical] |= dup_variants
                 del self.entity_map['PERSON'][dup_canonical]
-
-            # Track tag remap: duplicate's tag -> primary's tag
-            tag_remap[duplicate['tag']] = primary['tag']
 
             # Mark duplicate for removal (can't remove during iteration)
             merged_indices.add(dup_idx)
@@ -5147,9 +4631,6 @@ class Anonymizer:
                     self.entity_map['PERSON'][primary_canonical] |= dup_variants
                     del self.entity_map['PERSON'][dup_canonical]
 
-                # Track tag remap: duplicate's tag -> primary's tag
-                tag_remap[dup_tag] = primary_tag
-
                 # Remove duplicate from canonical_persons
                 self.canonical_persons.remove(duplicate)
 
@@ -5190,7 +4671,7 @@ class Anonymizer:
                 if male_person:
                     # Merge female version into male version
                     female_canonical = f"{person['first']} {person['last']}"
-                    print(f"  [DEDUP] Phase 3: Merging ambiguous '{female_canonical}' -> '{male_canonical}'")
+                    print(f"  [DEDUP] Phase 3: Merging ambiguous '{female_canonical}' → '{male_canonical}'")
 
                     # Merge entity_map variants
                     if female_canonical in self.entity_map['PERSON']:
@@ -5199,9 +4680,6 @@ class Anonymizer:
                             self.entity_map['PERSON'][male_canonical] = set()
                         self.entity_map['PERSON'][male_canonical] |= female_variants
                         del self.entity_map['PERSON'][female_canonical]
-
-                    # Track tag remap: female's tag -> male's tag
-                    tag_remap[person['tag']] = male_person['tag']
 
                     # Mark for removal
                     persons_to_remove.append(person)
@@ -5238,7 +4716,7 @@ class Anonymizer:
                 typo_canonical = f"{person['first']} {person['last']}"
                 correct_canonical = f"{person['first']} {correct_surname.capitalize()}"
 
-                print(f"  [DEDUP] Phase 4: Correcting typo '{typo_canonical}' -> '{correct_canonical}'")
+                print(f"  [DEDUP] Phase 4: Correcting typo '{typo_canonical}' → '{correct_canonical}'")
 
                 # Update person's last name
                 person['last'] = correct_surname.capitalize()
@@ -5265,30 +4743,12 @@ class Anonymizer:
         if total_merged > 0:
             print(f"  [DEBUG] Total merged: {total_merged} duplicate persons")
 
-        if tag_remap:
-            print(f"  [DEDUP] Tag remap: {tag_remap}")
-
-        return tag_remap
-
-    def anonymize_docx(self, input_path: str, output_path: str, json_map: str, txt_map: str, pdf_report: str = None):
+    def anonymize_docx(self, input_path: str, output_path: str, json_map: str, txt_map: str):
         """Hlavní metoda pro anonymizaci DOCX dokumentu."""
-        print(f"\n[INFO] Zpracovavam: {Path(input_path).name}")
-
-        # Track overall timing for PDF report
-        import time
-        overall_start = time.time()
-
-        # Compute source file hash and size for PDF report
-        input_p = Path(input_path)
-        self._source_size = input_p.stat().st_size
-        sha = hashlib.sha256()
-        with open(input_path, 'rb') as fh:
-            for chunk in iter(lambda: fh.read(65536), b''):
-                sha.update(chunk)
-        self._source_hash = sha.hexdigest()
-        self._report_start_ts = overall_start
+        print(f"\n🔍 Zpracovávám: {Path(input_path).name}")
 
         # Načti dokument
+        import time
         start_time = time.time()
         doc = Document(input_path)
         print(f"  [DEBUG] Document loaded in {time.time() - start_time:.1f}s")
@@ -5342,29 +4802,7 @@ class Anonymizer:
                             para.text = text
 
         # POST-PROCESSING: Deduplicate persons AFTER all extraction (including tables)
-        tag_remap = self._deduplicate_persons()
-
-        # Apply tag remap to document text (replace merged tags with primary tags)
-        if tag_remap:
-            print(f"  [DEDUP] Applying tag remap to document ({len(tag_remap)} remaps)...")
-            for para in doc.paragraphs:
-                original = para.text
-                text = original
-                for old_tag, new_tag in tag_remap.items():
-                    text = text.replace(old_tag, new_tag)
-                if text != original:
-                    para.text = text
-            for table in doc.tables:
-                for row in table.rows:
-                    for cell in row.cells:
-                        for para in cell.paragraphs:
-                            original = para.text
-                            text = original
-                            for old_tag, new_tag in tag_remap.items():
-                                text = text.replace(old_tag, new_tag)
-                            if text != original:
-                                para.text = text
-            print(f"  [DEDUP] Tag remap applied successfully")
+        self._deduplicate_persons()
 
         # Ulož dokument
         start_time = time.time()
@@ -5373,13 +4811,13 @@ class Anonymizer:
 
         # Vytvoř mapy (předej doc a path aby se nečetl znovu)
         start_time = time.time()
-        self._create_maps(json_map, txt_map, input_path, doc, pdf_report)
+        self._create_maps(json_map, txt_map, input_path, doc)
         print(f"  [DEBUG] Maps created in {time.time() - start_time:.1f}s")
 
-        print(f"[OK] Hotovo! Nalezeno {len(self.canonical_persons)} osob")
+        print(f"✅ Hotovo! Nalezeno {len(self.canonical_persons)} osob")
 
-    def _create_maps(self, json_path: str, txt_path: str, source_file: str, doc=None, pdf_report: str = None):
-        """Vytvoří JSON a TXT mapy náhrad (a volitelně PDF report)."""
+    def _create_maps(self, json_path: str, txt_path: str, source_file: str, doc=None):
+        """Vytvoří JSON a TXT mapy náhrad."""
 
         # Cleanup nepoužitých tagů před vytvořením map
         # Použij předaný dokument nebo načti z disku
@@ -5404,19 +4842,19 @@ class Anonymizer:
             "entities": []
         }
 
-        # VALIDACE: Použij už načtený zdrojový text (nečti soubor znovu - může být smazaný)
-        # self.source_text byl uložen na začátku anonymize_docx
-        source_text = getattr(self, 'source_text', '')
-        # Přidej text z tabulek pokud máme doc objekt
-        if doc:
-            for table in doc.tables:
-                for row in table.rows:
-                    for cell in row.cells:
-                        source_text += '\n' + '\n'.join([p.text for p in cell.paragraphs])
+        # VALIDACE: Načti zdrojový dokument pro kontrolu existence entit
+        from docx import Document as DocxDocument
+        source_doc = DocxDocument(source_file)
+        source_text = '\n'.join([p.text for p in source_doc.paragraphs])
+        # Přidej text z tabulek
+        for table in source_doc.tables:
+            for row in table.rows:
+                for cell in row.cells:
+                    source_text += '\n' + '\n'.join([p.text for p in cell.paragraphs])
 
 
         # ========== AUTOMATICKÁ OPRAVA: Kanonická jména musí mít varianty ve smlouvě! ==========
-        print("\n[INFO] AUTO-OPRAVA: Kontroluji a opravuji kanonicka jmena...")
+        print("\n🔍 AUTO-OPRAVA: Kontroluji a opravuji kanonická jména...")
 
         persons_to_delete = []  # Persons that are completely invalid
         fixed_count = 0
@@ -5453,8 +4891,8 @@ class Anonymizer:
             if not found_in_doc:
                 if variants:
                     # Has variants but none in doc → Try to fix from most common variant
-                    print(f"  [!] '{canonical_full}' neni ve smlouve, ale ma varianty: {variants}")
-                    print(f"      -> Pokousim se opravit z nejcastejsi varianty...")
+                    print(f"  ⚠️  '{canonical_full}' není ve smlouvě, ale má varianty: {variants}")
+                    print(f"      → Pokouším se opravit z nejčastější varianty...")
 
                     # Count occurrences of each variant
                     variant_counts = {}
@@ -5470,7 +4908,7 @@ class Anonymizer:
                         if len(parts) == 2:
                             corrected_first = infer_first_name_nominative(parts[0])
                             corrected_last = infer_surname_nominative(parts[1])
-                            print(f"      [OK] OPRAVENO: '{canonical_full}' -> '{corrected_first} {corrected_last}' (z varianty '{best_variant}')")
+                            print(f"      ✅ OPRAVENO: '{canonical_full}' → '{corrected_first} {corrected_last}' (z varianty '{best_variant}')")
 
                             person['first'] = corrected_first
                             person['last'] = corrected_last
@@ -5490,15 +4928,15 @@ class Anonymizer:
 
                             fixed_count += 1
                         else:
-                            print(f"      [X] Nelze opravit - chybny format varianty")
+                            print(f"      ❌ Nelze opravit - chybný formát varianty")
                             persons_to_delete.append(i)
                     else:
                         # No variant is in document → completely invalid
-                        print(f"  [X] '{canonical_full}' - zadna varianta ve smlouve -> MAZU!")
+                        print(f"  ❌ '{canonical_full}' - žádná varianta ve smlouvě → MAŽU!")
                         persons_to_delete.append(i)
                 else:
                     # No variants at all → completely made up
-                    print(f"  [X] '{canonical_full}' - zadne varianty, vymyslena osoba -> MAZU!")
+                    print(f"  ❌ '{canonical_full}' - žádné varianty, vymyšlená osoba → MAŽU!")
                     persons_to_delete.append(i)
 
         # Delete invalid persons (reverse order to preserve indices)
@@ -5526,14 +4964,14 @@ class Anonymizer:
                     del self.person_index[key]
 
         if fixed_count > 0 or persons_to_delete:
-            print(f"\n  [OK] AUTO-OPRAVA dokoncena:")
+            print(f"\n  ✅ AUTO-OPRAVA dokončena:")
             if fixed_count > 0:
                 print(f"     - Opraveno: {fixed_count} osob")
             if persons_to_delete:
                 print(f"     - Smazáno: {len(persons_to_delete)} neplatných osob")
             print()
         else:
-            print("  [OK] Vsechna kanonicka jmena jsou v poradku!\n")
+            print("  ✅ Všechna kanonická jména jsou v pořádku!\n")
 
         # Osoby - ukládáme VŠECHNY původní formy z dokumentu
         for p in self.canonical_persons:
@@ -5542,24 +4980,9 @@ class Anonymizer:
             # Získej všechny původní formy z entity_map
             original_forms = self.entity_map['PERSON'].get(canonical_full, {canonical_full})
 
-            # DŮLEŽITÉ: Kanonický tvar (základní nominativ) MUSÍ být první!
-            # Deanonymizátor používá první výskyt jako základní tvar.
-
-            # Nejdřív přidej kanonický tvar (pokud existuje v dokumentu)
-            if canonical_full in source_text:
-                json_data["entities"].append({
-                    "type": "PERSON",
-                    "label": p['tag'],
-                    "original": canonical_full,
-                    "occurrences": 1
-                })
-
-            # Pak teprve přidej ostatní varianty (skloněné tvary)
+            # Pro každou původní formu vytvoř samostatný záznam
+            # ALE POUZE pokud existuje ve zdrojovém dokumentu!
             for original_form in original_forms:
-                # Skip kanonický tvar - už jsme ho přidali
-                if original_form == canonical_full:
-                    continue
-
                 if original_form in source_text:
                     json_data["entities"].append({
                         "type": "PERSON",
@@ -5618,272 +5041,6 @@ class Anonymizer:
                         f.write(f"{label}: {display_value}\n")
                     f.write("\n")
 
-        # PDF report (volitelný)
-        if pdf_report:
-            print(f"  [INFO] Generuji PDF report: {Path(pdf_report).name}")
-            duration = _time.time() - getattr(self, '_report_start_ts', _time.time())
-            try:
-                _generate_pdf_report(
-                    pdf_path=pdf_report,
-                    source_file=source_file,
-                    source_size=getattr(self, '_source_size', 0),
-                    source_hash=getattr(self, '_source_hash', 'N/A'),
-                    canonical_persons=self.canonical_persons,
-                    entity_map=self.entity_map,
-                    person_canonical_names=self.person_canonical_names,
-                    start_ts=getattr(self, '_report_start_ts', _time.time()),
-                    duration_secs=duration,
-                    json_data=json_data,
-                )
-            except Exception as e:
-                print(f"[WARN] PDF report generation failed: {e}")
-                import traceback
-                traceback.print_exc()
-
-# =============== PDF Report Generator ===============
-_ENTITY_CATEGORY_MAP = {
-    'PERSON':       ('Osoby (Jména)',        'OSOBA'),
-    'ADDRESS':      ('Lokace (Adresy)',      'ADRESA'),
-    'RC':           ('Rodná čísla',          'RC'),
-    'DATE':         ('Data (obecná)',         'DATUM'),
-    'BIRTH_DATE':   ('Data narození',         'DATUM_NAR'),
-    'BANK_ACCOUNT': ('Bankovní účty',        'UCET'),
-    'IBAN':         ('IBAN',                 'IBAN'),
-    'CARD':         ('Platební karty',       'KARTA'),
-    'ICO':          ('IČO',                  'ICO'),
-    'DIC':          ('DIČ',                  'DIC'),
-    'PHONE':        ('Kontakty (Telefon)',   'TEL'),
-    'EMAIL':        ('Kontakty (E-mail)',    'EMAIL'),
-    'PASSPORT':     ('Cestovní pasy',        'PAS'),
-    'ID_CARD':      ('Občanské průkazy',     'OP'),
-    'DRIVER_LICENSE':('Řidičské průkazy',    'RP'),
-    'LICENSE_PLATE':('SPZ',                  'SPZ'),
-    'VIN':          ('VIN',                  'VIN'),
-    'IP':           ('IP adresy',            'IP'),
-    'USERNAME':     ('Uživatelská jména',    'USERNAME'),
-    'PASSWORD':     ('Hesla',                'HESLO'),
-    'API_KEY':      ('API klíče',            'API_KEY'),
-    'SECRET':       ('Secrets',              'SECRET'),
-    'SSH_KEY':      ('SSH klíče',            'SSH_KEY'),
-    'HOST':         ('Hostnames',            'HOST'),
-    'INSURANCE_ID': ('Čísla pojištěnce',    'POJISTENEC'),
-    'RFID':         ('RFID/Badge',           'RFID'),
-    'LINKEDIN':     ('LinkedIn',             'LINKEDIN'),
-    'FACEBOOK':     ('Facebook',             'FACEBOOK'),
-    'INSTAGRAM':    ('Instagram',            'INSTAGRAM'),
-    'SKYPE':        ('Skype',                'SKYPE'),
-}
-
-
-def _generate_pdf_report(pdf_path: str, source_file: str, source_size: int,
-                         source_hash: str, canonical_persons: list,
-                         entity_map: dict, person_canonical_names: dict,
-                         start_ts: float, duration_secs: float,
-                         json_data: dict):
-    """Vygeneruje PDF report (Certifikát o provedené anonymizaci)."""
-    try:
-        from fpdf import FPDF
-    except ImportError:
-        print("[WARN] fpdf2 not installed, skipping PDF report")
-        return
-
-    # ------ Fonts ------
-    # Hledej DejaVu fonty v několika lokacích (prioritně bundled ve složce fonts/)
-    FONT_DIR = None
-    _font_candidates = [
-        Path(__file__).parent / 'fonts',                          # Bundled s aplikací (dev)
-        Path(sys.executable).parent / 'fonts',                    # Bundled s exe (Nuitka)
-        Path(sys.argv[0]).resolve().parent / 'fonts',             # Original exe dir (Nuitka onefile)
-        Path('/usr/share/fonts/truetype/dejavu'),                 # Linux
-    ]
-    for candidate in _font_candidates:
-        if candidate.exists() and (candidate / 'DejaVuSans.ttf').exists():
-            FONT_DIR = str(candidate)
-            break
-
-    class ReportPDF(FPDF):
-        def __init__(self):
-            super().__init__()
-            self._register_fonts()
-
-        def _register_fonts(self):
-            font_dir = FONT_DIR
-            if font_dir:
-                self.add_font('DejaVu', '', str(Path(font_dir) / 'DejaVuSans.ttf'), uni=True)
-                self.add_font('DejaVu', 'B', str(Path(font_dir) / 'DejaVuSans-Bold.ttf'), uni=True)
-                self.font_family_name = 'DejaVu'
-            else:
-                self.font_family_name = 'Helvetica'
-
-        def _f(self, style='', size=10):
-            self.set_font(self.font_family_name, style, size)
-
-        def header(self):
-            self._f('B', 10)
-            self.set_text_color(120, 120, 120)
-            self.cell(0, 6, 'SKRYI Document Suite', new_x='LMARGIN', new_y='NEXT')
-            self.set_draw_color(180, 180, 180)
-            self.line(10, self.get_y(), 200, self.get_y())
-            self.ln(4)
-
-        def footer(self):
-            self.set_y(-30)
-            self.set_draw_color(180, 180, 180)
-            self.line(10, self.get_y(), 200, self.get_y())
-            self.ln(3)
-            self._f('', 7)
-            self.set_text_color(100, 100, 100)
-            disclaimer = (
-                'Prohlášení: Tento report slouží jako technický doklad o provedení procesu '
-                'anonymizace technologií SKRYI. Software pracuje na principu algoritmické detekce, '
-                'která navzdory vysoké přesnosti vyžaduje finální kontrolu člověkem. Uživatel jako '
-                'správce dat nese plnou odpovědnost za shodu výsledného dokumentu s nařízením GDPR. '
-                'Více informací v EULA.'
-            )
-            self.multi_cell(0, 3.5, disclaimer)
-            self._f('', 7)
-            self.cell(0, 4, f'Strana {self.page_no()}/{{nb}}', align='C')
-
-    pdf = ReportPDF()
-    pdf.alias_nb_pages()
-    pdf.add_page()
-    pdf.set_auto_page_break(auto=True, margin=35)
-
-    # ------ Report ID ------
-    report_id = f"REP-{datetime.now().strftime('%Y-%m%d-%H%M%S')}"
-
-    # ====== 1. HLAVICKA ======
-    pdf._f('B', 18)
-    pdf.set_text_color(30, 30, 30)
-    pdf.cell(0, 12, 'CERTIFIKÁT O PROVEDENÉ ANONYMIZACI', new_x='LMARGIN', new_y='NEXT', align='C')
-    pdf.ln(2)
-    pdf._f('', 10)
-    pdf.set_text_color(80, 80, 80)
-    pdf.cell(0, 6, f'ID Reportu: {report_id}', new_x='LMARGIN', new_y='NEXT', align='C')
-    pdf.ln(6)
-
-    # Helper for label:value rows
-    def kv_row(label, value, bold_val=False):
-        pdf._f('B', 9)
-        pdf.set_text_color(60, 60, 60)
-        pdf.cell(55, 6, label, new_x='RIGHT')
-        pdf._f('B' if bold_val else '', 9)
-        pdf.set_text_color(30, 30, 30)
-        pdf.cell(0, 6, str(value), new_x='LMARGIN', new_y='NEXT')
-
-    def section_title(title):
-        pdf.ln(4)
-        pdf.set_fill_color(240, 240, 240)
-        pdf._f('B', 11)
-        pdf.set_text_color(30, 30, 30)
-        pdf.cell(0, 8, f'  {title}', new_x='LMARGIN', new_y='NEXT', fill=True)
-        pdf.ln(2)
-
-    # ====== 2. IDENTIFIKACE ZDROJOVEHO SOUBORU ======
-    section_title('Identifikace zdrojového souboru')
-    kv_row('Název souboru:', Path(source_file).name)
-    size_mb = source_size / (1024 * 1024)
-    size_str = f"{size_mb:.2f} MB" if size_mb >= 1 else f"{source_size / 1024:.1f} KB"
-    kv_row('Velikost souboru:', size_str)
-    kv_row('Digitální otisk (SHA-256):', source_hash[:64])
-
-    # ====== 3. DETAILY PROCESU ======
-    section_title('Detaily procesu')
-    start_dt = datetime.fromtimestamp(start_ts)
-    kv_row('Čas zahájení:', start_dt.strftime('%d. %m. %Y, %H:%M:%S'))
-    kv_row('Doba zpracování:', f'{duration_secs:.1f} sekundy')
-    kv_row('Verze Enginu:', 'SKRYI Core v3.0 (Morfologická inference CZ/SK)')
-    kv_row('Režim zpracování:', 'Lokální / Offline (Data neopustila stanici)')
-
-    # ====== 4. STATISTICKY PREHLED ======
-    section_title('Statistický přehled (Výsledek analýzy)')
-
-    # Build category stats from entity_map + canonical_persons
-    category_stats = []
-
-    # Persons
-    person_count = 0
-    person_labels = []
-    for p in canonical_persons:
-        person_count += 1
-        canonical_full = f'{p["first"]} {p["last"]}'
-        variants = entity_map.get('PERSON', {}).get(canonical_full, set())
-        person_count += len(variants)  # includes declension variants
-        person_labels.append(p['tag'])
-    if canonical_persons:
-        category_stats.append(('Osoby (Jména)', len(canonical_persons), ', '.join(person_labels[:4])))
-
-    # Other entity types
-    for typ, entities in sorted(entity_map.items()):
-        if typ == 'PERSON':
-            continue
-        if not entities:
-            continue
-        cat_name, tag_prefix = _ENTITY_CATEGORY_MAP.get(typ, (typ, typ))
-        total_occurrences = sum(max(len(v), 1) if isinstance(v, set) else 1 for v in entities.values())
-        labels = [f'[[{tag_prefix}_{i}]]' for i in range(1, min(len(entities) + 1, 4))]
-        category_stats.append((cat_name, total_occurrences, ', '.join(labels)))
-
-    # Count total variant forms (pádové varianty)
-    total_padove = 0
-    for p in canonical_persons:
-        canonical_full = f'{p["first"]} {p["last"]}'
-        variants = entity_map.get('PERSON', {}).get(canonical_full, set())
-        total_padove += len(variants)
-
-    # Draw table
-    if category_stats:
-        # Table header
-        pdf.set_fill_color(50, 50, 50)
-        pdf.set_text_color(255, 255, 255)
-        pdf._f('B', 8)
-        col_w = [70, 25, 95]
-        headers = ['Kategorie entity', 'Počet', 'Příklady štítků']
-        for i, h in enumerate(headers):
-            pdf.cell(col_w[i], 7, h, border=1, fill=True, align='C')
-        pdf.ln()
-
-        # Table rows
-        pdf.set_text_color(30, 30, 30)
-        fill = False
-        for cat_name, count, labels in category_stats:
-            pdf.set_fill_color(248, 248, 248) if fill else pdf.set_fill_color(255, 255, 255)
-            pdf._f('', 8)
-            pdf.cell(col_w[0], 6, cat_name, border=1, fill=True)
-            pdf.cell(col_w[1], 6, str(count), border=1, fill=True, align='C')
-            pdf._f('', 7)
-            pdf.cell(col_w[2], 6, labels, border=1, fill=True)
-            pdf.ln()
-            fill = not fill
-
-        pdf.ln(3)
-
-    # Total entities
-    total_entities = sum(
-        len(entities) for typ, entities in entity_map.items() if typ != 'PERSON'
-    ) + len(canonical_persons)
-    pdf._f('B', 9)
-    pdf.set_text_color(30, 30, 30)
-    pdf.cell(55, 6, 'Celkem nahrazených entit:', new_x='RIGHT')
-    pdf._f('B', 10)
-    pdf.cell(0, 6, str(total_entities), new_x='LMARGIN', new_y='NEXT')
-
-    if total_padove > 0:
-        pdf._f('', 9)
-        pdf.cell(55, 6, 'Detekovaných pádových variant:', new_x='RIGHT')
-        pdf._f('B', 10)
-        pdf.cell(0, 6, str(total_padove), new_x='LMARGIN', new_y='NEXT')
-
-    # ====== 5. TECHNICKE POTVRZENI BEZPECNOSTI ======
-    section_title('Technické potvrzení bezpečnosti')
-    kv_row('Mapa náhrad:', 'Uložena v souboru .json')
-    kv_row('Metoda anonymizace:', 'Pseudonymizace s možností reverzního procesu')
-
-    # Save
-    pdf.output(pdf_path)
-    print(f"  [OK] PDF report ulozen: {Path(pdf_path).name}")
-
-
 # =============== Batch processing ===============
 def batch_anonymize(folder_path, names_json="cz_names.v1.json"):
     """Zpracuje všechny DOCX soubory v adresáři."""
@@ -5905,14 +5062,13 @@ def batch_anonymize(folder_path, names_json="cz_names.v1.json"):
         out_docx = path.parent / f"{base}_anon.docx"
         out_json = path.parent / f"{base}_map.json"
         out_txt = path.parent / f"{base}_map.txt"
-        out_pdf = path.parent / f"{base}_report.pdf"
 
         try:
             a = Anonymizer(verbose=False)
-            a.anonymize_docx(str(path), str(out_docx), str(out_json), str(out_txt), pdf_report=str(out_pdf))
-            print(f"[OK] Vystupy: {out_docx.name}, {out_json.name}, {out_txt.name}, {out_pdf.name}")
+            a.anonymize_docx(str(path), str(out_docx), str(out_json), str(out_txt))
+            print(f"✅ Výstupy: {out_docx.name}, {out_json.name}, {out_txt.name}")
         except Exception as e:
-            print(f"[X] CHYBA pri zpracovani {path.name}: {e}")
+            print(f"❌ CHYBA při zpracování {path.name}: {e}")
             import traceback
             traceback.print_exc()
 
@@ -5940,20 +5096,19 @@ def main():
 
         # Single file mode
         if not args.docx_path:
-            print("[X] Chybi cesta k souboru. Pouzij: python script.py <soubor.docx>")
+            print("❌ Chybí cesta k souboru. Použij: python script.py <soubor.docx>")
             print("   Nebo: python script.py --batch <adresář>")
             return 2
 
         path = Path(args.docx_path)
         if not path.exists():
-            print(f"[X] Soubor nenalezen: {path}")
+            print(f"❌ Soubor nenalezen: {path}")
             return 2
 
         base = path.stem
         out_docx = path.parent / f"{base}_anon.docx"
         out_json = path.parent / f"{base}_map.json"
         out_txt = path.parent / f"{base}_map.txt"
-        out_pdf = path.parent / f"{base}_report.pdf"
 
         # Kontrola zamčených souborů
         files_locked = False
@@ -5971,26 +5126,24 @@ def main():
             out_docx = path.parent / f"{base}_anon_{timestamp}.docx"
             out_json = path.parent / f"{base}_map_{timestamp}.json"
             out_txt = path.parent / f"{base}_map_{timestamp}.txt"
-            out_pdf = path.parent / f"{base}_report_{timestamp}.pdf"
-            print(f"\n[!] Vystupni soubory jsou otevrene v jine aplikaci!")
+            print(f"\n⚠️  Výstupní soubory jsou otevřené v jiné aplikaci!")
             print(f"   Vytvářím nové soubory s časovým razítkem: {timestamp}\n")
 
         a = Anonymizer(verbose=False)
-        a.anonymize_docx(str(path), str(out_docx), str(out_json), str(out_txt), pdf_report=str(out_pdf))
+        a.anonymize_docx(str(path), str(out_docx), str(out_json), str(out_txt))
 
-        print(f"\n[OK] Vystupy:")
+        print(f"\n✅ Výstupy:")
         print(f" - {out_docx}")
         print(f" - {out_json}")
         print(f" - {out_txt}")
-        print(f" - {out_pdf}")
-        print(f"\n[INFO] Statistiky:")
+        print(f"\n📊 Statistiky:")
         print(f" - Nalezeno osob: {len(a.canonical_persons)}")
         print(f" - Celkem entit: {sum(len(e) for e in a.entity_map.values())}")
 
         return 0
 
     except Exception as e:
-        print(f"\n[X] CHYBA: {e}")
+        print(f"\n❌ CHYBA: {e}")
         import traceback
         traceback.print_exc()
         return 1

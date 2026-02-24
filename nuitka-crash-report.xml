@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf8'?>
+<nuitka-compilation-report nuitka_version="2.8.10" nuitka_commercial_version="not installed" mode="module" completion="error exit message (1)" exit_message="Failed unexpectedly in Scons C backend compilation.">
+  <module name="anon7.2 - s padama" kind="CompiledPythonModule" usage="root_module" reason="Root module" source_path="${cwd}\anon7.2 - s padama.py">
+    <optimization-time pass="1" time="0.80" micro_passes="11" max_branch_merge="235" merged_total="37859" />
+    <optimization-time pass="2" time="0.07" micro_passes="1" max_branch_merge="202" merged_total="3324" />
+    <module_usages>
+      <module_usage name="sys" finding="absolute" line="10" />
+      <module_usage name="re" finding="excluded" line="10" exclusion_reason="Not following into stdlib unless standalone or requested to follow into stdlib." />
+      <module_usage name="json" finding="excluded" line="10" exclusion_reason="Not following into stdlib unless standalone or requested to follow into stdlib." />
+      <module_usage name="unicodedata" finding="excluded" line="10" exclusion_reason="Extension modules cannot be inspected." />
+      <module_usage name="typing" finding="excluded" line="11" exclusion_reason="Not following into stdlib unless standalone or requested to follow into stdlib." />
+      <module_usage name="pathlib" finding="excluded" line="12" exclusion_reason="Not following into stdlib unless standalone or requested to follow into stdlib." />
+      <module_usage name="collections" finding="excluded" line="13" exclusion_reason="Not following into stdlib unless standalone or requested to follow into stdlib." />
+      <module_usage name="collections.defaultdict" finding="not-found" line="13" />
+      <module_usage name="collections.OrderedDict" finding="not-found" line="13" />
+      <module_usage name="docx" finding="absolute" line="14" />
+      <module_usage name="docx.Document" finding="not-found" line="14" />
+      <module_usage name="datetime" finding="excluded" line="15" exclusion_reason="Not following into stdlib unless standalone or requested to follow into stdlib." />
+      <module_usage name="unicodedata" finding="excluded" line="2035" exclusion_reason="Extension modules cannot be inspected." />
+      <module_usage name="time" finding="absolute" line="2117" />
+      <module_usage name="docx" finding="absolute" line="2179" />
+      <module_usage name="docx.Document" finding="not-found" line="2179" />
+      <module_usage name="traceback" finding="excluded" line="2285" exclusion_reason="Not following into stdlib unless standalone or requested to follow into stdlib." />
+      <module_usage name="argparse" finding="excluded" line="2290" exclusion_reason="Not following into stdlib unless standalone or requested to follow into stdlib." />
+      <module_usage name="traceback" finding="excluded" line="2360" exclusion_reason="Not following into stdlib unless standalone or requested to follow into stdlib." />
+    </module_usages>
+  </module>
+  <performance>
+    <memory_usage name="after_launch" value="48807936" />
+    <memory_usage name="before_c_code_generation" value="54460416" />
+    <memory_usage name="before_running_scons" value="57053184" />
+  </performance>
+  <data_composer blob_size="30233" total="885">
+    <module_data filename="__bytecode.const" blob_name=".bytecode" blob_size="3" input_size="0" />
+    <module_data filename="__constants.const" blob_name="" blob_size="830" input_size="2106" />
+    <module_data filename="module.anon7.2 - s padama.const" blob_name="anon7.2 - s padama" blob_size="29350" input_size="38991" />
+  </data_composer>
+  <command_line>
+    <option value="--module" />
+    <option value="--assume-yes-for-downloads" />
+    <option value="--remove-output" />
+    <option value="--output-dir=C:\Nixminds\skryi-clean\dist_nuitka" />
+    <option value="C:\Nixminds\skryi-clean\anon7.2 - s padama.py" />
+  </command_line>
+  <plugins>
+    <plugin name="anti-bloat" user_enabled="no" />
+    <plugin name="eventlet" user_enabled="no" />
+    <plugin name="gi" user_enabled="no" />
+    <plugin name="implicit-imports" user_enabled="no" />
+    <plugin name="options-nanny" user_enabled="no" />
+    <plugin name="pkg-resources" user_enabled="no" />
+    <plugin name="transformers" user_enabled="no" />
+  </plugins>
+  <distributions />
+  <python python_exe="${sys.prefix}\python.exe" python_flavor="CPython Official" python_version="3.11.8" os_name="Windows" os_release="11" arch_name="x86_64" filesystem_encoding="utf-8">
+    <search_path>
+      <path value="${cwd}" />
+      <path value="${sys.prefix}\DLLs" />
+      <path value="${sys.prefix}\Lib" />
+      <path value="${sys.prefix}" />
+      <path value="${sys.prefix}\Lib\site-packages" />
+    </search_path>
+  </python>
+  <output run_filename="${cwd}\dist_nuitka\anon7.2 - s padama.cp311-win_amd64.pyd" />
+</nuitka-compilation-report>
