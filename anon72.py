@@ -4482,7 +4482,28 @@ class Anonymizer:
             return self._get_or_create_label('BIRTH_DATE', match.group(1))
         text = BIRTH_DATE_RE.sub(replace_birth_date, text)
 
-        # 16.7. ČÍSLO PASU
+        # 16.7. OBECNÁ DATA (podpisy, uzavření smlouvy, platnost, atd.)
+        # MUSÍ být PO datum narození a birth_id, aby se nepřebíjely
+        def replace_date(match):
+            date_str = match.group(1)
+            # Validace: zkontroluj rozsah den (1-31) a měsíc (1-12)
+            parts = re.split(r'\.\s?', date_str.strip('.'))
+            if len(parts) >= 2:
+                try:
+                    day, month = int(parts[0]), int(parts[1])
+                    if day < 1 or day > 31 or month < 1 or month > 12:
+                        return match.group(0)  # Neplatné datum, ponech beze změny
+                except (ValueError, IndexError):
+                    pass
+            return self._get_or_create_label('DATE', date_str)
+        text = DATE_RE.sub(replace_date, text)
+
+        # 16.7b. DATUM SLOVNĚ (např. "15. března 2024", "5. července 2026")
+        def replace_date_words(match):
+            return self._get_or_create_label('DATE', match.group(1))
+        text = DATE_WORDS_RE.sub(replace_date_words, text)
+
+        # 16.8. ČÍSLO PASU
         def replace_passport(match):
             return self._get_or_create_label('PASSPORT', match.group(1))
         text = PASSPORT_RE.sub(replace_passport, text)
@@ -5614,6 +5635,7 @@ _ENTITY_CATEGORY_MAP = {
     'PERSON':       ('Osoby (Jména)',        'OSOBA'),
     'ADDRESS':      ('Lokace (Adresy)',      'ADRESA'),
     'RC':           ('Rodná čísla',          'RC'),
+    'DATE':         ('Data (obecná)',         'DATUM'),
     'BIRTH_DATE':   ('Data narození',         'DATUM_NAR'),
     'BANK_ACCOUNT': ('Bankovní účty',        'UCET'),
     'IBAN':         ('IBAN',                 'IBAN'),
