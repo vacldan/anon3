@@ -171,10 +171,12 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
 
     # FIRST: Hardcoded list of common feminine names that should NEVER be converted
     # This is necessary because the name library is incomplete (missing Martina, etc.)
+    # NOTE: Names that are also genitive of common male names (jana→jan, petra→petr, pavla→pavel)
+    # are excluded from this list - they are handled by the genitive stripping rules below.
     common_feminine_names = {
-        'martina', 'jana', 'petra', 'eva', 'anna', 'marie', 'lenka', 'kateřina',
+        'martina', 'eva', 'anna', 'marie', 'lenka', 'kateřina',
         'alena', 'hana', 'lucie', 'veronika', 'monika', 'jitka', 'zuzana', 'ivana',
-        'tereza', 'barbora', 'andrea', 'michaela', 'simona', 'nikola', 'pavla',
+        'tereza', 'barbora', 'andrea', 'michaela', 'simona', 'nikola',
         'daniela', 'alexandra', 'kristýna', 'markéta', 'renata', 'šárka', 'karolína',
         'krista', 'beata'
     }
@@ -182,9 +184,20 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
     if lo in common_feminine_names:
         return None  # Don't convert feminine names to masculine
 
-    # Also check library if available
+    # Check library - BUT if stripping -a yields a valid male name, prefer that
+    # (e.g. "Jana" → "Jan", "Petra" → "Petr", "Pavla" → "Pavel")
     if lo in CZECH_FIRST_NAMES and lo.endswith('a'):
-        return None  # Don't convert, let the caller handle it
+        male_cand = obs[:-1]  # Jana → Jan
+        if male_cand.lower() in CZECH_FIRST_NAMES:
+            return male_cand.capitalize()
+        # Vložné 'e': Pavla → Pavl → Pavel
+        if len(male_cand) >= 3:
+            last_char = male_cand[-1]
+            if last_char.lower() not in 'aeiouyáéěíóúůý':
+                with_e = male_cand[:-1] + 'e' + last_char
+                if with_e.lower() in CZECH_FIRST_NAMES:
+                    return with_e.capitalize()
+        return None  # It's a feminine name, don't convert
 
     cands = []
 
@@ -1417,6 +1430,7 @@ ADDRESS_RE = re.compile(
             r'(?:sídlo(?:\s+podnikání)?|se\s+sídlem)\s*:\s*|'
             r'(?:místo\s+podnikání)\s*:\s*|'
             r'(?:adresa|trvalý\s+pobyt|na\s+adrese)\s*:\s*|'
+            r'(?:na\s+adresu|adresy|adresu)\s+|'
             r'(?:v\s+ulic[ií]|na\s+ulici|v\s+dom[eě])\s+)'
             r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]'
             r'[a-záčďéěíňóřšťúůýž\s]{2,50}?'
@@ -1821,8 +1835,8 @@ class Anonymizer:
         if typ == 'ADDRESS':
             # Odstraň prefix s dvojtečkou (Sídlo:, Adresa:, atd.)
             orig_norm = re.sub(r'^(Sídlo|Trvalé\s+bydliště|Trvalý\s+pobyt|Bydliště|Adresa|Místo\s+podnikání|Se\s+sídlem|Bytem)\s*:\s*', '', orig_norm, flags=re.IGNORECASE)
-            # Odstraň prefix bez dvojtečky na začátku (adrese, bytem) - instrumentál/lokál
-            orig_norm = re.sub(r'^(adrese|adresa|bytem|bydlišti|sídle)\s+', '', orig_norm, flags=re.IGNORECASE)
+            # Odstraň prefix bez dvojtečky na začátku (adrese, bytem, adresy, na adresu) - všechny pády
+            orig_norm = re.sub(r'^(na\s+adresu|adrese|adresa|adresy|adresu|bytem|bydlišti|sídle)\s+', '', orig_norm, flags=re.IGNORECASE)
 
         # OPTIMIZATION: Use reverse_map for O(1) lookup instead of O(n) iteration
         # Check if this variant already exists
@@ -4898,8 +4912,13 @@ class Anonymizer:
 
         Tento krok je důležitý protože různé pádové formy (Karel/Karla/Karlu)
         mohou vytvořit separátní osoby pokud nejsou správně detekované jako varianty.
+
+        Returns:
+            dict: Tag remap dictionary {old_tag: new_tag} for updating document text.
         """
         from collections import defaultdict
+
+        tag_remap = {}  # old_tag -> new_tag (for replacing in document text after dedup)
 
         print(f"  [DEDUP] Starting deduplication, {len(self.canonical_persons)} persons to check")
 
@@ -4982,6 +5001,9 @@ class Anonymizer:
                     self.entity_map['PERSON'][primary_canonical] = set()
                 self.entity_map['PERSON'][primary_canonical] |= dup_variants
                 del self.entity_map['PERSON'][dup_canonical]
+
+            # Track tag remap: duplicate's tag -> primary's tag
+            tag_remap[duplicate['tag']] = primary['tag']
 
             # Mark duplicate for removal (can't remove during iteration)
             merged_indices.add(dup_idx)
@@ -5094,6 +5116,9 @@ class Anonymizer:
                     self.entity_map['PERSON'][primary_canonical] |= dup_variants
                     del self.entity_map['PERSON'][dup_canonical]
 
+                # Track tag remap: duplicate's tag -> primary's tag
+                tag_remap[dup_tag] = primary_tag
+
                 # Remove duplicate from canonical_persons
                 self.canonical_persons.remove(duplicate)
 
@@ -5143,6 +5168,9 @@ class Anonymizer:
                             self.entity_map['PERSON'][male_canonical] = set()
                         self.entity_map['PERSON'][male_canonical] |= female_variants
                         del self.entity_map['PERSON'][female_canonical]
+
+                    # Track tag remap: female's tag -> male's tag
+                    tag_remap[person['tag']] = male_person['tag']
 
                     # Mark for removal
                     persons_to_remove.append(person)
@@ -5205,6 +5233,11 @@ class Anonymizer:
         total_merged = merged_count_phase1 + merged_count + merged_count_phase3
         if total_merged > 0:
             print(f"  [DEBUG] Total merged: {total_merged} duplicate persons")
+
+        if tag_remap:
+            print(f"  [DEDUP] Tag remap: {tag_remap}")
+
+        return tag_remap
 
     def anonymize_docx(self, input_path: str, output_path: str, json_map: str, txt_map: str, pdf_report: str = None):
         """Hlavní metoda pro anonymizaci DOCX dokumentu."""
@@ -5278,7 +5311,29 @@ class Anonymizer:
                             para.text = text
 
         # POST-PROCESSING: Deduplicate persons AFTER all extraction (including tables)
-        self._deduplicate_persons()
+        tag_remap = self._deduplicate_persons()
+
+        # Apply tag remap to document text (replace merged tags with primary tags)
+        if tag_remap:
+            print(f"  [DEDUP] Applying tag remap to document ({len(tag_remap)} remaps)...")
+            for para in doc.paragraphs:
+                original = para.text
+                text = original
+                for old_tag, new_tag in tag_remap.items():
+                    text = text.replace(old_tag, new_tag)
+                if text != original:
+                    para.text = text
+            for table in doc.tables:
+                for row in table.rows:
+                    for cell in row.cells:
+                        for para in cell.paragraphs:
+                            original = para.text
+                            text = original
+                            for old_tag, new_tag in tag_remap.items():
+                                text = text.replace(old_tag, new_tag)
+                            if text != original:
+                                para.text = text
+            print(f"  [DEDUP] Tag remap applied successfully")
 
         # Ulož dokument
         start_time = time.time()
