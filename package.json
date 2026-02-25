@@ -32,6 +32,7 @@
       "package.json",
       "EULA.txt",
       "assets/**/*",
+      "fonts/**/*",
       "validate_license_standalone.exe",
       "anonymize_cli.exe",
       "deanonymizator_lokal.exe",
@@ -79,6 +80,7 @@
       "**/*.exe",
       "**/*.pyd",
       "cz_names.v1.json",
+      "fonts/**/*",
       "assets/**/*"
     ],
     "win": {
