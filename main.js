@@ -492,7 +492,9 @@ function resolveScript(baseName) {
     }
   }
 
-  console.warn(`[RESOLVE] ${baseName} not found in any location`);
+  console.warn(`[RESOLVE] ${baseName} not found in any location!`);
+  console.warn(`[RESOLVE] Searched EXE: ${exeCands.join(', ')}`);
+  console.warn(`[RESOLVE] Searched PY:  ${pyCands.join(', ')}`);
   return { path: pyCands[0], isExe: false };
 }
 
@@ -579,7 +581,7 @@ ipcMain.handle("anonymize-document", async (evt, filePath) => {
   if (!fs.existsSync(cliScript.path)) {
     // Fallback to regular CLI if turbo not found
     cliScript = resolveScript("anonymize_cli.py");
-    if (!fs.existsSync(cliScript.path)) return { success: false, error: `CLI script not found: ${cliScript.path}` };
+    if (!fs.existsSync(cliScript.path)) return { success: false, error: `CLI script not found: ${cliScript.path}. Zkontrolujte, že Nuitka build proběhl správně a anonymize_cli.exe byl zkopírován do složky aplikace.` };
   }
 
   const startedMs = Date.now();
