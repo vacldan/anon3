@@ -46,14 +46,8 @@ DATA_DIRS = [
 EXTRA_FLAGS = {
     "anonymize_cli.py": [
         "--include-package=fpdf",      # PDF report generation (fpdf2)
-        "--include-package=fonttools",  # Required by fpdf2 for TTF fonts
+        "--include-package=fontTools",  # Required by fpdf2 for TTF fonts (capital T!)
     ],
-}
-
-# Scripts that should use --standalone instead of --onefile
-# (some packages like fpdf/fonttools break Nuitka onefile mode)
-USE_STANDALONE_MODE = {
-    "anonymize_cli.py",
 }
 
 
@@ -96,34 +90,20 @@ def check_nuitka():
 
 
 def compile_to_exe(filepath, output_dir):
-    """Compile a Python script to standalone .exe"""
+    """Compile a Python script to standalone .exe (onefile)"""
     filename = filepath.name
     output_name = filepath.stem  # filename without extension
 
-    # Some scripts need --standalone mode (no onefile) because their
-    # dependencies (e.g. fpdf, fonttools) break Nuitka's onefile packing
-    use_standalone = filename in USE_STANDALONE_MODE
-
-    if use_standalone:
-        cmd = [
-            sys.executable, "-m", "nuitka",
-            "--standalone",                 # Folder with .exe + dependencies
-            "--assume-yes-for-downloads",
-            "--output-dir=" + str(output_dir),
-            "--output-filename=" + output_name + ".exe",
-            "--windows-console-mode=disable",
-        ]
-    else:
-        cmd = [
-            sys.executable, "-m", "nuitka",
-            "--onefile",                    # Single .exe file
-            "--standalone",                 # Include all dependencies
-            "--assume-yes-for-downloads",
-            "--remove-output",              # Clean build folders
-            "--output-dir=" + str(output_dir),
-            "--output-filename=" + output_name + ".exe",
-            "--windows-console-mode=disable",
-        ]
+    cmd = [
+        sys.executable, "-m", "nuitka",
+        "--onefile",                    # Single .exe file
+        "--standalone",                 # Include all dependencies
+        "--assume-yes-for-downloads",   # Auto-download C++ compiler if needed
+        "--remove-output",              # Clean build folders
+        "--output-dir=" + str(output_dir),
+        "--output-filename=" + output_name + ".exe",
+        "--windows-console-mode=disable",
+    ]
 
     # Add extra flags for specific scripts (e.g. --include-package)
     extra = EXTRA_FLAGS.get(filename, [])
@@ -131,21 +111,7 @@ def compile_to_exe(filepath, output_dir):
 
     cmd.append(str(filepath))
 
-    success = run_command(cmd, f"Compiling {filename} to .exe ({'standalone' if use_standalone else 'onefile'})")
-
-    # For standalone mode, the .exe is inside a .dist/ folder - copy it out
-    if success and use_standalone:
-        dist_dir = output_dir / f"{output_name}.dist"
-        dist_exe = dist_dir / f"{output_name}.exe"
-        target_exe = output_dir / f"{output_name}.exe"
-        if dist_exe.exists():
-            shutil.copy(dist_exe, target_exe)
-            print(f"  Copied {output_name}.exe from .dist/ to output dir")
-        else:
-            print(f"  WARNING: {dist_exe} not found after standalone build!")
-            success = False
-
-    return success
+    return run_command(cmd, f"Compiling {filename} to .exe")
 
 
 def compile_to_module(filepath, output_dir):
@@ -271,15 +237,6 @@ def main():
         dest = project_root / pyi_file.name
         shutil.copy(pyi_file, dest)
         print(f"  Copied: {pyi_file.name}")
-        copied_count += 1
-
-    # Copy standalone .dist/ folders (e.g. anonymize_cli.dist/)
-    for dist_folder in output_dir.glob("*.dist"):
-        dest = project_root / dist_folder.name
-        if dest.exists():
-            shutil.rmtree(dest)
-        shutil.copytree(dist_folder, dest)
-        print(f"  Copied folder: {dist_folder.name}/ ({sum(1 for _ in dist_folder.rglob('*'))} files)")
         copied_count += 1
 
     # Copy data directories (fonts/)

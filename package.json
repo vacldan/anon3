@@ -35,7 +35,6 @@
       "fonts/**/*",
       "validate_license_standalone.exe",
       "anonymize_cli.exe",
-      "anonymize_cli.dist/**/*",
       "deanonymizator_lokal.exe",
       "pdf2docx_cli.exe",
       "skryi_watcher.exe",
@@ -80,7 +79,6 @@
       "**/*.pyd",
       "cz_names.v1.json",
       "fonts/**/*",
-      "anonymize_cli.dist/**/*",
       "assets/**/*"
     ],
     "win": {
