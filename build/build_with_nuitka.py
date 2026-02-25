@@ -245,29 +245,90 @@ def main():
             shutil.copytree(dirpath, dest)
             print(f"  Copied directory: {dirname}/")
 
+    # Phase 4: Auto-copy all output files to project root
+    print("\n" + "=" * 60)
+    print("  PHASE 4: Copying to project root")
+    print("=" * 60)
+
+    copied_count = 0
+
+    # Copy .exe files
+    for exe_file in output_dir.glob("*.exe"):
+        dest = project_root / exe_file.name
+        shutil.copy(exe_file, dest)
+        print(f"  Copied: {exe_file.name}")
+        copied_count += 1
+
+    # Copy .pyd files
+    for pyd_file in output_dir.glob("*.pyd"):
+        dest = project_root / pyd_file.name
+        shutil.copy(pyd_file, dest)
+        print(f"  Copied: {pyd_file.name}")
+        copied_count += 1
+
+    # Copy .pyi files
+    for pyi_file in output_dir.glob("*.pyi"):
+        dest = project_root / pyi_file.name
+        shutil.copy(pyi_file, dest)
+        print(f"  Copied: {pyi_file.name}")
+        copied_count += 1
+
+    # Copy standalone .dist/ folders (e.g. anonymize_cli.dist/)
+    for dist_folder in output_dir.glob("*.dist"):
+        dest = project_root / dist_folder.name
+        if dest.exists():
+            shutil.rmtree(dest)
+        shutil.copytree(dist_folder, dest)
+        print(f"  Copied folder: {dist_folder.name}/ ({sum(1 for _ in dist_folder.rglob('*'))} files)")
+        copied_count += 1
+
+    # Copy data directories (fonts/)
+    for dirname in DATA_DIRS:
+        src = output_dir / dirname
+        if src.exists():
+            dest = project_root / dirname
+            if dest.exists():
+                shutil.rmtree(dest)
+            shutil.copytree(src, dest)
+            print(f"  Copied folder: {dirname}/")
+            copied_count += 1
+
+    # Copy data files
+    for filename in DATA_FILES:
+        src = output_dir / filename
+        if src.exists():
+            dest = project_root / filename
+            shutil.copy(src, dest)
+            print(f"  Copied: {filename}")
+            copied_count += 1
+
+    print(f"\n  Total copied to project root: {copied_count} items")
+
     # Summary
     print("\n" + "=" * 60)
     print("  BUILD SUMMARY")
     print("=" * 60)
     print(f"  Compiled files: {success_count}")
-    print(f"  Failed files: {len(failed_files)}")
+    print(f"  Failed files:   {len(failed_files)}")
+    print(f"  Copied to root: {copied_count}")
 
     if failed_files:
-        print(f"\n  Failed: {', '.join(failed_files)}")
+        print(f"\n  FAILED: {', '.join(failed_files)}")
 
     print(f"\n  Output directory: {output_dir}")
-    print("\n  Compiled .exe files are FULLY PROTECTED!")
-    print("  MASTER_SECRET is embedded in binary code.")
 
     # List output files
     print("\n  Output files:")
     for f in sorted(output_dir.iterdir()):
-        size = f.stat().st_size / 1024
-        print(f"    {f.name} ({size:.1f} KB)")
+        if f.is_dir():
+            dir_size = sum(ff.stat().st_size for ff in f.rglob('*') if ff.is_file()) / 1024
+            print(f"    {f.name}/ ({dir_size:.0f} KB total)")
+        else:
+            size = f.stat().st_size / 1024
+            print(f"    {f.name} ({size:.1f} KB)")
 
-    print("\n  Next steps:")
-    print("    1. Copy .exe files to project root")
-    print("    2. Run: npm run dist")
+    print("\n  Next step:")
+    print("    npm run dist")
 
     return 0 if success_count > 0 else 1
 
