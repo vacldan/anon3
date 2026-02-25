@@ -462,15 +462,12 @@ app.on("activate", () => {
 function resolveScript(baseName) {
   const unpackedDir = __dirname.replace('app.asar', 'app.asar.unpacked');
   const exeName = baseName.replace('.py', '.exe');
-  const stemName = baseName.replace('.py', '');
   const pyName = baseName;
 
-  // First look for compiled .exe (Nuitka onefile or standalone)
+  // First look for compiled .exe (Nuitka onefile)
   const exeCands = [
-    path.join(unpackedDir, exeName),                          // onefile: app.asar.unpacked/script.exe
-    path.join(unpackedDir, stemName + ".dist", exeName),      // standalone: app.asar.unpacked/script.dist/script.exe
-    path.join(__dirname, exeName),                            // dev: same dir
-    path.join(__dirname, stemName + ".dist", exeName),        // dev standalone: same dir/script.dist/script.exe
+    path.join(unpackedDir, exeName),
+    path.join(__dirname, exeName),
   ];
 
   for (const p of exeCands) {
