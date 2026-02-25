@@ -50,6 +50,12 @@ EXTRA_FLAGS = {
     ],
 }
 
+# Scripts that should use --standalone instead of --onefile
+# (some packages like fpdf/fonttools break Nuitka onefile mode)
+USE_STANDALONE_MODE = {
+    "anonymize_cli.py",
+}
+
 
 def run_command(cmd, description):
     """Run a command and return success status"""
@@ -94,17 +100,30 @@ def compile_to_exe(filepath, output_dir):
     filename = filepath.name
     output_name = filepath.stem  # filename without extension
 
-    cmd = [
-        sys.executable, "-m", "nuitka",
-        "--onefile",                    # Single .exe file
-        "--standalone",                 # Include all dependencies
-        "--assume-yes-for-downloads",   # Auto-download C++ compiler if needed
-        "--remove-output",              # Clean build folders
-        "--output-dir=" + str(output_dir),
-        "--output-filename=" + output_name + ".exe",
-        # Console mode: disable console window (Electron communicates via pipes)
-        "--windows-console-mode=disable",
-    ]
+    # Some scripts need --standalone mode (no onefile) because their
+    # dependencies (e.g. fpdf, fonttools) break Nuitka's onefile packing
+    use_standalone = filename in USE_STANDALONE_MODE
+
+    if use_standalone:
+        cmd = [
+            sys.executable, "-m", "nuitka",
+            "--standalone",                 # Folder with .exe + dependencies
+            "--assume-yes-for-downloads",
+            "--output-dir=" + str(output_dir),
+            "--output-filename=" + output_name + ".exe",
+            "--windows-console-mode=disable",
+        ]
+    else:
+        cmd = [
+            sys.executable, "-m", "nuitka",
+            "--onefile",                    # Single .exe file
+            "--standalone",                 # Include all dependencies
+            "--assume-yes-for-downloads",
+            "--remove-output",              # Clean build folders
+            "--output-dir=" + str(output_dir),
+            "--output-filename=" + output_name + ".exe",
+            "--windows-console-mode=disable",
+        ]
 
     # Add extra flags for specific scripts (e.g. --include-package)
     extra = EXTRA_FLAGS.get(filename, [])
@@ -112,7 +131,21 @@ def compile_to_exe(filepath, output_dir):
 
     cmd.append(str(filepath))
 
-    return run_command(cmd, f"Compiling {filename} to .exe")
+    success = run_command(cmd, f"Compiling {filename} to .exe ({'standalone' if use_standalone else 'onefile'})")
+
+    # For standalone mode, the .exe is inside a .dist/ folder - copy it out
+    if success and use_standalone:
+        dist_dir = output_dir / f"{output_name}.dist"
+        dist_exe = dist_dir / f"{output_name}.exe"
+        target_exe = output_dir / f"{output_name}.exe"
+        if dist_exe.exists():
+            shutil.copy(dist_exe, target_exe)
+            print(f"  Copied {output_name}.exe from .dist/ to output dir")
+        else:
+            print(f"  WARNING: {dist_exe} not found after standalone build!")
+            success = False
+
+    return success
 
 
 def compile_to_module(filepath, output_dir):
