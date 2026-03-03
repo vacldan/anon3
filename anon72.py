@@ -1833,10 +1833,10 @@ class Anonymizer:
 
         # Speciální cleanup pro ADDRESS - odstraň prefixy "Sídlo:", "Trvalé bydliště:", "Trvalý pobyt:" atd.
         if typ == 'ADDRESS':
-            # Odstraň prefix s dvojtečkou (Sídlo:, Adresa:, atd.)
-            orig_norm = re.sub(r'^(Sídlo|Trvalé\s+bydliště|Trvalý\s+pobyt|Bydliště|Adresa|Místo\s+podnikání|Se\s+sídlem|Bytem)\s*:\s*', '', orig_norm, flags=re.IGNORECASE)
-            # Odstraň prefix bez dvojtečky na začátku (adrese, bytem, adresy, na adresu) - všechny pády
-            orig_norm = re.sub(r'^(na\s+adresu|adrese|adresa|adresy|adresu|bytem|bydlišti|sídle)\s+', '', orig_norm, flags=re.IGNORECASE)
+            # Odstraň prefix s dvojtečkou (Sídlo:, Adresa:, Na adrese:, atd.)
+            orig_norm = re.sub(r'^(?:Sídlo(?:\s+podnikání)?|Trvalé\s+bydliště|Trvalý\s+pobyt|Bydliště|Adresa|Na\s+adrese|Místo\s+podnikání|Se\s+sídlem|Bytem)\s*:\s*', '', orig_norm, flags=re.IGNORECASE)
+            # Odstraň prefix bez dvojtečky na začátku - MUSÍ pokrývat všechny prefixy z ADDRESS_RE
+            orig_norm = re.sub(r'^(?:trvale\s+bytem|na\s+adresu|na\s+adrese|adrese|adresa|adresy|adresu|bytem|bydlišti|sídle|v\s+ulic[ií]|na\s+ulici|v\s+dom[eě])\s+', '', orig_norm, flags=re.IGNORECASE)
 
         # OPTIMIZATION: Use reverse_map for O(1) lookup instead of O(n) iteration
         # Check if this variant already exists
@@ -4420,8 +4420,11 @@ class Anonymizer:
         def replace_birth_id(match):
             birth_id = match.group(1) if match.group(1) else match.group(2)
             if birth_id:
-                # Odstranit lomítko pokud není přítomné
                 birth_id_clean = birth_id.replace(' ', '')
+                # Normalizace: vždy použij tvar s lomítkem (XXXXXX/XXXX)
+                # aby se deduplikovaly varianty 901122/4567 a 9011224567
+                if '/' not in birth_id_clean and len(birth_id_clean) >= 9:
+                    birth_id_clean = birth_id_clean[:6] + '/' + birth_id_clean[6:]
                 return self._get_or_create_label('BIRTH_ID', birth_id_clean)
             return match.group(0)
         text = BIRTH_ID_RE.sub(replace_birth_id, text)
@@ -5532,17 +5535,17 @@ class Anonymizer:
             # Získej všechny původní formy z entity_map
             original_forms = self.entity_map['PERSON'].get(canonical_full, {canonical_full})
 
-            # DŮLEŽITÉ: Kanonický tvar (základní nominativ) MUSÍ být první!
+            # DŮLEŽITÉ: Kanonický tvar (základní nominativ) MUSÍ být VŽDY první!
             # Deanonymizátor používá první výskyt jako základní tvar.
-
-            # Nejdřív přidej kanonický tvar (pokud existuje v dokumentu)
-            if canonical_full in source_text:
-                json_data["entities"].append({
-                    "type": "PERSON",
-                    "label": p['tag'],
-                    "original": canonical_full,
-                    "occurrences": 1
-                })
+            # I když nominativ není přímo v textu (osoba se vyskytuje jen ve skloněném tvaru),
+            # musíme ho uvést pro správnou deanonymizaci.
+            canonical_in_source = canonical_full in source_text
+            json_data["entities"].append({
+                "type": "PERSON",
+                "label": p['tag'],
+                "original": canonical_full,
+                "occurrences": 1 if canonical_in_source else 0
+            })
 
             # Pak teprve přidej ostatní varianty (skloněné tvary)
             for original_form in original_forms:
