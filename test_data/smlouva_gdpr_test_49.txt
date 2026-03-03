@@ -1,0 +1,38 @@
+SMLOUVA O ZAJIŠTĚNÍ OSTRAHY A MONITOROVÁNÍ OBCHODNÍHO CENTRA
+
+I. SMLUVNÍ STRANY
+
+1. Objednatel:
+   Název: OC Galerie Jih a.s.
+   Sídlo: Obchodní 1, 700 30 Ostrava
+   IČO: 27766554
+   Zastoupená: Ing. Romanem Krupou, předsedou představenstva
+   Telefon: +420 595 123 000
+   E‑mail: info@ocgaleriejih.cz
+
+2. Dodavatel bezpečnostních služeb:
+   Název: SECURITAS Moravia s.r.o.
+   Sídlo: Bezpečnostní 8, 709 00 Ostrava
+   IČO: 26221155
+   Kontaktní osoba: Bc. Jakub Šíma
+   Telefon: +420 736 555 444
+   E‑mail: jakub.sima@securitas-moravia.cz
+
+II. MONITOROVÁNÍ A OSOBNÍ ÚDAJE
+
+1. Dodavatel zajišťuje nepřetržité kamerové monitorování společných prostor OC Galerie Jih.
+2. Kamerové záznamy mohou obsahovat obrazové záznamy osob, registrační značky vozidel (např. 5AZ 4567, 7B8 2345) a další identifikátory.
+3. V rámci testu anonymizace se uvádí kontaktní osoby:
+   a) technik správy budovy: Ing. Martin Blažek, nar. 29. 01. 1980, telefon: +420 603 111 777;
+   b) vedoucí směny bezpečnostní služby: Petr Valenta, nar. 16. 06. 1983, e‑mail: petr.valenta@example.com.
+
+III. PŘÍSTUPOVÉ ÚDAJE KE KAMEROVÉMU SYSTÉMU
+
+1. Administrátorský přístup:
+   Uživatelské jméno: j.sima
+   Heslo: S3curitas!2026
+   IP adresa serveru: 172.16.0.10
+
+IV. ZÁVĚR
+
+V Ostravě dne 5. 7. 2026

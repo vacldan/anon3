@@ -1,0 +1,46 @@
+OSOBY
+-----
+[[PERSON_1]]: Roman Turek
+  - Romanem Turkem
+[[PERSON_2]]: Helena Vodičková
+  - Helenou Vodičkovou
+  - Heleně Vodičkové
+[[PERSON_3]]: Jaroslav Černý
+  - Jaroslava Černého
+
+ADDRESS
+[[ADDRESS_1]]: se sídlem Analytická 21, 190 00 Praha 9
+[[ADDRESS_2]]: Větrná 8, 779 00 Olomouc
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 830404/1234
+[[BIRTH_ID_2]]: 900129/5678
+[[BIRTH_ID_3]]: 880515/4321
+
+DATE
+[[DATE_1]]: 04. 04. 1983
+[[DATE_2]]: 29. 01. 1990
+[[DATE_3]]: 15. 05. 1988
+[[DATE_4]]: 25. 5. 2026
+
+EMAIL
+[[EMAIL_1]]: roman.turek@datalab.cz
+[[EMAIL_2]]: helena.vodickova@example.com
+
+ICO
+[[ICO_1]]: 88990011
+
+IP
+[[IP_1]]: 10.0.0.101
+
+MAC
+[[MAC_1]]: 00:25:96:FF:EE:11
+
+PASSWORD
+[[PASSWORD_1]]: T3stovac1!2026
+[[PASSWORD_2]]: J4roTest?2026
+
+PHONE
+[[PHONE_1]]: +420 602 444 333
+[[PHONE_2]]: +420 777 222 333
+

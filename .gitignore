@@ -23,9 +23,12 @@ anon72.onefile-build/
 anon72.cp311-win_amd64/
 
 # Test files
+# Obecně ignoruj DOCX, ale povol testovací smlouvy v test_data/
 *.docx
 smlouva*
 historie*
+!test_data/*.docx
+!test_data/smlouva*
 
 # License files (customers only)
 *.lic

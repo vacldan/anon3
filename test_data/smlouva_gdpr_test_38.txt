@@ -1,0 +1,51 @@
+SMLOUVA O PROVOZU ŠKOLNÍHO INFORMAČNÍHO SYSTÉMU A ZPRACOVÁNÍ OSOBNÍCH ÚDAJŮ
+
+I. SMLUVNÍ STRANY
+
+1. Škola (Správce):
+   Název: Gymnázium Na Hradbách
+   Sídlo: Na Hradbách 15, 702 00 Ostrava
+   IČO: 12398745
+   Telefon: +420 596 111 222
+   E-mail: sekretariat@gymhradby.cz
+   Zastoupená: Mgr. Štěpán Hrubeš
+
+2. Dodavatel (Zpracovatel):
+   Název: EduCloud Systems s.r.o.
+   Sídlo: U Kampusu 9, 625 00 Brno
+   IČO: 98732145
+   Kontaktní osoba: Kamil Řezníček, RČ 860921/4444, tel. +420 725 666 999, e-mail: kamil.reznicek@educloud.cz
+
+II. PŘEDMĚT
+
+1. Zpracovatel se zavazuje provozovat systém pro evidenci žáků, rozvrh, klasifikaci a komunikaci s rodiči.
+2. Typické údaje: jméno, příjmení, datum narození, adresa, zákonný zástupce, kontakty, poznámky k podpůrným opatřením.
+
+III. PŘÍKLADY (PRO TEST)
+
+1. Žák: Nikol Šťastná (RČ 100202/0005), zákonný zástupce: Veronika Lacinová (veronika.lacinova@example.com, +420 605 123 456).
+2. V textu se mohou objevovat tvary: „Nikol Šťastné“, „s Nikol Šťastnou“, „Veronice Lacinové“, „s Veronikou Lacinovou“.
+
+IV. PŘÍSTUPY
+
+1. Admin školy:
+   Uživatelské jméno: shrubes
+   Heslo: Gymn4zium!2026
+2. Servisní účet dodavatele:
+   Uživatelské jméno: servis.educloud
+   Heslo: EduCl0ud?2026
+3. Logování přístupů: IP 85.95.12.34, 85.95.12.35, MAC 00:25:96:FF:EE:11.
+
+V. DOBA TRVÁNÍ
+
+1. Smlouva se uzavírá na dobu určitou od 1. 9. 2026 do 31. 8. 2030.
+
+VI. ZÁVĚR
+
+V Ostravě dne 30. 6. 2026
+
+……………………..............................
+Mgr. Štěpán Hrubeš
+
+……………………..............................
+Kamil Řezníček

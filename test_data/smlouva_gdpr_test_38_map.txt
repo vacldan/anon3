@@ -1,0 +1,49 @@
+OSOBY
+-----
+[[PERSON_1]]: Štěpán Hrubeš
+[[PERSON_2]]: Kamil Řezníček
+[[PERSON_3]]: Veronika Lacinová
+  - Veronice Lacinové
+  - Veronikou Lacinovou
+[[PERSON_4]]: Nikol Šťastná
+  - Nikol Šťastnou
+  - Nikol Šťastné
+
+ADDRESS
+[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_2]]: U Kampusu 9, 625 00 Brno
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 860921/4444
+[[BIRTH_ID_2]]: 100202/0005
+
+DATE
+[[DATE_1]]: 1. 9. 2026
+[[DATE_2]]: 31. 8. 2030
+[[DATE_3]]: 30. 6. 2026
+
+EMAIL
+[[EMAIL_1]]: sekretariat@gymhradby.cz
+[[EMAIL_2]]: kamil.reznicek@educloud.cz
+[[EMAIL_3]]: veronika.lacinova@example.com
+
+ICO
+[[ICO_1]]: 12398745
+[[ICO_2]]: 98732145
+
+IP
+[[IP_1]]: 85.95.12.34
+[[IP_2]]: 85.95.12.35
+
+MAC
+[[MAC_1]]: 00:25:96:FF:EE:11
+
+PASSWORD
+[[PASSWORD_1]]: Gymn4zium!2026
+[[PASSWORD_2]]: EduCl0ud?2026
+
+PHONE
+[[PHONE_1]]: +420 596 111 222
+[[PHONE_2]]: +420 725 666 999
+[[PHONE_3]]: +420 605 123 456
+

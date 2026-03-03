@@ -1,0 +1,57 @@
+OSOBY
+-----
+[[PERSON_1]]: Martin Černý
+[[PERSON_2]]: Lenka Konečná
+[[PERSON_3]]: Robert Vlach
+[[PERSON_4]]: Karel Dvořák
+[[PERSON_5]]: Jana Malíková
+  - Jany Malíkové
+[[PERSON_6]]: Petra Horáková
+  - Petrou Horákovou
+[[PERSON_7]]: Jan Dvořák
+  - Janu Dvořákovi
+[[PERSON_8]]: Karel Malý
+  - Karla Malého
+
+ADDRESS
+[[ADDRESS_1]]: Obchodní 1200/5, 140 00 Praha 4
+[[ADDRESS_2]]: Serverová 22, 639 00 Brno
+[[ADDRESS_3]]: Na Kopci 3, 625 00 Brno
+[[ADDRESS_4]]: U Lomu 7, 602 00 Brno
+
+BANK
+[[BANK_1]]: 9988776655/0100
+[[BANK_2]]: 5544332211/0300
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 800403/5678
+
+DATE
+[[DATE_1]]: 03. 04. 1980
+[[DATE_2]]: 5. 5. 2026
+
+EMAIL
+[[EMAIL_1]]: dpo@alfa-shop.cz
+[[EMAIL_2]]: robert.vlach@cloudata.cz
+[[EMAIL_3]]: petra.horakova@example.com
+
+ICO
+[[ICO_1]]: 12345678
+[[ICO_2]]: 87654321
+
+IP
+[[IP_1]]: 185.22.33.44
+
+MAC
+[[MAC_1]]: 00:11:22:33:44:55
+[[MAC_2]]: 00:11:22:33:44:66
+
+PASSWORD
+[[PASSWORD_1]]: M4rtin!2026
+
+PHONE
+[[PHONE_1]]: +420 234 555 111
+[[PHONE_2]]: +420 608 444 777
+[[PHONE_3]]: +420 777 000 999
+[[PHONE_4]]: +420 605 222 111
+

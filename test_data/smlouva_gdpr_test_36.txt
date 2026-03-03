@@ -1,0 +1,56 @@
+SMLOUVA O ZPRACOVÁNÍ OSOBNÍCH ÚDAJŮ (GDPR) – NEMOCNIČNÍ INFORMAČNÍ SYSTÉM
+
+uzavřená dle čl. 28 Nařízení (EU) 2016/679 (GDPR)
+
+I. SMLUVNÍ STRANY
+
+1. Správce:
+   Název: Krajská nemocnice Jih a.s.
+   Sídlo: Nemocniční 1, 400 01 Ústí nad Labem
+   IČO: 44550011
+   Kontaktní e-mail: dpo@knjih.cz
+   Telefon: +420 477 111 222
+
+   (dále jen „Správce“)
+
+2. Zpracovatel:
+   Název: HealthIT Services s.r.o.
+   Sídlo: Serverová 22, 639 00 Brno
+   IČO: 87654321
+   Kontaktní osoba: Igor Vraný, nar. 03. 04. 1980, RČ 800403/5678, tel. +420 608 444 777, e-mail: igor.vrany@healthit.cz
+
+   (dále jen „Zpracovatel“)
+
+II. PŘEDMĚT
+
+1. Správce pověřuje Zpracovatele správou a provozem nemocničního informačního systému (NIS), v němž jsou zpracovávány osobní údaje pacientů.
+2. Typy údajů: jméno, příjmení, datum narození, rodné číslo, adresa, kontakt, údaje o hospitalizaci, diagnózy, výsledky vyšetření, medikace.
+
+III. PŘÍKLADY DAT A KONTAKTŮ (PRO TEST)
+
+1. V systému se mohou nacházet údaje pacientů, např. „Sabině Nedvědové“ (RČ 930630/7890), e-mail sabina.nedvedova@example.com, tel. +420 731 444 555, nebo „Renatě Slámové“ (RČ 840308/6789).
+2. Údaje o přístupu:
+   Admin účet: admin.nis
+   Heslo: NIS!Adm1n2026
+   IP přístupy: 185.22.33.44, 192.168.11.22
+   MAC: 00:11:22:33:44:55
+
+IV. BEZPEČNOST A AUDIT
+
+1. Zpracovatel vede auditní logy přístupů (uživatel, IP, čas, akce).
+2. Zpracovatel umožní Správci provést audit po předchozí dohodě.
+
+V. DOBA TRVÁNÍ
+
+1. Smlouva se uzavírá na dobu určitou od 1. 7. 2026 do 30. 6. 2029.
+
+VI. ZÁVĚR
+
+V Ústí nad Labem dne 20. 6. 2026
+
+……………………..............................
+za Správce
+
+……………………..............................
+Igor Vraný
+za Zpracovatele

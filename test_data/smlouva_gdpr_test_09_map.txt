@@ -1,0 +1,50 @@
+OSOBY
+-----
+[[PERSON_1]]: Štěpán Hrubeš
+  - Štěpána Hrubeše
+[[PERSON_2]]: Gabriela Pokorná
+  - Gabrielu Pokornou
+  - Gabriely Pokorné
+[[PERSON_3]]: Kamil Řezníček
+[[PERSON_4]]: Markéta Benešová
+[[PERSON_5]]: Erik Roubal
+[[PERSON_6]]: Aleš Kříž
+
+ADDRESS
+[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_2]]: U Kampusu 9, 625 00 Brno
+[[ADDRESS_3]]: Lipová 3, 702 00 Ostrava
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 860921/4444
+[[BIRTH_ID_2]]: 081014/1234
+
+DATE
+[[DATE_1]]: 21. 09. 1986
+[[DATE_2]]: 14. 10. 2008
+[[DATE_3]]: 01. 01. 1980
+[[DATE_4]]: 1. 9. 2026
+[[DATE_5]]: 31. 8. 2030
+[[DATE_6]]: 20. 5. 2026
+
+EMAIL
+[[EMAIL_1]]: reditel@gymhradby.cz
+[[EMAIL_2]]: kamil.reznicek@educloud.cz
+
+ICO
+[[ICO_1]]: 12398745
+[[ICO_2]]: 98732145
+
+IP
+[[IP_1]]: 85.95.12.34
+[[IP_2]]: 85.95.12.35
+
+PASSWORD
+[[PASSWORD_1]]: Gymn4zium!2026
+[[PASSWORD_2]]: EduCl0ud?2026
+
+PHONE
+[[PHONE_1]]: +420 596 111 222
+[[PHONE_2]]: +420 725 666 999
+[[PHONE_3]]: +420 603 222 111
+

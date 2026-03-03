@@ -1,0 +1,74 @@
+OSOBY
+-----
+[[PERSON_1]]: Daniel Mlynář
+[[PERSON_2]]: Markéta Benešová
+  - Markétou Benešovou
+  - Markétě Benešové
+[[PERSON_3]]: Petr Dohnal
+  - Petra Dohnala
+  - Petrem Dohnalem
+  - Petru Dohnalovi
+[[PERSON_4]]: Gabriela Štěpánová
+  - Gabrielou Štěpánovou
+  - Gabrielu Štěpánovou
+  - Gabriely Štěpánové
+[[PERSON_5]]: Tomáš Nguyen
+
+ADDRESS
+[[ADDRESS_1]]: Právnická 12, 110 00 Praha 1
+[[ADDRESS_2]]: Sadová 19, 370 01 České Budějovice
+[[ADDRESS_3]]: Sadová 19, byt 7
+[[ADDRESS_4]]: Jabloňová 12, 400 01 Ústí nad Labem
+[[ADDRESS_5]]: U Parku 8, 779 00 Olomouc
+
+BANK
+[[BANK_1]]: 112882351/0300
+[[BANK_2]]: 662219881/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 870823/4567
+[[BIRTH_ID_2]]: 841010/1234
+[[BIRTH_ID_3]]: 900101/2222
+[[BIRTH_ID_4]]: 880505/3333
+
+DATE
+[[DATE_1]]: 23. 08. 1987
+[[DATE_2]]: 10. 10. 1984
+[[DATE_3]]: 01. 01. 1990
+[[DATE_4]]: 05. 05. 1988
+[[DATE_5]]: 3. 6. 2026
+
+EMAIL
+[[EMAIL_1]]: daniel.mlynar@advokati.cz
+[[EMAIL_2]]: marketa.benesova@example.com
+[[EMAIL_3]]: petr.dohnal@example.org
+[[EMAIL_4]]: tomas.nguyen@example.net
+
+IBAN
+[[IBAN_1]]: CZ98 0300 0000 0011 2882 3510
+
+ICO
+[[ICO_1]]: 05288977
+
+ID_CARD
+[[ID_CARD_1]]: 112233445
+
+IP
+[[IP_1]]: 192.168.11.22
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP45678
+
+MAC
+[[MAC_1]]: 00:1F:44:AA:22:11
+
+PASSWORD
+[[PASSWORD_1]]: M@rketa2026!
+
+PHONE
+[[PHONE_1]]: +420 731 456 789
+[[PHONE_2]]: +420 777 999 111
+[[PHONE_3]]: +420 605 123 456
+[[PHONE_4]]: +420 603 987 654
+[[PHONE_5]]: +420 605 444 555
+

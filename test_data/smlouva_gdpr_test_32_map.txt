@@ -1,0 +1,61 @@
+OSOBY
+-----
+[[PERSON_1]]: Tomáš Hruška
+[[PERSON_2]]: Sabina Nedvědová
+  - Sabinou Nedvědovou
+  - Sabině Nedvědové
+[[PERSON_3]]: Renata Slámová
+  - Renatou Slámovou
+  - Renatě Slámové
+[[PERSON_4]]: Miroslav Vaněk
+  - Miroslava Vaňka
+  - Miroslavu Vaňkovi
+
+ADDRESS
+[[ADDRESS_1]]: Jabloňová 12, 400 01 Ústí nad Labem
+[[ADDRESS_2]]: platnost 08/28, CVC
+
+BANK
+[[BANK_1]]: 987654321/0300
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 780228/1234
+[[BIRTH_ID_2]]: 930630/7890
+[[BIRTH_ID_3]]: 9306307890
+[[BIRTH_ID_4]]: 840308/6789
+[[BIRTH_ID_5]]: 801111/1234
+
+DATE
+[[DATE_1]]: 28. 02. 1978
+[[DATE_2]]: 30. 06. 1993
+[[DATE_3]]: 08. 03. 1984
+[[DATE_4]]: 11. 11. 1980
+[[DATE_5]]: 4. 6. 2026
+
+EMAIL
+[[EMAIL_1]]: podatelna@knjih.cz
+[[EMAIL_2]]: sabina.nedvedova@example.com
+[[EMAIL_3]]: renata.slamova@example.com
+
+ICO
+[[ICO_1]]: 44550011
+
+ID_CARD
+[[ID_CARD_1]]: 556677889
+
+IMEI
+[[IMEI_1]]: 356778119992110
+
+IP
+[[IP_1]]: 10.0.0.58
+[[IP_2]]: 192.168.11.22
+
+PASSWORD
+[[PASSWORD_1]]: N3mocnice!2026
+
+PHONE
+[[PHONE_1]]: +420 477 111 222
+[[PHONE_2]]: +420 731 444 555
+[[PHONE_3]]: +420 606 777 222
+[[PHONE_4]]: +420 603 222 111
+

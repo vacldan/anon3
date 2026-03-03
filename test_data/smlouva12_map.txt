@@ -1,0 +1,193 @@
+OSOBY
+-----
+[[PERSON_1]]: Karel Ryba
+[[PERSON_2]]: Jana Rybová
+  - Janou
+[[PERSON_3]]: Marie Rybová
+[[PERSON_4]]: Josef Ryba
+[[PERSON_5]]: Tomáš Kapr
+[[PERSON_6]]: Pavel Losos
+[[PERSON_7]]: Jana Kaprová
+[[PERSON_8]]: Petr Rybář
+[[PERSON_9]]: Martin Štika
+[[PERSON_10]]: Matěj Sokol
+  - Matěj
+  - Sokol
+  - Sokola
+[[PERSON_11]]: Petra Sokolová
+  - Petra
+[[PERSON_12]]: Jiří Sokol
+  - Jiří Sokolovi
+[[PERSON_13]]: Anička Sokolová
+  - Aničku Sokolovou
+[[PERSON_14]]: Eva Svobodová
+[[PERSON_15]]: Klára Havránková
+[[PERSON_16]]: Michal Kolář
+[[PERSON_18]]: Lenka Kolářová
+  - Kolářová
+[[PERSON_19]]: Pavel Kolář
+[[PERSON_20]]: Jana Dvořáková
+[[PERSON_21]]: Tomáš Novák
+  - Novák
+[[PERSON_22]]: Martin Vrána
+  - Martina Vrány
+  - Vráno
+  - Vránovi
+[[PERSON_23]]: Petr Havel
+  - Petrem Havlem
+[[PERSON_24]]: Jana Nováková
+[[PERSON_25]]: David Černý
+  - Davide
+[[PERSON_26]]: Martin Hora
+[[PERSON_27]]: Eva Vlková
+[[PERSON_28]]: Tomáš Novotný
+[[PERSON_29]]: Pavel Novák
+[[PERSON_30]]: Petra Horáková
+  - Horáková
+[[PERSON_31]]: David Kos
+[[PERSON_32]]: Jana Vlková
+  - Janě Vlkové
+[[PERSON_33]]: Martin Liška
+  - Martinu Liškovi
+[[PERSON_34]]: Tomáš Jelínek
+  - Tomáše Jelínka
+[[PERSON_35]]: Petr Nový
+  - Nové
+  - Petra Nového
+[[PERSON_36]]: Lukáš Vrána
+  - Lukášem
+  - Lukášem Vránou
+[[PERSON_37]]: Klára Sokolová
+[[PERSON_38]]: Václav Holub
+  - Holub
+  - Holuba
+  - Václav
+[[PERSON_39]]: Markéta Holubová
+[[PERSON_40]]: Karel Havran
+  - Havran
+  - Havranem
+[[PERSON_41]]: Jana Vránová
+  - Janou Vránovou
+  - Vránová
+[[PERSON_42]]: Petr Soukup
+  - Petra Soukupa
+[[PERSON_43]]: Tomáš Jeřábek
+[[PERSON_44]]: Martin Vrba
+[[PERSON_45]]: Eva Holanová
+[[PERSON_46]]: Petr Novotný
+[[PERSON_47]]: Lukáš Vlček
+  - Vlčkova
+[[PERSON_48]]: Jan Horák
+
+ADDRESS
+[[ADDRESS_1]]: Rybná 8, 110 00 Praha 1
+[[ADDRESS_2]]: Rybná 25, Praha 1
+[[ADDRESS_3]]: Sokolská 45, 120 00 Praha 2
+[[ADDRESS_4]]: Kolářská 12, 602 00 Brno
+[[ADDRESS_5]]: Nová Kolářská 88, 615 00 Brno
+[[ADDRESS_6]]: na adrese Komenského 58, Brno
+[[ADDRESS_7]]: Václavské náměstí 47, 110 00 Praha 1
+[[ADDRESS_8]]: Vránova 25, 130 00 Praha 3
+[[ADDRESS_9]]: Ovocný trh 8, 110 00 Praha 1
+[[ADDRESS_10]]: Průmyslová 158, 708 00 Ostrava
+[[ADDRESS_11]]: Holubova 28, 702 00 Ostrava
+
+BANK
+[[BANK_1]]: 2547896321/0800
+[[BANK_2]]: 3698745210/0300
+[[BANK_3]]: 2587496321/2010
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 680315/4582
+[[BIRTH_ID_2]]: 150908/3654
+[[BIRTH_ID_3]]: 855612/7896
+[[BIRTH_ID_4]]: 830405/2147
+[[BIRTH_ID_5]]: 190325/8965
+[[BIRTH_ID_6]]: 870523/4785
+[[BIRTH_ID_7]]: 895314/6987
+[[BIRTH_ID_8]]: 620815/3698
+[[BIRTH_ID_9]]: 910824/3698
+[[BIRTH_ID_10]]: 880724/3698
+[[BIRTH_ID_11]]: 850615/4125
+[[BIRTH_ID_12]]: 925423/6985
+[[BIRTH_ID_13]]: 920615/4785
+
+DATE
+[[DATE_1]]: 18.4.2025
+[[DATE_2]]: 25.4.2025
+[[DATE_3]]: 15.3.1968
+[[DATE_4]]: 19.4.2025
+[[DATE_5]]: 10.5.2025
+[[DATE_6]]: 8.9.2015
+[[DATE_7]]: 12.6.1985
+[[DATE_8]]: 5.4.1983
+[[DATE_9]]: 2.5.2025
+[[DATE_10]]: 23.5.1987
+[[DATE_11]]: 14.3.1989
+[[DATE_12]]: 8.5.2025
+[[DATE_13]]: 15.5.2025
+[[DATE_14]]: 31.7.2025
+[[DATE_15]]: 1.6.2025
+[[DATE_16]]: 10.6.2025
+[[DATE_17]]: 1.4.2025
+[[DATE_18]]: 12.5.2025
+[[DATE_19]]: 30.4.2025
+[[DATE_20]]: 24.7.1988
+[[DATE_21]]: 15.6.1992
+[[DATE_22]]: 29.5.2025
+
+DIC
+[[DIC_1]]: CZ36985214
+[[DIC_2]]: CZ45896321
+
+EMAIL
+[[EMAIL_1]]: petra.sokolova@email.cz
+[[EMAIL_2]]: michal.kolar@firma.cz
+[[EMAIL_3]]: lenka.kolarova@email.cz
+[[EMAIL_4]]: jana.novakova@digitalsolutions.cz
+[[EMAIL_5]]: petr.havel@digitalsolutions.cz
+[[EMAIL_6]]: katerina.mala@digitalsolutions.cz
+[[EMAIL_7]]: petra.horakova@techcorp.cz
+[[EMAIL_8]]: david.kos@techcorp.cz
+[[EMAIL_9]]: jana.vlkova@techcorp.cz
+[[EMAIL_10]]: martin.liska@techcorp.cz
+[[EMAIL_11]]: tomas.jelinek@techcorp.cz
+[[EMAIL_12]]: jiri.sokol@sokolinvest.cz
+[[EMAIL_13]]: lukas.vlcek@email.cz
+[[EMAIL_14]]: pavel.novak@novakdesign.cz
+[[EMAIL_15]]: jan.horak@horakpartners.cz
+
+ICO
+[[ICO_1]]: 28965473
+[[ICO_2]]: 36987452
+[[ICO_3]]: 28547963
+[[ICO_4]]: 47896325
+[[ICO_5]]: 36985214
+[[ICO_6]]: 45896321
+
+ID_CARD
+[[ID_CARD_1]]: AB 789456
+
+LINKEDIN
+[[LINKEDIN_1]]: linkedin.com/in/petra-horakova
+
+PHONE
+[[PHONE_1]]: +420 605 874 963
+[[PHONE_2]]: 604 325 874
+[[PHONE_3]]: 725 896 314
+[[PHONE_4]]: 604 987 452
+[[PHONE_5]]: 724 365 987
+[[PHONE_6]]: +420 606 987 452
+[[PHONE_7]]: +420 724 365 874
+[[PHONE_8]]: 603 741 258
+[[PHONE_9]]: 724 896 325
+[[PHONE_10]]: 604 789 456
+[[PHONE_11]]: 725 896 321
+[[PHONE_12]]: +420 724 896 325
+[[PHONE_13]]: 606 874 521
+[[PHONE_14]]: 724 365 874
+[[PHONE_15]]: 605 789 632
+[[PHONE_16]]: 724 896 547
+[[PHONE_17]]: 606 874 523
+[[PHONE_18]]: +420 607 854 963
+

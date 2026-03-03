@@ -1,0 +1,85 @@
+SOUHLAS SE ZPRACOVÁNÍM ÚDAJŮ V NEMOCNIČNÍM INFORMAČNÍM SYSTÉMU
+
+I. IDENTIFIKACE SUBJEKTŮ
+
+1. Organizace / pracoviště:
+   Název: Městský úřad Nový Brod
+   Adresa: Náměstí 1, 500 02 Hradec Králové
+   IČO: 00223344
+   Telefon: +420 495 888 111
+   E‑mail: podatelna@novybrod.cz
+
+2. Odpovědná osoba / pracovník:
+   Jméno a příjmení: Ondřej Turek
+   Datum narození: 11. 02. 1977
+   Rodné číslo: 931014/3071
+   Adresa: Vinohradská 30/4, 130 00 Praha 3
+   OP/Pas: 826592866
+   Telefon: +420 799 927 987
+   E‑mail: ondrej.turek@example.com
+
+3. Klient / účastník / pacient:
+   Jméno a příjmení: Adéla Hrubešová
+   Datum narození: 21. 08. 1984
+   Rodné číslo: 081108/5142
+   Adresa: Na Kopci 2/1, 100 00 Praha 10
+   Číslo pasu: PP9064999
+   Telefon: +420 756 765 695
+   E‑mail: adela.hrubesova@example.com
+   Platební karta: 4012 4370 6421 4408, platnost 08/28, CVC: 123
+
+II. ÚČEL A ROZSAH
+
+1. Dokument upravuje pravidla komunikace a zpracování osobních údajů mezi Ondřejem Turkem a Adélou Hrubešovou.
+2. Smluvní strany potvrzují, že údaje o Adély Hrubešové mohou být použity pro účely evidence, komunikace a vyúčtování.
+3. Příklady pádů jmen pro test:
+   - „s Adélou Hrubešovou“, „k Adélě Hrubešové“, „bez Adély Hrubešové“, „Adélo Hrubešová“.
+   - „s Ondřejem Turkem“, „k Ondřejovi Turkovi“, „bez Ondřeja Turka“, „Ondřeje Turku“.
+
+
+III. ZDRAVOTNÍ ÚDAJE (ZVLÁŠTNÍ KATEGORIE)
+
+1. Pacient/klient bere na vědomí, že Adéla Hrubešová poskytuje údaje o zdravotním stavu, např. diagnóza: hypertenze, alergie na penicilin, užívané léky: metoprolol.
+2. Výsledky vyšetření budou zasílány Adélě Hrubešové na e‑mail adela.hrubesova@example.com a mohou být sděleny i zákonnému zástupci Terezě Černé.
+
+IV. PLATBY, FAKTURACE, DORUČOVÁNÍ
+
+1. Úhrady budou prováděny na účet: 719266333/0300; IBAN: CZ43 5500 0000 0656 3690 7738 6262.
+2. Variabilní symbol: 0811085142.
+3. Doručování zpráv:
+   a) e‑mailem na adresy ondrej.turek@example.com a adela.hrubesova@example.com,
+   b) telefonicky na čísla +420 799 927 987 a +420 756 765 695,
+   c) písemně na adresu Na Kopci 2/1, 100 00 Praha 10.
+
+V. PŘÍSTUP A LOGOVÁNÍ
+
+1. Přístup do interního systému:
+   Uživatelské jméno: oturek
+   Heslo: On15!3489
+2. Přístupy mohou být logovány včetně IP adres 61.89.205.82 a 2001:0db8:85a3:0000:0000:8a2e:0370:7334 a MAC adresy F3:D8:B3:1F:C4:59.
+
+VI. DALŠÍ OSOBY
+
+1. Svědek / doprovod:
+   Štěpán Kříž, nar. 19. 02. 1964, RČ 080610/1908, tel. +420 774 641 677, e‑mail stepan.kriz@example.com.
+2. Zákonný zástupce / kontakt:
+   Tereza Černá, nar. 22. 10. 1986, RČ 780220/6359, tel. +420 763 904 403, e‑mail tereza.cerna@example.com.
+3. V textu se dále vyskytují tvary: „s Štěpánem Křížem“, „k Štěpánovi Křížovi“, „bez Štěpána Kříža“.
+
+VII. DOPLŇKOVÉ IDENTIFIKÁTORY
+
+1. Registrační značka vozidla: 7B8 9749
+2. VIN: WAUZZZ8V0KA956354
+
+VIII. ZÁVĚREČNÁ USTANOVENÍ
+
+1. Tento dokument je vyhotoven ve dvou stejnopisech.
+2. Na důkaz souhlasu připojují podpisy Ondřeja Turka a Adély Hrubešové.
+
+V nemocnice dne 24. 02. 2026
+
+……………………..............................
+Ondřej Turek
+
+……………………..............................
+Adéla Hrubešová

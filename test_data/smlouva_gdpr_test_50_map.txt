@@ -1,0 +1,42 @@
+OSOBY
+-----
+[[PERSON_1]]: Petra Jelínková
+[[PERSON_2]]: Marek Hruška
+[[PERSON_3]]: Anna Králová
+  - Annou Královou
+  - Anny Králové
+[[PERSON_4]]: Jan Král
+  - Jana Krále
+  - Janem Králem
+[[PERSON_5]]: Simona Králová
+  - Simonou Královou
+  - Simony Králové
+
+ADDRESS
+[[ADDRESS_1]]: Dominikánské náměstí 1, 601 67 Brno
+[[ADDRESS_2]]: Rodinná 6, 612 00 Brno
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 160414/0007
+[[BIRTH_ID_2]]: 840202/1234
+[[BIRTH_ID_3]]: 850919/5678
+
+DATE
+[[DATE_1]]: 14. 04. 2016
+[[DATE_2]]: 02. 02. 1984
+[[DATE_3]]: 19. 09. 1985
+[[DATE_4]]: 10. 7. 2026
+
+EMAIL
+[[EMAIL_1]]: petra.jelinkova@brno.cz
+[[EMAIL_2]]: marek.hruska@dobrarodina.cz
+[[EMAIL_3]]: simona.kralova@example.com
+
+ICO
+[[ICO_1]]: 26588741
+
+PHONE
+[[PHONE_1]]: +420 542 174 111
+[[PHONE_2]]: +420 737 222 333
+[[PHONE_3]]: +420 602 888 111
+
