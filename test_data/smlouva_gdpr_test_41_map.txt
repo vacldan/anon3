@@ -1,0 +1,67 @@
+OSOBY
+-----
+[[PERSON_1]]: Jan Vlk
+[[PERSON_2]]: Radek Zahradník
+[[PERSON_3]]: Barbora Koutná
+  - Barborou Koutnou
+  - Barboře Koutné
+[[PERSON_4]]: Ondřej Jelínek
+  - Ondřejem Jelínkem
+  - Ondřeji Jelínkovi
+[[PERSON_5]]: Marek Koutný
+
+ADDRESS
+[[ADDRESS_1]]: Technologická 5, 160 00 Praha 6
+[[ADDRESS_2]]: Lipová 8, 602 00 Brno
+
+BANK
+[[BANK_1]]: 227799881/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 850412/1234
+[[BIRTH_ID_2]]: 910515/4567
+[[BIRTH_ID_3]]: 800303/7890
+[[BIRTH_ID_4]]: 890820/3210
+
+DATE
+[[DATE_1]]: 12. 04. 1985
+[[DATE_2]]: 15. 05. 1991
+[[DATE_3]]: 03. 03. 1980
+[[DATE_4]]: 20. 08. 1989
+[[DATE_5]]: 5. 3. 2026
+
+DIC
+[[DIC_1]]: CZ00012345
+[[DIC_2]]: CZ05223311
+
+EMAIL
+[[EMAIL_1]]: reditelstvi@fnsever.cz
+[[EMAIL_2]]: radek.zahradnik@medisoft.cz
+[[EMAIL_3]]: barbora.koutna@example.com
+[[EMAIL_4]]: ondrej.jelinek@fnsever.cz
+[[EMAIL_5]]: marek.koutny@example.org
+
+HOST
+[[HOST_1]]: vpn.fnsever.cz
+
+IBAN
+[[IBAN_1]]: CZ24 5500 0000 0022 7799 8810
+
+ICO
+[[ICO_1]]: 00012345
+[[ICO_2]]: 05223311
+
+IP
+[[IP_1]]: 10.22.33.44
+[[IP_2]]: 192.168.20.101
+
+PASSWORD
+[[PASSWORD_1]]: M3diSoft!2026
+
+PHONE
+[[PHONE_1]]: +420 224 111 222
+[[PHONE_2]]: +420 606 888 999
+[[PHONE_3]]: +420 731 222 333
+[[PHONE_4]]: +420 224 555 666
+[[PHONE_5]]: +420 603 987 111
+

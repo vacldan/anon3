@@ -1,0 +1,53 @@
+OSOBY
+-----
+[[PERSON_1]]: Robert Vlach
+[[PERSON_2]]: Jana Procházková
+  - Janou Procházkovou
+  - Janě Procházkové
+[[PERSON_3]]: Matěj Procházka
+  - Matěje Procházky
+  - Matějovi Procházkovi
+[[PERSON_4]]: Klára Procházková
+  - Kláry Procházkové
+
+ADDRESS
+[[ADDRESS_1]]: Na Kopci 3, 625 00 Brno
+[[ADDRESS_2]]: Dlouhá 8, 602 00 Brno
+
+BANK
+[[BANK_1]]: 4455667789/0300
+[[BANK_2]]: 1122334455/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 800403/5678
+[[BIRTH_ID_2]]: 920505/1234
+[[BIRTH_ID_3]]: 910915/7890
+[[BIRTH_ID_4]]: 951220/4567
+
+DATE
+[[DATE_1]]: 03. 04. 1980
+[[DATE_2]]: 05. 05. 1992
+[[DATE_3]]: 15. 09. 1991
+[[DATE_4]]: 20. 12. 1995
+[[DATE_5]]: 8. 7. 2026
+
+EMAIL
+[[EMAIL_1]]: robert.vlach@cloudata.cz
+[[EMAIL_2]]: jana.prochazkova@example.com
+[[EMAIL_3]]: matej.prochazka@example.org
+
+ID_CARD
+[[ID_CARD_1]]: 987654321
+
+IP
+[[IP_1]]: 85.95.12.34
+
+PASSWORD
+[[PASSWORD_1]]: M3diace!2026
+
+PHONE
+[[PHONE_1]]: +420 608 444 777
+[[PHONE_2]]: +420 777 555 444
+[[PHONE_3]]: +420 608 999 000
+[[PHONE_4]]: +420 604 333 222
+

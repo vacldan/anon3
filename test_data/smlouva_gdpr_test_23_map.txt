@@ -1,0 +1,81 @@
+OSOBY
+-----
+[[PERSON_1]]: Monika Svobodová
+  - Moniko Svobodová
+  - Monikou Svobodovou
+  - Moniky Svobodové
+  - Monikě Svobodové
+[[PERSON_2]]: Matěj Řezníček
+  - Matěja Řezníčka
+  - Matěje Řezníčku
+  - Matějem Řezníčkem
+  - Matějovi Řezníčkovi
+[[PERSON_3]]: Filip Král
+  - Filipa Krála
+  - Filipem Králem
+  - Filipovi Královi
+[[PERSON_4]]: Lucie Řezníčková
+
+ADDRESS
+[[ADDRESS_1]]: Kampus 9, 625 00 Brno
+[[ADDRESS_2]]: U Parku 49/10, 779 00 Olomouc
+[[ADDRESS_3]]: Na Návsi 63/1, 789 01 Zábřeh
+[[ADDRESS_4]]: platnost 08/28, CVC
+[[ADDRESS_5]]: písemně na adresu Na Návsi 63/1, 789 01 Zábřeh
+
+BANK
+[[BANK_1]]: 741093085/0300
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 061218/7013
+[[BIRTH_ID_2]]: 000428/8540
+[[BIRTH_ID_3]]: 070307/5396
+[[BIRTH_ID_4]]: 080719/2803
+
+CARD
+[[CARD_1]]: 4446 9073 6281 1886
+
+DATE
+[[DATE_1]]: 18. 04. 2000
+[[DATE_2]]: 04. 07. 1968
+[[DATE_3]]: 11. 10. 1968
+[[DATE_4]]: 01. 12. 1960
+[[DATE_5]]: 24. 02. 2026
+
+EMAIL
+[[EMAIL_1]]: rektorat@unisever.cz
+[[EMAIL_2]]: monika.svobodova@example.com
+[[EMAIL_3]]: matej.reznicek@example.com
+[[EMAIL_4]]: filip.kral@example.com
+[[EMAIL_5]]: lucie.reznickova@example.com
+
+IBAN
+[[IBAN_1]]: CZ99 0300 0000 2486 4808 0297
+
+ICO
+[[ICO_1]]: 00224466
+
+ID_CARD
+[[ID_CARD_1]]: 389404483
+
+IP
+[[IP_1]]: 177.58.121.145
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP17888
+[[LICENSE_PLATE_2]]: 2AC 1981
+[[LICENSE_PLATE_3]]: 0GA2740
+
+MAC
+[[MAC_1]]: 0D:1E:2B:2B:CC:85
+
+PASSWORD
+[[PASSWORD_1]]: Mo26!8234
+
+PHONE
+[[PHONE_1]]: +420 541 111 000
+[[PHONE_2]]: +420 794 698 203
+[[PHONE_3]]: +420 752 361 680
+[[PHONE_4]]: +420 714 817 182
+[[PHONE_5]]: +420 642 848 755
+

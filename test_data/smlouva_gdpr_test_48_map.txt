@@ -1,0 +1,37 @@
+OSOBY
+-----
+[[PERSON_1]]: Šárka Pokorná
+[[PERSON_2]]: Tomáš Konečný
+  - Tomáše Konečného
+  - Tomášem Konečným
+[[PERSON_3]]: Lenka Konečná
+  - Lenkou Konečnou
+  - Lenky Konečné
+[[PERSON_4]]: Vojtěch Konečný
+[[PERSON_5]]: Eliška Konečná
+  - Eliškou Konečnou
+  - Elišky Konečné
+
+ADDRESS
+[[ADDRESS_1]]: Mediátorská 4, 602 00 Brno
+[[ADDRESS_2]]: Olšová 6, 602 00 Brno
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 841010/5678
+[[BIRTH_ID_2]]: 850505/7890
+
+DATE
+[[DATE_1]]: 10. 10. 1984
+[[DATE_2]]: 05. 05. 1985
+[[DATE_3]]: 02. 03. 2015
+[[DATE_4]]: 18. 09. 2017
+[[DATE_5]]: 22. 6. 2026
+
+EMAIL
+[[EMAIL_1]]: sarka.pokorna@mediace-brno.cz
+[[EMAIL_2]]: lenka.konecna@example.com
+
+PHONE
+[[PHONE_1]]: +420 739 111 222
+[[PHONE_2]]: +420 604 222 444
+

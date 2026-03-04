@@ -1,0 +1,49 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+dist_obfuscated/
+dist_nuitka/
+pyarmor_runtime_*/
+
+# Nuitka build artifacts
+*.build/
+*.dist/
+*.onefile-build/
+anon72.build/
+anon72.dist/
+anon72.onefile-build/
+*.cp311-win_amd64/
+anon72.cp311-win_amd64/
+
+# Test files
+# Obecně ignoruj DOCX, ale povol testovací smlouvy v test_data/
+*.docx
+smlouva*
+historie*
+!test_data/*.docx
+!test_data/smlouva*
+
+# License files (customers only)
+*.lic
+
+# Logs
+*.log
+
+# IDE
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db

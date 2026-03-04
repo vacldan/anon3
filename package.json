@@ -1,0 +1,102 @@
+{
+  "name": "nixminds-document-suite",
+  "version": "3.0.0",
+  "description": "Nixminds Document Anonymization Suite",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --enable-logging",
+    "dist": "electron-builder --publish=never",
+    "test": "python build/test_before_compile.py",
+    "compile": "python build/build_with_nuitka.py",
+    "obfuscate": "python build/build_with_trial_pyarmor.py"
+  },
+  "author": {
+    "name": "Nixminds",
+    "email": "info@nixminds.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^22.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.nixminds.document-suite",
+    "productName": "SKRYI Document Suite",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "package.json",
+      "EULA.txt",
+      "assets/**/*",
+      "validate_license_standalone.exe",
+      "anonymize_cli.exe",
+      "deanonymizator_lokal.exe",
+      "pdf2docx_cli.exe",
+      "skryi_watcher.exe",
+      "deanon_watcher.exe",
+      "pdf2docx_watcher.exe",
+      "skryi_tray.exe",
+      "anon72.pyd",
+      "anon72.cp311-win_amd64.pyd",
+      "cz_names.v1.json",
+      "!anon72/",
+      "!anon72/**",
+      "!anon72.cp311-win_amd64/",
+      "!anon72.cp311-win_amd64/**",
+      "!*.build/",
+      "!*.build/**",
+      "!*.dist/",
+      "!*.dist/**",
+      "!*.onefile-build/",
+      "!*.onefile-build/**",
+      "!**/*.py",
+      "!**/*.pyw",
+      "!**/*.docx",
+      "!**/historie*.txt",
+      "!**/History*.txt",
+      "!**/audit.txt",
+      "!**/smlouva*",
+      "!**/historie*",
+      "!**/History*",
+      "!**/test*",
+      "!**/debug*",
+      "!**/*_test.py",
+      "!**/*_anon.docx",
+      "!**/*_map.*",
+      "!**/licensing/**",
+      "!**/dist/**",
+      "!**/dist_obfuscated/**",
+      "!**/dist_nuitka/**",
+      "!**/node_modules/**",
+      "!**/.git/**",
+      "!**/build/**"
+    ],
+    "asarUnpack": [
+      "**/*.exe",
+      "**/*.pyd",
+      "cz_names.v1.json",
+      "assets/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "sign": null,
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "SKRYI Document Suite",
+      "artifactName": "SKRYI-Setup-${version}.${ext}",
+      "warningsAsErrors": false,
+      "license": "EULA.txt"
+    }
+  }
+}

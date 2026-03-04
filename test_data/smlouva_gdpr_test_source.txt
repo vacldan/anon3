@@ -1,0 +1,140 @@
+SMLOUVA O POSKYTOVÁNÍ SLUŽEB
+
+uzavřená podle § 1746 odst. 2 zákona č. 89/2012 Sb., občanský zákoník
+
+I. SMLUVNÍ STRANY
+
+1. Poskytovatel:
+   Jméno a příjmení: Ing. Jan Novák
+   Datum narození: 15. 03. 1985
+   Rodné číslo: 850315/1234
+   Trvalý pobyt: Vinohradská 1287/45, 130 00 Praha 3
+   Číslo občanského průkazu: 123456789
+   Telefon: +420 777 123 456
+   E‑mail: jan.novak@priklad.cz
+   Bankovní spojení: 123456789/0100
+   IBAN: CZ65 0800 0000 0012 3456 7899
+   Registrační značka vozidla: 5AZ 4567
+   VIN vozidla: WAUZZZ8V0FA123456
+   Uživatelské jméno v interním systému: jnovak
+   IP adresa domovského připojení: 192.168.0.101
+   MAC adresa domácího routeru: 00:1A:2B:3C:4D:5E
+   Profil na LinkedIn: https://www.linkedin.com/in/jan-novak
+
+   (dále jen „Poskytovatel“)
+
+2. Objednatel:
+   Jméno a příjmení: Mgr. Petra Svobodová
+   Datum narození: 22. 11. 1990
+   Rodné číslo: 901122/4567
+   Trvalý pobyt: Křenová 14, 602 00 Brno
+   Korespondenční adresa: Křenová 14, byt 5, 602 00 Brno
+   Číslo pasu: PP9876543
+   Telefon: +420 603 987 654
+   E‑mail: petra.svobodova@example.com
+   Číslo platební karty: 4111 1111 1111 2222
+   Platnost karty: 08/28, CVC: 123
+   Číslo účtu: 987654321/0300
+   Uživatelské jméno v portálu: psvobodova
+   IP adresa pracovního notebooku: 10.0.0.58
+
+   (dále jen „Objednatel“)
+
+Společně též jen „Smluvní strany“ nebo jednotlivě „Smluvní strana“.
+
+II. PŘEDMĚT SMLOUVY
+
+1. Poskytovatel se zavazuje poskytovat Objednateli IT konzultační služby spočívající zejména v analýze osobních údajů Objednatele a osob blízkých Petry Svobodové a v přípravě podkladů pro anonymizaci dokumentů.
+2. Objednatel se zavazuje uhradit Poskytovateli odměnu ve výši a za podmínek uvedených v této smlouvě.
+
+III. IDENTIFIKACE DALŠÍCH FYZICKÝCH OSOB
+
+1. Objednatel prohlašuje, že v rámci poskytování služeb bude nutné nakládat rovněž s osobními údaji následujících osob:
+
+   a) Manžel Objednatelky:
+      Jméno a příjmení: Tomáš Svoboda
+      Datum narození: 01. 02. 1988
+      Rodné číslo: 880201/3210
+      Trvalý pobyt: Křenová 14, 602 00 Brno
+      Telefon: +420 602 111 222
+      E‑mail: tomas.svoboda@osobni-mail.cz
+      Číslo řidičského průkazu: EA 123456
+      Registrační značka vozidla: 7B8 2345
+
+   b) Sestra Objednatelky:
+      Jméno a příjmení: Bc. Lucie Malá
+      Datum narození: 09. 09. 1993
+      Rodné číslo: 930909/7890
+      Trvalý pobyt: U Parku 8, 779 00 Olomouc
+      Telefon: +420 605 444 555
+      E‑mail: lucie.mala@example.org
+      Číslo průkazu zdravotního pojištěnce: 9309097890
+
+   c) Otec Objednatelky:
+      Jméno a příjmení: Václav Svoboda
+      Datum narození: 30. 05. 1960
+      Rodné číslo: 600530/1111
+      Adresa: Na Kopci 12, 100 00 Praha 10
+      Telefon: +420 602 333 444
+
+2. Petra Svobodová výslovně souhlasí s tím, aby veškeré osobní údaje uvedené v této smlouvě, týkající se jak Petry Svobodové, tak Tomáše Svobody, Lucie Malé a Václava Svobody, byly předány Janu Novákovi za účelem plnění této smlouvy a následné anonymizace.
+
+IV. POUŽÍVÁNÍ OSOBNÍCH ÚDAJŮ VE TEXTU SMLOUVY
+
+1. Smluvní strany berou na vědomí, že Petra Svobodová poskytla Janu Novákovi přístup k e‑mailové schránce petra.svobodova@example.com, a to včetně historie zpráv obsahujících osobní údaje Tomáše Svobody, Lucie Malé i Václava Svobody.
+2. Jan Novák se zavazuje, že s osobními údaji Petry Svobodové, Tomáše Svobody, Lucie Malé a Václava Svobody bude nakládat v souladu s GDPR.
+3. Bude‑li třeba komunikovat s Tomášem Svobodou přímo, zavazuje se Jan Novák zasílat zprávy na adresu tomas.svoboda@osobni-mail.cz a v nezbytných případech Tomáši Svobodovi telefonovat na číslo +420 602 111 222.
+4. V případě Lucie Malé je Jan Novák oprávněn zasílat jí zprávy obsahující osobní údaje Petry Svobodové na adresu lucie.mala@example.org, a to zejména pokud bude nutné ověřit totožnost Lucie Malé z hlediska rodinného vztahu k Petře Svobodové.
+5. Osobní údaje Václava Svobody budou využívány pouze v rozsahu jména, příjmení, adresy Na Kopci 12, 100 00 Praha 10 a data narození 30. 05. 1960, není‑li výslovně dohodnuto jinak.
+
+V. KONTAKTNÍ ÚDAJE A PŘÍSTUPOVÉ ÚDAJE
+
+1. Petra Svobodová poskytne Janu Novákovi následující přístupové údaje:
+   a) Uživatelské jméno: petra.svobodova
+      Heslo: P@etra2024!
+      Přístup do klientského portálu obsahujícího osobní údaje Petry Svobodové a Tomáše Svobody.
+   b) Uživatelské jméno: petra.svobodova.gmail
+      Heslo: H3slO!gmail
+      Přístup do privátní e‑mailové schránky, kde se nachází smlouvy mezi Petrou Svobodovou a Tomášem Svobodou.
+
+2. Jan Novák je oprávněn přistupovat z IP adresy 192.168.0.101 a prostřednictvím notebooku s MAC adresou 00:1A:2B:3C:4D:5E.
+
+3. Komunikace mezi Janem Novákem a Petrou Svobodovou bude probíhat zejména:
+   a) e‑mailem na adresách jan.novak@priklad.cz a petra.svobodova@example.com,
+   b) telefonicky na číslech +420 777 123 456 (Jan Novák) a +420 603 987 654 (Petra Svobodová),
+   c) prostřednictvím zasílání fyzických dokumentů na adresu Vinohradská 1287/45, 130 00 Praha 3 (adresa Jana Nováka).
+
+VI. ODMĚNA A PLATEBNÍ PODMÍNKY
+
+1. Objednatel se zavazuje uhradit Poskytovateli jednorázovou odměnu ve výši 25 000 Kč (slovy: dvacet pět tisíc korun českých).
+2. Odměna bude uhrazena bezhotovostním převodem na bankovní účet Jana Nováka č. 123456789/0100, vedený u Československé obchodní banky, a.s.
+3. Variabilní symbol bude rodné číslo Petry Svobodové, tj. 9011224567, bez lomítka.
+4. Platba bude provedena nejpozději do 14 dnů ode dne podpisu této smlouvy Petrou Svobodovou.
+
+VII. DOBA TRVÁNÍ SMLOUVY
+
+1. Tato smlouva je uzavřena na dobu určitou, a to od 1. 3. 2026 do 31. 12. 2026.
+2. V případě, že bude Petra Svobodová požadovat další služby po dni 31. 12. 2026, uzavřou Jan Novák a Petra Svobodová dodatek ke smlouvě.
+
+VIII. ZVLÁŠTNÍ USTANOVENÍ O OCHRANĚ OSOBNÍCH ÚDAJŮ
+
+1. Jan Novák výslovně prohlašuje, že veškeré osobní údaje Petry Svobodové, Tomáše Svobody, Lucie Malé a Václava Svobody použije výhradně k účelu plnění této smlouvy.
+2. Petra Svobodová bere na vědomí, že jméno Jana Nováka, adresa Vinohradská 1287/45, 130 00 Praha 3, e‑mail jan.novak@priklad.cz a telefonní číslo +420 777 123 456 mohou být uvedeny v interních záznamech Objednatelky.
+3. Smluvní strany si jsou vědomy, že jména ve tvarech „Janu Novákovi“, „s Janem Novákem“, „Petře Svobodové“, „s Petrou Svobodovou“, „Tomáši Svobodovi“, „s Tomášem Svobodou“, „Lucii Malé“, „s Lucií Malou“, „Václavu Svobodovi“ a „s Václavem Svobodou“ představují různé pádové varianty týchž osob.
+
+IX. ZÁVĚREČNÁ USTANOVENÍ
+
+1. Smlouva je vyhotovena ve dvou stejnopisech, z nichž jeden obdrží Jan Novák a jeden obdrží Petra Svobodová.
+2. Smluvní strany prohlašují, že si tuto smlouvu přečetly, že byla sepsána na základě jejich pravé a svobodné vůle, nikoli v tísni ani za nápadně nevýhodných podmínek, a na důkaz toho připojují své vlastnoruční podpisy.
+
+V Praze dne 1. 3. 2026
+
+
+……………………..............................
+Ing. Jan Novák
+Poskytovatel
+
+
+……………………..............................
+Mgr. Petra Svobodová
+Objednatel

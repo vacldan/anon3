@@ -1,0 +1,127 @@
+================================================================================
+     LICENCNI UJEDNANI S KONCOVYM UZIVATELEM (EULA)
+                   SKRYI Document Suite
+================================================================================
+
+
+1. UVODNI USTANOVENI
+--------------------
+
+* Toto Licencni ujednani (dale jen "Smlouva") je pravni smlouvou mezi vami
+  (fyzickou nebo pravnickou osobou, dale jen "Uzivatel") a spolecnosti
+  Nixminds s.r.o. (nebo aktualnim pravnim subjektem/OSVC, dale jen
+  "Poskytovatel").
+
+* Predmetem Smlouvy je poskytnuti prava k uziti pocitacoveho programu
+  SKRYI Document Suite (dale jen "Software").
+
+* Instalaci, kopirovanim nebo jinym uzitim Softwaru vyjadruje Uzivatel
+  souhlas s podminkami teto Smlouvy.
+
+
+2. ROZSAH LICENCE
+-----------------
+
+* Poskytovatel udeluje Uzivateli nevyhradni, neprenosnou a casove omezenou
+  licenci k uziti Softwaru.
+
+* Licence je technicky vazana na unikatni identifikator hardwaru
+  (Hardware ID) a nesmi byt bez souhlasu Poskytovatele uzivana na jinem
+  zarizeni.
+
+* Uzivateli je zakazano Software dale sirit, provadet zpetne inzenyrstvi
+  (reverse engineering), dekompilovat nebo se pokousel o vyvoj odvozenych
+  del.
+
+
+3. UCEL SOFTWARU A POVAHA TECHNOLOGIE
+--------------------------------------
+
+* Software je technologicky nastroj urceny k usnadneni procesu anonymizace
+  dokumentu pomoci algoritmicke a morfologicke analyzy textu.
+
+* Software neni pravni sluzbou ani automatizovanym rozhodovacim systemem
+  s pravnimi ucinky; slouzi vyhradne jako asistence pro lidskeho operatora.
+
+* Uzivatel bere na vedomi, ze Software pracuje v plne offline rezimu,
+  neodesila zadna data k Poskytovateli a neodpovida za kvalitu vstupnich
+  dat (napr. nekvalitni skeny).
+
+
+4. ODPOVEDNOST UZIVATELE (GDPR COMPLIANCE)
+-------------------------------------------
+
+* Uzivatel nese vyhradni roli Spravce osobnich udaju ve smyslu narizeni
+  GDPR.
+
+* Uzivatel je povinen provest finalni vizualni kontrolu kazdeho vystupu
+  (anonymizovaneho dokumentu) pred jeho zverejnenim nebo predanim tretim
+  stranam.
+
+* Automatizovane rozpoznani entit nenahrazuje odborny usudek a nezbavuje
+  Uzivatele odpovednosti za ochranu citlivych udaju.
+
+
+5. OMEZENI ODPOVEDNOSTI POSKYTOVATELE
+--------------------------------------
+
+* Software je poskytovan "tak, jak stoji a lezi" (AS IS). Poskytovatel
+  negarantuje 100% uspesnost detekce vsech osobnich udaju vzhledem
+  k lingvisticke slozitosti a kontextove promenlivosti ceskeho
+  a slovenskeho jazyka.
+
+* Celkova odpovednost Poskytovatele za jakekoli prime ci neprime skody
+  (vcetne spravnich pokut udelenych dozorovymi urady) je omezena
+  maximalni castkou odpovidajici vysi zaplaceneho licencniho poplatku
+  za dane obdobi.
+
+* Poskytovatel neodpovida za ztratu dat, zisku nebo jine ekonomicke ztraty
+  vznikle v souvislosti s uzitim Softwaru.
+
+
+6. OCHRANA OSOBNICH UDAJU A DUVERNOST
+--------------------------------------
+
+* Poskytovatel prohlasuje, ze Software neposila zadne dokumenty, metadata
+  ani mapy nahrad na externi servery.
+
+* Veskere zpracovani probiha lokalne na infrastrukture Uzivatele, cimz je
+  zajistena maximalni uroven zabezpeceni citlivych informaci.
+
+
+7. PODPORA A AKTUALIZACE
+-------------------------
+
+* Poskytovatel muze vydavat aktualizace softwaru za ucelem vylepseni
+  funkci nebo opravy chyb.
+
+* Narok na technickou podporu a aktualizace se ridi typem zakoupene
+  licence.
+
+
+8. UKONCENI LICENCE
+--------------------
+
+* Licence zanika uplynutim sjednane doby, neuhrazenim licencniho poplatku
+  nebo porusenim podminek teto Smlouvy Uzivatelem.
+
+* Pri ukonceni licence je Uzivatel povinen ukoncit uzivani Softwaru
+  a odstranit jej ze sveho zarizeni.
+
+
+9. ZAVERECNA USTANOVENI
+------------------------
+
+* Tato Smlouva se ridi pravnim radem Ceske republiky.
+
+* Pripadne spory budou reseny vecne a mistne prislusnymi soudy v Ceske
+  republice.
+
+* Pokud se nektere ustanoveni stane neplatnym, ostatni ustanoveni Smlouvy
+  zustavaji v platnosti.
+
+
+================================================================================
+                    (c) 2026 Nixminds s.r.o.
+                   Vsechna prava vyhrazena
+================================================================================

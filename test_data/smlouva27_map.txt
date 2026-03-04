@@ -1,0 +1,201 @@
+OSOBY
+-----
+[[PERSON_1]]: Jana Nováková
+[[PERSON_2]]: Petr Novák
+  - Novák
+  - Petra Nováka
+[[PERSON_3]]: Kateřina Dvořáková
+[[PERSON_4]]: Michal Dvořák
+  - Dvořákovi
+  - Michala Dvořáka
+[[PERSON_5]]: Tomáš Černý
+[[PERSON_6]]: Eva Svobodová
+  - Svobodové
+[[PERSON_7]]: Marie Procházková
+[[PERSON_8]]: Martin Procházka
+  - Martina Procházku
+  - Procházkovi
+[[PERSON_9]]: Lenka Horáková
+[[PERSON_10]]: David Král
+[[PERSON_11]]: Jakub Mareš
+  - Marešovi
+[[PERSON_12]]: Eliška Pokorná
+  - Elišky Pokorné
+[[PERSON_13]]: Adam Pokorný
+  - Adama Pokorného
+[[PERSON_14]]: Pavla Pokorný
+  - Pavlu Pokornému
+[[PERSON_15]]: Lucie Pokorná
+  - Lucie Pokorné
+[[PERSON_16]]: Roman Málek
+[[PERSON_17]]: Věra Málková
+  - Málkové
+[[PERSON_18]]: Hana Novotná
+  - Hanou Novotnou
+[[PERSON_19]]: Stanislav Jelínek
+  - Jelínkovi
+[[PERSON_20]]: Alena Benešová
+[[PERSON_21]]: Miroslav Beneš
+[[PERSON_22]]: Dana Holubová
+  - Dany Holubové
+[[PERSON_23]]: Radek Holub
+[[PERSON_24]]: Jiří Kučer
+  - Jiří Kučera
+[[PERSON_25]]: Petr Vlček
+[[PERSON_26]]: Zdeněk Novotný
+  - Novotnému
+[[PERSON_27]]: Ondřej Bartoš
+  - Bartoš
+[[PERSON_28]]: Filip Veselý
+  - Veselému
+[[PERSON_29]]: Ivana Čermáková
+[[PERSON_30]]: Tereza Čermáková
+  - Tereze
+[[PERSON_31]]: Markéta Šimková
+[[PERSON_32]]: Nikola Horáková
+[[PERSON_33]]: Jan Horák
+  - Jana Horáka
+[[PERSON_34]]: Simona Jelínková
+[[PERSON_35]]: Václav Moravec
+[[PERSON_36]]: Andrea Soukupová
+[[PERSON_37]]: Jakub Fiala
+  - Jakuba Fialu
+[[PERSON_38]]: Michal Fiala
+[[PERSON_39]]: Kristýna Sedláčková
+[[PERSON_40]]: Radim Kopecký
+[[PERSON_41]]: Zuzana Němečková
+[[PERSON_42]]: Petra Řezníčková
+[[PERSON_43]]: Jaroslav Řezníček
+[[PERSON_44]]: Klára Synková
+[[PERSON_45]]: Ondřej Vávra
+[[PERSON_46]]: Jana Svobodová
+[[PERSON_47]]: Karel Marek
+[[PERSON_48]]: Barbora Němcová
+[[PERSON_49]]: Tomáš Urban
+[[PERSON_50]]: Monika Zemanová
+[[PERSON_51]]: Robert Kolář
+[[PERSON_52]]: Daniela Bartošová
+[[PERSON_53]]: Lukáš Pospíšil
+[[PERSON_54]]: Iveta Krajíčková
+[[PERSON_55]]: Vladimír Růžička
+
+ADDRESS
+[[ADDRESS_1]]: na zajištění nemovitosti na adrese Růžová 847/23, Praha 3
+[[ADDRESS_2]]: Dlouhá 15, Brno 602 00
+[[ADDRESS_3]]: Lidická 47/9, Plzeň 301 00
+[[ADDRESS_4]]: Na Výšinách 128, Ostrava 708 00
+[[ADDRESS_5]]: trvale bytem Krátká 5, Liberec 460 01
+[[ADDRESS_6]]: Stromová 67/3, Olomouc 779 00
+[[ADDRESS_7]]: Zahradní 19, Pardubice 530 02
+[[ADDRESS_8]]: Polní 34, Hradec Králové 500 02
+[[ADDRESS_9]]: Lesní 7, Zlín 760 01
+[[ADDRESS_10]]: Školní 45, Tábor 390 01
+[[ADDRESS_11]]: Jiráskova 89, Kladno 272 01
+[[ADDRESS_12]]: Revoluční 23
+
+BANK
+[[BANK_1]]: 2847561230/0100
+[[BANK_2]]: 1928374650/2700
+[[BANK_3]]: 8765432109/5500
+[[BANK_4]]: 4567891230/0800
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 850615/1234
+[[BIRTH_ID_2]]: 885420/7891
+[[BIRTH_ID_3]]: 920303/5678
+[[BIRTH_ID_4]]: 945612/3344
+[[BIRTH_ID_5]]: 756028/9012
+[[BIRTH_ID_6]]: 800512/6543
+[[BIRTH_ID_7]]: 445566778
+[[BIRTH_ID_8]]: 625418/7890
+[[BIRTH_ID_9]]: 910825/4321
+[[BIRTH_ID_10]]: 880407/5566
+[[BIRTH_ID_11]]: 860918/7654
+[[BIRTH_ID_12]]: 841205/3210
+[[BIRTH_ID_13]]: 140523/8901
+[[BIRTH_ID_14]]: 170815/6789
+[[BIRTH_ID_15]]: 755624/8123
+[[BIRTH_ID_16]]: 760314/9001
+[[BIRTH_ID_17]]: 700629/4455
+[[BIRTH_ID_18]]: 825407/6123
+[[BIRTH_ID_19]]: 690823/7788
+[[BIRTH_ID_20]]: 725614/8899
+[[BIRTH_ID_21]]: 831127/5544
+[[BIRTH_ID_22]]: 875409/6677
+[[BIRTH_ID_23]]: 780512/9988
+[[BIRTH_ID_24]]: 950628/7123
+[[BIRTH_ID_25]]: 105524/7891
+[[BIRTH_ID_26]]: 835628/4512
+[[BIRTH_ID_27]]: 800415/6789
+[[BIRTH_ID_28]]: 155623/8902
+[[BIRTH_ID_29]]: 805629/4512
+[[BIRTH_ID_30]]: 741123/6789
+[[BIRTH_ID_31]]: 915824/7034
+[[BIRTH_ID_32]]: 830407/8512
+[[BIRTH_ID_33]]: 125623/9078
+[[BIRTH_ID_34]]: 975614/8234
+[[BIRTH_ID_35]]: 790214/6523
+[[BIRTH_ID_36]]: 885629/7412
+[[BIRTH_ID_37]]: 660823/5678
+[[BIRTH_ID_38]]: 705614/8923
+[[BIRTH_ID_39]]: 925824/6745
+[[BIRTH_ID_40]]: 840512/7890
+[[BIRTH_ID_41]]: 896523/7410
+[[BIRTH_ID_42]]: 751208/5623
+[[BIRTH_ID_43]]: 925614/8234
+[[BIRTH_ID_44]]: 880924/6745
+[[BIRTH_ID_45]]: 815420/9087
+[[BIRTH_ID_46]]: 720305/8912
+[[BIRTH_ID_47]]: 945723/6801
+[[BIRTH_ID_48]]: 870618/7234
+[[BIRTH_ID_49]]: 865214/7923
+[[BIRTH_ID_50]]: 690727/8145
+
+DATE
+[[DATE_1]]: 22. prosince 2025
+[[DATE_2]]: 18. 12. 2025
+[[DATE_3]]: 20. 12. 2025
+[[DATE_4]]: 30. 6. 2026
+
+DIC
+[[DIC_1]]: CZ65478923
+
+EMAIL
+[[EMAIL_1]]: jana.novakova@email.cz
+[[EMAIL_2]]: v.malkova@firma.cz
+[[EMAIL_3]]: i.cermakova@seznam.cz
+[[EMAIL_4]]: k.sedlackova@firma.cz
+
+IBAN
+[[IBAN_1]]: CZ6508000000192837465012
+[[IBAN_2]]: CZ7520100000002001234567
+
+ICO
+[[ICO_1]]: 12345678
+[[ICO_2]]: 04785421
+[[ICO_3]]: 28476521
+[[ICO_4]]: 74859621
+[[ICO_5]]: 65478923
+[[ICO_6]]: 29384756
+[[ICO_7]]: 84756291
+
+ID_CARD
+[[ID_CARD_1]]: AB123456
+[[ID_CARD_2]]: 987654321
+[[ID_CARD_3]]: CD789012
+[[ID_CARD_4]]: EF456789
+
+INSURANCE_ID
+[[INSURANCE_ID_1]]: 111222333
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: 3T8 4567
+
+PHONE
+[[PHONE_1]]: +420 777 123 456
+[[PHONE_2]]: +420 608 987 654
+[[PHONE_3]]: +420 732 456 789
+[[PHONE_4]]: +420 605 123 987
+[[PHONE_5]]: +420 721 654 321
+[[PHONE_6]]: +420 775 321 654
+

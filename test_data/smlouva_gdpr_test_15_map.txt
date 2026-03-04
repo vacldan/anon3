@@ -1,0 +1,81 @@
+OSOBY
+-----
+[[PERSON_1]]: Monika Vaňková
+  - Moniko Vaňková
+  - Monikou Vaňkovou
+  - Moniky Vaňkové
+  - Monikě Vaňkové
+[[PERSON_2]]: Petra Malíková
+  - Petro Malíková
+  - Petrou Malíkovou
+  - Petry Malíkové
+  - Petrě Malíkové
+[[PERSON_3]]: Aleš Turek
+  - Aleša Turka
+  - Alešem Turkem
+  - Alešovi Turkovi
+[[PERSON_4]]: Petra Benešová
+
+ADDRESS
+[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_2]]: Vinohradská 146/22, 130 00 Praha 3
+[[ADDRESS_3]]: Sadová 193/12, 370 01 České Budějovice
+[[ADDRESS_4]]: platnost 08/28, CVC
+[[ADDRESS_5]]: písemně na adresu Sadová 193/12, 370 01 České Budějovice
+
+BANK
+[[BANK_1]]: 575178293/0600
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 060525/3358
+[[BIRTH_ID_2]]: 650707/6698
+[[BIRTH_ID_3]]: 070528/5878
+[[BIRTH_ID_4]]: 020710/2266
+
+CARD
+[[CARD_1]]: 4229 4168 9894 3390
+
+DATE
+[[DATE_1]]: 17. 07. 1964
+[[DATE_2]]: 15. 03. 1963
+[[DATE_3]]: 13. 06. 2007
+[[DATE_4]]: 25. 12. 1979
+[[DATE_5]]: 24. 02. 2026
+
+EMAIL
+[[EMAIL_1]]: sekretariat@gymhradby.cz
+[[EMAIL_2]]: monika.vankova@example.com
+[[EMAIL_3]]: petra.malikova@example.com
+[[EMAIL_4]]: ales.turek@example.com
+[[EMAIL_5]]: petra.benesova@example.com
+
+IBAN
+[[IBAN_1]]: CZ37 5500 0000 3272 1865 7960
+
+ICO
+[[ICO_1]]: 12398745
+
+ID_CARD
+[[ID_CARD_1]]: 828986090
+
+IP
+[[IP_1]]: 105.23.184.79
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ34682
+[[LICENSE_PLATE_2]]: 3AA 5617
+[[LICENSE_PLATE_3]]: 0FA9485
+
+MAC
+[[MAC_1]]: 50:0F:2B:06:78:B4
+
+PASSWORD
+[[PASSWORD_1]]: Mo86!5291
+
+PHONE
+[[PHONE_1]]: +420 596 111 222
+[[PHONE_2]]: +420 723 762 768
+[[PHONE_3]]: +420 601 425 785
+[[PHONE_4]]: +420 670 932 944
+[[PHONE_5]]: +420 629 942 947
+

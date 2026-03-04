@@ -1,0 +1,80 @@
+SMLOUVA O PODPOŘE NEMOCNIČNÍHO INFORMAČNÍHO SYSTÉMU A ZPRACOVÁNÍ OSOBNÍCH ÚDAJŮ
+
+uzavřená dle § 1746 odst. 2 zákona č. 89/2012 Sb., občanský zákoník, a dle Nařízení (EU) 2016/679 (GDPR)
+
+I. SMLUVNÍ STRANY
+
+1. Zadavatel (Nemocnice):
+   Název: Fakultní nemocnice Sever
+   Sídlo: U Nemocnice 1, 120 00 Praha 2
+   IČO: 00012345
+   DIČ: CZ00012345
+   Statutární zástupce: MUDr. Jan Vlk, ředitel
+   Telefon: +420 224 111 222
+   E‑mail: reditelstvi@fnsever.cz
+   Datová schránka: abcd123
+
+   (dále jen „Nemocnice“)
+
+2. Dodavatel IT služeb:
+   Obchodní firma: MEDISOFT Solutions s.r.o.
+   Sídlo: Technologická 5, 160 00 Praha 6
+   IČO: 05223311
+   DIČ: CZ05223311
+   Zapsaná v OR u Městského soudu v Praze, oddíl C, vložka 257890
+   Kontaktní osoba: Ing. Radek Zahradník
+   Datum narození: 12. 04. 1985
+   Rodné číslo: 850412/1234
+   Telefon: +420 606 888 999
+   E‑mail: radek.zahradnik@medisoft.cz
+   IP adresa služebního notebooku: 10.22.33.44
+
+   (dále jen „Dodavatel“)
+
+Společně též jen „Smluvní strany“.
+
+II. PŘEDMĚT SMLOUVY
+
+1. Dodavatel se zavazuje poskytovat Nemocnici podporu nemocničního informačního systému MEDISOFT, zahrnující zejména:
+   a) správu databáze pacientů,
+   b) správu uživatelských účtů zdravotnického personálu,
+   c) aktualizace aplikace a bezpečnostních záplat,
+   d) asistenci při testování anonymizace zdravotnických záznamů exportovaných z NIS.
+2. Nemocnice se zavazuje platit Dodavateli odměnu dle článku VII této smlouvy.
+
+III. KATEGORIE ZPRACOVÁVANÝCH ÚDAJŮ
+
+1. V rámci provozu NIS MEDISOFT jsou zpracovávány osobní údaje:
+   a) pacientů (jméno, příjmení, datum narození, rodné číslo, číslo pojištěnce, diagnózy),
+   b) zdravotnického personálu (jméno, příjmení, titul, osobní číslo, číslo služebního telefonu),
+   c) kontaktních osob pacientů a osob blízkých.
+2. Pro testovací účely se ve smlouvě výslovně uvádí následující fiktivní osoby:
+   a) Pacient: Bc. Barbora Koutná, nar. 15. 05. 1991, rodné číslo 910515/4567,
+      adresa: Lipová 8, 602 00 Brno, telefon: +420 731 222 333, e‑mail: barbora.koutna@example.com.
+   b) Ošetřující lékař: MUDr. Ondřej Jelínek, nar. 03. 03. 1980, rodné číslo 800303/7890,
+      služební e‑mail: ondrej.jelinek@fnsever.cz, telefon: +420 224 555 666.
+   c) Kontaktní osoba: Marek Koutný, nar. 20. 08. 1989, rodné číslo 890820/3210,
+      telefon: +420 603 987 111, e‑mail: marek.koutny@example.org.
+
+IV. PŘÍSTUPY A TECHNICKÉ ÚDAJE
+
+1. Dodavatel používá pro vzdálený přístup tyto přístupové údaje:
+   Uživatelské jméno: radek.zahradnik
+   Heslo: M3diSoft!2026
+   VPN server: vpn.fnsever.cz
+2. Přístupy jsou logovány včetně IP adres (např. 10.22.33.44, 192.168.20.101), uživatelského jména a času přihlášení.
+3. Nemocnice bere na vědomí, že se v logách budou objevovat pádové tvary jmen, např. „s Barborou Koutnou“, „Barboře Koutné“, „Ondřeji Jelínkovi“, „s Ondřejem Jelínkem“.
+
+V. ZÁRUKY A BEZPEČNOST
+
+1. Dodavatel prohlašuje, že všichni jeho zaměstnanci, kteří budou mít přístup do NIS, podepsali dohody o mlčenlivosti.
+2. Dodavatel zpracovává osobní údaje výlučně na základě pokynů Nemocnice.
+
+VII. ODMĚNA
+
+1. Měsíční paušál za podporu NIS činí 45 000 Kč bez DPH.
+2. Odměna bude hrazena na účet Dodavatele č. 227799881/5500, IBAN: CZ24 5500 0000 0022 7799 8810.
+
+VIII. ZÁVĚR
+
+V Praze dne 5. 3. 2026

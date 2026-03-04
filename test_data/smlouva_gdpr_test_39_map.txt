@@ -1,0 +1,44 @@
+OSOBY
+-----
+[[PERSON_1]]: Tomáš Hruška
+[[PERSON_2]]: Radek Holík
+[[PERSON_3]]: Veronika Lacinová
+  - Veronice Lacinové
+  - Veronikou Lacinovou
+[[PERSON_4]]: Erik Roubal
+  - Erika Roubala
+  - Erikem Roubalem
+
+ADDRESS
+[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
+[[ADDRESS_2]]: Technologická 15, 160 00 Praha 6
+
+BANK
+[[BANK_1]]: 6655443322/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 780228/1234
+[[BIRTH_ID_2]]: 820718/4321
+[[BIRTH_ID_3]]: 940212/7890
+[[BIRTH_ID_4]]: 800909/3333
+
+DATE
+[[DATE_1]]: 5. 7. 2026
+
+EMAIL
+[[EMAIL_1]]: recepce@privatmed.cz
+[[EMAIL_2]]: radek.holik@datasecure.cz
+[[EMAIL_3]]: veronika.lacinova@example.com
+[[EMAIL_4]]: erik.roubal@example.com
+[[EMAIL_5]]: info@datasecure.cz
+
+ICO
+[[ICO_1]]: 99887766
+[[ICO_2]]: 05288977
+
+PHONE
+[[PHONE_1]]: +420 224 333 444
+[[PHONE_2]]: +420 739 111 222
+[[PHONE_3]]: +420 605 123 456
+[[PHONE_4]]: +420 739 555 777
+
