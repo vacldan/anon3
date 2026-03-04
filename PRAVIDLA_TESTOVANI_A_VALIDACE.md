@@ -182,6 +182,10 @@ Pro ověření všech pravidel by testovací dokument měl obsahovat:
 
 ## 5. Hodnocení (scoring)
 
+> **Kompletní hodnoticí matice** se všemi kategoriemi chyb, váhami a příklady je v **[QA_POKYNY.md](QA_POKYNY.md)**.
+
+Zkrácený přehled srážek pro `deep_validate.py`:
+
 | Kategorie | Max. srážka | Popis |
 |-----------|-------------|-------|
 | Kanonické formy | -3 | Správný nominativ a diakritika (0.5 za chybu) |
@@ -192,6 +196,8 @@ Pro ověření všech pravidel by testovací dokument měl obsahovat:
 | **Celkem** | **10** | |
 
 **Minimální akceptovatelné skóre:** 9/10 (s tolerancí pro edge cases).
+
+Pro plný audit všech entit (EMAIL, PHONE, BANK, IBAN, CARD, ADDRESS, BIRTH_ID, ID_CARD, PASSWORD atd.) viz [QA_POKYNY.md](QA_POKYNY.md) — obsahuje trojstupňovou matici (KRITICKÉ −3.0, ZÁVAŽNÉ −1.0, DROBNÉ −0.3/−0.5) + bonusy.
 
 ---
 

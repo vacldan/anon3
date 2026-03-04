@@ -22,8 +22,8 @@ This is a Python-based offline GDPR/PII document anonymizer ("SKRYI / Anonymizá
 | `_validate_gdpr_tests.py` | Batch GDPR test validation runner |
 | `_gdpr_audit.py` | GDPR audit helper |
 | `cz_names.v1.json` | Czech first names dictionary (MVČR) |
+| `QA_POKYNY.md` | **Scoring matrix — authoritative quality evaluation reference** |
 | `PRAVIDLA_TESTOVANI_A_VALIDACE.md` | **Testing and validation rules — MUST be followed** |
-| `audit.txt` | Master audit prompt with scoring system |
 | `test_data/` | Test contracts (smlouva10–33) + anon outputs + maps |
 
 ### Running the anonymizer
@@ -60,21 +60,18 @@ Single contract:
 python3 deep_validate.py test_data/smlouva10.docx
 ```
 
-#### Scoring (from `PRAVIDLA_TESTOVANI_A_VALIDACE.md`)
+#### Scoring
 
-| Category | Max deduction | Description |
-|----------|---------------|-------------|
-| Canonical forms | -3 | Correct nominative + diacritics (0.5 per error) |
-| Blacklist in persons | -2 | "Prosím", "Firma", role words must not be persons (0.5 per error) |
-| First name in names.json | -2 | First word must exist in name library (0.5 per error) |
-| Name leaks | -3 | No name may remain in the anonymized document (1 per leak) |
-| Phantom persons | -2 | All persons in map must have a tag in document (0.5 per phantom) |
+**Full scoring matrix: see `QA_POKYNY.md`** — the authoritative reference for all quality evaluation.
 
-**Minimum acceptable score:** 9/10. Target: average ≥ 9.0 across all contracts, no critical errors.
+Three severity tiers:
+- **KRITICKÉ (−3.0 each):** plain-text PII leaks, missing map entries — must be 0 for GO
+- **ZÁVAŽNÉ (−1.0 each):** wrong entity type, merged/split persons, incomplete redaction
+- **DROBNÉ (−0.3/−0.5 each):** canonical form errors, blacklist words as persons, phantoms, address prefixes
 
-#### Audit scoring (from `audit.txt`)
+**GO = score ≥ 9.0 AND 0 critical errors.** Target: average ≥ 9.0 across all contracts.
 
-The `audit.txt` file contains a more detailed scoring system (start 10.0, hard fails −3.0 each, majors −1.0, minors −0.3/−0.5) with GO threshold 9.3 and zero hard fails required. This is used for comprehensive audits covering all entity types (CARD, IBAN, BIRTH_ID, EMAIL, PHONE, BANK, ADDRESS, etc.).
+`deep_validate.py` implements a subset (focused on PERSON). For full entity audit, review against `QA_POKYNY.md`.
 
 ### Important notes
 
