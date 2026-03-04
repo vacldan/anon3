@@ -22,8 +22,7 @@ This is a Python-based offline GDPR/PII document anonymizer ("SKRYI / Anonymizá
 | `_validate_gdpr_tests.py` | Batch GDPR test validation runner |
 | `_gdpr_audit.py` | GDPR audit helper |
 | `cz_names.v1.json` | Czech first names dictionary (MVČR) |
-| `QA_POKYNY.md` | **Scoring matrix — authoritative quality evaluation reference** |
-| `PRAVIDLA_TESTOVANI_A_VALIDACE.md` | **Testing and validation rules — MUST be followed** |
+| `QA_POKYNY.md` | **Unified QA doc — testing, validation, scoring matrix (MUST follow)** |
 | `test_data/` | Test contracts (smlouva10–33) + anon outputs + maps |
 
 ### Running the anonymizer
@@ -42,7 +41,7 @@ Outputs per file: `<basename>_anon.docx`, `<basename>_map.json`, `<basename>_map
 
 ### Testing and validation workflow (MANDATORY)
 
-**See `PRAVIDLA_TESTOVANI_A_VALIDACE.md` for the full specification.** Key points:
+**See `QA_POKYNY.md` for the full specification.** Key points:
 
 1. **After ANY change to `anon72.py`:** re-anonymize test contracts, then run `python3 deep_validate.py`
 2. **Never fix just the reported case** — always run validation and fix the general pattern
