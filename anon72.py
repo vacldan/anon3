@@ -921,6 +921,9 @@ def infer_surname_nominative(obs: str) -> str:
         'pavelka', 'popelka', 'hruška', 'kotek',
         'štika', 'pecka', 'šenka',
         'kučera', 'bašta', 'bárta',
+        'řípa', 'bláha', 'malina', 'lojda', 'brázda', 'krejza',
+        'černota', 'vojta', 'zástěra', 'pazdera', 'rychtera',
+        'machala', 'švestka',
     }
 
     if lo.endswith('ka') and len(obs) > 3 and lo not in common_surnames_a:
@@ -1003,6 +1006,10 @@ def infer_surname_nominative(obs: str) -> str:
             'svobod', 'svoboda', 'pasek', 'paseka',
             'zík', 'zíka',
             'pecek', 'pecka', 'peck',
+            'říp', 'bláh', 'malin', 'lojd', 'brázd', 'krejz',
+            'černot', 'vojt', 'zástěr', 'pazder', 'rychter',
+            'machal', 'švestk',
+            'hrdin', 'jirs', 'vavr',
         }
 
         # -ovi od příjmení na -ka: Švestkovi → Švestka, Pasekovi → Paseka
@@ -1039,7 +1046,12 @@ def infer_surname_nominative(obs: str) -> str:
                 last_two = stem_lo[-2:]
 
                 if last_two == 'tk' and len(stem) >= 5:
-                    return stem + 'a'
+                    # Rozlišit: Kuchta → Kuchtovi → stem "Kucht" → tk → "Kuchta"
+                    # vs. Chrástek → Chrástkovi → stem "Chrástk" → tk → "Chrástek"
+                    # Heuristika: pokud stem má víc než 2 souhlásky za sebou na konci → vložné-e
+                    if len(stem_lo) >= 3 and stem_lo[-3] in 'bcčdďfghjklmnňpqrřsštťvwxzž':
+                        return stem[:-1] + 'e' + stem[-1]  # Chrástk → Chrástek
+                    return stem + 'a'  # Kucht → Kuchta
 
                 # Speciální: 'nk' — může být -ek (Vaněk) nebo konsonantní (Šenk, Renk)
                 # Heuristika: pokud 3. znak od konce je samohláska → konsonantní (Šenk)
@@ -1181,6 +1193,9 @@ def infer_surname_nominative(obs: str) -> str:
             'hora', 'skála', 'jura', 'hrdina', 'jirsa', 'vavra', 'hrůza',
             'mácha', 'říha', 'bříza', 'mlčocha', 'kvěcha',
             'kučera', 'bašta', 'bárta',
+            'řípa', 'bláha', 'malina', 'lojda', 'brázda', 'krejza',
+            'černota', 'vojta', 'zástěra', 'pazdera', 'rychtera',
+            'machala', 'švestka',
         }
 
         if stem_lo + 'a' not in known_a_nominatives:
@@ -2335,7 +2350,11 @@ class Anonymizer:
                 'prosím',  # "Prosím David" = zdvořilostní obrat, ne jméno!
                 'firma',   # "Firma Horáková" = reference na firmu, ne osoba!
                 # Role a pozice (ne jména)
-                'services', 'risk', 'account', 'senior', 'developer', 'architect'
+                'services', 'risk', 'account', 'senior', 'developer', 'architect',
+                'support', 'career', 'customer', 'success', 'program', 'web',
+                'invest', 'compliance', 'poboček', 'pobočka',
+                'převzetí', 'porušení', 'nepředání', 'vypracoval',
+                'přepis', 'elektřina', 'banka', 'pojištění',
             }
 
             combined = f"{first} {last}".lower()
@@ -3257,7 +3276,11 @@ class Anonymizer:
                 'prosím',  # "Prosím David" = zdvořilostní obrat, ne jméno!
                 'firma',   # "Firma Horáková" = reference na firmu, ne osoba!
                 # Role a pozice (ne jména)
-                'services', 'risk', 'account', 'senior', 'developer', 'architect'
+                'services', 'risk', 'account', 'senior', 'developer', 'architect',
+                'support', 'career', 'customer', 'success', 'program', 'web',
+                'invest', 'compliance', 'poboček', 'pobočka',
+                'převzetí', 'porušení', 'nepředání', 'vypracoval',
+                'přepis', 'elektřina', 'banka', 'pojištění',
             }
 
             # Kontrola, zda hodnota obsahuje blacklist slovo (whole-word match)
@@ -4376,10 +4399,16 @@ class Anonymizer:
             'manager', 'director', 'chief', 'officer',
             'specialist', 'consultant', 'coordinator',
             'developer', 'architect', 'engineer', 'analyst',
-            'řidič', 'řidička', 'řidiče', 'řidiči', 'řidičem',  # všechny pády
+            'řidič', 'řidička', 'řidiče', 'řidiči', 'řidičem',
             'klient', 'klienta', 'klientka', 'klientky', 'klientovi',
             'pacient', 'pacienta', 'pacientka', 'pacientky',
-            'žadatel', 'žadatele', 'žadatelka', 'žadatelky'
+            'žadatel', 'žadatele', 'žadatelka', 'žadatelky',
+            'support', 'career', 'customer', 'success', 'program',
+            'web', 'services', 'risk', 'account', 'senior',
+            'invest', 'compliance', 'poboček', 'pobočka',
+            'převzetí', 'porušení', 'nepředání', 'vypracoval',
+            'přepis', 'elektřina', 'banka', 'pojištění',
+            'prosím', 'firma',
         }
 
         # 1. Najdi všechny 4-slovné matche (včetně překrývajících se!)
@@ -4650,7 +4679,19 @@ class Anonymizer:
             ]
             if any(term in matched_text.lower() for term in medical_terms):
                 return matched_text  # Not an address, return unchanged
-            return self._get_or_create_label('ADDRESS', matched_text)
+            # Strip address prefixes from the stored value (but keep them in text replacement)
+            clean_addr = matched_text
+            addr_prefixes = [
+                'trvale bytem ', 'trvale bytem', 'se sídlem ', 'se sídlem',
+                'na adrese: ', 'na adrese:', 'na adrese ', 'na adrese',
+                'bytem ', 'bytem', 'sídlem ', 'sídlem',
+            ]
+            clean_lower = clean_addr.lower()
+            for prefix in addr_prefixes:
+                if clean_lower.startswith(prefix):
+                    clean_addr = clean_addr[len(prefix):].lstrip()
+                    break
+            return self._get_or_create_label('ADDRESS', clean_addr)
         text = ADDRESS_RE.sub(replace_address, text)
 
         # 10. EMAILY (před ostatními, protože obsahují speciální znaky)
