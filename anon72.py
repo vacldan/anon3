@@ -1053,18 +1053,17 @@ def infer_surname_nominative(obs: str) -> str:
                         return stem[:-1] + 'e' + stem[-1]  # Chrástk → Chrástek
                     return stem + 'a'  # Kucht → Kuchta
 
-                # Speciální: 'nk' — může být -ek (Vaněk) nebo konsonantní (Šenk, Renk)
-                # Heuristika: pokud 3. znak od konce je samohláska → konsonantní (Šenk)
-                # pokud 3. znak od konce je souhláska → vložné-e (Vaňk→Vaněk)
+                # Speciální: 'nk' — může být -ek (Vaněk, Šimůnek) nebo konsonantní (Šenk, Renk)
+                # Heuristika: krátký stem (≤4) → konsonantní; delší → vložné-e
                 if last_two == 'nk':
-                    if len(stem_lo) >= 3 and stem_lo[-3] in 'aeiouyáéěíóúůý':
-                        return stem  # Šenkovi → Šenk (samohláska před nk)
+                    if len(stem_lo) <= 4:
+                        return stem  # Šenkovi → Šenk, Renkovi → Renk
                     else:
                         soft_map = {'ň': 'ně', 'ď': 'dě', 'ť': 'tě'}
                         prev_char = stem[-2]
                         if prev_char.lower() in soft_map:
                             return stem[:-2] + soft_map[prev_char.lower()] + stem[-1]
-                        return stem[:-1] + 'e' + stem[-1]
+                        return stem[:-1] + 'e' + stem[-1]  # Šimůnkovi → Šimůnek
 
                 if last_two in needs_ek_patterns:
                     soft_map = {'ň': 'ně', 'ď': 'dě', 'ť': 'tě'}
@@ -4681,16 +4680,15 @@ class Anonymizer:
                 return matched_text  # Not an address, return unchanged
             # Strip address prefixes from the stored value (but keep them in text replacement)
             clean_addr = matched_text
-            addr_prefixes = [
-                'trvale bytem ', 'trvale bytem', 'se sídlem ', 'se sídlem',
-                'na adrese: ', 'na adrese:', 'na adrese ', 'na adrese',
-                'bytem ', 'bytem', 'sídlem ', 'sídlem',
-            ]
-            clean_lower = clean_addr.lower()
-            for prefix in addr_prefixes:
-                if clean_lower.startswith(prefix):
-                    clean_addr = clean_addr[len(prefix):].lstrip()
-                    break
+            # Find and strip everything up to and including known address markers
+            import re as _re
+            addr_marker_pattern = _re.compile(
+                r'^.*?(?:trvale\s+bytem|se\s+sídlem|na\s+adrese\s*:?|bytem)\s*',
+                _re.IGNORECASE
+            )
+            m_prefix = addr_marker_pattern.match(clean_addr)
+            if m_prefix:
+                clean_addr = clean_addr[m_prefix.end():].lstrip()
             return self._get_or_create_label('ADDRESS', clean_addr)
         text = ADDRESS_RE.sub(replace_address, text)
 
