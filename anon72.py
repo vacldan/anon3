@@ -917,9 +917,10 @@ def infer_surname_nominative(obs: str) -> str:
         'kuřátka', 'kubíčka', 'marečka', 'vašíčka',
         # Další příjmení končící na -ka v nominativu
         'kuba', 'červinka', 'hromádka', 'horčička', 'straka', 'paseka',
-        'krupička', 'koudelka', 'řezníčka', 'urbanek',  # Přidáno
-        'pavelka', 'popelka', 'hruška', 'kotek',  # Přidáno pro smlouva22
-        'štika'  # Ryba → příjmení Štika (ne Štek)
+        'krupička', 'koudelka', 'řezníčka', 'urbanek',
+        'pavelka', 'popelka', 'hruška', 'kotek',
+        'štika', 'pecka', 'šenka',
+        'kučera', 'bašta', 'bárta',
     }
 
     if lo.endswith('ka') and len(obs) > 3 and lo not in common_surnames_a:
@@ -995,9 +996,13 @@ def infer_surname_nominative(obs: str) -> str:
 
         # KONTROLA: Některé kmeny potřebují -a (Pasekovi → Paseka, ne Pasek)
         surname_stems_needing_a = {
-            'kub', 'červink', 'hromádk', 'horčičk', 'strak',
-            'kuč', 'bárt', 'procházk', 'klím', 'svobod', 'pasek',
-            'zík',  # Zíkovi → Zíka
+            'kub', 'kuba', 'červink', 'červinka', 'hromádk', 'hromádka',
+            'horčičk', 'horčička', 'strak', 'straka',
+            'kuč', 'kučer', 'bárt', 'bárta', 'bašt', 'bašta',
+            'procházk', 'procházka', 'klím', 'klíma',
+            'svobod', 'svoboda', 'pasek', 'paseka',
+            'zík', 'zíka',
+            'pecek', 'pecka', 'peck',
         }
 
         # -ovi od příjmení na -ka: Švestkovi → Švestka, Pasekovi → Paseka
@@ -1025,26 +1030,45 @@ def infer_surname_nominative(obs: str) -> str:
             consonants = 'bcčdďfghjklmnňpqrřsštťvwxzž'
 
             if stem_lo[-2] in consonants and stem_lo[-1] in consonants:
-                needs_e_patterns = {'jk', 'žk', 'čk', 'rk', 'šk', 'tk', 'dk', 'ck', 'nk',
-                                    'sk', 'stk', 'lk', 'mk', 'pk', 'vk', 'zk',
-                                    'ňk', 'ďk', 'ťk'}
+                # Vložné-e patterns pro -ek příjmení (Hájkovi → Hájek)
+                needs_ek_patterns = {'jk', 'žk', 'čk', 'rk', 'šk', 'dk', 'ck',
+                                     'sk', 'stk', 'lk', 'mk', 'pk', 'vk', 'zk',
+                                     'ňk', 'ďk', 'ťk'}
+                # Vložné-e patterns pro -ec příjmení (Holubcovi → Holubec)
+                needs_ec_patterns = {'bc', 'mc', 'vc', 'lc'}
                 last_two = stem_lo[-2:]
 
                 if last_two == 'tk' and len(stem) >= 5:
                     return stem + 'a'
 
-                if last_two in needs_e_patterns:
+                # Speciální: 'nk' — může být -ek (Vaněk) nebo konsonantní (Šenk, Renk)
+                # Heuristika: pokud 3. znak od konce je samohláska → konsonantní (Šenk)
+                # pokud 3. znak od konce je souhláska → vložné-e (Vaňk→Vaněk)
+                if last_two == 'nk':
+                    if len(stem_lo) >= 3 and stem_lo[-3] in 'aeiouyáéěíóúůý':
+                        return stem  # Šenkovi → Šenk (samohláska před nk)
+                    else:
+                        soft_map = {'ň': 'ně', 'ď': 'dě', 'ť': 'tě'}
+                        prev_char = stem[-2]
+                        if prev_char.lower() in soft_map:
+                            return stem[:-2] + soft_map[prev_char.lower()] + stem[-1]
+                        return stem[:-1] + 'e' + stem[-1]
+
+                if last_two in needs_ek_patterns:
                     soft_map = {'ň': 'ně', 'ď': 'dě', 'ť': 'tě'}
                     prev_char = stem[-2]
                     if prev_char.lower() in soft_map:
                         return stem[:-2] + soft_map[prev_char.lower()] + stem[-1]
                     return stem[:-1] + 'e' + stem[-1]
 
+                if last_two in needs_ec_patterns:
+                    return stem[:-1] + 'e' + stem[-1]  # Holubcovi → Holubc → Holubec
+
                 # Souhlásková zakončení typická pro cizí/přejaté příjmení → kompletní
                 valid_cc_endings = {'lf', 'rt', 'rn', 'lt', 'nd', 'rm', 'rg', 'ng',
                                     'mb', 'mp', 'rd', 'rf', 'rl', 'rp', 'rš', 'rv',
                                     'rz', 'rč', 'rc', 'rb', 'nt', 'ns', 'nz', 'nc',
-                                    'ch', 'ech'}  # Frydrych, Rychter
+                                    'ch', 'ech', 'nk'}  # Frydrych, Rychter, Šenk
                 if last_two in valid_cc_endings:
                     return stem  # Volfovi → Volf, Šubrtovi → Šubrt
 
@@ -1057,16 +1081,23 @@ def infer_surname_nominative(obs: str) -> str:
                     'holas', 'novak', 'beran', 'rendl', 'přikryl', 'konrád', 'frydrych',
                     'šubrt', 'volf', 'špinar', 'fichtner', 'nezval', 'balcar', 'kralert',
                     'rychter', 'topol', 'plášil', 'hrabě',
+                    'král', 'nguyen', 'švec', 'řehoř', 'kříž', 'holubec',
                 }
                 if stem_lo in consonantal_stems:
                     return stem  # Holasovi → Holas, Novakovi → Novak
 
                 # Typicky kompletní příjmení (-ák, -ík, -ek, -er, -ar...)
-                typical_masc = ('ák', 'ík', 'ek', 'ok', 'uk', 'er', 'ar', 'or', 'ur', 'ir',
-                                'ář', 'éř', 'íř', 'al', 'el', 'il', 'ol', 'ul',
-                                'áš', 'eš', 'iš', 'oš', 'uš', 'áč', 'eč', 'ič',
-                                'án', 'ín', 'ún', 'on', 'un', 'at', 'it', 'ut',
-                                'áb', 'ář', 'ůl', 'ýš', 'ýř', 'ás', 'ous', 'as', 'ak')
+                typical_masc = ('ák', 'ík', 'ek', 'ok', 'uk', 'er', 'ar', 'or', 'ur', 'ir', 'ér', 'ýr',
+                                'ář', 'éř', 'íř', 'oř', 'úř',
+                                'al', 'el', 'il', 'ol', 'ul', 'ál', 'ýl', 'íl',
+                                'áš', 'eš', 'iš', 'oš', 'uš', 'ýš',
+                                'áč', 'eč', 'ič', 'oč', 'ec',
+                                'án', 'ín', 'ún', 'on', 'un', 'en', 'ýn',
+                                'at', 'it', 'ut', 'ot', 'át',
+                                'áb', 'ůl', 'ás', 'ous', 'as', 'ak', 'us',
+                                'ád', 'yd', 'id', 'od', 'ch',
+                                'áž', 'íž', 'ež', 'ož', 'až', 'úž',
+                                'nk', 'lc', 'rc')
                 if stem_lo.endswith(typical_masc):
                     return stem  # Řehákovi → Řehák, Špinarovi → Špinar, Holasovi → Holas
 
@@ -1127,7 +1158,11 @@ def infer_surname_nominative(obs: str) -> str:
             # Novákem → Novák, Procházkou → Procházka
             # Kratochvílem → Kratochvíl, Králem → Král
             # Švecem → Švec, Hrubešem → Hrubeš
-            return obs[:-2]
+            result = obs[:-2]
+            # Kontrola: příjmení končící na -a v nominativu (Kučerem → Kučera, ne Kučer)
+            if (result.lower() + 'a') in common_surnames_a:
+                return result + 'a'
+            return result
 
     # ========== GENITIV: -a pro příjmení končící na -lo ==========
     # Šídlo → Šídla (genitiv) → vrátit Šídlo
@@ -1145,20 +1180,23 @@ def infer_surname_nominative(obs: str) -> str:
         known_a_nominatives = common_surnames_a | animal_plant_surnames | {
             'hora', 'skála', 'jura', 'hrdina', 'jirsa', 'vavra', 'hrůza',
             'mácha', 'říha', 'bříza', 'mlčocha', 'kvěcha',
+            'kučera', 'bašta', 'bárta',
         }
 
         if stem_lo + 'a' not in known_a_nominatives:
             typical_masc_endings = (
-                'up', 'an', 'ín', 'ún', 'on', 'un', 'in',
+                'up', 'an', 'ín', 'ún', 'on', 'un', 'in', 'en', 'án', 'ýn',
                 'ák', 'ík', 'ek', 'ok', 'uk',
-                'er', 'ar', 'or', 'ur', 'ir',
-                'ář', 'éř', 'íř',
-                'al', 'el', 'il', 'ol', 'ul',
-                'áš', 'eš', 'iš', 'oš', 'uš',
-                'áč', 'eč', 'ič', 'oč',
-                'at', 'it', 'ut', 'ot',
+                'er', 'ar', 'or', 'ur', 'ir', 'ér', 'ýr',
+                'ář', 'éř', 'íř', 'oř', 'úř',
+                'al', 'el', 'il', 'ol', 'ul', 'ál', 'ýl', 'íl',
+                'áš', 'eš', 'iš', 'oš', 'uš', 'ýš',
+                'áč', 'eč', 'ič', 'oč', 'ec',
+                'at', 'it', 'ut', 'ot', 'át',
                 'áb', 'ůl', 'ýš', 'ýř', 'ás', 'us', 'as',
                 'ád', 'yd', 'id', 'od', 'ch',
+                'áž', 'íž', 'ež', 'ož', 'až', 'úž',
+                'nk', 'lc', 'rc',
             )
             if stem_lo.endswith(typical_masc_endings):
                 return stem
@@ -1178,7 +1216,8 @@ def infer_surname_nominative(obs: str) -> str:
         # Kubů → stem "Kub" → zkontroluj že je v seznamu → vrať "Kuba"
         surname_stems_needing_a = {
             'kub', 'červink', 'hromádk', 'horčičk', 'strak',
-            'kuč', 'bárt', 'procházk', 'klím', 'svobod'
+            'kuč', 'kučer', 'bárt', 'bašt', 'procházk', 'klím', 'svobod',
+            'pasek', 'zík', 'peck',
         }
 
         if stem.lower() in surname_stems_needing_a:
