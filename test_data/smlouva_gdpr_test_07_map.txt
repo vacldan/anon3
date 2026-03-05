@@ -1,0 +1,40 @@
+OSOBY
+-----
+[[PERSON_1]]: Aleš Kříž
+[[PERSON_2]]: Sabina Nedvědová
+  - Sabinu Nedvědovou
+  - Sabiny Nedvědové
+
+ADDRESS
+[[ADDRESS_1]]: Datová 77, 186 00 Praha 8
+[[ADDRESS_2]]: Jabloňová 12, 400 01 Ústí nad Labem
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 800101/1111
+[[BIRTH_ID_2]]: 930630/7890
+
+DATE
+[[DATE_1]]: 01. 01. 1980
+[[DATE_2]]: 30. 06. 1993
+[[DATE_3]]: 2. 5. 2026
+
+EMAIL
+[[EMAIL_1]]: podpora@telnet.cz
+[[EMAIL_2]]: sabina.nedvedova@example.com
+
+ICO
+[[ICO_1]]: 55667788
+
+ID_CARD
+[[ID_CARD_1]]: 556677889
+
+IP
+[[IP_1]]: 192.168.11.22
+
+PASSWORD
+[[PASSWORD_1]]: T3lNet!2026
+
+PHONE
+[[PHONE_1]]: +420 246 111 222
+[[PHONE_2]]: +420 731 444 555
+

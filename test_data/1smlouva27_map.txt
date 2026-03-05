@@ -1,0 +1,177 @@
+OSOBY
+-----
+[[PERSON_1]]: Petr Novák
+  - Petra Nováka
+[[PERSON_2]]: Pan Novák
+[[PERSON_3]]: Jana Nováková
+[[PERSON_4]]: Michal Dvořák
+  - Michala Dvořáka
+[[PERSON_5]]: Kateřina Dvořáková
+[[PERSON_6]]: Tomáš Černý
+[[PERSON_7]]: Pacientek Eva
+  - Pacientka Eva
+[[PERSON_8]]: Martin Procházka
+  - Martina Procházku
+[[PERSON_9]]: Marie Procházková
+[[PERSON_10]]: Lenka Horáková
+[[PERSON_11]]: Obžalovaný Jakub
+[[PERSON_12]]: David Král
+[[PERSON_13]]: Lucie Pokorná
+  - Lucie Pokorné
+[[PERSON_14]]: Pavel Pokorný
+  - Pavlu Pokornému
+[[PERSON_15]]: Adam Pokorný
+  - Adama Pokorného
+[[PERSON_16]]: Eliška Pokorná
+  - Elišky Pokorné
+[[PERSON_17]]: Zaměstnankyně Věra
+[[PERSON_18]]: Roman Málek
+[[PERSON_19]]: Zaměstnanec Stanislav
+[[PERSON_20]]: Hana Novotná
+  - Hanou Novotnou
+[[PERSON_21]]: Kupující Miroslav
+[[PERSON_22]]: Prodávající Alena
+[[PERSON_23]]: Stavebník Jiří
+[[PERSON_24]]: Investor Radek
+[[PERSON_25]]: Danya Holubová
+  - Dany Holubové
+[[PERSON_26]]: Petr Vlček
+[[PERSON_27]]: Dlužník Zdeněk
+[[PERSON_28]]: Ondřej Bartoš
+[[PERSON_29]]: Odsouzený Filip
+[[PERSON_30]]: Věznici Plzeň
+[[PERSON_31]]: Žákyně Tereza
+[[PERSON_32]]: Ivana Čermáková
+[[PERSON_33]]: Rodině Jana
+[[PERSON_34]]: Nikola Horáková
+[[PERSON_35]]: Markéta Šimková
+[[PERSON_36]]: Simona Jelínková
+[[PERSON_37]]: Václav Moravec
+[[PERSON_38]]: Andrea Soukupová
+[[PERSON_39]]: Michal Fiael
+  - Michal Fiala
+[[PERSON_40]]: Jakub Fiael
+  - Jakuba Fialu
+[[PERSON_41]]: Kristýna Sedláčková
+[[PERSON_42]]: Radim Kopecký
+[[PERSON_43]]: Zuzana Němečková
+[[PERSON_44]]: Jaroslav Řezníček
+[[PERSON_45]]: Petra Řezníčková
+[[PERSON_46]]: Klára Synková
+[[PERSON_47]]: Ondřej Vávra
+[[PERSON_48]]: Jana Svobodová
+[[PERSON_49]]: Karel Marek
+[[PERSON_50]]: Barbora Němcová
+[[PERSON_51]]: Tomáš Urban
+[[PERSON_52]]: Monika Zemanová
+[[PERSON_53]]: Robert Kolář
+[[PERSON_54]]: Daniela Bartošová
+[[PERSON_55]]: Lukáš Pospíšil
+[[PERSON_56]]: Iveta Krajíčková
+[[PERSON_57]]: Vladimír Růžiček
+  - Vladimír Růžička
+
+ADDRESS
+[[ADDRESS_1]]: adrese Růžová 847/23, Praha 3
+[[ADDRESS_2]]: bytem Dlouhá 15, Brno
+[[ADDRESS_3]]: Lidická 47/9, Plzeň
+[[ADDRESS_4]]: Na Výšinách 128, Ostrava
+
+BANK
+[[BANK_1]]: 2847561230/0100
+[[BANK_2]]: 1928374650/2700
+[[BANK_3]]: 8765432109/5500
+[[BANK_4]]: 4567891230/0800
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 850615/1234
+[[BIRTH_ID_2]]: 885420/7891
+[[BIRTH_ID_3]]: 920303/5678
+[[BIRTH_ID_4]]: 945612/3344
+[[BIRTH_ID_5]]: 756028/9012
+[[BIRTH_ID_6]]: 800512/6543
+[[BIRTH_ID_7]]: 625418/7890
+[[BIRTH_ID_8]]: 910825/4321
+[[BIRTH_ID_9]]: 880407/5566
+[[BIRTH_ID_10]]: 860918/7654
+[[BIRTH_ID_11]]: 841205/3210
+[[BIRTH_ID_12]]: 140523/8901
+[[BIRTH_ID_13]]: 170815/6789
+[[BIRTH_ID_14]]: 755624/8123
+[[BIRTH_ID_15]]: 760314/9001
+[[BIRTH_ID_16]]: 700629/4455
+[[BIRTH_ID_17]]: 825407/6123
+[[BIRTH_ID_18]]: 690823/7788
+[[BIRTH_ID_19]]: 725614/8899
+[[BIRTH_ID_20]]: 831127/5544
+[[BIRTH_ID_21]]: 875409/6677
+[[BIRTH_ID_22]]: 780512/9988
+[[BIRTH_ID_23]]: 950628/7123
+[[BIRTH_ID_24]]: 105524/7891
+[[BIRTH_ID_25]]: 835628/4512
+[[BIRTH_ID_26]]: 800415/6789
+[[BIRTH_ID_27]]: 155623/8902
+[[BIRTH_ID_28]]: 805629/4512
+[[BIRTH_ID_29]]: 741123/6789
+[[BIRTH_ID_30]]: 915824/7034
+[[BIRTH_ID_31]]: 830407/8512
+[[BIRTH_ID_32]]: 125623/9078
+[[BIRTH_ID_33]]: 975614/8234
+[[BIRTH_ID_34]]: 790214/6523
+[[BIRTH_ID_35]]: 885629/7412
+[[BIRTH_ID_36]]: 660823/5678
+[[BIRTH_ID_37]]: 705614/8923
+[[BIRTH_ID_38]]: 925824/6745
+[[BIRTH_ID_39]]: 840512/7890
+[[BIRTH_ID_40]]: 896523/7410
+[[BIRTH_ID_41]]: 751208/5623
+[[BIRTH_ID_42]]: 925614/8234
+[[BIRTH_ID_43]]: 880924/6745
+[[BIRTH_ID_44]]: 815420/9087
+[[BIRTH_ID_45]]: 720305/8912
+[[BIRTH_ID_46]]: 945723/6801
+[[BIRTH_ID_47]]: 870618/7234
+[[BIRTH_ID_48]]: 865214/7923
+[[BIRTH_ID_49]]: 690727/8145
+
+DIC
+[[DIC_1]]: CZ65478923
+
+EMAIL
+[[EMAIL_1]]: jana.novakova@email.cz
+[[EMAIL_2]]: v.malkova@firma.cz
+[[EMAIL_3]]: i.cermakova@seznam.cz
+[[EMAIL_4]]: k.sedlackova@firma.cz
+
+IBAN
+[[IBAN_1]]: CZ6508000000192837465012
+[[IBAN_2]]: CZ7520100000002001234567
+
+ICO
+[[ICO_1]]: 12345678
+[[ICO_2]]: 04785421
+[[ICO_3]]: 28476521
+[[ICO_4]]: 74859621
+[[ICO_5]]: 65478923
+[[ICO_6]]: 29384756
+[[ICO_7]]: 84756291
+
+ID_CARD
+[[ID_CARD_1]]: AB123456
+[[ID_CARD_2]]: CD789012
+[[ID_CARD_3]]: EF456789
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: 3T8 4567
+
+PHONE
+[[PHONE_1]]: +420 777 123 456
+[[PHONE_2]]: 111222333
+[[PHONE_3]]: +420 608 987 654
+[[PHONE_4]]: 445566778
+[[PHONE_5]]: 987654321
+[[PHONE_6]]: +420 732 456 789
+[[PHONE_7]]: +420 605 123 987
+[[PHONE_8]]: +420 721 654 321
+[[PHONE_9]]: +420 775 321 654
+

@@ -1,0 +1,41 @@
+OSOBY
+-----
+[[PERSON_1]]: Roman Krupa
+  - Romanem Krupou
+[[PERSON_2]]: Jakub Šíma
+[[PERSON_3]]: Martin Blažek
+[[PERSON_4]]: Petr Valenta
+
+ADDRESS
+[[ADDRESS_1]]: Obchodní 1, 700 30 Ostrava
+[[ADDRESS_2]]: Bezpečnostní 8, 709 00 Ostrava
+
+DATE
+[[DATE_1]]: 29. 01. 1980
+[[DATE_2]]: 16. 06. 1983
+[[DATE_3]]: 5. 7. 2026
+
+EMAIL
+[[EMAIL_1]]: info@ocgaleriejih.cz
+[[EMAIL_2]]: jakub.sima@securitas-moravia.cz
+[[EMAIL_3]]: petr.valenta@example.com
+
+ICO
+[[ICO_1]]: 27766554
+[[ICO_2]]: 26221155
+
+IP
+[[IP_1]]: 172.16.0.10
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: 5AZ 4567
+[[LICENSE_PLATE_2]]: 7B8 2345
+
+PASSWORD
+[[PASSWORD_1]]: S3curitas!2026
+
+PHONE
+[[PHONE_1]]: +420 595 123 000
+[[PHONE_2]]: +420 736 555 444
+[[PHONE_3]]: +420 603 111 777
+

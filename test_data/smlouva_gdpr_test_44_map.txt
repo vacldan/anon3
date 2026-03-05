@@ -1,0 +1,47 @@
+OSOBY
+-----
+[[PERSON_1]]: Miroslav Černý
+[[PERSON_2]]: Patrik Král
+  - Patrika Krále
+  - Patrikem Králem
+[[PERSON_3]]: Jana Košťálová
+  - Janou Košťálovou
+  - Jany Košťálové
+[[PERSON_4]]: Tomáš Doležal
+  - Tomáše Doležala
+  - Tomášem Doležalem
+
+ADDRESS
+[[ADDRESS_1]]: Soudní 8, 110 00 Praha 1
+[[ADDRESS_2]]: Na Výsluní 21, 190 00 Praha 9
+[[ADDRESS_3]]: Dlouhá 9, 110 00 Praha 1
+[[ADDRESS_4]]: Na Skalce 4, 252 10 Mníšek pod Brdy
+
+BANK
+[[BANK_1]]: 889977665/0300
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 900404/2222
+[[BIRTH_ID_2]]: 880808/3456
+[[BIRTH_ID_3]]: 850101/6789
+
+DATE
+[[DATE_1]]: 04. 04. 1990
+[[DATE_2]]: 08. 08. 1988
+[[DATE_3]]: 01. 01. 1985
+[[DATE_4]]: 20. 5. 2026
+
+EMAIL
+[[EMAIL_1]]: miroslav.cerny@obhajci.cz
+[[EMAIL_2]]: patrik.kral@example.com
+[[EMAIL_3]]: jana.kostalova@example.org
+
+ICO
+[[ICO_1]]: 71588933
+
+PHONE
+[[PHONE_1]]: +420 602 999 000
+[[PHONE_2]]: +420 777 444 333
+[[PHONE_3]]: +420 605 111 222
+[[PHONE_4]]: +420 604 555 777
+

@@ -1,0 +1,43 @@
+OSOBY
+-----
+[[PERSON_1]]: Radim Štěrba
+[[PERSON_2]]: Michaela Kubová
+[[PERSON_3]]: Filip Novotný
+[[PERSON_4]]: Andrea Novotná
+[[PERSON_5]]: Vojtěch Novotný
+
+ADDRESS
+[[ADDRESS_1]]: Slunečná 3, 400 04 Ústí nad Labem
+[[ADDRESS_2]]: Digitální 9, 150 00 Praha 5
+[[ADDRESS_3]]: K Žernosekám 11, 400 04 Ústí nad Labem
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 130905/0015
+[[BIRTH_ID_2]]: 840130/4567
+[[BIRTH_ID_3]]: 821211/7890
+
+DATE
+[[DATE_1]]: 05. 09. 2013
+[[DATE_2]]: 30. 01. 1984
+[[DATE_3]]: 11. 12. 1982
+[[DATE_4]]: 30. 5. 2026
+
+EMAIL
+[[EMAIL_1]]: reditel@zsslunecna.cz
+[[EMAIL_2]]: michaela.kubova@edu-soft.cz
+[[EMAIL_3]]: andrea.novotna@example.com
+[[EMAIL_4]]: vojtech.novotny@example.org
+
+ICO
+[[ICO_1]]: 70888811
+[[ICO_2]]: 07554466
+
+PASSWORD
+[[PASSWORD_1]]: Slun3cna!2026
+[[PASSWORD_2]]: Fil1p2026
+
+PHONE
+[[PHONE_1]]: +420 475 123 456
+[[PHONE_2]]: +420 607 555 444
+[[PHONE_3]]: +420 603 444 222
+

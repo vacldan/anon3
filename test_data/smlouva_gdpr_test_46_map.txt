@@ -1,0 +1,34 @@
+OSOBY
+-----
+[[PERSON_1]]: Daniela Fořtová
+[[PERSON_2]]: Petr Havel
+  - Petra Havla
+  - Petrem Havlem
+[[PERSON_3]]: Klára Havelová
+  - Klárou Havelovou
+  - Kláry Havelové
+
+ADDRESS
+[[ADDRESS_1]]: U Stromu 2, 500 03 Hradec Králové
+[[ADDRESS_2]]: K Labi 9, 500 03 Hradec Králové
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 870718/4444
+[[BIRTH_ID_2]]: 210309/0006
+
+DATE
+[[DATE_1]]: 18. 07. 1987
+[[DATE_2]]: 09. 03. 2021
+[[DATE_3]]: 7. 6. 2026
+
+EMAIL
+[[EMAIL_1]]: reditelka@msustromu.cz
+[[EMAIL_2]]: petr.havel@example.com
+
+ICO
+[[ICO_1]]: 70992233
+
+PHONE
+[[PHONE_1]]: +420 495 222 333
+[[PHONE_2]]: +420 604 111 222
+

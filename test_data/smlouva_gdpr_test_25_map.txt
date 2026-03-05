@@ -1,0 +1,81 @@
+OSOBY
+-----
+[[PERSON_1]]: Petra Vlachová
+  - Petro Vlachová
+  - Petrou Vlachovou
+  - Petry Vlachové
+  - Petrě Vlachové
+[[PERSON_2]]: Marek Hrubeš
+  - Marka Hrubeša
+  - Markem Hrubešem
+  - Markovi Hrubešovi
+  - Marku Hrubeše
+[[PERSON_3]]: Oldřich Král
+  - Oldřicha Krála
+  - Oldřichem Králem
+  - Oldřichovi Královi
+[[PERSON_4]]: Monika Vaňková
+
+ADDRESS
+[[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_2]]: Dlouhá 190/27, 602 00 Brno
+[[ADDRESS_3]]: Jabloňová 1/11, 400 01 Ústí nad Labem
+[[ADDRESS_4]]: platnost 08/28, CVC
+[[ADDRESS_5]]: písemně na adresu Jabloňová 1/11, 400 01 Ústí nad Labem
+
+BANK
+[[BANK_1]]: 254200833/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 061222/4921
+[[BIRTH_ID_2]]: 600715/7267
+[[BIRTH_ID_3]]: 850804/9622
+[[BIRTH_ID_4]]: 010713/3276
+
+CARD
+[[CARD_1]]: 4785 2786 3201 6150
+
+DATE
+[[DATE_1]]: 06. 10. 1991
+[[DATE_2]]: 16. 04. 1986
+[[DATE_3]]: 08. 05. 1974
+[[DATE_4]]: 01. 03. 2001
+[[DATE_5]]: 24. 02. 2026
+
+EMAIL
+[[EMAIL_1]]: podatelna@novybrod.cz
+[[EMAIL_2]]: petra.vlachova@example.com
+[[EMAIL_3]]: marek.hrubes@example.com
+[[EMAIL_4]]: oldrich.kral@example.com
+[[EMAIL_5]]: monika.vankova@example.com
+
+IBAN
+[[IBAN_1]]: CZ46 5500 0000 5752 4704 0691
+
+ICO
+[[ICO_1]]: 00223344
+
+ID_CARD
+[[ID_CARD_1]]: 643474529
+
+IP
+[[IP_1]]: 94.162.5.212
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ76120
+[[LICENSE_PLATE_2]]: 3AA 2993
+[[LICENSE_PLATE_3]]: 0GA3511
+
+MAC
+[[MAC_1]]: 28:64:3F:3B:01:C7
+
+PASSWORD
+[[PASSWORD_1]]: Pe45!7164
+
+PHONE
+[[PHONE_1]]: +420 495 888 111
+[[PHONE_2]]: +420 685 927 883
+[[PHONE_3]]: +420 742 812 520
+[[PHONE_4]]: +420 634 655 101
+[[PHONE_5]]: +420 767 174 382
+

@@ -1,0 +1,81 @@
+OSOBY
+-----
+[[PERSON_1]]: Erik Novák
+  - Erika Nováka
+  - Erike Nováke
+  - Erikem Novákem
+  - Erikovi Novákovi
+[[PERSON_2]]: Václav Řezníček
+  - Václava Řezníčka
+  - Václave Řezníčku
+  - Václavem Řezníčkem
+  - Václavovi Řezníčkovi
+[[PERSON_3]]: Alžběta Svobodová
+  - Alžbětou Svobodovou
+  - Alžběty Svobodové
+  - Alžbětě Svobodové
+[[PERSON_4]]: Renata Řezníčková
+
+ADDRESS
+[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_2]]: Na Kopci 193/4, 100 00 Praha 10
+[[ADDRESS_3]]: Na Kopci 44/29, 100 00 Praha 10
+[[ADDRESS_4]]: platnost 08/28, CVC
+[[ADDRESS_5]]: písemně na adresu Na Kopci 44/29, 100 00 Praha 10
+
+BANK
+[[BANK_1]]: 662453659/0600
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 950816/5519
+[[BIRTH_ID_2]]: 970310/6245
+[[BIRTH_ID_3]]: 010308/6013
+[[BIRTH_ID_4]]: 851002/2450
+
+CARD
+[[CARD_1]]: 4662 7748 9769 7447
+
+DATE
+[[DATE_1]]: 11. 03. 2003
+[[DATE_2]]: 11. 05. 1991
+[[DATE_3]]: 09. 12. 1991
+[[DATE_4]]: 07. 07. 1971
+[[DATE_5]]: 24. 02. 2026
+
+EMAIL
+[[EMAIL_1]]: sekretariat@gymhradby.cz
+[[EMAIL_2]]: erik.novak@example.com
+[[EMAIL_3]]: vaclav.reznicek@example.com
+[[EMAIL_4]]: alzbeta.svobodova@example.com
+[[EMAIL_5]]: renata.reznickova@example.com
+
+IBAN
+[[IBAN_1]]: CZ75 0600 0000 3636 0529 5069
+
+ICO
+[[ICO_1]]: 12398745
+
+ID_CARD
+[[ID_CARD_1]]: 595671667
+
+IP
+[[IP_1]]: 144.249.106.221
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP60292
+[[LICENSE_PLATE_2]]: 5AZ 8076
+[[LICENSE_PLATE_3]]: 0GA6686
+
+MAC
+[[MAC_1]]: 38:C5:11:CD:80:95
+
+PASSWORD
+[[PASSWORD_1]]: Er83!6939
+
+PHONE
+[[PHONE_1]]: +420 596 111 222
+[[PHONE_2]]: +420 771 776 125
+[[PHONE_3]]: +420 689 954 592
+[[PHONE_4]]: +420 610 876 611
+[[PHONE_5]]: +420 661 961 465
+

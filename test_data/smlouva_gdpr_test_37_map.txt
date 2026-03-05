@@ -1,0 +1,42 @@
+OSOBY
+-----
+[[PERSON_1]]: Gabriela Štěpánová
+  - Gabriele Štěpánové
+  - Gabrielou Štěpánovou
+[[PERSON_2]]: Petra Svobodová
+[[PERSON_3]]: Tomáš Nguyen
+  - Tomášem Nguyenem
+  - Tomáši Nguyenovi
+
+ADDRESS
+[[ADDRESS_1]]: U Parku 8, 779 00 Olomouc
+[[ADDRESS_2]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_3]]: com a v listinné podobě na adresu U Parku 8, 779 00 Olomouc
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 900101/2222
+
+DATE
+[[DATE_1]]: 01. 01. 1990
+[[DATE_2]]: 25. 6. 2026
+
+EMAIL
+[[EMAIL_1]]: gabriela.stepanova@example.com
+[[EMAIL_2]]: podatelna@novybrod.cz
+[[EMAIL_3]]: tomas.nguyen@example.net
+[[EMAIL_4]]: petra.svobodova@example.com
+
+ID_CARD
+[[ID_CARD_1]]: 123456789
+
+IP
+[[IP_1]]: 85.95.12.34
+
+PASSWORD
+[[PASSWORD_1]]: Spis!2026
+
+PHONE
+[[PHONE_1]]: +420 603 987 654
+[[PHONE_2]]: +420 495 888 111
+[[PHONE_3]]: +420 605 444 555
+

@@ -1,0 +1,54 @@
+OSOBY
+-----
+[[PERSON_1]]: Iveta Konečná
+[[PERSON_2]]: František Kubíček
+  - Františka Kubíčka
+  - Františkem Kubíčkem
+[[PERSON_3]]: Jana Brázdová
+  - Janou Brázdovou
+  - Jany Brázdové
+[[PERSON_4]]: Pavel Richter
+  - Pavla Richtera
+  - Pavlem Richterem
+
+ADDRESS
+[[ADDRESS_1]]: Javorová 5, 779 00 Olomouc
+[[ADDRESS_2]]: Na Stráni 12, 779 00 Olomouc
+[[ADDRESS_3]]: vatele navštěvovali jeho bytovou jednotku Na Stráni 12, 779 00 Olomouc
+[[ADDRESS_4]]: Jabloňová 11, 779 00 Olomouc
+[[ADDRESS_5]]: Masarykova 3, 779 00 Olomouc
+
+BANK
+[[BANK_1]]: 1122334455/0800
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 420921/1234
+[[BIRTH_ID_2]]: 720217/3456
+[[BIRTH_ID_3]]: 691105/5678
+
+DATE
+[[DATE_1]]: 21. 09. 1942
+[[DATE_2]]: 17. 02. 1972
+[[DATE_3]]: 05. 11. 1969
+[[DATE_4]]: 10. 4. 2026
+
+EMAIL
+[[EMAIL_1]]: info@cssjavor.cz
+[[EMAIL_2]]: jana.brazdova@example.com
+
+ICO
+[[ICO_1]]: 25998877
+
+IP
+[[IP_1]]: 192.168.50.101
+[[IP_2]]: 10.0.1.22
+
+PASSWORD
+[[PASSWORD_1]]: Javor!2026
+
+PHONE
+[[PHONE_1]]: +420 585 111 444
+[[PHONE_2]]: +420 604 222 333
+[[PHONE_3]]: +420 603 777 888
+[[PHONE_4]]: +420 585 222 555
+

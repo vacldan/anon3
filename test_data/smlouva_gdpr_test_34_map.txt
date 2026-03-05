@@ -1,0 +1,53 @@
+OSOBY
+-----
+[[PERSON_1]]: Václav Svoboda
+  - Václava Svobody
+  - Václavem Svobodou
+  - Václavu Svobodovi
+[[PERSON_2]]: Petra Svobodová
+  - Petrou Svobodovou
+  - Petru Svobodovou
+  - Petře Svobodové
+[[PERSON_3]]: Lucie Malá
+  - Lucii Malé
+  - Lucií Malou
+[[PERSON_4]]: Tomáš Svoboda
+
+ADDRESS
+[[ADDRESS_1]]: Lázeňská 89, 602 00 Brno
+[[ADDRESS_2]]: Na Kopci 12, 100 00 Praha 10
+[[ADDRESS_3]]: Křenová 14, 602 00 Brno
+
+BANK
+[[BANK_1]]: 123456789/0100
+[[BANK_2]]: 987654321/0300
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 600530/1111
+[[BIRTH_ID_2]]: 901122/4567
+[[BIRTH_ID_3]]: 930909/7890
+[[BIRTH_ID_4]]: 880201/3210
+
+DATE
+[[DATE_1]]: 30. 05. 1960
+[[DATE_2]]: 22. 11. 1990
+[[DATE_3]]: 09. 09. 1993
+[[DATE_4]]: 01. 02. 1988
+[[DATE_5]]: 1. 7. 2026
+[[DATE_6]]: 10. 6. 2026
+
+EMAIL
+[[EMAIL_1]]: info@domovharmonie.cz
+[[EMAIL_2]]: petra.svobodova@example.com
+[[EMAIL_3]]: lucie.mala@example.org
+
+ICO
+[[ICO_1]]: 66770011
+
+PHONE
+[[PHONE_1]]: +420 541 222 333
+[[PHONE_2]]: +420 602 333 444
+[[PHONE_3]]: +420 603 987 654
+[[PHONE_4]]: +420 605 444 555
+[[PHONE_5]]: +420 602 111 222
+

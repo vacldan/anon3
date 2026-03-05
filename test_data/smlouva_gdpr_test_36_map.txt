@@ -1,0 +1,46 @@
+OSOBY
+-----
+[[PERSON_1]]: Igor Vraný
+[[PERSON_2]]: Renata Slámová
+  - Renatě Slámové
+[[PERSON_3]]: Sabina Nedvědová
+  - Sabině Nedvědové
+
+ADDRESS
+[[ADDRESS_1]]: Serverová 22, 639 00 Brno
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 800403/5678
+[[BIRTH_ID_2]]: 930630/7890
+[[BIRTH_ID_3]]: 840308/6789
+
+DATE
+[[DATE_1]]: 03. 04. 1980
+[[DATE_2]]: 1. 7. 2026
+[[DATE_3]]: 30. 6. 2029
+[[DATE_4]]: 20. 6. 2026
+
+EMAIL
+[[EMAIL_1]]: dpo@knjih.cz
+[[EMAIL_2]]: igor.vrany@healthit.cz
+[[EMAIL_3]]: sabina.nedvedova@example.com
+
+ICO
+[[ICO_1]]: 44550011
+[[ICO_2]]: 87654321
+
+IP
+[[IP_1]]: 185.22.33.44
+[[IP_2]]: 192.168.11.22
+
+MAC
+[[MAC_1]]: 00:11:22:33:44:55
+
+PASSWORD
+[[PASSWORD_1]]: NIS!Adm1n2026
+
+PHONE
+[[PHONE_1]]: +420 477 111 222
+[[PHONE_2]]: +420 608 444 777
+[[PHONE_3]]: +420 731 444 555
+

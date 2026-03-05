@@ -1,0 +1,46 @@
+OSOBY
+-----
+[[PERSON_1]]: Štěpán Hrubeš
+[[PERSON_2]]: Veronika Lacinová
+  - Veronice Lacinové
+  - Veronikou Lacinovou
+  - Veroniky Lacinové
+[[PERSON_3]]: Nikol Šťastná
+  - Nikol Šťastnou
+  - Nikol Šťastné
+
+ADDRESS
+[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_2]]: U Lesa 9, 530 02 Pardubice
+[[ADDRESS_3]]: Na Návsi 6, 789 01 Zábřeh
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 940212/7890
+[[BIRTH_ID_2]]: 100202/0005
+
+DATE
+[[DATE_1]]: 12. 02. 1994
+[[DATE_2]]: 02. 02. 2010
+[[DATE_3]]: 30. 6. 2028
+[[DATE_4]]: 6. 6. 2026
+
+EMAIL
+[[EMAIL_1]]: sekretariat@gymhradby.cz
+[[EMAIL_2]]: veronika.lacinova@example.com
+
+ICO
+[[ICO_1]]: 12398745
+
+ID_CARD
+[[ID_CARD_1]]: 987654321
+
+IP
+[[IP_1]]: 85.95.12.34
+
+PASSWORD
+[[PASSWORD_1]]: Sk0la!2026
+
+PHONE
+[[PHONE_1]]: +420 596 111 222
+[[PHONE_2]]: +420 605 123 456
+

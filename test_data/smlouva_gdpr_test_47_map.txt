@@ -1,0 +1,38 @@
+OSOBY
+-----
+[[PERSON_1]]: Alena Krátká
+[[PERSON_2]]: Roman Jílek
+[[PERSON_3]]: Martin Řehoř
+  - Martina Řehoře
+  - Martinem Řehořem
+[[PERSON_4]]: Jana Dvořáčková
+  - Janou Dvořáčkovou
+  - Jany Dvořáčkové
+
+ADDRESS
+[[ADDRESS_1]]: Zdravotní 10, 602 00 Brno
+[[ADDRESS_2]]: Průmyslová 77, 627 00 Brno
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 860214/3210
+[[BIRTH_ID_2]]: 900929/7890
+
+DATE
+[[DATE_1]]: 14. 02. 1986
+[[DATE_2]]: 29. 09. 1990
+[[DATE_3]]: 15. 6. 2026
+
+EMAIL
+[[EMAIL_1]]: info@mediprac.cz
+[[EMAIL_2]]: roman.jilek@strojirny-morava.cz
+[[EMAIL_3]]: jana.dvorackova@example.com
+
+ICO
+[[ICO_1]]: 26223344
+[[ICO_2]]: 25566789
+
+PHONE
+[[PHONE_1]]: +420 543 111 888
+[[PHONE_2]]: +420 602 333 999
+[[PHONE_3]]: +420 604 555 333
+
