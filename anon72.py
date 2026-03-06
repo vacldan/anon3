@@ -66,6 +66,9 @@ def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
                 'Alice', 'Krista', 'Antonie', 'Nadie', 'Vito', 'Marco', 'Methoděj',
                 'Martina', 'Nikol', 'Nikola',
                 'Vlasta', 'Lenora', 'Žanina', 'Rene', 'Pavla', 'Iva', 'Alex', 'Max',
+                # Zdrobněliny a neformální jména chybějící v knihovně
+                'Olda', 'Míla', 'Miloš', 'Standa', 'Jarda', 'Franta', 'Pepa',
+                'Honza', 'Vašek', 'Jirka', 'Zdeněk', 'Věra', 'Slávek', 'Ota',
             }
             names.update(missing_names)
 
@@ -184,10 +187,11 @@ def _male_genitive_to_nominative(obs: str) -> Optional[str]:
             if cand_with_o.lower() in CZECH_FIRST_NAMES or cand.lower() in foreign_o_names:
                 return cand_with_o.capitalize()
 
-        # Jména končící na -a: Oldovi → Old → Olda
+        # Jména končící na -a: Oldovi → Old → Olda, Honzovi → Honz → Honza, atd.
         if len(cand) >= 2:
             cand_with_a = cand + 'a'
-            common_a_names = {'old', 'jir', 'kub', 'ondr'}
+            # Mužská jména na -a: Olda, Honza, Jirka, Standa, Franta, Pepa, Míla, Vašek→Vaška
+            common_a_names = {'old', 'jir', 'kub', 'ondr', 'honz', 'stand', 'frant', 'pep', 'míl', 'jirk'}
             if cand_with_a.lower() in CZECH_FIRST_NAMES or cand.lower() in common_a_names:
                 return cand_with_a.capitalize()
 
@@ -1254,11 +1258,13 @@ def variants_for_first(first: str) -> set:
     V = {f, f.lower(), f.capitalize()}
     low = f.lower()
 
-    # ========== Ženská jména končící na -a ==========
+    # ========== Jména končící na -a (ženská i mužská: Eva, Petra, Olda, Honza, Jirka) ==========
     if low.endswith('a'):
         stem = f[:-1]
         # Základní pády: Gen/Dat/Akuz/Vok/Lok/Instr
         V |= {stem+'y', stem+'e', stem+'ě', stem+'u', stem+'ou', stem+'o'}
+        # Mužský dativ/lokál pro maskulina na -a (Olda→Oldovi, Honza→Honzovi, Jirka→Jirkovi)
+        V.add(stem+'ovi')
 
         # Přivlastňovací přídavná jména (Janin dům, Petřina kniha)
         V |= {stem+s for s in ['in','ina','iny','iné','inu','inou','iným','iných','ino']}
@@ -1643,10 +1649,10 @@ PHONE_RE = re.compile(
     r')'
     r'(?:tel\.?|telefon|mobil|GSM)?\s*:?\s*'  # Volitelný prefix (MIMO capture group!)
     r'('  # START capture group - jen samotné číslo
-    r'\+420\s?\d{3}\s?\d{3}\s?\d{3}|'  # +420 xxx xxx xxx
-    r'\+420\s?\d{3}\s?\d{2}\s?\d{2}\s?\d{2}|'  # +420 xxx xx xx xx
-    r'(?<!\d)\d{3}\s?\d{3}\s?\d{3}(?!\s*(?:Kč|EUR|USD|CZK)\b)(?!\d)|'  # xxx xxx xxx (NE pokud následuje měna!)
-    r'(?<!\d)\d{3}\s?\d{2}\s?\d{2}\s?\d{2}(?!\d)'  # xxx xx xx xx
+    r'\+420[\s\xa0]*\d{3}[\s\xa0]*\d{3}[\s\xa0]*\d{3}|'  # +420 xxx xxx xxx (podporuje víceré mezery i NBSP)
+    r'\+420[\s\xa0]*\d{3}[\s\xa0]*\d{2}[\s\xa0]*\d{2}[\s\xa0]*\d{2}|'  # +420 xxx xx xx xx
+    r'(?<!\d)\d{3}[\s\xa0]?\d{3}[\s\xa0]?\d{3}(?![\s\xa0]*(?:Kč|EUR|USD|CZK)\b)(?!\d)|'  # xxx xxx xxx (NE pokud následuje měna!)
+    r'(?<!\d)\d{3}[\s\xa0]?\d{2}[\s\xa0]?\d{2}[\s\xa0]?\d{2}(?!\d)'  # xxx xx xx xx
     r')',  # END capture group
     re.IGNORECASE
 )
@@ -1913,7 +1919,12 @@ class Anonymizer:
             orig_norm = re.sub(r'^(?:Sídlo(?:\s+podnikání)?|Trvalé\s+bydliště|Trvalý\s+pobyt|Bydliště|Adresa|Na\s+adrese|Místo\s+podnikání|Se\s+sídlem|Bytem)\s*:\s*', '', orig_norm, flags=re.IGNORECASE)
             # Odstraň prefix bez dvojtečky na začátku - MUSÍ pokrývat všechny prefixy z ADDRESS_RE
             # DŮLEŽITÉ: "bytem" může být přímo nalepené na adresu (bytemRevoluční) → \s* místo \s+
-            orig_norm = re.sub(r'^(?:trvale\s+bytem|se\s+sídlem|na\s+adresu|na\s+adrese|adrese|adresa|adresy|adresu|bytem|bydlišti|sídle|v\s+ulic[ií]|na\s+ulici|v\s+dom[eě])\s*', '', orig_norm, flags=re.IGNORECASE)
+            # DŮLEŽITÉ: Použij opakovanou aplikaci (loop) pro případ vícenásobných prefixů
+            for _ in range(3):  # Max 3 iterace pro vnořené prefixy
+                orig_before = orig_norm
+                orig_norm = re.sub(r'^(?:trvale[\s\xa0]+bytem|se[\s\xa0]+sídlem|na[\s\xa0]+adresu|na[\s\xa0]+adrese|adrese|adresa|adresy|adresu|bytem|bydlišti|sídle|v[\s\xa0]+ulic[ií]|na[\s\xa0]+ulici|v[\s\xa0]+dom[eě])[\s\xa0:]*', '', orig_norm, flags=re.IGNORECASE)
+                if orig_norm == orig_before:
+                    break
 
         # OPTIMIZATION: Use reverse_map for O(1) lookup instead of O(n) iteration
         # Check if this variant already exists
@@ -2213,10 +2224,16 @@ class Anonymizer:
                 'manager', 'director', 'chief', 'officer',
                 'vyšetřující', 'vyšetřovatel', 'lékař', 'doktor', 'sestra',
                 # Nekontrolované / nesmyslné detekce
-                'prosím',  # "Prosím David" = zdvořilostní obrat, ne jméno!
-                'firma',   # "Firma Horáková" = reference na firmu, ne osoba!
+                'prosím', 'firma',
                 # Role a pozice (ne jména)
-                'services', 'risk', 'account', 'senior', 'developer', 'architect'
+                'services', 'risk', 'account', 'senior', 'developer', 'architect',
+                # České běžné slova
+                'služba', 'způsob', 'smlouva', 'dohoda',
+                # Anglická technická slova
+                'forensic', 'logging', 'standard', 'advanced', 'sconto', 'bolton',
+                'react', 'contractual', 'compliance',
+                # Česká města (skloněné tvary)
+                'českých', 'budějovicích', 'budějovic',
             }
 
             combined = f"{first} {last}".lower()
@@ -2320,6 +2337,9 @@ class Anonymizer:
             'blanka', 'jitka', 'ivana', 'monika', 'soňa', 'drahomíra',
             'růžena', 'libuše', 'milada', 'anežka', 'hedvika', 'květoslava',
             'laura', 'alois', 'alice', 'krista', 'antonie', 'nadie', 'vito', 'marco',
+            # Zdrobněliny a neformální jména
+            'olda', 'míla', 'standa', 'jarda', 'franta', 'pepa',
+            'honza', 'vašek', 'jirka', 'slávek', 'ota',
         }
 
         # Všechny ignore_words pro rychlé ověření (budeme je potřebovat v obou handlerech)
@@ -2595,6 +2615,16 @@ class Anonymizer:
             'ventures', 'credo', 'mayo', 'clinic', 'met', 'london',
             'avenue', 'contractual', 'plánovaná', 'diagno',
             'cisco', 'processing', 'notářská',
+            # Další anglická technická slova
+            'forensic', 'logging', 'monitoring', 'reporting', 'testing',
+            'compliance', 'sconto', 'bolton', 'advanced',
+            # České běžné slova (ne jména)
+            'služba', 'způsob', 'metoda', 'systém', 'proces',
+            'projekt', 'předmět', 'plnění', 'rozsah', 'podmínky',
+            'firma',
+            # Česká města - skloněné tvary
+            'českých', 'budějovicích', 'budějovic', 'budějovice',
+            'karlových', 'varech', 'králové', 'hradci',
             # Zdravotnictví + Léky/Produkty
             'nemocnice', 'poliklinika', 'polikliniek', 'nemocniec',
             'healthcare', 'symbicort', 'turbuhaler', 'spirometr',
@@ -3138,7 +3168,18 @@ class Anonymizer:
                 'prosím',  # "Prosím David" = zdvořilostní obrat, ne jméno!
                 'firma',   # "Firma Horáková" = reference na firmu, ne osoba!
                 # Role a pozice (ne jména)
-                'services', 'risk', 'account', 'senior', 'developer', 'architect'
+                'services', 'risk', 'account', 'senior', 'developer', 'architect',
+                # České běžné slova (ne jména)
+                'služba', 'způsob', 'metoda', 'systém', 'proces', 'projekt',
+                'smlouva', 'dohoda', 'předmět', 'plnění', 'rozsah', 'podmínky',
+                # Anglická technická slova
+                'forensic', 'logging', 'monitoring', 'reporting', 'testing',
+                'standard', 'advanced', 'basic', 'premium', 'enterprise',
+                'sconto', 'bolton', 'react', 'contractual', 'compliance',
+                # Česká města (skloněné tvary)
+                'českých', 'budějovicích', 'budějovic', 'budějovice',
+                'karlových', 'varech', 'králové', 'hradci',
+                'ústí', 'labem', 'orlicí',
             }
 
             # Kontrola, zda hodnota obsahuje blacklist slovo (whole-word match)
@@ -3147,6 +3188,20 @@ class Anonymizer:
             for word in critical_blacklist:
                 if word in combined_parts:
                     return match.group(0)  # Není osoba
+
+            # 1b. Blacklist pro celé 2-slovné fráze (název firem, produktů, měst)
+            two_word_blacklist = {
+                'react advanced', 'standard contractual', 'forensic logging',
+                'sconto bolton', 'crescendo capital', 'služba způsob',
+                'českých budějovicích', 'českých budějovic', 'české budějovice',
+                'karlových varech', 'karlovy vary', 'hradci králové',
+                'hradec králové', 'ústí labem', 'ústí orlicí',
+                'nový jičín', 'nové město', 'staré město',
+                'mladá boleslav', 'mladé boleslavi',
+                'firma horák', 'firma horáková',
+            }
+            if combined in two_word_blacklist:
+                return match.group(0)  # Není osoba
 
             # 2. Rozšířený ignore list (původní)
             ignore_words = {
@@ -3416,6 +3471,16 @@ class Anonymizer:
                 'ventures', 'credo', 'mayo', 'clinic', 'met', 'london',
                 'avenue', 'contractual', 'plánovaná', 'diagno',
                 'cisco', 'processing', 'notářská',
+                # Další anglická technická slova
+                'forensic', 'logging', 'monitoring', 'reporting', 'testing',
+                'compliance', 'sconto', 'bolton', 'advanced',
+                # České běžné slova (ne jména)
+                'služba', 'způsob', 'metoda', 'systém', 'proces',
+                'projekt', 'předmět', 'plnění', 'rozsah', 'podmínky',
+                'firma',
+                # Česká města - skloněné tvary
+                'českých', 'budějovicích', 'budějovic', 'budějovice',
+                'karlových', 'varech', 'králové', 'hradci',
                 # Zdravotnictví + Léky/Produkty
                 'nemocnice', 'poliklinika', 'polikliniek', 'nemocniec',
                 'healthcare', 'symbicort', 'turbuhaler', 'spirometr',
@@ -3932,9 +3997,18 @@ class Anonymizer:
                 # Religious/Place names
                 r'\b(svat[éého]|svatá)\b',  # Svaté, Svatého, Svatá (Saint)
                 r'\b(kostel|chrám|kaple|církev)\b',  # Church, temple, chapel
-                # Czech cities and places
+                # Czech cities and places (all declension forms!)
                 r'\b(nový\s+jičín|nové\s+město|staré\s+město)\b',
-                r'\b(mladá\s+boleslav|české\s+budějovice|hradec\s+králové|hradci\s+králové)\b',
+                r'\b(mladá\s+boleslav|mladé\s+boleslavi|mladou\s+boleslaví)\b',
+                r'\b(české\s+budějovice|českých\s+budějovic(?:ích)?|českými\s+budějovicemi)\b',
+                r'\b(hradec\s+králové|hradci\s+králové|hradce\s+králové)\b',
+                r'\b(ústí\s+(?:nad\s+)?labem|ústí\s+(?:nad\s+)?orlicí)\b',
+                r'\b(karlovy\s+vary|karlových\s+varech|karlovými\s+vary)\b',
+                # Forensic/tech terms (anglické technické termíny)
+                r'\b(forensic|logging|monitoring|reporting|testing|compliance)\b',
+                r'\b(react|contractual|sconto|bolton)\b',
+                # České běžné slova nesmí být jména
+                r'\b(služba|způsob|metoda|proces|projekt|rozsah|podmínky)\b',
                 # Company suffixes když jsou uprostřed
                 r'\b(group|company|corp|ltd|gmbh|inc|services?)\b'
             ]
@@ -5654,6 +5728,44 @@ class Anonymizer:
                         if text != original:
                             para.text = text
 
+        # Zpracuj záhlaví a zápatí (headers/footers) - DŮLEŽITÉ pro kompletní anonymizaci
+        try:
+            _hf_processed = set()  # Deduplicate linked headers/footers
+            for section in doc.sections:
+                for header_footer in [section.header, section.footer]:
+                    if not header_footer:
+                        continue
+                    # Skip already-processed linked headers/footers
+                    hf_id = id(header_footer._element)
+                    if hf_id in _hf_processed:
+                        continue
+                    _hf_processed.add(hf_id)
+                    for para in header_footer.paragraphs:
+                        if not para.text.strip():
+                            continue
+                        original = para.text
+                        self.source_text += '\n' + original
+                        text = self.anonymize_entities(original)
+                        text = self._apply_known_people(text)
+                        text = self._replace_remaining_people(text)
+                        if text != original:
+                            para.text = text
+                    for table in header_footer.tables:
+                        for row in table.rows:
+                            for cell in row.cells:
+                                for para in cell.paragraphs:
+                                    if not para.text.strip():
+                                        continue
+                                    original = para.text
+                                    self.source_text += '\n' + original
+                                    text = self.anonymize_entities(original)
+                                    text = self._apply_known_people(text)
+                                    text = self._replace_remaining_people(text)
+                                    if text != original:
+                                        para.text = text
+        except Exception as e:
+            print(f"  [WARN] Header/footer processing skipped: {e}")
+
         # POST-PROCESSING: Deduplicate persons AFTER all extraction (including tables)
         tag_remap = self._deduplicate_persons()
 
@@ -5677,6 +5789,21 @@ class Anonymizer:
                                 text = text.replace(old_tag, new_tag)
                             if text != original:
                                 para.text = text
+            # Apply remap to headers/footers too
+            try:
+                for section in doc.sections:
+                    for hf in [section.header, section.footer]:
+                        if not hf:
+                            continue
+                        for para in hf.paragraphs:
+                            original = para.text
+                            text = original
+                            for old_tag, new_tag in tag_remap.items():
+                                text = text.replace(old_tag, new_tag)
+                            if text != original:
+                                para.text = text
+            except Exception:
+                pass
             print(f"  [DEDUP] Tag remap applied successfully")
 
         # Ulož dokument
@@ -5900,7 +6027,12 @@ class Anonymizer:
                 continue  # Skip PERSON - already handled in canonical_persons
             for idx, (original, variants) in enumerate(entities.items(), 1):
                 # VALIDACE: Přidej jen entity které existují ve zdrojovém dokumentu
-                if original in source_text:
+                # BIRTH_ID: Normalizace přidává lomítko (850123/1234), ale zdroj může mít tvar bez něj
+                in_source = original in source_text
+                if not in_source and typ == 'BIRTH_ID' and '/' in original:
+                    # Zkus i tvar bez lomítka
+                    in_source = original.replace('/', '') in source_text
+                if in_source:
                     json_data["entities"].append({
                         "type": typ,
                         "label": f"[[{typ}_{idx}]]",
@@ -5941,7 +6073,11 @@ class Anonymizer:
                     # a přeskakujeme ty, které nejsou v source_text. Tím zajistíme konzistentní labely.
                     has_any = False
                     for idx, (original, variants) in enumerate(entities.items(), 1):
-                        if original in source_text:
+                        # BIRTH_ID: Normalizace přidává lomítko, ale zdroj může mít tvar bez něj
+                        in_source = original in source_text
+                        if not in_source and typ == 'BIRTH_ID' and '/' in original:
+                            in_source = original.replace('/', '') in source_text
+                        if in_source:
                             if not has_any:
                                 f.write(f"{typ}\n")
                                 has_any = True
