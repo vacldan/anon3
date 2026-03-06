@@ -84,7 +84,7 @@ ADDRESS
 [[ADDRESS_2]]: Dlouhá 15, Brno 602 00
 [[ADDRESS_3]]: Lidická 47/9, Plzeň 301 00
 [[ADDRESS_4]]: Na Výšinách 128, Ostrava 708 00
-[[ADDRESS_5]]: trvale bytem Krátká 5, Liberec 460 01
+[[ADDRESS_5]]: Krátká 5, Liberec 460 01
 [[ADDRESS_6]]: Stromová 67/3, Olomouc 779 00
 [[ADDRESS_7]]: Zahradní 19, Pardubice 530 02
 [[ADDRESS_8]]: Polní 34, Hradec Králové 500 02
@@ -106,7 +106,6 @@ BIRTH_ID
 [[BIRTH_ID_4]]: 945612/3344
 [[BIRTH_ID_5]]: 756028/9012
 [[BIRTH_ID_6]]: 800512/6543
-[[BIRTH_ID_7]]: 445566778
 [[BIRTH_ID_8]]: 625418/7890
 [[BIRTH_ID_9]]: 910825/4321
 [[BIRTH_ID_10]]: 880407/5566

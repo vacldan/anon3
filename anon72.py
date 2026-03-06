@@ -1492,7 +1492,8 @@ ADDRESS_RE = re.compile(
         r'(?:'
             r'(?:(?:trvale\s+)?bytem\s+|'
             r'(?:trvalé\s+)?bydlišt[eě]\s*:\s*|'
-            r'(?:sídlo(?:\s+podnikání)?|se\s+sídlem)\s*:\s*|'
+            r'(?:sídlo(?:\s+podnikání)?)\s*:\s*|'
+            r'se\s+sídlem\s*:?\s*|'
             r'(?:místo\s+podnikání)\s*:\s*|'
             r'(?:adresa|trvalý\s+pobyt|na\s+adrese)\s*:\s*|'
             r'(?:na\s+adresu|adresy|adresu)\s+|'
@@ -1911,7 +1912,8 @@ class Anonymizer:
             # Odstraň prefix s dvojtečkou (Sídlo:, Adresa:, Na adrese:, atd.)
             orig_norm = re.sub(r'^(?:Sídlo(?:\s+podnikání)?|Trvalé\s+bydliště|Trvalý\s+pobyt|Bydliště|Adresa|Na\s+adrese|Místo\s+podnikání|Se\s+sídlem|Bytem)\s*:\s*', '', orig_norm, flags=re.IGNORECASE)
             # Odstraň prefix bez dvojtečky na začátku - MUSÍ pokrývat všechny prefixy z ADDRESS_RE
-            orig_norm = re.sub(r'^(?:trvale\s+bytem|na\s+adresu|na\s+adrese|adrese|adresa|adresy|adresu|bytem|bydlišti|sídle|v\s+ulic[ií]|na\s+ulici|v\s+dom[eě])\s+', '', orig_norm, flags=re.IGNORECASE)
+            # DŮLEŽITÉ: "bytem" může být přímo nalepené na adresu (bytemRevoluční) → \s* místo \s+
+            orig_norm = re.sub(r'^(?:trvale\s+bytem|se\s+sídlem|na\s+adresu|na\s+adrese|adrese|adresa|adresy|adresu|bytem|bydlišti|sídle|v\s+ulic[ií]|na\s+ulici|v\s+dom[eě])\s*', '', orig_norm, flags=re.IGNORECASE)
 
         # OPTIMIZATION: Use reverse_map for O(1) lookup instead of O(n) iteration
         # Check if this variant already exists
@@ -4594,12 +4596,20 @@ class Anonymizer:
         # 15. TELEFONY (po ID_CARD a VS, ale PŘED částkami!)
         def replace_phone(match):
             phone_val = match.group(1)
+            # Čísla s +420 prefixem jsou VŽDY telefony - nefiltruj!
+            if phone_val.startswith('+420'):
+                return self._get_or_create_label('PHONE', phone_val)
             start_pos = match.start()
             ctx = text[max(0, start_pos - 60):start_pos].lower()
-            # Filtruj false positives: čísla pojištěnců, průkazů (ZTP/P)
+            # Filtruj false positives: čísla pojištěnců, průkazů ZTP/P
+            # DŮLEŽITÉ: 'průkaz' samotný je příliš široký (chytá "řidičský průkaz")
+            # Proto kontrolujeme specifické kontexty: ZTP průkaz, průkaz pojištěnce
             insurance_kws = ['pojištěnc', 'pojistenec', 'pojištěnk', 'pojistenk',
                              'vzp', 'ozp', 'čpzp', 'zpš', 'zpmv',
-                             'ztp', 'průkaz', 'prukaz', 'číslo průkazu', 'cislo prukazu']
+                             'ztp', 'průkaz pojištěnc', 'prukaz pojistenc',
+                             'průkaz ztp', 'prukaz ztp',
+                             'číslo průkazu', 'cislo prukazu',
+                             'číslo pojištěnc', 'cislo pojistenc']
             if any(kw in ctx for kw in insurance_kws):
                 return match.group(0)
             return self._get_or_create_label('PHONE', phone_val)
@@ -5927,16 +5937,19 @@ class Anonymizer:
                 if typ == 'PERSON':
                     continue  # Skip PERSON - already handled in OSOBY section
                 if entities:
-                    # Filter entities the same way as JSON to ensure consistency
-                    filtered_entities = [(original, variants) for original, variants in entities.items()
-                                         if original in source_text]
-                    if filtered_entities:
-                        f.write(f"{typ}\n")
-                        for idx, (original, variants) in enumerate(filtered_entities, 1):
+                    # DŮLEŽITÉ: Používáme stejné indexování jako JSON mapa - enumerate přes VŠECHNY entity
+                    # a přeskakujeme ty, které nejsou v source_text. Tím zajistíme konzistentní labely.
+                    has_any = False
+                    for idx, (original, variants) in enumerate(entities.items(), 1):
+                        if original in source_text:
+                            if not has_any:
+                                f.write(f"{typ}\n")
+                                has_any = True
                             label = f"[[{typ}_{idx}]]"
                             # Pro citlivá data zobraz jen ***REDACTED*** bez čísla
                             display_value = "***REDACTED***" if original.startswith("***REDACTED_") else original
                             f.write(f"{label}: {display_value}\n")
+                    if has_any:
                         f.write("\n")
 
         # PDF report (volitelný)

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:48:47.132589",
+  "generated_at": "2026-03-06T07:35:56.189000",
   "source_file": "smlouva28.docx",
   "entities": [
     {
@@ -78,13 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Říhovi",
+      "original": "Říha",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Říha",
+      "original": "Říhovi",
       "occurrences": 1
     },
     {
@@ -156,14 +156,32 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_18]]",
+      "original": "Sára Kubíková",
+      "occurrences": 0
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_18]]",
       "original": "Sáry Kubíkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_19]]",
+      "original": "Matěj Kubík",
+      "occurrences": 0
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_19]]",
       "original": "Matěje Kubíka",
       "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_20]]",
+      "original": "Miroslav Kubík",
+      "occurrences": 0
     },
     {
       "type": "PERSON",
@@ -186,13 +204,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_23]]",
-      "original": "Sedlákovi",
-      "occurrences": 1
+      "original": "Bohumil Sedlák",
+      "occurrences": 0
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_23]]",
       "original": "Bohumila Sedláka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_23]]",
+      "original": "Sedlákovi",
       "occurrences": 1
     },
     {
@@ -246,13 +270,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_30]]",
-      "original": "Pokorné",
-      "occurrences": 1
+      "original": "Dana Pokorná",
+      "occurrences": 0
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_30]]",
       "original": "Dany Pokorné",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_30]]",
+      "original": "Pokorné",
       "occurrences": 1
     },
     {
@@ -278,6 +308,12 @@
       "label": "[[PERSON_34]]",
       "original": "Blanka Nováková",
       "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_35]]",
+      "original": "Klára Součková",
+      "occurrences": 0
     },
     {
       "type": "PERSON",
@@ -416,6 +452,12 @@
       "label": "[[PERSON_57]]",
       "original": "Svatomír Novák",
       "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_58]]",
+      "original": "Ondřej Málek",
+      "occurrences": 0
     },
     {
       "type": "PERSON",
@@ -685,12 +727,6 @@
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_1]]",
       "original": "820714/9234",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_2]]",
-      "original": "887799001",
       "occurrences": 1
     },
     {
@@ -1140,36 +1176,42 @@
     {
       "type": "PHONE",
       "label": "[[PHONE_4]]",
-      "original": "+420 608 321 654",
+      "original": "+420 725 654 321",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_5]]",
-      "original": "+420 736 789 012",
+      "original": "+420 608 321 654",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_6]]",
-      "original": "+420 605 432 789",
+      "original": "+420 736 789 012",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_7]]",
-      "original": "+420 721 456 789",
+      "original": "+420 605 432 789",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_8]]",
-      "original": "+420 608 789 456",
+      "original": "+420 721 456 789",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_9]]",
+      "original": "+420 608 789 456",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_10]]",
       "original": "+420 731 654 987",
       "occurrences": 1
     },

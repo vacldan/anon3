@@ -70,8 +70,7 @@ OSOBY
 [[PERSON_53]]: Ilona Petráková
 [[PERSON_54]]: Alois Kopecký
 [[PERSON_55]]: Gita Procházková
-[[PERSON_56]]: Blažej Sýkor
-  - Blažej Sýkora
+[[PERSON_56]]: Blažej Sýkora
 [[PERSON_57]]: Světlana Dvořáková
 [[PERSON_58]]: Antonín Beneš
 [[PERSON_59]]: Libuše Vaňková
@@ -93,7 +92,7 @@ ADDRESS
 [[ADDRESS_2]]: Nemovitost na adrese Slezská 67, Opava 746 01
 [[ADDRESS_3]]: Mánesova 89/12, Chomutov 430 01
 [[ADDRESS_4]]: Tylova 34/6, Karlovy Vary 360 01
-[[ADDRESS_5]]: bytemRevoluční 67/9, Děčín 405 02
+[[ADDRESS_5]]: Revoluční 67/9, Děčín 405 02
 [[ADDRESS_6]]: Krátká 23, Most 434 01
 [[ADDRESS_7]]: Sadová 56/3, Kladno 272 01
 [[ADDRESS_8]]: Polní 12, Trutnov 541 01
@@ -219,11 +218,13 @@ INSURANCE_ID
 PHONE
 [[PHONE_1]]: +420 602 147 258
 [[PHONE_2]]: +420 775 369 147
-[[PHONE_3]]: +420 731 456 789
-[[PHONE_4]]: +420 605 147 258
-[[PHONE_5]]: +420 736 258 147
-[[PHONE_6]]: +420 731 258 369
-[[PHONE_7]]: +420 608 147 258
-[[PHONE_8]]: +420 602 369 147
-[[PHONE_9]]: +420 731 147 258
+[[PHONE_3]]: +420 608 258 369
+[[PHONE_4]]: +420 731 456 789
+[[PHONE_5]]: +420 721 369 258
+[[PHONE_6]]: +420 605 147 258
+[[PHONE_7]]: +420 736 258 147
+[[PHONE_8]]: +420 731 258 369
+[[PHONE_9]]: +420 608 147 258
+[[PHONE_10]]: +420 602 369 147
+[[PHONE_11]]: +420 731 147 258
 

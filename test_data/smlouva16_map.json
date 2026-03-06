@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:48:18.372330",
+  "generated_at": "2026-03-06T07:37:30.217263",
   "source_file": "smlouva16.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Novák",
+      "original": "Tomáše Nováka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Tomáše Nováka",
+      "original": "Novák",
       "occurrences": 1
     },
     {

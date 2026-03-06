@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:48:50.546052",
+  "generated_at": "2026-03-06T07:33:45.298606",
   "source_file": "smlouva29.docx",
   "entities": [
     {
@@ -162,6 +162,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_19]]",
+      "original": "Emílie Tesařová",
+      "occurrences": 0
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_19]]",
       "original": "Emílie Tesařové",
       "occurrences": 1
     },
@@ -176,6 +182,12 @@
       "label": "[[PERSON_21]]",
       "original": "Metoděj Strnad",
       "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_22]]",
+      "original": "Cecílie Nová",
+      "occurrences": 0
     },
     {
       "type": "PERSON",
@@ -294,6 +306,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_38]]",
+      "original": "Izabel Kolářová",
+      "occurrences": 0
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_38]]",
       "original": "Izabelu Kolářovou",
       "occurrences": 1
     },
@@ -403,12 +421,6 @@
       "type": "PERSON",
       "label": "[[PERSON_55]]",
       "original": "Gita Procházková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_56]]",
-      "original": "Blažej Sýkor",
       "occurrences": 1
     },
     {
@@ -540,7 +552,7 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "bytemRevoluční 67/9, Děčín 405 02",
+      "original": "Revoluční 67/9, Děčín 405 02",
       "occurrences": 1
     },
     {
@@ -1122,42 +1134,54 @@
     {
       "type": "PHONE",
       "label": "[[PHONE_3]]",
-      "original": "+420 731 456 789",
+      "original": "+420 608 258 369",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_4]]",
-      "original": "+420 605 147 258",
+      "original": "+420 731 456 789",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_5]]",
-      "original": "+420 736 258 147",
+      "original": "+420 721 369 258",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_6]]",
-      "original": "+420 731 258 369",
+      "original": "+420 605 147 258",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_7]]",
-      "original": "+420 608 147 258",
+      "original": "+420 736 258 147",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_8]]",
-      "original": "+420 602 369 147",
+      "original": "+420 731 258 369",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_9]]",
+      "original": "+420 608 147 258",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_10]]",
+      "original": "+420 602 369 147",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_11]]",
       "original": "+420 731 147 258",
       "occurrences": 1
     },

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:47:17.591472",
+  "generated_at": "2026-03-06T07:36:24.117915",
   "source_file": "smlouva10.docx",
   "entities": [
     {
@@ -72,12 +72,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Sokol",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
       "original": "Matěj",
       "occurrences": 1
     },
@@ -85,6 +79,12 @@
       "type": "PERSON",
       "label": "[[PERSON_10]]",
       "original": "Sokola",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_10]]",
+      "original": "Sokol",
       "occurrences": 1
     },
     {
@@ -110,6 +110,12 @@
       "label": "[[PERSON_12]]",
       "original": "Jiří Sokolovi",
       "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_13]]",
+      "original": "Anička Sokolová",
+      "occurrences": 0
     },
     {
       "type": "PERSON",
@@ -186,13 +192,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
-      "original": "Vránovi",
+      "original": "Martina Vrány",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
-      "original": "Martina Vrány",
+      "original": "Vránovi",
       "occurrences": 1
     },
     {
@@ -306,6 +312,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_35]]",
+      "original": "Petr Nový",
+      "occurrences": 0
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_35]]",
       "original": "Nové",
       "occurrences": 1
     },
@@ -324,13 +336,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_36]]",
-      "original": "Lukášem Vránou",
+      "original": "Lukášem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_36]]",
-      "original": "Lukášem",
+      "original": "Lukášem Vránou",
       "occurrences": 1
     },
     {
@@ -348,13 +360,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_38]]",
-      "original": "Václav",
+      "original": "Holuba",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_38]]",
-      "original": "Holuba",
+      "original": "Václav",
       "occurrences": 1
     },
     {
@@ -404,6 +416,12 @@
       "label": "[[PERSON_41]]",
       "original": "Janou Vránovou",
       "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_42]]",
+      "original": "Petr Soukup",
+      "occurrences": 0
     },
     {
       "type": "PERSON",
@@ -696,7 +714,7 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "na adrese Komenského 58, Brno",
+      "original": "Komenského 58, Brno",
       "occurrences": 1
     },
     {

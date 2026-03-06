@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:48:43.370950",
+  "generated_at": "2026-03-06T07:35:44.186969",
   "source_file": "smlouva27.docx",
   "entities": [
     {
@@ -8,6 +8,12 @@
       "label": "[[PERSON_1]]",
       "original": "Jana Nováková",
       "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Petr Novák",
+      "occurrences": 0
     },
     {
       "type": "PERSON",
@@ -26,6 +32,12 @@
       "label": "[[PERSON_3]]",
       "original": "Kateřina Dvořáková",
       "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Michal Dvořák",
+      "occurrences": 0
     },
     {
       "type": "PERSON",
@@ -66,6 +78,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
+      "original": "Martin Procházka",
+      "occurrences": 0
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_8]]",
       "original": "Procházkovi",
       "occurrences": 1
     },
@@ -102,8 +120,20 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
+      "original": "Eliška Pokorná",
+      "occurrences": 0
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_12]]",
       "original": "Elišky Pokorné",
       "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_13]]",
+      "original": "Adam Pokorný",
+      "occurrences": 0
     },
     {
       "type": "PERSON",
@@ -114,8 +144,20 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_14]]",
+      "original": "Pavla Pokorný",
+      "occurrences": 0
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_14]]",
       "original": "Pavlu Pokornému",
       "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_15]]",
+      "original": "Lucie Pokorná",
+      "occurrences": 0
     },
     {
       "type": "PERSON",
@@ -140,6 +182,12 @@
       "label": "[[PERSON_17]]",
       "original": "Málkové",
       "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_18]]",
+      "original": "Hana Novotná",
+      "occurrences": 0
     },
     {
       "type": "PERSON",
@@ -170,6 +218,12 @@
       "label": "[[PERSON_21]]",
       "original": "Miroslav Beneš",
       "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_22]]",
+      "original": "Dana Holubová",
+      "occurrences": 0
     },
     {
       "type": "PERSON",
@@ -270,6 +324,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_33]]",
+      "original": "Jan Horák",
+      "occurrences": 0
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_33]]",
       "original": "Jana Horáka",
       "occurrences": 1
     },
@@ -290,6 +350,12 @@
       "label": "[[PERSON_36]]",
       "original": "Andrea Soukupová",
       "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_37]]",
+      "original": "Jakub Fiala",
+      "occurrences": 0
     },
     {
       "type": "PERSON",
@@ -456,7 +522,7 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "trvale bytem Krátká 5, Liberec 460 01",
+      "original": "Krátká 5, Liberec 460 01",
       "occurrences": 1
     },
     {
@@ -559,12 +625,6 @@
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_6]]",
       "original": "800512/6543",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_7]]",
-      "original": "445566778",
       "occurrences": 1
     },
     {
