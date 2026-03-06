@@ -603,6 +603,18 @@ def infer_first_name_nominative(obs: str) -> str:
             if stem.lower() in CZECH_FIRST_NAMES:
                 return stem.capitalize()
 
+    # Instrumentál: -ou → -a (Renatou → Renata, Hanou → Hana) - MUSÍ BÝT PŘED -u!
+    # Důvod: -u check by chytil "Renatou" jako "Renato" (protože renato je v knihovně)
+    if lo.endswith('ou') and len(obs) > 2:
+        stem_ou = obs[:-2]
+        if (stem_ou + 'a').lower() in CZECH_FIRST_NAMES:
+            return (stem_ou + 'a').capitalize()
+        # Common female names ending in -a
+        common_ou_names = {'hana', 'jana', 'anna', 'eva', 'dana', 'krista', 'beata',
+                           'renata', 'pavla', 'petra', 'vlasta', 'mirka', 'radka'}
+        if (stem_ou + 'a').lower() in common_ou_names:
+            return (stem_ou + 'a').capitalize()
+
     # Dativ: -u → remove for MALE names first (Danielu → Daniel), then try -u → -a for FEMALE names (Hanu → Hana)
     if lo.endswith('u') and len(obs) > 1:
         stem = obs[:-1]
@@ -841,8 +853,8 @@ def infer_surname_nominative(obs: str) -> str:
             return obs[:-1]
 
     if lo.endswith('la') and len(obs) > 3 and lo not in common_surnames_a:
-        # Rozlišit: Havla → Havel vs Šídla → Šídlo vs Rendla → Rendl
-        base_without_a = obs[:-1]  # Šídla → Šídl
+        # Rozlišit: Havla → Havel vs Šídla → Šídlo vs Rendla → Rendl vs Kratochvíla → Kratochvíl
+        base_without_a = obs[:-1]  # Šídla → Šídl, Kratochvíla → Kratochvíl
         base_lo = base_without_a.lower()
 
         # Výjimka: Rendl, Přikryl - genitiv je -a, ne -lo
@@ -855,9 +867,17 @@ def infer_surname_nominative(obs: str) -> str:
         if base_lo.endswith(('dl', 'zl', 'tl', 'nl', 'sl', 'cl')):
             return base_without_a + 'o'  # Šídla → Šídl → Šídlo
         else:
-            # Havel → Havla → vrátit Havel
-            base_without_la = obs[:-2]
-            return base_without_la + 'el'
+            # Zkontroluj jestli stem (bez -a) končí na dvě souhlásky → potřebuje vložné 'e'
+            # Havla → Havl (vl = dvě souhlásky) → Havel
+            # Kratochvíla → Kratochvíl (íl = samohláska+souhláska) → Kratochvíl (bez vložného e)
+            consonants = 'bcčdďfghjklmnňpqrřsštťvwxzž'
+            if (len(base_without_a) >= 3
+                    and base_lo[-2] in consonants and base_lo[-1] in consonants):
+                # Dvě souhlásky na konci → vlož 'e': Havl → Havel
+                return base_without_a[:-1] + 'e' + base_without_a[-1]
+            else:
+                # Samohláska+souhláska na konci → jen odstraň -a: Kratochvíla → Kratochvíl
+                return base_without_a
 
     if lo.endswith('ce') and len(obs) > 3:
         # Two patterns:
@@ -1012,6 +1032,8 @@ def infer_surname_nominative(obs: str) -> str:
             stem_lem_orig = obs[:-2]  # "Havl" (zachovej velikost písmen)
             if stem_lem_orig.lower() in vlozne_e_stems:
                 return stem_lem_orig[:-1] + 'e' + stem_lem_orig[-1]  # Havl → Havel
+            else:
+                return obs[:-2]  # Králem → Král, Kratochvílem → Kratochvíl
 
         # Kontrola: není -bem, -dem (součást některých příjmení)
         # POZNÁMKA: -lem a -rem jsou řešeny výše (řádky 431-441)
@@ -1039,6 +1061,8 @@ def infer_surname_nominative(obs: str) -> str:
         known_a_nominatives = common_surnames_a | animal_plant_surnames | {
             'hora', 'skála', 'jura', 'hrdina', 'jirsa', 'vavra', 'hrůza',
             'mácha', 'říha', 'bříza', 'mlčocha', 'kvěcha',
+            'šembera', 'kříža', 'brázda', 'kuchta', 'švestka', 'homola',
+            'vávra', 'kvapila', 'opočenská', 'fiala', 'sýkora',
         }
 
         if stem_lo + 'a' not in known_a_nominatives:
@@ -5898,17 +5922,22 @@ class Anonymizer:
                 f.write("\n")
 
             # Ostatní entity (kromě PERSON, který už je v OSOBY)
+            # DŮLEŽITÉ: Používáme stejné filtrování jako JSON mapa (pouze entity v source_text)
             for typ, entities in sorted(self.entity_map.items()):
                 if typ == 'PERSON':
                     continue  # Skip PERSON - already handled in OSOBY section
                 if entities:
-                    f.write(f"{typ}\n")
-                    for idx, (original, variants) in enumerate(entities.items(), 1):
-                        label = f"[[{typ}_{idx}]]"
-                        # Pro citlivá data zobraz jen ***REDACTED*** bez čísla
-                        display_value = "***REDACTED***" if original.startswith("***REDACTED_") else original
-                        f.write(f"{label}: {display_value}\n")
-                    f.write("\n")
+                    # Filter entities the same way as JSON to ensure consistency
+                    filtered_entities = [(original, variants) for original, variants in entities.items()
+                                         if original in source_text]
+                    if filtered_entities:
+                        f.write(f"{typ}\n")
+                        for idx, (original, variants) in enumerate(filtered_entities, 1):
+                            label = f"[[{typ}_{idx}]]"
+                            # Pro citlivá data zobraz jen ***REDACTED*** bez čísla
+                            display_value = "***REDACTED***" if original.startswith("***REDACTED_") else original
+                            f.write(f"{label}: {display_value}\n")
+                        f.write("\n")
 
         # PDF report (volitelný)
         if pdf_report:
