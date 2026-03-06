@@ -1,0 +1,3208 @@
+{
+  "summary": {
+    "total": 85,
+    "passed": 73,
+    "failed": 12,
+    "avg_score": 9.5,
+    "with_pii_leak": 12,
+    "map_inconsistent": 0,
+    "structure_broken": 0,
+    "pdf_missing": 0
+  },
+  "prehled": [
+    {
+      "soubor": "smlouva 30.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva0.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva10.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva11.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva12.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva13.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva14.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva15.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva16.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva17.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva18.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva19.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva2.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva20.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva21.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva22.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva23.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva24.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva25.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva26.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva27.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva28.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva29.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva3.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva31.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva32.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva33.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva4.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva5.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva6.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva7.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva8.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva9.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test.docx",
+      "score": 7,
+      "status": "FAIL",
+      "problémy": "PII:1",
+      "poznamka": "PII leak: \"NAME: Otec Objednatelky\""
+    },
+    {
+      "soubor": "smlouva_gdpr_test_01.docx",
+      "score": 7,
+      "status": "FAIL",
+      "problémy": "PII:1",
+      "poznamka": "PII leak: \"NAME: Otec Objednatelky\""
+    },
+    {
+      "soubor": "smlouva_gdpr_test_02.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_03.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_04.docx",
+      "score": 6,
+      "status": "FAIL",
+      "problémy": "PII:2",
+      "poznamka": "PII leak: \"Zpracovatel\", \"NAME: Zástupce Správce\""
+    },
+    {
+      "soubor": "smlouva_gdpr_test_05.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_06.docx",
+      "score": 5,
+      "status": "FAIL",
+      "problémy": "PII:3",
+      "poznamka": "PII leak: \"NAME: Banka Credita\", \"NAME: Banka Credita\", \"NAME: Banka Credita\""
+    },
+    {
+      "soubor": "smlouva_gdpr_test_07.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_08.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_09.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_10.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_11.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_12.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_13.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_14.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_15.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_16.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_17.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_18.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_19.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_20.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_21.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_22.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_23.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_24.docx",
+      "score": 7,
+      "status": "FAIL",
+      "problémy": "PII:1",
+      "poznamka": "PII leak: \"NAME: Nový Brod\""
+    },
+    {
+      "soubor": "smlouva_gdpr_test_25.docx",
+      "score": 7,
+      "status": "FAIL",
+      "problémy": "PII:1",
+      "poznamka": "PII leak: \"NAME: Nový Brod\""
+    },
+    {
+      "soubor": "smlouva_gdpr_test_26.docx",
+      "score": 7,
+      "status": "FAIL",
+      "problémy": "PII:1",
+      "poznamka": "PII leak: \"NAME: Nový Brod\""
+    },
+    {
+      "soubor": "smlouva_gdpr_test_27.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_28.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_29.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_30.docx",
+      "score": 7,
+      "status": "FAIL",
+      "problémy": "PII:1",
+      "poznamka": "PII leak: \"NAME: Nový Brod\""
+    },
+    {
+      "soubor": "smlouva_gdpr_test_31.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_32.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_33.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_34.docx",
+      "score": 7,
+      "status": "FAIL",
+      "problémy": "PII:1",
+      "poznamka": "PII leak: \"NAME: Domov Harmonie\""
+    },
+    {
+      "soubor": "smlouva_gdpr_test_35.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_36.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_37.docx",
+      "score": 7,
+      "status": "FAIL",
+      "problémy": "PII:1",
+      "poznamka": "PII leak: \"NAME: Nový Brod\""
+    },
+    {
+      "soubor": "smlouva_gdpr_test_38.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_39.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_40.docx",
+      "score": 7,
+      "status": "FAIL",
+      "problémy": "PII:1",
+      "poznamka": "PII leak: \"NAME: Odměna Mediátora\""
+    },
+    {
+      "soubor": "smlouva_gdpr_test_41.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_42.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_43.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_44.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_45.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_46.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_47.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_48.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_49.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:2, regex:1",
+      "poznamka": "PII leak: \"NAME: Galerie Jih\", \"NAME: Galerie Jih\" | Regex PII: 7B8 2345 (SPZ)"
+    },
+    {
+      "soubor": "smlouva_gdpr_test_50.docx",
+      "score": 10,
+      "status": "OK",
+      "problémy": "—",
+      "poznamka": "OK"
+    }
+  ],
+  "results": [
+    {
+      "file": "smlouva 30.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 153,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 57,
+          "tables": 1
+        },
+        "anonymized": {
+          "paragraphs": 57,
+          "tables": 1
+        }
+      }
+    },
+    {
+      "file": "smlouva.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 25,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 109,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 109,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva0.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 131,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 60,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 60,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva10.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 171,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 294,
+          "tables": 5
+        },
+        "anonymized": {
+          "paragraphs": 294,
+          "tables": 5
+        }
+      }
+    },
+    {
+      "file": "smlouva11.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 60,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 59,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 59,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva12.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 171,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 294,
+          "tables": 5
+        },
+        "anonymized": {
+          "paragraphs": 294,
+          "tables": 5
+        }
+      }
+    },
+    {
+      "file": "smlouva13.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 225,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 643,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 643,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva14.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 390,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 1679,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 1679,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva15.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 390,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 1679,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 1679,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva16.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 202,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 1256,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 1256,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva17.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 113,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 410,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 410,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva18.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 57,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 122,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 122,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva19.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 65,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 135,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 135,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva2.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 27,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 121,
+          "tables": 3
+        },
+        "anonymized": {
+          "paragraphs": 121,
+          "tables": 3
+        }
+      }
+    },
+    {
+      "file": "smlouva20.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 119,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 134,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 134,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva21.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 151,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 55,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 55,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva22.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 300,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 106,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 106,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva23.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 313,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 104,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 104,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva24.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 286,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 104,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 104,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva25.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 68,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 19,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 19,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva26.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 101,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 5,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 5,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva27.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 167,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 52,
+          "tables": 1
+        },
+        "anonymized": {
+          "paragraphs": 52,
+          "tables": 1
+        }
+      }
+    },
+    {
+      "file": "smlouva28.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 216,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 72,
+          "tables": 1
+        },
+        "anonymized": {
+          "paragraphs": 72,
+          "tables": 1
+        }
+      }
+    },
+    {
+      "file": "smlouva29.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 199,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 69,
+          "tables": 1
+        },
+        "anonymized": {
+          "paragraphs": 69,
+          "tables": 1
+        }
+      }
+    },
+    {
+      "file": "smlouva3.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 13,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 34,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 34,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva31.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 161,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 77,
+          "tables": 1
+        },
+        "anonymized": {
+          "paragraphs": 77,
+          "tables": 1
+        }
+      }
+    },
+    {
+      "file": "smlouva32.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 151,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 71,
+          "tables": 1
+        },
+        "anonymized": {
+          "paragraphs": 71,
+          "tables": 1
+        }
+      }
+    },
+    {
+      "file": "smlouva33.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 141,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 72,
+          "tables": 1
+        },
+        "anonymized": {
+          "paragraphs": 72,
+          "tables": 1
+        }
+      }
+    },
+    {
+      "file": "smlouva4.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 30,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 46,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 46,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva5.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 37,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 56,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 56,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva6.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 37,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 34,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 34,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva7.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 87,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 66,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 66,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva8.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 135,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 196,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 196,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva9.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 102,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 59,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 59,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "NAME: Otec Objednatelky"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 64,
+      "score": 7,
+      "score_breakdown": {
+        "pii_from_map": 1,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 140,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 140,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_01.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "NAME: Otec Objednatelky"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 61,
+      "score": 7,
+      "score_breakdown": {
+        "pii_from_map": 1,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 136,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 136,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_02.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 45,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 96,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 96,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_03.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 27,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 82,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 82,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_04.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Zpracovatel",
+        "NAME: Zástupce Správce"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 40,
+      "score": 6,
+      "score_breakdown": {
+        "pii_from_map": 2,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 87,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 87,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_05.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 26,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 86,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 86,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_06.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "NAME: Banka Credita",
+        "NAME: Banka Credita",
+        "NAME: Banka Credita"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 26,
+      "score": 5,
+      "score_breakdown": {
+        "pii_from_map": 3,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 79,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 79,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_07.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 20,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 76,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 76,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_08.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 27,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 65,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 65,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_09.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 34,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 70,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 70,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_10.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 26,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 64,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 64,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_11.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 52,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 85,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 85,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_12.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 51,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 85,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 85,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_13.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 50,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 80,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 80,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_14.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 50,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 80,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 80,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_15.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 50,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 80,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 80,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_16.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 50,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 80,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 80,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_17.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 51,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 85,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 85,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_18.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 49,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 85,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 85,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_19.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 51,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 85,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 85,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_20.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 51,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 85,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 85,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_21.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 50,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 80,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 80,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_22.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 50,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 80,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 80,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_23.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 50,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 80,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 80,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_24.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "NAME: Nový Brod"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 51,
+      "score": 7,
+      "score_breakdown": {
+        "pii_from_map": 1,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 85,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 85,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_25.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "NAME: Nový Brod"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 50,
+      "score": 7,
+      "score_breakdown": {
+        "pii_from_map": 1,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 80,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 80,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_26.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "NAME: Nový Brod"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 51,
+      "score": 7,
+      "score_breakdown": {
+        "pii_from_map": 1,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 85,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 85,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_27.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 50,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 80,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 80,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_28.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 50,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 80,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 80,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_29.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 51,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 85,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 85,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_30.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "NAME: Nový Brod"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 51,
+      "score": 7,
+      "score_breakdown": {
+        "pii_from_map": 1,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 85,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 85,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_31.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 48,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 97,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 97,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_32.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 38,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 79,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 79,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_33.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 26,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 76,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 76,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_34.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "NAME: Domov Harmonie"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 37,
+      "score": 7,
+      "score_breakdown": {
+        "pii_from_map": 1,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 73,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 73,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_35.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 31,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 53,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 53,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_36.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 26,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 56,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 56,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_37.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "NAME: Nový Brod"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 23,
+      "score": 7,
+      "score_breakdown": {
+        "pii_from_map": 1,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 42,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 42,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_38.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 29,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 51,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 51,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_39.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 28,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 48,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 48,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_40.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "NAME: Odměna Mediátora"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 33,
+      "score": 7,
+      "score_breakdown": {
+        "pii_from_map": 1,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 76,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 76,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_41.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 43,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 80,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 80,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_42.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 35,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 57,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 57,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_43.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 35,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 51,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 51,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_44.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 31,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 41,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 41,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_45.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 26,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 46,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 46,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_46.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 19,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 36,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 36,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_47.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 24,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 34,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 34,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_48.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 25,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 26,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 26,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_49.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "NAME: Galerie Jih",
+        "NAME: Galerie Jih"
+      ],
+      "pii_regex_found": [
+        {
+          "match": "7B8 2345",
+          "type": "SPZ"
+        }
+      ],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 22,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 2,
+        "pii_from_regex": 1,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 38,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 38,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva_gdpr_test_50.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 32,
+      "score": 10,
+      "score_breakdown": {
+        "pii_from_map": 0,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 32,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 32,
+          "tables": 0
+        }
+      }
+    }
+  ],
+  "failed_files": [
+    "smlouva_gdpr_test.docx",
+    "smlouva_gdpr_test_01.docx",
+    "smlouva_gdpr_test_04.docx",
+    "smlouva_gdpr_test_06.docx",
+    "smlouva_gdpr_test_24.docx",
+    "smlouva_gdpr_test_25.docx",
+    "smlouva_gdpr_test_26.docx",
+    "smlouva_gdpr_test_30.docx",
+    "smlouva_gdpr_test_34.docx",
+    "smlouva_gdpr_test_37.docx",
+    "smlouva_gdpr_test_40.docx",
+    "smlouva_gdpr_test_49.docx"
+  ]
+}
