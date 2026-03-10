@@ -1,0 +1,110 @@
+OSOBY
+-----
+[[PERSON_1]]: Jaroslav Tesař
+  - Jaroslava Tesařa
+  - Jaroslave Tesaře
+  - Jaroslavem Tesařem
+  - Jaroslavovi Tesařovi
+[[PERSON_2]]: Krista Pospíšilová
+  - Kristo Pospíšilová
+  - Kristou Pospíšilovou
+  - Kristy Pospíšilové
+  - Kristě Pospíšilové
+[[PERSON_3]]: Stanislav Růžička
+  - Stanislava Růžičku
+  - Stanislava Růžičky
+  - Stanislavem Růžičkou
+  - Stanislavovi Růžičkovi
+[[PERSON_4]]: Růžena Kratochvílová
+  - Růženy Kratochvílové
+[[PERSON_5]]: Hedvika Jirsová
+  - Hedviky Jirsové
+[[PERSON_6]]: Stanislav Beneš
+  - Stanislava Beneša
+[[PERSON_7]]: Krista Pospíšilováová
+  - Kristu Pospíšilováovou
+[[PERSON_8]]: Růžena Kratochvílováová
+  - Růženu Kratochvílováovou
+[[PERSON_9]]: Hedvika Jirsováová
+  - Hedviku Jirsováovou
+
+ADDRESS
+[[ADDRESS_1]]: Vídeňská 800, 140 59 Praha 4
+[[ADDRESS_2]]: Tylova 53, 530 02 Pardubice
+[[ADDRESS_3]]: Masarykova 245, 500 02 Hradec Králové
+[[ADDRESS_4]]: Wolkerova 195, 796 01 Prostějov
+[[ADDRESS_5]]: Palackého 92, 301 00 Plzeň
+[[ADDRESS_6]]: Jihlavská 101, 625 00 Brno
+[[ADDRESS_7]]: Bezručova 170/11, 746 01 Opava
+[[ADDRESS_8]]: Tylova 53, 530 02 Pardubice a Masarykova
+[[ADDRESS_9]]: Hradec Králové
+[[ADDRESS_10]]: platnost 09/27, CVC
+
+BANK
+[[BANK_1]]: 42984-3889535731/2010
+[[BANK_2]]: 370890-7342396066/0100
+[[BANK_3]]: 8843542656/0800
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 0110185927
+[[BIRTH_ID_2]]: 085927/5466
+[[BIRTH_ID_3]]: 600824/4237
+[[BIRTH_ID_4]]: 815620/3143
+[[BIRTH_ID_5]]: 0551029462
+[[BIRTH_ID_6]]: 080911/9706
+
+DATE
+[[DATE_1]]: 15. 1. 1999
+[[DATE_2]]: 9. 4. 1962
+[[DATE_3]]: 21. 3. 2002
+[[DATE_4]]: 27. 3. 1974
+[[DATE_5]]: 25. 6. 1987
+[[DATE_6]]: 2. 7. 1972
+[[DATE_7]]: 13. 08. 2026
+
+DIC
+[[DIC_1]]: CZ00064190
+
+EMAIL
+[[EMAIL_1]]: jaroslav.tesar@email.cz
+[[EMAIL_2]]: krista.pospisilova@firma.cz
+[[EMAIL_3]]: stanislav.ruzicka@example.com
+[[EMAIL_4]]: ruzena.kratochvilova@example.com
+[[EMAIL_5]]: hedvika.jirsova@post.cz
+[[EMAIL_6]]: stanislav.benes@example.com
+
+IBAN
+[[IBAN_1]]: CZ50 0600 0000 4823 6552 2151
+[[IBAN_2]]: CZ90 0800 0000 2096 3454 3585
+
+ICO
+[[ICO_1]]: 00064190
+
+ID_CARD
+[[ID_CARD_1]]: DV 268775
+[[ID_CARD_2]]: 844205467
+[[ID_CARD_3]]: EI 507249
+[[ID_CARD_4]]: 831696042
+
+IP
+[[IP_1]]: 217.90.249.133
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP66421
+[[LICENSE_PLATE_2]]: PP55877
+
+MAC
+[[MAC_1]]: 51:39:D4:03:4B:5F
+
+PASSWORD
+[[PASSWORD_1]]: Kri32!7891
+
+PHONE
+[[PHONE_1]]: 758 631 205
+[[PHONE_2]]: 678 737 856
+[[PHONE_3]]: 632 737 470
+[[PHONE_4]]: +420708427761
+[[PHONE_5]]: +420762996164
+[[PHONE_6]]: 609 905 878
+[[PHONE_7]]: 844205467
+

@@ -16,6 +16,7 @@ ADDRESS
 [[ADDRESS_1]]: Náměstí 5
 [[ADDRESS_2]]: května 3, 301 00 Plzeň
 [[ADDRESS_3]]: Luční 7, 326 00 Plzeň
+[[ADDRESS_4]]: V Plzni
 
 BANK
 [[BANK_1]]: 556688990/0100

@@ -1,0 +1,111 @@
+OSOBY
+-----
+[[PERSON_1]]: Ignác Holík
+  - Ignáca Holíka
+  - Ignáce Holíke
+  - Ignácem Holíkem
+  - Ignácovi Holíkovi
+[[PERSON_2]]: Hedvika Malíková
+  - Hedviko Malíková
+  - Hedvikou Malíkovou
+  - Hedviky Malíkové
+  - Hedvikě Malíkové
+[[PERSON_3]]: Krista Procházková
+  - Kristy Procházkové
+[[PERSON_4]]: David Procházka
+  - Davida Procházku
+  - Davida Procházky
+[[PERSON_5]]: Dalibor Rendl
+  - Dalibora Rendla
+  - Daliborem Rendlem
+  - Daliborovi Rendlovi
+[[PERSON_6]]: Metoděj Švestka
+  - Metoděja Švestku
+  - Metoděja Švestky
+[[PERSON_7]]: Hedvika Malíkováová
+  - Hedviku Malíkováovou
+[[PERSON_8]]: Krista Procházkováová
+  - Kristu Procházkováovou
+
+ADDRESS
+[[ADDRESS_1]]: Praha 9
+[[ADDRESS_2]]: Bryksova 763/46, 198 00 Praha 14
+[[ADDRESS_3]]: U Nemocnice 168, 128 08 Praha 2
+[[ADDRESS_4]]: Nádražní 124/35, 702 00 Ostrava
+[[ADDRESS_5]]: Sokolovská 106/32, 186 00 Praha 8
+[[ADDRESS_6]]: Křenová 8, 602 00 Brno
+[[ADDRESS_7]]: U Nemocnice 207/11, 128 08 Praha 2
+[[ADDRESS_8]]: Bezručova 241/27, 746 01 Opava
+[[ADDRESS_9]]: a Nádražní 124/35, 702 00 Ostrava
+[[ADDRESS_10]]: platnost 03/27, CVC
+[[ADDRESS_11]]: Exekutorský úřad Praha 9, IČO
+[[ADDRESS_12]]: Správcem osobních údajů je Exekutorský úřad Praha 9, IČO
+
+BANK
+[[BANK_1]]: 517170-7666463454/6210
+[[BANK_2]]: 37910-1047996130/0800
+[[BANK_3]]: 9760249792/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 590505/6547
+[[BIRTH_ID_2]]: 585902/3165
+[[BIRTH_ID_3]]: 0908112587
+[[BIRTH_ID_4]]: 0411128207
+[[BIRTH_ID_5]]: 655424/4889
+[[BIRTH_ID_6]]: 830311/9295
+
+DATE
+[[DATE_1]]: 18. 11. 1969
+[[DATE_2]]: 18. 4. 1968
+[[DATE_3]]: 16. 4. 1982
+[[DATE_4]]: 8. 8. 1998
+[[DATE_5]]: 10. 3. 1965
+[[DATE_6]]: 20. 1. 1996
+[[DATE_7]]: 01. 01. 2026
+
+DIC
+[[DIC_1]]: CZ71234567
+
+EMAIL
+[[EMAIL_1]]: ignac.holik@email.cz
+[[EMAIL_2]]: hedvika.malikova@seznam.cz
+[[EMAIL_3]]: krista.prochazkova@email.cz
+[[EMAIL_4]]: dalibor.rendl@firma.cz
+[[EMAIL_5]]: david.prochazka@firma.cz
+[[EMAIL_6]]: metodej.svestka@seznam.cz
+
+IBAN
+[[IBAN_1]]: CZ92 0800 0000 7439 7458 1487
+[[IBAN_2]]: CZ25 5500 0000 9536 4612 3520
+
+ICO
+[[ICO_1]]: 71234567
+
+ID_CARD
+[[ID_CARD_1]]: NW 649150
+[[ID_CARD_2]]: 949496344
+[[ID_CARD_3]]: 576511417
+[[ID_CARD_4]]: 237332240
+
+IP
+[[IP_1]]: 61.162.32.34
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ18550
+[[LICENSE_PLATE_2]]: CZ42197
+
+MAC
+[[MAC_1]]: E3:B1:5B:26:30:07
+
+PASSWORD
+[[PASSWORD_1]]: Hed31!4817
+
+PHONE
+[[PHONE_1]]: +420 711 728 552
+[[PHONE_2]]: 672 723 486
+[[PHONE_3]]: 633 920 418
+[[PHONE_4]]: +420635233958
+[[PHONE_5]]: +420725501574
+[[PHONE_6]]: +420 786 509 781
+[[PHONE_7]]: 949496344
+

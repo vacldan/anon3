@@ -1,0 +1,463 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-03-09T15:51:33.838268",
+  "source_file": "smlouva_gdpr_test_77.docx",
+  "entities": [
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Aleš Vaněk",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Alešovi Vaněkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Aleše Vaněke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Alešem Vaněkem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Aleša Vaněka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Růžena Marešová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Růženo Marešová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Růženou Marešovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Růženě Marešové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Růženy Marešové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Růžena Marešováová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Růženu Marešováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Iva Vaňková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Ivy Vaňkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Tomáš Doležal",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Tomášem Doležalem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Tomášovi Doležalovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Tomáše Doležala",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Oldřich Urban",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Oldřicha Urbana",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_7]]",
+      "original": "Ladislav Soukup",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_7]]",
+      "original": "Ladislava Soukupa",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_8]]",
+      "original": "Iva Vaňkováová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_8]]",
+      "original": "Ivu Vaňkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Vídeňská 800, 140 59 Praha 4",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Jihlavská 146/2, 625 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "Nádražní 10/12, 702 00 Ostrava",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "Na Návsi 63/23, 789 01 Zábřeh",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "Dlouhá 148/11, 602 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_6]]",
+      "original": "Revoluční 46, 110 00 Praha 1",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_7]]",
+      "original": "Pražská 109/24, 360 01 Karlovy Vary",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_8]]",
+      "original": "Jihlavská 146/2, 625 00 Brno a Nádražní",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_9]]",
+      "original": "Ostrava",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_10]]",
+      "original": "platnost 12/29, CVC",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_1]]",
+      "original": "00064190",
+      "occurrences": 1
+    },
+    {
+      "type": "DIC",
+      "label": "[[DIC_1]]",
+      "original": "CZ00064190",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_1]]",
+      "original": "14. 4. 1977",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_2]]",
+      "original": "6. 8. 1965",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_3]]",
+      "original": "12. 2. 1996",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_4]]",
+      "original": "10. 9. 2001",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_5]]",
+      "original": "8. 12. 1982",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_6]]",
+      "original": "24. 10. 1973",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_7]]",
+      "original": "27. 07. 2026",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_1]]",
+      "original": "0510048476",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_2]]",
+      "original": "786101/6644",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_3]]",
+      "original": "845326/5474",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_4]]",
+      "original": "821226/5328",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_5]]",
+      "original": "0111050616",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_6]]",
+      "original": "020126/0280",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_1]]",
+      "original": "UC 220561",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_2]]",
+      "original": "287197669",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_3]]",
+      "original": "BG 969825",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_4]]",
+      "original": "VY 415222",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_1]]",
+      "original": "+420638522700",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_2]]",
+      "original": "+420 741 170 126",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_3]]",
+      "original": "+420 706 638 501",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_4]]",
+      "original": "+420 708 751 475",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_5]]",
+      "original": "+420 636 101 315",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_6]]",
+      "original": "+420 788 539 289",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_7]]",
+      "original": "287197669",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_1]]",
+      "original": "ales.vanek@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_2]]",
+      "original": "ruzena.maresova@post.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_3]]",
+      "original": "iva.vankova@post.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_4]]",
+      "original": "tomas.dolezal@post.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_5]]",
+      "original": "oldrich.urban@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_6]]",
+      "original": "ladislav.soukup@seznam.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_1]]",
+      "original": "6318905165/5500",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_2]]",
+      "original": "955861-3997224598/5500",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_3]]",
+      "original": "7063161980/5500",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_1]]",
+      "original": "CZ58 0300 0000 7644 9069 1047",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_2]]",
+      "original": "CZ99 0600 0000 7169 1899 0023",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "CZ57681",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_2]]",
+      "original": "CZ94609",
+      "occurrences": 1
+    },
+    {
+      "type": "PASSWORD",
+      "label": "[[PASSWORD_1]]",
+      "original": "Růž47!5470",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_1]]",
+      "original": "220.185.171.180",
+      "occurrences": 1
+    },
+    {
+      "type": "MAC",
+      "label": "[[MAC_1]]",
+      "original": "83:CE:B7:8A:FD:48",
+      "occurrences": 1
+    }
+  ]
+}

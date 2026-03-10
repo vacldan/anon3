@@ -1,0 +1,337 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-03-09T15:51:02.639205",
+  "source_file": "smlouva_gdpr_test_136.docx",
+  "entities": [
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Alžběta Křížová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Alžbětě Křížové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Alžbětou Křížovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Alžběto Křížová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Alžběty Křížové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Helena Turková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Heleno Turková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Heleny Turkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Helenou Turkovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Heleně Turkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Jana Malíková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Janě Malíkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Janou Malíkovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Michal Černý",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Michalovi Černýovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Michalem Černýem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Michala Černýa",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Michal Černýe",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Michale Černýe",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Kampus 9, 625 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Vinohradská 17/2, 130 00 Praha 3",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "Na Kopci 160/3, 100 00 Praha 10",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "případně písemně na adresu Na Kopci 160/3, 100 00 Praha 10",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "písemné doručení na adresu Na Kopci 160/3, 100 00 Praha 10",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_6]]",
+      "original": "Pro účely doručování se používá adresa Na Kopci 160/3, 100 00 Praha 10",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_7]]",
+      "original": "pro Heleně Turkové a Vinohradská 17/2, 130 00 Praha 3",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_1]]",
+      "original": "00224466",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_1]]",
+      "original": "+420 541 111 000",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_2]]",
+      "original": "+420 685 813 503",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_3]]",
+      "original": "+420 745 484 397",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_4]]",
+      "original": "+420 741 104 543",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_5]]",
+      "original": "+420 680 907 365",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_1]]",
+      "original": "rektorat@unisever.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_2]]",
+      "original": "alzbeta.krizova@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_3]]",
+      "original": "helena.turkova@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_4]]",
+      "original": "michal.cerny@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_5]]",
+      "original": "jana.malikova@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_1]]",
+      "original": "22. 01. 1985",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_2]]",
+      "original": "12. 03. 1996",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_3]]",
+      "original": "03. 01. 1993",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_4]]",
+      "original": "09. 11. 2006",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_5]]",
+      "original": "08. 03. 2026",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_1]]",
+      "original": "651214/5468",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_2]]",
+      "original": "971227/2289",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_3]]",
+      "original": "861102/3021",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_4]]",
+      "original": "910826/4099",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_1]]",
+      "original": "810176880",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "CZ70938",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_2]]",
+      "original": "1AB 9075",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_3]]",
+      "original": "0GA9217",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_1]]",
+      "original": "4168 4816 5860 6072",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_1]]",
+      "original": "CZ82 0300 0000 3534 7807 9655",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_1]]",
+      "original": "314213358/5500",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_1]]",
+      "original": "192.168.11.22",
+      "occurrences": 1
+    },
+    {
+      "type": "MAC",
+      "label": "[[MAC_1]]",
+      "original": "7A:40:C2:43:45:3D",
+      "occurrences": 1
+    }
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-03-09T15:51:04.271911",
+  "source_file": "smlouva_gdpr_test_141.docx",
+  "entities": [
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Filip Hrubeš",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Filipem Hrubešem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Filipovi Hrubešovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Filipa Hrubeša",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Filipe Hrubeše",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Michal Král",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Michalem Králem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Michale Krále",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Michalovi Královi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Michala Krála",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Markéta Králová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Markétou Královou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Markétě Králové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "David Kříž",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Davidovi Křížovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Davida Kříža",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Davide Kříže",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Davidem Křížem",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Na Hradbách 15, 702 00 Ostrava",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "U Parku 128/23, 779 00 Olomouc",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "Pojišťovací 37/20, 110 00 Praha 1",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "případně písemně na adresu Pojišťovací 37/20, 110 00 Praha 1",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "písemné doručení na adresu Pojišťovací 37/20, 110 00 Praha 1",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_6]]",
+      "original": "Pro účely doručování se používá adresa Pojišťovací 37/20, 110 00 Praha 1",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_7]]",
+      "original": "pro Michalovi Královi a U Parku 128/23, 779 00 Olomouc pro Filipovi Hrubešovi",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_1]]",
+      "original": "12398745",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_1]]",
+      "original": "+420 596 111 222",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_2]]",
+      "original": "+420 770 597 503",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_3]]",
+      "original": "+420 746 586 966",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_4]]",
+      "original": "+420 690 929 118",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_5]]",
+      "original": "+420 782 288 449",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_1]]",
+      "original": "sekretariat@gymhradby.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_2]]",
+      "original": "filip.hrubes@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_3]]",
+      "original": "michal.kral@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_4]]",
+      "original": "david.kriz@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_5]]",
+      "original": "marketa.kralova@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_1]]",
+      "original": "26. 11. 1986",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_2]]",
+      "original": "02. 03. 2004",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_3]]",
+      "original": "04. 02. 1974",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_4]]",
+      "original": "15. 03. 1975",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_5]]",
+      "original": "08. 03. 2026",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_1]]",
+      "original": "030726/6105",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_2]]",
+      "original": "730720/6022",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_3]]",
+      "original": "070219/7548",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_4]]",
+      "original": "051025/2241",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_1]]",
+      "original": "977137816",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "PP39479",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_2]]",
+      "original": "5AZ 1813",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_3]]",
+      "original": "0GA8074",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_1]]",
+      "original": "4352 4998 7385 7566",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_1]]",
+      "original": "CZ99 5500 0000 6155 4479 0464",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_1]]",
+      "original": "102388401/0100",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_1]]",
+      "original": "190.233.238.204",
+      "occurrences": 1
+    },
+    {
+      "type": "MAC",
+      "label": "[[MAC_1]]",
+      "original": "00:F5:D4:A3:58:27",
+      "occurrences": 1
+    }
+  ]
+}

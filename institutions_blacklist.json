@@ -1,0 +1,160 @@
+{
+  "_comment": "Instituce, firmy, univerzity, nemocnice apod. které NESMÍ být detekovány jako osoby. Každý termín prošel kontrolou, že NENÍ běžné české/slovenské příjmení ani křestní jméno. Lowercase.",
+  "_version": "1.0",
+
+  "banks_cz": [
+    "čsob", "československá", "raiffeisenbank", "raiffeisen",
+    "moneta", "airbank", "equa", "mbank", "unicredit",
+    "creditas", "trinity", "expobank", "fio", "ppf"
+  ],
+  "banks_sk": [
+    "tatrabanka", "sporiteľňa", "sporitelna", "vúb"
+  ],
+
+  "insurance_cz": [
+    "kooperativa", "kooperativy", "kooperativou",
+    "generali", "uniqa", "čpp",
+    "metlife", "slavia"
+  ],
+  "insurance_sk": [
+    "union"
+  ],
+
+  "health_insurance": [
+    "vzp", "ozp", "zpmv", "čpzp",
+    "vojenská", "vojenské", "revírní", "bratrská", "pokladna"
+  ],
+
+  "telcos": [
+    "t-mobile", "vodafone", "cetin", "cetinu"
+  ],
+
+  "energy": [
+    "čez", "čezu", "čezem",
+    "eon", "innogy", "pražská energetika"
+  ],
+
+  "universities_cz": [
+    "čvut", "všse", "všcht", "všte",
+    "jihočeská", "jihočeské",
+    "západočeská", "západočeské",
+    "ostravská", "ostravské",
+    "slezská", "slezské",
+    "mendelova", "mendelově", "mendelovy",
+    "janáčkova", "janáčkově", "janáčkovy",
+    "amu", "avu", "jamu", "damu",
+    "učení", "technické", "technického", "technickém",
+    "ekonomická", "ekonomické", "ekonomického",
+    "polytechnika", "polytechniky"
+  ],
+  "universities_sk": [
+    "komenského", "komenský",
+    "žilinská", "žilinské",
+    "bratislavská", "bratislavské"
+  ],
+
+  "hospitals": [
+    "motol", "motolu", "motole",
+    "bulovka", "bulovce", "bulovky",
+    "thomayer", "thomayerova", "thomayerově", "thomayerovy",
+    "ikem", "ikemu",
+    "homolka", "homolce", "homolky",
+    "podolí",
+    "vinohrady", "vinohradská", "vinohradské",
+    "královské", "královských"
+  ],
+
+  "government": [
+    "katastrální", "katastrálního",
+    "finanční", "finančního", "finančním",
+    "celní", "celního",
+    "živnostenský", "živnostenského",
+    "správa", "správy", "správě", "správou",
+    "inspekce", "inspekci",
+    "agentura", "agentury", "agentuře",
+    "ombudsman", "ombudsmana", "ombudsmanem",
+    "antidiskriminační",
+    "policie", "policii", "policií",
+    "hasičský", "hasičského",
+    "česká", "český", "české", "českého", "českém",
+    "slovenská", "slovenský", "slovenské", "slovenského",
+    "národní", "národního"
+  ],
+
+  "retail": [
+    "kaufland", "kauflandu",
+    "lidl", "lidlu",
+    "tesco", "tesca",
+    "penny", "globus", "globusu",
+    "coop", "coopu",
+    "interspar", "spar",
+    "makro", "makra",
+    "ikea", "ikeu",
+    "obi",
+    "hornbach", "hornbachu",
+    "bauhaus", "bauhausu",
+    "decathlon", "decathlonu",
+    "primark", "primarku",
+    "dm", "rossmann", "rossmanna"
+  ],
+
+  "major_companies_cz_sk": [
+    "agrofert", "agrofertu",
+    "avast", "avastu",
+    "seznam", "seznamu",
+    "rohlík", "rohlíku",
+    "alza", "alzy", "alze",
+    "heureka", "heurece",
+    "kiwi",
+    "kentico",
+    "penta", "penty"
+  ],
+
+  "major_companies_de_at_pl": [
+    "siemens", "siemensu",
+    "bosch", "bosche",
+    "bmw",
+    "audi",
+    "continental", "continentalu",
+    "lufthansa", "lufthansy",
+    "telekom", "telekomu",
+    "sparkasse",
+    "orlen", "orlenu",
+    "allegro"
+  ],
+
+  "legal_institutions": [
+    "čak", "české advokátní komory", "advokátní komora", "advokátní komory",
+    "notářská", "notářské", "notářskou", "notářského",
+    "exekutorský", "exekutorského", "exekutorskou",
+    "rozhodčí", "rozhodčího",
+    "arbitrážní", "arbitrážního",
+    "ústavní", "ústavního",
+    "nejvyšší", "nejvyššího",
+    "vrchní", "vrchního",
+    "krajský", "krajského",
+    "okresní", "okresního",
+    "obvodní", "obvodního",
+    "městský", "městského"
+  ],
+
+  "education_terms": [
+    "rektorát", "rektorátu",
+    "děkanát", "děkanátu",
+    "katedra", "katedry", "katedře",
+    "ústav", "ústavu",
+    "institut", "institutu",
+    "knihovna", "knihovny", "knihovně"
+  ],
+
+  "healthcare_terms": [
+    "lékárna", "lékárny", "lékárně",
+    "poliklinika", "polikliniky", "poliklinice",
+    "sanatorium", "sanatoria",
+    "hospic", "hospice",
+    "laboratoř", "laboratoře", "laboratoři",
+    "transfuzní", "transfuzního",
+    "záchranná", "záchranné",
+    "zdravotnická", "zdravotnické", "zdravotnického"
+  ]
+}

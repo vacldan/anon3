@@ -1,0 +1,337 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-03-09T15:50:59.119888",
+  "source_file": "smlouva_gdpr_test_124.docx",
+  "entities": [
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Markéta Křížová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Markéto Křížová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Markétou Křížovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Markéty Křížové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Markétě Křížové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Monika Králová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Monikou Královou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Moniko Králová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Moniky Králové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Monikě Králové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Lucie Nováková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Lucie Novákové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Lucie Novákovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Tomáš Černý",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Tomáše Černýa",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Tomášovi Černýovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Tomášem Černýem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Tomáš Černýe",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Tomáši Černýe",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Poliklinická 3, 120 00 Praha 2",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Na Kopci 125/29, 100 00 Praha 10",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "Sadová 165/27, 370 01 České Budějovice",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "případně písemně na adresu Sadová 165/27, 370 01 České Budějovice",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "písemné doručení na adresu Sadová 165/27, 370 01 České Budějovice",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_6]]",
+      "original": "Pro účely doručování se používá adresa Sadová 165/27, 370 01 České Budějovice pro Monikě",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_7]]",
+      "original": "Králové a Na Kopci 125/29, 100 00 Praha 10",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_1]]",
+      "original": "99887766",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_1]]",
+      "original": "+420 224 333 444",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_2]]",
+      "original": "+420 769 801 722",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_3]]",
+      "original": "+420 773 843 708",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_4]]",
+      "original": "+420 752 816 554",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_5]]",
+      "original": "+420 633 955 517",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_1]]",
+      "original": "recepce@privatmed.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_2]]",
+      "original": "marketa.krizova@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_3]]",
+      "original": "monika.kralova@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_4]]",
+      "original": "tomas.cerny@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_5]]",
+      "original": "lucie.novakova@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_1]]",
+      "original": "10. 05. 1976",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_2]]",
+      "original": "01. 10. 1983",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_3]]",
+      "original": "22. 12. 1978",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_4]]",
+      "original": "27. 11. 1994",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_5]]",
+      "original": "08. 03. 2026",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_1]]",
+      "original": "740528/1467",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_2]]",
+      "original": "080903/8048",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_3]]",
+      "original": "920615/7707",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_4]]",
+      "original": "090722/5927",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_1]]",
+      "original": "584907488",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "CZ41790",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_2]]",
+      "original": "3AA 1983",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_3]]",
+      "original": "0HA9002",
+      "occurrences": 1
+    },
+    {
+      "type": "CARD",
+      "label": "[[CARD_1]]",
+      "original": "4167 6976 1178 2813",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_1]]",
+      "original": "CZ37 0800 0000 2593 2034 1353",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_1]]",
+      "original": "319658597/0100",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_1]]",
+      "original": "162.149.115.120",
+      "occurrences": 1
+    },
+    {
+      "type": "MAC",
+      "label": "[[MAC_1]]",
+      "original": "E7:66:8B:6D:76:24",
+      "occurrences": 1
+    }
+  ]
+}

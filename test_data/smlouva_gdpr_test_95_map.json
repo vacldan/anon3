@@ -1,0 +1,481 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-03-09T15:51:47.121611",
+  "source_file": "smlouva_gdpr_test_95.docx",
+  "entities": [
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Jaroslav Tesař",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Jaroslava Tesařa",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Jaroslave Tesaře",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Jaroslavem Tesařem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Jaroslavovi Tesařovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Krista Pospíšilová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Kristě Pospíšilové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Kristo Pospíšilová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Kristou Pospíšilovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Kristy Pospíšilové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Stanislav Růžička",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Stanislava Růžičku",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Stanislavem Růžičkou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Stanislava Růžičky",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Stanislavovi Růžičkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Růžena Kratochvílová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Růženy Kratochvílové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Hedvika Jirsová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Hedviky Jirsové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Stanislav Beneš",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Stanislava Beneša",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_7]]",
+      "original": "Krista Pospíšilováová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_7]]",
+      "original": "Kristu Pospíšilováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_8]]",
+      "original": "Růžena Kratochvílováová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_8]]",
+      "original": "Růženu Kratochvílováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_9]]",
+      "original": "Hedvika Jirsováová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_9]]",
+      "original": "Hedviku Jirsováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Vídeňská 800, 140 59 Praha 4",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Tylova 53, 530 02 Pardubice",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "Masarykova 245, 500 02 Hradec Králové",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "Wolkerova 195, 796 01 Prostějov",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "Palackého 92, 301 00 Plzeň",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_6]]",
+      "original": "Jihlavská 101, 625 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_7]]",
+      "original": "Bezručova 170/11, 746 01 Opava",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_8]]",
+      "original": "Tylova 53, 530 02 Pardubice a Masarykova",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_9]]",
+      "original": "Hradec Králové",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_10]]",
+      "original": "platnost 09/27, CVC",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_1]]",
+      "original": "00064190",
+      "occurrences": 1
+    },
+    {
+      "type": "DIC",
+      "label": "[[DIC_1]]",
+      "original": "CZ00064190",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_1]]",
+      "original": "15. 1. 1999",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_2]]",
+      "original": "9. 4. 1962",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_3]]",
+      "original": "21. 3. 2002",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_4]]",
+      "original": "27. 3. 1974",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_5]]",
+      "original": "25. 6. 1987",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_6]]",
+      "original": "2. 7. 1972",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_7]]",
+      "original": "13. 08. 2026",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_1]]",
+      "original": "0110185927",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_2]]",
+      "original": "085927/5466",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_3]]",
+      "original": "600824/4237",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_4]]",
+      "original": "815620/3143",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_5]]",
+      "original": "0551029462",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_6]]",
+      "original": "080911/9706",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_1]]",
+      "original": "DV 268775",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_2]]",
+      "original": "844205467",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_3]]",
+      "original": "EI 507249",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_4]]",
+      "original": "831696042",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_1]]",
+      "original": "758 631 205",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_2]]",
+      "original": "678 737 856",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_3]]",
+      "original": "632 737 470",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_4]]",
+      "original": "+420708427761",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_5]]",
+      "original": "+420762996164",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_6]]",
+      "original": "609 905 878",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_7]]",
+      "original": "844205467",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_1]]",
+      "original": "jaroslav.tesar@email.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_2]]",
+      "original": "krista.pospisilova@firma.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_3]]",
+      "original": "stanislav.ruzicka@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_4]]",
+      "original": "ruzena.kratochvilova@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_5]]",
+      "original": "hedvika.jirsova@post.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_6]]",
+      "original": "stanislav.benes@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_1]]",
+      "original": "42984-3889535731/2010",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_2]]",
+      "original": "370890-7342396066/0100",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_3]]",
+      "original": "8843542656/0800",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_1]]",
+      "original": "CZ50 0600 0000 4823 6552 2151",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_2]]",
+      "original": "CZ90 0800 0000 2096 3454 3585",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "PP66421",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_2]]",
+      "original": "PP55877",
+      "occurrences": 1
+    },
+    {
+      "type": "PASSWORD",
+      "label": "[[PASSWORD_1]]",
+      "original": "Kri32!7891",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_1]]",
+      "original": "217.90.249.133",
+      "occurrences": 1
+    },
+    {
+      "type": "MAC",
+      "label": "[[MAC_1]]",
+      "original": "51:39:D4:03:4B:5F",
+      "occurrences": 1
+    }
+  ]
+}

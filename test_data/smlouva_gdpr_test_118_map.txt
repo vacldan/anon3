@@ -1,0 +1,83 @@
+OSOBY
+-----
+[[PERSON_1]]: Barbora Řezníčková
+  - Barboro Řezníčková
+  - Barborou Řezníčkovou
+  - Barbory Řezníčkové
+  - Barborě Řezníčkové
+[[PERSON_2]]: Jaroslav Holík
+  - Jaroslava Holíka
+  - Jaroslave Holíke
+  - Jaroslavem Holíkem
+  - Jaroslavovi Holíkovi
+[[PERSON_3]]: Petra Dvořáková
+  - Petrou Dvořákovou
+  - Petrě Dvořákové
+[[PERSON_4]]: Štěpán Turek
+  - Štěpána Turka
+  - Štěpáne Turku
+  - Štěpánem Turkem
+  - Štěpánovi Turkovi
+
+ADDRESS
+[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_2]]: Dlouhá 76/19, 602 00 Brno
+[[ADDRESS_3]]: Na Návsi 25/17, 789 01 Zábřeh
+[[ADDRESS_4]]: případně písemně na adresu Na Návsi 25/17, 789 01 Zábřeh
+[[ADDRESS_5]]: písemné doručení na adresu Na Návsi 25/17, 789 01 Zábřeh
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Návsi 25/17, 789 01 Zábřeh pro Jaroslavovi Holíkovi
+[[ADDRESS_7]]: a Dlouhá 76/19, 602 00 Brno pro Barborě Řezníčkové
+
+BANK
+[[BANK_1]]: 870995792/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 671004/6298
+[[BIRTH_ID_2]]: 800627/8884
+[[BIRTH_ID_3]]: 770202/9185
+[[BIRTH_ID_4]]: 710716/4936
+
+CARD
+[[CARD_1]]: 4634 4454 9885 6939
+
+DATE
+[[DATE_1]]: 06. 10. 1997
+[[DATE_2]]: 02. 11. 1997
+[[DATE_3]]: 11. 12. 1987
+[[DATE_4]]: 12. 08. 1982
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: sekretariat@gymhradby.cz
+[[EMAIL_2]]: barbora.reznickova@example.com
+[[EMAIL_3]]: jaroslav.holik@example.com
+[[EMAIL_4]]: stepan.turek@example.com
+[[EMAIL_5]]: petra.dvorakova@example.com
+
+IBAN
+[[IBAN_1]]: CZ61 0100 0000 0629 9745 7139
+
+ICO
+[[ICO_1]]: 12398745
+
+ID_CARD
+[[ID_CARD_1]]: 611637108
+
+IP
+[[IP_1]]: 86.236.166.111
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ73755
+[[LICENSE_PLATE_2]]: 3AA 8805
+[[LICENSE_PLATE_3]]: 0GA1609
+
+MAC
+[[MAC_1]]: 95:F9:6A:D2:C9:71
+
+PHONE
+[[PHONE_1]]: +420 596 111 222
+[[PHONE_2]]: +420 797 913 427
+[[PHONE_3]]: +420 696 270 331
+[[PHONE_4]]: +420 791 134 709
+[[PHONE_5]]: +420 731 636 978
+

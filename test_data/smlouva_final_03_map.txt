@@ -1,0 +1,54 @@
+OSOBY
+-----
+[[PERSON_1]]: Růžena Horváthová
+  - Růženy Horváthové
+  - Růženě Horváthové
+[[PERSON_2]]: Vojtěch Kopecký
+  - Vojtěcha Kopeckého
+[[PERSON_3]]: Sebastian Polák
+  - Sebastianem Polákem
+[[PERSON_4]]: Natálie Nguyenová
+  - Natálie Nguyenovou
+
+ADDRESS
+[[ADDRESS_1]]: listopadu 1790/5, 702 00 Ostrava - Moravská Ostrava
+[[ADDRESS_2]]: Ostrava
+[[ADDRESS_3]]: Palackého 170/9, 612 00 Brno - Královo Pole
+[[ADDRESS_4]]: Masarykovo náměstí 61/18, 586 01 Jihlava
+[[ADDRESS_5]]: V Ostravě
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 035227/6029
+
+DATE
+[[DATE_1]]: 3. 2. 1968
+[[DATE_2]]: 11. 10. 2026
+
+EMAIL
+[[EMAIL_1]]: ruzena.horvathova@email.cz
+[[EMAIL_2]]: vojtech.kopecky@post.cz
+[[EMAIL_3]]: sebastian.polak@fno.cz
+[[EMAIL_4]]: natalie.nguyenova@fno.cz
+
+ICO
+[[ICO_1]]: 00843989
+
+ID_CARD
+[[ID_CARD_1]]: BA605924
+
+INSURANCE_ID
+[[INSURANCE_ID_1]]: 3625059897
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EC6128
+
+PHONE
+[[PHONE_1]]: +420 753 789 130
+[[PHONE_2]]: +420 783 266 333
+[[PHONE_3]]: +420 742 538 541
+[[PHONE_4]]: +420 692 598 816
+[[PHONE_5]]: +420 627 132 136
+
+RFID
+[[RFID_1]]: RFID
+

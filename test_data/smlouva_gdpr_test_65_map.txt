@@ -1,0 +1,111 @@
+OSOBY
+-----
+[[PERSON_1]]: Michal Vaněk
+  - Michala Vaněka
+  - Michale Vaněke
+  - Michalem Vaněkem
+  - Michalovi Vaněkovi
+[[PERSON_2]]: Gabriela Hájková
+  - Gabrielo Hájková
+  - Gabrielou Hájkovou
+  - Gabriely Hájkové
+  - Gabrielě Hájkové
+[[PERSON_3]]: Ello Pazderová
+  - Ella Pazderová
+  - Ellou Pazderovou
+  - Elly Pazderové
+[[PERSON_4]]: Anežka Dvořáková
+  - Anežkou Dvořákovou
+  - Anežky Dvořákové
+  - Anežkě Dvořákové
+[[PERSON_6]]: Simona Švestková
+  - Simony Švestkové
+[[PERSON_7]]: Roman Vlach
+  - Romana Vlacha
+[[PERSON_8]]: Anežka Dvořákováová
+  - Anežku Dvořákováovou
+[[PERSON_9]]: Gabriela Hájkováová
+  - Gabrielu Hájkováovou
+[[PERSON_10]]: Ella Pazderováová
+  - Ellu Pazderováovou
+[[PERSON_11]]: Simona Švestkováová
+  - Simonu Švestkováovou
+
+ADDRESS
+[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
+[[ADDRESS_2]]: U Nemocnice 232/19, 128 08 Praha 2
+[[ADDRESS_3]]: Dlouhá 57, 602 00 Brno
+[[ADDRESS_4]]: Křenová 55, 602 00 Brno
+[[ADDRESS_5]]: U Parku 136/38, 779 00 Olomouc
+[[ADDRESS_6]]: Technologická 170/23, 160 00 Praha 6
+[[ADDRESS_7]]: Jabloňová 85/11, 400 01 Ústí nad Labem
+[[ADDRESS_8]]: a Dlouhá 57, 602 00 Brno
+[[ADDRESS_9]]: platnost 06/29, CVC
+
+BANK
+[[BANK_1]]: 1145907048/0100
+[[BANK_2]]: 6729069410/2700
+[[BANK_3]]: 8147605464/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 0607101554
+[[BIRTH_ID_2]]: 0760172923
+[[BIRTH_ID_3]]: 095106/1015
+[[BIRTH_ID_4]]: 0859042829
+[[BIRTH_ID_5]]: 046002/4431
+[[BIRTH_ID_6]]: 531121/4300
+
+DATE
+[[DATE_1]]: 27. 8. 1986
+[[DATE_2]]: 8. 11. 1978
+[[DATE_3]]: 7. 7. 1965
+[[DATE_4]]: 25. 8. 1985
+[[DATE_5]]: 19. 11. 1991
+[[DATE_6]]: 22. 5. 1990
+[[DATE_7]]: 18. 04. 2026
+
+DIC
+[[DIC_1]]: CZ99887766
+
+EMAIL
+[[EMAIL_1]]: michal.vanek@example.com
+[[EMAIL_2]]: gabriela.hajkova@example.com
+[[EMAIL_3]]: anezka.dvorakova@example.com
+[[EMAIL_4]]: ella.pazderova@seznam.cz
+[[EMAIL_5]]: simona.svestkova@email.cz
+[[EMAIL_6]]: roman.vlach@email.cz
+
+IBAN
+[[IBAN_1]]: CZ44 5500 0000 9750 6540 6830
+[[IBAN_2]]: CZ51 0800 0000 1773 9945 6455
+
+ICO
+[[ICO_1]]: 99887766
+
+ID_CARD
+[[ID_CARD_1]]: XE 894836
+[[ID_CARD_2]]: VN 113560
+[[ID_CARD_3]]: ZS 652604
+[[ID_CARD_4]]: MD 463012
+
+IP
+[[IP_1]]: 38.184.232.169
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ28322
+[[LICENSE_PLATE_2]]: EA12827
+
+MAC
+[[MAC_1]]: 75:E3:5E:F7:5F:C1
+
+PASSWORD
+[[PASSWORD_1]]: Gab85!8105
+
+PHONE
+[[PHONE_1]]: 637 584 240
+[[PHONE_2]]: +420633691298
+[[PHONE_3]]: +420728362873
+[[PHONE_4]]: +420 706 124 148
+[[PHONE_5]]: +420698582604
+[[PHONE_6]]: +420795461196
+

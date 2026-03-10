@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-02-25T17:55:33.768239",
+  "generated_at": "2026-03-09T15:48:36.532918",
   "source_file": "smlouva 30.docx",
   "entities": [
     {
@@ -96,7 +96,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_13]]",
+      "original": "Xenie Voráčková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_13]]",
       "original": "Xenie Voráčkovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_14]]",
+      "original": "Sára Voráčková",
       "occurrences": 1
     },
     {
@@ -126,13 +138,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_17]]",
-      "original": "Fialové",
+      "original": "Matylda Fialová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_17]]",
       "original": "Matyldu Fialovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_17]]",
+      "original": "Fialové",
       "occurrences": 1
     },
     {
@@ -304,6 +322,18 @@
       "occurrences": 1
     },
     {
+      "type": "PERSON",
+      "label": "[[PERSON_45]]",
+      "original": "Pravoslav Malík",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_51]]",
+      "original": "Xaver Klein",
+      "occurrences": 1
+    },
+    {
       "type": "DATE",
       "label": "[[DATE_1]]",
       "original": "2. ledna 2026",
@@ -330,67 +360,91 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Zahradní 45, Hradec Králové 500 02",
+      "original": "Lesní 67/3, Jihlava 586 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "Krátká 89/12, Brno 602 00",
+      "original": "Zahradní 45, Hradec Králové 500 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "Lázeňská 34, Teplice 415 01",
+      "original": "Krátká 89/12, Brno 602 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "Polní 67, Pardubice 530 02",
+      "original": "Lázeňská 34, Teplice 415 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Krátká 45, Olomouc 779 00",
+      "original": "Polní 67, Pardubice 530 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Zahradní 12, Přerov 750 02",
+      "original": "Krátká 45, Olomouc 779 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_9]]",
-      "original": "Slezská 89/6, Ostrava 708 00",
+      "original": "Zahradní 12, Přerov 750 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_10]]",
-      "original": "Krátká 23, Havířov 736 01",
+      "original": "Slezská 89/6, Ostrava 708 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_11]]",
-      "original": "Polní 67",
+      "original": "Krátká 23, Havířov 736 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_12]]",
-      "original": "Lázeňská 45, Karlovy Vary 360 01",
+      "original": "Polní 67, Frýdek-Místek 738 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_13]]",
+      "original": "Lázeňská 45, Karlovy Vary 360 01",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_14]]",
       "original": "Polní 34, Brno 602 00",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_15]]",
+      "original": "Praha",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_16]]",
+      "original": "Pardubice",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_17]]",
+      "original": "Brno",
       "occurrences": 1
     },
     {
@@ -498,181 +552,241 @@
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_10]]",
-      "original": "825629/7945",
+      "original": "334455667",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_11]]",
-      "original": "780625/7823",
+      "original": "825629/7945",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_12]]",
-      "original": "155624/7890",
+      "original": "780625/7823",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_13]]",
-      "original": "175823/8901",
+      "original": "155624/7890",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_14]]",
-      "original": "805629/8134",
+      "original": "175823/8901",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_15]]",
-      "original": "750814/7623",
+      "original": "805629/8134",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_16]]",
-      "original": "385629/8912",
+      "original": "750814/7623",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_17]]",
-      "original": "830625/7823",
+      "original": "385629/8912",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_18]]",
-      "original": "900512/8134",
+      "original": "830625/7823",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_19]]",
-      "original": "555624/8912",
+      "original": "900512/8134",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_20]]",
-      "original": "855723/8245",
+      "original": "555624/8912",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_21]]",
-      "original": "115624/7890",
+      "original": "855723/8245",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_22]]",
-      "original": "875629/8134",
+      "original": "115624/7890",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_23]]",
-      "original": "795624/7823",
+      "original": "875629/8134",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_24]]",
-      "original": "835629/8245",
+      "original": "795624/7823",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_25]]",
-      "original": "885629/8134",
+      "original": "835629/8245",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_26]]",
-      "original": "720625/7623",
+      "original": "885629/8134",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_27]]",
-      "original": "790814/8134",
+      "original": "720625/7623",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_28]]",
-      "original": "755629/8245",
+      "original": "790814/8134",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_29]]",
-      "original": "825724/8134",
+      "original": "755629/8245",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_30]]",
-      "original": "680512/7623",
+      "original": "889900112",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_31]]",
-      "original": "845629/8134",
+      "original": "825724/8134",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_32]]",
-      "original": "770714/7823",
+      "original": "680512/7623",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_33]]",
-      "original": "520825/6734",
+      "original": "845629/8134",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_34]]",
-      "original": "065624/7890",
+      "original": "770714/7823",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_35]]",
-      "original": "000512/7823",
+      "original": "520825/6734",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_36]]",
-      "original": "805629/8245",
+      "original": "065624/7890",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_37]]",
-      "original": "740714/7623",
+      "original": "000512/7823",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_38]]",
-      "original": "985624/8134",
+      "original": "805629/8245",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_39]]",
+      "original": "740714/7623",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_40]]",
+      "original": "985624/8134",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_41]]",
       "original": "680825/7623",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_42]]",
+      "original": "770825/7623",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_43]]",
+      "original": "720625/7823",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_44]]",
+      "original": "925724/8134",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_45]]",
+      "original": "810714/7823",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_46]]",
+      "original": "550825/6734",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_47]]",
+      "original": "865629/8245",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_48]]",
+      "original": "955724/8912",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_49]]",
+      "original": "630714/7623",
       "occurrences": 1
     },
     {
@@ -708,43 +822,31 @@
     {
       "type": "PHONE",
       "label": "[[PHONE_4]]",
-      "original": "334455667",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_5]]",
       "original": "667788990",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_6]]",
+      "label": "[[PHONE_5]]",
       "original": "+420 608 369 147",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_7]]",
+      "label": "[[PHONE_6]]",
       "original": "+420 775 456 789",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_8]]",
+      "label": "[[PHONE_7]]",
       "original": "+420 608 147 258",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_9]]",
+      "label": "[[PHONE_8]]",
       "original": "+420 731 369 258",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_10]]",
-      "original": "889900112",
       "occurrences": 1
     },
     {
@@ -811,6 +913,12 @@
       "type": "ICO",
       "label": "[[ICO_4]]",
       "original": "89012345",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_5]]",
+      "original": "67823451",
       "occurrences": 1
     }
   ]

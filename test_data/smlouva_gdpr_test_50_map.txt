@@ -1,20 +1,23 @@
 OSOBY
 -----
 [[PERSON_1]]: Petra Jelínková
-[[PERSON_2]]: Marek Hruška
-[[PERSON_3]]: Anna Králová
-  - Annou Královou
+[[PERSON_2]]: Spolek Dobrá
+[[PERSON_3]]: Marek Hruška
+[[PERSON_4]]: Anny Králová
   - Anny Králové
-[[PERSON_4]]: Jan Král
+[[PERSON_5]]: Jan Král
   - Jana Krále
   - Janem Králem
-[[PERSON_5]]: Simona Králová
+[[PERSON_6]]: Simona Králová
   - Simonou Královou
   - Simony Králové
+[[PERSON_7]]: Anna Králová
+  - Annou Královou
 
 ADDRESS
 [[ADDRESS_1]]: Dominikánské náměstí 1, 601 67 Brno
 [[ADDRESS_2]]: Rodinná 6, 612 00 Brno
+[[ADDRESS_3]]: V Brně
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 160414/0007

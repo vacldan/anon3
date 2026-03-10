@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:41.138165",
+  "generated_at": "2026-03-09T15:51:09.029739",
   "source_file": "smlouva_gdpr_test_29.docx",
   "entities": [
     {
@@ -12,13 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Barbory Vaňkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Barboro Vaňková",
+      "original": "Barborě Vaňkové",
       "occurrences": 1
     },
     {
@@ -30,13 +24,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Barborě Vaňkové",
+      "original": "Barboro Vaňková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Barbory Vaňkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "David Kříž",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Davidem Křížem",
       "occurrences": 1
     },
     {
@@ -55,12 +61,6 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Davidovi Křížovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Davidem Křížem",
       "occurrences": 1
     },
     {
@@ -90,13 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Štěpánovi Svobodovi",
+      "original": "Štěpána Svobody",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Štěpána Svobody",
+      "original": "Štěpánovi Svobodovi",
       "occurrences": 1
     },
     {

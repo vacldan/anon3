@@ -8,6 +8,7 @@ OSOBY
 ADDRESS
 [[ADDRESS_1]]: Datová 77, 186 00 Praha 8
 [[ADDRESS_2]]: Jabloňová 12, 400 01 Ústí nad Labem
+[[ADDRESS_3]]: V Praze
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 800101/1111

@@ -1,0 +1,110 @@
+OSOBY
+-----
+[[PERSON_1]]: Erik Hájek
+  - Erika Hájka
+  - Erike Hájku
+  - Erikem Hájkem
+  - Erikovi Hájkovi
+[[PERSON_2]]: Drahomíra Švestková
+  - Drahomíro Švestková
+  - Drahomírou Švestkovou
+  - Drahomíry Švestkové
+  - Drahomírě Švestkové
+[[PERSON_3]]: Drahomíra Švestkováová
+  - Drahomíru Švestkováovou
+[[PERSON_5]]: Ctibor Beneš
+  - Ctibora Beneša
+  - Ctiborem Benešem
+  - Ctiborovi Benešovi
+[[PERSON_6]]: Erik Procházka
+  - Erika Procházku
+  - Erika Procházky
+[[PERSON_7]]: Tereza Rendlová
+  - Terezy Rendlové
+[[PERSON_8]]: Vít Soukup
+  - Víta Soukupa
+[[PERSON_9]]: Tereza Rendlováová
+  - Terezu Rendlováovou
+
+ADDRESS
+[[ADDRESS_1]]: Sokolská 88, 120 00 Praha 2
+[[ADDRESS_2]]: Hlavní 48/34, 669 02 Znojmo
+[[ADDRESS_3]]: U Nemocnice 224/29, 128 08 Praha 2
+[[ADDRESS_4]]: Wolkerova 191/8, 796 01 Prostějov
+[[ADDRESS_5]]: Jihlavská 79/32, 625 00 Brno
+[[ADDRESS_6]]: Jabloňová 249, 400 01 Ústí nad Labem
+[[ADDRESS_7]]: Bezručova 164/26, 746 01 Opava
+[[ADDRESS_8]]: Hlavní 48/34, 669 02 Znojmo a U Nemocnice
+[[ADDRESS_9]]: Praha 2
+[[ADDRESS_10]]: platnost 10/27, CVC
+[[ADDRESS_11]]: V Liberci
+
+BANK
+[[BANK_1]]: 241639743/2010
+[[BANK_2]]: 9049908087/2010
+[[BANK_3]]: 631806-415985659/0100
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 020713/6489
+[[BIRTH_ID_2]]: 105124/9341
+[[BIRTH_ID_3]]: 961002/0449
+[[BIRTH_ID_4]]: 0103105278
+[[BIRTH_ID_5]]: 0758210887
+[[BIRTH_ID_6]]: 040226/9811
+
+DATE
+[[DATE_1]]: 27. 6. 1968
+[[DATE_2]]: 20. 10. 1977
+[[DATE_3]]: 16. 01. 2026
+[[DATE_4]]: 13. 6. 2005
+[[DATE_5]]: 11. 9. 2003
+[[DATE_6]]: 24. 9. 1980
+[[DATE_7]]: 1. 5. 1961
+[[DATE_8]]: 08. 03. 2026
+
+DIC
+[[DIC_1]]: CZ07788990
+
+EMAIL
+[[EMAIL_1]]: erik.hajek@post.cz
+[[EMAIL_2]]: drahomira.svestkova@example.com
+[[EMAIL_3]]: ctibor.benes@seznam.cz
+[[EMAIL_4]]: erik.prochazka@email.cz
+[[EMAIL_5]]: tereza.rendlova@email.cz
+[[EMAIL_6]]: vit.soukup@email.cz
+
+IBAN
+[[IBAN_1]]: CZ83 5500 0000 3000 4157 1887
+[[IBAN_2]]: CZ58 0800 0000 7180 8862 9209
+
+ICO
+[[ICO_1]]: 07788990
+
+ID_CARD
+[[ID_CARD_1]]: SD 284124
+[[ID_CARD_2]]: 440837681
+[[ID_CARD_3]]: 454123012
+[[ID_CARD_4]]: ID 805785
+
+IP
+[[IP_1]]: 98.141.112.150
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EA97587
+[[LICENSE_PLATE_2]]: EA97942
+
+MAC
+[[MAC_1]]: B1:61:50:65:67:E4
+
+PASSWORD
+[[PASSWORD_1]]: Dra32!7158
+
+PHONE
+[[PHONE_1]]: 749 474 682
+[[PHONE_2]]: 795 203 360
+[[PHONE_3]]: +420 775 309 323
+[[PHONE_4]]: +420680374411
+[[PHONE_5]]: +420 606 168 740
+[[PHONE_6]]: +420 654 769 849
+[[PHONE_7]]: 440837681
+

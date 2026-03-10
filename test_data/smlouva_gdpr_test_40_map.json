@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:48.401411",
+  "generated_at": "2026-03-09T15:51:10.779615",
   "source_file": "smlouva_gdpr_test_40.docx",
   "entities": [
     {
@@ -36,13 +36,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Matějovi Procházkovi",
+      "original": "Matěje Procházky",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Matěje Procházky",
+      "original": "Matějovi Procházkovi",
       "occurrences": 1
     },
     {
@@ -121,6 +121,12 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Dlouhá 8, 602 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "V Brně",
       "occurrences": 1
     },
     {

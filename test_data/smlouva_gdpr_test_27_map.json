@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:39.803433",
+  "generated_at": "2026-03-09T15:51:08.734870",
   "source_file": "smlouva_gdpr_test_27.docx",
   "entities": [
     {
@@ -18,12 +18,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Markéty Černé",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Markétou Černou",
       "occurrences": 1
     },
@@ -35,8 +29,20 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Markéty Černé",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Barbora Králová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Barbory Králové",
       "occurrences": 1
     },
     {
@@ -48,19 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Barborou Královou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Barboro Králová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Barbory Králové",
+      "original": "Barborou Královou",
       "occurrences": 1
     },
     {
@@ -78,13 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Erikem Novákem",
+      "original": "Erika Nováka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Erika Nováka",
+      "original": "Erikem Novákem",
       "occurrences": 1
     },
     {

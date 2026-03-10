@@ -23,7 +23,7 @@ OSOBY
   - Elišky Pokorné
 [[PERSON_13]]: Adam Pokorný
   - Adama Pokorného
-[[PERSON_14]]: Pavla Pokorný
+[[PERSON_14]]: Pavel Pokorný
   - Pavlu Pokornému
 [[PERSON_15]]: Lucie Pokorná
   - Lucie Pokorné
@@ -39,8 +39,7 @@ OSOBY
 [[PERSON_22]]: Dana Holubová
   - Dany Holubové
 [[PERSON_23]]: Radek Holub
-[[PERSON_24]]: Jiří Kučer
-  - Jiří Kučera
+[[PERSON_24]]: Jiří Kučera
 [[PERSON_25]]: Petr Vlček
 [[PERSON_26]]: Zdeněk Novotný
   - Novotnému
@@ -50,10 +49,9 @@ OSOBY
   - Veselému
 [[PERSON_29]]: Ivana Čermáková
 [[PERSON_30]]: Tereza Čermáková
-  - Tereze
 [[PERSON_31]]: Markéta Šimková
 [[PERSON_32]]: Nikola Horáková
-[[PERSON_33]]: Jan Horák
+[[PERSON_33]]: Jana Horák
   - Jana Horáka
 [[PERSON_34]]: Simona Jelínková
 [[PERSON_35]]: Václav Moravec
@@ -69,29 +67,24 @@ OSOBY
 [[PERSON_44]]: Klára Synková
 [[PERSON_45]]: Ondřej Vávra
 [[PERSON_46]]: Jana Svobodová
-[[PERSON_47]]: Karel Marek
-[[PERSON_48]]: Barbora Němcová
 [[PERSON_49]]: Tomáš Urban
-[[PERSON_50]]: Monika Zemanová
-[[PERSON_51]]: Robert Kolář
-[[PERSON_52]]: Daniela Bartošová
-[[PERSON_53]]: Lukáš Pospíšil
-[[PERSON_54]]: Iveta Krajíčková
-[[PERSON_55]]: Vladimír Růžička
 
 ADDRESS
 [[ADDRESS_1]]: na zajištění nemovitosti na adrese Růžová 847/23, Praha 3
 [[ADDRESS_2]]: Dlouhá 15, Brno 602 00
 [[ADDRESS_3]]: Lidická 47/9, Plzeň 301 00
 [[ADDRESS_4]]: Na Výšinách 128, Ostrava 708 00
-[[ADDRESS_5]]: trvale bytem Krátká 5, Liberec 460 01
-[[ADDRESS_6]]: Stromová 67/3, Olomouc 779 00
-[[ADDRESS_7]]: Zahradní 19, Pardubice 530 02
-[[ADDRESS_8]]: Polní 34, Hradec Králové 500 02
-[[ADDRESS_9]]: Lesní 7, Zlín 760 01
-[[ADDRESS_10]]: Školní 45, Tábor 390 01
-[[ADDRESS_11]]: Jiráskova 89, Kladno 272 01
-[[ADDRESS_12]]: Revoluční 23
+[[ADDRESS_5]]: Krátká 5, Liberec 460 01
+[[ADDRESS_6]]: Hlavní 84, České Budějovice 370 01
+[[ADDRESS_7]]: Stromová 67/3, Olomouc 779 00
+[[ADDRESS_8]]: Zahradní 19, Pardubice 530 02
+[[ADDRESS_9]]: Polní 34, Hradec Králové 500 02
+[[ADDRESS_10]]: Pražská 156/89, Jihlava 586 01
+[[ADDRESS_11]]: Lesní 7, Zlín 760 01
+[[ADDRESS_12]]: Školní 45, Tábor 390 01
+[[ADDRESS_13]]: Plzeň
+[[ADDRESS_14]]: Jiráskova 89, Kladno 272 01
+[[ADDRESS_15]]: Revoluční 23, Frýdek-Místek 738 01
 
 BANK
 [[BANK_1]]: 2847561230/0100
@@ -185,17 +178,15 @@ ID_CARD
 [[ID_CARD_3]]: CD789012
 [[ID_CARD_4]]: EF456789
 
-INSURANCE_ID
-[[INSURANCE_ID_1]]: 111222333
-
 LICENSE_PLATE
 [[LICENSE_PLATE_1]]: 3T8 4567
 
 PHONE
 [[PHONE_1]]: +420 777 123 456
-[[PHONE_2]]: +420 608 987 654
-[[PHONE_3]]: +420 732 456 789
-[[PHONE_4]]: +420 605 123 987
-[[PHONE_5]]: +420 721 654 321
-[[PHONE_6]]: +420 775 321 654
+[[PHONE_2]]: 111222333
+[[PHONE_3]]: +420 608 987 654
+[[PHONE_4]]: +420 732 456 789
+[[PHONE_5]]: +420 605 123 987
+[[PHONE_6]]: +420 721 654 321
+[[PHONE_7]]: +420 775 321 654
 

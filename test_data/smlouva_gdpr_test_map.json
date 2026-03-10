@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:19.628588",
+  "generated_at": "2026-03-09T15:50:48.539835",
   "source_file": "smlouva_gdpr_test.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Janem Novákem",
+      "original": "Janu Novákovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Janu Novákovi",
+      "original": "Janem Novákem",
       "occurrences": 1
     },
     {
@@ -35,91 +35,73 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Petrou Svobodovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Petry Svobodové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Petře Svobodové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
+      "label": "[[PERSON_4]]",
       "original": "Tomáš Svoboda",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Tomáše Svobody",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
+      "label": "[[PERSON_4]]",
       "original": "Tomášem Svobodou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
+      "label": "[[PERSON_4]]",
       "original": "Tomáši Svobodovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
+      "original": "Tomáše Svobody",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Lucie Malá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Lucii Malé",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_5]]",
       "original": "Lucie Malé",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_5]]",
+      "original": "Lucii Malé",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Lucií Malou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_6]]",
       "original": "Václav Svoboda",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Václavu Svobodovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_6]]",
       "original": "Václava Svobody",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_6]]",
+      "original": "Václavu Svobodovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
       "original": "Václavem Svobodou",
       "occurrences": 1
     },
@@ -222,19 +204,31 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "U Parku 8, 779 00 Olomouc",
+      "original": "Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "Na Kopci 12, 100 00 Praha 10",
+      "original": "U Parku 8, 779 00 Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
+      "original": "Na Kopci 12, 100 00 Praha 10",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_7]]",
       "original": "zasílání fyzických dokumentů na adresu Vinohradská 1287/45, 130 00 Praha 3",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_8]]",
+      "original": "V Praze",
       "occurrences": 1
     },
     {

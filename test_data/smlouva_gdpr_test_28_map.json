@@ -1,24 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:40.464404",
+  "generated_at": "2026-03-09T15:51:08.889667",
   "source_file": "smlouva_gdpr_test_28.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Erik Novák",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Erike Nováke",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Erikem Novákem",
       "occurrences": 1
     },
     {
@@ -35,14 +23,20 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Václav Řezníček",
+      "label": "[[PERSON_1]]",
+      "original": "Erike Nováke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Erikem Novákem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Václava Řezníčka",
+      "original": "Václav Řezníček",
       "occurrences": 1
     },
     {
@@ -54,13 +48,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Václave Řezníčku",
+      "original": "Václava Řezníčka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Václavovi Řezníčkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Václave Řezníčku",
       "occurrences": 1
     },
     {
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Alžbětě Svobodové",
+      "original": "Alžbětou Svobodovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Alžbětou Svobodovou",
+      "original": "Alžbětě Svobodové",
       "occurrences": 1
     },
     {

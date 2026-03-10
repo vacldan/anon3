@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:45.279484",
+  "generated_at": "2026-03-09T15:51:10.036282",
   "source_file": "smlouva_gdpr_test_35.docx",
   "entities": [
     {
@@ -36,6 +36,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
+      "original": "Janou Procházkovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Janě Procházkové",
       "occurrences": 1
     },
@@ -43,12 +49,6 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Jany Procházkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Janou Procházkovou",
       "occurrences": 1
     },
     {
@@ -127,6 +127,12 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
       "original": "Dlouhá 8, 602 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "V Praze",
       "occurrences": 1
     },
     {

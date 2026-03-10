@@ -1,0 +1,57 @@
+OSOBY
+-----
+[[PERSON_1]]: Theodor Polák
+[[PERSON_2]]: Eliška Zemanová
+  - Elišky Zemanové
+  - Eliškě Zemanové
+[[PERSON_3]]: Dominik Jandák
+[[PERSON_4]]: Hans Horváth
+  - Hansem Horváthem
+  - Horváth
+
+ADDRESS
+[[ADDRESS_1]]: Masarykovo náměstí 124/21, 586 01 Jihlava
+[[ADDRESS_2]]: Stodolní 170/17, 702 00 Ostrava - Moravská Ostrava
+[[ADDRESS_3]]: Komenského 232/12, 760 01 Zlín
+[[ADDRESS_4]]: V Praze
+
+BANK
+[[BANK_1]]: 191327976/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 085303/5683
+
+DATE
+[[DATE_1]]: 1. 4. 1984
+[[DATE_2]]: 19. 2. 1974
+[[DATE_3]]: 15. 3. 2025
+[[DATE_4]]: 10. 9. 2025
+[[DATE_5]]: 1. 10. 2025
+[[DATE_6]]: 27. 8. 2026
+
+DIC
+[[DIC_1]]: CZ20858614
+
+EMAIL
+[[EMAIL_1]]: theodor.polak@post.cz
+[[EMAIL_2]]: eliska.zemanova@firma.cz
+[[EMAIL_3]]: hans.horvath@gmail.com
+
+IBAN
+[[IBAN_1]]: CZ74 0600 0000 1290 6886 3151
+
+ICO
+[[ICO_1]]: 92623072
+[[ICO_2]]: 14335290
+
+ID_CARD
+[[ID_CARD_1]]: FN 784866
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: AT31547
+
+PHONE
+[[PHONE_1]]: +420 797 446 658
+[[PHONE_2]]: +420 638 107 886
+[[PHONE_3]]: +420 759 220 818
+

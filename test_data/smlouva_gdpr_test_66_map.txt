@@ -1,0 +1,110 @@
+OSOBY
+-----
+[[PERSON_1]]: Max Švestka
+  - Maxa Švestku
+  - Maxa Švestky
+  - Maxe Švestko
+  - Maxem Švestkou
+  - Maxovi Švestkovi
+[[PERSON_2]]: Libuše Rendlová
+  - Libuše Rendlovou
+  - Libuše Rendlové
+[[PERSON_3]]: Miloslav Rendl
+  - Miloslava Rendla
+  - Miloslavem Rendlem
+[[PERSON_4]]: Darja Kuchtová
+  - Darjou Kuchtovou
+  - Darjy Kuchtové
+  - Darjě Kuchtové
+[[PERSON_5]]: Květa Holíková
+  - Květy Holíkové
+[[PERSON_6]]: Ondřej Kuchta
+  - Ondřeja Kuchtu
+  - Ondřeja Kuchty
+[[PERSON_7]]: Darja Kuchtováová
+  - Darju Kuchtováovou
+[[PERSON_8]]: Libuše Rendlováová
+  - Libuše Rendlováovou
+[[PERSON_9]]: Květa Holíkováová
+  - Květu Holíkováovou
+
+ADDRESS
+[[ADDRESS_1]]: Sokolská 88, 120 00 Praha 2
+[[ADDRESS_2]]: Nádražní 80, 702 00 Ostrava
+[[ADDRESS_3]]: Riegrova 208/29, 779 00 Olomouc
+[[ADDRESS_4]]: Žižkova 177/11, 460 01 Liberec
+[[ADDRESS_5]]: Havlíčkova 137/14, 586 01 Jihlava
+[[ADDRESS_6]]: Smetanova 207/4, 760 01 Zlín
+[[ADDRESS_7]]: Masarykova 237/2, 500 02 Hradec Králové
+[[ADDRESS_8]]: Nádražní 80, 702 00 Ostrava a Riegrova
+[[ADDRESS_9]]: Olomouc
+[[ADDRESS_10]]: platnost 12/27, CVC
+
+BANK
+[[BANK_1]]: 1679274040/2010
+[[BANK_2]]: 3552470254/2010
+[[BANK_3]]: 122172-7184011360/6210
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 090626/7288
+[[BIRTH_ID_2]]: 105116/5584
+[[BIRTH_ID_3]]: 765210/3605
+[[BIRTH_ID_4]]: 9403086061
+[[BIRTH_ID_5]]: 075915/0972
+[[BIRTH_ID_6]]: 530909/4729
+
+DATE
+[[DATE_1]]: 28. 5. 1971
+[[DATE_2]]: 16. 4. 1967
+[[DATE_3]]: 3. 9. 1998
+[[DATE_4]]: 16. 2. 2002
+[[DATE_5]]: 20. 3. 1969
+[[DATE_6]]: 17. 5. 1989
+[[DATE_7]]: 07. 04. 2026
+
+DIC
+[[DIC_1]]: CZ07788990
+
+EMAIL
+[[EMAIL_1]]: max.svestka@firma.cz
+[[EMAIL_2]]: libuse.rendlova@firma.cz
+[[EMAIL_3]]: darja.kuchtova@email.cz
+[[EMAIL_4]]: miloslav.rendl@post.cz
+[[EMAIL_5]]: kveta.holikova@example.com
+[[EMAIL_6]]: ondrej.kuchta@firma.cz
+
+IBAN
+[[IBAN_1]]: CZ12 0300 0000 6459 6124 9617
+[[IBAN_2]]: CZ64 0100 0000 6649 9662 4881
+
+ICO
+[[ICO_1]]: 07788990
+
+ID_CARD
+[[ID_CARD_1]]: JI 383178
+[[ID_CARD_2]]: 268436508
+[[ID_CARD_3]]: 638600409
+[[ID_CARD_4]]: BL 307127
+
+IP
+[[IP_1]]: 53.97.113.109
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP19183
+[[LICENSE_PLATE_2]]: CZ92753
+
+MAC
+[[MAC_1]]: D7:B7:54:70:5B:5D
+
+PASSWORD
+[[PASSWORD_1]]: Lib23!7837
+
+PHONE
+[[PHONE_1]]: +420 712 608 879
+[[PHONE_2]]: 793 623 446
+[[PHONE_3]]: +420 694 502 261
+[[PHONE_4]]: +420669872773
+[[PHONE_5]]: 678 440 425
+[[PHONE_6]]: 608 733 508
+[[PHONE_7]]: 268436508
+

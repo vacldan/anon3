@@ -1,0 +1,83 @@
+OSOBY
+-----
+[[PERSON_1]]: Štěpán Dvořák
+  - Štěpána Dvořáka
+  - Štěpáne Dvořáke
+  - Štěpánem Dvořákem
+  - Štěpánovi Dvořákovi
+[[PERSON_2]]: Pavel Roubal
+  - Pavla Roubala
+  - Pavle Roubale
+  - Pavlem Roubalem
+  - Pavlovi Roubalovi
+[[PERSON_3]]: Alžběta Řezníčková
+  - Alžbětou Řezníčkovou
+  - Alžbětě Řezníčkové
+[[PERSON_4]]: Jan Král
+  - Jana Krála
+  - Jane Krále
+  - Janem Králem
+  - Janovi Královi
+
+ADDRESS
+[[ADDRESS_1]]: Kampus 9, 625 00 Brno
+[[ADDRESS_2]]: Na Kopci 174/30, 100 00 Praha 10
+[[ADDRESS_3]]: Technologická 39/20, 160 00 Praha 6
+[[ADDRESS_4]]: případně písemně na adresu Technologická 39/20, 160 00 Praha 6
+[[ADDRESS_5]]: písemné doručení na adresu Technologická 39/20, 160 00 Praha 6
+[[ADDRESS_6]]: ro účely doručování se používá adresa Technologická 39/20, 160 00 Praha 6
+[[ADDRESS_7]]: pro Pavlovi Roubalovi a Na Kopci 174/30, 100 00 Praha 10
+
+BANK
+[[BANK_1]]: 218629090/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 061126/8736
+[[BIRTH_ID_2]]: 100409/9946
+[[BIRTH_ID_3]]: 780603/7613
+[[BIRTH_ID_4]]: 021227/6208
+
+CARD
+[[CARD_1]]: 4968 1638 5359 7391
+
+DATE
+[[DATE_1]]: 27. 11. 1965
+[[DATE_2]]: 05. 08. 1997
+[[DATE_3]]: 25. 10. 1984
+[[DATE_4]]: 17. 01. 2008
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: rektorat@unisever.cz
+[[EMAIL_2]]: stepan.dvorak@example.com
+[[EMAIL_3]]: pavel.roubal@example.com
+[[EMAIL_4]]: jan.kral@example.com
+[[EMAIL_5]]: alzbeta.reznickova@example.com
+
+IBAN
+[[IBAN_1]]: CZ32 0100 0000 2856 7667 9840
+
+ICO
+[[ICO_1]]: 00224466
+
+ID_CARD
+[[ID_CARD_1]]: 376149813
+
+IP
+[[IP_1]]: 186.130.230.191
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ68302
+[[LICENSE_PLATE_2]]: 7B8 4154
+[[LICENSE_PLATE_3]]: 0GA3824
+
+MAC
+[[MAC_1]]: 16:75:F4:DB:42:DD
+
+PHONE
+[[PHONE_1]]: +420 541 111 000
+[[PHONE_2]]: +420 678 786 491
+[[PHONE_3]]: +420 679 241 874
+[[PHONE_4]]: +420 613 741 390
+[[PHONE_5]]: +420 776 232 585
+

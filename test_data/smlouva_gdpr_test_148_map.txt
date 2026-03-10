@@ -1,0 +1,83 @@
+OSOBY
+-----
+[[PERSON_1]]: Veronika Vaňková
+  - Veroniko Vaňková
+  - Veronikou Vaňkovou
+  - Veroniky Vaňkové
+  - Veronikě Vaňkové
+[[PERSON_2]]: Jana Svobodová
+  - Jano Svobodová
+  - Janou Svobodovou
+  - Jany Svobodové
+  - Janě Svobodové
+[[PERSON_3]]: Veronika Malíková
+  - Veronikou Malíkovou
+  - Veronikě Malíkové
+[[PERSON_4]]: Jan Holík
+  - Jana Holíka
+  - Jane Holíke
+  - Janem Holíkem
+  - Janovi Holíkovi
+
+ADDRESS
+[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_2]]: U Parku 131/1, 779 00 Olomouc
+[[ADDRESS_3]]: Vinohradská 43/4, 130 00 Praha 3
+[[ADDRESS_4]]: případně písemně na adresu Vinohradská 43/4, 130 00 Praha 3
+[[ADDRESS_5]]: písemné doručení na adresu Vinohradská 43/4, 130 00 Praha 3
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Vinohradská 43/4, 130 00 Praha 3
+[[ADDRESS_7]]: pro Janě Svobodové a U Parku 131/1, 779 00 Olomouc pro Veronikě Vaňkové
+
+BANK
+[[BANK_1]]: 979490921/0100
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 071022/6343
+[[BIRTH_ID_2]]: 920211/5687
+[[BIRTH_ID_3]]: 810112/2685
+[[BIRTH_ID_4]]: 030403/3667
+
+CARD
+[[CARD_1]]: 4873 2141 9963 3024
+
+DATE
+[[DATE_1]]: 03. 10. 2001
+[[DATE_2]]: 19. 10. 1996
+[[DATE_3]]: 14. 01. 1981
+[[DATE_4]]: 05. 06. 1989
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: sekretariat@gymhradby.cz
+[[EMAIL_2]]: veronika.vankova@example.com
+[[EMAIL_3]]: jana.svobodova@example.com
+[[EMAIL_4]]: jan.holik@example.com
+[[EMAIL_5]]: veronika.malikova@example.com
+
+IBAN
+[[IBAN_1]]: CZ44 0800 0000 2013 2601 8565
+
+ICO
+[[ICO_1]]: 12398745
+
+ID_CARD
+[[ID_CARD_1]]: 454658055
+
+IP
+[[IP_1]]: 88.134.202.170
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP50769
+[[LICENSE_PLATE_2]]: 3AA 8971
+[[LICENSE_PLATE_3]]: 0FA2269
+
+MAC
+[[MAC_1]]: 00:1F:94:16:37:0C
+
+PHONE
+[[PHONE_1]]: +420 596 111 222
+[[PHONE_2]]: +420 778 211 541
+[[PHONE_3]]: +420 606 964 111
+[[PHONE_4]]: +420 718 718 962
+[[PHONE_5]]: +420 678 966 106
+

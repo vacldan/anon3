@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:43.279433",
+  "generated_at": "2026-03-09T15:51:09.651902",
   "source_file": "smlouva_gdpr_test_32.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Sabinou Nedvědovou",
+      "original": "Sabině Nedvědové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Sabině Nedvědové",
+      "original": "Sabinou Nedvědovou",
       "occurrences": 1
     },
     {
@@ -36,13 +36,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Renatou Slámovou",
+      "original": "Renatě Slámové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Renatě Slámové",
+      "original": "Renatou Slámovou",
       "occurrences": 1
     },
     {
@@ -53,14 +53,38 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_5]]",
+      "original": "Miroslav Vaňk",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Miroslavu Vaňkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_5]]",
       "original": "Miroslava Vaňka",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Nemocniční 1, 400 01 Ústí nad Labem",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Jabloňová 12, 400 01 Ústí nad Labem",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "platnost 08/28, CVC",
       "occurrences": 1
     },
     {
@@ -156,31 +180,19 @@
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_3]]",
-      "original": "9306307890",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_4]]",
       "original": "840308/6789",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_5]]",
+      "label": "[[BIRTH_ID_4]]",
       "original": "801111/1234",
       "occurrences": 1
     },
     {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_1]]",
-      "original": "Jabloňová 12, 400 01 Ústí nad Labem",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "platnost 08/28, CVC",
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_1]]",
+      "original": "9306307890",
       "occurrences": 1
     },
     {

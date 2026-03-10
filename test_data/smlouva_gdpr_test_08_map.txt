@@ -4,7 +4,7 @@ OSOBY
 [[PERSON_2]]: Renata Slámová
   - Renatou Slámovou
   - Renaty Slámové
-[[PERSON_3]]: Miroslav Vaněk
+[[PERSON_3]]: Miroslav Vaňek
   - Miroslava Vaňka
 [[PERSON_4]]: Nikol Šťastná
   - Nikol Šťastnou
@@ -13,6 +13,7 @@ OSOBY
 ADDRESS
 [[ADDRESS_1]]: Pojišťovací 4, 110 00 Praha 1
 [[ADDRESS_2]]: Na Návsi 6, 789 01 Zábřeh
+[[ADDRESS_3]]: V Praze
 
 BANK
 [[BANK_1]]: 771199221/0100

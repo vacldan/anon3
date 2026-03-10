@@ -20,9 +20,12 @@ ADDRESS
 [[ADDRESS_2]]: Poděbradova 10, 460 01 Liberec
 [[ADDRESS_3]]: Svobody 3, Brno
 [[ADDRESS_4]]: Dlouhá 12, 602 00 Brno
-[[ADDRESS_5]]: Průmyslová 9, Brno
-[[ADDRESS_6]]: Komenského 4, Praha 2
-[[ADDRESS_7]]: Brněnská 10, Brno
+[[ADDRESS_5]]: Hlavní 77, 779 00 Olomouc
+[[ADDRESS_6]]: Olomouc
+[[ADDRESS_7]]: Průmyslová 9, Brno
+[[ADDRESS_8]]: Komenského 4, Praha 2
+[[ADDRESS_9]]: Brněnská 10, Brno
+[[ADDRESS_10]]: Brno
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 800202/3456

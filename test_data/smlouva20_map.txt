@@ -2,84 +2,83 @@ OSOBY
 -----
 [[PERSON_1]]: Gabriela Štěpánová
   - Gabrielou Štěpánovou
-[[PERSON_2]]: Adam Králem
+[[PERSON_2]]: Adam Král
   - Adamem Králem
-[[PERSON_3]]: Adam Král
-[[PERSON_4]]: Lucie Havelková
+[[PERSON_3]]: Lucie Havelková
   - Lucii Havelkové
-[[PERSON_5]]: Petr Dohnal
+[[PERSON_4]]: Petr Dohnal
   - Petra Dohnala
   - Petru Dohnalovi
-[[PERSON_6]]: Martina Jeřábková
+[[PERSON_5]]: Martina Jeřábková
   - Martinou Jeřábkovou
   - Martinu Jeřábkovou
-[[PERSON_7]]: Tomáš Nguyen
+[[PERSON_6]]: Tomáš Nguyen
   - Tomášem Nguyenem
-[[PERSON_8]]: Eva Marečková
+[[PERSON_7]]: Eva Marečková
   - Evy Marečkové
-[[PERSON_9]]: David Šembera
+[[PERSON_8]]: David Šembera
   - Davida Šembery
-[[PERSON_10]]: Klára Šustrová
+[[PERSON_9]]: Klára Šustrová
   - Kláru Šustrovou
-[[PERSON_11]]: Daniel Mlynář
+[[PERSON_10]]: Daniel Mlynář
   - Danielu Mlynářovi
-[[PERSON_12]]: Tereza Pavlíková
+[[PERSON_11]]: Tereza Pavlíková
   - Terezou Pavlíkovou
-[[PERSON_13]]: Robert Vinkler
+[[PERSON_12]]: Robert Vinkler
   - Robertu Vinklerovi
-[[PERSON_14]]: Simona Trčková
+[[PERSON_13]]: Simona Trčková
   - Simony Trčkové
   - Simoně Trčkové
-[[PERSON_15]]: Michal Gregor
+[[PERSON_14]]: Michal Gregor
   - Michalem Gregorem
-[[PERSON_16]]: Lenka Šípková
+[[PERSON_15]]: Lenka Šípková
   - Lenky Šípkové
-[[PERSON_17]]: Ondřej Vlček
+[[PERSON_16]]: Ondřej Vlček
   - Ondřejem Vlčkem
-[[PERSON_18]]: Marcela Bočková
+[[PERSON_17]]: Marcela Bočková
   - Marcele Bočkové
-[[PERSON_19]]: Viktor Havel
+[[PERSON_18]]: Viktor Havel
   - Viktora Havla
   - Viktoru Havlovi
-[[PERSON_20]]: Barbora Němcová
+[[PERSON_19]]: Barbora Němcová
   - Barbory Němcové
-[[PERSON_21]]: Radka Hofmanová
+[[PERSON_21]]: Radek Hofmana
+  - Radek Hofman
   - Radka Hofmana
-[[PERSON_23]]: Alžběta Konečná
+[[PERSON_22]]: Alžběta Konečná
   - Alžbětou Konečnou
-[[PERSON_24]]: Igor Vraný
-  - Igor
+[[PERSON_23]]: Igor Vraný
   - Igoru Vranému
   - Vraný
-[[PERSON_25]]: Monika Hrabovská
+[[PERSON_24]]: Monika Hrabovská
   - Monice Hrabovské
   - Monikou Hrabovskou
-[[PERSON_26]]: Roman Turek
+[[PERSON_25]]: Roman Turek
   - Romanem Turkovi
   - Romanu Turkovi
-[[PERSON_27]]: Kateřina Blažková
+[[PERSON_26]]: Kateřina Blažková
   - Kateřinu Blažkovou
-[[PERSON_28]]: Filip Švec
+[[PERSON_27]]: Filip Švec
   - Filipa Švece
   - Filipem Švecem
-[[PERSON_29]]: Adéla Jarošová
+[[PERSON_28]]: Adéla Jarošová
   - Adéle Jarošové
-[[PERSON_30]]: Jaroslav Černý
+[[PERSON_29]]: Jaroslav Černý
   - Jaroslavem Černým
   - Černého
-[[PERSON_31]]: Helena Vodičková
+[[PERSON_30]]: Helena Vodičková
   - Helenou Vodičkovou
   - Heleně Vodičkové
-[[PERSON_32]]: Kamil Řezníčka
+[[PERSON_31]]: Kamil Řezníčka
   - Kamil Řezníček
   - Kamila Řezníčka
-[[PERSON_33]]: Gabriela Pokorná
+[[PERSON_32]]: Gabriela Pokorná
   - Gabriele Pokorné
-[[PERSON_34]]: Štěpán Hrubeš
+[[PERSON_33]]: Štěpán Hrubeš
   - Štěpánem Hrubešem
-[[PERSON_35]]: Nikol Šťastná
+[[PERSON_34]]: Nikol Šťastná
   - Nikol Šťastné
-[[PERSON_36]]: Miroslav Vaněk
+[[PERSON_35]]: Miroslav Vaňk
   - Miroslavem Vaňkem
   - Miroslavu Vaňkovi
 [[PERSON_37]]: Renato Slámová
@@ -97,20 +96,20 @@ OSOBY
   - Erikem Roubalem
 [[PERSON_42]]: Sabina Nedvědová
   - Sabiny Nedvědové
-[[PERSON_43]]: Aleš Kříža
-  - Aleš Kříž
+[[PERSON_43]]: Aleš Kříž
   - Aleše Kříže
   - Aleši Křížovi
 [[PERSON_44]]: Veronika Lacinová
   - Veronice Lacinové
-[[PERSON_45]]: Adrian Kratochvílem
+[[PERSON_45]]: Adrian Kratochvíl
   - Adrianem Kratochvílem
-[[PERSON_46]]: Adrian Kratochvíla
   - Adrianovi Kratochvílovi
 
 ADDRESS
-[[ADDRESS_1]]: se sídlem V Kapslovně 881/11, Praha 3
+[[ADDRESS_1]]: V Kapslovně 881/11, Praha 3
 [[ADDRESS_2]]: Obvodním soudem pro Prahu 3, sp
+[[ADDRESS_3]]: v Praze
+[[ADDRESS_4]]: v Brně
 
 BANK
 [[BANK_1]]: 112882351/0300

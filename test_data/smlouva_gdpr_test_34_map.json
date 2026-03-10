@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:44.593779",
+  "generated_at": "2026-03-09T15:51:09.894651",
   "source_file": "smlouva_gdpr_test_34.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Václavem Svobodou",
+      "original": "Václava Svobody",
       "occurrences": 1
     },
     {
@@ -24,19 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Václava Svobody",
+      "original": "Václavem Svobodou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Petra Svobodová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Petře Svobodové",
       "occurrences": 1
     },
     {
@@ -49,6 +43,12 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Petrou Svobodovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Petře Svobodové",
       "occurrences": 1
     },
     {
@@ -91,6 +91,12 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Křenová 14, 602 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "V Brně",
       "occurrences": 1
     },
     {

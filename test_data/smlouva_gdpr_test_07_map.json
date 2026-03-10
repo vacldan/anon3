@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:25.418872",
+  "generated_at": "2026-03-09T15:50:50.178001",
   "source_file": "smlouva_gdpr_test_07.docx",
   "entities": [
     {
@@ -37,6 +37,12 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Jabloňová 12, 400 01 Ústí nad Labem",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "V Praze",
       "occurrences": 1
     },
     {

@@ -1,0 +1,83 @@
+OSOBY
+-----
+[[PERSON_1]]: David Hrubeš
+  - Davida Hrubeša
+  - Davide Hrubeše
+  - Davidem Hrubešem
+  - Davidovi Hrubešovi
+[[PERSON_2]]: Ondřej Vaněk
+  - Ondřeja Vaněka
+  - Ondřeje Vaněke
+  - Ondřejem Vaněkem
+  - Ondřejovi Vaněkovi
+[[PERSON_3]]: Markéta Králová
+  - Markétou Královou
+  - Markétě Králové
+[[PERSON_4]]: Petra Černá
+  - Petro Černá
+  - Petrou Černou
+  - Petry Černé
+  - Petrě Černé
+
+ADDRESS
+[[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_2]]: Na Kopci 146/10, 100 00 Praha 10
+[[ADDRESS_3]]: Pojišťovací 29/27, 110 00 Praha 1
+[[ADDRESS_4]]: případně písemně na adresu Pojišťovací 29/27, 110 00 Praha 1
+[[ADDRESS_5]]: písemné doručení na adresu Pojišťovací 29/27, 110 00 Praha 1
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Pojišťovací 29/27, 110 00 Praha 1
+[[ADDRESS_7]]: pro Ondřejovi Vaněkovi a Na Kopci 146/10, 100 00 Praha 10
+
+BANK
+[[BANK_1]]: 841535560/0600
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 700124/2161
+[[BIRTH_ID_2]]: 680907/3357
+[[BIRTH_ID_3]]: 840809/8818
+[[BIRTH_ID_4]]: 891119/8750
+
+CARD
+[[CARD_1]]: 4328 3801 9253 6209
+
+DATE
+[[DATE_1]]: 12. 02. 1994
+[[DATE_2]]: 28. 09. 1988
+[[DATE_3]]: 14. 11. 1997
+[[DATE_4]]: 11. 08. 1989
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: podatelna@novybrod.cz
+[[EMAIL_2]]: david.hrubes@example.com
+[[EMAIL_3]]: ondrej.vanek@example.com
+[[EMAIL_4]]: petra.cerna@example.com
+[[EMAIL_5]]: marketa.kralova@example.com
+
+IBAN
+[[IBAN_1]]: CZ85 5500 0000 9778 3979 5865
+
+ICO
+[[ICO_1]]: 00223344
+
+ID_CARD
+[[ID_CARD_1]]: 560061887
+
+IP
+[[IP_1]]: 192.168.11.22
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ72495
+[[LICENSE_PLATE_2]]: 2AC 8206
+[[LICENSE_PLATE_3]]: 0HA9288
+
+MAC
+[[MAC_1]]: 38:0A:4B:C0:EF:29
+
+PHONE
+[[PHONE_1]]: +420 495 888 111
+[[PHONE_2]]: +420 797 188 612
+[[PHONE_3]]: +420 615 585 500
+[[PHONE_4]]: +420 687 262 981
+[[PHONE_5]]: +420 650 830 565
+

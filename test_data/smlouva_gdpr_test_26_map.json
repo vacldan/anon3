@@ -1,24 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:39.169379",
+  "generated_at": "2026-03-09T15:51:08.625574",
   "source_file": "smlouva_gdpr_test_26.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Aleš Dvořák",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Aleše Dvořáke",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Alešem Dvořákem",
       "occurrences": 1
     },
     {
@@ -31,6 +19,18 @@
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Aleša Dvořáka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Aleše Dvořáke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Alešem Dvořákem",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ondřeje Hrubeše",
+      "original": "Ondřeja Hrubeša",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ondřeja Hrubeša",
+      "original": "Ondřeje Hrubeše",
       "occurrences": 1
     },
     {
@@ -84,7 +84,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Štěpána Vlacha",
+      "original": "Štěpánem Vlachem",
       "occurrences": 1
     },
     {
@@ -96,7 +96,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Štěpánem Vlachem",
+      "original": "Štěpána Vlacha",
       "occurrences": 1
     },
     {

@@ -1,0 +1,113 @@
+OSOBY
+-----
+[[PERSON_1]]: Vincenc Novák
+  - Vincenca Nováka
+  - Vincence Nováke
+  - Vincencem Novákem
+  - Vincencovi Novákovi
+[[PERSON_2]]: Šárka Brázdová
+  - Šárko Brázdová
+  - Šárkou Brázdovou
+  - Šárky Brázdové
+  - Šárkě Brázdové
+[[PERSON_3]]: Ivana Soukupová
+  - Ivanou Soukupovou
+  - Ivany Soukupové
+  - Ivaně Soukupové
+[[PERSON_4]]: Krista Vavrová
+  - Kristy Vavrové
+[[PERSON_5]]: Krista Beranová
+  - Kristy Beranové
+[[PERSON_6]]: Bruno Kuchta
+  - Brunoa Kuchtu
+  - Brunoa Kuchty
+[[PERSON_7]]: Ivana Soukupováová
+  - Ivanu Soukupováovou
+[[PERSON_8]]: Šárka Brázdováová
+  - Šárku Brázdováovou
+[[PERSON_9]]: Krista Beranováová
+  - Kristu Beranováovou
+
+ADDRESS
+[[ADDRESS_1]]: Zahradní 5, 390 02 Tábor
+[[ADDRESS_2]]: Jabloňová 88, 400 01 Ústí nad Labem
+[[ADDRESS_3]]: Revoluční 205/33, 110 00 Praha 1
+[[ADDRESS_4]]: Žižkova 221/7, 460 01 Liberec
+[[ADDRESS_5]]: Dvořákova 179/21, 370 01 České Budějovice
+[[ADDRESS_6]]: Dvořákova 172/29, 370 01 České Budějovice
+[[ADDRESS_7]]: Jabloňová 211, 400 01 Ústí nad Labem
+[[ADDRESS_8]]: Jabloňová 88, 400 01 Ústí nad Labem a Revoluční
+[[ADDRESS_9]]: Praha 1
+[[ADDRESS_10]]: platnost 01/30, CVC
+[[ADDRESS_11]]: V Ostravě
+
+BANK
+[[BANK_1]]: 3339625585/0600
+[[BANK_2]]: 7913798278/0300
+[[BANK_3]]: 733611-8639783941/2700
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 8903224509
+[[BIRTH_ID_2]]: 8453150783
+[[BIRTH_ID_3]]: 085608/3499
+[[BIRTH_ID_4]]: 695525/9025
+[[BIRTH_ID_5]]: 075201/8913
+[[BIRTH_ID_6]]: 020827/5415
+
+CARD
+[[CARD_1]]: 708989438324401
+
+DATE
+[[DATE_1]]: 14. 1. 1980
+[[DATE_2]]: 19. 7. 1976
+[[DATE_3]]: 13. 8. 1983
+[[DATE_4]]: 26. 2. 1976
+[[DATE_5]]: 13. 2. 1974
+[[DATE_6]]: 21. 9. 1971
+[[DATE_7]]: 23. 09. 2026
+
+DIC
+[[DIC_1]]: CZ55667788
+
+EMAIL
+[[EMAIL_1]]: vincenc.novak@firma.cz
+[[EMAIL_2]]: sarka.brazdova@seznam.cz
+[[EMAIL_3]]: ivana.soukupova@post.cz
+[[EMAIL_4]]: krista.vavrova@seznam.cz
+[[EMAIL_5]]: krista.beranova@post.cz
+[[EMAIL_6]]: bruno.kuchta@example.com
+
+IBAN
+[[IBAN_1]]: CZ38 0300 0000 7787 7524 5233
+[[IBAN_2]]: CZ11 0300 0000 6281 8091 5211
+
+ICO
+[[ICO_1]]: 55667788
+
+ID_CARD
+[[ID_CARD_1]]: MR 841409
+[[ID_CARD_2]]: FU 984761
+[[ID_CARD_3]]: 155160773
+
+IP
+[[IP_1]]: 62.94.108.112
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP18557
+[[LICENSE_PLATE_2]]: EA51467
+
+MAC
+[[MAC_1]]: A8:8E:BA:B9:80:79
+
+PASSWORD
+[[PASSWORD_1]]: Šár85!8712
+
+PHONE
+[[PHONE_1]]: 330484570
+[[PHONE_2]]: 681 850 268
+[[PHONE_3]]: 637 606 432
+[[PHONE_4]]: +420706117705
+[[PHONE_5]]: 793 528 454
+[[PHONE_6]]: +420 747 861 738
+[[PHONE_7]]: +420700691692
+

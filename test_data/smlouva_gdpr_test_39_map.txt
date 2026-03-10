@@ -12,6 +12,7 @@ OSOBY
 ADDRESS
 [[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
 [[ADDRESS_2]]: Technologická 15, 160 00 Praha 6
+[[ADDRESS_3]]: V Praze
 
 BANK
 [[BANK_1]]: 6655443322/5500

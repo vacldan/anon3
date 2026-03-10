@@ -17,9 +17,10 @@ ADDRESS
 [[ADDRESS_1]]: Na Výšinách 25, 170 00 Praha 7
 [[ADDRESS_2]]: Dlouhá 8, 602 00 Brno
 [[ADDRESS_3]]: Dlouhá 8, byt 12
-[[ADDRESS_4]]: kk v domě na adrese Dlouhá 8, 602 00 Brno
-[[ADDRESS_5]]: U Stromovky 3, 170 00 Praha 7
-[[ADDRESS_6]]: trvale bytem Na Výšinách 25, 170 00 Praha 7
+[[ADDRESS_4]]: Brno
+[[ADDRESS_5]]: kk v domě na adrese Dlouhá 8, 602 00 Brno
+[[ADDRESS_6]]: U Stromovky 3, 170 00 Praha 7
+[[ADDRESS_7]]: V Brně
 
 BANK
 [[BANK_1]]: 1122334455/5500

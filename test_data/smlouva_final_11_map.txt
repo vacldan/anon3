@@ -1,0 +1,37 @@
+OSOBY
+-----
+[[PERSON_1]]: Sebastian Šimek
+  - Sebastianem Šimkem
+[[PERSON_2]]: Žaneta Havlíčková
+  - Žanety Havlíčkové
+
+ADDRESS
+[[ADDRESS_1]]: Masarykovo náměstí 7, 586 01 Jihlava
+[[ADDRESS_2]]: Tyršova 247/16, 530 02 Pardubice
+
+BANK
+[[BANK_1]]: 726093684/0100
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 125203/8013
+
+DATE
+[[DATE_1]]: 25. 11. 1989
+[[DATE_2]]: 15. 3. 2020
+[[DATE_3]]: 13. 12. 2026
+
+EMAIL
+[[EMAIL_1]]: info@medvet-jihlava.cz
+[[EMAIL_2]]: sebastian.simek@medvet-jihlava.cz
+[[EMAIL_3]]: zaneta.havlickova@gmail.com
+
+ICO
+[[ICO_1]]: 27304501
+[[ICO_2]]: 48385854
+
+PHONE
+[[PHONE_1]]: +420 567 123 456
+[[PHONE_2]]: +420 646 856 902
+[[PHONE_3]]: +420 645 359 930
+[[PHONE_4]]: 605861268
+

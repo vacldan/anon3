@@ -1,0 +1,84 @@
+OSOBY
+-----
+[[PERSON_1]]: Alžběta Křížová
+  - Alžběto Křížová
+  - Alžbětou Křížovou
+  - Alžběty Křížové
+  - Alžbětě Křížové
+[[PERSON_2]]: Helena Turková
+  - Heleno Turková
+  - Helenou Turkovou
+  - Heleny Turkové
+  - Heleně Turkové
+[[PERSON_3]]: Jana Malíková
+  - Janou Malíkovou
+  - Janě Malíkové
+[[PERSON_4]]: Michal Černý
+  - Michala Černýa
+  - Michalem Černýem
+  - Michalovi Černýovi
+[[PERSON_5]]: Michal Černýe
+  - Michale Černýe
+
+ADDRESS
+[[ADDRESS_1]]: Kampus 9, 625 00 Brno
+[[ADDRESS_2]]: Vinohradská 17/2, 130 00 Praha 3
+[[ADDRESS_3]]: Na Kopci 160/3, 100 00 Praha 10
+[[ADDRESS_4]]: případně písemně na adresu Na Kopci 160/3, 100 00 Praha 10
+[[ADDRESS_5]]: písemné doručení na adresu Na Kopci 160/3, 100 00 Praha 10
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Kopci 160/3, 100 00 Praha 10
+[[ADDRESS_7]]: pro Heleně Turkové a Vinohradská 17/2, 130 00 Praha 3
+
+BANK
+[[BANK_1]]: 314213358/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 651214/5468
+[[BIRTH_ID_2]]: 971227/2289
+[[BIRTH_ID_3]]: 861102/3021
+[[BIRTH_ID_4]]: 910826/4099
+
+CARD
+[[CARD_1]]: 4168 4816 5860 6072
+
+DATE
+[[DATE_1]]: 22. 01. 1985
+[[DATE_2]]: 12. 03. 1996
+[[DATE_3]]: 03. 01. 1993
+[[DATE_4]]: 09. 11. 2006
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: rektorat@unisever.cz
+[[EMAIL_2]]: alzbeta.krizova@example.com
+[[EMAIL_3]]: helena.turkova@example.com
+[[EMAIL_4]]: michal.cerny@example.com
+[[EMAIL_5]]: jana.malikova@example.com
+
+IBAN
+[[IBAN_1]]: CZ82 0300 0000 3534 7807 9655
+
+ICO
+[[ICO_1]]: 00224466
+
+ID_CARD
+[[ID_CARD_1]]: 810176880
+
+IP
+[[IP_1]]: 192.168.11.22
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ70938
+[[LICENSE_PLATE_2]]: 1AB 9075
+[[LICENSE_PLATE_3]]: 0GA9217
+
+MAC
+[[MAC_1]]: 7A:40:C2:43:45:3D
+
+PHONE
+[[PHONE_1]]: +420 541 111 000
+[[PHONE_2]]: +420 685 813 503
+[[PHONE_3]]: +420 745 484 397
+[[PHONE_4]]: +420 741 104 543
+[[PHONE_5]]: +420 680 907 365
+

@@ -109,7 +109,7 @@ SKRYI Document Suite/
         ├── deanonymizator_lokal.exe        # Deanonymizace
         ├── pdf2docx_cli.exe                # PDF/Obrázky → DOCX (OCR)
         ├── pdf2docx_watcher.exe            # Složkový režim (watcher)
-        └── cz_names.v1.json                # Databáze českých jmen (224 000)
+        └── cz_names.v1.json                # Databáze českých jmen (~7 000 unikátních křestních jmen, stovky tisíc tvarů)
 ```
 
 ## 3.3 Procesní architektura
@@ -347,7 +347,7 @@ PO deduplikaci: 8 osob (unikátní)
 
 ## 4.5 INOVACE #4: Hybrid knihovny a morfologických heuristik
 
-Kombinace referenční knihovny (224 000 českých jmen) s inteligentními heuristikami pro neznámá jména.
+Kombinace referenční knihovny (~7 000 unikátních českých křestních jmen, stovky tisíc odvozených tvarů) s inteligentními heuristikami pro neznámá jména.
 
 ```
 ROZHODOVACÍ STROM:

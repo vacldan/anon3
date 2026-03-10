@@ -1,8 +1,14 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:48:23.256721",
+  "generated_at": "2026-03-09T15:50:01.879766",
   "source_file": "smlouva19.docx",
   "entities": [
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Adrian Kratochvíl",
+      "occurrences": 1
+    },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
@@ -18,7 +24,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Novotnou",
+      "original": "Lucie Novotná",
       "occurrences": 1
     },
     {
@@ -30,7 +36,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
+      "original": "Novotnou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Lucie Novotné",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Gabriela Hrbáčová",
       "occurrences": 1
     },
     {
@@ -42,13 +60,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Tomášem Pavlíkem",
+      "original": "Tomáš Pavlík",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Pavlíkem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Tomášem Pavlíkem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Filip Šimůnek",
       "occurrences": 1
     },
     {
@@ -60,13 +90,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
+      "original": "Hana Zbořilová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_7]]",
       "original": "Hany Zbořilové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Kláry Melichové",
+      "original": "Klára Melichová",
       "occurrences": 1
     },
     {
@@ -77,8 +113,26 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_8]]",
+      "original": "Kláry Melichové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_9]]",
+      "original": "Michaela Růžičková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_9]]",
       "original": "Michaelou Růžičkovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_10]]",
+      "original": "Zora Konečná",
       "occurrences": 1
     },
     {
@@ -162,6 +216,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
+      "original": "Erika Řehořová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_21]]",
       "original": "Eriky Řehořové",
       "occurrences": 1
     },
@@ -204,13 +264,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_28]]",
-      "original": "Pavlínou Plíškovou",
+      "original": "Pavlína Plíšková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_29]]",
-      "original": "Adrian Kratochvíl",
+      "label": "[[PERSON_28]]",
+      "original": "Pavlínou Plíškovou",
       "occurrences": 1
     },
     {
@@ -223,6 +283,12 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Křišťanová 19, 779 00 Olomouc",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "V Praze",
       "occurrences": 1
     },
     {
@@ -247,6 +313,12 @@
       "type": "PHONE",
       "label": "[[PHONE_2]]",
       "original": "+420 728 442 991",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_3]]",
+      "original": "551784002",
       "occurrences": 1
     },
     {

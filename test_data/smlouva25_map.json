@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:48:40.062344",
+  "generated_at": "2026-03-09T15:50:18.443566",
   "source_file": "smlouva25.docx",
   "entities": [
     {
@@ -24,6 +24,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Lenka Pešková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Lenky Peškové",
       "occurrences": 1
     },
@@ -36,13 +42,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Michala Bureše",
+      "original": "Michal Bureš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Michalu Burešovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Michala Bureše",
       "occurrences": 1
     },
     {
@@ -120,6 +132,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
+      "original": "Pavel Jura",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_10]]",
       "original": "Pavla Jury",
       "occurrences": 1
     },
@@ -132,19 +150,31 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_11]]",
+      "original": "Martina Holubcová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_11]]",
       "original": "Martiny Holubcové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
-      "original": "Romana Šimůnka",
+      "original": "Roman Šimůnek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
       "original": "Romanem Šimůnkem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_12]]",
+      "original": "Romana Šimůnka",
       "occurrences": 1
     },
     {
@@ -169,6 +199,12 @@
       "type": "PERSON",
       "label": "[[PERSON_14]]",
       "original": "Ondřeji Křížovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_15]]",
+      "original": "Radka Horská",
       "occurrences": 1
     },
     {

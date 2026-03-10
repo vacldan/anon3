@@ -1,0 +1,84 @@
+OSOBY
+-----
+[[PERSON_1]]: Filip Turek
+  - Filipa Turka
+  - Filipe Turku
+  - Filipem Turkem
+  - Filipovi Turkovi
+[[PERSON_2]]: Jan Kříž
+  - Jana Kříža
+  - Jane Kříže
+  - Janem Křížem
+  - Janovi Křížovi
+[[PERSON_3]]: Helena Hrubešová
+  - Helenou Hrubešovou
+  - Heleně Hrubešové
+[[PERSON_4]]: Jaroslav Černý
+  - Jaroslava Černýa
+  - Jaroslavem Černýem
+  - Jaroslavovi Černýovi
+[[PERSON_5]]: Jaroslav Černýe
+  - Jaroslave Černýe
+
+ADDRESS
+[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_2]]: Dlouhá 68/20, 602 00 Brno
+[[ADDRESS_3]]: Technologická 193/25, 160 00 Praha 6
+[[ADDRESS_4]]: případně písemně na adresu Technologická 193/25, 160 00 Praha 6
+[[ADDRESS_5]]: písemné doručení na adresu Technologická 193/25, 160 00 Praha 6
+[[ADDRESS_6]]: ro účely doručování se používá adresa Technologická 193/25, 160 00 Praha 6
+[[ADDRESS_7]]: pro Janovi Křížovi a Dlouhá 68/20, 602 00 Brno pro Filipovi Turkovi
+
+BANK
+[[BANK_1]]: 686580703/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 101011/1249
+[[BIRTH_ID_2]]: 791001/8754
+[[BIRTH_ID_3]]: 620908/6632
+[[BIRTH_ID_4]]: 890621/6928
+
+CARD
+[[CARD_1]]: 4742 3018 5219 9472
+
+DATE
+[[DATE_1]]: 13. 07. 1997
+[[DATE_2]]: 23. 05. 1990
+[[DATE_3]]: 10. 10. 1961
+[[DATE_4]]: 23. 11. 1979
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: sekretariat@gymhradby.cz
+[[EMAIL_2]]: filip.turek@example.com
+[[EMAIL_3]]: jan.kriz@example.com
+[[EMAIL_4]]: jaroslav.cerny@example.com
+[[EMAIL_5]]: helena.hrubesova@example.com
+
+IBAN
+[[IBAN_1]]: CZ33 0800 0000 0403 0510 2225
+
+ICO
+[[ICO_1]]: 12398745
+
+ID_CARD
+[[ID_CARD_1]]: 264915635
+
+IP
+[[IP_1]]: 192.168.11.22
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EA56660
+[[LICENSE_PLATE_2]]: 3AA 5941
+[[LICENSE_PLATE_3]]: 0HA2682
+
+MAC
+[[MAC_1]]: 07:CB:FF:60:E4:DE
+
+PHONE
+[[PHONE_1]]: +420 596 111 222
+[[PHONE_2]]: +420 630 188 216
+[[PHONE_3]]: +420 762 648 681
+[[PHONE_4]]: +420 643 730 821
+[[PHONE_5]]: +420 681 385 631
+

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:23.833544",
+  "generated_at": "2026-03-09T15:50:49.900433",
   "source_file": "smlouva_gdpr_test_05.docx",
   "entities": [
     {
@@ -49,6 +49,12 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
       "original": "Barbory Veselé s fakturační adresou Luční 45, 150 00 Praha 5",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "V Praze",
       "occurrences": 1
     },
     {
@@ -132,13 +138,13 @@
     {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_4]]",
-      "original": "1112233445",
+      "original": "920707/2222",
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_5]]",
-      "original": "920707/2222",
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_1]]",
+      "original": "1112233445",
       "occurrences": 1
     },
     {

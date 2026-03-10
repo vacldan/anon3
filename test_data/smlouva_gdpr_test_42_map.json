@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:49.784747",
+  "generated_at": "2026-03-09T15:51:11.316199",
   "source_file": "smlouva_gdpr_test_42.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Františkem Kubíčkem",
+      "original": "Františka Kubíčka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Františka Kubíčka",
+      "original": "Františkem Kubíčkem",
       "occurrences": 1
     },
     {
@@ -36,13 +36,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Janou Brázdovou",
+      "original": "Jany Brázdové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Jany Brázdové",
+      "original": "Janou Brázdovou",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Pavlem Richterem",
+      "original": "Pavla Richtera",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Pavla Richtera",
+      "original": "Pavlem Richterem",
       "occurrences": 1
     },
     {
@@ -94,6 +94,12 @@
       "occurrences": 1
     },
     {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_6]]",
+      "original": "V Olomouci",
+      "occurrences": 1
+    },
+    {
       "type": "ICO",
       "label": "[[ICO_1]]",
       "original": "25998877",
@@ -114,12 +120,18 @@
     {
       "type": "PHONE",
       "label": "[[PHONE_3]]",
-      "original": "+420 603 777 888",
+      "original": "123456789",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_4]]",
+      "original": "+420 603 777 888",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_5]]",
       "original": "+420 585 222 555",
       "occurrences": 1
     },

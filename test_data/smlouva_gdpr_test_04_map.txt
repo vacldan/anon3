@@ -8,9 +8,12 @@ OSOBY
   - Jany Malíkové
 [[PERSON_6]]: Petra Horáková
   - Petrou Horákovou
-[[PERSON_7]]: Jan Dvořák
+[[PERSON_7]]: Servera Zpracovatel
+  - Servery Zpracovatele
+  - Zpracovatel
+[[PERSON_8]]: Jan Dvořák
   - Janu Dvořákovi
-[[PERSON_8]]: Karel Malý
+[[PERSON_9]]: Karel Malý
   - Karla Malého
 
 ADDRESS
@@ -18,6 +21,9 @@ ADDRESS
 [[ADDRESS_2]]: Serverová 22, 639 00 Brno
 [[ADDRESS_3]]: Na Kopci 3, 625 00 Brno
 [[ADDRESS_4]]: U Lomu 7, 602 00 Brno
+[[ADDRESS_5]]: v Brně
+[[ADDRESS_6]]: Lomu 7, 602 00
+[[ADDRESS_7]]: V Praze
 
 BANK
 [[BANK_1]]: 9988776655/0100

@@ -18,8 +18,10 @@ ADDRESS
 [[ADDRESS_1]]: Právnická 12, 110 00 Praha 1
 [[ADDRESS_2]]: Sadová 19, 370 01 České Budějovice
 [[ADDRESS_3]]: Sadová 19, byt 7
-[[ADDRESS_4]]: Jabloňová 12, 400 01 Ústí nad Labem
-[[ADDRESS_5]]: U Parku 8, 779 00 Olomouc
+[[ADDRESS_4]]: České Budějovice
+[[ADDRESS_5]]: Jabloňová 12, 400 01 Ústí nad Labem
+[[ADDRESS_6]]: U Parku 8, 779 00 Olomouc
+[[ADDRESS_7]]: V Praze
 
 BANK
 [[BANK_1]]: 112882351/0300

@@ -2,20 +2,18 @@ OSOBY
 -----
 [[PERSON_1]]: Karel Ryba
 [[PERSON_2]]: Jana Rybová
-  - Janou
 [[PERSON_3]]: Marie Rybová
 [[PERSON_4]]: Josef Ryba
 [[PERSON_5]]: Tomáš Kapr
 [[PERSON_6]]: Pavel Losos
 [[PERSON_7]]: Jana Kaprová
 [[PERSON_8]]: Petr Rybář
-[[PERSON_9]]: Martin Štika
+[[PERSON_9]]: Martin Štik
+  - Martin Štika
 [[PERSON_10]]: Matěj Sokol
-  - Matěj
   - Sokol
   - Sokola
 [[PERSON_11]]: Petra Sokolová
-  - Petra
 [[PERSON_12]]: Jiří Sokol
   - Jiří Sokolovi
 [[PERSON_13]]: Anička Sokolová
@@ -23,6 +21,7 @@ OSOBY
 [[PERSON_14]]: Eva Svobodová
 [[PERSON_15]]: Klára Havránková
 [[PERSON_16]]: Michal Kolář
+[[PERSON_17]]:  Malá
 [[PERSON_18]]: Lenka Kolářová
   - Kolářová
 [[PERSON_19]]: Pavel Kolář
@@ -33,64 +32,69 @@ OSOBY
   - Martina Vrány
   - Vráno
   - Vránovi
-[[PERSON_23]]: Petr Havel
+[[PERSON_23]]: Petr Havl
   - Petrem Havlem
-[[PERSON_24]]: Jana Nováková
-[[PERSON_25]]: David Černý
-  - Davide
-[[PERSON_26]]: Martin Hora
-[[PERSON_27]]: Eva Vlková
-[[PERSON_28]]: Tomáš Novotný
-[[PERSON_29]]: Pavel Novák
-[[PERSON_30]]: Petra Horáková
+[[PERSON_24]]: Petr Havel
+[[PERSON_25]]: Kateřina Malá
+[[PERSON_26]]: Jana Nováková
+[[PERSON_28]]: David Černý
+[[PERSON_29]]: Martin Hora
+[[PERSON_30]]: Eva Vlková
+[[PERSON_31]]: Tomáš Novotný
+[[PERSON_32]]: Pavel Novák
+[[PERSON_33]]: Petra Horáková
   - Horáková
-[[PERSON_31]]: David Kos
-[[PERSON_32]]: Jana Vlková
+[[PERSON_34]]: David Kos
+[[PERSON_35]]: Jana Vlková
   - Janě Vlkové
-[[PERSON_33]]: Martin Liška
+[[PERSON_36]]: Martin Liška
   - Martinu Liškovi
-[[PERSON_34]]: Tomáš Jelínek
+[[PERSON_37]]: Tomáš Jelínek
   - Tomáše Jelínka
-[[PERSON_35]]: Petr Nový
+[[PERSON_38]]: Petr Nový
   - Nové
   - Petra Nového
-[[PERSON_36]]: Lukáš Vrána
-  - Lukášem
+[[PERSON_39]]: Lukáš Vrána
   - Lukášem Vránou
-[[PERSON_37]]: Klára Sokolová
-[[PERSON_38]]: Václav Holub
+[[PERSON_40]]: Klára Sokolová
+[[PERSON_42]]: Václav Holub
   - Holub
   - Holuba
-  - Václav
-[[PERSON_39]]: Markéta Holubová
-[[PERSON_40]]: Karel Havran
+[[PERSON_43]]: Markéta Holubová
+[[PERSON_44]]: Karel Havran
   - Havran
   - Havranem
-[[PERSON_41]]: Jana Vránová
+[[PERSON_45]]: Jana Vránová
   - Janou Vránovou
   - Vránová
-[[PERSON_42]]: Petr Soukup
+[[PERSON_46]]: Petr Soukupa
   - Petra Soukupa
-[[PERSON_43]]: Tomáš Jeřábek
-[[PERSON_44]]: Martin Vrba
-[[PERSON_45]]: Eva Holanová
-[[PERSON_46]]: Petr Novotný
-[[PERSON_47]]: Lukáš Vlček
+[[PERSON_47]]: Tomáš Jeřábek
+[[PERSON_48]]: Martin Vrba
+[[PERSON_49]]: Eva Holanová
+[[PERSON_50]]: Petr Novotný
+[[PERSON_51]]: Lukáš Vlček
   - Vlčkova
-[[PERSON_48]]: Jan Horák
+[[PERSON_52]]: Jan Horák
 
 ADDRESS
-[[ADDRESS_1]]: Rybná 8, 110 00 Praha 1
-[[ADDRESS_2]]: Rybná 25, Praha 1
-[[ADDRESS_3]]: Sokolská 45, 120 00 Praha 2
-[[ADDRESS_4]]: Kolářská 12, 602 00 Brno
-[[ADDRESS_5]]: Nová Kolářská 88, 615 00 Brno
-[[ADDRESS_6]]: na adrese Komenského 58, Brno
-[[ADDRESS_7]]: Václavské náměstí 47, 110 00 Praha 1
-[[ADDRESS_8]]: Vránova 25, 130 00 Praha 3
-[[ADDRESS_9]]: Ovocný trh 8, 110 00 Praha 1
-[[ADDRESS_10]]: Průmyslová 158, 708 00 Ostrava
-[[ADDRESS_11]]: Holubova 28, 702 00 Ostrava
+[[ADDRESS_1]]: v Praze
+[[ADDRESS_2]]: U Nemocnice 2, 128 08 Praha 2
+[[ADDRESS_3]]: Rybná 8, 110 00 Praha 1
+[[ADDRESS_4]]: Rybná 25, Praha 1
+[[ADDRESS_5]]: Sokolská 45, 120 00 Praha 2
+[[ADDRESS_6]]: Praha
+[[ADDRESS_7]]: Kolářská 12, 602 00 Brno
+[[ADDRESS_8]]: Nová Kolářská 88, 615 00 Brno
+[[ADDRESS_9]]: Komenského 58, Brno
+[[ADDRESS_10]]: Václavské náměstí 47, 110 00 Praha 1
+[[ADDRESS_11]]: Vránova 25, 130 00 Praha 3
+[[ADDRESS_12]]: Ovocný trh 8, 110 00 Praha 1
+[[ADDRESS_13]]: Průmyslová 158, 708 00 Ostrava
+[[ADDRESS_14]]: Holubova 28, 702 00 Ostrava
+[[ADDRESS_15]]: Ostrava
+[[ADDRESS_16]]: Praha 5
+[[ADDRESS_17]]: Brno
 
 BANK
 [[BANK_1]]: 2547896321/0800
@@ -167,9 +171,6 @@ ICO
 
 ID_CARD
 [[ID_CARD_1]]: AB 789456
-
-LINKEDIN
-[[LINKEDIN_1]]: linkedin.com/in/petra-horakova
 
 PHONE
 [[PHONE_1]]: +420 605 874 963

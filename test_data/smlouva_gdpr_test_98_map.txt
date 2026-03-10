@@ -1,0 +1,108 @@
+OSOBY
+-----
+[[PERSON_1]]: Ondřej Kořínek
+  - Ondřeja Kořínka
+  - Ondřeje Kořínku
+  - Ondřejem Kořínkem
+  - Ondřejovi Kořínkovi
+[[PERSON_2]]: Dagmar Šemberová
+  - Dagmar Šemberovou
+  - Dagmar Šemberové
+[[PERSON_3]]: Ivana Růžičková
+  - Ivanou Růžičkovou
+  - Ivany Růžičkové
+  - Ivaně Růžičkové
+[[PERSON_4]]: Milada Fialová
+  - Milady Fialové
+[[PERSON_5]]: Monika Tesařová
+  - Moniky Tesařové
+[[PERSON_6]]: Čeněk Hájek
+  - Čeněka Hájka
+[[PERSON_7]]: Ivana Růžičkováová
+  - Ivanu Růžičkováovou
+[[PERSON_8]]: Dagmar Šemberováová
+  - Dagmar Šemberováovou
+[[PERSON_9]]: Milada Fialováová
+  - Miladu Fialováovou
+[[PERSON_10]]: Monika Tesařováová
+  - Moniku Tesařováovou
+
+ADDRESS
+[[ADDRESS_1]]: Bělehradská 132, 120 84 Praha 2
+[[ADDRESS_2]]: Bezručova 209, 746 01 Opava
+[[ADDRESS_3]]: Jihlavská 205/18, 625 00 Brno
+[[ADDRESS_4]]: Husova 3/13, 390 02 Tábor
+[[ADDRESS_5]]: Pražská 36/12, 360 01 Karlovy Vary
+[[ADDRESS_6]]: Vinohradská 182/6, 130 00 Praha 3
+[[ADDRESS_7]]: Sadová 249/17, 370 01 České Budějovice
+[[ADDRESS_8]]: Bezručova 209, 746 01 Opava a Jihlavská
+[[ADDRESS_9]]: Brno
+[[ADDRESS_10]]: platnost 05/27, CVC
+
+BANK
+[[BANK_1]]: 9583976559/0800
+[[BANK_2]]: 4240457129/2010
+[[BANK_3]]: 7863043917/0600
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 990509/9024
+[[BIRTH_ID_2]]: 035704/5572
+[[BIRTH_ID_3]]: 0059113537
+[[BIRTH_ID_4]]: 5858269520
+[[BIRTH_ID_5]]: 816112/5962
+[[BIRTH_ID_6]]: 060609/4475
+
+DATE
+[[DATE_1]]: 9. 1. 2002
+[[DATE_2]]: 16. 3. 1961
+[[DATE_3]]: 10. 8. 1967
+[[DATE_4]]: 4. 3. 2002
+[[DATE_5]]: 12. 6. 1997
+[[DATE_6]]: 28. 4. 1985
+[[DATE_7]]: 03. 05. 2026
+
+DIC
+[[DIC_1]]: CZ45272956
+
+EMAIL
+[[EMAIL_1]]: ondrej.korinek@email.cz
+[[EMAIL_2]]: dagmar.semberova@email.cz
+[[EMAIL_3]]: ivana.ruzickova@firma.cz
+[[EMAIL_4]]: milada.fialova@example.com
+[[EMAIL_5]]: monika.tesarova@example.com
+[[EMAIL_6]]: cenek.hajek@firma.cz
+
+IBAN
+[[IBAN_1]]: CZ76 0600 0000 5478 1960 3766
+[[IBAN_2]]: CZ92 0600 0000 2794 2808 8246
+
+ICO
+[[ICO_1]]: 45272956
+
+ID_CARD
+[[ID_CARD_1]]: PC 617426
+[[ID_CARD_2]]: XL 501042
+[[ID_CARD_3]]: 338487657
+[[ID_CARD_4]]: 978087782
+
+IP
+[[IP_1]]: 67.87.102.58
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ42980
+[[LICENSE_PLATE_2]]: EA52334
+
+MAC
+[[MAC_1]]: 2E:2B:0D:A2:AA:27
+
+PASSWORD
+[[PASSWORD_1]]: Dag23!7053
+
+PHONE
+[[PHONE_1]]: +420 727 675 571
+[[PHONE_2]]: +420635834858
+[[PHONE_3]]: +420782996555
+[[PHONE_4]]: +420760577704
+[[PHONE_5]]: +420 626 319 374
+[[PHONE_6]]: +420 710 882 214
+

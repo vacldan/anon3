@@ -1,0 +1,109 @@
+OSOBY
+-----
+[[PERSON_1]]: Alex Pospíšil
+  - Alexa Pospíšila
+  - Alexe Pospíšile
+  - Alexem Pospíšilem
+  - Alexovi Pospíšilovi
+[[PERSON_2]]: Helena Černá
+  - Heleno Černá
+  - Helenou Černou
+  - Helenu Černou
+  - Heleny Černé
+  - Heleně Černé
+[[PERSON_3]]: Milada Pazderová
+  - Milady Pazderové
+[[PERSON_4]]: Pavel Kuchta
+  - Pavla Kuchtu
+  - Pavla Kuchty
+  - Pavlem Kuchtou
+  - Pavlovi Kuchtovi
+[[PERSON_5]]: Ema Vaňková
+  - Emy Vaňkové
+[[PERSON_6]]: Bedřich Holub
+  - Bedřicha Holuba
+[[PERSON_7]]: Ema Vaňkováová
+  - Emu Vaňkováovou
+[[PERSON_8]]: Milada Pazderováová
+  - Miladu Pazderováovou
+
+ADDRESS
+[[ADDRESS_1]]: Sokolská 88, 120 00 Praha 2
+[[ADDRESS_2]]: Nádražní 4/22, 702 00 Ostrava
+[[ADDRESS_3]]: Bezručova 18/29, 746 01 Opava
+[[ADDRESS_4]]: Bezručova 120/18, 746 01 Opava
+[[ADDRESS_5]]: Havlíčkova 148, 586 01 Jihlava
+[[ADDRESS_6]]: Jihlavská 159, 625 00 Brno
+[[ADDRESS_7]]: Na Návsi 119/33, 789 01 Zábřeh
+[[ADDRESS_8]]: Nádražní 4/22, 702 00 Ostrava a Bezručova
+[[ADDRESS_9]]: platnost 01/30, CVC
+[[ADDRESS_10]]: V Brně
+
+BANK
+[[BANK_1]]: 2519483116/0800
+[[BANK_2]]: 9530105141/2010
+[[BANK_3]]: 3606758129/6210
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 650824/6508
+[[BIRTH_ID_2]]: 1052026722
+[[BIRTH_ID_3]]: 745417/3493
+[[BIRTH_ID_4]]: 061127/0972
+[[BIRTH_ID_5]]: 675504/8576
+[[BIRTH_ID_6]]: 670409/8210
+
+DATE
+[[DATE_1]]: 28. 5. 1963
+[[DATE_2]]: 24. 7. 1969
+[[DATE_3]]: 22. 4. 1989
+[[DATE_4]]: 7. 11. 1995
+[[DATE_5]]: 24. 9. 1993
+[[DATE_6]]: 28. 7. 1966
+[[DATE_7]]: 10. 04. 2026
+
+DIC
+[[DIC_1]]: CZ07788990
+
+EMAIL
+[[EMAIL_1]]: alex.pospisil@post.cz
+[[EMAIL_2]]: helena.cerna@email.cz
+[[EMAIL_3]]: milada.pazderova@post.cz
+[[EMAIL_4]]: pavel.kuchta@email.cz
+[[EMAIL_5]]: ema.vankova@example.com
+[[EMAIL_6]]: bedrich.holub@seznam.cz
+
+IBAN
+[[IBAN_1]]: CZ16 5500 0000 4656 6887 3183
+[[IBAN_2]]: CZ24 0800 0000 0986 2455 4658
+
+ICO
+[[ICO_1]]: 07788990
+
+ID_CARD
+[[ID_CARD_1]]: OV 625709
+[[ID_CARD_2]]: 801381179
+[[ID_CARD_3]]: 848615398
+[[ID_CARD_4]]: ZJ 498397
+
+IP
+[[IP_1]]: 118.194.26.90
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ43360
+[[LICENSE_PLATE_2]]: PP68835
+
+MAC
+[[MAC_1]]: 05:92:44:E3:54:A6
+
+PASSWORD
+[[PASSWORD_1]]: Hel65!8162
+
+PHONE
+[[PHONE_1]]: +420761427373
+[[PHONE_2]]: 732 613 687
+[[PHONE_3]]: +420 681 146 581
+[[PHONE_4]]: +420 795 649 186
+[[PHONE_5]]: +420621541575
+[[PHONE_6]]: +420 679 918 795
+[[PHONE_7]]: 801381179
+

@@ -1,0 +1,84 @@
+OSOBY
+-----
+[[PERSON_1]]: Filip Malík
+  - Filipa Malíka
+  - Filipe Malíke
+  - Filipem Malíkem
+  - Filipovi Malíkovi
+  - Malíkovi
+[[PERSON_2]]: Simona Turková
+  - Simono Turková
+  - Simonou Turkovou
+  - Simony Turkové
+  - Simoně Turkové
+[[PERSON_3]]: Simona Hrubešová
+  - Simonou Hrubešovou
+  - Simoně Hrubešové
+[[PERSON_4]]: Barbora Vaňková
+  - Barboro Vaňková
+  - Barborou Vaňkovou
+  - Barbory Vaňkové
+  - Barborě Vaňkové
+
+ADDRESS
+[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_2]]: Sadová 97/19, 370 01 České Budějovice
+[[ADDRESS_3]]: Křenová 31/21, 602 00 Brno
+[[ADDRESS_4]]: případně písemně na adresu Křenová 31/21, 602 00 Brno
+[[ADDRESS_5]]: písemné doručení na adresu Křenová 31/21, 602 00 Brno
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Křenová 31/21, 602 00 Brno pro Simoně Turkové a
+[[ADDRESS_7]]: Sadová 97/19, 370 01 České Budějovice pro Filipovi
+
+BANK
+[[BANK_1]]: 634966812/0300
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 050224/4981
+[[BIRTH_ID_2]]: 850701/2670
+[[BIRTH_ID_3]]: 880817/7014
+[[BIRTH_ID_4]]: 670908/7506
+
+CARD
+[[CARD_1]]: 4839 1998 9531 1253
+
+DATE
+[[DATE_1]]: 16. 02. 1968
+[[DATE_2]]: 25. 05. 2001
+[[DATE_3]]: 26. 03. 2006
+[[DATE_4]]: 24. 09. 2008
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: sekretariat@gymhradby.cz
+[[EMAIL_2]]: filip.malik@example.com
+[[EMAIL_3]]: simona.turkova@example.com
+[[EMAIL_4]]: barbora.vankova@example.com
+[[EMAIL_5]]: simona.hrubesova@example.com
+
+IBAN
+[[IBAN_1]]: CZ25 0600 0000 0035 5527 4082
+
+ICO
+[[ICO_1]]: 12398745
+
+ID_CARD
+[[ID_CARD_1]]: 918273179
+
+IP
+[[IP_1]]: 192.168.11.22
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EA32387
+[[LICENSE_PLATE_2]]: 7B8 4311
+[[LICENSE_PLATE_3]]: 0KA4538
+
+MAC
+[[MAC_1]]: C2:02:B0:92:11:BC
+
+PHONE
+[[PHONE_1]]: +420 596 111 222
+[[PHONE_2]]: +420 795 796 923
+[[PHONE_3]]: +420 679 639 987
+[[PHONE_4]]: +420 642 537 347
+[[PHONE_5]]: +420 720 123 346
+

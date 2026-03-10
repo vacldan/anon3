@@ -1,0 +1,84 @@
+OSOBY
+-----
+[[PERSON_1]]: Jan Vaněk
+  - Jana Vaněka
+  - Jane Vaněke
+  - Janem Vaněkem
+  - Janovi Vaněkovi
+[[PERSON_2]]: Matěj Černý
+  - Matěja Černýa
+  - Matějem Černýem
+  - Matějovi Černýovi
+[[PERSON_3]]: Matěj Černýe
+  - Matěje Černýe
+[[PERSON_4]]: Adéla Křížová
+  - Adélou Křížovou
+  - Adélě Křížové
+[[PERSON_5]]: David Král
+  - Davida Krála
+  - Davide Krále
+  - Davidem Králem
+  - Davidovi Královi
+
+ADDRESS
+[[ADDRESS_1]]: Nemocniční 1, 400 01 Ústí nad Labem
+[[ADDRESS_2]]: U Parku 90/7, 779 00 Olomouc
+[[ADDRESS_3]]: Na Kopci 147/29, 100 00 Praha 10
+[[ADDRESS_4]]: případně písemně na adresu Na Kopci 147/29, 100 00 Praha 10
+[[ADDRESS_5]]: písemné doručení na adresu Na Kopci 147/29, 100 00 Praha 10
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Kopci 147/29, 100 00 Praha 10
+[[ADDRESS_7]]: pro Matějovi Černýovi a U Parku 90/7, 779 00 Olomouc pro Janovi Vaněkovi
+
+BANK
+[[BANK_1]]: 948923301/0100
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 020213/2419
+[[BIRTH_ID_2]]: 070712/9723
+[[BIRTH_ID_3]]: 011202/1104
+[[BIRTH_ID_4]]: 970528/2919
+
+CARD
+[[CARD_1]]: 4768 8137 8776 4921
+
+DATE
+[[DATE_1]]: 04. 07. 1996
+[[DATE_2]]: 12. 02. 1975
+[[DATE_3]]: 11. 06. 2010
+[[DATE_4]]: 24. 11. 1998
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: podatelna@knjih.cz
+[[EMAIL_2]]: jan.vanek@example.com
+[[EMAIL_3]]: matej.cerny@example.com
+[[EMAIL_4]]: david.kral@example.com
+[[EMAIL_5]]: adela.krizova@example.com
+
+IBAN
+[[IBAN_1]]: CZ72 0600 0000 8131 5468 9294
+
+ICO
+[[ICO_1]]: 44550011
+
+ID_CARD
+[[ID_CARD_1]]: 292353181
+
+IP
+[[IP_1]]: 211.20.124.99
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ38249
+[[LICENSE_PLATE_2]]: 5AZ 9868
+[[LICENSE_PLATE_3]]: 0GA7613
+
+MAC
+[[MAC_1]]: 5C:7E:23:29:5B:93
+
+PHONE
+[[PHONE_1]]: +420 477 111 222
+[[PHONE_2]]: +420 600 881 785
+[[PHONE_3]]: +420 780 311 359
+[[PHONE_4]]: +420 670 920 844
+[[PHONE_5]]: +420 730 554 234
+

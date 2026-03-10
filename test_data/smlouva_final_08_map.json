@@ -1,0 +1,193 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-03-09T15:50:46.726171",
+  "source_file": "smlouva_final_08.docx",
+  "entities": [
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Radek Kratochvíl",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Radkovi Kratochvílovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Žaneta Poláková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Žanetě Polákové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Nguyen Duc",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Nguyen Duca",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Nguyen Ducovi",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Revoluční 15, 110 00 Praha 1",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Palackého třída 195/24, 779 00 Olomouc - Nová Ulice",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "V Praze",
+      "occurrences": 1
+    },
+    {
+      "type": "DIC",
+      "label": "[[DIC_1]]",
+      "original": "CZ15926837",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_1]]",
+      "original": "15926837",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_2]]",
+      "original": "14635450",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_1]]",
+      "original": "zaneta.polakova@cybershield.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_2]]",
+      "original": "nguyen.duc.nguyen@email.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_3]]",
+      "original": "nguyen.duc@cybershield.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_1]]",
+      "original": "+420 691 688 951",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_2]]",
+      "original": "+420 601 894 898",
+      "occurrences": 1
+    },
+    {
+      "type": "LINKEDIN",
+      "label": "[[LINKEDIN_1]]",
+      "original": "https://www.linkedin.com/in/zaneta-polakova-144",
+      "occurrences": 1
+    },
+    {
+      "type": "LINKEDIN",
+      "label": "[[LINKEDIN_2]]",
+      "original": "https://www.linkedin.com/in/nguyen-duc-nguyen-951",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_1]]",
+      "original": "2. 7. 1993",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_2]]",
+      "original": "1. 9. 2026",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_3]]",
+      "original": "7. 11. 2026",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_1]]",
+      "original": "850807/7514",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_1]]",
+      "original": "908374954/0600",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_2]]",
+      "original": "680603332/0300",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_1]]",
+      "original": "CZ92 0600 0000 0831 8850 6116",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_1]]",
+      "original": "3085190176",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_1]]",
+      "original": "nguyend",
+      "occurrences": 1
+    },
+    {
+      "type": "PASSWORD",
+      "label": "[[PASSWORD_1]]",
+      "original": "Cy8er!7600",
+      "occurrences": 1
+    },
+    {
+      "type": "RFID",
+      "label": "[[RFID_1]]",
+      "original": "RFID",
+      "occurrences": 1
+    }
+  ]
+}

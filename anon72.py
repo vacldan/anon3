@@ -42,8 +42,14 @@ def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
                         for gender_key in ['M', 'F', 'U']:
                             if gender_key in firstnames:
                                 names.update(firstnames[gender_key])
+                if 'firstnames_no_diac' in data:
+                    nd = data['firstnames_no_diac']
+                    if isinstance(nd, dict):
+                        for gender_key in ['M', 'F', 'U']:
+                            if gender_key in nd:
+                                names.update(nd[gender_key])
                 # Stará struktura: {"male": [...], "female": [...]}
-                else:
+                if 'firstnames' not in data and 'firstnames_no_diac' not in data:
                     names.update(data.get('male', []))
                     names.update(data.get('female', []))
             elif isinstance(data, list):
@@ -59,6 +65,35 @@ def load_names_library(json_path: str = "cz_names.v1.json") -> Set[str]:
 
 # Load names library at module import time
 CZECH_FIRST_NAMES = load_names_library()
+
+
+def load_institutions_blacklist(json_path: str = "institutions_blacklist.json") -> Set[str]:
+    """Načte blacklist institucí/firem/univerzit z JSON souboru."""
+    try:
+        script_dir = Path(__file__).parent if '__file__' in globals() else Path.cwd()
+        json_file = script_dir / json_path
+        if not json_file.exists():
+            json_file = Path.cwd() / json_path
+        if not json_file.exists():
+            return set()
+
+        with open(json_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        terms = set()
+        for key, values in data.items():
+            if key.startswith('_'):
+                continue
+            if isinstance(values, list):
+                terms.update(v.lower() for v in values)
+        print(f"[OK] Nacteno {len(terms)} instituci z blacklistu")
+        return terms
+    except Exception as e:
+        print(f"[!] Chyba pri nacitani {json_path}: {e}")
+        return set()
+
+
+INSTITUTION_BLACKLIST = load_institutions_blacklist()
 
 # =============== Varianty pro nahrazování ===============
 def variants_for_first(first: str) -> set:
@@ -1460,50 +1495,44 @@ ADDRESS_RE = re.compile(
             r'(?:adresa|trvalý\s+pobyt|na\s+adrese)\s*:\s*|'
             r'(?:na\s+adresu|adresy|adresu)\s+|'
             r'(?:v\s+ulic[ií]|na\s+ulici|v\s+dom[eě])\s+)'
-            r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]'
+            r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ]'
             r'[a-záčďéěíňóřšťúůýž\s]{2,50}?'
-            r'\s+\d{1,4}(?:/\d{1,4})?'  # Číslo domu (povinné)
-            r'(?:'  # Nepovinná část s městem/PSČ (jen s prefixem!)
+            r'\s+\d{1,4}(?:/\d{1,4})?'
+            r'(?:'
                 r',\s*'
                 r'(?:'
-                    # PSČ město
                     r'\d{3}\s?\d{2}'
                     r'[ \t]+'
-                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
+                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t\-]){1,30}'
                     r'(?:[ \t]+\d{1,2})?'
                 r'|'
-                    # město PSČ
-                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
+                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t\-]){1,30}'
                     r'[ \t]+'
                     r'\d{3}\s?\d{2}'
                 r'|'
-                    # jen město
-                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
+                    r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t\-]){1,30}'
                     r'(?:[ \t]+\d{1,2})?'
                 r')'
             r')?'
         r')'
     r'|'
-        # SKUPINA 2: BEZ prefixu - město je POVINNÉ (aby se nechytaly náhodná slova)
+        # SKUPINA 2: BEZ prefixu - město je POVINNÉ
         r'(?:'
-            r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]'
+            r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ]'
             r'[a-záčďéěíňóřšťúůýž\s]{2,50}?'
-            r'\s+\d{1,4}(?:/\d{1,4})?'  # Číslo domu
-            r',\s*'  # Čárka (povinná!)
+            r'\s+\d{1,4}(?:/\d{1,4})?'
+            r',\s*'
             r'(?:'
-                # PSČ město
                 r'\d{3}\s?\d{2}'
                 r'[ \t]+'
-                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
+                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t\-]){1,30}'
                 r'(?:[ \t]+\d{1,2})?'
             r'|'
-                # město PSČ
-                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
+                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t\-]){1,30}'
                 r'[ \t]+'
                 r'\d{3}\s?\d{2}'
             r'|'
-                # jen město (BEZ PSČ, ale město MUSÍ být!)
-                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t]){1,30}'
+                r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ](?:(?![ \t]+(?:telefon|tel\.|e-mail|email|kontakt|fax|mobil|datov|bankovn))[a-záčďéěíňóřšťúůýž \t\-]){1,30}'
                 r'(?:[ \t]+\d{1,2})?'
             r')'
         r')'
@@ -2040,7 +2069,7 @@ class Anonymizer:
             return f"({prefix} {tag})"
 
         maiden_name_pattern = re.compile(
-            r'\((rozená|rozenou|roz\.|dříve|dřív|původně)\s+([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\)',
+            r'\((rozená|rozenou|roz\.|dříve|dřív|původně)\s+([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)\)',
             re.UNICODE | re.IGNORECASE
         )
 
@@ -2069,9 +2098,9 @@ class Anonymizer:
         # Zachytí: "pan Novák", "paní Malá", "Novák uvedl", "Novákovi bylo"
         standalone_surname_pattern = re.compile(
             r'(?:'
-            r'(?:pan|paní|pana|paní|panu)\s+([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)|'  # pan Novák
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+ov[ia])\s+(?:uvedl|uvedla|řekl|řekla|byl|byla|měl|měla)|'  # Novákovi uvedl
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\s+(?:uvedl|uvedla|řekl|řekla|potvrdil|potvrdila)'  # Novák uvedl
+            r'(?:pan|paní|pana|paní|panu)\s+([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)|'  # pan Novák
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+ov[ia])\s+(?:uvedl|uvedla|řekl|řekla|byl|byla|měl|měla)|'  # Novákovi uvedl
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)\s+(?:uvedl|uvedla|řekl|řekla|potvrdil|potvrdila)'  # Novák uvedl
             r')',
             re.UNICODE | re.IGNORECASE
         )
@@ -2106,7 +2135,7 @@ class Anonymizer:
         # Pattern pro samostatné křestní jméno následované slovesem nebo "jako"
         # Rozšířeno o uvozovky a další slovesa
         standalone_first_name_pattern = re.compile(
-            r'(?:^|["\s])([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\s+(?:pracoval|pracovala|řekl|řekla|uvedl|uvedla|jako|byl|byla|je|jsou|měl|měla|dělal|dělala)',
+            r'(?:^|["\s])([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)\s+(?:pracoval|pracovala|řekl|řekla|uvedl|uvedla|jako|byl|byla|je|jsou|měl|měla|dělal|dělala)',
             re.UNICODE | re.MULTILINE
         )
 
@@ -2125,8 +2154,8 @@ class Anonymizer:
         # Tento musí jít PŘED obecným pattern aby titul nebyl ztracen
         titled_pattern = re.compile(
             r'(Ing\.|Mgr\.|Bc\.|MUDr\.|JUDr\.|PhDr\.|RNDr\.|Prof\.|Doc\.|Ph\.D\.|MBA|CSc\.|DrSc\.)\s+'
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\s+'
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)',
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)\s+'
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)',
             re.UNICODE
         )
 
@@ -2142,14 +2171,25 @@ class Anonymizer:
                 's.r.o.', 'a.s.', 'spol.', 'k.s.', 'v.o.s.', 'o.p.s.',
                 'ltd', 'inc', 'corp', 'gmbh', 'llc',
                 'czech', 'republic', 'synlab', 'gymnázium', 'gymnasium',
-                'university', 'univerzita', 'fakulta', 'klinika', 'nemocnice',
+                'university', 'univerzita', 'univerzitě', 'univerzity',
+                'fakulta', 'fakultě', 'fakulty', 'klinika', 'nemocnice',
+                'karlova', 'karlově', 'karlovy', 'masarykova', 'masarykově',
+                'palackého', 'palacký',
                 'centrum', 'ústav', 'institute', 'academy', 'akademie',
                 'kaspersky', 'endpoint', 'latitude', 'archer', 'classic',
                 'windows', 'linux', 'android', 'ios', 'office', 'excel',
                 'ředitelka', 'ředitel', 'jednatel', 'jednatelka',
                 'manager', 'director', 'chief', 'officer',
-                'vyšetřující', 'vyšetřovatel', 'lékař', 'doktor', 'sestra'
+                'vyšetřující', 'vyšetřovatel', 'lékař', 'doktor', 'sestra',
+                'pojistitel', 'pojistník', 'správce', 'zpracovatel',
+                'zařízení', 'žadatel', 'sídlo', 'domov', 'galerie',
+                'banka', 'banky', 'bankovní', 'bankovnictví',
+                'stav', 'stavu', 'stavy', 'stavem',
+                'banka', 'banky', 'bankovní', 'bankovnictví',
+                'stav', 'stavu', 'stavy', 'stavem',
+                'anonymizer', 'harmonie', 'credita', 'brod',
             }
+            critical_blacklist |= INSTITUTION_BLACKLIST
 
             combined = f"{first} {last}".lower()
             for word in critical_blacklist:
@@ -2167,7 +2207,7 @@ class Anonymizer:
                 'web', 'services', 'success', 'program', 'compliance',
                 'senior', 'junior', 'lead', 'head', 'team',
                 'převzetí', 'porušení', 'nepředání', 'pobočka', 'poboček',
-                'banka', 'pojištěnec', 'pachatel', 'zaměstnankyně', 'prosím',
+                'banka', 'banky', 'pojištěnec', 'pachatel', 'zaměstnankyně', 'prosím',
             }
             if first.lower() in role_words:
                 return match.group(0)
@@ -2210,13 +2250,13 @@ class Anonymizer:
         # Detekuje např: "Mrtvá matka Drahomíra Dvořáková", "Zemřelý otec Jan Novák", atd.
         # Tento pattern musí být PŘED 3-slovným patternem!
         double_role_person_pattern = re.compile(
-            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'  # První role/přídavné jméno
+            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)'  # První role/přídavné jméno
             r'\s+'
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'  # Druhá role/podstatné jméno
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)'  # Druhá role/podstatné jméno
             r'\s+'
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'  # Křestní jméno
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)'  # Křestní jméno
             r'\s+'
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\b',  # Příjmení
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)\b',  # Příjmení
             re.UNICODE
         )
 
@@ -2224,19 +2264,19 @@ class Anonymizer:
         # Tento pattern musí být PŘED běžným 2-slovným patternem!
         # Detekuje např: "Klient Ladislav Konečný", "Žadatel Jan Novák", atd.
         role_person_pattern = re.compile(
-            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'  # Potenciální titul/role
+            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)'  # Potenciální titul/role
             r'\s+'
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'  # Křestní jméno
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)'  # Křestní jméno
             r'\s+'
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\b',  # Příjmení
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)\b',  # Příjmení
             re.UNICODE
         )
 
         # Pattern pro jméno příjmení (2 slova)
         person_pattern = re.compile(
-            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)'
+            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)'
             r'\s+'
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\b',
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)\b',
             re.UNICODE
         )
 
@@ -3035,7 +3075,10 @@ class Anonymizer:
                 'ltd', 'inc', 'corp', 'gmbh', 'llc',
                 # Instituce
                 'czech', 'republic', 'synlab', 'gymnázium', 'gymnasium',
-                'university', 'univerzita', 'fakulta', 'klinika', 'nemocnice',
+                'university', 'univerzita', 'univerzitě', 'univerzity',
+                'fakulta', 'fakultě', 'fakulty', 'klinika', 'nemocnice',
+                'karlova', 'karlově', 'karlovy', 'masarykova', 'masarykově',
+                'palackého', 'palacký',
                 'centrum', 'ústav', 'institute', 'academy', 'akademie',
                 'motol', 'bulovka', 'thomayer', 'center',
                 'ombudsman', 'ombudsmana', 'ombudsmanem', 'ombudsmanovi', 'ombudsmanů',
@@ -3046,8 +3089,16 @@ class Anonymizer:
                 # Role/Pozice (když jsou samostatně)
                 'ředitelka', 'ředitel', 'jednatel', 'jednatelka',
                 'manager', 'director', 'chief', 'officer',
-                'vyšetřující', 'vyšetřovatel', 'lékař', 'doktor', 'sestra'
+                'vyšetřující', 'vyšetřovatel', 'lékař', 'doktor', 'sestra',
+                'pojistitel', 'pojistník', 'správce', 'zpracovatel',
+                'zařízení', 'žadatel', 'sídlo', 'domov', 'galerie',
+                'anonymizer', 'harmonie', 'credita', 'brod',
+                'advokát', 'advokátka', 'advokátní', 'notář', 'notářka',
+                'soud', 'soudu', 'soudce', 'soudkyně',
+                'ministerstvo', 'magistrát', 'obec', 'město',
+                'pojišťovna', 'spořitelna',
             }
+            critical_blacklist |= INSTITUTION_BLACKLIST
 
             combined = f"{first_obs} {last_obs}".lower()
             combined_words = set(combined.split())
@@ -3058,6 +3109,20 @@ class Anonymizer:
                 else:
                     if word in combined_words:
                         return match.group(0)
+
+            # 1b. Blacklist pro celé 2-slovné fráze (název firem, produktů, měst) – z ignor_source
+            two_word_blacklist = {
+                'react advanced', 'standard contractual', 'forensic logging',
+                'sconto bolton', 'crescendo capital', 'služba způsob',
+                'českých budějovicích', 'českých budějovic', 'české budějovice',
+                'karlových varech', 'karlovy vary', 'hradci králové',
+                'hradec králové', 'ústí labem', 'ústí orlicí',
+                'nový jičín', 'nové město', 'staré město',
+                'mladá boleslav', 'mladé boleslavi',
+                'firma horák', 'firma horáková',
+            }
+            if combined in two_word_blacklist:
+                return match.group(0)
 
             # 2. Rozšířený ignore list (původní)
             ignore_words = {
@@ -3840,9 +3905,18 @@ class Anonymizer:
                 # Religious/Place names
                 r'\b(svat[éého]|svatá)\b',  # Svaté, Svatého, Svatá (Saint)
                 r'\b(kostel|chrám|kaple|církev)\b',  # Church, temple, chapel
-                # Czech cities and places
+                # Czech cities and places (všechny skloněné tvary – z ignor_source)
                 r'\b(nový\s+jičín|nové\s+město|staré\s+město)\b',
-                r'\b(mladá\s+boleslav|české\s+budějovice|hradec\s+králové|hradci\s+králové)\b',
+                r'\b(mladá\s+boleslav|mladé\s+boleslavi|mladou\s+boleslaví)\b',
+                r'\b(české\s+budějovice|českých\s+budějovic(?:ích)?|českými\s+budějovicemi)\b',
+                r'\b(hradec\s+králové|hradci\s+králové|hradce\s+králové)\b',
+                r'\b(ústí\s+(?:nad\s+)?labem|ústí\s+(?:nad\s+)?orlicí)\b',
+                r'\b(karlovy\s+vary|karlových\s+varech|karlovými\s+vary)\b',
+                # Forensic/tech termíny (anglické – z ignor_source)
+                r'\b(forensic|logging|monitoring|reporting|testing|compliance)\b',
+                r'\b(react|contractual|sconto|bolton)\b',
+                # Česká běžná slova (ne jména – z ignor_source)
+                r'\b(služba|způsob|metoda|proces|projekt|rozsah|podmínky)\b',
                 # Company suffixes když jsou uprostřed
                 r'\b(group|company|corp|ltd|gmbh|inc|services?)\b'
             ]
@@ -4244,33 +4318,27 @@ class Anonymizer:
             pos = match.start() + 1
 
         # 4. Kombinuj matche a odstraň překryvy (preferuj delší = 4-slovné > 3-slovné > 2-slovné)
-        all_matches = []
+        all_candidates = []
 
-        # Přidej 4-slovné (mají nejvyšší prioritu)
         for match in matches_4word:
-            all_matches.append(('4word', match))
-
-        # Přidej 3-slovné, ale pouze pokud se nepřekrývají s 4-slovnými
+            all_candidates.append(('4word', match))
         for match in matches_3word:
-            overlaps = False
-            for _, m4 in [m for m in all_matches if m[0] == '4word']:
-                # Překryv = matche sdílejí nějaký znak
-                if not (match.end() <= m4.start() or match.start() >= m4.end()):
-                    overlaps = True
-                    break
-            if not overlaps:
-                all_matches.append(('3word', match))
-
-        # Přidej 2-slovné, ale pouze pokud se nepřekrývají s 4-slovnými nebo 3-slovnými
+            all_candidates.append(('3word', match))
         for match in matches_2word:
+            all_candidates.append(('2word', match))
+
+        priority = {'4word': 0, '3word': 1, '2word': 2}
+        all_candidates.sort(key=lambda x: (priority[x[0]], x[1].start()))
+
+        all_matches = []
+        for cand_type, cand_match in all_candidates:
             overlaps = False
-            for _, m_higher in [m for m in all_matches if m[0] in ('4word', '3word')]:
-                # Překryv = matche sdílejí nějaký znak
-                if not (match.end() <= m_higher.start() or match.start() >= m_higher.end()):
+            for _, accepted in all_matches:
+                if not (cand_match.end() <= accepted.start() or cand_match.start() >= accepted.end()):
                     overlaps = True
                     break
             if not overlaps:
-                all_matches.append(('2word', match))
+                all_matches.append((cand_type, cand_match))
 
         all_matches.sort(key=lambda x: x[1].start(), reverse=True)
 
@@ -4306,7 +4374,7 @@ class Anonymizer:
         # Pattern pro samostatné velké slovo (pravděpodobně příjmení)
         # POZOR: Musíme vyloučit slova, která jsou už anonymizovaná nebo jsou běžná slova
         standalone_word_pattern = re.compile(
-            r'(?<!\w)([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]{2,})(?!\w)',
+            r'(?<!\w)([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]{2,})(?!\w)',
             re.UNICODE
         )
 
@@ -4608,10 +4676,10 @@ class Anonymizer:
             if plate.upper().startswith('EU '):
                 return match.group(0)
 
-            # Kontrola kontextu - nesmí být po "od", "z", "do", "roku"
+            # Kontrola kontextu - nesmí být po celém slově "od", "z", "do", "roku"
             start_pos = match.start()
-            context_before = text[max(0, start_pos-10):start_pos].lower()
-            if any(word in context_before for word in ['od ', 'z ', 'do ', 'roku ']):
+            context_before = text[max(0, start_pos-20):start_pos].lower()
+            if re.search(r'(?:^|\s)(?:od|z|do|roku)\s+$', context_before):
                 return match.group(0)
 
             return self._get_or_create_label('LICENSE_PLATE', plate)
@@ -4812,7 +4880,7 @@ class Anonymizer:
 
         # POST-PASS: Místo narození
         birth_place_pattern = re.compile(
-            r'(Místo\s+narození\s*:)\s*([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)',
+            r'(Místo\s+narození\s*:)\s*([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)',
             re.IGNORECASE
         )
         def replace_birth_place(match):
@@ -4827,9 +4895,9 @@ class Anonymizer:
         # Pattern: Ulice 123/45, Praha 3  (bez PSČ nebo kontextu "bytem", "sídlo:" apod.)
         # ROZŠÍŘENO: Teď podporuje JAKÉKOLIV město, ne jen Praha/Brno/Ostrava/Plzeň
         simple_addr_pattern = re.compile(
-            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+(?:\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)?)\s+'  # Ulice (1-2 slova)
+            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+(?:\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)?)\s+'  # Ulice (1-2 slova)
             r'(\d+(?:/\d+)?)\s*,\s*'  # Číslo
-            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+(?:\s+\d+)?)'  # Město (jakékoliv + volitelné číslo obvodu)
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+(?:\s+\d+)?)'  # Město (jakékoliv + volitelné číslo obvodu)
             r'(?=\s|$|,|\.|;|:|\n|\r)',  # Lookahead - konec nebo interpunkce
             re.IGNORECASE
         )
@@ -4852,7 +4920,7 @@ class Anonymizer:
 
         # POST-PASS: "Ulice číslo, PSČ" without city name (e.g. "Hlavní 77, 779 00")
         psc_only_addr_pattern = re.compile(
-            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+(?:\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)?)\s+'
+            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+(?:\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)?)\s+'
             r'(\d{1,4}(?:/\d{1,4})?)\s*,\s*'
             r'(\d{3}\s?\d{2})'
             r'(?=\s|$|,|\.|;|:|\n|\r)',
@@ -4867,10 +4935,28 @@ class Anonymizer:
             return self._get_or_create_label('ADDRESS', addr)
         text = psc_only_addr_pattern.sub(replace_psc_only_addr, text)
 
+        # POST-PASS: "Město PSČ" BEZ ulice – pokud následuje hned za již otagovanou adresou,
+        # sloučíme to do STEJNÉHO tagu (je to jedna adresa, ne dvě).
+        city_psc_near_addr_pattern = re.compile(
+            r'(\[\[ADDRESS_(\d+)\]\])'
+            r'(,\s*)'
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][A-Za-zÁČĎÉĚÍŇÓŘŠŤÚŮÝŽáčďéěíňóřšťúůýž\-]+(?:\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][A-Za-zÁČĎÉĚÍŇÓŘŠŤÚŮÝŽáčďéěíňóřšťúůýž\-]+)*)'
+            r'\s+(\d{3}\s?\d{2})\b'
+        )
+
+        def replace_city_psc_near_addr(match):
+            tag = match.group(1)
+            city_psc = f"{match.group(4)} {match.group(5)}"
+            if city_psc.upper().startswith("ISO"):
+                return match.group(0)
+            return tag
+
+        text = city_psc_near_addr_pattern.sub(replace_city_psc_near_addr, text)
+
         # POST-PASS: Samostatná města v adresním kontextu (sídlo Brno, Praha 4, v Praze, Brno-střed)
         city_pattern = re.compile(
             r'(?:(?:sídlo|se\s+sídlem|bydliště|bydlištěm|na\s+adrese|v\s+městě|adresa)\s*:?\s*)?'
-            r'\b(Praha\s*\d*|Brno(?:\s*-\s*[a-záčďéěíňóřšťúůýž]+)?|Ostrava|Plzeň|Olomouc|Liberec|České\s+Budějovice|Hradec\s+Králové|Zlín|Pardubice)\b'
+            r'\b(Praha\s*\d*|Brno(?:\s*-\s*[a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)?|Ostrava|Plzeň|Olomouc|Liberec|České\s+Budějovice|Hradec\s+Králové|Zlín|Pardubice)\b'
             r'(?=\s|$|,|\.|;|\)|-)',
             re.IGNORECASE
         )
@@ -4927,6 +5013,16 @@ class Anonymizer:
                                             new_parts.append(variant)  # Keep original if tagged
                                     new_parts.append(parts[-1])
                                     text = ''.join(new_parts)
+
+        # POST-PASS (FINAL): Městská čtvrť za pomlčkou po adresním tagu
+        # Zachytí: [[ADDRESS_2]] - Vinohrady, [[ADDRESS_5]] - Staré Město, apod.
+        # Musí běžet AŽ PO city_pattern (standalone Praha/Brno), jinak tag ještě neexistuje.
+        district_after_addr_re = re.compile(
+            r'(\[\[ADDRESS_\d+\]\])'
+            r'(\s*-\s*)'
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+(?:\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)*)'
+        )
+        text = district_after_addr_re.sub(lambda m: m.group(1), text)
 
         return text
 
@@ -5378,6 +5474,201 @@ class Anonymizer:
 
         return tag_remap
 
+    def _postpass_standalone_firstnames(self, doc):
+        """Post-pass: find and replace standalone first names of already-detected persons.
+
+        After main anonymization, some first names may remain in the text when used
+        standalone (e.g. "Barbora uhradí Jakubovi" or email signatures like "Děkuji, Petra").
+        This pass catches them by looking for case variants of first names that are already
+        in the entity map.
+
+        Safety measures:
+        - Only targets first names of persons we actually detected in this document
+        - Short names (< 4 chars) are only replaced in safe contexts (after Pan/Paní, titles, signatures)
+        - Blacklist of common Czech words that coincide with name forms
+        - Never replaces inside existing [[...]] tags
+        """
+        if not self.canonical_persons:
+            return
+
+        _STANDALONE_BLACKLIST = {
+            'nová', 'nové', 'nového', 'nový', 'nových', 'novém', 'novému', 'novým',
+            'stav', 'stavu', 'stavě', 'stavem', 'stavy',
+            'bílá', 'bílé', 'bílého', 'bílý', 'bílém',
+            'malá', 'malé', 'malého', 'malý', 'malém',
+            'černá', 'černé', 'černého', 'černý', 'černém',
+            'krátká', 'krátké', 'krátkého', 'krátký',
+            'holá', 'holé', 'holého', 'holý',
+            'veselá', 'veselé', 'veselého', 'veselý',
+            'suchá', 'suché', 'suchého', 'suchý',
+            'tichá', 'tiché', 'tichého', 'tichý',
+            'říha', 'pech', 'brod', 'les', 'havl',
+            'město', 'místo', 'místa', 'města',
+            'ano', 'asi', 'ale', 'kde', 'kdo', 'jak', 'jen',
+            'pan', 'paní', 'pán', 'pane',
+            'soud', 'soudu', 'rada', 'rady',
+            'svědci', 'svědek', 'svědků', 'svědky', 'svědkem',
+            'gymn', 'gymnázi', 'gymnázium',
+            'server', 'serveru', 'servery', 'serverem', 'serverů',
+        }
+
+        _SAFE_BEFORE_RE = re.compile(
+            r'(?:^|[.!?:,;()\s])(?:Pan|Paní|Pane|pan|paní|pane|'
+            r'Ing\.|Mgr\.|MUDr\.|JUDr\.|Bc\.|PhDr\.|RNDr\.|doc\.|prof\.|PharmDr\.)\s+$'
+        )
+        _SAFE_SIGNATURE_RE = re.compile(
+            r'(?:^|[.!?])\s*(?:Děkuji|Díky|S\s+pozdravem|Zdraví|Váš|Vaše|podpis)[,:]?\s+$',
+            re.IGNORECASE,
+        )
+
+        replacements = {}
+        for person in self.canonical_persons:
+            first = person['first']
+            tag = person['tag']
+            if not first or len(first) < 2:
+                continue
+
+            fvars = variants_for_first(first)
+            for var in fvars:
+                if not var or len(var) < 3:
+                    continue
+                var_lo = var.lower()
+                if var_lo in _STANDALONE_BLACKLIST:
+                    continue
+                if var_lo not in replacements:
+                    replacements[var_lo] = (tag, first, len(first))
+
+        if not replacements:
+            return
+
+        sorted_variants = sorted(replacements.keys(), key=len, reverse=True)
+        alts = '|'.join(re.escape(v) for v in sorted_variants)
+        pattern = re.compile(r'\b(' + alts + r')\b', re.IGNORECASE)
+
+        count = 0
+
+        def _process_text(text):
+            nonlocal count
+            segments = re.split(r'(\[\[[^\]]*\]\])', text)
+            result = []
+            for seg in segments:
+                if seg.startswith('[[') and ']]' in seg:
+                    result.append(seg)
+                    continue
+
+                def _repl(m):
+                    nonlocal count
+                    matched_lo = m.group(0).lower()
+                    if matched_lo not in replacements:
+                        return m.group(0)
+
+                    tag, orig_first, orig_len = replacements[matched_lo]
+
+                    if orig_len < 4:
+                        before_ctx = seg[:m.start()]
+                        if not _SAFE_BEFORE_RE.search(before_ctx) and not _SAFE_SIGNATURE_RE.search(before_ctx):
+                            return m.group(0)
+
+                    count += 1
+                    return tag
+
+                seg = pattern.sub(_repl, seg)
+                result.append(seg)
+            return ''.join(result)
+
+        for para in doc.paragraphs:
+            if not para.text.strip():
+                continue
+            new_text = _process_text(para.text)
+            if new_text != para.text:
+                para.text = new_text
+
+        for table in doc.tables:
+            for row in table.rows:
+                for cell in row.cells:
+                    for para in cell.paragraphs:
+                        if not para.text.strip():
+                            continue
+                        new_text = _process_text(para.text)
+                        if new_text != para.text:
+                            para.text = new_text
+
+        if count:
+            print(f"  [POSTPASS] Standalone first names replaced: {count}")
+
+    def _postpass_orphan_surname_after_tag(self, doc):
+        """Absorb surname fragments that remain right after a [[PERSON_N]] tag.
+
+        This handles multi-word first names like 'Mai Linh Nguyenová' where
+        the detector parsed 'Mai Linh' as the full name, leaving 'Nguyenová' behind.
+        Pattern: [[PERSON_N]] Surname  →  [[PERSON_N]]
+
+        Two strategies:
+        1. Known surname variants from detected persons
+        2. Heuristic: any word with Czech surname suffix (-ová, -ové, -ovou, -ský, -ského, etc.)
+        """
+        import re as _re
+
+        all_surname_variants = set()
+        for p in self.canonical_persons:
+            last = p.get('last', '')
+            if not last:
+                continue
+            try:
+                for v in self.variants_for_surname(last):
+                    if len(v) >= 3:
+                        all_surname_variants.add(v)
+            except Exception:
+                if len(last) >= 3:
+                    all_surname_variants.add(last)
+
+        CZ_UPPER = r'A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ'
+        CZ_LOWER = r'a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ'
+
+        patterns = []
+        if all_surname_variants:
+            escaped = [_re.escape(v) for v in sorted(all_surname_variants, key=len, reverse=True)]
+            patterns.append('(?:' + '|'.join(escaped) + ')')
+
+        patterns.append(
+            rf'[{CZ_UPPER}][{CZ_LOWER}]*(?:ová|ové|ovou|ský|ského|skému|ským|ská|ské|skou)'
+            rf'(?![{CZ_LOWER}])'
+        )
+
+        combined = '|'.join(patterns)
+        pat = _re.compile(
+            r'(\[\[PERSON_\d+\]\])'
+            r'\s+'
+            r'(' + combined + r')'
+            r'(?=[\s,.\-;:!?\)\]]|$)',
+        )
+
+        count = 0
+
+        def _do(text):
+            nonlocal count
+            new, n = pat.subn(r'\1', text)
+            count += n
+            return new
+
+        for para in doc.paragraphs:
+            if '[[PERSON_' in para.text:
+                new_text = _do(para.text)
+                if new_text != para.text:
+                    para.text = new_text
+
+        for table in doc.tables:
+            for row in table.rows:
+                for cell in row.cells:
+                    for para in cell.paragraphs:
+                        if '[[PERSON_' in para.text:
+                            new_text = _do(para.text)
+                            if new_text != para.text:
+                                para.text = new_text
+
+        if count:
+            print(f"  [POSTPASS] Orphan surnames absorbed: {count}")
+
     def anonymize_docx(self, input_path: str, output_path: str, json_map: str, txt_map: str, pdf_report: str = None):
         """Hlavní metoda pro anonymizaci DOCX dokumentu."""
         print(f"\n[INFO] Zpracovavam: {Path(input_path).name}")
@@ -5473,6 +5764,13 @@ class Anonymizer:
                             if text != original:
                                 para.text = text
             print(f"  [DEDUP] Tag remap applied successfully")
+
+        # POST-PROCESSING: Standalone first names of already-detected persons
+        self._postpass_standalone_firstnames(doc)
+
+        # POST-PROCESSING: Absorb orphan surname fragments after PERSON tags
+        # Handles multi-word first names where "Mai Linh" → [[PERSON_5]] but "Nguyenová" remains
+        self._postpass_orphan_surname_after_tag(doc)
 
         # Ulož dokument
         start_time = time.time()

@@ -1,0 +1,84 @@
+OSOBY
+-----
+[[PERSON_1]]: Jana Procházková
+  - Jano Procházková
+  - Janou Procházkovou
+  - Jany Procházkové
+  - Janě Procházkové
+  - Procházkové
+[[PERSON_2]]: Michal Král
+  - Michala Krála
+  - Michale Krále
+  - Michalem Králem
+  - Michalovi Královi
+[[PERSON_3]]: Gabriela Malíková
+  - Gabrielou Malíkovou
+  - Gabrielě Malíkové
+[[PERSON_4]]: Alžběta Nováková
+  - Alžběto Nováková
+  - Alžbětou Novákovou
+  - Alžběty Novákové
+  - Alžbětě Novákové
+
+ADDRESS
+[[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_2]]: Sadová 179/14, 370 01 České Budějovice
+[[ADDRESS_3]]: Dlouhá 35/18, 602 00 Brno
+[[ADDRESS_4]]: případně písemně na adresu Dlouhá 35/18, 602 00 Brno
+[[ADDRESS_5]]: písemné doručení na adresu Dlouhá 35/18, 602 00 Brno
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Dlouhá 35/18, 602 00 Brno pro Michalovi Královi a
+[[ADDRESS_7]]: Sadová 179/14, 370 01 České Budějovice pro Janě
+
+BANK
+[[BANK_1]]: 780589485/0300
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 070708/8989
+[[BIRTH_ID_2]]: 630908/5300
+[[BIRTH_ID_3]]: 090713/3276
+[[BIRTH_ID_4]]: 050323/5299
+
+CARD
+[[CARD_1]]: 4285 7164 5026 9589
+
+DATE
+[[DATE_1]]: 11. 01. 1991
+[[DATE_2]]: 10. 05. 1974
+[[DATE_3]]: 01. 03. 2001
+[[DATE_4]]: 19. 04. 1965
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: podatelna@novybrod.cz
+[[EMAIL_2]]: jana.prochazkova@example.com
+[[EMAIL_3]]: michal.kral@example.com
+[[EMAIL_4]]: alzbeta.novakova@example.com
+[[EMAIL_5]]: gabriela.malikova@example.com
+
+IBAN
+[[IBAN_1]]: CZ59 5500 0000 0068 9321 2132
+
+ICO
+[[ICO_1]]: 00223344
+
+ID_CARD
+[[ID_CARD_1]]: 726323621
+
+IP
+[[IP_1]]: 110.62.68.62
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EA22815
+[[LICENSE_PLATE_2]]: 2AC 9120
+[[LICENSE_PLATE_3]]: 0KA1957
+
+MAC
+[[MAC_1]]: A9:A2:05:37:44:A0
+
+PHONE
+[[PHONE_1]]: +420 495 888 111
+[[PHONE_2]]: +420 735 314 964
+[[PHONE_3]]: +420 600 934 486
+[[PHONE_4]]: +420 767 174 382
+[[PHONE_5]]: +420 631 218 917
+

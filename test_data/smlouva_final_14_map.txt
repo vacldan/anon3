@@ -1,0 +1,54 @@
+OSOBY
+-----
+[[PERSON_1]]: Aleksandr Petrov
+  - Aleksandra Petrova
+  - Aleksandrovi Petrovovi
+[[PERSON_2]]: Anežka Šimková
+  - Anežkě Šimkové
+[[PERSON_3]]: Dominik Bártl
+  - Dominika Bártla
+
+ADDRESS
+[[ADDRESS_1]]: Revoluční 132/13, 110 00 Praha 1
+[[ADDRESS_2]]: Tyršova 144/10, 530 02 Pardubice
+[[ADDRESS_3]]: Čelakovského sady 88/3, 120 00 Praha 2
+[[ADDRESS_4]]: NP domu na adrese Kolínská 42/7, 130 00 Praha 3
+[[ADDRESS_5]]: V Praze
+
+BANK
+[[BANK_1]]: 433827891/0100
+[[BANK_2]]: 842520116/0800
+[[BANK_3]]: 504463700/0100
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 721124/4707
+[[BIRTH_ID_2]]: 825802/8272
+[[BIRTH_ID_3]]: 081207/6159
+
+DATE
+[[DATE_1]]: 1. 2. 2004
+[[DATE_2]]: 18. 9. 1958
+[[DATE_3]]: 4. 10. 2002
+[[DATE_4]]: 1. 4. 2026
+[[DATE_5]]: 31. 3. 2028
+[[DATE_6]]: 13. 9. 2026
+
+DIC
+[[DIC_1]]: CZ49135181
+
+EMAIL
+[[EMAIL_1]]: aleksandr.petrov@firma.cz
+[[EMAIL_2]]: anezka.simkova@firma.cz
+
+IBAN
+[[IBAN_1]]: CZ98 0300 0000 7395 5034 9788
+[[IBAN_2]]: CZ34 0600 0000 4133 2065 6079
+
+ICO
+[[ICO_1]]: 69287967
+
+PHONE
+[[PHONE_1]]: +420 780 490 958
+[[PHONE_2]]: +420 634 988 275
+[[PHONE_3]]: +420 662 663 246
+

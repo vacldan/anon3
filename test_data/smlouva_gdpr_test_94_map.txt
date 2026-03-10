@@ -1,0 +1,117 @@
+OSOBY
+-----
+[[PERSON_1]]: Vlastimil Kolísek
+  - Vlastimila Kolíska
+  - Vlastimile Kolísku
+  - Vlastimilem Kolískem
+  - Vlastimilovi Kolískovi
+[[PERSON_2]]: Žofie Roubalová
+  - Žofie Roubalové
+  - Žofii Roubalové
+  - Žofií Roubalovou
+[[PERSON_3]]: Hyundai Tucson
+[[PERSON_4]]: Jiřina Rendlová
+  - Jiřinou Rendlovou
+  - Jiřiny Rendlové
+  - Jiřině Rendlové
+[[PERSON_5]]: Vlastimil Popelka
+  - Vlastimila Popelku
+  - Vlastimila Popelky
+[[PERSON_6]]: Milada Vaňková
+  - Milady Vaňkové
+[[PERSON_7]]: Michal Hrdina
+  - Michala Hrdinu
+  - Michala Hrdiny
+[[PERSON_8]]: Jiřina Rendlováová
+  - Jiřinu Rendlováovou
+[[PERSON_9]]: Žofie Roubalováová
+  - Žofii Roubalováovou
+[[PERSON_10]]: Milada Vaňkováová
+  - Miladu Vaňkováovou
+
+ADDRESS
+[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_2]]: U Parku 93/38, 779 00 Olomouc
+[[ADDRESS_3]]: Smetanova 221/17, 760 01 Zlín
+[[ADDRESS_4]]: Husova 24/31, 390 02 Tábor
+[[ADDRESS_5]]: Dvořákova 17/3, 370 01 České Budějovice
+[[ADDRESS_6]]: Na Kopci 179, 100 00 Praha 10
+[[ADDRESS_7]]: Dlouhá 194/5, 602 00 Brno
+[[ADDRESS_8]]: U Parku 93/38, 779 00 Olomouc a Smetanova
+[[ADDRESS_9]]: Zlín
+[[ADDRESS_10]]: platnost 07/27, CVC
+[[ADDRESS_11]]: V Brně
+
+BANK
+[[BANK_1]]: 307034-320933876/0600
+[[BANK_2]]: 8218347360/0600
+[[BANK_3]]: 835416-3316825065/2700
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 0311069964
+[[BIRTH_ID_2]]: 066223/0206
+[[BIRTH_ID_3]]: 556006/6095
+[[BIRTH_ID_4]]: 501210/4372
+[[BIRTH_ID_5]]: 085717/5635
+[[BIRTH_ID_6]]: 1008215033
+
+DATE
+[[DATE_1]]: 12. 6. 1965
+[[DATE_2]]: 27. 7. 1979
+[[DATE_3]]: 10. 6. 1971
+[[DATE_4]]: 6. 1. 1973
+[[DATE_5]]: 11. 9. 1984
+[[DATE_6]]: 18. 6. 1965
+[[DATE_7]]: 25. 12. 2027
+[[DATE_8]]: 07. 08. 2026
+
+DIC
+[[DIC_1]]: CZ12398745
+
+EMAIL
+[[EMAIL_1]]: vlastimil.kolisek@email.cz
+[[EMAIL_2]]: zofie.roubalova@email.cz
+[[EMAIL_3]]: jirina.rendlova@post.cz
+[[EMAIL_4]]: vlastimil.popelka@firma.cz
+[[EMAIL_5]]: milada.vankova@seznam.cz
+[[EMAIL_6]]: michal.hrdina@firma.cz
+
+IBAN
+[[IBAN_1]]: CZ22 0800 0000 0806 9251 2472
+[[IBAN_2]]: CZ35 0800 0000 1872 7012 7414
+
+ICO
+[[ICO_1]]: 12398745
+
+ID_CARD
+[[ID_CARD_1]]: TB 888006
+[[ID_CARD_2]]: MK 628849
+[[ID_CARD_3]]: 605264724
+[[ID_CARD_4]]: QQ 514705
+[[ID_CARD_5]]: CG574042
+
+IP
+[[IP_1]]: 56.244.60.102
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ38039
+[[LICENSE_PLATE_2]]: 2A7 6121
+[[LICENSE_PLATE_3]]: CZ53978
+
+MAC
+[[MAC_1]]: 6A:BB:64:35:53:C3
+
+PASSWORD
+[[PASSWORD_1]]: Žof51!8097
+
+PHONE
+[[PHONE_1]]: +420610118795
+[[PHONE_2]]: +420 741 365 205
+[[PHONE_3]]: +420 665 769 419
+[[PHONE_4]]: 752 666 498
+[[PHONE_5]]: 706 951 395
+[[PHONE_6]]: 671 458 676
+
+VIN
+[[VIN_1]]: WAUZZZ8VP2DMVS7DE
+

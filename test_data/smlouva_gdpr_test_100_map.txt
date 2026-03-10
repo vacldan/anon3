@@ -1,0 +1,109 @@
+OSOBY
+-----
+[[PERSON_1]]: Lubomír Polák
+  - Lubomíra Poláka
+  - Lubomíre Poláke
+  - Lubomírem Polákem
+  - Lubomírovi Polákovi
+[[PERSON_2]]: Petra Hrubešová
+[[PERSON_4]]: Hugo Vavra
+  - Hugoa Vavru
+  - Hugoa Vavry
+  - Hugoem Vavrou
+  - Hugoovi Vavrovi
+[[PERSON_5]]: Marek Havlička
+  - Marka Havličky
+[[PERSON_6]]: Jana Šídlová
+  - Jany Šídlové
+[[PERSON_7]]: Lubomír Pospíšil
+  - Lubomíra Pospíšila
+[[PERSON_9]]: Petru Hrubešováová
+  - Petru Hrubešováovou
+[[PERSON_10]]: Jana Šídlováová
+  - Janu Šídlováovou
+
+ADDRESS
+[[ADDRESS_1]]: Kosmonautů 44, 779 00 Olomouc
+[[ADDRESS_2]]: Tylova 186/25, 530 02 Pardubice
+[[ADDRESS_3]]: U Nemocnice 73/24, 128 08 Praha 2
+[[ADDRESS_4]]: Sokolovská 8/6, 186 00 Praha 8
+[[ADDRESS_5]]: Komenského 202/9, 702 00 Ostrava
+[[ADDRESS_6]]: Sadová 66, 370 01 České Budějovice
+[[ADDRESS_7]]: Hlavní 200/17, 669 02 Znojmo
+[[ADDRESS_8]]: Tylova 186/25, 530 02 Pardubice a U Nemocnice
+[[ADDRESS_9]]: Praha 2
+[[ADDRESS_10]]: platnost 01/27, CVC
+[[ADDRESS_11]]: podezřelé jednání Hugoa Vavry na adrese Sokolovská 8/6, 186 00 Praha 8
+
+BANK
+[[BANK_1]]: 2109689707/2700
+[[BANK_2]]: 618441335/5500
+[[BANK_3]]: 312453-165532935/0800
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 000707/8926
+[[BIRTH_ID_2]]: 046217/6188
+[[BIRTH_ID_3]]: 031116/7904
+[[BIRTH_ID_4]]: 8407123280
+[[BIRTH_ID_5]]: 046210/6705
+[[BIRTH_ID_6]]: 050715/2675
+
+CARD
+[[CARD_1]]: 378555979783781
+
+DATE
+[[DATE_1]]: 17. 1. 1968
+[[DATE_2]]: 24. 6. 1960
+[[DATE_3]]: 3. 12. 1990
+[[DATE_4]]: 8. 11. 1965
+[[DATE_5]]: 2. 10. 1970
+[[DATE_6]]: 14. 3. 1991
+[[DATE_7]]: 26. 04. 2026
+[[DATE_8]]: 09. 10. 2026
+
+DIC
+[[DIC_1]]: CZ33445566
+
+EMAIL
+[[EMAIL_1]]: lubomir.polak@email.cz
+[[EMAIL_2]]: petra.hrubesova@post.cz
+[[EMAIL_3]]: hugo.vavra@firma.cz
+[[EMAIL_4]]: marek.havlicka@example.com
+[[EMAIL_5]]: jana.sidlova@example.com
+[[EMAIL_6]]: lubomir.pospisil@firma.cz
+
+IBAN
+[[IBAN_1]]: CZ50 0800 0000 9999 0819 2417
+[[IBAN_2]]: CZ58 0100 0000 3713 9668 5610
+
+ICO
+[[ICO_1]]: 33445566
+
+ID_CARD
+[[ID_CARD_1]]: WM 806945
+[[ID_CARD_2]]: 840481937
+[[ID_CARD_3]]: LZ 670326
+[[ID_CARD_4]]: 657551817
+
+IP
+[[IP_1]]: 35.163.162.26
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EA45333
+[[LICENSE_PLATE_2]]: PP36917
+
+MAC
+[[MAC_1]]: 68:4C:B5:07:8E:26
+
+PASSWORD
+[[PASSWORD_1]]: Pet84!5714
+
+PHONE
+[[PHONE_1]]: +420 664 981 115
+[[PHONE_2]]: +420 642 366 664
+[[PHONE_3]]: 744 447 299
+[[PHONE_4]]: +420745692454
+[[PHONE_5]]: 784 567 753
+[[PHONE_6]]: +420 612 782 150
+[[PHONE_7]]: 840481937
+

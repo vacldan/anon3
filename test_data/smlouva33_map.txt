@@ -8,64 +8,60 @@ OSOBY
   - Liška
   - Liškovi
 [[PERSON_4]]: Růžena Dvořáková
-[[PERSON_5]]: Sylva Dvořáková
-[[PERSON_6]]: Miloslava Fischerová
-[[PERSON_7]]: Svatava Lišková
-[[PERSON_8]]: Ctibor Liška
-[[PERSON_9]]: Justýna Dvořáková
-[[PERSON_10]]: Marcela Burešová
+[[PERSON_5]]: Timoté Dvořák
+[[PERSON_6]]: Sylva Dvořáková
+[[PERSON_7]]: Miloslava Fischerová
+[[PERSON_8]]: Svatava Lišková
+[[PERSON_9]]: Ctibor Liška
+[[PERSON_10]]: Justýna Dvořáková
+[[PERSON_11]]: Marcela Burešová
   - Burešové
-[[PERSON_11]]: Pavel Bureš
+[[PERSON_12]]: Pavel Bureš
   - Bureš
-[[PERSON_12]]: Rostislav Bureš
-[[PERSON_13]]: Květoslava Tesařová
-[[PERSON_14]]: Alan Bureš
-[[PERSON_15]]: Beáta Burešová
-[[PERSON_16]]: Ilona Malíková
-[[PERSON_17]]: Arnošt Malík
-[[PERSON_18]]: Radana Malíková
-[[PERSON_19]]: Cyril Malík
-  - Cyrilovi
-[[PERSON_20]]: Vendelín Horák
-[[PERSON_21]]: Slavoj Sedlák
+[[PERSON_13]]: Rostislav Bureš
+[[PERSON_14]]: Květoslava Tesařová
+[[PERSON_15]]: Alan Bureš
+[[PERSON_16]]: Beáta Burešová
+[[PERSON_17]]: Ilona Malíková
+[[PERSON_18]]: Arnošt Malík
+[[PERSON_19]]: Radana Malíková
+[[PERSON_20]]: Cyril Malík
+[[PERSON_21]]: Vendelín Horák
+[[PERSON_22]]: Slavoj Sedlák
   - Sedlákovi
   - Slavoje Sedláka
-  - Slavojovi
-[[PERSON_22]]: Oldřich Sedlák
-  - Oldřich
+[[PERSON_23]]: Oldřich Sedlák
   - Oldřicha Sedláka
-[[PERSON_23]]: Evžen Sedlák
-[[PERSON_24]]: Miloslava Sedláková
-[[PERSON_25]]: Anastázie Sedláková
-[[PERSON_26]]: Matouš Sedlák
-[[PERSON_27]]: Klaudie Nová
-[[PERSON_28]]: Čeněk Sedlák
-[[PERSON_29]]: Hedvika Sedláková
-[[PERSON_30]]: Methoděj Kučer
+[[PERSON_24]]: Evžen Sedlák
+[[PERSON_25]]: Miloslava Sedláková
+[[PERSON_26]]: Anastázie Sedláková
+[[PERSON_27]]: Matouš Sedlák
+[[PERSON_28]]: Klaudie Nová
+[[PERSON_29]]: Čeněk Sedlák
+[[PERSON_30]]: Hedvika Sedláková
+[[PERSON_31]]: Methoděj Kučera
   - Kučerovi
-  - Methoděj Kučera
-[[PERSON_31]]: Viola Kučerová
-[[PERSON_32]]: Pravdomil Kučer
-  - Pravdomil Kučera
-[[PERSON_33]]: Hermína Kučerová
-[[PERSON_34]]: Ctibor Pech
-[[PERSON_35]]: Libuše Pechová
+[[PERSON_32]]: Viola Kučerová
+[[PERSON_33]]: Pravdomil Kučera
+[[PERSON_34]]: Hermína Kučerová
+[[PERSON_35]]: Ctibor Pech
+[[PERSON_36]]: Libuše Pechová
   - Pechové
-[[PERSON_36]]: Bohumil Novotný
+[[PERSON_37]]: Bohumil Novotný
   - Novotné
   - Novotnému
-[[PERSON_37]]: Anežka Novotná
-[[PERSON_38]]: Doubravka Novotná
-[[PERSON_39]]: Valdemar Novotný
-[[PERSON_40]]: Sylva Novotná
-[[PERSON_41]]: Gizela Bartošová
+[[PERSON_38]]: Anežka Novotná
+[[PERSON_39]]: Doubravka Novotná
+[[PERSON_40]]: Valdemar Novotný
+[[PERSON_41]]: Sylva Novotná
+[[PERSON_42]]: Gizela Bartošová
   - Bartošové
-[[PERSON_42]]: Jolana Fišerová
-[[PERSON_43]]: Bonifác Bartoš
-  - Bartoš
+[[PERSON_43]]: Jolana Fišerová
+[[PERSON_44]]: Bonifác Bartoš
   - Bartošovi
-[[PERSON_44]]: Květoslava Malá
-[[PERSON_45]]: Radana Bartošová
+[[PERSON_45]]: Květoslava Malá
+[[PERSON_46]]: Timoté Bartoš
+[[PERSON_47]]: Radana Bartošová
 
 ADDRESS
 [[ADDRESS_1]]: Polní 145/18, Hradec Králové 500 02
@@ -83,6 +79,7 @@ ADDRESS
 [[ADDRESS_13]]: Krátká 45, Brno 602 00
 [[ADDRESS_14]]: Vinohradská 245, Praha 2
 [[ADDRESS_15]]: Lázeňská 89, Praha 1
+[[ADDRESS_16]]: v Praze
 
 BANK
 [[BANK_1]]: 9876543210/0100
@@ -98,37 +95,40 @@ BIRTH_ID
 [[BIRTH_ID_8]]: 455629/7845
 [[BIRTH_ID_9]]: 480825/6734
 [[BIRTH_ID_10]]: 855724/8245
-[[BIRTH_ID_11]]: 520714/6734
-[[BIRTH_ID_12]]: 830625/7823
-[[BIRTH_ID_13]]: 155623/7890
-[[BIRTH_ID_14]]: 175824/8901
-[[BIRTH_ID_15]]: 155724/8901
-[[BIRTH_ID_16]]: 855629/8134
-[[BIRTH_ID_17]]: 820714/7623
-[[BIRTH_ID_18]]: 175623/7890
-[[BIRTH_ID_19]]: 750825/7923
-[[BIRTH_ID_20]]: 780714/8134
-[[BIRTH_ID_21]]: 820625/7623
-[[BIRTH_ID_22]]: 855629/8245
-[[BIRTH_ID_23]]: 885724/8134
-[[BIRTH_ID_24]]: 535629/7845
-[[BIRTH_ID_25]]: 500825/6734
-[[BIRTH_ID_26]]: 680625/7923
-[[BIRTH_ID_27]]: 725629/8245
-[[BIRTH_ID_28]]: 005623/7890
-[[BIRTH_ID_29]]: 025824/8901
-[[BIRTH_ID_30]]: 555724/8134
-[[BIRTH_ID_31]]: 780625/7623
-[[BIRTH_ID_32]]: 720625/7923
-[[BIRTH_ID_33]]: 775629/8245
-[[BIRTH_ID_34]]: 985623/7890
-[[BIRTH_ID_35]]: 005824/8901
-[[BIRTH_ID_36]]: 025629/8912
-[[BIRTH_ID_37]]: 835724/8134
-[[BIRTH_ID_38]]: 790714/7623
-[[BIRTH_ID_39]]: 720625/7623
-[[BIRTH_ID_40]]: 780825/7623
-[[BIRTH_ID_41]]: 805629/8134
+[[BIRTH_ID_11]]: 112233445
+[[BIRTH_ID_12]]: 520714/6734
+[[BIRTH_ID_13]]: 830625/7823
+[[BIRTH_ID_14]]: 155623/7890
+[[BIRTH_ID_15]]: 175824/8901
+[[BIRTH_ID_16]]: 155724/8901
+[[BIRTH_ID_17]]: 855629/8134
+[[BIRTH_ID_18]]: 820714/7623
+[[BIRTH_ID_19]]: 175623/7890
+[[BIRTH_ID_20]]: 750825/7923
+[[BIRTH_ID_21]]: 780714/8134
+[[BIRTH_ID_22]]: 820625/7623
+[[BIRTH_ID_23]]: 855629/8245
+[[BIRTH_ID_24]]: 885724/8134
+[[BIRTH_ID_25]]: 535629/7845
+[[BIRTH_ID_26]]: 500825/6734
+[[BIRTH_ID_27]]: 680625/7923
+[[BIRTH_ID_28]]: 334455667
+[[BIRTH_ID_29]]: 725629/8245
+[[BIRTH_ID_30]]: 005623/7890
+[[BIRTH_ID_31]]: 025824/8901
+[[BIRTH_ID_32]]: 555724/8134
+[[BIRTH_ID_33]]: 778899001
+[[BIRTH_ID_34]]: 780625/7623
+[[BIRTH_ID_35]]: 720625/7923
+[[BIRTH_ID_36]]: 775629/8245
+[[BIRTH_ID_37]]: 985623/7890
+[[BIRTH_ID_38]]: 005824/8901
+[[BIRTH_ID_39]]: 025629/8912
+[[BIRTH_ID_40]]: 835724/8134
+[[BIRTH_ID_41]]: 790714/7623
+[[BIRTH_ID_42]]: 720625/7623
+[[BIRTH_ID_43]]: 780825/7623
+[[BIRTH_ID_44]]: 805629/8134
 
 DATE
 [[DATE_1]]: 3. ledna 2026
@@ -147,19 +147,14 @@ ICO
 ID_CARD
 [[ID_CARD_1]]: 789456123
 
-INSURANCE_ID
-[[INSURANCE_ID_1]]: 112233445
-[[INSURANCE_ID_2]]: 667788990
-[[INSURANCE_ID_3]]: 334455667
-[[INSURANCE_ID_4]]: 778899001
-
 PHONE
 [[PHONE_1]]: +420 603 456 789
 [[PHONE_2]]: +420 731 456 789
 [[PHONE_3]]: +420 608 147 258
 [[PHONE_4]]: +420 605 789 123
 [[PHONE_5]]: +420 731 789 456
-[[PHONE_6]]: +420 603 789 456
-[[PHONE_7]]: +420 608 789 123
-[[PHONE_8]]: +420 605 147 258
+[[PHONE_6]]: 667788990
+[[PHONE_7]]: +420 603 789 456
+[[PHONE_8]]: +420 608 789 123
+[[PHONE_9]]: +420 605 147 258
 

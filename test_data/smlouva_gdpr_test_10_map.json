@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:27.766541",
+  "generated_at": "2026-03-09T15:50:50.786568",
   "source_file": "smlouva_gdpr_test_10.docx",
   "entities": [
     {
@@ -24,13 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Helenou Vodičkovou",
+      "original": "Heleně Vodičkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Heleně Vodičkové",
+      "original": "Helenou Vodičkovou",
       "occurrences": 1
     },
     {
@@ -48,13 +48,19 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "se sídlem Analytická 21, 190 00 Praha 9",
+      "original": "Analytická 21, 190 00 Praha 9",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Větrná 8, 779 00 Olomouc",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "V Olomouci",
       "occurrences": 1
     },
     {

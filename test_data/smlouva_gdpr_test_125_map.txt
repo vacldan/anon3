@@ -1,0 +1,83 @@
+OSOBY
+-----
+[[PERSON_1]]: Michal Černý
+  - Michala Černýa
+  - Michalem Černýem
+  - Michalovi Černýovi
+[[PERSON_2]]: Roman Roubal
+  - Romana Roubala
+  - Romane Roubale
+  - Romanem Roubalem
+  - Romanovi Roubalovi
+[[PERSON_3]]: Michal Černýe
+  - Michale Černýe
+[[PERSON_4]]: Adéla Procházková
+  - Adélou Procházkovou
+  - Adélě Procházkové
+[[PERSON_5]]: Monika Procházková
+  - Moniko Procházková
+  - Monikou Procházkovou
+  - Moniky Procházkové
+  - Monikě Procházkové
+
+ADDRESS
+[[ADDRESS_1]]: Kampus 9, 625 00 Brno
+[[ADDRESS_2]]: Technologická 80/27, 160 00 Praha 6
+[[ADDRESS_3]]: Na Návsi 132/29, 789 01 Zábřeh
+[[ADDRESS_4]]: případně písemně na adresu Na Návsi 132/29, 789 01 Zábřeh
+[[ADDRESS_5]]: písemné doručení na adresu Na Návsi 132/29, 789 01 Zábřeh
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Návsi 132/29, 789 01 Zábřeh pro Romanovi Roubalovi a
+
+BANK
+[[BANK_1]]: 173814088/0300
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 060704/7435
+[[BIRTH_ID_2]]: 700517/9028
+[[BIRTH_ID_3]]: 930727/6795
+[[BIRTH_ID_4]]: 001225/8553
+
+CARD
+[[CARD_1]]: 4755 4116 8954 4630
+
+DATE
+[[DATE_1]]: 07. 01. 1981
+[[DATE_2]]: 07. 10. 1979
+[[DATE_3]]: 09. 07. 2010
+[[DATE_4]]: 15. 11. 1987
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: rektorat@unisever.cz
+[[EMAIL_2]]: michal.cerny@example.com
+[[EMAIL_3]]: roman.roubal@example.com
+[[EMAIL_4]]: monika.prochazkova@example.com
+[[EMAIL_5]]: adela.prochazkova@example.com
+
+IBAN
+[[IBAN_1]]: CZ93 0300 0000 1946 7265 8791
+
+ICO
+[[ICO_1]]: 00224466
+
+ID_CARD
+[[ID_CARD_1]]: 128652315
+
+IP
+[[IP_1]]: 192.168.11.22
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ51899
+[[LICENSE_PLATE_2]]: 5AZ 3361
+[[LICENSE_PLATE_3]]: 0FA1803
+
+MAC
+[[MAC_1]]: 3E:73:20:B9:CD:63
+
+PHONE
+[[PHONE_1]]: +420 541 111 000
+[[PHONE_2]]: +420 740 540 572
+[[PHONE_3]]: +420 744 140 953
+[[PHONE_4]]: +420 770 117 252
+[[PHONE_5]]: +420 666 838 841
+

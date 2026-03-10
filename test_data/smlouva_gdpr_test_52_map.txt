@@ -1,0 +1,113 @@
+OSOBY
+-----
+[[PERSON_1]]: Dalibor Fiala
+  - Dalibora Fialu
+  - Dalibora Fialy
+  - Dalibore Fialo
+  - Daliborem Fialou
+  - Daliborovi Fialovi
+[[PERSON_2]]: Natálie Bartůňková
+  - Natálie Bartůňkové
+  - Natálii Bartůňkové
+  - Natálií Bartůňkovou
+[[PERSON_3]]: Natálie Bartůňkováová
+  - Natálii Bartůňkováovou
+[[PERSON_4]]: Marek Hrubeš
+  - Hrubeš
+  - Marka Hrubeša
+  - Markem Hrubešem
+  - Markovi Hrubešovi
+[[PERSON_5]]: Tereza Doležalová
+  - Terezy Doležalové
+[[PERSON_6]]: Jana Šemberová
+  - Jany Šemberové
+[[PERSON_7]]: Arnošt Malina
+  - Arnošta Malinu
+  - Arnošta Maliny
+[[PERSON_10]]: Tereza Doležalováová
+  - Terezu Doležalováovou
+[[PERSON_11]]: Jana Šemberováová
+  - Janu Šemberováovou
+[[PERSON_12]]: Svědci Marek
+
+ADDRESS
+[[ADDRESS_1]]: Kosmonautů 44, 779 00 Olomouc
+[[ADDRESS_2]]: Křenová 49, 602 00 Brno
+[[ADDRESS_3]]: Havlíčkova 215, 586 01 Jihlava
+[[ADDRESS_4]]: Praha 1
+[[ADDRESS_5]]: Pražská 129/27, 360 01 Karlovy Vary
+[[ADDRESS_6]]: Komenského 34, 702 00 Ostrava
+[[ADDRESS_7]]: Husova 152/15, 390 02 Tábor
+[[ADDRESS_8]]: Jabloňová 95/35, 400 01 Ústí nad Labem
+[[ADDRESS_9]]: Křenová 49, 602 00 Brno a Havlíčkova
+[[ADDRESS_10]]: platnost 08/30, CVC
+
+BANK
+[[BANK_1]]: 9223494019/0300
+[[BANK_2]]: 870637-5329805880/0800
+[[BANK_3]]: 6051910376/0600
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 0412172893
+[[BIRTH_ID_2]]: 515121/5596
+[[BIRTH_ID_3]]: 090401/8604
+[[BIRTH_ID_4]]: 075502/3342
+[[BIRTH_ID_5]]: 755315/7913
+[[BIRTH_ID_6]]: 840805/5773
+
+DATE
+[[DATE_1]]: 19. 1. 2000
+[[DATE_2]]: 23. 9. 2005
+[[DATE_3]]: 6. 8. 1968
+[[DATE_4]]: 24. 8. 2000
+[[DATE_5]]: 5. 3. 1976
+[[DATE_6]]: 18. 9. 1991
+[[DATE_7]]: 14. 01. 2026
+
+DIC
+[[DIC_1]]: CZ33445566
+
+EMAIL
+[[EMAIL_1]]: dalibor.fiala@example.com
+[[EMAIL_2]]: natalie.bartunkova@email.cz
+[[EMAIL_3]]: marek.hrubes@email.cz
+[[EMAIL_4]]: tereza.dolezalova@firma.cz
+[[EMAIL_5]]: jana.semberova@example.com
+[[EMAIL_6]]: arnost.malina@firma.cz
+
+IBAN
+[[IBAN_1]]: CZ47 0100 0000 8275 5575 0669
+[[IBAN_2]]: CZ12 5500 0000 4050 9099 1464
+
+ICO
+[[ICO_1]]: 33445566
+[[ICO_2]]: 12000000
+
+ID_CARD
+[[ID_CARD_1]]: 143882682
+[[ID_CARD_2]]: SM 757601
+[[ID_CARD_3]]: 166177288
+
+IP
+[[IP_1]]: 223.143.206.164
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP50317
+[[LICENSE_PLATE_2]]: CZ50443
+
+MAC
+[[MAC_1]]: 21:14:5D:59:EA:04
+
+PASSWORD
+[[PASSWORD_1]]: Nat43!8313
+
+PHONE
+[[PHONE_1]]: 991867969
+[[PHONE_2]]: 689 455 923
+[[PHONE_3]]: +420 712 806 798
+[[PHONE_4]]: 791 786 373
+[[PHONE_5]]: +420637190421
+[[PHONE_6]]: +420 758 262 135
+[[PHONE_7]]: 607 960 660
+[[PHONE_8]]: 143882682
+

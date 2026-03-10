@@ -1,0 +1,83 @@
+OSOBY
+-----
+[[PERSON_1]]: Michal Hrubeš
+  - Michala Hrubeša
+  - Michale Hrubeše
+  - Michalem Hrubešem
+  - Michalovi Hrubešovi
+[[PERSON_2]]: Pavel Novák
+  - Pavla Nováka
+  - Pavle Nováke
+  - Pavlem Novákem
+  - Pavlovi Novákovi
+[[PERSON_3]]: Jana Nováková
+  - Janou Novákovou
+  - Janě Novákové
+[[PERSON_4]]: David Roubal
+  - Davida Roubala
+  - Davide Roubale
+  - Davidem Roubalem
+  - Davidovi Roubalovi
+
+ADDRESS
+[[ADDRESS_1]]: Nemocniční 1, 400 01 Ústí nad Labem
+[[ADDRESS_2]]: Křenová 163/9, 602 00 Brno
+[[ADDRESS_3]]: U Parku 137/6, 779 00 Olomouc
+[[ADDRESS_4]]: případně písemně na adresu U Parku 137/6, 779 00 Olomouc
+[[ADDRESS_5]]: písemné doručení na adresu U Parku 137/6, 779 00 Olomouc
+[[ADDRESS_6]]: Pro účely doručování se používá adresa U Parku 137/6, 779 00 Olomouc pro Pavlovi Novákovi a
+[[ADDRESS_7]]: Křenová 163/9, 602 00 Brno pro Michalovi Hrubešovi
+
+BANK
+[[BANK_1]]: 852073436/0300
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 050419/7840
+[[BIRTH_ID_2]]: 060510/8767
+[[BIRTH_ID_3]]: 001023/5112
+[[BIRTH_ID_4]]: 070608/5134
+
+CARD
+[[CARD_1]]: 4688 4556 6616 1502
+
+DATE
+[[DATE_1]]: 23. 06. 2006
+[[DATE_2]]: 09. 12. 1972
+[[DATE_3]]: 17. 05. 1982
+[[DATE_4]]: 13. 05. 1975
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: podatelna@knjih.cz
+[[EMAIL_2]]: michal.hrubes@example.com
+[[EMAIL_3]]: pavel.novak@example.com
+[[EMAIL_4]]: david.roubal@example.com
+[[EMAIL_5]]: jana.novakova@example.com
+
+IBAN
+[[IBAN_1]]: CZ35 0600 0000 7823 9358 5353
+
+ICO
+[[ICO_1]]: 44550011
+
+ID_CARD
+[[ID_CARD_1]]: 260718272
+
+IP
+[[IP_1]]: 147.29.200.28
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EA95728
+[[LICENSE_PLATE_2]]: 3AA 3387
+[[LICENSE_PLATE_3]]: 0GA4807
+
+MAC
+[[MAC_1]]: D7:64:B7:8E:B5:59
+
+PHONE
+[[PHONE_1]]: +420 477 111 222
+[[PHONE_2]]: +420 631 616 177
+[[PHONE_3]]: +420 713 975 261
+[[PHONE_4]]: +420 647 768 863
+[[PHONE_5]]: +420 740 340 839
+

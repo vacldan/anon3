@@ -1,24 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:32.390880",
+  "generated_at": "2026-03-09T15:51:07.075471",
   "source_file": "smlouva_gdpr_test_16.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Karel Novák",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Karlovi Novákovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Karla Nováka",
       "occurrences": 1
     },
     {
@@ -35,20 +23,20 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Karla Nováka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Karlovi Novákovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Oldřich Roubal",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Oldřichovi Roubalovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Oldřicha Roubala",
       "occurrences": 1
     },
     {
@@ -60,7 +48,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Oldřicha Roubala",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Oldřiche Roubale",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Oldřichovi Roubalovi",
       "occurrences": 1
     },
     {

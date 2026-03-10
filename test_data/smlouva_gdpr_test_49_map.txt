@@ -1,6 +1,6 @@
 OSOBY
 -----
-[[PERSON_1]]: Roman Krupa
+[[PERSON_1]]: Roman Krupá
   - Romanem Krupou
 [[PERSON_2]]: Jakub Šíma
 [[PERSON_3]]: Martin Blažek
@@ -9,6 +9,7 @@ OSOBY
 ADDRESS
 [[ADDRESS_1]]: Obchodní 1, 700 30 Ostrava
 [[ADDRESS_2]]: Bezpečnostní 8, 709 00 Ostrava
+[[ADDRESS_3]]: V Ostravě
 
 DATE
 [[DATE_1]]: 29. 01. 1980

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:41.793526",
+  "generated_at": "2026-03-09T15:51:09.180152",
   "source_file": "smlouva_gdpr_test_30.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ondřejovi Turkovi",
+      "original": "Ondřeje Turku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ondřeje Turku",
+      "original": "Ondřejovi Turkovi",
       "occurrences": 1
     },
     {
@@ -42,13 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Adélou Hrubešovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Adélě Hrubešové",
+      "original": "Adély Hrubešové",
       "occurrences": 1
     },
     {
@@ -60,7 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Adély Hrubešové",
+      "original": "Adélou Hrubešovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Adélě Hrubešové",
       "occurrences": 1
     },
     {

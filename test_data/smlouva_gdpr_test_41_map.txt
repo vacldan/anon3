@@ -11,8 +11,10 @@ OSOBY
 [[PERSON_5]]: Marek Koutný
 
 ADDRESS
-[[ADDRESS_1]]: Technologická 5, 160 00 Praha 6
-[[ADDRESS_2]]: Lipová 8, 602 00 Brno
+[[ADDRESS_1]]: U Nemocnice 1, 120 00 Praha 2
+[[ADDRESS_2]]: Technologická 5, 160 00 Praha 6
+[[ADDRESS_3]]: v Praze
+[[ADDRESS_4]]: Lipová 8, 602 00 Brno
 
 BANK
 [[BANK_1]]: 227799881/5500

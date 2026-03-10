@@ -1,0 +1,61 @@
+OSOBY
+-----
+[[PERSON_1]]: Kryštof Jandák
+  - Kryštofa Jandáka
+[[PERSON_2]]: Eliška Jandáková
+[[PERSON_3]]: Zbyněk Jandák
+[[PERSON_4]]: Daniela Šimková
+
+ADDRESS
+[[ADDRESS_1]]: Pražská 55, 301 00 Plzeň
+[[ADDRESS_2]]: Sokolovská 214/25, 360 01 Karlovy Vary
+[[ADDRESS_3]]: Kolínská 21/13, 130 00 Praha 3
+[[ADDRESS_4]]: Kolínská 235/35, 130 00 Praha 3
+[[ADDRESS_5]]: kabinet 205, tel
+[[ADDRESS_6]]: V Plzni
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 700501/9145
+[[BIRTH_ID_2]]: 085408/4140
+[[BIRTH_ID_3]]: 110204/8556
+
+BIRTH_PLACE
+[[BIRTH_PLACE_1]]: Plzeň
+
+DATE
+[[DATE_1]]: 20. 9. 2012
+[[DATE_2]]: 18. 2. 1978
+[[DATE_3]]: 27. 2. 1977
+[[DATE_4]]: 27. 7. 2026
+
+EMAIL
+[[EMAIL_1]]: sekretariat@spss-plzen.cz
+[[EMAIL_2]]: krystof.jandak@student.spss-plzen.cz
+[[EMAIL_3]]: eliska.jandakova@post.cz
+[[EMAIL_4]]: zbynek.jandak@post.cz
+[[EMAIL_5]]: daniela.simkova@spss-plzen.cz
+
+FACEBOOK
+[[FACEBOOK_1]]: https://www.facebook.com/spssplzen
+
+ICO
+[[ICO_1]]: 48379212
+[[ICO_2]]: 27304501
+[[ICO_3]]: 00177041
+
+INSURANCE_ID
+[[INSURANCE_ID_1]]: 4493334267
+
+PASSWORD
+[[PASSWORD_1]]: Skola2026!25
+
+PHONE
+[[PHONE_1]]: +420 377 321 111
+[[PHONE_2]]: +420 646 439 429
+[[PHONE_3]]: +420 778 673 548
+[[PHONE_4]]: +420 627 378 555
+[[PHONE_5]]: +420 735 157 948
+
+USERNAME
+[[USERNAME_1]]: e.jandakova
+

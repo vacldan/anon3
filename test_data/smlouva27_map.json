@@ -1,12 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:48:43.370950",
+  "generated_at": "2026-03-09T15:50:21.145385",
   "source_file": "smlouva27.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Jana Nováková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Petr Novák",
       "occurrences": 1
     },
     {
@@ -25,6 +31,12 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Kateřina Dvořáková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Michal Dvořák",
       "occurrences": 1
     },
     {
@@ -66,13 +78,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Procházkovi",
+      "original": "Martin Procházka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
       "original": "Martina Procházku",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_8]]",
+      "original": "Procházkovi",
       "occurrences": 1
     },
     {
@@ -102,7 +120,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
+      "original": "Eliška Pokorná",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_12]]",
       "original": "Elišky Pokorné",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_13]]",
+      "original": "Adam Pokorný",
       "occurrences": 1
     },
     {
@@ -114,7 +144,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_14]]",
+      "original": "Pavel Pokorný",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_14]]",
       "original": "Pavlu Pokornému",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_15]]",
+      "original": "Lucie Pokorná",
       "occurrences": 1
     },
     {
@@ -139,6 +181,12 @@
       "type": "PERSON",
       "label": "[[PERSON_17]]",
       "original": "Málkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_18]]",
+      "original": "Hana Novotná",
       "occurrences": 1
     },
     {
@@ -174,6 +222,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
+      "original": "Dana Holubová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_22]]",
       "original": "Dany Holubové",
       "occurrences": 1
     },
@@ -181,12 +235,6 @@
       "type": "PERSON",
       "label": "[[PERSON_23]]",
       "original": "Radek Holub",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_24]]",
-      "original": "Jiří Kučer",
       "occurrences": 1
     },
     {
@@ -251,12 +299,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_30]]",
-      "original": "Tereze",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_31]]",
       "original": "Markéta Šimková",
       "occurrences": 1
@@ -265,6 +307,12 @@
       "type": "PERSON",
       "label": "[[PERSON_32]]",
       "original": "Nikola Horáková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_33]]",
+      "original": "Jana Horák",
       "occurrences": 1
     },
     {
@@ -289,6 +337,12 @@
       "type": "PERSON",
       "label": "[[PERSON_36]]",
       "original": "Andrea Soukupová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_37]]",
+      "original": "Jakub Fiala",
       "occurrences": 1
     },
     {
@@ -353,56 +407,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_47]]",
-      "original": "Karel Marek",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_48]]",
-      "original": "Barbora Němcová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_49]]",
       "original": "Tomáš Urban",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_50]]",
-      "original": "Monika Zemanová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_51]]",
-      "original": "Robert Kolář",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_52]]",
-      "original": "Daniela Bartošová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_53]]",
-      "original": "Lukáš Pospíšil",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_54]]",
-      "original": "Iveta Krajíčková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_55]]",
-      "original": "Vladimír Růžička",
       "occurrences": 1
     },
     {
@@ -456,49 +462,67 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "trvale bytem Krátká 5, Liberec 460 01",
+      "original": "Krátká 5, Liberec 460 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "Stromová 67/3, Olomouc 779 00",
+      "original": "Hlavní 84, České Budějovice 370 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Zahradní 19, Pardubice 530 02",
+      "original": "Stromová 67/3, Olomouc 779 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Polní 34, Hradec Králové 500 02",
+      "original": "Zahradní 19, Pardubice 530 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_9]]",
-      "original": "Lesní 7, Zlín 760 01",
+      "original": "Polní 34, Hradec Králové 500 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_10]]",
-      "original": "Školní 45, Tábor 390 01",
+      "original": "Pražská 156/89, Jihlava 586 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_11]]",
-      "original": "Jiráskova 89, Kladno 272 01",
+      "original": "Lesní 7, Zlín 760 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_12]]",
-      "original": "Revoluční 23",
+      "original": "Školní 45, Tábor 390 01",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_13]]",
+      "original": "Plzeň",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_14]]",
+      "original": "Jiráskova 89, Kladno 272 01",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_15]]",
+      "original": "Revoluční 23, Frýdek-Místek 738 01",
       "occurrences": 1
     },
     {
@@ -858,30 +882,36 @@
     {
       "type": "PHONE",
       "label": "[[PHONE_2]]",
-      "original": "+420 608 987 654",
+      "original": "111222333",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_3]]",
-      "original": "+420 732 456 789",
+      "original": "+420 608 987 654",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_4]]",
-      "original": "+420 605 123 987",
+      "original": "+420 732 456 789",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_5]]",
-      "original": "+420 721 654 321",
+      "original": "+420 605 123 987",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_6]]",
+      "original": "+420 721 654 321",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_7]]",
       "original": "+420 775 321 654",
       "occurrences": 1
     },
@@ -949,12 +979,6 @@
       "type": "ID_CARD",
       "label": "[[ID_CARD_4]]",
       "original": "EF456789",
-      "occurrences": 1
-    },
-    {
-      "type": "INSURANCE_ID",
-      "label": "[[INSURANCE_ID_1]]",
-      "original": "111222333",
       "occurrences": 1
     },
     {

@@ -1,0 +1,83 @@
+OSOBY
+-----
+[[PERSON_1]]: Matěj Hrubeš
+  - Matěja Hrubeša
+  - Matěje Hrubeše
+  - Matějem Hrubešem
+  - Matějovi Hrubešovi
+[[PERSON_2]]: Tomáš Král
+  - Tomáše Krála
+  - Tomášem Králem
+  - Tomáši Krále
+  - Tomášovi Královi
+[[PERSON_3]]: Simona Turková
+  - Simonou Turkovou
+  - Simoně Turkové
+[[PERSON_4]]: Jaroslav Dvořák
+  - Jaroslava Dvořáka
+  - Jaroslave Dvořáke
+  - Jaroslavem Dvořákem
+  - Jaroslavovi Dvořákovi
+
+ADDRESS
+[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_2]]: Křenová 192/23, 602 00 Brno
+[[ADDRESS_3]]: Křenová 116/9, 602 00 Brno
+[[ADDRESS_4]]: případně písemně na adresu Křenová 116/9, 602 00 Brno
+[[ADDRESS_5]]: písemné doručení na adresu Křenová 116/9, 602 00 Brno
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Křenová 116/9, 602 00 Brno pro Tomášovi Královi a
+[[ADDRESS_7]]: Křenová 192/23, 602 00 Brno pro Matějovi Hrubešovi
+
+BANK
+[[BANK_1]]: 774250710/0100
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 000904/2547
+[[BIRTH_ID_2]]: 000602/5276
+[[BIRTH_ID_3]]: 090228/2910
+[[BIRTH_ID_4]]: 860127/6683
+
+CARD
+[[CARD_1]]: 4962 3024 8241 6663
+
+DATE
+[[DATE_1]]: 05. 07. 1997
+[[DATE_2]]: 05. 02. 1964
+[[DATE_3]]: 18. 03. 1969
+[[DATE_4]]: 09. 02. 1963
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: sekretariat@gymhradby.cz
+[[EMAIL_2]]: matej.hrubes@example.com
+[[EMAIL_3]]: tomas.kral@example.com
+[[EMAIL_4]]: jaroslav.dvorak@example.com
+[[EMAIL_5]]: simona.turkova@example.com
+
+IBAN
+[[IBAN_1]]: CZ84 0100 0000 4066 1186 2553
+
+ICO
+[[ICO_1]]: 12398745
+
+ID_CARD
+[[ID_CARD_1]]: 375373161
+
+IP
+[[IP_1]]: 25.89.175.106
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EA62490
+[[LICENSE_PLATE_2]]: 1AB 5667
+[[LICENSE_PLATE_3]]: 0KA6027
+
+MAC
+[[MAC_1]]: 1E:13:7F:BA:A2:1B
+
+PHONE
+[[PHONE_1]]: +420 596 111 222
+[[PHONE_2]]: +420 666 414 236
+[[PHONE_3]]: +420 725 648 326
+[[PHONE_4]]: +420 766 173 817
+[[PHONE_5]]: +420 621 528 482
+

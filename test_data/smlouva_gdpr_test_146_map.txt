@@ -1,0 +1,84 @@
+OSOBY
+-----
+[[PERSON_1]]: Jaroslav Malík
+  - Jaroslava Malíka
+  - Jaroslave Malíke
+  - Jaroslavem Malíkem
+  - Jaroslavovi Malíkovi
+  - Malíkovi
+[[PERSON_2]]: Ondřej Holík
+  - Ondřeja Holíka
+  - Ondřeje Holíke
+  - Ondřejem Holíkem
+  - Ondřejovi Holíkovi
+[[PERSON_3]]: Helena Benešová
+  - Helenou Benešovou
+  - Heleně Benešové
+[[PERSON_4]]: Ondřej Řezníček
+  - Ondřeja Řezníčka
+  - Ondřeje Řezníčku
+  - Ondřejem Řezníčkem
+  - Ondřejovi Řezníčkovi
+
+ADDRESS
+[[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_2]]: Jabloňová 91/9, 400 01 Ústí nad Labem
+[[ADDRESS_3]]: Vinohradská 34/28, 130 00 Praha 3
+[[ADDRESS_4]]: případně písemně na adresu Vinohradská 34/28, 130 00 Praha 3
+[[ADDRESS_5]]: písemné doručení na adresu Vinohradská 34/28, 130 00 Praha 3
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Vinohradská 34/28, 130 00 Praha 3
+[[ADDRESS_7]]: pro Ondřejovi Holíkovi a Jabloňová 91/9, 400 01 Ústí nad Labem pro Jaroslavovi
+
+BANK
+[[BANK_1]]: 772240643/0300
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 850312/7656
+[[BIRTH_ID_2]]: 850502/1919
+[[BIRTH_ID_3]]: 780607/8432
+[[BIRTH_ID_4]]: 041011/5084
+
+CARD
+[[CARD_1]]: 4350 5947 3731 4446
+
+DATE
+[[DATE_1]]: 25. 08. 2008
+[[DATE_2]]: 03. 06. 1966
+[[DATE_3]]: 05. 10. 1977
+[[DATE_4]]: 27. 07. 1993
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: podatelna@novybrod.cz
+[[EMAIL_2]]: jaroslav.malik@example.com
+[[EMAIL_3]]: ondrej.holik@example.com
+[[EMAIL_4]]: ondrej.reznicek@example.com
+[[EMAIL_5]]: helena.benesova@example.com
+
+IBAN
+[[IBAN_1]]: CZ33 0300 0000 3603 8172 3784
+
+ICO
+[[ICO_1]]: 00223344
+
+ID_CARD
+[[ID_CARD_1]]: 920636711
+
+IP
+[[IP_1]]: 192.168.11.22
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ12804
+[[LICENSE_PLATE_2]]: 1AB 2072
+[[LICENSE_PLATE_3]]: 0KA9424
+
+MAC
+[[MAC_1]]: 0E:4F:E7:68:F4:C6
+
+PHONE
+[[PHONE_1]]: +420 495 888 111
+[[PHONE_2]]: +420 792 327 472
+[[PHONE_3]]: +420 769 822 934
+[[PHONE_4]]: +420 758 219 460
+[[PHONE_5]]: +420 612 844 678
+

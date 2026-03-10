@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:24.571947",
+  "generated_at": "2026-03-09T15:50:50.025346",
   "source_file": "smlouva_gdpr_test_06.docx",
   "entities": [
     {
@@ -36,12 +36,18 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Sadová 19, 370 01 České Budějovice",
+      "original": "v Praze",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
+      "original": "Sadová 19, 370 01 České Budějovice",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
       "original": "trvalého pobytu Sadová 19, 370 01 České Budějovice",
       "occurrences": 1
     },
@@ -79,6 +85,12 @@
       "type": "PHONE",
       "label": "[[PHONE_3]]",
       "original": "+420 777 999 111",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_4]]",
+      "original": "112233445",
       "occurrences": 1
     },
     {

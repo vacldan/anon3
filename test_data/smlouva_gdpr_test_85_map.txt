@@ -1,0 +1,109 @@
+OSOBY
+-----
+[[PERSON_1]]: Vincenc Tesař
+  - Vincenca Tesařa
+  - Vincence Tesaře
+  - Vincencem Tesařem
+  - Vincencovi Tesařovi
+[[PERSON_2]]: Krista Šemberová
+  - Kristo Šemberová
+  - Kristou Šemberovou
+  - Kristy Šemberové
+  - Kristě Šemberové
+[[PERSON_3]]: Věra Havličková
+  - Věrou Havličkovou
+  - Věry Havličkové
+  - Věrě Havličkové
+[[PERSON_4]]: Čeněk Vlach
+  - Čeněka Vlacha
+[[PERSON_5]]: Ella Navrátilová
+[[PERSON_6]]: Blahoslav Brázda
+  - Blahoslava Brázdu
+  - Blahoslava Brázdy
+[[PERSON_7]]: Věra Havličkováová
+  - Věru Havličkováovou
+[[PERSON_8]]: Krista Šemberováová
+  - Kristu Šemberováovou
+[[PERSON_10]]: Ella Navrátilováová
+  - Ellu Navrátilováovou
+
+ADDRESS
+[[ADDRESS_1]]: Lesní 12, 586 01 Jihlava
+[[ADDRESS_2]]: Masarykova 12/17, 500 02 Hradec Králové
+[[ADDRESS_3]]: Sadová 14, 370 01 České Budějovice
+[[ADDRESS_4]]: Sokolovská 242, 186 00 Praha 8
+[[ADDRESS_5]]: Havlíčkova 99/39, 586 01 Jihlava
+[[ADDRESS_6]]: Riegrova 212, 779 00 Olomouc
+[[ADDRESS_7]]: Na Kopci 33/34, 100 00 Praha 10
+[[ADDRESS_8]]: Masarykova 12/17, 500 02 Hradec Králové a Sadová 14
+[[ADDRESS_9]]: České Budějovice
+[[ADDRESS_10]]: platnost 11/28, CVC
+[[ADDRESS_11]]: Tylova 143, Ústí nad Labem
+
+BANK
+[[BANK_1]]: 374143-459216229/5500
+[[BANK_2]]: 7434044874/0100
+[[BANK_3]]: 1816746206/0800
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 850721/4554
+[[BIRTH_ID_2]]: 836206/3192
+[[BIRTH_ID_3]]: 765906/7529
+[[BIRTH_ID_4]]: 0606149510
+[[BIRTH_ID_5]]: 985110/7611
+[[BIRTH_ID_6]]: 000305/6754
+
+DATE
+[[DATE_1]]: 16. 7. 1987
+[[DATE_2]]: 4. 4. 1999
+[[DATE_3]]: 26. 10. 2003
+[[DATE_4]]: 12. 8. 2002
+[[DATE_5]]: 18. 7. 1979
+[[DATE_6]]: 16. 3. 1968
+[[DATE_7]]: 18. 07. 2026
+
+DIC
+[[DIC_1]]: CZ44556677
+
+EMAIL
+[[EMAIL_1]]: vincenc.tesar@email.cz
+[[EMAIL_2]]: krista.semberova@example.com
+[[EMAIL_3]]: vera.havlickova@firma.cz
+[[EMAIL_4]]: cenek.vlach@firma.cz
+[[EMAIL_5]]: ella.navratilova@post.cz
+[[EMAIL_6]]: blahoslav.brazda@firma.cz
+
+IBAN
+[[IBAN_1]]: CZ13 5500 0000 3297 1087 1792
+[[IBAN_2]]: CZ58 0100 0000 6462 3666 3488
+
+ICO
+[[ICO_1]]: 44556677
+
+ID_CARD
+[[ID_CARD_1]]: YO 753652
+[[ID_CARD_2]]: 405426343
+[[ID_CARD_3]]: 300272416
+
+IP
+[[IP_1]]: 61.130.162.123
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP15245
+[[LICENSE_PLATE_2]]: CZ96356
+
+MAC
+[[MAC_1]]: 79:14:58:B9:C7:B7
+
+PASSWORD
+[[PASSWORD_1]]: Kri64!6642
+
+PHONE
+[[PHONE_1]]: 290035736
+[[PHONE_2]]: +420783997343
+[[PHONE_3]]: +420 649 444 484
+[[PHONE_4]]: 622 120 288
+[[PHONE_5]]: +420 768 783 305
+[[PHONE_6]]: 628 864 164
+[[PHONE_7]]: +420 771 589 973
+

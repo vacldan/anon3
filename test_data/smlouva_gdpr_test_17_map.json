@@ -1,12 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:33.049084",
+  "generated_at": "2026-03-09T15:51:07.204702",
   "source_file": "smlouva_gdpr_test_17.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Veronika Svobodová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Veroniko Svobodová",
       "occurrences": 1
     },
     {
@@ -29,12 +35,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Veroniko Svobodová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Erik Procházka",
       "occurrences": 1
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Erikovi Procházkovi",
+      "original": "Erikem Procházkou",
       "occurrences": 1
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Erikem Procházkou",
+      "original": "Erikovi Procházkovi",
       "occurrences": 1
     },
     {
@@ -84,7 +84,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Filipem Procházkou",
+      "original": "Filipa Procházky",
       "occurrences": 1
     },
     {
@@ -96,7 +96,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Filipa Procházky",
+      "original": "Filipem Procházkou",
       "occurrences": 1
     },
     {

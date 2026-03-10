@@ -1,0 +1,84 @@
+OSOBY
+-----
+[[PERSON_1]]: Filip Malík
+  - Filipa Malíka
+  - Filipe Malíke
+  - Filipem Malíkem
+  - Filipovi Malíkovi
+  - Malíkovi
+[[PERSON_2]]: Aleš Vaněk
+  - Aleša Vaněka
+  - Aleše Vaněke
+  - Alešem Vaněkem
+  - Alešovi Vaněkovi
+[[PERSON_3]]: Lucie Benešová
+  - Lucie Benešovou
+  - Lucie Benešové
+[[PERSON_4]]: Aleš Turek
+  - Aleša Turka
+  - Aleše Turku
+  - Alešem Turkem
+  - Alešovi Turkovi
+
+ADDRESS
+[[ADDRESS_1]]: Kampus 9, 625 00 Brno
+[[ADDRESS_2]]: Sadová 98/21, 370 01 České Budějovice
+[[ADDRESS_3]]: Křenová 102/3, 602 00 Brno
+[[ADDRESS_4]]: případně písemně na adresu Křenová 102/3, 602 00 Brno
+[[ADDRESS_5]]: písemné doručení na adresu Křenová 102/3, 602 00 Brno
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Křenová 102/3, 602 00 Brno pro Alešovi Vaněkovi a
+[[ADDRESS_7]]: Sadová 98/21, 370 01 České Budějovice pro Filipovi
+
+BANK
+[[BANK_1]]: 358249232/0300
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 980621/7614
+[[BIRTH_ID_2]]: 000422/7310
+[[BIRTH_ID_3]]: 630601/9941
+[[BIRTH_ID_4]]: 611006/3045
+
+CARD
+[[CARD_1]]: 4971 2045 2844 5917
+
+DATE
+[[DATE_1]]: 21. 09. 1989
+[[DATE_2]]: 04. 07. 2010
+[[DATE_3]]: 26. 11. 1987
+[[DATE_4]]: 15. 09. 1960
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: rektorat@unisever.cz
+[[EMAIL_2]]: filip.malik@example.com
+[[EMAIL_3]]: ales.vanek@example.com
+[[EMAIL_4]]: ales.turek@example.com
+[[EMAIL_5]]: lucie.benesova@example.com
+
+IBAN
+[[IBAN_1]]: CZ92 0300 0000 0130 2253 8204
+
+ICO
+[[ICO_1]]: 00224466
+
+ID_CARD
+[[ID_CARD_1]]: 849336039
+
+IP
+[[IP_1]]: 159.79.107.74
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ73405
+[[LICENSE_PLATE_2]]: 5AZ 8818
+[[LICENSE_PLATE_3]]: 0HA1763
+
+MAC
+[[MAC_1]]: 7F:FC:4B:C2:4B:FC
+
+PHONE
+[[PHONE_1]]: +420 541 111 000
+[[PHONE_2]]: +420 714 469 259
+[[PHONE_3]]: +420 655 840 808
+[[PHONE_4]]: +420 741 800 110
+[[PHONE_5]]: +420 647 643 941
+

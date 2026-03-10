@@ -1,0 +1,212 @@
+SKRYI Document Suite – Závěrečná zpráva a
+strategický plán
+Přehled produktu
+SKRYI Document Suite je inovativní offline systém pro anonymizaci osobních údajů v dokumentech
+(DOCX, PDF, TXT aj.) zaměřený na jazyky s bohatou morfologií (např. čeština, slovenština). Na rozdíl od
+ručního „začernění“ fixou nebo nástrojů vyžadujících cloudovou analýzu data SKRYI plně automatizuje
+a urychluje celý proces. Klíčové vlastnosti produktu:
+-  100% offline provoz: Všechna data jsou zpracovávána lokálně a nikdy neopouští zařízení, takže
+nehrozí únik citlivých informací ani závislost na externí infrastruktuře
+.
+- Morfologická inteligence: SKRYI rozpoznává osobní údaje ve všech pádech a tvarech (např. Jakubovi,
+Petřina apod.), kde standardní řešení často selhávají. Tím automaticky detekuje a anonymizuje křestní
+jména, příjmení, e-maily, telefonní čísla, adresy a další údaje bez nutnosti manuálního zásahu.
+- GDPR compliance: Produkt splňuje technické požadavky nařízení o ochraně osobních údajů, včetně
+auditních záznamů a ověření, co bylo anonymizováno.
+- Konfigurovatelné šablony: Uživatelé mohou definovat vlastní anonymizační pravidla (např. přes YAML
+nebo GUI), která lze opakovaně aplikovat. SKRYI si pamatuje předvolby pro opakované běhy, čímž
+eliminuje nevýhodu starších systémů, které při každém spuštění „zapomínaly“ nastavená pravidla
+. 
+Tržní potenciál a segmentace
+Trh řešení pro GDPR a anonymizaci dat rapidně roste. Odhady uvádějí, že globální trh GDPR služeb bude
+z 3,34 mld. USD (2025) růst na 13,71 mld. USD do roku 2030
+ (ročně ~25,6 % nárůst). Evropě, jakožto
+rodišti GDPR, patří dominantní podíl
+. Mezi klíčové segmenty pro SKRYI patří:
+- Veřejný sektor a justice: Soudy a státní správa (v ČR je aktuálně vypsána soutěž na nový systém pro
+anonymizaci soudních rozsudků
+). Existující anonymizační nástroje úřadům často práci prodlužují –
+úředníci si stěžují, že nové systémy nesplňují základní funkce a jsou pomalé
+. SKRYI cílí na tuto
+nemoc – nabídne spolehlivou a rychlou náhradu manuální „černé fixy“.
+- Bankovnictví a pojišťovnictví (BFSI): Segment tvoří přibližně 35 % poptávky po GDPR řešeních
+.
+Banky a pojišťovny pracují s extrémně citlivými daty klientů a vyžadují robustní anonymizaci pro interní i
+externí reporting.
+-  Zdravotnictví: Roste potřeba anonymizovat lékařské dokumentace, výzkumná data o pacientech
+apod., zejména s ohledem na digitální zdravotní záznamy.
+- Právní a HR služby: Právní firmy, oddělení interních kontrol a HR – anonymizují smlouvy, pohovory,
+výpovědi apod. Vysoce cenná data vyžadují přesné nástroje.
+-  Konzultanti a DPO-as-a-Service: Firmy nabízející služby na outsourcing ochrany osobních údajů
+budou SKRYI používat jako klíčový nástroj pro své klienty. 
+Tímto pokrýváme jak velké korporace, tak menší organizace (neziskové i obchodní), které usilují o
+konsolidaci nákladů a zvýšení efektivity anonymizace. 
+1
+2
+3
+4
+5
+2
+6
+1
+
+
+Konkurenční prostředí a výhody
+Existuje několik kategorií konkurenčních řešení, avšak žádné neřeší kompletně problém, který SKRYI cílí:
+- Ruční anonymizace vs automatizace: Ruční postup (práce „fixou“ v PDF) je nákladný a nespolehlivý
+. Automatizované systémy (např. Usnesení.cz) umí rychle označit citlivá data a začernit je dle rolí
+,
+avšak často neřeší morfologii a chybí jim plná offline podpora. SKRYI zautomatizuje proces s full-
+textovým  vyhledáním  a  konzistentním  anonymizovaným  výstupem,  včetně  jasného  záznamu  o
+provedených změnách.
+- Cloud vs lokální řešení: Většina moderních řešení provozuje NLP engine v cloudu, účtuje API volání a
+vyžaduje neustálé připojení k internetu (což zvyšuje náklady a bezpečnostní rizika). Např. anonym.legal
+Desktop App pracuje offline pouze v UI, ale samotná PII analýza volá Presidio API na serveru
+. SKRYI
+běží zcela lokálně
+ (tzv. „true zero trust“): žádné vstupní údaje ani klíče neopouští prostředí zákazníka.
+- Cena a škálovatelnost: SaaS anonymizační služby (Anonymization API, AWS, Google DLP aj.) typicky
+účtují stovky až tisíce dolarů měsíčně na základě počtu slov či tokenů
+. SKRYI umožní alternativu –
+flexibilní  licencování  bez  přerušení  služby  dodatečnými  poplatky  (viz  níže).  Cena  bude  nastavena
+atraktivně pro SMB i enterprise bez skrývání „třecích nákladů“.
+-  Morfologická přesnost: Konkurenti (často zaměření na angličtinu) selhávají při českých tvarech.
+Stávající anonymizátor ve justice neuměl odstranit všechny výskyty jména v dokumentu
+. SKRYI to
+umí – cílí na tento „pain point“ a díky lingvistické analýze odstraňuje komplexní osobní údaje bez
+opomenutí. 
+Výsledkem je irresistibilní nabídka: SKRYI kombinuje vysokou úroveň ochrany dat (aktiva > pasiva) a
+uživatelskou jednoduchost. Uživatelé získávají jedno řešení pokrývající všechny hlavní GDPR scénáře
+rychleji a spolehlivěji než současné nástroje, bez zbytečné složitosti. 
+Licenční model a cenová strategie
+Na základě analýzy trhu navrhujeme hybridní licenční model s důrazem na maximální páku (výnosy vůči
+vynaloženým nákladům)
+:
+1.  Jednorázové licence (SMB): Pro malé a střední firmy nabízíme základní verzi za  2 500–5 000 Kč
+(jednorázově) včetně roční aktualizace. Tento model apeluje na zákazníky, kteří chtějí jednoduché a
+předvídatelné řešení bez dlouhodobých závazků (analogicky k offline nástroji CamoText za jednorázový
+poplatek
+).
+2. Roční předplatné (enterprise): Pro větší organizace nabízíme licence na bázi ročního předplatného
+(50–200 EUR za uživatele/instalaci) s neomezeným objemem dat, prioritní podporou a SLA. Tento tarif
+zajistí stabilní cash flow a umožní cenově škálovat dle počtu uživatelů či oddělení (např. každé další 4
+licence za zvýhodněný balíček).
+3.  Korporátní licence na míru: Pro největší klienty (vláda, korporace, kanceláře s desítkami DPO)
+připravíme individuální nabídky (1 000–5 000 EUR+ ročně) s doplňkovými službami (certifikace, školení,
+integration).  Zahrne  podporu  více  lokalit  a  garanci  dle  požadavků  klienta.  Tím  maximalizujeme
+průměrnou výši kontraktu (LTV) a zajistíme dlouhodobé vztahy. 
+Ke  všem  tarifům  přidáme  value-adds pro  okamžité  nasazení  (např.  on-premise*  ISO  27001
+dokumentace,  šablony  GDPR  auditu).  Marketingově  využijeme  freemium/trial  verze  a
+partnerských kanálů (softwaroví integrátoři, DPO poradci). Cílem je  odstranit tření** – cena a
+model SKRYI bude jasný, bez skrytých poplatků, aby se nástroj prodával sám. 
+7
+8
+9
+1
+10
+2
+10
+1
+1
+2
+
+
+Startupová dokumentace a business plán
+Pro úspěšný rozvoj SKRYI vypracujeme komplexní strategický plán s jasně definovanými cíli, metrikami a
+kroky:
+Cíle a vize: Stanovit SKRYI jako vedoucí anonymizační řešení v Evropě. Dosáhnout  radikální
+inovace –  cílově  dosáhnout  10×  lepší efektivity  než  existující  systémy  (rychlost  zpracování,
+přesnost  detekce),  využívaje  prvotních  principů  inovace
+.  Strategický  mandát:  nikdy  se
+nesmíříme s průměrem, chceme outsidery stát se standardem. 
+Tým a organizace: Malý agilní tým vývojářů a produktových manažerů pod patronací Nixminds
+(nejlépe s odborníky na NLP a právní problematiku). Financování udržíme lean – každý výdaj
+bude přísně odůvodněný (princip „každý výdaj = potenciální past závazků“) a zaměříme se na
+tvůrčí (intelektuální) aktiva. Použijeme kapitál formou dluhu či grantů pro zrychlenou expanzi
+(Kiyosakiho přístup: využít dluh jako páku pro cashflow aktiva). 
+Produktový roadmap: Prioritizujeme vývoj na základě zpětné vazby pilotních uživatelů (např.
+soudy,  korporátní  právníci).  Každá  verze  produktu  bude  měřitelná  –  např.  metrika  „počet
+odstraněných citlivých údajů“ na dokument nebo snížení času potřebného k anonymizaci o X %.
+Uplatníme pravidlo systémové odolnosti: škálujeme infrastrukturu, abychom udrželi výkon při
+růstu počtu klientů, a definujeme KPI (např. MRR, ARPU, churn) pro kontrolu udržitelného růstu
+. 
+Marketing  a  prodej: Kombinujeme  agresivní  obsahový  marketing  (o  GDPR,  anonymizaci
+dokumentů, předváděcí webináře) s cílenými kampaněmi na byznys komunity (LinkedIn DPO,
+konferenční sponzorství). Vytvoříme irresistible offer (např. „Vyzkoušej zdarma s garancí vrácení,
+pokud nesplní stanovené metriky výkonu“). Dále budeme využívat virální prvky (případové studie
+úspěšné implementace ve veřejném sektoru, reference od DPO) jako bezplatnou reklamu. Prodej
+probíhá skrze online kanály i přímým oslovováním klíčových zákazníků (velké firmy, stát). 
+Klíčové metriky (KPIs): Nepřetržitě budeme monitorovat  měsíční opakované příjmy (MRR/
+ARR),  počet placených uživatelů,  průměrnou hodnotu zakázky (ARPU),  CAC vs. LTV,  míru
+odchodu zákazníků (churn) a  hrubou marži. Výstupy a optimalizace dle těchto čísel zajistí
+finanční disciplínu a růst. Např. do 6 měsíců nastavíme cíle: X enterprise kontraktů a Y EUR MRR. 
+Rizika  a  compliance: Eliminujeme  katastrofické  riziko  („Ruin  Assessment“):  protože  SKRYI
+zpracovává vše lokálně a neskrývá žádná data, nehrozí legální náklady za únik informací
+.
+Pravidelně provádíme audit souladu s GDPR, HIPAA, budeme připraveni na nové normy (EU AI
+Act, NIS2). Právní tým zajistí, že ani při expandování do nových trhů neporušíme zákony. 
+Finanční plán: Zachováme přísnou finanční disciplínu – minimalizujeme výdaje do nepotřebných
+oblastí, investujeme do aktivního rozvoje (AI algoritmy, licence). Naše finanční projekce počítají s
+malým ziskem prvních 12 měsíců a postupným zvyšováním. Například: 3 placení zákazníci do 6
+měsíců, 10 do 12 měsíců, s plným pokrytím nákladů do konce druhého roku. SKRYI je digitální
+aktivum Nixminds, které přispívá k dlouhodobé finanční nezávislosti firmy. 
+Akční  plán: Konkrétní  implementační  kroky:  (1)  Intenzivní  workshopy  s  klíčovými  uživateli
+(soudci, DPO) – nasbírat přesné požadavky. (2) Vyrobit MVP a spustit pilotní projekt ve vybrané
+instituci. (3) Vyhodnotit výkon a podle dat vylepšit model (first-principles approach – soustředit
+• 
+1
+• 
+• 
+3
+• 
+• 
+• 
+9
+• 
+• 
+3
+
+
+se jen na největší zdroj přidané hodnoty). (4) Navrhnout marketingové materiály a prodejní
+strategie. (5) Pravidelně revidovat KPI a optimalizovat náklady dle metrik ROI. 
+Závěr
+SKRYI Document Suite představuje produkt s vysokým potenciálem – adresuje skutečný trh s rostoucí
+poptávkou  a  nabízí  jedinečnou  konkurenční  výhodu (offline  +  morfologie).  Díky  nekompromisní
+strategii  zaměřené  na  měřitelné  výsledky,  maximalizaci  zisku  a  lever  (páky)  je  připraven  přinést
+Nixminds dlouhodobé finanční benefity a posunout anonymizaci dokumentů na novou úroveň. Tento
+dokument  shrnuje  kompletní  plán,  jak  technologii  SKRYI  uvést  na  trh,  získat  klienty  a  vybudovat
+udržitelný business model. 
+Zdrojová data: Citace uvedených statistik a příkladů pocházejí z aktuálních studií trhu a dokumentace
+konkurenčních řešení (viz odkazy 
+).
+Best Text Anonymization Tools Compared: CamoText vs AWS vs Azure vs Google | 2026 Guide
+https://camotext.ai/blogposts/best-text-anonymization-tools-comparison
+Rozvoj anonymizéru? Systém úředníkům práci neusnadňuje | iROZHLAS - spolehlivé zprávy
+https://www.irozhlas.cz/zpravy-domov/resort-spravedlnosti-soutezi-rozvoj-anonymizeru-sytem-zatim-praci-
+justicnim_2510070500_pik
+GDPR Services Market Growth Beyond USD 20070 Billion by 2035
+https://www.openpr.com/news/4398525/gdpr-services-market-growth-beyond-usd-20070-billion-by-2035
+Anonymizace v dokumentech: Systém usnesení.cz vs. ruční metoda - Systém pro přípravu, řízení
+jednání, hlasování a generování zápisů ze zastupitelstva
+https://www.usneseni.cz/novinky/anonymizace-v-dokumentech-system-usnesenicz-vs-rucni-metoda
+Troubleshooting & FAQ - Desktop App
+https://anonym.legal/docs/desktop/troubleshooting
+Pricing - Data Anonymization API | Enterprise PII Protection & Privacy Solutions
+https://www.anonymizationapi.com/pricing.php
+3
+1
+2
+7
+10
+9
+1
+2
+5
+3
+4
+6
+7
+8
+9
+10
+4

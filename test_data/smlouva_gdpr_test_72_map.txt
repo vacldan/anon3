@@ -1,0 +1,110 @@
+OSOBY
+-----
+[[PERSON_1]]: Bruno Kořínek
+  - Brunoa Kořínka
+  - Brunoe Kořínku
+  - Brunoem Kořínkem
+  - Brunoovi Kořínkovi
+[[PERSON_2]]: Milada Hájková
+  - Milado Hájková
+  - Miladou Hájkovou
+  - Milady Hájkové
+  - Miladě Hájkové
+[[PERSON_3]]: Hedvika Benešová
+  - Hedvikou Benešovou
+  - Hedviky Benešové
+  - Hedvikě Benešové
+[[PERSON_4]]: Aleš Vaněk
+  - Aleša Vaněka
+[[PERSON_5]]: Klára Dvořáková
+  - Kláry Dvořákové
+[[PERSON_6]]: Kryštof Král
+  - Kryštofa Krála
+[[PERSON_7]]: Hedvika Benešováová
+  - Hedviku Benešováovou
+[[PERSON_8]]: Milada Hájkováová
+  - Miladu Hájkováovou
+[[PERSON_9]]: Klára Dvořákováová
+  - Kláru Dvořákováovou
+
+ADDRESS
+[[ADDRESS_1]]: Praha 9
+[[ADDRESS_2]]: Bryksova 763/46, 198 00 Praha 14
+[[ADDRESS_3]]: Vinohradská 51/11, 130 00 Praha 3
+[[ADDRESS_4]]: U Parku 131, 779 00 Olomouc
+[[ADDRESS_5]]: Palackého 162, 301 00 Plzeň
+[[ADDRESS_6]]: Nádražní 226, 702 00 Ostrava
+[[ADDRESS_7]]: Na Kopci 27/30, 100 00 Praha 10
+[[ADDRESS_8]]: Národní 109/2, 110 00 Praha 1
+[[ADDRESS_9]]: a U Parku 131, 779 00 Olomouc
+[[ADDRESS_10]]: platnost 10/26, CVC
+[[ADDRESS_11]]: Exekutorský úřad Praha 9, IČO
+[[ADDRESS_12]]: Správcem osobních údajů je Exekutorský úřad Praha 9, IČO
+
+BANK
+[[BANK_1]]: 3436124453/6210
+[[BANK_2]]: 5242704546/0800
+[[BANK_3]]: 7587375255/2010
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 900603/6668
+[[BIRTH_ID_2]]: 646221/1121
+[[BIRTH_ID_3]]: 105320/8096
+[[BIRTH_ID_4]]: 910426/4446
+[[BIRTH_ID_5]]: 615814/0519
+[[BIRTH_ID_6]]: 0303195512
+
+DATE
+[[DATE_1]]: 24. 11. 1964
+[[DATE_2]]: 2. 5. 1974
+[[DATE_3]]: 8. 11. 1974
+[[DATE_4]]: 2. 12. 1997
+[[DATE_5]]: 18. 1. 2002
+[[DATE_6]]: 12. 5. 1980
+[[DATE_7]]: 19. 10. 2026
+
+DIC
+[[DIC_1]]: CZ71234567
+
+EMAIL
+[[EMAIL_1]]: bruno.korinek@email.cz
+[[EMAIL_2]]: milada.hajkova@firma.cz
+[[EMAIL_3]]: hedvika.benesova@post.cz
+[[EMAIL_4]]: ales.vanek@seznam.cz
+[[EMAIL_5]]: klara.dvorakova@example.com
+[[EMAIL_6]]: krystof.kral@example.com
+
+IBAN
+[[IBAN_1]]: CZ29 5500 0000 1438 4760 4092
+[[IBAN_2]]: CZ85 0600 0000 4661 0275 7188
+
+ICO
+[[ICO_1]]: 71234567
+
+ID_CARD
+[[ID_CARD_1]]: SS 991106
+[[ID_CARD_2]]: 865372140
+[[ID_CARD_3]]: AA 298630
+
+IP
+[[IP_1]]: 209.81.53.197
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ75216
+[[LICENSE_PLATE_2]]: PP25376
+
+MAC
+[[MAC_1]]: 18:72:54:56:D2:9F
+
+PASSWORD
+[[PASSWORD_1]]: Mil95!9965
+
+PHONE
+[[PHONE_1]]: 476624054
+[[PHONE_2]]: +420727841604
+[[PHONE_3]]: 719 436 627
+[[PHONE_4]]: +420 664 992 409
+[[PHONE_5]]: +420 695 539 839
+[[PHONE_6]]: +420 709 595 819
+[[PHONE_7]]: 754 469 984
+

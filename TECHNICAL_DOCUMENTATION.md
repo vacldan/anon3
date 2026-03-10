@@ -1,7 +1,7 @@
 # SKRYI Document Suite - Technical Documentation
 
-> **Version:** 3.0.0
-> **Last Updated:** 2026-02-25
+> **Version:** 3.1.1
+> **Last Updated:** 2026-02-24
 > **Audience:** Senior developers, DevOps engineers, maintainers
 
 ---
@@ -57,7 +57,7 @@ SKRYI Document Suite is a **desktop application** for GDPR-compliant anonymizati
 |------|-------|---------|
 | `main.js` | ~1360 | Electron main process. Python discovery, license check, IPC handlers, watcher management, stats. |
 | `index.html` | ~1430 | Single-file UI: HTML structure, full CSS (Chrome/Silver dark theme), inline JavaScript. |
-| `anon72.py` | ~5990 | Core anonymization engine. `Anonymizer` class with regex-based NER, Czech morphological inference, GDPR entity detection. |
+| `anon72.py` | ~6400 | Core anonymization engine. `Anonymizer` class with regex-based NER, Czech morphological inference, GDPR entity detection, standalone first-name post-pass, district absorption. |
 | `anonymize_cli.py` | ~147 | CLI wrapper that imports `anon72`, parses args, runs anonymization, outputs JSON result for Electron. |
 | `deanonymizator_lokal.py` | ~300 | Reverse-anonymization: reads `_map.json`, replaces tags back to original values. |
 | `pdf2docx_cli.py` | ~250 | PDF/image to DOCX converter. Uses `pdf2docx` for native PDFs, falls back to Tesseract OCR for scanned documents. |
@@ -87,6 +87,7 @@ All watchers use the `watchdog` library (event-based, not polling). Output goes 
 | File | Purpose |
 |------|---------|
 | `cz_names.v1.json` | Czech name database. Structure: `{firstnames: {M: [...], F: [...], U: [...]}, firstnames_no_diac: {...}, surnames: {...}}` |
+| `institutions_blacklist.json` | Curated list (~250–300) of institutions/companies/universities/hospitals (CZ/SK + selected neighbors) that must never be classified as PERSON. Loaded once at startup and merged into `critical_blacklist`/`role_words` in `anon72.py` and `non_person_tokens` in `run_anonymize_tests.py`. |
 | `fonts/DejaVuSans.ttf` | Font for PDF report generation (fpdf2 requires explicit TTF for Czech characters) |
 | `fonts/DejaVuSans-Bold.ttf` | Bold variant |
 | `EULA.txt` | End-user license agreement (shown during NSIS install) |
@@ -228,6 +229,11 @@ anonymize_docx(input, output, map_json, map_txt, pdf_report)
   │
   ├── FOR EACH paragraph + table cell:
   │     ├── anonymize_entities(text)         # Regex-based entity detection
+  │     │     └── Includes address post-passes:
+  │     │           ├── Simple address cleanup
+  │     │           ├── City+PSČ merge into existing ADDRESS tags
+  │     │           ├── Standalone city detection (Praha, Brno, ...)
+  │     │           └── District absorption ("[[ADDRESS_2]] - Vinohrady" → "[[ADDRESS_2]]")
   │     ├── _apply_known_people(text)        # Replace known person variants
   │     └── _replace_remaining_people(text)  # Detect new persons via NER patterns
   │
@@ -237,8 +243,12 @@ anonymize_docx(input, output, map_json, map_txt, pdf_report)
   │     └── _deduplicate_persons()                  # Merge duplicate persons
   │           └── Returns tag_remap dict → applied to all paragraphs/tables
   │
-  ├── 4. Save anonymized document
-  └── 5. _create_maps() → JSON map, TXT map, PDF report
+  ├── 4. _postpass_standalone_firstnames(doc)  # NEW: Catch standalone first names
+  │     └── For each detected person, search for their first name variants
+  │           outside [[...]] tags and replace with corresponding [[PERSON_N]]
+  │
+  ├── 5. Save anonymized document
+  └── 6. _create_maps() → JSON map, TXT map, PDF report
 ```
 
 ### Entity Detection (`anonymize_entities`)
@@ -292,6 +302,7 @@ This is the most complex part of the engine. It handles:
    - Role + name: `nájemce Jan Novák` (legal role prefix)
    - Standalone surname after known context
    - Standalone first name after known context
+   - Robust ordering and overlap resolution between 4-word, 3-word and 2-word patterns to avoid corrupting tags when names are separated by large whitespace.
 
 2. **Morphological inference** - Czech names are declined through 7 grammatical cases:
    - `Jana` could be nominative (female name) OR genitive of `Jan` (male)
@@ -310,11 +321,53 @@ This is the most complex part of the engine. It handles:
    - Phase 3: Cross-gender match (Novák ↔ Nováková if same-person context)
    - Returns `tag_remap` dict for document-wide tag replacement
 
-5. **Name library** (`cz_names.v1.json`):
+5. **Standalone first-name post-pass** (`_postpass_standalone_firstnames`):
+   - Runs AFTER dedup/remap, BEFORE document save
+   - For each detected person, extracts their first name and generates Czech case variants via `variants_for_first()`
+   - Scans the entire document for these variants **outside** existing `[[...]]` tags
+   - Safety measures:
+     - Short names (< 4 chars: Jan, Eva, Ivo) only replaced in safe contexts (after `Pan/Paní`, academic titles like `Ing./Mgr./MUDr.`, or in signature blocks like `S pozdravem, ...`)
+     - Longer names (4+ chars: Jakub, Barbora, Petra) replaced broadly
+     - Blacklist of common Czech words that collide with name forms (`nová`, `město`, `stav`, `server`, `svědci`, etc.)
+     - Never replaces inside existing `[[...]]` tags
+   - Typical impact: catches ~93 standalone first names across 33 out of 186 test contracts
+
+6. **Orphan surname absorption after person tags** (`_postpass_orphan_surname_after_tag`):
+   - Handles cases where a **multi-word first name** (e.g. `Mai Linh Nguyenová`) is partially anonymized and the surname fragment remains right after a `[[PERSON_N]]` tag.
+   - Pattern: `[[PERSON_N]] Surname` → `[[PERSON_N]]`, applied only when:
+     - Surname matches any known surname variant of an already-detected person, **or**
+     - Surname matches a robust Czech surname suffix heuristic (`-ová`, `-ové`, `-ovou`, `-ský`, `-ská`, etc.).
+   - Runs on the fully anonymized document (paragraphs + tables) after person deduplication and tag remap, and is what fixes the `"Mai Linh Nguyenová"` leak discovered in final stress-test contracts.
+
+7. **Address district absorption** (inside `anonymize_entities`):
+   - Post-pass at the END of all address processing
+   - Catches pattern: `[[ADDRESS_N]] - DistrictName` (e.g., `[[ADDRESS_2]] - Vinohrady`)
+   - Absorbs the district name into the existing address tag
+   - Must run AFTER standalone city detection (`Praha 3`, `Brno`) so the tag exists first
+
+8. **Non-person blacklists** (sector-specific):
+   - `critical_blacklist` in person detection: prevents roles/institutions from being tagged as PERSON
+   - `role_blacklist_words` in map cleanup: removes false PERSON entries post-hoc
+   - Institution/brand coverage is **data-driven**:
+     - Terms are maintained in `institutions_blacklist.json` (banks, insurers, universities, hospitals, large retailers, gov. bodies) and loaded once at module import.
+     - `anon72.py` merges this set into `critical_blacklist`/`role_words`; `run_anonymize_tests.py` merges it into `non_person_tokens`, so both engine and validators share the same view of “non-person” tokens.
+   - Sector coverage spans 6 target domains:
+     - **Legal**: advokát, advokátní, notář, soud, soudce, soudkyně
+     - **Healthcare**: nemocnice, klinika, ordinace, ambulance, oddělení, pracoviště
+     - **Public administration**: ministerstvo, magistrát, obec, město, úřad
+     - **HR**: recruiter, recruitment, talent, personální, personalista, peopleops
+     - **Education**: gymnázium, univerzita, fakulta, škola, školství
+     - **Financial**: banka, spořitelna, pojišťovna, bankovní, finanční
+
+9. **Name library** (`cz_names.v1.json`):
    - `firstnames.M` - Male first names with diacritics
    - `firstnames.F` - Female first names with diacritics
    - `firstnames_no_diac` - Names without diacritics (e.g., "Jan" without háček)
    - Used to disambiguate gender of observed name forms
+
+10. **International diacritics support**:
+    - All person-related regex character classes were extended to include Central-European and selected Western diacritics (e.g. `Ä, Ö, Ü, Ą, Ę, Ł, Ń, Ś, Ź, Ż, Ő, Ű, Ñ` and their lowercase variants).
+    - This prevents leaks for foreign surnames like `"Müllerová"` or mixed-origin full names while keeping the false-positive rate low thanks to the existing blacklist logic.
 
 ### Output Files
 
@@ -594,11 +647,27 @@ CSS custom properties (variables) define the Chrome/Silver dark theme:
 
 7. **Dedup tag remap** - After person deduplication, old tags must be replaced throughout the entire document. The `tag_remap` dict is applied to all paragraphs and table cells after dedup runs.
 
+8. **Standalone first-name post-pass ordering** - `_postpass_standalone_firstnames` must run AFTER dedup (so tag_remap is applied first) and BEFORE document save. Short names (< 4 chars) are only replaced in safe contexts to avoid false positives with common Czech words.
+
+9. **Orphan surname post-pass ordering** - `_postpass_orphan_surname_after_tag` must run after all person detection and tag remapping. It only operates on patterns of the form `[[PERSON_N]] Surname` and uses both known surname variants and suffix heuristics; this is what fixes cases like `"Mai Linh Nguyenová"` where only the first-name chunk was originally tagged.
+
+10. **District absorption ordering** - The `district_after_addr_re` post-pass must run at the END of `anonymize_entities`, after all city detection patterns (`city_pattern`, `city_in_place`). If placed earlier, the address tag for "Praha 3" doesn't exist yet and the district name "Vinohrady" won't be absorbed.
+
+11. **Non-person false positives** - Common Czech words like `Stav`, `Banka`, `Zpracovatel`, `Nové` can be mistakenly detected as person names when they appear in "FirstName LastName" position. The `critical_blacklist` and `role_blacklist_words` sets prevent this but must be kept up-to-date for each target sector (legal, healthcare, HR, education, finance, public admin).
+
 ### Platform
 
 8. **Windows-only in production** - WMIC/PowerShell calls for HW fingerprint, registry for autostart, NSIS installer. Development works cross-platform.
 
 9. **Antivirus false positives** - Nuitka-compiled .exe files are sometimes flagged by antivirus software. The license validator has a Python fallback if the .exe fails silently.
+
+### Testing and manual audit
+
+To validate the correctness of the engine after the latest changes (standalone first-name post-pass, orphan surname absorption, expanded blacklists and extended diacritics support), a mixed automated + manual audit pipeline was used:
+
+- **Automated regression**: anonymization + strict validators (`run_anonymize_tests.py`, `run_anonymize_tests_v2.py`) over the full corpus of ~200 synthetic contracts (including multiple “stress-test” documents).
+- **Brute-force raw cross-check**: helper scripts in `test_data/` that scan anonymized outputs for any occurrence of original PII values outside `[[...]]` tags (intentionally ignoring blacklists to surface worst-case candidates).
+- **Full manual review**: 201 anonymized contracts (including 15 “final” high-complexity scenarios with foreign names, SSH keys, RFID, LinkedIn, databoxes, complex address formats) were manually cross-checked against their `_map.json` files. Result: **zero real PII leaks**; the remaining 7 findings (`Bc.`, `hcp_admin`, `123456`, `RFID`, `Zpracovatel`) were all confirmed as non-person or non-sensitive terms in context.
 
 ---
 
@@ -632,6 +701,7 @@ User selects smlouva.docx
     │     ├── _fix_gender_mismatches()
     │     ├── _deduplicate_persons() → tag_remap
     │     ├── Apply tag_remap to all text
+    │     ├── _postpass_standalone_firstnames()  → catch "Barbora", "Jakubovi" etc.
     │     ├── Save _anon.docx
     │     └── _create_maps() → _map.json, _map.txt, _report.pdf
     └── Print JSON result to stdout

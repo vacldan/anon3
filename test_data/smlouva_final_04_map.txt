@@ -1,0 +1,70 @@
+OSOBY
+-----
+[[PERSON_1]]: Theodor Brož
+  - Theodorem Brožem
+  - Theodorovi Brožovi
+[[PERSON_2]]: Patrik Müller
+  - Patrika Müllera
+  - Patrikem Müllerem
+
+ADDRESS
+[[ADDRESS_1]]: Revoluční 15, 110 00 Praha 1
+[[ADDRESS_2]]: Palackého 183/43, 612 00 Brno - Královo Pole
+[[ADDRESS_3]]: V Praze
+
+BANK
+[[BANK_1]]: 351932926/0600
+[[BANK_2]]: 947991563/6210
+
+DATE
+[[DATE_1]]: 6. 5. 2026
+[[DATE_2]]: 27. 3. 2026
+[[DATE_3]]: 19. 9. 2026
+
+DIC
+[[DIC_1]]: CZ15926837
+
+EMAIL
+[[EMAIL_1]]: theodor.broz@cybershield.cz
+[[EMAIL_2]]: patrik.muller@pentester.cz
+
+FACEBOOK
+[[FACEBOOK_1]]: https://www.facebook.com/patrik.muller.67
+
+IBAN
+[[IBAN_1]]: CZ45 0100 0000 5760 3736 5043
+
+ICO
+[[ICO_1]]: 15926837
+[[ICO_2]]: 90265631
+[[ICO_3]]: 23523462
+[[ICO_4]]: 46572826
+
+IP
+[[IP_1]]: 34.47.16.126
+[[IP_2]]: 98.144.68.7
+[[IP_3]]: 77.230.61.128
+[[IP_4]]: 215.33.68.92
+[[IP_5]]: 147.117.41.205
+
+LINKEDIN
+[[LINKEDIN_1]]: https://www.linkedin.com/in/theodor-broz-791
+[[LINKEDIN_2]]: https://www.linkedin.com/in/patrik-muller-485
+
+MAC
+[[MAC_1]]: 1E:C9:15:9E:4B:B6
+[[MAC_2]]: 3E:64:4E:25:96:C9
+[[MAC_3]]: 36:4D:FF:DC:8B:4D
+
+PASSWORD
+[[PASSWORD_1]]: T3stAdm!n2026
+[[PASSWORD_2]]: Us3r@Pass99
+
+PHONE
+[[PHONE_1]]: +420 639 939 790
+[[PHONE_2]]: +420 705 925 489
+
+USERNAME
+[[USERNAME_1]]: test_admin
+[[USERNAME_2]]: username
+

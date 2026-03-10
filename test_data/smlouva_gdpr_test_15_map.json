@@ -1,18 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:31.667871",
+  "generated_at": "2026-03-09T15:51:06.624597",
   "source_file": "smlouva_gdpr_test_15.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Monika Vaňková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Moniko Vaňková",
       "occurrences": 1
     },
     {
@@ -30,6 +24,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Moniko Vaňková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Monikou Vaňkovou",
       "occurrences": 1
     },
@@ -42,19 +42,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Petrě Malíkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Petrou Malíkovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Petro Malíková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Petrě Malíkové",
       "occurrences": 1
     },
     {
@@ -65,14 +59,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Aleš Turek",
+      "label": "[[PERSON_2]]",
+      "original": "Petrou Malíkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Alešovi Turkovi",
+      "original": "Aleš Turek",
       "occurrences": 1
     },
     {
@@ -85,6 +79,12 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Alešem Turkem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Alešovi Turkovi",
       "occurrences": 1
     },
     {

@@ -1,0 +1,121 @@
+OSOBY
+-----
+[[PERSON_1]]: Alena Vránová
+[[PERSON_2]]: Karel Švec
+[[PERSON_3]]: Jiří Konečný
+  - Konečný
+[[PERSON_4]]: Finanční Banek
+  - Banka
+  - Finanční Banka
+[[PERSON_5]]: Tomáš Doležal
+[[PERSON_6]]: Pavla Růžičková
+[[PERSON_7]]: Barbora Nováková
+[[PERSON_8]]: Petra Malíková
+[[PERSON_9]]: Dominik Král
+[[PERSON_10]]: Michal Konečný
+[[PERSON_11]]: Klára Veselá
+[[PERSON_12]]: Tomáš Čada
+[[PERSON_13]]: Veronika Štěpánová
+[[PERSON_14]]: Roman Doležal
+[[PERSON_15]]: Jana Čechová
+[[PERSON_16]]: Radek Matoušek
+[[PERSON_17]]: Lenka Růžičková
+[[PERSON_18]]: Petr Beneš
+[[PERSON_19]]: Marek Šmíd
+[[PERSON_20]]: Jitka Dvořáčková
+[[PERSON_21]]: Petr Kovář
+[[PERSON_22]]: Martina Horáková
+[[PERSON_23]]: Jana Černá
+[[PERSON_24]]: Iveta Zelená
+
+ADDRESS
+[[ADDRESS_1]]: Jihlavská 20, 625 00 Brno
+[[ADDRESS_2]]: Křížkovského 12, 602 00 Brno
+[[ADDRESS_3]]: Brno
+[[ADDRESS_4]]: Na Poříčí 8, 110 00 Praha 1
+[[ADDRESS_5]]: Antonínská 8, Brno
+[[ADDRESS_6]]: Masarykova 22, 602 00 Brno
+[[ADDRESS_7]]: Družstevní 5, 779 00 Olomouc
+[[ADDRESS_8]]: Vídeňská 118, 619 00 Brno
+[[ADDRESS_9]]: Technologická 45, Praha 6
+[[ADDRESS_10]]: Jungmannova 5, Praha 1
+[[ADDRESS_11]]: Lipová 19, 460 01 Liberec
+[[ADDRESS_12]]: Vídeňská 4, 639 00 Brno
+[[ADDRESS_13]]: Ostrava
+[[ADDRESS_14]]: Na Příkopě 33, Praha 1
+[[ADDRESS_15]]: Křižíkova 56, 186 00 Praha 8
+[[ADDRESS_16]]: Spálená 75/16, Praha 1
+[[ADDRESS_17]]: Sokolská 14, Ostrava
+
+BANK
+[[BANK_1]]: 123456789/0100
+[[BANK_2]]: 256987451/0300
+[[BANK_3]]: 987123456/5500
+[[BANK_4]]: 303456789/0300
+[[BANK_5]]: 2310456789/0100
+[[BANK_6]]: 987456123/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 740914/1825
+[[BIRTH_ID_2]]: 880722/0543
+[[BIRTH_ID_3]]: 851117/4758
+
+DATE
+[[DATE_1]]: 14.09.1974
+[[DATE_2]]: 10. 10. 2025
+[[DATE_3]]: 11. 10. 2025
+[[DATE_4]]: 12. 10. 2025
+[[DATE_5]]: 17. 9. 2025
+[[DATE_6]]: 14. 6. 2025
+[[DATE_7]]: 28. 6. 2025
+[[DATE_8]]: 22.07.1988
+[[DATE_9]]: 18. 8. 2025
+[[DATE_10]]: 14. 2. 2025
+[[DATE_11]]: 1. 7. 2025
+[[DATE_12]]: 15. 6. 2025
+[[DATE_13]]: 2. 9. 2025
+[[DATE_14]]: 7. 11. 2025
+[[DATE_15]]: 25. 6. 2025
+[[DATE_16]]: 17.11.1985
+[[DATE_17]]: 1. 8. 2025
+[[DATE_18]]: 31. 7. 2040
+
+DIC
+[[DIC_1]]: CZ74125896
+
+EMAIL
+[[EMAIL_1]]: alena.vranova@fnbrno.cz
+[[EMAIL_2]]: jiri.konecny@cfb.cz
+[[EMAIL_3]]: barbora.novakova@agroklasik.cz
+[[EMAIL_4]]: klara.vesela@datasys.cz
+[[EMAIL_5]]: pavel.novotny@datasys.cz
+[[EMAIL_6]]: v.stepanova@taxadvisors.cz
+[[EMAIL_7]]: johann.schmidt@powergrid.de
+[[EMAIL_8]]: martina.horáková@neoteam.cz
+[[EMAIL_9]]: jan.korbel@neoteam.cz
+[[EMAIL_10]]: lenka.vlčková@neoteam.cz
+
+ICO
+[[ICO_1]]: 65269705
+[[ICO_2]]: 98765432
+[[ICO_3]]: 74125896
+[[ICO_4]]: 65478932
+[[ICO_5]]: 55669877
+[[ICO_6]]: 88977655
+[[ICO_7]]: 77889911
+[[ICO_8]]: 74215368
+[[ICO_9]]: 11122334
+[[ICO_10]]: 45317054
+[[ICO_11]]: 25062025
+[[ICO_12]]: 60232514
+[[ICO_13]]: 45272956
+
+IP
+[[IP_1]]: 185.63.115.42
+
+PHONE
+[[PHONE_1]]: 543 123 789
+[[PHONE_2]]: 222 333 444
+[[PHONE_3]]: +420 734 555 111
+[[PHONE_4]]: 721 888 123
+

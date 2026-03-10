@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:36.459021",
+  "generated_at": "2026-03-09T15:51:07.978761",
   "source_file": "smlouva_gdpr_test_22.docx",
   "entities": [
     {
@@ -12,25 +12,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Pavle Hrubeše",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Pavlem Hrubešem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Pavlovi Hrubešovi",
+      "original": "Pavla Hrubeša",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Pavla Hrubeša",
+      "original": "Pavle Hrubeše",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Pavlovi Hrubešovi",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavlovi Svobodovi",
+      "original": "Pavla Svobody",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavle Svobodo",
+      "original": "Pavlovi Svobodovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavla Svobody",
+      "original": "Pavle Svobodo",
       "occurrences": 1
     },
     {
@@ -72,7 +72,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Romana Beneša",
+      "original": "Romanem Benešem",
       "occurrences": 1
     },
     {
@@ -84,7 +84,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Romanem Benešem",
+      "original": "Romana Beneša",
       "occurrences": 1
     },
     {

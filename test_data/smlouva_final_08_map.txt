@@ -1,0 +1,62 @@
+OSOBY
+-----
+[[PERSON_1]]: Radek Kratochvíl
+  - Radkovi Kratochvílovi
+[[PERSON_2]]: Žaneta Poláková
+  - Žanetě Polákové
+[[PERSON_4]]: Nguyen Duc
+  - Nguyen Duca
+  - Nguyen Ducovi
+
+ADDRESS
+[[ADDRESS_1]]: Revoluční 15, 110 00 Praha 1
+[[ADDRESS_2]]: Palackého třída 195/24, 779 00 Olomouc - Nová Ulice
+[[ADDRESS_3]]: V Praze
+
+BANK
+[[BANK_1]]: 908374954/0600
+[[BANK_2]]: 680603332/0300
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 850807/7514
+
+DATE
+[[DATE_1]]: 2. 7. 1993
+[[DATE_2]]: 1. 9. 2026
+[[DATE_3]]: 7. 11. 2026
+
+DIC
+[[DIC_1]]: CZ15926837
+
+EMAIL
+[[EMAIL_1]]: zaneta.polakova@cybershield.cz
+[[EMAIL_2]]: nguyen.duc.nguyen@email.cz
+[[EMAIL_3]]: nguyen.duc@cybershield.cz
+
+IBAN
+[[IBAN_1]]: CZ92 0600 0000 0831 8850 6116
+
+ICO
+[[ICO_1]]: 15926837
+[[ICO_2]]: 14635450
+
+INSURANCE_ID
+[[INSURANCE_ID_1]]: 3085190176
+
+LINKEDIN
+[[LINKEDIN_1]]: https://www.linkedin.com/in/zaneta-polakova-144
+[[LINKEDIN_2]]: https://www.linkedin.com/in/nguyen-duc-nguyen-951
+
+PASSWORD
+[[PASSWORD_1]]: Cy8er!7600
+
+PHONE
+[[PHONE_1]]: +420 691 688 951
+[[PHONE_2]]: +420 601 894 898
+
+RFID
+[[RFID_1]]: RFID
+
+USERNAME
+[[USERNAME_1]]: nguyend
+

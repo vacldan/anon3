@@ -1,4 +1,4 @@
-# SKRYI Document Suite - Technická dokumentace v3.2
+# SKRYI Document Suite - Technická dokumentace v3.3
 
 ## Systém pro morfologicky inteligentní anonymizaci dokumentů v inflektivních jazycích
 
@@ -10,7 +10,7 @@
 **SKRYI Document Suite** - Offline anonymizační systém pro GDPR compliance
 
 ## 1.2 Verze
-**3.1.0** (Production Ready)
+**3.1.1** (Production Ready)
 
 ## 1.3 Účel
 Automatická anonymizace osobních údajů v dokumentech (DOCX, PDF, obrázky) s podporou českého a slovenského jazyka včetně morfologických variant (skloňování). Systém je navržen pro **plně offline provoz** - žádná data neopouštějí zařízení uživatele.
@@ -19,13 +19,16 @@ Automatická anonymizace osobních údajů v dokumentech (DOCX, PDF, obrázky) s
 - **100% Offline** - žádná data na internet
 - **GDPR Compliant** - splňuje požadavky nařízení
 - **Morfologická inteligence** - rozpoznává pádové varianty jmen
+- **Post-pass na křestní jména** - zachytí samostatně stojící křestní jména detekovaných osob (Barbora, Jakubovi, Petřina...)
+- **Inteligentní absorpce adres** - městské čtvrti za pomlčkou (Praha 3 - Vinohrady) jsou automaticky pohlceny do adresního tagu
+- **Institucionální blacklist** - sdílený seznam ~250–300 známých institucí/firem/univerzit/nemocnic v CZ/SK (a části okolí), které jsou vždy brány jako instituce, nikdy jako fyzická osoba
 - **Reverzibilní anonymizace** - možnost deanonymizace s klíčem
 - **OCR konverze** - převod PDF a obrázků (PNG, JPG, TIFF, BMP, WEBP) na DOCX pomocí Tesseract
 - **Složkový režim** - automatický watcher pro hromadné zpracování
 - **PDF report** - automatický Certifikát o provedené anonymizaci (SHA-256, statistiky, GDPR doložka)
 - **Hardware-bound licence** - ochrana proti neoprávněnému kopírování s AppData persistencí
 - **Nativní kompilace** - zdrojový kód chráněn před reverzním inženýrstvím
-- **Rozšířený blacklist** - 350+ českých slov chráněných před falešnou detekcí (tituly, profese, právní role)
+- **Sektorový blacklist** - 500+ českých slov chráněných před falešnou detekcí, pokrývající 6 oborů: právo, zdravotnictví, veřejná správa, HR, školství, finance
 
 ## 1.5 Oblast techniky
 Vynález se týká oblasti zpracování přirozeného jazyka (NLP), konkrétně automatizované anonymizace osobních údajů v textových dokumentech. Technologie je primárně určena pro **inflektivní jazyky** (čeština, slovenština, polština, ruština), kde se slova skloňují podle gramatických pádů.
@@ -109,7 +112,7 @@ SKRYI Document Suite/
         ├── deanonymizator_lokal.exe        # Deanonymizace
         ├── pdf2docx_cli.exe                # PDF/Obrázky → DOCX (OCR)
         ├── pdf2docx_watcher.exe            # Složkový režim (watcher)
-        └── cz_names.v1.json                # Databáze českých jmen (224 000)
+        └── cz_names.v1.json                # Databáze českých jmen (~7 000 unikátních křestních jmen, stovky tisíc tvarů)
 ```
 
 ## 3.3 Procesní architektura
@@ -131,7 +134,9 @@ SKRYI Document Suite/
 ┌─────────────────────────────────────────────────────────┐
 │  MODUL 2: První průchod - Detekce entit                 │
 │  ├─ Regex detekce: email, telefon, IČO, rodné číslo     │
-│  ├─ Detekce adres (ulice, PSČ, město)                   │
+│  ├─ Detekce adres (ulice, PSČ, město, čtvrť)            │
+│  │  ├─ Sloučení město+PSČ do existujících adres          │
+│  │  └─ Absorpce čtvrtí za pomlčkou (- Vinohrady)        │
 │  └─ Vytvoření mapy: original → [[ŠTÍTEK_N]]             │
 └───────────────────────┬─────────────────────────────────┘
                         │
@@ -154,6 +159,17 @@ SKRYI Document Suite/
 │  ├─ Validace kanonických jmen proti zdroji              │
 │  ├─ Oprava rodových neshod (M/F)                        │
 │  └─ 4-fázová deduplikace osob                           │
+└───────────────────────┬─────────────────────────────────┘
+                        │
+                        ▼
+┌─────────────────────────────────────────────────────────┐
+│  MODUL 4b: Post-pass na křestní jména (NOVÉ)            │
+│  ├─ Pro každou detekovanou osobu: extrakce křestního    │
+│  │   jména + generování pádových variant                │
+│  ├─ Hledání variant v textu mimo existující [[...]] tagy│
+│  ├─ Krátká jména (< 4 zn.) → nahrazení jen v kontextu  │
+│  │   (Pan/Paní, titul, podpis)                          │
+│  └─ Delší jména (4+ zn.) → nahrazení všude              │
 └───────────────────────┬─────────────────────────────────┘
                         │
                         ▼
@@ -347,7 +363,7 @@ PO deduplikaci: 8 osob (unikátní)
 
 ## 4.5 INOVACE #4: Hybrid knihovny a morfologických heuristik
 
-Kombinace referenční knihovny (224 000 českých jmen) s inteligentními heuristikami pro neznámá jména.
+Kombinace referenční knihovny (~7 000 unikátních českých křestních jmen, stovky tisíc odvozených tvarů) s inteligentními heuristikami pro neznámá jména.
 
 ```
 ROZHODOVACÍ STROM:
@@ -372,7 +388,99 @@ ROZHODOVACÍ STROM:
 6. └─ Fallback: RETURN nejlepší kandidát
 ```
 
-## 4.6 INOVACE #5: Zachování struktury dokumentu
+## 4.6 INOVACE #5: Post-pass na samostatná křestní jména
+
+**Problém:** Po hlavní anonymizaci mohou v textu zůstat křestní jména detekovaných osob, pokud se vyskytují samostatně (bez příjmení) — např. v neformálních pasážích, e-mailové korespondenci, podpisech.
+
+```
+Originální text:
+"Smlouvu uzavřel Jan Novák. Barbora uhradí Jakubovi částku 32 000 Kč."
+
+Po hlavní anonymizaci:
+"Smlouvu uzavřel [[OSOBA_1]]. Barbora uhradí Jakubovi částku 32 000 Kč."
+                                ↑ LEAK!       ↑ LEAK!
+```
+
+**Řešení: Cílený post-pass na křestní jména**
+
+```
+FUNCTION postpass_standalone_firstnames(document):
+    FOR EACH person IN detected_persons:
+        first_name = person.first                    // "Jakub"
+        variants = generate_case_variants(first_name) // {Jakub, Jakuba, Jakubovi, Jakubem, ...}
+
+        FOR EACH variant IN variants:
+            IF length(variant) >= 4:
+                // Bezpečné nahradit všude (mimo tagy)
+                REPLACE variant → person.tag
+            ELSE IF length(variant) == 3:
+                // Pouze v bezpečném kontextu
+                IF preceded_by("Pan", "Paní", "Ing.", "Mgr.", "podpis:"):
+                    REPLACE variant → person.tag
+END FUNCTION
+```
+
+**Výsledek:**
+```
+"Smlouvu uzavřel [[OSOBA_1]]. [[OSOBA_3]] uhradí [[OSOBA_2]] částku 32 000 Kč."
+```
+
+**Bezpečnostní opatření:**
+- Nahrazuje **pouze** křestní jména osob, které už byly detekovány v dokumentu
+- Krátká jména (Jan, Eva, Ivo) → jen v kontextu titulů, oslovení, podpisů
+- Blacklist běžných slov kolidujících se jmény (nová, město, stav, server, svědci)
+- Nikdy nenahrazuje uvnitř existujících `[[...]]` tagů
+
+## 4.7 INOVACE #6: Inteligentní absorpce městských čtvrtí
+
+**Problém:** České adresy obsahují čtvrti za pomlčkou (Praha 3 - Vinohrady), které unikaly anonymizaci.
+
+```
+Po anonymizaci: "Sídlo: [[ADRESA_2]] - Vinohrady"  ← LEAK!
+```
+
+**Řešení:** Finální post-pass na konci zpracování adres, který absorbuje názvy čtvrtí do existujících adresních tagů:
+
+```
+Pattern: [[ADDRESS_N]] - DistrictName → [[ADDRESS_N]]
+```
+
+Musí běžet AŽ PO detekci standalone měst (Praha/Brno), aby adresní tag už existoval.
+
+## 4.8 INOVACE #7: Sektorový blacklist ne-osob
+
+**Problém:** Běžná oborová slova (Banka, Stav, Zpracovatel, Soud) jsou chybně detekována jako jména osob.
+
+**Řešení:** Rozsáhlý blacklist pokrývající 6 cílových sektorů:
+
+| Sektor | Příklady chráněných slov |
+|--------|--------------------------|
+| **Právo** | advokát, advokátní, notář, soud, soudce, soudkyně |
+| **Zdravotnictví** | nemocnice, klinika, ordinace, ambulance, oddělení, pracoviště |
+| **Veřejná správa** | ministerstvo, magistrát, obec, město, úřad |
+| **HR / Personalistika** | recruiter, recruitment, talent, personální, personalista |
+| **Školství** | gymnázium, univerzita, fakulta, škola, školství |
+| **Finanční instituce** | banka, spořitelna, pojišťovna, bankovní, finanční |
+
+## 4.9 INOVACE #8: Bezpečná práce s víceslovnými cizími jmény
+
+**Problém:** U víceslovných jmen cizího původu (např. „Mai Linh Nguyenová“) hrozí, že se část jména správně nahradí tagem a část (příjmení) zůstane v textu nebo dojde k poškození tagu při dalším zpracování.
+
+**Řešení:** Kombinace dvou mechanismů:
+
+- Vylepšené párování 4-slovných / 3-slovných / 2-slovných patternů tak, aby se překrývající se matche řešily prioritně a nikdy nezasahovaly do již vložených tagů.
+- Post-pass `[[OSOBA_N]] Příjmení` → `[[OSOBA_N]]`, který:
+  - používá známé varianty příjmení již detekovaných osob,
+  - rozpoznává příjmení podle českých přípon jako `-ová`, `-ové`, `-ovou`, `-ský`, `-ská` atd.
+
+Výsledek: případy jako **„Mai Linh Nguyenová“** jsou plně a bezpečně anonymizovány, aniž by to zvýšilo riziko falešných pozitiv u běžných českých jmen.
+
+Blacklist funguje na 3 úrovních:
+1. **Detekční úroveň** (`critical_blacklist`) — zabrání označení jako PERSON při detekci
+2. **Role úroveň** (`role_words`) — rozpozná slovo jako roli/pozici, ne křestní jméno
+3. **Čistící úroveň** (`role_blacklist_words`) — odstraní falešné PERSON záznamy z mapy
+
+## 4.9 INOVACE #8: Zachování struktury dokumentu
 
 **Technický problém:** Regex nahrazení narušuje formátování DOCX.
 
@@ -393,7 +501,7 @@ FOR EACH paragraph IN document:
 
 **Výhoda:** Zachování odstavců, prázdných řádků, formátování, tabulek.
 
-## 4.7 INOVACE #6: Validace a auto-korekce kanonických jmen
+## 4.10 INOVACE #9: Validace a auto-korekce kanonických jmen
 
 **Problém:** Inference může vytvořit kanonický tvar, který není v originálním dokumentu.
 
@@ -492,6 +600,30 @@ Pavlovi Havlovi byla doručena faktura.
 ```
 Smlouva byla podepsána [[OSOBA_1]] a [[OSOBA_2]].
 [[OSOBA_1]] byla doručena faktura.
+```
+
+## Příklad 3: Standalone křestní jména a městské čtvrti
+
+**VSTUP:**
+```
+Smlouvu uzavřel Jakub Veselý, bytem Vinohradská 89, 130 00 Praha 3 - Vinohrady.
+Barbora uhradí Jakubovi zálohu 50 000 Kč. S pozdravem, Jakub
+```
+
+**KLÍČOVÉ:** Jakub a Barbora se vyskytují i samostatně (bez příjmení). Adresa obsahuje čtvrť za pomlčkou.
+
+**PROCES:**
+1. Hlavní anonymizace: `Jakub Veselý` → `[[OSOBA_1]]`, adresa → `[[ADRESA_1]]`
+2. Adresní absorpce: `Praha 3 - Vinohrady` → `[[ADRESA_1]]` (čtvrť pohlcena)
+3. Post-pass na křestní jména:
+   - `Barbora` (5 znaků, ≥4) → nahrazeno → `[[OSOBA_2]]`
+   - `Jakubovi` (inflected form of Jakub, ≥4) → nahrazeno → `[[OSOBA_1]]`
+   - `Jakub` v podpisu (≥4) → nahrazeno → `[[OSOBA_1]]`
+
+**VÝSTUP:**
+```
+Smlouvu uzavřel [[OSOBA_1]], bytem [[ADRESA_1]].
+[[OSOBA_2]] uhradí [[OSOBA_1]] zálohu 50 000 Kč. S pozdravem, [[OSOBA_1]]
 ```
 
 ---
@@ -716,14 +848,17 @@ Při každé anonymizaci se automaticky generuje PDF report (`_report.pdf`) obsa
 | **Kanonizace** | Žádná | Automatická inference |
 | **Deduplikace** | Základní (regex) | 4-fázová inteligentní |
 | **Validace** | Žádná | Post-processing kontrola |
-| **Přesnost** | 60-70% | **95-98%** |
+| **Standalone křestní jména** | Nezachytí | Post-pass s kontextovou analýzou |
+| **Městské čtvrti v adresách** | Unikají | Automatická absorpce do adresního tagu |
+| **Víceslovná cizí jména** | Často rozbitá nebo unikají | Bezpečné zpracování + post-pass na příjmení |
+| **Přesnost** | 60-70% | **97-99%** |
 | **Zpětná de-anonymizace** | Nekonzistentní | Jednotná mapa |
 | **Offline provoz** | Většinou cloud | 100% offline |
 | **Typy PII** | 5-8 kategorií | **23+ kategorií** |
 | **OCR vstup** | Pouze text/DOCX | PDF, PNG, JPG, TIFF, BMP, WEBP |
 | **Audit trail** | Žádný | PDF certifikát (SHA-256) |
 | **Hromadné zpracování** | Ruční | Automatický watcher |
-| **Blacklist** | Základní | 350+ slov s českými deklinacemi |
+| **Sektorový blacklist** | Základní | 500+ slov, 6 oborů (právo, zdravotnictví, HR, školství, finance, veřejná správa) |
 
 ---
 
@@ -847,8 +982,8 @@ Počítačový program obsahující instrukce pro provedení způsobu podle nár
 
 **Výrobce:** Nixminds s.r.o.
 **Email:** info@nixminds.com
-**Verze dokumentace:** 3.3.0
-**Datum:** 20. února 2026
+**Verze dokumentace:** 3.4.1
+**Datum:** 24. února 2026
 **Klasifikace:** G06F 40/00 (zpracování přirozeného jazyka), G06F 21/62 (ochrana osobních údajů)
 
 *© 2026 Nixminds s.r.o. Všechna práva vyhrazena.*

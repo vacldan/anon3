@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:33.746095",
+  "generated_at": "2026-03-09T15:51:07.375998",
   "source_file": "smlouva_gdpr_test_18.docx",
   "entities": [
     {
@@ -42,13 +42,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Lucie Malíkové",
+      "original": "Lucie Malíkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Lucie Malíkovou",
+      "original": "Lucie Malíkové",
       "occurrences": 1
     },
     {
@@ -78,13 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Alešem Hrubešem",
+      "original": "Alešovi Hrubešovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Alešovi Hrubešovi",
+      "original": "Alešem Hrubešem",
       "occurrences": 1
     },
     {

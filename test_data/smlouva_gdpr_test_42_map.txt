@@ -17,6 +17,7 @@ ADDRESS
 [[ADDRESS_3]]: vatele navštěvovali jeho bytovou jednotku Na Stráni 12, 779 00 Olomouc
 [[ADDRESS_4]]: Jabloňová 11, 779 00 Olomouc
 [[ADDRESS_5]]: Masarykova 3, 779 00 Olomouc
+[[ADDRESS_6]]: V Olomouci
 
 BANK
 [[BANK_1]]: 1122334455/0800
@@ -49,6 +50,7 @@ PASSWORD
 PHONE
 [[PHONE_1]]: +420 585 111 444
 [[PHONE_2]]: +420 604 222 333
-[[PHONE_3]]: +420 603 777 888
-[[PHONE_4]]: +420 585 222 555
+[[PHONE_3]]: 123456789
+[[PHONE_4]]: +420 603 777 888
+[[PHONE_5]]: +420 585 222 555
 

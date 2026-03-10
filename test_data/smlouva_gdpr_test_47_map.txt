@@ -12,6 +12,7 @@ OSOBY
 ADDRESS
 [[ADDRESS_1]]: Zdravotní 10, 602 00 Brno
 [[ADDRESS_2]]: Průmyslová 77, 627 00 Brno
+[[ADDRESS_3]]: V Brně
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 860214/3210

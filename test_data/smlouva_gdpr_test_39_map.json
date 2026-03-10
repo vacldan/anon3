@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:47.736465",
+  "generated_at": "2026-03-09T15:51:10.532121",
   "source_file": "smlouva_gdpr_test_39.docx",
   "entities": [
     {
@@ -42,13 +42,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Erikem Roubalem",
+      "original": "Erika Roubala",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Erika Roubala",
+      "original": "Erikem Roubalem",
       "occurrences": 1
     },
     {
@@ -61,6 +61,12 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Technologická 15, 160 00 Praha 6",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "V Praze",
       "occurrences": 1
     },
     {

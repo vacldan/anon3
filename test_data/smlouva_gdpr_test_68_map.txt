@@ -1,0 +1,107 @@
+OSOBY
+-----
+[[PERSON_1]]: Zdeněk Doležal
+  - Zdeněka Doležala
+  - Zdeněke Doležale
+  - Zdeněkem Doležalem
+  - Zdeněkovi Doležalovi
+[[PERSON_2]]: Libuše Marešová
+  - Libuše Marešovou
+  - Libuše Marešové
+[[PERSON_3]]: Přemysl Křeček
+  - Přemysla Křečka
+  - Přemyslem Křečkem
+  - Přemyslovi Křečkovi
+[[PERSON_4]]: Metoděj Holík
+  - Metoděja Holíka
+[[PERSON_5]]: Monika Křečková
+  - Moniky Křečkové
+[[PERSON_6]]: Leoš Jirsa
+  - Leoša Jirsu
+  - Leoša Jirsy
+[[PERSON_7]]: Libuše Marešováová
+  - Libuše Marešováovou
+[[PERSON_8]]: Monika Křečkováová
+  - Moniku Křečkováovou
+
+ADDRESS
+[[ADDRESS_1]]: Vídeňská 800, 140 59 Praha 4
+[[ADDRESS_2]]: Wolkerova 103/30, 796 01 Prostějov
+[[ADDRESS_3]]: Masarykova 138/34, 500 02 Hradec Králové
+[[ADDRESS_4]]: Sokolovská 219/29, 186 00 Praha 8
+[[ADDRESS_5]]: Palackého 127, 301 00 Plzeň
+[[ADDRESS_6]]: Dvořákova 210/7, 370 01 České Budějovice
+[[ADDRESS_7]]: Jabloňová 138/34, 400 01 Ústí nad Labem
+[[ADDRESS_8]]: Wolkerova 103/30, 796 01 Prostějov a Masarykova
+[[ADDRESS_9]]: Hradec Králové
+[[ADDRESS_10]]: platnost 09/30, CVC
+[[ADDRESS_11]]: v Brně
+[[ADDRESS_12]]: Exekutorský úřad Praha 9, ev
+
+BANK
+[[BANK_1]]: 7475138212/2010
+[[BANK_2]]: 4414925461/2700
+[[BANK_3]]: 7777357329/0300
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 960501/2260
+[[BIRTH_ID_2]]: 705225/5416
+[[BIRTH_ID_3]]: 1010132221
+[[BIRTH_ID_4]]: 070224/6417
+[[BIRTH_ID_5]]: 705225/1084
+[[BIRTH_ID_6]]: 740217/7990
+
+DATE
+[[DATE_1]]: 17. 11. 1968
+[[DATE_2]]: 8. 12. 1968
+[[DATE_3]]: 1. 1. 1998
+[[DATE_4]]: 22. 7. 1963
+[[DATE_5]]: 21. 2. 1961
+[[DATE_6]]: 1. 10. 1993
+[[DATE_7]]: 24. 03. 2026
+
+DIC
+[[DIC_1]]: CZ00064190
+
+EMAIL
+[[EMAIL_1]]: zdenek.dolezal@firma.cz
+[[EMAIL_2]]: libuse.maresova@email.cz
+[[EMAIL_3]]: premysl.krecek@email.cz
+[[EMAIL_4]]: metodej.holik@seznam.cz
+[[EMAIL_5]]: monika.kreckova@firma.cz
+[[EMAIL_6]]: leos.jirsa@firma.cz
+
+IBAN
+[[IBAN_1]]: CZ49 5500 0000 3587 9961 9216
+[[IBAN_2]]: CZ16 0800 0000 9986 5431 7674
+
+ICO
+[[ICO_1]]: 00064190
+
+ID_CARD
+[[ID_CARD_1]]: NW 461134
+[[ID_CARD_2]]: WE 981923
+[[ID_CARD_3]]: DP 185817
+[[ID_CARD_4]]: 771844623
+
+IP
+[[IP_1]]: 75.76.144.221
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP24641
+[[LICENSE_PLATE_2]]: CZ49636
+
+MAC
+[[MAC_1]]: 1E:BD:C3:19:24:32
+
+PASSWORD
+[[PASSWORD_1]]: Lib67!4274
+
+PHONE
+[[PHONE_1]]: +420 678 503 715
+[[PHONE_2]]: +420670206648
+[[PHONE_3]]: +420618496266
+[[PHONE_4]]: +420625544689
+[[PHONE_5]]: +420624739809
+[[PHONE_6]]: +420 708 160 974
+

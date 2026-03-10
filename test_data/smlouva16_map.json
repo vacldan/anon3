@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:48:18.372330",
+  "generated_at": "2026-03-09T15:49:57.712528",
   "source_file": "smlouva16.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Novák",
+      "original": "Tomáše Nováka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Tomáše Nováka",
+      "original": "Novák",
       "occurrences": 1
     },
     {
@@ -59,122 +59,128 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_6]]",
+      "label": "[[PERSON_7]]",
       "original": "Martin Svoboda",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
+      "label": "[[PERSON_8]]",
       "original": "Pavel Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_8]]",
+      "label": "[[PERSON_9]]",
       "original": "Pavel Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_9]]",
+      "label": "[[PERSON_10]]",
       "original": "Eva Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_10]]",
+      "label": "[[PERSON_11]]",
       "original": "Tomáš Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_11]]",
+      "label": "[[PERSON_12]]",
       "original": "Hana Malá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_12]]",
+      "label": "[[PERSON_13]]",
       "original": "Petra Nováková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_13]]",
+      "label": "[[PERSON_14]]",
       "original": "Jana Horáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_14]]",
+      "label": "[[PERSON_15]]",
       "original": "Petr Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_15]]",
+      "label": "[[PERSON_16]]",
       "original": "Karel Procházka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_16]]",
+      "label": "[[PERSON_17]]",
       "original": "Lucie Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_17]]",
+      "label": "[[PERSON_18]]",
       "original": "Hana Nováková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_18]]",
+      "label": "[[PERSON_19]]",
       "original": "Tomáš Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_19]]",
+      "label": "[[PERSON_20]]",
       "original": "Pavel Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_20]]",
+      "label": "[[PERSON_21]]",
       "original": "Petra Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_21]]",
+      "label": "[[PERSON_22]]",
       "original": "Eva Malá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_22]]",
+      "label": "[[PERSON_24]]",
       "original": "Robert Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_23]]",
+      "label": "[[PERSON_25]]",
       "original": "Petra Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_24]]",
+      "label": "[[PERSON_26]]",
       "original": "Tomáš Veselý",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_25]]",
+      "label": "[[PERSON_27]]",
       "original": "Jana Svobodová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_28]]",
+      "original": "Processing Agreement",
       "occurrences": 1
     },
     {
@@ -448,6 +454,84 @@
       "occurrences": 1
     },
     {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Praha",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Pařížská 123/45, 110 00 Praha 1",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "Praha 1",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "Mánesova 67/89, 120 00 Praha 2",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "Evropská 234/56, 160 00 Praha 6",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_6]]",
+      "original": "v Praze",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_7]]",
+      "original": "Karlovo náměstí 89/34, 120 00 Praha 2",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_8]]",
+      "original": "Vinohradská 234/78, 130 00 Praha 3",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_9]]",
+      "original": "Korunní 123/45, 120 00 Praha 2",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_10]]",
+      "original": "Slezská 67/89, 130 00 Praha 3",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_11]]",
+      "original": "Mánesova 45/12, 160 00 Praha 6",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_12]]",
+      "original": "Karlovo náměstí 89/34, Praha 2",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_13]]",
+      "original": "Pařížská 67, Praha 1",
+      "occurrences": 1
+    },
+    {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_1]]",
       "original": "750615/1234",
@@ -589,66 +673,6 @@
       "type": "BIRTH_PLACE",
       "label": "[[BIRTH_PLACE_2]]",
       "original": "Praha",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_1]]",
-      "original": "Pařížská 123/45, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Mánesova 67/89, 120 00 Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Evropská 234/56, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "Karlovo náměstí 89/34, 120 00 Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "Vinohradská 234/78, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Korunní 123/45, 120 00 Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Slezská 67/89, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "Mánesova 45/12, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Karlovo náměstí 89/34, Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "Pařížská 67, Praha 1",
       "occurrences": 1
     },
     {
@@ -1081,6 +1105,54 @@
       "type": "ICO",
       "label": "[[ICO_3]]",
       "original": "34567890",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_1]]",
+      "original": "7506151234",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_2]]",
+      "original": "7858226734",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_3]]",
+      "original": "8203151823",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_4]]",
+      "original": "9005234521",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_5]]",
+      "original": "6508231234",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_6]]",
+      "original": "8756154521",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_7]]",
+      "original": "9203152314",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_8]]",
+      "original": "7509236734",
       "occurrences": 1
     },
     {

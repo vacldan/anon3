@@ -1,0 +1,83 @@
+OSOBY
+-----
+[[PERSON_1]]: Filip Hrubeš
+  - Filipa Hrubeša
+  - Filipe Hrubeše
+  - Filipem Hrubešem
+  - Filipovi Hrubešovi
+[[PERSON_2]]: Michal Král
+  - Michala Krála
+  - Michale Krále
+  - Michalem Králem
+  - Michalovi Královi
+[[PERSON_3]]: Markéta Králová
+  - Markétou Královou
+  - Markétě Králové
+[[PERSON_4]]: David Kříž
+  - Davida Kříža
+  - Davide Kříže
+  - Davidem Křížem
+  - Davidovi Křížovi
+
+ADDRESS
+[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_2]]: U Parku 128/23, 779 00 Olomouc
+[[ADDRESS_3]]: Pojišťovací 37/20, 110 00 Praha 1
+[[ADDRESS_4]]: případně písemně na adresu Pojišťovací 37/20, 110 00 Praha 1
+[[ADDRESS_5]]: písemné doručení na adresu Pojišťovací 37/20, 110 00 Praha 1
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Pojišťovací 37/20, 110 00 Praha 1
+[[ADDRESS_7]]: pro Michalovi Královi a U Parku 128/23, 779 00 Olomouc pro Filipovi Hrubešovi
+
+BANK
+[[BANK_1]]: 102388401/0100
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 030726/6105
+[[BIRTH_ID_2]]: 730720/6022
+[[BIRTH_ID_3]]: 070219/7548
+[[BIRTH_ID_4]]: 051025/2241
+
+CARD
+[[CARD_1]]: 4352 4998 7385 7566
+
+DATE
+[[DATE_1]]: 26. 11. 1986
+[[DATE_2]]: 02. 03. 2004
+[[DATE_3]]: 04. 02. 1974
+[[DATE_4]]: 15. 03. 1975
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: sekretariat@gymhradby.cz
+[[EMAIL_2]]: filip.hrubes@example.com
+[[EMAIL_3]]: michal.kral@example.com
+[[EMAIL_4]]: david.kriz@example.com
+[[EMAIL_5]]: marketa.kralova@example.com
+
+IBAN
+[[IBAN_1]]: CZ99 5500 0000 6155 4479 0464
+
+ICO
+[[ICO_1]]: 12398745
+
+ID_CARD
+[[ID_CARD_1]]: 977137816
+
+IP
+[[IP_1]]: 190.233.238.204
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP39479
+[[LICENSE_PLATE_2]]: 5AZ 1813
+[[LICENSE_PLATE_3]]: 0GA8074
+
+MAC
+[[MAC_1]]: 00:F5:D4:A3:58:27
+
+PHONE
+[[PHONE_1]]: +420 596 111 222
+[[PHONE_2]]: +420 770 597 503
+[[PHONE_3]]: +420 746 586 966
+[[PHONE_4]]: +420 690 929 118
+[[PHONE_5]]: +420 782 288 449
+

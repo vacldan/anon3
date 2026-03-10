@@ -1,0 +1,40 @@
+OSOBY
+-----
+[[PERSON_1]]: Vojtěch Zeman
+  - Vojtěcha Zemana
+  - Vojtěchem Zemanem
+[[PERSON_2]]: Beáta Kopecká
+  - Beáty Kopecké
+  - Beátě Kopecké
+[[PERSON_3]]: Francesca Rossiová
+  - Francescy Rossiové
+
+ADDRESS
+[[ADDRESS_1]]: listopadu 1790/5, 702 00 Ostrava - Moravská Ostrava
+[[ADDRESS_2]]: Ostrava
+[[ADDRESS_3]]: Čelakovského sady 193/10, 120 00 Praha 2
+[[ADDRESS_4]]: V Ostravě
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 085506/6706
+
+DATE
+[[DATE_1]]: 1. 2. 1973
+[[DATE_2]]: 9. 1. 2026
+
+EMAIL
+[[EMAIL_1]]: beata.kopecka@gmail.com
+[[EMAIL_2]]: francesca.rossiova@fno.cz
+
+ICO
+[[ICO_1]]: 76675312
+
+INSURANCE_ID
+[[INSURANCE_ID_1]]: 4998631058
+
+PHONE
+[[PHONE_1]]: +420 625 775 505
+[[PHONE_2]]: +420 710 730 495
+[[PHONE_3]]: +420 773 332 824
+[[PHONE_4]]: +420 646 726 418
+

@@ -5,18 +5,15 @@ OSOBY
   - Janem Novákem
   - Janu Novákovi
 [[PERSON_2]]: Petra Svobodová
-  - Petrou Svobodovou
-  - Petry Svobodové
-  - Petře Svobodové
-[[PERSON_3]]: Tomáš Svoboda
+[[PERSON_4]]: Tomáš Svoboda
   - Tomáše Svobody
   - Tomášem Svobodou
   - Tomáši Svobodovi
-[[PERSON_4]]: Lucie Malá
+[[PERSON_5]]: Lucie Malá
   - Lucie Malé
   - Lucii Malé
   - Lucií Malou
-[[PERSON_5]]: Václav Svoboda
+[[PERSON_6]]: Václav Svoboda
   - Václava Svobody
   - Václavem Svobodou
   - Václavu Svobodovi
@@ -25,9 +22,11 @@ ADDRESS
 [[ADDRESS_1]]: Vinohradská 1287/45, 130 00 Praha 3
 [[ADDRESS_2]]: Křenová 14, 602 00 Brno
 [[ADDRESS_3]]: Křenová 14, byt 5
-[[ADDRESS_4]]: U Parku 8, 779 00 Olomouc
-[[ADDRESS_5]]: Na Kopci 12, 100 00 Praha 10
-[[ADDRESS_6]]: zasílání fyzických dokumentů na adresu Vinohradská 1287/45, 130 00 Praha 3
+[[ADDRESS_4]]: Brno
+[[ADDRESS_5]]: U Parku 8, 779 00 Olomouc
+[[ADDRESS_6]]: Na Kopci 12, 100 00 Praha 10
+[[ADDRESS_7]]: zasílání fyzických dokumentů na adresu Vinohradská 1287/45, 130 00 Praha 3
+[[ADDRESS_8]]: V Praze
 
 BANK
 [[BANK_1]]: 123456789/0100

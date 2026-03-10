@@ -1,0 +1,111 @@
+OSOBY
+-----
+[[PERSON_1]]: Jan Beneš
+  - Jana Beneša
+  - Jane Beneše
+  - Janem Benešem
+  - Janovi Benešovi
+[[PERSON_2]]: Věra Poláková
+  - Věro Poláková
+  - Věrou Polákovou
+  - Věry Polákové
+  - Věrě Polákové
+[[PERSON_3]]: Věra Polákováová
+  - Věru Polákováovou
+[[PERSON_4]]: Přemysl Mareš
+  - Přemysla Mareša
+  - Přemyslem Marešem
+  - Přemyslovi Marešovi
+[[PERSON_5]]: Jana Pospíšilová
+  - Jany Pospíšilové
+[[PERSON_6]]: Iva Zíková
+  - Ivy Zíkové
+[[PERSON_7]]: Arnošt Havlička
+  - Arnošta Havličku
+  - Arnošta Havličky
+[[PERSON_8]]: Jana Pospíšilováová
+  - Janu Pospíšilováovou
+[[PERSON_9]]: Iva Zíkováová
+  - Ivu Zíkováovou
+
+ADDRESS
+[[ADDRESS_1]]: Nemocniční 1, 400 01 Ústí nad Labem
+[[ADDRESS_2]]: Jabloňová 161, 400 01 Ústí nad Labem
+[[ADDRESS_3]]: Dvořákova 214/18, 370 01 České Budějovice
+[[ADDRESS_4]]: České Budějovice
+[[ADDRESS_5]]: Praha 1
+[[ADDRESS_6]]: Sokolovská 237/21, 186 00 Praha 8
+[[ADDRESS_7]]: Jihlavská 141/40, 625 00 Brno
+[[ADDRESS_8]]: Bezručova 10, 746 01 Opava
+[[ADDRESS_9]]: Na Návsi 169/37, 789 01 Zábřeh
+[[ADDRESS_10]]: Jabloňová 161, 400 01 Ústí nad Labem a Dvořákova
+[[ADDRESS_11]]: platnost 08/26, CVC
+
+BANK
+[[BANK_1]]: 654652-4694605933/5500
+[[BANK_2]]: 2078659364/0800
+[[BANK_3]]: 4330251479/2010
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 5808173575
+[[BIRTH_ID_2]]: 525811/3045
+[[BIRTH_ID_3]]: 080920/9911
+[[BIRTH_ID_4]]: 005109/1208
+[[BIRTH_ID_5]]: 0854274665
+[[BIRTH_ID_6]]: 080811/0384
+
+DATE
+[[DATE_1]]: 13. 3. 1982
+[[DATE_2]]: 12. 9. 1972
+[[DATE_3]]: 21. 2. 2000
+[[DATE_4]]: 4. 12. 1967
+[[DATE_5]]: 6. 7. 1970
+[[DATE_6]]: 24. 3. 2004
+[[DATE_7]]: 01. 02. 2026
+
+DIC
+[[DIC_1]]: CZ44550011
+
+EMAIL
+[[EMAIL_1]]: jan.benes@seznam.cz
+[[EMAIL_2]]: vera.polakova@example.com
+[[EMAIL_3]]: premysl.mares@example.com
+[[EMAIL_4]]: jana.pospisilova@example.com
+[[EMAIL_5]]: iva.zikova@seznam.cz
+[[EMAIL_6]]: arnost.havlicka@post.cz
+
+IBAN
+[[IBAN_1]]: CZ11 0800 0000 4568 3965 1242
+[[IBAN_2]]: CZ17 5500 0000 0802 1548 0752
+
+ICO
+[[ICO_1]]: 44550011
+
+ID_CARD
+[[ID_CARD_1]]: HB 740982
+[[ID_CARD_2]]: 653152867
+[[ID_CARD_3]]: 252823613
+[[ID_CARD_4]]: 838888378
+
+IP
+[[IP_1]]: 127.193.244.30
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ21886
+[[LICENSE_PLATE_2]]: CZ80478
+
+MAC
+[[MAC_1]]: E1:6C:FC:5A:47:51
+
+PASSWORD
+[[PASSWORD_1]]: Věr66!4328
+
+PHONE
+[[PHONE_1]]: +420 636 589 568
+[[PHONE_2]]: 739 241 700
+[[PHONE_3]]: +420 797 798 982
+[[PHONE_4]]: 745 659 448
+[[PHONE_5]]: 726 456 195
+[[PHONE_6]]: +420 628 593 141
+[[PHONE_7]]: 653152867
+

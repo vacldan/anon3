@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:47:18.857101",
+  "generated_at": "2026-03-09T15:48:44.051964",
   "source_file": "smlouva11.docx",
   "entities": [
     {
@@ -114,19 +114,37 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "Průmyslová 9, Brno",
+      "original": "Hlavní 77, 779 00 Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "Komenského 4, Praha 2",
+      "original": "Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
+      "original": "Průmyslová 9, Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_8]]",
+      "original": "Komenského 4, Praha 2",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_9]]",
       "original": "Brněnská 10, Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_10]]",
+      "original": "Brno",
       "occurrences": 1
     },
     {

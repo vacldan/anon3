@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:22.198281",
+  "generated_at": "2026-03-09T15:50:49.402058",
   "source_file": "smlouva_gdpr_test_03.docx",
   "entities": [
     {
@@ -36,18 +36,24 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "U Lesa 9, 530 02 Pardubice",
+      "original": "v Praze",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "je kancelář Zaměstnavatele na adrese Technologická 15, 160 00 Praha 6",
+      "original": "U Lesa 9, 530 02 Pardubice",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
+      "original": "je kancelář Zaměstnavatele na adrese Technologická 15, 160 00 Praha 6",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
       "original": "bydliště U Lesa 9, 530 02 Pardubice",
       "occurrences": 1
     },

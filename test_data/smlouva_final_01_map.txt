@@ -1,0 +1,63 @@
+OSOBY
+-----
+[[PERSON_1]]: Radek Dostál
+  - Radkem Dostálem
+  - Radkovi Dostálovi
+[[PERSON_2]]: Kateřina Bártlová
+  - Kateřině Bártlové
+[[PERSON_3]]: Petr Kopecký
+  - Petrem Kopeckým
+[[PERSON_4]]: Vladimír Šimek
+  - Vladimíra Šimka
+  - Vladimírovi Šimkovi
+
+ADDRESS
+[[ADDRESS_1]]: Palackého 28, 612 00 Brno - Královo Pole
+[[ADDRESS_2]]: Brno-město
+[[ADDRESS_3]]: v Brně
+[[ADDRESS_4]]: Čelakovského sady 117/47, 120 00 Praha 2
+[[ADDRESS_5]]: sídlem Tyršova 44, 530 02 Pardubice
+[[ADDRESS_6]]: Kolínská 109/47, 130 00 Praha 3
+[[ADDRESS_7]]: Revoluční 15, 110 00 Praha 1
+[[ADDRESS_8]]: nceláři exekutora Radka Dostála na adrese Palackého 28, 612 00 Brno - Královo Pole
+
+BANK
+[[BANK_1]]: 680543005/0800
+[[BANK_2]]: 338593972/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 626102/5520
+[[BIRTH_ID_2]]: 780424/3260
+
+DATE
+[[DATE_1]]: 12. 1. 2026
+[[DATE_2]]: 14. 6. 1959
+[[DATE_3]]: 19. 5. 1993
+[[DATE_4]]: 5. 11. 2025
+[[DATE_5]]: 9. 10. 2026
+
+EMAIL
+[[EMAIL_1]]: katerina.bartlova@post.cz
+[[EMAIL_2]]: vladimir.simek@gmail.com
+[[EMAIL_3]]: security@cybershield.cz
+[[EMAIL_4]]: podatelna@exekutor-brno.cz
+
+IBAN
+[[IBAN_1]]: CZ72 5500 0000 2443 1634 4926
+
+ICO
+[[ICO_1]]: 66240913
+[[ICO_2]]: 15926837
+
+ID_CARD
+[[ID_CARD_1]]: 388163697
+[[ID_CARD_2]]: EA 787199
+
+LINKEDIN
+[[LINKEDIN_1]]: https://www.linkedin.com/in/petr-kopecky-324
+
+PHONE
+[[PHONE_1]]: +420 611 745 659
+[[PHONE_2]]: +420 696 434 890
+[[PHONE_3]]: +420 541 235 678
+

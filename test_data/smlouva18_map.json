@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:48:21.845386",
+  "generated_at": "2026-03-09T15:50:00.852204",
   "source_file": "smlouva18.docx",
   "entities": [
     {
@@ -24,6 +24,18 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
+      "original": "Pavlína Pokorná",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Pavlíny Pokorné",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Pokorná",
       "occurrences": 1
     },
@@ -31,12 +43,6 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Pokornou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Pavlíny Pokorné",
       "occurrences": 1
     },
     {
@@ -54,6 +60,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
+      "original": "Klímou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Klíma",
       "occurrences": 1
     },
@@ -65,12 +77,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Klímou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Tereza Houfová",
       "occurrences": 1
@@ -78,7 +84,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Houfová",
+      "original": "Terezy Houfové",
       "occurrences": 1
     },
     {
@@ -90,7 +96,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Terezy Houfové",
+      "original": "Houfová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Lenka Kratochvílová",
       "occurrences": 1
     },
     {
@@ -102,7 +114,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
+      "original": "Šárka Novotná",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_7]]",
       "original": "Šárkou Novotnou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_8]]",
+      "original": "Alžběta Strmisková",
       "occurrences": 1
     },
     {
@@ -132,6 +156,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
+      "original": "Tomáš Štefánek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_12]]",
       "original": "Tomášem Štefánkem",
       "occurrences": 1
     },
@@ -144,13 +174,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_14]]",
-      "original": "Vránou",
+      "original": "Tobiáš Vráný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_14]]",
       "original": "Tobiášem Vránou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_14]]",
+      "original": "Vránou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_15]]",
+      "original": "Mark Prášek",
       "occurrences": 1
     },
     {
@@ -190,6 +232,12 @@
       "occurrences": 1
     },
     {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "V Praze",
+      "occurrences": 1
+    },
+    {
       "type": "EMAIL",
       "label": "[[EMAIL_1]]",
       "original": "ivan.dolezal@nmsvk.cz",
@@ -211,6 +259,12 @@
       "type": "PHONE",
       "label": "[[PHONE_2]]",
       "original": "+420 603 225 819",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_3]]",
+      "original": "894552003",
       "occurrences": 1
     },
     {

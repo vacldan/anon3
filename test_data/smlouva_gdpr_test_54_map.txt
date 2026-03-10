@@ -1,0 +1,111 @@
+OSOBY
+-----
+[[PERSON_1]]: Filip Krejčí
+  - Filipe Krejčí
+  - Filipem Krejčím
+  - Filipovi Krejčím
+[[PERSON_2]]: Monika Urbanová
+  - Moniko Urbanová
+  - Monikou Urbanovou
+  - Moniky Urbanové
+  - Monikě Urbanové
+[[PERSON_3]]: David Kořínek
+  - Davida Kořínka
+  - Davidem Kořínkem
+  - Davidovi Kořínkovi
+[[PERSON_4]]: Nikola Havličková
+  - Nikoly Havličkové
+[[PERSON_5]]: Ivana Urbanová
+  - Ivany Urbanové
+[[PERSON_6]]: Marek Malina
+  - Marka Malinu
+  - Marka Maliny
+[[PERSON_7]]: Filip Krejčího
+  - Filipa Krejčího
+[[PERSON_8]]: Filip Krejčímu
+  - Filipovi Krejčímu
+[[PERSON_9]]: Monika Urbanováová
+  - Moniku Urbanováovou
+[[PERSON_10]]: Nikola Havličkováová
+  - Nikolu Havličkováovou
+[[PERSON_11]]: Ivana Urbanováová
+  - Ivanu Urbanováovou
+
+ADDRESS
+[[ADDRESS_1]]: Bělehradská 132, 120 84 Praha 2
+[[ADDRESS_2]]: U Nemocnice 96, 128 08 Praha 2
+[[ADDRESS_3]]: Dvořákova 240/20, 370 01 České Budějovice
+[[ADDRESS_4]]: Vinohradská 83/3, 130 00 Praha 3
+[[ADDRESS_5]]: Masarykova 210/16, 500 02 Hradec Králové
+[[ADDRESS_6]]: Tylova 123/33, 530 02 Pardubice
+[[ADDRESS_7]]: Vinohradská 173/15, 130 00 Praha 3
+[[ADDRESS_8]]: a Dvořákova 240/20, 370 01 České Budějovice
+[[ADDRESS_9]]: platnost 05/28, CVC
+
+BANK
+[[BANK_1]]: 777628-5750965444/5500
+[[BANK_2]]: 8960849788/0300
+[[BANK_3]]: 228476-472999921/0600
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 940408/7587
+[[BIRTH_ID_2]]: 0958153921
+[[BIRTH_ID_3]]: 630103/6714
+[[BIRTH_ID_4]]: 025401/0257
+[[BIRTH_ID_5]]: 6254117622
+[[BIRTH_ID_6]]: 010215/4666
+
+DATE
+[[DATE_1]]: 4. 6. 1963
+[[DATE_2]]: 15. 1. 2004
+[[DATE_3]]: 21. 3. 1991
+[[DATE_4]]: 15. 2. 1999
+[[DATE_5]]: 6. 7. 1990
+[[DATE_6]]: 6. 1. 1988
+[[DATE_7]]: 06. 01. 2026
+
+DIC
+[[DIC_1]]: CZ45272956
+
+EMAIL
+[[EMAIL_1]]: filip.krejci@example.com
+[[EMAIL_2]]: monika.urbanova@email.cz
+[[EMAIL_3]]: david.korinek@seznam.cz
+[[EMAIL_4]]: nikola.havlickova@firma.cz
+[[EMAIL_5]]: ivana.urbanova@post.cz
+[[EMAIL_6]]: marek.malina@seznam.cz
+
+IBAN
+[[IBAN_1]]: CZ16 5500 0000 8280 0388 9223
+[[IBAN_2]]: CZ22 0600 0000 8618 4758 2430
+
+ICO
+[[ICO_1]]: 45272956
+
+ID_CARD
+[[ID_CARD_1]]: ID 300854
+[[ID_CARD_2]]: DH 110940
+[[ID_CARD_3]]: 974402304
+[[ID_CARD_4]]: 768853946
+
+IP
+[[IP_1]]: 102.117.74.156
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EA79490
+[[LICENSE_PLATE_2]]: EA25850
+
+MAC
+[[MAC_1]]: 5B:8E:2C:D0:EE:A6
+
+PASSWORD
+[[PASSWORD_1]]: Mon41!5732
+
+PHONE
+[[PHONE_1]]: 774 517 758
+[[PHONE_2]]: +420731135698
+[[PHONE_3]]: 623 616 996
+[[PHONE_4]]: +420 707 877 181
+[[PHONE_5]]: +420711927464
+[[PHONE_6]]: 601 967 166
+

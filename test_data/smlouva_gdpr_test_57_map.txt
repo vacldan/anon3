@@ -1,0 +1,112 @@
+OSOBY
+-----
+[[PERSON_1]]: Hynek Krejčí
+  - Hynkem Krejčím
+  - Hynkovi Krejčím
+  - Hynku Krejčí
+[[PERSON_2]]: Darja Křečková
+  - Darjo Křečková
+  - Darjou Křečkovou
+  - Darjy Křečkové
+  - Darjě Křečkové
+[[PERSON_3]]: Darja Křečkováová
+  - Darju Křečkováovou
+[[PERSON_4]]: Krista Malíková
+  - Kristou Malíkovou
+  - Kristy Malíkové
+  - Kristě Malíkové
+[[PERSON_5]]: Norbert Vaněk
+  - Norberta Vaněka
+[[PERSON_6]]: Pavla Kuchtová
+[[PERSON_7]]: Michal Roubal
+  - Michala Roubala
+[[PERSON_8]]: Hynek Krejčího
+  - Hynka Krejčího
+[[PERSON_9]]: Hynek Krejčímu
+  - Hynkovi Krejčímu
+[[PERSON_10]]: Krista Malíkováová
+  - Kristu Malíkováovou
+[[PERSON_12]]: Pavel Kuchtováová
+  - Pavlu Kuchtováovou
+
+ADDRESS
+[[ADDRESS_1]]: Právnická 12, 110 00 Praha 1
+[[ADDRESS_2]]: Masarykova 106/20, 500 02 Hradec Králové
+[[ADDRESS_3]]: Národní 233/25, 110 00 Praha 1
+[[ADDRESS_4]]: Dvořákova 104, 370 01 České Budějovice
+[[ADDRESS_5]]: Dlouhá 130, 602 00 Brno
+[[ADDRESS_6]]: Bezručova 86/17, 746 01 Opava
+[[ADDRESS_7]]: Nádražní 142, 702 00 Ostrava
+[[ADDRESS_8]]: Masarykova 106/20, 500 02 Hradec Králové a Národní
+[[ADDRESS_9]]: Praha 1
+[[ADDRESS_10]]: platnost 12/27, CVC
+
+BANK
+[[BANK_1]]: 7472581164/0800
+[[BANK_2]]: 7015463110/0300
+[[BANK_3]]: 4742606438/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 0409247169
+[[BIRTH_ID_2]]: 975601/2979
+[[BIRTH_ID_3]]: 955105/3960
+[[BIRTH_ID_4]]: 0104281342
+[[BIRTH_ID_5]]: 7458289404
+[[BIRTH_ID_6]]: 0111173280
+
+DATE
+[[DATE_1]]: 13. 7. 1962
+[[DATE_2]]: 16. 8. 1996
+[[DATE_3]]: 13. 10. 2026
+[[DATE_4]]: 25. 4. 1995
+[[DATE_5]]: 13. 11. 1974
+[[DATE_6]]: 7. 8. 1972
+[[DATE_7]]: 9. 2. 1962
+[[DATE_8]]: 28. 04. 2026
+
+DIC
+[[DIC_1]]: CZ11223344
+
+EMAIL
+[[EMAIL_1]]: hynek.krejci@example.com
+[[EMAIL_2]]: darja.kreckova@example.com
+[[EMAIL_3]]: krista.malikova@seznam.cz
+[[EMAIL_4]]: norbert.vanek@post.cz
+[[EMAIL_5]]: pavla.kuchtova@post.cz
+[[EMAIL_6]]: michal.roubal@email.cz
+
+IBAN
+[[IBAN_1]]: CZ35 0300 0000 6415 0631 2062
+[[IBAN_2]]: CZ54 0300 0000 7599 5550 3083
+
+ICO
+[[ICO_1]]: 11223344
+
+ID_CARD
+[[ID_CARD_1]]: 898255885
+[[ID_CARD_2]]: RI 288527
+[[ID_CARD_3]]: 232125848
+
+IP
+[[IP_1]]: 211.173.67.56
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP22546
+[[LICENSE_PLATE_2]]: PP68393
+
+MAC
+[[MAC_1]]: 48:49:19:E8:14:3B
+
+PASSWORD
+[[PASSWORD_1]]: Dar36!9094
+
+PHONE
+[[PHONE_1]]: 191976141
+[[PHONE_2]]: 677 741 665
+[[PHONE_3]]: +420675802232
+[[PHONE_4]]: +420678300620
+[[PHONE_5]]: 772 814 950
+[[PHONE_6]]: +420 664 529 195
+[[PHONE_7]]: +420762761437
+[[PHONE_8]]: 898255885
+

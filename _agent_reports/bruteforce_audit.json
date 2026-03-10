@@ -1,0 +1,2254 @@
+{
+  "results": [
+    {
+      "file": "smlouva 30.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 153,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 24,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva0.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 131,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva10.docx",
+      "map_leaks": [
+        {
+          "original": "Nové",
+          "label": "[[PERSON_38]]",
+          "type": "PERSON",
+          "first_index": 8611,
+          "context": "í vyšetřování: Ing. [[PERSON_48]] (bezpečnostní manažer) Členové: Bc. [[PERSON_44]] (mistr), Mgr. [[PERSON_49]] (HR)  PŘEDBĚ"
+        }
+      ],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 172,
+        "map_leak_count": 1,
+        "regex_hit_count": 0
+      },
+      "verdict": "FAIL"
+    },
+    {
+      "file": "smlouva11.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 58,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva12.docx",
+      "map_leaks": [
+        {
+          "original": "Nové",
+          "label": "[[PERSON_38]]",
+          "type": "PERSON",
+          "first_index": 8611,
+          "context": "í vyšetřování: Ing. [[PERSON_48]] (bezpečnostní manažer) Členové: Bc. [[PERSON_44]] (mistr), Mgr. [[PERSON_49]] (HR)  PŘEDBĚ"
+        }
+      ],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 172,
+        "map_leak_count": 1,
+        "regex_hit_count": 0
+      },
+      "verdict": "FAIL"
+    },
+    {
+      "file": "smlouva13.docx",
+      "map_leaks": [],
+      "regex_hits": [
+        {
+          "type": "RC",
+          "match": "123456/2024",
+          "start": 5837,
+          "context": "jící daňová kontrola: Číslo jednací: FÚ-123456/2024/Kon Kontrolované období: 2021-2022 Zjiš"
+        },
+        {
+          "type": "CITY_PSC",
+          "match": "ISO 27001",
+          "start": 13121,
+          "context": "IRTH_ID_26]] Certifikace: CIPP/E, CIPM, ISO 27001 Lead Auditor Email: [[EMAIL_19]] [[PHON"
+        }
+      ],
+      "stats": {
+        "entities_total": 223,
+        "map_leak_count": 0,
+        "regex_hit_count": 2
+      },
+      "verdict": "FAIL"
+    },
+    {
+      "file": "smlouva14.docx",
+      "map_leaks": [
+        {
+          "original": "hcp_admin",
+          "label": "[[USERNAME_9]]",
+          "type": "USERNAME",
+          "first_index": 24139,
+          "context": " pokusů: 247 - Username pokusů: admin, root, administrator, hcp_admin - Výsledek: BLOKOVÁNO (fail2ban po 5 pokusech) - IP zabloko"
+        }
+      ],
+      "regex_hits": [
+        {
+          "type": "PHONE9",
+          "match": "125 000 000",
+          "start": 39572,
+          "context": "MAIL_39]]  Valuácia (post-money, 2022): 125 000 000 Kč  Plánovaná Series B: Q3 2024, target"
+        },
+        {
+          "type": "CITY_PSC",
+          "match": "ISO 27001",
+          "start": 15656,
+          "context": "D_20]] Email: [[EMAIL_12]] [[PHONE_21]] ISO 27001 certifikát: CZ-I[[LICENSE_PLATE_1]]-202"
+        },
+        {
+          "type": "CITY_PSC",
+          "match": "ISO 27701",
+          "start": 15711,
+          "context": "fikát: CZ-I[[LICENSE_PLATE_1]]-2023-456 ISO 27701 certifikát: CZ-I[[LICENSE_PLATE_2]]-202"
+        },
+        {
+          "type": "CITY_PSC",
+          "match": "ISO 27001",
+          "start": 19508,
+          "context": "echnical admin Certifikace: RHCE, CCNA, ISO 27001 Lead Implementer  5) Bc. [[PERSON_10]] "
+        },
+        {
+          "type": "CITY_PSC",
+          "match": "ISO 27018",
+          "start": 22796,
+          "context": "ng, backup Certifikace: [[ADDRESS_30]], ISO 27018 DPA: uzavřena [[DATE_44]] SCC: Standard"
+        }
+      ],
+      "stats": {
+        "entities_total": 386,
+        "map_leak_count": 1,
+        "regex_hit_count": 5
+      },
+      "verdict": "FAIL"
+    },
+    {
+      "file": "smlouva15.docx",
+      "map_leaks": [
+        {
+          "original": "hcp_admin",
+          "label": "[[USERNAME_9]]",
+          "type": "USERNAME",
+          "first_index": 24139,
+          "context": " pokusů: 247 - Username pokusů: admin, root, administrator, hcp_admin - Výsledek: BLOKOVÁNO (fail2ban po 5 pokusech) - IP zabloko"
+        }
+      ],
+      "regex_hits": [
+        {
+          "type": "PHONE9",
+          "match": "125 000 000",
+          "start": 39572,
+          "context": "MAIL_39]]  Valuácia (post-money, 2022): 125 000 000 Kč  Plánovaná Series B: Q3 2024, target"
+        },
+        {
+          "type": "CITY_PSC",
+          "match": "ISO 27001",
+          "start": 15656,
+          "context": "D_20]] Email: [[EMAIL_12]] [[PHONE_21]] ISO 27001 certifikát: CZ-I[[LICENSE_PLATE_1]]-202"
+        },
+        {
+          "type": "CITY_PSC",
+          "match": "ISO 27701",
+          "start": 15711,
+          "context": "fikát: CZ-I[[LICENSE_PLATE_1]]-2023-456 ISO 27701 certifikát: CZ-I[[LICENSE_PLATE_2]]-202"
+        },
+        {
+          "type": "CITY_PSC",
+          "match": "ISO 27001",
+          "start": 19508,
+          "context": "echnical admin Certifikace: RHCE, CCNA, ISO 27001 Lead Implementer  5) Bc. [[PERSON_10]] "
+        },
+        {
+          "type": "CITY_PSC",
+          "match": "ISO 27018",
+          "start": 22796,
+          "context": "ng, backup Certifikace: [[ADDRESS_30]], ISO 27018 DPA: uzavřena [[DATE_44]] SCC: Standard"
+        }
+      ],
+      "stats": {
+        "entities_total": 386,
+        "map_leak_count": 1,
+        "regex_hit_count": 5
+      },
+      "verdict": "FAIL"
+    },
+    {
+      "file": "smlouva16.docx",
+      "map_leaks": [],
+      "regex_hits": [
+        {
+          "type": "PHONE9",
+          "match": "150 000 000",
+          "start": 1832,
+          "context": "oddíl B, vložka 23456 Základní kapitál: 150 000 000 Kč (plně splacen) Zastoupena: Ing. [[PE"
+        },
+        {
+          "type": "CITY_PSC",
+          "match": "ISO 27001",
+          "start": 2785,
+          "context": "2018/456/MZ - ISO 9001:2015 (od 2020) - ISO 27001:2013 (od 2021)  ═══════════════════════"
+        },
+        {
+          "type": "CITY_PSC",
+          "match": "ISO 27001",
+          "start": 19337,
+          "context": "r. [[PERSON_22]], ext., [[EMAIL_20]]) - ISO 27001: ANO (certifikát CZ-I[[LICENSE_PLATE_1]"
+        }
+      ],
+      "stats": {
+        "entities_total": 202,
+        "map_leak_count": 0,
+        "regex_hit_count": 3
+      },
+      "verdict": "FAIL"
+    },
+    {
+      "file": "smlouva17.docx",
+      "map_leaks": [
+        {
+          "original": "123456",
+          "label": "[[ID_CARD_2]]",
+          "type": "ID_CARD",
+          "first_index": 4329,
+          "context": "Kč Pojištění nemovitosti: Allianz, č. smlouvy: POJ-BYT-2015-123456 Havarijní pojištění vozidla: Generali, č. smlouvy: HAV-2020"
+        }
+      ],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 113,
+        "map_leak_count": 1,
+        "regex_hit_count": 0
+      },
+      "verdict": "FAIL"
+    },
+    {
+      "file": "smlouva18.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 57,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva19.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 64,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva2.docx",
+      "map_leaks": [
+        {
+          "original": "Stav",
+          "label": "[[PERSON_1]]",
+          "type": "PERSON",
+          "first_index": 844,
+          "context": "raně nejpozději 2 měsíce před uplynutím doby nájmu, že na nástavě netrvá, nájem se automaticky prodlužuje o další jeden rok "
+        }
+      ],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 26,
+        "map_leak_count": 1,
+        "regex_hit_count": 0
+      },
+      "verdict": "FAIL"
+    },
+    {
+      "file": "smlouva20.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 117,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva21.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 149,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva22.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 295,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva23.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 315,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva24.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 284,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva25.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 68,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva26.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 101,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva27.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 167,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva28.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 216,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva29.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 199,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva3.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 13,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva31.docx",
+      "map_leaks": [],
+      "regex_hits": [
+        {
+          "type": "PHONE9",
+          "match": "347 000 000",
+          "start": 1271,
+          "context": "navých peněz v celkové výši přesahující 347 000 000 Kč. Hlavní obviněný [[PERSON_1]] použív"
+        }
+      ],
+      "stats": {
+        "entities_total": 161,
+        "map_leak_count": 0,
+        "regex_hit_count": 1
+      },
+      "verdict": "FAIL"
+    },
+    {
+      "file": "smlouva32.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 151,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva33.docx",
+      "map_leaks": [],
+      "regex_hits": [
+        {
+          "type": "PHONE9",
+          "match": "124 000 000",
+          "start": 9276,
+          "context": "želům patřil společný majetek v hodnotě 124 000 000 Kč: nemovitosti (rodinná vila [[ADDRESS"
+        }
+      ],
+      "stats": {
+        "entities_total": 141,
+        "map_leak_count": 0,
+        "regex_hit_count": 1
+      },
+      "verdict": "FAIL"
+    },
+    {
+      "file": "smlouva4.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 30,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva5.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 37,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva6.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 37,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva7.docx",
+      "map_leaks": [
+        {
+          "original": "Bc.",
+          "label": "[[USERNAME_1]]",
+          "type": "USERNAME",
+          "first_index": 1749,
+          "context": "] Zhotovitel: STAVBY A SERVIS s.r.o., [[ICO_2]], zastoupen: Bc. [[PERSON_9]] Předmět díla: Komplexní rekonstrukce ordinace "
+        }
+      ],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 85,
+        "map_leak_count": 1,
+        "regex_hit_count": 0
+      },
+      "verdict": "FAIL"
+    },
+    {
+      "file": "smlouva8.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 135,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva9.docx",
+      "map_leaks": [
+        {
+          "original": "Banka",
+          "label": "[[PERSON_4]]",
+          "type": "PERSON",
+          "first_index": 4108,
+          "context": "dy. Díky, [[PERSON_23]]_22]] manažerka  9. DOKLAD O PLATBĚ (BANKA) [[PERSON_4]]: Komerční banka a.s., [[ICO_10]], [[ADDRESS_1"
+        }
+      ],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 101,
+        "map_leak_count": 1,
+        "regex_hit_count": 0
+      },
+      "verdict": "FAIL"
+    },
+    {
+      "file": "smlouva_gdpr_test.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 63,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_01.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 60,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_02.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 45,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_03.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 27,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_04.docx",
+      "map_leaks": [
+        {
+          "original": "Zpracovatel",
+          "label": "[[PERSON_7]]",
+          "type": "PERSON",
+          "first_index": 313,
+          "context": "ONE_1]]    E‑mail: [[EMAIL_1]]     (dále jen „Správce“)  2. Zpracovatel:    Obchodní firma: CloudData Services s.r.o.    [[ADDRESS_"
+        }
+      ],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 40,
+        "map_leak_count": 1,
+        "regex_hit_count": 0
+      },
+      "verdict": "FAIL"
+    },
+    {
+      "file": "smlouva_gdpr_test_05.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 26,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_06.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 26,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_07.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 20,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_08.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 27,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_09.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 34,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_10.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 26,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_100.docx",
+      "map_leaks": [],
+      "regex_hits": [
+        {
+          "type": "CITY_PSC",
+          "match": "ČAK 86288",
+          "start": 5972,
+          "context": "hájce podezřelého: [[PERSON_7]], ev. č. ČAK 86288, [[PHONE_6]], e-mail [[EMAIL_6]]. 5. K "
+        }
+      ],
+      "stats": {
+        "entities_total": 76,
+        "map_leak_count": 0,
+        "regex_hit_count": 1
+      },
+      "verdict": "FAIL"
+    },
+    {
+      "file": "smlouva_gdpr_test_101.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 56,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_102.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_103.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_104.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_105.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_106.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_107.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_108.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 52,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_109.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_11.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 52,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_110.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_111.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_112.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_113.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_114.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_115.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_116.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_117.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_118.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_119.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_12.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 51,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_120.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_121.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_122.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_123.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_124.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_125.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_126.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_127.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 53,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_128.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_129.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 48,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_13.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 50,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_130.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_131.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_132.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_133.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_134.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_135.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_136.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_137.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_138.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_139.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_14.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 50,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_140.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_141.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_142.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_143.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_144.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_145.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_146.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_147.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_148.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_149.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 55,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_15.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 50,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_150.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 54,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_16.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 50,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_17.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 51,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_18.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 49,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_19.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 51,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_20.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 51,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_21.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 50,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_22.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 50,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_23.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 50,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_24.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 51,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_25.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 50,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_26.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 51,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_27.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 50,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_28.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 50,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_29.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 51,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_30.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 51,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_31.docx",
+      "map_leaks": [],
+      "regex_hits": [
+        {
+          "type": "CITY_PSC",
+          "match": "ČAK 12345",
+          "start": 234,
+          "context": ":    Advokát: Mgr. [[PERSON_1]], ev. č. ČAK 12345    [[ADDRESS_1]]    [[ICO_1]]    Datová"
+        }
+      ],
+      "stats": {
+        "entities_total": 47,
+        "map_leak_count": 0,
+        "regex_hit_count": 1
+      },
+      "verdict": "FAIL"
+    },
+    {
+      "file": "smlouva_gdpr_test_32.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 38,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_33.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 26,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_34.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 37,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_35.docx",
+      "map_leaks": [],
+      "regex_hits": [
+        {
+          "type": "CITY_PSC",
+          "match": "ČAK 54321",
+          "start": 250,
+          "context": " a příjmení: JUDr. [[PERSON_2]], ev. č. ČAK 54321 [[ADDRESS_2]] [[PHONE_2]] E-mail: [[EMA"
+        }
+      ],
+      "stats": {
+        "entities_total": 31,
+        "map_leak_count": 0,
+        "regex_hit_count": 1
+      },
+      "verdict": "FAIL"
+    },
+    {
+      "file": "smlouva_gdpr_test_36.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 26,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_37.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 23,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_38.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 29,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_39.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 28,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_40.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 33,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_41.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 42,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_42.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 35,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_43.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 35,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_44.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 31,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_45.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 26,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_46.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 19,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_47.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 24,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_48.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 25,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_49.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 23,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_50.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 30,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_51.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 79,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_52.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 81,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_53.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 80,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_54.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 82,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_55.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 80,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_56.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 79,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_57.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 81,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_58.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 79,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_59.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 78,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_60.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 75,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_61.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 79,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_62.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 84,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_63.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 82,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_64.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 82,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_65.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 80,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_66.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 79,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_67.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 77,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_68.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 76,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_69.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 79,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_70.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 80,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_71.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 79,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_72.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 79,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_73.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 77,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_74.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 75,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_75.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 80,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_76.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 77,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_77.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 76,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_78.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 78,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_79.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 81,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_80.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 76,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_81.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 77,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_82.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 79,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_83.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 85,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_84.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 76,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_85.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 78,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_86.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 78,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_87.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 78,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_88.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 83,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_89.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 85,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_90.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 77,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_91.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 76,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_92.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 77,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_93.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 86,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_94.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 84,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_95.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 79,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_96.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 80,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_97.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 82,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_98.docx",
+      "map_leaks": [],
+      "regex_hits": [],
+      "stats": {
+        "entities_total": 79,
+        "map_leak_count": 0,
+        "regex_hit_count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "file": "smlouva_gdpr_test_99.docx",
+      "map_leaks": [],
+      "regex_hits": [
+        {
+          "type": "CITY_PSC",
+          "match": "ČAK 65033",
+          "start": 5950,
+          "context": "hájce podezřelého: [[PERSON_6]], ev. č. ČAK 65033, [[PHONE_7]], e-mail [[EMAIL_6]]. 5. K "
+        }
+      ],
+      "stats": {
+        "entities_total": 80,
+        "map_leak_count": 0,
+        "regex_hit_count": 1
+      },
+      "verdict": "FAIL"
+    }
+  ],
+  "summary": {
+    "total": 185,
+    "pass": 168,
+    "fail": 17,
+    "map_leaks": 9,
+    "regex_hits": 21
+  }
+}

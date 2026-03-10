@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:52.276495",
+  "generated_at": "2026-03-09T15:51:11.896609",
   "source_file": "smlouva_gdpr_test_46.docx",
   "entities": [
     {
@@ -36,13 +36,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Klárou Havelovou",
+      "original": "Kláry Havelové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Kláry Havelové",
+      "original": "Klárou Havelovou",
       "occurrences": 1
     },
     {

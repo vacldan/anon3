@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:54.734571",
+  "generated_at": "2026-03-09T15:51:12.345244",
   "source_file": "smlouva_gdpr_test_50.docx",
   "entities": [
     {
@@ -12,55 +12,73 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Spolek Dobrá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Marek Hruška",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Annou Královou",
+      "label": "[[PERSON_4]]",
+      "original": "Anny Králová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
+      "label": "[[PERSON_4]]",
       "original": "Anny Králové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_5]]",
       "original": "Jan Král",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_5]]",
       "original": "Jana Krále",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_5]]",
       "original": "Janem Králem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_6]]",
       "original": "Simona Králová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_6]]",
+      "original": "Simonou Královou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
       "original": "Simony Králové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Simonou Královou",
+      "label": "[[PERSON_7]]",
+      "original": "Anna Králová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_7]]",
+      "original": "Annou Královou",
       "occurrences": 1
     },
     {
@@ -73,6 +91,12 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Rodinná 6, 612 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "V Brně",
       "occurrences": 1
     },
     {

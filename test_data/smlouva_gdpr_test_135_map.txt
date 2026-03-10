@@ -1,0 +1,84 @@
+OSOBY
+-----
+[[PERSON_1]]: Pavel Roubal
+  - Pavla Roubala
+  - Pavle Roubale
+  - Pavlem Roubalem
+  - Pavlovi Roubalovi
+  - Roubalovi
+[[PERSON_2]]: Filip Řezníček
+  - Filipa Řezníčka
+  - Filipe Řezníčku
+  - Filipem Řezníčkem
+  - Filipovi Řezníčkovi
+[[PERSON_3]]: Veronika Dvořáková
+  - Veronikou Dvořákovou
+  - Veronikě Dvořákové
+[[PERSON_4]]: Gabriela Procházková
+  - Gabrielo Procházková
+  - Gabrielou Procházkovou
+  - Gabriely Procházkové
+  - Gabrielě Procházkové
+
+ADDRESS
+[[ADDRESS_1]]: Kampus 9, 625 00 Brno
+[[ADDRESS_2]]: Sadová 103/21, 370 01 České Budějovice
+[[ADDRESS_3]]: Vinohradská 179/28, 130 00 Praha 3
+[[ADDRESS_4]]: případně písemně na adresu Vinohradská 179/28, 130 00 Praha 3
+[[ADDRESS_5]]: písemné doručení na adresu Vinohradská 179/28, 130 00 Praha 3
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Vinohradská 179/28, 130 00 Praha 3
+[[ADDRESS_7]]: pro Filipovi Řezníčkovi a Sadová 103/21, 370 01 České Budějovice pro Pavlovi
+
+BANK
+[[BANK_1]]: 619433238/0300
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 941223/4532
+[[BIRTH_ID_2]]: 920821/2613
+[[BIRTH_ID_3]]: 621226/1748
+[[BIRTH_ID_4]]: 810224/2533
+
+CARD
+[[CARD_1]]: 4015 4479 1302 9122
+
+DATE
+[[DATE_1]]: 25. 10. 2001
+[[DATE_2]]: 11. 09. 1961
+[[DATE_3]]: 12. 05. 2001
+[[DATE_4]]: 18. 03. 1996
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: rektorat@unisever.cz
+[[EMAIL_2]]: pavel.roubal@example.com
+[[EMAIL_3]]: filip.reznicek@example.com
+[[EMAIL_4]]: gabriela.prochazkova@example.com
+[[EMAIL_5]]: veronika.dvorakova@example.com
+
+IBAN
+[[IBAN_1]]: CZ22 0100 0000 2083 6408 2838
+
+ICO
+[[ICO_1]]: 00224466
+
+ID_CARD
+[[ID_CARD_1]]: 263255371
+
+IP
+[[IP_1]]: 192.168.11.22
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP84366
+[[LICENSE_PLATE_2]]: 5AZ 3406
+[[LICENSE_PLATE_3]]: 0HA7966
+
+MAC
+[[MAC_1]]: B7:65:CD:BD:86:9B
+
+PHONE
+[[PHONE_1]]: +420 541 111 000
+[[PHONE_2]]: +420 701 641 583
+[[PHONE_3]]: +420 664 390 856
+[[PHONE_4]]: +420 730 132 143
+[[PHONE_5]]: +420 705 270 371
+

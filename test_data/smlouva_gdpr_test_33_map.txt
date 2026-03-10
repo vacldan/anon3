@@ -13,6 +13,7 @@ ADDRESS
 [[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
 [[ADDRESS_2]]: U Lesa 9, 530 02 Pardubice
 [[ADDRESS_3]]: Na Návsi 6, 789 01 Zábřeh
+[[ADDRESS_4]]: V Ostravě
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 940212/7890

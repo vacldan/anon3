@@ -1,0 +1,84 @@
+OSOBY
+-----
+[[PERSON_1]]: Václav Vaněk
+  - Václava Vaněka
+  - Václave Vaněke
+  - Václavem Vaněkem
+  - Václavovi Vaněkovi
+[[PERSON_2]]: Roman Černý
+  - Romana Černýa
+  - Romanem Černýem
+  - Romanovi Černýovi
+[[PERSON_3]]: Roman Černýe
+  - Romane Černýe
+[[PERSON_4]]: Renata Dvořáková
+  - Renatou Dvořákovou
+  - Renatě Dvořákové
+[[PERSON_5]]: Štěpán Procházka
+  - Štěpána Procházky
+  - Štěpáne Procházko
+  - Štěpánem Procházkou
+  - Štěpánovi Procházkovi
+
+ADDRESS
+[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_2]]: Vinohradská 187/5, 130 00 Praha 3
+[[ADDRESS_3]]: Na Kopci 129/9, 100 00 Praha 10
+[[ADDRESS_4]]: případně písemně na adresu Na Kopci 129/9, 100 00 Praha 10
+[[ADDRESS_5]]: písemné doručení na adresu Na Kopci 129/9, 100 00 Praha 10
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Kopci 129/9, 100 00 Praha 10
+[[ADDRESS_7]]: pro Romanovi Černýovi a Vinohradská 187/5, 130 00 Praha 3
+
+BANK
+[[BANK_1]]: 322714809/0600
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 020412/4522
+[[BIRTH_ID_2]]: 080114/2403
+[[BIRTH_ID_3]]: 781014/6665
+[[BIRTH_ID_4]]: 911004/4281
+
+CARD
+[[CARD_1]]: 4044 7220 9921 2020
+
+DATE
+[[DATE_1]]: 01. 06. 1969
+[[DATE_2]]: 15. 08. 1965
+[[DATE_3]]: 02. 01. 2010
+[[DATE_4]]: 04. 10. 1969
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: sekretariat@gymhradby.cz
+[[EMAIL_2]]: vaclav.vanek@example.com
+[[EMAIL_3]]: roman.cerny@example.com
+[[EMAIL_4]]: stepan.prochazka@example.com
+[[EMAIL_5]]: renata.dvorakova@example.com
+
+IBAN
+[[IBAN_1]]: CZ88 0100 0000 0880 5472 9121
+
+ICO
+[[ICO_1]]: 12398745
+
+ID_CARD
+[[ID_CARD_1]]: 620885778
+
+IP
+[[IP_1]]: 69.151.131.228
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EA88198
+[[LICENSE_PLATE_2]]: 1AB 2857
+[[LICENSE_PLATE_3]]: 0HA1124
+
+MAC
+[[MAC_1]]: 1C:6F:47:68:AA:2A
+
+PHONE
+[[PHONE_1]]: +420 596 111 222
+[[PHONE_2]]: +420 654 536 797
+[[PHONE_3]]: +420 664 793 881
+[[PHONE_4]]: +420 727 571 379
+[[PHONE_5]]: +420 731 814 165
+

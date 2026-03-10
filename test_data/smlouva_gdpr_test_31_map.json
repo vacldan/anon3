@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:42.597483",
+  "generated_at": "2026-03-09T15:51:09.468632",
   "source_file": "smlouva_gdpr_test_31.docx",
   "entities": [
     {
@@ -60,13 +60,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Gabrielu Štěpánovou",
+      "original": "Gabrielou Štěpánovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Gabrielou Štěpánovou",
+      "original": "Gabrielu Štěpánovou",
       "occurrences": 1
     },
     {
@@ -102,13 +102,25 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "Jabloňová 12, 400 01 Ústí nad Labem",
+      "original": "České Budějovice",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
+      "original": "Jabloňová 12, 400 01 Ústí nad Labem",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_6]]",
       "original": "U Parku 8, 779 00 Olomouc",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_7]]",
+      "original": "V Praze",
       "occurrences": 1
     },
     {

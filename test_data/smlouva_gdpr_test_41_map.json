@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:49.130821",
+  "generated_at": "2026-03-09T15:51:11.108235",
   "source_file": "smlouva_gdpr_test_41.docx",
   "entities": [
     {
@@ -42,19 +42,43 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Ondřeji Jelínkovi",
+      "original": "Ondřejem Jelínkem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Ondřejem Jelínkem",
+      "original": "Ondřeji Jelínkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Marek Koutný",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "U Nemocnice 1, 120 00 Praha 2",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Technologická 5, 160 00 Praha 6",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "v Praze",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "Lipová 8, 602 00 Brno",
       "occurrences": 1
     },
     {
@@ -139,18 +163,6 @@
       "type": "EMAIL",
       "label": "[[EMAIL_5]]",
       "original": "marek.koutny@example.org",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_1]]",
-      "original": "Technologická 5, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Lipová 8, 602 00 Brno",
       "occurrences": 1
     },
     {

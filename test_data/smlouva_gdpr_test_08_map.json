@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:26.215333",
+  "generated_at": "2026-03-09T15:50:50.360632",
   "source_file": "smlouva_gdpr_test_08.docx",
   "entities": [
     {
@@ -30,7 +30,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
+      "original": "Miroslav Vaňek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Miroslava Vaňka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Nikol Šťastná",
       "occurrences": 1
     },
     {
@@ -55,6 +67,12 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Na Návsi 6, 789 01 Zábřeh",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "V Praze",
       "occurrences": 1
     },
     {

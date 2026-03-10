@@ -1,0 +1,109 @@
+OSOBY
+-----
+[[PERSON_1]]: Přemysl Švestka
+  - Přemysla Švestku
+  - Přemysla Švestky
+  - Přemysle Švestko
+  - Přemyslem Švestkou
+  - Přemyslovi Švestkovi
+[[PERSON_2]]: Iva Kratochvílová
+  - Ivo Kratochvílová
+  - Ivou Kratochvílovou
+  - Ivy Kratochvílové
+  - Ivě Kratochvílové
+[[PERSON_3]]: Metoděj Kopecký
+  - Metoděja Kopeckého
+  - Metodějem Kopeckým
+  - Metodějovi Kopeckém
+  - Metodějovi Kopeckému
+[[PERSON_4]]: Vít Kořínek
+  - Víta Kořínka
+[[PERSON_5]]: Libuše Krejčová
+  - Libuše Krejčové
+[[PERSON_6]]: Matěj Urban
+  - Matěja Urbana
+[[PERSON_7]]: Iva Kratochvílováová
+  - Ivu Kratochvílováovou
+[[PERSON_8]]: Libuše Krejčováová
+  - Libuše Krejčováovou
+
+ADDRESS
+[[ADDRESS_1]]: Kampus 9, 625 00 Brno
+[[ADDRESS_2]]: Pražská 98, 360 01 Karlovy Vary
+[[ADDRESS_3]]: Národní 5/26, 110 00 Praha 1
+[[ADDRESS_4]]: Dvořákova 51, 370 01 České Budějovice
+[[ADDRESS_5]]: Pražská 119/37, 360 01 Karlovy Vary
+[[ADDRESS_6]]: Riegrova 27, 779 00 Olomouc
+[[ADDRESS_7]]: U Nemocnice 87, 128 08 Praha 2
+[[ADDRESS_8]]: Pražská 98, 360 01 Karlovy Vary a Národní
+[[ADDRESS_9]]: Praha 1
+[[ADDRESS_10]]: platnost 05/28, CVC
+
+BANK
+[[BANK_1]]: 3151205952/2010
+[[BANK_2]]: 3149513341/0100
+[[BANK_3]]: 9721969198/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 070706/5121
+[[BIRTH_ID_2]]: 055404/1569
+[[BIRTH_ID_3]]: 850802/3528
+[[BIRTH_ID_4]]: 051101/9924
+[[BIRTH_ID_5]]: 0553266440
+[[BIRTH_ID_6]]: 8510285480
+
+DATE
+[[DATE_1]]: 13. 4. 1968
+[[DATE_2]]: 3. 7. 1977
+[[DATE_3]]: 5. 5. 1966
+[[DATE_4]]: 8. 6. 1990
+[[DATE_5]]: 28. 8. 1981
+[[DATE_6]]: 1. 4. 1960
+[[DATE_7]]: 02. 03. 2026
+
+DIC
+[[DIC_1]]: CZ00224466
+
+EMAIL
+[[EMAIL_1]]: premysl.svestka@example.com
+[[EMAIL_2]]: iva.kratochvilova@seznam.cz
+[[EMAIL_3]]: metodej.kopecky@seznam.cz
+[[EMAIL_4]]: vit.korinek@example.com
+[[EMAIL_5]]: libuse.krejcova@example.com
+[[EMAIL_6]]: matej.urban@firma.cz
+
+IBAN
+[[IBAN_1]]: CZ30 0800 0000 2622 5929 7289
+[[IBAN_2]]: CZ73 0600 0000 0843 2992 3630
+
+ICO
+[[ICO_1]]: 00224466
+
+ID_CARD
+[[ID_CARD_1]]: AN 202041
+[[ID_CARD_2]]: 494150612
+[[ID_CARD_3]]: 581092945
+[[ID_CARD_4]]: 109286613
+
+IP
+[[IP_1]]: 37.28.3.184
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP88342
+[[LICENSE_PLATE_2]]: EA35429
+
+MAC
+[[MAC_1]]: 61:E6:5F:47:5C:99
+
+PASSWORD
+[[PASSWORD_1]]: Iva95!9600
+
+PHONE
+[[PHONE_1]]: 679 722 699
+[[PHONE_2]]: +420 716 173 487
+[[PHONE_3]]: +420750880140
+[[PHONE_4]]: +420758634407
+[[PHONE_5]]: +420 645 535 312
+[[PHONE_6]]: +420 708 713 484
+[[PHONE_7]]: 494150612
+

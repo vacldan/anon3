@@ -1,6 +1,6 @@
 OSOBY
 -----
-[[PERSON_1]]: Adrian Kratochvílem
+[[PERSON_1]]: Adrian Kratochvíl
   - Adrianem Kratochvílem
 [[PERSON_2]]: Daniela Horská
 [[PERSON_3]]: Lucie Novotná
@@ -45,11 +45,11 @@ OSOBY
 [[PERSON_27]]: Štěpán Šeda
 [[PERSON_28]]: Pavlína Plíšková
   - Pavlínou Plíškovou
-[[PERSON_29]]: Adrian Kratochvíl
 
 ADDRESS
 [[ADDRESS_1]]: Nad Kampusem 821/4, Praha 10
 [[ADDRESS_2]]: Křišťanová 19, 779 00 Olomouc
+[[ADDRESS_3]]: V Praze
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 856126/5529
@@ -80,6 +80,7 @@ MAC
 PHONE
 [[PHONE_1]]: +420 233 801 220
 [[PHONE_2]]: +420 728 442 991
+[[PHONE_3]]: 551784002
 
 VIN
 [[VIN_1]]: TMBJG9NP8N7022812

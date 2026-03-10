@@ -1,0 +1,84 @@
+OSOBY
+-----
+[[PERSON_1]]: Tomáš Svoboda
+  - Tomáše Svobody
+  - Tomášem Svobodou
+  - Tomášovi Svobodovi
+[[PERSON_2]]: Erik Černý
+  - Erika Černýa
+  - Erikem Černýem
+  - Erikovi Černýovi
+[[PERSON_3]]: Tomáš Svobodo
+  - Tomáši Svobodo
+[[PERSON_4]]: Erik Černýe
+  - Erike Černýe
+[[PERSON_5]]: Gabriela Křížová
+  - Gabrielou Křížovou
+  - Gabrielě Křížové
+[[PERSON_6]]: Jaroslav Novák
+  - Jaroslava Nováka
+  - Jaroslave Nováke
+  - Jaroslavem Novákem
+  - Jaroslavovi Novákovi
+
+ADDRESS
+[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_2]]: Na Kopci 43/11, 100 00 Praha 10
+[[ADDRESS_3]]: Na Návsi 188/27, 789 01 Zábřeh
+[[ADDRESS_4]]: případně písemně na adresu Na Návsi 188/27, 789 01 Zábřeh
+[[ADDRESS_5]]: písemné doručení na adresu Na Návsi 188/27, 789 01 Zábřeh
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Návsi 188/27, 789 01 Zábřeh pro Erikovi Černýovi a
+
+BANK
+[[BANK_1]]: 917148487/0100
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 091106/4065
+[[BIRTH_ID_2]]: 781013/4377
+[[BIRTH_ID_3]]: 050721/7803
+[[BIRTH_ID_4]]: 841211/7748
+
+CARD
+[[CARD_1]]: 4293 9158 4821 1297
+
+DATE
+[[DATE_1]]: 09. 04. 2004
+[[DATE_2]]: 12. 12. 1960
+[[DATE_3]]: 13. 10. 2010
+[[DATE_4]]: 02. 05. 2003
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: sekretariat@gymhradby.cz
+[[EMAIL_2]]: tomas.svoboda@example.com
+[[EMAIL_3]]: erik.cerny@example.com
+[[EMAIL_4]]: jaroslav.novak@example.com
+[[EMAIL_5]]: gabriela.krizova@example.com
+
+IBAN
+[[IBAN_1]]: CZ57 0100 0000 9815 1485 9590
+
+ICO
+[[ICO_1]]: 12398745
+
+ID_CARD
+[[ID_CARD_1]]: 126330922
+
+IP
+[[IP_1]]: 192.168.11.22
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP10885
+[[LICENSE_PLATE_2]]: 7B8 6111
+[[LICENSE_PLATE_3]]: 0KA7647
+
+MAC
+[[MAC_1]]: 1C:37:85:4C:B7:17
+
+PHONE
+[[PHONE_1]]: +420 596 111 222
+[[PHONE_2]]: +420 715 619 129
+[[PHONE_3]]: +420 760 679 277
+[[PHONE_4]]: +420 716 822 433
+[[PHONE_5]]: +420 703 456 882
+

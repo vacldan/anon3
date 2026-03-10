@@ -4,12 +4,12 @@
 
 | Metrika | Hodnota |
 |---------|---------|
-| Celkem smluv | 85 |
-| Prošlo (score>=9) | 73 |
-| Selhalo | 12 |
-| Průměr score | 9.5/10 |
-| S PII leakem | 12 |
-| Nekonzistentní mapa | 0 |
+| Celkem smluv | 200 |
+| Prošlo (score>=9) | 191 |
+| Selhalo | 9 |
+| Průměr score | 9.8/10 |
+| S PII leakem | 9 |
+| Nekonzistentní mapa | 1 |
 
 ## Přehled po smlouvách
 
@@ -49,22 +49,88 @@
 | smlouva7.docx | 10/10 | OK | — |
 | smlouva8.docx | 10/10 | OK | — |
 | smlouva9.docx | 10/10 | OK | — |
-| smlouva_gdpr_test.docx | 7/10 | FAIL | PII:1 |
-| smlouva_gdpr_test_01.docx | 7/10 | FAIL | PII:1 |
+| smlouva_final_01.docx | 4/10 | FAIL | PII:2, mapa |
+| smlouva_final_02.docx | 10/10 | OK | — |
+| smlouva_final_03.docx | 7/10 | FAIL | PII:1 |
+| smlouva_final_04.docx | 6/10 | FAIL | PII:2 |
+| smlouva_final_05.docx | 10/10 | OK | — |
+| smlouva_final_06.docx | 10/10 | OK | — |
+| smlouva_final_07.docx | 7/10 | FAIL | PII:1 |
+| smlouva_final_08.docx | 5/10 | FAIL | PII:3 |
+| smlouva_final_09.docx | 7/10 | FAIL | PII:1 |
+| smlouva_final_10.docx | 10/10 | OK | — |
+| smlouva_final_11.docx | 6/10 | FAIL | PII:2 |
+| smlouva_final_12.docx | 7/10 | FAIL | PII:1 |
+| smlouva_final_13.docx | 7/10 | FAIL | PII:1 |
+| smlouva_final_14.docx | 10/10 | OK | — |
+| smlouva_final_15.docx | 10/10 | OK | — |
+| smlouva_gdpr_test.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_01.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_02.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_03.docx | 10/10 | OK | — |
-| smlouva_gdpr_test_04.docx | 6/10 | FAIL | PII:2 |
+| smlouva_gdpr_test_04.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_05.docx | 10/10 | OK | — |
-| smlouva_gdpr_test_06.docx | 5/10 | FAIL | PII:3 |
+| smlouva_gdpr_test_06.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_07.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_08.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_09.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_10.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_100.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_101.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_102.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_103.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_104.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_105.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_106.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_107.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_108.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_109.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_11.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_110.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_111.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_112.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_113.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_114.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_115.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_116.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_117.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_118.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_119.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_12.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_120.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_121.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_122.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_123.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_124.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_125.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_126.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_127.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_128.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_129.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_13.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_130.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_131.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_132.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_133.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_134.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_135.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_136.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_137.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_138.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_139.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_14.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_140.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_141.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_142.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_143.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_144.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_145.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_146.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_147.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_148.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_149.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_15.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_150.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_16.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_17.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_18.docx | 10/10 | OK | — |
@@ -73,23 +139,23 @@
 | smlouva_gdpr_test_21.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_22.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_23.docx | 10/10 | OK | — |
-| smlouva_gdpr_test_24.docx | 7/10 | FAIL | PII:1 |
-| smlouva_gdpr_test_25.docx | 7/10 | FAIL | PII:1 |
-| smlouva_gdpr_test_26.docx | 7/10 | FAIL | PII:1 |
+| smlouva_gdpr_test_24.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_25.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_26.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_27.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_28.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_29.docx | 10/10 | OK | — |
-| smlouva_gdpr_test_30.docx | 7/10 | FAIL | PII:1 |
+| smlouva_gdpr_test_30.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_31.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_32.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_33.docx | 10/10 | OK | — |
-| smlouva_gdpr_test_34.docx | 7/10 | FAIL | PII:1 |
+| smlouva_gdpr_test_34.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_35.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_36.docx | 10/10 | OK | — |
-| smlouva_gdpr_test_37.docx | 7/10 | FAIL | PII:1 |
+| smlouva_gdpr_test_37.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_38.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_39.docx | 10/10 | OK | — |
-| smlouva_gdpr_test_40.docx | 7/10 | FAIL | PII:1 |
+| smlouva_gdpr_test_40.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_41.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_42.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_43.docx | 10/10 | OK | — |
@@ -98,107 +164,136 @@
 | smlouva_gdpr_test_46.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_47.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_48.docx | 10/10 | OK | — |
-| smlouva_gdpr_test_49.docx | 4/10 | FAIL | PII:2, regex:1 |
+| smlouva_gdpr_test_49.docx | 10/10 | OK | — |
 | smlouva_gdpr_test_50.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_51.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_52.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_53.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_54.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_55.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_56.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_57.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_58.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_59.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_60.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_61.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_62.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_63.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_64.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_65.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_66.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_67.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_68.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_69.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_70.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_71.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_72.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_73.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_74.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_75.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_76.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_77.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_78.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_79.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_80.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_81.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_82.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_83.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_84.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_85.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_86.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_87.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_88.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_89.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_90.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_91.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_92.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_93.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_94.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_95.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_96.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_97.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_98.docx | 10/10 | OK | — |
+| smlouva_gdpr_test_99.docx | 10/10 | OK | — |
 
 ---
 
 ## Detaily chyb po smlouvách
 
-### smlouva_gdpr_test.docx — 7/10
+### smlouva_final_01.docx — 4/10
 
 **PII leak (hodnoty z mapy nalezené v anonymu):**
-- `NAME: Otec Objednatelky`
+- `NAME: Poučení  Proti`
+- `NAME: Doručení  Tento`
+
+**Mapa – chyby adres (ADDRESS):**
+- [D-PREFIX] [[ADDRESS_5]] = 'sídlem Tyršova 44, 530 02 Pardubice' obsahuje prefix 'sídlem', který podle QA pravidel do adresy nepatří.
 
 ---
 
-### smlouva_gdpr_test_01.docx — 7/10
+### smlouva_final_03.docx — 7/10
 
 **PII leak (hodnoty z mapy nalezené v anonymu):**
-- `NAME: Otec Objednatelky`
+- `RFID`
 
 ---
 
-### smlouva_gdpr_test_04.docx — 6/10
+### smlouva_final_04.docx — 6/10
 
 **PII leak (hodnoty z mapy nalezené v anonymu):**
-- `Zpracovatel`
-- `NAME: Zástupce Správce`
+- `NAME: Testování Wi`
+- `NAME: Odměna  Celková`
 
 ---
 
-### smlouva_gdpr_test_06.docx — 5/10
+### smlouva_final_07.docx — 7/10
 
 **PII leak (hodnoty z mapy nalezené v anonymu):**
-- `NAME: Banka Credita`
-- `NAME: Banka Credita`
-- `NAME: Banka Credita`
+- `NAME: Univerzitě Karlově`
 
 ---
 
-### smlouva_gdpr_test_24.docx — 7/10
+### smlouva_final_08.docx — 5/10
 
 **PII leak (hodnoty z mapy nalezené v anonymu):**
-- `NAME: Nový Brod`
+- `RFID`
+- `NAME: Tran Phu`
+- `NAME: Hanoi Přechodný`
 
 ---
 
-### smlouva_gdpr_test_25.docx — 7/10
+### smlouva_final_09.docx — 7/10
 
 **PII leak (hodnoty z mapy nalezené v anonymu):**
-- `NAME: Nový Brod`
+- `NAME: Souhlas  Já`
 
 ---
 
-### smlouva_gdpr_test_26.docx — 7/10
+### smlouva_final_11.docx — 6/10
 
 **PII leak (hodnoty z mapy nalezené v anonymu):**
-- `NAME: Nový Brod`
+- `NAME: Buddy Pohlaví`
+- `NAME: Odměna  Preventivní`
 
 ---
 
-### smlouva_gdpr_test_30.docx — 7/10
+### smlouva_final_12.docx — 7/10
 
 **PII leak (hodnoty z mapy nalezené v anonymu):**
-- `NAME: Nový Brod`
+- `NAME: Pardubicích Sp`
 
 ---
 
-### smlouva_gdpr_test_34.docx — 7/10
+### smlouva_final_13.docx — 7/10
 
 **PII leak (hodnoty z mapy nalezené v anonymu):**
-- `NAME: Domov Harmonie`
-
----
-
-### smlouva_gdpr_test_37.docx — 7/10
-
-**PII leak (hodnoty z mapy nalezené v anonymu):**
-- `NAME: Nový Brod`
-
----
-
-### smlouva_gdpr_test_40.docx — 7/10
-
-**PII leak (hodnoty z mapy nalezené v anonymu):**
-- `NAME: Odměna Mediátora`
-
----
-
-### smlouva_gdpr_test_49.docx — 4/10
-
-**PII leak (hodnoty z mapy nalezené v anonymu):**
-- `NAME: Galerie Jih`
-- `NAME: Galerie Jih`
-
-**PII nalezené regexem:**
-- `7B8 2345` (SPZ)
+- `NAME: Poučení  Proti`
 
 ---
 
 ## Selhané soubory
 
-smlouva_gdpr_test.docx, smlouva_gdpr_test_01.docx, smlouva_gdpr_test_04.docx, smlouva_gdpr_test_06.docx, smlouva_gdpr_test_24.docx, smlouva_gdpr_test_25.docx, smlouva_gdpr_test_26.docx, smlouva_gdpr_test_30.docx, smlouva_gdpr_test_34.docx, smlouva_gdpr_test_37.docx, smlouva_gdpr_test_40.docx, smlouva_gdpr_test_49.docx
+smlouva_final_01.docx, smlouva_final_03.docx, smlouva_final_04.docx, smlouva_final_07.docx, smlouva_final_08.docx, smlouva_final_09.docx, smlouva_final_11.docx, smlouva_final_12.docx, smlouva_final_13.docx
 
 ---
 *Detailní data v `test_results.json`*

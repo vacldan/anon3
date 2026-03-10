@@ -1,0 +1,110 @@
+OSOBY
+-----
+[[PERSON_1]]: Marek Procházka
+  - Marka Procházku
+  - Marka Procházky
+  - Markem Procházkou
+  - Markovi Procházkovi
+  - Marku Procházko
+[[PERSON_2]]: Helena Krejčová
+  - Heleno Krejčová
+  - Helenou Krejčovou
+  - Heleny Krejčové
+  - Heleně Krejčové
+[[PERSON_3]]: Helena Krejčováová
+  - Helenu Krejčováovou
+[[PERSON_4]]: Ema Benešová
+  - Emy Benešové
+[[PERSON_5]]: Markéta Bartůňková
+  - Markétou Bartůňkovou
+  - Markéty Bartůňkové
+  - Markétě Bartůňkové
+[[PERSON_6]]: Lída Malinová
+  - Lídy Malinové
+[[PERSON_7]]: Alex Řezníček
+  - Alexa Řezníčka
+[[PERSON_8]]: Markéta Bartůňkováová
+  - Markétu Bartůňkováovou
+[[PERSON_9]]: Lída Malinováová
+  - Lídu Malinováovou
+[[PERSON_10]]: Ema Benešováová
+  - Emu Benešováovou
+
+ADDRESS
+[[ADDRESS_1]]: Bělehradská 132, 120 84 Praha 2
+[[ADDRESS_2]]: Nádražní 8, 702 00 Ostrava
+[[ADDRESS_3]]: Bezručova 228/24, 746 01 Opava
+[[ADDRESS_4]]: Žižkova 40, 460 01 Liberec
+[[ADDRESS_5]]: Masarykova 51/23, 500 02 Hradec Králové
+[[ADDRESS_6]]: Nádražní 103/19, 702 00 Ostrava
+[[ADDRESS_7]]: Husova 139, 390 02 Tábor
+[[ADDRESS_8]]: Nádražní 8, 702 00 Ostrava a Bezručova
+[[ADDRESS_9]]: platnost 09/29, CVC
+
+BANK
+[[BANK_1]]: 961657-3073150920/0600
+[[BANK_2]]: 4498908873/6210
+[[BANK_3]]: 8874738840/2010
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 080805/5745
+[[BIRTH_ID_2]]: 036104/8039
+[[BIRTH_ID_3]]: 075624/0106
+[[BIRTH_ID_4]]: 035913/9677
+[[BIRTH_ID_5]]: 0053237782
+[[BIRTH_ID_6]]: 820116/0207
+
+DATE
+[[DATE_1]]: 9. 11. 1983
+[[DATE_2]]: 17. 10. 1964
+[[DATE_3]]: 11. 7. 1983
+[[DATE_4]]: 10. 12. 1981
+[[DATE_5]]: 21. 11. 1988
+[[DATE_6]]: 20. 4. 1997
+[[DATE_7]]: 07. 09. 2026
+
+DIC
+[[DIC_1]]: CZ45272956
+
+EMAIL
+[[EMAIL_1]]: marek.prochazka@post.cz
+[[EMAIL_2]]: helena.krejcova@firma.cz
+[[EMAIL_3]]: ema.benesova@seznam.cz
+[[EMAIL_4]]: marketa.bartunkova@firma.cz
+[[EMAIL_5]]: lida.malinova@example.com
+[[EMAIL_6]]: alex.reznicek@post.cz
+
+IBAN
+[[IBAN_1]]: CZ77 0600 0000 6716 1449 2502
+[[IBAN_2]]: CZ87 0600 0000 9844 8865 8033
+
+ICO
+[[ICO_1]]: 45272956
+
+ID_CARD
+[[ID_CARD_1]]: UK 990706
+[[ID_CARD_2]]: KC 769739
+[[ID_CARD_3]]: MH 295737
+[[ID_CARD_4]]: TO 595571
+
+IP
+[[IP_1]]: 179.59.5.254
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP23118
+[[LICENSE_PLATE_2]]: PP26711
+
+MAC
+[[MAC_1]]: 0F:2D:50:95:FC:59
+
+PASSWORD
+[[PASSWORD_1]]: Hel90!8317
+
+PHONE
+[[PHONE_1]]: +420795559681
+[[PHONE_2]]: +420 616 802 938
+[[PHONE_3]]: +420 688 101 535
+[[PHONE_4]]: 710 900 250
+[[PHONE_5]]: +420 603 522 323
+[[PHONE_6]]: 641 563 860
+

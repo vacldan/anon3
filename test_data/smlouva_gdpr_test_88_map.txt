@@ -1,0 +1,112 @@
+OSOBY
+-----
+[[PERSON_1]]: Bohumil Tesař
+  - Bohumila Tesařa
+  - Bohumile Tesaře
+  - Bohumilem Tesařem
+  - Bohumilovi Tesařovi
+[[PERSON_2]]: Hedvika Řípová
+  - Hedviko Řípová
+  - Hedvikou Řípovou
+  - Hedviky Řípové
+  - Hedvikě Řípové
+[[PERSON_3]]: Lucie Fialová
+  - Lucie Fialové
+  - Lucii Fialové
+  - Lucií Fialovou
+[[PERSON_4]]: Adéla Kořínková
+  - Adély Kořínkové
+[[PERSON_5]]: Květa Nováková
+  - Květy Novákové
+[[PERSON_6]]: Alex Hrdina
+  - Alexa Hrdinu
+  - Alexa Hrdiny
+[[PERSON_7]]: Lucie Fialováová
+  - Lucii Fialováovou
+[[PERSON_8]]: Hedvika Řípováová
+  - Hedviku Řípováovou
+[[PERSON_9]]: Květa Novákováová
+  - Květu Novákováovou
+
+ADDRESS
+[[ADDRESS_1]]: Bělehradská 132, 120 84 Praha 2
+[[ADDRESS_2]]: Bezručova 187/20, 746 01 Opava
+[[ADDRESS_3]]: U Parku 92/2, 779 00 Olomouc
+[[ADDRESS_4]]: Křenová 171/22, 602 00 Brno
+[[ADDRESS_5]]: Husova 40/33, 390 02 Tábor
+[[ADDRESS_6]]: Wolkerova 56/10, 796 01 Prostějov
+[[ADDRESS_7]]: U Nemocnice 134/4, 128 08 Praha 2
+[[ADDRESS_8]]: Bezručova 187/20, 746 01 Opava a U Parku
+[[ADDRESS_9]]: Olomouc
+[[ADDRESS_10]]: platnost 05/29, CVC
+[[ADDRESS_11]]: Na Návsi 166, Praha
+[[ADDRESS_12]]: v Praze
+
+BANK
+[[BANK_1]]: 5597318805/0100
+[[BANK_2]]: 324702-7688903893/0100
+[[BANK_3]]: 907152-3794894496/2010
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 100806/7832
+[[BIRTH_ID_2]]: 685425/9375
+[[BIRTH_ID_3]]: 0757209134
+[[BIRTH_ID_4]]: 0256207259
+[[BIRTH_ID_5]]: 0161241328
+[[BIRTH_ID_6]]: 940926/9404
+
+DATE
+[[DATE_1]]: 9. 3. 1965
+[[DATE_2]]: 21. 4. 1960
+[[DATE_3]]: 17. 9. 1983
+[[DATE_4]]: 5. 7. 1997
+[[DATE_5]]: 18. 3. 1971
+[[DATE_6]]: 2. 2. 2004
+[[DATE_7]]: 27. 08. 2026
+
+DIC
+[[DIC_1]]: CZ45272956
+
+EMAIL
+[[EMAIL_1]]: bohumil.tesar@seznam.cz
+[[EMAIL_2]]: hedvika.ripova@firma.cz
+[[EMAIL_3]]: lucie.fialova@post.cz
+[[EMAIL_4]]: adela.korinkova@firma.cz
+[[EMAIL_5]]: kveta.novakova@example.com
+[[EMAIL_6]]: alex.hrdina@post.cz
+
+IBAN
+[[IBAN_1]]: CZ38 0300 0000 9669 2529 3252
+[[IBAN_2]]: CZ46 0100 0000 7867 2970 3480
+
+ICO
+[[ICO_1]]: 45272956
+
+ID_CARD
+[[ID_CARD_1]]: OF 617128
+[[ID_CARD_2]]: 805604586
+[[ID_CARD_3]]: 676133025
+[[ID_CARD_4]]: 633312689
+
+IP
+[[IP_1]]: 132.217.183.239
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EA65290
+[[LICENSE_PLATE_2]]: CZ20637
+
+MAC
+[[MAC_1]]: F0:41:5B:DD:96:94
+
+PASSWORD
+[[PASSWORD_1]]: Hed26!5482
+
+PHONE
+[[PHONE_1]]: 609 966 712
+[[PHONE_2]]: +420729195728
+[[PHONE_3]]: 626 872 396
+[[PHONE_4]]: 784 814 856
+[[PHONE_5]]: +420 691 716 505
+[[PHONE_6]]: 740 487 933
+[[PHONE_7]]: 805604586
+

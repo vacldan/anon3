@@ -1,0 +1,107 @@
+OSOBY
+-----
+[[PERSON_1]]: Michal Řezníček
+  - Michala Řezníčka
+  - Michale Řezníčku
+  - Michalem Řezníčkem
+  - Michalovi Řezníčkovi
+[[PERSON_2]]: Pavla Havličková
+[[PERSON_3]]: Pavlě Havličková
+  - Pavlě Havličkové
+[[PERSON_4]]: Veronika Marešová
+  - Veronikou Marešovou
+  - Veroniky Marešové
+  - Veronikě Marešové
+[[PERSON_5]]: Alžběta Černá
+  - Alžbětu Černou
+  - Alžběty Černé
+[[PERSON_6]]: Jiřina Havličková
+  - Jiřiny Havličkové
+[[PERSON_7]]: Jaroslav Vlach
+  - Jaroslava Vlacha
+[[PERSON_9]]: Veronika Marešováová
+  - Veroniku Marešováovou
+[[PERSON_10]]: Pavel Havličkováová
+  - Pavlu Havličkováovou
+[[PERSON_11]]: Jiřina Havličkováová
+  - Jiřinu Havličkováovou
+
+ADDRESS
+[[ADDRESS_1]]: Vídeňská 800, 140 59 Praha 4
+[[ADDRESS_2]]: Husova 236/11, 390 02 Tábor
+[[ADDRESS_3]]: Žižkova 245/15, 460 01 Liberec
+[[ADDRESS_4]]: Dlouhá 35/39, 602 00 Brno
+[[ADDRESS_5]]: Dvořákova 187, 370 01 České Budějovice
+[[ADDRESS_6]]: Žižkova 132/18, 460 01 Liberec
+[[ADDRESS_7]]: Na Kopci 13, 100 00 Praha 10
+[[ADDRESS_8]]: Husova 236/11, 390 02 Tábor a Žižkova
+[[ADDRESS_9]]: Liberec
+[[ADDRESS_10]]: platnost 10/28, CVC
+
+BANK
+[[BANK_1]]: 1804163764/0600
+[[BANK_2]]: 238279-6842437033/2010
+[[BANK_3]]: 276548-5238288293/0800
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 520906/3766
+[[BIRTH_ID_2]]: 096102/7089
+[[BIRTH_ID_3]]: 516022/1538
+[[BIRTH_ID_4]]: 085921/5438
+[[BIRTH_ID_5]]: 0758267133
+[[BIRTH_ID_6]]: 010928/5025
+
+DATE
+[[DATE_1]]: 21. 4. 1996
+[[DATE_2]]: 20. 11. 1993
+[[DATE_3]]: 18. 3. 1995
+[[DATE_4]]: 15. 6. 1992
+[[DATE_5]]: 19. 9. 1977
+[[DATE_6]]: 1. 12. 1960
+[[DATE_7]]: 12. 06. 2026
+
+DIC
+[[DIC_1]]: CZ00064190
+
+EMAIL
+[[EMAIL_1]]: michal.reznicek@post.cz
+[[EMAIL_2]]: pavla.havlickova@email.cz
+[[EMAIL_3]]: veronika.maresova@seznam.cz
+[[EMAIL_4]]: alzbeta.cerna@email.cz
+[[EMAIL_5]]: jirina.havlickova@post.cz
+[[EMAIL_6]]: jaroslav.vlach@firma.cz
+
+IBAN
+[[IBAN_1]]: CZ13 0800 0000 1397 9144 8028
+[[IBAN_2]]: CZ59 0100 0000 8765 6263 3936
+
+ICO
+[[ICO_1]]: 00064190
+
+ID_CARD
+[[ID_CARD_1]]: AT 254379
+[[ID_CARD_2]]: MG 941480
+[[ID_CARD_3]]: ZB 632934
+[[ID_CARD_4]]: LL 800542
+
+IP
+[[IP_1]]: 147.216.148.44
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ62560
+[[LICENSE_PLATE_2]]: EA13974
+
+MAC
+[[MAC_1]]: 4A:1D:96:E7:43:6B
+
+PASSWORD
+[[PASSWORD_1]]: Pav30!7907
+
+PHONE
+[[PHONE_1]]: +420784541428
+[[PHONE_2]]: +420 671 460 332
+[[PHONE_3]]: +420620953490
+[[PHONE_4]]: +420776366205
+[[PHONE_5]]: +420781611819
+[[PHONE_6]]: +420655551541
+

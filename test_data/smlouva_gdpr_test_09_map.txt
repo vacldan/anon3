@@ -9,11 +9,14 @@ OSOBY
 [[PERSON_4]]: Markéta Benešová
 [[PERSON_5]]: Erik Roubal
 [[PERSON_6]]: Aleš Kříž
+[[PERSON_7]]: Gymnázi Na
+  - Gymnázia Na
 
 ADDRESS
 [[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
 [[ADDRESS_2]]: U Kampusu 9, 625 00 Brno
 [[ADDRESS_3]]: Lipová 3, 702 00 Ostrava
+[[ADDRESS_4]]: V Ostravě
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 860921/4444

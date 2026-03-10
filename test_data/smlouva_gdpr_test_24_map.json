@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:37.781417",
+  "generated_at": "2026-03-09T15:51:08.270012",
   "source_file": "smlouva_gdpr_test_24.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Tomáše Roubala",
+      "original": "Tomášovi Roubalovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Tomášovi Roubalovi",
+      "original": "Tomáše Roubala",
       "occurrences": 1
     },
     {
@@ -48,6 +48,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Gabrielě Vaňkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Gabriely Vaňkové",
       "occurrences": 1
     },
@@ -55,12 +61,6 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Gabrielou Vaňkovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Gabrielě Vaňkové",
       "occurrences": 1
     },
     {
@@ -84,12 +84,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Janou Roubalovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Jany Roubalové",
       "occurrences": 1
     },
@@ -97,6 +91,12 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Janě Roubalové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Janou Roubalovou",
       "occurrences": 1
     },
     {

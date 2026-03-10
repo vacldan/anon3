@@ -7,9 +7,10 @@ OSOBY
 
 ADDRESS
 [[ADDRESS_1]]: Technologická 15, 160 00 Praha 6
-[[ADDRESS_2]]: U Lesa 9, 530 02 Pardubice
-[[ADDRESS_3]]: je kancelář Zaměstnavatele na adrese Technologická 15, 160 00 Praha 6
-[[ADDRESS_4]]: bydliště U Lesa 9, 530 02 Pardubice
+[[ADDRESS_2]]: v Praze
+[[ADDRESS_3]]: U Lesa 9, 530 02 Pardubice
+[[ADDRESS_4]]: je kancelář Zaměstnavatele na adrese Technologická 15, 160 00 Praha 6
+[[ADDRESS_5]]: bydliště U Lesa 9, 530 02 Pardubice
 
 BANK
 [[BANK_1]]: 771199221/0100

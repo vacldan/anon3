@@ -1,0 +1,106 @@
+OSOBY
+-----
+[[PERSON_1]]: Štěpán Havlička
+  - Štěpána Havličku
+  - Štěpána Havličky
+  - Štěpáne Havličko
+  - Štěpánem Havličkou
+  - Štěpánovi Havličkovi
+[[PERSON_2]]: Alice Nováková
+  - Alice Novákovou
+  - Alice Novákové
+[[PERSON_3]]: Vojtěch Pospíšil
+  - Vojtěcha Pospíšila
+  - Vojtěchem Pospíšilem
+  - Vojtěchovi Pospíšilovi
+[[PERSON_4]]: Ivana Šídlová
+  - Ivany Šídlové
+[[PERSON_5]]: Květa Poláková
+  - Květy Polákové
+[[PERSON_6]]: Matěj Hrubeš
+  - Matěja Hrubeša
+[[PERSON_7]]: Alice Novákováová
+  - Alice Novákováovou
+[[PERSON_8]]: Ivana Šídlováová
+  - Ivanu Šídlováovou
+[[PERSON_9]]: Květa Polákováová
+  - Květu Polákováovou
+
+ADDRESS
+[[ADDRESS_1]]: Lesní 12, 586 01 Jihlava
+[[ADDRESS_2]]: Národní 155, 110 00 Praha 1
+[[ADDRESS_3]]: U Parku 30, 779 00 Olomouc
+[[ADDRESS_4]]: Komenského 13, 702 00 Ostrava
+[[ADDRESS_5]]: Riegrova 125/32, 779 00 Olomouc
+[[ADDRESS_6]]: Tylova 130/25, 530 02 Pardubice
+[[ADDRESS_7]]: Křenová 187/24, 602 00 Brno
+[[ADDRESS_8]]: a U Parku 30, 779 00 Olomouc
+[[ADDRESS_9]]: platnost 12/26, CVC
+
+BANK
+[[BANK_1]]: 8026796627/2700
+[[BANK_2]]: 1415027293/0300
+[[BANK_3]]: 369310-9992876282/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 070601/1258
+[[BIRTH_ID_2]]: 885613/0147
+[[BIRTH_ID_3]]: 8709169701
+[[BIRTH_ID_4]]: 006106/9910
+[[BIRTH_ID_5]]: 6261172677
+[[BIRTH_ID_6]]: 0111221726
+
+DATE
+[[DATE_1]]: 25. 4. 1961
+[[DATE_2]]: 18. 9. 1976
+[[DATE_3]]: 1. 3. 1987
+[[DATE_4]]: 27. 8. 1982
+[[DATE_5]]: 26. 2. 1970
+[[DATE_6]]: 9. 9. 1988
+[[DATE_7]]: 29. 09. 2026
+
+DIC
+[[DIC_1]]: CZ44556677
+
+EMAIL
+[[EMAIL_1]]: stepan.havlicka@post.cz
+[[EMAIL_2]]: alice.novakova@example.com
+[[EMAIL_3]]: vojtech.pospisil@email.cz
+[[EMAIL_4]]: ivana.sidlova@example.com
+[[EMAIL_5]]: kveta.polakova@example.com
+[[EMAIL_6]]: matej.hrubes@firma.cz
+
+IBAN
+[[IBAN_1]]: CZ35 5500 0000 0896 6735 3285
+[[IBAN_2]]: CZ40 0600 0000 2411 9325 6513
+
+ICO
+[[ICO_1]]: 44556677
+
+ID_CARD
+[[ID_CARD_1]]: UU 705402
+[[ID_CARD_2]]: PR 655025
+[[ID_CARD_3]]: 693203170
+[[ID_CARD_4]]: KW 692815
+
+IP
+[[IP_1]]: 52.38.200.105
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EA31808
+[[LICENSE_PLATE_2]]: EA57199
+
+MAC
+[[MAC_1]]: BD:F2:D8:C9:06:FC
+
+PASSWORD
+[[PASSWORD_1]]: Ali25!8973
+
+PHONE
+[[PHONE_1]]: +420 735 268 358
+[[PHONE_2]]: +420746896937
+[[PHONE_3]]: +420 605 529 240
+[[PHONE_4]]: 637 170 795
+[[PHONE_5]]: +420 738 408 748
+[[PHONE_6]]: +420 657 264 943
+

@@ -15,6 +15,7 @@ OSOBY
 ADDRESS
 [[ADDRESS_1]]: Mediátorská 4, 602 00 Brno
 [[ADDRESS_2]]: Olšová 6, 602 00 Brno
+[[ADDRESS_3]]: V Brně
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 841010/5678

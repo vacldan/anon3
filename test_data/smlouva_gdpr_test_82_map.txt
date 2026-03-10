@@ -1,0 +1,110 @@
+OSOBY
+-----
+[[PERSON_1]]: Dobroslav Turek
+  - Dobroslava Turka
+  - Dobroslave Turku
+  - Dobroslavem Turkem
+  - Dobroslavovi Turkovi
+[[PERSON_2]]: Eliška Křížová
+  - Eliško Křížová
+  - Eliškou Křížovou
+  - Elišky Křížové
+  - Eliškě Křížové
+[[PERSON_3]]: Eliška Křížováová
+  - Elišku Křížováovou
+[[PERSON_4]]: Pavel Havlička
+  - Pavla Havličku
+  - Pavla Havličky
+  - Pavlem Havličkou
+  - Pavlovi Havličkovi
+[[PERSON_5]]: Darja Turková
+  - Darjy Turkové
+[[PERSON_6]]: Alžběta Řezníčková
+  - Alžběty Řezníčkové
+[[PERSON_7]]: Max Hrubeš
+  - Maxa Hrubeša
+[[PERSON_8]]: Darja Turkováová
+  - Darju Turkováovou
+[[PERSON_9]]: Alžběta Řezníčkováová
+  - Alžbětu Řezníčkováovou
+
+ADDRESS
+[[ADDRESS_1]]: Kosmonautů 44, 779 00 Olomouc
+[[ADDRESS_2]]: Pražská 150, 360 01 Karlovy Vary
+[[ADDRESS_3]]: Žižkova 166, 460 01 Liberec
+[[ADDRESS_4]]: Praha 1
+[[ADDRESS_5]]: Smetanova 159/30, 760 01 Zlín
+[[ADDRESS_6]]: Havlíčkova 21/13, 586 01 Jihlava
+[[ADDRESS_7]]: Tylova 95, 530 02 Pardubice
+[[ADDRESS_8]]: Smetanova 176/15, 760 01 Zlín
+[[ADDRESS_9]]: Pražská 150, 360 01 Karlovy Vary a Žižkova
+[[ADDRESS_10]]: Liberec
+[[ADDRESS_11]]: platnost 08/30, CVC
+
+BANK
+[[BANK_1]]: 55595-2417260982/0600
+[[BANK_2]]: 362331-4491323270/0100
+[[BANK_3]]: 8100589978/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 060611/8665
+[[BIRTH_ID_2]]: 9657164349
+[[BIRTH_ID_3]]: 100803/0366
+[[BIRTH_ID_4]]: 7552100514
+[[BIRTH_ID_5]]: 075328/5358
+[[BIRTH_ID_6]]: 680204/4877
+
+DATE
+[[DATE_1]]: 12. 9. 1999
+[[DATE_2]]: 9. 9. 1961
+[[DATE_3]]: 28. 7. 1991
+[[DATE_4]]: 21. 11. 1968
+[[DATE_5]]: 11. 11. 2001
+[[DATE_6]]: 23. 7. 1984
+[[DATE_7]]: 20. 08. 2026
+
+DIC
+[[DIC_1]]: CZ33445566
+
+EMAIL
+[[EMAIL_1]]: dobroslav.turek@firma.cz
+[[EMAIL_2]]: eliska.krizova@post.cz
+[[EMAIL_3]]: pavel.havlicka@email.cz
+[[EMAIL_4]]: darja.turkova@firma.cz
+[[EMAIL_5]]: alzbeta.reznickova@post.cz
+[[EMAIL_6]]: max.hrubes@post.cz
+
+IBAN
+[[IBAN_1]]: CZ74 0800 0000 3151 0540 0955
+[[IBAN_2]]: CZ56 0800 0000 3340 9087 6059
+
+ICO
+[[ICO_1]]: 33445566
+
+ID_CARD
+[[ID_CARD_1]]: GU 763831
+[[ID_CARD_2]]: XS 360614
+[[ID_CARD_3]]: 915752601
+[[ID_CARD_4]]: 863705543
+
+IP
+[[IP_1]]: 79.5.71.67
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP53065
+[[LICENSE_PLATE_2]]: CZ11454
+
+MAC
+[[MAC_1]]: 50:74:D7:3C:3B:10
+
+PASSWORD
+[[PASSWORD_1]]: Eli94!7164
+
+PHONE
+[[PHONE_1]]: 615 316 825
+[[PHONE_2]]: +420773561873
+[[PHONE_3]]: +420659494995
+[[PHONE_4]]: +420691204962
+[[PHONE_5]]: 619 161 703
+[[PHONE_6]]: +420760434126
+

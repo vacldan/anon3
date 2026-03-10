@@ -1,0 +1,83 @@
+OSOBY
+-----
+[[PERSON_1]]: Matěj Novák
+  - Matěja Nováka
+  - Matěje Nováke
+  - Matějem Novákem
+  - Matějovi Novákovi
+[[PERSON_2]]: Gabriela Hrubešová
+  - Gabrielo Hrubešová
+  - Gabrielou Hrubešovou
+  - Gabriely Hrubešové
+  - Gabrielě Hrubešové
+[[PERSON_3]]: Gabriela Vlachová
+  - Gabrielou Vlachovou
+  - Gabrielě Vlachové
+[[PERSON_4]]: Tereza Černá
+  - Terezo Černá
+  - Terezou Černou
+  - Terezy Černé
+  - Terezě Černé
+
+ADDRESS
+[[ADDRESS_1]]: Nemocniční 1, 400 01 Ústí nad Labem
+[[ADDRESS_2]]: U Parku 124/21, 779 00 Olomouc
+[[ADDRESS_3]]: Technologická 31/2, 160 00 Praha 6
+[[ADDRESS_4]]: případně písemně na adresu Technologická 31/2, 160 00 Praha 6
+[[ADDRESS_5]]: písemné doručení na adresu Technologická 31/2, 160 00 Praha 6
+[[ADDRESS_6]]: ro účely doručování se používá adresa Technologická 31/2, 160 00 Praha 6
+[[ADDRESS_7]]: pro Gabrielě Hrubešové a U Parku 124/21, 779 00 Olomouc pro Matějovi Novákovi
+
+BANK
+[[BANK_1]]: 323367406/0100
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 010517/6345
+[[BIRTH_ID_2]]: 080610/1908
+[[BIRTH_ID_3]]: 780220/6359
+[[BIRTH_ID_4]]: 621126/8787
+
+CARD
+[[CARD_1]]: 4394 3621 6653 3516
+
+DATE
+[[DATE_1]]: 09. 04. 2000
+[[DATE_2]]: 19. 02. 1964
+[[DATE_3]]: 22. 10. 1986
+[[DATE_4]]: 02. 06. 1987
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: podatelna@knjih.cz
+[[EMAIL_2]]: matej.novak@example.com
+[[EMAIL_3]]: gabriela.hrubesova@example.com
+[[EMAIL_4]]: tereza.cerna@example.com
+[[EMAIL_5]]: gabriela.vlachova@example.com
+
+IBAN
+[[IBAN_1]]: CZ52 0800 0000 3705 7923 2380
+
+ICO
+[[ICO_1]]: 44550011
+
+ID_CARD
+[[ID_CARD_1]]: 540624759
+
+IP
+[[IP_1]]: 183.142.23.90
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP18990
+[[LICENSE_PLATE_2]]: 3AA 3171
+[[LICENSE_PLATE_3]]: 0GA8381
+
+MAC
+[[MAC_1]]: F6:FC:E3:16:4D:8A
+
+PHONE
+[[PHONE_1]]: +420 477 111 222
+[[PHONE_2]]: +420 691 104 109
+[[PHONE_3]]: +420 774 641 677
+[[PHONE_4]]: +420 763 904 403
+[[PHONE_5]]: +420 644 485 307
+

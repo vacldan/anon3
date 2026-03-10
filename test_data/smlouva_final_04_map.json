@@ -1,0 +1,241 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-03-09T15:50:45.670059",
+  "source_file": "smlouva_final_04.docx",
+  "entities": [
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Theodor Brož",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Theodorovi Brožovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Theodorem Brožem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Patrik Müller",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Patrikem Müllerem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Patrika Müllera",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Revoluční 15, 110 00 Praha 1",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Palackého 183/43, 612 00 Brno - Královo Pole",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "V Praze",
+      "occurrences": 1
+    },
+    {
+      "type": "DIC",
+      "label": "[[DIC_1]]",
+      "original": "CZ15926837",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_1]]",
+      "original": "15926837",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_2]]",
+      "original": "90265631",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_3]]",
+      "original": "23523462",
+      "occurrences": 1
+    },
+    {
+      "type": "ICO",
+      "label": "[[ICO_4]]",
+      "original": "46572826",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_1]]",
+      "original": "+420 639 939 790",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_2]]",
+      "original": "+420 705 925 489",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_1]]",
+      "original": "theodor.broz@cybershield.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_2]]",
+      "original": "patrik.muller@pentester.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "LINKEDIN",
+      "label": "[[LINKEDIN_1]]",
+      "original": "https://www.linkedin.com/in/theodor-broz-791",
+      "occurrences": 1
+    },
+    {
+      "type": "LINKEDIN",
+      "label": "[[LINKEDIN_2]]",
+      "original": "https://www.linkedin.com/in/patrik-muller-485",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_1]]",
+      "original": "351932926/0600",
+      "occurrences": 1
+    },
+    {
+      "type": "BANK",
+      "label": "[[BANK_2]]",
+      "original": "947991563/6210",
+      "occurrences": 1
+    },
+    {
+      "type": "IBAN",
+      "label": "[[IBAN_1]]",
+      "original": "CZ45 0100 0000 5760 3736 5043",
+      "occurrences": 1
+    },
+    {
+      "type": "FACEBOOK",
+      "label": "[[FACEBOOK_1]]",
+      "original": "https://www.facebook.com/patrik.muller.67",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_1]]",
+      "original": "34.47.16.126",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_2]]",
+      "original": "98.144.68.7",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_3]]",
+      "original": "77.230.61.128",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_4]]",
+      "original": "215.33.68.92",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_5]]",
+      "original": "147.117.41.205",
+      "occurrences": 1
+    },
+    {
+      "type": "MAC",
+      "label": "[[MAC_1]]",
+      "original": "1E:C9:15:9E:4B:B6",
+      "occurrences": 1
+    },
+    {
+      "type": "MAC",
+      "label": "[[MAC_2]]",
+      "original": "3E:64:4E:25:96:C9",
+      "occurrences": 1
+    },
+    {
+      "type": "MAC",
+      "label": "[[MAC_3]]",
+      "original": "36:4D:FF:DC:8B:4D",
+      "occurrences": 1
+    },
+    {
+      "type": "PASSWORD",
+      "label": "[[PASSWORD_1]]",
+      "original": "T3stAdm!n2026",
+      "occurrences": 1
+    },
+    {
+      "type": "PASSWORD",
+      "label": "[[PASSWORD_2]]",
+      "original": "Us3r@Pass99",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_1]]",
+      "original": "test_admin",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_2]]",
+      "original": "username",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_1]]",
+      "original": "6. 5. 2026",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_2]]",
+      "original": "27. 3. 2026",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_3]]",
+      "original": "19. 9. 2026",
+      "occurrences": 1
+    }
+  ]
+}

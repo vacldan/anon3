@@ -1,12 +1,24 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:30.114762",
+  "generated_at": "2026-03-09T15:51:00.790563",
   "source_file": "smlouva_gdpr_test_13.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Renata Holíková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Renatou Holíkovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Renaty Holíkové",
       "occurrences": 1
     },
     {
@@ -23,20 +35,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Renaty Holíkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Renatou Holíkovou",
+      "label": "[[PERSON_2]]",
+      "original": "Tomáš Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Tomáš Dvořák",
+      "original": "Tomáši Dvořáke",
       "occurrences": 1
     },
     {
@@ -59,12 +65,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Tomáši Dvořáke",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Václav Roubal",
       "occurrences": 1
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Václava Roubala",
+      "original": "Václavovi Roubalovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Václavovi Roubalovi",
+      "original": "Václava Roubala",
       "occurrences": 1
     },
     {

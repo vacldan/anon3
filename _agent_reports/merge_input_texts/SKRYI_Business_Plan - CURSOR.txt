@@ -1,0 +1,697 @@
+SKRYI Document Suite
+Business Plan & Startup Report
+Offline GDPR Anonymization Platform
+for Inflective Languages
+Datum: 09. 03. 2026
+Verze: 1.0
+Klasifikace: CONFIDENTIAL
+Připravil: Nixminds s.r.o.
+Kontakt: info@nixminds.com
+© 2026 Nixminds s.r.o.  —  Strana 1
+
+
+SKRYI Document Suite — Business Plan & Startup Report  |  CONFIDENTIAL
+Obsah
+1. Executive Summary
+2. Problém a tržní příležitost
+3. Produkt — SKRYI Document Suite
+4. Technologické konkurenční výhody
+5. Cílové trhy a segmenty
+6. Konkurenční analýza
+7. Cenová strategie a licenční model
+8. Revenue model a finanční projekce
+9. Go-to-Market strategie
+10. SWOT analýza
+11. Technická připravenost a validace
+12. Tým a organizace
+13. Roadmapa
+14. Závěr a doporučení
+© 2026 Nixminds s.r.o.  —  Strana 2
+
+
+SKRYI Document Suite — Business Plan & Startup Report  |  CONFIDENTIAL
+1. Executive Summary
+SKRYI  Document  Suite  je  desktopová  aplikace  pro  plně  offline  anonymizaci  osobních  údajů  v
+dokumentech  (DOCX,  PDF,  obrázky).  Produkt  cílí  na  organizace  v  České  republice,  na  Slovensku  a
+potenciálně  dalších  zemích  s  inflektivními  jazyky  (polština,  chorvatština,  slovinština),  které  potřebují
+splnit požadavky GDPR bez odesílání dat na cloud.
+Na trhu neexistuje srovnatelný produkt, který by kombinoval: (1) morfologickou inteligenci pro skloňování
+jmen ve všech 7 pádech, (2) plně offline provoz, (3) 34 kategorií PII, (4) reverzibilní anonymizaci s klíčem,
+a (5) automatický OCR vstup.
+Produkt  je  ve  stavu  Production  Ready  (v3.1.1).  Byl  ověřen  na  korpusu  200+  syntetických  smluv
+pokrývajících  6  sektorů  (právo,  zdravotnictví,  veřejná  správa,  HR,  školství,  finance).  Manuální  audit
+potvrdil nulový počet skutečných úniků osobních údajů.
+Klíčová čísla
+Metrika
+Hodnota
+Kategorie PII
+34 typů (jména, adresy, RČ, IBAN, SPZ, VIN, SSH klíče…)
+Knihovna jmen
+224 000 českých/mezinárodních jmen
+Přesnost anonymizace
+97–99 % (ověřeno na 200+ smlouvách)
+Doba zpracování
+< 2 s / dokument (typická smlouva 3–5 stran)
+Offline režim
+100 % — žádná data neopouštějí zařízení
+OCR podpora
+PDF, PNG, JPG, TIFF, BMP, WEBP
+Platforma
+Windows 10/11 (desktop)
+Technologie
+Electron + Python (Nuitka compiled)
+© 2026 Nixminds s.r.o.  —  Strana 3
+
+
+SKRYI Document Suite — Business Plan & Startup Report  |  CONFIDENTIAL
+2. Problém a tržní příležitost
+2.1 Regulatorní tlak
+Od května 2018 platí v EU Obecné nařízení o ochraně osobních údajů (GDPR). Organizace jsou povinny
+chránit osobní údaje a za porušení jim hrozí pokuty až do výše 20 mil. EUR nebo 4 % ročního obratu.
+Český  ÚOOÚ  aktivně  ukládá  pokuty  —  jen  v  roce  2025  bylo  v  ČR  uděleno  přes  30  pokut  za  porušení
+GDPR.
+2.2 Inflektivní jazyky = speciální problém
+Existující  anonymizační  nástroje  (Presidio  od  Microsoftu,  AWS  Comprehend,  Google  DLP)  jsou  primárně
+navrženy  pro  angličtinu.  V  češtině  a  slovenštině  se  jména  skloňují  —  "Jan  Novák"  má  14+  tvarů  (Jana
+Nováka, Janu Novákovi, Janem Novákem…). Stávající řešení tyto tvary nerozpoznávají → data leak.
+Problém  se  netýká  jen  češtiny:  polština,  slovenština,  chorvatština,  slovinština,  maďarština  —  to  jsou
+stovky milionů uživatelů v EU, kteří nemají adekvátní nástroj.
+2.3 Offline požadavek
+Mnoho  organizací  (advokátní  kanceláře,  soudy,  nemocnice,  ministerstva)  nemůže  posílat  citlivé
+dokumenty do cloudu. Potřebují nástroj, který funguje 100% offline. SKRYI je jediný produkt na trhu, který
+toto splňuje s plnou morfologickou podporou.
+2.4 Velikost trhu (TAM/SAM/SOM)
+Segment
+TAM
+SAM
+SOM (rok 1–2)
+ČR — advokátní kanceláře
+~3 500 kanceláří
+~1 000 (50+ zaměstnanců)
+50–100
+ČR — notáři
+~450 notářů
+~450
+20–40
+ČR — nemocnice a kliniky
+~190 nemocnic
+~190
+10–20
+ČR — ministerstva a úřady
+~6 000 úřadů
+~500 (krajské+)
+20–30
+ČR — HR / personální agentury
+~800 agentur
+~400
+20–30
+SK — ekvivalentní
+~60 % objemu ČR
+~500
+15–25
+PL, HR, SI — budoucí
+10× ČR
+—
+—
+Konzervativní odhad SOM v prvních 2 letech: 100–250 placených licencí v ČR/SK.
+© 2026 Nixminds s.r.o.  —  Strana 4
+
+
+SKRYI Document Suite — Business Plan & Startup Report  |  CONFIDENTIAL
+3. Produkt — SKRYI Document Suite
+3.1 Funkce produktu
+Funkce
+Popis
+Anonymizace DOCX
+Automatická detekce a nahrazení 34 kategorií PII tagy [[OSOBA_1]] atd.
+Deanonymizace
+Zpětná rekonstrukce původního dokumentu pomocí klíče (_map.json)
+OCR konverze
+PDF / obrázky (PNG, JPG, TIFF, BMP, WEBP) → DOCX přes Tesseract
+Hromadné zpracování
+Automatický watcher — složkový režim pro dávkové zpracování
+PDF certifikát
+Automatický audit trail: SHA-256 otisk, statistiky, GDPR doložka
+Morfologická inteligence
+7 pádů × 2 čísla × přivlastňovací tvary pro česká jména
+Standalone křestní jména
+Post-pass zachytí i samostatně stojící křestní jména (Barbora, Jakubovi)
+Sektorový blacklist
+500+ chráněných slov v 6 oborech + 267 institucí (data-driven)
+Víceslovná cizí jména
+Bezpečné zpracování jmen typu 'Mai Linh Nguyenová'
+Hardwarová licence
+HW-ID binding, AppData persistence, offline validace
+3.2 Technologický stack
+Vrstva
+Technologie
+Proč
+GUI
+Electron + HTML/CSS/JS
+Moderní UI, rychlý vývoj, Windows instalátor
+Backend
+Python 3.11
+Bohatý NLP ekosystém, python-docx, fpdf2
+Kompilace
+Nuitka
+Ochrana kódu, nativní rychlost, bez Python runtime
+Balení
+electron-builder + NSIS
+Profesionální Windows installer (~100 MB)
+OCR
+Tesseract + Poppler
+Open-source, lokální, čeština
+© 2026 Nixminds s.r.o.  —  Strana 5
+
+
+SKRYI Document Suite — Business Plan & Startup Report  |  CONFIDENTIAL
+4. Technologické konkurenční výhody
+SKRYI má několik patentovatelných inovací, které ho odlišují od všech existujících řešení:
+Bidirekcionalní morfologická inference
+Z libovolného pádu odvodí nominativ a naopak. Žádný konkurent toto neumí pro češtinu.
+Prioritizovaný kaskádový systém pádových pravidel
+Eliminuje ambiguitu ("Karlu" → "Karel", ne "Karl") pomocí přesně definovaného pořadí pravidel.
+4-fázová deduplikace osob
+Slučuje duplicitní osoby: totožná jména → podmnožiny variant → muž/žena → překlepy/OCR chyby.
+Standalone first-name post-pass
+Zachytí křestní jména ve všech pádech, i když se vyskytují bez příjmení ("Barbora uhradí Jakubovi...").
+Orphan surname absorption
+Bezpečně zpracuje víceslovná cizí jména ("Mai Linh Nguyenová") včetně příjmení.
+Inteligentní absorpce městských čtvrtí
+Řeší české adresy s čtvrtěmi za pomlčkou ("Praha 3 - Vinohrady").
+Data-driven institucionální blacklist
+267 institucí (banky, univerzity, nemocnice) + 500+ rolí → minimální false positives.
+100% offline architektura
+Žádná data neopouštějí zařízení. Klíčový požadavek pro advokáty, soudy, nemocnice.
+34 kategorií PII
+Nejširší pokrytí na trhu: od jmen a RČ přes IBAN, SSH klíče, RFID, až po sociální sítě.
+© 2026 Nixminds s.r.o.  —  Strana 6
+
+
+SKRYI Document Suite — Business Plan & Startup Report  |  CONFIDENTIAL
+5. Cílové trhy a segmenty
+5.1 Primární trh (rok 1–2): Česká republika
+Advokátní kanceláře a notáři
+Denně  pracují  s  citlivými  smlouvami,  rozsudky,  závětmi.  Regulátor  (ČAK)  tlačí  na  GDPR  compliance.
+Vysoká ochota platit za profesionální nástroje. Typicky 1–5 licencí na kancelář.
+Nemocnice a zdravotnická zařízení
+Lékařské  zprávy,  propouštěcí  zprávy,  znalecké  posudky.  GDPR  +  zákon  o  zdravotních  službách.  Často
+interní IT oddělení → jednodušší nasazení. Typicky 5–20 licencí.
+Veřejná správa (ministerstva, krajské úřady)
+Povinnost anonymizovat rozhodnutí, spisy, datové schránky. Veřejné zakázky. Delší sales cycle, ale vyšší
+LTV. Enterprise licence.
+Finanční instituce
+Banky, pojišťovny, leasingové společnosti. Smlouvy, interní audity, reporting. Přísná compliance oddělení.
+Typicky enterprise licence.
+5.2 Sekundární trh (rok 2–3): Slovensko
+Slovenština  je  nejbližší  jazyk  k  češtině.  Engine  vyžaduje  minimální  úpravy  (rozšíření  knihovny  jmen,
+drobné morfologické adaptace). Trh je ~60 % velikosti českého.
+5.3 Terciární trh (rok 3–5): Polsko, Chorvatsko, Slovinsko
+Všechny  jsou  inflektivní  jazyky  se  stejným  problémem.  Polsko  je  4×  větší  trh  než  ČR.  Vyžaduje  novou
+knihovnu jmen a morfologická pravidla, ale architektura je připravena.
+© 2026 Nixminds s.r.o.  —  Strana 7
+
+
+SKRYI Document Suite — Business Plan & Startup Report  |  CONFIDENTIAL
+6. Konkurenční analýza
+Řešení
+Offline
+CZ morfologie
+PII typy
+Cena/rok
+Nevýhoda
+SKRYI
+✓
+✓ (7 pádů)
+34
+viz kap. 7
+Pouze Windows
+MS Presidio
+✗ (cloud)
+✗
+~15
+Zdarma (OSS)
+Bez CZ podpory, cloud
+AWS Comprehend
+✗ (cloud)
+✗
+~12
+Pay-per-use
+Cloud, anglicky
+Google DLP
+✗ (cloud)
+✗
+~50
+Pay-per-use
+Cloud, anglicky
+Manuální práce
+✓
+✓ (lidsky)
+∞
+Mzdové nákl.
+Pomalé, chybové, drahé
+Regex skripty
+✓
+✗
+5–10
+Interní vývoj
+Bez morfologie, udržba
+SKRYI je jediný produkt, který kombinuje offline provoz, českou morfologii a široké pokrytí PII. Nejbližší
+alternativou je manuální práce, která stojí desítky hodin měsíčně u větších organizací.
+6.1 Cenové srovnání s manuální prací
+Průměrná  advokátní  kancelář  anonymizuje  ~50  dokumentů/měsíc.  Manuální  anonymizace  trvá  20–40
+minut na dokument (identifikace + nahrazení + kontrola).
+Metrika
+Manuální práce
+SKRYI
+Čas na dokument
+30 min (průměr)
+< 5 s (automaticky)
+Měsíční čas (50 dok.)
+25 hodin
+< 5 minut
+Roční mzdový náklad
+~150 000 Kč (asistent)
+Licence SKRYI
+Chybovost
+5–15 % (lidský faktor)
+< 1–3 %
+Audit trail
+Žádný
+PDF certifikát (SHA-256)
+© 2026 Nixminds s.r.o.  —  Strana 8
+
+
+SKRYI Document Suite — Business Plan & Startup Report  |  CONFIDENTIAL
+7. Cenová strategie a licenční model
+7.1 Licenční model
+Hardware-bound licence s roční obnovou. Licence je vázaná na konkrétní počítač (HW ID). Přenos na jiný
+počítač je možný kontaktováním podpory.
+7.2 Doporučené ceny
+Typ licence
+Cena / rok (bez DPH)
+Cílový segment
+Obsah
+Trial
+Zdarma (30 dní)
+Všichni
+Plná funkcionalita, 30 dokumentů limit
+Standard
+14 900 Kč
+OSVČ, malé kanceláře (1–3 osoby)
+1 PC, email podpora, aktualizace
+Professional
+34 900 Kč
+Střední firmy (4–20 osob)
+Až 5 PC, prioritní podpora, OCR, watcher
+Enterprise
+Na míru (od 89 000 Kč)
+Korporace, úřady, nemocnice
+Neomezeno PC, SLA, onboarding, customizace
+7.3 Zdůvodnění ceny
+Licence Standard (14 900 Kč/rok) je ~10 % ročního mzdového nákladu na manuální anonymizaci. ROI je
+dosaženo  již  při  zpracování  10–15  dokumentů  za  měsíc.  Průměrná  advokátní  kancelář  zpracuje  30–80
+dokumentů měsíčně → ROI < 1 měsíc.
+Enterprise cena je nastavena tak, aby byla konkurenceschopná vůči internímu vývoji (~500 000–1 000
+000 Kč za vlastní řešení + údržba) a zároveň odrážela hodnotu offline nasazení a compliance certifikátů.
+7.4 Slevy a incentives
+•
+Early adopter sleva: 30 % pro prvních 50 zákazníků
+•
+Roční platba předem: 10 % sleva
+•
+Multi-licence: 20 % od 3. licence výše
+•
+Referral program: 15 % z první roční platby doporučeného zákazníka
+•
+Akademická licence: 50 % sleva pro univerzity a výzkumné ústavy
+© 2026 Nixminds s.r.o.  —  Strana 9
+
+
+SKRYI Document Suite — Business Plan & Startup Report  |  CONFIDENTIAL
+8. Revenue model a finanční projekce
+8.1 Revenue streams
+•
+Roční licence (primární): 80–85 % tržeb
+•
+Onboarding a školení (enterprise): 10 % tržeb
+•
+Customizace a integrace: 5–10 % tržeb
+8.2 Projekce — konzervativní scénář
+Rok
+Standard
+Professional
+Enterprise
+Celkem licencí
+ARR (Kč)
+ARR (EUR)
+Rok 1
+40
+15
+3
+58
+1 063 500
+~42 500
+Rok 2
+90
+35
+8
+133
+2 834 000
+~113 400
+Rok 3
+160
+60
+15
+235
+5 329 000
+~213 200
+Rok 4 (+SK)
+250
+90
+25
+365
+8 546 000
+~341 800
+Rok 5 (+PL)
+400
+140
+40
+580
+14 140 000
+~565 600
+Pozn.:  ARR  =  Annual  Recurring  Revenue.  Výpočet:  Standard  ×  14  900  +  Professional  ×  34  900  +
+Enterprise × 89 000. Nezahrnuje onboarding, customizace a referral příjmy.
+8.3 Náklady (rok 1)
+Položka
+Měsíčně (Kč)
+Ročně (Kč)
+Vývojář/zakladatel (1 FTE)
+0 (sweat equity)
+0
+Cloud (web, email, CI/CD)
+2 000
+24 000
+Marketing (online, PPC, PR)
+15 000
+180 000
+Právní služby (EULA, GDPR audit)
+—
+60 000
+Účetnictví
+3 000
+36 000
+Konference a networking
+—
+40 000
+Celkem
+~20 000
+~340 000
+8.4 Break-even
+Při ročních nákladech ~340 000 Kč a průměrné ceně licence ~18 000 Kč je break-even dosažen při 19
+prodaných licencích za rok — tj. méně než 2 licence měsíčně.
+© 2026 Nixminds s.r.o.  —  Strana 10
+
+
+SKRYI Document Suite — Business Plan & Startup Report  |  CONFIDENTIAL
+9. Go-to-Market strategie
+9.1 Fáze 1: Pilotní zákazníci (měsíce 1–3)
+•
+Oslovit 10–15 advokátních kanceláří s nabídkou bezplatného trial (30 dní)
+•
+Osobní demo + onboarding zdarma pro prvních 5 zákazníků
+•
+Sbírat testimonials a case studies
+•
+Feedback loop → rychlé iterace produktu
+9.2 Fáze 2: Organický růst (měsíce 3–12)
+•
+Landing page + SEO (klíčová slova: "anonymizace smluv", "GDPR anonymizátor")
+•
+LinkedIn inbound marketing → články o GDPR compliance
+•
+Partnerství s ČAK (Česká advokátní komora) — doporučený nástroj
+•
+Webináře a live demo pro cílové segmenty
+•
+Referral program aktivní
+9.3 Fáze 3: Škálování (rok 2+)
+•
+Account manager pro enterprise segment
+•
+Slovenská lokalizace + slovenská knihovna jmen
+•
+Partnerství s IT distributory (Alza Business, AutoCont)
+•
+Vstup na veřejné zakázky (NIPEZ, E-ZAK)
+•
+Konference: IT právo, eHealth, GDPR summity
+9.4 Distribuční kanály
+Kanál
+Priorita
+Náklady
+Očekávaný podíl
+Přímý prodej (web + demo)
+Vysoká
+Nízké
+50 %
+Referral program
+Vysoká
+Variabilní (15 %)
+20 %
+IT distributoři
+Střední
+Marže 20–30 %
+15 %
+Veřejné zakázky
+Střední
+Admin overhead
+10 %
+Konference / events
+Nízká
+40 000 Kč/rok
+5 %
+© 2026 Nixminds s.r.o.  —  Strana 11
+
+
+SKRYI Document Suite — Business Plan & Startup Report  |  CONFIDENTIAL
+10. SWOT analýza
+Silné stránky (Strengths)
+•
+Unikátní morfologická inteligence pro inflektivní jazyky — žádný konkurent
+•
+100% offline — splňuje nejpřísnější bezpečnostní požadavky
+•
+34 kategorií PII — nejširší pokrytí na trhu
+•
+Produkt je hotový a validovaný (200+ smluv, 0 reálných leaků)
+•
+Nízké provozní náklady (desktop app, žádná infrastruktura)
+•
+Patentovatelné inovace (7 klíčových technologických inovací)
+Slabé stránky (Weaknesses)
+•
+Pouze Windows — chybí macOS/Linux verze
+•
+Jednočlenný tým (zakladatel = vývojář = prodejce)
+•
+Žádný brand awareness — nový produkt na trhu
+•
+Rule-based approach — potenciální omezení pro exotické jazyky
+•
+Závislost na python-docx — omezená podpora starších .doc formátů
+Příležitosti (Opportunities)
+•
+GDPR enforcement se zpřísňuje — rostoucí poptávka po compliance nástrojích
+•
+Expanze na slovenský a polský trh (10× větší TAM)
+•
+AI Act (2026) — další regulace zvyšující poptávku po anonymizaci dat
+•
+Partnerství s právními a zdravotnickými asociacemi
+•
+SaaS/API verze pro enterprise zákazníky (budoucí pivot)
+•
+Integrace s DMS systémy (SharePoint, Google Workspace)
+Hrozby (Threats)
+•
+Velcí hráči (Microsoft, Google) mohou přidat CZ podporu do existujících cloudových nástrojů
+•
+Open-source alternativy (Presidio + CZ community model)
+•
+Regulatorní změny — zmírnění GDPR by snížilo poptávku
+•
+Ekonomická recese — organizace škrtají IT rozpočty
+•
+Piráctví — nutnost robustní licence ochrany (HW binding implementováno)
+© 2026 Nixminds s.r.o.  —  Strana 12
+
+
+SKRYI Document Suite — Business Plan & Startup Report  |  CONFIDENTIAL
+11. Technická připravenost a validace
+11.1 Stav produktu
+Oblast
+Stav
+Detail
+Anonymizační engine
+✓ Production Ready
+v3.1.1, 6 500+ řádků, 34 PII kategorií
+GUI (Electron)
+✓ Production Ready
+Single-file HTML, 4 taby, dark theme
+OCR konverze
+✓ Production Ready
+PDF + 5 obrázkových formátů
+Deanonymizace
+✓ Production Ready
+Plně reverzibilní
+Hromadné zpracování
+✓ Production Ready
+3 watchery (anon/deanon/PDF)
+Licence systém
+✓ Production Ready
+HW-bound, AppData persistence
+PDF certifikát
+✓ Production Ready
+SHA-256, GDPR doložka
+Windows installer
+✓ Production Ready
+NSIS, ~100 MB
+Dokumentace
+✓ Kompletní
+Technická + veřejná + EULA
+11.2 Validace kvality
+Test
+Rozsah
+Výsledek
+Standardní validátor
+200+ smluv
+100 % PASS
+Přísný validátor (v2)
+200+ smluv
+100 % PASS
+Brute-force cross-check
+200+ smluv
+0 reálných leaků
+Manuální audit
+201 smluv (1 po 1)
+0 reálných leaků, 7 false positives
+Stress-test (cizí jména)
+15 speciálních smluv
+100 % PASS
+Regresní test po opravě
+201 smluv (re-anonymizace)
+Beze změn
+11.3 Testovací korpus
+Testovací  korpus  obsahuje  200+  syntetických  smluv  pokrývajících:  pracovní  smlouvy,  kupní  smlouvy,
+nájemní  smlouvy,  trestní  spisy,  lékařské  zprávy,  rodinněprávní  dokumenty,  finanční  smlouvy,  exekuční
+příkazy,  darovací  smlouvy  a  další.  Smlouvy  obsahují  české  i  zahraniční  jména  (vietnamská,  německá,
+polská, anglická), SSH klíče, RFID identifikátory, LinkedIn profily, datové schránky a další PII.
+© 2026 Nixminds s.r.o.  —  Strana 13
+
+
+SKRYI Document Suite — Business Plan & Startup Report  |  CONFIDENTIAL
+12. Tým a organizace
+12.1 Současný tým
+Nixminds  s.r.o.  je  technologická  společnost  zaměřená  na  NLP  a  GDPR  compliance  nástroje.  SKRYI
+Document Suite byl vyvinut jako hlavní produkt společnosti.
+12.2 Plán rozšíření týmu
+Role
+Kdy
+Důvod
+Sales / Account Manager
+Měsíc 6–9
+Přímý prodej a enterprise vztahy
+Customer Support
+Měsíc 9–12
+Podpora zákazníků, onboarding
+Backend Developer
+Rok 2
+Polská/slovenská lokalizace engine
+Marketing Specialist
+Rok 2
+Content marketing, SEO, PPC
+13. Produktová roadmapa
+Q1 2026
+•
+Produkt v3.1.1 dokončen
+•
+Testovací korpus 200+ smluv
+•
+Business plan připraven
+Q2 2026
+•
+Landing page + trial verze online
+•
+Pilotní zákazníci (5-10)
+•
+Sbírání testimonials
+Q3 2026
+•
+První placené licence
+•
+Referral program
+•
+ČAK partnerství
+Q4 2026
+•
+40-60 licencí celkem
+•
+Slovenská lokalizace zahájena
+•
+Enterprise onboarding
+© 2026 Nixminds s.r.o.  —  Strana 14
+
+
+SKRYI Document Suite — Business Plan & Startup Report  |  CONFIDENTIAL
+2027 H1
+•
+SK verze v produkci
+•
+130+ licencí
+•
+Účast na konferencích
+2027 H2
+•
+Polská verze - R&D
+•
+API/SaaS prototyp
+•
+200+ licencí
+2028
+•
+PL verze v produkci
+•
+macOS verze
+•
+350+ licencí
+•
+Série A / break-even
+© 2026 Nixminds s.r.o.  —  Strana 15
+
+
+SKRYI Document Suite — Business Plan & Startup Report  |  CONFIDENTIAL
+14. Závěr a doporučení
+SKRYI Document Suite je technologicky vyspělý, plně validovaný produkt řešící reálný a rostoucí problém
+na trhu. Kombinace morfologické inteligence, offline provozu a širokého pokrytí PII kategorií vytváří silnou
+konkurenční výhodu bez přímého konkurenta.
+Klíčová doporučení
+•
+Spustit  trial  verzi  co  nejdříve  —  produkt  je  hotový,  trh  čeká.  Každý  měsíc  bez  prodeje  je  ztracená
+příležitost.
+•
+Zaměřit se na advokátní kanceláře jako první segment — nejvyšší ochota platit, nejsilnější regulatorní
+tlak, dobře definovaný use case.
+•
+Investovat  do  partnerství  s  ČAK  (Česká  advokátní  komora)  —  doporučení  od  ČAK  =  okamžitá
+důvěryhodnost u tisíců kanceláří.
+•
+Chránit IP — zvážit patentovou přihlášku na klíčové morfologické inovace (bidirekcionalní inference,
+kaskádový systém pravidel).
+•
+Plánovat  slovenskou  a  polskou  lokalizaci  jako  hlavní  growth  lever  —  polský  trh  je  4×  větší  a  má
+identický problém.
+Nixminds s.r.o. | info@nixminds.com
+Dokument vygenerován: 09. 03. 2026 16:13
+CONFIDENTIAL — Pouze pro interní použití
+© 2026 Nixminds s.r.o.  —  Strana 16

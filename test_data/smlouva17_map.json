@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:48:20.687864",
+  "generated_at": "2026-03-09T15:50:00.006237",
   "source_file": "smlouva17.docx",
   "entities": [
     {
@@ -30,6 +30,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
+      "original": "Matěj Procházka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Matěj Procházek",
       "occurrences": 1
     },
@@ -42,7 +48,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
+      "original": "Karel Procházka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_7]]",
       "original": "Karel Procházek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_8]]",
+      "original": "Martin Procházka",
       "occurrences": 1
     },
     {
@@ -84,6 +102,18 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_14]]",
+      "original": "Octavi Combi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_14]]",
+      "original": "Octavia Combi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_15]]",
       "original": "Eva Nováková",
       "occurrences": 1
     },
@@ -228,67 +258,109 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Karlova 45/12, 602 00 Brno",
+      "original": "Praha",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Vinohradská 1234/89, 130 00 Praha 3",
+      "original": "Karlova 45/12, 602 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "Masarykova 123/45, 602 00 Brno",
+      "original": "Vinohradská 1234/89, 130 00 Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "Vinohradská 1234/89, Praha 3",
+      "original": "Brno-střed",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "Na Františku 12/34, 110 00 Praha 1",
+      "original": "Masarykova 123/45, 602 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "přestal 2019, celkem kouřil 10",
+      "original": "Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Vinohradská 123, Praha 3",
+      "original": "Vinohradská 1234/89, Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_9]]",
-      "original": "Na Poříčí 23, Praha 1",
+      "original": "Na Františku 12/34, 110 00 Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_10]]",
-      "original": "Vinohradská 1234/89, byt č",
+      "original": "Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_11]]",
-      "original": "Dell Latitude 5520, SN",
+      "original": "Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_12]]",
+      "original": "v Brně",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_13]]",
+      "original": "přestal 2019, celkem kouřil 10",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_14]]",
+      "original": "Vinohradská 123, Praha 3",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_15]]",
+      "original": "Na Poříčí 23, Praha 1",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_16]]",
+      "original": "Vinohradská 1234/89, byt č",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_17]]",
+      "original": "Dell Latitude 5520, SN",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_18]]",
       "original": "Cisco 8841, MAC",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_19]]",
+      "original": "V Praze",
       "occurrences": 1
     },
     {
@@ -348,36 +420,42 @@
     {
       "type": "PHONE",
       "label": "[[PHONE_2]]",
-      "original": "+420 606 345 678",
+      "original": "987654321",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_3]]",
-      "original": "+420 603 234 567",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_4]]",
-      "original": "+420 605 456 789",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_5]]",
       "original": "+420 724 567 890",
       "occurrences": 1
     },
     {
       "type": "PHONE",
+      "label": "[[PHONE_4]]",
+      "original": "+420 606 345 678",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_5]]",
+      "original": "+420 603 234 567",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
       "label": "[[PHONE_6]]",
-      "original": "+420 606 234 567",
+      "original": "+420 605 456 789",
       "occurrences": 1
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_7]]",
+      "original": "+420 606 234 567",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_8]]",
       "original": "+420 222 456 700",
       "occurrences": 1
     },
@@ -448,12 +526,6 @@
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_7]]",
-      "original": "8508121234",
-      "occurrences": 1
-    },
-    {
       "type": "ID_CARD",
       "label": "[[ID_CARD_1]]",
       "original": "345678901",
@@ -466,15 +538,15 @@
       "occurrences": 1
     },
     {
-      "type": "DRIVER_LICENSE",
-      "label": "[[DRIVER_LICENSE_1]]",
-      "original": "987654321",
-      "occurrences": 1
-    },
-    {
       "type": "BIRTH_PLACE",
       "label": "[[BIRTH_PLACE_1]]",
       "original": "Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "INSURANCE_ID",
+      "label": "[[INSURANCE_ID_1]]",
+      "original": "8508121234",
       "occurrences": 1
     },
     {

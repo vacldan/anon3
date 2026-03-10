@@ -1,0 +1,84 @@
+OSOBY
+-----
+[[PERSON_1]]: Pavel Černý
+  - Pavla Černýa
+  - Pavlem Černýem
+  - Pavlovi Černýovi
+[[PERSON_2]]: Matěj Kříž
+  - Matěja Kříža
+  - Matěje Kříže
+  - Matějem Křížem
+  - Matějovi Křížovi
+[[PERSON_3]]: Pavle Černýe
+[[PERSON_4]]: Lucie Roubalová
+  - Lucie Roubalovou
+  - Lucie Roubalové
+[[PERSON_5]]: Matěj Černý
+  - Matěja Černýa
+  - Matějem Černýem
+  - Matějovi Černýovi
+[[PERSON_6]]: Matěj Černýe
+  - Matěje Černýe
+
+ADDRESS
+[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
+[[ADDRESS_2]]: Dlouhá 108/19, 602 00 Brno
+[[ADDRESS_3]]: Dlouhá 138/1, 602 00 Brno
+[[ADDRESS_4]]: případně písemně na adresu Dlouhá 138/1, 602 00 Brno
+[[ADDRESS_5]]: písemné doručení na adresu Dlouhá 138/1, 602 00 Brno
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Dlouhá 138/1, 602 00 Brno pro Matějovi Křížovi a
+[[ADDRESS_7]]: Dlouhá 108/19, 602 00 Brno pro Pavlovi Černýovi
+
+BANK
+[[BANK_1]]: 493419909/0600
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 070314/3873
+[[BIRTH_ID_2]]: 960718/3792
+[[BIRTH_ID_3]]: 880409/6920
+[[BIRTH_ID_4]]: 851015/3953
+
+CARD
+[[CARD_1]]: 4632 9180 3982 8221
+
+DATE
+[[DATE_1]]: 28. 10. 1966
+[[DATE_2]]: 24. 03. 2001
+[[DATE_3]]: 20. 07. 2005
+[[DATE_4]]: 01. 11. 2010
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: recepce@privatmed.cz
+[[EMAIL_2]]: pavel.cerny@example.com
+[[EMAIL_3]]: matej.kriz@example.com
+[[EMAIL_4]]: matej.cerny@example.com
+[[EMAIL_5]]: lucie.roubalova@example.com
+
+IBAN
+[[IBAN_1]]: CZ56 0600 0000 4495 5076 8104
+
+ICO
+[[ICO_1]]: 99887766
+
+ID_CARD
+[[ID_CARD_1]]: 213120073
+
+IP
+[[IP_1]]: 95.19.38.13
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EA68806
+[[LICENSE_PLATE_2]]: 3AA 7033
+[[LICENSE_PLATE_3]]: 0HA4972
+
+MAC
+[[MAC_1]]: 2A:4A:44:AB:F2:B2
+
+PHONE
+[[PHONE_1]]: +420 224 333 444
+[[PHONE_2]]: +420 763 584 318
+[[PHONE_3]]: +420 688 841 853
+[[PHONE_4]]: +420 787 755 616
+[[PHONE_5]]: +420 635 641 942
+

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:23.071926",
+  "generated_at": "2026-03-09T15:50:49.764196",
   "source_file": "smlouva_gdpr_test_04.docx",
   "entities": [
     {
@@ -54,12 +54,42 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Janu Dvořákovi",
+      "original": "Servera Zpracovatel",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_7]]",
+      "original": "Zpracovatel",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_7]]",
+      "original": "Servery Zpracovatele",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
+      "original": "Jan Dvořák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_8]]",
+      "original": "Janu Dvořákovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_9]]",
+      "original": "Karel Malý",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_9]]",
       "original": "Karla Malého",
       "occurrences": 1
     },
@@ -85,6 +115,24 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
       "original": "U Lomu 7, 602 00 Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "v Brně",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_6]]",
+      "original": "Lomu 7, 602 00",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_7]]",
+      "original": "V Praze",
       "occurrences": 1
     },
     {

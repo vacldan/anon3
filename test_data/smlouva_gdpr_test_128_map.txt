@@ -1,0 +1,83 @@
+OSOBY
+-----
+[[PERSON_1]]: Ondřej Dvořák
+  - Ondřeja Dvořáka
+  - Ondřeje Dvořáke
+  - Ondřejem Dvořákem
+  - Ondřejovi Dvořákovi
+[[PERSON_2]]: Simona Nováková
+  - Simono Nováková
+  - Simonou Novákovou
+  - Simony Novákové
+  - Simoně Novákové
+[[PERSON_3]]: Adéla Roubalová
+  - Adélou Roubalovou
+  - Adélě Roubalové
+[[PERSON_4]]: Jaroslav Hrubeš
+  - Jaroslava Hrubeša
+  - Jaroslave Hrubeše
+  - Jaroslavem Hrubešem
+  - Jaroslavovi Hrubešovi
+
+ADDRESS
+[[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_2]]: U Parku 64/19, 779 00 Olomouc
+[[ADDRESS_3]]: Na Kopci 11/6, 100 00 Praha 10
+[[ADDRESS_4]]: případně písemně na adresu Na Kopci 11/6, 100 00 Praha 10
+[[ADDRESS_5]]: písemné doručení na adresu Na Kopci 11/6, 100 00 Praha 10
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Kopci 11/6, 100 00 Praha 10
+[[ADDRESS_7]]: pro Simoně Novákové a U Parku 64/19, 779 00 Olomouc pro Ondřejovi Dvořákovi
+
+BANK
+[[BANK_1]]: 481256634/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 851016/6019
+[[BIRTH_ID_2]]: 830204/9391
+[[BIRTH_ID_3]]: 710816/7125
+[[BIRTH_ID_4]]: 890803/2555
+
+CARD
+[[CARD_1]]: 4380 5488 7196 5432
+
+DATE
+[[DATE_1]]: 01. 05. 2002
+[[DATE_2]]: 08. 12. 1963
+[[DATE_3]]: 24. 03. 1966
+[[DATE_4]]: 07. 05. 1964
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: podatelna@novybrod.cz
+[[EMAIL_2]]: ondrej.dvorak@example.com
+[[EMAIL_3]]: simona.novakova@example.com
+[[EMAIL_4]]: jaroslav.hrubes@example.com
+[[EMAIL_5]]: adela.roubalova@example.com
+
+IBAN
+[[IBAN_1]]: CZ37 0300 0000 3461 4138 7054
+
+ICO
+[[ICO_1]]: 00223344
+
+ID_CARD
+[[ID_CARD_1]]: 704939735
+
+IP
+[[IP_1]]: 192.168.11.22
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EA42507
+[[LICENSE_PLATE_2]]: 2AC 8574
+[[LICENSE_PLATE_3]]: 0FA2269
+
+MAC
+[[MAC_1]]: 15:80:AE:66:86:10
+
+PHONE
+[[PHONE_1]]: +420 495 888 111
+[[PHONE_2]]: +420 798 356 541
+[[PHONE_3]]: +420 703 393 990
+[[PHONE_4]]: +420 675 228 295
+[[PHONE_5]]: +420 690 672 605
+

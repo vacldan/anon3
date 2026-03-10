@@ -1,0 +1,117 @@
+OSOBY
+-----
+[[PERSON_1]]: Alex Černý
+  - Alexa Černého
+  - Alexe Černý
+  - Alexem Černým
+  - Alexovi Černém
+  - Alexovi Černému
+[[PERSON_2]]: Monika Poláková
+  - Moniko Poláková
+  - Monikou Polákovou
+  - Moniky Polákové
+  - Monikě Polákové
+[[PERSON_3]]: Hyundai Tucson
+[[PERSON_4]]: Laura Rendlová
+[[PERSON_5]]: Lubomír Zík
+  - Lubomír Zíka
+  - Lubomíra Zíku
+  - Lubomíra Zíky
+[[PERSON_6]]: Růžena Malíková
+  - Růženy Malíkové
+[[PERSON_7]]: Zdeněk Švestka
+  - Zdeněka Švestku
+  - Zdeněka Švestky
+[[PERSON_9]]: Laura Rendlováová
+  - Lauru Rendlováovou
+[[PERSON_10]]: Monika Polákováová
+  - Moniku Polákováovou
+[[PERSON_11]]: Růžena Malíkováová
+  - Růženu Malíkováovou
+
+ADDRESS
+[[ADDRESS_1]]: Praha 1
+[[ADDRESS_2]]: Křenová 39/14, 602 00 Brno
+[[ADDRESS_3]]: U Parku 130, 779 00 Olomouc
+[[ADDRESS_4]]: Dlouhá 123/2, 602 00 Brno
+[[ADDRESS_5]]: Dvořákova 242, 370 01 České Budějovice
+[[ADDRESS_6]]: Křenová 226/23, 602 00 Brno
+[[ADDRESS_7]]: Jabloňová 187/34, 400 01 Ústí nad Labem
+[[ADDRESS_8]]: Křenová 39/14, 602 00 Brno a U Parku
+[[ADDRESS_9]]: Olomouc
+[[ADDRESS_10]]: platnost 12/28, CVC
+[[ADDRESS_11]]: V Liberci
+
+BANK
+[[BANK_1]]: 2374871002/0100
+[[BANK_2]]: 3958343181/0600
+[[BANK_3]]: 1846576350/0600
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 9011169059
+[[BIRTH_ID_2]]: 075315/9673
+[[BIRTH_ID_3]]: 0660139865
+[[BIRTH_ID_4]]: 680901/7458
+[[BIRTH_ID_5]]: 005427/1555
+[[BIRTH_ID_6]]: 060213/4771
+
+DATE
+[[DATE_1]]: 27. 3. 1999
+[[DATE_2]]: 8. 8. 1983
+[[DATE_3]]: 2. 12. 1977
+[[DATE_4]]: 8. 10. 2002
+[[DATE_5]]: 21. 8. 1967
+[[DATE_6]]: 9. 8. 1973
+[[DATE_7]]: 22. 8. 2028
+[[DATE_8]]: 13. 07. 2026
+
+DIC
+[[DIC_1]]: CZ88990011
+
+EMAIL
+[[EMAIL_1]]: alex.cerny@post.cz
+[[EMAIL_2]]: monika.polakova@seznam.cz
+[[EMAIL_3]]: laura.rendlova@example.com
+[[EMAIL_4]]: lubomir.zika@email.cz
+[[EMAIL_5]]: ruzena.malikova@seznam.cz
+[[EMAIL_6]]: zdenek.svestka@seznam.cz
+
+IBAN
+[[IBAN_1]]: CZ58 5500 0000 9665 1453 6736
+[[IBAN_2]]: CZ29 0600 0000 6233 9318 8907
+
+ICO
+[[ICO_1]]: 88990011
+
+ID_CARD
+[[ID_CARD_1]]: NO 109159
+[[ID_CARD_2]]: IK 731727
+[[ID_CARD_3]]: PY 399155
+[[ID_CARD_4]]: DH415377
+
+IP
+[[IP_1]]: 222.135.52.59
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ96940
+[[LICENSE_PLATE_2]]: 5A1 3057
+[[LICENSE_PLATE_3]]: EA79343
+
+MAC
+[[MAC_1]]: 92:E0:15:A9:97:9A
+
+PASSWORD
+[[PASSWORD_1]]: Mon26!6710
+
+PHONE
+[[PHONE_1]]: 499936200
+[[PHONE_2]]: 712 994 896
+[[PHONE_3]]: 606 257 940
+[[PHONE_4]]: +420 651 623 429
+[[PHONE_5]]: +420754188486
+[[PHONE_6]]: 747 654 276
+[[PHONE_7]]: +420787338975
+
+VIN
+[[VIN_1]]: TMBJY84YVR2CJZT26
+

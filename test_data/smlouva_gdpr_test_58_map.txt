@@ -1,0 +1,110 @@
+OSOBY
+-----
+[[PERSON_1]]: Roman Křeček
+  - Romana Křečka
+  - Romane Křečku
+  - Romanem Křečkem
+  - Romanovi Křečkovi
+[[PERSON_2]]: Ella Roubalová
+[[PERSON_4]]: Markéta Pazderová
+  - Markétou Pazderovou
+  - Markéty Pazderové
+  - Markétě Pazderové
+[[PERSON_5]]: Bruno Tesař
+  - Brunoa Tesařa
+[[PERSON_6]]: Lucie Jirsová
+  - Lucie Jirsové
+[[PERSON_7]]: Marek Šembera
+  - Marka Šemberu
+  - Marka Šembery
+[[PERSON_9]]: Markéta Pazderováová
+  - Markétu Pazderováovou
+[[PERSON_10]]: Ella Roubalováová
+  - Ellu Roubalováovou
+[[PERSON_11]]: Lucie Jirsováová
+  - Lucii Jirsováovou
+
+ADDRESS
+[[ADDRESS_1]]: Praha 9
+[[ADDRESS_2]]: Bryksova 763/46, 198 00 Praha 14
+[[ADDRESS_3]]: Riegrova 22/23, 779 00 Olomouc
+[[ADDRESS_4]]: Palackého 168/15, 301 00 Plzeň
+[[ADDRESS_5]]: Národní 36/24, 110 00 Praha 1
+[[ADDRESS_6]]: Pražská 150/32, 360 01 Karlovy Vary
+[[ADDRESS_7]]: Tylova 37, 530 02 Pardubice
+[[ADDRESS_8]]: Komenského 93/27, 702 00 Ostrava
+[[ADDRESS_9]]: Riegrova 22/23, 779 00 Olomouc a Palackého
+[[ADDRESS_10]]: Plzeň
+[[ADDRESS_11]]: platnost 03/28, CVC
+[[ADDRESS_12]]: Exekutorský úřad Praha 9, IČO
+[[ADDRESS_13]]: Správcem osobních údajů je Exekutorský úřad Praha 9, IČO
+[[ADDRESS_14]]: V Plzni
+
+BANK
+[[BANK_1]]: 6003350461/6210
+[[BANK_2]]: 3242857138/0300
+[[BANK_3]]: 5611249385/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 051217/2262
+[[BIRTH_ID_2]]: 6058022165
+[[BIRTH_ID_3]]: 025304/3261
+[[BIRTH_ID_4]]: 931211/8299
+[[BIRTH_ID_5]]: 085224/2830
+[[BIRTH_ID_6]]: 7910235923
+
+DATE
+[[DATE_1]]: 7. 1. 1992
+[[DATE_2]]: 15. 5. 1966
+[[DATE_3]]: 17. 8. 1974
+[[DATE_4]]: 6. 12. 1988
+[[DATE_5]]: 25. 3. 1961
+[[DATE_6]]: 9. 12. 1968
+[[DATE_7]]: 10. 08. 2026
+
+DIC
+[[DIC_1]]: CZ71234567
+
+EMAIL
+[[EMAIL_1]]: roman.krecek@example.com
+[[EMAIL_2]]: ella.roubalova@firma.cz
+[[EMAIL_3]]: marketa.pazderova@example.com
+[[EMAIL_4]]: bruno.tesar@firma.cz
+[[EMAIL_5]]: lucie.jirsova@seznam.cz
+[[EMAIL_6]]: marek.sembera@seznam.cz
+
+IBAN
+[[IBAN_1]]: CZ78 0100 0000 4235 8494 9522
+[[IBAN_2]]: CZ62 5500 0000 4874 2852 7547
+
+ICO
+[[ICO_1]]: 71234567
+
+ID_CARD
+[[ID_CARD_1]]: UN 199977
+[[ID_CARD_2]]: 289114308
+[[ID_CARD_3]]: XJ 796018
+[[ID_CARD_4]]: 816537517
+
+IP
+[[IP_1]]: 84.77.112.192
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP53993
+[[LICENSE_PLATE_2]]: PP46209
+
+MAC
+[[MAC_1]]: 1C:B6:9D:3D:6B:93
+
+PASSWORD
+[[PASSWORD_1]]: Ell35!9965
+
+PHONE
+[[PHONE_1]]: 655 868 910
+[[PHONE_2]]: +420 642 470 934
+[[PHONE_3]]: +420703844238
+[[PHONE_4]]: 716 534 472
+[[PHONE_5]]: 671 974 932
+[[PHONE_6]]: +420 795 215 776
+[[PHONE_7]]: 289114308
+

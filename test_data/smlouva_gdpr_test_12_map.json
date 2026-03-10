@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:29.329969",
+  "generated_at": "2026-03-09T15:50:57.729050",
   "source_file": "smlouva_gdpr_test_12.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpáne Dvořáke",
+      "original": "Štěpánem Dvořákem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpánem Dvořákem",
+      "original": "Štěpáne Dvořáke",
       "occurrences": 1
     },
     {
@@ -42,13 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Petrou Roubalovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Petry Roubalové",
+      "original": "Petrě Roubalové",
       "occurrences": 1
     },
     {
@@ -60,7 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Petrě Roubalové",
+      "original": "Petry Roubalové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Petrou Roubalovou",
       "occurrences": 1
     },
     {
@@ -84,13 +84,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Petrou Královou",
+      "original": "Petry Králové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Petry Králové",
+      "original": "Petrou Královou",
       "occurrences": 1
     },
     {

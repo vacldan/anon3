@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:48:25.979056",
+  "generated_at": "2026-03-09T15:50:04.901075",
   "source_file": "smlouva20.docx",
   "entities": [
     {
@@ -18,241 +18,253 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Adam Král",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Adamem Králem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Adam Král",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Lucie Havelková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_3]]",
       "original": "Lucii Havelkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_4]]",
       "original": "Petr Dohnal",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_4]]",
       "original": "Petra Dohnala",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_4]]",
       "original": "Petru Dohnalovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_6]]",
+      "label": "[[PERSON_5]]",
       "original": "Martina Jeřábková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_6]]",
+      "label": "[[PERSON_5]]",
+      "original": "Martinu Jeřábkovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Martinou Jeřábkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Martinu Jeřábkovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
       "original": "Tomáš Nguyen",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
+      "label": "[[PERSON_6]]",
       "original": "Tomášem Nguyenem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_8]]",
+      "label": "[[PERSON_7]]",
       "original": "Eva Marečková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_8]]",
+      "label": "[[PERSON_7]]",
       "original": "Evy Marečkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_9]]",
+      "label": "[[PERSON_8]]",
       "original": "David Šembera",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_9]]",
+      "label": "[[PERSON_8]]",
       "original": "Davida Šembery",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_10]]",
+      "label": "[[PERSON_9]]",
       "original": "Klára Šustrová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_10]]",
+      "label": "[[PERSON_9]]",
       "original": "Kláru Šustrovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_11]]",
+      "label": "[[PERSON_10]]",
       "original": "Daniel Mlynář",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_11]]",
+      "label": "[[PERSON_10]]",
       "original": "Danielu Mlynářovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_12]]",
+      "label": "[[PERSON_11]]",
       "original": "Tereza Pavlíková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_12]]",
+      "label": "[[PERSON_11]]",
       "original": "Terezou Pavlíkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_13]]",
+      "label": "[[PERSON_12]]",
       "original": "Robert Vinkler",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_13]]",
+      "label": "[[PERSON_12]]",
       "original": "Robertu Vinklerovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_14]]",
+      "label": "[[PERSON_13]]",
       "original": "Simona Trčková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_14]]",
+      "label": "[[PERSON_13]]",
       "original": "Simony Trčkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_14]]",
+      "label": "[[PERSON_13]]",
       "original": "Simoně Trčkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_15]]",
+      "label": "[[PERSON_14]]",
       "original": "Michal Gregor",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_15]]",
+      "label": "[[PERSON_14]]",
       "original": "Michalem Gregorem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_16]]",
+      "label": "[[PERSON_15]]",
       "original": "Lenka Šípková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_16]]",
+      "label": "[[PERSON_15]]",
       "original": "Lenky Šípkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_17]]",
+      "label": "[[PERSON_16]]",
       "original": "Ondřej Vlček",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_17]]",
+      "label": "[[PERSON_16]]",
       "original": "Ondřejem Vlčkem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_18]]",
+      "label": "[[PERSON_17]]",
       "original": "Marcela Bočková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_18]]",
+      "label": "[[PERSON_17]]",
       "original": "Marcele Bočkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_19]]",
+      "label": "[[PERSON_18]]",
       "original": "Viktor Havel",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_19]]",
+      "label": "[[PERSON_18]]",
+      "original": "Viktoru Havlovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_18]]",
       "original": "Viktora Havla",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_19]]",
-      "original": "Viktoru Havlovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_20]]",
       "original": "Barbora Němcová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_20]]",
+      "label": "[[PERSON_19]]",
       "original": "Barbory Němcové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_21]]",
+      "original": "Radek Hofmana",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_21]]",
+      "original": "Radek Hofman",
       "occurrences": 1
     },
     {
@@ -263,224 +275,224 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_23]]",
+      "label": "[[PERSON_22]]",
       "original": "Alžběta Konečná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_23]]",
+      "label": "[[PERSON_22]]",
       "original": "Alžbětou Konečnou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_24]]",
+      "label": "[[PERSON_23]]",
       "original": "Igor Vraný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_24]]",
+      "label": "[[PERSON_23]]",
+      "original": "Vraný",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_23]]",
       "original": "Igoru Vranému",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_24]]",
-      "original": "Vraný",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_24]]",
-      "original": "Igor",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_25]]",
       "original": "Monika Hrabovská",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_25]]",
+      "label": "[[PERSON_24]]",
       "original": "Monice Hrabovské",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_25]]",
+      "label": "[[PERSON_24]]",
       "original": "Monikou Hrabovskou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_26]]",
+      "label": "[[PERSON_25]]",
       "original": "Roman Turek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_26]]",
+      "label": "[[PERSON_25]]",
       "original": "Romanu Turkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_26]]",
+      "label": "[[PERSON_25]]",
       "original": "Romanem Turkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_27]]",
+      "label": "[[PERSON_26]]",
       "original": "Kateřina Blažková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_27]]",
+      "label": "[[PERSON_26]]",
       "original": "Kateřinu Blažkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_28]]",
+      "label": "[[PERSON_27]]",
       "original": "Filip Švec",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_28]]",
+      "label": "[[PERSON_27]]",
       "original": "Filipem Švecem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_28]]",
+      "label": "[[PERSON_27]]",
       "original": "Filipa Švece",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_29]]",
+      "label": "[[PERSON_28]]",
       "original": "Adéla Jarošová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_29]]",
+      "label": "[[PERSON_28]]",
       "original": "Adéle Jarošové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_30]]",
+      "label": "[[PERSON_29]]",
       "original": "Jaroslav Černý",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_30]]",
+      "label": "[[PERSON_29]]",
       "original": "Jaroslavem Černým",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_30]]",
+      "label": "[[PERSON_29]]",
       "original": "Černého",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_31]]",
+      "label": "[[PERSON_30]]",
       "original": "Helena Vodičková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_31]]",
+      "label": "[[PERSON_30]]",
       "original": "Heleně Vodičkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_31]]",
+      "label": "[[PERSON_30]]",
       "original": "Helenou Vodičkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_32]]",
+      "label": "[[PERSON_31]]",
+      "original": "Kamil Řezníčka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_31]]",
+      "original": "Kamila Řezníčka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_31]]",
       "original": "Kamil Řezníček",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_32]]",
-      "original": "Kamila Řezníčka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_33]]",
       "original": "Gabriela Pokorná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_33]]",
+      "label": "[[PERSON_32]]",
       "original": "Gabriele Pokorné",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_34]]",
+      "label": "[[PERSON_33]]",
       "original": "Štěpán Hrubeš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_34]]",
+      "label": "[[PERSON_33]]",
       "original": "Štěpánem Hrubešem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_35]]",
+      "label": "[[PERSON_34]]",
       "original": "Nikol Šťastná",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_35]]",
+      "label": "[[PERSON_34]]",
       "original": "Nikol Šťastné",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_36]]",
-      "original": "Miroslav Vaněk",
+      "label": "[[PERSON_35]]",
+      "original": "Miroslav Vaňk",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_36]]",
+      "label": "[[PERSON_35]]",
       "original": "Miroslavu Vaňkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_36]]",
+      "label": "[[PERSON_35]]",
       "original": "Miroslavem Vaňkem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_37]]",
-      "original": "Renaty Slámové",
+      "original": "Renato Slámová",
       "occurrences": 1
     },
     {
@@ -493,6 +505,12 @@
       "type": "PERSON",
       "label": "[[PERSON_37]]",
       "original": "Renatou Slámovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_37]]",
+      "original": "Renaty Slámové",
       "occurrences": 1
     },
     {
@@ -522,13 +540,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_40]]",
-      "original": "Markéty Benešové",
+      "original": "Markétě Benešové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_40]]",
-      "original": "Markétě Benešové",
+      "original": "Markéty Benešové",
       "occurrences": 1
     },
     {
@@ -564,6 +582,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_43]]",
+      "original": "Aleš Kříž",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_43]]",
       "original": "Aleši Křížovi",
       "occurrences": 1
     },
@@ -571,12 +595,6 @@
       "type": "PERSON",
       "label": "[[PERSON_43]]",
       "original": "Aleše Kříže",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_43]]",
-      "original": "Aleš Kříž",
       "occurrences": 1
     },
     {
@@ -594,25 +612,43 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_45]]",
+      "original": "Adrian Kratochvíl",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_45]]",
       "original": "Adrianem Kratochvílem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_46]]",
+      "label": "[[PERSON_45]]",
       "original": "Adrianovi Kratochvílovi",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "se sídlem V Kapslovně 881/11, Praha 3",
+      "original": "V Kapslovně 881/11, Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Obvodním soudem pro Prahu 3, sp",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "v Praze",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "v Brně",
       "occurrences": 1
     },
     {

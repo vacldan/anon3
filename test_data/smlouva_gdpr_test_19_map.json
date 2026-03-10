@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:34.435178",
+  "generated_at": "2026-03-09T15:51:07.534962",
   "source_file": "smlouva_gdpr_test_19.docx",
   "entities": [
     {
@@ -12,19 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Veronikě Dvořákové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Veroniko Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Veronikou Dvořákovou",
+      "original": "Veronikě Dvořákové",
       "occurrences": 1
     },
     {
@@ -35,14 +29,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Jaroslav Vaněk",
+      "label": "[[PERSON_1]]",
+      "original": "Veronikou Dvořákovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jaroslavem Vaněkem",
+      "original": "Jaroslav Vaněk",
       "occurrences": 1
     },
     {
@@ -61,6 +55,12 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Jaroslave Vaněke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Jaroslavem Vaněkem",
       "occurrences": 1
     },
     {
@@ -84,12 +84,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Matějovi Hrubešovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Matěja Hrubeša",
       "occurrences": 1
     },
@@ -97,6 +91,12 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Matějem Hrubešem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Matějovi Hrubešovi",
       "occurrences": 1
     },
     {

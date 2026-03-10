@@ -367,6 +367,7 @@ def _find_visible_names_addresses(anon_text: str) -> List[str]:
         "interní", "dětské", "dětská", "vyšetřující", "spirometr", "jaeger",
         "healthcare", "medical", "imaging", "pharma", "pharmaceutical",
         "huntington", "mayo", "clinic",
+        "ordinace", "ambulance", "oddělení", "pracoviště",
         # ---------- české města / městské části / lokace ----------
         "praha", "praze", "prahy", "prahou", "brno", "brna", "brně",
         "olomouc", "olomouci", "ostrava", "ostravě", "ostravy",
@@ -376,20 +377,24 @@ def _find_visible_names_addresses(anon_text: str) -> List[str]:
         "pardubice", "liberec", "plzeň", "zlín", "opava", "česká",
         # ---------- školy / instituce ----------
         "gymnázium", "univerzita", "fakulta", "centrum",
+        "základní", "střední", "škola", "školy", "školství",
         # ---------- firmy / finanční produkty ----------
         "home", "credit", "financial", "invest", "plus", "reality",
         "provident", "quick", "allianz", "moravia", "energy", "finanční",
         "innovation", "labs", "shop", "world", "papin", "food", "zdravé",
         "konzervy",
+        "banka", "banky", "bankovní", "bankovnictví",
+        "spořitelna", "spořitelny", "pojišťovna", "pojišťovny",
         # ---------- auta / hardware / produkty ----------
         "škoda", "octavia", "superb", "fabia", "kodiaq",
         "volkswagen", "transporter", "ford", "transit",
         "dell", "latitude", "samsung", "galaxy",
         "symbicort", "turbuhaler",
         "archer", "link",
-        # ---------- technologie / software / firmy ----------
+        # ---------- technologie / software / firmy (včetně ignor_source) ----------
         "google", "authenticator", "amazon", "web", "microsoft", "azure",
         "apple", "facebook", "splunk", "enterprise", "cisco",
+        "sconto", "bolton", "forensic", "logging",
         "kaspersky", "endpoint", "synlab", "czech", "prague", "eye",
         "republic", "visa", "classic", "credo", "ventures", "zebra",
         "meta", "london",
@@ -404,6 +409,9 @@ def _find_visible_names_addresses(anon_text: str) -> List[str]:
         "director", "legal", "counsel", "chief", "career", "support",
         "customer", "success", "design", "studio", "global", "finance",
         "compliance", "leasing", "vozidlo", "jira", "demo",
+        # ---------- HR / personalistika ----------
+        "hr", "hrbp", "recruiter", "recruitment", "talent",
+        "people", "peopleops", "personální", "personálního", "personalista",
         # ---------- právní / smluvní / obecné termíny ----------
         "úroky", "splatnost", "období", "smlouvy", "pobočka",
         "věznici", "věznice", "legamedis", "anonimizace",
@@ -420,14 +428,38 @@ def _find_visible_names_addresses(anon_text: str) -> List[str]:
         "poriz", "výjimky", "partner", "rodné",
         "pronajímatele", "pronajímatel", "nájemci",
         "některé", "společnost",
+        "stav", "stavu", "stavy", "stavem",
         # ---------- tituly (často ve spojení role + titul) ----------
         "mgr", "bc", "ing", "sc", "phd", "judr", "mudr", "phdr",
         "rndr", "doc", "prof", "mba",
         # ---------- další ne-osobní ----------
         "svaté", "markéty", "notářská",
         "pacientky", "pacientka", "pacienta",
+        # ---------- role / instituce / smluvní termíny ----------
+        "sídlo", "sídlem", "sídla",
+        "zařízení", "zákonný", "zákonného", "zákonná", "zákonným",
+        "zástupce", "zástupcem", "zástupci",
+        "kancelář", "kanceláře", "kanceláři",
+        "úřad", "úřadu", "úřadem",
+        "ministerstvo", "magistrát", "magistrátu", "krajský", "krajská",
+        "obec", "obce", "město", "města",
     }
     non_person_tokens = {t.lower() for t in non_person_tokens}
+
+    # Load institutions blacklist (same file used by anon72.py)
+    try:
+        import json as _json
+        _inst_path = Path(__file__).parent.parent / "institutions_blacklist.json"
+        if _inst_path.exists():
+            with open(_inst_path, "r", encoding="utf-8") as _f:
+                _inst_data = _json.load(_f)
+            for _key, _vals in _inst_data.items():
+                if _key.startswith("_"):
+                    continue
+                if isinstance(_vals, list):
+                    non_person_tokens.update(v.lower() for v in _vals)
+    except Exception:
+        pass
 
     role_words_lo = {w.lower() for w in role_words}
 
@@ -477,7 +509,63 @@ _PII_LEAK_IGNORE = {
     'risk manager', 'account manager', 'support program', 'services',
     'banka', 'stav', 'nová', 'nové', 'nový', 'malá', 'malý', 'hrubá',
     'innovation labs', 'papin food', 'compliance', 'hcp_admin',
+    # role / strany smlouvy (ne osobní údaje)
+    'zpracovatel', 'správce', 'pojistitel', 'pojistník', 'objednatel', 'zhotovitel',
+    'pronajímatel', 'nájemce', 'kupující', 'prodávající', 'dlužník', 'věřitel',
+    'zaměstnavatel', 'zaměstnanec', 'žadatel', 'zařízení',
 }
+
+# Fráze a názvy institucí/rolí, které nejsou osobními údaji dle GDPR – nepočítat jako PII leak.
+_PII_LEAK_IGNORE_PHRASES = {
+    'pojistitel pojistník', 'pojistník pojistitel',
+    'správce zpracovatel', 'zpracovatel správce',
+    'zařízení žadatel', 'žadatel zařízení',
+    'pronajímatel nájemce', 'nájemce pronajímatel',
+    'věřitel dlužník', 'dlužník věřitel',
+    'objednatel zhotovitel', 'zhotovitel objednatel',
+    'prodávající kupující', 'kupující prodávající',
+    'zaměstnavatel zaměstnanec', 'zaměstnanec zaměstnavatel',
+    'městský úřad nový brod', 'nový brod',
+    'exekutorský úřad praha 9', 'exekutorský úřad',
+    'notářská kancelář mgr. horák', 'mgr. horák sídlo',
+    'domov seniorů slunečnice', 'domov harmonie', 'domov seniorů',
+    'galerie jih', 'centrum harmonie',
+    'skryi anonymizer pro', 'anonymizer pro', 'anonymizer',
+    'otec objednatelky', 'zástupce správce', 'odměna mediátora',
+    'banka credita', 'crescendo capital',
+    've zlíně', 'v praze', 'v brně', 'v ostravě', 'v plzni', 'v olomouci',
+    'českých budějovicích',
+    'horák sídlo', 'václavské nám', 'václavské náměstí',
+    'notářská kancelář', 'kancelář mgr',
+    # 2-slovné fráze z ignor_source (firmy, města, produkty – ne osoby)
+    'firma horák', 'firma horáková', 'české budějovice', 'českých budějovic',
+    'karlovy vary', 'karlových varech', 'hradec králové', 'hradci králové',
+    'nové město', 'staré město', 'nový jičín', 'mladá boleslav', 'mladé boleslavi',
+    'crescendo capital', 'služba způsob',
+    'sconto bolton', 'forensic logging',
+}
+
+
+def _normalize_for_ignore(s: str) -> str:
+    """Normalizuje řetězec pro porovnání s ignore seznamy (jedna mezera, lowercase)."""
+    return re.sub(r'\s+', ' ', s).strip().lower()
+
+
+def _should_ignore_visible_pii(visible_item: str) -> bool:
+    """True pokud je heuristický nález (NAME:/ADDR:) role/instituce, ne skutečné PII."""
+    if visible_item.startswith("NAME: "):
+        part = visible_item[6:].strip()
+    elif visible_item.startswith("ADDR: "):
+        part = visible_item[6:].strip()
+    else:
+        return False
+    norm = _normalize_for_ignore(part)
+    if norm in _PII_LEAK_IGNORE_PHRASES or norm in _PII_LEAK_IGNORE:
+        return True
+    if any(p in norm for p in _PII_LEAK_IGNORE_PHRASES):
+        return True
+    return False
+
 
 def check_pii_leak_from_map(anon_text: str, originals: Set[str]) -> List[str]:
     """Vrátí seznam původních hodnot z mapy, které se objevily ve výstupu (PII leak)."""
@@ -486,6 +574,11 @@ def check_pii_leak_from_map(anon_text: str, originals: Set[str]) -> List[str]:
         if len(orig) < 4:
             continue
         if orig.lower() in _PII_LEAK_IGNORE:
+            continue
+        norm = _normalize_for_ignore(orig)
+        if norm in _PII_LEAK_IGNORE_PHRASES:
+            continue
+        if any(p in norm for p in _PII_LEAK_IGNORE_PHRASES):
             continue
         escaped = re.escape(orig)
         is_numeric = orig.replace(' ', '').isdigit()
@@ -708,9 +801,10 @@ def run_single_anonymize(docx_path: Path) -> dict:
 
         # 2) Heuristické úniky: jména/adresy, které anonymizátor vůbec neoznačil
         visible_names_addrs = _find_visible_names_addresses(anon_text)
-        if visible_names_addrs:
+        visible_filtered = [x for x in visible_names_addrs if not _should_ignore_visible_pii(x)]
+        if visible_filtered:
             # Přidej je jako zvláštní typ PII leaků – s prefixem pro čitelnost v reportu
-            result["pii_leaks"].extend(visible_names_addrs)
+            result["pii_leaks"].extend(visible_filtered)
         result["pii_regex_found"] = [
             {"match": m[:20] + "..." if len(m) > 20 else m, "type": t}
             for m, t in check_pii_regex(anon_text)

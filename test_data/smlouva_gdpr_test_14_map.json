@@ -1,12 +1,24 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:30.929260",
+  "generated_at": "2026-03-09T15:51:03.733505",
   "source_file": "smlouva_gdpr_test_14.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Tomáš Holík",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Tomáše Holíka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Tomášem Holíkem",
       "occurrences": 1
     },
     {
@@ -23,26 +35,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Tomášem Holíkem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Tomáše Holíka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Filip Novák",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Filipe Nováke",
       "occurrences": 1
     },
     {
@@ -65,6 +59,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Filipe Nováke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Tomáš Král",
       "occurrences": 1
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Tomáše Krála",
+      "original": "Tomášovi Královi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Tomášovi Královi",
+      "original": "Tomáše Krála",
       "occurrences": 1
     },
     {

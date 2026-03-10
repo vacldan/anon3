@@ -9,8 +9,9 @@ OSOBY
   - Jaroslava Černého
 
 ADDRESS
-[[ADDRESS_1]]: se sídlem Analytická 21, 190 00 Praha 9
+[[ADDRESS_1]]: Analytická 21, 190 00 Praha 9
 [[ADDRESS_2]]: Větrná 8, 779 00 Olomouc
+[[ADDRESS_3]]: V Olomouci
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 830404/1234

@@ -1,0 +1,156 @@
+Díky za upřesnění a dodání těch byznysových podkladů! Teď už mám kompletní obrázek – 
+technologický "vnitřek" z tvých nahraných dokumentů i tu strategickou nadstavbu z našeho 
+předchozího chatu. 
+Tady je tvůj ﬁnální, sjednocený report (Master Document), který kombinuje hloubkovou 
+technickou dokumentaci s byznys plánem pro rok 2026. Tento text je připraven pro investory, 
+banky nebo jako zakládající dokument tvého start-upu. 
+ 
+STRATEGICKÝ BUSINESS PLÁN A TECHNICKÁ DOKUMENTACE: SKRYI Suite (2026) 
+Projekt: SKRYI Document Suite (v3.3) 
+Segment: RegTech / LegalTech / Cybersecurity 
+Hlavní hodnota: Morfologicky inteligentní, 100% oﬄine anonymizace pro inﬂekƟvní jazyky. 
+ 
+1. EXECUTIVE SUMMARY 
+SKRYI Document Suite řeší kriƟcký problém úniku osobních údajů (PII) v dokumentech 
+vyvolaný neschopnosơ běžných nástrojů skloňovat v češƟně. Zaơmco globální konkurence 
+selhává u pádových forem jmen, SKRYI díky bidirekcionální morfologické inferenci dosahuje 
+98%+ přesnosƟ. V roce 2026, pod tlakem legislaƟvy (AI Act, EHDS), se SKRYI stává nezbytným 
+nástrojem pro bezpečné nakládání s daty bez nutnosƟ cloudu. 
+ 
+2. TRŽNÍ ANALÝZA A LEGISLATIVNÍ KATALYZÁTORY (2026) 
+Rok 2026 je pro SKRYI klíčový díky souběhu několika regulatorních požadavků: 
+ 
+EHDS (Evropský prostor pro zdravotní data): Povinnost sdílení dat pro výzkum 
+vyžaduje cerƟﬁkovanou anonymizaci. SKRYI umožňuje nemocnicím procesovat data 
+lokálně. 
+ 
+EU AI Act (Plná účinnost od 2. 8. 2026): Firmy trénující vlastní modely musí 
+garantovat ochranu soukromí. SKRYI slouží jako "enabler" pro legální přípravu 
+datasetů. 
+ 
+Směrnice o transparentnosƟ odměňování (červen 2026): Nutnost anonymizovat 
+mzdové listy pro reporƟng Gender Pay Gap. 
+ 
+Novela zákona o zdravotních službách: Povinné klinické audity (EKA) vyžadují 
+bezpečné zpřístupnění dokumentace externím auditorům. 
+ 
+
+
+3. TECHNOLOGICKÉ JÁDRO (The "Unfair Advantage") 
+Technická dokumentace deﬁnuje SKRYI jako hybridní desktopovou aplikaci (Electron UI + 
+Python Backend), která funguje striktně oﬄine. 
+Klíčové inovace: 
+1. Morfologická inteligence: Systém nerozpoznává pouze staƟcké řetězce, ale odvozuje 
+nominaƟv (1. pád) a generuje zbylých 6 pádů. To eliminuje "PII leaks" u skloňovaných 
+jmen (např. "s Janem Novákem" -> [[OSOBA_1]]). 
+2. Inteligentní post-processing: 
+o Absorpce adres: AutomaƟcké pohlcení městských čásơ (Praha 3 - Vinohrady). 
+o Post-pass na křestní jména: Zachycení samostatně stojících jmen 
+detekovaných osob v celém dokumentu. 
+3. Extenzivní detekce: Přes 23 kategorií (IČO, DIČ, rodná čísla, bankovní účty, SPZ, 
+kryptograﬁcké klíče). 
+4. Bezpečnostní kompilace: Zdrojový kód je chráněn proƟ reverznímu inženýrství 
+pomocí Nuitka (kompilace do .pyd/.exe). 
+5. Hardwarová ﬁxace: Licence je vázána na Hardware ID (CPU + MAC + S/N disku), což 
+znemožňuje nelegální šíření. 
+ 
+4. KONKURENČNÍ POSITIONING (2026) 
+SKRYI vyplňuje mezeru mezi manuálními nástroji (Adobe) a rizikovými cloudy. 
+Parametr 
+SKRYI Suite 
+Globální Cloudy (Cleardox 
+atd.) 
+Zavernime.cz 
+(Web) 
+Morfologie 
+(CZ/SK) 
+98% (všech 7 
+pádů) 
+Nízká (pouze 1. pád) 
+Střední 
+Režim provozu 
+100% Oﬄine 
+Cloud / Hybrid 
+Webový prohlížeč 
+
+
+Parametr 
+SKRYI Suite 
+Globální Cloudy (Cleardox 
+atd.) 
+Zavernime.cz 
+(Web) 
+Bezpečnost 
+Maximální 
+(lokální) 
+Riziko úniku při uploadu 
+Riziko cloudu 
+Cena (roční) 
+24 900 – 49 900 
+Kč 
+cca 42 000 Kč+ 
+cca 36 000 Kč 
+ 
+5. EKONOMICKÝ POTENCIÁL A ROI 
+Při predikované průměrné mzdě v roce 2026 (cca 49 215 Kč) jsou úspory zásadní. 
+Model 100 dokumentů / měsíc: 
+ 
+Manuální anonymizace: 10 min/dok = 1 000 min (16,6 hod) 
+ 
+SKRYI anonymizace: 1 min/dok = 100 min (1,6 hod) 
+ 
+Úspora: 15 hodin vysoce kvaliﬁkované práce měsíčně. 
+Odvětví 
+Hodinový náklad ﬁrmy Roční úspora Návratnost licence
+Advokacie 
+1 200 Kč 
+216 000 Kč 
+1,5 měsíce 
+Zdravotnictví 
+448 Kč 
+80 640 Kč 
+4 měsíce 
+Veřejná správa 423 Kč 
+76 140 Kč 
+4,5 měsíce 
+ 
+6. CENOVÁ STRATEGIE (Value-Based Pricing) 
+Navržené ceny reﬂektují vysokou přidanou hodnotu a úsporu nákladů. 
+ 
+SKRYI Professional (Solo advokáƟ, malé ﬁrmy): 
+
+
+o 24 900 Kč / PC / rok 
+o Zaměření na efekƟvitu a úsporu času. 
+ 
+SKRYI Enterprise & Compliance (Nemocnice, Banky, Státní správa): 
+o 49 900 Kč / PC / rok 
+o Zaměření na shodu s NIS2 a EHDS. Obsahuje auditní cerƟﬁkáty a prioritní 
+podporu. 
+ 
+7. STRATEGICKÁ ROADMAPA 
+ 
+Q1 2026: Whitepaper "Proč LLM selhávají v české anonymizaci". Cílení na DPO 
+komunity. 
+ 
+Q2 2026: Účast na konferenci ISSS v Hradci Králové (síťování s veřejnou správou). 
+ 
+Q3 2026: Kampaň "Blind Recruitment" pro HR (anonymizace CV dle AI Actu). 
+ 
+Q4 2026: Příprava expanze (Polsko, Slovensko) přes granty TA ČR TREND. 
+ 
+8. RIZIKA A BUDOUCÍ VÝVOJ 
+1. LLM De-anonymizace: Moderní modely umí idenƟﬁkovat osoby podle stylu psaní. 
+Budoucí verze SKRYI musí obsahovat stylometrické maskování. 
+2. Dark Social: Prodej v roce 2026 nebude stát na reklamě, ale na doporučeních v 
+uzavřených komunitách (Slack/Discord DPO skupin). 
+3. CerƟﬁkace: Pro masové nasazení ve zdravotnictví bude nutná cerƟﬁkace 
+interoperability dle EHDS. 
+ 
+Jak z tohoto textu udělat PDF: 
+1. Zkopíruj celý tento text. 
+2. Vlož ho do Google Docs nebo MicrosoŌ Wordu. 
+3. Uprav si formátování (nadpisy, tabulky). 
+4. Zvol Soubor -> Stáhnout jako -> Dokument PDF (.pdf). 
+Máš takto všechno, co jsi potřeboval pro svou dokumentaci? 
+ 

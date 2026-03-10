@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:45.863409",
+  "generated_at": "2026-03-09T15:51:10.110511",
   "source_file": "smlouva_gdpr_test_36.docx",
   "entities": [
     {
@@ -12,13 +12,37 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Renata Slámová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Renatě Slámové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
+      "original": "Sabina Nedvědová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Sabině Nedvědové",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Nemocniční 1, 400 01 Ústí nad Labem",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Serverová 22, 639 00 Brno",
       "occurrences": 1
     },
     {
@@ -67,12 +91,6 @@
       "type": "PHONE",
       "label": "[[PHONE_3]]",
       "original": "+420 731 444 555",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_1]]",
-      "original": "Serverová 22, 639 00 Brno",
       "occurrences": 1
     },
     {

@@ -1,0 +1,84 @@
+OSOBY
+-----
+[[PERSON_1]]: Tomáš Holík
+  - Holíkovi
+  - Tomáše Holíka
+  - Tomášem Holíkem
+  - Tomáši Holíke
+  - Tomášovi Holíkovi
+[[PERSON_2]]: Barbora Nováková
+  - Barboro Nováková
+  - Barborou Novákovou
+  - Barbory Novákové
+  - Barborě Novákové
+[[PERSON_3]]: Helena Nováková
+  - Helenou Novákovou
+  - Heleně Novákové
+[[PERSON_4]]: Tomáš Král
+  - Tomáše Krála
+  - Tomášem Králem
+  - Tomáši Krále
+  - Tomášovi Královi
+
+ADDRESS
+[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
+[[ADDRESS_2]]: Jabloňová 39/13, 400 01 Ústí nad Labem
+[[ADDRESS_3]]: Křenová 88/26, 602 00 Brno
+[[ADDRESS_4]]: případně písemně na adresu Křenová 88/26, 602 00 Brno
+[[ADDRESS_5]]: písemné doručení na adresu Křenová 88/26, 602 00 Brno
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Křenová 88/26, 602 00 Brno pro Barborě Novákové a
+[[ADDRESS_7]]: Jabloňová 39/13, 400 01 Ústí nad Labem pro Tomášovi
+
+BANK
+[[BANK_1]]: 809616011/0600
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 880411/4602
+[[BIRTH_ID_2]]: 660105/2109
+[[BIRTH_ID_3]]: 010604/8056
+[[BIRTH_ID_4]]: 610704/5041
+
+CARD
+[[CARD_1]]: 4674 7435 7171 7702
+
+DATE
+[[DATE_1]]: 08. 02. 1969
+[[DATE_2]]: 12. 04. 2007
+[[DATE_3]]: 28. 08. 1973
+[[DATE_4]]: 09. 04. 1996
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: recepce@privatmed.cz
+[[EMAIL_2]]: tomas.holik@example.com
+[[EMAIL_3]]: barbora.novakova@example.com
+[[EMAIL_4]]: tomas.kral@example.com
+[[EMAIL_5]]: helena.novakova@example.com
+
+IBAN
+[[IBAN_1]]: CZ93 0800 0000 7531 2445 2074
+
+ICO
+[[ICO_1]]: 99887766
+
+ID_CARD
+[[ID_CARD_1]]: 480791941
+
+IP
+[[IP_1]]: 142.164.81.87
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: PP82253
+[[LICENSE_PLATE_2]]: 5AZ 6764
+[[LICENSE_PLATE_3]]: 0GA9235
+
+MAC
+[[MAC_1]]: 96:77:ED:03:12:55
+
+PHONE
+[[PHONE_1]]: +420 224 333 444
+[[PHONE_2]]: +420 787 990 905
+[[PHONE_3]]: +420 729 325 183
+[[PHONE_4]]: +420 671 101 981
+[[PHONE_5]]: +420 616 358 111
+

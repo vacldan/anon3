@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:48:40.951172",
+  "generated_at": "2026-03-09T15:50:18.871519",
   "source_file": "smlouva26.docx",
   "entities": [
     {
@@ -30,13 +30,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Martiny Kyselové",
+      "original": "Martina Kyselová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Martině Kyselové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Martiny Kyselové",
       "occurrences": 1
     },
     {
@@ -90,6 +96,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
+      "original": "Milan Krupauera",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_8]]",
       "original": "Milan Krupauer",
       "occurrences": 1
     },
@@ -102,6 +114,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_9]]",
+      "original": "Lucie Žákovsko",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_9]]",
       "original": "Lucií Žákovsko",
       "occurrences": 1
     },
@@ -109,6 +127,12 @@
       "type": "PERSON",
       "label": "[[PERSON_10]]",
       "original": "Lucie Žákovská",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_11]]",
+      "original": "Adam Vrba",
       "occurrences": 1
     },
     {
@@ -138,13 +162,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_13]]",
-      "original": "Lukáš Pecka",
+      "original": "Lukáš Pecek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_13]]",
       "original": "Lukáši Peckovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_13]]",
+      "original": "Lukáš Pecka",
       "occurrences": 1
     },
     {
@@ -174,7 +204,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_16]]",
-      "original": "Radka Pospíšilová",
+      "original": "Radko Pospíšilová",
       "occurrences": 1
     },
     {
@@ -185,32 +215,32 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_17]]",
+      "label": "[[PERSON_18]]",
       "original": "Tomáš Havelka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_17]]",
+      "label": "[[PERSON_18]]",
       "original": "Tomáše Havelku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_18]]",
-      "original": "Alžběta Malíková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_19]]",
-      "original": "Radovanem Chýlem",
+      "original": "Alžběta Malíková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_20]]",
       "original": "Radovan Chýl",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_20]]",
+      "original": "Radovanem Chýlem",
       "occurrences": 1
     },
     {
@@ -418,6 +448,12 @@
       "occurrences": 1
     },
     {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_6]]",
+      "original": "cz a adrese Hlavní 55, Milevsko",
+      "occurrences": 1
+    },
+    {
       "type": "EMAIL",
       "label": "[[EMAIL_1]]",
       "original": "adam.vrba@kontakt.cz",
@@ -450,12 +486,6 @@
     {
       "type": "EMAIL",
       "label": "[[EMAIL_6]]",
-      "original": "zdenek.spicka@office.cz",
-      "occurrences": 1
-    },
-    {
-      "type": "EMAIL",
-      "label": "[[EMAIL_7]]",
       "original": "nikola.soukupova@post.cz",
       "occurrences": 1
     },

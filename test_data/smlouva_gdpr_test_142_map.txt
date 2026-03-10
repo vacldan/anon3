@@ -1,0 +1,83 @@
+OSOBY
+-----
+[[PERSON_1]]: Renata Řezníčková
+  - Renato Řezníčková
+  - Renatou Řezníčkovou
+  - Renaty Řezníčkové
+  - Renatě Řezníčkové
+[[PERSON_2]]: Michal Procházka
+  - Michala Procházky
+  - Michale Procházko
+  - Michalem Procházkou
+  - Michalovi Procházkovi
+[[PERSON_3]]: Monika Hrubešová
+  - Monikou Hrubešovou
+  - Monikě Hrubešové
+[[PERSON_4]]: Václav Svoboda
+  - Václava Svobody
+  - Václave Svobodo
+  - Václavem Svobodou
+  - Václavovi Svobodovi
+
+ADDRESS
+[[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_2]]: Pojišťovací 16/21, 110 00 Praha 1
+[[ADDRESS_3]]: Na Návsi 97/20, 789 01 Zábřeh
+[[ADDRESS_4]]: případně písemně na adresu Na Návsi 97/20, 789 01 Zábřeh
+[[ADDRESS_5]]: písemné doručení na adresu Na Návsi 97/20, 789 01 Zábřeh
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Návsi 97/20, 789 01 Zábřeh pro Michalovi
+[[ADDRESS_7]]: Procházkovi a Pojišťovací 16/21, 110 00 Praha 1
+
+BANK
+[[BANK_1]]: 888620030/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 611008/4862
+[[BIRTH_ID_2]]: 681207/1654
+[[BIRTH_ID_3]]: 040605/1903
+[[BIRTH_ID_4]]: 900105/2268
+
+CARD
+[[CARD_1]]: 4150 4302 6226 2781
+
+DATE
+[[DATE_1]]: 24. 11. 1980
+[[DATE_2]]: 24. 04. 2009
+[[DATE_3]]: 22. 06. 1988
+[[DATE_4]]: 17. 02. 1978
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: podatelna@novybrod.cz
+[[EMAIL_2]]: renata.reznickova@example.com
+[[EMAIL_3]]: michal.prochazka@example.com
+[[EMAIL_4]]: vaclav.svoboda@example.com
+[[EMAIL_5]]: monika.hrubesova@example.com
+
+IBAN
+[[IBAN_1]]: CZ42 0300 0000 4979 7782 1019
+
+ICO
+[[ICO_1]]: 00223344
+
+ID_CARD
+[[ID_CARD_1]]: 762006068
+
+IP
+[[IP_1]]: 216.168.43.194
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EA71803
+[[LICENSE_PLATE_2]]: 3AA 9476
+[[LICENSE_PLATE_3]]: 0FA6374
+
+MAC
+[[MAC_1]]: 09:AF:C1:E3:76:C8
+
+PHONE
+[[PHONE_1]]: +420 495 888 111
+[[PHONE_2]]: +420 746 725 270
+[[PHONE_3]]: +420 771 911 492
+[[PHONE_4]]: +420 764 333 663
+[[PHONE_5]]: +420 696 868 858
+

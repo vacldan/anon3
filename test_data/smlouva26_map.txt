@@ -15,7 +15,8 @@ OSOBY
   - Petrem Lněničkou
 [[PERSON_7]]: Renata Jírová
   - Renaty Jírové
-[[PERSON_8]]: Milan Krupauer
+[[PERSON_8]]: Milan Krupauera
+  - Milan Krupauer
   - Milana Krupauera
 [[PERSON_9]]: Lucie Žákovsko
   - Lucií Žákovsko
@@ -32,15 +33,14 @@ OSOBY
   - Kateřině Vítkové
 [[PERSON_15]]: Zdeněk Špička
   - Zdeňka Špičku
-[[PERSON_16]]: Radka Pospíšilová
+[[PERSON_16]]: Radko Pospíšilová
   - Radkou Pospíšilovou
-[[PERSON_17]]: Tomáš Havelka
+[[PERSON_18]]: Tomáš Havelka
   - Tomáše Havelku
-[[PERSON_18]]: Alžběta Malíková
-[[PERSON_19]]: Radovan Chýlem
-  - Radovanem Chýlem
+[[PERSON_19]]: Alžběta Malíková
 [[PERSON_20]]: Radovan Chýl
   - Radovan Chýle
+  - Radovanem Chýlem
 [[PERSON_21]]: Veronika Plzáková
   - Veronice Plzákové
 [[PERSON_22]]: Jaromír Kotek
@@ -72,6 +72,7 @@ ADDRESS
 [[ADDRESS_3]]: a bydliště Jabloňová 19, Nový Jičín
 [[ADDRESS_4]]: a adresu Na Lávce 4, Sušice
 [[ADDRESS_5]]: kdy Alžběty Malíkové se týká bydliště U Rybníka 8, Soběslav
+[[ADDRESS_6]]: cz a adrese Hlavní 55, Milevsko
 
 BANK
 [[BANK_1]]: 2100887711/2010
@@ -91,8 +92,7 @@ EMAIL
 [[EMAIL_3]]: op@legal.cz
 [[EMAIL_4]]: veronika.plzakova@mail.cz
 [[EMAIL_5]]: a.malikova@firma.cz
-[[EMAIL_6]]: zdenek.spicka@office.cz
-[[EMAIL_7]]: nikola.soukupova@post.cz
+[[EMAIL_6]]: nikola.soukupova@post.cz
 
 ICO
 [[ICO_1]]: 09188211

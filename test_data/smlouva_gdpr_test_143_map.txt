@@ -1,0 +1,83 @@
+OSOBY
+-----
+[[PERSON_1]]: Štěpán Roubal
+  - Štěpána Roubala
+  - Štěpáne Roubale
+  - Štěpánem Roubalem
+  - Štěpánovi Roubalovi
+[[PERSON_2]]: Aleš Vlach
+  - Aleša Vlacha
+  - Aleše Vlache
+  - Alešem Vlachem
+  - Alešovi Vlachovi
+[[PERSON_3]]: Gabriela Roubalová
+  - Gabrielou Roubalovou
+  - Gabrielě Roubalové
+[[PERSON_4]]: Aleš Malík
+  - Aleša Malíka
+  - Aleše Malíke
+  - Alešem Malíkem
+  - Alešovi Malíkovi
+
+ADDRESS
+[[ADDRESS_1]]: Kampus 9, 625 00 Brno
+[[ADDRESS_2]]: U Parku 24/14, 779 00 Olomouc
+[[ADDRESS_3]]: Vinohradská 141/27, 130 00 Praha 3
+[[ADDRESS_4]]: případně písemně na adresu Vinohradská 141/27, 130 00 Praha 3
+[[ADDRESS_5]]: písemné doručení na adresu Vinohradská 141/27, 130 00 Praha 3
+[[ADDRESS_6]]: Pro účely doručování se používá adresa Vinohradská 141/27, 130 00 Praha 3
+[[ADDRESS_7]]: pro Alešovi Vlachovi a U Parku 24/14, 779 00 Olomouc pro Štěpánovi Roubalovi
+
+BANK
+[[BANK_1]]: 962242152/0100
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 791207/7704
+[[BIRTH_ID_2]]: 020319/2208
+[[BIRTH_ID_3]]: 910609/5545
+[[BIRTH_ID_4]]: 660302/1310
+
+CARD
+[[CARD_1]]: 4046 2308 4099 7235
+
+DATE
+[[DATE_1]]: 03. 01. 1971
+[[DATE_2]]: 25. 03. 1982
+[[DATE_3]]: 18. 08. 1995
+[[DATE_4]]: 09. 01. 1961
+[[DATE_5]]: 08. 03. 2026
+
+EMAIL
+[[EMAIL_1]]: rektorat@unisever.cz
+[[EMAIL_2]]: stepan.roubal@example.com
+[[EMAIL_3]]: ales.vlach@example.com
+[[EMAIL_4]]: ales.malik@example.com
+[[EMAIL_5]]: gabriela.roubalova@example.com
+
+IBAN
+[[IBAN_1]]: CZ21 5500 0000 6367 5164 1568
+
+ICO
+[[ICO_1]]: 00224466
+
+ID_CARD
+[[ID_CARD_1]]: 419637185
+
+IP
+[[IP_1]]: 109.80.82.25
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ23474
+[[LICENSE_PLATE_2]]: 3AA 8236
+[[LICENSE_PLATE_3]]: 0FA7500
+
+MAC
+[[MAC_1]]: 12:DD:A0:EC:D1:2C
+
+PHONE
+[[PHONE_1]]: +420 541 111 000
+[[PHONE_2]]: +420 768 473 907
+[[PHONE_3]]: +420 603 823 573
+[[PHONE_4]]: +420 686 380 887
+[[PHONE_5]]: +420 739 456 298
+

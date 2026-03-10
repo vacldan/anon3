@@ -1,0 +1,118 @@
+OSOBY
+-----
+[[PERSON_1]]: Michal Švestka
+  - Michala Švestku
+  - Michala Švestky
+  - Michale Švestko
+  - Michalem Švestkou
+  - Michalovi Švestkovi
+[[PERSON_2]]: Jana Navrátilová
+  - Jano Navrátilová
+  - Janou Navrátilovou
+  - Jany Navrátilové
+  - Janě Navrátilové
+[[PERSON_3]]: Jana Navrátilováová
+  - Janu Navrátilováovou
+[[PERSON_4]]: Filip Zík
+  - Filip Zíka
+  - Filipa Zíku
+  - Filipa Zíky
+  - Filipovi Zíkovi
+[[PERSON_5]]: Ondřej Popelka
+  - Ondřeja Popelku
+  - Ondřeja Popelky
+[[PERSON_6]]: Anežka Holubová
+  - Anežky Holubové
+[[PERSON_7]]: Vojtěch Dvořák
+  - Vojtěcha Dvořáka
+[[PERSON_8]]: Filip Zíká
+  - Filipem Zíkou
+[[PERSON_9]]: Anežka Holubováová
+  - Anežku Holubováovou
+
+ADDRESS
+[[ADDRESS_1]]: Praha 1
+[[ADDRESS_2]]: Žižkova 133, 460 01 Liberec
+[[ADDRESS_3]]: Jihlavská 186/38, 625 00 Brno
+[[ADDRESS_4]]: Ostrava
+[[ADDRESS_5]]: Palackého 5, 301 00 Plzeň
+[[ADDRESS_6]]: Husova 119/2, 390 02 Tábor
+[[ADDRESS_7]]: Havlíčkova 165, 586 01 Jihlava
+[[ADDRESS_8]]: Komenského 125, 702 00 Ostrava
+[[ADDRESS_9]]: Žižkova 133, 460 01 Liberec a Jihlavská
+[[ADDRESS_10]]: Brno
+[[ADDRESS_11]]: platnost 06/28, CVC
+[[ADDRESS_12]]: V Ostravě
+
+BANK
+[[BANK_1]]: 901658-9293029432/0600
+[[BANK_2]]: 602681-409626596/5500
+[[BANK_3]]: 4919990857/0600
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 0404104249
+[[BIRTH_ID_2]]: 095301/2224
+[[BIRTH_ID_3]]: 0511101568
+[[BIRTH_ID_4]]: 940515/5417
+[[BIRTH_ID_5]]: 745910/1006
+[[BIRTH_ID_6]]: 031104/2987
+
+CARD
+[[CARD_1]]: 237441446582745
+
+DATE
+[[DATE_1]]: 20. 1. 1990
+[[DATE_2]]: 24. 9. 1978
+[[DATE_3]]: 10. 1. 1971
+[[DATE_4]]: 1. 9. 1990
+[[DATE_5]]: 18. 12. 1987
+[[DATE_6]]: 15. 9. 1998
+[[DATE_7]]: 11. 01. 2026
+
+DIC
+[[DIC_1]]: CZ88990011
+
+EMAIL
+[[EMAIL_1]]: michal.svestka@firma.cz
+[[EMAIL_2]]: jana.navratilova@post.cz
+[[EMAIL_3]]: filip.zika@seznam.cz
+[[EMAIL_4]]: ondrej.popelka@email.cz
+[[EMAIL_5]]: anezka.holubova@firma.cz
+[[EMAIL_6]]: vojtech.dvorak@example.com
+
+IBAN
+[[IBAN_1]]: CZ15 5500 0000 5144 3135 7128
+[[IBAN_2]]: CZ94 0600 0000 4917 5622 6465
+
+ICO
+[[ICO_1]]: 88990011
+[[ICO_2]]: 10000000
+
+ID_CARD
+[[ID_CARD_1]]: 664829944
+[[ID_CARD_2]]: BA 700403
+[[ID_CARD_3]]: ON 278500
+
+IP
+[[IP_1]]: 191.163.107.207
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ21767
+[[LICENSE_PLATE_2]]: PP46502
+
+MAC
+[[MAC_1]]: C4:60:1A:DB:5D:05
+
+PASSWORD
+[[PASSWORD_1]]: Jan22!2502
+
+PHONE
+[[PHONE_1]]: 572995893
+[[PHONE_2]]: +420676784592
+[[PHONE_3]]: +420 608 375 205
+[[PHONE_4]]: +420611145261
+[[PHONE_5]]: +420 688 930 861
+[[PHONE_6]]: +420 731 747 244
+[[PHONE_7]]: 745 900 999
+[[PHONE_8]]: 664829944
+

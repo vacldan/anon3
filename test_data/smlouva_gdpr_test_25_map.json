@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:38.465573",
+  "generated_at": "2026-03-09T15:51:08.438801",
   "source_file": "smlouva_gdpr_test_25.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Petrě Vlachové",
+      "original": "Petro Vlachová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Petro Vlachová",
+      "original": "Petrě Vlachové",
       "occurrences": 1
     },
     {
@@ -42,18 +42,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Markem Hrubešem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Marku Hrubeše",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Markovi Hrubešovi",
       "occurrences": 1
     },
@@ -65,14 +53,20 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Oldřich Král",
+      "label": "[[PERSON_2]]",
+      "original": "Markem Hrubešem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Marku Hrubeše",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Oldřicha Krála",
+      "original": "Oldřich Král",
       "occurrences": 1
     },
     {
@@ -85,6 +79,12 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Oldřichem Králem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Oldřicha Krála",
       "occurrences": 1
     },
     {

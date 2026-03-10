@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:51.064946",
+  "generated_at": "2026-03-09T15:51:11.709362",
   "source_file": "smlouva_gdpr_test_44.docx",
   "entities": [
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Tomášem Doležalem",
+      "original": "Tomáše Doležala",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Tomáše Doležala",
+      "original": "Tomášem Doležalem",
       "occurrences": 1
     },
     {
@@ -91,6 +91,12 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
       "original": "Na Skalce 4, 252 10 Mníšek pod Brdy",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "V Praze",
       "occurrences": 1
     },
     {

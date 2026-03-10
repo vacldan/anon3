@@ -1,12 +1,24 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-03T14:46:28.559914",
+  "generated_at": "2026-03-09T15:50:54.575916",
   "source_file": "smlouva_gdpr_test_11.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Adéla Dvořáková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Adélou Dvořákovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Adélo Dvořáková",
       "occurrences": 1
     },
     {
@@ -23,20 +35,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Adélo Dvořáková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Adélou Dvořákovou",
+      "label": "[[PERSON_2]]",
+      "original": "Oldřich Černý",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Oldřich Černý",
+      "original": "Oldřichovi Černýovi",
       "occurrences": 1
     },
     {
@@ -53,8 +59,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Oldřichovi Černýovi",
+      "label": "[[PERSON_3]]",
+      "original": "Oldřich Černýe",
       "occurrences": 1
     },
     {
@@ -84,6 +90,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
+      "original": "Aleša Nováka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Alešovi Novákovi",
       "occurrences": 1
     },
@@ -91,12 +103,6 @@
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Alešem Novákem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Aleša Nováka",
       "occurrences": 1
     },
     {
