@@ -1,0 +1,134 @@
+OSOBY
+-----
+[[PERSON_1]]: Gabriela Štěpánová
+  - Gabrielou Štěpánovou
+[[PERSON_2]]: Adam Král
+  - Adamem Králem
+[[PERSON_3]]: Lucie Havelková
+  - Lucii Havelkové
+[[PERSON_4]]: Petr Dohnal
+  - Petra Dohnala
+  - Petru Dohnalovi
+[[PERSON_5]]: Martina Jeřábková
+  - Martinou Jeřábkovou
+  - Martinu Jeřábkovou
+[[PERSON_6]]: Tomáš Nguyen
+  - Tomášem Nguyenem
+[[PERSON_7]]: Eva Marečková
+  - Evy Marečkové
+[[PERSON_8]]: David Šembera
+  - Davida Šembery
+[[PERSON_9]]: Klára Šustrová
+  - Kláru Šustrovou
+[[PERSON_10]]: Daniel Mlynář
+  - Danielu Mlynářovi
+[[PERSON_11]]: Tereza Pavlíková
+  - Terezou Pavlíkovou
+[[PERSON_12]]: Robert Vinkler
+  - Robertu Vinklerovi
+[[PERSON_13]]: Simona Trčková
+  - Simony Trčkové
+  - Simoně Trčkové
+[[PERSON_14]]: Michal Gregor
+  - Michalem Gregorem
+[[PERSON_15]]: Lenka Šípková
+  - Lenky Šípkové
+[[PERSON_16]]: Ondřej Vlček
+  - Ondřejem Vlčkem
+[[PERSON_17]]: Marcela Bočková
+  - Marcele Bočkové
+[[PERSON_18]]: Viktor Havel
+  - Viktora Havla
+  - Viktoru Havlovi
+[[PERSON_19]]: Barbora Němcová
+  - Barbory Němcové
+[[PERSON_20]]: Radka Hofmanová
+  - Radka Hofmana
+[[PERSON_22]]: Alžběta Konečná
+  - Alžbětou Konečnou
+[[PERSON_23]]: Igor Vraný
+  - Igor
+  - Igoru Vranému
+  - Vraný
+[[PERSON_24]]: Monika Hrabovská
+  - Monice Hrabovské
+  - Monikou Hrabovskou
+[[PERSON_25]]: Roman Turek
+  - Romanem Turkovi
+  - Romanu Turkovi
+[[PERSON_26]]: Kateřina Blažková
+  - Kateřinu Blažkovou
+[[PERSON_27]]: Filip Švec
+  - Filipa Švece
+  - Filipem Švecem
+[[PERSON_28]]: Adéla Jarošová
+  - Adéle Jarošové
+[[PERSON_29]]: Jaroslav Černý
+  - Jaroslavem Černým
+  - Černého
+[[PERSON_30]]: Helena Vodičková
+  - Helenou Vodičkovou
+  - Heleně Vodičkové
+[[PERSON_31]]: Kamil Řezníčka
+  - Kamil Řezníček
+  - Kamila Řezníčka
+[[PERSON_32]]: Gabriela Pokorná
+  - Gabriele Pokorné
+[[PERSON_33]]: Štěpán Hrubeš
+  - Štěpánem Hrubešem
+[[PERSON_34]]: Nikol Šťastná
+  - Nikol Šťastné
+[[PERSON_35]]: Miroslav Vaněk
+  - Miroslavem Vaňkem
+  - Miroslavu Vaňkovi
+[[PERSON_36]]: Renata Slámová
+  - Renatou Slámovou
+  - Renaty Slámové
+[[PERSON_37]]: Patrik Holík
+  - Patrika Holíka
+  - Patriku Holíkovi
+[[PERSON_38]]: Markéta Benešová
+  - Markéty Benešové
+  - Markétě Benešové
+[[PERSON_39]]: Erik Roubal
+  - Erika Roubala
+  - Erikem Roubalem
+[[PERSON_40]]: Sabina Nedvědová
+  - Sabiny Nedvědové
+[[PERSON_41]]: Aleš Kříža
+  - Aleš Kříž
+  - Aleše Kříže
+  - Aleši Křížovi
+[[PERSON_42]]: Veronika Lacinová
+  - Veronice Lacinové
+[[PERSON_43]]: Adrian Kratochvíl
+  - Adrianem Kratochvílem
+  - Adrianovi Kratochvílovi
+
+ADDRESS
+[[ADDRESS_1]]: V Kapslovně 881/11, Praha 3
+[[ADDRESS_2]]: Obvodním soudem pro Prahu 3, sp
+
+BANK
+[[BANK_1]]: 112882351/0300
+[[BANK_2]]: 662219881/5500
+[[BANK_3]]: 771199221/0100
+
+DATE
+[[DATE_1]]: 4. 2. 2025
+
+ICO
+[[ICO_1]]: 05288977
+
+IMEI
+[[IMEI_1]]: 356778119992110
+
+IP
+[[IP_1]]: 192.168.11.22
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: is2025
+
+MAC
+[[MAC_1]]: 00:1F:44:AA:22:11
+

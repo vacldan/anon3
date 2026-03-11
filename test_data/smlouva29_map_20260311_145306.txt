@@ -1,0 +1,230 @@
+OSOBY
+-----
+[[PERSON_1]]: Dagmar Konečná
+[[PERSON_2]]: Ladislav Konečný
+  - Konečnému
+[[PERSON_3]]: Liběna Menclová
+[[PERSON_4]]: Benedikt Mencl
+  - Menclovi
+[[PERSON_5]]: Hubert Rybář
+[[PERSON_6]]: Anežka Fischerová
+  - Fischerové
+[[PERSON_7]]: Agáta Šulcová
+[[PERSON_8]]: Norbert Šulc
+  - Šulcovi
+[[PERSON_9]]: Patricie Dlouhá
+[[PERSON_10]]: Maxmilián Benda
+[[PERSON_11]]: Zikmund Hruška
+  - Hruškovi
+[[PERSON_12]]: Rostislav Vaculík
+  - Vaculíkovi
+[[PERSON_13]]: Dominik Vaculík
+[[PERSON_14]]: Valdemar Vlk
+[[PERSON_15]]: Hedvika Dostálová
+  - Dostálové
+[[PERSON_16]]: Jolana Matoušková
+[[PERSON_17]]: Leopold Matoušek
+  - Matouškovi
+[[PERSON_18]]: Johana Malá
+[[PERSON_19]]: Emílie Tesařová
+  - Emílie Tesařové
+[[PERSON_20]]: Cyril Tesař
+[[PERSON_21]]: Metoděj Strnad
+[[PERSON_22]]: Cecílie Nová
+  - Cecílii Novou
+  - Nové
+[[PERSON_23]]: Oliver Kadlec
+[[PERSON_24]]: Tamara Kadlecová
+  - Kadlecové
+[[PERSON_25]]: Bruno Kadlec
+[[PERSON_26]]: Aneta Kadlecová
+[[PERSON_27]]: Viola Kadlecová
+[[PERSON_28]]: Servác Mlynář
+[[PERSON_29]]: Teodora Mlynářová
+  - Mlynářové
+[[PERSON_30]]: Gizela Šimková
+[[PERSON_31]]: Svatopluk Procházka
+[[PERSON_32]]: Jolana Burešová
+[[PERSON_33]]: Vincenc Bartůněk
+[[PERSON_34]]: Laura Hájková
+[[PERSON_35]]: Jarmil Vávra
+[[PERSON_36]]: Berta Fleková
+[[PERSON_37]]: Dobroslav Čížek
+[[PERSON_38]]: Izabel Kolářová
+  - Izabelu Kolářovou
+[[PERSON_39]]: Hermína Kolářová
+[[PERSON_40]]: Gita Pilná
+[[PERSON_41]]: Věnceslav Pilný
+[[PERSON_42]]: Slavěna Žáková
+[[PERSON_43]]: Medard Šesták
+  - Medard
+[[PERSON_44]]: Justýna Horáčková
+[[PERSON_45]]: Drahoslav Polák
+[[PERSON_46]]: Apolena Machová
+[[PERSON_47]]: Roland Stránský
+[[PERSON_48]]: Evženie Morávková
+[[PERSON_49]]: Ctibor Urban
+[[PERSON_50]]: Emilie Kučerová
+[[PERSON_51]]: Vlastislav Šíma
+[[PERSON_52]]: Darja Beranová
+[[PERSON_53]]: Ilona Petráková
+[[PERSON_54]]: Alois Kopecký
+[[PERSON_55]]: Gita Procházková
+[[PERSON_56]]: Blažej Sýkora
+[[PERSON_57]]: Světlana Dvořáková
+[[PERSON_58]]: Antonín Beneš
+[[PERSON_59]]: Libuše Vaňková
+[[PERSON_60]]: Oldřich Kolman
+[[PERSON_61]]: Edita Urbanová
+[[PERSON_62]]: Klaudie Horníková
+[[PERSON_63]]: Ferdinand Bílý
+[[PERSON_64]]: Regína Baštová
+[[PERSON_65]]: Pankrác Kolman
+[[PERSON_66]]: Nora Majerová
+[[PERSON_67]]: Bonifác Tesař
+[[PERSON_68]]: Amálie Šimůnková
+[[PERSON_69]]: Kvido Schneider
+[[PERSON_70]]: Doubravka Váňová
+[[PERSON_71]]: Slavomír Heřman
+
+ADDRESS
+[[ADDRESS_1]]: Lázeňská 145/8, Teplice 415 01
+[[ADDRESS_2]]: Nemovitost na adrese Slezská 67, Opava 746 01
+[[ADDRESS_3]]: Mánesova 89/12, Chomutov 430 01
+[[ADDRESS_4]]: Tylova 34/6, Karlovy Vary 360 01
+[[ADDRESS_5]]: Revoluční 67/9, Děčín 405 02
+[[ADDRESS_6]]: Krátká 23, Most 434 01
+[[ADDRESS_7]]: Sadová 56/3, Kladno 272 01
+[[ADDRESS_8]]: Polní 12, Trutnov 541 01
+[[ADDRESS_9]]: Sportovní 45, Mladá Boleslav 293 01
+[[ADDRESS_10]]: Lázeňská 78, Poděbrady 290 01
+[[ADDRESS_11]]: Krátká 12, Hradec Králové 500 02
+[[ADDRESS_12]]: Polní 89, Děčín 405 02
+[[ADDRESS_13]]: Zahradní 34, Chomutov 430 01
+[[ADDRESS_14]]: Krátká 45, Teplice 415 01
+[[ADDRESS_15]]: Zahradní 78, Chomutov 430 01
+[[ADDRESS_16]]: Lázeňská 89, Karlovy Vary 360 01
+
+BANK
+[[BANK_1]]: 2910384756/0100
+[[BANK_2]]: 5678901234/2700
+[[BANK_3]]: 7890123456/0800
+[[BANK_4]]: 9012345678/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 760824/5912
+[[BIRTH_ID_2]]: 795614/7823
+[[BIRTH_ID_3]]: 810723/6734
+[[BIRTH_ID_4]]: 845629/8012
+[[BIRTH_ID_5]]: 925824/7134
+[[BIRTH_ID_6]]: 880512/6823
+[[BIRTH_ID_7]]: 895723/8245
+[[BIRTH_ID_8]]: 830625/7912
+[[BIRTH_ID_9]]: 750814/8123
+[[BIRTH_ID_10]]: 080523/7845
+[[BIRTH_ID_11]]: 780925/6734
+[[BIRTH_ID_12]]: 685629/8134
+[[BIRTH_ID_13]]: 570823/7623
+[[BIRTH_ID_14]]: 835724/8923
+[[BIRTH_ID_15]]: 840714/6912
+[[BIRTH_ID_16]]: 190823/7890
+[[BIRTH_ID_17]]: 895629/8134
+[[BIRTH_ID_18]]: 720625/7823
+[[BIRTH_ID_19]]: 355624/8912
+[[BIRTH_ID_20]]: 855723/8134
+[[BIRTH_ID_21]]: 145623/7890
+[[BIRTH_ID_22]]: 165824/8912
+[[BIRTH_ID_23]]: 185629/7845
+[[BIRTH_ID_24]]: 205723/8901
+[[BIRTH_ID_25]]: 805624/7823
+[[BIRTH_ID_26]]: 155624/7890
+[[BIRTH_ID_27]]: 855629/7845
+[[BIRTH_ID_28]]: 740925/6734
+[[BIRTH_ID_29]]: 825723/8134
+[[BIRTH_ID_30]]: 680512/7623
+[[BIRTH_ID_31]]: 965624/8912
+[[BIRTH_ID_32]]: 830714/7823
+[[BIRTH_ID_33]]: 695629/8134
+[[BIRTH_ID_34]]: 750823/6734
+[[BIRTH_ID_35]]: 815724/8245
+[[BIRTH_ID_36]]: 155629/7890
+[[BIRTH_ID_37]]: 610714/7623
+[[BIRTH_ID_38]]: 665629/8134
+[[BIRTH_ID_39]]: 895623/8245
+[[BIRTH_ID_40]]: 935724/8134
+[[BIRTH_ID_41]]: 780814/6734
+[[BIRTH_ID_42]]: 805629/7845
+[[BIRTH_ID_43]]: 860523/7823
+[[BIRTH_ID_44]]: 755624/8912
+[[BIRTH_ID_45]]: 640925/6734
+[[BIRTH_ID_46]]: 885629/8245
+[[BIRTH_ID_47]]: 790714/7623
+[[BIRTH_ID_48]]: 925723/8134
+[[BIRTH_ID_49]]: 715629/7845
+[[BIRTH_ID_50]]: 550814/6734
+[[BIRTH_ID_51]]: 835724/8912
+[[BIRTH_ID_52]]: 720523/7623
+[[BIRTH_ID_53]]: 630714/6734
+[[BIRTH_ID_54]]: 755624/7845
+[[BIRTH_ID_55]]: 780825/7623
+[[BIRTH_ID_56]]: 895723/8912
+[[BIRTH_ID_57]]: 825629/7845
+[[BIRTH_ID_58]]: 650814/7623
+[[BIRTH_ID_59]]: 895623/8134
+[[BIRTH_ID_60]]: 770625/7823
+[[BIRTH_ID_61]]: 765824/8912
+[[BIRTH_ID_62]]: 620714/7623
+[[BIRTH_ID_63]]: 935629/8245
+[[BIRTH_ID_64]]: 810523/7845
+[[BIRTH_ID_65]]: 705629/8134
+[[BIRTH_ID_66]]: 690825/7623
+
+DATE
+[[DATE_1]]: 2. ledna 2026
+
+DIC
+[[DIC_1]]: CZ58694712
+
+EMAIL
+[[EMAIL_1]]: l.konecny@email.cz
+[[EMAIL_2]]: a.fischerova@centrum.cz
+[[EMAIL_3]]: h.dostalova@seznam.cz
+[[EMAIL_4]]: c.tesar@firma.cz
+[[EMAIL_5]]: t.mlynarova@email.cz
+[[EMAIL_6]]: s.prochazka@firma.cz
+[[EMAIL_7]]: s.zakova@centrum.cz
+[[EMAIL_8]]: d.beranova@email.cz
+[[EMAIL_9]]: a.benes@firma.cz
+
+IBAN
+[[IBAN_1]]: CZ8520100000002345678901
+
+ICO
+[[ICO_1]]: 58694712
+[[ICO_2]]: 07823456
+
+ID_CARD
+[[ID_CARD_1]]: 345678901
+[[ID_CARD_2]]: KL456789
+[[ID_CARD_3]]: MN890123
+[[ID_CARD_4]]: OP123456
+
+INSURANCE_ID
+[[INSURANCE_ID_1]]: 556677889
+[[INSURANCE_ID_2]]: 778899112
+[[INSURANCE_ID_3]]: 112233445
+[[INSURANCE_ID_4]]: 889900112
+
+PHONE
+[[PHONE_1]]: +420 602 147 258
+[[PHONE_2]]: +420 775 369 147
+[[PHONE_3]]: +420 608 258 369
+[[PHONE_4]]: +420 731 456 789
+[[PHONE_5]]: +420 721 369 258
+[[PHONE_6]]: +420 605 147 258
+[[PHONE_7]]: +420 736 258 147
+[[PHONE_8]]: +420 731 258 369
+[[PHONE_9]]: +420 608 147 258
+[[PHONE_10]]: +420 602 369 147
+[[PHONE_11]]: +420 731 147 258
+
