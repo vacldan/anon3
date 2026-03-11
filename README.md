@@ -12,7 +12,7 @@ Tento branch obsahuje pouze soubory potřebné pro vytvoření instalačního ba
 ├── anonymize_cli.py               # CLI pro anonymizaci
 ├── deanonymizator_lokal.py        # Deanonymizace
 ├── pdf2docx_cli.py                # PDF konverze
-├── anon7.2 - s padama.py          # Hlavní anonymizační engine
+├── anon72.py                       # Hlavní anonymizační engine (v7.2+)
 ├── cz_names.v1.json               # Data pro české jména
 ├── build/
 │   ├── build_with_trial_pyarmor.py  # Build script pro PyArmor trial
@@ -75,6 +75,8 @@ Cíl: Tento nástroj automaticky anonymizuje osobní údaje dle GDPR v textovýc
 ### Klíčové vlastnosti
 
 - Offline: žádná data neopouští zařízení
-- Detekce PII: jména, adresy, e-maily, telefony, bankovní účty, rodná čísla, IČ/DIČ, SPZ
-- Jednotné štítky: `[[UŽIVATEL_1]]`, `[[ADRESA_3]]`, `[[ÚČET_2]]`
+- Detekce PII: jména, adresy (víceúrovňová detekce s proximity merge), e-maily, telefony, bankovní účty, rodná čísla, IČ/DIČ, SPZ, 34 kategorií celkem
+- Jednotné štítky: `[[PERSON_1]]`, `[[ADDRESS_1]]`, `[[BANK_ACCOUNT_1]]`
 - Mapa náhrad: strojově čitelný map.json + lidsky čitelný map.txt
+- Adresní engine: proximity merge komponent (PSČ, ulice, město, republika) bez ohledu na slovosled, deduplikace podmnožin, whitelist 80+ českých měst
+- Testováno na 200+ syntetických smlouvách + 30 variant úvěrových smluv s různými formáty adres

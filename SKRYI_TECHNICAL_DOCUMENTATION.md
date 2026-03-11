@@ -1,4 +1,4 @@
-# SKRYI Document Suite - Technická dokumentace v3.2
+# SKRYI Document Suite - Technická dokumentace v3.3
 
 ## Systém pro morfologicky inteligentní anonymizaci dokumentů v inflektivních jazycích
 
@@ -131,7 +131,9 @@ SKRYI Document Suite/
 ┌─────────────────────────────────────────────────────────┐
 │  MODUL 2: První průchod - Detekce entit                 │
 │  ├─ Regex detekce: email, telefon, IČO, rodné číslo     │
-│  ├─ Detekce adres (ulice, PSČ, město)                   │
+│  ├─ Detekce adres (ulice, PSČ, město, republika)        │
+│  ├─ Proximity merge: sloučení blízkých komponent         │
+│  ├─ Deduplikace ADDRESS záznamů (podřetězcová)          │
 │  └─ Vytvoření mapy: original → [[ŠTÍTEK_N]]             │
 └───────────────────────┬─────────────────────────────────┘
                         │
@@ -153,7 +155,8 @@ SKRYI Document Suite/
 │  MODUL 4: Post-processing                               │
 │  ├─ Validace kanonických jmen proti zdroji              │
 │  ├─ Oprava rodových neshod (M/F)                        │
-│  └─ 4-fázová deduplikace osob                           │
+│  ├─ 4-fázová deduplikace osob                           │
+│  └─ Finální deduplikace ADDRESS (sloučení podmnožin)    │
 └───────────────────────┬─────────────────────────────────┘
                         │
                         ▼
@@ -410,6 +413,54 @@ FUNCTION validate_canonical_names():
                 person.first, person.last = parse_name(best_variant)
 END FUNCTION
 ```
+
+## 4.8 INOVACE #7: Víceúrovňová detekce adres s proximity merge
+
+**Problém:** Adresy v českých smlouvách se vyskytují v mnoha formátech a slovosledech:
+- `Vyskočilova 1442/1b, Praha 4 - Michle, 140 28`
+- `PSČ 140 28, Vyskočilova 1442/1b, Praha 4 - Michle, Česká republika`
+- `140 28 Praha 4, Vyskočilova 1442/1b`
+- `Praha 4, Michle, Vyskočilova 1442/1b, PSČ 140 28`
+
+**Řešení: Tříúrovňový systém**
+
+**Úroveň 1 – Přímé regex vzory:**
+Sada specifických regexů zachytí nejčastější formáty (ulice číslo, PSČ město, město-část).
+
+**Úroveň 2 – Proximity merge (`_address_proximity_merge`):**
+```
+1. Detekuj nezávislé komponenty v textu:
+   - PSČ (pattern: \d{3}\s?\d{2}, volitelně s prefixem "PSČ")
+   - Ulice + číslo (pattern: Slovo(+Slovo)(+ŘímskéČíslo)? Číslo(/Číslo)?)
+   - Město (whitelist 80+ českých měst)
+   - Země (Česká republika, Slovenská republika)
+
+2. Seskup komponenty do skupin podle blízkosti (MAX_DIST = 80 znaků)
+   - Přeruš skupinu na ne-ADDRESS tazích ([[ICO_X]], [[PERSON_X]])
+
+3. Slouč skupinu do jednoho [[ADDRESS_N]] tagu
+   - Vyžaduj alespoň 1 "silnou" komponentu (PSČ, ulice, nebo existující tag)
+   - Normalizuj PSČ (14028 → 140 28, odstraň prefix "PSČ")
+   - Deduplikuj části před sloučením
+```
+
+**Úroveň 3 – Finální deduplikace (`_deduplicate_addresses`):**
+```
+Po dokončení veškeré detekce:
+1. Seřaď ADDRESS záznamy podle délky kanonické hodnoty
+2. Pro každý kratší záznam:
+   - Pokud je podřetězcem delšího → přemapuj tag na delší
+   - Nahraď starý tag novým v celém dokumentu
+3. Odstraň absorbované záznamy z mapy
+```
+
+**Příklad:**
+| Vstup | Detekce |
+|-------|---------|
+| `Děčín, Česká republika, Masarykovo náměstí 1/1, PSČ 405 02` | `[[ADDRESS_1]]` (proximity merge) |
+| `...sídlo Děčín...` (jinde v textu) | `[[ADDRESS_1]]` (deduplikace – „Děčín" absorbováno) |
+
+**Výhoda:** Spolehlivá detekce adres bez ohledu na slovosled, bez duplicitních záznamů v mapě. Testováno na 30 variantách úvěrových smluv s různými městy a formáty.
 
 ---
 

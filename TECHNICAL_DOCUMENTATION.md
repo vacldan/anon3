@@ -1,7 +1,7 @@
 # SKRYI Document Suite - Technical Documentation
 
-> **Version:** 3.1.1
-> **Last Updated:** 2026-02-24
+> **Version:** 3.2.0
+> **Last Updated:** 2026-03-11
 > **Audience:** Senior developers, DevOps engineers, maintainers
 
 ---
@@ -230,10 +230,13 @@ anonymize_docx(input, output, map_json, map_txt, pdf_report)
   ├── FOR EACH paragraph + table cell:
   │     ├── anonymize_entities(text)         # Regex-based entity detection
   │     │     └── Includes address post-passes:
-  │     │           ├── Simple address cleanup
+  │     │           ├── Full-address regex patterns (multiple word orders)
+  │     │           ├── Proximity merge: group nearby PSČ/street/city components
   │     │           ├── City+PSČ merge into existing ADDRESS tags
-  │     │           ├── Standalone city detection (Praha, Brno, ...)
-  │     │           └── District absorption ("[[ADDRESS_2]] - Vinohrady" → "[[ADDRESS_2]]")
+  │     │           ├── Standalone city detection (80+ Czech cities)
+  │     │           ├── Country absorption (Česká/Slovenská republika)
+  │     │           ├── District absorption ("[[ADDRESS_2]] - Vinohrady")
+  │     │           └── ADDRESS deduplication (subset merge)
   │     ├── _apply_known_people(text)        # Replace known person variants
   │     └── _replace_remaining_people(text)  # Detect new persons via NER patterns
   │
@@ -263,7 +266,7 @@ All entity detection is **regex-based** (no ML models). The method processes tex
 | Category | Tag Prefix | Example Pattern |
 |----------|-----------|-----------------|
 | PERSON | OSOBA | Regex + Czech morphological rules |
-| ADDRESS | ADRESA | Czech address prefixes + street/city patterns |
+| ADDRESS | ADRESA | Multi-level: regex patterns + proximity merge + city whitelist (80+) |
 | RC (Birth Number) | RC | `\d{6}/\d{3,4}` |
 | DATE | DATUM | `5. 7. 2026` format |
 | BIRTH_DATE | DATUM_NAR | Date after "narozen/á" |
@@ -339,13 +342,29 @@ This is the most complex part of the engine. It handles:
      - Surname matches a robust Czech surname suffix heuristic (`-ová`, `-ové`, `-ovou`, `-ský`, `-ská`, etc.).
    - Runs on the fully anonymized document (paragraphs + tables) after person deduplication and tag remap, and is what fixes the `"Mai Linh Nguyenová"` leak discovered in final stress-test contracts.
 
-7. **Address district absorption** (inside `anonymize_entities`):
-   - Post-pass at the END of all address processing
-   - Catches pattern: `[[ADDRESS_N]] - DistrictName` (e.g., `[[ADDRESS_2]] - Vinohrady`)
-   - Absorbs the district name into the existing address tag
-   - Must run AFTER standalone city detection (`Praha 3`, `Brno`) so the tag exists first
+7. **Address proximity merge** (`_address_proximity_merge` inside `anonymize_entities`):
+   - Detects independent address components regardless of word order:
+     - **PSČ**: `\d{3}\s?\d{2}` (with optional "PSČ" prefix)
+     - **Street + number**: `(prefix)? Word(+Word)*(+RomanNumeral)? Number(/Number)?`
+     - **City**: whitelist of **80+ Czech cities** (Praha, Brno, Ostrava, Plzeň, Olomouc, Liberec, Hradec Králové, České Budějovice, Karlovy Vary, Zlín, Pardubice, Jihlava, Děčín, Přerov, Chrudim, Tábor, Svitavy, Kroměříž, Znojmo, Třebíč, Prostějov, Kutná Hora, Havlíčkův Brod, Kolín, Benešov, Písek, Louny, Strakonice, Kladno, Mladá Boleslav, and many more)
+     - **Country**: `Česká republika`, `Slovenská republika`
+   - Groups components within MAX_DIST=80 characters, breaking on non-ADDRESS tags (barriers)
+   - Requires at least one "strong" component (PSČ, street+number, or existing ADDRESS tag)
+   - Normalizes PSČ (removes "PSČ" prefix, formats `14028` → `140 28`) and deduplicates parts
 
-8. **Non-person blacklists** (sector-specific):
+8. **Address district/country absorption** (inside `anonymize_entities`):
+   - Post-pass absorbs `", Česká republika"` after `[[ADDRESS_N]]` tags
+   - Post-pass absorbs `"- DistrictName"` after `[[ADDRESS_N]]` tags
+   - Must run AFTER standalone city detection so the tag exists first
+
+9. **ADDRESS deduplication** (`_deduplicate_addresses`, runs before document save):
+   - Sorts all ADDRESS entries by canonical value length
+   - If a shorter entry is a substring of a longer one → merges them (keeps the longer one)
+   - Remaps all tags in the document (paragraphs + tables)
+   - Eliminates redundant entries like standalone `"Svitavy"` when `"Svitavy, Česká republika, náměstí Míru 32/1, 568 02"` already exists
+   - Combined with substring matching in `_get_or_create_label`, prevents most duplicates at creation time
+
+10. **Non-person blacklists** (sector-specific):
    - `critical_blacklist` in person detection: prevents roles/institutions from being tagged as PERSON
    - `role_blacklist_words` in map cleanup: removes false PERSON entries post-hoc
    - Institution/brand coverage is **data-driven**:
@@ -653,7 +672,11 @@ CSS custom properties (variables) define the Chrome/Silver dark theme:
 
 10. **District absorption ordering** - The `district_after_addr_re` post-pass must run at the END of `anonymize_entities`, after all city detection patterns (`city_pattern`, `city_in_place`). If placed earlier, the address tag for "Praha 3" doesn't exist yet and the district name "Vinohrady" won't be absorbed.
 
-11. **Non-person false positives** - Common Czech words like `Stav`, `Banka`, `Zpracovatel`, `Nové` can be mistakenly detected as person names when they appear in "FirstName LastName" position. The `critical_blacklist` and `role_blacklist_words` sets prevent this but must be kept up-to-date for each target sector (legal, healthcare, HR, education, finance, public admin).
+11. **Address proximity merge barriers** - The proximity merge must break groups when non-ADDRESS tags (`[[ICO_X]]`, `[[PERSON_X]]`) appear between address components. Without barriers, unrelated entities can be incorrectly merged into a single ADDRESS tag.
+
+12. **ADDRESS deduplication ordering** - `_deduplicate_addresses()` must run AFTER all post-processing (person dedup, standalone firstnames, orphan surnames) but BEFORE document save and map creation. This ensures all ADDRESS tags are finalized before the merge pass.
+
+13. **Non-person false positives** - Common Czech words like `Stav`, `Banka`, `Zpracovatel`, `Nové`, `Poplatek`, `Specifikace`, `Běžný` can be mistakenly detected as person names when they appear in "FirstName LastName" position. The `critical_blacklist` and `role_blacklist_words` sets prevent this but must be kept up-to-date for each target sector (legal, healthcare, HR, education, finance, public admin). Multi-word city names (Kutná Hora, Havlíčkův Brod, Přemysla Otakara, etc.) are also blacklisted to prevent detection as person names.
 
 ### Platform
 
@@ -667,7 +690,8 @@ To validate the correctness of the engine after the latest changes (standalone f
 
 - **Automated regression**: anonymization + strict validators (`run_anonymize_tests.py`, `run_anonymize_tests_v2.py`) over the full corpus of ~200 synthetic contracts (including multiple “stress-test” documents).
 - **Brute-force raw cross-check**: helper scripts in `test_data/` that scan anonymized outputs for any occurrence of original PII values outside `[[...]]` tags (intentionally ignoring blacklists to surface worst-case candidates).
-- **Full manual review**: 201 anonymized contracts (including 15 “final” high-complexity scenarios with foreign names, SSH keys, RFID, LinkedIn, databoxes, complex address formats) were manually cross-checked against their `_map.json` files. Result: **zero real PII leaks**; the remaining 7 findings (`Bc.`, `hcp_admin`, `123456`, `RFID`, `Zpracovatel`) were all confirmed as non-person or non-sensitive terms in context.
+- **Full manual review**: 201 anonymized contracts (including 15 “final” high-complexity scenarios with foreign names, SSH keys, RFID, LinkedIn, databoxes, complex address formats) were manually cross-checked against their `_map.json` files. Result: **zero real PII leaks**; the remaining 7 findings (`Bc.`, `hcp_admin`, `123456`, `RFID`, `Zpracovatel`) were all confirmed as non-person or non-sensitive
+- **Address variant stress-test**: 30 loan contract variants (smlouva-uver-variant-1..30) generated from a real loan contract template with systematically varied address formats (15 variants x varied word orders + 15 variants with completely different Czech cities/streets/PSC). All 30 variants pass with **zero address leaks, zero false person detections, and zero duplicate ADDRESS entries in the maps**. terms in context.
 
 ---
 
