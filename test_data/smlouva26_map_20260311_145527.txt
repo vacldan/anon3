@@ -1,0 +1,119 @@
+OSOBY
+-----
+[[PERSON_1]]: Hana Blažková
+  - Hanou Blažkovou
+[[PERSON_2]]: Ondřej Patočka
+  - Ondřeje Patočku
+[[PERSON_3]]: Martina Kyselová
+  - Martiny Kyselové
+  - Martině Kyselové
+[[PERSON_4]]: Roman Jeřábek
+  - Romana Jeřábka
+[[PERSON_5]]: Ivana Rendlová
+  - Ivanu Rendlovou
+[[PERSON_6]]: Petr Lněnička
+  - Petrem Lněničkou
+[[PERSON_7]]: Renata Jírová
+  - Renaty Jírové
+[[PERSON_8]]: Milan Krupauer
+  - Milana Krupauera
+[[PERSON_9]]: Lucie Žákovsko
+  - Lucií Žákovsko
+[[PERSON_10]]: Lucie Žákovská
+[[PERSON_11]]: Adam Vrba
+  - Adama Vrby
+  - Adamem Vrbou
+[[PERSON_12]]: Nikola Soukupová
+  - Nikoly Soukupové
+[[PERSON_13]]: Lukáš Pecek
+  - Lukáš Pecka
+  - Lukáši Peckovi
+[[PERSON_14]]: Kateřina Vítková
+  - Kateřině Vítkové
+[[PERSON_15]]: Zdeněk Špička
+  - Zdeňka Špičku
+[[PERSON_16]]: Radka Pospíšilová
+  - Radkou Pospíšilovou
+[[PERSON_17]]: Tomáš Havelka
+  - Tomáše Havelku
+[[PERSON_18]]: Alžběta Malíková
+[[PERSON_19]]: Radovan Chýl
+  - Radovan Chýle
+  - Radovanem Chýlem
+[[PERSON_20]]: Veronika Plzáková
+  - Veronice Plzákové
+[[PERSON_21]]: Jaromír Kotek
+  - Jaromíra Kotka
+[[PERSON_22]]: Soňa Nedbalová
+[[PERSON_23]]: Michal Plíva
+[[PERSON_24]]: Kristýna Tůmová
+[[PERSON_25]]: Pavel Horčička
+[[PERSON_26]]: Andrea Vránová
+[[PERSON_27]]: Štěpán Liška
+[[PERSON_28]]: Petra Měchurová
+[[PERSON_29]]: Jiří Kolařík
+[[PERSON_30]]: Barbora Kmentová
+[[PERSON_31]]: David Záruba
+[[PERSON_32]]: Simona Králíková
+[[PERSON_33]]: Oldřich Hanzal
+[[PERSON_34]]: Lenka Brýdlová
+[[PERSON_35]]: Filip Kameník
+[[PERSON_36]]: Jana Roučková
+[[PERSON_37]]: Patrik Veleba
+[[PERSON_38]]: Monika Bártová
+[[PERSON_39]]: Václav Dufek
+[[PERSON_40]]: Tereza Kalinová
+[[PERSON_41]]: Marek Štolba
+
+ADDRESS
+[[ADDRESS_1]]: u byla komunikace vedena ohledně bydliště Na Stráni 12, Klatovy
+[[ADDRESS_2]]: cz a adrese Polní 7, Vimperk
+[[ADDRESS_3]]: a bydliště Jabloňová 19, Nový Jičín
+[[ADDRESS_4]]: a adresu Na Lávce 4, Sušice
+[[ADDRESS_5]]: kdy Alžběty Malíkové se týká bydliště U Rybníka 8, Soběslav
+
+BANK
+[[BANK_1]]: 2100887711/2010
+[[BANK_2]]: 2400991188/2010
+[[BANK_3]]: 1900772288/0100
+[[BANK_4]]: 2101449988/2010
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 915412/7712
+[[BIRTH_ID_2]]: 840912/3319
+[[BIRTH_ID_3]]: 926118/4402
+[[BIRTH_ID_4]]: 905331/1188
+
+EMAIL
+[[EMAIL_1]]: adam.vrba@kontakt.cz
+[[EMAIL_2]]: milan.krupauer@firma.cz
+[[EMAIL_3]]: op@legal.cz
+[[EMAIL_4]]: veronika.plzakova@mail.cz
+[[EMAIL_5]]: a.malikova@firma.cz
+[[EMAIL_6]]: zdenek.spicka@office.cz
+[[EMAIL_7]]: nikola.soukupova@post.cz
+
+ICO
+[[ICO_1]]: 09188211
+
+ID_CARD
+[[ID_CARD_1]]: 447882119
+[[ID_CARD_2]]: 332118889
+[[ID_CARD_3]]: 449998112
+[[ID_CARD_4]]: 551229988
+
+IP
+[[IP_1]]: 185.44.18.92
+[[IP_2]]: 10.1.44.91
+[[IP_3]]: 192.168.0.77
+[[IP_4]]: 178.77.22.41
+
+PHONE
+[[PHONE_1]]: +420 603 118 771
+[[PHONE_2]]: +420 728 441 990
+[[PHONE_3]]: +420 777 551 118
+[[PHONE_4]]: +420 603 771 009
+[[PHONE_5]]: +420 739 118 442
+[[PHONE_6]]: +420 728 992 881
+[[PHONE_7]]: +420 603 889 114
+

@@ -505,14 +505,18 @@ def main():
             print("  nebo bez argumentů v adresáři s test_data/")
             sys.exit(1)
         results = []
-        for n in range(10, 34):
-            if n == 30:
+        # All contracts: smlouva0-9, smlouva10-33, "smlouva 30"
+        contract_list = []
+        for n in range(0, 34):
+            if n == 1:  # smlouva1.docx does not exist
                 continue
-            src = base / f'smlouva{n}.docx'
+            contract_list.append((str(n), base / f'smlouva{n}.docx'))
+        contract_list.append((' 30', base / 'smlouva 30.docx'))
+        for label, src in contract_list:
             if src.exists():
                 r = run_validation(str(src))
                 if 'error' not in r:
-                    results.append((n, r))
+                    results.append((label, r))
                     print_report(r)
         # Souhrnná tabulka
         if results:
@@ -521,7 +525,7 @@ def main():
             print('=' * 70)
             print(f"{'Smlouva':<12} {'Skóre':<10} {'Kanon':<6} {'Var':<5} {'Nepokr':<6} {'Úniky':<6} {'Phantom':<7} {'Status'}")
             print('-' * 70)
-            for n, r in results:
+            for label, r in results:
                 ec = len(r['errors_canonical'])
                 ev = len(r.get('errors_canonical_variants', []))
                 ur = len(r.get('uncovered_real', []))
@@ -529,11 +533,12 @@ def main():
                 ph = len(r['phantoms'])
                 s = r['score']
                 status = '✓' if s >= 9 else '✗'
-                print(f"smlouva{n:<6} {s}/{r['max_score']:<6} {ec:<6} {ev:<5} {ur:<6} {lk:<6} {ph:<7} {status}")
+                name = f"smlouva{label}"
+                print(f"{name:<18} {s}/{r['max_score']:<6} {ec:<6} {ev:<5} {ur:<6} {lk:<6} {ph:<7} {status}")
             avg = sum(r['score'] for _, r in results) / len(results)
             print('-' * 70)
             print(f"Průměr: {avg:.1f}/10")
-            failed = [n for n, r in results if r['score'] < 9]
+            failed = [label for label, r in results if r['score'] < 9]
             if failed:
                 sys.exit(1)
     else:

@@ -1,0 +1,40 @@
+OSOBY
+-----
+[[PERSON_1]]: Lukáš Mareček
+  - Marečka
+[[PERSON_2]]: Petra Novotná
+  - Petry Novotné
+[[PERSON_3]]: Jakub Doležal
+[[PERSON_4]]: Klára Malá
+  - Kláry Malé
+[[PERSON_5]]: Michal Říha
+  - Michalu Říhovi
+[[PERSON_6]]: Veronika Suchá
+  - Veronice Suché
+
+ADDRESS
+[[ADDRESS_1]]: Na Hrázi 21, 612 00 Brno
+[[ADDRESS_2]]: K Lesu 14, 370 01 České Budějovice
+[[ADDRESS_3]]: U Studánky 58, 500 03 Hradec Králové
+[[ADDRESS_4]]: Horní cesta 17, 674 01 Třebíč
+[[ADDRESS_5]]: Pod Skalkou 3, 101 00 Praha
+[[ADDRESS_6]]: Družstevní 66, 787 01 Šumperk
+[[ADDRESS_7]]: listopadu 2025, a to na účet pana Lukáše
+
+BANK
+[[BANK_1]]: 555123456/0300
+
+DATE
+[[DATE_1]]: 4. 5. 1982
+[[DATE_2]]: 16. 9. 1987
+[[DATE_3]]: 28. 2. 1991
+[[DATE_4]]: 3. 7. 1995
+[[DATE_5]]: 22. 11. 1989
+[[DATE_6]]: 12. 12. 1993
+[[DATE_7]]: 31. 7. 2025
+[[DATE_8]]: 30. 7. 2025
+[[DATE_9]]: 31. července 2025
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: 2AB 1234
+
