@@ -1,10 +1,10 @@
 {
   "summary": {
-    "total": 200,
+    "total": 216,
     "passed": 191,
-    "failed": 9,
-    "avg_score": 9.8,
-    "with_pii_leak": 9,
+    "failed": 25,
+    "avg_score": 9.4,
+    "with_pii_leak": 25,
     "map_inconsistent": 1,
     "structure_broken": 0,
     "pdf_missing": 0
@@ -16,6 +16,118 @@
       "status": "OK",
       "problémy": "—",
       "poznamka": "OK"
+    },
+    {
+      "soubor": "smlouva-o-uveru_base.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:6",
+      "poznamka": "PII leak: \"Poplatky\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\" (+1)"
+    },
+    {
+      "soubor": "smlouva-uver-variant-1.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:6",
+      "poznamka": "PII leak: \"Poplatky\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\" (+1)"
+    },
+    {
+      "soubor": "smlouva-uver-variant-10.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:6",
+      "poznamka": "PII leak: \"Poplatky\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\" (+1)"
+    },
+    {
+      "soubor": "smlouva-uver-variant-11.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:6",
+      "poznamka": "PII leak: \"Poplatky\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\" (+1)"
+    },
+    {
+      "soubor": "smlouva-uver-variant-12.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:6",
+      "poznamka": "PII leak: \"Poplatky\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\" (+1)"
+    },
+    {
+      "soubor": "smlouva-uver-variant-13.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:6",
+      "poznamka": "PII leak: \"Poplatky\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\" (+1)"
+    },
+    {
+      "soubor": "smlouva-uver-variant-14.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:6",
+      "poznamka": "PII leak: \"Poplatky\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\" (+1)"
+    },
+    {
+      "soubor": "smlouva-uver-variant-15.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:6",
+      "poznamka": "PII leak: \"Poplatky\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\" (+1)"
+    },
+    {
+      "soubor": "smlouva-uver-variant-2.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:6",
+      "poznamka": "PII leak: \"Poplatky\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\" (+1)"
+    },
+    {
+      "soubor": "smlouva-uver-variant-3.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:6",
+      "poznamka": "PII leak: \"Poplatky\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\" (+1)"
+    },
+    {
+      "soubor": "smlouva-uver-variant-4.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:6",
+      "poznamka": "PII leak: \"Poplatky\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\" (+1)"
+    },
+    {
+      "soubor": "smlouva-uver-variant-5.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:6",
+      "poznamka": "PII leak: \"Poplatky\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\" (+1)"
+    },
+    {
+      "soubor": "smlouva-uver-variant-6.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:6",
+      "poznamka": "PII leak: \"Poplatky\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\" (+1)"
+    },
+    {
+      "soubor": "smlouva-uver-variant-7.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:6",
+      "poznamka": "PII leak: \"Poplatky\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\" (+1)"
+    },
+    {
+      "soubor": "smlouva-uver-variant-8.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:6",
+      "poznamka": "PII leak: \"Poplatky\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\" (+1)"
+    },
+    {
+      "soubor": "smlouva-uver-variant-9.docx",
+      "score": 4,
+      "status": "FAIL",
+      "problémy": "PII:6",
+      "poznamka": "PII leak: \"Poplatky\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\", \"NAME: Money Bank\" (+1)"
     },
     {
       "soubor": "smlouva.docx",
@@ -253,7 +365,7 @@
       "score": 4,
       "status": "FAIL",
       "problémy": "PII:2, mapa",
-      "poznamka": "PII leak: \"NAME: Poučení  Proti\", \"NAME: Doručení  Tento\" | Mapa (adresy): [D-PREFIX] [[ADDRESS_5]] = 'sídlem Tyršova 44, 530 02 Pardubice' obsahuje prefix 'sídlem', který podle QA pravidel do adresy nepatří."
+      "poznamka": "PII leak: \"NAME: Poučení  Proti\", \"NAME: Doručení  Tento\" | Mapa (adresy): [D-PREFIX] [[ADDRESS_6]] = 'sídlem Tyršova 44, 530 02 Pardubice' obsahuje prefix 'sídlem', který podle QA pravidel do adresy nepatří."
     },
     {
       "soubor": "smlouva_final_02.docx",
@@ -1422,7 +1534,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 153,
+      "entity_count": 161,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -1439,6 +1551,598 @@
         "anonymized": {
           "paragraphs": 57,
           "tables": 1
+        }
+      }
+    },
+    {
+      "file": "smlouva-o-uveru_base.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Poplatky",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 23,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 6,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 40,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 40,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva-uver-variant-1.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Poplatky",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 23,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 6,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 40,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 40,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva-uver-variant-10.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Poplatky",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 25,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 6,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 40,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 40,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva-uver-variant-11.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Poplatky",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 26,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 6,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 40,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 40,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva-uver-variant-12.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Poplatky",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 26,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 6,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 40,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 40,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva-uver-variant-13.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Poplatky",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 25,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 6,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 40,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 40,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva-uver-variant-14.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Poplatky",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 26,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 6,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 40,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 40,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva-uver-variant-15.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Poplatky",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 26,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 6,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 40,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 40,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva-uver-variant-2.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Poplatky",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 25,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 6,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 40,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 40,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva-uver-variant-3.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Poplatky",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 26,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 6,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 40,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 40,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva-uver-variant-4.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Poplatky",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 25,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 6,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 40,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 40,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva-uver-variant-5.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Poplatky",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 24,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 6,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 40,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 40,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva-uver-variant-6.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Poplatky",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 26,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 6,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 40,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 40,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva-uver-variant-7.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Poplatky",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 26,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 6,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 40,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 40,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva-uver-variant-8.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Poplatky",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 25,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 6,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 40,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 40,
+          "tables": 0
+        }
+      }
+    },
+    {
+      "file": "smlouva-uver-variant-9.docx",
+      "success": true,
+      "error": null,
+      "pii_leaks": [
+        "Poplatky",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank",
+        "NAME: Money Bank"
+      ],
+      "pii_regex_found": [],
+      "map_ok": true,
+      "map_errors": [],
+      "structure_ok": true,
+      "pdf_report_exists": true,
+      "entity_count": 25,
+      "score": 4,
+      "score_breakdown": {
+        "pii_from_map": 6,
+        "pii_from_regex": 0,
+        "map_ok": true,
+        "structure_ok": true,
+        "pdf_exists": true
+      },
+      "structure": {
+        "original": {
+          "paragraphs": 40,
+          "tables": 0
+        },
+        "anonymized": {
+          "paragraphs": 40,
+          "tables": 0
         }
       }
     },
@@ -1482,7 +2186,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 132,
+      "entity_count": 130,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -1512,7 +2216,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 172,
+      "entity_count": 177,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -1542,7 +2246,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 58,
+      "entity_count": 63,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -1572,7 +2276,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 172,
+      "entity_count": 177,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -1602,7 +2306,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 223,
+      "entity_count": 229,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -1632,7 +2336,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 386,
+      "entity_count": 391,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -1662,7 +2366,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 386,
+      "entity_count": 391,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -1692,7 +2396,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 202,
+      "entity_count": 211,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -1722,7 +2426,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 113,
+      "entity_count": 121,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -1752,7 +2456,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 57,
+      "entity_count": 58,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -1782,7 +2486,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 64,
+      "entity_count": 65,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -1812,7 +2516,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 26,
+      "entity_count": 29,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -1842,7 +2546,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 117,
+      "entity_count": 119,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -1872,7 +2576,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 149,
+      "entity_count": 150,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -1902,7 +2606,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 295,
+      "entity_count": 296,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -1932,7 +2636,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 314,
+      "entity_count": 313,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2052,7 +2756,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 167,
+      "entity_count": 173,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2082,7 +2786,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 216,
+      "entity_count": 221,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2112,7 +2816,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 199,
+      "entity_count": 206,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2142,7 +2846,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 13,
+      "entity_count": 14,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2172,7 +2876,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 161,
+      "entity_count": 172,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2202,7 +2906,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 151,
+      "entity_count": 159,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2232,7 +2936,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 141,
+      "entity_count": 150,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2262,7 +2966,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 30,
+      "entity_count": 32,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2292,7 +2996,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 37,
+      "entity_count": 38,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2322,7 +3026,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 37,
+      "entity_count": 38,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2352,7 +3056,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 85,
+      "entity_count": 86,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2382,7 +3086,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 135,
+      "entity_count": 133,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2412,7 +3116,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 100,
+      "entity_count": 104,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2443,11 +3147,11 @@
       "pii_regex_found": [],
       "map_ok": false,
       "map_errors": [
-        "[D-PREFIX] [[ADDRESS_5]] = 'sídlem Tyršova 44, 530 02 Pardubice' obsahuje prefix 'sídlem', který podle QA pravidel do adresy nepatří."
+        "[D-PREFIX] [[ADDRESS_6]] = 'sídlem Tyršova 44, 530 02 Pardubice' obsahuje prefix 'sídlem', který podle QA pravidel do adresy nepatří."
       ],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 40,
+      "entity_count": 41,
       "score": 4,
       "score_breakdown": {
         "pii_from_map": 2,
@@ -2477,7 +3181,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 46,
+      "entity_count": 47,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2509,7 +3213,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 31,
+      "entity_count": 33,
       "score": 7,
       "score_breakdown": {
         "pii_from_map": 1,
@@ -2602,7 +3306,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 36,
+      "entity_count": 37,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2700,7 +3404,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 23,
+      "entity_count": 27,
       "score": 7,
       "score_breakdown": {
         "pii_from_map": 1,
@@ -2730,7 +3434,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 23,
+      "entity_count": 24,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2763,7 +3467,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 20,
+      "entity_count": 21,
       "score": 6,
       "score_breakdown": {
         "pii_from_map": 2,
@@ -2795,7 +3499,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 36,
+      "entity_count": 38,
       "score": 7,
       "score_breakdown": {
         "pii_from_map": 1,
@@ -2827,7 +3531,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 32,
+      "entity_count": 35,
       "score": 7,
       "score_breakdown": {
         "pii_from_map": 1,
@@ -2857,7 +3561,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 33,
+      "entity_count": 34,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2917,7 +3621,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 63,
+      "entity_count": 64,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2947,7 +3651,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 60,
+      "entity_count": 61,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -2977,7 +3681,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 45,
+      "entity_count": 48,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -3037,7 +3741,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 40,
+      "entity_count": 42,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -3247,7 +3951,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 76,
+      "entity_count": 77,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -5377,7 +6081,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 47,
+      "entity_count": 48,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -5737,7 +6441,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 35,
+      "entity_count": 36,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -5977,7 +6681,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 79,
+      "entity_count": 80,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6007,7 +6711,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 82,
+      "entity_count": 83,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6037,7 +6741,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 80,
+      "entity_count": 81,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6067,7 +6771,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 80,
+      "entity_count": 81,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6097,7 +6801,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 80,
+      "entity_count": 81,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6127,7 +6831,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 79,
+      "entity_count": 80,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6157,7 +6861,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 81,
+      "entity_count": 82,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6187,7 +6891,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 79,
+      "entity_count": 80,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6217,7 +6921,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 78,
+      "entity_count": 79,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6247,7 +6951,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 75,
+      "entity_count": 76,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6277,7 +6981,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 79,
+      "entity_count": 80,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6307,7 +7011,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 84,
+      "entity_count": 86,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6337,7 +7041,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 82,
+      "entity_count": 83,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6367,7 +7071,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 82,
+      "entity_count": 83,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6397,7 +7101,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 80,
+      "entity_count": 81,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6427,7 +7131,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 79,
+      "entity_count": 80,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6457,7 +7161,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 75,
+      "entity_count": 76,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6487,7 +7191,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 76,
+      "entity_count": 77,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6547,7 +7251,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 80,
+      "entity_count": 82,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6577,7 +7281,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 78,
+      "entity_count": 80,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6607,7 +7311,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 79,
+      "entity_count": 81,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6637,7 +7341,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 77,
+      "entity_count": 79,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6667,7 +7371,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 75,
+      "entity_count": 77,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6697,7 +7401,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 80,
+      "entity_count": 81,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6727,7 +7431,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 77,
+      "entity_count": 78,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6757,7 +7461,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 76,
+      "entity_count": 77,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6787,7 +7491,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 78,
+      "entity_count": 79,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6817,7 +7521,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 79,
+      "entity_count": 80,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6847,7 +7551,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 76,
+      "entity_count": 77,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6877,7 +7581,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 77,
+      "entity_count": 78,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6907,7 +7611,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 79,
+      "entity_count": 80,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6937,7 +7641,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 85,
+      "entity_count": 87,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6967,7 +7671,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 76,
+      "entity_count": 78,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -6997,7 +7701,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 78,
+      "entity_count": 80,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -7027,7 +7731,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 78,
+      "entity_count": 80,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -7057,7 +7761,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 78,
+      "entity_count": 80,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -7087,7 +7791,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 81,
+      "entity_count": 83,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -7117,7 +7821,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 85,
+      "entity_count": 86,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -7147,7 +7851,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 77,
+      "entity_count": 78,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -7177,7 +7881,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 76,
+      "entity_count": 77,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -7207,7 +7911,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 77,
+      "entity_count": 78,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -7237,7 +7941,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 86,
+      "entity_count": 87,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -7267,7 +7971,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 84,
+      "entity_count": 85,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -7297,7 +8001,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 79,
+      "entity_count": 80,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -7327,7 +8031,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 80,
+      "entity_count": 81,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -7357,7 +8061,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 82,
+      "entity_count": 84,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -7387,7 +8091,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 77,
+      "entity_count": 78,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -7417,7 +8121,7 @@
       "map_errors": [],
       "structure_ok": true,
       "pdf_report_exists": true,
-      "entity_count": 80,
+      "entity_count": 81,
       "score": 10,
       "score_breakdown": {
         "pii_from_map": 0,
@@ -7439,6 +8143,22 @@
     }
   ],
   "failed_files": [
+    "smlouva-o-uveru_base.docx",
+    "smlouva-uver-variant-1.docx",
+    "smlouva-uver-variant-10.docx",
+    "smlouva-uver-variant-11.docx",
+    "smlouva-uver-variant-12.docx",
+    "smlouva-uver-variant-13.docx",
+    "smlouva-uver-variant-14.docx",
+    "smlouva-uver-variant-15.docx",
+    "smlouva-uver-variant-2.docx",
+    "smlouva-uver-variant-3.docx",
+    "smlouva-uver-variant-4.docx",
+    "smlouva-uver-variant-5.docx",
+    "smlouva-uver-variant-6.docx",
+    "smlouva-uver-variant-7.docx",
+    "smlouva-uver-variant-8.docx",
+    "smlouva-uver-variant-9.docx",
     "smlouva_final_01.docx",
     "smlouva_final_03.docx",
     "smlouva_final_04.docx",

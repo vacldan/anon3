@@ -1494,7 +1494,9 @@ ADDRESS_RE = re.compile(
             r'(?:místo\s+podnikání)\s*:\s*|'
             r'(?:adresa|trvalý\s+pobyt|na\s+adrese)\s*:\s*|'
             r'(?:na\s+adresu|adresy|adresu)\s+|'
-            r'(?:v\s+ulic[ií]|na\s+ulici|v\s+dom[eě])\s+)'
+            r'(?:v\s+ulic[ií]|na\s+ulici|v\s+dom[eě])\s+|'
+            r'(?:nám\.\s*|ul\.\s*|n\.\s*|nábřeží\s+|náměstí\s+)'
+            r')'
             r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ]'
             r'[a-záčďéěíňóřšťúůýž\s]{2,50}?'
             r'\s+\d{1,4}(?:/\d{1,4})?'
@@ -1895,6 +1897,9 @@ class Anonymizer:
             # Odstraň prefix s dvojtečkou (Sídlo:, Adresa:, atd.)
             orig_norm = re.sub(r'^(Sídlo|Trvalé\s+bydliště|Trvalý\s+pobyt|Bydliště|Adresa|Místo\s+podnikání|Se\s+sídlem|Bytem|Na\s+adrese)\s*:?\s*', '', orig_norm, flags=re.IGNORECASE)
             orig_norm = re.sub(r'^(trvale\s+bytem|na\s+adresu|na\s+adrese|adrese|adresa|adresy|adresu|bytem|bydlišti|sídle|se\s+sídlem)\s+', '', orig_norm, flags=re.IGNORECASE)
+            # Normalizace PSČ: "14028" → "140 28", "PSČ 140 28" → "140 28"
+            orig_norm = re.sub(r'\bPSČ\s+', '', orig_norm, flags=re.IGNORECASE)
+            orig_norm = re.sub(r'\b(\d{3})(\d{2})\b', r'\1 \2', orig_norm)
 
         # OPTIMIZATION: Use reverse_map for O(1) lookup instead of O(n) iteration
         # Pro ADDRESS: case-insensitive lookup (V Praze = v Praze)
@@ -1906,12 +1911,38 @@ class Anonymizer:
 
         # Pro ADDRESS: zkontroluj i existující map_key (case-insensitive)
         if typ == 'ADDRESS':
-            for existing_key in self.entity_map[typ]:
+            for existing_key in list(self.entity_map[typ].keys()):
                 if existing_key.lower() == orig_norm.lower():
                     self.entity_map[typ][existing_key].add(orig_norm)
                     self.entity_reverse_map[typ][lookup_key] = existing_key
                     idx = self.entity_index_cache[typ][existing_key]
                     return f"[[{typ}_{idx}]]"
+
+            # Podřetězcové sloučení: pokud nová adresa je obsažena v existující
+            # (nebo naopak), použij tu delší jako kanonickou
+            new_lower = orig_norm.lower()
+            for existing_key in list(self.entity_map[typ].keys()):
+                ex_lower = existing_key.lower()
+                if len(new_lower) < 4 or len(ex_lower) < 4:
+                    continue
+                if new_lower in ex_lower:
+                    # Nová je kratší podřetězec existující → použij existující tag
+                    self.entity_map[typ][existing_key].add(orig_norm)
+                    self.entity_reverse_map[typ][lookup_key] = existing_key
+                    idx = self.entity_index_cache[typ][existing_key]
+                    return f"[[{typ}_{idx}]]"
+                if ex_lower in new_lower:
+                    # Existující je kratší → upgraduj kanonickou na delší
+                    old_idx = self.entity_index_cache[typ][existing_key]
+                    old_variants = self.entity_map[typ].pop(existing_key)
+                    del self.entity_index_cache[typ][existing_key]
+                    old_variants.add(orig_norm)
+                    old_variants.add(existing_key)
+                    self.entity_map[typ][orig_norm] = old_variants
+                    self.entity_index_cache[typ][orig_norm] = old_idx
+                    self.entity_reverse_map[typ][lookup_key] = orig_norm
+                    self.entity_reverse_map[typ][ex_lower] = orig_norm
+                    return f"[[{typ}_{old_idx}]]"
 
         # Vytvoř nový
         idx = len(self.entity_map[typ]) + 1
@@ -2188,6 +2219,11 @@ class Anonymizer:
                 'banka', 'banky', 'bankovní', 'bankovnictví',
                 'stav', 'stavu', 'stavy', 'stavem',
                 'anonymizer', 'harmonie', 'credita', 'brod',
+                'expres', 'business',
+                'poplatek', 'poplatky', 'poplatku', 'poplatkem',
+                'měsíční', 'měsíčního', 'měsíčním',
+                'specifikace', 'specifikaec', 'běžný', 'běžného', 'běžném', 'běžným',
+                'otakara', 'otakaru', 'otakar',
             }
             critical_blacklist |= INSTITUTION_BLACKLIST
 
@@ -3093,6 +3129,11 @@ class Anonymizer:
                 'pojistitel', 'pojistník', 'správce', 'zpracovatel',
                 'zařízení', 'žadatel', 'sídlo', 'domov', 'galerie',
                 'anonymizer', 'harmonie', 'credita', 'brod',
+                'expres', 'business',
+                'poplatek', 'poplatky', 'poplatku', 'poplatkem',
+                'měsíční', 'měsíčního', 'měsíčním',
+                'specifikace', 'specifikaec', 'běžný', 'běžného', 'běžném', 'běžným',
+                'otakara', 'otakaru', 'otakar',
                 'advokát', 'advokátka', 'advokátní', 'notář', 'notářka',
                 'soud', 'soudu', 'soudce', 'soudkyně',
                 'ministerstvo', 'magistrát', 'obec', 'město',
@@ -3120,6 +3161,21 @@ class Anonymizer:
                 'nový jičín', 'nové město', 'staré město',
                 'mladá boleslav', 'mladé boleslavi',
                 'firma horák', 'firma horáková',
+                'expres business', 'měsíční poplatek', 'specifikace běžný',
+                'specifikace běžného', 'specifikaec běžný',
+                'přemysl otakara', 'přemysla otakara', 'přemysla otakaru',
+                'kutná hora', 'kutné hory', 'kutnou horou',
+                'havlíčkův brod', 'havlíčkova brodu', 'havlíčkově brodě',
+                'mladá boleslav', 'mladé boleslavi',
+                'uherské hradiště', 'uherského hradiště',
+                'valašské meziříčí', 'valašského meziříčí',
+                'mariánské lázně', 'mariánských lázní',
+                'jablonec nisou', 'jablonce nisou',
+                'česká lípa', 'české lípy',
+                'jindřichův hradec', 'jindřichova hradce',
+                'žďár sázavou', 'žďáru sázavou',
+                'český krumlov', 'českého krumlova',
+                'nový jičín', 'nového jičína',
             }
             if combined in two_word_blacklist:
                 return match.group(0)
@@ -4398,6 +4454,153 @@ class Anonymizer:
 
         return text
 
+    def _address_proximity_merge(self, text: str) -> str:
+        """Sloučí osiřelé adresní komponenty (PSČ, ulice+číslo, město) do jednoho ADDRESS tagu.
+        Funguje bez ohledu na slovosled – např. „140 28 Praha 4, Vyskočilova 1442/1b".
+        """
+        MAX_DIST = 80
+
+        # 1) ADDRESS tagy + ne-ADDRESS tagy (zarážky skupin)
+        addr_tag_re = re.compile(r'\[\[ADDRESS_\d+\]\]')
+        any_tag_re = re.compile(r'\[\[[A-Z_]+_\d+\]\]')
+        addr_tags = [(m.start(), m.end(), m.group(0), 'TAG') for m in addr_tag_re.finditer(text)]
+        other_tag_positions = []
+        for m in any_tag_re.finditer(text):
+            if not m.group(0).startswith('[[ADDRESS_'):
+                other_tag_positions.append((m.start(), m.end()))
+
+        all_tag_spans = [(s, e) for s, e, _, _ in addr_tags] + other_tag_positions
+
+        def inside_any_tag(pos):
+            for s, e in all_tag_spans:
+                if s <= pos < e:
+                    return True
+            return False
+
+        # 2) Detekce komponent
+        psc_re = re.compile(r'\b((?:PSČ\s*)?\d{3}\s?\d{2})\b', re.IGNORECASE)
+        street_re = re.compile(
+            r'\b((?:nám\.\s*|ul\.\s*|n\.\s*|nábřeží\s+|náměstí\s+)?'
+            r'[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+'
+            r'(?:\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)*'
+            r'(?:\s+[IVXLCDM]+\.?)?)\s+'
+            r'(\d{1,4}(?:/\d{1,4}[a-zA-Z]?)?)\b',
+            re.IGNORECASE
+        )
+        city_re = re.compile(
+            r'\b(Praha\s*\d*(?:\s*-\s*[A-Za-záčďéěíňóřšťúůýž\-]+)?|'
+            r'Brno(?:\s*-\s*[a-záčďéěíňóřšťúůýž\-]+)?|'
+            r'Ostrava|Plzeň|Olomouc|Liberec|Mohelnice|Teplice|Chomutov|Opava|Zlín|Pardubice|'
+            r'České\s+Budějovice|Hradec\s+Králové|Ústí\s+nad\s+Labem|Havířov|Frýdek-Místek|'
+            r'Karviná|Jihlava|Karlovy\s+Vary|Most|Děčín|'
+            r'Přerov|Chrudim|Tábor|Svitavy|Kroměříž|Znojmo|Třebíč|Prostějov|'
+            r'Kutná\s+Hora|Havlíčkův\s+Brod|Kolín|Benešov|Písek|Louny|Strakonice|'
+            r'Kladno|Mladá\s+Boleslav|Příbram|Beroun|Nymburk|Mělník|Rakovník|'
+            r'Třinec|Kopřivnice|Nový\s+Jičín|Vsetín|Valašské\s+Meziříčí|'
+            r'Uherské\s+Hradiště|Hodonín|Břeclav|Blansko|Vyškov|Boskovice|'
+            r'Žďár\s+nad\s+Sázavou|Pelhřimov|Humpolec|Český\s+Krumlov|'
+            r'Prachatice|Jindřichův\s+Hradec|Sokolov|Cheb|Mariánské\s+Lázně|'
+            r'Jablonec\s+nad\s+Nisou|Česká\s+Lípa|Trutnov|Náchod|Svitavy|'
+            r'Šumperk|Jeseník|Prostějov|Přeštice|Domažlice|Klatovy|Rokycany)\b',
+            re.IGNORECASE
+        )
+        psc_p_re = re.compile(r'\b(\d{3}\s?\d{2})\s+p\.\s+([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýž\-]+)\b', re.IGNORECASE)
+        country_re = re.compile(r'\b(Česká\s+republika|Slovenská\s+republika)\b', re.IGNORECASE)
+
+        not_streets = {'vložka', 'strana', 'článek', 'oddíl', 'odstavec', 'příloha',
+                       'kapitola', 'zákon', 'verze', 'klient', 'banka', 'splátka',
+                       'částka', 'sazba', 'platba', 'pojistka', 'psč',
+                       'praha', 'brno', 'ostrava', 'plzeň', 'olomouc', 'liberec',
+                       'mohelnice', 'teplice', 'chomutov', 'opava', 'zlín',
+                       'pardubice', 'havířov', 'karviná', 'jihlava', 'most', 'děčín',
+                       'přerov', 'chrudim', 'tábor', 'svitavy', 'kroměříž', 'znojmo',
+                       'třebíč', 'prostějov', 'kolín', 'benešov', 'písek', 'louny',
+                       'strakonice', 'kladno', 'příbram', 'beroun', 'nymburk',
+                       'mělník', 'rakovník', 'třinec', 'kopřivnice', 'vsetín',
+                       'hodonín', 'břeclav', 'blansko', 'vyškov', 'boskovice',
+                       'humpolec', 'pelhřimov', 'prachatice', 'sokolov', 'cheb',
+                       'trutnov', 'náchod', 'šumperk', 'jeseník', 'domažlice',
+                       'klatovy', 'rokycany'}
+
+        components = []
+        for pat, typ in [(psc_re, 'PSC'), (street_re, 'STREET'), (city_re, 'CITY'),
+                         (psc_p_re, 'PSC_P'), (country_re, 'COUNTRY')]:
+            for m in pat.finditer(text):
+                if inside_any_tag(m.start()):
+                    continue
+                if typ == 'STREET':
+                    street_name = m.group(1).strip().lower()
+                    if street_name in not_streets:
+                        continue
+                    val = f"{m.group(1)} {m.group(2)}"
+                elif typ == 'PSC_P':
+                    val = f"{m.group(1)} p. {m.group(2)}"
+                else:
+                    val = m.group(0)
+                components.append((m.start(), m.end(), val.strip(), typ))
+
+        # 3) Seskup blízké spany; přeruš na ne-ADDRESS tazích
+        all_spans = sorted(addr_tags + components, key=lambda x: x[0])
+        groups = []
+        current = []
+        last_end = -999
+
+        for span in all_spans:
+            start, end, val, typ = span
+            if current:
+                gap_has_barrier = any(last_end <= s and e <= start
+                                     for s, e in other_tag_positions)
+                if start - last_end > MAX_DIST or gap_has_barrier:
+                    groups.append(current)
+                    current = []
+            current.append(span)
+            last_end = max(last_end, end)
+
+        if current:
+            groups.append(current)
+
+        # 4) Slouč a nahraď (od konce)
+        for group in reversed(groups):
+            if len(group) < 2:
+                continue
+            has_strong = any(s[3] in ('PSC', 'PSC_P', 'STREET', 'TAG') for s in group)
+            if not has_strong:
+                continue
+            span_start = min(s[0] for s in group)
+            span_end = max(s[1] for s in group)
+            def _norm_addr_part(v):
+                """Normalize for dedup: strip PSČ prefix, normalize XXXXX→XXX XX."""
+                v = re.sub(r'^PSČ\s+', '', v, flags=re.IGNORECASE).strip()
+                v = re.sub(r'\bPSČ\s+', '', v, flags=re.IGNORECASE)
+                v = re.sub(r'\b(\d{3})(\d{2})\b', r'\1 \2', v)
+                return v
+
+            parts = []
+            seen_norm = set()
+            for s in sorted(group, key=lambda x: x[0]):
+                _, _, val, typ = s
+                if typ == 'TAG':
+                    tag_num = int(re.search(r'\d+', val).group())
+                    canon = next((k for k in self.entity_index_cache.get('ADDRESS', {})
+                                  if self.entity_index_cache['ADDRESS'].get(k) == tag_num), val)
+                    norm = _norm_addr_part(canon).lower()
+                    if norm not in seen_norm:
+                        parts.append(_norm_addr_part(canon))
+                        seen_norm.add(norm)
+                else:
+                    norm = _norm_addr_part(val).lower()
+                    if norm not in seen_norm:
+                        parts.append(_norm_addr_part(val))
+                        seen_norm.add(norm)
+            merged = ', '.join(str(p) for p in parts if p and not str(p).startswith('[['))
+            if not merged or len(merged) < 10 or len(merged) > 120:
+                continue
+            tag = self._get_or_create_label('ADDRESS', merged)
+            text = text[:span_start] + tag + text[span_end:]
+
+        return text
+
+
     def anonymize_entities(self, text: str) -> str:
         """Anonymizuje všechny entity (adresy, kontakty, IČO, atd.)."""
 
@@ -4891,6 +5094,72 @@ class Anonymizer:
             return f"{prefix} {tag}"
         text = birth_place_pattern.sub(replace_birth_place, text)
 
+        # POST-PASS: Adresa s PSČ na začátku: "PSČ 140 28, ulice číslo, Praha N (- čtvrť)?(, Česká republika)?"
+        full_addr_psc_first_re = re.compile(
+            r'\b(?:PSČ\s*)?(\d{3}\s?\d{2})\s*,\s*'
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+(?:\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)?)\s+'
+            r'(\d{1,4}(?:/\d{1,4}[a-zA-Z]?)?)\s*,\s*'
+            r'(Praha\s*\d*(?:\s*-\s*[A-Za-záčďéěíňóřšťúůýž\-]+)?)'
+            r'(?:\s*,\s*(Česká\s+republika|Slovenská\s+republika))?',
+            re.IGNORECASE
+        )
+        def replace_full_addr_psc_first(match):
+            psc, ulice, cislo, mesto = match.group(1), match.group(2), match.group(3), match.group(4)
+            suffix = match.group(5) or ''
+            addr = f"{ulice} {cislo}, {mesto}, {psc}"
+            if suffix:
+                addr += f", {suffix}"
+            if '[[' in addr:
+                return match.group(0)
+            return self._get_or_create_label('ADDRESS', addr)
+        text = full_addr_psc_first_re.sub(replace_full_addr_psc_first, text)
+
+        # POST-PASS: "ulice číslo, PSČ město" (např. Vyskočilova 1442/1b, 140 28 Praha 4 - Michle)
+        full_addr_street_psc_mesto_re = re.compile(
+            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+(?:\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)?)\s+'
+            r'(\d{1,4}(?:/\d{1,4}[a-zA-Z]?)?)\s*,\s*'
+            r'(\d{3}\s?\d{2})\s+(Praha\s*\d*(?:\s*-\s*[A-Za-záčďéěíňóřšťúůýž\-]+)?)\b',
+            re.IGNORECASE
+        )
+        def replace_full_addr_street_psc_mesto(match):
+            addr = f"{match.group(1)} {match.group(2)}, {match.group(4)}, {match.group(3)}"
+            if '[[' in addr:
+                return match.group(0)
+            return self._get_or_create_label('ADDRESS', addr)
+        text = full_addr_street_psc_mesto_re.sub(replace_full_addr_street_psc_mesto, text)
+
+        # POST-PASS: Celá adresa "ulice číslo, Praha N (- čtvrť)?, PSČ" - MUSÍ běžet PŘED simple_addr
+        # aby se nezachytilo jen "ulice, Praha 4" a nezůstala PSČ
+        # Číslo: 1442, 1442/1, 1442/1b (orientační číslo může mít písmeno)
+        full_addr_praha_psc_re = re.compile(
+            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+(?:\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)?)\s+'
+            r'(\d{1,4}(?:/\d{1,4}[a-zA-Z]?)?)\s*,\s*'
+            r'(Praha\s*\d*(?:\s*-\s*[A-Za-záčďéěíňóřšťúůýž\-]+)?)\s*,\s*'
+            r'(\d{3}\s?\d{2})\b',
+            re.IGNORECASE
+        )
+        def replace_full_addr_praha(match):
+            addr = f"{match.group(1)} {match.group(2)}, {match.group(3)}, {match.group(4)}"
+            if '[[' in addr:
+                return match.group(0)
+            return self._get_or_create_label('ADDRESS', addr)
+        text = full_addr_praha_psc_re.sub(replace_full_addr_praha, text)
+
+        # POST-PASS: Celá adresa "ulice číslo, město, PSČ p. město" - MUSÍ běžet PŘED simple_addr
+        full_addr_mesto_psc_re = re.compile(
+            r'\b((?:nám\.\s*|ul\.\s*|n\.\s*)?[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+(?:\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)?)\s+'
+            r'(\d{1,4}(?:/\d{1,4}[a-zA-Z]?)?)\s*,\s*'
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ\-]+)\s*,\s*'
+            r'(\d{3}\s?\d{2})\s+p\.\s+([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ\-]+)\b',
+            re.IGNORECASE
+        )
+        def replace_full_addr_mesto_psc(match):
+            addr = f"{match.group(1)} {match.group(2)}, {match.group(3)}, {match.group(4)} p. {match.group(5)}"
+            if '[[' in addr:
+                return match.group(0)
+            return self._get_or_create_label('ADDRESS', addr)
+        text = full_addr_mesto_psc_re.sub(replace_full_addr_mesto_psc, text)
+
         # POST-PASS: Jednoduché adresy (ulice číslo, město) které unikly ADDRESS_RE
         # Pattern: Ulice 123/45, Praha 3  (bez PSČ nebo kontextu "bytem", "sídlo:" apod.)
         # ROZŠÍŘENO: Teď podporuje JAKÉKOLIV město, ne jen Praha/Brno/Ostrava/Plzeň
@@ -4953,10 +5222,41 @@ class Anonymizer:
 
         text = city_psc_near_addr_pattern.sub(replace_city_psc_near_addr, text)
 
+        # POST-PASS: Absorbovat PSČ za ADDRESS tagem (např. "[[ADDRESS_1]], 140 28" -> "[[ADDRESS_1]]")
+        # Zachytí: "[[ADDRESS_X]], PSČ" a "[[ADDRESS_X]], PSČ p. město"
+        psc_after_addr_re = re.compile(
+            r'(\[\[ADDRESS_\d+\]\])\s*,\s*(\d{3}\s?\d{2})(?:\s+p\.\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýž\-]+)?(?=\s|$|,|\.|;|\n)',
+            re.IGNORECASE
+        )
+        text = psc_after_addr_re.sub(lambda m: m.group(1), text)
+
+        # POST-PASS: Absorbovat "Česká republika" / "Slovenská republika" za ADDRESS tagem
+        country_after_addr_re = re.compile(
+            r'(\[\[ADDRESS_\d+\]\])\s*,\s*(Česká\s+republika|Slovenská\s+republika)(?=\s|$|,|\.|;|\n)',
+            re.IGNORECASE
+        )
+        text = country_after_addr_re.sub(lambda m: m.group(1), text)
+
         # POST-PASS: Samostatná města v adresním kontextu (sídlo Brno, Praha 4, v Praze, Brno-střed)
+        _city_names = (
+            r'Praha\s*\d*(?:\s*-\s*[A-Za-záčďéěíňóřšťúůýž\-]+)?|'
+            r'Brno(?:\s*-\s*[a-záčďéěíňóřšťúůýž\-]+)?|'
+            r'Ostrava|Plzeň|Olomouc|Liberec|Mohelnice|Teplice|Chomutov|Opava|Zlín|Pardubice|'
+            r'České\s+Budějovice|Hradec\s+Králové|Ústí\s+nad\s+Labem|Havířov|Frýdek-Místek|'
+            r'Karviná|Jihlava|Karlovy\s+Vary|Most|Děčín|'
+            r'Přerov|Chrudim|Tábor|Svitavy|Kroměříž|Znojmo|Třebíč|Prostějov|'
+            r'Kutná\s+Hora|Havlíčkův\s+Brod|Kolín|Benešov|Písek|Louny|Strakonice|'
+            r'Kladno|Mladá\s+Boleslav|Příbram|Beroun|Nymburk|Mělník|Rakovník|'
+            r'Třinec|Kopřivnice|Nový\s+Jičín|Vsetín|Valašské\s+Meziříčí|'
+            r'Uherské\s+Hradiště|Hodonín|Břeclav|Blansko|Vyškov|Boskovice|'
+            r'Žďár\s+nad\s+Sázavou|Pelhřimov|Humpolec|Český\s+Krumlov|'
+            r'Prachatice|Jindřichův\s+Hradec|Sokolov|Cheb|Mariánské\s+Lázně|'
+            r'Jablonec\s+nad\s+Nisou|Česká\s+Lípa|Trutnov|Náchod|'
+            r'Šumperk|Jeseník|Přeštice|Domažlice|Klatovy|Rokycany'
+        )
         city_pattern = re.compile(
             r'(?:(?:sídlo|se\s+sídlem|bydliště|bydlištěm|na\s+adrese|v\s+městě|adresa)\s*:?\s*)?'
-            r'\b(Praha\s*\d*|Brno(?:\s*-\s*[a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)?|Ostrava|Plzeň|Olomouc|Liberec|České\s+Budějovice|Hradec\s+Králové|Zlín|Pardubice)\b'
+            r'\b(' + _city_names + r')\b'
             r'(?=\s|$|,|\.|;|\)|-)',
             re.IGNORECASE
         )
@@ -5013,6 +5313,10 @@ class Anonymizer:
                                             new_parts.append(variant)  # Keep original if tagged
                                     new_parts.append(parts[-1])
                                     text = ''.join(new_parts)
+
+        # POST-PASS: Komponentový proximity merge – sloučí osiřelé adresní komponenty
+        # bez ohledu na slovosled (PSČ město ulice, ulice město PSČ, atd.)
+        text = self._address_proximity_merge(text)
 
         # POST-PASS (FINAL): Městská čtvrť za pomlčkou po adresním tagu
         # Zachytí: [[ADDRESS_2]] - Vinohrady, [[ADDRESS_5]] - Staré Město, apod.
@@ -5139,6 +5443,50 @@ class Anonymizer:
 
         if fixed_count > 0:
             print(f"  [GENDER-FIX] Opraveno {fixed_count} gender mismatchů\n")
+
+    def _deduplicate_addresses(self):
+        """Sloučí duplicitní ADDRESS záznamy: kratší podřetězce se přemapují na delší.
+        Např. 'Svitavy' + 'Svitavy, Česká republika, náměstí Míru 32/1, 568 02'
+        → zůstane jen ta delší, kratší tag se přesměruje.
+        """
+        if 'ADDRESS' not in self.entity_map:
+            return {}
+
+        entries = {}
+        for key, variants in self.entity_map['ADDRESS'].items():
+            idx = self.entity_index_cache['ADDRESS'].get(key)
+            if idx is not None:
+                entries[key] = idx
+
+        if len(entries) < 2:
+            return {}
+
+        keys_by_len = sorted(entries.keys(), key=lambda k: len(k))
+        remap = {}
+        absorbed = set()
+
+        for i, short_key in enumerate(keys_by_len):
+            if short_key in absorbed:
+                continue
+            short_lower = short_key.lower()
+            for long_key in keys_by_len[i + 1:]:
+                if long_key in absorbed:
+                    continue
+                long_lower = long_key.lower()
+                if short_lower in long_lower and short_key != long_key:
+                    short_idx = entries[short_key]
+                    long_idx = entries[long_key]
+                    old_tag = f"[[ADDRESS_{short_idx}]]"
+                    new_tag = f"[[ADDRESS_{long_idx}]]"
+                    remap[old_tag] = new_tag
+                    self.entity_map['ADDRESS'][long_key] |= self.entity_map['ADDRESS'].pop(short_key)
+                    del self.entity_index_cache['ADDRESS'][short_key]
+                    absorbed.add(short_key)
+                    break
+
+        if remap:
+            print(f"  [ADDR-DEDUP] Sloučeno {len(remap)} duplicitních adres")
+        return remap
 
     def _deduplicate_persons(self):
         """Sloučí duplicitní osoby se stejným inferred nominativem nebo sdílenými variantami.
@@ -5771,6 +6119,27 @@ class Anonymizer:
         # POST-PROCESSING: Absorb orphan surname fragments after PERSON tags
         # Handles multi-word first names where "Mai Linh" → [[PERSON_5]] but "Nguyenová" remains
         self._postpass_orphan_surname_after_tag(doc)
+
+        # POST-PROCESSING: Deduplicate ADDRESS entries (merge subsets into supersets)
+        addr_remap = self._deduplicate_addresses()
+        if addr_remap:
+            for para in doc.paragraphs:
+                original = para.text
+                text = original
+                for old_tag, new_tag in addr_remap.items():
+                    text = text.replace(old_tag, new_tag)
+                if text != original:
+                    para.text = text
+            for table in doc.tables:
+                for row in table.rows:
+                    for cell in row.cells:
+                        for para in cell.paragraphs:
+                            original = para.text
+                            text = original
+                            for old_tag, new_tag in addr_remap.items():
+                                text = text.replace(old_tag, new_tag)
+                            if text != original:
+                                para.text = text
 
         # Ulož dokument
         start_time = time.time()

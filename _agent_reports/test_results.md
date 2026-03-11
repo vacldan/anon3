@@ -4,11 +4,11 @@
 
 | Metrika | Hodnota |
 |---------|---------|
-| Celkem smluv | 200 |
+| Celkem smluv | 216 |
 | Prošlo (score>=9) | 191 |
-| Selhalo | 9 |
-| Průměr score | 9.8/10 |
-| S PII leakem | 9 |
+| Selhalo | 25 |
+| Průměr score | 9.4/10 |
+| S PII leakem | 25 |
 | Nekonzistentní mapa | 1 |
 
 ## Přehled po smlouvách
@@ -16,6 +16,22 @@
 | Soubor | Score | Status | Problémy |
 |--------|-------|--------|----------|
 | smlouva 30.docx | 10/10 | OK | — |
+| smlouva-o-uveru_base.docx | 4/10 | FAIL | PII:6 |
+| smlouva-uver-variant-1.docx | 4/10 | FAIL | PII:6 |
+| smlouva-uver-variant-10.docx | 4/10 | FAIL | PII:6 |
+| smlouva-uver-variant-11.docx | 4/10 | FAIL | PII:6 |
+| smlouva-uver-variant-12.docx | 4/10 | FAIL | PII:6 |
+| smlouva-uver-variant-13.docx | 4/10 | FAIL | PII:6 |
+| smlouva-uver-variant-14.docx | 4/10 | FAIL | PII:6 |
+| smlouva-uver-variant-15.docx | 4/10 | FAIL | PII:6 |
+| smlouva-uver-variant-2.docx | 4/10 | FAIL | PII:6 |
+| smlouva-uver-variant-3.docx | 4/10 | FAIL | PII:6 |
+| smlouva-uver-variant-4.docx | 4/10 | FAIL | PII:6 |
+| smlouva-uver-variant-5.docx | 4/10 | FAIL | PII:6 |
+| smlouva-uver-variant-6.docx | 4/10 | FAIL | PII:6 |
+| smlouva-uver-variant-7.docx | 4/10 | FAIL | PII:6 |
+| smlouva-uver-variant-8.docx | 4/10 | FAIL | PII:6 |
+| smlouva-uver-variant-9.docx | 4/10 | FAIL | PII:6 |
 | smlouva.docx | 10/10 | OK | — |
 | smlouva0.docx | 10/10 | OK | — |
 | smlouva10.docx | 10/10 | OK | — |
@@ -220,6 +236,198 @@
 
 ## Detaily chyb po smlouvách
 
+### smlouva-o-uveru_base.docx — 4/10
+
+**PII leak (hodnoty z mapy nalezené v anonymu):**
+- `Poplatky`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+
+---
+
+### smlouva-uver-variant-1.docx — 4/10
+
+**PII leak (hodnoty z mapy nalezené v anonymu):**
+- `Poplatky`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+
+---
+
+### smlouva-uver-variant-10.docx — 4/10
+
+**PII leak (hodnoty z mapy nalezené v anonymu):**
+- `Poplatky`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+
+---
+
+### smlouva-uver-variant-11.docx — 4/10
+
+**PII leak (hodnoty z mapy nalezené v anonymu):**
+- `Poplatky`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+
+---
+
+### smlouva-uver-variant-12.docx — 4/10
+
+**PII leak (hodnoty z mapy nalezené v anonymu):**
+- `Poplatky`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+
+---
+
+### smlouva-uver-variant-13.docx — 4/10
+
+**PII leak (hodnoty z mapy nalezené v anonymu):**
+- `Poplatky`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+
+---
+
+### smlouva-uver-variant-14.docx — 4/10
+
+**PII leak (hodnoty z mapy nalezené v anonymu):**
+- `Poplatky`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+
+---
+
+### smlouva-uver-variant-15.docx — 4/10
+
+**PII leak (hodnoty z mapy nalezené v anonymu):**
+- `Poplatky`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+
+---
+
+### smlouva-uver-variant-2.docx — 4/10
+
+**PII leak (hodnoty z mapy nalezené v anonymu):**
+- `Poplatky`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+
+---
+
+### smlouva-uver-variant-3.docx — 4/10
+
+**PII leak (hodnoty z mapy nalezené v anonymu):**
+- `Poplatky`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+
+---
+
+### smlouva-uver-variant-4.docx — 4/10
+
+**PII leak (hodnoty z mapy nalezené v anonymu):**
+- `Poplatky`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+
+---
+
+### smlouva-uver-variant-5.docx — 4/10
+
+**PII leak (hodnoty z mapy nalezené v anonymu):**
+- `Poplatky`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+
+---
+
+### smlouva-uver-variant-6.docx — 4/10
+
+**PII leak (hodnoty z mapy nalezené v anonymu):**
+- `Poplatky`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+
+---
+
+### smlouva-uver-variant-7.docx — 4/10
+
+**PII leak (hodnoty z mapy nalezené v anonymu):**
+- `Poplatky`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+
+---
+
+### smlouva-uver-variant-8.docx — 4/10
+
+**PII leak (hodnoty z mapy nalezené v anonymu):**
+- `Poplatky`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+
+---
+
+### smlouva-uver-variant-9.docx — 4/10
+
+**PII leak (hodnoty z mapy nalezené v anonymu):**
+- `Poplatky`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+- `NAME: Money Bank`
+
+---
+
 ### smlouva_final_01.docx — 4/10
 
 **PII leak (hodnoty z mapy nalezené v anonymu):**
@@ -227,7 +435,7 @@
 - `NAME: Doručení  Tento`
 
 **Mapa – chyby adres (ADDRESS):**
-- [D-PREFIX] [[ADDRESS_5]] = 'sídlem Tyršova 44, 530 02 Pardubice' obsahuje prefix 'sídlem', který podle QA pravidel do adresy nepatří.
+- [D-PREFIX] [[ADDRESS_6]] = 'sídlem Tyršova 44, 530 02 Pardubice' obsahuje prefix 'sídlem', který podle QA pravidel do adresy nepatří.
 
 ---
 
@@ -293,7 +501,7 @@
 
 ## Selhané soubory
 
-smlouva_final_01.docx, smlouva_final_03.docx, smlouva_final_04.docx, smlouva_final_07.docx, smlouva_final_08.docx, smlouva_final_09.docx, smlouva_final_11.docx, smlouva_final_12.docx, smlouva_final_13.docx
+smlouva-o-uveru_base.docx, smlouva-uver-variant-1.docx, smlouva-uver-variant-10.docx, smlouva-uver-variant-11.docx, smlouva-uver-variant-12.docx, smlouva-uver-variant-13.docx, smlouva-uver-variant-14.docx, smlouva-uver-variant-15.docx, smlouva-uver-variant-2.docx, smlouva-uver-variant-3.docx, smlouva-uver-variant-4.docx, smlouva-uver-variant-5.docx, smlouva-uver-variant-6.docx, smlouva-uver-variant-7.docx, smlouva-uver-variant-8.docx, smlouva-uver-variant-9.docx, smlouva_final_01.docx, smlouva_final_03.docx, smlouva_final_04.docx, smlouva_final_07.docx, smlouva_final_08.docx, smlouva_final_09.docx, smlouva_final_11.docx, smlouva_final_12.docx, smlouva_final_13.docx
 
 ---
 *Detailní data v `test_results.json`*
