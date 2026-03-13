@@ -12,11 +12,10 @@ OSOBY
   - Tomášem Doležalem
 
 ADDRESS
-[[ADDRESS_1]]: Soudní 8, 110 00 Praha 1
-[[ADDRESS_2]]: Na Výsluní 21, 190 00 Praha 9
+[[ADDRESS_1]]: Soudní 8, Praha 1, 110 00
+[[ADDRESS_2]]: Na Výsluní 21, Praha 9, 190 00
 [[ADDRESS_3]]: Dlouhá 9, 110 00 Praha 1
 [[ADDRESS_4]]: Na Skalce 4, 252 10 Mníšek pod Brdy
-[[ADDRESS_5]]: V Praze
 
 BANK
 [[BANK_1]]: 889977665/0300

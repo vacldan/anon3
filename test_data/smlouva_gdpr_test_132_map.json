@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:01.536070",
+  "generated_at": "2026-03-13T09:56:43.303002",
   "source_file": "smlouva_gdpr_test_132.docx",
   "entities": [
     {
@@ -12,19 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Romanem Vlachem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Romana Vlacha",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Romane Vlache",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Romanem Vlachem",
       "occurrences": 1
     },
     {
@@ -35,8 +29,20 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Romana Vlacha",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Alžběta Svobodová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Alžbětou Svobodovou",
       "occurrences": 1
     },
     {
@@ -54,12 +60,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Alžbětou Svobodovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Alžbětě Svobodové",
       "occurrences": 1
     },
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Petrou Roubalovou",
+      "original": "Petrě Roubalové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Petrě Roubalové",
+      "original": "Petrou Roubalovou",
       "occurrences": 1
     },
     {
@@ -90,13 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Erikem Svobodou",
+      "original": "Erikovi Svobodovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Erikovi Svobodovi",
+      "original": "Erike Svobodo",
       "occurrences": 1
     },
     {
@@ -108,14 +108,14 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Erike Svobodo",
+      "original": "Erikem Svobodou",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Náměstí 1, 500 02 Hradec Králové",
-      "occurrences": 1
+      "original": "Náměstí 1, 500 02, Hradec Králové",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -125,33 +125,9 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Vinohradská 57/17, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Vinohradská 57/17, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Vinohradská 57/17, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Vinohradská 57/17, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Alžbětě Svobodové a Na Návsi 58/11, 789 01 Zábřeh pro Romanovi Vlachovi",
-      "occurrences": 1
+      "original": "Vinohradská 57/17, Praha 3, 130 00",
+      "occurrences": 2
     },
     {
       "type": "ICO",

@@ -21,8 +21,6 @@ ADDRESS
 [[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
 [[ADDRESS_2]]: Dlouhá 170/28, 602 00 Brno
 [[ADDRESS_3]]: Na Návsi 142/28, 789 01 Zábřeh
-[[ADDRESS_4]]: platnost 08/28, CVC
-[[ADDRESS_5]]: písemně na adresu Na Návsi 142/28, 789 01 Zábřeh
 
 BANK
 [[BANK_1]]: 342528118/0300

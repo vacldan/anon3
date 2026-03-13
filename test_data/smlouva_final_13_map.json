@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:47.493810",
+  "generated_at": "2026-03-13T09:56:23.897028",
   "source_file": "smlouva_final_13.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Elišky Zemanové",
+      "original": "Eliškě Zemanové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Eliškě Zemanové",
+      "original": "Elišky Zemanové",
       "occurrences": 1
     },
     {
@@ -42,37 +42,37 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Hansem Horváthem",
+      "original": "Horváth",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Horváth",
+      "original": "Hansem Horváthem",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Masarykovo náměstí 124/21, 586 01 Jihlava",
+      "original": "Rsp 605/2026",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Stodolní 170/17, 702 00 Ostrava - Moravská Ostrava",
-      "occurrences": 1
+      "original": "Masarykovo náměstí 124/21, 586 01, Jihlava",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Komenského 232/12, 760 01 Zlín",
-      "occurrences": 1
+      "original": "Stodolní 170/17, 702 00, Ostrava",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "V Praze",
+      "original": "Komenského 232/12, 760 01 Zlín",
       "occurrences": 1
     },
     {
@@ -172,15 +172,21 @@
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_1]]",
-      "original": "FN 784866",
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "AK 52447",
       "occurrences": 1
     },
     {
       "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_1]]",
+      "label": "[[LICENSE_PLATE_2]]",
       "original": "AT31547",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_1]]",
+      "original": "FN 784866",
       "occurrences": 1
     },
     {

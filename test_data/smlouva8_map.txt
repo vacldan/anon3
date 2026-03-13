@@ -7,9 +7,6 @@ OSOBY
   - Kučera
   - Kučeru
 [[PERSON_4]]: Alexandr Popesca
-  - Alexandru Popescu
-  - Alexandru Popescuovi
-  - Popescu
 [[PERSON_6]]: Hana Nejedlá
   - Haně Nejedlé
   - Nejedlá
@@ -24,48 +21,44 @@ OSOBY
   - Alenou Sedláčkovou
   - Sedláčkovou
 [[PERSON_10]]: Jiří Bárta
-[[PERSON_11]]:  Hrubá
-[[PERSON_12]]: Barbora Šimková
+[[PERSON_11]]: Barbora Šimková
   - Šimková
-[[PERSON_13]]: Barbora Hrubá
-[[PERSON_14]]: Lenka Slavíková
+[[PERSON_12]]: Barbora Hrubá
+  - Hrubá
+[[PERSON_13]]: Lenka Slavíková
   - Lenku Slavíkovou
   - Slavíková
-[[PERSON_15]]: Ondřej Jelínek
+[[PERSON_14]]: Ondřej Jelínek
   - Ondřejem Jelínkem
-[[PERSON_16]]: Klára Vrabcová
+[[PERSON_15]]: Klára Vrabcová
   - Klárou Vrabcovou
-[[PERSON_17]]: Radek Schneider
-[[PERSON_18]]: Josef Havel
+[[PERSON_16]]: Radek Schneider
+[[PERSON_17]]: Josef Havel
   - Havelovi
   - Josefu Havelovi
-[[PERSON_19]]: David Havlas
+[[PERSON_18]]: David Havlas
   - Havlas
   - Havlasovi
-[[PERSON_20]]: Petr Havelek
-  - Petr Havelka
+[[PERSON_19]]: Petr Havelka
 
 ADDRESS
-[[ADDRESS_1]]: Revoluční 2548/9, 110 00 Praha 1
-[[ADDRESS_2]]: Jiráskova 45, 702 00 Ostrava
-[[ADDRESS_3]]: Praha 1, Revoluční
+[[ADDRESS_1]]: Revoluční 2548/9, Praha 1, 110 00
+[[ADDRESS_2]]: Jiráskova 45, 702 00, Ostrava
 [[ADDRESS_4]]: Údolní 15/238, 602 00 Brno
 [[ADDRESS_5]]: Vinohradská 1458/65, 130 00 Praha 3
-[[ADDRESS_6]]: v Brně
-[[ADDRESS_7]]: Studentská 28, 160 00 Praha 6
-[[ADDRESS_8]]: Mánesova 156, 621 00 Brno
-[[ADDRESS_9]]: v ulici Studentská 28, Praha 6
-[[ADDRESS_10]]: Pařížská 1548/30, 110 00 Praha 1
-[[ADDRESS_11]]: Purkyňova 88, 612 00 Brno
-[[ADDRESS_12]]: U Parku 25, 140 00 Praha 4
-[[ADDRESS_13]]: Belgická 47, 120 00 Praha 2
-[[ADDRESS_14]]: podnikání: Pod Lipami 18, 150 00 Praha 5
-[[ADDRESS_15]]: Karlovo náměstí 25, 120 00 Praha 2
-[[ADDRESS_16]]: Národní 38, 110 00 Praha 1
-[[ADDRESS_17]]: Žitná 1365/42, 120 00 Praha 2
-[[ADDRESS_18]]: Havelská 12, 110 00 Praha 1
-[[ADDRESS_19]]: Havlíčkova 85, 130 00 Praha 3
-[[ADDRESS_20]]: Havířov 78
+[[ADDRESS_6]]: Studentská 28, 160 00 Praha 6
+[[ADDRESS_7]]: Mánesova 156, 621 00 Brno
+[[ADDRESS_9]]: Pařížská 1548/30, Praha 1, 110 00
+[[ADDRESS_10]]: Purkyňova 88, 612 00 Brno
+[[ADDRESS_11]]: Parku 25, 140 00 Praha 4
+[[ADDRESS_12]]: Belgická 47, 120 00 Praha 2
+[[ADDRESS_13]]: Pod Lipami 18, Praha 5, 150 00
+[[ADDRESS_14]]: Karlovo náměstí 25, Praha 2, 120 00
+[[ADDRESS_15]]: Národní 38, Praha 1, 110 00
+[[ADDRESS_16]]: Žitná 1365/42, 120 00 Praha 2
+[[ADDRESS_17]]: Havelská 12, 110 00 Praha 1
+[[ADDRESS_18]]: Havlíčkova 85, 130 00 Praha 3
+[[ADDRESS_19]]: Havířov 78
 
 BANK
 [[BANK_1]]: 3698547125/0300

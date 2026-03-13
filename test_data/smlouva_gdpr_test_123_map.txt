@@ -20,13 +20,8 @@ OSOBY
   - Jaroslavovi Dvořákovi
 
 ADDRESS
-[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_1]]: Na Hradbách 15, 702 00, Ostrava
 [[ADDRESS_2]]: Křenová 192/23, 602 00 Brno
-[[ADDRESS_3]]: Křenová 116/9, 602 00 Brno
-[[ADDRESS_4]]: případně písemně na adresu Křenová 116/9, 602 00 Brno
-[[ADDRESS_5]]: písemné doručení na adresu Křenová 116/9, 602 00 Brno
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Křenová 116/9, 602 00 Brno pro Tomášovi Královi a
-[[ADDRESS_7]]: Křenová 192/23, 602 00 Brno pro Matějovi Hrubešovi
 
 BANK
 [[BANK_1]]: 774250710/0100

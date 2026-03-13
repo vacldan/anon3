@@ -1,0 +1,224 @@
+OSOBY
+-----
+[[PERSON_1]]: Petra Havlíčková
+[[PERSON_2]]: Ivana Musilová
+[[PERSON_3]]: Aleš Krejčí
+[[PERSON_4]]: Kamila Horská
+[[PERSON_5]]: Lucie Blažková
+[[PERSON_6]]: Marek Tichý
+[[PERSON_7]]: Miroslava Beranová
+[[PERSON_8]]: Lukáš Horák
+[[PERSON_9]]: Radovan Kolínský
+[[PERSON_10]]: Otakar Vávra
+  - Vávrovi
+[[PERSON_11]]: Sára Kubíková
+  - Sáry Kubíkové
+[[PERSON_12]]: Matěj Kubík
+  - Matěje Kubíka
+[[PERSON_13]]: Miroslav Kubík
+  - Miroslavem Kubíkem
+[[PERSON_14]]: Renata Kubíková
+[[PERSON_15]]: Vladimír Staněk
+[[PERSON_16]]: Bohumil Sedlák
+  - Bohumila Sedláka
+  - Sedlákovi
+[[PERSON_17]]: Dalibor Kozák
+[[PERSON_18]]: Eduard Šimek
+[[PERSON_19]]: Bohuslav Říha
+  - Říha
+[[PERSON_20]]: Marcela Hrubá
+[[PERSON_21]]: Augustin Klíma
+[[PERSON_22]]: Lenka Gregorová
+[[PERSON_23]]: Vratislav Čížek
+[[PERSON_24]]: Blanka Nováková
+[[PERSON_25]]: Klára Součková
+  - Kláru Součkovou
+[[PERSON_26]]: Ladislav Souček
+[[PERSON_27]]: Milena Havelová
+[[PERSON_28]]: Ctibor Havel
+[[PERSON_29]]: Milada Kadlecová
+[[PERSON_30]]: Radovan Šindelář
+[[PERSON_31]]: Alena Burešová
+[[PERSON_32]]: Oldřich Moravec
+[[PERSON_33]]: Zdenka Fialová
+[[PERSON_34]]: Ervín Kopecký
+[[PERSON_35]]: Pavla Sýkorová
+[[PERSON_36]]: Emil Vondráček
+[[PERSON_37]]: Drahomíra Holubová
+[[PERSON_38]]: Stanislava Horáková
+[[PERSON_39]]: Čeněk Liška
+[[PERSON_40]]: Petr Kraus
+[[PERSON_41]]: Jarmila Krausová
+[[PERSON_42]]: Hynek Říha
+[[PERSON_43]]: Božena Marková
+[[PERSON_44]]: Aleš Urbanec
+[[PERSON_45]]: Libuše Sedláčková
+[[PERSON_46]]: Svatomír Novák
+  - Novák
+[[PERSON_47]]: Ondřej Málek
+  - Ondřeje Málka
+[[PERSON_48]]: Jitka Málková
+[[PERSON_49]]: Bořivoj Šimek
+[[PERSON_50]]: Milena Kuželová
+[[PERSON_51]]: Lumír Kadlec
+[[PERSON_52]]: Štěpánka Horská
+[[PERSON_53]]: Bronislav Vávra
+[[PERSON_54]]: Růžena Málková
+[[PERSON_55]]: Arnošt Bureš
+[[PERSON_56]]: Marcela Vávrová
+[[PERSON_57]]: Bohumír Sedláček
+[[PERSON_58]]: Helena Koubková
+[[PERSON_59]]: Gustav Šťastný
+[[PERSON_60]]: Sylva Hrubá
+[[PERSON_61]]: Vlasta Říhová
+[[PERSON_62]]: František Toman
+[[PERSON_63]]: Naděžda Bartošová
+
+ADDRESS
+[[ADDRESS_1]]: Vinohradská 142/7, Praha 10
+[[ADDRESS_2]]: Slunečná 89, Brno 602 00
+[[ADDRESS_3]]: Krátká 15/3, Ústí nad Labem 400 01
+[[ADDRESS_4]]: Revoluční 67, Liberec 460 01
+[[ADDRESS_5]]: Zahradní 34, Ostrava 708 00
+[[ADDRESS_6]]: Lázeňská 78/12, Karlovy Vary 360 01
+[[ADDRESS_7]]: Sportovní 23, Zlín 760 01
+[[ADDRESS_8]]: Polní 56, Jihlava 586 01
+[[ADDRESS_9]]: Klostermannova 89, České Budějovice 370 01
+[[ADDRESS_11]]: Tovární 67, Mladá Boleslav 293 01
+[[ADDRESS_12]]: Krátká 89, Havířov 736 01
+[[ADDRESS_13]]: Polní 34, Přerov 750 02
+[[ADDRESS_14]]: Hlavní 45, Přerov 750 02
+[[ADDRESS_15]]: Krátká 89, Zlín 760 01
+[[ADDRESS_16]]: Zahradní 67, Pardubice 530 02
+[[ADDRESS_17]]: Polní 12, Olomouc 779 00
+[[ADDRESS_18]]: Krátká 34, Brno 602 00
+[[ADDRESS_19]]: Školní 89, Tábor 390 01
+
+BANK
+[[BANK_1]]: 9876543210/2010
+[[BANK_2]]: 5678901234/0300
+[[BANK_3]]: 7890123456/0600
+[[BANK_4]]: 3456789012/2700
+[[BANK_5]]: 7890123456/0800
+[[BANK_6]]: 4567890123/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 820714/9234
+[[BIRTH_ID_2]]: 887799001
+[[BIRTH_ID_3]]: 856329/8123
+[[BIRTH_ID_4]]: 730825/6734
+[[BIRTH_ID_5]]: 815629/7234
+[[BIRTH_ID_6]]: 870623/5623
+[[BIRTH_ID_7]]: 334455667
+[[BIRTH_ID_8]]: 925814/7890
+[[BIRTH_ID_9]]: 790412/8934
+[[BIRTH_ID_10]]: 905624/7823
+[[BIRTH_ID_11]]: 750923/6712
+[[BIRTH_ID_12]]: 785629/8901
+[[BIRTH_ID_13]]: 998877665
+[[BIRTH_ID_14]]: 680314/7823
+[[BIRTH_ID_15]]: 750825/9123
+[[BIRTH_ID_16]]: 845723/8234
+[[BIRTH_ID_17]]: 820914/6745
+[[BIRTH_ID_18]]: 130425/7890
+[[BIRTH_ID_19]]: 160712/8901
+[[BIRTH_ID_20]]: 750623/8912
+[[BIRTH_ID_21]]: 450814/7823
+[[BIRTH_ID_22]]: 720518/9234
+[[BIRTH_ID_23]]: 780924/6712
+[[BIRTH_ID_24]]: 835629/7823
+[[BIRTH_ID_25]]: 690723/8912
+[[BIRTH_ID_26]]: 895723/8234
+[[BIRTH_ID_27]]: 680514/7823
+[[BIRTH_ID_28]]: 875623/8945
+[[BIRTH_ID_29]]: 770825/6712
+[[BIRTH_ID_30]]: 915824/7234
+[[BIRTH_ID_31]]: 690623/8923
+[[BIRTH_ID_32]]: 135624/7890
+[[BIRTH_ID_33]]: 855729/8012
+[[BIRTH_ID_34]]: 520814/7623
+[[BIRTH_ID_35]]: 585629/7834
+[[BIRTH_ID_36]]: 735624/8923
+[[BIRTH_ID_37]]: 810623/7812
+[[BIRTH_ID_38]]: 630925/6734
+[[BIRTH_ID_39]]: 925814/7845
+[[BIRTH_ID_40]]: 740512/8923
+[[BIRTH_ID_41]]: 875629/7234
+[[BIRTH_ID_42]]: 550723/8012
+[[BIRTH_ID_43]]: 835724/8923
+[[BIRTH_ID_44]]: 905623/7845
+[[BIRTH_ID_45]]: 480814/7623
+[[BIRTH_ID_46]]: 715629/8234
+[[BIRTH_ID_47]]: 750923/7812
+[[BIRTH_ID_48]]: 820512/6734
+[[BIRTH_ID_49]]: 565724/8923
+[[BIRTH_ID_50]]: 790625/7823
+[[BIRTH_ID_51]]: 855629/8012
+[[BIRTH_ID_52]]: 720814/7623
+[[BIRTH_ID_53]]: 915724/8234
+[[BIRTH_ID_54]]: 155623/7890
+[[BIRTH_ID_55]]: 600925/7812
+[[BIRTH_ID_56]]: 825623/7845
+[[BIRTH_ID_57]]: 770512/6734
+[[BIRTH_ID_58]]: 895729/8012
+[[BIRTH_ID_59]]: 680814/7623
+[[BIRTH_ID_60]]: 645729/8234
+[[BIRTH_ID_61]]: 580814/7123
+[[BIRTH_ID_62]]: 915824/6790
+[[BIRTH_ID_63]]: 720623/8945
+[[BIRTH_ID_64]]: 885629/7245
+[[BIRTH_ID_65]]: 670925/6734
+[[BIRTH_ID_66]]: 935724/8012
+[[BIRTH_ID_67]]: 795623/8934
+[[BIRTH_ID_68]]: 530814/7823
+[[BIRTH_ID_69]]: 865629/7423
+
+DATE
+[[DATE_1]]: 24. prosince 2025
+
+DIC
+[[DIC_1]]: CZ45678912
+
+EMAIL
+[[EMAIL_1]]: m.havlicek@centrum.cz
+[[EMAIL_2]]: v.blazek@email.cz
+[[EMAIL_3]]: r.kubikova@seznam.cz
+[[EMAIL_4]]: s.gregorova@firma.cz
+[[EMAIL_5]]: l.gregorova@email.cz
+[[EMAIL_6]]: a.buresova@centrum.cz
+[[EMAIL_7]]: a.urbanec@firma.cz
+[[EMAIL_8]]: b.vavra@email.cz
+
+ICO
+[[ICO_1]]: 45678912
+[[ICO_2]]: 06789234
+[[ICO_3]]: 78945612
+[[ICO_4]]: 08945623
+[[ICO_5]]: 26349981
+[[ICO_6]]: 25621351
+[[ICO_7]]: 67823451
+
+ID_CARD
+[[ID_CARD_1]]: GH890123
+[[ID_CARD_2]]: IJ012345
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: 5A7 8901
+[[LICENSE_PLATE_2]]: NS 7823
+[[LICENSE_PLATE_3]]: NS 4567
+
+PHONE
+[[PHONE_1]]: +420 603 456 789
+[[PHONE_2]]: +420 774 123 987
+[[PHONE_3]]: +420 731 987 654
+[[PHONE_4]]: 456789123
+[[PHONE_5]]: +420 725 654 321
+[[PHONE_6]]: 445566778
+[[PHONE_7]]: +420 608 321 654
+[[PHONE_8]]: +420 736 789 012
+[[PHONE_9]]: +420 605 432 789
+[[PHONE_10]]: +420 721 456 789
+[[PHONE_11]]: 567890234
+[[PHONE_12]]: +420 608 789 456
+[[PHONE_13]]: +420 731 654 987
+

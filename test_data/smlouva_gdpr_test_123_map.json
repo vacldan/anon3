@@ -1,12 +1,24 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:58.876713",
+  "generated_at": "2026-03-13T09:56:39.238400",
   "source_file": "smlouva_gdpr_test_123.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Matěj Hrubeš",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Matěja Hrubeša",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Matěje Hrubeše",
       "occurrences": 1
     },
     {
@@ -23,20 +35,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Matěje Hrubeše",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Matěja Hrubeša",
+      "label": "[[PERSON_2]]",
+      "original": "Tomáš Král",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Tomáš Král",
+      "original": "Tomášem Králem",
       "occurrences": 1
     },
     {
@@ -55,12 +61,6 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Tomášovi Královi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Tomášem Králem",
       "occurrences": 1
     },
     {
@@ -90,7 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Jaroslavem Dvořákem",
+      "original": "Jaroslave Dvořáke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Jaroslava Dvořáka",
       "occurrences": 1
     },
     {
@@ -102,56 +108,20 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Jaroslave Dvořáke",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Jaroslava Dvořáka",
+      "original": "Jaroslavem Dvořákem",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Na Hradbách 15, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Na Hradbách 15, 702 00, Ostrava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Křenová 192/23, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Křenová 116/9, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Křenová 116/9, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Křenová 116/9, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Křenová 116/9, 602 00 Brno pro Tomášovi Královi a",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Křenová 192/23, 602 00 Brno pro Matějovi Hrubešovi",
-      "occurrences": 1
+      "occurrences": 3
     },
     {
       "type": "ICO",

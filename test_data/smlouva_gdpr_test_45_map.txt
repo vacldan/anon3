@@ -7,8 +7,8 @@ OSOBY
 [[PERSON_5]]: Vojtěch Novotný
 
 ADDRESS
-[[ADDRESS_1]]: Slunečná 3, 400 04 Ústí nad Labem
-[[ADDRESS_2]]: Digitální 9, 150 00 Praha 5
+[[ADDRESS_1]]: Slunečná 3, 400 04, Ústí nad Labem
+[[ADDRESS_2]]: Digitální 9, Praha 5, 150 00
 [[ADDRESS_3]]: K Žernosekám 11, 400 04 Ústí nad Labem
 
 BIRTH_ID

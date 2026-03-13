@@ -6,11 +6,9 @@ OSOBY
 [[PERSON_3]]: Lucie Veselá
 
 ADDRESS
-[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
-[[ADDRESS_2]]: Luční 45, 150 00 Praha 5
+[[ADDRESS_1]]: Poliklinická 3, Praha 2, 120 00
 [[ADDRESS_3]]: U Parku 12, 293 01 Mladá Boleslav
-[[ADDRESS_4]]: Barbory Veselé s fakturační adresou Luční 45, 150 00 Praha 5
-[[ADDRESS_5]]: V Praze
+[[ADDRESS_4]]: adresou Luční 45, Praha 5, 150 00
 
 BANK
 [[BANK_1]]: 6655443322/5500

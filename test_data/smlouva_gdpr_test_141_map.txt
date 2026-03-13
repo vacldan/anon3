@@ -20,13 +20,9 @@ OSOBY
   - Davidovi Křížovi
 
 ADDRESS
-[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_1]]: Na Hradbách 15, 702 00, Ostrava
 [[ADDRESS_2]]: U Parku 128/23, 779 00 Olomouc
-[[ADDRESS_3]]: Pojišťovací 37/20, 110 00 Praha 1
-[[ADDRESS_4]]: případně písemně na adresu Pojišťovací 37/20, 110 00 Praha 1
-[[ADDRESS_5]]: písemné doručení na adresu Pojišťovací 37/20, 110 00 Praha 1
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Pojišťovací 37/20, 110 00 Praha 1
-[[ADDRESS_7]]: pro Michalovi Královi a U Parku 128/23, 779 00 Olomouc pro Filipovi Hrubešovi
+[[ADDRESS_5]]: Pojišťovací 37/20, Praha 1, 110 00
 
 BANK
 [[BANK_1]]: 102388401/0100

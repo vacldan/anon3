@@ -21,13 +21,9 @@ OSOBY
   - Tomáši Černýe
 
 ADDRESS
-[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
+[[ADDRESS_1]]: Poliklinická 3, Praha 2, 120 00
 [[ADDRESS_2]]: Na Kopci 125/29, 100 00 Praha 10
 [[ADDRESS_3]]: Sadová 165/27, 370 01 České Budějovice
-[[ADDRESS_4]]: případně písemně na adresu Sadová 165/27, 370 01 České Budějovice
-[[ADDRESS_5]]: písemné doručení na adresu Sadová 165/27, 370 01 České Budějovice
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Sadová 165/27, 370 01 České Budějovice pro Monikě
-[[ADDRESS_7]]: Králové a Na Kopci 125/29, 100 00 Praha 10
 
 BANK
 [[BANK_1]]: 319658597/0100

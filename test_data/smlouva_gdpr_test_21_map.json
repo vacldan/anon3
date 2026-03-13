@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:07.798598",
+  "generated_at": "2026-03-13T09:56:53.387162",
   "source_file": "smlouva_gdpr_test_21.docx",
   "entities": [
     {
@@ -18,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Renaty Procházkové",
+      "original": "Renatě Procházkové",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Renatě Procházkové",
+      "original": "Renaty Procházkové",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Terezou Svobodovou",
+      "original": "Terezo Svobodová",
       "occurrences": 1
     },
     {
@@ -54,19 +54,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Terezo Svobodová",
+      "original": "Terezě Svobodové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Terezě Svobodové",
+      "original": "Terezou Svobodovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Erik Černý",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Erika Černýa",
       "occurrences": 1
     },
     {
@@ -79,12 +85,6 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Erikem Černýem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Erika Černýa",
       "occurrences": 1
     },
     {
@@ -109,18 +109,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Sadová 158/29, 370 01 České Budějovice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "platnost 08/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemně na adresu Sadová 158/29, 370 01 České Budějovice",
       "occurrences": 1
     },
     {

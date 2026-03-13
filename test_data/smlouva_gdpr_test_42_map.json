@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:11.316199",
+  "generated_at": "2026-03-13T09:56:59.346174",
   "source_file": "smlouva_gdpr_test_42.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Františka Kubíčka",
+      "original": "Františkem Kubíčkem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Františkem Kubíčkem",
+      "original": "Františka Kubíčka",
       "occurrences": 1
     },
     {
@@ -36,13 +36,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Jany Brázdové",
+      "original": "Janou Brázdovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Janou Brázdovou",
+      "original": "Jany Brázdové",
       "occurrences": 1
     },
     {
@@ -66,37 +66,25 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Javorová 5, 779 00 Olomouc",
-      "occurrences": 1
+      "original": "Javorová 5, 779 00, Olomouc",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Na Stráni 12, 779 00 Olomouc",
-      "occurrences": 1
+      "original": "Na Stráni 12, 779 00, Olomouc",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "vatele navštěvovali jeho bytovou jednotku Na Stráni 12, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
       "original": "Jabloňová 11, 779 00 Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_4]]",
       "original": "Masarykova 3, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "V Olomouci",
       "occurrences": 1
     },
     {

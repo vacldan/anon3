@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:54.401272",
+  "generated_at": "2026-03-13T09:56:32.620809",
   "source_file": "smlouva_gdpr_test_109.docx",
   "entities": [
     {
@@ -12,25 +12,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Veroniko Dvořáková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Veronikě Dvořákové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Veroniky Dvořákové",
+      "original": "Veronikou Dvořákovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Veronikou Dvořákovou",
+      "original": "Veroniko Dvořáková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Veroniky Dvořákové",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jaroslavovi Vaněkovi",
+      "original": "Jaroslavem Vaněkem",
       "occurrences": 1
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jaroslavem Vaněkem",
+      "original": "Jaroslavovi Vaněkovi",
       "occurrences": 1
     },
     {
@@ -72,19 +72,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Barborě Turkové",
+      "original": "Barborou Turkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Barborou Turkovou",
+      "original": "Barborě Turkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Matěj Hrubeš",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Matěje Hrubeše",
       "occurrences": 1
     },
     {
@@ -102,20 +108,14 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Matěje Hrubeše",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Matějovi Hrubešovi",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Poliklinická 3, 120 00 Praha 2",
-      "occurrences": 1
+      "original": "Poliklinická 3, Praha 2, 120 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -125,33 +125,9 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Vinohradská 100/22, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Vinohradská 100/22, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Vinohradská 100/22, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Vinohradská 100/22, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Jaroslavovi Vaněkovi a Křenová 136/5, 602 00 Brno pro Veronikě Dvořákové",
-      "occurrences": 1
+      "original": "Vinohradská 100/22, Praha 3, 130 00",
+      "occurrences": 2
     },
     {
       "type": "ICO",

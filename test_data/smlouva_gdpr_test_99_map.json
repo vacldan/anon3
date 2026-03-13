@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:49.846283",
+  "generated_at": "2026-03-13T09:57:34.367541",
   "source_file": "smlouva_gdpr_test_99.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Stanislave Křečku",
+      "original": "Stanislava Křečka",
       "occurrences": 1
     },
     {
@@ -24,7 +24,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Stanislava Křečka",
+      "original": "Stanislave Křečku",
       "occurrences": 1
     },
     {
@@ -42,25 +42,31 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Kláry Jirsové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Kláro Jirsová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Klárě Jirsové",
+      "original": "Kláry Jirsové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Kláru Jirsováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Klárou Jirsovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Klárě Jirsové",
       "occurrences": 1
     },
     {
@@ -72,19 +78,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
+      "original": "Ivě Hrdinové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Ivou Hrdinovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Ivy Hrdinové",
+      "original": "Ivu Hrdinováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Ivě Hrdinové",
+      "original": "Ivy Hrdinové",
       "occurrences": 1
     },
     {
@@ -108,6 +120,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
+      "original": "Růženu Vavrováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Růženy Vavrové",
       "occurrences": 1
     },
@@ -124,46 +142,10 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Iva Hrdinováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Ivu Hrdinováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Klára Jirsováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Kláru Jirsováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Růžena Vavrováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Růženu Vavrováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Náměstí 1, 500 02 Hradec Králové",
-      "occurrences": 1
+      "original": "Náměstí 1, 500 02, Hradec Králové",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -174,55 +156,31 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Komenského 40/31, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Komenského 40/31, 702 00, Ostrava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Husova 177, 390 02 Tábor",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Hlavní 240, 669 02 Znojmo",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Vinohradská 179/2, 130 00 Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Jabloňová 102, 400 01 Ústí nad Labem",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Palackého 24, 301 00 Plzeň a Komenského",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 02/26, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "a podezřelé jednání Ivy Hrdinové na adrese Husova 177, 390 02 Tábor",
+      "original": "Jabloňová 102, 400 01 Ústí nad Labem",
       "occurrences": 1
     },
     {
@@ -364,12 +322,6 @@
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_8]]",
-      "original": "968459339",
-      "occurrences": 1
-    },
-    {
       "type": "EMAIL",
       "label": "[[EMAIL_1]]",
       "original": "stanislav.krecek@post.cz",
@@ -463,6 +415,12 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
       "original": "PP94796",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_3]]",
+      "original": "AK 65033",
       "occurrences": 1
     },
     {

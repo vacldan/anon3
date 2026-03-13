@@ -1,12 +1,14 @@
 OSOBY
 -----
-[[PERSON_1]]: Erik Tesař
+[[PERSON_1]]: Erik Tesařa
+  - Erik Tesař
   - Erika Tesařa
   - Erike Tesaře
   - Erikem Tesařem
   - Erikovi Tesařovi
 [[PERSON_2]]: Viktorie Svobodová
   - Viktorie Svobodové
+  - Viktorii Svobodováovou
   - Viktorii Svobodové
   - Viktorií Svobodovou
 [[PERSON_3]]: Karel Brázda
@@ -15,28 +17,20 @@ OSOBY
   - Karlem Brázdou
   - Karlovi Brázdovi
 [[PERSON_4]]: Dagmar Kratochvílová
-  - Dagmar Kratochvílové
 [[PERSON_5]]: Olga Fialová
+  - Olgu Fialováovou
   - Olgy Fialové
 [[PERSON_6]]: Miroslav Kratochvíl
   - Miroslava Kratochvíla
-[[PERSON_7]]: Viktorie Svobodováová
-  - Viktorii Svobodováovou
-[[PERSON_8]]: Dagmar Kratochvílováová
-  - Dagmar Kratochvílováovou
-[[PERSON_9]]: Olga Fialováová
-  - Olgu Fialováovou
 
 ADDRESS
-[[ADDRESS_1]]: Lesní 12, 586 01 Jihlava
-[[ADDRESS_2]]: U Nemocnice 42/38, 128 08 Praha 2
-[[ADDRESS_3]]: Bezručova 198, 746 01 Opava
-[[ADDRESS_4]]: Dlouhá 226/25, 602 00 Brno
-[[ADDRESS_5]]: Jihlavská 142/35, 625 00 Brno
-[[ADDRESS_6]]: Riegrova 129/3, 779 00 Olomouc
-[[ADDRESS_7]]: Hlavní 199/4, 669 02 Znojmo
-[[ADDRESS_8]]: a Bezručova 198, 746 01 Opava
-[[ADDRESS_9]]: platnost 09/27, CVC
+[[ADDRESS_1]]: Lesní 12, 586 01, Jihlava
+[[ADDRESS_2]]: Nemocnice 42/38, 128 08 Praha 2
+[[ADDRESS_3]]: Bezručova 198, 746 01, Opava
+[[ADDRESS_5]]: Dlouhá 226/25, 602 00 Brno
+[[ADDRESS_6]]: Jihlavská 142/35, 625 00 Brno
+[[ADDRESS_7]]: Riegrova 129/3, 779 00 Olomouc
+[[ADDRESS_8]]: Hlavní 199/4, 669 02 Znojmo
 
 BANK
 [[BANK_1]]: 4346425944/6210
@@ -104,5 +98,4 @@ PHONE
 [[PHONE_4]]: +420 735 895 266
 [[PHONE_5]]: +420 711 972 231
 [[PHONE_6]]: +420636267397
-[[PHONE_7]]: 673432995
 

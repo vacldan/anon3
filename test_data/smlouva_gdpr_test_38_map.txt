@@ -5,14 +5,14 @@ OSOBY
 [[PERSON_3]]: Veronika Lacinová
   - Veronice Lacinové
   - Veronikou Lacinovou
-[[PERSON_4]]: Nikol Šťastná
+[[PERSON_4]]: Nikol Šťastný
   - Nikol Šťastnou
+  - Nikol Šťastná
   - Nikol Šťastné
 
 ADDRESS
-[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
-[[ADDRESS_2]]: U Kampusu 9, 625 00 Brno
-[[ADDRESS_3]]: V Ostravě
+[[ADDRESS_1]]: Na Hradbách 15, 702 00, Ostrava
+[[ADDRESS_2]]: Kampusu 9, 625 00, Brno
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 860921/4444

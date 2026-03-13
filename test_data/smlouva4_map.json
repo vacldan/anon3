@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:41.611736",
+  "generated_at": "2026-03-13T09:56:17.384314",
   "source_file": "smlouva4.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Marečka",
+      "original": "Lukáše Marečka",
       "occurrences": 1
     },
     {
@@ -106,18 +106,6 @@
       "occurrences": 1
     },
     {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "listopadu 2025, a to na účet pana Lukáše",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "V Brně",
-      "occurrences": 1
-    },
-    {
       "type": "DATE",
       "label": "[[DATE_1]]",
       "original": "4. 5. 1982",
@@ -162,12 +150,18 @@
     {
       "type": "DATE",
       "label": "[[DATE_8]]",
-      "original": "30. 7. 2025",
+      "original": "30. listopadu 2025",
       "occurrences": 1
     },
     {
       "type": "DATE",
       "label": "[[DATE_9]]",
+      "original": "30. 7. 2025",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_10]]",
       "original": "31. července 2025",
       "occurrences": 1
     },

@@ -9,9 +9,11 @@ OSOBY
 [[PERSON_2]]: Simona Šimůnková
   - Simono Šimůnková
   - Simonou Šimůnkovou
+  - Simonu Šimůnkováovou
   - Simony Šimůnkové
   - Simoně Šimůnkové
 [[PERSON_3]]: Darja Soukupová
+  - Darju Soukupováovou
   - Darjy Soukupové
 [[PERSON_4]]: Štěpán Procházka
   - Štěpána Procházku
@@ -23,21 +25,14 @@ OSOBY
   - Hugoovi Vavrovi
 [[PERSON_6]]: Bruno Bartůněk
   - Brunoa Bartůněka
-[[PERSON_7]]: Simona Šimůnkováová
-  - Simonu Šimůnkováovou
-[[PERSON_8]]: Darja Soukupováová
-  - Darju Soukupováovou
 
 ADDRESS
-[[ADDRESS_1]]: Praha 1
+[[ADDRESS_1]]: Václavské nám. 12, 110 00 Praha 1
 [[ADDRESS_2]]: Hlavní 61/39, 669 02 Znojmo
-[[ADDRESS_3]]: Hlavní 55, 669 02 Znojmo
-[[ADDRESS_4]]: Vinohradská 151/2, 130 00 Praha 3
-[[ADDRESS_5]]: Revoluční 187/29, 110 00 Praha 1
-[[ADDRESS_6]]: Dlouhá 196/25, 602 00 Brno
-[[ADDRESS_7]]: Dvořákova 128/4, 370 01 České Budějovice
-[[ADDRESS_8]]: Hlavní 61/39, 669 02 Znojmo a Hlavní 55
-[[ADDRESS_9]]: platnost 09/30, CVC
+[[ADDRESS_5]]: Vinohradská 151/2, 130 00 Praha 3
+[[ADDRESS_6]]: Revoluční 187/29, 110 00 Praha 1
+[[ADDRESS_7]]: Dlouhá 196/25, 602 00 Brno
+[[ADDRESS_8]]: Dvořákova 128/4, 370 01 České Budějovice
 
 BANK
 [[BANK_1]]: 9422182823/0300

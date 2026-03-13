@@ -8,37 +8,31 @@ OSOBY
   - Maxovi Švestkovi
 [[PERSON_2]]: Libuše Rendlová
   - Libuše Rendlovou
+  - Libuše Rendlováovou
   - Libuše Rendlové
 [[PERSON_3]]: Miloslav Rendl
   - Miloslava Rendla
   - Miloslavem Rendlem
 [[PERSON_4]]: Darja Kuchtová
   - Darjou Kuchtovou
+  - Darju Kuchtováovou
   - Darjy Kuchtové
   - Darjě Kuchtové
 [[PERSON_5]]: Květa Holíková
+  - Květu Holíkováovou
   - Květy Holíkové
 [[PERSON_6]]: Ondřej Kuchta
   - Ondřeja Kuchtu
   - Ondřeja Kuchty
-[[PERSON_7]]: Darja Kuchtováová
-  - Darju Kuchtováovou
-[[PERSON_8]]: Libuše Rendlováová
-  - Libuše Rendlováovou
-[[PERSON_9]]: Květa Holíkováová
-  - Květu Holíkováovou
 
 ADDRESS
-[[ADDRESS_1]]: Sokolská 88, 120 00 Praha 2
+[[ADDRESS_1]]: Sokolská 88, Praha 2, 120 00
 [[ADDRESS_2]]: Nádražní 80, 702 00 Ostrava
-[[ADDRESS_3]]: Riegrova 208/29, 779 00 Olomouc
-[[ADDRESS_4]]: Žižkova 177/11, 460 01 Liberec
-[[ADDRESS_5]]: Havlíčkova 137/14, 586 01 Jihlava
-[[ADDRESS_6]]: Smetanova 207/4, 760 01 Zlín
-[[ADDRESS_7]]: Masarykova 237/2, 500 02 Hradec Králové
-[[ADDRESS_8]]: Nádražní 80, 702 00 Ostrava a Riegrova
-[[ADDRESS_9]]: Olomouc
-[[ADDRESS_10]]: platnost 12/27, CVC
+[[ADDRESS_3]]: Riegrova 208/29, 779 00, Olomouc
+[[ADDRESS_5]]: Žižkova 177/11, 460 01 Liberec
+[[ADDRESS_6]]: Havlíčkova 137/14, 586 01 Jihlava
+[[ADDRESS_7]]: Smetanova 207/4, 760 01 Zlín
+[[ADDRESS_8]]: Masarykova 237/2, 500 02 Hradec Králové
 
 BANK
 [[BANK_1]]: 1679274040/2010
@@ -106,5 +100,4 @@ PHONE
 [[PHONE_4]]: +420669872773
 [[PHONE_5]]: 678 440 425
 [[PHONE_6]]: 608 733 508
-[[PHONE_7]]: 268436508
 

@@ -1,6 +1,7 @@
 OSOBY
 -----
-[[PERSON_1]]: Vincenc Tesař
+[[PERSON_1]]: Vincenc Tesařa
+  - Vincenc Tesař
   - Vincenca Tesařa
   - Vincence Tesaře
   - Vincencem Tesařem
@@ -8,37 +9,33 @@ OSOBY
 [[PERSON_2]]: Krista Šemberová
   - Kristo Šemberová
   - Kristou Šemberovou
+  - Kristu Šemberováovou
   - Kristy Šemberové
   - Kristě Šemberové
 [[PERSON_3]]: Věra Havličková
   - Věrou Havličkovou
+  - Věru Havličkováovou
   - Věry Havličkové
   - Věrě Havličkové
 [[PERSON_4]]: Čeněk Vlach
   - Čeněka Vlacha
-[[PERSON_5]]: Ella Navrátilová
+[[PERSON_5]]: Ell Navrátilová
+  - Ella Navrátilová
+  - Ellu Navrátilováovou
+  - Elly Navrátilové
 [[PERSON_6]]: Blahoslav Brázda
   - Blahoslava Brázdu
   - Blahoslava Brázdy
-[[PERSON_7]]: Věra Havličkováová
-  - Věru Havličkováovou
-[[PERSON_8]]: Krista Šemberováová
-  - Kristu Šemberováovou
-[[PERSON_10]]: Ella Navrátilováová
-  - Ellu Navrátilováovou
 
 ADDRESS
-[[ADDRESS_1]]: Lesní 12, 586 01 Jihlava
+[[ADDRESS_1]]: Lesní 12, 586 01, Jihlava
 [[ADDRESS_2]]: Masarykova 12/17, 500 02 Hradec Králové
-[[ADDRESS_3]]: Sadová 14, 370 01 České Budějovice
-[[ADDRESS_4]]: Sokolovská 242, 186 00 Praha 8
-[[ADDRESS_5]]: Havlíčkova 99/39, 586 01 Jihlava
-[[ADDRESS_6]]: Riegrova 212, 779 00 Olomouc
-[[ADDRESS_7]]: Na Kopci 33/34, 100 00 Praha 10
-[[ADDRESS_8]]: Masarykova 12/17, 500 02 Hradec Králové a Sadová 14
-[[ADDRESS_9]]: České Budějovice
-[[ADDRESS_10]]: platnost 11/28, CVC
-[[ADDRESS_11]]: Tylova 143, Ústí nad Labem
+[[ADDRESS_3]]: Sadová 14, 370 01, České Budějovice
+[[ADDRESS_5]]: Sokolovská 242, 186 00 Praha 8
+[[ADDRESS_6]]: Havlíčkova 99/39, 586 01 Jihlava
+[[ADDRESS_7]]: Riegrova 212, 779 00 Olomouc
+[[ADDRESS_8]]: Na Kopci 33/34, 100 00 Praha 10
+[[ADDRESS_9]]: Tylova 143, Ústí nad Labem
 
 BANK
 [[BANK_1]]: 374143-459216229/5500
@@ -91,6 +88,7 @@ IP
 LICENSE_PLATE
 [[LICENSE_PLATE_1]]: PP15245
 [[LICENSE_PLATE_2]]: CZ96356
+[[LICENSE_PLATE_3]]: LV 2837
 
 MAC
 [[MAC_1]]: 79:14:58:B9:C7:B7

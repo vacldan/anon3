@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:52.135697",
+  "generated_at": "2026-03-13T09:56:29.237527",
   "source_file": "smlouva_gdpr_test_101.docx",
   "entities": [
     {
@@ -18,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Oldřicha Dvořáka",
+      "original": "Oldřiche Dvořáke",
       "occurrences": 1
     },
     {
@@ -30,13 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Oldřiche Dvořáke",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Dvořákovi",
+      "original": "Oldřicha Dvořáka",
       "occurrences": 1
     },
     {
@@ -126,8 +120,8 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Poliklinická 3, 120 00 Praha 2",
-      "occurrences": 1
+      "original": "Poliklinická 3, Praha 2, 120 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -139,31 +133,7 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "U Parku 123/23, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu U Parku 123/23, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu U Parku 123/23, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa U Parku 123/23, 779 00 Olomouc pro Oldřichovi Černýovi",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "a Jabloňová 60/4, 400 01 Ústí nad Labem pro Oldřichovi",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ICO",

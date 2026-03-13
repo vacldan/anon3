@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:00.636514",
+  "generated_at": "2026-03-13T09:56:41.820714",
   "source_file": "smlouva_gdpr_test_129.docx",
   "entities": [
     {
@@ -18,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Davide Kříže",
+      "original": "Davidovi Křížovi",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Davidovi Křížovi",
+      "original": "Davide Kříže",
       "occurrences": 1
     },
     {
@@ -60,12 +60,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Marku Holíke",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
       "original": "Markem Holíkem",
       "occurrences": 1
     },
@@ -82,10 +76,16 @@
       "occurrences": 1
     },
     {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Marku Holíke",
+      "occurrences": 1
+    },
+    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Na Hradbách 15, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Na Hradbách 15, 702 00, Ostrava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -97,30 +97,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Na Kopci 72/30, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Na Kopci 72/30, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Na Kopci 72/30, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Na Kopci 72/30, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Davidovi Křížovi a Vinohradská 189/20, 130 00 Praha 3",
       "occurrences": 1
     },
     {

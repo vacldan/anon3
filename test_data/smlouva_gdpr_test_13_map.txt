@@ -20,8 +20,6 @@ ADDRESS
 [[ADDRESS_1]]: Kampus 9, 625 00 Brno
 [[ADDRESS_2]]: Sadová 135/16, 370 01 České Budějovice
 [[ADDRESS_3]]: Pojišťovací 28/25, 110 00 Praha 1
-[[ADDRESS_4]]: platnost 08/28, CVC
-[[ADDRESS_5]]: písemně na adresu Pojišťovací 28/25, 110 00 Praha 1
 
 BANK
 [[BANK_1]]: 402372036/0300

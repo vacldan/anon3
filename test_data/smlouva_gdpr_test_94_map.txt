@@ -7,40 +7,33 @@ OSOBY
   - Vlastimilovi Kolískovi
 [[PERSON_2]]: Žofie Roubalová
   - Žofie Roubalové
+  - Žofii Roubalováovou
   - Žofii Roubalové
   - Žofií Roubalovou
 [[PERSON_3]]: Hyundai Tucson
 [[PERSON_4]]: Jiřina Rendlová
   - Jiřinou Rendlovou
+  - Jiřinu Rendlováovou
   - Jiřiny Rendlové
   - Jiřině Rendlové
 [[PERSON_5]]: Vlastimil Popelka
   - Vlastimila Popelku
   - Vlastimila Popelky
 [[PERSON_6]]: Milada Vaňková
+  - Miladu Vaňkováovou
   - Milady Vaňkové
 [[PERSON_7]]: Michal Hrdina
   - Michala Hrdinu
   - Michala Hrdiny
-[[PERSON_8]]: Jiřina Rendlováová
-  - Jiřinu Rendlováovou
-[[PERSON_9]]: Žofie Roubalováová
-  - Žofii Roubalováovou
-[[PERSON_10]]: Milada Vaňkováová
-  - Miladu Vaňkováovou
 
 ADDRESS
-[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
-[[ADDRESS_2]]: U Parku 93/38, 779 00 Olomouc
-[[ADDRESS_3]]: Smetanova 221/17, 760 01 Zlín
-[[ADDRESS_4]]: Husova 24/31, 390 02 Tábor
-[[ADDRESS_5]]: Dvořákova 17/3, 370 01 České Budějovice
-[[ADDRESS_6]]: Na Kopci 179, 100 00 Praha 10
-[[ADDRESS_7]]: Dlouhá 194/5, 602 00 Brno
-[[ADDRESS_8]]: U Parku 93/38, 779 00 Olomouc a Smetanova
-[[ADDRESS_9]]: Zlín
-[[ADDRESS_10]]: platnost 07/27, CVC
-[[ADDRESS_11]]: V Brně
+[[ADDRESS_1]]: Na Hradbách 15, 702 00, Ostrava
+[[ADDRESS_2]]: Parku 93/38, 779 00 Olomouc
+[[ADDRESS_3]]: Smetanova 221/17, 760 01, Zlín
+[[ADDRESS_5]]: Husova 24/31, 390 02 Tábor
+[[ADDRESS_6]]: Dvořákova 17/3, 370 01 České Budějovice
+[[ADDRESS_7]]: Na Kopci 179, 100 00 Praha 10
+[[ADDRESS_8]]: Dlouhá 194/5, 602 00 Brno
 
 BANK
 [[BANK_1]]: 307034-320933876/0600

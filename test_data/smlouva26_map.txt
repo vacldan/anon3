@@ -2,7 +2,7 @@ OSOBY
 -----
 [[PERSON_1]]: Hana Blažková
   - Hanou Blažkovou
-[[PERSON_2]]: Ondřej Patočka
+[[PERSON_2]]: Ondřej Patoček
   - Ondřeje Patočku
 [[PERSON_3]]: Martina Kyselová
   - Martiny Kyselové
@@ -11,68 +11,69 @@ OSOBY
   - Romana Jeřábka
 [[PERSON_5]]: Ivana Rendlová
   - Ivanu Rendlovou
-[[PERSON_6]]: Petr Lněnička
+[[PERSON_6]]: Petr Lněniček
   - Petrem Lněničkou
 [[PERSON_7]]: Renata Jírová
   - Renaty Jírové
 [[PERSON_8]]: Milan Krupauera
   - Milan Krupauer
   - Milana Krupauera
-[[PERSON_9]]: Lucie Žákovsko
-  - Lucií Žákovsko
-[[PERSON_10]]: Lucie Žákovská
-[[PERSON_11]]: Adam Vrba
+[[PERSON_9]]: Lucie Žákovská
+  - Lucií Žákovskou
+[[PERSON_10]]: Adam Vrba
   - Adama Vrby
   - Adamem Vrbou
-[[PERSON_12]]: Nikola Soukupová
+[[PERSON_11]]: Nikola Soukupová
   - Nikoly Soukupové
-[[PERSON_13]]: Lukáš Pecek
+[[PERSON_12]]: Lukáš Pecek
   - Lukáš Pecka
   - Lukáši Peckovi
-[[PERSON_14]]: Kateřina Vítková
+[[PERSON_13]]: Kateřina Vítková
   - Kateřině Vítkové
-[[PERSON_15]]: Zdeněk Špička
+[[PERSON_14]]: Zdeněk Špiček
   - Zdeňka Špičku
-[[PERSON_16]]: Radko Pospíšilová
+[[PERSON_15]]: Radko Pospíšil
   - Radkou Pospíšilovou
-[[PERSON_18]]: Tomáš Havelka
+[[PERSON_16]]: Radka Pospíšilová
+[[PERSON_17]]: Tomáš Havelka
   - Tomáše Havelku
-[[PERSON_19]]: Alžběta Malíková
-[[PERSON_20]]: Radovan Chýl
+[[PERSON_18]]: Alžběta Malíková
+  - Alžběty Malíkové
+[[PERSON_19]]: Radovan Chýl
   - Radovan Chýle
   - Radovanem Chýlem
-[[PERSON_21]]: Veronika Plzáková
+[[PERSON_20]]: Veronika Plzáková
   - Veronice Plzákové
-[[PERSON_22]]: Jaromír Kotek
+[[PERSON_21]]: Jaromír Kotek
   - Jaromíra Kotka
-[[PERSON_23]]: Soňa Nedbalová
-[[PERSON_24]]: Michal Plíva
-[[PERSON_25]]: Kristýna Tůmová
-[[PERSON_26]]: Pavel Horčička
-[[PERSON_27]]: Andrea Vránová
-[[PERSON_28]]: Štěpán Liška
-[[PERSON_29]]: Petra Měchurová
-[[PERSON_30]]: Jiří Kolařík
-[[PERSON_31]]: Barbora Kmentová
-[[PERSON_32]]: David Záruba
-[[PERSON_33]]: Simona Králíková
-[[PERSON_34]]: Oldřich Hanzal
-[[PERSON_35]]: Lenka Brýdlová
-[[PERSON_36]]: Filip Kameník
-[[PERSON_37]]: Jana Roučková
-[[PERSON_38]]: Patrik Veleba
-[[PERSON_39]]: Monika Bártová
-[[PERSON_40]]: Václav Dufek
-[[PERSON_41]]: Tereza Kalinová
-[[PERSON_42]]: Marek Štolba
+[[PERSON_22]]: Soňa Nedbalová
+[[PERSON_23]]: Michal Plíva
+[[PERSON_24]]: Kristýna Tůmová
+[[PERSON_25]]: Pavel Horčička
+[[PERSON_26]]: Andrea Vránová
+[[PERSON_27]]: Štěpán Liška
+[[PERSON_28]]: Petra Měchurová
+[[PERSON_29]]: Jiří Kolařík
+[[PERSON_30]]: Barbora Kmentová
+[[PERSON_31]]: David Záruba
+[[PERSON_32]]: Simona Králíková
+[[PERSON_33]]: Oldřich Hanzal
+[[PERSON_34]]: Lenka Brýdlová
+[[PERSON_35]]: Filip Kameník
+[[PERSON_36]]: Jana Roučková
+[[PERSON_37]]: Patrik Veleba
+[[PERSON_38]]: Monika Bártová
+[[PERSON_39]]: Václav Dufek
+[[PERSON_40]]: Tereza Kalinová
+[[PERSON_41]]: Marek Štolba
 
 ADDRESS
-[[ADDRESS_1]]: u byla komunikace vedena ohledně bydliště Na Stráni 12, Klatovy
-[[ADDRESS_2]]: cz a adrese Polní 7, Vimperk
-[[ADDRESS_3]]: a bydliště Jabloňová 19, Nový Jičín
-[[ADDRESS_4]]: a adresu Na Lávce 4, Sušice
-[[ADDRESS_5]]: kdy Alžběty Malíkové se týká bydliště U Rybníka 8, Soběslav
-[[ADDRESS_6]]: cz a adrese Hlavní 55, Milevsko
+[[ADDRESS_1]]: Na Stráni 12, Klatovy
+[[ADDRESS_2]]: Polní 7, Vimperk
+[[ADDRESS_3]]: Jabloňová 19, Nový Jičín
+[[ADDRESS_4]]: Na Lávce 4, Sušice
+[[ADDRESS_5]]: Rybníka 8, Soběslav
+[[ADDRESS_6]]: Hlavní 55, Milevsko
 
 BANK
 [[BANK_1]]: 2100887711/2010
@@ -89,10 +90,12 @@ BIRTH_ID
 EMAIL
 [[EMAIL_1]]: adam.vrba@kontakt.cz
 [[EMAIL_2]]: milan.krupauer@firma.cz
-[[EMAIL_3]]: op@legal.cz
-[[EMAIL_4]]: veronika.plzakova@mail.cz
-[[EMAIL_5]]: a.malikova@firma.cz
-[[EMAIL_6]]: nikola.soukupova@post.cz
+[[EMAIL_3]]: ivana.rendlova@post.cz
+[[EMAIL_4]]: op@legal.cz
+[[EMAIL_5]]: veronika.plzakova@mail.cz
+[[EMAIL_6]]: a.malikova@firma.cz
+[[EMAIL_7]]: zdenek.spicka@office.cz
+[[EMAIL_8]]: nikola.soukupova@post.cz
 
 ICO
 [[ICO_1]]: 09188211

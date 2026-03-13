@@ -20,13 +20,9 @@ OSOBY
   - Janě Řezníčkové
 
 ADDRESS
-[[ADDRESS_1]]: Nemocniční 1, 400 01 Ústí nad Labem
+[[ADDRESS_1]]: Nemocniční 1, 400 01, Ústí nad Labem
 [[ADDRESS_2]]: Na Návsi 29/10, 789 01 Zábřeh
-[[ADDRESS_3]]: Vinohradská 88/12, 130 00 Praha 3
-[[ADDRESS_4]]: případně písemně na adresu Vinohradská 88/12, 130 00 Praha 3
-[[ADDRESS_5]]: písemné doručení na adresu Vinohradská 88/12, 130 00 Praha 3
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Vinohradská 88/12, 130 00 Praha 3
-[[ADDRESS_7]]: pro Jaroslavovi Vaněkovi a Na Návsi 29/10, 789 01 Zábřeh pro Romanovi Křížovi
+[[ADDRESS_5]]: Vinohradská 88/12, Praha 3, 130 00
 
 BANK
 [[BANK_1]]: 175550955/0300

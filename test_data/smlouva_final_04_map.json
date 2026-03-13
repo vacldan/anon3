@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:45.670059",
+  "generated_at": "2026-03-13T09:56:21.553479",
   "source_file": "smlouva_final_04.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Theodorovi Brožovi",
+      "original": "Theodorem Brožem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Theodorem Brožem",
+      "original": "Theodorovi Brožovi",
       "occurrences": 1
     },
     {
@@ -42,20 +42,14 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Revoluční 15, 110 00 Praha 1",
+      "original": "Revoluční 15, Praha 1 - Staré, 110 00, Město",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Palackého 183/43, 612 00 Brno - Královo Pole",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "V Praze",
-      "occurrences": 1
+      "original": "Palackého 183/43, 612 00, Brno - Královo",
+      "occurrences": 2
     },
     {
       "type": "DIC",

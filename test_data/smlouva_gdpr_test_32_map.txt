@@ -13,9 +13,8 @@ OSOBY
   - Miroslavu Vaňkovi
 
 ADDRESS
-[[ADDRESS_1]]: Nemocniční 1, 400 01 Ústí nad Labem
-[[ADDRESS_2]]: Jabloňová 12, 400 01 Ústí nad Labem
-[[ADDRESS_3]]: platnost 08/28, CVC
+[[ADDRESS_1]]: Nemocniční 1, 400 01, Ústí nad Labem
+[[ADDRESS_2]]: Jabloňová 12, 400 01, Ústí nad Labem
 
 BANK
 [[BANK_1]]: 987654321/0300
@@ -44,15 +43,15 @@ ICO
 ID_CARD
 [[ID_CARD_1]]: 556677889
 
-IMEI
-[[IMEI_1]]: 356778119992110
-
 INSURANCE_ID
 [[INSURANCE_ID_1]]: 9306307890
 
 IP
 [[IP_1]]: 10.0.0.58
 [[IP_2]]: 192.168.11.22
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EI 35677
 
 PASSWORD
 [[PASSWORD_1]]: N3mocnice!2026

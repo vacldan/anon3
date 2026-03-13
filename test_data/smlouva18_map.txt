@@ -31,16 +31,15 @@ OSOBY
 [[PERSON_14]]: Tobiáš Vráný
   - Tobiášem Vránou
   - Vránou
-[[PERSON_15]]: Mark Prášek
+[[PERSON_15]]: Marek Prášek
   - Markem Práškem
 [[PERSON_16]]: Ondřej Valach
 [[PERSON_17]]: Irena Vlašáková
 [[PERSON_18]]: Luděk Štrunc
 
 ADDRESS
-[[ADDRESS_1]]: U Sanatoria 1120/18, Praha 6
+[[ADDRESS_1]]: Sanatoria 1120/18, Praha 6, 160 00
 [[ADDRESS_2]]: Karafiátová 28, 779 00 Olomouc
-[[ADDRESS_3]]: V Praze
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 127979/3815
@@ -56,13 +55,11 @@ EMAIL
 ICO
 [[ICO_1]]: 00458931
 
-IMEI
-[[IMEI_1]]: 866745032551118
-
 LICENSE_PLATE
 [[LICENSE_PLATE_1]]: 7B7 1189
 [[LICENSE_PLATE_2]]: HA44510
 [[LICENSE_PLATE_3]]: 5M4 6629
+[[LICENSE_PLATE_4]]: EI 86674
 
 MAC
 [[MAC_1]]: 00:1C:14:78:AA:22

@@ -10,8 +10,7 @@ OSOBY
 
 ADDRESS
 [[ADDRESS_1]]: U Parku 8, 779 00 Olomouc
-[[ADDRESS_2]]: Náměstí 1, 500 02 Hradec Králové
-[[ADDRESS_3]]: com a v listinné podobě na adresu U Parku 8, 779 00 Olomouc
+[[ADDRESS_2]]: Náměstí 1, 500 02, Hradec Králové
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 900101/2222

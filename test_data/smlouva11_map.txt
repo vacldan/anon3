@@ -16,16 +16,14 @@ OSOBY
 [[PERSON_14]]: Jan Holý
 
 ADDRESS
-[[ADDRESS_1]]: Olbrachtova 12, Praha 4
-[[ADDRESS_2]]: Poděbradova 10, 460 01 Liberec
+[[ADDRESS_1]]: Poděbradova 10, 460 01 Liberec
+[[ADDRESS_2]]: Olbrachtova 12, Praha 4
 [[ADDRESS_3]]: Svobody 3, Brno
 [[ADDRESS_4]]: Dlouhá 12, 602 00 Brno
 [[ADDRESS_5]]: Hlavní 77, 779 00 Olomouc
-[[ADDRESS_6]]: Olomouc
-[[ADDRESS_7]]: Průmyslová 9, Brno
-[[ADDRESS_8]]: Komenského 4, Praha 2
-[[ADDRESS_9]]: Brněnská 10, Brno
-[[ADDRESS_10]]: Brno
+[[ADDRESS_6]]: Průmyslová 9, Brno
+[[ADDRESS_7]]: Komenského 4, Praha 2
+[[ADDRESS_8]]: Brněnská 10, Brno
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 800202/3456

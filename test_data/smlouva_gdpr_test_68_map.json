@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:27.216137",
+  "generated_at": "2026-03-13T09:57:14.070546",
   "source_file": "smlouva_gdpr_test_68.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Zdeněke Doležale",
+      "original": "Zdeněka Doležala",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Zdeněka Doležala",
+      "original": "Zdeněke Doležale",
       "occurrences": 1
     },
     {
@@ -42,13 +42,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Libuše Marešovou",
+      "original": "Libuše Marešové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Libuše Marešové",
+      "original": "Libuše Marešováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Libuše Marešovou",
       "occurrences": 1
     },
     {
@@ -96,6 +102,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
+      "original": "Moniku Křečkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Moniky Křečkové",
       "occurrences": 1
     },
@@ -108,43 +120,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Leoša Jirsu",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_6]]",
       "original": "Leoša Jirsy",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Libuše Marešováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Libuše Marešováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Monika Křečkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Moniku Křečkováovou",
+      "label": "[[PERSON_6]]",
+      "original": "Leoša Jirsu",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Vídeňská 800, 140 59 Praha 4",
+      "original": "Vídeňská 800, Praha 4, 140 59",
       "occurrences": 1
     },
     {
@@ -156,61 +144,31 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Masarykova 138/34, 500 02 Hradec Králové",
-      "occurrences": 1
+      "original": "Masarykova 138/34, 500 02, Hradec Králové",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Sokolovská 219/29, 186 00 Praha 8",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Palackého 127, 301 00 Plzeň",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Dvořákova 210/7, 370 01 České Budějovice",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Jabloňová 138/34, 400 01 Ústí nad Labem",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Wolkerova 103/30, 796 01 Prostějov a Masarykova",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Hradec Králové",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 09/30, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "v Brně",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_12]]",
-      "original": "Exekutorský úřad Praha 9, ev",
+      "original": "Jabloňová 138/34, 400 01 Ústí nad Labem",
       "occurrences": 1
     },
     {

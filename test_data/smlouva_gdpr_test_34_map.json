@@ -1,12 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:09.894651",
+  "generated_at": "2026-03-13T09:56:57.236040",
   "source_file": "smlouva_gdpr_test_34.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Václav Svoboda",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Václavem Svobodou",
       "occurrences": 1
     },
     {
@@ -23,12 +29,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Václavem Svobodou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Petra Svobodová",
       "occurrences": 1
@@ -36,13 +36,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Petru Svobodovou",
+      "original": "Petrou Svobodovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Petrou Svobodovou",
+      "original": "Petru Svobodovou",
       "occurrences": 1
     },
     {
@@ -60,13 +60,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucii Malé",
+      "original": "Lucií Malou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucií Malou",
+      "original": "Lucii Malé",
       "occurrences": 1
     },
     {
@@ -78,25 +78,19 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Lázeňská 89, 602 00 Brno",
-      "occurrences": 1
+      "original": "Lázeňská 89, 602 00, Brno",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Na Kopci 12, 100 00 Praha 10",
+      "original": "Na Kopci 12, Praha 10, 100 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Křenová 14, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "V Brně",
       "occurrences": 1
     },
     {

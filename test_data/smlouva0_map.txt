@@ -22,48 +22,43 @@ OSOBY
   - Kateřinou Malou
   - Malou
 [[PERSON_9]]: Tomáš Veselý
-[[PERSON_10]]:  Nová
-[[PERSON_11]]: Petra Beránková
+[[PERSON_10]]: Petra Beránková
   - Beránková
-[[PERSON_12]]: Petra Nová
-[[PERSON_13]]: Růžena Holubová
+[[PERSON_11]]: Petra Nová
+  - Nová
+[[PERSON_12]]: Růžena Holubová
   - Holubová
   - Růženu Holubovou
-[[PERSON_14]]: Pavel Beran
+[[PERSON_13]]: Pavel Beran
   - Pavlem Beranem
-[[PERSON_16]]: Jitka Poláčková
+[[PERSON_15]]: Jitka Poláčková
   - Jitkou Poláčkovou
-[[PERSON_17]]: David Müller
-[[PERSON_18]]: Lana Bytová
-  - Lan Bytem
-[[PERSON_19]]: Petr Novotný
+[[PERSON_16]]: David Müller
+[[PERSON_17]]: Petr Novotný
   - Novotnému
   - Petru Novotnému
-[[PERSON_20]]: Adam Nový
+[[PERSON_18]]: Adam Nový
   - Novému
   - Nový
 
 ADDRESS
-[[ADDRESS_1]]: Washingtonova 1621/11, 110 00 Praha 1
-[[ADDRESS_2]]: Kollárova 28, 602 00 Brno
-[[ADDRESS_3]]: Místo výkonu práce Praha 1, Washingtonova
-[[ADDRESS_4]]: U Svatého Ducha 5/142, 301 00 Plzeň Rodné číslo
+[[ADDRESS_1]]: Washingtonova 1621/11, Praha 1, 110 00
+[[ADDRESS_2]]: Kollárova 28, 602 00, Brno
+[[ADDRESS_4]]: U Svatého Ducha 5/142, 301 00 Plzeň
 [[ADDRESS_5]]: Belgická 1247/23, 120 00 Praha 2
-[[ADDRESS_6]]: v Praze
-[[ADDRESS_7]]: Mánesova 87, 612 00 Brno OP
-[[ADDRESS_8]]: Londýnská 54, 639 00 Brno Číslo účtu
-[[ADDRESS_9]]: kk v ulici Mánesova 87, Brno
-[[ADDRESS_10]]: Vinohradská 2396/184, 130 00 Praha 3
-[[ADDRESS_11]]: Smetanova 45, 500 02 Hradec Králové Číslo OP
-[[ADDRESS_12]]: Na Výšinách 12, 148 00 Praha 4
-[[ADDRESS_13]]: Jugoslávská 25, 613 00 Brno RČ
-[[ADDRESS_14]]: podnikání: Pod Pavlačí 7, 140 00 Praha 4
-[[ADDRESS_15]]: Janáčkovo nábřeží 13, 150 00 Praha 5
-[[ADDRESS_16]]: Wenzigova 5, 120 00 Praha 2
-[[ADDRESS_17]]: Přívozní 1058/8, 170 00 Praha 7
-[[ADDRESS_18]]: Nová 156, 252 19 Rudná u Prahy RČ
-[[ADDRESS_19]]: Novákova 45, 250 01 Brandýs nad Labem Rodné číslo
-[[ADDRESS_20]]: Nová Ves 78
+[[ADDRESS_6]]: Mánesova 87, 612 00 Brno
+[[ADDRESS_7]]: Londýnská 54, 639 00 Brno
+[[ADDRESS_9]]: Vinohradská 2396/184, Praha 3, 130 00
+[[ADDRESS_10]]: Smetanova 45, 500 02 Hradec Králové
+[[ADDRESS_11]]: Na Výšinách 12, 148 00 Praha 4
+[[ADDRESS_12]]: Jugoslávská 25, 613 00 Brno
+[[ADDRESS_13]]: Pod Pavlačí 7, Praha 4, 140 00
+[[ADDRESS_14]]: Janáčkovo nábřeží 13, Praha 5, 150 00
+[[ADDRESS_15]]: Wenzigova 5, Praha 2, 120 00
+[[ADDRESS_16]]: Přívozní 1058/8, 170 00 Praha 7
+[[ADDRESS_17]]: Nová 156, 252 19 Rudná u Prahy
+[[ADDRESS_18]]: Novákova 45, 250 01 Brandýs nad Labem
+[[ADDRESS_19]]: Nová Ves 78
 
 BANK
 [[BANK_1]]: 2547896321/0800

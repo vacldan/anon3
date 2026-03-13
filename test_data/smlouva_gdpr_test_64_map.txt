@@ -3,15 +3,18 @@ OSOBY
 [[PERSON_1]]: Dobroslav Růžička
   - Dobroslava Růžičku
   - Dobroslava Růžičky
+  - Dobroslave Růžičko
   - Dobroslavem Růžičkou
   - Dobroslavovi Růžičkovi
 [[PERSON_2]]: Iva Řezníčková
   - Ivo Řezníčková
   - Ivou Řezníčkovou
+  - Ivu Řezníčkováovou
   - Ivy Řezníčkové
   - Ivě Řezníčkové
 [[PERSON_3]]: Lída Zíková
   - Lídou Zíkovou
+  - Lídu Zíkováovou
   - Lídy Zíkové
   - Lídě Zíkové
 [[PERSON_4]]: Norbert Bartůněk
@@ -21,23 +24,15 @@ OSOBY
   - Drahomíry Černé
 [[PERSON_6]]: Ondřej Šimůnek
   - Ondřeja Šimůnka
-[[PERSON_7]]: Lída Zíkováová
-  - Lídu Zíkováovou
-[[PERSON_8]]: Iva Řezníčkováová
-  - Ivu Řezníčkováovou
-[[PERSON_9]]: Dobroslav Růžičko
-  - Dobroslave Růžičko
 
 ADDRESS
-[[ADDRESS_1]]: Na Příkopě 33, 114 07 Praha 1
-[[ADDRESS_2]]: U Nemocnice 31/31, 128 08 Praha 2
-[[ADDRESS_3]]: Komenského 212/25, 702 00 Ostrava
-[[ADDRESS_4]]: Národní 10/22, 110 00 Praha 1
-[[ADDRESS_5]]: Na Kopci 16, 100 00 Praha 10
-[[ADDRESS_6]]: Pražská 230, 360 01 Karlovy Vary
-[[ADDRESS_7]]: Žižkova 21/2, 460 01 Liberec
-[[ADDRESS_8]]: a Komenského 212/25, 702 00 Ostrava
-[[ADDRESS_9]]: platnost 05/28, CVC
+[[ADDRESS_1]]: Na Příkopě 33, Praha 1, 114 07
+[[ADDRESS_2]]: Nemocnice 31/31, 128 08 Praha 2
+[[ADDRESS_3]]: Komenského 212/25, 702 00, Ostrava
+[[ADDRESS_5]]: Národní 10/22, 110 00 Praha 1
+[[ADDRESS_6]]: Na Kopci 16, 100 00 Praha 10
+[[ADDRESS_7]]: Pražská 230, 360 01 Karlovy Vary
+[[ADDRESS_8]]: Žižkova 21/2, 460 01 Liberec
 
 BANK
 [[BANK_1]]: 3191142591/2700
@@ -108,7 +103,6 @@ PHONE
 [[PHONE_4]]: +420 707 592 272
 [[PHONE_5]]: +420696251951
 [[PHONE_6]]: 767 244 513
-[[PHONE_7]]: 381768746
 
 VIN
 [[VIN_1]]: VF18V7L4FH40T7XXL

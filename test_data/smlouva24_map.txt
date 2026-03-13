@@ -35,22 +35,23 @@ OSOBY
   - Janě Lipové
 [[PERSON_15]]: Helena Skálová
   - Heleně Skálové
-[[PERSON_16]]: Vlasto Partiková
+[[PERSON_16]]: Vlasto Partik
   - Vlastou Partikovou
-[[PERSON_17]]: Vlastě Partiková
+[[PERSON_17]]: Vlastě Partik
   - Vlastě Partikové
+[[PERSON_18]]: Vlasta Partiková
 [[PERSON_19]]: Ivana Holínková
   - Ivaně Holínkové
 [[PERSON_20]]: Otylie Mandelová
   - Otylii Mandelové
   - Otylií Mandelovou
-[[PERSON_21]]: Antonie Řezáčová
+[[PERSON_21]]: Antoni Řezáčová
   - Antonii Řezáčové
 [[PERSON_22]]: Melanie Dvořáková
   - Melanii Dvořákové
 [[PERSON_23]]: Irene Panská
   - Irene Panské
-[[PERSON_24]]: Alice Šustrová
+[[PERSON_24]]: Alica Šustr
   - Alice Šustrů
   - Alici Šustrové
 [[PERSON_25]]: Beatrice Vránová
@@ -72,7 +73,8 @@ OSOBY
   - Albíně Hořákové
 [[PERSON_31]]: Rosalie Fuksová
   - Rosalii Fuksové
-[[PERSON_32]]: Otilia Rýdlová
+[[PERSON_32]]: Otilie Rýdlová
+  - Otilia Rýdlová
   - Otilii Rýdlové
   - Otilií Rýdlovou
 [[PERSON_33]]: Hedvika Stonová
@@ -82,7 +84,7 @@ OSOBY
   - Kristianě Pencové
 [[PERSON_35]]: Melita Kudrnová
   - Melitě Kudrnové
-[[PERSON_36]]: Nadie Habrová
+[[PERSON_36]]: Nadia Habrová
   - Nadii Habrové
   - Nadií Habrovou
 [[PERSON_37]]: Silvie Blahová
@@ -125,8 +127,7 @@ OSOBY
   - Haně Pivoňkové
 [[PERSON_53]]: Ema Hrušková
   - Emě Hruškové
-[[PERSON_54]]: Pavel Zík
-  - Pavel Zíka
+[[PERSON_54]]: Pavel Zíka
   - Pavla Zíky
   - Pavlovi Zíkovi
 [[PERSON_55]]: Václav Holas
@@ -197,8 +198,9 @@ OSOBY
   - Huga Šindeláře
   - Hugovi Šindelářovi
 [[PERSON_78]]: Ivo Zámyslický
-  - Iva Zámyslického
   - Ivovi Zámyslickému
+[[PERSON_79]]: Iva Zámyslická
+  - Iva Zámyslického
 [[PERSON_80]]: Vit Paseka
   - Vitovi Pasekovi
 [[PERSON_81]]: Vito Paseka

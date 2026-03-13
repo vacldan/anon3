@@ -20,13 +20,9 @@ OSOBY
   - Petrě Černé
 
 ADDRESS
-[[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_1]]: Náměstí 1, 500 02, Hradec Králové
 [[ADDRESS_2]]: Na Kopci 146/10, 100 00 Praha 10
-[[ADDRESS_3]]: Pojišťovací 29/27, 110 00 Praha 1
-[[ADDRESS_4]]: případně písemně na adresu Pojišťovací 29/27, 110 00 Praha 1
-[[ADDRESS_5]]: písemné doručení na adresu Pojišťovací 29/27, 110 00 Praha 1
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Pojišťovací 29/27, 110 00 Praha 1
-[[ADDRESS_7]]: pro Ondřejovi Vaněkovi a Na Kopci 146/10, 100 00 Praha 10
+[[ADDRESS_5]]: Pojišťovací 29/27, Praha 1, 110 00
 
 BANK
 [[BANK_1]]: 841535560/0600

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:28.439819",
+  "generated_at": "2026-03-13T09:56:06.587956",
   "source_file": "smlouva29.docx",
   "entities": [
     {
@@ -174,31 +174,37 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_20]]",
+      "original": "Cyril Tesařa",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_20]]",
       "original": "Cyril Tesař",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
-      "original": "Metoděj Strnad",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_22]]",
       "original": "Cecílie Nová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_22]]",
+      "label": "[[PERSON_21]]",
       "original": "Cecílii Novou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_22]]",
+      "label": "[[PERSON_21]]",
       "original": "Nové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_22]]",
+      "original": "Metoděj Strnad",
       "occurrences": 1
     },
     {
@@ -455,14 +461,50 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_62]]",
+      "original": "Klaudie Horníková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_63]]",
+      "original": "Ferdinand Bílý",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_64]]",
+      "original": "Regína Baštová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_65]]",
       "original": "Pankrác Kolman",
       "occurrences": 1
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_66]]",
+      "original": "Nora Majerová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_67]]",
+      "original": "Bonifác Tesařa",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_67]]",
       "original": "Bonifác Tesař",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_68]]",
+      "original": "Amálie Šimůnková",
       "occurrences": 1
     },
     {
@@ -475,6 +517,12 @@
       "type": "PERSON",
       "label": "[[PERSON_70]]",
       "original": "Doubravka Váňová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_71]]",
+      "original": "Slavomír Heřman",
       "occurrences": 1
     },
     {
@@ -492,7 +540,7 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Nemovitost na adrese Slezská 67, Opava 746 01",
+      "original": "Slezská 67, Opava 746 01",
       "occurrences": 1
     },
     {
@@ -563,12 +611,6 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_14]]",
-      "original": "Zahradní 34, Chomutov 430 01",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_15]]",
       "original": "Krátká 45, Teplice 415 01",
       "occurrences": 1
@@ -577,7 +619,7 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_16]]",
       "original": "Zahradní 78, Chomutov 430 01",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",

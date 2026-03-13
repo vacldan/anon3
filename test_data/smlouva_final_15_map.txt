@@ -8,14 +8,10 @@ OSOBY
 [[PERSON_5]]: Aleksandr Petrov
 
 ADDRESS
-[[ADDRESS_1]]: v Brně
-[[ADDRESS_2]]: Husova 15, 601 95 Brno
-[[ADDRESS_3]]: Pražská 216/30, 301 00 Plzeň
-[[ADDRESS_4]]: Palackého třída 27/30, 779 00 Olomouc - Nová Ulice
-[[ADDRESS_5]]: Tyršova 197/50, 530 02 Pardubice
-[[ADDRESS_6]]: Pražská 125/48, 301 00 Plzeň
-[[ADDRESS_7]]: Brno-město
-[[ADDRESS_8]]: Pražská 207/37, 301 00 Plzeň
+[[ADDRESS_1]]: Husova 15, 601 95 Brno
+[[ADDRESS_3]]: Palackého třída 27/30, 779 00 Olomouc - Nová Ulice
+[[ADDRESS_4]]: Tyršova 197/50, 530 02 Pardubice
+[[ADDRESS_6]]: Pražská 207/37, 301 00, Plzeň
 
 BANK
 [[BANK_1]]: 708641677/0600

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:50.640295",
+  "generated_at": "2026-03-13T09:56:27.671120",
   "source_file": "smlouva_gdpr_test_09.docx",
   "entities": [
     {
@@ -24,13 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Gabrielu Pokornou",
+      "original": "Gabriely Pokorné",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Gabriely Pokorné",
+      "original": "Gabrielu Pokornou",
       "occurrences": 1
     },
     {
@@ -72,25 +72,19 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Na Hradbách 15, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Na Hradbách 15, 702 00, Ostrava",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "U Kampusu 9, 625 00 Brno",
-      "occurrences": 1
+      "original": "Kampusu 9, 625 00, Brno",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Lipová 3, 702 00 Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "V Ostravě",
       "occurrences": 1
     },
     {

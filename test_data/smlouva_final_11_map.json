@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:47.121965",
+  "generated_at": "2026-03-13T09:56:23.368455",
   "source_file": "smlouva_final_11.docx",
   "entities": [
     {
@@ -31,12 +31,12 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
       "original": "Masarykovo náměstí 7, 586 01 Jihlava",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Tyršova 247/16, 530 02 Pardubice",
+      "original": "Tyršova 247/16, 530 02",
       "occurrences": 1
     },
     {

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:32.316164",
+  "generated_at": "2026-03-13T09:57:18.720869",
   "source_file": "smlouva_gdpr_test_75.docx",
   "entities": [
     {
@@ -12,25 +12,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ignáce Holíke",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Ignáca Holíka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ignácem Holíkem",
+      "original": "Ignáce Holíke",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Ignácovi Holíkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Ignácem Holíkem",
       "occurrences": 1
     },
     {
@@ -42,25 +42,31 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Hedvikou Malíkovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Hedviko Malíková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Hedviky Malíkové",
+      "original": "Hedvikou Malíkovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Hedviku Malíkováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Hedvikě Malíkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Hedviky Malíkové",
       "occurrences": 1
     },
     {
@@ -77,14 +83,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "David Procházka",
+      "label": "[[PERSON_3]]",
+      "original": "Kristu Procházkováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Davida Procházku",
+      "original": "David Procházka",
       "occurrences": 1
     },
     {
@@ -95,8 +101,20 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Davida Procházku",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Dalibor Rendl",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Daliborem Rendlem",
       "occurrences": 1
     },
     {
@@ -109,12 +127,6 @@
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Dalibora Rendla",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Daliborem Rendlem",
       "occurrences": 1
     },
     {
@@ -136,52 +148,16 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Hedvika Malíkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Hedviku Malíkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Krista Procházkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Kristu Procházkováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Praha 9",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Bryksova 763/46, 198 00 Praha 14",
+      "original": "Bryksova 763/46, Praha 14, 198 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "U Nemocnice 168, 128 08 Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "Nádražní 124/35, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Nádražní 124/35, 702 00, Ostrava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -199,36 +175,12 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
       "original": "U Nemocnice 207/11, 128 08 Praha 2",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
       "original": "Bezručova 241/27, 746 01 Opava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "a Nádražní 124/35, 702 00 Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 03/27, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "Exekutorský úřad Praha 9, IČO",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_12]]",
-      "original": "Správcem osobních údajů je Exekutorský úřad Praha 9, IČO",
       "occurrences": 1
     },
     {
@@ -379,12 +331,6 @@
       "type": "PHONE",
       "label": "[[PHONE_6]]",
       "original": "+420 786 509 781",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "949496344",
       "occurrences": 1
     },
     {

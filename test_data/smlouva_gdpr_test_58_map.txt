@@ -5,40 +5,37 @@ OSOBY
   - Romane Křečku
   - Romanem Křečkem
   - Romanovi Křečkovi
-[[PERSON_2]]: Ella Roubalová
+[[PERSON_2]]: Ell Roubalová
+  - Ella Roubalová
+  - Ello Roubalová
+  - Ellu Roubalováovou
+  - Elly Roubalové
+  - Ellě Roubalové
+[[PERSON_3]]: Ello Roubal
+  - Ellou Roubalovou
 [[PERSON_4]]: Markéta Pazderová
   - Markétou Pazderovou
+  - Markétu Pazderováovou
   - Markéty Pazderové
   - Markétě Pazderové
-[[PERSON_5]]: Bruno Tesař
+[[PERSON_5]]: Bruno Tesařa
+  - Bruno Tesař
   - Brunoa Tesařa
 [[PERSON_6]]: Lucie Jirsová
   - Lucie Jirsové
+  - Lucii Jirsováovou
 [[PERSON_7]]: Marek Šembera
   - Marka Šemberu
   - Marka Šembery
-[[PERSON_9]]: Markéta Pazderováová
-  - Markétu Pazderováovou
-[[PERSON_10]]: Ella Roubalováová
-  - Ellu Roubalováovou
-[[PERSON_11]]: Lucie Jirsováová
-  - Lucii Jirsováovou
 
 ADDRESS
-[[ADDRESS_1]]: Praha 9
-[[ADDRESS_2]]: Bryksova 763/46, 198 00 Praha 14
-[[ADDRESS_3]]: Riegrova 22/23, 779 00 Olomouc
-[[ADDRESS_4]]: Palackého 168/15, 301 00 Plzeň
+[[ADDRESS_1]]: Bryksova 763/46, Praha 14, 198 00
+[[ADDRESS_2]]: Riegrova 22/23, 779 00 Olomouc
+[[ADDRESS_3]]: Palackého 168/15, 301 00, Plzeň
 [[ADDRESS_5]]: Národní 36/24, 110 00 Praha 1
 [[ADDRESS_6]]: Pražská 150/32, 360 01 Karlovy Vary
 [[ADDRESS_7]]: Tylova 37, 530 02 Pardubice
 [[ADDRESS_8]]: Komenského 93/27, 702 00 Ostrava
-[[ADDRESS_9]]: Riegrova 22/23, 779 00 Olomouc a Palackého
-[[ADDRESS_10]]: Plzeň
-[[ADDRESS_11]]: platnost 03/28, CVC
-[[ADDRESS_12]]: Exekutorský úřad Praha 9, IČO
-[[ADDRESS_13]]: Správcem osobních údajů je Exekutorský úřad Praha 9, IČO
-[[ADDRESS_14]]: V Plzni
 
 BANK
 [[BANK_1]]: 6003350461/6210
@@ -106,5 +103,4 @@ PHONE
 [[PHONE_4]]: 716 534 472
 [[PHONE_5]]: 671 974 932
 [[PHONE_6]]: +420 795 215 776
-[[PHONE_7]]: 289114308
 

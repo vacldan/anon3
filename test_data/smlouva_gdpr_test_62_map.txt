@@ -9,38 +9,28 @@ OSOBY
 [[PERSON_2]]: Monika Poláková
   - Moniko Poláková
   - Monikou Polákovou
+  - Moniku Polákováovou
   - Moniky Polákové
   - Monikě Polákové
 [[PERSON_3]]: Hyundai Tucson
 [[PERSON_4]]: Laura Rendlová
-[[PERSON_5]]: Lubomír Zík
-  - Lubomír Zíka
+[[PERSON_5]]: Lubomír Zíka
   - Lubomíra Zíku
   - Lubomíra Zíky
 [[PERSON_6]]: Růžena Malíková
+  - Růženu Malíkováovou
   - Růženy Malíkové
 [[PERSON_7]]: Zdeněk Švestka
   - Zdeněka Švestku
   - Zdeněka Švestky
-[[PERSON_9]]: Laura Rendlováová
-  - Lauru Rendlováovou
-[[PERSON_10]]: Monika Polákováová
-  - Moniku Polákováovou
-[[PERSON_11]]: Růžena Malíkováová
-  - Růženu Malíkováovou
 
 ADDRESS
-[[ADDRESS_1]]: Praha 1
-[[ADDRESS_2]]: Křenová 39/14, 602 00 Brno
-[[ADDRESS_3]]: U Parku 130, 779 00 Olomouc
-[[ADDRESS_4]]: Dlouhá 123/2, 602 00 Brno
-[[ADDRESS_5]]: Dvořákova 242, 370 01 České Budějovice
-[[ADDRESS_6]]: Křenová 226/23, 602 00 Brno
-[[ADDRESS_7]]: Jabloňová 187/34, 400 01 Ústí nad Labem
-[[ADDRESS_8]]: Křenová 39/14, 602 00 Brno a U Parku
-[[ADDRESS_9]]: Olomouc
-[[ADDRESS_10]]: platnost 12/28, CVC
-[[ADDRESS_11]]: V Liberci
+[[ADDRESS_1]]: Václavské nám. 12, 110 00 Praha 1
+[[ADDRESS_4]]: U Parku 130, 779 00 Olomouc
+[[ADDRESS_5]]: Dlouhá 123/2, 602 00 Brno
+[[ADDRESS_6]]: Dvořákova 242, 370 01 České Budějovice
+[[ADDRESS_7]]: Křenová 226/23, 602 00 Brno
+[[ADDRESS_8]]: Jabloňová 187/34, 400 01 Ústí nad Labem
 
 BANK
 [[BANK_1]]: 2374871002/0100

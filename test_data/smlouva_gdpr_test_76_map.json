@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:33.032708",
+  "generated_at": "2026-03-13T09:57:19.367163",
   "source_file": "smlouva_gdpr_test_76.docx",
   "entities": [
     {
@@ -12,13 +12,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Miloslavovi Brázdovi",
+      "original": "Miloslavem Brázdou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Miloslava Brázdu",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Miloslavovi Brázdovi",
       "occurrences": 1
     },
     {
@@ -35,14 +41,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Miloslavem Brázdou",
+      "label": "[[PERSON_2]]",
+      "original": "Simona Šimůnková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Simona Šimůnková",
+      "original": "Simony Šimůnkové",
       "occurrences": 1
     },
     {
@@ -54,13 +60,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Simono Šimůnková",
+      "original": "Simonu Šimůnkováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Simony Šimůnkové",
+      "original": "Simono Šimůnková",
       "occurrences": 1
     },
     {
@@ -78,6 +84,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
+      "original": "Darju Soukupováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Darjy Soukupové",
       "occurrences": 1
     },
@@ -90,13 +102,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Štěpána Procházku",
+      "original": "Štěpána Procházky",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Štěpána Procházky",
+      "original": "Štěpána Procházku",
       "occurrences": 1
     },
     {
@@ -108,13 +120,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Hugoa Vavru",
+      "original": "Hugoa Vavry",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Hugoa Vavry",
+      "original": "Hugoem Vavrou",
       "occurrences": 1
     },
     {
@@ -126,7 +138,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Hugoem Vavrou",
+      "original": "Hugoa Vavru",
       "occurrences": 1
     },
     {
@@ -142,81 +154,39 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Simona Šimůnkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Simonu Šimůnkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Darja Soukupováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Darju Soukupováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Praha 1",
+      "original": "Václavské nám. 12, 110 00 Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Hlavní 61/39, 669 02 Znojmo",
-      "occurrences": 1
+      "occurrences": 4
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Hlavní 55, 669 02 Znojmo",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Vinohradská 151/2, 130 00 Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Revoluční 187/29, 110 00 Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Dlouhá 196/25, 602 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Dvořákova 128/4, 370 01 České Budějovice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Hlavní 61/39, 669 02 Znojmo a Hlavní 55",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "platnost 09/30, CVC",
+      "original": "Dvořákova 128/4, 370 01 České Budějovice",
       "occurrences": 1
     },
     {

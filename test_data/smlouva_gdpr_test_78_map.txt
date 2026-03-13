@@ -12,6 +12,7 @@ OSOBY
   - Heleny Černé
   - Heleně Černé
 [[PERSON_3]]: Milada Pazderová
+  - Miladu Pazderováovou
   - Milady Pazderové
 [[PERSON_4]]: Pavel Kuchta
   - Pavla Kuchtu
@@ -19,25 +20,18 @@ OSOBY
   - Pavlem Kuchtou
   - Pavlovi Kuchtovi
 [[PERSON_5]]: Ema Vaňková
+  - Emu Vaňkováovou
   - Emy Vaňkové
 [[PERSON_6]]: Bedřich Holub
   - Bedřicha Holuba
-[[PERSON_7]]: Ema Vaňkováová
-  - Emu Vaňkováovou
-[[PERSON_8]]: Milada Pazderováová
-  - Miladu Pazderováovou
 
 ADDRESS
-[[ADDRESS_1]]: Sokolská 88, 120 00 Praha 2
+[[ADDRESS_1]]: Sokolská 88, Praha 2, 120 00
 [[ADDRESS_2]]: Nádražní 4/22, 702 00 Ostrava
-[[ADDRESS_3]]: Bezručova 18/29, 746 01 Opava
-[[ADDRESS_4]]: Bezručova 120/18, 746 01 Opava
-[[ADDRESS_5]]: Havlíčkova 148, 586 01 Jihlava
-[[ADDRESS_6]]: Jihlavská 159, 625 00 Brno
-[[ADDRESS_7]]: Na Návsi 119/33, 789 01 Zábřeh
-[[ADDRESS_8]]: Nádražní 4/22, 702 00 Ostrava a Bezručova
-[[ADDRESS_9]]: platnost 01/30, CVC
-[[ADDRESS_10]]: V Brně
+[[ADDRESS_5]]: Bezručova 120/18, 746 01 Opava
+[[ADDRESS_6]]: Havlíčkova 148, 586 01 Jihlava
+[[ADDRESS_7]]: Jihlavská 159, 625 00 Brno
+[[ADDRESS_8]]: Na Návsi 119/33, 789 01 Zábřeh
 
 BANK
 [[BANK_1]]: 2519483116/0800
@@ -105,5 +99,4 @@ PHONE
 [[PHONE_4]]: +420 795 649 186
 [[PHONE_5]]: +420621541575
 [[PHONE_6]]: +420 679 918 795
-[[PHONE_7]]: 801381179
 

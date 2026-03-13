@@ -1,6 +1,7 @@
 OSOBY
 -----
-[[PERSON_1]]: Bohumil Tesař
+[[PERSON_1]]: Bohumil Tesařa
+  - Bohumil Tesař
   - Bohumila Tesařa
   - Bohumile Tesaře
   - Bohumilem Tesařem
@@ -8,39 +9,32 @@ OSOBY
 [[PERSON_2]]: Hedvika Řípová
   - Hedviko Řípová
   - Hedvikou Řípovou
+  - Hedviku Řípováovou
   - Hedviky Řípové
   - Hedvikě Řípové
 [[PERSON_3]]: Lucie Fialová
   - Lucie Fialové
+  - Lucii Fialováovou
   - Lucii Fialové
   - Lucií Fialovou
 [[PERSON_4]]: Adéla Kořínková
   - Adély Kořínkové
 [[PERSON_5]]: Květa Nováková
+  - Květu Novákováovou
   - Květy Novákové
 [[PERSON_6]]: Alex Hrdina
   - Alexa Hrdinu
   - Alexa Hrdiny
-[[PERSON_7]]: Lucie Fialováová
-  - Lucii Fialováovou
-[[PERSON_8]]: Hedvika Řípováová
-  - Hedviku Řípováovou
-[[PERSON_9]]: Květa Novákováová
-  - Květu Novákováovou
 
 ADDRESS
-[[ADDRESS_1]]: Bělehradská 132, 120 84 Praha 2
+[[ADDRESS_1]]: Bělehradská 132, Praha 2, 120 84
 [[ADDRESS_2]]: Bezručova 187/20, 746 01 Opava
-[[ADDRESS_3]]: U Parku 92/2, 779 00 Olomouc
-[[ADDRESS_4]]: Křenová 171/22, 602 00 Brno
-[[ADDRESS_5]]: Husova 40/33, 390 02 Tábor
-[[ADDRESS_6]]: Wolkerova 56/10, 796 01 Prostějov
-[[ADDRESS_7]]: U Nemocnice 134/4, 128 08 Praha 2
-[[ADDRESS_8]]: Bezručova 187/20, 746 01 Opava a U Parku
-[[ADDRESS_9]]: Olomouc
-[[ADDRESS_10]]: platnost 05/29, CVC
-[[ADDRESS_11]]: Na Návsi 166, Praha
-[[ADDRESS_12]]: v Praze
+[[ADDRESS_4]]: U Parku 92/2, 779 00 Olomouc
+[[ADDRESS_5]]: Křenová 171/22, 602 00 Brno
+[[ADDRESS_6]]: Husova 40/33, 390 02 Tábor
+[[ADDRESS_7]]: Wolkerova 56/10, 796 01 Prostějov
+[[ADDRESS_8]]: U Nemocnice 134/4, 128 08 Praha 2
+[[ADDRESS_9]]: Na Návsi 166, Praha
 
 BANK
 [[BANK_1]]: 5597318805/0100
@@ -94,6 +88,7 @@ IP
 LICENSE_PLATE
 [[LICENSE_PLATE_1]]: EA65290
 [[LICENSE_PLATE_2]]: CZ20637
+[[LICENSE_PLATE_3]]: LV 4442
 
 MAC
 [[MAC_1]]: F0:41:5B:DD:96:94
@@ -108,5 +103,4 @@ PHONE
 [[PHONE_4]]: 784 814 856
 [[PHONE_5]]: +420 691 716 505
 [[PHONE_6]]: 740 487 933
-[[PHONE_7]]: 805604586
 

@@ -1,24 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:30.127822",
+  "generated_at": "2026-03-13T09:57:16.652980",
   "source_file": "smlouva_gdpr_test_72.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Bruno Kořínek",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Brunoe Kořínku",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Brunoovi Kořínkovi",
       "occurrences": 1
     },
     {
@@ -35,8 +23,32 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Brunoovi Kořínkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Brunoe Kořínku",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Milada Hájková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Milady Hájkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Miladu Hájkováovou",
       "occurrences": 1
     },
     {
@@ -49,12 +61,6 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Miladě Hájkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Milady Hájkové",
       "occurrences": 1
     },
     {
@@ -79,6 +85,12 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Hedvikě Benešové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Hedviku Benešováovou",
       "occurrences": 1
     },
     {
@@ -113,6 +125,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Kláru Dvořákováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_6]]",
       "original": "Kryštof Král",
       "occurrences": 1
@@ -124,56 +142,14 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Hedvika Benešováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Hedviku Benešováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Milada Hájkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Miladu Hájkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Klára Dvořákováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Kláru Dvořákováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Praha 9",
+      "original": "Bryksova 763/46, Praha 14, 198 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Bryksova 763/46, 198 00 Praha 14",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
       "original": "Vinohradská 51/11, 130 00 Praha 3",
       "occurrences": 1
     },
@@ -181,7 +157,7 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
       "original": "U Parku 131, 779 00 Olomouc",
-      "occurrences": 1
+      "occurrences": 4
     },
     {
       "type": "ADDRESS",
@@ -205,30 +181,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
       "original": "Národní 109/2, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "a U Parku 131, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 10/26, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "Exekutorský úřad Praha 9, IČO",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_12]]",
-      "original": "Správcem osobních údajů je Exekutorský úřad Praha 9, IČO",
       "occurrences": 1
     },
     {

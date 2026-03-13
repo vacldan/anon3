@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:24.956371",
+  "generated_at": "2026-03-13T09:56:03.770260",
   "source_file": "smlouva28.docx",
   "entities": [
     {
@@ -90,13 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_11]]",
-      "original": "Říha",
+      "original": "Říhovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_11]]",
-      "original": "Říhovi",
+      "original": "Říha",
       "occurrences": 1
     },
     {
@@ -288,13 +288,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_31]]",
-      "original": "Dany Pokorné",
+      "original": "Pokorné",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_31]]",
-      "original": "Pokorné",
+      "original": "Dany Pokorné",
       "occurrences": 1
     },
     {
@@ -467,6 +467,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_58]]",
+      "original": "Novák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_59]]",
       "original": "Ondřej Málek",
       "occurrences": 1
@@ -515,8 +521,62 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_66]]",
+      "original": "Růžena Málková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_67]]",
+      "original": "Arnošt Bureš",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_68]]",
       "original": "Marcela Vávrová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_69]]",
+      "original": "Bohumír Sedláček",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_70]]",
+      "original": "Helena Koubková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_71]]",
+      "original": "Gustav Šťastný",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_72]]",
+      "original": "Sylva Hrubá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_73]]",
+      "original": "Vlasta Říhová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_74]]",
+      "original": "František Toman",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_75]]",
+      "original": "Naděžda Bartošová",
       "occurrences": 1
     },
     {
@@ -581,12 +641,6 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "Zahradní 12, Pardubice 530 02",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_11]]",
       "original": "Tovární 67, Mladá Boleslav 293 01",
       "occurrences": 1
@@ -600,61 +654,43 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_13]]",
-      "original": "Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_14]]",
       "original": "Polní 34, Přerov 750 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_15]]",
-      "original": "v Ostravě",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_16]]",
+      "label": "[[ADDRESS_14]]",
       "original": "Hlavní 45, Přerov 750 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_17]]",
+      "label": "[[ADDRESS_15]]",
       "original": "Krátká 89, Zlín 760 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_18]]",
+      "label": "[[ADDRESS_16]]",
       "original": "Zahradní 67, Pardubice 530 02",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_19]]",
+      "label": "[[ADDRESS_17]]",
       "original": "Polní 12, Olomouc 779 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_20]]",
+      "label": "[[ADDRESS_18]]",
       "original": "Krátká 34, Brno 602 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_21]]",
+      "label": "[[ADDRESS_19]]",
       "original": "Školní 89, Tábor 390 01",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_22]]",
-      "original": "Exekuce 8, celkem",
       "occurrences": 1
     },
     {
@@ -1225,6 +1261,18 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_1]]",
       "original": "5A7 8901",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_2]]",
+      "original": "NS 7823",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_3]]",
+      "original": "NS 4567",
       "occurrences": 1
     },
     {

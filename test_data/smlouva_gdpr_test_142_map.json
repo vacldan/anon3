@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:04.495457",
+  "generated_at": "2026-03-13T09:56:47.904306",
   "source_file": "smlouva_gdpr_test_142.docx",
   "entities": [
     {
@@ -18,6 +18,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Renato Řezníčková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Renatou Řezníčkovou",
       "occurrences": 1
     },
@@ -29,12 +35,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Renato Řezníčková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Michal Procházka",
       "occurrences": 1
@@ -42,13 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Michale Procházko",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Michalovi Procházkovi",
+      "original": "Michala Procházky",
       "occurrences": 1
     },
     {
@@ -60,7 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Michala Procházky",
+      "original": "Michalovi Procházkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Michale Procházko",
       "occurrences": 1
     },
     {
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Monikou Hrubešovou",
+      "original": "Monikě Hrubešové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Monikě Hrubešové",
+      "original": "Monikou Hrubešovou",
       "occurrences": 1
     },
     {
@@ -90,19 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Václava Svobody",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Václave Svobodo",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Václavovi Svobodovi",
       "occurrences": 1
     },
     {
@@ -112,10 +100,22 @@
       "occurrences": 1
     },
     {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Václava Svobody",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Václavovi Svobodovi",
+      "occurrences": 1
+    },
+    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Náměstí 1, 500 02 Hradec Králové",
-      "occurrences": 1
+      "original": "Náměstí 1, 500 02, Hradec Králové",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -127,30 +127,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Na Návsi 97/20, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Na Návsi 97/20, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Na Návsi 97/20, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Na Návsi 97/20, 789 01 Zábřeh pro Michalovi",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Procházkovi a Pojišťovací 16/21, 110 00 Praha 1",
       "occurrences": 1
     },
     {

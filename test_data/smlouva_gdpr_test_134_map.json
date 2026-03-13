@@ -1,12 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:02.126082",
+  "generated_at": "2026-03-13T09:56:44.164789",
   "source_file": "smlouva_gdpr_test_134.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Filip Turek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Filipa Turka",
       "occurrences": 1
     },
     {
@@ -24,12 +30,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Filipa Turka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Filipem Turkem",
       "occurrences": 1
     },
@@ -37,12 +37,6 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Jan Kříž",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Janem Křížem",
       "occurrences": 1
     },
     {
@@ -65,14 +59,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Helena Hrubešová",
+      "label": "[[PERSON_2]]",
+      "original": "Janem Křížem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Heleně Hrubešové",
+      "original": "Helena Hrubešová",
       "occurrences": 1
     },
     {
@@ -83,14 +77,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Jaroslav Černý",
+      "label": "[[PERSON_3]]",
+      "original": "Heleně Hrubešové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Jaroslava Černýa",
+      "original": "Jaroslav Černý",
       "occurrences": 1
     },
     {
@@ -103,6 +97,12 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Jaroslavovi Černýovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Jaroslava Černýa",
       "occurrences": 1
     },
     {
@@ -120,8 +120,8 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Na Hradbách 15, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Na Hradbách 15, 702 00, Ostrava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -131,33 +131,9 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Technologická 193/25, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Technologická 193/25, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Technologická 193/25, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "ro účely doručování se používá adresa Technologická 193/25, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Janovi Křížovi a Dlouhá 68/20, 602 00 Brno pro Filipovi Turkovi",
-      "occurrences": 1
+      "original": "Technologická 193/25, Praha 6, 160 00",
+      "occurrences": 2
     },
     {
       "type": "ICO",

@@ -8,34 +8,29 @@ OSOBY
 [[PERSON_2]]: Růžena Marešová
   - Růženo Marešová
   - Růženou Marešovou
+  - Růženu Marešováovou
   - Růženy Marešové
   - Růženě Marešové
-[[PERSON_3]]: Růžena Marešováová
-  - Růženu Marešováovou
-[[PERSON_4]]: Iva Vaňková
+[[PERSON_3]]: Iva Vaňková
+  - Ivu Vaňkováovou
   - Ivy Vaňkové
-[[PERSON_5]]: Tomáš Doležal
+[[PERSON_4]]: Tomáš Doležal
   - Tomáše Doležala
   - Tomášem Doležalem
   - Tomášovi Doležalovi
-[[PERSON_6]]: Oldřich Urban
+[[PERSON_5]]: Oldřich Urban
   - Oldřicha Urbana
-[[PERSON_7]]: Ladislav Soukup
+[[PERSON_6]]: Ladislav Soukup
   - Ladislava Soukupa
-[[PERSON_8]]: Iva Vaňkováová
-  - Ivu Vaňkováovou
 
 ADDRESS
-[[ADDRESS_1]]: Vídeňská 800, 140 59 Praha 4
+[[ADDRESS_1]]: Vídeňská 800, Praha 4, 140 59
 [[ADDRESS_2]]: Jihlavská 146/2, 625 00 Brno
-[[ADDRESS_3]]: Nádražní 10/12, 702 00 Ostrava
-[[ADDRESS_4]]: Na Návsi 63/23, 789 01 Zábřeh
-[[ADDRESS_5]]: Dlouhá 148/11, 602 00 Brno
-[[ADDRESS_6]]: Revoluční 46, 110 00 Praha 1
-[[ADDRESS_7]]: Pražská 109/24, 360 01 Karlovy Vary
-[[ADDRESS_8]]: Jihlavská 146/2, 625 00 Brno a Nádražní
-[[ADDRESS_9]]: Ostrava
-[[ADDRESS_10]]: platnost 12/29, CVC
+[[ADDRESS_3]]: Nádražní 10/12, 702 00, Ostrava
+[[ADDRESS_5]]: Na Návsi 63/23, 789 01 Zábřeh
+[[ADDRESS_6]]: Dlouhá 148/11, 602 00 Brno
+[[ADDRESS_7]]: Revoluční 46, 110 00 Praha 1
+[[ADDRESS_8]]: Pražská 109/24, 360 01 Karlovy Vary
 
 BANK
 [[BANK_1]]: 6318905165/5500
@@ -103,5 +98,4 @@ PHONE
 [[PHONE_4]]: +420 708 751 475
 [[PHONE_5]]: +420 636 101 315
 [[PHONE_6]]: +420 788 539 289
-[[PHONE_7]]: 287197669
 

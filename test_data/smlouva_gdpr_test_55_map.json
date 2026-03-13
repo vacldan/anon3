@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:16.733782",
+  "generated_at": "2026-03-13T09:57:04.520261",
   "source_file": "smlouva_gdpr_test_55.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Romanovi Kuchtovi",
+      "original": "Romana Kuchty",
       "occurrences": 1
     },
     {
@@ -30,13 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Romanem Kuchtou",
+      "original": "Romanovi Kuchtovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Romana Kuchty",
+      "original": "Romanem Kuchtou",
       "occurrences": 1
     },
     {
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Adélo Roubalová",
+      "original": "Adélou Roubalovou",
       "occurrences": 1
     },
     {
@@ -60,13 +60,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Adélou Roubalovou",
+      "original": "Adélě Roubalové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Adélě Roubalové",
+      "original": "Adélu Roubalováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Adélo Roubalová",
       "occurrences": 1
     },
     {
@@ -78,7 +84,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Miladě Bartůňkové",
+      "original": "Milady Bartůňkové",
       "occurrences": 1
     },
     {
@@ -90,7 +96,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Milady Bartůňkové",
+      "original": "Miladu Bartůňkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Miladě Bartůňkové",
       "occurrences": 1
     },
     {
@@ -119,6 +131,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Drahomíru Šimůnkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_6]]",
       "original": "Miroslav Vlach",
       "occurrences": 1
@@ -130,99 +148,39 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Milada Bartůňkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Miladu Bartůňkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Adéla Roubalováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Adélu Roubalováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Drahomíra Šimůnkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Drahomíru Šimůnkováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Poliklinická 3, 120 00 Praha 2",
+      "original": "Poliklinická 3, Praha 2, 120 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Revoluční 102, 110 00 Praha 1",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Purkyňova 82/29, 612 00 Brno",
-      "occurrences": 1
+      "original": "Purkyňova 82/29, 612 00, Brno",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "Revoluční 44, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Riegrova 147, 779 00 Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Bezručova 151/30, 746 01 Opava",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Na Návsi 56, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "a Purkyňova 82/29, 612 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "platnost 09/27, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "V Brně",
+      "original": "Na Návsi 56, 789 01 Zábřeh",
       "occurrences": 1
     },
     {
@@ -373,12 +331,6 @@
       "type": "PHONE",
       "label": "[[PHONE_6]]",
       "original": "+420 769 503 855",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "880614528",
       "occurrences": 1
     },
     {

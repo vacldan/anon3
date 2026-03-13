@@ -1,4 +1,4 @@
-# SKRYI Document Suite - Technická dokumentace v3.3
+# SKRYI Document Suite - Technická dokumentace v3.4
 
 ## Systém pro morfologicky inteligentní anonymizaci dokumentů v inflektivních jazycích
 
@@ -10,7 +10,7 @@
 **SKRYI Document Suite** - Offline anonymizační systém pro GDPR compliance
 
 ## 1.2 Verze
-**3.1.0** (Production Ready)
+**3.3.0** (Production Ready)
 
 ## 1.3 Účel
 Automatická anonymizace osobních údajů v dokumentech (DOCX, PDF, obrázky) s podporou českého a slovenského jazyka včetně morfologických variant (skloňování). Systém je navržen pro **plně offline provoz** - žádná data neopouštějí zařízení uživatele.
@@ -26,6 +26,8 @@ Automatická anonymizace osobních údajů v dokumentech (DOCX, PDF, obrázky) s
 - **Hardware-bound licence** - ochrana proti neoprávněnému kopírování s AppData persistencí
 - **Nativní kompilace** - zdrojový kód chráněn před reverzním inženýrstvím
 - **Rozšířený blacklist** - 350+ českých slov chráněných před falešnou detekcí (tituly, profese, právní role)
+- **6 specializovaných post-passů** - záchyt izolovaných křestních jmen, osiřelých příjmení, rodných jmen, titulovaných osob, firemních jmen a rodných čísel jako var. symbolů
+- **Kompletní podpora mužských příjmení na -a** - Fiala, Svoboda, Malina, Neruda atd. (vokativ, instrumentál, akuzativ, genitiv, dativ) s koordinovanými kmenových sad
 
 ## 1.5 Oblast techniky
 Vynález se týká oblasti zpracování přirozeného jazyka (NLP), konkrétně automatizované anonymizace osobních údajů v textových dokumentech. Technologie je primárně určena pro **inflektivní jazyky** (čeština, slovenština, polština, ruština), kde se slova skloňují podle gramatických pádů.
@@ -155,8 +157,18 @@ SKRYI Document Suite/
 │  MODUL 4: Post-processing                               │
 │  ├─ Validace kanonických jmen proti zdroji              │
 │  ├─ Oprava rodových neshod (M/F)                        │
+│  ├─ Normalizace kanonických jmen do nominativu          │
 │  ├─ 4-fázová deduplikace osob                           │
-│  └─ Finální deduplikace ADDRESS (sloučení podmnožin)    │
+│  ├─ 6 specializovaných post-passů:                      │
+│  │  ├─ Izolovaná křestní jména                          │
+│  │  ├─ Osiřelá příjmení za tagy                         │
+│  │  ├─ Rodná jména (rozená Nováková)                    │
+│  │  ├─ Titulované osoby (JUDr., MUDr., Ing.)           │
+│  │  ├─ Firemní jména (Horák & Partners s.r.o.)          │
+│  │  └─ Rodná čísla jako variabilní symboly              │
+│  ├─ Deduplikace adres (sloučení podmnožin)              │
+│  ├─ Deduplikace telefonů (+420 prefix)                  │
+│  └─ Odstranění PHONE/ID_CARD překryvů                   │
 └───────────────────────┬─────────────────────────────────┘
                         │
                         ▼
@@ -462,6 +474,73 @@ Po dokončení veškeré detekce:
 
 **Výhoda:** Spolehlivá detekce adres bez ohledu na slovosled, bez duplicitních záznamů v mapě. Testováno na 30 variantách úvěrových smluv s různými městy a formáty.
 
+**Normalizace prefixů:** Při ukládání do mapy se z hodnot odstraňují prefixy „adrese“, „bytem“, „sídlem“ atd., takže v mapě jsou čisté adresy (např. „Růžová 847/23, Praha 3“ místo „adrese Růžová 847/23, Praha 3“).
+
+## 4.9 INOVACE #8: Inference mužských příjmení končících na -a
+
+### Problém:
+Česká mužská příjmení končící na -a (Fiala, Svoboda, Malina, Neruda, Janota, Šlechta) se skloňují jako ženská substantiva, ale vyžadují mužskou rekonstrukci nominativu. Bez speciální logiky vytváří systém **duplicitní PERSON entity**:
+
+```
+Příjmení: "Fiala" (nominativ)
+Instrumentál: "Fialou" → inference "Fialá" (CHYBA → "Fialý" po opravě rodu)
+Vokativ: "Fialo" → inference "Fialo" (CHYBA → bez pravidla)
+→ Výsledek: 3 různé PERSON entity pro jednu osobu!
+```
+
+### Řešení: Koordinované kmenové sady
+
+```
+FUNCTION infer_surname_nominative(observed):
+    // Priorita 0: Detekce zdvojeného suffixu
+    IF observed = "...ováovou" THEN
+        STRIP "-ovou" → RETURN "...ová"
+
+    // Instrumentál: -ou → -a (mužské kmeny)
+    IF observed ends "-ou" AND stem IN masculine_a_stems THEN
+        RETURN stem + "a"
+
+    // Vokativ: -o → -a
+    IF observed ends "-o" AND stem IN vocative_a_stems THEN
+        RETURN stem + "a"
+
+    // Genitiv: -y → -a (chráněná příjmení)
+    IF observed ends "-y" AND full_form IN protected_a_surnames THEN
+        RETURN full_form
+
+    // Akuzativ/Dativ: -u → -a
+    IF observed ends "-u" AND stem IN known_a_surnames THEN
+        RETURN stem + "a"
+
+    // Dativ: -ovi → -a
+    IF observed ends "-ovi" AND stem IN surname_stems_needing_a THEN
+        RETURN stem + "a"
+```
+
+### Kmenové sady (45+ kmenů):
+`fial`, `svobod`, `skál`, `malin`, `nerud`, `janot`, `šlecht`, `procházk`, `matějk`, `růžičk`, `bartošk`, `hrdličk`, `chaloupk`, `trojánk`, `šimůnk`, `čupk`, `hánk`, `navrátilk`, `pavelk`, `hrušk`, `koudelk`, `krupičk`, `řezníčk`, `bláh`, `kafk`, `smetan`, `strak`, `pasek`, `popelk`, `kub`, `červink`, `hromádk`, `horčičk`, `holink` ...
+
+### Výsledek:
+```
+PŘED opravou: "Dalibor Fiala" → PERSON_1, PERSON_7 ("Fialý"), PERSON_8 ("Fialo")
+PO opravě:   "Dalibor Fiala" → PERSON_1 (všech 7 pádů + vokativ správně sjednoceno)
+```
+
+## 4.10 INOVACE #9: Šest specializovaných post-passů
+
+Po hlavní detekci a deduplikaci probíhá **6 dalších průchodů** dokumentem:
+
+| Post-pass | Zachycuje | Příklad |
+|-----------|-----------|---------|
+| `_postpass_standalone_firstnames` | Izolovaná křestní jména | „Barbora", „Jakubovi" |
+| `_postpass_orphan_surname_after_tag` | Osiřelá příjmení za tagy | `[[OSOBA_1]] Nguyenová` → `[[OSOBA_1]]` |
+| `_postpass_maiden_names` | Rodná jména | `(rozená Nováková)`, `roz. Dvořáková` |
+| `_postpass_titled_standalone_names` | Titulované osoby | `JUDr. Novák`, `MUDr. Dvořáková` |
+| `_postpass_company_person_names` | Příjmení ve firmách | `Horák & Partners s.r.o.` |
+| `_postpass_birth_id_as_var_symbol` | RČ jako var. symbol | `var. symbol 6005301111` |
+
+**Pořadí je klíčové** – post-passy běží AFTER deduplikace, BEFORE uložení dokumentu.
+
 ---
 
 # 5. DATOVÉ STRUKTURY
@@ -684,7 +763,7 @@ del anon72.py
 # 7. Build Windows installer
 npm run dist
 
-# Výsledek: dist/SKRYI-Setup-3.1.0.exe
+# Výsledek: dist/SKRYI-Setup-3.3.0.exe
 ```
 
 **Poznámka k Nuitka buildu:** Při kompilaci `anonymize_cli.exe` je nutné zahrnout balíček `fpdf2` pro generování PDF reportů: `--include-package=fpdf`.
@@ -695,7 +774,7 @@ npm run dist
 
 ## 10.1 Instalace
 
-1. Spusťte `SKRYI-Setup-3.1.0.exe`
+1. Spusťte `SKRYI-Setup-3.3.0.exe`
 2. Odsouhlaste licenční podmínky (EULA)
 3. Zvolte instalační složku
 4. Dokončete instalaci
@@ -767,10 +846,10 @@ Při každé anonymizaci se automaticky generuje PDF report (`_report.pdf`) obsa
 | **Kanonizace** | Žádná | Automatická inference |
 | **Deduplikace** | Základní (regex) | 4-fázová inteligentní |
 | **Validace** | Žádná | Post-processing kontrola |
-| **Přesnost** | 60-70% | **95-98%** |
+| **Přesnost** | 60-70% | **98-99%** (236/236 smluv CLEAN) |
 | **Zpětná de-anonymizace** | Nekonzistentní | Jednotná mapa |
 | **Offline provoz** | Většinou cloud | 100% offline |
-| **Typy PII** | 5-8 kategorií | **23+ kategorií** |
+| **Typy PII** | 5-8 kategorií | **34 kategorií** |
 | **OCR vstup** | Pouze text/DOCX | PDF, PNG, JPG, TIFF, BMP, WEBP |
 | **Audit trail** | Žádný | PDF certifikát (SHA-256) |
 | **Hromadné zpracování** | Ruční | Automatický watcher |
@@ -898,8 +977,8 @@ Počítačový program obsahující instrukce pro provedení způsobu podle nár
 
 **Výrobce:** Nixminds s.r.o.
 **Email:** info@nixminds.com
-**Verze dokumentace:** 3.3.0
-**Datum:** 20. února 2026
+**Verze dokumentace:** 3.4.0
+**Datum:** 24. února 2026
 **Klasifikace:** G06F 40/00 (zpracování přirozeného jazyka), G06F 21/62 (ochrana osobních údajů)
 
 *© 2026 Nixminds s.r.o. Všechna práva vyhrazena.*

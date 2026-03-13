@@ -8,43 +8,41 @@ OSOBY
 [[PERSON_4]]: Lukáš Křížek
 [[PERSON_5]]: Lukáš Kříž
   - Lukáši Křížovi
-[[PERSON_6]]:  Horáková
-[[PERSON_7]]: Petra Bartošová
-[[PERSON_8]]: Radim Svoboda
-[[PERSON_9]]: Tomáš Kučera
-[[PERSON_10]]: Růžena Poláková
-[[PERSON_11]]: Pavel Marek
-[[PERSON_12]]: Karel Blažek
-[[PERSON_13]]: Petr Malý
-[[PERSON_14]]: Adam Novotný
+[[PERSON_6]]: Petra Bartošová
+[[PERSON_7]]: Radim Svoboda
+[[PERSON_8]]: Tomáš Kučera
+[[PERSON_9]]: Růžena Poláková
+[[PERSON_10]]: Pavel Marek
+[[PERSON_11]]: Karel Blažek
+[[PERSON_12]]: Petr Malý
+[[PERSON_13]]: Adam Novotný
   - Novotný
-[[PERSON_15]]: Martin Němec
-[[PERSON_16]]: Tomáš Veselý
-[[PERSON_17]]: Kateřina Malá
-[[PERSON_18]]:  Nová
-[[PERSON_19]]: Petra Beránková
-[[PERSON_20]]: Karel Rybář
+[[PERSON_14]]: Martin Němec
+[[PERSON_15]]: Tomáš Veselý
+[[PERSON_16]]: Kateřina Malá
+[[PERSON_17]]: Petra Beránková
+[[PERSON_18]]: Karel Rybář
   - Rybář
 
 ADDRESS
-[[ADDRESS_1]]: Nerudova 12, 110 00 Praha 1
+[[ADDRESS_1]]: Nerudova 12, Praha 1, 110 00
 [[ADDRESS_2]]: Růžová 5, 602 00 Brno
 [[ADDRESS_3]]: Slezská 33, 779 00 Olomouc
-[[ADDRESS_4]]: Jiráskova 12, 779 00 Olomouc
+[[ADDRESS_4]]: Jiráskova 12, 779 00, Olomouc
 [[ADDRESS_5]]: Na Kopci 7, 130 00 Praha 3
 [[ADDRESS_6]]: Kollárova 28, 602 00 Brno
 [[ADDRESS_7]]: Tyršova 10, 370 01 České Budějovice
 [[ADDRESS_8]]: Dlouhá 89, 110 00 Praha 1
-[[ADDRESS_9]]: Na Příkopě 5, 110 00 Praha 1
+[[ADDRESS_9]]: Na Příkopě 5, Praha 1, 110 00
 [[ADDRESS_10]]: Masarykova 4, 602 00 Brno
-[[ADDRESS_11]]: Elišky Přemyslovny 15, 170 00 Praha
+[[ADDRESS_11]]: Elišky Přemyslovny 15, Praha, 170 00
 [[ADDRESS_12]]: Nová 156, 252 19 Rudná
 [[ADDRESS_13]]: Novákova 45, 250 01 Brandýs nad Labem
 [[ADDRESS_14]]: Lesní 12, 251 01 Říčany
-[[ADDRESS_15]]: Vinohradská 120, 130 00 Praha 3
+[[ADDRESS_15]]: Vinohradská 120, Praha 3, 130 00
 [[ADDRESS_16]]: Smetanova 45, 500 02 Hradec Králové
 [[ADDRESS_17]]: Palackého 10, 500 02 Hradec Králové
-[[ADDRESS_18]]: Horní 5, 602 00 Brno
+[[ADDRESS_18]]: Horní 5, 602 00, Brno
 
 BANK
 [[BANK_1]]: 2300456789/2010
@@ -102,7 +100,4 @@ PHONE
 [[PHONE_9]]: +420 733 444 555
 [[PHONE_10]]: 604 789 321
 [[PHONE_11]]: 606 111 222
-
-USERNAME
-[[USERNAME_1]]: Bc.
 

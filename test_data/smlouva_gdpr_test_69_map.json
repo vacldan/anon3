@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:27.812714",
+  "generated_at": "2026-03-13T09:57:14.654156",
   "source_file": "smlouva_gdpr_test_69.docx",
   "entities": [
     {
@@ -18,18 +18,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Zdeněka Havličku",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Zdeněkovi Havličkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Zdeněkem Havličkou",
       "occurrences": 1
     },
@@ -41,6 +29,18 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Zdeněka Havličku",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Zdeněkovi Havličkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Adéla Pospíšilová",
       "occurrences": 1
@@ -48,13 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Adélo Pospíšilová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Adély Pospíšilové",
+      "original": "Adélu Pospíšilováovou",
       "occurrences": 1
     },
     {
@@ -71,14 +65,20 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Nikola Vlachová",
+      "label": "[[PERSON_2]]",
+      "original": "Adély Pospíšilové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Adélo Pospíšilová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Nikolě Vlachové",
+      "original": "Nikola Vlachová",
       "occurrences": 1
     },
     {
@@ -90,13 +90,31 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
+      "original": "Nikolě Vlachové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Nikolou Vlachovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Nikolu Vlachováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Tereza Vavrová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Terezu Vavrováovou",
       "occurrences": 1
     },
     {
@@ -119,6 +137,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Libuše Novákováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_6]]",
       "original": "Dalibor Vlach",
       "occurrences": 1
@@ -130,58 +154,10 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Nikola Vlachováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Nikolu Vlachováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Adéla Pospíšilováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Adélu Pospíšilováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Tereza Vavrováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Terezu Vavrováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Libuše Novákováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Libuše Novákováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "V Úvalu 84, 150 06 Praha 5",
-      "occurrences": 1
+      "original": "Úvalu 84, Praha 5, 150 06",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -192,43 +168,31 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Husova 39, 390 02 Tábor",
-      "occurrences": 1
+      "original": "Husova 39, 390 02, Tábor",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Bezručova 41/12, 746 01 Opava",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "U Parku 5/25, 779 00 Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Dlouhá 44/27, 602 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Sokolovská 49/23, 186 00 Praha 8",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Pražská 158, 360 01 Karlovy Vary a Husova 39",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "platnost 03/29, CVC",
+      "original": "Sokolovská 49/23, 186 00 Praha 8",
       "occurrences": 1
     },
     {

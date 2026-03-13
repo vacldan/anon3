@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:05.997943",
+  "generated_at": "2026-03-13T09:56:50.204359",
   "source_file": "smlouva_gdpr_test_147.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Pavla Černýa",
+      "original": "Pavlem Černýem",
       "occurrences": 1
     },
     {
@@ -24,7 +24,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Pavlem Černýem",
+      "original": "Pavla Černýa",
       "occurrences": 1
     },
     {
@@ -36,7 +36,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Matěja Kříža",
+      "original": "Matějem Křížem",
       "occurrences": 1
     },
     {
@@ -48,13 +48,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Matějovi Křížovi",
+      "original": "Matěja Kříža",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Matějem Křížem",
+      "original": "Matějovi Křížovi",
       "occurrences": 1
     },
     {
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Lucie Roubalovou",
+      "original": "Lucie Roubalové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Lucie Roubalové",
+      "original": "Lucie Roubalovou",
       "occurrences": 1
     },
     {
@@ -120,44 +120,14 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Poliklinická 3, 120 00 Praha 2",
-      "occurrences": 1
+      "original": "Poliklinická 3, Praha 2, 120 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Dlouhá 108/19, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Dlouhá 138/1, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Dlouhá 138/1, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Dlouhá 138/1, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Dlouhá 138/1, 602 00 Brno pro Matějovi Křížovi a",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Dlouhá 108/19, 602 00 Brno pro Pavlovi Černýovi",
-      "occurrences": 1
+      "occurrences": 3
     },
     {
       "type": "ICO",

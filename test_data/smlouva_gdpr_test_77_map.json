@@ -1,18 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:33.838268",
+  "generated_at": "2026-03-13T09:57:20.153856",
   "source_file": "smlouva_gdpr_test_77.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Aleš Vaněk",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Alešovi Vaněkovi",
       "occurrences": 1
     },
     {
@@ -35,8 +29,20 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Alešovi Vaněkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Růžena Marešová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Růženy Marešové",
       "occurrences": 1
     },
     {
@@ -54,103 +60,85 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Růženě Marešové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Růženy Marešové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Růžena Marešováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
       "original": "Růženu Marešováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_2]]",
+      "original": "Růženě Marešové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Iva Vaňková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_3]]",
       "original": "Ivy Vaňkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_3]]",
+      "original": "Ivu Vaňkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Tomáš Doležal",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_4]]",
       "original": "Tomášem Doležalem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_4]]",
       "original": "Tomášovi Doležalovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_4]]",
       "original": "Tomáše Doležala",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_6]]",
+      "label": "[[PERSON_5]]",
       "original": "Oldřich Urban",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_6]]",
+      "label": "[[PERSON_5]]",
       "original": "Oldřicha Urbana",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
+      "label": "[[PERSON_6]]",
       "original": "Ladislav Soukup",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
+      "label": "[[PERSON_6]]",
       "original": "Ladislava Soukupa",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Iva Vaňkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Ivu Vaňkováovou",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Vídeňská 800, 140 59 Praha 4",
+      "original": "Vídeňská 800, Praha 4, 140 59",
       "occurrences": 1
     },
     {
@@ -162,49 +150,31 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Nádražní 10/12, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Nádražní 10/12, 702 00, Ostrava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Na Návsi 63/23, 789 01 Zábřeh",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Dlouhá 148/11, 602 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Revoluční 46, 110 00 Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Pražská 109/24, 360 01 Karlovy Vary",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Jihlavská 146/2, 625 00 Brno a Nádražní",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 12/29, CVC",
+      "original": "Pražská 109/24, 360 01 Karlovy Vary",
       "occurrences": 1
     },
     {
@@ -355,12 +325,6 @@
       "type": "PHONE",
       "label": "[[PHONE_6]]",
       "original": "+420 788 539 289",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "287197669",
       "occurrences": 1
     },
     {

@@ -12,12 +12,10 @@ OSOBY
   - Pavlem Richterem
 
 ADDRESS
-[[ADDRESS_1]]: Javorová 5, 779 00 Olomouc
-[[ADDRESS_2]]: Na Stráni 12, 779 00 Olomouc
-[[ADDRESS_3]]: vatele navštěvovali jeho bytovou jednotku Na Stráni 12, 779 00 Olomouc
-[[ADDRESS_4]]: Jabloňová 11, 779 00 Olomouc
-[[ADDRESS_5]]: Masarykova 3, 779 00 Olomouc
-[[ADDRESS_6]]: V Olomouci
+[[ADDRESS_1]]: Javorová 5, 779 00, Olomouc
+[[ADDRESS_2]]: Na Stráni 12, 779 00, Olomouc
+[[ADDRESS_3]]: Jabloňová 11, 779 00 Olomouc
+[[ADDRESS_4]]: Masarykova 3, 779 00 Olomouc
 
 BANK
 [[BANK_1]]: 1122334455/0800

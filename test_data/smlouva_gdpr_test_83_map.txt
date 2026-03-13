@@ -9,40 +9,32 @@ OSOBY
 [[PERSON_2]]: Jana Navrátilová
   - Jano Navrátilová
   - Janou Navrátilovou
+  - Janu Navrátilováovou
   - Jany Navrátilové
   - Janě Navrátilové
-[[PERSON_3]]: Jana Navrátilováová
-  - Janu Navrátilováovou
-[[PERSON_4]]: Filip Zík
-  - Filip Zíka
+[[PERSON_3]]: Filip Zíka
   - Filipa Zíku
   - Filipa Zíky
   - Filipovi Zíkovi
-[[PERSON_5]]: Ondřej Popelka
+[[PERSON_4]]: Ondřej Popelka
   - Ondřeja Popelku
   - Ondřeja Popelky
-[[PERSON_6]]: Anežka Holubová
-  - Anežky Holubové
-[[PERSON_7]]: Vojtěch Dvořák
-  - Vojtěcha Dvořáka
-[[PERSON_8]]: Filip Zíká
-  - Filipem Zíkou
-[[PERSON_9]]: Anežka Holubováová
+[[PERSON_5]]: Anežka Holubová
   - Anežku Holubováovou
+  - Anežky Holubové
+[[PERSON_6]]: Vojtěch Dvořák
+  - Vojtěcha Dvořáka
+[[PERSON_7]]: Filip Zíký
+  - Filipem Zíkou
 
 ADDRESS
-[[ADDRESS_1]]: Praha 1
+[[ADDRESS_1]]: 110 00, Praha 1
 [[ADDRESS_2]]: Žižkova 133, 460 01 Liberec
-[[ADDRESS_3]]: Jihlavská 186/38, 625 00 Brno
-[[ADDRESS_4]]: Ostrava
+[[ADDRESS_3]]: Jihlavská 186/38, 625 00, Brno
 [[ADDRESS_5]]: Palackého 5, 301 00 Plzeň
 [[ADDRESS_6]]: Husova 119/2, 390 02 Tábor
 [[ADDRESS_7]]: Havlíčkova 165, 586 01 Jihlava
 [[ADDRESS_8]]: Komenského 125, 702 00 Ostrava
-[[ADDRESS_9]]: Žižkova 133, 460 01 Liberec a Jihlavská
-[[ADDRESS_10]]: Brno
-[[ADDRESS_11]]: platnost 06/28, CVC
-[[ADDRESS_12]]: V Ostravě
 
 BANK
 [[BANK_1]]: 901658-9293029432/0600
@@ -114,5 +106,4 @@ PHONE
 [[PHONE_5]]: +420 688 930 861
 [[PHONE_6]]: +420 731 747 244
 [[PHONE_7]]: 745 900 999
-[[PHONE_8]]: 664829944
 

@@ -20,13 +20,9 @@ OSOBY
   - Davidovi Roubalovi
 
 ADDRESS
-[[ADDRESS_1]]: Nemocniční 1, 400 01 Ústí nad Labem
+[[ADDRESS_1]]: Nemocniční 1, 400 01, Ústí nad Labem
 [[ADDRESS_2]]: Křenová 163/9, 602 00 Brno
 [[ADDRESS_3]]: U Parku 137/6, 779 00 Olomouc
-[[ADDRESS_4]]: případně písemně na adresu U Parku 137/6, 779 00 Olomouc
-[[ADDRESS_5]]: písemné doručení na adresu U Parku 137/6, 779 00 Olomouc
-[[ADDRESS_6]]: Pro účely doručování se používá adresa U Parku 137/6, 779 00 Olomouc pro Pavlovi Novákovi a
-[[ADDRESS_7]]: Křenová 163/9, 602 00 Brno pro Michalovi Hrubešovi
 
 BANK
 [[BANK_1]]: 852073436/0300

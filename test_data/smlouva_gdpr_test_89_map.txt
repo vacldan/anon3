@@ -8,43 +8,34 @@ OSOBY
   - Matějovi Černému
 [[PERSON_2]]: Lucie Hájková
   - Lucie Hájkové
+  - Lucii Hájkováovou
   - Lucii Hájkové
   - Lucií Hájkovou
 [[PERSON_3]]: Gabriela Malinová
   - Gabrielou Malinovou
+  - Gabrielu Malinováovou
   - Gabriely Malinové
   - Gabrielě Malinové
 [[PERSON_4]]: Miluše Pazderová
+  - Miluše Pazderováovou
   - Miluše Pazderové
-[[PERSON_5]]: Antoni Procházková
+[[PERSON_5]]: Antoni Procházek
   - Antonie Procházková
   - Antonie Procházkové
 [[PERSON_6]]: Bruno Procházka
   - Brunoa Procházku
   - Brunoa Procházky
-[[PERSON_7]]: Gabriela Malinováová
-  - Gabrielu Malinováovou
-[[PERSON_8]]: Lucie Hájkováová
-  - Lucii Hájkováovou
-[[PERSON_9]]: Miluše Pazderováová
-  - Miluše Pazderováovou
-[[PERSON_10]]: Antonie Procházkováová
+[[PERSON_7]]: Antoni Procházková
   - Antonii Procházkováovou
 
 ADDRESS
-[[ADDRESS_1]]: Praha 9
-[[ADDRESS_2]]: Bryksova 763/46, 198 00 Praha 14
-[[ADDRESS_3]]: Na Návsi 98/35, 789 01 Zábřeh
-[[ADDRESS_4]]: Nádražní 94/37, 702 00 Ostrava
+[[ADDRESS_1]]: Bryksova 763/46, Praha 14, 198 00
+[[ADDRESS_2]]: Na Návsi 98/35, 789 01 Zábřeh
+[[ADDRESS_3]]: Nádražní 94/37, 702 00, Ostrava
 [[ADDRESS_5]]: Žižkova 102/8, 460 01 Liberec
 [[ADDRESS_6]]: Havlíčkova 185/34, 586 01 Jihlava
 [[ADDRESS_7]]: Bezručova 209/3, 746 01 Opava
 [[ADDRESS_8]]: Národní 204, 110 00 Praha 1
-[[ADDRESS_9]]: Na Návsi 98/35, 789 01 Zábřeh a Nádražní
-[[ADDRESS_10]]: Ostrava
-[[ADDRESS_11]]: platnost 12/27, CVC
-[[ADDRESS_12]]: Exekutorský úřad Praha 9, IČO
-[[ADDRESS_13]]: Správcem osobních údajů je Exekutorský úřad Praha 9, IČO
 
 BANK
 [[BANK_1]]: 7401993699/0800
@@ -112,5 +103,4 @@ PHONE
 [[PHONE_4]]: 778 878 666
 [[PHONE_5]]: 682 244 259
 [[PHONE_6]]: 776 129 876
-[[PHONE_7]]: 328800593
 

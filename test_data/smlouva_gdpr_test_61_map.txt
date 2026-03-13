@@ -3,42 +3,31 @@ OSOBY
 [[PERSON_1]]: Jaroslav Růžička
   - Jaroslava Růžičku
   - Jaroslava Růžičky
+  - Jaroslave Růžičko
   - Jaroslavem Růžičkou
   - Jaroslavovi Růžičkovi
 [[PERSON_2]]: Ines Havličková
-  - Ines Havličkovou
-  - Ines Havličkové
 [[PERSON_3]]: Leoš Beneš
   - Leoša Beneša
   - Leošem Benešem
   - Leošovi Benešovi
 [[PERSON_4]]: Ivana Křížová
+  - Ivanu Křížováovou
   - Ivany Křížové
 [[PERSON_5]]: Jana Šemberová
+  - Janu Šemberováovou
   - Jany Šemberové
 [[PERSON_6]]: Jan Malík
   - Jana Malíka
-[[PERSON_7]]: Ines Havličkováová
-  - Ines Havličkováovou
-[[PERSON_8]]: Jaroslav Růžičko
-  - Jaroslave Růžičko
-[[PERSON_9]]: Ivana Křížováová
-  - Ivanu Křížováovou
-[[PERSON_10]]: Jana Šemberováová
-  - Janu Šemberováovou
 
 ADDRESS
-[[ADDRESS_1]]: Na Příkopě 33, 114 07 Praha 1
+[[ADDRESS_1]]: Na Příkopě 33, Praha 1, 114 07
 [[ADDRESS_2]]: Smetanova 146/10, 760 01 Zlín
-[[ADDRESS_3]]: Technologická 13/23, 160 00 Praha 6
-[[ADDRESS_4]]: Purkyňova 20, 612 00 Brno
-[[ADDRESS_5]]: Riegrova 108, 779 00 Olomouc
-[[ADDRESS_6]]: Sadová 247, 370 01 České Budějovice
-[[ADDRESS_7]]: Palackého 196/32, 301 00 Plzeň
-[[ADDRESS_8]]: Smetanova 146/10, 760 01 Zlín a Technologická
-[[ADDRESS_9]]: Praha 6
-[[ADDRESS_10]]: platnost 01/27, CVC
-[[ADDRESS_11]]: V Liberci
+[[ADDRESS_3]]: Technologická 13/23, Praha 6, 160 00
+[[ADDRESS_5]]: Purkyňova 20, 612 00 Brno
+[[ADDRESS_6]]: Riegrova 108, 779 00 Olomouc
+[[ADDRESS_7]]: Sadová 247, 370 01 České Budějovice
+[[ADDRESS_8]]: Palackého 196/32, 301 00 Plzeň
 
 BANK
 [[BANK_1]]: 2449016618/6210
@@ -106,5 +95,4 @@ PHONE
 [[PHONE_4]]: +420782673850
 [[PHONE_5]]: 672 620 165
 [[PHONE_6]]: +420 647 116 498
-[[PHONE_7]]: 784387547
 

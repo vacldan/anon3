@@ -8,37 +8,30 @@ OSOBY
 [[PERSON_2]]: Klára Jirsová
   - Kláro Jirsová
   - Klárou Jirsovou
+  - Kláru Jirsováovou
   - Kláry Jirsové
   - Klárě Jirsové
 [[PERSON_3]]: Iva Hrdinová
   - Ivou Hrdinovou
+  - Ivu Hrdinováovou
   - Ivy Hrdinové
   - Ivě Hrdinové
 [[PERSON_4]]: Ema Kopecká
   - Emy Kopecké
 [[PERSON_5]]: Růžena Vavrová
+  - Růženu Vavrováovou
   - Růženy Vavrové
 [[PERSON_6]]: Svatopluk Vaněk
   - Svatopluka Vaněka
-[[PERSON_7]]: Iva Hrdinováová
-  - Ivu Hrdinováovou
-[[PERSON_8]]: Klára Jirsováová
-  - Kláru Jirsováovou
-[[PERSON_9]]: Růžena Vavrováová
-  - Růženu Vavrováovou
 
 ADDRESS
-[[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_1]]: Náměstí 1, 500 02, Hradec Králové
 [[ADDRESS_2]]: Palackého 24, 301 00 Plzeň
-[[ADDRESS_3]]: Komenského 40/31, 702 00 Ostrava
-[[ADDRESS_4]]: Husova 177, 390 02 Tábor
-[[ADDRESS_5]]: Hlavní 240, 669 02 Znojmo
-[[ADDRESS_6]]: Vinohradská 179/2, 130 00 Praha 3
-[[ADDRESS_7]]: Jabloňová 102, 400 01 Ústí nad Labem
-[[ADDRESS_8]]: Palackého 24, 301 00 Plzeň a Komenského
-[[ADDRESS_9]]: Ostrava
-[[ADDRESS_10]]: platnost 02/26, CVC
-[[ADDRESS_11]]: a podezřelé jednání Ivy Hrdinové na adrese Husova 177, 390 02 Tábor
+[[ADDRESS_3]]: Komenského 40/31, 702 00, Ostrava
+[[ADDRESS_5]]: Husova 177, 390 02 Tábor
+[[ADDRESS_6]]: Hlavní 240, 669 02 Znojmo
+[[ADDRESS_7]]: Vinohradská 179/2, 130 00 Praha 3
+[[ADDRESS_8]]: Jabloňová 102, 400 01 Ústí nad Labem
 
 BANK
 [[BANK_1]]: 9815278283/2700
@@ -92,6 +85,7 @@ IP
 LICENSE_PLATE
 [[LICENSE_PLATE_1]]: CZ73497
 [[LICENSE_PLATE_2]]: PP94796
+[[LICENSE_PLATE_3]]: AK 65033
 
 MAC
 [[MAC_1]]: E7:C0:AC:2F:DA:16
@@ -107,5 +101,4 @@ PHONE
 [[PHONE_5]]: 722 536 702
 [[PHONE_6]]: 777 196 914
 [[PHONE_7]]: +420 648 821 380
-[[PHONE_8]]: 968459339
 

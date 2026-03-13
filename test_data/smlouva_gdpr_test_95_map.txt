@@ -1,6 +1,7 @@
 OSOBY
 -----
-[[PERSON_1]]: Jaroslav Tesař
+[[PERSON_1]]: Jaroslav Tesařa
+  - Jaroslav Tesař
   - Jaroslava Tesařa
   - Jaroslave Tesaře
   - Jaroslavem Tesařem
@@ -8,6 +9,7 @@ OSOBY
 [[PERSON_2]]: Krista Pospíšilová
   - Kristo Pospíšilová
   - Kristou Pospíšilovou
+  - Kristu Pospíšilováovou
   - Kristy Pospíšilové
   - Kristě Pospíšilové
 [[PERSON_3]]: Stanislav Růžička
@@ -16,29 +18,22 @@ OSOBY
   - Stanislavem Růžičkou
   - Stanislavovi Růžičkovi
 [[PERSON_4]]: Růžena Kratochvílová
+  - Růženu Kratochvílováovou
   - Růženy Kratochvílové
 [[PERSON_5]]: Hedvika Jirsová
+  - Hedviku Jirsováovou
   - Hedviky Jirsové
 [[PERSON_6]]: Stanislav Beneš
   - Stanislava Beneša
-[[PERSON_7]]: Krista Pospíšilováová
-  - Kristu Pospíšilováovou
-[[PERSON_8]]: Růžena Kratochvílováová
-  - Růženu Kratochvílováovou
-[[PERSON_9]]: Hedvika Jirsováová
-  - Hedviku Jirsováovou
 
 ADDRESS
-[[ADDRESS_1]]: Vídeňská 800, 140 59 Praha 4
+[[ADDRESS_1]]: Vídeňská 800, Praha 4, 140 59
 [[ADDRESS_2]]: Tylova 53, 530 02 Pardubice
-[[ADDRESS_3]]: Masarykova 245, 500 02 Hradec Králové
-[[ADDRESS_4]]: Wolkerova 195, 796 01 Prostějov
-[[ADDRESS_5]]: Palackého 92, 301 00 Plzeň
-[[ADDRESS_6]]: Jihlavská 101, 625 00 Brno
-[[ADDRESS_7]]: Bezručova 170/11, 746 01 Opava
-[[ADDRESS_8]]: Tylova 53, 530 02 Pardubice a Masarykova
-[[ADDRESS_9]]: Hradec Králové
-[[ADDRESS_10]]: platnost 09/27, CVC
+[[ADDRESS_3]]: Masarykova 245, 500 02, Hradec Králové
+[[ADDRESS_5]]: Wolkerova 195, 796 01 Prostějov
+[[ADDRESS_6]]: Palackého 92, 301 00 Plzeň
+[[ADDRESS_7]]: Jihlavská 101, 625 00 Brno
+[[ADDRESS_8]]: Bezručova 170/11, 746 01 Opava
 
 BANK
 [[BANK_1]]: 42984-3889535731/2010
@@ -106,5 +101,4 @@ PHONE
 [[PHONE_4]]: +420708427761
 [[PHONE_5]]: +420762996164
 [[PHONE_6]]: 609 905 878
-[[PHONE_7]]: 844205467
 

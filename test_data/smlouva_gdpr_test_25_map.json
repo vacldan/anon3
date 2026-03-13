@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:08.438801",
+  "generated_at": "2026-03-13T09:56:54.581152",
   "source_file": "smlouva_gdpr_test_25.docx",
   "entities": [
     {
@@ -42,25 +42,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Markovi Hrubešovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Marka Hrubeša",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Markem Hrubešem",
+      "original": "Markovi Hrubešovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Marku Hrubeše",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Markem Hrubešem",
       "occurrences": 1
     },
     {
@@ -72,7 +72,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Oldřichovi Královi",
+      "original": "Oldřicha Krála",
       "occurrences": 1
     },
     {
@@ -84,7 +84,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Oldřicha Krála",
+      "original": "Oldřichovi Královi",
       "occurrences": 1
     },
     {
@@ -109,18 +109,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Jabloňová 1/11, 400 01 Ústí nad Labem",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "platnost 08/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemně na adresu Jabloňová 1/11, 400 01 Ústí nad Labem",
       "occurrences": 1
     },
     {

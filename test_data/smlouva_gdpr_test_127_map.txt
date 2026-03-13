@@ -20,12 +20,9 @@ OSOBY
   - Štěpánovi Hrubešovi
 
 ADDRESS
-[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
+[[ADDRESS_1]]: Poliklinická 3, Praha 2, 120 00
 [[ADDRESS_2]]: Pojišťovací 114/7, 110 00 Praha 1
 [[ADDRESS_3]]: U Parku 57/3, 779 00 Olomouc
-[[ADDRESS_4]]: případně písemně na adresu U Parku 57/3, 779 00 Olomouc
-[[ADDRESS_5]]: písemné doručení na adresu U Parku 57/3, 779 00 Olomouc
-[[ADDRESS_6]]: Pro účely doručování se používá adresa U Parku 57/3, 779 00 Olomouc pro Matějovi Vaněkovi a
 
 BANK
 [[BANK_1]]: 644447126/0100

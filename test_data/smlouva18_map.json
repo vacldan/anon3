@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:00.852204",
+  "generated_at": "2026-03-13T09:55:41.204738",
   "source_file": "smlouva18.docx",
   "entities": [
     {
@@ -30,6 +30,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
+      "original": "Pavlínou Pokornou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Pavlíny Pokorné",
       "occurrences": 1
     },
@@ -47,12 +53,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Pavlínou Pokornou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Robert Klíma",
       "occurrences": 1
@@ -60,13 +60,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Klímou",
+      "original": "Klíma",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Klíma",
+      "original": "Klímou",
       "occurrences": 1
     },
     {
@@ -84,6 +84,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
+      "original": "Houfová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Terezy Houfové",
       "occurrences": 1
     },
@@ -91,12 +97,6 @@
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Houfovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Houfová",
       "occurrences": 1
     },
     {
@@ -180,19 +180,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_14]]",
-      "original": "Tobiášem Vránou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_14]]",
       "original": "Vránou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_14]]",
+      "original": "Tobiášem Vránou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_15]]",
-      "original": "Mark Prášek",
+      "original": "Marek Prášek",
       "occurrences": 1
     },
     {
@@ -217,24 +217,6 @@
       "type": "PERSON",
       "label": "[[PERSON_18]]",
       "original": "Luděk Štrunc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_1]]",
-      "original": "U Sanatoria 1120/18, Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Karafiátová 28, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "V Praze",
       "occurrences": 1
     },
     {
@@ -271,6 +253,18 @@
       "type": "ICO",
       "label": "[[ICO_1]]",
       "original": "00458931",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Sanatoria 1120/18, Praha 6, 160 00",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Karafiátová 28, 779 00 Olomouc",
       "occurrences": 1
     },
     {
@@ -334,15 +328,15 @@
       "occurrences": 1
     },
     {
-      "type": "VIN",
-      "label": "[[VIN_1]]",
-      "original": "TMBJJ7NU0L5199221",
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_4]]",
+      "original": "EI 86674",
       "occurrences": 1
     },
     {
-      "type": "IMEI",
-      "label": "[[IMEI_1]]",
-      "original": "866745032551118",
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "TMBJJ7NU0L5199221",
       "occurrences": 1
     }
   ]

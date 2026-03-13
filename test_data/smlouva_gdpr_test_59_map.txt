@@ -9,6 +9,7 @@ OSOBY
 [[PERSON_2]]: Iva Kratochvílová
   - Ivo Kratochvílová
   - Ivou Kratochvílovou
+  - Ivu Kratochvílováovou
   - Ivy Kratochvílové
   - Ivě Kratochvílové
 [[PERSON_3]]: Metoděj Kopecký
@@ -19,25 +20,18 @@ OSOBY
 [[PERSON_4]]: Vít Kořínek
   - Víta Kořínka
 [[PERSON_5]]: Libuše Krejčová
+  - Libuše Krejčováovou
   - Libuše Krejčové
 [[PERSON_6]]: Matěj Urban
   - Matěja Urbana
-[[PERSON_7]]: Iva Kratochvílováová
-  - Ivu Kratochvílováovou
-[[PERSON_8]]: Libuše Krejčováová
-  - Libuše Krejčováovou
 
 ADDRESS
-[[ADDRESS_1]]: Kampus 9, 625 00 Brno
-[[ADDRESS_2]]: Pražská 98, 360 01 Karlovy Vary
-[[ADDRESS_3]]: Národní 5/26, 110 00 Praha 1
-[[ADDRESS_4]]: Dvořákova 51, 370 01 České Budějovice
-[[ADDRESS_5]]: Pražská 119/37, 360 01 Karlovy Vary
-[[ADDRESS_6]]: Riegrova 27, 779 00 Olomouc
-[[ADDRESS_7]]: U Nemocnice 87, 128 08 Praha 2
-[[ADDRESS_8]]: Pražská 98, 360 01 Karlovy Vary a Národní
-[[ADDRESS_9]]: Praha 1
-[[ADDRESS_10]]: platnost 05/28, CVC
+[[ADDRESS_1]]: Kampus 9, 625 00, Brno
+[[ADDRESS_3]]: Národní 5/26, Praha 1, 110 00
+[[ADDRESS_5]]: Dvořákova 51, 370 01 České Budějovice
+[[ADDRESS_6]]: Pražská 119/37, 360 01 Karlovy Vary
+[[ADDRESS_7]]: Riegrova 27, 779 00 Olomouc
+[[ADDRESS_8]]: U Nemocnice 87, 128 08 Praha 2
 
 BANK
 [[BANK_1]]: 3151205952/2010
@@ -105,5 +99,4 @@ PHONE
 [[PHONE_4]]: +420758634407
 [[PHONE_5]]: +420 645 535 312
 [[PHONE_6]]: +420 708 713 484
-[[PHONE_7]]: 494150612
 

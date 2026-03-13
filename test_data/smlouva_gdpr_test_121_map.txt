@@ -20,13 +20,9 @@ OSOBY
   - Davidovi Malíkovi
 
 ADDRESS
-[[ADDRESS_1]]: Kampus 9, 625 00 Brno
+[[ADDRESS_1]]: Kampus 9, 625 00, Brno
 [[ADDRESS_2]]: Dlouhá 19/2, 602 00 Brno
 [[ADDRESS_3]]: Jabloňová 131/1, 400 01 Ústí nad Labem
-[[ADDRESS_4]]: případně písemně na adresu Jabloňová 131/1, 400 01 Ústí nad Labem
-[[ADDRESS_5]]: písemné doručení na adresu Jabloňová 131/1, 400 01 Ústí nad Labem
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Jabloňová 131/1, 400 01 Ústí nad Labem pro Michalovi
-[[ADDRESS_7]]: Malíkovi a Dlouhá 19/2, 602 00 Brno pro Heleně Procházkové
 
 BANK
 [[BANK_1]]: 812872725/5500

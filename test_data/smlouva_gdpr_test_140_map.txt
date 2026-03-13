@@ -5,7 +5,6 @@ OSOBY
   - Filipe Malíke
   - Filipem Malíkem
   - Filipovi Malíkovi
-  - Malíkovi
 [[PERSON_2]]: Simona Turková
   - Simono Turková
   - Simonou Turkovou
@@ -21,13 +20,9 @@ OSOBY
   - Barborě Vaňkové
 
 ADDRESS
-[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_1]]: Na Hradbách 15, 702 00, Ostrava
 [[ADDRESS_2]]: Sadová 97/19, 370 01 České Budějovice
 [[ADDRESS_3]]: Křenová 31/21, 602 00 Brno
-[[ADDRESS_4]]: případně písemně na adresu Křenová 31/21, 602 00 Brno
-[[ADDRESS_5]]: písemné doručení na adresu Křenová 31/21, 602 00 Brno
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Křenová 31/21, 602 00 Brno pro Simoně Turkové a
-[[ADDRESS_7]]: Sadová 97/19, 370 01 České Budějovice pro Filipovi
 
 BANK
 [[BANK_1]]: 634966812/0300

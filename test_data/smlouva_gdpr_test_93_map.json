@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:45.338437",
+  "generated_at": "2026-03-13T09:57:30.558849",
   "source_file": "smlouva_gdpr_test_93.docx",
   "entities": [
     {
@@ -12,19 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Oldřichem Kořínkem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Oldřichovi Kořínkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Oldřicha Kořínka",
+      "original": "Oldřichem Kořínkem",
       "occurrences": 1
     },
     {
@@ -35,8 +29,26 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Oldřicha Kořínka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Jitka Doležalová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Jitku Doležalováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Jitkě Doležalové",
       "occurrences": 1
     },
     {
@@ -59,12 +71,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Jitkě Doležalové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Natálie Šimůnková",
       "occurrences": 1
@@ -78,13 +84,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Natálii Šimůnkové",
+      "original": "Natálii Šimůnkováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Natálie Šimůnkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Natálii Šimůnkové",
       "occurrences": 1
     },
     {
@@ -101,6 +113,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Darju Holubováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Renata Poláková",
       "occurrences": 1
@@ -113,14 +131,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_6]]",
-      "original": "Dobroslav Hrdina",
+      "label": "[[PERSON_5]]",
+      "original": "Renatu Polákováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Dobroslava Hrdiny",
+      "original": "Dobroslav Hrdina",
       "occurrences": 1
     },
     {
@@ -131,57 +149,15 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Natálie Šimůnkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Natálii Šimůnkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Jitka Doležalováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Jitku Doležalováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Darja Holubováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Darju Holubováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Renata Polákováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Renatu Polákováovou",
+      "label": "[[PERSON_6]]",
+      "original": "Dobroslava Hrdiny",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Náměstí 1, 500 02 Hradec Králové",
-      "occurrences": 1
+      "original": "Náměstí 1, 500 02, Hradec Králové",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -192,55 +168,25 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Komenského 168/18, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Komenského 168/18, 702 00, Ostrava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Palackého 13/12, 301 00 Plzeň",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "Žižkova 156, 460 01 Liberec",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "Na Kopci 230/25, 100 00 Praha 10",
-      "occurrences": 1
+      "original": "Žižkova 156, 460 01 Liberec",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Žižkova 53, 460 01 Liberec",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "Husova 69/13, 390 02 Tábor a Komenského",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 01/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "V Ostravě",
+      "original": "Na Kopci 230/25, 100 00 Praha 10",
       "occurrences": 1
     },
     {
@@ -403,12 +349,6 @@
       "type": "PHONE",
       "label": "[[PHONE_6]]",
       "original": "+420776981484",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "182279622",
       "occurrences": 1
     },
     {

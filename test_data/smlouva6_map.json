@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:42.189583",
+  "generated_at": "2026-03-13T09:56:18.070897",
   "source_file": "smlouva6.docx",
   "entities": [
     {
@@ -30,7 +30,7 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "U Křižovatky 25, 779 00 Olomouc",
+      "original": "Křižovatky 25, 779 00 Olomouc",
       "occurrences": 1
     },
     {
@@ -55,12 +55,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
       "original": "Tylova 58, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "V Olomouci",
       "occurrences": 1
     },
     {

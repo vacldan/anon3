@@ -7,39 +7,32 @@ OSOBY
 [[PERSON_2]]: Darja Křečková
   - Darjo Křečková
   - Darjou Křečkovou
+  - Darju Křečkováovou
   - Darjy Křečkové
   - Darjě Křečkové
-[[PERSON_3]]: Darja Křečkováová
-  - Darju Křečkováovou
-[[PERSON_4]]: Krista Malíková
+[[PERSON_3]]: Krista Malíková
   - Kristou Malíkovou
+  - Kristu Malíkováovou
   - Kristy Malíkové
   - Kristě Malíkové
-[[PERSON_5]]: Norbert Vaněk
+[[PERSON_4]]: Norbert Vaněk
   - Norberta Vaněka
-[[PERSON_6]]: Pavla Kuchtová
-[[PERSON_7]]: Michal Roubal
+[[PERSON_5]]: Pavla Kuchtová
+[[PERSON_6]]: Michal Roubal
   - Michala Roubala
-[[PERSON_8]]: Hynek Krejčího
+[[PERSON_7]]: Hynek Krejčího
   - Hynka Krejčího
-[[PERSON_9]]: Hynek Krejčímu
+[[PERSON_8]]: Hynek Krejčímu
   - Hynkovi Krejčímu
-[[PERSON_10]]: Krista Malíkováová
-  - Kristu Malíkováovou
-[[PERSON_12]]: Pavel Kuchtováová
-  - Pavlu Kuchtováovou
 
 ADDRESS
-[[ADDRESS_1]]: Právnická 12, 110 00 Praha 1
+[[ADDRESS_1]]: Právnická 12, Praha 1, 110 00
 [[ADDRESS_2]]: Masarykova 106/20, 500 02 Hradec Králové
-[[ADDRESS_3]]: Národní 233/25, 110 00 Praha 1
-[[ADDRESS_4]]: Dvořákova 104, 370 01 České Budějovice
-[[ADDRESS_5]]: Dlouhá 130, 602 00 Brno
-[[ADDRESS_6]]: Bezručova 86/17, 746 01 Opava
-[[ADDRESS_7]]: Nádražní 142, 702 00 Ostrava
-[[ADDRESS_8]]: Masarykova 106/20, 500 02 Hradec Králové a Národní
-[[ADDRESS_9]]: Praha 1
-[[ADDRESS_10]]: platnost 12/27, CVC
+[[ADDRESS_3]]: Národní 233/25, Praha 1, 110 00
+[[ADDRESS_6]]: Dvořákova 104, 370 01 České Budějovice
+[[ADDRESS_7]]: Dlouhá 130, 602 00 Brno
+[[ADDRESS_8]]: Bezručova 86/17, 746 01 Opava
+[[ADDRESS_9]]: Nádražní 142, 702 00 Ostrava
 
 BANK
 [[BANK_1]]: 7472581164/0800
@@ -108,5 +101,4 @@ PHONE
 [[PHONE_5]]: 772 814 950
 [[PHONE_6]]: +420 664 529 195
 [[PHONE_7]]: +420762761437
-[[PHONE_8]]: 898255885
 

@@ -1,18 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:05.091384",
+  "generated_at": "2026-03-13T09:56:48.804200",
   "source_file": "smlouva_gdpr_test_144.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Karel Vlach",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Karlovi Vlachovi",
       "occurrences": 1
     },
     {
@@ -30,6 +24,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Karlovi Vlachovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Karlem Vlachem",
       "occurrences": 1
     },
@@ -42,25 +42,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Veroniko Dvořáková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Veronikě Dvořákové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Veroniky Dvořákové",
+      "original": "Veronikou Dvořákovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Veronikou Dvořákovou",
+      "original": "Veroniko Dvořáková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Veroniky Dvořákové",
       "occurrences": 1
     },
     {
@@ -72,25 +72,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Monikou Novákovou",
+      "original": "Monikě Novákové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Monikě Novákové",
+      "original": "Monikou Novákovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Michal Kříž",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Michalovi Křížovi",
       "occurrences": 1
     },
     {
@@ -112,46 +106,22 @@
       "occurrences": 1
     },
     {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Michalovi Křížovi",
+      "occurrences": 1
+    },
+    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Náměstí 1, 500 02 Hradec Králové",
-      "occurrences": 1
+      "original": "Náměstí 1, 500 02, Hradec Králové",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Na Návsi 137/22, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Na Návsi 78/10, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Na Návsi 78/10, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Na Návsi 78/10, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Na Návsi 78/10, 789 01 Zábřeh pro Veronikě Dvořákové a",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Na Návsi 137/22, 789 01 Zábřeh pro Karlovi Vlachovi",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ICO",

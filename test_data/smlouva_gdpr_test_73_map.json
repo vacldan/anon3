@@ -1,18 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:30.870467",
+  "generated_at": "2026-03-13T09:57:17.287311",
   "source_file": "smlouva_gdpr_test_73.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Hugo Hájek",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Hugoa Hájka",
       "occurrences": 1
     },
     {
@@ -30,6 +24,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Hugoa Hájka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Hugoovi Hájkovi",
       "occurrences": 1
     },
@@ -42,25 +42,31 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Janě Pospíšilové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Jany Pospíšilové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Janou Pospíšilovou",
+      "original": "Janě Pospíšilové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Jano Pospíšilová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Janu Pospíšilováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Janou Pospíšilovou",
       "occurrences": 1
     },
     {
@@ -72,7 +78,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Adélě Řípové",
+      "original": "Adélou Řípovou",
       "occurrences": 1
     },
     {
@@ -84,7 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Adélou Řípovou",
+      "original": "Adélu Řípováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Adélě Řípové",
       "occurrences": 1
     },
     {
@@ -113,14 +125,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_6]]",
-      "original": "Erik Růžička",
+      "label": "[[PERSON_5]]",
+      "original": "Moniku Havličkováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Erika Růžičky",
+      "original": "Erik Růžička",
       "occurrences": 1
     },
     {
@@ -131,44 +143,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Adéla Řípováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Adélu Řípováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Jana Pospíšilováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Janu Pospíšilováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Monika Havličkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Moniku Havličkováovou",
+      "label": "[[PERSON_6]]",
+      "original": "Erika Růžičky",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Budínova 67/2, 180 81 Praha 8",
+      "original": "Budínova 67/2, Praha 8, 180 81",
       "occurrences": 1
     },
     {
@@ -180,43 +162,31 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Wolkerova 121/23, 796 01 Prostějov",
-      "occurrences": 1
+      "original": "Wolkerova 121/23, 796 01, Prostějov",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Žižkova 235/39, 460 01 Liberec",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Havlíčkova 211/3, 586 01 Jihlava",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Technologická 63, 160 00 Praha 6",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Masarykova 65/37, 500 02 Hradec Králové",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Purkyňova 82, 612 00 Brno a Wolkerova",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "platnost 11/29, CVC",
+      "original": "Masarykova 65/37, 500 02 Hradec Králové",
       "occurrences": 1
     },
     {

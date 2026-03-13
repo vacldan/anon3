@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:07.534962",
+  "generated_at": "2026-03-13T09:56:52.837640",
   "source_file": "smlouva_gdpr_test_19.docx",
   "entities": [
     {
@@ -12,25 +12,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Veroniko Dvořáková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Veronikě Dvořákové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Veroniky Dvořákové",
+      "original": "Veronikou Dvořákovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Veronikou Dvořákovou",
+      "original": "Veroniko Dvořáková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Veroniky Dvořákové",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jaroslavovi Vaněkovi",
+      "original": "Jaroslavem Vaněkem",
       "occurrences": 1
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jaroslavem Vaněkem",
+      "original": "Jaroslavovi Vaněkovi",
       "occurrences": 1
     },
     {
@@ -115,18 +115,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Vinohradská 100/22, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "platnost 08/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemně na adresu Vinohradská 100/22, 130 00 Praha 3",
       "occurrences": 1
     },
     {

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:48:51.151011",
+  "generated_at": "2026-03-13T09:54:56.104766",
   "source_file": "smlouva12.docx",
   "entities": [
     {
@@ -132,427 +132,397 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_17]]",
-      "original": " Malá",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_18]]",
       "original": "Lenka Kolářová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_18]]",
+      "label": "[[PERSON_17]]",
       "original": "Kolářová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_19]]",
+      "label": "[[PERSON_18]]",
       "original": "Pavel Kolář",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_20]]",
+      "label": "[[PERSON_19]]",
       "original": "Jana Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_21]]",
+      "label": "[[PERSON_20]]",
       "original": "Tomáš Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_21]]",
+      "label": "[[PERSON_20]]",
       "original": "Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_22]]",
+      "label": "[[PERSON_21]]",
       "original": "Martin Vrána",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_22]]",
+      "label": "[[PERSON_21]]",
+      "original": "Vráno",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_21]]",
       "original": "Martina Vrány",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_22]]",
+      "label": "[[PERSON_21]]",
       "original": "Vránovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
-      "original": "Vráno",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_23]]",
       "original": "Petr Havl",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_23]]",
+      "label": "[[PERSON_22]]",
       "original": "Petrem Havlem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_24]]",
+      "label": "[[PERSON_23]]",
       "original": "Petr Havel",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_25]]",
+      "label": "[[PERSON_24]]",
       "original": "Kateřina Malá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_26]]",
+      "label": "[[PERSON_24]]",
+      "original": "Malá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_25]]",
       "original": "Jana Nováková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_28]]",
+      "label": "[[PERSON_27]]",
       "original": "David Černý",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_29]]",
+      "label": "[[PERSON_28]]",
       "original": "Martin Hora",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_30]]",
+      "label": "[[PERSON_29]]",
       "original": "Eva Vlková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_31]]",
+      "label": "[[PERSON_30]]",
       "original": "Tomáš Novotný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_32]]",
+      "label": "[[PERSON_31]]",
       "original": "Pavel Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_33]]",
+      "label": "[[PERSON_32]]",
       "original": "Petra Horáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_33]]",
+      "label": "[[PERSON_32]]",
       "original": "Horáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_34]]",
+      "label": "[[PERSON_33]]",
       "original": "David Kos",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_35]]",
+      "label": "[[PERSON_34]]",
       "original": "Jana Vlková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_35]]",
+      "label": "[[PERSON_34]]",
       "original": "Janě Vlkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_36]]",
+      "label": "[[PERSON_35]]",
       "original": "Martin Liška",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_36]]",
+      "label": "[[PERSON_35]]",
       "original": "Martinu Liškovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_37]]",
+      "label": "[[PERSON_36]]",
       "original": "Tomáš Jelínek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_37]]",
+      "label": "[[PERSON_36]]",
       "original": "Tomáše Jelínka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_38]]",
+      "label": "[[PERSON_37]]",
       "original": "Petr Nový",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_38]]",
+      "label": "[[PERSON_37]]",
+      "original": "Petra Nového",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_37]]",
       "original": "Nové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_38]]",
-      "original": "Petra Nového",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_39]]",
       "original": "Lukáš Vrána",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_39]]",
+      "label": "[[PERSON_38]]",
       "original": "Lukášem Vránou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_40]]",
+      "label": "[[PERSON_39]]",
       "original": "Klára Sokolová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_42]]",
+      "label": "[[PERSON_41]]",
       "original": "Václav Holub",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_42]]",
+      "label": "[[PERSON_41]]",
+      "original": "Holuba",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_41]]",
       "original": "Holub",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_42]]",
-      "original": "Holuba",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_43]]",
       "original": "Markéta Holubová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_44]]",
+      "label": "[[PERSON_43]]",
       "original": "Karel Havran",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_44]]",
+      "label": "[[PERSON_43]]",
       "original": "Havran",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_44]]",
+      "label": "[[PERSON_43]]",
       "original": "Havranem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_45]]",
+      "label": "[[PERSON_44]]",
       "original": "Jana Vránová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_45]]",
+      "label": "[[PERSON_44]]",
+      "original": "Janou Vránovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_44]]",
       "original": "Vránová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_45]]",
-      "original": "Janou Vránovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_46]]",
       "original": "Petr Soukupa",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_46]]",
+      "label": "[[PERSON_45]]",
       "original": "Petra Soukupa",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_47]]",
+      "label": "[[PERSON_46]]",
       "original": "Tomáš Jeřábek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_48]]",
+      "label": "[[PERSON_47]]",
       "original": "Martin Vrba",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_49]]",
+      "label": "[[PERSON_48]]",
       "original": "Eva Holanová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_50]]",
+      "label": "[[PERSON_49]]",
       "original": "Petr Novotný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_51]]",
+      "label": "[[PERSON_50]]",
       "original": "Lukáš Vlček",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_52]]",
+      "label": "[[PERSON_50]]",
+      "original": "Vlčkova",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_51]]",
       "original": "Jan Horák",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "v Praze",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "U Nemocnice 2, 128 08 Praha 2",
+      "original": "Nemocnice 2, 128 08 Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Rybná 8, 110 00 Praha 1",
-      "occurrences": 1
+      "original": "Rybná 25, Praha 1",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "Rybná 25, Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
       "original": "Sokolská 45, 120 00 Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "Praha",
-      "occurrences": 1
+      "original": "Nová Kolářská 88, 615 00 Brno",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Kolářská 12, 602 00 Brno",
-      "occurrences": 1
+      "original": "Komenského 58, Brno",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Nová Kolářská 88, 615 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Komenského 58, Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
       "original": "Václavské náměstí 47, 110 00 Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
+      "label": "[[ADDRESS_9]]",
       "original": "Vránova 25, 130 00 Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_12]]",
+      "label": "[[ADDRESS_10]]",
       "original": "Ovocný trh 8, 110 00 Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_13]]",
+      "label": "[[ADDRESS_11]]",
       "original": "Průmyslová 158, 708 00 Ostrava",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_14]]",
+      "label": "[[ADDRESS_12]]",
       "original": "Holubova 28, 702 00 Ostrava",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_15]]",
-      "original": "Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_16]]",
-      "original": "Praha 5",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_17]]",
-      "original": "Brno",
+      "label": "[[ADDRESS_13]]",
+      "original": "150 00, Praha 5",
       "occurrences": 1
     },
     {
@@ -805,18 +775,12 @@
       "type": "PHONE",
       "label": "[[PHONE_7]]",
       "original": "+420 724 365 874",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_8]]",
       "original": "603 741 258",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_9]]",
-      "original": "724 896 325",
       "occurrences": 1
     },
     {
@@ -835,18 +799,12 @@
       "type": "PHONE",
       "label": "[[PHONE_12]]",
       "original": "+420 724 896 325",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_13]]",
       "original": "606 874 521",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_14]]",
-      "original": "724 365 874",
       "occurrences": 1
     },
     {

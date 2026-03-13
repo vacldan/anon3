@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:46.886894",
+  "generated_at": "2026-03-13T09:56:23.004294",
   "source_file": "smlouva_final_09.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Vojtěchem Zemanem",
+      "original": "Vojtěcha Zemana",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Vojtěcha Zemana",
+      "original": "Vojtěchem Zemanem",
       "occurrences": 1
     },
     {
@@ -52,27 +52,21 @@
       "occurrences": 1
     },
     {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "CT 2026",
+      "occurrences": 1
+    },
+    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "listopadu 1790/5, 702 00 Ostrava - Moravská Ostrava",
+      "original": "17. listopadu 1790/5, 702 00 Ostrava - Moravská Ostrava",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Čelakovského sady 193/10, 120 00 Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "V Ostravě",
+      "original": "Čelakovského sady 193/10, Praha 2 - Nové, 120 00, Město",
       "occurrences": 1
     },
     {

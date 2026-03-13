@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:46.726171",
+  "generated_at": "2026-03-13T09:56:22.754453",
   "source_file": "smlouva_final_08.docx",
   "entities": [
     {
@@ -30,12 +30,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Nguyen Duc",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Nguyen Duca",
       "occurrences": 1
     },
@@ -46,21 +40,21 @@
       "occurrences": 1
     },
     {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Nguyen Duc",
+      "occurrences": 1
+    },
+    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Revoluční 15, 110 00 Praha 1",
-      "occurrences": 1
+      "original": "Revoluční 15, Praha 1 - Staré, 110 00, Město",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Palackého třída 195/24, 779 00 Olomouc - Nová Ulice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "V Praze",
       "occurrences": 1
     },
     {

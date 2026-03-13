@@ -5,7 +5,6 @@ OSOBY
   - Janou Procházkovou
   - Jany Procházkové
   - Janě Procházkové
-  - Procházkové
 [[PERSON_2]]: Michal Král
   - Michala Krála
   - Michale Krále
@@ -21,13 +20,9 @@ OSOBY
   - Alžbětě Novákové
 
 ADDRESS
-[[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_1]]: Náměstí 1, 500 02, Hradec Králové
 [[ADDRESS_2]]: Sadová 179/14, 370 01 České Budějovice
 [[ADDRESS_3]]: Dlouhá 35/18, 602 00 Brno
-[[ADDRESS_4]]: případně písemně na adresu Dlouhá 35/18, 602 00 Brno
-[[ADDRESS_5]]: písemné doručení na adresu Dlouhá 35/18, 602 00 Brno
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Dlouhá 35/18, 602 00 Brno pro Michalovi Královi a
-[[ADDRESS_7]]: Sadová 179/14, 370 01 České Budějovice pro Janě
 
 BANK
 [[BANK_1]]: 780589485/0300

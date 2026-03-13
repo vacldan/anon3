@@ -21,13 +21,9 @@ OSOBY
   - Davidovi Královi
 
 ADDRESS
-[[ADDRESS_1]]: Nemocniční 1, 400 01 Ústí nad Labem
+[[ADDRESS_1]]: Nemocniční 1, 400 01, Ústí nad Labem
 [[ADDRESS_2]]: U Parku 90/7, 779 00 Olomouc
 [[ADDRESS_3]]: Na Kopci 147/29, 100 00 Praha 10
-[[ADDRESS_4]]: případně písemně na adresu Na Kopci 147/29, 100 00 Praha 10
-[[ADDRESS_5]]: písemné doručení na adresu Na Kopci 147/29, 100 00 Praha 10
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Kopci 147/29, 100 00 Praha 10
-[[ADDRESS_7]]: pro Matějovi Černýovi a U Parku 90/7, 779 00 Olomouc pro Janovi Vaněkovi
 
 BANK
 [[BANK_1]]: 948923301/0100

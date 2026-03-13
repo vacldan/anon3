@@ -1,7 +1,7 @@
 OSOBY
 -----
 [[PERSON_1]]: Lukáš Mareček
-  - Marečka
+  - Lukáše Marečka
 [[PERSON_2]]: Petra Novotná
   - Petry Novotné
 [[PERSON_3]]: Jakub Doležal
@@ -19,8 +19,6 @@ ADDRESS
 [[ADDRESS_4]]: Horní cesta 17, 674 01 Třebíč
 [[ADDRESS_5]]: Pod Skalkou 3, 101 00 Praha
 [[ADDRESS_6]]: Družstevní 66, 787 01 Šumperk
-[[ADDRESS_7]]: listopadu 2025, a to na účet pana Lukáše
-[[ADDRESS_8]]: V Brně
 
 BANK
 [[BANK_1]]: 555123456/0300
@@ -33,8 +31,9 @@ DATE
 [[DATE_5]]: 22. 11. 1989
 [[DATE_6]]: 12. 12. 1993
 [[DATE_7]]: 31. 7. 2025
-[[DATE_8]]: 30. 7. 2025
-[[DATE_9]]: 31. července 2025
+[[DATE_8]]: 30. listopadu 2025
+[[DATE_9]]: 30. 7. 2025
+[[DATE_10]]: 31. července 2025
 
 LICENSE_PLATE
 [[LICENSE_PLATE_1]]: 2AB 1234

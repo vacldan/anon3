@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:34.485518",
+  "generated_at": "2026-03-13T09:57:20.853835",
   "source_file": "smlouva_gdpr_test_78.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alexem Pospíšilem",
+      "original": "Alexe Pospíšile",
       "occurrences": 1
     },
     {
@@ -24,13 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alexa Pospíšila",
+      "original": "Alexem Pospíšilem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alexe Pospíšile",
+      "original": "Alexa Pospíšila",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Helenu Černou",
+      "original": "Heleno Černá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Heleno Černá",
+      "original": "Helenu Černou",
       "occurrences": 1
     },
     {
@@ -78,6 +78,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
+      "original": "Miladu Pazderováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Milady Pazderové",
       "occurrences": 1
     },
@@ -85,18 +91,6 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Pavel Kuchta",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Pavla Kuchtu",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Pavlovi Kuchtovi",
       "occurrences": 1
     },
     {
@@ -113,6 +107,18 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Pavla Kuchtu",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Pavlovi Kuchtovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Ema Vaňková",
       "occurrences": 1
@@ -121,6 +127,12 @@
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Emy Vaňkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Emu Vaňkováovou",
       "occurrences": 1
     },
     {
@@ -136,33 +148,9 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Ema Vaňkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Emu Vaňkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Milada Pazderováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Miladu Pazderováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Sokolská 88, 120 00 Praha 2",
+      "original": "Sokolská 88, Praha 2, 120 00",
       "occurrences": 1
     },
     {
@@ -173,50 +161,26 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Bezručova 18/29, 746 01 Opava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "Bezručova 120/18, 746 01 Opava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
+      "original": "Bezručova 120/18, 746 01 Opava",
+      "occurrences": 4
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_6]]",
       "original": "Havlíčkova 148, 586 01 Jihlava",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Jihlavská 159, 625 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Na Návsi 119/33, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Nádražní 4/22, 702 00 Ostrava a Bezručova",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "platnost 01/30, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "V Brně",
+      "original": "Na Návsi 119/33, 789 01 Zábřeh",
       "occurrences": 1
     },
     {
@@ -367,12 +331,6 @@
       "type": "PHONE",
       "label": "[[PHONE_6]]",
       "original": "+420 679 918 795",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "801381179",
       "occurrences": 1
     },
     {

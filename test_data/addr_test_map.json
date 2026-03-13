@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-03-13T08:23:53.539582",
+  "source_file": "addr_test.docx",
+  "entities": [
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "140 28, Vyskočilova 1442/1b, Praha 4, Česká republika",
+      "occurrences": 2
+    }
+  ]
+}

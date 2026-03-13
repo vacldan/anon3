@@ -3,31 +3,27 @@ OSOBY
 [[PERSON_1]]: Tomáš Svoboda
   - Tomáše Svobody
   - Tomášem Svobodou
+  - Tomáši Svobodo
   - Tomášovi Svobodovi
 [[PERSON_2]]: Erik Černý
   - Erika Černýa
   - Erikem Černýem
   - Erikovi Černýovi
-[[PERSON_3]]: Tomáš Svobodo
-  - Tomáši Svobodo
-[[PERSON_4]]: Erik Černýe
+[[PERSON_3]]: Erik Černýe
   - Erike Černýe
-[[PERSON_5]]: Gabriela Křížová
+[[PERSON_4]]: Gabriela Křížová
   - Gabrielou Křížovou
   - Gabrielě Křížové
-[[PERSON_6]]: Jaroslav Novák
+[[PERSON_5]]: Jaroslav Novák
   - Jaroslava Nováka
   - Jaroslave Nováke
   - Jaroslavem Novákem
   - Jaroslavovi Novákovi
 
 ADDRESS
-[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_1]]: Na Hradbách 15, 702 00, Ostrava
 [[ADDRESS_2]]: Na Kopci 43/11, 100 00 Praha 10
 [[ADDRESS_3]]: Na Návsi 188/27, 789 01 Zábřeh
-[[ADDRESS_4]]: případně písemně na adresu Na Návsi 188/27, 789 01 Zábřeh
-[[ADDRESS_5]]: písemné doručení na adresu Na Návsi 188/27, 789 01 Zábřeh
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Návsi 188/27, 789 01 Zábřeh pro Erikovi Černýovi a
 
 BANK
 [[BANK_1]]: 917148487/0100

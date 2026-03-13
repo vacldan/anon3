@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:19.650817",
+  "generated_at": "2026-03-13T09:57:07.137175",
   "source_file": "smlouva_gdpr_test_58.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Romanem Křečkem",
+      "original": "Romana Křečka",
       "occurrences": 1
     },
     {
@@ -30,7 +30,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Romana Křečka",
+      "original": "Romanem Křečkem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Ell Roubalová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Ello Roubalová",
       "occurrences": 1
     },
     {
@@ -41,8 +53,44 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Elly Roubalové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Ellu Roubalováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Ellě Roubalové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Ello Roubal",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Ellou Roubalovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Markéta Pazderová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Markétu Pazderováovou",
       "occurrences": 1
     },
     {
@@ -66,13 +114,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Bruno Tesař",
+      "original": "Bruno Tesařa",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Brunoa Tesařa",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Bruno Tesař",
       "occurrences": 1
     },
     {
@@ -89,14 +143,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Marek Šembera",
+      "label": "[[PERSON_6]]",
+      "original": "Lucii Jirsováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Marka Šemberu",
+      "original": "Marek Šembera",
       "occurrences": 1
     },
     {
@@ -107,63 +161,27 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Markéta Pazderováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Markétu Pazderováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Ella Roubalováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Ellu Roubalováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_11]]",
-      "original": "Lucie Jirsováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_11]]",
-      "original": "Lucii Jirsováovou",
+      "label": "[[PERSON_7]]",
+      "original": "Marka Šemberu",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Praha 9",
+      "original": "Bryksova 763/46, Praha 14, 198 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Bryksova 763/46, 198 00 Praha 14",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
       "original": "Riegrova 22/23, 779 00 Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "Palackého 168/15, 301 00 Plzeň",
-      "occurrences": 1
+      "label": "[[ADDRESS_3]]",
+      "original": "Palackého 168/15, 301 00, Plzeň",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -187,42 +205,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
       "original": "Komenského 93/27, 702 00 Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Riegrova 22/23, 779 00 Olomouc a Palackého",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "Plzeň",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "platnost 03/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_12]]",
-      "original": "Exekutorský úřad Praha 9, IČO",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_13]]",
-      "original": "Správcem osobních údajů je Exekutorský úřad Praha 9, IČO",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_14]]",
-      "original": "V Plzni",
       "occurrences": 1
     },
     {
@@ -373,12 +355,6 @@
       "type": "PHONE",
       "label": "[[PHONE_6]]",
       "original": "+420 795 215 776",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "289114308",
       "occurrences": 1
     },
     {

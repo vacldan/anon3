@@ -21,8 +21,6 @@ ADDRESS
 [[ADDRESS_1]]: Právnická 12, 110 00 Praha 1
 [[ADDRESS_2]]: Jabloňová 160/24, 400 01 Ústí nad Labem
 [[ADDRESS_3]]: Technologická 98/4, 160 00 Praha 6
-[[ADDRESS_4]]: platnost 08/28, CVC
-[[ADDRESS_5]]: písemně na adresu Technologická 98/4, 160 00 Praha 6
 
 BANK
 [[BANK_1]]: 809842045/0100

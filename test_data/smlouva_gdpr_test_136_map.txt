@@ -21,13 +21,9 @@ OSOBY
   - Michale Černýe
 
 ADDRESS
-[[ADDRESS_1]]: Kampus 9, 625 00 Brno
+[[ADDRESS_1]]: Kampus 9, 625 00, Brno
 [[ADDRESS_2]]: Vinohradská 17/2, 130 00 Praha 3
 [[ADDRESS_3]]: Na Kopci 160/3, 100 00 Praha 10
-[[ADDRESS_4]]: případně písemně na adresu Na Kopci 160/3, 100 00 Praha 10
-[[ADDRESS_5]]: písemné doručení na adresu Na Kopci 160/3, 100 00 Praha 10
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Kopci 160/3, 100 00 Praha 10
-[[ADDRESS_7]]: pro Heleně Turkové a Vinohradská 17/2, 130 00 Praha 3
 
 BANK
 [[BANK_1]]: 314213358/5500

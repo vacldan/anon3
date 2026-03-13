@@ -33,7 +33,7 @@ OSOBY
 [[PERSON_11]]: Hana Svatošová
   - Hany Svatošové
   - Haně Svatošové
-[[PERSON_12]]: Vlastě Doležalová
+[[PERSON_12]]: Vlastě Doležal
   - Vlastě Doležalové
 [[PERSON_13]]: Vlasta Doležalová
   - Vlasty Doležalové
@@ -70,10 +70,11 @@ OSOBY
 [[PERSON_24]]: Dagmara Štolbová
   - Dagmary Štolbové
   - Dagmaře Štolbové
-[[PERSON_25]]: Lenoro Pechová
+[[PERSON_25]]: Lenoro Peceh
   - Lenorou Pechovou
-[[PERSON_26]]: Lenore Pechová
+[[PERSON_26]]: Lenore Peceh
   - Lenore Pechové
+[[PERSON_27]]: Lenora Pechová
 [[PERSON_28]]: Sára Čechmanová
   - Sáry Čechmanové
   - Sáře Čechmanové
@@ -172,7 +173,7 @@ OSOBY
 [[PERSON_59]]: Radim Pazdera
   - Radima Pazdery
   - Radimu Pazderovi
-[[PERSON_60]]: Lubomír Šimůnk
+[[PERSON_60]]: Lubomír Šimůnka
   - Lubomír Šimůnek
   - Lubomíra Šimůnka
   - Lubomírovi Šimůnkovi
@@ -185,12 +186,12 @@ OSOBY
 [[PERSON_63]]: Jaromír Řezáč
   - Jaromíra Řezáče
   - Jaromírovi Řezáčovi
-[[PERSON_64]]: Čeněk Blažeková
-  - Čeňka Blažka
-  - Čeňkovi Blažkovi
-[[PERSON_66]]: Olda Skála
+[[PERSON_64]]: Čeněk Blažek
+[[PERSON_66]]: Olda Skálaová
   - Oldovi Skálovi
   - Oldy Skály
+[[PERSON_67]]: Old Skála
+  - Olda Skála
 [[PERSON_68]]: Leoš Kovařík
   - Leoše Kovaříka
   - Leošovi Kovaříkovi
@@ -221,8 +222,10 @@ OSOBY
   - Olega Nováka
   - Olegovi Novákovi
 [[PERSON_77]]: Radek Veverka
-  - Radka Veverky
   - Radkovi Veverkovi
+[[PERSON_78]]: Radka Veverkaová
+  - Radka Veverky
+[[PERSON_79]]: Radko Veverka
 [[PERSON_80]]: Robert Krupička
   - Roberta Krupičky
   - Robertovi Krupičkovi
@@ -264,8 +267,9 @@ OSOBY
   - Marka Zástěry
   - Markovi Zástěrovi
 [[PERSON_94]]: Janek Švarný
-  - Janka Švarného
   - Jankovi Švarnému
+[[PERSON_95]]: Janka Švarná
+  - Janka Švarného
 [[PERSON_96]]: Bohdan Žídek
   - Bohdana Žídka
   - Bohdanovi Žídkovi

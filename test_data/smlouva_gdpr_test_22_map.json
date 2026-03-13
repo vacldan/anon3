@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:07.978761",
+  "generated_at": "2026-03-13T09:56:53.703326",
   "source_file": "smlouva_gdpr_test_22.docx",
   "entities": [
     {
@@ -12,25 +12,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Pavlem Hrubešem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Pavla Hrubeša",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Pavle Hrubeše",
+      "original": "Pavlovi Hrubešovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Pavlovi Hrubešovi",
+      "original": "Pavlem Hrubešem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Pavle Hrubeše",
       "occurrences": 1
     },
     {
@@ -42,13 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavla Svobody",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Pavlem Svobodou",
+      "original": "Pavle Svobodo",
       "occurrences": 1
     },
     {
@@ -60,7 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavle Svobodo",
+      "original": "Pavlem Svobodou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Pavla Svobody",
       "occurrences": 1
     },
     {
@@ -78,13 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Romanovi Benešovi",
+      "original": "Romana Beneša",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Romana Beneša",
+      "original": "Romanovi Benešovi",
       "occurrences": 1
     },
     {
@@ -109,18 +109,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Technologická 100/15, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "platnost 08/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemně na adresu Technologická 100/15, 160 00 Praha 6",
       "occurrences": 1
     },
     {

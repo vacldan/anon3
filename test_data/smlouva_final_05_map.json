@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:45.863472",
+  "generated_at": "2026-03-13T09:56:21.847084",
   "source_file": "smlouva_final_05.docx",
   "entities": [
     {
@@ -42,32 +42,14 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Sokolovská 214/25, 360 01 Karlovy Vary",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Kolínská 21/13, 130 00 Praha 3",
-      "occurrences": 1
+      "original": "Sokolovská 214/25, 360 01, Karlovy Vary",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "Kolínská 235/35, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "kabinet 205, tel",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "V Plzni",
-      "occurrences": 1
+      "original": "Kolínská 235/35, Praha 3 - Vinohrady, 130 00",
+      "occurrences": 2
     },
     {
       "type": "ICO",

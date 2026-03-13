@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:04.901075",
+  "generated_at": "2026-03-13T09:55:44.838066",
   "source_file": "smlouva20.docx",
   "entities": [
     {
@@ -48,13 +48,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Petra Dohnala",
+      "original": "Petru Dohnalovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Petru Dohnalovi",
+      "original": "Petra Dohnala",
       "occurrences": 1
     },
     {
@@ -168,13 +168,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_13]]",
-      "original": "Simony Trčkové",
+      "original": "Simoně Trčkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_13]]",
-      "original": "Simoně Trčkové",
+      "original": "Simony Trčkové",
       "occurrences": 1
     },
     {
@@ -234,13 +234,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_18]]",
-      "original": "Viktoru Havlovi",
+      "original": "Viktora Havla",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_18]]",
-      "original": "Viktora Havla",
+      "original": "Viktoru Havlovi",
       "occurrences": 1
     },
     {
@@ -257,6 +257,18 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_20]]",
+      "original": "Radka Hofmanaová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_20]]",
+      "original": "Radka Hofmana",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_21]]",
       "original": "Radek Hofmana",
       "occurrences": 1
@@ -265,12 +277,6 @@
       "type": "PERSON",
       "label": "[[PERSON_21]]",
       "original": "Radek Hofman",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_21]]",
-      "original": "Radka Hofmana",
       "occurrences": 1
     },
     {
@@ -294,13 +300,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_23]]",
-      "original": "Vraný",
+      "original": "Igoru Vranému",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_23]]",
-      "original": "Igoru Vranému",
+      "original": "Vraný",
       "occurrences": 1
     },
     {
@@ -312,13 +318,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_24]]",
-      "original": "Monice Hrabovské",
+      "original": "Monikou Hrabovskou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_24]]",
-      "original": "Monikou Hrabovskou",
+      "original": "Monice Hrabovské",
       "occurrences": 1
     },
     {
@@ -330,13 +336,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_25]]",
-      "original": "Romanu Turkovi",
+      "original": "Romanem Turkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_25]]",
-      "original": "Romanem Turkovi",
+      "original": "Romanu Turkovi",
       "occurrences": 1
     },
     {
@@ -360,13 +366,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_27]]",
-      "original": "Filipem Švecem",
+      "original": "Filipa Švece",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_27]]",
-      "original": "Filipa Švece",
+      "original": "Filipem Švecem",
       "occurrences": 1
     },
     {
@@ -462,6 +468,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_34]]",
+      "original": "Nikol Šťastný",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_34]]",
       "original": "Nikol Šťastná",
       "occurrences": 1
     },
@@ -491,14 +503,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_37]]",
-      "original": "Renato Slámová",
+      "label": "[[PERSON_36]]",
+      "original": "Miroslav Vaněk",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_37]]",
-      "original": "Renata Slámová",
+      "original": "Renato Slám",
       "occurrences": 1
     },
     {
@@ -509,7 +521,13 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_37]]",
+      "label": "[[PERSON_38]]",
+      "original": "Renata Slámová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_38]]",
       "original": "Renaty Slámové",
       "occurrences": 1
     },
@@ -540,13 +558,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_40]]",
-      "original": "Markétě Benešové",
+      "original": "Markéty Benešové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_40]]",
-      "original": "Markéty Benešové",
+      "original": "Markétě Benešové",
       "occurrences": 1
     },
     {
@@ -558,13 +576,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_41]]",
-      "original": "Erika Roubala",
+      "original": "Erikem Roubalem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_41]]",
-      "original": "Erikem Roubalem",
+      "original": "Erika Roubala",
       "occurrences": 1
     },
     {
@@ -588,13 +606,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_43]]",
-      "original": "Aleši Křížovi",
+      "original": "Aleše Kříže",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_43]]",
-      "original": "Aleše Kříže",
+      "original": "Aleši Křížovi",
       "occurrences": 1
     },
     {
@@ -618,37 +636,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_45]]",
-      "original": "Adrianem Kratochvílem",
+      "original": "Adrianovi Kratochvílovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_45]]",
-      "original": "Adrianovi Kratochvílovi",
+      "original": "Adrianem Kratochvílem",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "V Kapslovně 881/11, Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Obvodním soudem pro Prahu 3, sp",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "v Praze",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "v Brně",
+      "original": "Kapslovně 881/11, Praha 3",
       "occurrences": 1
     },
     {
@@ -664,21 +664,15 @@
       "occurrences": 1
     },
     {
-      "type": "IMEI",
-      "label": "[[IMEI_1]]",
-      "original": "356778119992110",
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "EI 35677",
       "occurrences": 1
     },
     {
       "type": "IP",
       "label": "[[IP_1]]",
       "original": "192.168.11.22",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_1]]",
-      "original": "is2025",
       "occurrences": 1
     },
     {

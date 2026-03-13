@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:49:49.308075",
+  "generated_at": "2026-03-13T09:55:30.907988",
   "source_file": "smlouva15.docx",
   "entities": [
     {
@@ -60,288 +60,246 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
-      "original": "Advanced Certification",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_13]]",
       "original": "Pavel Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_14]]",
-      "original": "Jakub ",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_15]]",
+      "label": "[[PERSON_13]]",
       "original": "Jana Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_16]]",
+      "label": "[[PERSON_14]]",
       "original": "Karel Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_17]]",
+      "label": "[[PERSON_15]]",
       "original": "Tomáš Veselý",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_18]]",
+      "label": "[[PERSON_16]]",
       "original": "Alena Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_19]]",
-      "original": "N Františka",
+      "label": "[[PERSON_16]]",
+      "original": "Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_19]]",
-      "original": "Na Františku",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_20]]",
+      "label": "[[PERSON_17]]",
       "original": "Petr Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_22]]",
+      "label": "[[PERSON_19]]",
       "original": "Adam Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_23]]",
+      "label": "[[PERSON_20]]",
       "original": "Lucie Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_24]]",
+      "label": "[[PERSON_21]]",
       "original": "Jana Nová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_25]]",
+      "label": "[[PERSON_22]]",
       "original": "Pavel Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_26]]",
-      "original": "N Bulovec",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_26]]",
-      "original": "Na Bulovce",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_27]]",
+      "label": "[[PERSON_23]]",
       "original": "Hana Nováková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_28]]",
+      "label": "[[PERSON_23]]",
+      "original": "Nováková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_24]]",
       "original": "Jana Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_29]]",
+      "label": "[[PERSON_25]]",
       "original": "Karel Novotný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_30]]",
+      "label": "[[PERSON_26]]",
       "original": "Petr Malý",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_31]]",
+      "label": "[[PERSON_27]]",
       "original": "Robert Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_32]]",
+      "label": "[[PERSON_28]]",
       "original": "Martin Procházka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_33]]",
+      "label": "[[PERSON_29]]",
       "original": "Petra Nováková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_34]]",
+      "label": "[[PERSON_30]]",
       "original": "Hana Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_35]]",
+      "label": "[[PERSON_31]]",
       "original": "Tomáš Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_36]]",
+      "label": "[[PERSON_32]]",
       "original": "Jan Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_37]]",
+      "label": "[[PERSON_33]]",
       "original": "Petr Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_38]]",
+      "label": "[[PERSON_34]]",
       "original": "Martin Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_39]]",
+      "label": "[[PERSON_35]]",
       "original": "Petra Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_40]]",
+      "label": "[[PERSON_36]]",
       "original": "Jan Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_42]]",
-      "original": "Contractual Clauses",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_43]]",
+      "label": "[[PERSON_38]]",
       "original": "Karel Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_44]]",
+      "label": "[[PERSON_39]]",
       "original": "Tomáš Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_45]]",
+      "label": "[[PERSON_40]]",
       "original": "Pavel Svoboda",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_46]]",
+      "label": "[[PERSON_41]]",
       "original": "Martina Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_47]]",
+      "label": "[[PERSON_42]]",
       "original": "Jan Svoboda",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_48]]",
+      "label": "[[PERSON_43]]",
       "original": "Tomáš Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_49]]",
+      "label": "[[PERSON_44]]",
       "original": "Eva Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_51]]",
+      "label": "[[PERSON_46]]",
       "original": "Tomáš Svoboda",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_52]]",
-      "original": "Met London",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_52]]",
-      "original": "Meta London",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_53]]",
+      "label": "[[PERSON_47]]",
       "original": "Jan Horák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_55]]",
+      "label": "[[PERSON_49]]",
       "original": "Martin Novotný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_56]]",
+      "label": "[[PERSON_50]]",
       "original": "Eva Málková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_57]]",
+      "label": "[[PERSON_51]]",
       "original": "Ondřej Bartoš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_58]]",
+      "label": "[[PERSON_52]]",
       "original": "Pavel Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_59]]",
+      "label": "[[PERSON_53]]",
       "original": "Jana Nováková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_60]]",
+      "label": "[[PERSON_54]]",
       "original": "Petra Horáková",
       "occurrences": 1
     },
@@ -792,13 +750,13 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Karlovo náměstí 12/34, 120 00 Praha 2",
-      "occurrences": 1
+      "original": "Karlovo náměstí 12/34, Praha 2, 120 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Slezská 45/9, 130 00 Praha 3",
+      "original": "Slezská 45/9, Praha 3 - Vinohrady, 130 00",
       "occurrences": 1
     },
     {
@@ -810,241 +768,115 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
       "original": "Masarykova 67/12, 602 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "Karlovo náměstí 12/34, Praha 2",
+      "original": "Evropská 178/123, Praha 6 - Dejvice, 160 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Vinohradská 123, Praha 3",
-      "occurrences": 1
+      "original": "Korunní 234/56, 130 00 Praha 3",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "v Praze",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Evropská 178/123, 160 00 Praha 6",
-      "occurrences": 1
+      "original": "Poliklinika Vinohradská 123/45, Praha 3",
+      "occurrences": 5
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_10]]",
-      "original": "Praha",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "Korunní 234/56, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_12]]",
-      "original": "Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_13]]",
-      "original": "Poliklinika Vinohradská 123/45, Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_14]]",
-      "original": "test 2013, po úmrtí matky",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_15]]",
-      "original": "Korunní 89, Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_16]]",
       "original": "Polská 23, Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_17]]",
-      "original": "Mánesova 45/12, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_18]]",
-      "original": "Pražský maraton 2023, čas",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_19]]",
-      "original": "Vinohradská 123/45, Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_20]]",
+      "label": "[[ADDRESS_12]]",
       "original": "Budínova 2, Praha 8",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_21]]",
-      "original": "Na Příkopě 123/45, 110 00 Praha 1",
+      "label": "[[ADDRESS_13]]",
+      "original": "Na Příkopě 123/45, Praha 1, 110 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_22]]",
-      "original": "Vinohradská 234/78, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_23]]",
+      "label": "[[ADDRESS_15]]",
       "original": "Dlouhá 45/12, 110 00 Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_24]]",
-      "original": "Vinohradská 123/89, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_25]]",
-      "original": "Korunní 67, Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_26]]",
+      "label": "[[ADDRESS_18]]",
       "original": "Mánesova 234/12, 120 00 Praha 2",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_27]]",
+      "label": "[[ADDRESS_19]]",
       "original": "Průmyslová 12, 170 00 Praha 7",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_28]]",
-      "original": "Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_29]]",
+      "label": "[[ADDRESS_20]]",
       "original": "Technická 456, 616 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
+      "label": "[[ADDRESS_21]]",
+      "original": "Ostravská 123, 702 00, Ostrava",
+      "occurrences": 2
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_22]]",
+      "original": "Brněnská 456, 602 00, Brno",
+      "occurrences": 2
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_23]]",
+      "original": "Náměstí Svobody 21, 602 00, Brno",
+      "occurrences": 2
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_24]]",
+      "original": "Husova 123/45, 602 00, Brno",
+      "occurrences": 3
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_25]]",
+      "original": "Vodní 67/8, 602 00, Brno",
+      "occurrences": 3
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_26]]",
+      "original": "Purkyňova 234/56, 612 00, Brno",
+      "occurrences": 3
+    },
+    {
+      "type": "ADDRESS",
       "label": "[[ADDRESS_30]]",
-      "original": "ISO 27001, ISO 27017",
+      "original": "Wenceslas Square 89/23, Praha 1, 110 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_31]]",
-      "original": "Ostravská 123, 702 00 Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_32]]",
-      "original": "Brněnská 456, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_33]]",
-      "original": "březen 2024, VS",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_34]]",
-      "original": "Náměstí Svobody 21, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_35]]",
-      "original": "Husova 123/45, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_36]]",
-      "original": "Brno-střed",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_37]]",
-      "original": "Vodní 67/8, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_38]]",
-      "original": "Purkyňova 234/56, 612 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_39]]",
-      "original": "Husova 123/45, Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_40]]",
-      "original": "rok 2019, RZ",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_41]]",
-      "original": "V Brně",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_42]]",
-      "original": "Wenceslas Square 89/23, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_43]]",
-      "original": "Vinohradská 1234/89, 130 00 Praha 3",
+      "original": "Vinohradská 1234/89, Praha 3 - Vinohrady, 130 00",
       "occurrences": 1
     },
     {
@@ -1313,12 +1145,6 @@
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_2]]",
-      "original": "456789012",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
       "label": "[[PHONE_3]]",
       "original": "+420 606 789 123",
       "occurrences": 1
@@ -1327,7 +1153,7 @@
       "type": "PHONE",
       "label": "[[PHONE_4]]",
       "original": "+420 777 234 567",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "PHONE",
@@ -1345,12 +1171,6 @@
       "type": "PHONE",
       "label": "[[PHONE_7]]",
       "original": "+420 222 333 444",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_8]]",
-      "original": "777 234 567",
       "occurrences": 1
     },
     {
@@ -1381,13 +1201,13 @@
       "type": "PHONE",
       "label": "[[PHONE_13]]",
       "original": "+420 222 456 789",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "PHONE",
       "label": "[[PHONE_14]]",
       "original": "+420 224 567 890",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "PHONE",
@@ -1397,20 +1217,8 @@
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_16]]",
-      "original": "224 567 890",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
       "label": "[[PHONE_17]]",
       "original": "222 678 901",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_18]]",
-      "original": "222 456 789",
       "occurrences": 1
     },
     {
@@ -2266,30 +2074,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_1]]",
-      "original": "SO27001",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_2]]",
-      "original": "SO27701",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "3B4 5678",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_4]]",
-      "original": "2B3 4567",
-      "occurrences": 1
-    },
-    {
       "type": "HOST",
       "label": "[[HOST_1]]",
       "original": "db-prod-01.cloudmed.cz",
@@ -2299,6 +2083,18 @@
       "type": "HOST",
       "label": "[[HOST_2]]",
       "original": "sftp.backup.cloudmed.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "3B4 5678",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_2]]",
+      "original": "2B3 4567",
       "occurrences": 1
     },
     {

@@ -20,13 +20,9 @@ OSOBY
   - Janovi Královi
 
 ADDRESS
-[[ADDRESS_1]]: Kampus 9, 625 00 Brno
+[[ADDRESS_1]]: Kampus 9, 625 00, Brno
 [[ADDRESS_2]]: Na Kopci 174/30, 100 00 Praha 10
-[[ADDRESS_3]]: Technologická 39/20, 160 00 Praha 6
-[[ADDRESS_4]]: případně písemně na adresu Technologická 39/20, 160 00 Praha 6
-[[ADDRESS_5]]: písemné doručení na adresu Technologická 39/20, 160 00 Praha 6
-[[ADDRESS_6]]: ro účely doručování se používá adresa Technologická 39/20, 160 00 Praha 6
-[[ADDRESS_7]]: pro Pavlovi Roubalovi a Na Kopci 174/30, 100 00 Praha 10
+[[ADDRESS_5]]: Technologická 39/20, Praha 6, 160 00
 
 BANK
 [[BANK_1]]: 218629090/5500

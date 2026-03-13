@@ -9,11 +9,10 @@ OSOBY
   - Dominika Bártla
 
 ADDRESS
-[[ADDRESS_1]]: Revoluční 132/13, 110 00 Praha 1
-[[ADDRESS_2]]: Tyršova 144/10, 530 02 Pardubice
+[[ADDRESS_1]]: Revoluční 132/13, Praha 1 - Staré, 110 00, Město
+[[ADDRESS_2]]: Tyršova 144/10, 530 02
 [[ADDRESS_3]]: Čelakovského sady 88/3, 120 00 Praha 2
-[[ADDRESS_4]]: NP domu na adrese Kolínská 42/7, 130 00 Praha 3
-[[ADDRESS_5]]: V Praze
+[[ADDRESS_4]]: Kolínská 42/7, 130 00 Praha 3
 
 BANK
 [[BANK_1]]: 433827891/0100
@@ -46,6 +45,9 @@ IBAN
 
 ICO
 [[ICO_1]]: 69287967
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: LV 1234
 
 PHONE
 [[PHONE_1]]: +420 780 490 958

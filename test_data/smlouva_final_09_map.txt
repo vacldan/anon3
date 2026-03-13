@@ -10,10 +10,8 @@ OSOBY
   - Francescy Rossiové
 
 ADDRESS
-[[ADDRESS_1]]: listopadu 1790/5, 702 00 Ostrava - Moravská Ostrava
-[[ADDRESS_2]]: Ostrava
-[[ADDRESS_3]]: Čelakovského sady 193/10, 120 00 Praha 2
-[[ADDRESS_4]]: V Ostravě
+[[ADDRESS_1]]: 17. listopadu 1790/5, 702 00 Ostrava - Moravská Ostrava
+[[ADDRESS_2]]: Čelakovského sady 193/10, Praha 2 - Nové, 120 00, Město
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 085506/6706
@@ -31,6 +29,9 @@ ICO
 
 INSURANCE_ID
 [[INSURANCE_ID_1]]: 4998631058
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CT 2026
 
 PHONE
 [[PHONE_1]]: +420 625 775 505

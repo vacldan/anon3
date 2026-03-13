@@ -4,14 +4,13 @@ OSOBY
   - Radkovi Kratochvílovi
 [[PERSON_2]]: Žaneta Poláková
   - Žanetě Polákové
-[[PERSON_4]]: Nguyen Duc
-  - Nguyen Duca
+[[PERSON_4]]: Nguyen Duca
+  - Nguyen Duc
   - Nguyen Ducovi
 
 ADDRESS
-[[ADDRESS_1]]: Revoluční 15, 110 00 Praha 1
+[[ADDRESS_1]]: Revoluční 15, Praha 1 - Staré, 110 00, Město
 [[ADDRESS_2]]: Palackého třída 195/24, 779 00 Olomouc - Nová Ulice
-[[ADDRESS_3]]: V Praze
 
 BANK
 [[BANK_1]]: 908374954/0600

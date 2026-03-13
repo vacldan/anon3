@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:47.753752",
+  "generated_at": "2026-03-13T09:56:24.194062",
   "source_file": "smlouva_final_14.docx",
   "entities": [
     {
@@ -102,13 +102,13 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Revoluční 132/13, 110 00 Praha 1",
+      "original": "Revoluční 132/13, Praha 1 - Staré, 110 00, Město",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Tyršova 144/10, 530 02 Pardubice",
+      "original": "Tyršova 144/10, 530 02",
       "occurrences": 1
     },
     {
@@ -120,13 +120,7 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "NP domu na adrese Kolínská 42/7, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "V Praze",
+      "original": "Kolínská 42/7, 130 00 Praha 3",
       "occurrences": 1
     },
     {
@@ -199,6 +193,12 @@
       "type": "DIC",
       "label": "[[DIC_1]]",
       "original": "CZ49135181",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "LV 1234",
       "occurrences": 1
     }
   ]

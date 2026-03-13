@@ -19,9 +19,6 @@ OSOBY
 ADDRESS
 [[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
 [[ADDRESS_2]]: Na Kopci 193/4, 100 00 Praha 10
-[[ADDRESS_3]]: Na Kopci 44/29, 100 00 Praha 10
-[[ADDRESS_4]]: platnost 08/28, CVC
-[[ADDRESS_5]]: písemně na adresu Na Kopci 44/29, 100 00 Praha 10
 
 BANK
 [[BANK_1]]: 662453659/0600

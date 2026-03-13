@@ -9,36 +9,29 @@ OSOBY
 [[PERSON_2]]: Adéla Roubalová
   - Adélo Roubalová
   - Adélou Roubalovou
+  - Adélu Roubalováovou
   - Adély Roubalové
   - Adélě Roubalové
 [[PERSON_3]]: Milada Bartůňková
   - Miladou Bartůňkovou
+  - Miladu Bartůňkováovou
   - Milady Bartůňkové
   - Miladě Bartůňkové
 [[PERSON_4]]: Alex Černý
   - Alexa Černého
 [[PERSON_5]]: Drahomíra Šimůnková
+  - Drahomíru Šimůnkováovou
   - Drahomíry Šimůnkové
 [[PERSON_6]]: Miroslav Vlach
   - Miroslava Vlacha
-[[PERSON_7]]: Milada Bartůňkováová
-  - Miladu Bartůňkováovou
-[[PERSON_8]]: Adéla Roubalováová
-  - Adélu Roubalováovou
-[[PERSON_9]]: Drahomíra Šimůnkováová
-  - Drahomíru Šimůnkováovou
 
 ADDRESS
-[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
+[[ADDRESS_1]]: Poliklinická 3, Praha 2, 120 00
 [[ADDRESS_2]]: Revoluční 102, 110 00 Praha 1
-[[ADDRESS_3]]: Purkyňova 82/29, 612 00 Brno
-[[ADDRESS_4]]: Revoluční 44, 110 00 Praha 1
-[[ADDRESS_5]]: Riegrova 147, 779 00 Olomouc
-[[ADDRESS_6]]: Bezručova 151/30, 746 01 Opava
-[[ADDRESS_7]]: Na Návsi 56, 789 01 Zábřeh
-[[ADDRESS_8]]: a Purkyňova 82/29, 612 00 Brno
-[[ADDRESS_9]]: platnost 09/27, CVC
-[[ADDRESS_10]]: V Brně
+[[ADDRESS_3]]: Purkyňova 82/29, 612 00, Brno
+[[ADDRESS_6]]: Riegrova 147, 779 00 Olomouc
+[[ADDRESS_7]]: Bezručova 151/30, 746 01 Opava
+[[ADDRESS_8]]: Na Návsi 56, 789 01 Zábřeh
 
 BANK
 [[BANK_1]]: 1906702626/5500
@@ -109,5 +102,4 @@ PHONE
 [[PHONE_4]]: +420 678 117 811
 [[PHONE_5]]: 725 814 211
 [[PHONE_6]]: +420 769 503 855
-[[PHONE_7]]: 880614528
 

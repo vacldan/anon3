@@ -1,7 +1,6 @@
 OSOBY
 -----
 [[PERSON_1]]: Tomáš Holík
-  - Holíkovi
   - Tomáše Holíka
   - Tomášem Holíkem
   - Tomáši Holíke
@@ -21,13 +20,9 @@ OSOBY
   - Tomášovi Královi
 
 ADDRESS
-[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
+[[ADDRESS_1]]: Poliklinická 3, Praha 2, 120 00
 [[ADDRESS_2]]: Jabloňová 39/13, 400 01 Ústí nad Labem
 [[ADDRESS_3]]: Křenová 88/26, 602 00 Brno
-[[ADDRESS_4]]: případně písemně na adresu Křenová 88/26, 602 00 Brno
-[[ADDRESS_5]]: písemné doručení na adresu Křenová 88/26, 602 00 Brno
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Křenová 88/26, 602 00 Brno pro Barborě Novákové a
-[[ADDRESS_7]]: Jabloňová 39/13, 400 01 Ústí nad Labem pro Tomášovi
 
 BANK
 [[BANK_1]]: 809616011/0600

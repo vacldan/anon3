@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:48.539835",
+  "generated_at": "2026-03-13T09:56:25.021119",
   "source_file": "smlouva_gdpr_test.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Jana Nováka",
+      "original": "Janem Novákem",
       "occurrences": 1
     },
     {
@@ -24,7 +24,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Janem Novákem",
+      "original": "Jana Nováka",
       "occurrences": 1
     },
     {
@@ -42,13 +42,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Tomášem Svobodou",
+      "original": "Tomáši Svobodovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Tomáši Svobodovi",
+      "original": "Tomášem Svobodou",
       "occurrences": 1
     },
     {
@@ -66,6 +66,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
+      "original": "Lucií Malou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Lucie Malé",
       "occurrences": 1
     },
@@ -73,12 +79,6 @@
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Lucii Malé",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Lucií Malou",
       "occurrences": 1
     },
     {
@@ -96,13 +96,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Václavu Svobodovi",
+      "original": "Václavem Svobodou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Václavem Svobodou",
+      "original": "Václavu Svobodovi",
       "occurrences": 1
     },
     {
@@ -186,49 +186,25 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Vinohradská 1287/45, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Křenová 14, 602 00 Brno",
-      "occurrences": 1
+      "original": "Vinohradská 1287/45, Praha 3, 130 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Křenová 14, byt 5",
-      "occurrences": 1
+      "original": "Křenová 14, byt 5, 602 00 Brno",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "Brno",
-      "occurrences": 1
+      "original": "Parku 8, 779 00, Olomouc",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "U Parku 8, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
       "original": "Na Kopci 12, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "zasílání fyzických dokumentů na adresu Vinohradská 1287/45, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "V Praze",
       "occurrences": 1
     },
     {

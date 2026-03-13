@@ -1,0 +1,142 @@
+OSOBY
+-----
+[[PERSON_1]]: Radomil Dvořák
+[[PERSON_2]]: Drahomíra Dvořáková
+[[PERSON_3]]: Svatomír Liška
+[[PERSON_4]]: Růžena Dvořáková
+[[PERSON_5]]: Timoté Dvořák
+[[PERSON_6]]: Sylva Dvořáková
+[[PERSON_7]]: Miloslava Fischerová
+[[PERSON_8]]: Svatava Lišková
+[[PERSON_9]]: Ctibor Liška
+[[PERSON_10]]: Justýna Dvořáková
+[[PERSON_11]]: Marcela Burešová
+[[PERSON_12]]: Pavel Bureš
+[[PERSON_13]]: Rostislav Bureš
+[[PERSON_14]]: Květoslava Tesařová
+[[PERSON_15]]: Alan Bureš
+[[PERSON_16]]: Beáta Burešová
+[[PERSON_17]]: Ilona Malíková
+[[PERSON_18]]: Arnošt Malík
+[[PERSON_19]]: Radana Malíková
+[[PERSON_20]]: Cyril Malík
+[[PERSON_21]]: Vendelín Horák
+[[PERSON_22]]: Slavoj Sedlák
+[[PERSON_23]]: Oldřich Sedlák
+[[PERSON_24]]: Evžen Sedlák
+[[PERSON_25]]: Miloslava Sedláková
+[[PERSON_26]]: Anastázie Sedláková
+[[PERSON_27]]: Matouš Sedlák
+[[PERSON_28]]: Klaudie Nová
+[[PERSON_29]]: Čeněk Sedlák
+[[PERSON_30]]: Hedvika Sedláková
+[[PERSON_31]]: Methoděj Kučera
+[[PERSON_32]]: Viola Kučerová
+[[PERSON_33]]: Pravdomil Kučera
+[[PERSON_34]]: Hermína Kučerová
+[[PERSON_35]]: Ctibor Pech
+[[PERSON_36]]: Libuše Pechová
+[[PERSON_37]]: Bohumil Novotný
+[[PERSON_38]]: Anežka Novotná
+[[PERSON_39]]: Doubravka Novotná
+[[PERSON_40]]: Valdemar Novotný
+[[PERSON_41]]: Sylva Novotná
+[[PERSON_42]]: Gizela Bartošová
+[[PERSON_43]]: Jolana Fišerová
+[[PERSON_44]]: Bonifác Bartoš
+[[PERSON_45]]: Květoslava Malá
+[[PERSON_46]]: Timoté Bartoš
+[[PERSON_47]]: Radana Bartošová
+
+ADDRESS
+[[ADDRESS_1]]: Polní 145/18, Hradec Králové 500 02
+[[ADDRESS_2]]: Zahradní 67, Pardubice 530 02
+[[ADDRESS_4]]: Polní 89, Pardubice 530 02
+[[ADDRESS_3]]: Krátká 23, Nový Bydžov 504 01, vdova
+[[ADDRESS_5]]: Lázeňská 89/4, Brno 602 00
+[[ADDRESS_6]]: Slezská 67, Opava 746 01
+[[ADDRESS_7]]: Zahradní 45, Hradec Králové 500 02
+[[ADDRESS_8]]: Polní 245/18, Ostrava 708 00
+[[ADDRESS_9]]: Krátká 67, Ostrava 708 00
+[[ADDRESS_10]]: Zahradní 89, Ostrava 708 00
+[[ADDRESS_11]]: Polní 145/18, Olomouc 779 00
+[[ADDRESS_12]]: Lázeňská 67, Přerov 750 02
+[[ADDRESS_13]]: Krátká 45, Brno 602 00
+[[ADDRESS_14]]: Vinohradská 245, Praha 2
+[[ADDRESS_15]]: Lázeňská 89, Praha 1
+
+BANK
+[[BANK_1]]: 9876543210/0100
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 780625/7923
+[[BIRTH_ID_2]]: 825629/8134
+[[BIRTH_ID_3]]: 145623/7890
+[[BIRTH_ID_4]]: 165824/8901
+[[BIRTH_ID_5]]: 185629/8912
+[[BIRTH_ID_6]]: 750714/7623
+[[BIRTH_ID_7]]: 805629/8245
+[[BIRTH_ID_8]]: 455629/7845
+[[BIRTH_ID_9]]: 480825/6734
+[[BIRTH_ID_10]]: 855724/8245
+[[BIRTH_ID_11]]: 112233445
+[[BIRTH_ID_12]]: 520714/6734
+[[BIRTH_ID_13]]: 830625/7823
+[[BIRTH_ID_14]]: 155623/7890
+[[BIRTH_ID_15]]: 175824/8901
+[[BIRTH_ID_16]]: 155724/8901
+[[BIRTH_ID_17]]: 855629/8134
+[[BIRTH_ID_18]]: 820714/7623
+[[BIRTH_ID_19]]: 175623/7890
+[[BIRTH_ID_20]]: 750825/7923
+[[BIRTH_ID_21]]: 780714/8134
+[[BIRTH_ID_22]]: 820625/7623
+[[BIRTH_ID_23]]: 855629/8245
+[[BIRTH_ID_24]]: 885724/8134
+[[BIRTH_ID_25]]: 535629/7845
+[[BIRTH_ID_26]]: 500825/6734
+[[BIRTH_ID_27]]: 680625/7923
+[[BIRTH_ID_28]]: 334455667
+[[BIRTH_ID_29]]: 725629/8245
+[[BIRTH_ID_30]]: 005623/7890
+[[BIRTH_ID_31]]: 025824/8901
+[[BIRTH_ID_32]]: 555724/8134
+[[BIRTH_ID_33]]: 778899001
+[[BIRTH_ID_34]]: 780625/7623
+[[BIRTH_ID_35]]: 720625/7923
+[[BIRTH_ID_36]]: 775629/8245
+[[BIRTH_ID_37]]: 985623/7890
+[[BIRTH_ID_38]]: 005824/8901
+[[BIRTH_ID_39]]: 025629/8912
+[[BIRTH_ID_40]]: 835724/8134
+[[BIRTH_ID_41]]: 790714/7623
+[[BIRTH_ID_42]]: 720625/7623
+[[BIRTH_ID_43]]: 780825/7623
+[[BIRTH_ID_44]]: 805629/8134
+
+DATE
+[[DATE_1]]: 3. ledna 2026
+[[DATE_2]]: 15. 12. 2025
+[[DATE_3]]: 20. 12. 2025
+
+EMAIL
+[[EMAIL_1]]: m.buresova@email.cz
+[[EMAIL_2]]: m.kucera@holding.cz
+[[EMAIL_3]]: b.novotny@holding.cz
+
+ICO
+[[ICO_1]]: 78945612
+[[ICO_2]]: 89456123
+
+PHONE
+[[PHONE_1]]: +420 603 456 789
+[[PHONE_2]]: +420 731 456 789
+[[PHONE_3]]: +420 608 147 258
+[[PHONE_4]]: +420 605 789 123
+[[PHONE_5]]: +420 731 789 456
+[[PHONE_6]]: 667788990
+[[PHONE_7]]: 789456123
+[[PHONE_8]]: +420 603 789 456
+[[PHONE_9]]: +420 608 789 123
+[[PHONE_10]]: +420 605 147 258
+

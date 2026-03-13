@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:51.636237",
+  "generated_at": "2026-03-13T09:56:28.721308",
   "source_file": "smlouva_gdpr_test_100.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Lubomíre Poláke",
+      "original": "Lubomírovi Polákovi",
       "occurrences": 1
     },
     {
@@ -24,19 +24,31 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Lubomírovi Polákovi",
+      "original": "Lubomíra Poláka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Lubomíra Poláka",
+      "original": "Lubomíre Poláke",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Petra Hrubešová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Petro Hrubeš",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Petrou Hrubešovou",
       "occurrences": 1
     },
     {
@@ -48,13 +60,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Hugoa Vavru",
+      "original": "Hugoa Vavry",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Hugoa Vavry",
+      "original": "Hugoem Vavrou",
       "occurrences": 1
     },
     {
@@ -66,7 +78,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Hugoem Vavrou",
+      "original": "Hugoa Vavru",
       "occurrences": 1
     },
     {
@@ -95,6 +107,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Janu Šídlováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_7]]",
       "original": "Lubomír Pospíšil",
       "occurrences": 1
@@ -108,7 +126,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_9]]",
-      "original": "Petru Hrubešováová",
+      "original": "Petru Hrubeš",
       "occurrences": 1
     },
     {
@@ -118,22 +136,10 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Jana Šídlováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Janu Šídlováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Kosmonautů 44, 779 00 Olomouc",
-      "occurrences": 1
+      "original": "Kosmonautů 44, 779 00, Olomouc",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -143,56 +149,32 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
+      "label": "[[ADDRESS_4]]",
       "original": "U Nemocnice 73/24, 128 08 Praha 2",
-      "occurrences": 1
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Sokolovská 8/6, 186 00 Praha 8",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Komenského 202/9, 702 00 Ostrava",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Sadová 66, 370 01 České Budějovice",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Hlavní 200/17, 669 02 Znojmo",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Tylova 186/25, 530 02 Pardubice a U Nemocnice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 01/27, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "podezřelé jednání Hugoa Vavry na adrese Sokolovská 8/6, 186 00 Praha 8",
+      "original": "Hlavní 200/17, 669 02 Znojmo",
       "occurrences": 1
     },
     {
@@ -352,12 +334,6 @@
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "840481937",
-      "occurrences": 1
-    },
-    {
       "type": "EMAIL",
       "label": "[[EMAIL_1]]",
       "original": "lubomir.polak@email.cz",
@@ -433,6 +409,12 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
       "original": "PP36917",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_3]]",
+      "original": "AK 86288",
       "occurrences": 1
     },
     {

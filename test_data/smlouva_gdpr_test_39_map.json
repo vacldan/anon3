@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:10.532121",
+  "generated_at": "2026-03-13T09:56:58.447765",
   "source_file": "smlouva_gdpr_test_39.docx",
   "entities": [
     {
@@ -24,13 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Veronikou Lacinovou",
+      "original": "Veronice Lacinové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Veronice Lacinové",
+      "original": "Veronikou Lacinovou",
       "occurrences": 1
     },
     {
@@ -42,31 +42,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Erika Roubala",
+      "original": "Erikem Roubalem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Erikem Roubalem",
+      "original": "Erika Roubala",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Poliklinická 3, 120 00 Praha 2",
+      "original": "Poliklinická 3, Praha 2, 120 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Technologická 15, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "V Praze",
+      "original": "Technologická 15, Praha 6, 160 00",
       "occurrences": 1
     },
     {

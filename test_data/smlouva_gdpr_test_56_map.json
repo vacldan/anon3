@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:17.719410",
+  "generated_at": "2026-03-13T09:57:05.336257",
   "source_file": "smlouva_gdpr_test_56.docx",
   "entities": [
     {
@@ -12,13 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Erikovi Hájkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Erikem Hájkem",
+      "original": "Erika Hájka",
       "occurrences": 1
     },
     {
@@ -30,13 +24,37 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Erika Hájka",
+      "original": "Erikem Hájkem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Erikovi Hájkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Drahomíra Švestková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Drahomíru Švestkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Drahomírě Švestkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Drahomíry Švestkové",
       "occurrences": 1
     },
     {
@@ -53,111 +71,81 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Drahomíry Švestkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Drahomírě Švestkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Drahomíra Švestkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Drahomíru Švestkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_4]]",
       "original": "Ctibor Beneš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_4]]",
+      "original": "Ctibora Beneša",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Ctiborovi Benešovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Ctiborem Benešem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Ctiborovi Benešovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Ctibora Beneša",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_6]]",
       "original": "Erik Procházka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_6]]",
+      "label": "[[PERSON_5]]",
+      "original": "Erika Procházku",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Erika Procházky",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Erika Procházku",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
       "original": "Tereza Rendlová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
+      "label": "[[PERSON_6]]",
       "original": "Terezy Rendlové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_8]]",
+      "label": "[[PERSON_6]]",
+      "original": "Terezu Rendlováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_7]]",
       "original": "Vít Soukup",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_8]]",
+      "label": "[[PERSON_7]]",
       "original": "Víta Soukupa",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Tereza Rendlováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Terezu Rendlováovou",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Sokolská 88, 120 00 Praha 2",
-      "occurrences": 1
+      "original": "Sokolská 88, Praha 2, 120 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -167,56 +155,32 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
+      "label": "[[ADDRESS_4]]",
       "original": "U Nemocnice 224/29, 128 08 Praha 2",
-      "occurrences": 1
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Wolkerova 191/8, 796 01 Prostějov",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Jihlavská 79/32, 625 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_8]]",
       "original": "Jabloňová 249, 400 01 Ústí nad Labem",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Bezručova 164/26, 746 01 Opava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "Hlavní 48/34, 669 02 Znojmo a U Nemocnice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_9]]",
-      "original": "Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 10/27, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "V Liberci",
+      "original": "Bezručova 164/26, 746 01 Opava",
       "occurrences": 1
     },
     {
@@ -373,12 +337,6 @@
       "type": "PHONE",
       "label": "[[PHONE_6]]",
       "original": "+420 654 769 849",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "440837681",
       "occurrences": 1
     },
     {

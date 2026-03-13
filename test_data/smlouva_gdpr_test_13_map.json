@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:00.790563",
+  "generated_at": "2026-03-13T09:56:42.104029",
   "source_file": "smlouva_gdpr_test_13.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Renaty Holíkové",
+      "original": "Renatě Holíkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Renatě Holíkové",
+      "original": "Renaty Holíkové",
       "occurrences": 1
     },
     {
@@ -48,13 +48,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Tomášovi Dvořákovi",
+      "original": "Tomášem Dvořákem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Tomášem Dvořákem",
+      "original": "Tomášovi Dvořákovi",
       "occurrences": 1
     },
     {
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Václavovi Roubalovi",
+      "original": "Václava Roubala",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Václava Roubala",
+      "original": "Václavovi Roubalovi",
       "occurrences": 1
     },
     {
@@ -109,18 +109,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Pojišťovací 28/25, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "platnost 08/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemně na adresu Pojišťovací 28/25, 110 00 Praha 1",
       "occurrences": 1
     },
     {

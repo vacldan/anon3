@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:38.053061",
+  "generated_at": "2026-03-13T09:40:13.364042",
   "source_file": "smlouva_gdpr_test_83.docx",
   "entities": [
     {
@@ -12,13 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michale Švestko",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Michala Švestku",
+      "original": "Michalovi Švestkovi",
       "occurrences": 1
     },
     {
@@ -30,13 +24,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michalem Švestkou",
+      "original": "Michala Švestku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michalovi Švestkovi",
+      "original": "Michale Švestko",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Michalem Švestkou",
       "occurrences": 1
     },
     {
@@ -48,13 +48,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jany Navrátilové",
+      "original": "Janou Navrátilovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Janě Navrátilové",
+      "original": "Janu Navrátilováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Jany Navrátilové",
       "occurrences": 1
     },
     {
@@ -66,121 +72,97 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Janou Navrátilovou",
+      "original": "Janě Navrátilové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Jana Navrátilováová",
+      "original": "Filip Zíka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Janu Navrátilováovou",
+      "original": "Filipa Zíku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Filip Zík",
+      "label": "[[PERSON_3]]",
+      "original": "Filipovi Zíkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_3]]",
       "original": "Filipa Zíky",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Filipovi Zíkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Filipa Zíku",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Filip Zíka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
       "original": "Ondřej Popelka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_4]]",
+      "original": "Ondřeja Popelku",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Ondřeja Popelky",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Ondřeja Popelku",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_6]]",
       "original": "Anežka Holubová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_6]]",
+      "label": "[[PERSON_5]]",
+      "original": "Anežku Holubováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Anežky Holubové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
+      "label": "[[PERSON_6]]",
       "original": "Vojtěch Dvořák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
+      "label": "[[PERSON_6]]",
       "original": "Vojtěcha Dvořáka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Filip Zíká",
+      "label": "[[PERSON_7]]",
+      "original": "Filip Zíký",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_8]]",
+      "label": "[[PERSON_7]]",
       "original": "Filipem Zíkou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Anežka Holubováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Anežku Holubováovou",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Praha 1",
+      "original": "110 00, Praha 1",
       "occurrences": 1
     },
     {
@@ -192,14 +174,8 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Jihlavská 186/38, 625 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "Ostrava",
-      "occurrences": 1
+      "original": "Jihlavská 186/38, 625 00, Brno",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -223,30 +199,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
       "original": "Komenského 125, 702 00 Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Žižkova 133, 460 01 Liberec a Jihlavská",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "platnost 06/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_12]]",
-      "original": "V Ostravě",
       "occurrences": 1
     },
     {
@@ -385,12 +337,6 @@
       "type": "PHONE",
       "label": "[[PHONE_7]]",
       "original": "745 900 999",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_8]]",
-      "original": "664829944",
       "occurrences": 1
     },
     {

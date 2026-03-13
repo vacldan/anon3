@@ -1,12 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:46.323873",
+  "generated_at": "2026-03-13T09:57:31.246769",
   "source_file": "smlouva_gdpr_test_94.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Vlastimil Kolísek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Vlastimile Kolísku",
       "occurrences": 1
     },
     {
@@ -29,20 +35,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Vlastimile Kolísku",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Žofie Roubalová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Žofii Roubalové",
       "occurrences": 1
     },
     {
@@ -55,6 +49,18 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Žofie Roubalové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Žofii Roubalové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Žofii Roubalováovou",
       "occurrences": 1
     },
     {
@@ -89,6 +95,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Jiřinu Rendlováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Vlastimil Popelka",
       "occurrences": 1
@@ -119,14 +131,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Michal Hrdina",
+      "label": "[[PERSON_6]]",
+      "original": "Miladu Vaňkováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Michala Hrdiny",
+      "original": "Michal Hrdina",
       "occurrences": 1
     },
     {
@@ -137,104 +149,50 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Jiřina Rendlováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Jiřinu Rendlováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Žofie Roubalováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Žofii Roubalováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Milada Vaňkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Miladu Vaňkováovou",
+      "label": "[[PERSON_7]]",
+      "original": "Michala Hrdiny",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Na Hradbách 15, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Na Hradbách 15, 702 00, Ostrava",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "U Parku 93/38, 779 00 Olomouc",
+      "original": "Parku 93/38, 779 00 Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Smetanova 221/17, 760 01 Zlín",
-      "occurrences": 1
+      "original": "Smetanova 221/17, 760 01, Zlín",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Husova 24/31, 390 02 Tábor",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Dvořákova 17/3, 370 01 České Budějovice",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Na Kopci 179, 100 00 Praha 10",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Dlouhá 194/5, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "U Parku 93/38, 779 00 Olomouc a Smetanova",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Zlín",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 07/27, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "V Brně",
+      "original": "Dlouhá 194/5, 602 00 Brno",
       "occurrences": 1
     },
     {

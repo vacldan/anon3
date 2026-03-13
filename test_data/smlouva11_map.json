@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:48:44.051964",
+  "generated_at": "2026-03-13T09:54:52.384482",
   "source_file": "smlouva11.docx",
   "entities": [
     {
@@ -90,13 +90,13 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Olbrachtova 12, Praha 4",
+      "original": "Poděbradova 10, 460 01 Liberec",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Poděbradova 10, 460 01 Liberec",
+      "original": "Olbrachtova 12, Praha 4",
       "occurrences": 1
     },
     {
@@ -120,31 +120,19 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
       "original": "Průmyslová 9, Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Komenského 4, Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
+      "label": "[[ADDRESS_8]]",
       "original": "Brněnská 10, Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "Brno",
       "occurrences": 1
     },
     {

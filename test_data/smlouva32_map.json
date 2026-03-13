@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:37.036490",
+  "generated_at": "2026-03-13T09:56:13.671185",
   "source_file": "smlouva32.docx",
   "entities": [
     {
@@ -85,6 +85,12 @@
       "type": "PERSON",
       "label": "[[PERSON_9]]",
       "original": "Lumír Moravec",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_10]]",
+      "original": "Ervín Tesařa",
       "occurrences": 1
     },
     {
@@ -358,6 +364,30 @@
       "occurrences": 1
     },
     {
+      "type": "PERSON",
+      "label": "[[PERSON_48]]",
+      "original": "Izák Vávra",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_49]]",
+      "original": "Kvido Tesařa",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_49]]",
+      "original": "Kvido Tesař",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_50]]",
+      "original": "Hedvika Fischerová",
+      "occurrences": 1
+    },
+    {
       "type": "DATE",
       "label": "[[DATE_1]]",
       "original": "3. ledna 2026",
@@ -379,83 +409,71 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
       "original": "Polní 145/18, Brno 602 00",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
       "original": "Lázeňská 89/4, Brno 602 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_3]]",
       "original": "Zahradní 67, Jihlava 586 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_4]]",
       "original": "Krátká 23, Znojmo 669 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Vinohradská 245/18, Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Lázeňská 89, Karlovy Vary 360 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Polní 67/12, Olomouc 779 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
+      "label": "[[ADDRESS_8]]",
       "original": "Krátká 145/8, Praha 4",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
+      "label": "[[ADDRESS_9]]",
       "original": "Slezská 67, Opava 746 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
+      "label": "[[ADDRESS_10]]",
       "original": "Zahradní 89, Hradec Králové 500 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_12]]",
-      "original": "Polní 45/18, Brno 602 00",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_13]]",
       "original": "Lázeňská 89, Teplice 415 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_14]]",
+      "label": "[[ADDRESS_13]]",
       "original": "Zahradní 67, Pardubice 530 02",
       "occurrences": 1
     },
@@ -874,12 +892,6 @@
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_14]]",
-      "original": "112233445",
-      "occurrences": 1
-    },
-    {
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_1]]",
       "original": "5B7 8901",
@@ -900,6 +912,12 @@
     {
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_4]]",
+      "original": "FM 2009",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_5]]",
       "original": "NB2004",
       "occurrences": 1
     },

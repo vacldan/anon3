@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:09.651902",
+  "generated_at": "2026-03-13T09:56:56.753594",
   "source_file": "smlouva_gdpr_test_32.docx",
   "entities": [
     {
@@ -72,20 +72,14 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Nemocniční 1, 400 01 Ústí nad Labem",
-      "occurrences": 1
+      "original": "Nemocniční 1, 400 01, Ústí nad Labem",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Jabloňová 12, 400 01 Ústí nad Labem",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "platnost 08/28, CVC",
-      "occurrences": 1
+      "original": "Jabloňová 12, 400 01, Ústí nad Labem",
+      "occurrences": 2
     },
     {
       "type": "ICO",
@@ -220,9 +214,9 @@
       "occurrences": 1
     },
     {
-      "type": "IMEI",
-      "label": "[[IMEI_1]]",
-      "original": "356778119992110",
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "EI 35677",
       "occurrences": 1
     },
     {

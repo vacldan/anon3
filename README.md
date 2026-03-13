@@ -12,7 +12,7 @@ Tento branch obsahuje pouze soubory potřebné pro vytvoření instalačního ba
 ├── anonymize_cli.py               # CLI pro anonymizaci
 ├── deanonymizator_lokal.py        # Deanonymizace
 ├── pdf2docx_cli.py                # PDF konverze
-├── anon72.py                       # Hlavní anonymizační engine (v7.2+)
+├── anon72.py                       # Hlavní anonymizační engine (v7.2+, ~8250 řádků)
 ├── cz_names.v1.json               # Data pro české jména
 ├── build/
 │   ├── build_with_trial_pyarmor.py  # Build script pro PyArmor trial
@@ -75,8 +75,10 @@ Cíl: Tento nástroj automaticky anonymizuje osobní údaje dle GDPR v textovýc
 ### Klíčové vlastnosti
 
 - Offline: žádná data neopouští zařízení
-- Detekce PII: jména, adresy (víceúrovňová detekce s proximity merge), e-maily, telefony, bankovní účty, rodná čísla, IČ/DIČ, SPZ, 34 kategorií celkem
+- Detekce PII: jména, adresy (víceúrovňová detekce s proximity merge), e-maily, telefony, bankovní účty, rodná čísla, IČ/DIČ, SPZ, SSH klíče, RFID, sociální sítě — 34 kategorií celkem
 - Jednotné štítky: `[[PERSON_1]]`, `[[ADDRESS_1]]`, `[[BANK_ACCOUNT_1]]`
 - Mapa náhrad: strojově čitelný map.json + lidsky čitelný map.txt
 - Adresní engine: proximity merge komponent (PSČ, ulice, město, republika) bez ohledu na slovosled, deduplikace podmnožin, whitelist 80+ českých měst
-- Testováno na 200+ syntetických smlouvách + 30 variant úvěrových smluv s různými formáty adres
+- 6 specializovaných post-passů: izolovaná křestní jména, osiřelá příjmení, rodná jména, titulované osoby, firemní jména, RČ jako var. symboly
+- Kompletní podpora mužských příjmení na -a (Fiala, Svoboda, Malina, Neruda) — 45+ kmenových sad koordinovaně pokrývajících všech 7 pádů + vokativ
+- Testováno na **236 syntetických smlouvách** — 236/236 CLEAN, 0 leaků, 0 chyb, 0 warningů

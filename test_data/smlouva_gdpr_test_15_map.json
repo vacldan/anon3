@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:06.624597",
+  "generated_at": "2026-03-13T09:56:51.270788",
   "source_file": "smlouva_gdpr_test_15.docx",
   "entities": [
     {
@@ -18,6 +18,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Monikou Vaňkovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Monikě Vaňkové",
       "occurrences": 1
     },
@@ -29,12 +35,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Monikou Vaňkovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Petra Malíková",
       "occurrences": 1
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Petro Malíková",
+      "original": "Petrou Malíkovou",
       "occurrences": 1
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Petrou Malíkovou",
+      "original": "Petro Malíková",
       "occurrences": 1
     },
     {
@@ -78,13 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Alešem Turkem",
+      "original": "Alešovi Turkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Alešovi Turkovi",
+      "original": "Alešem Turkem",
       "occurrences": 1
     },
     {
@@ -109,18 +109,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Sadová 193/12, 370 01 České Budějovice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "platnost 08/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemně na adresu Sadová 193/12, 370 01 České Budějovice",
       "occurrences": 1
     },
     {

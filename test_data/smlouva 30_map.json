@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:48:36.532918",
+  "generated_at": "2026-03-13T09:54:40.496719",
   "source_file": "smlouva 30.docx",
   "entities": [
     {
@@ -60,13 +60,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Zeman",
+      "original": "Zemanovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Zemanovi",
+      "original": "Zeman",
       "occurrences": 1
     },
     {
@@ -144,13 +144,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_17]]",
-      "original": "Matyldu Fialovou",
+      "original": "Fialové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_17]]",
-      "original": "Fialové",
+      "original": "Matyldu Fialovou",
       "occurrences": 1
     },
     {
@@ -329,8 +329,56 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_46]]",
+      "original": "Karina Bílková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_47]]",
+      "original": "Samuel Štěpán",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_48]]",
+      "original": "Stela Pospíšilová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_49]]",
+      "original": "Jáchym Horák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_50]]",
+      "original": "Otmar Doubek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_51]]",
       "original": "Xaver Klein",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_52]]",
+      "original": "Beáta Zemanová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_53]]",
+      "original": "Radana Malá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_54]]",
+      "original": "Artur Říha",
       "occurrences": 1
     },
     {
@@ -426,26 +474,8 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_14]]",
-      "original": "Polní 34, Brno 602 00",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_15]]",
-      "original": "Praha",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_16]]",
-      "original": "Pardubice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_17]]",
-      "original": "Brno",
-      "occurrences": 1
+      "original": "Polní 34, Brno 602 00, Praha",
+      "occurrences": 2
     },
     {
       "type": "EMAIL",
@@ -919,6 +949,12 @@
       "type": "ICO",
       "label": "[[ICO_5]]",
       "original": "67823451",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "LV 8912",
       "occurrences": 1
     }
   ]

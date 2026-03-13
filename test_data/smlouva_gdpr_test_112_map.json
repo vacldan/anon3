@@ -1,24 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:55.411176",
+  "generated_at": "2026-03-13T09:56:34.170867",
   "source_file": "smlouva_gdpr_test_112.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Petra Hrubešová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Petry Hrubešové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Petro Hrubešová",
       "occurrences": 1
     },
     {
@@ -35,14 +23,20 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Petra Svobodová",
+      "label": "[[PERSON_1]]",
+      "original": "Petro Hrubešová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Petry Hrubešové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Petro Svobodová",
+      "original": "Petra Svobodová",
       "occurrences": 1
     },
     {
@@ -54,13 +48,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Petrě Svobodové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Petry Svobodové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Petrě Svobodové",
+      "original": "Petro Svobodová",
       "occurrences": 1
     },
     {
@@ -90,13 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Romane Beneše",
+      "original": "Romanem Benešem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Romanem Benešem",
+      "original": "Romana Beneša",
       "occurrences": 1
     },
     {
@@ -108,14 +108,14 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Romana Beneša",
+      "original": "Romane Beneše",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Poliklinická 3, 120 00 Praha 2",
-      "occurrences": 1
+      "original": "Poliklinická 3, Praha 2, 120 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -125,33 +125,9 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Technologická 100/15, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Technologická 100/15, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Technologická 100/15, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "ro účely doručování se používá adresa Technologická 100/15, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Petrě Svobodové a Pojišťovací 163/2, 110 00 Praha 1",
-      "occurrences": 1
+      "original": "Technologická 100/15, Praha 6, 160 00",
+      "occurrences": 2
     },
     {
       "type": "ICO",

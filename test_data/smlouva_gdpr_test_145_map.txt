@@ -5,7 +5,6 @@ OSOBY
   - Alžbětou Řezníčkovou
   - Alžběty Řezníčkové
   - Alžbětě Řezníčkové
-  - Řezníčkové
 [[PERSON_2]]: Karel Kříž
   - Karla Kříža
   - Karle Kříže
@@ -21,13 +20,8 @@ OSOBY
   - Klárě Křížové
 
 ADDRESS
-[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
-[[ADDRESS_2]]: Jabloňová 69/5, 400 01 Ústí nad Labem
+[[ADDRESS_1]]: Poliklinická 3, Praha 2, 120 00
 [[ADDRESS_3]]: Jabloňová 121/3, 400 01 Ústí nad Labem
-[[ADDRESS_4]]: případně písemně na adresu Jabloňová 121/3, 400 01 Ústí nad Labem
-[[ADDRESS_5]]: písemné doručení na adresu Jabloňová 121/3, 400 01 Ústí nad Labem
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Jabloňová 121/3, 400 01 Ústí nad Labem pro Karlovi
-[[ADDRESS_7]]: Křížovi a Jabloňová 69/5, 400 01 Ústí nad Labem pro Alžbětě
 
 BANK
 [[BANK_1]]: 246341595/0600

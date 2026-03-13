@@ -20,8 +20,6 @@ ADDRESS
 [[ADDRESS_1]]: Právnická 12, 110 00 Praha 1
 [[ADDRESS_2]]: Technologická 27/16, 160 00 Praha 6
 [[ADDRESS_3]]: Sadová 158/29, 370 01 České Budějovice
-[[ADDRESS_4]]: platnost 08/28, CVC
-[[ADDRESS_5]]: písemně na adresu Sadová 158/29, 370 01 České Budějovice
 
 BANK
 [[BANK_1]]: 399527258/0300

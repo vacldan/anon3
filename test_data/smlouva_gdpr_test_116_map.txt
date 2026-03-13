@@ -20,13 +20,9 @@ OSOBY
   - Marku Holíke
 
 ADDRESS
-[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
+[[ADDRESS_1]]: Poliklinická 3, Praha 2, 120 00
 [[ADDRESS_2]]: Na Návsi 173/24, 789 01 Zábřeh
-[[ADDRESS_3]]: Technologická 49/17, 160 00 Praha 6
-[[ADDRESS_4]]: případně písemně na adresu Technologická 49/17, 160 00 Praha 6
-[[ADDRESS_5]]: písemné doručení na adresu Technologická 49/17, 160 00 Praha 6
-[[ADDRESS_6]]: ro účely doručování se používá adresa Technologická 49/17, 160 00 Praha 6
-[[ADDRESS_7]]: pro Monikě Svobodové a Na Návsi 173/24, 789 01 Zábřeh pro Alešovi Novákovi
+[[ADDRESS_5]]: Technologická 49/17, Praha 6, 160 00
 
 BANK
 [[BANK_1]]: 398006617/5500

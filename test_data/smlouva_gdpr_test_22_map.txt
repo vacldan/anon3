@@ -20,8 +20,6 @@ ADDRESS
 [[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
 [[ADDRESS_2]]: Pojišťovací 163/2, 110 00 Praha 1
 [[ADDRESS_3]]: Technologická 100/15, 160 00 Praha 6
-[[ADDRESS_4]]: platnost 08/28, CVC
-[[ADDRESS_5]]: písemně na adresu Technologická 100/15, 160 00 Praha 6
 
 BANK
 [[BANK_1]]: 571297708/0600

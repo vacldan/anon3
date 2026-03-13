@@ -8,36 +8,30 @@ OSOBY
 [[PERSON_2]]: Drahomíra Švestková
   - Drahomíro Švestková
   - Drahomírou Švestkovou
+  - Drahomíru Švestkováovou
   - Drahomíry Švestkové
   - Drahomírě Švestkové
-[[PERSON_3]]: Drahomíra Švestkováová
-  - Drahomíru Švestkováovou
-[[PERSON_5]]: Ctibor Beneš
+[[PERSON_4]]: Ctibor Beneš
   - Ctibora Beneša
   - Ctiborem Benešem
   - Ctiborovi Benešovi
-[[PERSON_6]]: Erik Procházka
+[[PERSON_5]]: Erik Procházka
   - Erika Procházku
   - Erika Procházky
-[[PERSON_7]]: Tereza Rendlová
-  - Terezy Rendlové
-[[PERSON_8]]: Vít Soukup
-  - Víta Soukupa
-[[PERSON_9]]: Tereza Rendlováová
+[[PERSON_6]]: Tereza Rendlová
   - Terezu Rendlováovou
+  - Terezy Rendlové
+[[PERSON_7]]: Vít Soukup
+  - Víta Soukupa
 
 ADDRESS
-[[ADDRESS_1]]: Sokolská 88, 120 00 Praha 2
+[[ADDRESS_1]]: Sokolská 88, Praha 2, 120 00
 [[ADDRESS_2]]: Hlavní 48/34, 669 02 Znojmo
-[[ADDRESS_3]]: U Nemocnice 224/29, 128 08 Praha 2
-[[ADDRESS_4]]: Wolkerova 191/8, 796 01 Prostějov
-[[ADDRESS_5]]: Jihlavská 79/32, 625 00 Brno
-[[ADDRESS_6]]: Jabloňová 249, 400 01 Ústí nad Labem
-[[ADDRESS_7]]: Bezručova 164/26, 746 01 Opava
-[[ADDRESS_8]]: Hlavní 48/34, 669 02 Znojmo a U Nemocnice
-[[ADDRESS_9]]: Praha 2
-[[ADDRESS_10]]: platnost 10/27, CVC
-[[ADDRESS_11]]: V Liberci
+[[ADDRESS_4]]: U Nemocnice 224/29, 128 08 Praha 2
+[[ADDRESS_6]]: Wolkerova 191/8, 796 01 Prostějov
+[[ADDRESS_7]]: Jihlavská 79/32, 625 00 Brno
+[[ADDRESS_8]]: Jabloňová 249, 400 01 Ústí nad Labem
+[[ADDRESS_9]]: Bezručova 164/26, 746 01 Opava
 
 BANK
 [[BANK_1]]: 241639743/2010
@@ -106,5 +100,4 @@ PHONE
 [[PHONE_4]]: +420680374411
 [[PHONE_5]]: +420 606 168 740
 [[PHONE_6]]: +420 654 769 849
-[[PHONE_7]]: 440837681
 

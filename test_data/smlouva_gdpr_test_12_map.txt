@@ -21,8 +21,6 @@ ADDRESS
 [[ADDRESS_1]]: Kampus 9, 625 00 Brno
 [[ADDRESS_2]]: Na Kopci 174/30, 100 00 Praha 10
 [[ADDRESS_3]]: Technologická 39/20, 160 00 Praha 6
-[[ADDRESS_4]]: platnost 08/28, CVC
-[[ADDRESS_5]]: písemně na adresu Technologická 39/20, 160 00 Praha 6
 
 BANK
 [[BANK_1]]: 218629090/5500

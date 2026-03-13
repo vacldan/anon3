@@ -8,36 +8,31 @@ OSOBY
 [[PERSON_2]]: Jana Pospíšilová
   - Jano Pospíšilová
   - Janou Pospíšilovou
+  - Janu Pospíšilováovou
   - Jany Pospíšilové
   - Janě Pospíšilové
 [[PERSON_3]]: Adéla Řípová
   - Adélou Řípovou
+  - Adélu Řípováovou
   - Adély Řípové
   - Adélě Řípové
 [[PERSON_4]]: Vlastimil Navrátil
   - Vlastimila Navrátila
 [[PERSON_5]]: Monika Havličková
+  - Moniku Havličkováovou
   - Moniky Havličkové
 [[PERSON_6]]: Erik Růžička
   - Erika Růžičku
   - Erika Růžičky
-[[PERSON_7]]: Adéla Řípováová
-  - Adélu Řípováovou
-[[PERSON_8]]: Jana Pospíšilováová
-  - Janu Pospíšilováovou
-[[PERSON_9]]: Monika Havličkováová
-  - Moniku Havličkováovou
 
 ADDRESS
-[[ADDRESS_1]]: Budínova 67/2, 180 81 Praha 8
+[[ADDRESS_1]]: Budínova 67/2, Praha 8, 180 81
 [[ADDRESS_2]]: Purkyňova 82, 612 00 Brno
-[[ADDRESS_3]]: Wolkerova 121/23, 796 01 Prostějov
-[[ADDRESS_4]]: Žižkova 235/39, 460 01 Liberec
-[[ADDRESS_5]]: Havlíčkova 211/3, 586 01 Jihlava
-[[ADDRESS_6]]: Technologická 63, 160 00 Praha 6
-[[ADDRESS_7]]: Masarykova 65/37, 500 02 Hradec Králové
-[[ADDRESS_8]]: Purkyňova 82, 612 00 Brno a Wolkerova
-[[ADDRESS_9]]: platnost 11/29, CVC
+[[ADDRESS_3]]: Wolkerova 121/23, 796 01, Prostějov
+[[ADDRESS_5]]: Žižkova 235/39, 460 01 Liberec
+[[ADDRESS_6]]: Havlíčkova 211/3, 586 01 Jihlava
+[[ADDRESS_7]]: Technologická 63, 160 00 Praha 6
+[[ADDRESS_8]]: Masarykova 65/37, 500 02 Hradec Králové
 
 BANK
 [[BANK_1]]: 4738227095/0600

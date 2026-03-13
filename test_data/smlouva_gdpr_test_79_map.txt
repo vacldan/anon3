@@ -9,37 +9,30 @@ OSOBY
 [[PERSON_2]]: Helena Krejčová
   - Heleno Krejčová
   - Helenou Krejčovou
+  - Helenu Krejčováovou
   - Heleny Krejčové
   - Heleně Krejčové
-[[PERSON_3]]: Helena Krejčováová
-  - Helenu Krejčováovou
-[[PERSON_4]]: Ema Benešová
+[[PERSON_3]]: Ema Benešová
+  - Emu Benešováovou
   - Emy Benešové
-[[PERSON_5]]: Markéta Bartůňková
+[[PERSON_4]]: Markéta Bartůňková
   - Markétou Bartůňkovou
+  - Markétu Bartůňkováovou
   - Markéty Bartůňkové
   - Markétě Bartůňkové
-[[PERSON_6]]: Lída Malinová
-  - Lídy Malinové
-[[PERSON_7]]: Alex Řezníček
-  - Alexa Řezníčka
-[[PERSON_8]]: Markéta Bartůňkováová
-  - Markétu Bartůňkováovou
-[[PERSON_9]]: Lída Malinováová
+[[PERSON_5]]: Lída Malinová
   - Lídu Malinováovou
-[[PERSON_10]]: Ema Benešováová
-  - Emu Benešováovou
+  - Lídy Malinové
+[[PERSON_6]]: Alex Řezníček
+  - Alexa Řezníčka
 
 ADDRESS
-[[ADDRESS_1]]: Bělehradská 132, 120 84 Praha 2
-[[ADDRESS_2]]: Nádražní 8, 702 00 Ostrava
-[[ADDRESS_3]]: Bezručova 228/24, 746 01 Opava
-[[ADDRESS_4]]: Žižkova 40, 460 01 Liberec
-[[ADDRESS_5]]: Masarykova 51/23, 500 02 Hradec Králové
-[[ADDRESS_6]]: Nádražní 103/19, 702 00 Ostrava
-[[ADDRESS_7]]: Husova 139, 390 02 Tábor
-[[ADDRESS_8]]: Nádražní 8, 702 00 Ostrava a Bezručova
-[[ADDRESS_9]]: platnost 09/29, CVC
+[[ADDRESS_1]]: Bělehradská 132, Praha 2, 120 84
+[[ADDRESS_3]]: Bezručova 228/24, 746 01, Opava
+[[ADDRESS_5]]: Žižkova 40, 460 01 Liberec
+[[ADDRESS_6]]: Masarykova 51/23, 500 02 Hradec Králové
+[[ADDRESS_7]]: Nádražní 103/19, 702 00 Ostrava
+[[ADDRESS_8]]: Husova 139, 390 02 Tábor
 
 BANK
 [[BANK_1]]: 961657-3073150920/0600

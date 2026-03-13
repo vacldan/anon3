@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:28.564665",
+  "generated_at": "2026-03-13T09:56:06.804826",
   "source_file": "smlouva3.docx",
   "entities": [
     {
@@ -28,18 +28,6 @@
       "occurrences": 1
     },
     {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "října 2025, a to v hotovosti nebo",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "V Olomouci",
-      "occurrences": 1
-    },
-    {
       "type": "DATE",
       "label": "[[DATE_1]]",
       "original": "12. 3. 1985",
@@ -60,6 +48,12 @@
     {
       "type": "DATE",
       "label": "[[DATE_4]]",
+      "original": "31. října 2025",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_5]]",
       "original": "31. 7. 2025",
       "occurrences": 1
     },

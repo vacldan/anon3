@@ -19,14 +19,10 @@ OSOBY
   - Václavu Svobodovi
 
 ADDRESS
-[[ADDRESS_1]]: Vinohradská 1287/45, 130 00 Praha 3
-[[ADDRESS_2]]: Křenová 14, 602 00 Brno
-[[ADDRESS_3]]: Křenová 14, byt 5
-[[ADDRESS_4]]: Brno
-[[ADDRESS_5]]: U Parku 8, 779 00 Olomouc
-[[ADDRESS_6]]: Na Kopci 12, 100 00 Praha 10
-[[ADDRESS_7]]: zasílání fyzických dokumentů na adresu Vinohradská 1287/45, 130 00 Praha 3
-[[ADDRESS_8]]: V Praze
+[[ADDRESS_1]]: Vinohradská 1287/45, Praha 3, 130 00
+[[ADDRESS_3]]: Křenová 14, byt 5, 602 00 Brno
+[[ADDRESS_4]]: Parku 8, 779 00, Olomouc
+[[ADDRESS_5]]: Na Kopci 12, 100 00 Praha 10
 
 BANK
 [[BANK_1]]: 123456789/0100

@@ -15,74 +15,79 @@ OSOBY
   - Dvořákové
 [[PERSON_8]]: Jolana Dvořáková
 [[PERSON_9]]: Ladislav Schneider
+  - Schneiderovi
 [[PERSON_10]]: Viola Tesařová
 [[PERSON_11]]: Klaudie Fischerová
   - Fischerová
-[[PERSON_12]]: Kolman 
-[[PERSON_13]]: Pravoslav Kolman
+[[PERSON_12]]: Pravoslav Kolman
   - Kolmanovi
-[[PERSON_14]]: Doubravka Kolmanová
-[[PERSON_15]]: Leopold Šmíd
+[[PERSON_13]]: Doubravka Kolmanová
+[[PERSON_14]]: Leopold Šmíd
   - Šmídovi
-[[PERSON_16]]: Xaver Horák
-[[PERSON_17]]: Amálie Bartošová
+[[PERSON_15]]: Xaver Horák
+[[PERSON_16]]: Amálie Bartošová
   - Bartošové
-[[PERSON_18]]: Bonifác Hruška
+[[PERSON_17]]: Bonifác Hruška
   - Hruškovi
-[[PERSON_19]]: Kvido Hruška
-[[PERSON_20]]: Regína Málková
+[[PERSON_18]]: Kvido Hruška
+[[PERSON_19]]: Regína Málková
   - Málkové
-[[PERSON_21]]: Valdemar Říha
-[[PERSON_22]]: Gita Vaculíková
-[[PERSON_23]]: Medard Vaculík
-[[PERSON_24]]: Hanuš Šimek
-[[PERSON_25]]: Liliana Šimková
+[[PERSON_20]]: Valdemar Říha
+[[PERSON_21]]: Gita Vaculíková
+[[PERSON_22]]: Medard Vaculík
+[[PERSON_23]]: Hanuš Šimek
+[[PERSON_24]]: Liliana Šimková
   - Šimková
-[[PERSON_26]]: Otmar Doubek
-[[PERSON_27]]: Kliment Kolář
-[[PERSON_28]]: Vincenc Bartoš
-[[PERSON_29]]: Marina Bartošová
-[[PERSON_30]]: Tadeáš Bartoš
-[[PERSON_31]]: Nela Bartošová
-[[PERSON_32]]: Dorota Bartošová
-[[PERSON_33]]: Vlastislav Horák
-[[PERSON_34]]: Blažena Horáková
-[[PERSON_35]]: Světlana Nová
-[[PERSON_36]]: Slavoj Novotný
-[[PERSON_37]]: Artur Vlk
-[[PERSON_38]]: Anastázie Novotná
+[[PERSON_25]]: Otmar Doubek
+[[PERSON_26]]: Kliment Kolář
+[[PERSON_27]]: Vincenc Bartoš
+[[PERSON_28]]: Marina Bartošová
+[[PERSON_29]]: Tadeáš Bartoš
+[[PERSON_30]]: Nela Bartošová
+[[PERSON_31]]: Dorota Bartošová
+[[PERSON_32]]: Vlastislav Horák
+[[PERSON_33]]: Blažena Horáková
+[[PERSON_34]]: Světlana Nová
+[[PERSON_35]]: Slavoj Novotný
+[[PERSON_36]]: Artur Vlk
+[[PERSON_37]]: Anastázie Novotná
   - Anastázie Novotnou
-[[PERSON_39]]: Zina Novotná
+[[PERSON_38]]: Zina Novotná
   - Zinu Novotnou
-[[PERSON_40]]: Xenie Novotná
+[[PERSON_39]]: Xenie Novotná
   - Xenii Novotnou
-[[PERSON_41]]: Radomír Tesař
-[[PERSON_42]]: Cyril Malík
-[[PERSON_43]]: Ervín Pospíšil
+[[PERSON_40]]: Radomír Tesařa
+  - Radomír Tesař
+[[PERSON_41]]: Cyril Malík
+[[PERSON_42]]: Ervín Pospíšil
   - Pospíšilovi
+[[PERSON_43]]: Evžen Moravec
+[[PERSON_44]]: Vendelín Novotný
+[[PERSON_45]]: Izák Bárta
+[[PERSON_46]]: Silvie Kadlecová
+[[PERSON_47]]: Žofie Pechová
+[[PERSON_48]]: Lubomír Zeman
+[[PERSON_49]]: Šimon Liška
+[[PERSON_50]]: Oldřiška Tesařová
 
 ADDRESS
 [[ADDRESS_1]]: Vinohradská 245/18, Praha 2
-[[ADDRESS_2]]: Lázeňská 89/4, Karlovy Vary 360 01
 [[ADDRESS_3]]: Polní 67/12, Brno 602 00
 [[ADDRESS_4]]: Zahradní 45, Pardubice 530 02
 [[ADDRESS_5]]: Krátká 23, Olomouc 779 00
 [[ADDRESS_6]]: Slezská 145/7, Opava 746 01
-[[ADDRESS_7]]: hneiderovi byla zabavena nemovitost na adrese Polní 89, Ostrava
+[[ADDRESS_7]]: Polní 89, Ostrava
 [[ADDRESS_8]]: Lázeňská 67/3, Teplice 415 01
 [[ADDRESS_9]]: Zahradní 123, Hradec Králové 500 02
 [[ADDRESS_10]]: Krátká 89/12, Brno 602 00
 [[ADDRESS_11]]: Polní 45/8, Pardubice 530 02
 [[ADDRESS_12]]: Lázeňská 123, Karlovy Vary 360 01
-[[ADDRESS_13]]: Slezská 67, Opava 746 01
 [[ADDRESS_14]]: Revoluční 45/9, Ústí nad Labem 400 01
 [[ADDRESS_15]]: Zahradní 34, Děčín 405 02
 [[ADDRESS_16]]: Krátká 67, Most 434 01
 [[ADDRESS_17]]: Polní 89/4, Chomutov 430 01
-[[ADDRESS_18]]: Vinohradská 245, Praha 2
 [[ADDRESS_19]]: Lázeňská 89, Praha 1
 [[ADDRESS_20]]: Krátká 123, Havířov 736 01
-[[ADDRESS_21]]: Ostrava
 
 BANK
 [[BANK_1]]: 9876543210/0100
@@ -161,6 +166,9 @@ ID_CARD
 [[ID_CARD_1]]: 789456123
 [[ID_CARD_2]]: ST456789
 [[ID_CARD_3]]: 456789012
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: NS 4567
 
 PHONE
 [[PHONE_1]]: +420 603 789 456

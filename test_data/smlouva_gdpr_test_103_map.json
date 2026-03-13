@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:52.785941",
+  "generated_at": "2026-03-13T09:56:30.170924",
   "source_file": "smlouva_gdpr_test_103.docx",
   "entities": [
     {
@@ -18,19 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Renaty Holíkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Holíkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Renatě Holíkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Renaty Holíkové",
       "occurrences": 1
     },
     {
@@ -54,13 +48,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Tomášovi Dvořákovi",
+      "original": "Tomášem Dvořákem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Tomášem Dvořákem",
+      "original": "Tomášovi Dvořákovi",
       "occurrences": 1
     },
     {
@@ -96,12 +90,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Václavovi Roubalovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Václava Roubala",
       "occurrences": 1
     },
@@ -114,14 +102,20 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
+      "original": "Václavovi Roubalovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Václavem Roubalem",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Kampus 9, 625 00 Brno",
-      "occurrences": 1
+      "original": "Kampus 9, 625 00, Brno",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -131,33 +125,9 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Pojišťovací 28/25, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Pojišťovací 28/25, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Pojišťovací 28/25, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Pojišťovací 28/25, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Tomášovi Dvořákovi a Sadová 135/16, 370 01 České Budějovice pro Renatě",
-      "occurrences": 1
+      "original": "Pojišťovací 28/25, Praha 1, 110 00",
+      "occurrences": 2
     },
     {
       "type": "ICO",

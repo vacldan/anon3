@@ -20,8 +20,6 @@ ADDRESS
 [[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
 [[ADDRESS_2]]: Vinohradská 146/22, 130 00 Praha 3
 [[ADDRESS_3]]: Sadová 193/12, 370 01 České Budějovice
-[[ADDRESS_4]]: platnost 08/28, CVC
-[[ADDRESS_5]]: písemně na adresu Sadová 193/12, 370 01 České Budějovice
 
 BANK
 [[BANK_1]]: 575178293/0600

@@ -8,6 +8,7 @@ OSOBY
 [[PERSON_2]]: Alžběta Tesařová
   - Alžběto Tesařová
   - Alžbětou Tesařovou
+  - Alžbětu Tesařováovou
   - Alžběty Tesařové
   - Alžbětě Tesařové
 [[PERSON_3]]: Vojtěch Hrubeš
@@ -17,26 +18,20 @@ OSOBY
 [[PERSON_4]]: Lída Holubová
   - Lídy Holubové
 [[PERSON_5]]: Renata Křížová
+  - Renatu Křížováovou
   - Renaty Křížové
 [[PERSON_6]]: Radek Beneš
   - Radka Beneša
-[[PERSON_7]]: Alžběta Tesařováová
-  - Alžbětu Tesařováovou
-[[PERSON_8]]: Renata Křížováová
-  - Renatu Křížováovou
 
 ADDRESS
-[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_1]]: Na Hradbách 15, 702 00, Ostrava
 [[ADDRESS_2]]: Na Kopci 225/20, 100 00 Praha 10
-[[ADDRESS_3]]: Křenová 172, 602 00 Brno
-[[ADDRESS_4]]: Dvořákova 75/18, 370 01 České Budějovice
-[[ADDRESS_5]]: Technologická 109/24, 160 00 Praha 6
-[[ADDRESS_6]]: Palackého 185/9, 301 00 Plzeň
-[[ADDRESS_7]]: U Nemocnice 113/17, 128 08 Praha 2
-[[ADDRESS_8]]: a Křenová 172, 602 00 Brno
-[[ADDRESS_9]]: platnost 07/28, CVC
-[[ADDRESS_10]]: Bezručova 41, Plzeň
-[[ADDRESS_11]]: v Plzni
+[[ADDRESS_3]]: Křenová 172, 602 00, Brno
+[[ADDRESS_5]]: Dvořákova 75/18, 370 01 České Budějovice
+[[ADDRESS_6]]: Technologická 109/24, 160 00 Praha 6
+[[ADDRESS_7]]: Palackého 185/9, 301 00 Plzeň
+[[ADDRESS_8]]: U Nemocnice 113/17, 128 08 Praha 2
+[[ADDRESS_9]]: Bezručova 41, Plzeň
 
 BANK
 [[BANK_1]]: 24134-5761032045/5500
@@ -93,6 +88,7 @@ IP
 LICENSE_PLATE
 [[LICENSE_PLATE_1]]: PP25281
 [[LICENSE_PLATE_2]]: CZ64466
+[[LICENSE_PLATE_3]]: LV 9242
 
 MAC
 [[MAC_1]]: 67:AA:4C:03:E2:7F
@@ -107,5 +103,4 @@ PHONE
 [[PHONE_4]]: +420722432919
 [[PHONE_5]]: +420641530649
 [[PHONE_6]]: +420 617 255 435
-[[PHONE_7]]: 675237846
 

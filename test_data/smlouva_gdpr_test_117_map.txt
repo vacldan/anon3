@@ -20,13 +20,9 @@ OSOBY
   - Ondřejovi Malíkovi
 
 ADDRESS
-[[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_1]]: Náměstí 1, 500 02, Hradec Králové
 [[ADDRESS_2]]: Technologická 115/7, 160 00 Praha 6
-[[ADDRESS_3]]: Vinohradská 62/1, 130 00 Praha 3
-[[ADDRESS_4]]: případně písemně na adresu Vinohradská 62/1, 130 00 Praha 3
-[[ADDRESS_5]]: písemné doručení na adresu Vinohradská 62/1, 130 00 Praha 3
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Vinohradská 62/1, 130 00 Praha 3
-[[ADDRESS_7]]: pro Tomášovi Benešovi a Technologická 115/7, 160 00 Praha 6
+[[ADDRESS_5]]: Vinohradská 62/1, Praha 3, 130 00
 
 BANK
 [[BANK_1]]: 738919051/5500

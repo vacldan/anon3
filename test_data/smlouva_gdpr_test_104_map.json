@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:53.080351",
+  "generated_at": "2026-03-13T09:56:30.587581",
   "source_file": "smlouva_gdpr_test_104.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Tomáše Holíka",
+      "original": "Tomášovi Holíkovi",
       "occurrences": 1
     },
     {
@@ -24,19 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Tomáše Holíka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Tomáši Holíke",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Holíkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Tomášovi Holíkovi",
       "occurrences": 1
     },
     {
@@ -48,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Barboro Nováková",
+      "original": "Barbory Novákové",
       "occurrences": 1
     },
     {
@@ -60,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Barborou Novákovou",
+      "original": "Barboro Nováková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Barbory Novákové",
+      "original": "Barborou Novákovou",
       "occurrences": 1
     },
     {
@@ -96,19 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Tomášovi Královi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Tomáši Krále",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Tomáše Krála",
+      "original": "Tomášovi Královi",
       "occurrences": 1
     },
     {
@@ -118,10 +106,16 @@
       "occurrences": 1
     },
     {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Tomáše Krála",
+      "occurrences": 1
+    },
+    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Poliklinická 3, 120 00 Praha 2",
-      "occurrences": 1
+      "original": "Poliklinická 3, Praha 2, 120 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -133,31 +127,7 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Křenová 88/26, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Křenová 88/26, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Křenová 88/26, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Křenová 88/26, 602 00 Brno pro Barborě Novákové a",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Jabloňová 39/13, 400 01 Ústí nad Labem pro Tomášovi",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ICO",

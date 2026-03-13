@@ -22,8 +22,6 @@ ADDRESS
 [[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
 [[ADDRESS_2]]: Jabloňová 60/4, 400 01 Ústí nad Labem
 [[ADDRESS_3]]: U Parku 123/23, 779 00 Olomouc
-[[ADDRESS_4]]: platnost 08/28, CVC
-[[ADDRESS_5]]: písemně na adresu U Parku 123/23, 779 00 Olomouc
 
 BANK
 [[BANK_1]]: 947790371/0100

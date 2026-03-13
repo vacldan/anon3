@@ -8,6 +8,7 @@ OSOBY
 [[PERSON_2]]: Blanka Malíková
   - Blanko Malíková
   - Blankou Malíkovou
+  - Blanku Malíkováovou
   - Blanky Malíkové
   - Blankě Malíkové
 [[PERSON_3]]: Tomáš Dvořák
@@ -16,26 +17,21 @@ OSOBY
   - Tomášovi Dvořákovi
 [[PERSON_4]]: Vincenc Hrubeš
   - Vincenca Hrubeša
-[[PERSON_5]]: Alice Havličková
+[[PERSON_5]]: Alica Havliček
+  - Alice Havličková
+  - Alice Havličkováovou
   - Alice Havličkové
 [[PERSON_6]]: Metoděj Turek
   - Metoděja Turka
-[[PERSON_7]]: Blanka Malíkováová
-  - Blanku Malíkováovou
-[[PERSON_8]]: Alice Havličkováová
-  - Alice Havličkováovou
 
 ADDRESS
-[[ADDRESS_1]]: Bělehradská 132, 120 84 Praha 2
+[[ADDRESS_1]]: Bělehradská 132, Praha 2, 120 84
 [[ADDRESS_2]]: Wolkerova 148/5, 796 01 Prostějov
-[[ADDRESS_3]]: Křenová 62, 602 00 Brno
-[[ADDRESS_4]]: Jihlavská 212, 625 00 Brno
-[[ADDRESS_5]]: U Parku 23/3, 779 00 Olomouc
-[[ADDRESS_6]]: Dvořákova 164/15, 370 01 České Budějovice
-[[ADDRESS_7]]: Národní 142/21, 110 00 Praha 1
-[[ADDRESS_8]]: Wolkerova 148/5, 796 01 Prostějov a Křenová 62
-[[ADDRESS_9]]: Brno
-[[ADDRESS_10]]: platnost 11/28, CVC
+[[ADDRESS_3]]: Křenová 62, 602 00, Brno
+[[ADDRESS_5]]: Jihlavská 212, 625 00 Brno
+[[ADDRESS_6]]: U Parku 23/3, 779 00 Olomouc
+[[ADDRESS_7]]: Dvořákova 164/15, 370 01 České Budějovice
+[[ADDRESS_8]]: Národní 142/21, 110 00 Praha 1
 
 BANK
 [[BANK_1]]: 3657582382/0100

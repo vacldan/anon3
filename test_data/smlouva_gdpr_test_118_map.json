@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:57.234005",
+  "generated_at": "2026-03-13T09:56:36.787513",
   "source_file": "smlouva_gdpr_test_118.docx",
   "entities": [
     {
@@ -18,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Barbory Řezníčkové",
+      "original": "Barborou Řezníčkovou",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Barborou Řezníčkovou",
+      "original": "Barbory Řezníčkové",
       "occurrences": 1
     },
     {
@@ -42,13 +42,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jaroslava Holíka",
+      "original": "Jaroslavem Holíkem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jaroslavem Holíkem",
+      "original": "Jaroslava Holíka",
       "occurrences": 1
     },
     {
@@ -72,19 +72,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Petrě Dvořákové",
+      "original": "Petrou Dvořákovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Petrou Dvořákovou",
+      "original": "Petrě Dvořákové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Štěpán Turek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Štěpáne Turku",
       "occurrences": 1
     },
     {
@@ -106,16 +112,10 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Štěpáne Turku",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Na Hradbách 15, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Na Hradbách 15, 702 00, Ostrava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -127,30 +127,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Na Návsi 25/17, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Na Návsi 25/17, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Na Návsi 25/17, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Na Návsi 25/17, 789 01 Zábřeh pro Jaroslavovi Holíkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "a Dlouhá 76/19, 602 00 Brno pro Barborě Řezníčkové",
       "occurrences": 1
     },
     {

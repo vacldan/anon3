@@ -18,13 +18,9 @@ OSOBY
   - Alešovi Hrubešovi
 
 ADDRESS
-[[ADDRESS_1]]: Právnická 12, 110 00 Praha 1
+[[ADDRESS_1]]: Právnická 12, Praha 1, 110 00
 [[ADDRESS_2]]: Vinohradská 8/26, 130 00 Praha 3
 [[ADDRESS_3]]: Na Kopci 17/11, 100 00 Praha 10
-[[ADDRESS_4]]: případně písemně na adresu Na Kopci 17/11, 100 00 Praha 10
-[[ADDRESS_5]]: písemné doručení na adresu Na Kopci 17/11, 100 00 Praha 10
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Kopci 17/11, 100 00 Praha 10
-[[ADDRESS_7]]: pro Lucie Malíkové a Vinohradská 8/26, 130 00 Praha 3
 
 BANK
 [[BANK_1]]: 440940744/0100

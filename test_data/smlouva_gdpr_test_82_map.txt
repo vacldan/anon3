@@ -8,38 +8,30 @@ OSOBY
 [[PERSON_2]]: Eliška Křížová
   - Eliško Křížová
   - Eliškou Křížovou
+  - Elišku Křížováovou
   - Elišky Křížové
   - Eliškě Křížové
-[[PERSON_3]]: Eliška Křížováová
-  - Elišku Křížováovou
-[[PERSON_4]]: Pavel Havlička
+[[PERSON_3]]: Pavel Havlička
   - Pavla Havličku
   - Pavla Havličky
   - Pavlem Havličkou
   - Pavlovi Havličkovi
-[[PERSON_5]]: Darja Turková
-  - Darjy Turkové
-[[PERSON_6]]: Alžběta Řezníčková
-  - Alžběty Řezníčkové
-[[PERSON_7]]: Max Hrubeš
-  - Maxa Hrubeša
-[[PERSON_8]]: Darja Turkováová
+[[PERSON_4]]: Darja Turková
   - Darju Turkováovou
-[[PERSON_9]]: Alžběta Řezníčkováová
+  - Darjy Turkové
+[[PERSON_5]]: Alžběta Řezníčková
   - Alžbětu Řezníčkováovou
+  - Alžběty Řezníčkové
+[[PERSON_6]]: Max Hrubeš
+  - Maxa Hrubeša
 
 ADDRESS
-[[ADDRESS_1]]: Kosmonautů 44, 779 00 Olomouc
+[[ADDRESS_1]]: Kosmonautů 44, 779 00, Olomouc
 [[ADDRESS_2]]: Pražská 150, 360 01 Karlovy Vary
 [[ADDRESS_3]]: Žižkova 166, 460 01 Liberec
-[[ADDRESS_4]]: Praha 1
-[[ADDRESS_5]]: Smetanova 159/30, 760 01 Zlín
-[[ADDRESS_6]]: Havlíčkova 21/13, 586 01 Jihlava
-[[ADDRESS_7]]: Tylova 95, 530 02 Pardubice
-[[ADDRESS_8]]: Smetanova 176/15, 760 01 Zlín
-[[ADDRESS_9]]: Pražská 150, 360 01 Karlovy Vary a Žižkova
-[[ADDRESS_10]]: Liberec
-[[ADDRESS_11]]: platnost 08/30, CVC
+[[ADDRESS_5]]: Havlíčkova 21/13, 586 01 Jihlava
+[[ADDRESS_6]]: Tylova 95, 530 02 Pardubice
+[[ADDRESS_7]]: Smetanova 176/15, 760 01 Zlín
 
 BANK
 [[BANK_1]]: 55595-2417260982/0600

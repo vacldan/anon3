@@ -1,18 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:28.553477",
+  "generated_at": "2026-03-13T09:57:15.236818",
   "source_file": "smlouva_gdpr_test_70.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Vincenc Novák",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Vincence Nováke",
       "occurrences": 1
     },
     {
@@ -25,6 +19,12 @@
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Vincencovi Novákovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Vincence Nováke",
       "occurrences": 1
     },
     {
@@ -48,6 +48,18 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Šárku Brázdováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Šárky Brázdové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Šárkou Brázdovou",
       "occurrences": 1
     },
@@ -59,14 +71,20 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Šárky Brázdové",
+      "label": "[[PERSON_3]]",
+      "original": "Ivana Soukupová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Ivana Soukupová",
+      "original": "Ivanu Soukupováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Ivany Soukupové",
       "occurrences": 1
     },
     {
@@ -79,12 +97,6 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Ivaně Soukupové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Ivany Soukupové",
       "occurrences": 1
     },
     {
@@ -108,6 +120,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
+      "original": "Kristu Beranováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Kristy Beranové",
       "occurrences": 1
     },
@@ -120,116 +138,44 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Brunoa Kuchtu",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_6]]",
       "original": "Brunoa Kuchty",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Ivana Soukupováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Ivanu Soukupováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Šárka Brázdováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Šárku Brázdováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Krista Beranováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Kristu Beranováovou",
+      "label": "[[PERSON_6]]",
+      "original": "Brunoa Kuchtu",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Zahradní 5, 390 02 Tábor",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Jabloňová 88, 400 01 Ústí nad Labem",
-      "occurrences": 1
+      "original": "Zahradní 5, 390 02, Tábor",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Revoluční 205/33, 110 00 Praha 1",
-      "occurrences": 1
+      "original": "Revoluční 205/33, Praha 1, 110 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Žižkova 221/7, 460 01 Liberec",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "Dvořákova 179/21, 370 01 České Budějovice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Dvořákova 172/29, 370 01 České Budějovice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Jabloňová 211, 400 01 Ústí nad Labem",
-      "occurrences": 1
+      "original": "Dvořákova 172/29, 370 01 České Budějovice",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Jabloňová 88, 400 01 Ústí nad Labem a Revoluční",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 01/30, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "V Ostravě",
-      "occurrences": 1
+      "original": "Jabloňová 211, 400 01 Ústí nad Labem",
+      "occurrences": 2
     },
     {
       "type": "ICO",

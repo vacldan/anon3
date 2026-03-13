@@ -20,13 +20,9 @@ OSOBY
   - Matějovi Hrubešovi
 
 ADDRESS
-[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
+[[ADDRESS_1]]: Poliklinická 3, Praha 2, 120 00
 [[ADDRESS_2]]: Křenová 136/5, 602 00 Brno
-[[ADDRESS_3]]: Vinohradská 100/22, 130 00 Praha 3
-[[ADDRESS_4]]: případně písemně na adresu Vinohradská 100/22, 130 00 Praha 3
-[[ADDRESS_5]]: písemné doručení na adresu Vinohradská 100/22, 130 00 Praha 3
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Vinohradská 100/22, 130 00 Praha 3
-[[ADDRESS_7]]: pro Jaroslavovi Vaněkovi a Křenová 136/5, 602 00 Brno pro Veronikě Dvořákové
+[[ADDRESS_5]]: Vinohradská 100/22, Praha 3, 130 00
 
 BANK
 [[BANK_1]]: 464059338/0100

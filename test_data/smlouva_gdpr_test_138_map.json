@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:03.269996",
+  "generated_at": "2026-03-13T09:56:45.904148",
   "source_file": "smlouva_gdpr_test_138.docx",
   "entities": [
     {
@@ -18,6 +18,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Michalem Hrubešem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Michale Hrubeše",
       "occurrences": 1
     },
@@ -25,12 +31,6 @@
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Michala Hrubeša",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Michalem Hrubešem",
       "occurrences": 1
     },
     {
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavlovi Novákovi",
+      "original": "Pavlem Novákem",
       "occurrences": 1
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavlem Novákem",
+      "original": "Pavlovi Novákovi",
       "occurrences": 1
     },
     {
@@ -90,18 +90,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Davida Roubala",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Davide Roubale",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Davidem Roubalem",
       "occurrences": 1
     },
@@ -112,10 +100,22 @@
       "occurrences": 1
     },
     {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Davida Roubala",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Davide Roubale",
+      "occurrences": 1
+    },
+    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Nemocniční 1, 400 01 Ústí nad Labem",
-      "occurrences": 1
+      "original": "Nemocniční 1, 400 01, Ústí nad Labem",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -127,31 +127,7 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "U Parku 137/6, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu U Parku 137/6, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu U Parku 137/6, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa U Parku 137/6, 779 00 Olomouc pro Pavlovi Novákovi a",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Křenová 163/9, 602 00 Brno pro Michalovi Hrubešovi",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ICO",

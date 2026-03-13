@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:42.066079",
+  "generated_at": "2026-03-13T09:56:17.887710",
   "source_file": "smlouva5.docx",
   "entities": [
     {
@@ -217,12 +217,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_10]]",
       "original": "Lesní 10, 787 01 Šumperk",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "V Olomouci",
       "occurrences": 1
     }
   ]

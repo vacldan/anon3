@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:05.327881",
+  "generated_at": "2026-03-13T09:56:49.204048",
   "source_file": "smlouva_gdpr_test_145.docx",
   "entities": [
     {
@@ -12,13 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Řezníčkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Alžběto Řezníčková",
+      "original": "Alžběty Řezníčkové",
       "occurrences": 1
     },
     {
@@ -30,13 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alžbětou Řezníčkovou",
+      "original": "Alžběto Řezníčková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alžběty Řezníčkové",
+      "original": "Alžbětou Řezníčkovou",
       "occurrences": 1
     },
     {
@@ -54,12 +48,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Karle Kříže",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Karlovi Křížovi",
       "occurrences": 1
     },
@@ -67,6 +55,12 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Karla Kříža",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Karle Kříže",
       "occurrences": 1
     },
     {
@@ -96,6 +90,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
+      "original": "Kláro Křížová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Klárě Křížové",
       "occurrences": 1
     },
@@ -108,56 +108,20 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Kláro Křížová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Kláry Křížové",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Poliklinická 3, 120 00 Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Jabloňová 69/5, 400 01 Ústí nad Labem",
-      "occurrences": 1
+      "original": "Poliklinická 3, Praha 2, 120 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Jabloňová 121/3, 400 01 Ústí nad Labem",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Jabloňová 121/3, 400 01 Ústí nad Labem",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Jabloňová 121/3, 400 01 Ústí nad Labem",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Jabloňová 121/3, 400 01 Ústí nad Labem pro Karlovi",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Křížovi a Jabloňová 69/5, 400 01 Ústí nad Labem pro Alžbětě",
-      "occurrences": 1
+      "occurrences": 3
     },
     {
       "type": "ICO",

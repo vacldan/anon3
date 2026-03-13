@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:08.116655",
+  "generated_at": "2026-03-13T09:56:53.965348",
   "source_file": "smlouva_gdpr_test_23.docx",
   "entities": [
     {
@@ -24,13 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Monikou Svobodovou",
+      "original": "Monikě Svobodové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Monikě Svobodové",
+      "original": "Monikou Svobodovou",
       "occurrences": 1
     },
     {
@@ -42,13 +42,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Matějem Řezníčkem",
+      "original": "Matějovi Řezníčkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Matějovi Řezníčkovi",
+      "original": "Matějem Řezníčkem",
       "occurrences": 1
     },
     {
@@ -109,18 +109,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Na Návsi 63/1, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "platnost 08/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemně na adresu Na Návsi 63/1, 789 01 Zábřeh",
       "occurrences": 1
     },
     {

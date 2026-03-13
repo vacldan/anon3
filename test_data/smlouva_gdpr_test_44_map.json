@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:11.709362",
+  "generated_at": "2026-03-13T09:56:59.787331",
   "source_file": "smlouva_gdpr_test_44.docx",
   "entities": [
     {
@@ -36,13 +36,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Jany Košťálové",
+      "original": "Janou Košťálovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Janou Košťálovou",
+      "original": "Jany Košťálové",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Tomáše Doležala",
+      "original": "Tomášem Doležalem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Tomášem Doležalem",
+      "original": "Tomáše Doležala",
       "occurrences": 1
     },
     {
@@ -72,13 +72,13 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Soudní 8, 110 00 Praha 1",
+      "original": "Soudní 8, Praha 1, 110 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Na Výsluní 21, 190 00 Praha 9",
+      "original": "Na Výsluní 21, Praha 9, 190 00",
       "occurrences": 1
     },
     {
@@ -91,12 +91,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
       "original": "Na Skalce 4, 252 10 Mníšek pod Brdy",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "V Praze",
       "occurrences": 1
     },
     {

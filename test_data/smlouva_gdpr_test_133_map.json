@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:01.807083",
+  "generated_at": "2026-03-13T09:56:43.720851",
   "source_file": "smlouva_gdpr_test_133.docx",
   "entities": [
     {
@@ -18,13 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Heleny Svobodové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Svobodové",
+      "original": "Helenou Svobodovou",
       "occurrences": 1
     },
     {
@@ -36,25 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Helenou Svobodovou",
+      "original": "Heleny Svobodové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Michal Novák",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Michala Nováka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Michalovi Novákovi",
       "occurrences": 1
     },
     {
@@ -67,6 +49,18 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Michale Nováke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Michalovi Novákovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Michala Nováka",
       "occurrences": 1
     },
     {
@@ -96,13 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Václavem Holíkem",
+      "original": "Václavovi Holíkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Václavovi Holíkovi",
+      "original": "Václave Holíke",
       "occurrences": 1
     },
     {
@@ -114,14 +108,14 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Václave Holíke",
+      "original": "Václavem Holíkem",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Poliklinická 3, 120 00 Praha 2",
-      "occurrences": 1
+      "original": "Poliklinická 3, Praha 2, 120 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -133,30 +127,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Na Návsi 66/24, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Na Návsi 66/24, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Na Návsi 66/24, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Na Návsi 66/24, 789 01 Zábřeh pro Michalovi Novákovi a",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Jabloňová 151/6, 400 01 Ústí nad Labem pro Heleně",
       "occurrences": 1
     },
     {

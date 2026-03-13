@@ -5,7 +5,6 @@ OSOBY
   - Helenou Svobodovou
   - Heleny Svobodové
   - Heleně Svobodové
-  - Svobodové
 [[PERSON_2]]: Michal Novák
   - Michala Nováka
   - Michale Nováke
@@ -21,13 +20,9 @@ OSOBY
   - Václavovi Holíkovi
 
 ADDRESS
-[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
+[[ADDRESS_1]]: Poliklinická 3, Praha 2, 120 00
 [[ADDRESS_2]]: Jabloňová 151/6, 400 01 Ústí nad Labem
 [[ADDRESS_3]]: Na Návsi 66/24, 789 01 Zábřeh
-[[ADDRESS_4]]: případně písemně na adresu Na Návsi 66/24, 789 01 Zábřeh
-[[ADDRESS_5]]: písemné doručení na adresu Na Návsi 66/24, 789 01 Zábřeh
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Návsi 66/24, 789 01 Zábřeh pro Michalovi Novákovi a
-[[ADDRESS_7]]: Jabloňová 151/6, 400 01 Ústí nad Labem pro Heleně
 
 BANK
 [[BANK_1]]: 587862869/5500

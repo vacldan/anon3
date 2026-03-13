@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:56.372284",
+  "generated_at": "2026-03-13T09:56:35.503917",
   "source_file": "smlouva_gdpr_test_115.docx",
   "entities": [
     {
@@ -12,25 +12,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Jany Procházkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Janou Procházkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Procházkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Janě Procházkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Jany Procházkové",
       "occurrences": 1
     },
     {
@@ -54,6 +48,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Michala Krála",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Michale Krále",
       "occurrences": 1
     },
@@ -61,12 +61,6 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Michalovi Královi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Michala Krála",
       "occurrences": 1
     },
     {
@@ -96,7 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Alžběty Novákové",
+      "original": "Alžbětě Novákové",
       "occurrences": 1
     },
     {
@@ -108,20 +102,20 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Alžběto Nováková",
+      "original": "Alžběty Novákové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Alžbětě Novákové",
+      "original": "Alžběto Nováková",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Náměstí 1, 500 02 Hradec Králové",
-      "occurrences": 1
+      "original": "Náměstí 1, 500 02, Hradec Králové",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -133,31 +127,7 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Dlouhá 35/18, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Dlouhá 35/18, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Dlouhá 35/18, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Dlouhá 35/18, 602 00 Brno pro Michalovi Královi a",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Sadová 179/14, 370 01 České Budějovice pro Janě",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ICO",

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:26.410563",
+  "generated_at": "2026-03-13T09:57:13.336324",
   "source_file": "smlouva_gdpr_test_67.docx",
   "entities": [
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Blankě Malíkové",
+      "original": "Blanko Malíková",
       "occurrences": 1
     },
     {
@@ -54,13 +54,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Blanky Malíkové",
+      "original": "Blanku Malíkováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Blanko Malíková",
+      "original": "Blankě Malíkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Blanky Malíkové",
       "occurrences": 1
     },
     {
@@ -72,13 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Tomášem Dvořákem",
+      "original": "Tomáše Dvořáka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Tomáše Dvořáka",
+      "original": "Tomášem Dvořákem",
       "occurrences": 1
     },
     {
@@ -102,13 +108,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Alice Havličková",
+      "original": "Alica Havliček",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Alice Havličkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Alice Havličkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Alice Havličková",
       "occurrences": 1
     },
     {
@@ -124,33 +142,9 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Blanka Malíkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Blanku Malíkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Alice Havličkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Alice Havličkováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Bělehradská 132, 120 84 Praha 2",
+      "original": "Bělehradská 132, Praha 2, 120 84",
       "occurrences": 1
     },
     {
@@ -162,49 +156,31 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Křenová 62, 602 00 Brno",
-      "occurrences": 1
+      "original": "Křenová 62, 602 00, Brno",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Jihlavská 212, 625 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "U Parku 23/3, 779 00 Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Dvořákova 164/15, 370 01 České Budějovice",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Národní 142/21, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Wolkerova 148/5, 796 01 Prostějov a Křenová 62",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 11/28, CVC",
+      "original": "Národní 142/21, 110 00 Praha 1",
       "occurrences": 1
     },
     {

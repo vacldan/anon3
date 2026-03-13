@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:21.145385",
+  "generated_at": "2026-03-13T09:56:00.331962",
   "source_file": "smlouva27.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Petra Nováka",
+      "original": "Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Novák",
+      "original": "Petra Nováka",
       "occurrences": 1
     },
     {
@@ -84,13 +84,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Martina Procházku",
+      "original": "Procházkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Procházkovi",
+      "original": "Martina Procházku",
       "occurrences": 1
     },
     {
@@ -312,7 +312,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_33]]",
-      "original": "Jana Horák",
+      "original": "Jana Horáková",
       "occurrences": 1
     },
     {
@@ -407,8 +407,56 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_47]]",
+      "original": "Karel Marek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_48]]",
+      "original": "Barbora Němcová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_49]]",
       "original": "Tomáš Urban",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_50]]",
+      "original": "Monika Zemanová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_51]]",
+      "original": "Robert Kolář",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_52]]",
+      "original": "Daniela Bartošová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_53]]",
+      "original": "Lukáš Pospíšil",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_54]]",
+      "original": "Iveta Krajíčková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_55]]",
+      "original": "Vladimír Růžička",
       "occurrences": 1
     },
     {
@@ -438,7 +486,7 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "na zajištění nemovitosti na adrese Růžová 847/23, Praha 3",
+      "original": "Růžová 847/23, Praha 3",
       "occurrences": 1
     },
     {
@@ -510,18 +558,12 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_13]]",
-      "original": "Plzeň",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_14]]",
       "original": "Jiráskova 89, Kladno 272 01",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_15]]",
+      "label": "[[ADDRESS_14]]",
       "original": "Revoluční 23, Frýdek-Místek 738 01",
       "occurrences": 1
     },

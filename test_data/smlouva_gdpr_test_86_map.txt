@@ -8,6 +8,7 @@ OSOBY
 [[PERSON_2]]: Jitka Holubová
   - Jitko Holubová
   - Jitkou Holubovou
+  - Jitku Holubováovou
   - Jitky Holubové
   - Jitkě Holubové
 [[PERSON_3]]: Blahoslav Kopecký
@@ -18,27 +19,20 @@ OSOBY
 [[PERSON_4]]: Simona Švestková
   - Simony Švestkové
 [[PERSON_5]]: Olga Bartůňková
+  - Olgu Bartůňkováovou
   - Olgy Bartůňkové
 [[PERSON_6]]: Blahoslav Brázda
   - Blahoslava Brázdu
   - Blahoslava Brázdy
-[[PERSON_7]]: Jitka Holubováová
-  - Jitku Holubováovou
-[[PERSON_8]]: Olga Bartůňkováová
-  - Olgu Bartůňkováovou
 
 ADDRESS
-[[ADDRESS_1]]: Lesní 12, 586 01 Jihlava
+[[ADDRESS_1]]: Lesní 12, 586 01, Jihlava
 [[ADDRESS_2]]: Žižkova 37/9, 460 01 Liberec
-[[ADDRESS_3]]: Bezručova 45, 746 01 Opava
-[[ADDRESS_4]]: Národní 248/35, 110 00 Praha 1
-[[ADDRESS_5]]: U Nemocnice 153/24, 128 08 Praha 2
-[[ADDRESS_6]]: Bezručova 31/8, 746 01 Opava
-[[ADDRESS_7]]: Na Kopci 134, 100 00 Praha 10
-[[ADDRESS_8]]: Žižkova 37/9, 460 01 Liberec a Bezručova 45
-[[ADDRESS_9]]: platnost 01/26, CVC
-[[ADDRESS_10]]: Smetanova 152, Ostrava
-[[ADDRESS_11]]: v Ostravě
+[[ADDRESS_5]]: Národní 248/35, 110 00 Praha 1
+[[ADDRESS_6]]: U Nemocnice 153/24, 128 08 Praha 2
+[[ADDRESS_7]]: Bezručova 31/8, 746 01 Opava
+[[ADDRESS_8]]: Na Kopci 134, 100 00 Praha 10
+[[ADDRESS_9]]: Smetanova 152, Ostrava
 
 BANK
 [[BANK_1]]: 143228-3481545033/0100
@@ -92,6 +86,7 @@ IP
 LICENSE_PLATE
 [[LICENSE_PLATE_1]]: PP83452
 [[LICENSE_PLATE_2]]: EA53207
+[[LICENSE_PLATE_3]]: LV 9663
 
 MAC
 [[MAC_1]]: 38:37:67:D2:56:40

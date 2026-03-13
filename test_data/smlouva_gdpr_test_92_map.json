@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:44.663895",
+  "generated_at": "2026-03-13T09:57:29.969501",
   "source_file": "smlouva_gdpr_test_92.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Radku Turku",
+      "original": "Radka Turka",
       "occurrences": 1
     },
     {
@@ -24,13 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Radka Turka",
+      "original": "Radkovi Turkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Radkovi Turkovi",
+      "original": "Radku Turku",
       "occurrences": 1
     },
     {
@@ -42,13 +42,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ivano Dvořáková",
+      "original": "Ivanou Dvořákovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ivany Dvořákové",
+      "original": "Ivano Dvořáková",
       "occurrences": 1
     },
     {
@@ -60,7 +60,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ivanou Dvořákovou",
+      "original": "Ivanu Dvořákováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Ivany Dvořákové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Ell Krejčová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Ellu Krejčováovou",
       "occurrences": 1
     },
     {
@@ -71,8 +89,32 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Ellou Krejčovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Elly Krejčové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Ellě Krejčové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Veronika Křížová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Veroniku Křížováovou",
       "occurrences": 1
     },
     {
@@ -108,56 +150,20 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Ella Krejčováová",
+      "original": "Petru Roubal",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Ellu Krejčováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Ivana Dvořákováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Ivanu Dvořákováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Veronika Křížováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Veroniku Křížováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_11]]",
-      "original": "Petru Roubalováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_11]]",
       "original": "Petru Roubalováovou",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Lesní 12, 586 01 Jihlava",
-      "occurrences": 1
+      "original": "Lesní 12, 586 01, Jihlava",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -168,49 +174,31 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Masarykova 238, 500 02 Hradec Králové",
-      "occurrences": 1
+      "original": "Masarykova 238, 500 02, Hradec Králové",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Smetanova 200/18, 760 01 Zlín",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Pražská 230/4, 360 01 Karlovy Vary",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Riegrova 222, 779 00 Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Husova 34, 390 02 Tábor",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "a Masarykova 238, 500 02 Hradec Králové",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "platnost 12/30, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "V Ostravě",
+      "original": "Husova 34, 390 02 Tábor",
       "occurrences": 1
     },
     {

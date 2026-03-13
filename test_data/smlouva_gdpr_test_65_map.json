@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:24.868365",
+  "generated_at": "2026-03-13T09:57:11.953960",
   "source_file": "smlouva_gdpr_test_65.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michala Vaněka",
+      "original": "Michale Vaněke",
       "occurrences": 1
     },
     {
@@ -24,13 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michalovi Vaněkovi",
+      "original": "Michala Vaněka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michale Vaněke",
+      "original": "Michalovi Vaněkovi",
       "occurrences": 1
     },
     {
@@ -48,6 +48,18 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Gabrielu Hájkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Gabrielo Hájková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Gabrielou Hájkovou",
       "occurrences": 1
     },
@@ -59,32 +71,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Gabrielo Hájková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Ello Pazderová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Elly Pazderové",
+      "original": "Ello Pazdera",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Ellou Pazderovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Ella Pazderová",
       "occurrences": 1
     },
     {
@@ -96,7 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Anežkě Dvořákové",
+      "original": "Anežku Dvořákováovou",
       "occurrences": 1
     },
     {
@@ -108,7 +102,31 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
+      "original": "Anežkě Dvořákové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Anežky Dvořákové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Ella Pazderová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Ellu Pazderováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Elly Pazderové",
       "occurrences": 1
     },
     {
@@ -125,6 +143,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Simonu Švestkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_7]]",
       "original": "Roman Vlach",
       "occurrences": 1
@@ -136,105 +160,45 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Anežka Dvořákováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Anežku Dvořákováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Gabriela Hájkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Gabrielu Hájkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Ella Pazderováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Ellu Pazderováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_11]]",
-      "original": "Simona Švestkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_11]]",
-      "original": "Simonu Švestkováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Poliklinická 3, 120 00 Praha 2",
+      "original": "Poliklinická 3, Praha 2, 120 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "U Nemocnice 232/19, 128 08 Praha 2",
+      "original": "Nemocnice 232/19, 128 08 Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Dlouhá 57, 602 00 Brno",
-      "occurrences": 1
+      "original": "Dlouhá 57, 602 00, Brno",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Křenová 55, 602 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "U Parku 136/38, 779 00 Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Technologická 170/23, 160 00 Praha 6",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Jabloňová 85/11, 400 01 Ústí nad Labem",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "a Dlouhá 57, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "platnost 06/29, CVC",
+      "original": "Jabloňová 85/11, 400 01 Ústí nad Labem",
       "occurrences": 1
     },
     {

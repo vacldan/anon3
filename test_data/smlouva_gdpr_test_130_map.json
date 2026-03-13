@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:00.990983",
+  "generated_at": "2026-03-13T09:56:42.446579",
   "source_file": "smlouva_gdpr_test_130.docx",
   "entities": [
     {
@@ -18,6 +18,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Monikě Vlachové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Moniky Vlachové",
       "occurrences": 1
     },
@@ -29,20 +35,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Monikě Vlachové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Aleš Svoboda",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Alešem Svobodou",
       "occurrences": 1
     },
     {
@@ -54,13 +48,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Aleša Svobody",
+      "original": "Aleše Svobodo",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Aleše Svobodo",
+      "original": "Alešem Svobodou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Aleša Svobody",
       "occurrences": 1
     },
     {
@@ -90,13 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Renatou Dvořákovou",
+      "original": "Renatě Dvořákové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Renatě Dvořákové",
+      "original": "Renatou Dvořákovou",
       "occurrences": 1
     },
     {
@@ -114,44 +114,20 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Právnická 12, 110 00 Praha 1",
-      "occurrences": 1
+      "original": "Právnická 12, Praha 1, 110 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "U Parku 124/3, 779 00 Olomouc",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Křenová 168/6, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Křenová 168/6, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Křenová 168/6, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Křenová 168/6, 602 00 Brno pro Alešovi Svobodovi a U",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Parku 124/3, 779 00 Olomouc pro Monikě Vlachové",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ICO",

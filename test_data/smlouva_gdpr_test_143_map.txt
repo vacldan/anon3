@@ -20,13 +20,9 @@ OSOBY
   - Alešovi Malíkovi
 
 ADDRESS
-[[ADDRESS_1]]: Kampus 9, 625 00 Brno
+[[ADDRESS_1]]: Kampus 9, 625 00, Brno
 [[ADDRESS_2]]: U Parku 24/14, 779 00 Olomouc
-[[ADDRESS_3]]: Vinohradská 141/27, 130 00 Praha 3
-[[ADDRESS_4]]: případně písemně na adresu Vinohradská 141/27, 130 00 Praha 3
-[[ADDRESS_5]]: písemné doručení na adresu Vinohradská 141/27, 130 00 Praha 3
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Vinohradská 141/27, 130 00 Praha 3
-[[ADDRESS_7]]: pro Alešovi Vlachovi a U Parku 24/14, 779 00 Olomouc pro Štěpánovi Roubalovi
+[[ADDRESS_5]]: Vinohradská 141/27, Praha 3, 130 00
 
 BANK
 [[BANK_1]]: 962242152/0100

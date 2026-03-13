@@ -7,6 +7,7 @@ OSOBY
 [[PERSON_2]]: Monika Urbanová
   - Moniko Urbanová
   - Monikou Urbanovou
+  - Moniku Urbanováovou
   - Moniky Urbanové
   - Monikě Urbanové
 [[PERSON_3]]: David Kořínek
@@ -14,8 +15,10 @@ OSOBY
   - Davidem Kořínkem
   - Davidovi Kořínkovi
 [[PERSON_4]]: Nikola Havličková
+  - Nikolu Havličkováovou
   - Nikoly Havličkové
 [[PERSON_5]]: Ivana Urbanová
+  - Ivanu Urbanováovou
   - Ivany Urbanové
 [[PERSON_6]]: Marek Malina
   - Marka Malinu
@@ -24,23 +27,14 @@ OSOBY
   - Filipa Krejčího
 [[PERSON_8]]: Filip Krejčímu
   - Filipovi Krejčímu
-[[PERSON_9]]: Monika Urbanováová
-  - Moniku Urbanováovou
-[[PERSON_10]]: Nikola Havličkováová
-  - Nikolu Havličkováovou
-[[PERSON_11]]: Ivana Urbanováová
-  - Ivanu Urbanováovou
 
 ADDRESS
-[[ADDRESS_1]]: Bělehradská 132, 120 84 Praha 2
-[[ADDRESS_2]]: U Nemocnice 96, 128 08 Praha 2
-[[ADDRESS_3]]: Dvořákova 240/20, 370 01 České Budějovice
-[[ADDRESS_4]]: Vinohradská 83/3, 130 00 Praha 3
-[[ADDRESS_5]]: Masarykova 210/16, 500 02 Hradec Králové
-[[ADDRESS_6]]: Tylova 123/33, 530 02 Pardubice
-[[ADDRESS_7]]: Vinohradská 173/15, 130 00 Praha 3
-[[ADDRESS_8]]: a Dvořákova 240/20, 370 01 České Budějovice
-[[ADDRESS_9]]: platnost 05/28, CVC
+[[ADDRESS_1]]: Bělehradská 132, Praha 2, 120 84
+[[ADDRESS_2]]: Nemocnice 96, 128 08 Praha 2
+[[ADDRESS_3]]: Dvořákova 240/20, 370 01, České Budějovice
+[[ADDRESS_6]]: Masarykova 210/16, 500 02 Hradec Králové
+[[ADDRESS_7]]: Tylova 123/33, 530 02 Pardubice
+[[ADDRESS_8]]: Vinohradská 173/15, 130 00 Praha 3
 
 BANK
 [[BANK_1]]: 777628-5750965444/5500

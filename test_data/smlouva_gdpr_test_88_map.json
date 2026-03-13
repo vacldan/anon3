@@ -1,18 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:41.604030",
+  "generated_at": "2026-03-13T09:57:27.270645",
   "source_file": "smlouva_gdpr_test_88.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Bohumil Tesař",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Bohumila Tesařa",
+      "original": "Bohumil Tesařa",
       "occurrences": 1
     },
     {
@@ -24,13 +18,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Bohumilem Tesařem",
+      "original": "Bohumil Tesař",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Bohumile Tesaře",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Bohumila Tesařa",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Bohumilem Tesařem",
       "occurrences": 1
     },
     {
@@ -42,13 +48,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Hedviku Řípováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Hedviky Řípové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Hedvikou Řípovou",
+      "original": "Hedvikě Řípové",
       "occurrences": 1
     },
     {
@@ -60,7 +72,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Hedvikě Řípové",
+      "original": "Hedvikou Řípovou",
       "occurrences": 1
     },
     {
@@ -73,6 +85,12 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Lucie Fialové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Lucii Fialováovou",
       "occurrences": 1
     },
     {
@@ -108,6 +126,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
+      "original": "Květu Novákováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Květy Novákové",
       "occurrences": 1
     },
@@ -120,55 +144,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Alexa Hrdiny",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_6]]",
       "original": "Alexa Hrdinu",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Lucie Fialováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Lucii Fialováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Hedvika Řípováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Hedviku Řípováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Květa Novákováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Květu Novákováovou",
+      "label": "[[PERSON_6]]",
+      "original": "Alexa Hrdiny",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Bělehradská 132, 120 84 Praha 2",
+      "original": "Bělehradská 132, Praha 2, 120 84",
       "occurrences": 1
     },
     {
@@ -179,62 +167,38 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
+      "label": "[[ADDRESS_4]]",
       "original": "U Parku 92/2, 779 00 Olomouc",
-      "occurrences": 1
+      "occurrences": 4
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Křenová 171/22, 602 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Husova 40/33, 390 02 Tábor",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Wolkerova 56/10, 796 01 Prostějov",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
+      "label": "[[ADDRESS_8]]",
       "original": "U Nemocnice 134/4, 128 08 Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "Bezručova 187/20, 746 01 Opava a U Parku",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_9]]",
-      "original": "Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 05/29, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
       "original": "Na Návsi 166, Praha",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_12]]",
-      "original": "v Praze",
       "occurrences": 1
     },
     {
@@ -388,12 +352,6 @@
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "805604586",
-      "occurrences": 1
-    },
-    {
       "type": "EMAIL",
       "label": "[[EMAIL_1]]",
       "original": "bohumil.tesar@seznam.cz",
@@ -469,6 +427,12 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
       "original": "CZ20637",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_3]]",
+      "original": "LV 4442",
       "occurrences": 1
     },
     {

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:11.992292",
+  "generated_at": "2026-03-13T09:57:00.415481",
   "source_file": "smlouva_gdpr_test_47.docx",
   "entities": [
     {
@@ -42,32 +42,26 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Janou Dvořáčkovou",
+      "original": "Jany Dvořáčkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Jany Dvořáčkové",
+      "original": "Janou Dvořáčkovou",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Zdravotní 10, 602 00 Brno",
-      "occurrences": 1
+      "original": "Zdravotní 10, 602 00, Brno",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Průmyslová 77, 627 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "V Brně",
-      "occurrences": 1
+      "original": "Průmyslová 77, 627 00, Brno",
+      "occurrences": 2
     },
     {
       "type": "ICO",

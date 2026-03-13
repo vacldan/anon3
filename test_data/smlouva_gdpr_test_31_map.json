@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:09.468632",
+  "generated_at": "2026-03-13T09:56:56.448180",
   "source_file": "smlouva_gdpr_test_31.docx",
   "entities": [
     {
@@ -18,25 +18,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Markétou Benešovou",
+      "original": "Markétě Benešové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Markétě Benešové",
+      "original": "Markétou Benešovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Petr Dohnal",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Petra Dohnala",
       "occurrences": 1
     },
     {
@@ -53,8 +47,20 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Petra Dohnala",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Gabriela Štěpánová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Gabriely Štěpánové",
       "occurrences": 1
     },
     {
@@ -71,56 +77,44 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Gabriely Štěpánové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Tomáš Nguyen",
       "occurrences": 1
     },
     {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_1]]",
-      "original": "Právnická 12, 110 00 Praha 1",
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "AK 12345",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_2]]",
+      "original": "PP45678",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Sadová 19, 370 01 České Budějovice",
+      "label": "[[ADDRESS_1]]",
+      "original": "Právnická 12, Praha 1, 110 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Sadová 19, byt 7",
-      "occurrences": 1
+      "original": "Sadová 19, byt 7, 370 01 České Budějovice",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "České Budějovice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
       "original": "Jabloňová 12, 400 01 Ústí nad Labem",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_5]]",
       "original": "U Parku 8, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "V Praze",
       "occurrences": 1
     },
     {
@@ -271,12 +265,6 @@
       "type": "ID_CARD",
       "label": "[[ID_CARD_1]]",
       "original": "112233445",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_1]]",
-      "original": "PP45678",
       "occurrences": 1
     },
     {

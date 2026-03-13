@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:49:57.712528",
+  "generated_at": "2026-03-13T09:55:38.271358",
   "source_file": "smlouva16.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Tomáše Nováka",
+      "original": "Novák",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Novák",
+      "original": "Tomáše Nováka",
       "occurrences": 1
     },
     {
@@ -79,6 +79,12 @@
       "type": "PERSON",
       "label": "[[PERSON_10]]",
       "original": "Eva Svobodová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_10]]",
+      "original": "Svobodová",
       "occurrences": 1
     },
     {
@@ -175,12 +181,6 @@
       "type": "PERSON",
       "label": "[[PERSON_27]]",
       "original": "Jana Svobodová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_28]]",
-      "original": "Processing Agreement",
       "occurrences": 1
     },
     {
@@ -454,84 +454,6 @@
       "occurrences": 1
     },
     {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_1]]",
-      "original": "Praha",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Pařížská 123/45, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "Mánesova 67/89, 120 00 Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "Evropská 234/56, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "v Praze",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Karlovo náměstí 89/34, 120 00 Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "Vinohradská 234/78, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Korunní 123/45, 120 00 Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "Slezská 67/89, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "Mánesova 45/12, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_12]]",
-      "original": "Karlovo náměstí 89/34, Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_13]]",
-      "original": "Pařížská 67, Praha 1",
-      "occurrences": 1
-    },
-    {
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_1]]",
       "original": "750615/1234",
@@ -673,6 +595,48 @@
       "type": "BIRTH_PLACE",
       "label": "[[BIRTH_PLACE_2]]",
       "original": "Praha",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Pařížská 123/45, Praha 1 - Josefov, 110 00",
+      "occurrences": 2
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Mánesova 67/89, Praha 2 - Vinohrady, 120 00",
+      "occurrences": 2
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "Evropská 234/56, Praha 6 - Dejvice, 160 00",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "Karlovo náměstí 89/34, Praha 2, 120 00",
+      "occurrences": 2
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "Vinohradská 234/78, 130 00 Praha 3",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_6]]",
+      "original": "Korunní 123/45, 120 00 Praha 2",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_7]]",
+      "original": "Slezská 67/89, 130 00 Praha 3",
       "occurrences": 1
     },
     {
@@ -851,12 +815,6 @@
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_5]]",
-      "original": "+420 222 123 456",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
       "label": "[[PHONE_6]]",
       "original": "+420 737 456 789",
       "occurrences": 1
@@ -931,7 +889,7 @@
       "type": "PHONE",
       "label": "[[PHONE_18]]",
       "original": "+420 224 123 456",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "PHONE",
@@ -1108,6 +1066,12 @@
       "occurrences": 1
     },
     {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "TD 2024",
+      "occurrences": 1
+    },
+    {
       "type": "INSURANCE_ID",
       "label": "[[INSURANCE_ID_1]]",
       "original": "7506151234",
@@ -1195,12 +1159,6 @@
       "type": "ACCOUNT_ID",
       "label": "[[ACCOUNT_ID_1]]",
       "original": "987654321098",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_1]]",
-      "original": "SO27001",
       "occurrences": 1
     },
     {

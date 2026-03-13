@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:38.787399",
+  "generated_at": "2026-03-13T09:57:24.704162",
   "source_file": "smlouva_gdpr_test_84.docx",
   "entities": [
     {
@@ -24,19 +24,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Blahoslave Dvořáke",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Blahoslavem Dvořákem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Blahoslave Dvořáke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Antoni Černá",
+      "original": "Antoni Černý",
       "occurrences": 1
     },
     {
@@ -48,24 +48,30 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Antonií Černou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Antonie Černá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
+      "label": "[[PERSON_3]]",
+      "original": "Antoni Černá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Antonií Černou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Antonii Černé",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
+      "label": "[[PERSON_3]]",
       "original": "Antonii Černou",
       "occurrences": 1
     },
@@ -73,6 +79,12 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Růžena Krejčová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Růženu Krejčováovou",
       "occurrences": 1
     },
     {
@@ -119,6 +131,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Soňu Malíkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_7]]",
       "original": "Bruno Doležal",
       "occurrences": 1
@@ -130,33 +148,9 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Růžena Krejčováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Růženu Krejčováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Soňa Malíkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Soňu Malíkováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Praha 1",
+      "original": "Václavské nám. 12, 110 00 Praha 1",
       "occurrences": 1
     },
     {
@@ -169,7 +163,7 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Tylova 221/39, 530 02 Pardubice",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -193,24 +187,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
       "original": "Nádražní 70/37, 702 00 Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "a Tylova 221/39, 530 02 Pardubice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "platnost 10/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "V Liberci",
       "occurrences": 1
     },
     {

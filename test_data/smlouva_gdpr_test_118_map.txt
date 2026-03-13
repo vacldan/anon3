@@ -20,13 +20,9 @@ OSOBY
   - Štěpánovi Turkovi
 
 ADDRESS
-[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_1]]: Na Hradbách 15, 702 00, Ostrava
 [[ADDRESS_2]]: Dlouhá 76/19, 602 00 Brno
 [[ADDRESS_3]]: Na Návsi 25/17, 789 01 Zábřeh
-[[ADDRESS_4]]: případně písemně na adresu Na Návsi 25/17, 789 01 Zábřeh
-[[ADDRESS_5]]: písemné doručení na adresu Na Návsi 25/17, 789 01 Zábřeh
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Návsi 25/17, 789 01 Zábřeh pro Jaroslavovi Holíkovi
-[[ADDRESS_7]]: a Dlouhá 76/19, 602 00 Brno pro Barborě Řezníčkové
 
 BANK
 [[BANK_1]]: 870995792/5500

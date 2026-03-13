@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:11.896609",
+  "generated_at": "2026-03-13T09:57:00.220644",
   "source_file": "smlouva_gdpr_test_46.docx",
   "entities": [
     {
@@ -36,20 +36,20 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Kláry Havelové",
+      "original": "Klárou Havelovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Klárou Havelovou",
+      "original": "Kláry Havelové",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "U Stromu 2, 500 03 Hradec Králové",
-      "occurrences": 1
+      "original": "Stromu 2, 500 03, Hradec Králové",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",

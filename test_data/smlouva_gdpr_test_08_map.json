@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:50.360632",
+  "generated_at": "2026-03-13T09:56:27.346546",
   "source_file": "smlouva_gdpr_test_08.docx",
   "entities": [
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Nikol Šťastná",
+      "original": "Nikol Šťastný",
       "occurrences": 1
     },
     {
@@ -60,19 +60,13 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Pojišťovací 4, 110 00 Praha 1",
+      "original": "Pojišťovací 4, Praha 1, 110 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Na Návsi 6, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "V Praze",
       "occurrences": 1
     },
     {

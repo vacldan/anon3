@@ -5,38 +5,34 @@ OSOBY
   - Blahoslave Dvořáke
   - Blahoslavem Dvořákem
   - Blahoslavovi Dvořákovi
-[[PERSON_2]]: Antoni Černá
+[[PERSON_2]]: Antoni Černý
   - Antonie Černá
   - Antonie Černé
+[[PERSON_3]]: Antoni Černá
   - Antonii Černou
   - Antonii Černé
   - Antonií Černou
 [[PERSON_4]]: Růžena Krejčová
   - Růženou Krejčovou
+  - Růženu Krejčováovou
   - Růženy Krejčové
   - Růženě Krejčové
 [[PERSON_5]]: Aleš Dvořák
   - Aleša Dvořáka
 [[PERSON_6]]: Soňa Malíková
+  - Soňu Malíkováovou
   - Soňy Malíkové
 [[PERSON_7]]: Bruno Doležal
   - Brunoa Doležala
-[[PERSON_8]]: Růžena Krejčováová
-  - Růženu Krejčováovou
-[[PERSON_9]]: Soňa Malíkováová
-  - Soňu Malíkováovou
 
 ADDRESS
-[[ADDRESS_1]]: Praha 1
+[[ADDRESS_1]]: Václavské nám. 12, 110 00 Praha 1
 [[ADDRESS_2]]: Národní 73/7, 110 00 Praha 1
 [[ADDRESS_3]]: Tylova 221/39, 530 02 Pardubice
 [[ADDRESS_4]]: Hlavní 118/31, 669 02 Znojmo
 [[ADDRESS_5]]: Na Kopci 93, 100 00 Praha 10
 [[ADDRESS_6]]: Dvořákova 181, 370 01 České Budějovice
 [[ADDRESS_7]]: Nádražní 70/37, 702 00 Ostrava
-[[ADDRESS_8]]: a Tylova 221/39, 530 02 Pardubice
-[[ADDRESS_9]]: platnost 10/28, CVC
-[[ADDRESS_10]]: V Liberci
 
 BANK
 [[BANK_1]]: 5091885044/2700

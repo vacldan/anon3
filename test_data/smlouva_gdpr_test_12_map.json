@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:57.729050",
+  "generated_at": "2026-03-13T09:56:37.520453",
   "source_file": "smlouva_gdpr_test_12.docx",
   "entities": [
     {
@@ -12,13 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpánem Dvořákem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Štěpáne Dvořáke",
+      "original": "Štěpánovi Dvořákovi",
       "occurrences": 1
     },
     {
@@ -30,13 +24,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpánovi Dvořákovi",
+      "original": "Štěpáne Dvořáke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Štěpánem Dvořákem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Petra Roubalová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Petry Roubalové",
       "occurrences": 1
     },
     {
@@ -49,12 +55,6 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Petro Roubalová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Petry Roubalové",
       "occurrences": 1
     },
     {
@@ -84,7 +84,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Petry Králové",
+      "original": "Petrě Králové",
       "occurrences": 1
     },
     {
@@ -96,7 +96,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Petrě Králové",
+      "original": "Petry Králové",
       "occurrences": 1
     },
     {
@@ -115,18 +115,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Technologická 39/20, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "platnost 08/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemně na adresu Technologická 39/20, 160 00 Praha 6",
       "occurrences": 1
     },
     {

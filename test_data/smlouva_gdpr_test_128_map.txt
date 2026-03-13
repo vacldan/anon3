@@ -20,13 +20,9 @@ OSOBY
   - Jaroslavovi Hrubešovi
 
 ADDRESS
-[[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_1]]: Náměstí 1, 500 02, Hradec Králové
 [[ADDRESS_2]]: U Parku 64/19, 779 00 Olomouc
 [[ADDRESS_3]]: Na Kopci 11/6, 100 00 Praha 10
-[[ADDRESS_4]]: případně písemně na adresu Na Kopci 11/6, 100 00 Praha 10
-[[ADDRESS_5]]: písemné doručení na adresu Na Kopci 11/6, 100 00 Praha 10
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Kopci 11/6, 100 00 Praha 10
-[[ADDRESS_7]]: pro Simoně Novákové a U Parku 64/19, 779 00 Olomouc pro Ondřejovi Dvořákovi
 
 BANK
 [[BANK_1]]: 481256634/5500

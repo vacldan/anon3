@@ -8,6 +8,7 @@ OSOBY
 [[PERSON_2]]: Drahomíra Vlachová
   - Drahomíro Vlachová
   - Drahomírou Vlachovou
+  - Drahomíru Vlachováovou
   - Drahomíry Vlachové
   - Drahomírě Vlachové
 [[PERSON_3]]: Marek Holub
@@ -18,27 +19,20 @@ OSOBY
 [[PERSON_4]]: Blanka Benešová
   - Blanky Benešové
 [[PERSON_5]]: Ema Malinová
+  - Emu Malinováovou
   - Emy Malinové
 [[PERSON_6]]: Marek Kuchta
   - Marka Kuchtu
   - Marka Kuchty
-[[PERSON_7]]: Drahomíra Vlachováová
-  - Drahomíru Vlachováovou
-[[PERSON_8]]: Urban 
-[[PERSON_9]]: Ema Malinováová
-  - Emu Malinováovou
-[[PERSON_10]]: Svědci Marek
 
 ADDRESS
-[[ADDRESS_1]]: Bělehradská 132, 120 84 Praha 2
+[[ADDRESS_1]]: Bělehradská 132, Praha 2, 120 84
 [[ADDRESS_2]]: Palackého 171/25, 301 00 Plzeň
-[[ADDRESS_3]]: Husova 151/33, 390 02 Tábor
-[[ADDRESS_4]]: Havlíčkova 239/24, 586 01 Jihlava
-[[ADDRESS_5]]: U Nemocnice 232/10, 128 08 Praha 2
-[[ADDRESS_6]]: U Parku 235/9, 779 00 Olomouc
-[[ADDRESS_7]]: Smetanova 56/28, 760 01 Zlín
-[[ADDRESS_8]]: Palackého 171/25, 301 00 Plzeň a Husova
-[[ADDRESS_9]]: platnost 11/29, CVC
+[[ADDRESS_3]]: Husova 151/33, 390 02, Tábor
+[[ADDRESS_5]]: Havlíčkova 239/24, 586 01 Jihlava
+[[ADDRESS_6]]: U Nemocnice 232/10, 128 08 Praha 2
+[[ADDRESS_7]]: U Parku 235/9, 779 00 Olomouc
+[[ADDRESS_8]]: Smetanova 56/28, 760 01 Zlín
 
 BANK
 [[BANK_1]]: 8804144578/2010

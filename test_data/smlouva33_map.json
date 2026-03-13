@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:41.356564",
+  "generated_at": "2026-03-13T09:56:17.070998",
   "source_file": "smlouva33.docx",
   "entities": [
     {
@@ -36,13 +36,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Liška",
+      "original": "Liškovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Liškovi",
+      "original": "Liška",
       "occurrences": 1
     },
     {
@@ -407,14 +407,14 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Krátká 23, Nový Bydžov 504 01",
+      "label": "[[ADDRESS_4]]",
+      "original": "Polní 89, Pardubice 530 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "Polní 89, Pardubice 530 02",
+      "label": "[[ADDRESS_3]]",
+      "original": "Krátká 23, Nový Bydžov 504 01, vdova",
       "occurrences": 1
     },
     {
@@ -481,12 +481,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_15]]",
       "original": "Lázeňská 89, Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_16]]",
-      "original": "v Praze",
       "occurrences": 1
     },
     {

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:40.974196",
+  "generated_at": "2026-03-13T09:57:26.703871",
   "source_file": "smlouva_gdpr_test_87.docx",
   "entities": [
     {
@@ -24,13 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Leoša Bartůněka",
+      "original": "Leoše Bartůněke",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Leoše Bartůněke",
+      "original": "Leoša Bartůněka",
       "occurrences": 1
     },
     {
@@ -42,13 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Alžběto Tesařová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Alžbětou Tesařovou",
+      "original": "Alžbětě Tesařové",
       "occurrences": 1
     },
     {
@@ -60,7 +54,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Alžbětě Tesařové",
+      "original": "Alžbětu Tesařováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Alžbětou Tesařovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Alžběto Tesařová",
       "occurrences": 1
     },
     {
@@ -72,7 +78,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Vojtěchem Hrubešem",
+      "original": "Vojtěchovi Hrubešovi",
       "occurrences": 1
     },
     {
@@ -84,7 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Vojtěchovi Hrubešovi",
+      "original": "Vojtěchem Hrubešem",
       "occurrences": 1
     },
     {
@@ -108,6 +114,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
+      "original": "Renatu Křížováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Renaty Křížové",
       "occurrences": 1
     },
@@ -124,34 +136,10 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Alžběta Tesařováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Alžbětu Tesařováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Renata Křížováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Renatu Křížováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Na Hradbách 15, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Na Hradbách 15, 702 00, Ostrava",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -162,55 +150,37 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Křenová 172, 602 00 Brno",
-      "occurrences": 1
+      "original": "Křenová 172, 602 00, Brno",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Dvořákova 75/18, 370 01 České Budějovice",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Technologická 109/24, 160 00 Praha 6",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Palackého 185/9, 301 00 Plzeň",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
+      "label": "[[ADDRESS_8]]",
       "original": "U Nemocnice 113/17, 128 08 Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "a Křenová 172, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_9]]",
-      "original": "platnost 07/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
       "original": "Bezručova 41, Plzeň",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "v Plzni",
       "occurrences": 1
     },
     {
@@ -364,12 +334,6 @@
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "675237846",
-      "occurrences": 1
-    },
-    {
       "type": "EMAIL",
       "label": "[[EMAIL_1]]",
       "original": "leos.bartunek@seznam.cz",
@@ -445,6 +409,12 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
       "original": "CZ64466",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_3]]",
+      "original": "LV 9242",
       "occurrences": 1
     },
     {

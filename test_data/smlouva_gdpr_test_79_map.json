@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:35.135057",
+  "generated_at": "2026-03-13T09:57:21.416666",
   "source_file": "smlouva_gdpr_test_79.docx",
   "entities": [
     {
@@ -12,13 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Marku Procházko",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Markovi Procházkovi",
+      "original": "Markem Procházkou",
       "occurrences": 1
     },
     {
@@ -36,7 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Markem Procházkou",
+      "original": "Marku Procházko",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Markovi Procházkovi",
       "occurrences": 1
     },
     {
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Heleno Krejčová",
+      "original": "Helenu Krejčováovou",
       "occurrences": 1
     },
     {
@@ -60,175 +60,133 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Heleny Krejčové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Heleně Krejčové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Heleny Krejčové",
+      "original": "Heleno Krejčová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Helena Krejčováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Helenu Krejčováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Ema Benešová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_3]]",
       "original": "Emy Benešové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_3]]",
+      "original": "Emu Benešováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Markéta Bartůňková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_4]]",
+      "original": "Markétou Bartůňkovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Markéty Bartůňkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_4]]",
+      "original": "Markétu Bartůňkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Markétě Bartůňkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Markétou Bartůňkovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_6]]",
       "original": "Lída Malinová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_6]]",
-      "original": "Lídy Malinové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Alex Řezníček",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Alexa Řezníčka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Markéta Bartůňkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Markétu Bartůňkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Lída Malinováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
+      "label": "[[PERSON_5]]",
       "original": "Lídu Malinováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Ema Benešováová",
+      "label": "[[PERSON_5]]",
+      "original": "Lídy Malinové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Emu Benešováovou",
+      "label": "[[PERSON_6]]",
+      "original": "Alex Řezníček",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Alexa Řezníčka",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Bělehradská 132, 120 84 Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Nádražní 8, 702 00 Ostrava",
+      "original": "Bělehradská 132, Praha 2, 120 84",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Bezručova 228/24, 746 01 Opava",
-      "occurrences": 1
+      "original": "Bezručova 228/24, 746 01, Opava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Žižkova 40, 460 01 Liberec",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Masarykova 51/23, 500 02 Hradec Králové",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Nádražní 103/19, 702 00 Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Husova 139, 390 02 Tábor",
-      "occurrences": 1
+      "original": "Nádražní 103/19, 702 00 Ostrava",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Nádražní 8, 702 00 Ostrava a Bezručova",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "platnost 09/29, CVC",
+      "original": "Husova 139, 390 02 Tábor",
       "occurrences": 1
     },
     {

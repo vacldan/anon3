@@ -18,10 +18,7 @@ OSOBY
 
 ADDRESS
 [[ADDRESS_1]]: Kampus 9, 625 00 Brno
-[[ADDRESS_2]]: Vinohradská 59/15, 130 00 Praha 3
 [[ADDRESS_3]]: Vinohradská 120/27, 130 00 Praha 3
-[[ADDRESS_4]]: platnost 08/28, CVC
-[[ADDRESS_5]]: písemně na adresu Vinohradská 120/27, 130 00 Praha 3
 
 BANK
 [[BANK_1]]: 530568416/0100

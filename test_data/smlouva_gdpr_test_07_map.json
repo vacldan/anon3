@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:50.178001",
+  "generated_at": "2026-03-13T09:56:27.104296",
   "source_file": "smlouva_gdpr_test_07.docx",
   "entities": [
     {
@@ -18,31 +18,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Sabiny Nedvědové",
+      "original": "Sabinu Nedvědovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Sabinu Nedvědovou",
+      "original": "Sabiny Nedvědové",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Datová 77, 186 00 Praha 8",
+      "original": "Datová 77, Praha 8, 186 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Jabloňová 12, 400 01 Ústí nad Labem",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "V Praze",
       "occurrences": 1
     },
     {

@@ -1,12 +1,24 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:56.964358",
+  "generated_at": "2026-03-13T09:56:36.399443",
   "source_file": "smlouva_gdpr_test_117.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Filip Vlach",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Filipa Vlacha",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Filipe Vlache",
       "occurrences": 1
     },
     {
@@ -19,18 +31,6 @@
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Filipovi Vlachovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Filipe Vlache",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Filipa Vlacha",
       "occurrences": 1
     },
     {
@@ -90,19 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Ondřejovi Malíkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Ondřejem Malíkem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Ondřeja Malíka",
+      "original": "Ondřejovi Malíkovi",
       "occurrences": 1
     },
     {
@@ -112,10 +106,16 @@
       "occurrences": 1
     },
     {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Ondřeja Malíka",
+      "occurrences": 1
+    },
+    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Náměstí 1, 500 02 Hradec Králové",
-      "occurrences": 1
+      "original": "Náměstí 1, 500 02, Hradec Králové",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -125,33 +125,9 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Vinohradská 62/1, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Vinohradská 62/1, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Vinohradská 62/1, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Vinohradská 62/1, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Tomášovi Benešovi a Technologická 115/7, 160 00 Praha 6",
-      "occurrences": 1
+      "original": "Vinohradská 62/1, Praha 3, 130 00",
+      "occurrences": 2
     },
     {
       "type": "ICO",

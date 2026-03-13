@@ -2,18 +2,15 @@ OSOBY
 -----
 [[PERSON_1]]: Maxmilián Bártl
   - Maxmiliána Bártla
-[[PERSON_2]]: Octavi Combi
-  - Octavia Combi
-[[PERSON_3]]: Iveta Dostálová
+[[PERSON_2]]: Iveta Dostálová
   - Ivety Dostálové
-[[PERSON_4]]: Giovanni Rossi
+[[PERSON_3]]: Giovanni Rossi
   - Giovanniem Rossiem
 
 ADDRESS
 [[ADDRESS_1]]: Olbrachtova 1929/62, 140 00 Praha 4
-[[ADDRESS_2]]: Sokolovská 194/48, 360 01 Karlovy Vary
+[[ADDRESS_2]]: Sokolovská 194/48, 360 01, Karlovy Vary
 [[ADDRESS_3]]: Masarykovo náměstí 156/10, 586 01 Jihlava
-[[ADDRESS_4]]: Sokolovská 19/30, 360 01 Karlovy Vary
 [[ADDRESS_5]]: Čelakovského sady 143/42, 120 00 Praha 2
 
 BANK

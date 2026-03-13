@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:10.036282",
+  "generated_at": "2026-03-13T09:56:57.520341",
   "source_file": "smlouva_gdpr_test_35.docx",
   "entities": [
     {
@@ -114,25 +114,13 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Právnická 12, 110 00 Praha 1",
+      "original": "Právnická 12, Praha 1, 110 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "tupování ve věci vedené u Obvodního soudu pro Prahu 3, sp",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
       "original": "Dlouhá 8, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "V Praze",
       "occurrences": 1
     },
     {
@@ -175,6 +163,12 @@
       "type": "ID_CARD",
       "label": "[[ID_CARD_1]]",
       "original": "445566778",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "AK 54321",
       "occurrences": 1
     },
     {

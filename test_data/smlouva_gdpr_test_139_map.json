@@ -1,12 +1,24 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:03.540104",
+  "generated_at": "2026-03-13T09:56:46.351509",
   "source_file": "smlouva_gdpr_test_139.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Helena Holíková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Heleno Holíková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Heleně Holíkové",
       "occurrences": 1
     },
     {
@@ -19,24 +31,6 @@
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Heleny Holíkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Heleno Holíková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Holíkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Heleně Holíkové",
       "occurrences": 1
     },
     {
@@ -54,6 +48,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Karlovi Benešovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Karle Beneše",
       "occurrences": 1
     },
@@ -65,12 +65,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Karlovi Benešovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Gabriela Procházková",
       "occurrences": 1
@@ -78,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Gabrielou Procházkovou",
+      "original": "Gabrielě Procházkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Gabrielě Procházkové",
+      "original": "Gabrielou Procházkovou",
       "occurrences": 1
     },
     {
@@ -96,13 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Pavlem Řezníčkem",
+      "original": "Pavle Řezníčku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Pavla Řezníčka",
+      "original": "Pavlem Řezníčkem",
       "occurrences": 1
     },
     {
@@ -114,14 +108,14 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Pavle Řezníčku",
+      "original": "Pavla Řezníčka",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Náměstí 1, 500 02 Hradec Králové",
-      "occurrences": 1
+      "original": "Náměstí 1, 500 02, Hradec Králové",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -133,30 +127,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Na Návsi 131/26, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Na Návsi 131/26, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Na Návsi 131/26, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Na Návsi 131/26, 789 01 Zábřeh pro Karlovi Benešovi a",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Jabloňová 108/16, 400 01 Ústí nad Labem pro Heleně",
       "occurrences": 1
     },
     {

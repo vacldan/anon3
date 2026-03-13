@@ -1,12 +1,24 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:21.809280",
+  "generated_at": "2026-03-13T09:57:09.204159",
   "source_file": "smlouva_gdpr_test_61.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Jaroslav Růžička",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Jaroslavovi Růžičkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Jaroslave Růžičko",
       "occurrences": 1
     },
     {
@@ -29,32 +41,20 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Jaroslavovi Růžičkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Ines Havličková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Ines Havličkovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Ines Havličkové",
+      "label": "[[PERSON_3]]",
+      "original": "Leoš Beneš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Leoš Beneš",
+      "original": "Leošovi Benešovi",
       "occurrences": 1
     },
     {
@@ -71,12 +71,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Leošovi Benešovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Ivana Křížová",
       "occurrences": 1
@@ -89,8 +83,20 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Ivanu Křížováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Jana Šemberová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Janu Šemberováovou",
       "occurrences": 1
     },
     {
@@ -112,57 +118,9 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Ines Havličkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Ines Havličkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Jaroslav Růžičko",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Jaroslave Růžičko",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Ivana Křížováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Ivanu Křížováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Jana Šemberováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Janu Šemberováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Na Příkopě 33, 114 07 Praha 1",
+      "original": "Na Příkopě 33, Praha 1, 114 07",
       "occurrences": 1
     },
     {
@@ -174,55 +132,31 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Technologická 13/23, 160 00 Praha 6",
-      "occurrences": 1
+      "original": "Technologická 13/23, Praha 6, 160 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Purkyňova 20, 612 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Riegrova 108, 779 00 Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Sadová 247, 370 01 České Budějovice",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Palackého 196/32, 301 00 Plzeň",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Smetanova 146/10, 760 01 Zlín a Technologická",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 01/27, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "V Liberci",
+      "original": "Palackého 196/32, 301 00 Plzeň",
       "occurrences": 1
     },
     {
@@ -373,12 +307,6 @@
       "type": "PHONE",
       "label": "[[PHONE_6]]",
       "original": "+420 647 116 498",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "784387547",
       "occurrences": 1
     },
     {

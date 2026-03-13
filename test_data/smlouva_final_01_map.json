@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:44.919466",
+  "generated_at": "2026-03-13T09:56:20.804566",
   "source_file": "smlouva_final_01.docx",
   "entities": [
     {
@@ -12,13 +12,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Radkovi Dostálovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Radkem Dostálem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Radkovi Dostálovi",
+      "original": "Radka Dostála",
       "occurrences": 1
     },
     {
@@ -54,61 +60,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Vladimírovi Šimkovi",
+      "original": "Vladimíra Šimka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Vladimíra Šimka",
+      "original": "Vladimírovi Šimkovi",
       "occurrences": 1
     },
     {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_1]]",
-      "original": "Palackého 28, 612 00 Brno - Královo Pole",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Brno-město",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "v Brně",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "Čelakovského sady 117/47, 120 00 Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "sídlem Tyršova 44, 530 02 Pardubice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Kolínská 109/47, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Revoluční 15, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "nceláři exekutora Radka Dostála na adrese Palackého 28, 612 00 Brno - Královo Pole",
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "EX 1478",
       "occurrences": 1
     },
     {
@@ -151,6 +115,36 @@
       "type": "ICO",
       "label": "[[ICO_2]]",
       "original": "15926837",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Brno-město, Palackého 28, 612 00, Brno - Královo",
+      "occurrences": 3
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Čelakovského sady 117/47, 120 00 Praha 2",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "Tyršova 44, 530 02",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "Kolínská 109/47, 130 00 Praha 3",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "Revoluční 15, Praha 1 - Staré, 110 00",
       "occurrences": 1
     },
     {

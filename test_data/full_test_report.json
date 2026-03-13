@@ -1,0 +1,26 @@
+{
+  "total": 231,
+  "success": 228,
+  "fail": 3,
+  "total_issues": 3,
+  "issues_by_type": {
+    "ANON_ERROR": 3
+  },
+  "details": [
+    {
+      "type": "ANON_ERROR",
+      "file": "smlouva10.docx",
+      "detail": "PermissionError: [Errno 13] Permission denied: 'C:\\\\Nixminds\\\\skryi-clean\\\\test_data\\\\smlouva10_anon.docx'"
+    },
+    {
+      "type": "ANON_ERROR",
+      "file": "smlouva_final_03.docx",
+      "detail": "PermissionError: [Errno 13] Permission denied: 'C:\\\\Nixminds\\\\skryi-clean\\\\test_data\\\\smlouva_final_03_anon.docx'"
+    },
+    {
+      "type": "ANON_ERROR",
+      "file": "smlouva_gdpr_test_83.docx",
+      "detail": "PermissionError: [Errno 13] Permission denied: 'C:\\\\Nixminds\\\\skryi-clean\\\\test_data\\\\smlouva_gdpr_test_83_anon.docx'"
+    }
+  ]
+}

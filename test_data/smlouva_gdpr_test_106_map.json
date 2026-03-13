@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:53.613658",
+  "generated_at": "2026-03-13T09:56:31.403519",
   "source_file": "smlouva_gdpr_test_106.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alžběto Procházková",
+      "original": "Alžběty Procházkové",
       "occurrences": 1
     },
     {
@@ -24,25 +24,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alžbětou Procházkovou",
+      "original": "Alžběto Procházková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alžběty Procházkové",
+      "original": "Alžbětou Procházkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Oldřich Roubal",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Oldřichem Roubalem",
       "occurrences": 1
     },
     {
@@ -65,6 +59,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Oldřichem Roubalem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Lucie Vlachová",
       "occurrences": 1
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucie Vlachovou",
+      "original": "Lucie Vlachové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucie Vlachové",
+      "original": "Lucie Vlachovou",
       "occurrences": 1
     },
     {
@@ -96,6 +96,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
+      "original": "Václave Turku",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Václavem Turkem",
       "occurrences": 1
     },
@@ -106,16 +112,10 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Václave Turku",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Poliklinická 3, 120 00 Praha 2",
-      "occurrences": 1
+      "original": "Poliklinická 3, Praha 2, 120 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -127,31 +127,7 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "U Parku 164/19, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu U Parku 164/19, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu U Parku 164/19, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa U Parku 164/19, 779 00 Olomouc pro Oldřichovi",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Roubalovi a Křenová 101/7, 602 00 Brno pro Alžbětě Procházkové",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ICO",

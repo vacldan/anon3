@@ -7,38 +7,31 @@ OSOBY
   - Štěpánovi Turkovi
 [[PERSON_2]]: Natálie Fialová
   - Natálie Fialové
+  - Natálii Fialováovou
   - Natálii Fialové
   - Natálií Fialovou
 [[PERSON_3]]: Cecílie Rendlová
   - Cecílie Rendlové
+  - Cecílii Rendlováovou
   - Cecílii Rendlové
   - Cecílií Rendlovou
 [[PERSON_4]]: Milada Fialová
+  - Miladu Fialováovou
   - Milady Fialové
 [[PERSON_5]]: Věra Poláková
+  - Věru Polákováovou
   - Věry Polákové
 [[PERSON_6]]: Lubomír Dvořák
   - Lubomíra Dvořáka
-[[PERSON_7]]: Cecílie Rendlováová
-  - Cecílii Rendlováovou
-[[PERSON_8]]: Natálie Fialováová
-  - Natálii Fialováovou
-[[PERSON_9]]: Milada Fialováová
-  - Miladu Fialováovou
-[[PERSON_10]]: Věra Polákováová
-  - Věru Polákováovou
 
 ADDRESS
-[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_1]]: Na Hradbách 15, 702 00, Ostrava
 [[ADDRESS_2]]: Na Návsi 120, 789 01 Zábřeh
 [[ADDRESS_3]]: Tylova 218/11, 530 02 Pardubice
 [[ADDRESS_4]]: Komenského 25, 702 00 Ostrava
 [[ADDRESS_5]]: Žižkova 226, 460 01 Liberec
 [[ADDRESS_6]]: Nádražní 54/40, 702 00 Ostrava
 [[ADDRESS_7]]: Havlíčkova 7/32, 586 01 Jihlava
-[[ADDRESS_8]]: Na Návsi 120, 789 01 Zábřeh a Tylova
-[[ADDRESS_9]]: Pardubice
-[[ADDRESS_10]]: platnost 08/27, CVC
 
 BANK
 [[BANK_1]]: 3497850093/2010
@@ -106,5 +99,4 @@ PHONE
 [[PHONE_5]]: 678 924 167
 [[PHONE_6]]: +420611520953
 [[PHONE_7]]: +420 621 594 243
-[[PHONE_8]]: 438375471
 

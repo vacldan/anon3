@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:08.734870",
+  "generated_at": "2026-03-13T09:56:55.153961",
   "source_file": "smlouva_gdpr_test_27.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Markéto Černá",
+      "original": "Markéty Černé",
       "occurrences": 1
     },
     {
@@ -24,13 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Markétě Černé",
+      "original": "Markéto Černá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Markéty Černé",
+      "original": "Markétě Černé",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Barbory Králové",
+      "original": "Barboro Králová",
       "occurrences": 1
     },
     {
@@ -54,7 +54,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Barboro Králová",
+      "original": "Barbory Králové",
       "occurrences": 1
     },
     {
@@ -78,13 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Erika Nováka",
+      "original": "Erikem Novákem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Erikem Novákem",
+      "original": "Erika Nováka",
       "occurrences": 1
     },
     {
@@ -101,27 +101,9 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Vinohradská 59/15, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Vinohradská 120/27, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "platnost 08/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemně na adresu Vinohradská 120/27, 130 00 Praha 3",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ICO",

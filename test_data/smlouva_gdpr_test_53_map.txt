@@ -8,38 +8,31 @@ OSOBY
 [[PERSON_2]]: Věra Poláková
   - Věro Poláková
   - Věrou Polákovou
+  - Věru Polákováovou
   - Věry Polákové
   - Věrě Polákové
-[[PERSON_3]]: Věra Polákováová
-  - Věru Polákováovou
-[[PERSON_4]]: Přemysl Mareš
+[[PERSON_3]]: Přemysl Mareš
   - Přemysla Mareša
   - Přemyslem Marešem
   - Přemyslovi Marešovi
-[[PERSON_5]]: Jana Pospíšilová
+[[PERSON_4]]: Jana Pospíšilová
+  - Janu Pospíšilováovou
   - Jany Pospíšilové
-[[PERSON_6]]: Iva Zíková
+[[PERSON_5]]: Iva Zíková
+  - Ivu Zíkováovou
   - Ivy Zíkové
-[[PERSON_7]]: Arnošt Havlička
+[[PERSON_6]]: Arnošt Havlička
   - Arnošta Havličku
   - Arnošta Havličky
-[[PERSON_8]]: Jana Pospíšilováová
-  - Janu Pospíšilováovou
-[[PERSON_9]]: Iva Zíkováová
-  - Ivu Zíkováovou
 
 ADDRESS
-[[ADDRESS_1]]: Nemocniční 1, 400 01 Ústí nad Labem
+[[ADDRESS_1]]: Nemocniční 1, 400 01, Ústí nad Labem
 [[ADDRESS_2]]: Jabloňová 161, 400 01 Ústí nad Labem
-[[ADDRESS_3]]: Dvořákova 214/18, 370 01 České Budějovice
-[[ADDRESS_4]]: České Budějovice
-[[ADDRESS_5]]: Praha 1
-[[ADDRESS_6]]: Sokolovská 237/21, 186 00 Praha 8
-[[ADDRESS_7]]: Jihlavská 141/40, 625 00 Brno
-[[ADDRESS_8]]: Bezručova 10, 746 01 Opava
-[[ADDRESS_9]]: Na Návsi 169/37, 789 01 Zábřeh
-[[ADDRESS_10]]: Jabloňová 161, 400 01 Ústí nad Labem a Dvořákova
-[[ADDRESS_11]]: platnost 08/26, CVC
+[[ADDRESS_3]]: Dvořákova 214/18, 370 01, České Budějovice
+[[ADDRESS_5]]: Sokolovská 237/21, 186 00 Praha 8
+[[ADDRESS_6]]: Jihlavská 141/40, 625 00 Brno
+[[ADDRESS_7]]: Bezručova 10, 746 01 Opava
+[[ADDRESS_8]]: Na Návsi 169/37, 789 01 Zábřeh
 
 BANK
 [[BANK_1]]: 654652-4694605933/5500
@@ -107,5 +100,4 @@ PHONE
 [[PHONE_4]]: 745 659 448
 [[PHONE_5]]: 726 456 195
 [[PHONE_6]]: +420 628 593 141
-[[PHONE_7]]: 653152867
 

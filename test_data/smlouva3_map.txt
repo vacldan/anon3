@@ -6,8 +6,6 @@ OSOBY
 ADDRESS
 [[ADDRESS_1]]: U Zámečku 45, 779 00 Olomouc
 [[ADDRESS_2]]: Na Výsluní 122, 736 01 Havířov
-[[ADDRESS_3]]: října 2025, a to v hotovosti nebo
-[[ADDRESS_4]]: V Olomouci
 
 BANK
 [[BANK_1]]: 123456789/0100
@@ -20,5 +18,6 @@ DATE
 [[DATE_1]]: 12. 3. 1985
 [[DATE_2]]: 8. 11. 1990
 [[DATE_3]]: 31. července 2025
-[[DATE_4]]: 31. 7. 2025
+[[DATE_4]]: 31. října 2025
+[[DATE_5]]: 31. 7. 2025
 

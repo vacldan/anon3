@@ -1,16 +1,14 @@
 OSOBY
 -----
-[[PERSON_1]]: Petro Svobodová
-  - Petra Svobodová
+[[PERSON_1]]: Petro Svoboda
   - Petrou Svobodovou
-  - Petry Svobodové
 [[PERSON_2]]: Jan Novák
   - Jana Nováka
   - Janem Novákem
   - Janovo Novákovo
-[[PERSON_4]]: Octavi Combi
-  - Octavia Combi
-[[PERSON_5]]: Kateřina Svobodová
+[[PERSON_3]]: Petra Svobodová
+  - Petry Svobodové
+[[PERSON_4]]: Kateřina Svobodová
   - Kateřinou Svobodovou
 
 ADDRESS

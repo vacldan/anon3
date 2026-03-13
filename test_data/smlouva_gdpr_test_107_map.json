@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:53.877875",
+  "generated_at": "2026-03-13T09:56:31.804116",
   "source_file": "smlouva_gdpr_test_107.docx",
   "entities": [
     {
@@ -12,25 +12,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Romane Svobodo",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Romana Svobody",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Romanovi Svobodovi",
+      "original": "Romane Svobodo",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Svobodovi",
+      "original": "Romanovi Svobodovi",
       "occurrences": 1
     },
     {
@@ -48,25 +42,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Erikem Procházkou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Erika Procházky",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Erike Procházko",
+      "original": "Erikem Procházkou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Erikovi Procházkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Erike Procházko",
       "occurrences": 1
     },
     {
@@ -96,13 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Filipa Procházky",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Filipe Procházko",
+      "original": "Filipem Procházkou",
       "occurrences": 1
     },
     {
@@ -114,14 +102,20 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Filipem Procházkou",
+      "original": "Filipe Procházko",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Filipa Procházky",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Právnická 12, 110 00 Praha 1",
-      "occurrences": 1
+      "original": "Právnická 12, Praha 1, 110 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -131,33 +125,9 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Technologická 98/4, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Technologická 98/4, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Technologická 98/4, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "ro účely doručování se používá adresa Technologická 98/4, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Erikovi Procházkovi a Jabloňová 160/24, 400 01 Ústí nad Labem pro Romanovi",
-      "occurrences": 1
+      "original": "Technologická 98/4, Praha 6, 160 00",
+      "occurrences": 2
     },
     {
       "type": "ICO",

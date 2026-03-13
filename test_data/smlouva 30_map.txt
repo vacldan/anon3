@@ -54,7 +54,15 @@ OSOBY
 [[PERSON_43]]: Vilém Šebesta
 [[PERSON_44]]: Blažena Říhová
 [[PERSON_45]]: Pravoslav Malík
+[[PERSON_46]]: Karina Bílková
+[[PERSON_47]]: Samuel Štěpán
+[[PERSON_48]]: Stela Pospíšilová
+[[PERSON_49]]: Jáchym Horák
+[[PERSON_50]]: Otmar Doubek
 [[PERSON_51]]: Xaver Klein
+[[PERSON_52]]: Beáta Zemanová
+[[PERSON_53]]: Radana Malá
+[[PERSON_54]]: Artur Říha
 
 ADDRESS
 [[ADDRESS_1]]: Polní 45, Náchod 547 01
@@ -70,10 +78,7 @@ ADDRESS
 [[ADDRESS_11]]: Krátká 23, Havířov 736 01
 [[ADDRESS_12]]: Polní 67, Frýdek-Místek 738 01
 [[ADDRESS_13]]: Lázeňská 45, Karlovy Vary 360 01
-[[ADDRESS_14]]: Polní 34, Brno 602 00
-[[ADDRESS_15]]: Praha
-[[ADDRESS_16]]: Pardubice
-[[ADDRESS_17]]: Brno
+[[ADDRESS_14]]: Polní 34, Brno 602 00, Praha
 
 BANK
 [[BANK_1]]: 8901234567/2700
@@ -159,6 +164,9 @@ ICO
 ID_CARD
 [[ID_CARD_1]]: 678901234
 [[ID_CARD_2]]: ST789012
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: LV 8912
 
 PHONE
 [[PHONE_1]]: +420 605 789 123

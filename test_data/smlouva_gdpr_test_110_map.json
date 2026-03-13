@@ -1,24 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:54.872408",
+  "generated_at": "2026-03-13T09:56:33.336790",
   "source_file": "smlouva_gdpr_test_110.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Roman Kříž",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Romana Kříža",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Romanovi Křížovi",
       "occurrences": 1
     },
     {
@@ -35,6 +23,18 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Romanovi Křížovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Romana Kříža",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Jaroslav Vaněk",
       "occurrences": 1
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jaroslavovi Vaněkovi",
+      "original": "Jaroslavem Vaněkem",
       "occurrences": 1
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jaroslavem Vaněkem",
+      "original": "Jaroslavovi Vaněkovi",
       "occurrences": 1
     },
     {
@@ -90,19 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Janě Řezníčkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Janou Řezníčkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Jano Řezníčková",
+      "original": "Janě Řezníčkové",
       "occurrences": 1
     },
     {
@@ -112,10 +106,16 @@
       "occurrences": 1
     },
     {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Jano Řezníčková",
+      "occurrences": 1
+    },
+    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Nemocniční 1, 400 01 Ústí nad Labem",
-      "occurrences": 1
+      "original": "Nemocniční 1, 400 01, Ústí nad Labem",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -125,33 +125,9 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Vinohradská 88/12, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Vinohradská 88/12, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Vinohradská 88/12, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Vinohradská 88/12, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Jaroslavovi Vaněkovi a Na Návsi 29/10, 789 01 Zábřeh pro Romanovi Křížovi",
-      "occurrences": 1
+      "original": "Vinohradská 88/12, Praha 3, 130 00",
+      "occurrences": 2
     },
     {
       "type": "ICO",

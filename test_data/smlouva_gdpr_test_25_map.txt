@@ -20,8 +20,6 @@ ADDRESS
 [[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
 [[ADDRESS_2]]: Dlouhá 190/27, 602 00 Brno
 [[ADDRESS_3]]: Jabloňová 1/11, 400 01 Ústí nad Labem
-[[ADDRESS_4]]: platnost 08/28, CVC
-[[ADDRESS_5]]: písemně na adresu Jabloňová 1/11, 400 01 Ústí nad Labem
 
 BANK
 [[BANK_1]]: 254200833/5500

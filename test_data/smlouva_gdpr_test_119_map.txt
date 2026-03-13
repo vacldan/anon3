@@ -20,13 +20,9 @@ OSOBY
   - Erikovi Řezníčkovi
 
 ADDRESS
-[[ADDRESS_1]]: Právnická 12, 110 00 Praha 1
+[[ADDRESS_1]]: Právnická 12, Praha 1, 110 00
 [[ADDRESS_2]]: Křenová 179/17, 602 00 Brno
-[[ADDRESS_3]]: Technologická 169/28, 160 00 Praha 6
-[[ADDRESS_4]]: případně písemně na adresu Technologická 169/28, 160 00 Praha 6
-[[ADDRESS_5]]: písemné doručení na adresu Technologická 169/28, 160 00 Praha 6
-[[ADDRESS_6]]: ro účely doručování se používá adresa Technologická 169/28, 160 00 Praha 6
-[[ADDRESS_7]]: pro Michalovi Holíkovi a Křenová 179/17, 602 00 Brno pro Markovi Benešovi
+[[ADDRESS_5]]: Technologická 169/28, Praha 6, 160 00
 
 BANK
 [[BANK_1]]: 350700712/0300

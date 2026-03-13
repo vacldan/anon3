@@ -9,37 +9,29 @@ OSOBY
 [[PERSON_2]]: Darja Brázdová
   - Darjo Brázdová
   - Darjou Brázdovou
+  - Darju Brázdováovou
   - Darjy Brázdové
   - Darjě Brázdové
 [[PERSON_3]]: Renata Svobodová
   - Renatou Svobodovou
+  - Renatu Svobodováovou
   - Renaty Svobodové
   - Renatě Svobodové
 [[PERSON_4]]: Roman Malík
   - Romana Malíka
 [[PERSON_5]]: Libuše Fialová
+  - Libuše Fialováovou
   - Libuše Fialové
 [[PERSON_6]]: Lubomír Hrdina
   - Lubomíra Hrdinu
   - Lubomíra Hrdiny
-[[PERSON_7]]: Renata Svobodováová
-  - Renatu Svobodováovou
-[[PERSON_8]]: Darja Brázdováová
-  - Darju Brázdováovou
-[[PERSON_9]]: Libuše Fialováová
-  - Libuše Fialováovou
 
 ADDRESS
-[[ADDRESS_1]]: Zahradní 5, 390 02 Tábor
+[[ADDRESS_1]]: Zahradní 5, 390 02, Tábor
 [[ADDRESS_2]]: Komenského 21/8, 702 00 Ostrava
-[[ADDRESS_3]]: Husova 215, 390 02 Tábor
-[[ADDRESS_4]]: Husova 71, 390 02 Tábor
-[[ADDRESS_5]]: Tylova 163/14, 530 02 Pardubice
-[[ADDRESS_6]]: Wolkerova 162/21, 796 01 Prostějov
-[[ADDRESS_7]]: Wolkerova 203/23, 796 01 Prostějov
-[[ADDRESS_8]]: Komenského 21/8, 702 00 Ostrava a Husova
-[[ADDRESS_9]]: platnost 03/30, CVC
-[[ADDRESS_10]]: V Olomouci
+[[ADDRESS_3]]: Husova 215, 390 02, Tábor
+[[ADDRESS_6]]: Tylova 163/14, 530 02 Pardubice
+[[ADDRESS_8]]: Wolkerova 203/23, 796 01 Prostějov
 
 BANK
 [[BANK_1]]: 361139-3326882357/2700

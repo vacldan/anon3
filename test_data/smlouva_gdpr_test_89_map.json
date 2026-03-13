@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:42.128365",
+  "generated_at": "2026-03-13T09:57:27.820604",
   "source_file": "smlouva_gdpr_test_89.docx",
   "entities": [
     {
@@ -24,6 +24,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Matějovi Černém",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Matěje Černý",
       "occurrences": 1
     },
@@ -35,20 +41,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Matějovi Černém",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Lucie Hájková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Lucii Hájkové",
       "occurrences": 1
     },
     {
@@ -60,19 +54,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Lucii Hájkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Lucií Hájkovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Lucii Hájkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Gabriela Malinová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Gabrielě Malinové",
       "occurrences": 1
     },
     {
@@ -89,6 +89,18 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Gabrielě Malinové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Gabrielu Malinováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Miluše Pazderová",
       "occurrences": 1
@@ -101,20 +113,26 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Antoni Procházková",
+      "label": "[[PERSON_4]]",
+      "original": "Miluše Pazderováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Antonie Procházková",
+      "original": "Antoni Procházek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Antonie Procházkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Antonie Procházková",
       "occurrences": 1
     },
     {
@@ -126,86 +144,44 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Brunoa Procházku",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_6]]",
       "original": "Brunoa Procházky",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Gabriela Malinováová",
+      "label": "[[PERSON_6]]",
+      "original": "Brunoa Procházku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Gabrielu Malinováovou",
+      "original": "Antoni Procházková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Lucie Hájkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Lucii Hájkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Miluše Pazderováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Miluše Pazderováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Antonie Procházkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
+      "label": "[[PERSON_7]]",
       "original": "Antonii Procházkováovou",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Praha 9",
+      "original": "Bryksova 763/46, Praha 14, 198 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Bryksova 763/46, 198 00 Praha 14",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
       "original": "Na Návsi 98/35, 789 01 Zábřeh",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "Nádražní 94/37, 702 00 Ostrava",
-      "occurrences": 1
+      "label": "[[ADDRESS_3]]",
+      "original": "Nádražní 94/37, 702 00, Ostrava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -229,36 +205,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
       "original": "Národní 204, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Na Návsi 98/35, 789 01 Zábřeh a Nádražní",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "platnost 12/27, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_12]]",
-      "original": "Exekutorský úřad Praha 9, IČO",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_13]]",
-      "original": "Správcem osobních údajů je Exekutorský úřad Praha 9, IČO",
       "occurrences": 1
     },
     {
@@ -409,12 +355,6 @@
       "type": "PHONE",
       "label": "[[PHONE_6]]",
       "original": "776 129 876",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "328800593",
       "occurrences": 1
     },
     {

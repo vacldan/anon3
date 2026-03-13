@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:04.815031",
+  "generated_at": "2026-03-13T09:56:48.368278",
   "source_file": "smlouva_gdpr_test_143.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpána Roubala",
+      "original": "Štěpánovi Roubalovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpánovi Roubalovi",
+      "original": "Štěpána Roubala",
       "occurrences": 1
     },
     {
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Aleše Vlache",
+      "original": "Aleša Vlacha",
       "occurrences": 1
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Aleša Vlacha",
+      "original": "Aleše Vlache",
       "occurrences": 1
     },
     {
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Gabrielě Roubalové",
+      "original": "Gabrielou Roubalovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Gabrielou Roubalovou",
+      "original": "Gabrielě Roubalové",
       "occurrences": 1
     },
     {
@@ -90,13 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Alešovi Malíkovi",
+      "original": "Alešem Malíkem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Alešem Malíkem",
+      "original": "Alešovi Malíkovi",
       "occurrences": 1
     },
     {
@@ -114,44 +114,20 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Kampus 9, 625 00 Brno",
-      "occurrences": 1
+      "original": "Kampus 9, 625 00, Brno",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "U Parku 24/14, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Vinohradská 141/27, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Vinohradská 141/27, 130 00 Praha 3",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Vinohradská 141/27, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Vinohradská 141/27, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Alešovi Vlachovi a U Parku 24/14, 779 00 Olomouc pro Štěpánovi Roubalovi",
-      "occurrences": 1
+      "original": "Vinohradská 141/27, Praha 3, 130 00",
+      "occurrences": 2
     },
     {
       "type": "ICO",

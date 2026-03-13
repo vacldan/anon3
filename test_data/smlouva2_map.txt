@@ -1,19 +1,12 @@
 OSOBY
 -----
-[[PERSON_1]]: Položek Stav
-  - Položka Stav
-  - Stav
-[[PERSON_2]]: Elektřina Přepisová
-  - Elektřina Přepis
-[[PERSON_3]]: Plyn Přepis
-[[PERSON_4]]: Lucie Doležalová
-[[PERSON_5]]: Tomáš Konečný
+[[PERSON_1]]: Lucie Doležalová
+[[PERSON_2]]: Tomáš Konečný
 
 ADDRESS
-[[ADDRESS_1]]: NP domu na adrese U Stadionu 25, 779 00 Olomouc
-[[ADDRESS_2]]: V Olomouci
-[[ADDRESS_3]]: Čechova 14, 750 02 Přerov
-[[ADDRESS_4]]: Kapucínská 8, 602 00 Brno
+[[ADDRESS_1]]: U Stadionu 25, 779 00 Olomouc
+[[ADDRESS_2]]: Čechova 14, 750 02 Přerov
+[[ADDRESS_3]]: Kapucínská 8, 602 00 Brno
 
 BANK
 [[BANK_1]]: 210123456/2010

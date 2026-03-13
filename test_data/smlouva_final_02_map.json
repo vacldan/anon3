@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:45.186354",
+  "generated_at": "2026-03-13T09:56:21.154481",
   "source_file": "smlouva_final_02.docx",
   "entities": [
     {
@@ -30,13 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Lukášovi Havlíčkovi",
+      "original": "Lukáša Havlíčka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Lukáša Havlíčka",
+      "original": "Lukášovi Havlíčkovi",
       "occurrences": 1
     },
     {
@@ -48,13 +48,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Anežkě Kratochvílové",
+      "original": "Anežky Kratochvílové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Anežky Kratochvílové",
+      "original": "Anežkě Kratochvílové",
       "occurrences": 1
     },
     {
@@ -66,49 +66,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Dominikovi Kratochvílovi",
+      "original": "Dominika Kratochvíla",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Dominika Kratochvíla",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_1]]",
-      "original": "notářky se sídlem Kolínská 3, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Sokolovská 3/31, 360 01 Karlovy Vary",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Tyršova 134/20, 530 02 Pardubice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "v budově na adrese Kolínská 42/7, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "Praha",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Kolínská 3, 130 00 Praha 3",
+      "original": "Dominikovi Kratochvílovi",
       "occurrences": 1
     },
     {
@@ -176,6 +140,24 @@
       "label": "[[ICO_2]]",
       "original": "34250309",
       "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Sokolovská 3/31, 360 01, Karlovy Vary",
+      "occurrences": 2
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "Tyršova 134/20, 530 02",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "Kolínská 42/7, 130 00 Praha 3",
+      "occurrences": 3
     },
     {
       "type": "BIRTH_ID",
@@ -271,6 +253,12 @@
       "type": "IBAN",
       "label": "[[IBAN_2]]",
       "original": "CZ75 0600 0000 3491 3805 1142",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_1]]",
+      "original": "LV 1234",
       "occurrences": 1
     },
     {

@@ -20,13 +20,9 @@ OSOBY
   - Romanovi Benešovi
 
 ADDRESS
-[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
+[[ADDRESS_1]]: Poliklinická 3, Praha 2, 120 00
 [[ADDRESS_2]]: Pojišťovací 163/2, 110 00 Praha 1
-[[ADDRESS_3]]: Technologická 100/15, 160 00 Praha 6
-[[ADDRESS_4]]: případně písemně na adresu Technologická 100/15, 160 00 Praha 6
-[[ADDRESS_5]]: písemné doručení na adresu Technologická 100/15, 160 00 Praha 6
-[[ADDRESS_6]]: ro účely doručování se používá adresa Technologická 100/15, 160 00 Praha 6
-[[ADDRESS_7]]: pro Petrě Svobodové a Pojišťovací 163/2, 110 00 Praha 1
+[[ADDRESS_5]]: Technologická 100/15, Praha 6, 160 00
 
 BANK
 [[BANK_1]]: 571297708/0600

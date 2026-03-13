@@ -1,12 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:12.178632",
+  "generated_at": "2026-03-13T09:57:00.788018",
   "source_file": "smlouva_gdpr_test_49.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Roman Krupá",
+      "original": "Roman Krupý",
       "occurrences": 1
     },
     {
@@ -36,20 +36,14 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Obchodní 1, 700 30 Ostrava",
-      "occurrences": 1
+      "original": "Obchodní 1, 700 30, Ostrava",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Bezpečnostní 8, 709 00 Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "V Ostravě",
-      "occurrences": 1
+      "original": "Bezpečnostní 8, 709 00, Ostrava",
+      "occurrences": 2
     },
     {
       "type": "ICO",

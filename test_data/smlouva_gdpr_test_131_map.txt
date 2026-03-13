@@ -20,13 +20,9 @@ OSOBY
   - Alešovi Královi
 
 ADDRESS
-[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_1]]: Na Hradbách 15, 702 00, Ostrava
 [[ADDRESS_2]]: U Parku 168/28, 779 00 Olomouc
 [[ADDRESS_3]]: Dlouhá 102/4, 602 00 Brno
-[[ADDRESS_4]]: případně písemně na adresu Dlouhá 102/4, 602 00 Brno
-[[ADDRESS_5]]: písemné doručení na adresu Dlouhá 102/4, 602 00 Brno
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Dlouhá 102/4, 602 00 Brno pro Matějovi Procházkovi a
-[[ADDRESS_7]]: U Parku 168/28, 779 00 Olomouc pro Davidovi Křížovi
 
 BANK
 [[BANK_1]]: 361272053/5500

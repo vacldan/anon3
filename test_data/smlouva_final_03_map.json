@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:45.394055",
+  "generated_at": "2026-03-13T09:25:28.712285",
   "source_file": "smlouva_final_03.docx",
   "entities": [
     {
@@ -58,51 +58,45 @@
       "occurrences": 1
     },
     {
+      "type": "DATE",
+      "label": "[[DATE_1]]",
+      "original": "17. listopadu 1790",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_2]]",
+      "original": "3. 2. 1968",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_3]]",
+      "original": "11. 10. 2026",
+      "occurrences": 1
+    },
+    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "listopadu 1790/5, 702 00 Ostrava - Moravská Ostrava",
+      "original": "702 00, Ostrava",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Ostrava",
-      "occurrences": 1
+      "original": "Palackého 170/9, 612 00, Brno - Královo",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Palackého 170/9, 612 00 Brno - Královo Pole",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
       "original": "Masarykovo náměstí 61/18, 586 01 Jihlava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "V Ostravě",
       "occurrences": 1
     },
     {
       "type": "ICO",
       "label": "[[ICO_1]]",
       "original": "00843989",
-      "occurrences": 1
-    },
-    {
-      "type": "DATE",
-      "label": "[[DATE_1]]",
-      "original": "3. 2. 1968",
-      "occurrences": 1
-    },
-    {
-      "type": "DATE",
-      "label": "[[DATE_2]]",
-      "original": "11. 10. 2026",
       "occurrences": 1
     },
     {

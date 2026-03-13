@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:07.075471",
+  "generated_at": "2026-03-13T09:56:51.987508",
   "source_file": "smlouva_gdpr_test_16.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Karle Nováke",
+      "original": "Karlem Novákem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Karlem Novákem",
+      "original": "Karlovi Novákovi",
       "occurrences": 1
     },
     {
@@ -30,19 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Karlovi Novákovi",
+      "original": "Karle Nováke",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Oldřich Roubal",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Oldřichem Roubalem",
       "occurrences": 1
     },
     {
@@ -65,6 +59,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Oldřichem Roubalem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Jana Turková",
       "occurrences": 1
@@ -78,13 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Jany Turkové",
+      "original": "Janě Turkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Janě Turkové",
+      "original": "Jany Turkové",
       "occurrences": 1
     },
     {
@@ -101,27 +101,9 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "U Parku 56/22, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "U Parku 164/19, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "platnost 08/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemně na adresu U Parku 164/19, 779 00 Olomouc",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ICO",

@@ -8,9 +8,8 @@ OSOBY
   - Patrikem Müllerem
 
 ADDRESS
-[[ADDRESS_1]]: Revoluční 15, 110 00 Praha 1
-[[ADDRESS_2]]: Palackého 183/43, 612 00 Brno - Královo Pole
-[[ADDRESS_3]]: V Praze
+[[ADDRESS_1]]: Revoluční 15, Praha 1 - Staré, 110 00, Město
+[[ADDRESS_2]]: Palackého 183/43, 612 00, Brno - Královo
 
 BANK
 [[BANK_1]]: 351932926/0600

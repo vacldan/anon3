@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:08.889667",
+  "generated_at": "2026-03-13T09:56:55.463601",
   "source_file": "smlouva_gdpr_test_28.docx",
   "entities": [
     {
@@ -18,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Erika Nováka",
+      "original": "Erikem Novákem",
       "occurrences": 1
     },
     {
@@ -30,25 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Erikem Novákem",
+      "original": "Erika Nováka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Václav Řezníček",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Václavem Řezníčkem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Václava Řezníčka",
       "occurrences": 1
     },
     {
@@ -61,6 +49,18 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Václave Řezníčku",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Václava Řezníčka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Václavem Řezníčkem",
       "occurrences": 1
     },
     {
@@ -103,25 +103,7 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Na Kopci 193/4, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Na Kopci 44/29, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "platnost 08/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemně na adresu Na Kopci 44/29, 100 00 Praha 10",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ICO",

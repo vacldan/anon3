@@ -10,10 +10,10 @@ OSOBY
   - Horváth
 
 ADDRESS
-[[ADDRESS_1]]: Masarykovo náměstí 124/21, 586 01 Jihlava
-[[ADDRESS_2]]: Stodolní 170/17, 702 00 Ostrava - Moravská Ostrava
-[[ADDRESS_3]]: Komenského 232/12, 760 01 Zlín
-[[ADDRESS_4]]: V Praze
+[[ADDRESS_1]]: Rsp 605/2026
+[[ADDRESS_2]]: Masarykovo náměstí 124/21, 586 01, Jihlava
+[[ADDRESS_3]]: Stodolní 170/17, 702 00, Ostrava
+[[ADDRESS_4]]: Komenského 232/12, 760 01 Zlín
 
 BANK
 [[BANK_1]]: 191327976/5500
@@ -48,7 +48,8 @@ ID_CARD
 [[ID_CARD_1]]: FN 784866
 
 LICENSE_PLATE
-[[LICENSE_PLATE_1]]: AT31547
+[[LICENSE_PLATE_1]]: AK 52447
+[[LICENSE_PLATE_2]]: AT31547
 
 PHONE
 [[PHONE_1]]: +420 797 446 658

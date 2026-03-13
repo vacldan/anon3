@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:24.128437",
+  "generated_at": "2026-03-13T09:57:11.312986",
   "source_file": "smlouva_gdpr_test_64.docx",
   "entities": [
     {
@@ -12,13 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Dobroslavovi Růžičkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Dobroslavem Růžičkou",
+      "original": "Dobroslave Růžičko",
       "occurrences": 1
     },
     {
@@ -30,7 +24,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Dobroslavovi Růžičkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Dobroslava Růžičky",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Dobroslavem Růžičkou",
       "occurrences": 1
     },
     {
@@ -42,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ivo Řezníčková",
+      "original": "Ivu Řezníčkováovou",
       "occurrences": 1
     },
     {
@@ -54,13 +60,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ivě Řezníčkové",
+      "original": "Ivo Řezníčková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Ivy Řezníčkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Ivě Řezníčkové",
       "occurrences": 1
     },
     {
@@ -72,7 +84,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lídou Zíkovou",
+      "original": "Lídě Zíkové",
       "occurrences": 1
     },
     {
@@ -84,7 +96,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lídě Zíkové",
+      "original": "Lídu Zíkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Lídou Zíkovou",
       "occurrences": 1
     },
     {
@@ -108,13 +126,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Drahomíry Černé",
+      "original": "Drahomíru Černou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Drahomíru Černou",
+      "original": "Drahomíry Černé",
       "occurrences": 1
     },
     {
@@ -130,93 +148,45 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Lída Zíkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Lídu Zíkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Iva Řezníčkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Ivu Řezníčkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Dobroslav Růžičko",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Dobroslave Růžičko",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Na Příkopě 33, 114 07 Praha 1",
+      "original": "Na Příkopě 33, Praha 1, 114 07",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "U Nemocnice 31/31, 128 08 Praha 2",
+      "original": "Nemocnice 31/31, 128 08 Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Komenského 212/25, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Komenského 212/25, 702 00, Ostrava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Národní 10/22, 110 00 Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Na Kopci 16, 100 00 Praha 10",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Pražská 230, 360 01 Karlovy Vary",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Žižkova 21/2, 460 01 Liberec",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "a Komenského 212/25, 702 00 Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "platnost 05/28, CVC",
+      "original": "Žižkova 21/2, 460 01 Liberec",
       "occurrences": 1
     },
     {
@@ -379,12 +349,6 @@
       "type": "PHONE",
       "label": "[[PHONE_6]]",
       "original": "767 244 513",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "381768746",
       "occurrences": 1
     },
     {

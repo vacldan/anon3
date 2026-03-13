@@ -1,16 +1,18 @@
 OSOBY
 -----
 [[PERSON_1]]: Arnošt Šídlo
-  - Arnošta Šídla
   - Arnošta Šídlo
   - Arnošte Šídlo
-  - Arnoštem Šídlem
-  - Arnoštovi Šídlovi
 [[PERSON_2]]: Lída Šídlová
   - Lído Šídlová
   - Lídou Šídlovou
+  - Lídu Šídlováovou
   - Lídy Šídlové
   - Lídě Šídlové
+[[PERSON_3]]: Arnošt Šídl
+  - Arnošta Šídla
+  - Arnoštem Šídlem
+  - Arnoštovi Šídlovi
 [[PERSON_4]]: Matěj Polák
   - Matěja Poláka
   - Matějem Polákem
@@ -18,25 +20,19 @@ OSOBY
 [[PERSON_5]]: Bedřich Kříž
   - Bedřicha Kříža
 [[PERSON_6]]: Blanka Řezníčková
+  - Blanku Řezníčkováovou
   - Blanky Řezníčkové
 [[PERSON_7]]: Dobroslav Řezníček
   - Dobroslava Řezníčka
-[[PERSON_8]]: Lída Šídlováová
-  - Lídu Šídlováovou
-[[PERSON_9]]: Blanka Řezníčkováová
-  - Blanku Řezníčkováovou
 
 ADDRESS
-[[ADDRESS_1]]: Karlova 8, 110 00 Praha 1
+[[ADDRESS_1]]: Karlova 8, Praha 1, 110 00
 [[ADDRESS_2]]: Nádražní 145, 702 00 Ostrava
-[[ADDRESS_3]]: Riegrova 172/8, 779 00 Olomouc
-[[ADDRESS_4]]: Technologická 137/30, 160 00 Praha 6
-[[ADDRESS_5]]: U Nemocnice 191, 128 08 Praha 2
-[[ADDRESS_6]]: Křenová 59/37, 602 00 Brno
-[[ADDRESS_7]]: Purkyňova 147, 612 00 Brno
-[[ADDRESS_8]]: Nádražní 145, 702 00 Ostrava a Riegrova
-[[ADDRESS_9]]: Olomouc
-[[ADDRESS_10]]: platnost 06/28, CVC
+[[ADDRESS_3]]: Riegrova 172/8, 779 00, Olomouc
+[[ADDRESS_5]]: Technologická 137/30, 160 00 Praha 6
+[[ADDRESS_6]]: U Nemocnice 191, 128 08 Praha 2
+[[ADDRESS_7]]: Křenová 59/37, 602 00 Brno
+[[ADDRESS_8]]: Purkyňova 147, 612 00 Brno
 
 BANK
 [[BANK_1]]: 295970997/2700

@@ -6,38 +6,28 @@ OSOBY
   - Ondřejem Kořínkem
   - Ondřejovi Kořínkovi
 [[PERSON_2]]: Dagmar Šemberová
-  - Dagmar Šemberovou
-  - Dagmar Šemberové
 [[PERSON_3]]: Ivana Růžičková
   - Ivanou Růžičkovou
+  - Ivanu Růžičkováovou
   - Ivany Růžičkové
   - Ivaně Růžičkové
 [[PERSON_4]]: Milada Fialová
+  - Miladu Fialováovou
   - Milady Fialové
 [[PERSON_5]]: Monika Tesařová
+  - Moniku Tesařováovou
   - Moniky Tesařové
 [[PERSON_6]]: Čeněk Hájek
   - Čeněka Hájka
-[[PERSON_7]]: Ivana Růžičkováová
-  - Ivanu Růžičkováovou
-[[PERSON_8]]: Dagmar Šemberováová
-  - Dagmar Šemberováovou
-[[PERSON_9]]: Milada Fialováová
-  - Miladu Fialováovou
-[[PERSON_10]]: Monika Tesařováová
-  - Moniku Tesařováovou
 
 ADDRESS
-[[ADDRESS_1]]: Bělehradská 132, 120 84 Praha 2
+[[ADDRESS_1]]: Bělehradská 132, Praha 2, 120 84
 [[ADDRESS_2]]: Bezručova 209, 746 01 Opava
-[[ADDRESS_3]]: Jihlavská 205/18, 625 00 Brno
-[[ADDRESS_4]]: Husova 3/13, 390 02 Tábor
-[[ADDRESS_5]]: Pražská 36/12, 360 01 Karlovy Vary
-[[ADDRESS_6]]: Vinohradská 182/6, 130 00 Praha 3
-[[ADDRESS_7]]: Sadová 249/17, 370 01 České Budějovice
-[[ADDRESS_8]]: Bezručova 209, 746 01 Opava a Jihlavská
-[[ADDRESS_9]]: Brno
-[[ADDRESS_10]]: platnost 05/27, CVC
+[[ADDRESS_3]]: Jihlavská 205/18, 625 00, Brno
+[[ADDRESS_5]]: Husova 3/13, 390 02 Tábor
+[[ADDRESS_6]]: Pražská 36/12, 360 01 Karlovy Vary
+[[ADDRESS_7]]: Vinohradská 182/6, 130 00 Praha 3
+[[ADDRESS_8]]: Sadová 249/17, 370 01 České Budějovice
 
 BANK
 [[BANK_1]]: 9583976559/0800

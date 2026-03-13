@@ -8,11 +8,8 @@ OSOBY
 
 ADDRESS
 [[ADDRESS_1]]: Pražská 55, 301 00 Plzeň
-[[ADDRESS_2]]: Sokolovská 214/25, 360 01 Karlovy Vary
-[[ADDRESS_3]]: Kolínská 21/13, 130 00 Praha 3
-[[ADDRESS_4]]: Kolínská 235/35, 130 00 Praha 3
-[[ADDRESS_5]]: kabinet 205, tel
-[[ADDRESS_6]]: V Plzni
+[[ADDRESS_2]]: Sokolovská 214/25, 360 01, Karlovy Vary
+[[ADDRESS_4]]: Kolínská 235/35, Praha 3 - Vinohrady, 130 00
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 700501/9145

@@ -8,38 +8,29 @@ OSOBY
 [[PERSON_2]]: Šárka Brázdová
   - Šárko Brázdová
   - Šárkou Brázdovou
+  - Šárku Brázdováovou
   - Šárky Brázdové
   - Šárkě Brázdové
 [[PERSON_3]]: Ivana Soukupová
   - Ivanou Soukupovou
+  - Ivanu Soukupováovou
   - Ivany Soukupové
   - Ivaně Soukupové
 [[PERSON_4]]: Krista Vavrová
   - Kristy Vavrové
 [[PERSON_5]]: Krista Beranová
+  - Kristu Beranováovou
   - Kristy Beranové
 [[PERSON_6]]: Bruno Kuchta
   - Brunoa Kuchtu
   - Brunoa Kuchty
-[[PERSON_7]]: Ivana Soukupováová
-  - Ivanu Soukupováovou
-[[PERSON_8]]: Šárka Brázdováová
-  - Šárku Brázdováovou
-[[PERSON_9]]: Krista Beranováová
-  - Kristu Beranováovou
 
 ADDRESS
-[[ADDRESS_1]]: Zahradní 5, 390 02 Tábor
-[[ADDRESS_2]]: Jabloňová 88, 400 01 Ústí nad Labem
-[[ADDRESS_3]]: Revoluční 205/33, 110 00 Praha 1
-[[ADDRESS_4]]: Žižkova 221/7, 460 01 Liberec
-[[ADDRESS_5]]: Dvořákova 179/21, 370 01 České Budějovice
-[[ADDRESS_6]]: Dvořákova 172/29, 370 01 České Budějovice
-[[ADDRESS_7]]: Jabloňová 211, 400 01 Ústí nad Labem
-[[ADDRESS_8]]: Jabloňová 88, 400 01 Ústí nad Labem a Revoluční
-[[ADDRESS_9]]: Praha 1
-[[ADDRESS_10]]: platnost 01/30, CVC
-[[ADDRESS_11]]: V Ostravě
+[[ADDRESS_1]]: Zahradní 5, 390 02, Tábor
+[[ADDRESS_3]]: Revoluční 205/33, Praha 1, 110 00
+[[ADDRESS_5]]: Žižkova 221/7, 460 01 Liberec
+[[ADDRESS_7]]: Dvořákova 172/29, 370 01 České Budějovice
+[[ADDRESS_8]]: Jabloňová 211, 400 01 Ústí nad Labem
 
 BANK
 [[BANK_1]]: 3339625585/0600

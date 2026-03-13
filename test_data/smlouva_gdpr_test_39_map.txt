@@ -10,9 +10,8 @@ OSOBY
   - Erikem Roubalem
 
 ADDRESS
-[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
-[[ADDRESS_2]]: Technologická 15, 160 00 Praha 6
-[[ADDRESS_3]]: V Praze
+[[ADDRESS_1]]: Poliklinická 3, Praha 2, 120 00
+[[ADDRESS_2]]: Technologická 15, Praha 6, 160 00
 
 BANK
 [[BANK_1]]: 6655443322/5500

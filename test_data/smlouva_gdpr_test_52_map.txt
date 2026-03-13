@@ -8,39 +8,32 @@ OSOBY
   - Daliborovi Fialovi
 [[PERSON_2]]: Natálie Bartůňková
   - Natálie Bartůňkové
+  - Natálii Bartůňkováovou
   - Natálii Bartůňkové
   - Natálií Bartůňkovou
-[[PERSON_3]]: Natálie Bartůňkováová
-  - Natálii Bartůňkováovou
-[[PERSON_4]]: Marek Hrubeš
+[[PERSON_3]]: Marek Hrubeš
   - Hrubeš
   - Marka Hrubeša
   - Markem Hrubešem
   - Markovi Hrubešovi
-[[PERSON_5]]: Tereza Doležalová
+[[PERSON_4]]: Tereza Doležalová
+  - Terezu Doležalováovou
   - Terezy Doležalové
-[[PERSON_6]]: Jana Šemberová
+[[PERSON_5]]: Jana Šemberová
+  - Janu Šemberováovou
   - Jany Šemberové
-[[PERSON_7]]: Arnošt Malina
+[[PERSON_6]]: Arnošt Malina
   - Arnošta Malinu
   - Arnošta Maliny
-[[PERSON_10]]: Tereza Doležalováová
-  - Terezu Doležalováovou
-[[PERSON_11]]: Jana Šemberováová
-  - Janu Šemberováovou
-[[PERSON_12]]: Svědci Marek
 
 ADDRESS
-[[ADDRESS_1]]: Kosmonautů 44, 779 00 Olomouc
+[[ADDRESS_1]]: Kosmonautů 44, 779 00, Olomouc
 [[ADDRESS_2]]: Křenová 49, 602 00 Brno
-[[ADDRESS_3]]: Havlíčkova 215, 586 01 Jihlava
-[[ADDRESS_4]]: Praha 1
+[[ADDRESS_3]]: Havlíčkova 215, 586 01, Jihlava
 [[ADDRESS_5]]: Pražská 129/27, 360 01 Karlovy Vary
 [[ADDRESS_6]]: Komenského 34, 702 00 Ostrava
 [[ADDRESS_7]]: Husova 152/15, 390 02 Tábor
 [[ADDRESS_8]]: Jabloňová 95/35, 400 01 Ústí nad Labem
-[[ADDRESS_9]]: Křenová 49, 602 00 Brno a Havlíčkova
-[[ADDRESS_10]]: platnost 08/30, CVC
 
 BANK
 [[BANK_1]]: 9223494019/0300
@@ -109,5 +102,4 @@ PHONE
 [[PHONE_5]]: +420637190421
 [[PHONE_6]]: +420 758 262 135
 [[PHONE_7]]: 607 960 660
-[[PHONE_8]]: 143882682
 

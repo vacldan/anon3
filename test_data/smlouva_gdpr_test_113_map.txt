@@ -20,13 +20,8 @@ OSOBY
   - Karlovi Královi
 
 ADDRESS
-[[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_1]]: Náměstí 1, 500 02, Hradec Králové
 [[ADDRESS_2]]: Na Návsi 26/11, 789 01 Zábřeh
-[[ADDRESS_3]]: Na Návsi 89/7, 789 01 Zábřeh
-[[ADDRESS_4]]: případně písemně na adresu Na Návsi 89/7, 789 01 Zábřeh
-[[ADDRESS_5]]: písemné doručení na adresu Na Návsi 89/7, 789 01 Zábřeh
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Návsi 89/7, 789 01 Zábřeh pro Jaroslavovi Vlachovi
-[[ADDRESS_7]]: a Na Návsi 26/11, 789 01 Zábřeh pro Pavlovi Benešovi
 
 BANK
 [[BANK_1]]: 749893836/0100

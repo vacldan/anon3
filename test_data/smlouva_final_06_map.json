@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:46.093557",
+  "generated_at": "2026-03-13T09:56:22.104195",
   "source_file": "smlouva_final_06.docx",
   "entities": [
     {
@@ -18,36 +18,24 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Octavi Combi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Octavia Combi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
       "original": "Iveta Dostálová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
+      "label": "[[PERSON_2]]",
       "original": "Ivety Dostálové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_3]]",
       "original": "Giovanni Rossi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_3]]",
       "original": "Giovanniem Rossiem",
       "occurrences": 1
     },
@@ -60,19 +48,13 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Sokolovská 194/48, 360 01 Karlovy Vary",
-      "occurrences": 1
+      "original": "Sokolovská 194/48, 360 01, Karlovy Vary",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Masarykovo náměstí 156/10, 586 01 Jihlava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "Sokolovská 19/30, 360 01 Karlovy Vary",
       "occurrences": 1
     },
     {

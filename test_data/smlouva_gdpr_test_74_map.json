@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:31.586817",
+  "generated_at": "2026-03-13T09:57:18.004194",
   "source_file": "smlouva_gdpr_test_74.docx",
   "entities": [
     {
@@ -12,13 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Čeněka Berana",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Čeněke Berane",
+      "original": "Čeněkovi Beranovi",
       "occurrences": 1
     },
     {
@@ -30,7 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Čeněkovi Beranovi",
+      "original": "Čeněke Berane",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Čeněka Berana",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Elišky Fialové",
+      "original": "Eliškou Fialovou",
       "occurrences": 1
     },
     {
@@ -54,7 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Eliškou Fialovou",
+      "original": "Elišku Fialováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Elišky Fialové",
       "occurrences": 1
     },
     {
@@ -108,6 +114,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
+      "original": "Soňu Řípováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Soňy Řípové",
       "occurrences": 1
     },
@@ -124,33 +136,9 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Eliška Fialováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Elišku Fialováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Soňa Řípováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Soňu Řípováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Právnická 12, 110 00 Praha 1",
+      "original": "Právnická 12, Praha 1, 110 00",
       "occurrences": 1
     },
     {
@@ -162,44 +150,26 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Bezručova 85/32, 746 01 Opava",
-      "occurrences": 1
+      "original": "Bezručova 85/32, 746 01, Opava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Riegrova 117/39, 779 00 Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Jihlavská 19/3, 625 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Masarykova 185, 500 02 Hradec Králové",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Masarykova 2/5, 500 02 Hradec Králové",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "Hlavní 222/33, 669 02 Znojmo a Bezručova",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "platnost 07/28, CVC",
-      "occurrences": 1
+      "original": "Masarykova 185, 500 02 Hradec Králové",
+      "occurrences": 2
     },
     {
       "type": "ICO",

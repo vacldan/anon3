@@ -20,13 +20,9 @@ OSOBY
   - Markétě Turkové
 
 ADDRESS
-[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_1]]: Na Hradbách 15, 702 00, Ostrava
 [[ADDRESS_2]]: Vinohradská 146/22, 130 00 Praha 3
 [[ADDRESS_3]]: Sadová 193/12, 370 01 České Budějovice
-[[ADDRESS_4]]: případně písemně na adresu Sadová 193/12, 370 01 České Budějovice
-[[ADDRESS_5]]: písemné doručení na adresu Sadová 193/12, 370 01 České Budějovice
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Sadová 193/12, 370 01 České Budějovice pro Janovi
-[[ADDRESS_7]]: Malíkovi a Vinohradská 146/22, 130 00 Praha 3
 
 BANK
 [[BANK_1]]: 575178293/0600

@@ -6,37 +6,29 @@ OSOBY
   - Michalem Řezníčkem
   - Michalovi Řezníčkovi
 [[PERSON_2]]: Pavla Havličková
-[[PERSON_3]]: Pavlě Havličková
+[[PERSON_3]]: Pavlě Havliček
   - Pavlě Havličkové
 [[PERSON_4]]: Veronika Marešová
   - Veronikou Marešovou
+  - Veroniku Marešováovou
   - Veroniky Marešové
   - Veronikě Marešové
 [[PERSON_5]]: Alžběta Černá
   - Alžbětu Černou
   - Alžběty Černé
 [[PERSON_6]]: Jiřina Havličková
+  - Jiřinu Havličkováovou
   - Jiřiny Havličkové
 [[PERSON_7]]: Jaroslav Vlach
   - Jaroslava Vlacha
-[[PERSON_9]]: Veronika Marešováová
-  - Veroniku Marešováovou
-[[PERSON_10]]: Pavel Havličkováová
-  - Pavlu Havličkováovou
-[[PERSON_11]]: Jiřina Havličkováová
-  - Jiřinu Havličkováovou
 
 ADDRESS
-[[ADDRESS_1]]: Vídeňská 800, 140 59 Praha 4
+[[ADDRESS_1]]: Vídeňská 800, Praha 4, 140 59
 [[ADDRESS_2]]: Husova 236/11, 390 02 Tábor
-[[ADDRESS_3]]: Žižkova 245/15, 460 01 Liberec
 [[ADDRESS_4]]: Dlouhá 35/39, 602 00 Brno
 [[ADDRESS_5]]: Dvořákova 187, 370 01 České Budějovice
 [[ADDRESS_6]]: Žižkova 132/18, 460 01 Liberec
 [[ADDRESS_7]]: Na Kopci 13, 100 00 Praha 10
-[[ADDRESS_8]]: Husova 236/11, 390 02 Tábor a Žižkova
-[[ADDRESS_9]]: Liberec
-[[ADDRESS_10]]: platnost 10/28, CVC
 
 BANK
 [[BANK_1]]: 1804163764/0600

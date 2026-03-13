@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:46.363093",
+  "generated_at": "2026-03-13T09:56:22.432820",
   "source_file": "smlouva_final_07.docx",
   "entities": [
     {
@@ -30,6 +30,18 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Kristýna Petrovaová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Kristýně Petrova",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Kristýna Petrova",
       "occurrences": 1
     },
@@ -47,20 +59,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Kristýně Petrova",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Aleksandr Petrova",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Aleksandra Petrova",
       "occurrences": 1
     },
     {
@@ -71,8 +71,14 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Aleksandra Petrova",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Maia Linh",
+      "original": "Maia Linhová",
       "occurrences": 1
     },
     {
@@ -138,8 +144,8 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Nádražní 118/17, 738 01 Frýdek-Místek",
-      "occurrences": 1
+      "original": "Nádražní 118/17, 738 01, Frýdek-Místek",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -150,8 +156,8 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Pražská 110/12, 301 00 Plzeň",
-      "occurrences": 1
+      "original": "Pražská 110/12, 301 00, Plzeň",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -163,12 +169,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
       "original": "Revoluční 3/21, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "V Praze",
       "occurrences": 1
     },
     {

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:53.378619",
+  "generated_at": "2026-03-13T09:56:31.021198",
   "source_file": "smlouva_gdpr_test_105.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michalem Vlachem",
+      "original": "Michale Vlache",
       "occurrences": 1
     },
     {
@@ -24,19 +24,31 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michala Vlacha",
+      "original": "Michalem Vlachem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michale Vlache",
+      "original": "Michala Vlacha",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Jan Malík",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Jane Malíke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Jana Malíka",
       "occurrences": 1
     },
     {
@@ -49,18 +61,6 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Janem Malíkem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Jana Malíka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Jane Malíke",
       "occurrences": 1
     },
     {
@@ -90,12 +90,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Markétě Turkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Markéty Turkové",
       "occurrences": 1
     },
@@ -108,14 +102,20 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
+      "original": "Markétě Turkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Markétou Turkovou",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Na Hradbách 15, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Na Hradbách 15, 702 00, Ostrava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -127,31 +127,7 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Sadová 193/12, 370 01 České Budějovice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Sadová 193/12, 370 01 České Budějovice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Sadová 193/12, 370 01 České Budějovice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Sadová 193/12, 370 01 České Budějovice pro Janovi",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Malíkovi a Vinohradská 146/22, 130 00 Praha 3",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ICO",

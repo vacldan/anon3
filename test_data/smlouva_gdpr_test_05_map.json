@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:49.900433",
+  "generated_at": "2026-03-13T09:56:26.654333",
   "source_file": "smlouva_gdpr_test_05.docx",
   "entities": [
     {
@@ -30,13 +30,7 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Poliklinická 3, 120 00 Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Luční 45, 150 00 Praha 5",
+      "original": "Poliklinická 3, Praha 2, 120 00",
       "occurrences": 1
     },
     {
@@ -48,14 +42,8 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "Barbory Veselé s fakturační adresou Luční 45, 150 00 Praha 5",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "V Praze",
-      "occurrences": 1
+      "original": "adresou Luční 45, Praha 5, 150 00",
+      "occurrences": 2
     },
     {
       "type": "ICO",

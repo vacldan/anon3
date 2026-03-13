@@ -20,8 +20,6 @@ ADDRESS
 [[ADDRESS_1]]: Kampus 9, 625 00 Brno
 [[ADDRESS_2]]: U Parku 49/10, 779 00 Olomouc
 [[ADDRESS_3]]: Na Návsi 63/1, 789 01 Zábřeh
-[[ADDRESS_4]]: platnost 08/28, CVC
-[[ADDRESS_5]]: písemně na adresu Na Návsi 63/1, 789 01 Zábřeh
 
 BANK
 [[BANK_1]]: 741093085/0300

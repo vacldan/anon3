@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:21.033089",
+  "generated_at": "2026-03-13T09:57:08.494711",
   "source_file": "smlouva_gdpr_test_60.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpánovi Havličkovi",
+      "original": "Štěpáne Havličko",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpána Havličky",
+      "original": "Štěpánovi Havličkovi",
       "occurrences": 1
     },
     {
@@ -30,19 +30,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpánem Havličkou",
+      "original": "Štěpána Havličky",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpáne Havličko",
+      "original": "Štěpánem Havličkou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Alice Nováková",
+      "original": "Alica Novák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Alice Novákováovou",
       "occurrences": 1
     },
     {
@@ -55,6 +61,12 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Alice Novákové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Alice Nováková",
       "occurrences": 1
     },
     {
@@ -72,13 +84,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Vojtěcha Pospíšila",
+      "original": "Vojtěchem Pospíšilem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Vojtěchem Pospíšilem",
+      "original": "Vojtěcha Pospíšila",
       "occurrences": 1
     },
     {
@@ -95,6 +107,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Ivanu Šídlováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Květa Poláková",
       "occurrences": 1
@@ -103,6 +121,12 @@
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Květy Polákové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Květu Polákováovou",
       "occurrences": 1
     },
     {
@@ -118,46 +142,10 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Alice Novákováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Alice Novákováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Ivana Šídlováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Ivanu Šídlováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Květa Polákováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Květu Polákováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Lesní 12, 586 01 Jihlava",
-      "occurrences": 1
+      "original": "Lesní 12, 586 01, Jihlava",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -167,44 +155,32 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
+      "label": "[[ADDRESS_4]]",
       "original": "U Parku 30, 779 00 Olomouc",
-      "occurrences": 1
+      "occurrences": 4
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Komenského 13, 702 00 Ostrava",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Riegrova 125/32, 779 00 Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Tylova 130/25, 530 02 Pardubice",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Křenová 187/24, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "a U Parku 30, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "platnost 12/26, CVC",
+      "original": "Křenová 187/24, 602 00 Brno",
       "occurrences": 1
     },
     {

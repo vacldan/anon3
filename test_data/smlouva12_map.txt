@@ -21,80 +21,74 @@ OSOBY
 [[PERSON_14]]: Eva Svobodová
 [[PERSON_15]]: Klára Havránková
 [[PERSON_16]]: Michal Kolář
-[[PERSON_17]]:  Malá
-[[PERSON_18]]: Lenka Kolářová
+[[PERSON_17]]: Lenka Kolářová
   - Kolářová
-[[PERSON_19]]: Pavel Kolář
-[[PERSON_20]]: Jana Dvořáková
-[[PERSON_21]]: Tomáš Novák
+[[PERSON_18]]: Pavel Kolář
+[[PERSON_19]]: Jana Dvořáková
+[[PERSON_20]]: Tomáš Novák
   - Novák
-[[PERSON_22]]: Martin Vrána
+[[PERSON_21]]: Martin Vrána
   - Martina Vrány
   - Vráno
   - Vránovi
-[[PERSON_23]]: Petr Havl
+[[PERSON_22]]: Petr Havl
   - Petrem Havlem
-[[PERSON_24]]: Petr Havel
-[[PERSON_25]]: Kateřina Malá
-[[PERSON_26]]: Jana Nováková
-[[PERSON_28]]: David Černý
-[[PERSON_29]]: Martin Hora
-[[PERSON_30]]: Eva Vlková
-[[PERSON_31]]: Tomáš Novotný
-[[PERSON_32]]: Pavel Novák
-[[PERSON_33]]: Petra Horáková
+[[PERSON_23]]: Petr Havel
+[[PERSON_24]]: Kateřina Malá
+  - Malá
+[[PERSON_25]]: Jana Nováková
+[[PERSON_27]]: David Černý
+[[PERSON_28]]: Martin Hora
+[[PERSON_29]]: Eva Vlková
+[[PERSON_30]]: Tomáš Novotný
+[[PERSON_31]]: Pavel Novák
+[[PERSON_32]]: Petra Horáková
   - Horáková
-[[PERSON_34]]: David Kos
-[[PERSON_35]]: Jana Vlková
+[[PERSON_33]]: David Kos
+[[PERSON_34]]: Jana Vlková
   - Janě Vlkové
-[[PERSON_36]]: Martin Liška
+[[PERSON_35]]: Martin Liška
   - Martinu Liškovi
-[[PERSON_37]]: Tomáš Jelínek
+[[PERSON_36]]: Tomáš Jelínek
   - Tomáše Jelínka
-[[PERSON_38]]: Petr Nový
+[[PERSON_37]]: Petr Nový
   - Nové
   - Petra Nového
-[[PERSON_39]]: Lukáš Vrána
+[[PERSON_38]]: Lukáš Vrána
   - Lukášem Vránou
-[[PERSON_40]]: Klára Sokolová
-[[PERSON_42]]: Václav Holub
+[[PERSON_39]]: Klára Sokolová
+[[PERSON_41]]: Václav Holub
   - Holub
   - Holuba
-[[PERSON_43]]: Markéta Holubová
-[[PERSON_44]]: Karel Havran
+[[PERSON_42]]: Markéta Holubová
+[[PERSON_43]]: Karel Havran
   - Havran
   - Havranem
-[[PERSON_45]]: Jana Vránová
+[[PERSON_44]]: Jana Vránová
   - Janou Vránovou
   - Vránová
-[[PERSON_46]]: Petr Soukupa
+[[PERSON_45]]: Petr Soukupa
   - Petra Soukupa
-[[PERSON_47]]: Tomáš Jeřábek
-[[PERSON_48]]: Martin Vrba
-[[PERSON_49]]: Eva Holanová
-[[PERSON_50]]: Petr Novotný
-[[PERSON_51]]: Lukáš Vlček
+[[PERSON_46]]: Tomáš Jeřábek
+[[PERSON_47]]: Martin Vrba
+[[PERSON_48]]: Eva Holanová
+[[PERSON_49]]: Petr Novotný
+[[PERSON_50]]: Lukáš Vlček
   - Vlčkova
-[[PERSON_52]]: Jan Horák
+[[PERSON_51]]: Jan Horák
 
 ADDRESS
-[[ADDRESS_1]]: v Praze
-[[ADDRESS_2]]: U Nemocnice 2, 128 08 Praha 2
-[[ADDRESS_3]]: Rybná 8, 110 00 Praha 1
-[[ADDRESS_4]]: Rybná 25, Praha 1
-[[ADDRESS_5]]: Sokolská 45, 120 00 Praha 2
-[[ADDRESS_6]]: Praha
-[[ADDRESS_7]]: Kolářská 12, 602 00 Brno
-[[ADDRESS_8]]: Nová Kolářská 88, 615 00 Brno
-[[ADDRESS_9]]: Komenského 58, Brno
-[[ADDRESS_10]]: Václavské náměstí 47, 110 00 Praha 1
-[[ADDRESS_11]]: Vránova 25, 130 00 Praha 3
-[[ADDRESS_12]]: Ovocný trh 8, 110 00 Praha 1
-[[ADDRESS_13]]: Průmyslová 158, 708 00 Ostrava
-[[ADDRESS_14]]: Holubova 28, 702 00 Ostrava
-[[ADDRESS_15]]: Ostrava
-[[ADDRESS_16]]: Praha 5
-[[ADDRESS_17]]: Brno
+[[ADDRESS_1]]: Nemocnice 2, 128 08 Praha 2
+[[ADDRESS_3]]: Rybná 25, Praha 1
+[[ADDRESS_4]]: Sokolská 45, 120 00 Praha 2
+[[ADDRESS_6]]: Nová Kolářská 88, 615 00 Brno
+[[ADDRESS_7]]: Komenského 58, Brno
+[[ADDRESS_8]]: Václavské náměstí 47, 110 00 Praha 1
+[[ADDRESS_9]]: Vránova 25, 130 00 Praha 3
+[[ADDRESS_10]]: Ovocný trh 8, 110 00 Praha 1
+[[ADDRESS_11]]: Průmyslová 158, 708 00 Ostrava
+[[ADDRESS_12]]: Holubova 28, 702 00 Ostrava
+[[ADDRESS_13]]: 150 00, Praha 5
 
 BANK
 [[BANK_1]]: 2547896321/0800
@@ -181,12 +175,10 @@ PHONE
 [[PHONE_6]]: +420 606 987 452
 [[PHONE_7]]: +420 724 365 874
 [[PHONE_8]]: 603 741 258
-[[PHONE_9]]: 724 896 325
 [[PHONE_10]]: 604 789 456
 [[PHONE_11]]: 725 896 321
 [[PHONE_12]]: +420 724 896 325
 [[PHONE_13]]: 606 874 521
-[[PHONE_14]]: 724 365 874
 [[PHONE_15]]: 605 789 632
 [[PHONE_16]]: 724 896 547
 [[PHONE_17]]: 606 874 523

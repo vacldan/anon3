@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:14.808194",
+  "generated_at": "2026-03-13T09:57:03.053821",
   "source_file": "smlouva_gdpr_test_53.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Jane Beneše",
+      "original": "Janovi Benešovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Janovi Benešovi",
+      "original": "Jana Beneša",
       "occurrences": 1
     },
     {
@@ -30,19 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Jana Beneša",
+      "original": "Jane Beneše",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Věra Poláková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Věrě Polákové",
       "occurrences": 1
     },
     {
@@ -60,116 +54,104 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Věrě Polákové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Věrou Polákovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Věra Polákováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
+      "label": "[[PERSON_2]]",
       "original": "Věru Polákováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_3]]",
       "original": "Přemysl Mareš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Přemysla Mareša",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_3]]",
       "original": "Přemyslovi Marešovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_3]]",
+      "original": "Přemysla Mareša",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Přemyslem Marešem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_4]]",
       "original": "Jana Pospíšilová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Jany Pospíšilové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_6]]",
-      "original": "Iva Zíková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_6]]",
-      "original": "Ivy Zíkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Arnošt Havlička",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Arnošta Havličky",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Arnošta Havličku",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Jana Pospíšilováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
+      "label": "[[PERSON_4]]",
       "original": "Janu Pospíšilováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Iva Zíkováová",
+      "label": "[[PERSON_4]]",
+      "original": "Jany Pospíšilové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_9]]",
+      "label": "[[PERSON_5]]",
+      "original": "Iva Zíková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Ivu Zíkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Ivy Zíkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Arnošt Havlička",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Arnošta Havličku",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Arnošta Havličky",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Nemocniční 1, 400 01 Ústí nad Labem",
-      "occurrences": 1
+      "original": "Nemocniční 1, 400 01, Ústí nad Labem",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -180,55 +162,31 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Dvořákova 214/18, 370 01 České Budějovice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "České Budějovice",
-      "occurrences": 1
+      "original": "Dvořákova 214/18, 370 01, České Budějovice",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
       "original": "Sokolovská 237/21, 186 00 Praha 8",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Jihlavská 141/40, 625 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Bezručova 10, 746 01 Opava",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
+      "label": "[[ADDRESS_8]]",
       "original": "Na Návsi 169/37, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "Jabloňová 161, 400 01 Ústí nad Labem a Dvořákova",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "platnost 08/26, CVC",
       "occurrences": 1
     },
     {
@@ -379,12 +337,6 @@
       "type": "PHONE",
       "label": "[[PHONE_6]]",
       "original": "+420 628 593 141",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "653152867",
       "occurrences": 1
     },
     {

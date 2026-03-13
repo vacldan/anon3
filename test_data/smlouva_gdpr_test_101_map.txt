@@ -1,7 +1,6 @@
 OSOBY
 -----
 [[PERSON_1]]: Oldřich Dvořák
-  - Dvořákovi
   - Oldřicha Dvořáka
   - Oldřiche Dvořáke
   - Oldřichem Dvořákem
@@ -22,13 +21,9 @@ OSOBY
   - Alešovi Novákovi
 
 ADDRESS
-[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
+[[ADDRESS_1]]: Poliklinická 3, Praha 2, 120 00
 [[ADDRESS_2]]: Jabloňová 60/4, 400 01 Ústí nad Labem
 [[ADDRESS_3]]: U Parku 123/23, 779 00 Olomouc
-[[ADDRESS_4]]: případně písemně na adresu U Parku 123/23, 779 00 Olomouc
-[[ADDRESS_5]]: písemné doručení na adresu U Parku 123/23, 779 00 Olomouc
-[[ADDRESS_6]]: Pro účely doručování se používá adresa U Parku 123/23, 779 00 Olomouc pro Oldřichovi Černýovi
-[[ADDRESS_7]]: a Jabloňová 60/4, 400 01 Ústí nad Labem pro Oldřichovi
 
 BANK
 [[BANK_1]]: 947790371/0100

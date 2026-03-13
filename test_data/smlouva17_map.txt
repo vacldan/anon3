@@ -2,44 +2,32 @@ OSOBY
 -----
 [[PERSON_1]]: Martina Svobodová
 [[PERSON_2]]: Jakub Procházka
-[[PERSON_3]]: Petra Procházková
-[[PERSON_4]]: Eliška Procházková
-[[PERSON_5]]: Matěj Procházka
+[[PERSON_3]]: Brno Přechodný
+[[PERSON_4]]: Petra Procházková
+[[PERSON_5]]: Eliška Procházková
+[[PERSON_6]]: Matěj Procházka
   - Matěj Procházek
-[[PERSON_6]]: Hana Procházková
-[[PERSON_7]]: Karel Procházka
+[[PERSON_7]]: Hana Procházková
+[[PERSON_8]]: Karel Procházka
   - Karel Procházek
-[[PERSON_8]]: Martin Procházka
+[[PERSON_9]]: Martin Procházka
   - Martin Procházek
-[[PERSON_9]]: Jana Procházková
-[[PERSON_10]]: Eva Málková
-[[PERSON_11]]: Pavel Dvořák
-[[PERSON_12]]: Tomáš Novák
-[[PERSON_13]]: Jana Svobodová
-[[PERSON_14]]: Octavi Combi
-  - Octavia Combi
+[[PERSON_10]]: Jana Procházková
+[[PERSON_11]]: Eva Málková
+[[PERSON_12]]: Pavel Dvořák
+[[PERSON_13]]: Tomáš Novák
+[[PERSON_14]]: Jana Svobodová
 [[PERSON_15]]: Eva Nováková
+  - Nováková
 
 ADDRESS
-[[ADDRESS_1]]: Wenceslausovo náměstí 1234/56, 110 00 Praha 1
-[[ADDRESS_2]]: Praha
+[[ADDRESS_1]]: Wenceslausovo náměstí 1234/56, Praha 1, 110 00
 [[ADDRESS_3]]: Karlova 45/12, 602 00 Brno
-[[ADDRESS_4]]: Vinohradská 1234/89, 130 00 Praha 3
-[[ADDRESS_5]]: Brno-střed
-[[ADDRESS_6]]: Masarykova 123/45, 602 00 Brno
-[[ADDRESS_7]]: Praha 1
-[[ADDRESS_8]]: Vinohradská 1234/89, Praha 3
-[[ADDRESS_9]]: Na Františku 12/34, 110 00 Praha 1
-[[ADDRESS_10]]: Brno
-[[ADDRESS_11]]: Praha 3
-[[ADDRESS_12]]: v Brně
-[[ADDRESS_13]]: přestal 2019, celkem kouřil 10
-[[ADDRESS_14]]: Vinohradská 123, Praha 3
-[[ADDRESS_15]]: Na Poříčí 23, Praha 1
-[[ADDRESS_16]]: Vinohradská 1234/89, byt č
-[[ADDRESS_17]]: Dell Latitude 5520, SN
-[[ADDRESS_18]]: Cisco 8841, MAC
-[[ADDRESS_19]]: V Praze
+[[ADDRESS_4]]: Masarykova 123/45, 602 00 Brno
+[[ADDRESS_6]]: Na Františku 12/34, 110 00 Praha 1
+[[ADDRESS_7]]: Brně, Karlova 45/12
+[[ADDRESS_9]]: Na Poříčí 23, Praha 1
+[[ADDRESS_2]]: Vinohradská 1234/89, 130 00 Praha 3, Praha 3 - Vinohrady
 
 API_KEY
 [[API_KEY_1]]: api_key_jp_2024_ghp_Kx7mP2vQ9wR5tYu8iO3nM6lJ4hG1sA

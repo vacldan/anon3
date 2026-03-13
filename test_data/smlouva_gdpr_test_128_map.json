@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:00.382204",
+  "generated_at": "2026-03-13T09:56:41.384320",
   "source_file": "smlouva_gdpr_test_128.docx",
   "entities": [
     {
@@ -18,12 +18,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ondřejem Dvořákem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Ondřejovi Dvořákovi",
       "occurrences": 1
     },
@@ -35,6 +29,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Ondřejem Dvořákem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Simona Nováková",
       "occurrences": 1
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Simono Nováková",
+      "original": "Simony Novákové",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Simonou Novákovou",
+      "original": "Simono Nováková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Simony Novákové",
+      "original": "Simonou Novákovou",
       "occurrences": 1
     },
     {
@@ -72,19 +72,31 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Adélě Roubalové",
+      "original": "Adélou Roubalovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Adélou Roubalovou",
+      "original": "Adélě Roubalové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Jaroslav Hrubeš",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Jaroslavem Hrubešem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Jaroslave Hrubeše",
       "occurrences": 1
     },
     {
@@ -100,57 +112,21 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Jaroslave Hrubeše",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Jaroslavem Hrubešem",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Náměstí 1, 500 02 Hradec Králové",
-      "occurrences": 1
+      "original": "Náměstí 1, 500 02, Hradec Králové",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "U Parku 64/19, 779 00 Olomouc",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Na Kopci 11/6, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Na Kopci 11/6, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Na Kopci 11/6, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Na Kopci 11/6, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Simoně Novákové a U Parku 64/19, 779 00 Olomouc pro Ondřejovi Dvořákovi",
       "occurrences": 1
     },
     {

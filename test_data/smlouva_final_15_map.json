@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:48.094419",
+  "generated_at": "2026-03-13T09:56:24.520456",
   "source_file": "smlouva_final_15.docx",
   "entities": [
     {
@@ -42,50 +42,26 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "v Brně",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
       "original": "Husova 15, 601 95 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Pražská 216/30, 301 00 Plzeň",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
       "original": "Palackého třída 27/30, 779 00 Olomouc - Nová Ulice",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_4]]",
       "original": "Tyršova 197/50, 530 02 Pardubice",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "Pražská 125/48, 301 00 Plzeň",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Brno-město",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "Pražská 207/37, 301 00 Plzeň",
-      "occurrences": 1
+      "original": "Pražská 207/37, 301 00, Plzeň",
+      "occurrences": 5
     },
     {
       "type": "DATE",

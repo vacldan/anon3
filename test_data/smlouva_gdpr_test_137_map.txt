@@ -20,13 +20,9 @@ OSOBY
   - Václavovi Hrubešovi
 
 ADDRESS
-[[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_1]]: Náměstí 1, 500 02, Hradec Králové
 [[ADDRESS_2]]: Vinohradská 119/15, 130 00 Praha 3
 [[ADDRESS_3]]: Sadová 83/20, 370 01 České Budějovice
-[[ADDRESS_4]]: případně písemně na adresu Sadová 83/20, 370 01 České Budějovice
-[[ADDRESS_5]]: písemné doručení na adresu Sadová 83/20, 370 01 České Budějovice
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Sadová 83/20, 370 01 České Budějovice pro Karlovi
-[[ADDRESS_7]]: Svobodovi a Vinohradská 119/15, 130 00 Praha 3
 
 BANK
 [[BANK_1]]: 322247281/0100

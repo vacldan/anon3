@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:01.879766",
+  "generated_at": "2026-03-13T09:55:42.188009",
   "source_file": "smlouva19.docx",
   "entities": [
     {
@@ -274,24 +274,6 @@
       "occurrences": 1
     },
     {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_1]]",
-      "original": "Nad Kampusem 821/4, Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Křišťanová 19, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "V Praze",
-      "occurrences": 1
-    },
-    {
       "type": "EMAIL",
       "label": "[[EMAIL_1]]",
       "original": "adrian.kratochvil@fnsm.cz",
@@ -325,6 +307,18 @@
       "type": "ICO",
       "label": "[[ICO_1]]",
       "original": "00311245",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "Nad Kampusem 821/4, Praha 10, 102 00",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "Křišťanová 19, 779 00 Olomouc",
       "occurrences": 1
     },
     {
@@ -376,15 +370,15 @@
       "occurrences": 1
     },
     {
-      "type": "VIN",
-      "label": "[[VIN_1]]",
-      "original": "TMBJG9NP8N7022812",
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_4]]",
+      "original": "EI 35677",
       "occurrences": 1
     },
     {
-      "type": "IMEI",
-      "label": "[[IMEI_1]]",
-      "original": "356778119991871",
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "TMBJG9NP8N7022812",
       "occurrences": 1
     }
   ]

@@ -20,13 +20,9 @@ OSOBY
   - Václavovi Svobodovi
 
 ADDRESS
-[[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_1]]: Náměstí 1, 500 02, Hradec Králové
 [[ADDRESS_2]]: Pojišťovací 16/21, 110 00 Praha 1
 [[ADDRESS_3]]: Na Návsi 97/20, 789 01 Zábřeh
-[[ADDRESS_4]]: případně písemně na adresu Na Návsi 97/20, 789 01 Zábřeh
-[[ADDRESS_5]]: písemné doručení na adresu Na Návsi 97/20, 789 01 Zábřeh
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Na Návsi 97/20, 789 01 Zábřeh pro Michalovi
-[[ADDRESS_7]]: Procházkovi a Pojišťovací 16/21, 110 00 Praha 1
 
 BANK
 [[BANK_1]]: 888620030/5500

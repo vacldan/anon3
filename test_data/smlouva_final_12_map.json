@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:47.279590",
+  "generated_at": "2026-03-13T09:56:23.604474",
   "source_file": "smlouva_final_12.docx",
   "entities": [
     {
@@ -54,37 +54,25 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "notářka se sídlem Tyršova 18, 530 02 Pardubice",
+      "original": "Tyršova 18, 530 02",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Čelakovského sady 174/9, 120 00 Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Pražská 9/27, 301 00 Plzeň",
+      "original": "Čelakovského sady 174/9, Praha 2 - Nové, 120 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
       "original": "Pražská 63/28, 301 00 Plzeň",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
       "original": "Tyršova 44/2, 530 02 Pardubice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pardubice",
       "occurrences": 1
     },
     {

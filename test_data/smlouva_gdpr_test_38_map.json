@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:10.320844",
+  "generated_at": "2026-03-13T09:56:58.137432",
   "source_file": "smlouva_gdpr_test_38.docx",
   "entities": [
     {
@@ -24,13 +24,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Veronikou Lacinovou",
+      "original": "Veronice Lacinové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Veronice Lacinové",
+      "original": "Veronikou Lacinovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Nikol Šťastný",
       "occurrences": 1
     },
     {
@@ -54,20 +60,14 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Na Hradbách 15, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Na Hradbách 15, 702 00, Ostrava",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "U Kampusu 9, 625 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "V Ostravě",
-      "occurrences": 1
+      "original": "Kampusu 9, 625 00, Brno",
+      "occurrences": 2
     },
     {
       "type": "ICO",

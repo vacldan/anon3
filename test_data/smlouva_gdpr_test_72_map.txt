@@ -8,38 +8,30 @@ OSOBY
 [[PERSON_2]]: Milada Hájková
   - Milado Hájková
   - Miladou Hájkovou
+  - Miladu Hájkováovou
   - Milady Hájkové
   - Miladě Hájkové
 [[PERSON_3]]: Hedvika Benešová
   - Hedvikou Benešovou
+  - Hedviku Benešováovou
   - Hedviky Benešové
   - Hedvikě Benešové
 [[PERSON_4]]: Aleš Vaněk
   - Aleša Vaněka
 [[PERSON_5]]: Klára Dvořáková
+  - Kláru Dvořákováovou
   - Kláry Dvořákové
 [[PERSON_6]]: Kryštof Král
   - Kryštofa Krála
-[[PERSON_7]]: Hedvika Benešováová
-  - Hedviku Benešováovou
-[[PERSON_8]]: Milada Hájkováová
-  - Miladu Hájkováovou
-[[PERSON_9]]: Klára Dvořákováová
-  - Kláru Dvořákováovou
 
 ADDRESS
-[[ADDRESS_1]]: Praha 9
-[[ADDRESS_2]]: Bryksova 763/46, 198 00 Praha 14
-[[ADDRESS_3]]: Vinohradská 51/11, 130 00 Praha 3
+[[ADDRESS_1]]: Bryksova 763/46, Praha 14, 198 00
+[[ADDRESS_2]]: Vinohradská 51/11, 130 00 Praha 3
 [[ADDRESS_4]]: U Parku 131, 779 00 Olomouc
 [[ADDRESS_5]]: Palackého 162, 301 00 Plzeň
 [[ADDRESS_6]]: Nádražní 226, 702 00 Ostrava
 [[ADDRESS_7]]: Na Kopci 27/30, 100 00 Praha 10
 [[ADDRESS_8]]: Národní 109/2, 110 00 Praha 1
-[[ADDRESS_9]]: a U Parku 131, 779 00 Olomouc
-[[ADDRESS_10]]: platnost 10/26, CVC
-[[ADDRESS_11]]: Exekutorský úřad Praha 9, IČO
-[[ADDRESS_12]]: Správcem osobních údajů je Exekutorský úřad Praha 9, IČO
 
 BANK
 [[BANK_1]]: 3436124453/6210

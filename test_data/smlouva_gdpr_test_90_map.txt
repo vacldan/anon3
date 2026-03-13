@@ -7,6 +7,7 @@ OSOBY
   - Matějovi Šimůnkovi
 [[PERSON_2]]: Miluše Brázdová
   - Miluše Brázdovou
+  - Miluše Brázdováovou
   - Miluše Brázdové
 [[PERSON_3]]: Alex Fiala
   - Alexa Fialu
@@ -16,27 +17,20 @@ OSOBY
 [[PERSON_4]]: Vincenc Řezníček
   - Vincenca Řezníčka
 [[PERSON_5]]: Ema Vaňková
+  - Emu Vaňkováovou
   - Emy Vaňkové
 [[PERSON_6]]: Stanislav Šembera
   - Stanislava Šemberu
   - Stanislava Šembery
-[[PERSON_7]]: Miluše Brázdováová
-  - Miluše Brázdováovou
-[[PERSON_9]]: Ema Vaňkováová
-  - Emu Vaňkováovou
-[[PERSON_10]]: Svědci Alex
 
 ADDRESS
-[[ADDRESS_1]]: Olbrachtova 1929/62, 140 00 Praha 4
+[[ADDRESS_1]]: Olbrachtova 1929/62, Praha 4, 140 00
 [[ADDRESS_2]]: Komenského 208/28, 702 00 Ostrava
-[[ADDRESS_3]]: Hlavní 96/39, 669 02 Znojmo
-[[ADDRESS_4]]: Husova 18/40, 390 02 Tábor
-[[ADDRESS_5]]: Dlouhá 8/25, 602 00 Brno
-[[ADDRESS_6]]: Revoluční 92, 110 00 Praha 1
-[[ADDRESS_7]]: Bezručova 192, 746 01 Opava
-[[ADDRESS_8]]: Komenského 208/28, 702 00 Ostrava a Hlavní
-[[ADDRESS_9]]: platnost 02/28, CVC
-[[ADDRESS_10]]: V Praze
+[[ADDRESS_3]]: Hlavní 96/39, 669 02, Znojmo
+[[ADDRESS_5]]: Husova 18/40, 390 02 Tábor
+[[ADDRESS_6]]: Dlouhá 8/25, 602 00 Brno
+[[ADDRESS_7]]: Revoluční 92, 110 00 Praha 1
+[[ADDRESS_8]]: Bezručova 192, 746 01 Opava
 
 BANK
 [[BANK_1]]: 584262209/2700

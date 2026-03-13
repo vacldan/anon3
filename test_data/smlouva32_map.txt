@@ -14,7 +14,8 @@ OSOBY
   - Burešové
 [[PERSON_8]]: Nela Burešová
 [[PERSON_9]]: Lumír Moravec
-[[PERSON_10]]: Ervín Tesař
+[[PERSON_10]]: Ervín Tesařa
+  - Ervín Tesař
 [[PERSON_11]]: Čeněk Moravec
 [[PERSON_12]]: Miloslava Kadlecová
   - Kadlecové
@@ -59,22 +60,24 @@ OSOBY
 [[PERSON_45]]: Valdemar Šmíd
 [[PERSON_46]]: Bonifác Bartoš
 [[PERSON_47]]: Marina Bartošová
+[[PERSON_48]]: Izák Vávra
+[[PERSON_49]]: Kvido Tesařa
+  - Kvido Tesař
+[[PERSON_50]]: Hedvika Fischerová
 
 ADDRESS
 [[ADDRESS_1]]: Polní 145/18, Brno 602 00
-[[ADDRESS_2]]: Brno
-[[ADDRESS_3]]: Lázeňská 89/4, Brno 602 00
-[[ADDRESS_4]]: Zahradní 67, Jihlava 586 01
-[[ADDRESS_5]]: Krátká 23, Znojmo 669 02
-[[ADDRESS_6]]: Vinohradská 245/18, Praha 2
-[[ADDRESS_7]]: Lázeňská 89, Karlovy Vary 360 01
-[[ADDRESS_8]]: Polní 67/12, Olomouc 779 00
-[[ADDRESS_9]]: Krátká 145/8, Praha 4
-[[ADDRESS_10]]: Slezská 67, Opava 746 01
-[[ADDRESS_11]]: Zahradní 89, Hradec Králové 500 02
-[[ADDRESS_12]]: Polní 45/18, Brno 602 00
-[[ADDRESS_13]]: Lázeňská 89, Teplice 415 01
-[[ADDRESS_14]]: Zahradní 67, Pardubice 530 02
+[[ADDRESS_2]]: Lázeňská 89/4, Brno 602 00
+[[ADDRESS_3]]: Zahradní 67, Jihlava 586 01
+[[ADDRESS_4]]: Krátká 23, Znojmo 669 02
+[[ADDRESS_5]]: Vinohradská 245/18, Praha 2
+[[ADDRESS_6]]: Lázeňská 89, Karlovy Vary 360 01
+[[ADDRESS_7]]: Polní 67/12, Olomouc 779 00
+[[ADDRESS_8]]: Krátká 145/8, Praha 4
+[[ADDRESS_9]]: Slezská 67, Opava 746 01
+[[ADDRESS_10]]: Zahradní 89, Hradec Králové 500 02
+[[ADDRESS_12]]: Lázeňská 89, Teplice 415 01
+[[ADDRESS_13]]: Zahradní 67, Pardubice 530 02
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 780625/7923
@@ -150,7 +153,8 @@ LICENSE_PLATE
 [[LICENSE_PLATE_1]]: 5B7 8901
 [[LICENSE_PLATE_2]]: 3T9 4567
 [[LICENSE_PLATE_3]]: 7A5 6789
-[[LICENSE_PLATE_4]]: NB2004
+[[LICENSE_PLATE_4]]: FM 2009
+[[LICENSE_PLATE_5]]: NB2004
 
 PHONE
 [[PHONE_1]]: +420 603 789 456
@@ -166,5 +170,4 @@ PHONE
 [[PHONE_11]]: 889900112
 [[PHONE_12]]: +420 605 147 258
 [[PHONE_13]]: +420 608 369 258
-[[PHONE_14]]: 112233445
 

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:02.639205",
+  "generated_at": "2026-03-13T09:56:44.954076",
   "source_file": "smlouva_gdpr_test_136.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alžbětě Křížové",
+      "original": "Alžběty Křížové",
       "occurrences": 1
     },
     {
@@ -24,13 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alžběto Křížová",
+      "original": "Alžbětě Křížové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alžběty Křížové",
+      "original": "Alžběto Křížová",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Helenou Turkovou",
+      "original": "Heleně Turkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Heleně Turkové",
+      "original": "Helenou Turkovou",
       "occurrences": 1
     },
     {
@@ -120,8 +120,8 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Kampus 9, 625 00 Brno",
-      "occurrences": 1
+      "original": "Kampus 9, 625 00, Brno",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -133,30 +133,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Na Kopci 160/3, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Na Kopci 160/3, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Na Kopci 160/3, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Na Kopci 160/3, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Heleně Turkové a Vinohradská 17/2, 130 00 Praha 3",
       "occurrences": 1
     },
     {

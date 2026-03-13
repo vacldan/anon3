@@ -1,30 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:13.982047",
+  "generated_at": "2026-03-13T09:57:02.336382",
   "source_file": "smlouva_gdpr_test_52.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Dalibor Fiala",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Daliborem Fialou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Dalibore Fialo",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Dalibora Fialu",
       "occurrences": 1
     },
     {
@@ -41,8 +23,32 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Dalibore Fialo",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Daliborem Fialou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Dalibora Fialu",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Natálie Bartůňková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Natálii Bartůňkováovou",
       "occurrences": 1
     },
     {
@@ -54,134 +60,104 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Natálii Bartůňkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Natálie Bartůňkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Natálie Bartůňkováová",
+      "label": "[[PERSON_2]]",
+      "original": "Natálii Bartůňkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Natálii Bartůňkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Marek Hrubeš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_3]]",
+      "original": "Marka Hrubeša",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Markem Hrubešem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Markovi Hrubešovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Hrubeš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Markovi Hrubešovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Marka Hrubeša",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Markem Hrubešem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
       "original": "Tereza Doležalová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Terezy Doležalové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_6]]",
-      "original": "Jana Šemberová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_6]]",
-      "original": "Jany Šemberové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Arnošt Malina",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Arnošta Malinu",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Arnošta Maliny",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Tereza Doležalováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
+      "label": "[[PERSON_4]]",
       "original": "Terezu Doležalováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_11]]",
-      "original": "Jana Šemberováová",
+      "label": "[[PERSON_4]]",
+      "original": "Terezy Doležalové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_11]]",
+      "label": "[[PERSON_5]]",
+      "original": "Jana Šemberová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Janu Šemberováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_12]]",
-      "original": "Svědci Marek",
+      "label": "[[PERSON_5]]",
+      "original": "Jany Šemberové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Arnošt Malina",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Arnošta Malinu",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Arnošta Maliny",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Kosmonautů 44, 779 00 Olomouc",
-      "occurrences": 1
+      "original": "Kosmonautů 44, 779 00, Olomouc",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -192,14 +168,8 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Havlíčkova 215, 586 01 Jihlava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "Praha 1",
-      "occurrences": 1
+      "original": "Havlíčkova 215, 586 01, Jihlava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -223,18 +193,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
       "original": "Jabloňová 95/35, 400 01 Ústí nad Labem",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Křenová 49, 602 00 Brno a Havlíčkova",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 08/30, CVC",
       "occurrences": 1
     },
     {
@@ -373,12 +331,6 @@
       "type": "PHONE",
       "label": "[[PHONE_7]]",
       "original": "607 960 660",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_8]]",
-      "original": "143882682",
       "occurrences": 1
     },
     {

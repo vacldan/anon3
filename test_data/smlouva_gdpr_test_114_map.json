@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:56.149212",
+  "generated_at": "2026-03-13T09:56:35.170901",
   "source_file": "smlouva_gdpr_test_114.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Jana Vaněka",
+      "original": "Janem Vaněkem",
       "occurrences": 1
     },
     {
@@ -24,7 +24,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Janem Vaněkem",
+      "original": "Jana Vaněka",
       "occurrences": 1
     },
     {
@@ -42,6 +42,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Matějovi Černýovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Matěja Černýa",
       "occurrences": 1
     },
@@ -49,12 +55,6 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Matějem Černýem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Matějovi Černýovi",
       "occurrences": 1
     },
     {
@@ -96,13 +96,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Davidem Králem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Davida Krála",
+      "original": "Davide Krále",
       "occurrences": 1
     },
     {
@@ -114,49 +108,31 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Davide Krále",
+      "original": "Davidem Králem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Davida Krála",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Nemocniční 1, 400 01 Ústí nad Labem",
-      "occurrences": 1
+      "original": "Nemocniční 1, 400 01, Ústí nad Labem",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "U Parku 90/7, 779 00 Olomouc",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Na Kopci 147/29, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Na Kopci 147/29, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Na Kopci 147/29, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Na Kopci 147/29, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Matějovi Černýovi a U Parku 90/7, 779 00 Olomouc pro Janovi Vaněkovi",
       "occurrences": 1
     },
     {

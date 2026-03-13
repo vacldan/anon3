@@ -14,12 +14,9 @@ OSOBY
   - Dominikovi Kratochvílovi
 
 ADDRESS
-[[ADDRESS_1]]: notářky se sídlem Kolínská 3, 130 00 Praha 3
-[[ADDRESS_2]]: Sokolovská 3/31, 360 01 Karlovy Vary
-[[ADDRESS_3]]: Tyršova 134/20, 530 02 Pardubice
-[[ADDRESS_4]]: v budově na adrese Kolínská 42/7, 130 00 Praha 3
-[[ADDRESS_5]]: Praha
-[[ADDRESS_6]]: Kolínská 3, 130 00 Praha 3
+[[ADDRESS_2]]: Sokolovská 3/31, 360 01, Karlovy Vary
+[[ADDRESS_3]]: Tyršova 134/20, 530 02
+[[ADDRESS_4]]: Kolínská 42/7, 130 00 Praha 3
 
 BANK
 [[BANK_1]]: 364858721/0300
@@ -59,6 +56,9 @@ ID_CARD
 [[ID_CARD_1]]: 513016357
 [[ID_CARD_2]]: 304095962
 [[ID_CARD_3]]: 709801125
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: LV 1234
 
 PHONE
 [[PHONE_1]]: +420 774 131 259

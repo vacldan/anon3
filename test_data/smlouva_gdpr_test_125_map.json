@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:59.437903",
+  "generated_at": "2026-03-13T09:56:40.070887",
   "source_file": "smlouva_gdpr_test_125.docx",
   "entities": [
     {
@@ -42,6 +42,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Romanem Roubalem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Romane Roubale",
       "occurrences": 1
     },
@@ -49,12 +55,6 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Romana Roubala",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Romanem Roubalem",
       "occurrences": 1
     },
     {
@@ -96,6 +96,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
+      "original": "Monikou Procházkovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Moniky Procházkové",
       "occurrences": 1
     },
@@ -112,16 +118,10 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Monikou Procházkovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Kampus 9, 625 00 Brno",
-      "occurrences": 1
+      "original": "Kampus 9, 625 00, Brno",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -133,24 +133,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Na Návsi 132/29, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Na Návsi 132/29, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Na Návsi 132/29, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Na Návsi 132/29, 789 01 Zábřeh pro Romanovi Roubalovi a",
       "occurrences": 1
     },
     {

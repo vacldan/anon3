@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:06.495146",
+  "generated_at": "2026-03-13T09:56:51.020951",
   "source_file": "smlouva_gdpr_test_149.docx",
   "entities": [
     {
@@ -12,25 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Filipe Malíke",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Filipa Malíka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Filipovi Malíkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Malíkovi",
+      "original": "Filipe Malíke",
       "occurrences": 1
     },
     {
@@ -41,14 +29,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Aleš Vaněk",
+      "label": "[[PERSON_1]]",
+      "original": "Filipa Malíka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Alešovi Vaněkovi",
+      "original": "Aleš Vaněk",
       "occurrences": 1
     },
     {
@@ -71,6 +59,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Alešovi Vaněkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Lucie Benešová",
       "occurrences": 1
@@ -78,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucie Benešové",
+      "original": "Lucie Benešovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucie Benešovou",
+      "original": "Lucie Benešové",
       "occurrences": 1
     },
     {
@@ -102,13 +96,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Alešem Turkem",
+      "original": "Alešovi Turkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Alešovi Turkovi",
+      "original": "Alešem Turkem",
       "occurrences": 1
     },
     {
@@ -120,8 +114,8 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Kampus 9, 625 00 Brno",
-      "occurrences": 1
+      "original": "Kampus 9, 625 00, Brno",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -133,31 +127,7 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Křenová 102/3, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Křenová 102/3, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Křenová 102/3, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Křenová 102/3, 602 00 Brno pro Alešovi Vaněkovi a",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Sadová 98/21, 370 01 České Budějovice pro Filipovi",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ICO",

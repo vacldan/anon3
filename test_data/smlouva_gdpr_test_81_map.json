@@ -1,18 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:36.618012",
+  "generated_at": "2026-03-13T09:57:22.770693",
   "source_file": "smlouva_gdpr_test_81.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Erik Tesař",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Erikovi Tesařovi",
+      "original": "Erik Tesařa",
       "occurrences": 1
     },
     {
@@ -24,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Erike Tesaře",
+      "original": "Erik Tesař",
       "occurrences": 1
     },
     {
@@ -35,14 +29,20 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Viktorie Svobodová",
+      "label": "[[PERSON_1]]",
+      "original": "Erike Tesaře",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Erikovi Tesařovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Viktorií Svobodovou",
+      "original": "Viktorie Svobodová",
       "occurrences": 1
     },
     {
@@ -55,6 +55,18 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Viktorie Svobodové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Viktorií Svobodovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Viktorii Svobodováovou",
       "occurrences": 1
     },
     {
@@ -72,6 +84,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
+      "original": "Karlovi Brázdovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Karla Brázdy",
       "occurrences": 1
     },
@@ -83,26 +101,20 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Karlovi Brázdovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Dagmar Kratochvílová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Dagmar Kratochvílové",
+      "label": "[[PERSON_5]]",
+      "original": "Olga Fialová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Olga Fialová",
+      "original": "Olgu Fialováovou",
       "occurrences": 1
     },
     {
@@ -124,93 +136,45 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Viktorie Svobodováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Viktorii Svobodováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Dagmar Kratochvílováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Dagmar Kratochvílováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Olga Fialováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Olgu Fialováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Lesní 12, 586 01 Jihlava",
-      "occurrences": 1
+      "original": "Lesní 12, 586 01, Jihlava",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "U Nemocnice 42/38, 128 08 Praha 2",
+      "original": "Nemocnice 42/38, 128 08 Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Bezručova 198, 746 01 Opava",
-      "occurrences": 1
+      "original": "Bezručova 198, 746 01, Opava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Dlouhá 226/25, 602 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Jihlavská 142/35, 625 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Riegrova 129/3, 779 00 Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Hlavní 199/4, 669 02 Znojmo",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "a Bezručova 198, 746 01 Opava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "platnost 09/27, CVC",
+      "original": "Hlavní 199/4, 669 02 Znojmo",
       "occurrences": 1
     },
     {
@@ -361,12 +325,6 @@
       "type": "PHONE",
       "label": "[[PHONE_6]]",
       "original": "+420636267397",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "673432995",
       "occurrences": 1
     },
     {

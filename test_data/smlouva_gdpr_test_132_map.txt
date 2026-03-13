@@ -20,13 +20,9 @@ OSOBY
   - Erikovi Svobodovi
 
 ADDRESS
-[[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_1]]: Náměstí 1, 500 02, Hradec Králové
 [[ADDRESS_2]]: Na Návsi 58/11, 789 01 Zábřeh
-[[ADDRESS_3]]: Vinohradská 57/17, 130 00 Praha 3
-[[ADDRESS_4]]: případně písemně na adresu Vinohradská 57/17, 130 00 Praha 3
-[[ADDRESS_5]]: písemné doručení na adresu Vinohradská 57/17, 130 00 Praha 3
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Vinohradská 57/17, 130 00 Praha 3
-[[ADDRESS_7]]: pro Alžbětě Svobodové a Na Návsi 58/11, 789 01 Zábřeh pro Romanovi Vlachovi
+[[ADDRESS_5]]: Vinohradská 57/17, Praha 3, 130 00
 
 BANK
 [[BANK_1]]: 986205964/5500

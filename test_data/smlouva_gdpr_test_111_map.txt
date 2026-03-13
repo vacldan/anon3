@@ -21,13 +21,9 @@ OSOBY
   - Erike Černýe
 
 ADDRESS
-[[ADDRESS_1]]: Právnická 12, 110 00 Praha 1
+[[ADDRESS_1]]: Právnická 12, Praha 1, 110 00
 [[ADDRESS_2]]: Technologická 27/16, 160 00 Praha 6
 [[ADDRESS_3]]: Sadová 158/29, 370 01 České Budějovice
-[[ADDRESS_4]]: případně písemně na adresu Sadová 158/29, 370 01 České Budějovice
-[[ADDRESS_5]]: písemné doručení na adresu Sadová 158/29, 370 01 České Budějovice
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Sadová 158/29, 370 01 České Budějovice pro Pavlovi
-[[ADDRESS_7]]: Novákovi a Technologická 27/16, 160 00 Praha 6
 
 BANK
 [[BANK_1]]: 399527258/0300

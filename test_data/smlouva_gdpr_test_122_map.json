@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:58.542780",
+  "generated_at": "2026-03-13T09:56:38.754154",
   "source_file": "smlouva_gdpr_test_122.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Václavem Vaněkem",
+      "original": "Václave Vaněke",
       "occurrences": 1
     },
     {
@@ -24,7 +24,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Václave Vaněke",
+      "original": "Václavem Vaněkem",
       "occurrences": 1
     },
     {
@@ -48,13 +48,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Romanovi Černýovi",
+      "original": "Romana Černýa",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Romana Černýa",
+      "original": "Romanovi Černýovi",
       "occurrences": 1
     },
     {
@@ -78,19 +78,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Renatou Dvořákovou",
+      "original": "Renatě Dvořákové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Renatě Dvořákové",
+      "original": "Renatou Dvořákovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Štěpán Procházka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Štěpánem Procházkou",
       "occurrences": 1
     },
     {
@@ -108,20 +114,14 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Štěpánem Procházkou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
       "original": "Štěpána Procházky",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Na Hradbách 15, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Na Hradbách 15, 702 00, Ostrava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -133,30 +133,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Na Kopci 129/9, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Na Kopci 129/9, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Na Kopci 129/9, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Na Kopci 129/9, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Romanovi Černýovi a Vinohradská 187/5, 130 00 Praha 3",
       "occurrences": 1
     },
     {

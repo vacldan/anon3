@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:43.804532",
+  "generated_at": "2026-03-13T09:56:19.687813",
   "source_file": "smlouva8.docx",
   "entities": [
     {
@@ -30,13 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Kučera",
+      "original": "Kučeru",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Kučeru",
+      "original": "Kučera",
       "occurrences": 1
     },
     {
@@ -47,26 +47,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Popescu",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Alexandru Popescu",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Alexandru Popescuovi",
+      "label": "[[PERSON_6]]",
+      "original": "Hana Nejedlá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Hana Nejedlá",
+      "original": "Nejedlá",
       "occurrences": 1
     },
     {
@@ -83,12 +71,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_6]]",
-      "original": "Nejedlá",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_7]]",
       "original": "Filip Špaček",
       "occurrences": 1
@@ -96,13 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Špaček",
+      "original": "Špačkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_7]]",
-      "original": "Špačkovi",
+      "original": "Špaček",
       "occurrences": 1
     },
     {
@@ -114,13 +96,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Janem Kovářem",
+      "original": "Kovář",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Kovář",
+      "original": "Janem Kovářem",
       "occurrences": 1
     },
     {
@@ -132,13 +114,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_9]]",
-      "original": "Alenou Sedláčkovou",
+      "original": "Sedláčkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_9]]",
-      "original": "Sedláčkovou",
+      "original": "Alenou Sedláčkovou",
       "occurrences": 1
     },
     {
@@ -150,140 +132,128 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_11]]",
-      "original": " Hrubá",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_12]]",
       "original": "Barbora Šimková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_12]]",
+      "label": "[[PERSON_11]]",
       "original": "Šimková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_13]]",
+      "label": "[[PERSON_12]]",
       "original": "Barbora Hrubá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_14]]",
+      "label": "[[PERSON_12]]",
+      "original": "Hrubá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_13]]",
       "original": "Lenka Slavíková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_14]]",
+      "label": "[[PERSON_13]]",
       "original": "Lenku Slavíkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_14]]",
+      "label": "[[PERSON_13]]",
       "original": "Slavíková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_15]]",
+      "label": "[[PERSON_14]]",
       "original": "Ondřej Jelínek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_15]]",
+      "label": "[[PERSON_14]]",
       "original": "Ondřejem Jelínkem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_16]]",
+      "label": "[[PERSON_15]]",
       "original": "Klára Vrabcová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_16]]",
+      "label": "[[PERSON_15]]",
       "original": "Klárou Vrabcovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_17]]",
+      "label": "[[PERSON_16]]",
       "original": "Radek Schneider",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_18]]",
+      "label": "[[PERSON_17]]",
       "original": "Josef Havel",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_18]]",
+      "label": "[[PERSON_17]]",
       "original": "Havelovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_18]]",
+      "label": "[[PERSON_17]]",
       "original": "Josefu Havelovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_19]]",
+      "label": "[[PERSON_18]]",
       "original": "David Havlas",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_19]]",
+      "label": "[[PERSON_18]]",
       "original": "Havlasovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_19]]",
+      "label": "[[PERSON_18]]",
       "original": "Havlas",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_20]]",
-      "original": "Petr Havelek",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_20]]",
+      "label": "[[PERSON_19]]",
       "original": "Petr Havelka",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Revoluční 2548/9, 110 00 Praha 1",
-      "occurrences": 1
+      "original": "Revoluční 2548/9, Praha 1, 110 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Jiráskova 45, 702 00 Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Praha 1, Revoluční",
-      "occurrences": 1
+      "original": "Jiráskova 45, 702 00, Ostrava",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -300,90 +270,78 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "v Brně",
-      "occurrences": 1
+      "original": "Studentská 28, 160 00 Praha 6",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Studentská 28, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
       "original": "Mánesova 156, 621 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_9]]",
-      "original": "v ulici Studentská 28, Praha 6",
+      "original": "Pařížská 1548/30, Praha 1, 110 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_10]]",
-      "original": "Pařížská 1548/30, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
       "original": "Purkyňova 88, 612 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_12]]",
-      "original": "U Parku 25, 140 00 Praha 4",
+      "label": "[[ADDRESS_11]]",
+      "original": "Parku 25, 140 00 Praha 4",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_13]]",
+      "label": "[[ADDRESS_12]]",
       "original": "Belgická 47, 120 00 Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
+      "label": "[[ADDRESS_13]]",
+      "original": "Pod Lipami 18, Praha 5, 150 00",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
       "label": "[[ADDRESS_14]]",
-      "original": "podnikání: Pod Lipami 18, 150 00 Praha 5",
+      "original": "Karlovo náměstí 25, Praha 2, 120 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_15]]",
-      "original": "Karlovo náměstí 25, 120 00 Praha 2",
+      "original": "Národní 38, Praha 1, 110 00",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_16]]",
-      "original": "Národní 38, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_17]]",
       "original": "Žitná 1365/42, 120 00 Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_18]]",
+      "label": "[[ADDRESS_17]]",
       "original": "Havelská 12, 110 00 Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_19]]",
+      "label": "[[ADDRESS_18]]",
       "original": "Havlíčkova 85, 130 00 Praha 3",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_20]]",
+      "label": "[[ADDRESS_19]]",
       "original": "Havířov 78",
       "occurrences": 1
     },

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:12.067710",
+  "generated_at": "2026-03-13T09:57:00.597982",
   "source_file": "smlouva_gdpr_test_48.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Tomáše Konečného",
+      "original": "Tomášem Konečným",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Tomášem Konečným",
+      "original": "Tomáše Konečného",
       "occurrences": 1
     },
     {
@@ -36,13 +36,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lenkou Konečnou",
+      "original": "Lenky Konečné",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lenky Konečné",
+      "original": "Lenkou Konečnou",
       "occurrences": 1
     },
     {
@@ -79,12 +79,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Olšová 6, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "V Brně",
       "occurrences": 1
     },
     {

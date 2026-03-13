@@ -21,13 +21,9 @@ OSOBY
   - Jaroslave Černýe
 
 ADDRESS
-[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_1]]: Na Hradbách 15, 702 00, Ostrava
 [[ADDRESS_2]]: Dlouhá 68/20, 602 00 Brno
-[[ADDRESS_3]]: Technologická 193/25, 160 00 Praha 6
-[[ADDRESS_4]]: případně písemně na adresu Technologická 193/25, 160 00 Praha 6
-[[ADDRESS_5]]: písemné doručení na adresu Technologická 193/25, 160 00 Praha 6
-[[ADDRESS_6]]: ro účely doručování se používá adresa Technologická 193/25, 160 00 Praha 6
-[[ADDRESS_7]]: pro Janovi Křížovi a Dlouhá 68/20, 602 00 Brno pro Filipovi Turkovi
+[[ADDRESS_5]]: Technologická 193/25, Praha 6, 160 00
 
 BANK
 [[BANK_1]]: 686580703/5500

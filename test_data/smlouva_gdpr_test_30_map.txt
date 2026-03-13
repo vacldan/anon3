@@ -21,8 +21,6 @@ ADDRESS
 [[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
 [[ADDRESS_2]]: Vinohradská 30/4, 130 00 Praha 3
 [[ADDRESS_3]]: Na Kopci 2/1, 100 00 Praha 10
-[[ADDRESS_4]]: platnost 08/28, CVC
-[[ADDRESS_5]]: písemně na adresu Na Kopci 2/1, 100 00 Praha 10
 
 BANK
 [[BANK_1]]: 719266333/0300

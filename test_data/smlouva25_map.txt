@@ -26,7 +26,7 @@ OSOBY
   - Pavlem Jurou
 [[PERSON_11]]: Martina Holubcová
   - Martiny Holubcové
-[[PERSON_12]]: Roman Šimůnek
+[[PERSON_12]]: Roman Šimůnka
   - Romana Šimůnka
   - Romanem Šimůnkem
 [[PERSON_13]]: Ivana Prokešová
@@ -35,17 +35,18 @@ OSOBY
   - Ondřeji Křížovi
 [[PERSON_15]]: Radka Horská
   - Radku Horskou
+  - Radky Horské
 [[PERSON_16]]: Václav Sýkora
   - Václava Sýkoru
 [[PERSON_17]]: Monika Trávníčková
   - Monice Trávníčkové
 
 ADDRESS
-[[ADDRESS_1]]: komunikováno ohledně bydliště na adrese U Studánky 14, Zlín
-[[ADDRESS_2]]: cz a že jeho trvalé bydliště je Na Pískách 7, Písek
-[[ADDRESS_3]]: cz a adresa Květná 33, Litomyšl
-[[ADDRESS_4]]: a adresa bydliště Polní 9, Třebíč
-[[ADDRESS_5]]: ky Horské by nebylo možné doložit bydliště Na Kopci 21, Beroun
+[[ADDRESS_1]]: U Studánky 14, Zlín
+[[ADDRESS_2]]: Na Pískách 7, Písek
+[[ADDRESS_3]]: Květná 33, Litomyšl
+[[ADDRESS_4]]: Polní 9, Třebíč
+[[ADDRESS_5]]: Na Kopci 21, Beroun
 
 BANK
 [[BANK_1]]: 2109987711/2010
@@ -59,9 +60,11 @@ BIRTH_ID
 
 EMAIL
 [[EMAIL_1]]: karel.vorisek82@mail.cz
-[[EMAIL_2]]: r.simunek@it.cz
-[[EMAIL_3]]: kriz.ondrej@server.cz
-[[EMAIL_4]]: monika.travnickova@office.cz
+[[EMAIL_2]]: jan.klicha@firma.cz
+[[EMAIL_3]]: hana.dolezalova@post.cz
+[[EMAIL_4]]: r.simunek@it.cz
+[[EMAIL_5]]: kriz.ondrej@server.cz
+[[EMAIL_6]]: monika.travnickova@office.cz
 
 ICO
 [[ICO_1]]: 09177281

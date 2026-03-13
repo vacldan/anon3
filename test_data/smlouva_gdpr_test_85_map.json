@@ -1,24 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:39.552494",
+  "generated_at": "2026-03-13T09:57:25.366922",
   "source_file": "smlouva_gdpr_test_85.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Vincenc Tesař",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Vincence Tesaře",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Vincencem Tesařem",
+      "original": "Vincenc Tesařa",
       "occurrences": 1
     },
     {
@@ -30,13 +18,37 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Vincence Tesaře",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Vincenca Tesařa",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Vincencem Tesařem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Vincenc Tesař",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Krista Šemberová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Kristou Šemberovou",
       "occurrences": 1
     },
     {
@@ -54,7 +66,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Kristou Šemberovou",
+      "original": "Kristu Šemberováovou",
       "occurrences": 1
     },
     {
@@ -72,19 +84,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
+      "original": "Věru Havličkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Věrou Havličkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Věry Havličkové",
+      "original": "Věrě Havličkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Věrě Havličkové",
+      "original": "Věry Havličkové",
       "occurrences": 1
     },
     {
@@ -97,6 +115,24 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Čeněka Vlacha",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Ell Navrátilová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Ellu Navrátilováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Elly Navrátilové",
       "occurrences": 1
     },
     {
@@ -124,46 +160,10 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Věra Havličkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Věru Havličkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Krista Šemberováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Kristu Šemberováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Ella Navrátilováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Ellu Navrátilováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Lesní 12, 586 01 Jihlava",
-      "occurrences": 1
+      "original": "Lesní 12, 586 01, Jihlava",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -174,54 +174,36 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Sadová 14, 370 01 České Budějovice",
-      "occurrences": 1
+      "original": "Sadová 14, 370 01, České Budějovice",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Sokolovská 242, 186 00 Praha 8",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Havlíčkova 99/39, 586 01 Jihlava",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Riegrova 212, 779 00 Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
+      "label": "[[ADDRESS_8]]",
       "original": "Na Kopci 33/34, 100 00 Praha 10",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "Masarykova 12/17, 500 02 Hradec Králové a Sadová 14",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_9]]",
-      "original": "České Budějovice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 11/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
       "original": "Tylova 143, Ústí nad Labem",
       "occurrences": 1
     },
@@ -451,6 +433,12 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
       "original": "CZ96356",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_3]]",
+      "original": "LV 2837",
       "occurrences": 1
     },
     {

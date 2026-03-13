@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:52.495040",
+  "generated_at": "2026-03-13T09:56:29.737756",
   "source_file": "smlouva_gdpr_test_102.docx",
   "entities": [
     {
@@ -12,13 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpánem Dvořákem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Štěpáne Dvořáke",
+      "original": "Štěpánovi Dvořákovi",
       "occurrences": 1
     },
     {
@@ -30,13 +24,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpánovi Dvořákovi",
+      "original": "Štěpáne Dvořáke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Štěpánem Dvořákem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Pavel Roubal",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Pavle Roubale",
       "occurrences": 1
     },
     {
@@ -59,12 +65,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Pavle Roubale",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Alžběta Řezníčková",
       "occurrences": 1
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Alžbětě Řezníčkové",
+      "original": "Alžbětou Řezníčkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Alžbětou Řezníčkovou",
+      "original": "Alžbětě Řezníčkové",
       "occurrences": 1
     },
     {
@@ -114,8 +114,8 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Kampus 9, 625 00 Brno",
-      "occurrences": 1
+      "original": "Kampus 9, 625 00, Brno",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -125,33 +125,9 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Technologická 39/20, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Technologická 39/20, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Technologická 39/20, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "ro účely doručování se používá adresa Technologická 39/20, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Pavlovi Roubalovi a Na Kopci 174/30, 100 00 Praha 10",
-      "occurrences": 1
+      "original": "Technologická 39/20, Praha 6, 160 00",
+      "occurrences": 2
     },
     {
       "type": "ICO",

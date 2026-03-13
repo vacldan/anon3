@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:42.958150",
+  "generated_at": "2026-03-13T09:57:28.477302",
   "source_file": "smlouva_gdpr_test_90.docx",
   "entities": [
     {
@@ -12,25 +12,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Matějovi Šimůnkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Matěja Šimůnka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Matějem Šimůnkem",
+      "original": "Matěje Šimůnku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Matěje Šimůnku",
+      "original": "Matějovi Šimůnkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Matějem Šimůnkem",
       "occurrences": 1
     },
     {
@@ -42,13 +42,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Miluše Brázdové",
+      "original": "Miluše Brázdováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Miluše Brázdovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Miluše Brázdové",
       "occurrences": 1
     },
     {
@@ -60,13 +66,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Alexa Fialy",
+      "original": "Alexa Fialu",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Alexa Fialu",
+      "original": "Alexa Fialy",
       "occurrences": 1
     },
     {
@@ -107,6 +113,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Emu Vaňkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_6]]",
       "original": "Stanislav Šembera",
       "occurrences": 1
@@ -124,39 +136,9 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Miluše Brázdováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Miluše Brázdováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Ema Vaňkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Emu Vaňkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Svědci Alex",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Olbrachtova 1929/62, 140 00 Praha 4",
+      "original": "Olbrachtova 1929/62, Praha 4, 140 00",
       "occurrences": 1
     },
     {
@@ -168,49 +150,31 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Hlavní 96/39, 669 02 Znojmo",
-      "occurrences": 1
+      "original": "Hlavní 96/39, 669 02, Znojmo",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Husova 18/40, 390 02 Tábor",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Dlouhá 8/25, 602 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Revoluční 92, 110 00 Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Bezručova 192, 746 01 Opava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Komenského 208/28, 702 00 Ostrava a Hlavní",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "platnost 02/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "V Praze",
+      "original": "Bezručova 192, 746 01 Opava",
       "occurrences": 1
     },
     {

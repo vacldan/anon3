@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:12.995139",
+  "generated_at": "2026-03-13T09:57:01.621205",
   "source_file": "smlouva_gdpr_test_51.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpánovi Turkovi",
+      "original": "Štěpáne Turku",
       "occurrences": 1
     },
     {
@@ -24,13 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpáne Turku",
+      "original": "Štěpána Turka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpána Turka",
+      "original": "Štěpánovi Turkovi",
       "occurrences": 1
     },
     {
@@ -54,6 +54,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Natálii Fialováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Natálií Fialovou",
       "occurrences": 1
     },
@@ -66,19 +72,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
+      "original": "Cecílii Rendlováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Cecílii Rendlové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Cecílie Rendlové",
+      "original": "Cecílií Rendlovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Cecílií Rendlovou",
+      "original": "Cecílie Rendlové",
       "occurrences": 1
     },
     {
@@ -95,6 +107,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Miladu Fialováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Věra Poláková",
       "occurrences": 1
@@ -103,6 +121,12 @@
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Věry Polákové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Věru Polákováovou",
       "occurrences": 1
     },
     {
@@ -118,58 +142,10 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Cecílie Rendlováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Cecílii Rendlováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Natálie Fialováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Natálii Fialováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Milada Fialováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Miladu Fialováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Věra Polákováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Věru Polákováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Na Hradbách 15, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Na Hradbách 15, 702 00, Ostrava",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -181,7 +157,7 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Tylova 218/11, 530 02 Pardubice",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -205,24 +181,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
       "original": "Havlíčkova 7/32, 586 01 Jihlava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "Na Návsi 120, 789 01 Zábřeh a Tylova",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Pardubice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 08/27, CVC",
       "occurrences": 1
     },
     {
@@ -355,12 +313,6 @@
       "type": "PHONE",
       "label": "[[PHONE_7]]",
       "original": "+420 621 594 243",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_8]]",
-      "original": "438375471",
       "occurrences": 1
     },
     {

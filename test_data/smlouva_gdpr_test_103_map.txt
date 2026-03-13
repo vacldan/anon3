@@ -1,7 +1,6 @@
 OSOBY
 -----
 [[PERSON_1]]: Renata Holíková
-  - Holíkové
   - Renato Holíková
   - Renatou Holíkovou
   - Renaty Holíkové
@@ -21,13 +20,9 @@ OSOBY
   - Václavovi Roubalovi
 
 ADDRESS
-[[ADDRESS_1]]: Kampus 9, 625 00 Brno
+[[ADDRESS_1]]: Kampus 9, 625 00, Brno
 [[ADDRESS_2]]: Sadová 135/16, 370 01 České Budějovice
-[[ADDRESS_3]]: Pojišťovací 28/25, 110 00 Praha 1
-[[ADDRESS_4]]: případně písemně na adresu Pojišťovací 28/25, 110 00 Praha 1
-[[ADDRESS_5]]: písemné doručení na adresu Pojišťovací 28/25, 110 00 Praha 1
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Pojišťovací 28/25, 110 00 Praha 1
-[[ADDRESS_7]]: pro Tomášovi Dvořákovi a Sadová 135/16, 370 01 České Budějovice pro Renatě
+[[ADDRESS_5]]: Pojišťovací 28/25, Praha 1, 110 00
 
 BANK
 [[BANK_1]]: 402372036/0300

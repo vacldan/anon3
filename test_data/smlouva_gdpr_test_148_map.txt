@@ -20,13 +20,9 @@ OSOBY
   - Janovi Holíkovi
 
 ADDRESS
-[[ADDRESS_1]]: Na Hradbách 15, 702 00 Ostrava
+[[ADDRESS_1]]: Na Hradbách 15, 702 00, Ostrava
 [[ADDRESS_2]]: U Parku 131/1, 779 00 Olomouc
-[[ADDRESS_3]]: Vinohradská 43/4, 130 00 Praha 3
-[[ADDRESS_4]]: případně písemně na adresu Vinohradská 43/4, 130 00 Praha 3
-[[ADDRESS_5]]: písemné doručení na adresu Vinohradská 43/4, 130 00 Praha 3
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Vinohradská 43/4, 130 00 Praha 3
-[[ADDRESS_7]]: pro Janě Svobodové a U Parku 131/1, 779 00 Olomouc pro Veronikě Vaňkové
+[[ADDRESS_5]]: Vinohradská 43/4, Praha 3, 130 00
 
 BANK
 [[BANK_1]]: 979490921/0100

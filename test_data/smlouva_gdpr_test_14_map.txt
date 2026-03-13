@@ -20,8 +20,6 @@ ADDRESS
 [[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
 [[ADDRESS_2]]: Jabloňová 39/13, 400 01 Ústí nad Labem
 [[ADDRESS_3]]: Křenová 88/26, 602 00 Brno
-[[ADDRESS_4]]: platnost 08/28, CVC
-[[ADDRESS_5]]: písemně na adresu Křenová 88/26, 602 00 Brno
 
 BANK
 [[BANK_1]]: 809616011/0600

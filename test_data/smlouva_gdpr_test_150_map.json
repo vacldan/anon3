@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:06.905319",
+  "generated_at": "2026-03-13T09:56:51.687451",
   "source_file": "smlouva_gdpr_test_150.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Davidovi Hrubešovi",
+      "original": "Davidem Hrubešem",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Davidem Hrubešem",
+      "original": "Davidovi Hrubešovi",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ondřejovi Vaněkovi",
+      "original": "Ondřejem Vaněkem",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ondřejem Vaněkem",
+      "original": "Ondřeja Vaněka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ondřeja Vaněka",
+      "original": "Ondřejovi Vaněkovi",
       "occurrences": 1
     },
     {
@@ -72,19 +72,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Markétou Královou",
+      "original": "Markétě Králové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Markétě Králové",
+      "original": "Markétou Královou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Petra Černá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Petry Černé",
       "occurrences": 1
     },
     {
@@ -102,20 +108,14 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Petry Černé",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Petrou Černou",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Náměstí 1, 500 02 Hradec Králové",
-      "occurrences": 1
+      "original": "Náměstí 1, 500 02, Hradec Králové",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -125,33 +125,9 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Pojišťovací 29/27, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Pojišťovací 29/27, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Pojišťovací 29/27, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Pojišťovací 29/27, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Ondřejovi Vaněkovi a Na Kopci 146/10, 100 00 Praha 10",
-      "occurrences": 1
+      "original": "Pojišťovací 29/27, Praha 1, 110 00",
+      "occurrences": 2
     },
     {
       "type": "ICO",

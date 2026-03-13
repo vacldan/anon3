@@ -9,102 +9,74 @@ OSOBY
 [[PERSON_7]]: Hana Procházková
 [[PERSON_9]]: Martin Svoboda
 [[PERSON_10]]: Eva Malá
-[[PERSON_12]]: Advanced Certification
-[[PERSON_13]]: Pavel Novák
-[[PERSON_14]]: Jakub 
-[[PERSON_15]]: Jana Svobodová
-[[PERSON_16]]: Karel Novák
-[[PERSON_17]]: Tomáš Veselý
-[[PERSON_18]]: Alena Dvořáková
-[[PERSON_19]]: N Františka
-  - Na Františku
-[[PERSON_20]]: Petr Dvořák
-[[PERSON_22]]: Adam Dvořák
-[[PERSON_23]]: Lucie Dvořáková
-[[PERSON_24]]: Jana Nová
-[[PERSON_25]]: Pavel Horák
-[[PERSON_26]]: N Bulovec
-  - Na Bulovce
-[[PERSON_27]]: Hana Nováková
-[[PERSON_28]]: Jana Dvořáková
-[[PERSON_29]]: Karel Novotný
-[[PERSON_30]]: Petr Malý
-[[PERSON_31]]: Robert Novák
-[[PERSON_32]]: Martin Procházka
-[[PERSON_33]]: Petra Nováková
-[[PERSON_34]]: Hana Svobodová
-[[PERSON_35]]: Tomáš Dvořák
-[[PERSON_36]]: Jan Dvořák
-[[PERSON_37]]: Petr Novák
-[[PERSON_38]]: Martin Horák
-[[PERSON_39]]: Petra Svobodová
-[[PERSON_40]]: Jan Novák
-[[PERSON_42]]: Contractual Clauses
-[[PERSON_43]]: Karel Dvořák
-[[PERSON_44]]: Tomáš Novák
-[[PERSON_45]]: Pavel Svoboda
-[[PERSON_46]]: Martina Svobodová
-[[PERSON_47]]: Jan Svoboda
-[[PERSON_48]]: Tomáš Horák
-[[PERSON_49]]: Eva Svobodová
-[[PERSON_51]]: Tomáš Svoboda
-[[PERSON_52]]: Met London
-  - Meta London
-[[PERSON_53]]: Jan Horák
-[[PERSON_55]]: Martin Novotný
-[[PERSON_56]]: Eva Málková
-[[PERSON_57]]: Ondřej Bartoš
-[[PERSON_58]]: Pavel Dvořák
-[[PERSON_59]]: Jana Nováková
-[[PERSON_60]]: Petra Horáková
+[[PERSON_12]]: Pavel Novák
+[[PERSON_13]]: Jana Svobodová
+[[PERSON_14]]: Karel Novák
+[[PERSON_15]]: Tomáš Veselý
+[[PERSON_16]]: Alena Dvořáková
+  - Dvořáková
+[[PERSON_17]]: Petr Dvořák
+[[PERSON_19]]: Adam Dvořák
+[[PERSON_20]]: Lucie Dvořáková
+[[PERSON_21]]: Jana Nová
+[[PERSON_22]]: Pavel Horák
+[[PERSON_23]]: Hana Nováková
+  - Nováková
+[[PERSON_24]]: Jana Dvořáková
+[[PERSON_25]]: Karel Novotný
+[[PERSON_26]]: Petr Malý
+[[PERSON_27]]: Robert Novák
+[[PERSON_28]]: Martin Procházka
+[[PERSON_29]]: Petra Nováková
+[[PERSON_30]]: Hana Svobodová
+[[PERSON_31]]: Tomáš Dvořák
+[[PERSON_32]]: Jan Dvořák
+[[PERSON_33]]: Petr Novák
+[[PERSON_34]]: Martin Horák
+[[PERSON_35]]: Petra Svobodová
+[[PERSON_36]]: Jan Novák
+[[PERSON_38]]: Karel Dvořák
+[[PERSON_39]]: Tomáš Novák
+[[PERSON_40]]: Pavel Svoboda
+[[PERSON_41]]: Martina Svobodová
+[[PERSON_42]]: Jan Svoboda
+[[PERSON_43]]: Tomáš Horák
+[[PERSON_44]]: Eva Svobodová
+[[PERSON_46]]: Tomáš Svoboda
+[[PERSON_47]]: Jan Horák
+[[PERSON_49]]: Martin Novotný
+[[PERSON_50]]: Eva Málková
+[[PERSON_51]]: Ondřej Bartoš
+[[PERSON_52]]: Pavel Dvořák
+[[PERSON_53]]: Jana Nováková
+[[PERSON_54]]: Petra Horáková
 
 ACCOUNT_ID
 [[ACCOUNT_ID_1]]: 123456789012
 
 ADDRESS
-[[ADDRESS_1]]: Karlovo náměstí 12/34, 120 00 Praha 2
-[[ADDRESS_2]]: Slezská 45/9, 130 00 Praha 3
+[[ADDRESS_1]]: Karlovo náměstí 12/34, Praha 2, 120 00
+[[ADDRESS_2]]: Slezská 45/9, Praha 3 - Vinohrady, 130 00
 [[ADDRESS_3]]: Žižkova 123/8, 130 00 Praha 3
-[[ADDRESS_4]]: Praha 3
-[[ADDRESS_5]]: Masarykova 67/12, 602 00 Brno
-[[ADDRESS_6]]: Karlovo náměstí 12/34, Praha 2
-[[ADDRESS_7]]: Vinohradská 123, Praha 3
-[[ADDRESS_8]]: v Praze
-[[ADDRESS_9]]: Evropská 178/123, 160 00 Praha 6
-[[ADDRESS_10]]: Praha
-[[ADDRESS_11]]: Korunní 234/56, 130 00 Praha 3
-[[ADDRESS_12]]: Praha 1
-[[ADDRESS_13]]: Poliklinika Vinohradská 123/45, Praha 3
-[[ADDRESS_14]]: test 2013, po úmrtí matky
-[[ADDRESS_15]]: Korunní 89, Praha 3
-[[ADDRESS_16]]: Polská 23, Praha 2
-[[ADDRESS_17]]: Mánesova 45/12, 160 00 Praha 6
-[[ADDRESS_18]]: Pražský maraton 2023, čas
-[[ADDRESS_19]]: Vinohradská 123/45, Praha 3
-[[ADDRESS_20]]: Budínova 2, Praha 8
-[[ADDRESS_21]]: Na Příkopě 123/45, 110 00 Praha 1
-[[ADDRESS_22]]: Vinohradská 234/78, 130 00 Praha 3
-[[ADDRESS_23]]: Dlouhá 45/12, 110 00 Praha 1
-[[ADDRESS_24]]: Vinohradská 123/89, 130 00 Praha 3
-[[ADDRESS_25]]: Korunní 67, Praha 3
-[[ADDRESS_26]]: Mánesova 234/12, 120 00 Praha 2
-[[ADDRESS_27]]: Průmyslová 12, 170 00 Praha 7
-[[ADDRESS_28]]: Brno
-[[ADDRESS_29]]: Technická 456, 616 00 Brno
-[[ADDRESS_30]]: ISO 27001, ISO 27017
-[[ADDRESS_31]]: Ostravská 123, 702 00 Ostrava
-[[ADDRESS_32]]: Brněnská 456, 602 00 Brno
-[[ADDRESS_33]]: březen 2024, VS
-[[ADDRESS_34]]: Náměstí Svobody 21, 602 00 Brno
-[[ADDRESS_35]]: Husova 123/45, 602 00 Brno
-[[ADDRESS_36]]: Brno-střed
-[[ADDRESS_37]]: Vodní 67/8, 602 00 Brno
-[[ADDRESS_38]]: Purkyňova 234/56, 612 00 Brno
-[[ADDRESS_39]]: Husova 123/45, Brno
-[[ADDRESS_40]]: rok 2019, RZ
-[[ADDRESS_41]]: V Brně
-[[ADDRESS_42]]: Wenceslas Square 89/23, 110 00 Praha 1
-[[ADDRESS_43]]: Vinohradská 1234/89, 130 00 Praha 3
+[[ADDRESS_4]]: Masarykova 67/12, 602 00 Brno
+[[ADDRESS_6]]: Evropská 178/123, Praha 6 - Dejvice, 160 00
+[[ADDRESS_7]]: Korunní 234/56, 130 00 Praha 3
+[[ADDRESS_8]]: Poliklinika Vinohradská 123/45, Praha 3
+[[ADDRESS_10]]: Polská 23, Praha 2
+[[ADDRESS_12]]: Budínova 2, Praha 8
+[[ADDRESS_13]]: Na Příkopě 123/45, Praha 1, 110 00
+[[ADDRESS_15]]: Dlouhá 45/12, 110 00 Praha 1
+[[ADDRESS_18]]: Mánesova 234/12, 120 00 Praha 2
+[[ADDRESS_19]]: Průmyslová 12, 170 00 Praha 7
+[[ADDRESS_20]]: Technická 456, 616 00 Brno
+[[ADDRESS_21]]: Ostravská 123, 702 00, Ostrava
+[[ADDRESS_22]]: Brněnská 456, 602 00, Brno
+[[ADDRESS_23]]: Náměstí Svobody 21, 602 00, Brno
+[[ADDRESS_24]]: Husova 123/45, 602 00, Brno
+[[ADDRESS_25]]: Vodní 67/8, 602 00, Brno
+[[ADDRESS_26]]: Purkyňova 234/56, 612 00, Brno
+[[ADDRESS_30]]: Wenceslas Square 89/23, Praha 1, 110 00
+[[ADDRESS_31]]: Vinohradská 1234/89, Praha 3 - Vinohrady, 130 00
 
 API_KEY
 [[API_KEY_1]]: ghp_Kx7mP2vQ9wR5tYu8iO3nM6lJ4hG1sA0dF
@@ -361,10 +333,8 @@ IP
 [[IP_6]]: 185.56.234.89
 
 LICENSE_PLATE
-[[LICENSE_PLATE_1]]: SO27001
-[[LICENSE_PLATE_2]]: SO27701
-[[LICENSE_PLATE_3]]: 3B4 5678
-[[LICENSE_PLATE_4]]: 2B3 4567
+[[LICENSE_PLATE_1]]: 3B4 5678
+[[LICENSE_PLATE_2]]: 2B3 4567
 
 PASSWORD
 [[PASSWORD_1]]: ChangeMeNow!2024
@@ -376,13 +346,11 @@ PASSWORD
 
 PHONE
 [[PHONE_1]]: +420 724 123 456
-[[PHONE_2]]: 456789012
 [[PHONE_3]]: +420 606 789 123
 [[PHONE_4]]: +420 777 234 567
 [[PHONE_5]]: +420 605 123 789
 [[PHONE_6]]: +420 724 890 345
 [[PHONE_7]]: +420 222 333 444
-[[PHONE_8]]: 777 234 567
 [[PHONE_9]]: +420 603 456 789
 [[PHONE_10]]: +420 234 567 890
 [[PHONE_11]]: +420 605 234 567
@@ -390,9 +358,7 @@ PHONE
 [[PHONE_13]]: +420 222 456 789
 [[PHONE_14]]: +420 224 567 890
 [[PHONE_15]]: +420 777 456 123
-[[PHONE_16]]: 224 567 890
 [[PHONE_17]]: 222 678 901
-[[PHONE_18]]: 222 456 789
 [[PHONE_19]]: 222 801 111
 [[PHONE_20]]: +420 724 678 901
 [[PHONE_21]]: +420 775 234 567

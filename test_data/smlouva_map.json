@@ -1,12 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:48:36.857522",
+  "generated_at": "2026-03-13T09:54:47.399720",
   "source_file": "smlouva.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Petro Svobodová",
+      "original": "Petro Svoboda",
       "occurrences": 1
     },
     {
@@ -17,26 +17,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Petra Svobodová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Petry Svobodové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Jan Novák",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Jana Nováka",
       "occurrences": 1
     },
     {
@@ -53,25 +35,31 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Octavi Combi",
+      "label": "[[PERSON_2]]",
+      "original": "Jana Nováka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Petra Svobodová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Petry Svobodové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Octavia Combi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
       "original": "Kateřina Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
+      "label": "[[PERSON_4]]",
       "original": "Kateřinou Svobodovou",
       "occurrences": 1
     },

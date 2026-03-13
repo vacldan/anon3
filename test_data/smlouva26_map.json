@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:18.871519",
+  "generated_at": "2026-03-13T09:55:58.221023",
   "source_file": "smlouva26.docx",
   "entities": [
     {
@@ -18,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ondřej Patočka",
+      "original": "Ondřej Patoček",
       "occurrences": 1
     },
     {
@@ -72,7 +72,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Petr Lněnička",
+      "original": "Petr Lněniček",
       "occurrences": 1
     },
     {
@@ -114,282 +114,288 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_9]]",
-      "original": "Lucie Žákovsko",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Lucií Žákovsko",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
       "original": "Lucie Žákovská",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_11]]",
+      "label": "[[PERSON_9]]",
+      "original": "Lucií Žákovskou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_10]]",
       "original": "Adam Vrba",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_11]]",
+      "label": "[[PERSON_10]]",
       "original": "Adamem Vrbou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_11]]",
+      "label": "[[PERSON_10]]",
       "original": "Adama Vrby",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_12]]",
+      "label": "[[PERSON_11]]",
       "original": "Nikola Soukupová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_12]]",
+      "label": "[[PERSON_11]]",
       "original": "Nikoly Soukupové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_13]]",
+      "label": "[[PERSON_12]]",
       "original": "Lukáš Pecek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_13]]",
+      "label": "[[PERSON_12]]",
       "original": "Lukáši Peckovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_13]]",
+      "label": "[[PERSON_12]]",
       "original": "Lukáš Pecka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_14]]",
+      "label": "[[PERSON_13]]",
       "original": "Kateřina Vítková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_14]]",
+      "label": "[[PERSON_13]]",
       "original": "Kateřině Vítkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_15]]",
-      "original": "Zdeněk Špička",
+      "label": "[[PERSON_14]]",
+      "original": "Zdeněk Špiček",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_15]]",
+      "label": "[[PERSON_14]]",
       "original": "Zdeňka Špičku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_16]]",
-      "original": "Radko Pospíšilová",
+      "label": "[[PERSON_15]]",
+      "original": "Radko Pospíšil",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_16]]",
+      "label": "[[PERSON_15]]",
       "original": "Radkou Pospíšilovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_18]]",
+      "label": "[[PERSON_16]]",
+      "original": "Radka Pospíšilová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_17]]",
       "original": "Tomáš Havelka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_18]]",
+      "label": "[[PERSON_17]]",
       "original": "Tomáše Havelku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_19]]",
+      "label": "[[PERSON_18]]",
       "original": "Alžběta Malíková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_20]]",
+      "label": "[[PERSON_18]]",
+      "original": "Alžběty Malíkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_19]]",
       "original": "Radovan Chýl",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_20]]",
+      "label": "[[PERSON_19]]",
+      "original": "Radovan Chýle",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_19]]",
       "original": "Radovanem Chýlem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_20]]",
-      "original": "Radovan Chýle",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_21]]",
       "original": "Veronika Plzáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_21]]",
+      "label": "[[PERSON_20]]",
       "original": "Veronice Plzákové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_22]]",
+      "label": "[[PERSON_21]]",
       "original": "Jaromír Kotek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_22]]",
+      "label": "[[PERSON_21]]",
       "original": "Jaromíra Kotka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_23]]",
+      "label": "[[PERSON_22]]",
       "original": "Soňa Nedbalová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_24]]",
+      "label": "[[PERSON_23]]",
       "original": "Michal Plíva",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_25]]",
+      "label": "[[PERSON_24]]",
       "original": "Kristýna Tůmová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_26]]",
+      "label": "[[PERSON_25]]",
       "original": "Pavel Horčička",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_27]]",
+      "label": "[[PERSON_26]]",
       "original": "Andrea Vránová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_28]]",
+      "label": "[[PERSON_27]]",
       "original": "Štěpán Liška",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_29]]",
+      "label": "[[PERSON_28]]",
       "original": "Petra Měchurová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_30]]",
+      "label": "[[PERSON_29]]",
       "original": "Jiří Kolařík",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_31]]",
+      "label": "[[PERSON_30]]",
       "original": "Barbora Kmentová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_32]]",
+      "label": "[[PERSON_31]]",
       "original": "David Záruba",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_33]]",
+      "label": "[[PERSON_32]]",
       "original": "Simona Králíková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_34]]",
+      "label": "[[PERSON_33]]",
       "original": "Oldřich Hanzal",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_35]]",
+      "label": "[[PERSON_34]]",
       "original": "Lenka Brýdlová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_36]]",
+      "label": "[[PERSON_35]]",
       "original": "Filip Kameník",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_37]]",
+      "label": "[[PERSON_36]]",
       "original": "Jana Roučková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_38]]",
+      "label": "[[PERSON_37]]",
       "original": "Patrik Veleba",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_39]]",
+      "label": "[[PERSON_38]]",
       "original": "Monika Bártová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_40]]",
+      "label": "[[PERSON_39]]",
       "original": "Václav Dufek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_41]]",
+      "label": "[[PERSON_40]]",
       "original": "Tereza Kalinová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_42]]",
+      "label": "[[PERSON_41]]",
       "original": "Marek Štolba",
       "occurrences": 1
     },
@@ -420,37 +426,37 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "u byla komunikace vedena ohledně bydliště Na Stráni 12, Klatovy",
+      "original": "Na Stráni 12, Klatovy",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "cz a adrese Polní 7, Vimperk",
+      "original": "Polní 7, Vimperk",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "a bydliště Jabloňová 19, Nový Jičín",
+      "original": "Jabloňová 19, Nový Jičín",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "a adresu Na Lávce 4, Sušice",
+      "original": "Na Lávce 4, Sušice",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "kdy Alžběty Malíkové se týká bydliště U Rybníka 8, Soběslav",
+      "original": "Rybníka 8, Soběslav",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "cz a adrese Hlavní 55, Milevsko",
+      "original": "Hlavní 55, Milevsko",
       "occurrences": 1
     },
     {
@@ -468,24 +474,36 @@
     {
       "type": "EMAIL",
       "label": "[[EMAIL_3]]",
-      "original": "op@legal.cz",
+      "original": "ivana.rendlova@post.cz",
       "occurrences": 1
     },
     {
       "type": "EMAIL",
       "label": "[[EMAIL_4]]",
-      "original": "veronika.plzakova@mail.cz",
+      "original": "op@legal.cz",
       "occurrences": 1
     },
     {
       "type": "EMAIL",
       "label": "[[EMAIL_5]]",
-      "original": "a.malikova@firma.cz",
+      "original": "veronika.plzakova@mail.cz",
       "occurrences": 1
     },
     {
       "type": "EMAIL",
       "label": "[[EMAIL_6]]",
+      "original": "a.malikova@firma.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_7]]",
+      "original": "zdenek.spicka@office.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_8]]",
       "original": "nikola.soukupova@post.cz",
       "occurrences": 1
     },

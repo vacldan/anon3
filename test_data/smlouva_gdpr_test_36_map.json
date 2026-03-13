@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:10.110511",
+  "generated_at": "2026-03-13T09:56:57.704119",
   "source_file": "smlouva_gdpr_test_36.docx",
   "entities": [
     {
@@ -36,14 +36,14 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Nemocniční 1, 400 01 Ústí nad Labem",
-      "occurrences": 1
+      "original": "Nemocniční 1, 400 01, Ústí nad Labem",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Serverová 22, 639 00 Brno",
-      "occurrences": 1
+      "original": "Serverová 22, 639 00, Brno",
+      "occurrences": 2
     },
     {
       "type": "ICO",

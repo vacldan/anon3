@@ -77,6 +77,7 @@ OSOBY
 [[PERSON_56]]: Aleš Urbanec
 [[PERSON_57]]: Libuše Sedláčková
 [[PERSON_58]]: Svatomír Novák
+  - Novák
 [[PERSON_59]]: Ondřej Málek
   - Ondřeje Málka
 [[PERSON_60]]: Jitka Málková
@@ -85,7 +86,16 @@ OSOBY
 [[PERSON_63]]: Lumír Kadlec
 [[PERSON_64]]: Štěpánka Horská
 [[PERSON_65]]: Bronislav Vávra
+[[PERSON_66]]: Růžena Málková
+[[PERSON_67]]: Arnošt Bureš
 [[PERSON_68]]: Marcela Vávrová
+[[PERSON_69]]: Bohumír Sedláček
+[[PERSON_70]]: Helena Koubková
+[[PERSON_71]]: Gustav Šťastný
+[[PERSON_72]]: Sylva Hrubá
+[[PERSON_73]]: Vlasta Říhová
+[[PERSON_74]]: František Toman
+[[PERSON_75]]: Naděžda Bartošová
 
 ADDRESS
 [[ADDRESS_1]]: Vinohradská 142/7, Praha 10
@@ -97,19 +107,15 @@ ADDRESS
 [[ADDRESS_7]]: Sportovní 23, Zlín 760 01
 [[ADDRESS_8]]: Polní 56, Jihlava 586 01
 [[ADDRESS_9]]: Klostermannova 89, České Budějovice 370 01
-[[ADDRESS_10]]: Zahradní 12, Pardubice 530 02
 [[ADDRESS_11]]: Tovární 67, Mladá Boleslav 293 01
 [[ADDRESS_12]]: Krátká 89, Havířov 736 01
-[[ADDRESS_13]]: Ostrava
-[[ADDRESS_14]]: Polní 34, Přerov 750 02
-[[ADDRESS_15]]: v Ostravě
-[[ADDRESS_16]]: Hlavní 45, Přerov 750 02
-[[ADDRESS_17]]: Krátká 89, Zlín 760 01
-[[ADDRESS_18]]: Zahradní 67, Pardubice 530 02
-[[ADDRESS_19]]: Polní 12, Olomouc 779 00
-[[ADDRESS_20]]: Krátká 34, Brno 602 00
-[[ADDRESS_21]]: Školní 89, Tábor 390 01
-[[ADDRESS_22]]: Exekuce 8, celkem
+[[ADDRESS_13]]: Polní 34, Přerov 750 02
+[[ADDRESS_14]]: Hlavní 45, Přerov 750 02
+[[ADDRESS_15]]: Krátká 89, Zlín 760 01
+[[ADDRESS_16]]: Zahradní 67, Pardubice 530 02
+[[ADDRESS_17]]: Polní 12, Olomouc 779 00
+[[ADDRESS_18]]: Krátká 34, Brno 602 00
+[[ADDRESS_19]]: Školní 89, Tábor 390 01
 
 BANK
 [[BANK_1]]: 9876543210/2010
@@ -223,6 +229,8 @@ ID_CARD
 
 LICENSE_PLATE
 [[LICENSE_PLATE_1]]: 5A7 8901
+[[LICENSE_PLATE_2]]: NS 7823
+[[LICENSE_PLATE_3]]: NS 4567
 
 PHONE
 [[PHONE_1]]: +420 603 456 789

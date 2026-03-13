@@ -1,0 +1,27 @@
+OSOBY
+-----
+[[PERSON_1]]: Zuzana Zímová
+[[PERSON_2]]: Anna Reková
+[[PERSON_3]]: Helena Oherová
+
+ADDRESS
+[[ADDRESS_1]]: Vyskočilova 1442/1b, 140 28, Praha 4 - Michle, Česká republika
+[[ADDRESS_2]]: Mohelnice, 789 85 p. Mohelnice, Kosmonautů 899/2
+
+BANK
+[[BANK_1]]: 248868540/0600
+[[BANK_2]]: 388888885/0600
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 9151245785
+
+DATE
+[[DATE_1]]: 16.07.2022
+[[DATE_2]]: 20.07.2022
+[[DATE_3]]: 20.06.2032
+[[DATE_4]]: 16.06.2022
+
+ICO
+[[ICO_1]]: 25672720
+[[ICO_2]]: 08837279
+

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:25.551509",
+  "generated_at": "2026-03-13T09:57:12.537387",
   "source_file": "smlouva_gdpr_test_66.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Maxem Švestkou",
+      "original": "Maxovi Švestkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Maxa Švestku",
+      "original": "Maxem Švestkou",
       "occurrences": 1
     },
     {
@@ -30,19 +30,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Maxe Švestko",
+      "original": "Maxa Švestku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Maxovi Švestkovi",
+      "original": "Maxe Švestko",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Libuše Rendlová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Libuše Rendlováovou",
       "occurrences": 1
     },
     {
@@ -66,25 +72,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Miloslavem Rendlem",
+      "original": "Miloslava Rendla",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Miloslava Rendla",
+      "original": "Miloslavem Rendlem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Darja Kuchtová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Darjy Kuchtové",
       "occurrences": 1
     },
     {
@@ -101,8 +101,26 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Darjy Kuchtové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Darju Kuchtováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Květa Holíková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Květu Holíkováovou",
       "occurrences": 1
     },
     {
@@ -120,55 +138,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Ondřeja Kuchtu",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_6]]",
       "original": "Ondřeja Kuchty",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Darja Kuchtováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Darju Kuchtováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Libuše Rendlováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Libuše Rendlováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Květa Holíkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Květu Holíkováovou",
+      "label": "[[PERSON_6]]",
+      "original": "Ondřeja Kuchtu",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Sokolská 88, 120 00 Praha 2",
+      "original": "Sokolská 88, Praha 2, 120 00",
       "occurrences": 1
     },
     {
@@ -180,49 +162,31 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Riegrova 208/29, 779 00 Olomouc",
-      "occurrences": 1
+      "original": "Riegrova 208/29, 779 00, Olomouc",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Žižkova 177/11, 460 01 Liberec",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Havlíčkova 137/14, 586 01 Jihlava",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Smetanova 207/4, 760 01 Zlín",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Masarykova 237/2, 500 02 Hradec Králové",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Nádražní 80, 702 00 Ostrava a Riegrova",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 12/27, CVC",
+      "original": "Masarykova 237/2, 500 02 Hradec Králové",
       "occurrences": 1
     },
     {
@@ -373,12 +337,6 @@
       "type": "PHONE",
       "label": "[[PHONE_6]]",
       "original": "608 733 508",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "268436508",
       "occurrences": 1
     },
     {

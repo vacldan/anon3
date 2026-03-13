@@ -21,8 +21,6 @@ ADDRESS
 [[ADDRESS_1]]: Právnická 12, 110 00 Praha 1
 [[ADDRESS_2]]: U Parku 34/7, 779 00 Olomouc
 [[ADDRESS_3]]: Na Návsi 70/19, 789 01 Zábřeh
-[[ADDRESS_4]]: platnost 08/28, CVC
-[[ADDRESS_5]]: písemně na adresu Na Návsi 70/19, 789 01 Zábřeh
 
 BANK
 [[BANK_1]]: 473541017/5500

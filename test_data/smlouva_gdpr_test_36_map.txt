@@ -7,8 +7,8 @@ OSOBY
   - Sabině Nedvědové
 
 ADDRESS
-[[ADDRESS_1]]: Nemocniční 1, 400 01 Ústí nad Labem
-[[ADDRESS_2]]: Serverová 22, 639 00 Brno
+[[ADDRESS_1]]: Nemocniční 1, 400 01, Ústí nad Labem
+[[ADDRESS_2]]: Serverová 22, 639 00, Brno
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 800403/5678

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:23.320511",
+  "generated_at": "2026-03-13T09:57:10.654026",
   "source_file": "smlouva_gdpr_test_63.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Aloise Švestko",
+      "original": "Aloisa Švestku",
       "occurrences": 1
     },
     {
@@ -24,25 +24,43 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Aloisovi Švestkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Aloisem Švestkou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Aloisa Švestku",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Aloisovi Švestkovi",
+      "original": "Aloise Švestko",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Darja Brázdová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Darjě Brázdové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Darju Brázdováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Darjou Brázdovou",
       "occurrences": 1
     },
     {
@@ -59,20 +77,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Darjou Brázdovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Darjě Brázdové",
+      "label": "[[PERSON_3]]",
+      "original": "Renata Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Renata Svobodová",
+      "original": "Renaty Svobodové",
       "occurrences": 1
     },
     {
@@ -90,7 +102,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Renaty Svobodové",
+      "original": "Renatu Svobodováovou",
       "occurrences": 1
     },
     {
@@ -119,14 +131,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_6]]",
-      "original": "Lubomír Hrdina",
+      "label": "[[PERSON_5]]",
+      "original": "Libuše Fialováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Lubomíra Hrdinu",
+      "original": "Lubomír Hrdina",
       "occurrences": 1
     },
     {
@@ -137,45 +149,15 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Renata Svobodováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Renatu Svobodováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Darja Brázdováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Darju Brázdováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Libuše Fialováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Libuše Fialováovou",
+      "label": "[[PERSON_6]]",
+      "original": "Lubomíra Hrdinu",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Zahradní 5, 390 02 Tábor",
-      "occurrences": 1
+      "original": "Zahradní 5, 390 02, Tábor",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -186,50 +168,20 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Husova 215, 390 02 Tábor",
-      "occurrences": 1
+      "original": "Husova 215, 390 02, Tábor",
+      "occurrences": 4
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "Husova 71, 390 02 Tábor",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Tylova 163/14, 530 02 Pardubice",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Wolkerova 162/21, 796 01 Prostějov",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Wolkerova 203/23, 796 01 Prostějov",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Komenského 21/8, 702 00 Ostrava a Husova",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "platnost 03/30, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "V Olomouci",
-      "occurrences": 1
+      "original": "Wolkerova 203/23, 796 01 Prostějov",
+      "occurrences": 2
     },
     {
       "type": "ICO",

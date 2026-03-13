@@ -1,24 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:55.755806",
+  "generated_at": "2026-03-13T09:56:34.669080",
   "source_file": "smlouva_gdpr_test_113.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Pavel Beneš",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Pavle Beneše",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Pavlem Benešem",
       "occurrences": 1
     },
     {
@@ -35,14 +23,20 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Jaroslav Vlach",
+      "label": "[[PERSON_1]]",
+      "original": "Pavlem Benešem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Pavle Beneše",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jaroslave Vlache",
+      "original": "Jaroslav Vlach",
       "occurrences": 1
     },
     {
@@ -54,13 +48,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Jaroslavem Vlachem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Jaroslava Vlacha",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jaroslavem Vlachem",
+      "original": "Jaroslave Vlache",
       "occurrences": 1
     },
     {
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Gabrielou Černou",
+      "original": "Gabrielě Černé",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Gabrielě Černé",
+      "original": "Gabrielou Černou",
       "occurrences": 1
     },
     {
@@ -90,19 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Karla Krála",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Karle Krále",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Karlovi Královi",
+      "original": "Karla Krála",
       "occurrences": 1
     },
     {
@@ -112,46 +106,22 @@
       "occurrences": 1
     },
     {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Karlovi Královi",
+      "occurrences": 1
+    },
+    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Náměstí 1, 500 02 Hradec Králové",
-      "occurrences": 1
+      "original": "Náměstí 1, 500 02, Hradec Králové",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Na Návsi 26/11, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Na Návsi 89/7, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Na Návsi 89/7, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Na Návsi 89/7, 789 01 Zábřeh",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Na Návsi 89/7, 789 01 Zábřeh pro Jaroslavovi Vlachovi",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "a Na Návsi 26/11, 789 01 Zábřeh pro Pavlovi Benešovi",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ICO",

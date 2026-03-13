@@ -42,9 +42,10 @@ OSOBY
   - Viktoru Havlovi
 [[PERSON_19]]: Barbora Němcová
   - Barbory Němcové
+[[PERSON_20]]: Radka Hofmanaová
+  - Radka Hofmana
 [[PERSON_21]]: Radek Hofmana
   - Radek Hofman
-  - Radka Hofmana
 [[PERSON_22]]: Alžběta Konečná
   - Alžbětou Konečnou
 [[PERSON_23]]: Igor Vraný
@@ -76,14 +77,16 @@ OSOBY
   - Gabriele Pokorné
 [[PERSON_33]]: Štěpán Hrubeš
   - Štěpánem Hrubešem
-[[PERSON_34]]: Nikol Šťastná
+[[PERSON_34]]: Nikol Šťastný
+  - Nikol Šťastná
   - Nikol Šťastné
 [[PERSON_35]]: Miroslav Vaňk
   - Miroslavem Vaňkem
   - Miroslavu Vaňkovi
-[[PERSON_37]]: Renato Slámová
-  - Renata Slámová
+[[PERSON_36]]: Miroslav Vaněk
+[[PERSON_37]]: Renato Slám
   - Renatou Slámovou
+[[PERSON_38]]: Renata Slámová
   - Renaty Slámové
 [[PERSON_39]]: Patrik Holík
   - Patrika Holíka
@@ -106,10 +109,7 @@ OSOBY
   - Adrianovi Kratochvílovi
 
 ADDRESS
-[[ADDRESS_1]]: V Kapslovně 881/11, Praha 3
-[[ADDRESS_2]]: Obvodním soudem pro Prahu 3, sp
-[[ADDRESS_3]]: v Praze
-[[ADDRESS_4]]: v Brně
+[[ADDRESS_1]]: Kapslovně 881/11, Praha 3
 
 BANK
 [[BANK_1]]: 112882351/0300
@@ -122,14 +122,11 @@ DATE
 ICO
 [[ICO_1]]: 05288977
 
-IMEI
-[[IMEI_1]]: 356778119992110
-
 IP
 [[IP_1]]: 192.168.11.22
 
 LICENSE_PLATE
-[[LICENSE_PLATE_1]]: is2025
+[[LICENSE_PLATE_1]]: EI 35677
 
 MAC
 [[MAC_1]]: 00:1F:44:AA:22:11

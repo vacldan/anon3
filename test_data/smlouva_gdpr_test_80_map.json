@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:35.951081",
+  "generated_at": "2026-03-13T09:57:22.070469",
   "source_file": "smlouva_gdpr_test_80.docx",
   "entities": [
     {
@@ -18,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michale Řezníčku",
+      "original": "Michala Řezníčka",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michala Řezníčka",
+      "original": "Michale Řezníčku",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Pavlě Havličková",
+      "original": "Pavlě Havliček",
       "occurrences": 1
     },
     {
@@ -60,19 +60,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Veroniky Marešové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Veronikou Marešovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
+      "original": "Veroniky Marešové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Veronikě Marešové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Veroniku Marešováovou",
       "occurrences": 1
     },
     {
@@ -84,13 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Alžběty Černé",
+      "original": "Alžbětu Černou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Alžbětu Černou",
+      "original": "Alžběty Černé",
       "occurrences": 1
     },
     {
@@ -107,6 +113,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Jiřinu Havličkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_7]]",
       "original": "Jaroslav Vlach",
       "occurrences": 1
@@ -118,57 +130,15 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Veronika Marešováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Veroniku Marešováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Pavel Havličkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_10]]",
-      "original": "Pavlu Havličkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_11]]",
-      "original": "Jiřina Havličkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_11]]",
-      "original": "Jiřinu Havličkováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Vídeňská 800, 140 59 Praha 4",
+      "original": "Vídeňská 800, Praha 4, 140 59",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "Husova 236/11, 390 02 Tábor",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Žižkova 245/15, 460 01 Liberec",
       "occurrences": 1
     },
     {
@@ -187,30 +157,12 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
       "original": "Žižkova 132/18, 460 01 Liberec",
-      "occurrences": 1
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
       "original": "Na Kopci 13, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "Husova 236/11, 390 02 Tábor a Žižkova",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Liberec",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 10/28, CVC",
       "occurrences": 1
     },
     {

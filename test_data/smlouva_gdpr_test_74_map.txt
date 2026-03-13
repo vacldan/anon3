@@ -8,6 +8,7 @@ OSOBY
 [[PERSON_2]]: Eliška Fialová
   - Eliško Fialová
   - Eliškou Fialovou
+  - Elišku Fialováovou
   - Elišky Fialové
   - Eliškě Fialové
 [[PERSON_3]]: Oldřich Šimůnek
@@ -17,24 +18,18 @@ OSOBY
 [[PERSON_4]]: Jan Hrdina
   - Jana Hrdiny
 [[PERSON_5]]: Soňa Řípová
+  - Soňu Řípováovou
   - Soňy Řípové
 [[PERSON_6]]: Vít Turek
   - Víta Turka
-[[PERSON_7]]: Eliška Fialováová
-  - Elišku Fialováovou
-[[PERSON_8]]: Soňa Řípováová
-  - Soňu Řípováovou
 
 ADDRESS
-[[ADDRESS_1]]: Právnická 12, 110 00 Praha 1
+[[ADDRESS_1]]: Právnická 12, Praha 1, 110 00
 [[ADDRESS_2]]: Hlavní 222/33, 669 02 Znojmo
-[[ADDRESS_3]]: Bezručova 85/32, 746 01 Opava
-[[ADDRESS_4]]: Riegrova 117/39, 779 00 Olomouc
-[[ADDRESS_5]]: Jihlavská 19/3, 625 00 Brno
-[[ADDRESS_6]]: Masarykova 185, 500 02 Hradec Králové
-[[ADDRESS_7]]: Masarykova 2/5, 500 02 Hradec Králové
-[[ADDRESS_8]]: Hlavní 222/33, 669 02 Znojmo a Bezručova
-[[ADDRESS_9]]: platnost 07/28, CVC
+[[ADDRESS_3]]: Bezručova 85/32, 746 01, Opava
+[[ADDRESS_5]]: Riegrova 117/39, 779 00 Olomouc
+[[ADDRESS_6]]: Jihlavská 19/3, 625 00 Brno
+[[ADDRESS_7]]: Masarykova 185, 500 02 Hradec Králové
 
 BANK
 [[BANK_1]]: 6202532242/6210

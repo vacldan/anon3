@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:56.637430",
+  "generated_at": "2026-03-13T09:56:35.920662",
   "source_file": "smlouva_gdpr_test_116.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alešem Novákem",
+      "original": "Aleša Nováka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Aleša Nováka",
+      "original": "Alešem Novákem",
       "occurrences": 1
     },
     {
@@ -42,25 +42,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Moniky Svobodové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Moniko Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Monikou Svobodovou",
+      "original": "Moniky Svobodové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Monikě Svobodové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Monikou Svobodovou",
       "occurrences": 1
     },
     {
@@ -72,25 +72,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucie Dvořákovou",
+      "original": "Lucie Dvořákové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucie Dvořákové",
+      "original": "Lucie Dvořákovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Marek Holík",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Marku Holíke",
       "occurrences": 1
     },
     {
@@ -112,10 +106,16 @@
       "occurrences": 1
     },
     {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Marku Holíke",
+      "occurrences": 1
+    },
+    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Poliklinická 3, 120 00 Praha 2",
-      "occurrences": 1
+      "original": "Poliklinická 3, Praha 2, 120 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -125,33 +125,9 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Technologická 49/17, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Technologická 49/17, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Technologická 49/17, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "ro účely doručování se používá adresa Technologická 49/17, 160 00 Praha 6",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Monikě Svobodové a Na Návsi 173/24, 789 01 Zábřeh pro Alešovi Novákovi",
-      "occurrences": 1
+      "original": "Technologická 49/17, Praha 6, 160 00",
+      "occurrences": 2
     },
     {
       "type": "ICO",

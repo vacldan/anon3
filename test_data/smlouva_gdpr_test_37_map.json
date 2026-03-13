@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:10.199487",
+  "generated_at": "2026-03-13T09:56:57.904173",
   "source_file": "smlouva_gdpr_test_37.docx",
   "entities": [
     {
@@ -36,13 +36,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Tomášem Nguyenem",
+      "original": "Tomáši Nguyenovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Tomáši Nguyenovi",
+      "original": "Tomášem Nguyenem",
       "occurrences": 1
     },
     {
@@ -72,14 +72,8 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "Náměstí 1, 500 02 Hradec Králové",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "com a v listinné podobě na adresu U Parku 8, 779 00 Olomouc",
-      "occurrences": 1
+      "original": "Náměstí 1, 500 02, Hradec Králové",
+      "occurrences": 2
     },
     {
       "type": "PHONE",

@@ -9,37 +9,31 @@ OSOBY
 [[PERSON_2]]: Adéla Pospíšilová
   - Adélo Pospíšilová
   - Adélou Pospíšilovou
+  - Adélu Pospíšilováovou
   - Adély Pospíšilové
   - Adélě Pospíšilové
 [[PERSON_3]]: Nikola Vlachová
   - Nikolou Vlachovou
+  - Nikolu Vlachováovou
   - Nikoly Vlachové
   - Nikolě Vlachové
 [[PERSON_4]]: Tereza Vavrová
+  - Terezu Vavrováovou
   - Terezy Vavrové
 [[PERSON_5]]: Libuše Nováková
+  - Libuše Novákováovou
   - Libuše Novákové
 [[PERSON_6]]: Dalibor Vlach
   - Dalibora Vlacha
-[[PERSON_7]]: Nikola Vlachováová
-  - Nikolu Vlachováovou
-[[PERSON_8]]: Adéla Pospíšilováová
-  - Adélu Pospíšilováovou
-[[PERSON_9]]: Tereza Vavrováová
-  - Terezu Vavrováovou
-[[PERSON_10]]: Libuše Novákováová
-  - Libuše Novákováovou
 
 ADDRESS
-[[ADDRESS_1]]: V Úvalu 84, 150 06 Praha 5
+[[ADDRESS_1]]: Úvalu 84, Praha 5, 150 06
 [[ADDRESS_2]]: Pražská 158, 360 01 Karlovy Vary
-[[ADDRESS_3]]: Husova 39, 390 02 Tábor
-[[ADDRESS_4]]: Bezručova 41/12, 746 01 Opava
-[[ADDRESS_5]]: U Parku 5/25, 779 00 Olomouc
-[[ADDRESS_6]]: Dlouhá 44/27, 602 00 Brno
-[[ADDRESS_7]]: Sokolovská 49/23, 186 00 Praha 8
-[[ADDRESS_8]]: Pražská 158, 360 01 Karlovy Vary a Husova 39
-[[ADDRESS_9]]: platnost 03/29, CVC
+[[ADDRESS_3]]: Husova 39, 390 02, Tábor
+[[ADDRESS_5]]: Bezručova 41/12, 746 01 Opava
+[[ADDRESS_6]]: U Parku 5/25, 779 00 Olomouc
+[[ADDRESS_7]]: Dlouhá 44/27, 602 00 Brno
+[[ADDRESS_8]]: Sokolovská 49/23, 186 00 Praha 8
 
 BANK
 [[BANK_1]]: 825102802/6210

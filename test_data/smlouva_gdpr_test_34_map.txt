@@ -14,10 +14,9 @@ OSOBY
 [[PERSON_4]]: Tomáš Svoboda
 
 ADDRESS
-[[ADDRESS_1]]: Lázeňská 89, 602 00 Brno
-[[ADDRESS_2]]: Na Kopci 12, 100 00 Praha 10
+[[ADDRESS_1]]: Lázeňská 89, 602 00, Brno
+[[ADDRESS_2]]: Na Kopci 12, Praha 10, 100 00
 [[ADDRESS_3]]: Křenová 14, 602 00 Brno
-[[ADDRESS_4]]: V Brně
 
 BANK
 [[BANK_1]]: 123456789/0100

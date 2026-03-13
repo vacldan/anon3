@@ -6,10 +6,9 @@ OSOBY
   - Ingrid Brožové
 
 ADDRESS
-[[ADDRESS_1]]: v Praze
-[[ADDRESS_2]]: Mariánské náměstí 1, 115 72 Praha 1
-[[ADDRESS_3]]: Masarykovo náměstí 57/34, 586 01 Jihlava
-[[ADDRESS_4]]: Nádražní 7/25, 738 01 Frýdek-Místek
+[[ADDRESS_1]]: Mariánské náměstí 1, 115 72 Praha 1
+[[ADDRESS_2]]: Masarykovo náměstí 57/34, 586 01, Jihlava
+[[ADDRESS_3]]: Nádražní 7/25, 738 01 Frýdek-Místek
 
 BIRTH_ID
 [[BIRTH_ID_1]]: 045725/3663

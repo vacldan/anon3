@@ -1,12 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:47.121611",
+  "generated_at": "2026-03-13T09:57:31.870650",
   "source_file": "smlouva_gdpr_test_95.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Jaroslav Tesař",
+      "original": "Jaroslav Tesařa",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Jaroslavem Tesařem",
       "occurrences": 1
     },
     {
@@ -24,13 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Jaroslavem Tesařem",
+      "original": "Jaroslavovi Tesařovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Jaroslavovi Tesařovi",
+      "original": "Jaroslav Tesař",
       "occurrences": 1
     },
     {
@@ -42,25 +48,31 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Kristě Pospíšilové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Kristo Pospíšilová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Kristou Pospíšilovou",
+      "original": "Kristu Pospíšilováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Kristě Pospíšilové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Kristy Pospíšilové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Kristou Pospíšilovou",
       "occurrences": 1
     },
     {
@@ -84,13 +96,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Stanislava Růžičky",
+      "original": "Stanislavovi Růžičkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Stanislavovi Růžičkovi",
+      "original": "Stanislava Růžičky",
       "occurrences": 1
     },
     {
@@ -107,8 +119,20 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Růženu Kratochvílováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Hedvika Jirsová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Hedviku Jirsováovou",
       "occurrences": 1
     },
     {
@@ -130,45 +154,9 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Krista Pospíšilováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Kristu Pospíšilováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Růžena Kratochvílováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Růženu Kratochvílováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Hedvika Jirsováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Hedviku Jirsováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Vídeňská 800, 140 59 Praha 4",
+      "original": "Vídeňská 800, Praha 4, 140 59",
       "occurrences": 1
     },
     {
@@ -180,49 +168,31 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Masarykova 245, 500 02 Hradec Králové",
-      "occurrences": 1
+      "original": "Masarykova 245, 500 02, Hradec Králové",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Wolkerova 195, 796 01 Prostějov",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Palackého 92, 301 00 Plzeň",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Jihlavská 101, 625 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Bezručova 170/11, 746 01 Opava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Tylova 53, 530 02 Pardubice a Masarykova",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Hradec Králové",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 09/27, CVC",
+      "original": "Bezručova 170/11, 746 01 Opava",
       "occurrences": 1
     },
     {
@@ -373,12 +343,6 @@
       "type": "PHONE",
       "label": "[[PHONE_6]]",
       "original": "609 905 878",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "844205467",
       "occurrences": 1
     },
     {

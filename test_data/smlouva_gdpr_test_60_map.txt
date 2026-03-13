@@ -6,36 +6,32 @@ OSOBY
   - Štěpáne Havličko
   - Štěpánem Havličkou
   - Štěpánovi Havličkovi
-[[PERSON_2]]: Alice Nováková
+[[PERSON_2]]: Alica Novák
   - Alice Novákovou
+  - Alice Nováková
+  - Alice Novákováovou
   - Alice Novákové
 [[PERSON_3]]: Vojtěch Pospíšil
   - Vojtěcha Pospíšila
   - Vojtěchem Pospíšilem
   - Vojtěchovi Pospíšilovi
 [[PERSON_4]]: Ivana Šídlová
+  - Ivanu Šídlováovou
   - Ivany Šídlové
 [[PERSON_5]]: Květa Poláková
+  - Květu Polákováovou
   - Květy Polákové
 [[PERSON_6]]: Matěj Hrubeš
   - Matěja Hrubeša
-[[PERSON_7]]: Alice Novákováová
-  - Alice Novákováovou
-[[PERSON_8]]: Ivana Šídlováová
-  - Ivanu Šídlováovou
-[[PERSON_9]]: Květa Polákováová
-  - Květu Polákováovou
 
 ADDRESS
-[[ADDRESS_1]]: Lesní 12, 586 01 Jihlava
+[[ADDRESS_1]]: Lesní 12, 586 01, Jihlava
 [[ADDRESS_2]]: Národní 155, 110 00 Praha 1
-[[ADDRESS_3]]: U Parku 30, 779 00 Olomouc
-[[ADDRESS_4]]: Komenského 13, 702 00 Ostrava
-[[ADDRESS_5]]: Riegrova 125/32, 779 00 Olomouc
-[[ADDRESS_6]]: Tylova 130/25, 530 02 Pardubice
-[[ADDRESS_7]]: Křenová 187/24, 602 00 Brno
-[[ADDRESS_8]]: a U Parku 30, 779 00 Olomouc
-[[ADDRESS_9]]: platnost 12/26, CVC
+[[ADDRESS_4]]: U Parku 30, 779 00 Olomouc
+[[ADDRESS_5]]: Komenského 13, 702 00 Ostrava
+[[ADDRESS_6]]: Riegrova 125/32, 779 00 Olomouc
+[[ADDRESS_7]]: Tylova 130/25, 530 02 Pardubice
+[[ADDRESS_8]]: Křenová 187/24, 602 00 Brno
 
 BANK
 [[BANK_1]]: 8026796627/2700

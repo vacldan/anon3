@@ -1,12 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:05.642536",
+  "generated_at": "2026-03-13T09:56:49.671015",
   "source_file": "smlouva_gdpr_test_146.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Jaroslav Malík",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Jaroslavem Malíkem",
       "occurrences": 1
     },
     {
@@ -29,18 +35,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Jaroslavem Malíkem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Malíkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Ondřej Holík",
       "occurrences": 1
@@ -49,6 +43,12 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Ondřeje Holíke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Ondřejem Holíkem",
       "occurrences": 1
     },
     {
@@ -65,12 +65,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Ondřejem Holíkem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Helena Benešová",
       "occurrences": 1
@@ -78,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Helenou Benešovou",
+      "original": "Heleně Benešové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Heleně Benešové",
+      "original": "Helenou Benešovou",
       "occurrences": 1
     },
     {
@@ -120,8 +114,8 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Náměstí 1, 500 02 Hradec Králové",
-      "occurrences": 1
+      "original": "Náměstí 1, 500 02, Hradec Králové",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
@@ -131,33 +125,9 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Vinohradská 34/28, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Vinohradská 34/28, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Vinohradská 34/28, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Vinohradská 34/28, 130 00 Praha 3",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Ondřejovi Holíkovi a Jabloňová 91/9, 400 01 Ústí nad Labem pro Jaroslavovi",
-      "occurrences": 1
+      "original": "Vinohradská 34/28, Praha 3, 130 00",
+      "occurrences": 2
     },
     {
       "type": "ICO",

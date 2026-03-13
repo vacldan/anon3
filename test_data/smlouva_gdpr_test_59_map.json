@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:20.347839",
+  "generated_at": "2026-03-13T09:57:07.804244",
   "source_file": "smlouva_gdpr_test_59.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Přemyslem Švestkou",
+      "original": "Přemysla Švestky",
       "occurrences": 1
     },
     {
@@ -30,13 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Přemysla Švestky",
+      "original": "Přemyslovi Švestkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Přemyslovi Švestkovi",
+      "original": "Přemyslem Švestkou",
       "occurrences": 1
     },
     {
@@ -48,13 +48,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ivo Kratochvílová",
+      "original": "Ivou Kratochvílovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ivou Kratochvílovou",
+      "original": "Ivu Kratochvílováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Ivo Kratochvílová",
       "occurrences": 1
     },
     {
@@ -78,12 +84,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Metodějovi Kopeckém",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
       "original": "Metodějovi Kopeckému",
       "occurrences": 1
     },
@@ -97,6 +97,12 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Metodějem Kopeckým",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Metodějovi Kopeckém",
       "occurrences": 1
     },
     {
@@ -125,6 +131,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Libuše Krejčováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_6]]",
       "original": "Matěj Urban",
       "occurrences": 1
@@ -136,87 +148,39 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Iva Kratochvílováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Ivu Kratochvílováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Libuše Krejčováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Libuše Krejčováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Kampus 9, 625 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
-      "original": "Pražská 98, 360 01 Karlovy Vary",
-      "occurrences": 1
+      "original": "Kampus 9, 625 00, Brno",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Národní 5/26, 110 00 Praha 1",
-      "occurrences": 1
+      "original": "Národní 5/26, Praha 1, 110 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Dvořákova 51, 370 01 České Budějovice",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "Pražská 119/37, 360 01 Karlovy Vary",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Riegrova 27, 779 00 Olomouc",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "U Nemocnice 87, 128 08 Praha 2",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Pražská 98, 360 01 Karlovy Vary a Národní",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 05/28, CVC",
+      "original": "U Nemocnice 87, 128 08 Praha 2",
       "occurrences": 1
     },
     {
@@ -367,12 +331,6 @@
       "type": "PHONE",
       "label": "[[PHONE_6]]",
       "original": "+420 708 713 484",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
-      "original": "494150612",
       "occurrences": 1
     },
     {

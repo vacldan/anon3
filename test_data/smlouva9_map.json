@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:44.700049",
+  "generated_at": "2026-03-13T09:56:20.520040",
   "source_file": "smlouva9.docx",
   "entities": [
     {
@@ -30,138 +30,120 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Finanční Banek",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Finanční Banka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Banka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
       "original": "Tomáš Doležal",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_6]]",
+      "label": "[[PERSON_5]]",
       "original": "Pavla Růžičková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
+      "label": "[[PERSON_6]]",
       "original": "Barbora Nováková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_8]]",
+      "label": "[[PERSON_7]]",
       "original": "Petra Malíková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_9]]",
+      "label": "[[PERSON_8]]",
       "original": "Dominik Král",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_10]]",
+      "label": "[[PERSON_9]]",
       "original": "Michal Konečný",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_11]]",
+      "label": "[[PERSON_10]]",
       "original": "Klára Veselá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_12]]",
+      "label": "[[PERSON_11]]",
       "original": "Tomáš Čada",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_13]]",
+      "label": "[[PERSON_12]]",
       "original": "Veronika Štěpánová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_14]]",
+      "label": "[[PERSON_13]]",
       "original": "Roman Doležal",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_15]]",
+      "label": "[[PERSON_14]]",
       "original": "Jana Čechová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_16]]",
+      "label": "[[PERSON_15]]",
       "original": "Radek Matoušek",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_17]]",
+      "label": "[[PERSON_16]]",
       "original": "Lenka Růžičková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_18]]",
+      "label": "[[PERSON_17]]",
       "original": "Petr Beneš",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_19]]",
+      "label": "[[PERSON_18]]",
       "original": "Marek Šmíd",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_20]]",
+      "label": "[[PERSON_19]]",
       "original": "Jitka Dvořáčková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_21]]",
+      "label": "[[PERSON_20]]",
       "original": "Petr Kovář",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_22]]",
+      "label": "[[PERSON_21]]",
       "original": "Martina Horáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_23]]",
+      "label": "[[PERSON_22]]",
       "original": "Jana Černá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_24]]",
+      "label": "[[PERSON_23]]",
       "original": "Iveta Zelená",
       "occurrences": 1
     },
@@ -180,19 +162,19 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
       "original": "Na Poříčí 8, 110 00 Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_4]]",
       "original": "Antonínská 8, Brno",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "Brno, Husova 24",
       "occurrences": 1
     },
     {
@@ -204,14 +186,14 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Družstevní 5, 779 00 Olomouc",
-      "occurrences": 1
+      "original": "Družstevní 5, 779 00, Olomouc",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Vídeňská 118, 619 00 Brno",
-      "occurrences": 1
+      "original": "Vídeňská 118, 619 00, Brno",
+      "occurrences": 4
     },
     {
       "type": "ADDRESS",
@@ -222,48 +204,36 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_10]]",
-      "original": "Jungmannova 5, Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
       "original": "Lipová 19, 460 01 Liberec",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_12]]",
-      "original": "Vídeňská 4, 639 00 Brno",
+      "label": "[[ADDRESS_11]]",
+      "original": "Jungmannova 5, Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_13]]",
-      "original": "Ostrava",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_14]]",
       "original": "Na Příkopě 33, Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_15]]",
+      "label": "[[ADDRESS_14]]",
       "original": "Křižíkova 56, 186 00 Praha 8",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_16]]",
+      "label": "[[ADDRESS_15]]",
       "original": "Spálená 75/16, Praha 1",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_17]]",
+      "label": "[[ADDRESS_16]]",
       "original": "Sokolská 14, Ostrava",
       "occurrences": 1
     },
@@ -540,18 +510,12 @@
     {
       "type": "ICO",
       "label": "[[ICO_11]]",
-      "original": "25062025",
-      "occurrences": 1
-    },
-    {
-      "type": "ICO",
-      "label": "[[ICO_12]]",
       "original": "60232514",
       "occurrences": 1
     },
     {
       "type": "ICO",
-      "label": "[[ICO_13]]",
+      "label": "[[ICO_12]]",
       "original": "45272956",
       "occurrences": 1
     },

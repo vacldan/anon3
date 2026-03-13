@@ -5,7 +5,6 @@ OSOBY
   - Filipe Malíke
   - Filipem Malíkem
   - Filipovi Malíkovi
-  - Malíkovi
 [[PERSON_2]]: Aleš Vaněk
   - Aleša Vaněka
   - Aleše Vaněke
@@ -21,13 +20,9 @@ OSOBY
   - Alešovi Turkovi
 
 ADDRESS
-[[ADDRESS_1]]: Kampus 9, 625 00 Brno
+[[ADDRESS_1]]: Kampus 9, 625 00, Brno
 [[ADDRESS_2]]: Sadová 98/21, 370 01 České Budějovice
 [[ADDRESS_3]]: Křenová 102/3, 602 00 Brno
-[[ADDRESS_4]]: případně písemně na adresu Křenová 102/3, 602 00 Brno
-[[ADDRESS_5]]: písemné doručení na adresu Křenová 102/3, 602 00 Brno
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Křenová 102/3, 602 00 Brno pro Alešovi Vaněkovi a
-[[ADDRESS_7]]: Sadová 98/21, 370 01 České Budějovice pro Filipovi
 
 BANK
 [[BANK_1]]: 358249232/0300

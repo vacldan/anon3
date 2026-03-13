@@ -21,13 +21,8 @@ OSOBY
   - Matěje Černýe
 
 ADDRESS
-[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
+[[ADDRESS_1]]: Poliklinická 3, Praha 2, 120 00
 [[ADDRESS_2]]: Dlouhá 108/19, 602 00 Brno
-[[ADDRESS_3]]: Dlouhá 138/1, 602 00 Brno
-[[ADDRESS_4]]: případně písemně na adresu Dlouhá 138/1, 602 00 Brno
-[[ADDRESS_5]]: písemné doručení na adresu Dlouhá 138/1, 602 00 Brno
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Dlouhá 138/1, 602 00 Brno pro Matějovi Křížovi a
-[[ADDRESS_7]]: Dlouhá 108/19, 602 00 Brno pro Pavlovi Černýovi
 
 BANK
 [[BANK_1]]: 493419909/0600

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:55.196651",
+  "generated_at": "2026-03-13T09:56:33.799305",
   "source_file": "smlouva_gdpr_test_111.docx",
   "entities": [
     {
@@ -12,13 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michale Procházko",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Michalovi Procházkovi",
+      "original": "Michala Procházky",
       "occurrences": 1
     },
     {
@@ -30,7 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michala Procházky",
+      "original": "Michalovi Procházkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Michale Procházko",
       "occurrences": 1
     },
     {
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavlovi Novákovi",
+      "original": "Pavlem Novákem",
       "occurrences": 1
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavlem Novákem",
+      "original": "Pavlovi Novákovi",
       "occurrences": 1
     },
     {
@@ -90,6 +90,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
+      "original": "Erika Černýa",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Erikovi Černýovi",
       "occurrences": 1
     },
@@ -97,12 +103,6 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Erikem Černýem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Erika Černýa",
       "occurrences": 1
     },
     {
@@ -120,8 +120,8 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Právnická 12, 110 00 Praha 1",
-      "occurrences": 1
+      "original": "Právnická 12, Praha 1, 110 00",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -133,31 +133,7 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Sadová 158/29, 370 01 České Budějovice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Sadová 158/29, 370 01 České Budějovice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Sadová 158/29, 370 01 České Budějovice",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Sadová 158/29, 370 01 České Budějovice pro Pavlovi",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Novákovi a Technologická 27/16, 160 00 Praha 6",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ICO",

@@ -5,7 +5,6 @@ OSOBY
   - Pavle Roubale
   - Pavlem Roubalem
   - Pavlovi Roubalovi
-  - Roubalovi
 [[PERSON_2]]: Filip Řezníček
   - Filipa Řezníčka
   - Filipe Řezníčku
@@ -21,13 +20,9 @@ OSOBY
   - Gabrielě Procházkové
 
 ADDRESS
-[[ADDRESS_1]]: Kampus 9, 625 00 Brno
+[[ADDRESS_1]]: Kampus 9, 625 00, Brno
 [[ADDRESS_2]]: Sadová 103/21, 370 01 České Budějovice
-[[ADDRESS_3]]: Vinohradská 179/28, 130 00 Praha 3
-[[ADDRESS_4]]: případně písemně na adresu Vinohradská 179/28, 130 00 Praha 3
-[[ADDRESS_5]]: písemné doručení na adresu Vinohradská 179/28, 130 00 Praha 3
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Vinohradská 179/28, 130 00 Praha 3
-[[ADDRESS_7]]: pro Filipovi Řezníčkovi a Sadová 103/21, 370 01 České Budějovice pro Pavlovi
+[[ADDRESS_5]]: Vinohradská 179/28, Praha 3, 130 00
 
 BANK
 [[BANK_1]]: 619433238/0300

@@ -1,0 +1,13 @@
+Update anon72 engine, docs, test results, and add business plan generators
+
+- anon72.py: improved overlap resolution for multi-word foreign names,
+  orphan surname post-pass, international diacritics support, standalone
+  first-name detection improvements
+- Updated all technical documentation with accurate name library count
+  (~7k unique names, not 224k) and latest feature descriptions
+- Re-anonymized 200+ test contracts with updated engine
+- Updated test results and validation reports
+- Added generate_final_report.py and generate_business_plan.py for
+  PDF report generation with updated pricing model (Solo/Office/Enterprise)
+- Added new test contracts (smlouva_gdpr_test_51-150, smlouva_final_01-15)
+  with anonymized outputs and maps

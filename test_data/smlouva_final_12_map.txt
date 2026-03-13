@@ -10,12 +10,10 @@ OSOBY
   - Patrikovi Kopeckému
 
 ADDRESS
-[[ADDRESS_1]]: notářka se sídlem Tyršova 18, 530 02 Pardubice
-[[ADDRESS_2]]: Čelakovského sady 174/9, 120 00 Praha 2
-[[ADDRESS_3]]: Pražská 9/27, 301 00 Plzeň
+[[ADDRESS_1]]: Tyršova 18, 530 02
+[[ADDRESS_2]]: Čelakovského sady 174/9, Praha 2 - Nové, 120 00
 [[ADDRESS_4]]: Pražská 63/28, 301 00 Plzeň
 [[ADDRESS_5]]: Tyršova 44/2, 530 02 Pardubice
-[[ADDRESS_6]]: Pardubice
 
 BANK
 [[BANK_1]]: 625657168/0800

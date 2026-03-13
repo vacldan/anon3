@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:47.845989",
+  "generated_at": "2026-03-13T09:57:32.570274",
   "source_file": "smlouva_gdpr_test_96.docx",
   "entities": [
     {
@@ -12,25 +12,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michalem Dvořákem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Michalovi Dvořákovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Michale Dvořáke",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Michalem Dvořákem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Michala Dvořáka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Michalovi Dvořákovi",
       "occurrences": 1
     },
     {
@@ -42,7 +42,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Veroniky Řípové",
+      "original": "Veroniko Řípová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Veroniku Řípováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Veronikě Řípové",
       "occurrences": 1
     },
     {
@@ -54,25 +66,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Veroniko Řípová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Veronikě Řípové",
+      "original": "Veroniky Řípové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Štěpán Křeček",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Štěpánem Křečkem",
       "occurrences": 1
     },
     {
@@ -85,6 +85,12 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Štěpána Křečka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Štěpánem Křečkem",
       "occurrences": 1
     },
     {
@@ -108,6 +114,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
+      "original": "Cecílii Králováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Cecílie Králové",
       "occurrences": 1
     },
@@ -120,43 +132,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Leoša Jirsu",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_6]]",
       "original": "Leoša Jirsy",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Veronika Řípováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Veroniku Řípováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Cecílie Králováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Cecílii Králováovou",
+      "label": "[[PERSON_6]]",
+      "original": "Leoša Jirsu",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Olbrachtova 1929/62, 140 00 Praha 4",
+      "original": "Olbrachtova 1929/62, Praha 4, 140 00",
       "occurrences": 1
     },
     {
@@ -168,43 +156,25 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Palackého 13/13, 301 00 Plzeň",
-      "occurrences": 1
+      "original": "Palackého 13/13, 301 00, Plzeň",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Tylova 98/12, 530 02 Pardubice",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "Křenová 109/15, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
-      "original": "Dvořákova 141/20, 370 01 České Budějovice",
-      "occurrences": 1
+      "original": "Křenová 109/15, 602 00 Brno",
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_7]]",
-      "original": "Křenová 104, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "a Palackého 13/13, 301 00 Plzeň",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "platnost 01/29, CVC",
+      "original": "Dvořákova 141/20, 370 01 České Budějovice",
       "occurrences": 1
     },
     {

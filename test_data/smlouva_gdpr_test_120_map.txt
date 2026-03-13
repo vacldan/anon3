@@ -20,13 +20,9 @@ OSOBY
   - Terezě Černé
 
 ADDRESS
-[[ADDRESS_1]]: Nemocniční 1, 400 01 Ústí nad Labem
+[[ADDRESS_1]]: Nemocniční 1, 400 01, Ústí nad Labem
 [[ADDRESS_2]]: U Parku 124/21, 779 00 Olomouc
-[[ADDRESS_3]]: Technologická 31/2, 160 00 Praha 6
-[[ADDRESS_4]]: případně písemně na adresu Technologická 31/2, 160 00 Praha 6
-[[ADDRESS_5]]: písemné doručení na adresu Technologická 31/2, 160 00 Praha 6
-[[ADDRESS_6]]: ro účely doručování se používá adresa Technologická 31/2, 160 00 Praha 6
-[[ADDRESS_7]]: pro Gabrielě Hrubešové a U Parku 124/21, 779 00 Olomouc pro Matějovi Novákovi
+[[ADDRESS_5]]: Technologická 31/2, Praha 6, 160 00
 
 BANK
 [[BANK_1]]: 323367406/0100

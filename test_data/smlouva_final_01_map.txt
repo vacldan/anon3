@@ -1,6 +1,7 @@
 OSOBY
 -----
 [[PERSON_1]]: Radek Dostál
+  - Radka Dostála
   - Radkem Dostálem
   - Radkovi Dostálovi
 [[PERSON_2]]: Kateřina Bártlová
@@ -12,14 +13,11 @@ OSOBY
   - Vladimírovi Šimkovi
 
 ADDRESS
-[[ADDRESS_1]]: Palackého 28, 612 00 Brno - Královo Pole
-[[ADDRESS_2]]: Brno-město
-[[ADDRESS_3]]: v Brně
-[[ADDRESS_4]]: Čelakovského sady 117/47, 120 00 Praha 2
-[[ADDRESS_5]]: sídlem Tyršova 44, 530 02 Pardubice
-[[ADDRESS_6]]: Kolínská 109/47, 130 00 Praha 3
-[[ADDRESS_7]]: Revoluční 15, 110 00 Praha 1
-[[ADDRESS_8]]: nceláři exekutora Radka Dostála na adrese Palackého 28, 612 00 Brno - Královo Pole
+[[ADDRESS_1]]: Brno-město, Palackého 28, 612 00, Brno - Královo
+[[ADDRESS_2]]: Čelakovského sady 117/47, 120 00 Praha 2
+[[ADDRESS_3]]: Tyršova 44, 530 02
+[[ADDRESS_4]]: Kolínská 109/47, 130 00 Praha 3
+[[ADDRESS_5]]: Revoluční 15, Praha 1 - Staré, 110 00
 
 BANK
 [[BANK_1]]: 680543005/0800
@@ -52,6 +50,9 @@ ICO
 ID_CARD
 [[ID_CARD_1]]: 388163697
 [[ID_CARD_2]]: EA 787199
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: EX 1478
 
 LINKEDIN
 [[LINKEDIN_1]]: https://www.linkedin.com/in/petr-kopecky-324

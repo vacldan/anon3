@@ -8,39 +8,33 @@ OSOBY
 [[PERSON_2]]: Gabriela Hájková
   - Gabrielo Hájková
   - Gabrielou Hájkovou
+  - Gabrielu Hájkováovou
   - Gabriely Hájkové
   - Gabrielě Hájkové
-[[PERSON_3]]: Ello Pazderová
-  - Ella Pazderová
+[[PERSON_3]]: Ello Pazdera
   - Ellou Pazderovou
-  - Elly Pazderové
 [[PERSON_4]]: Anežka Dvořáková
   - Anežkou Dvořákovou
+  - Anežku Dvořákováovou
   - Anežky Dvořákové
   - Anežkě Dvořákové
+[[PERSON_5]]: Ella Pazderová
+  - Ellu Pazderováovou
+  - Elly Pazderové
 [[PERSON_6]]: Simona Švestková
+  - Simonu Švestkováovou
   - Simony Švestkové
 [[PERSON_7]]: Roman Vlach
   - Romana Vlacha
-[[PERSON_8]]: Anežka Dvořákováová
-  - Anežku Dvořákováovou
-[[PERSON_9]]: Gabriela Hájkováová
-  - Gabrielu Hájkováovou
-[[PERSON_10]]: Ella Pazderováová
-  - Ellu Pazderováovou
-[[PERSON_11]]: Simona Švestkováová
-  - Simonu Švestkováovou
 
 ADDRESS
-[[ADDRESS_1]]: Poliklinická 3, 120 00 Praha 2
-[[ADDRESS_2]]: U Nemocnice 232/19, 128 08 Praha 2
-[[ADDRESS_3]]: Dlouhá 57, 602 00 Brno
-[[ADDRESS_4]]: Křenová 55, 602 00 Brno
-[[ADDRESS_5]]: U Parku 136/38, 779 00 Olomouc
-[[ADDRESS_6]]: Technologická 170/23, 160 00 Praha 6
-[[ADDRESS_7]]: Jabloňová 85/11, 400 01 Ústí nad Labem
-[[ADDRESS_8]]: a Dlouhá 57, 602 00 Brno
-[[ADDRESS_9]]: platnost 06/29, CVC
+[[ADDRESS_1]]: Poliklinická 3, Praha 2, 120 00
+[[ADDRESS_2]]: Nemocnice 232/19, 128 08 Praha 2
+[[ADDRESS_3]]: Dlouhá 57, 602 00, Brno
+[[ADDRESS_5]]: Křenová 55, 602 00 Brno
+[[ADDRESS_6]]: U Parku 136/38, 779 00 Olomouc
+[[ADDRESS_7]]: Technologická 170/23, 160 00 Praha 6
+[[ADDRESS_8]]: Jabloňová 85/11, 400 01 Ústí nad Labem
 
 BANK
 [[BANK_1]]: 1145907048/0100

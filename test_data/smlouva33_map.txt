@@ -66,8 +66,8 @@ OSOBY
 ADDRESS
 [[ADDRESS_1]]: Polní 145/18, Hradec Králové 500 02
 [[ADDRESS_2]]: Zahradní 67, Pardubice 530 02
-[[ADDRESS_3]]: Krátká 23, Nový Bydžov 504 01
 [[ADDRESS_4]]: Polní 89, Pardubice 530 02
+[[ADDRESS_3]]: Krátká 23, Nový Bydžov 504 01, vdova
 [[ADDRESS_5]]: Lázeňská 89/4, Brno 602 00
 [[ADDRESS_6]]: Slezská 67, Opava 746 01
 [[ADDRESS_7]]: Zahradní 45, Hradec Králové 500 02
@@ -79,7 +79,6 @@ ADDRESS
 [[ADDRESS_13]]: Krátká 45, Brno 602 00
 [[ADDRESS_14]]: Vinohradská 245, Praha 2
 [[ADDRESS_15]]: Lázeňská 89, Praha 1
-[[ADDRESS_16]]: v Praze
 
 BANK
 [[BANK_1]]: 9876543210/0100

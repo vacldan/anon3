@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:08.270012",
+  "generated_at": "2026-03-13T09:56:54.263251",
   "source_file": "smlouva_gdpr_test_24.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Tomášovi Roubalovi",
+      "original": "Tomáši Roubale",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Tomáše Roubala",
+      "original": "Tomášovi Roubalovi",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Tomáši Roubale",
+      "original": "Tomáše Roubala",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Gabriely Vaňkové",
+      "original": "Gabrielou Vaňkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Gabrielou Vaňkovou",
+      "original": "Gabriely Vaňkové",
       "occurrences": 1
     },
     {
@@ -84,6 +84,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
+      "original": "Janou Roubalovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Jany Roubalové",
       "occurrences": 1
     },
@@ -91,12 +97,6 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Janě Roubalové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Janou Roubalovou",
       "occurrences": 1
     },
     {
@@ -115,18 +115,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Jabloňová 77/14, 400 01 Ústí nad Labem",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "platnost 08/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemně na adresu Jabloňová 77/14, 400 01 Ústí nad Labem",
       "occurrences": 1
     },
     {

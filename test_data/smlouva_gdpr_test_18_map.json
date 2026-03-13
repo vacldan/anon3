@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:07.375998",
+  "generated_at": "2026-03-13T09:56:52.554256",
   "source_file": "smlouva_gdpr_test_18.docx",
   "entities": [
     {
@@ -18,12 +18,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Filipovi Benešovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Filipem Benešem",
       "occurrences": 1
     },
@@ -31,6 +25,12 @@
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Filipa Beneša",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Filipovi Benešovi",
       "occurrences": 1
     },
     {
@@ -103,18 +103,6 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
       "original": "Na Kopci 17/11, 100 00 Praha 10",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "platnost 08/28, CVC",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
-      "original": "písemně na adresu Na Kopci 17/11, 100 00 Praha 10",
       "occurrences": 1
     },
     {

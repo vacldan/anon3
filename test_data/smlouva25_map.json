@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:50:18.443566",
+  "generated_at": "2026-03-13T09:55:57.787739",
   "source_file": "smlouva25.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Karla Voříška",
+      "original": "Karlem Voříškem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Karlem Voříškem",
+      "original": "Karla Voříška",
       "occurrences": 1
     },
     {
@@ -30,13 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Lenky Peškové",
+      "original": "Lenkou Peškovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Lenkou Peškovou",
+      "original": "Lenky Peškové",
       "occurrences": 1
     },
     {
@@ -162,7 +162,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_12]]",
-      "original": "Roman Šimůnek",
+      "original": "Roman Šimůnka",
       "occurrences": 1
     },
     {
@@ -215,6 +215,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_15]]",
+      "original": "Radky Horské",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_16]]",
       "original": "Václav Sýkora",
       "occurrences": 1
@@ -246,18 +252,30 @@
     {
       "type": "EMAIL",
       "label": "[[EMAIL_2]]",
-      "original": "r.simunek@it.cz",
+      "original": "jan.klicha@firma.cz",
       "occurrences": 1
     },
     {
       "type": "EMAIL",
       "label": "[[EMAIL_3]]",
-      "original": "kriz.ondrej@server.cz",
+      "original": "hana.dolezalova@post.cz",
       "occurrences": 1
     },
     {
       "type": "EMAIL",
       "label": "[[EMAIL_4]]",
+      "original": "r.simunek@it.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_5]]",
+      "original": "kriz.ondrej@server.cz",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_6]]",
       "original": "monika.travnickova@office.cz",
       "occurrences": 1
     },
@@ -300,31 +318,31 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "komunikováno ohledně bydliště na adrese U Studánky 14, Zlín",
+      "original": "U Studánky 14, Zlín",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
-      "original": "cz a že jeho trvalé bydliště je Na Pískách 7, Písek",
+      "original": "Na Pískách 7, Písek",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "cz a adresa Květná 33, Litomyšl",
+      "original": "Květná 33, Litomyšl",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_4]]",
-      "original": "a adresa bydliště Polní 9, Třebíč",
+      "original": "Polní 9, Třebíč",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "ky Horské by nebylo možné doložit bydliště Na Kopci 21, Beroun",
+      "original": "Na Kopci 21, Beroun",
       "occurrences": 1
     },
     {

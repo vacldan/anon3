@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:43.892862",
+  "generated_at": "2026-03-13T09:57:29.310138",
   "source_file": "smlouva_gdpr_test_91.docx",
   "entities": [
     {
@@ -12,25 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Arnoštovi Šídlovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Arnoštem Šídlem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Arnošta Šídlo",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Arnošta Šídla",
       "occurrences": 1
     },
     {
@@ -48,13 +30,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Lído Šídlová",
+      "original": "Lídou Šídlovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Lídy Šídlové",
+      "original": "Lídu Šídlováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Lído Šídlová",
       "occurrences": 1
     },
     {
@@ -66,19 +54,37 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Lídou Šídlovou",
+      "original": "Lídy Šídlové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Arnošt Šídl",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Arnoštem Šídlem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Arnošta Šídla",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Arnoštovi Šídlovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Matěj Polák",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Matějovi Polákovi",
       "occurrences": 1
     },
     {
@@ -91,6 +97,12 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Matějem Polákem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Matějovi Polákovi",
       "occurrences": 1
     },
     {
@@ -114,6 +126,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
+      "original": "Blanku Řezníčkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
       "original": "Blanky Řezníčkové",
       "occurrences": 1
     },
@@ -130,33 +148,9 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Lída Šídlováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_8]]",
-      "original": "Lídu Šídlováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Blanka Řezníčkováová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_9]]",
-      "original": "Blanku Řezníčkováovou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Karlova 8, 110 00 Praha 1",
+      "original": "Karlova 8, Praha 1, 110 00",
       "occurrences": 1
     },
     {
@@ -168,49 +162,31 @@
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_3]]",
-      "original": "Riegrova 172/8, 779 00 Olomouc",
-      "occurrences": 1
+      "original": "Riegrova 172/8, 779 00, Olomouc",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
+      "label": "[[ADDRESS_5]]",
       "original": "Technologická 137/30, 160 00 Praha 6",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_6]]",
       "original": "U Nemocnice 191, 128 08 Praha 2",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
+      "label": "[[ADDRESS_7]]",
       "original": "Křenová 59/37, 602 00 Brno",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "Purkyňova 147, 612 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_8]]",
-      "original": "Nádražní 145, 702 00 Ostrava a Riegrova",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "platnost 06/28, CVC",
+      "original": "Purkyňova 147, 612 00 Brno",
       "occurrences": 1
     },
     {

@@ -8,6 +8,7 @@ OSOBY
 [[PERSON_2]]: Veronika Řípová
   - Veroniko Řípová
   - Veronikou Řípovou
+  - Veroniku Řípováovou
   - Veroniky Řípové
   - Veronikě Řípové
 [[PERSON_3]]: Štěpán Křeček
@@ -18,24 +19,18 @@ OSOBY
   - Leoša Popelky
 [[PERSON_5]]: Cecílie Králová
   - Cecílie Králové
+  - Cecílii Králováovou
 [[PERSON_6]]: Leoš Jirsa
   - Leoša Jirsu
   - Leoša Jirsy
-[[PERSON_7]]: Veronika Řípováová
-  - Veroniku Řípováovou
-[[PERSON_8]]: Cecílie Králováová
-  - Cecílii Králováovou
 
 ADDRESS
-[[ADDRESS_1]]: Olbrachtova 1929/62, 140 00 Praha 4
+[[ADDRESS_1]]: Olbrachtova 1929/62, Praha 4, 140 00
 [[ADDRESS_2]]: Vinohradská 249/35, 130 00 Praha 3
-[[ADDRESS_3]]: Palackého 13/13, 301 00 Plzeň
-[[ADDRESS_4]]: Tylova 98/12, 530 02 Pardubice
-[[ADDRESS_5]]: Křenová 109/15, 602 00 Brno
-[[ADDRESS_6]]: Dvořákova 141/20, 370 01 České Budějovice
-[[ADDRESS_7]]: Křenová 104, 602 00 Brno
-[[ADDRESS_8]]: a Palackého 13/13, 301 00 Plzeň
-[[ADDRESS_9]]: platnost 01/29, CVC
+[[ADDRESS_3]]: Palackého 13/13, 301 00, Plzeň
+[[ADDRESS_5]]: Tylova 98/12, 530 02 Pardubice
+[[ADDRESS_6]]: Křenová 109/15, 602 00 Brno
+[[ADDRESS_7]]: Dvořákova 141/20, 370 01 České Budějovice
 
 BANK
 [[BANK_1]]: 320533-7242009543/2700

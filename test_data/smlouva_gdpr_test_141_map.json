@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-09T15:51:04.271911",
+  "generated_at": "2026-03-13T09:56:47.494614",
   "source_file": "smlouva_gdpr_test_141.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Filipovi Hrubešovi",
+      "original": "Filipa Hrubeša",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Filipa Hrubeša",
+      "original": "Filipovi Hrubešovi",
       "occurrences": 1
     },
     {
@@ -48,6 +48,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Michala Krála",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Michale Krále",
       "occurrences": 1
     },
@@ -59,20 +65,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Michala Krála",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Markéta Králová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Markétou Královou",
       "occurrences": 1
     },
     {
@@ -83,8 +77,26 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Markétou Královou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "David Kříž",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Davidem Křížem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Davide Kříže",
       "occurrences": 1
     },
     {
@@ -100,58 +112,22 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Davide Kříže",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Davidem Křížem",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "Na Hradbách 15, 702 00 Ostrava",
-      "occurrences": 1
+      "original": "Na Hradbách 15, 702 00, Ostrava",
+      "occurrences": 3
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_2]]",
       "original": "U Parku 128/23, 779 00 Olomouc",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Pojišťovací 37/20, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "případně písemně na adresu Pojišťovací 37/20, 110 00 Praha 1",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
       "label": "[[ADDRESS_5]]",
-      "original": "písemné doručení na adresu Pojišťovací 37/20, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "Pro účely doručování se používá adresa Pojišťovací 37/20, 110 00 Praha 1",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_7]]",
-      "original": "pro Michalovi Královi a U Parku 128/23, 779 00 Olomouc pro Filipovi Hrubešovi",
-      "occurrences": 1
+      "original": "Pojišťovací 37/20, Praha 1, 110 00",
+      "occurrences": 2
     },
     {
       "type": "ICO",

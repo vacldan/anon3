@@ -20,13 +20,9 @@ OSOBY
   - Renatě Dvořákové
 
 ADDRESS
-[[ADDRESS_1]]: Právnická 12, 110 00 Praha 1
+[[ADDRESS_1]]: Právnická 12, Praha 1, 110 00
 [[ADDRESS_2]]: U Parku 124/3, 779 00 Olomouc
 [[ADDRESS_3]]: Křenová 168/6, 602 00 Brno
-[[ADDRESS_4]]: případně písemně na adresu Křenová 168/6, 602 00 Brno
-[[ADDRESS_5]]: písemné doručení na adresu Křenová 168/6, 602 00 Brno
-[[ADDRESS_6]]: Pro účely doručování se používá adresa Křenová 168/6, 602 00 Brno pro Alešovi Svobodovi a U
-[[ADDRESS_7]]: Parku 124/3, 779 00 Olomouc pro Monikě Vlachové
 
 BANK
 [[BANK_1]]: 924911033/0600

@@ -8,40 +8,31 @@ OSOBY
 [[PERSON_2]]: Jitka Doležalová
   - Jitko Doležalová
   - Jitkou Doležalovou
+  - Jitku Doležalováovou
   - Jitky Doležalové
   - Jitkě Doležalové
 [[PERSON_3]]: Natálie Šimůnková
   - Natálie Šimůnkové
+  - Natálii Šimůnkováovou
   - Natálii Šimůnkové
   - Natálií Šimůnkovou
 [[PERSON_4]]: Darja Holubová
+  - Darju Holubováovou
   - Darjy Holubové
 [[PERSON_5]]: Renata Poláková
+  - Renatu Polákováovou
   - Renaty Polákové
 [[PERSON_6]]: Dobroslav Hrdina
   - Dobroslava Hrdinu
   - Dobroslava Hrdiny
-[[PERSON_7]]: Natálie Šimůnkováová
-  - Natálii Šimůnkováovou
-[[PERSON_8]]: Jitka Doležalováová
-  - Jitku Doležalováovou
-[[PERSON_9]]: Darja Holubováová
-  - Darju Holubováovou
-[[PERSON_10]]: Renata Polákováová
-  - Renatu Polákováovou
 
 ADDRESS
-[[ADDRESS_1]]: Náměstí 1, 500 02 Hradec Králové
+[[ADDRESS_1]]: Náměstí 1, 500 02, Hradec Králové
 [[ADDRESS_2]]: Husova 69/13, 390 02 Tábor
-[[ADDRESS_3]]: Komenského 168/18, 702 00 Ostrava
-[[ADDRESS_4]]: Palackého 13/12, 301 00 Plzeň
-[[ADDRESS_5]]: Žižkova 156, 460 01 Liberec
-[[ADDRESS_6]]: Na Kopci 230/25, 100 00 Praha 10
-[[ADDRESS_7]]: Žižkova 53, 460 01 Liberec
-[[ADDRESS_8]]: Husova 69/13, 390 02 Tábor a Komenského
-[[ADDRESS_9]]: Ostrava
-[[ADDRESS_10]]: platnost 01/28, CVC
-[[ADDRESS_11]]: V Ostravě
+[[ADDRESS_3]]: Komenského 168/18, 702 00, Ostrava
+[[ADDRESS_5]]: Palackého 13/12, 301 00 Plzeň
+[[ADDRESS_6]]: Žižkova 156, 460 01 Liberec
+[[ADDRESS_7]]: Na Kopci 230/25, 100 00 Praha 10
 
 BANK
 [[BANK_1]]: 6620713590/0600
@@ -112,7 +103,6 @@ PHONE
 [[PHONE_4]]: +420757178654
 [[PHONE_5]]: 641 142 758
 [[PHONE_6]]: +420776981484
-[[PHONE_7]]: 182279622
 
 VIN
 [[VIN_1]]: VF1CBVUFB9TD4EV4V

@@ -7,6 +7,7 @@ OSOBY
   - Zdeněkovi Doležalovi
 [[PERSON_2]]: Libuše Marešová
   - Libuše Marešovou
+  - Libuše Marešováovou
   - Libuše Marešové
 [[PERSON_3]]: Přemysl Křeček
   - Přemysla Křečka
@@ -15,28 +16,20 @@ OSOBY
 [[PERSON_4]]: Metoděj Holík
   - Metoděja Holíka
 [[PERSON_5]]: Monika Křečková
+  - Moniku Křečkováovou
   - Moniky Křečkové
 [[PERSON_6]]: Leoš Jirsa
   - Leoša Jirsu
   - Leoša Jirsy
-[[PERSON_7]]: Libuše Marešováová
-  - Libuše Marešováovou
-[[PERSON_8]]: Monika Křečkováová
-  - Moniku Křečkováovou
 
 ADDRESS
-[[ADDRESS_1]]: Vídeňská 800, 140 59 Praha 4
+[[ADDRESS_1]]: Vídeňská 800, Praha 4, 140 59
 [[ADDRESS_2]]: Wolkerova 103/30, 796 01 Prostějov
-[[ADDRESS_3]]: Masarykova 138/34, 500 02 Hradec Králové
-[[ADDRESS_4]]: Sokolovská 219/29, 186 00 Praha 8
-[[ADDRESS_5]]: Palackého 127, 301 00 Plzeň
-[[ADDRESS_6]]: Dvořákova 210/7, 370 01 České Budějovice
-[[ADDRESS_7]]: Jabloňová 138/34, 400 01 Ústí nad Labem
-[[ADDRESS_8]]: Wolkerova 103/30, 796 01 Prostějov a Masarykova
-[[ADDRESS_9]]: Hradec Králové
-[[ADDRESS_10]]: platnost 09/30, CVC
-[[ADDRESS_11]]: v Brně
-[[ADDRESS_12]]: Exekutorský úřad Praha 9, ev
+[[ADDRESS_3]]: Masarykova 138/34, 500 02, Hradec Králové
+[[ADDRESS_5]]: Sokolovská 219/29, 186 00 Praha 8
+[[ADDRESS_6]]: Palackého 127, 301 00 Plzeň
+[[ADDRESS_7]]: Dvořákova 210/7, 370 01 České Budějovice
+[[ADDRESS_8]]: Jabloňová 138/34, 400 01 Ústí nad Labem
 
 BANK
 [[BANK_1]]: 7475138212/2010
