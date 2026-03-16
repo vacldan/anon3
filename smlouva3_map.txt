@@ -1,0 +1,22 @@
+OSOBY
+-----
+[[PERSON_1]]: Martin Horák
+[[PERSON_2]]: Tomáš Černý
+
+ADDRESS
+[[ADDRESS_1]]: U Zámečku 45, 779 00 Olomouc
+Číslo občanského
+[[ADDRESS_2]]: Na Výsluní 122, 736 01 Havířov
+Číslo občanského
+
+BANK
+[[BANK_1]]: 123456789/0100
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 854123/3256
+[[BIRTH_ID_2]]: 901108/4521
+
+DATE
+[[DATE_1]]: 12. 3. 1985
+[[DATE_2]]: 8. 11. 1990
+

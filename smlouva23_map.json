@@ -1,0 +1,1027 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-03-16T21:19:21.332341",
+  "source_file": "smlouva23.docx",
+  "entities": [
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Blanka Veselá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Blanca Veselá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Milena Dvořáčková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Mileněa Dvořáčková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Jaroslava Čechová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_6]]",
+      "original": "Jaroslavěa Čechová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_7]]",
+      "original": "Pavlína Králíčková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_8]]",
+      "original": "Pavlíněa Králíčková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_9]]",
+      "original": "Ludmila Pokorná",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_10]]",
+      "original": "Hedvika Urbanová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_11]]",
+      "original": "Blanka Hrušková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_12]]",
+      "original": "Blanca Hrušková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_13]]",
+      "original": "Milada Řehůřková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_14]]",
+      "original": "Miladěa Řehůřková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_15]]",
+      "original": "Růžena Koutná",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_16]]",
+      "original": "Růženěa Koutná",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_17]]",
+      "original": "Božena Procházková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_18]]",
+      "original": "Boženěa Procházková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_19]]",
+      "original": "Hana Svatošová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_20]]",
+      "original": "Hany Svatošová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_21]]",
+      "original": "Vlasta Doležalová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_22]]",
+      "original": "Vlasty Doležalová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_23]]",
+      "original": "Vlastěa Doležalová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_24]]",
+      "original": "Dana Křížová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_25]]",
+      "original": "Marta Blaštíková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_26]]",
+      "original": "Helga Šimáčková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_27]]",
+      "original": "Helze Šimáčková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_28]]",
+      "original": "Blahoslava Kučerová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_29]]",
+      "original": "Blahoslavěa Kučerová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_30]]",
+      "original": "Ivona Říhová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_31]]",
+      "original": "Renáta Havelová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_32]]",
+      "original": "Renátěa Havelová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_33]]",
+      "original": "Sylva Janoušková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_34]]",
+      "original": "Ela Vrbová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_35]]",
+      "original": "Elea Vrbová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_36]]",
+      "original": "Natálie Vítová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_37]]",
+      "original": "Natálii Vítová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_38]]",
+      "original": "Stáňa Klímová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_39]]",
+      "original": "Dagmara Štolbová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_40]]",
+      "original": "Lenora Pechová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_41]]",
+      "original": "Lenore Pechová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_42]]",
+      "original": "Lenoro Pechová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_43]]",
+      "original": "Sára Čechmanová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_44]]",
+      "original": "Apolena Zoubková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_45]]",
+      "original": "Apoleněa Zoubková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_46]]",
+      "original": "Beata Hlavatá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_47]]",
+      "original": "Krista Hladká",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_48]]",
+      "original": "Kriste Hladká",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_49]]",
+      "original": "Kristo Hladká",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_50]]",
+      "original": "Otilie Rybářová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_51]]",
+      "original": "Otilii Rybářová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_52]]",
+      "original": "Judita Zahradníková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_53]]",
+      "original": "Juditěa Zahradníková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_54]]",
+      "original": "Světlana Šindelářová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_55]]",
+      "original": "Světlaněa Šindelářová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_56]]",
+      "original": "Eliska Novomeská",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_57]]",
+      "original": "Elisec Novomeské",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_58]]",
+      "original": "Eliska Novomesá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_59]]",
+      "original": "Magda Blažejová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_60]]",
+      "original": "Rita Holasová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_61]]",
+      "original": "Žanina Kočová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_62]]",
+      "original": "Žaniny Kočová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_63]]",
+      "original": "Žaniněa Kočová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_64]]",
+      "original": "Justina Valešová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_65]]",
+      "original": "Justiněa Valešová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_66]]",
+      "original": "Jolana Škodová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_67]]",
+      "original": "Jolaněa Škodová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_68]]",
+      "original": "Milica Horňáková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_69]]",
+      "original": "Milici Horňáková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_70]]",
+      "original": "Jarmila Sedlářová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_71]]",
+      "original": "Olívie Švecová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_72]]",
+      "original": "Olívii Švecová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_73]]",
+      "original": "Olíviía Švecová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_74]]",
+      "original": "Dominika Hrebenářová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_75]]",
+      "original": "Blanka Palečková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_76]]",
+      "original": "Blanca Palečková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_77]]",
+      "original": "Žofie Koutová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_78]]",
+      "original": "Žofii Koutová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_79]]",
+      "original": "Viola Mičková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_80]]",
+      "original": "Hana Štroblová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_81]]",
+      "original": "Hany Štroblová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_82]]",
+      "original": "Karina Fialová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_83]]",
+      "original": "Kariněa Fialová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_84]]",
+      "original": "Lívia Králová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_85]]",
+      "original": "Líviie Králová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_86]]",
+      "original": "Líviía Králová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_87]]",
+      "original": "Nela Tůmová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_88]]",
+      "original": "Radmila Hanzlíková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_89]]",
+      "original": "Irena Bártová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_90]]",
+      "original": "Stanislav Bartoš",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_91]]",
+      "original": "Stanislav Bartoše",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_92]]",
+      "original": "Vít Kolář",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_93]]",
+      "original": "Vít Koláře",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_94]]",
+      "original": "Karel Řehoř",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_95]]",
+      "original": "Karl Řehoře",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_96]]",
+      "original": "Karla Řehoř",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_97]]",
+      "original": "Otto Holubec",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_98]]",
+      "original": "Ott Holubec",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_99]]",
+      "original": "Štefan Kubiš",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_100]]",
+      "original": "Štefan Kubiše",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_101]]",
+      "original": "Radim Pazdera",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_102]]",
+      "original": "Radima Pazdera",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_103]]",
+      "original": "Lubomír Šimůnek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_104]]",
+      "original": "Miloš Konečný",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_105]]",
+      "original": "Miloše Konečný",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_106]]",
+      "original": "Zdeněk Havelík",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_107]]",
+      "original": "Zdeňk Havelík",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_108]]",
+      "original": "Jaromír Řezáč",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_109]]",
+      "original": "Jaromír Řezáče",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_110]]",
+      "original": "Čeněk Blažek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_111]]",
+      "original": "Čeňk Blažek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_112]]",
+      "original": "Old Skála",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_113]]",
+      "original": "Oldy Skála",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_114]]",
+      "original": "Leoš Kovařík",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_115]]",
+      "original": "Leoše Kovařík",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_116]]",
+      "original": "Radovan Šindelář",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_117]]",
+      "original": "Radovan Šindeláře",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_118]]",
+      "original": "Marek Holý",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_119]]",
+      "original": "Mark Holý",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_120]]",
+      "original": "Adam Vachoušek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_121]]",
+      "original": "Tomáš Řípa",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_122]]",
+      "original": "Tomáše Řípa",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_123]]",
+      "original": "Vladimír Šebek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_124]]",
+      "original": "Bedřich Horský",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_125]]",
+      "original": "Albín Řehák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_126]]",
+      "original": "Oleg Novák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_127]]",
+      "original": "Radko Veverka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_128]]",
+      "original": "Radk Veverka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_129]]",
+      "original": "Robert Krupiček",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_130]]",
+      "original": "Emil Koudelek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_131]]",
+      "original": "Jindřich Malina",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_132]]",
+      "original": "Vojtěch Straek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_133]]",
+      "original": "Luboš Hronek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_134]]",
+      "original": "Luboše Hronek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_135]]",
+      "original": "Josef Bláha",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_136]]",
+      "original": "Mikuláš Švarc",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_137]]",
+      "original": "Mikuláše Švarc",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_138]]",
+      "original": "Bogdan Čapek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_139]]",
+      "original": "Radko Jančík",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_140]]",
+      "original": "Radk Jančík",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_141]]",
+      "original": "Rostislav Holiš",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_142]]",
+      "original": "Rostislav Holiše",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_143]]",
+      "original": "Dalimil Šenk",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_144]]",
+      "original": "Marek Zástěra",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_145]]",
+      "original": "Mark Zástěra",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_146]]",
+      "original": "Janek Švarný",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_147]]",
+      "original": "Jank Švarný",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_148]]",
+      "original": "Bohdan Žídek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_149]]",
+      "original": "Hynek Kubát",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_150]]",
+      "original": "Hynk Kubát",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_151]]",
+      "original": "Lukáš Čermák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_152]]",
+      "original": "Lukáše Čermák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_153]]",
+      "original": "František Zábranský",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_154]]",
+      "original": "Františk Zábranský",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_155]]",
+      "original": "Ctibor Hanzal",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_156]]",
+      "original": "Marek Ženíšek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_157]]",
+      "original": "Mark Ženíšek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_158]]",
+      "original": "Přemysl Doležal",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_159]]",
+      "original": "Alexej Kratochvíl",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_160]]",
+      "original": "Alexeje Kratochvíl",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_161]]",
+      "original": "Jaroslav Šubrt",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_162]]",
+      "original": "Boris Slavíček",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_163]]",
+      "original": "Borise Slavíček",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_164]]",
+      "original": "Radomír Volf",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_165]]",
+      "original": "Lukáš Křivánek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_166]]",
+      "original": "Lukáše Křivánek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_167]]",
+      "original": "Patrik Černota",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_168]]",
+      "original": "Jaroslav Špinar",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_169]]",
+      "original": "Marek Turek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_170]]",
+      "original": "Mark Turek",
+      "occurrences": 1
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+OSOBY
+-----
+[[PERSON_1]]: Nájemec Pronajímateli
+[[PERSON_2]]: Pronajímatel Nájemci
+[[PERSON_3]]: Položek Stav
+[[PERSON_4]]: Služb Způsob
+[[PERSON_5]]: Elektřin Přepis
+[[PERSON_6]]: Nájemec Nájemec
+[[PERSON_7]]: Plyn Přepis
+[[PERSON_8]]: Převzetí Bytu
+[[PERSON_9]]: Porušení Výše
+[[PERSON_10]]: Nepředání Bytu
+[[PERSON_11]]: Tomáš Konečný
+[[PERSON_12]]: Lucie Doležalová
+[[PERSON_13]]: Hlásit Pronajímateli
+[[PERSON_14]]: Jen Dominik
+[[PERSON_15]]: Sconto Bolton
+
+ADDRESS
+[[ADDRESS_1]]: NP domu na adrese U Stadionu 25, 779 00 Olomouc
+[[ADDRESS_2]]: Čechova 14, 750 02 Přerov
+[[ADDRESS_3]]: Kapucínská 8, 602 00 Brno
+
+BANK
+[[BANK_1]]: 210123456/2010
+[[BANK_2]]: 670987654/5500
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 123456/789
+[[BIRTH_ID_2]]: 987654/321
+
+EMAIL
+[[EMAIL_1]]: tomas.k@example.cz
+[[EMAIL_2]]: lucie.d@example.cz
+
+PHONE
+[[PHONE_1]]: +420 777 111 222
+[[PHONE_2]]: +420 605 333 444
+
