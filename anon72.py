@@ -2099,11 +2099,25 @@ class Anonymizer:
             return f"({prefix} {tag})"
 
         maiden_name_pattern = re.compile(
-            r'\((rozená|rozenou|roz\.|dříve|dřív|původně)\s+([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\)',
+            r'\(?(rozená|rozenou|roz\.|dříve|dřív|původně)\s+([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+)\)?',
             re.UNICODE | re.IGNORECASE
         )
 
-        text = maiden_name_pattern.sub(replace_maiden_name, text)
+        def replace_maiden_name_wrapper(match):
+            prefix = match.group(1)
+            surname = match.group(2)
+            surname_nom = infer_surname_nominative(surname)
+            tag, _ = self._ensure_person_tag("", surname_nom)
+            # Preserve parentheses if present
+            full = match.group(0)
+            if full.startswith('(') and full.endswith(')'):
+                return f"({prefix} {tag})"
+            elif full.startswith('('):
+                return f"({prefix} {tag}"
+            else:
+                return f"{prefix} {tag}"
+
+        text = maiden_name_pattern.sub(replace_maiden_name_wrapper, text)
 
         # ========== FÁZE 3: SAMOSTATNÁ PŘÍJMENÍ ==========
         # Pattern: "Novák uvedl", "pan Dvořák", "Novákovi bylo", "od Maláové"
