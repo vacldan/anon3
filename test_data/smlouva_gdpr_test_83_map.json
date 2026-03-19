@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:40:13.364042",
+  "generated_at": "2026-03-18T14:50:36.749044",
   "source_file": "smlouva_gdpr_test_83.docx",
   "entities": [
     {
@@ -13,6 +13,12 @@
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Michalovi Švestkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Michalem Švestkou",
       "occurrences": 1
     },
     {
@@ -35,12 +41,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Michalem Švestkou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Jana Navrátilová",
       "occurrences": 1
@@ -48,13 +48,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Janou Navrátilovou",
+      "original": "Janu Navrátilováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Janu Navrátilováovou",
+      "original": "Janě Navrátilové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Janou Navrátilovou",
       "occurrences": 1
     },
     {
@@ -71,14 +77,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Janě Navrátilové",
+      "label": "[[PERSON_3]]",
+      "original": "Filip Zíka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Filip Zíka",
+      "original": "Filipovi Zíkovi",
       "occurrences": 1
     },
     {
@@ -90,7 +96,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Filipovi Zíkovi",
+      "original": "Filipem Zíkou",
       "occurrences": 1
     },
     {
@@ -108,13 +114,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Ondřeja Popelku",
+      "original": "Ondřeja Popelky",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Ondřeja Popelky",
+      "original": "Ondřeja Popelku",
       "occurrences": 1
     },
     {
@@ -126,13 +132,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Anežku Holubováovou",
+      "original": "Anežky Holubové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Anežky Holubové",
+      "original": "Anežku Holubováovou",
       "occurrences": 1
     },
     {
@@ -148,21 +154,9 @@
       "occurrences": 1
     },
     {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Filip Zíký",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_7]]",
-      "original": "Filipem Zíkou",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "110 00, Praha 1",
+      "original": "Václavské nám. 12, 110 00 Praha 1",
       "occurrences": 1
     },
     {

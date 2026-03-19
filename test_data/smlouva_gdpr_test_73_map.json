@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:17.287311",
+  "generated_at": "2026-03-18T14:50:22.270476",
   "source_file": "smlouva_gdpr_test_73.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Hugoem Hájkem",
+      "original": "Hugoa Hájka",
       "occurrences": 1
     },
     {
@@ -24,19 +24,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Hugoa Hájka",
+      "original": "Hugoovi Hájkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Hugoovi Hájkovi",
+      "original": "Hugoem Hájkem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Jana Pospíšilová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Janou Pospíšilovou",
       "occurrences": 1
     },
     {
@@ -65,12 +71,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Janou Pospíšilovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Adéla Řípová",
       "occurrences": 1
@@ -78,13 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Adélou Řípovou",
+      "original": "Adély Řípové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Adély Řípové",
+      "original": "Adélou Řípovou",
       "occurrences": 1
     },
     {
@@ -120,13 +120,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Moniky Havličkové",
+      "original": "Moniku Havličkováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Moniku Havličkováovou",
+      "original": "Moniky Havličkové",
       "occurrences": 1
     },
     {
@@ -138,13 +138,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Erika Růžičku",
+      "original": "Erika Růžičky",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Erika Růžičky",
+      "original": "Erika Růžičku",
       "occurrences": 1
     },
     {

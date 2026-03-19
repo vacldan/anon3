@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:54:48.121617",
+  "generated_at": "2026-03-18T14:44:19.361850",
   "source_file": "smlouva0.docx",
   "entities": [
     {
@@ -60,6 +60,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
+      "original": "Evě Horváthové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Horváthová",
       "occurrences": 1
     },
@@ -71,12 +77,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Evě Horváthové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_6]]",
       "original": "Lukáš Procházka",
       "occurrences": 1
@@ -84,13 +84,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Procházkovi",
+      "original": "Procházka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Procházka",
+      "original": "Procházkovi",
       "occurrences": 1
     },
     {
@@ -120,13 +120,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Malou",
+      "original": "Kateřinou Malou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Kateřinou Malou",
+      "original": "Malou",
       "occurrences": 1
     },
     {
@@ -234,13 +234,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_18]]",
-      "original": "Nový",
+      "original": "Novému",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_18]]",
-      "original": "Novému",
+      "original": "Nový",
       "occurrences": 1
     },
     {

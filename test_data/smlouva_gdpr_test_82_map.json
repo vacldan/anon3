@@ -1,12 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:23.431194",
+  "generated_at": "2026-03-18T14:50:35.266710",
   "source_file": "smlouva_gdpr_test_82.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Dobroslav Turek",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Dobroslava Turka",
       "occurrences": 1
     },
     {
@@ -29,26 +35,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Dobroslava Turka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Eliška Křížová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Eliškou Křížovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Eliškě Křížové",
       "occurrences": 1
     },
     {
@@ -66,6 +54,18 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Eliškě Křížové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Eliškou Křížovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Eliško Křížová",
       "occurrences": 1
     },
@@ -78,13 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Pavla Havličky",
+      "original": "Pavla Havličku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Pavla Havličku",
+      "original": "Pavla Havličky",
       "occurrences": 1
     },
     {
@@ -108,13 +108,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Darjy Turkové",
+      "original": "Darju Turkováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Darju Turkováovou",
+      "original": "Darjy Turkové",
       "occurrences": 1
     },
     {
@@ -126,13 +126,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Alžbětu Řezníčkováovou",
+      "original": "Alžběty Řezníčkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Alžběty Řezníčkové",
+      "original": "Alžbětu Řezníčkováovou",
       "occurrences": 1
     },
     {

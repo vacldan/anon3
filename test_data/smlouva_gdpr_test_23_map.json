@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:53.965348",
+  "generated_at": "2026-03-18T14:49:38.543973",
   "source_file": "smlouva_gdpr_test_23.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Moniko Svobodová",
+      "original": "Monikě Svobodové",
       "occurrences": 1
     },
     {
@@ -24,13 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Monikě Svobodové",
+      "original": "Monikou Svobodovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Monikou Svobodovou",
+      "original": "Moniko Svobodová",
       "occurrences": 1
     },
     {
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Matějem Řezníčkem",
+      "original": "Matěje Řezníčku",
       "occurrences": 1
     },
     {
@@ -60,13 +60,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Matěje Řezníčku",
+      "original": "Matějem Řezníčkem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Filip Král",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Filipovi Královi",
       "occurrences": 1
     },
     {
@@ -79,12 +85,6 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Filipa Krála",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Filipovi Královi",
       "occurrences": 1
     },
     {
@@ -232,8 +232,8 @@
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_1]]",
+      "type": "PASSPORT",
+      "label": "[[PASSPORT_1]]",
       "original": "389404483",
       "occurrences": 1
     },
@@ -247,12 +247,6 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
       "original": "2AC 1981",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0GA2740",
       "occurrences": 1
     },
     {
@@ -289,6 +283,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "0D:1E:2B:2B:CC:85",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0GA274034",
       "occurrences": 1
     }
   ]

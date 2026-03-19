@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:35.920662",
+  "generated_at": "2026-03-18T14:49:04.414696",
   "source_file": "smlouva_gdpr_test_116.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alešovi Novákovi",
+      "original": "Aleša Nováka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Aleša Nováka",
+      "original": "Aleše Nováke",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Aleše Nováke",
+      "original": "Alešovi Novákovi",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Moniko Svobodová",
+      "original": "Monikě Svobodové",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Monikě Svobodové",
+      "original": "Monikou Svobodovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Monikou Svobodovou",
+      "original": "Moniko Svobodová",
       "occurrences": 1
     },
     {
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucie Dvořákové",
+      "original": "Lucie Dvořákovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucie Dvořákovou",
+      "original": "Lucie Dvořákové",
       "occurrences": 1
     },
     {
@@ -90,13 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Markem Holíkem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Markovi Holíkovi",
+      "original": "Marku Holíke",
       "occurrences": 1
     },
     {
@@ -108,7 +102,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Marku Holíke",
+      "original": "Markovi Holíkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Markem Holíkem",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0GA3110",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4455 6835 9091 2311",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "A9:88:77:BE:4C:02",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0GA311027",
       "occurrences": 1
     }
   ]

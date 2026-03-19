@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-12T22:16:51.775074",
+  "generated_at": "2026-03-18T14:44:29.530303",
   "source_file": "smlouva10.docx",
   "entities": [
     {
@@ -174,7 +174,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
-      "original": "Vráno",
+      "original": "Vránovi",
       "occurrences": 1
     },
     {
@@ -186,7 +186,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
-      "original": "Vránovi",
+      "original": "Vráno",
       "occurrences": 1
     },
     {
@@ -318,13 +318,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_37]]",
-      "original": "Nové",
+      "original": "Petra Nového",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_37]]",
-      "original": "Petra Nového",
+      "original": "Nové",
       "occurrences": 1
     },
     {

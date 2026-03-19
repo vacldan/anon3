@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:36.399443",
+  "generated_at": "2026-03-18T14:49:05.342543",
   "source_file": "smlouva_gdpr_test_117.docx",
   "entities": [
     {
@@ -18,6 +18,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Filipovi Vlachovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Filipe Vlache",
       "occurrences": 1
     },
@@ -29,20 +35,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Filipovi Vlachovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Tomáš Beneš",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Tomášovi Benešovi",
       "occurrences": 1
     },
     {
@@ -60,6 +54,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Tomášovi Benešovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Tomáši Beneše",
       "occurrences": 1
     },
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Adélou Malíkovou",
+      "original": "Adélě Malíkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Adélě Malíkové",
+      "original": "Adélou Malíkovou",
       "occurrences": 1
     },
     {
@@ -90,25 +90,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Ondřejem Malíkem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Ondřejovi Malíkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Ondřeje Malíke",
+      "original": "Ondřeja Malíka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Ondřeja Malíka",
+      "original": "Ondřejem Malíkem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Ondřeje Malíke",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0KA9260",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4875 5122 2639 8565",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "8D:83:60:4E:D1:72",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0KA926085",
       "occurrences": 1
     }
   ]

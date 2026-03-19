@@ -1,24 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:51.270788",
+  "generated_at": "2026-03-18T14:49:33.759277",
   "source_file": "smlouva_gdpr_test_15.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Monika Vaňková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Moniky Vaňkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Monikou Vaňkovou",
       "occurrences": 1
     },
     {
@@ -35,8 +23,26 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Moniky Vaňkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Monikou Vaňkovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Petra Malíková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Petro Malíková",
       "occurrences": 1
     },
     {
@@ -48,19 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Petrě Malíkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Petry Malíkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Petro Malíková",
+      "original": "Petrě Malíkové",
       "occurrences": 1
     },
     {
@@ -72,7 +72,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Aleša Turka",
+      "original": "Alešem Turkem",
       "occurrences": 1
     },
     {
@@ -84,7 +84,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Alešem Turkem",
+      "original": "Aleša Turka",
       "occurrences": 1
     },
     {
@@ -232,8 +232,8 @@
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_1]]",
+      "type": "PASSPORT",
+      "label": "[[PASSPORT_1]]",
       "original": "828986090",
       "occurrences": 1
     },
@@ -247,12 +247,6 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
       "original": "3AA 5617",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0FA9485",
       "occurrences": 1
     },
     {
@@ -289,6 +283,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "50:0F:2B:06:78:B4",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0FA948549",
       "occurrences": 1
     }
   ]

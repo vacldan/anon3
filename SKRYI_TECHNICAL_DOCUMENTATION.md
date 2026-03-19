@@ -1,4 +1,4 @@
-# SKRYI Document Suite - Technická dokumentace v3.4
+# SKRYI Document Suite - Technická dokumentace v3.1
 
 ## Systém pro morfologicky inteligentní anonymizaci dokumentů v inflektivních jazycích
 
@@ -10,7 +10,7 @@
 **SKRYI Document Suite** - Offline anonymizační systém pro GDPR compliance
 
 ## 1.2 Verze
-**3.3.0** (Production Ready)
+**3.1.0** (Production Ready)
 
 ## 1.3 Účel
 Automatická anonymizace osobních údajů v dokumentech (DOCX, PDF, obrázky) s podporou českého a slovenského jazyka včetně morfologických variant (skloňování). Systém je navržen pro **plně offline provoz** - žádná data neopouštějí zařízení uživatele.
@@ -28,6 +28,10 @@ Automatická anonymizace osobních údajů v dokumentech (DOCX, PDF, obrázky) s
 - **Rozšířený blacklist** - 350+ českých slov chráněných před falešnou detekcí (tituly, profese, právní role)
 - **6 specializovaných post-passů** - záchyt izolovaných křestních jmen, osiřelých příjmení, rodných jmen, titulovaných osob, firemních jmen a rodných čísel jako var. symbolů
 - **Kompletní podpora mužských příjmení na -a** - Fiala, Svoboda, Malina, Neruda atd. (vokativ, instrumentál, akuzativ, genitiv, dativ) s koordinovanými kmenových sad
+- **Kontextová klasifikace telefonů** - variabilní symboly (VS:) a čísla pojištěnce nejsou chybně tagována jako PHONE díky kontextové analýze okolního textu
+- **Vokativní deduplikace** - ženské vokativy (Petro, Martino, Jano) jsou správně rozpoznány jako tvary ženských jmen a sloučeny s nominativem (Petra, Martina, Jana)
+- **Rozšířený non-person blacklist** - automobilové značky (Hyundai Tucson), adresy s přívlastky (Brno Přechodný), projektové role a gymnázia jsou chráněny před falešnou PERSON detekcí
+- **Kontextová filtrace SPZ** - čísla protokolů a lékařských záznamů (NB2004) nejsou chybně tagována jako LICENSE_PLATE
 
 ## 1.5 Oblast techniky
 Vynález se týká oblasti zpracování přirozeného jazyka (NLP), konkrétně automatizované anonymizace osobních údajů v textových dokumentech. Technologie je primárně určena pro **inflektivní jazyky** (čeština, slovenština, polština, ruština), kde se slova skloňují podle gramatických pádů.
@@ -168,7 +172,9 @@ SKRYI Document Suite/
 │  │  └─ Rodná čísla jako variabilní symboly              │
 │  ├─ Deduplikace adres (sloučení podmnožin)              │
 │  ├─ Deduplikace telefonů (+420 prefix)                  │
-│  └─ Odstranění PHONE/ID_CARD překryvů                   │
+│  ├─ Odstranění PHONE/ID_CARD/INSURANCE_ID překryvů       │
+│  ├─ Kontextová klasifikace PHONE (VS:, pojištěnce)       │
+│  └─ Vokativní deduplikace osob (-o → -a sloučení)        │
 └───────────────────────┬─────────────────────────────────┘
                         │
                         ▼
@@ -353,6 +359,15 @@ typo_dictionary = {
     'prochzka': 'procházka'
 }
 ```
+
+**FÁZE 5: Vokativní deduplikace (NOVÉ v3.1)**
+```
+IF first_A ends with 'o' AND first_A[:-1] + 'a' == first_B THEN
+    // Petro + Petra, Martino + Martina, Jano + Jana
+    IF surnames share common root (male/female pair) THEN
+        MERGE(A → B)  // Sloučit pod ženský nominativ
+```
+Řeší problém, kdy ženské vokativy (Petro! Martino!) byly vytvářeny jako nové mužské osoby.
 
 **Výsledek:**
 ```
@@ -540,6 +555,39 @@ Po hlavní detekci a deduplikaci probíhá **6 dalších průchodů** dokumentem
 | `_postpass_birth_id_as_var_symbol` | RČ jako var. symbol | `var. symbol 6005301111` |
 
 **Pořadí je klíčové** – post-passy běží AFTER deduplikace, BEFORE uložení dokumentu.
+
+## 4.11 INOVACE #10: Kontextová klasifikace telefonních čísel
+
+### Problém:
+9-10místná čísla pojištěnce (z kontextu "Číslo pojištěnce:") a variabilní symboly (z kontextu "VS:") byla chybně klasifikována jako PHONE.
+
+### Řešení: Kontextová analýza okolního textu
+```
+FUNCTION replace_phone(match):
+    phone_val = match.group(1)
+    context_before = text[max(0, start-40):start]
+
+    // NEtaguj jako PHONE pokud kontextem je:
+    IF context matches "VS|variabilní symbol|číslo pojištěnce|pojišťovna" THEN
+        RETURN original  // Ponechej bez tagu
+
+    // NEtaguj pokud 10-digit číslo už existuje jako INSURANCE_ID nebo BIRTH_ID
+    IF len(digits) == 10 AND digits IN existing INSURANCE_ID/BIRTH_ID THEN
+        RETURN original
+```
+
+### Post-processing:
+`_remove_phone_idcard_overlap()` rozšířena o kontrolu `INSURANCE_ID` (dříve jen `ID_CARD` a `BIRTH_ID`).
+
+## 4.12 INOVACE #11: Kontextová filtrace SPZ/License Plates
+
+### Problém:
+Čísla protokolů, lékařských záznamů a inventárních čísel (formát `[A-Z]{2}\d{4}`, např. NB2004) byla chybně tagována jako SPZ.
+
+### Řešení:
+Přidána kontextová kontrola v `replace_license_plate()`:
+- Pokud kontext naznačuje protokol/záznam/inventární číslo → NEtaguj jako SPZ
+- Specifický filtr pro prefix "NB" v kontextu nemocnice/pacienta/vyšetření
 
 ---
 
@@ -763,7 +811,7 @@ del anon72.py
 # 7. Build Windows installer
 npm run dist
 
-# Výsledek: dist/SKRYI-Setup-3.3.0.exe
+# Výsledek: dist/SKRYI-Setup-3.0.0.exe
 ```
 
 **Poznámka k Nuitka buildu:** Při kompilaci `anonymize_cli.exe` je nutné zahrnout balíček `fpdf2` pro generování PDF reportů: `--include-package=fpdf`.
@@ -774,7 +822,7 @@ npm run dist
 
 ## 10.1 Instalace
 
-1. Spusťte `SKRYI-Setup-3.3.0.exe`
+1. Spusťte `SKRYI-Setup-3.0.0.exe`
 2. Odsouhlaste licenční podmínky (EULA)
 3. Zvolte instalační složku
 4. Dokončete instalaci
@@ -846,7 +894,7 @@ Při každé anonymizaci se automaticky generuje PDF report (`_report.pdf`) obsa
 | **Kanonizace** | Žádná | Automatická inference |
 | **Deduplikace** | Základní (regex) | 4-fázová inteligentní |
 | **Validace** | Žádná | Post-processing kontrola |
-| **Přesnost** | 60-70% | **98-99%** (236/236 smluv CLEAN) |
+| **Přesnost** | 60-70% | **98-99%** (241 smluv testováno) |
 | **Zpětná de-anonymizace** | Nekonzistentní | Jednotná mapa |
 | **Offline provoz** | Většinou cloud | 100% offline |
 | **Typy PII** | 5-8 kategorií | **34 kategorií** |
@@ -854,6 +902,7 @@ Při každé anonymizaci se automaticky generuje PDF report (`_report.pdf`) obsa
 | **Audit trail** | Žádný | PDF certifikát (SHA-256) |
 | **Hromadné zpracování** | Ruční | Automatický watcher |
 | **Blacklist** | Základní | 350+ slov s českými deklinacemi |
+| **Kontextová klasifikace** | Žádná | PHONE/INSURANCE_ID/VS kontextová analýza |
 
 ---
 
@@ -977,8 +1026,8 @@ Počítačový program obsahující instrukce pro provedení způsobu podle nár
 
 **Výrobce:** Nixminds s.r.o.
 **Email:** info@nixminds.com
-**Verze dokumentace:** 3.4.0
-**Datum:** 24. února 2026
+**Verze dokumentace:** 3.1.0
+**Datum:** 18. března 2026
 **Klasifikace:** G06F 40/00 (zpracování přirozeného jazyka), G06F 21/62 (ochrana osobních údajů)
 
 *© 2026 Nixminds s.r.o. Všechna práva vyhrazena.*

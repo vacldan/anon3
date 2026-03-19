@@ -76,17 +76,19 @@ OSOBY
 [[PERSON_59]]: Libuše Vaňková
 [[PERSON_60]]: Oldřich Kolman
 [[PERSON_61]]: Edita Urbanová
-[[PERSON_62]]: Klaudie Horníková
-[[PERSON_63]]: Ferdinand Bílý
-[[PERSON_64]]: Regína Baštová
-[[PERSON_65]]: Pankrác Kolman
-[[PERSON_66]]: Nora Majerová
-[[PERSON_67]]: Bonifác Tesařa
+[[PERSON_62]]: Medard Pankrác
+[[PERSON_63]]: Kvido Bonifác
+[[PERSON_64]]: Klaudie Horníková
+[[PERSON_65]]: Ferdinand Bílý
+[[PERSON_66]]: Regína Baštová
+[[PERSON_67]]: Pankrác Kolman
+[[PERSON_68]]: Nora Majerová
+[[PERSON_69]]: Bonifác Tesařa
   - Bonifác Tesař
-[[PERSON_68]]: Amálie Šimůnková
-[[PERSON_69]]: Kvido Schneider
-[[PERSON_70]]: Doubravka Váňová
-[[PERSON_71]]: Slavomír Heřman
+[[PERSON_70]]: Amálie Šimůnková
+[[PERSON_71]]: Kvido Schneider
+[[PERSON_72]]: Doubravka Váňová
+[[PERSON_73]]: Slavomír Heřman
 
 ADDRESS
 [[ADDRESS_1]]: Lázeňská 145/8, Teplice 415 01
@@ -210,7 +212,7 @@ ID_CARD
 [[ID_CARD_1]]: 345678901
 [[ID_CARD_2]]: KL456789
 [[ID_CARD_3]]: MN890123
-[[ID_CARD_4]]: OP123456
+[[ID_CARD_4]]: 123456
 
 PHONE
 [[PHONE_1]]: +420 602 147 258

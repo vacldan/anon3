@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:06.587956",
+  "generated_at": "2026-03-18T14:47:51.854073",
   "source_file": "smlouva29.docx",
   "entities": [
     {
@@ -192,13 +192,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
-      "original": "Cecílii Novou",
+      "original": "Nové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
-      "original": "Nové",
+      "original": "Cecílii Novou",
       "occurrences": 1
     },
     {
@@ -462,66 +462,78 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_62]]",
-      "original": "Klaudie Horníková",
+      "original": "Medard Pankrác",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_63]]",
-      "original": "Ferdinand Bílý",
+      "original": "Kvido Bonifác",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_64]]",
-      "original": "Regína Baštová",
+      "original": "Klaudie Horníková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_65]]",
-      "original": "Pankrác Kolman",
+      "original": "Ferdinand Bílý",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_66]]",
-      "original": "Nora Majerová",
+      "original": "Regína Baštová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_67]]",
-      "original": "Bonifác Tesařa",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_67]]",
-      "original": "Bonifác Tesař",
+      "original": "Pankrác Kolman",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_68]]",
-      "original": "Amálie Šimůnková",
+      "original": "Nora Majerová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_69]]",
-      "original": "Kvido Schneider",
+      "original": "Bonifác Tesařa",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_69]]",
+      "original": "Bonifác Tesař",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_70]]",
-      "original": "Doubravka Váňová",
+      "original": "Amálie Šimůnková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_71]]",
+      "original": "Kvido Schneider",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_72]]",
+      "original": "Doubravka Váňová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_73]]",
       "original": "Slavomír Heřman",
       "occurrences": 1
     },
@@ -1134,7 +1146,7 @@
     {
       "type": "ID_CARD",
       "label": "[[ID_CARD_4]]",
-      "original": "OP123456",
+      "original": "123456",
       "occurrences": 1
     },
     {

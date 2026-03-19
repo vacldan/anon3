@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:08.494711",
+  "generated_at": "2026-03-18T14:50:05.007825",
   "source_file": "smlouva_gdpr_test_60.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpáne Havličko",
+      "original": "Štěpánem Havličkou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpánovi Havličkovi",
+      "original": "Štěpáne Havličko",
       "occurrences": 1
     },
     {
@@ -30,13 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpána Havličky",
+      "original": "Štěpánovi Havličkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpánem Havličkou",
+      "original": "Štěpána Havličky",
       "occurrences": 1
     },
     {
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Alice Novákováovou",
+      "original": "Alice Nováková",
       "occurrences": 1
     },
     {
@@ -66,13 +66,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Alice Nováková",
+      "original": "Alice Novákováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Vojtěch Pospíšil",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Vojtěcha Pospíšila",
       "occurrences": 1
     },
     {
@@ -85,12 +91,6 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Vojtěchem Pospíšilem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Vojtěcha Pospíšila",
       "occurrences": 1
     },
     {

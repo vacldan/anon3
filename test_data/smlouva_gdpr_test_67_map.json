@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:13.336324",
+  "generated_at": "2026-03-18T14:50:14.575613",
   "source_file": "smlouva_gdpr_test_67.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Přemyslem Kratochvílem",
+      "original": "Přemysle Kratochvíle",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Přemyslovi Kratochvílovi",
+      "original": "Přemyslem Kratochvílem",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Přemysle Kratochvíle",
+      "original": "Přemyslovi Kratochvílovi",
       "occurrences": 1
     },
     {
@@ -54,12 +54,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Blanku Malíkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Blankě Malíkové",
       "occurrences": 1
     },
@@ -67,6 +61,12 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Blanky Malíkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Blanku Malíkováovou",
       "occurrences": 1
     },
     {
@@ -84,13 +84,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Tomášem Dvořákem",
+      "original": "Tomášovi Dvořákovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Tomášovi Dvořákovi",
+      "original": "Tomášem Dvořákem",
       "occurrences": 1
     },
     {
@@ -120,13 +120,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Alice Havličkováovou",
+      "original": "Alice Havličková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Alice Havličková",
+      "original": "Alice Havličkováovou",
       "occurrences": 1
     },
     {

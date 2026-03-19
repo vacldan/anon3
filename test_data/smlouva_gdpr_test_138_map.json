@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:45.904148",
+  "generated_at": "2026-03-18T14:49:23.325499",
   "source_file": "smlouva_gdpr_test_138.docx",
   "entities": [
     {
@@ -18,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michalem Hrubešem",
+      "original": "Michala Hrubeša",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michala Hrubeša",
+      "original": "Michalem Hrubešem",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavla Nováka",
+      "original": "Pavlovi Novákovi",
       "occurrences": 1
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavlovi Novákovi",
+      "original": "Pavla Nováka",
       "occurrences": 1
     },
     {
@@ -90,25 +90,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Davidem Roubalem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Davidovi Roubalovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Davida Roubala",
+      "original": "Davidem Roubalem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Davide Roubale",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Davida Roubala",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0GA4807",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4688 4556 6616 1502",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "D7:64:B7:8E:B5:59",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0GA480742",
       "occurrences": 1
     }
   ]

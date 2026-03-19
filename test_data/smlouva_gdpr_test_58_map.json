@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:07.137175",
+  "generated_at": "2026-03-18T14:50:02.383672",
   "source_file": "smlouva_gdpr_test_58.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Romane Křečku",
+      "original": "Romanovi Křečkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Romanovi Křečkovi",
+      "original": "Romane Křečku",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ello Roubalová",
+      "original": "Ellě Roubalové",
       "occurrences": 1
     },
     {
@@ -54,19 +54,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Elly Roubalové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Ellu Roubalováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ellě Roubalové",
+      "original": "Elly Roubalové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Ello Roubalová",
       "occurrences": 1
     },
     {
@@ -90,13 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Markétu Pazderováovou",
+      "original": "Markéty Pazderové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Markéty Pazderové",
+      "original": "Markétu Pazderováovou",
       "occurrences": 1
     },
     {
@@ -120,13 +120,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Brunoa Tesařa",
+      "original": "Bruno Tesař",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Bruno Tesař",
+      "original": "Brunoa Tesařa",
       "occurrences": 1
     },
     {
@@ -138,13 +138,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Lucie Jirsové",
+      "original": "Lucii Jirsováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Lucii Jirsováovou",
+      "original": "Lucie Jirsové",
       "occurrences": 1
     },
     {

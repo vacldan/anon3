@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:14.070546",
+  "generated_at": "2026-03-18T14:50:16.094582",
   "source_file": "smlouva_gdpr_test_68.docx",
   "entities": [
     {
@@ -18,12 +18,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Zdeněkem Doležalem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Zdeněkovi Doležalovi",
       "occurrences": 1
     },
@@ -31,6 +25,12 @@
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Zdeněke Doležale",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Zdeněkem Doležalem",
       "occurrences": 1
     },
     {
@@ -66,7 +66,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Přemyslovi Křečkovi",
+      "original": "Přemysla Křečka",
       "occurrences": 1
     },
     {
@@ -78,7 +78,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Přemysla Křečka",
+      "original": "Přemyslovi Křečkovi",
       "occurrences": 1
     },
     {
@@ -102,13 +102,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Moniku Křečkováovou",
+      "original": "Moniky Křečkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Moniky Křečkové",
+      "original": "Moniku Křečkováovou",
       "occurrences": 1
     },
     {

@@ -1,0 +1,21 @@
+Dobrý den [Jméno],
+
+oslovuji Vás, protože se věnujete [oblast]. Věřím, že bezpečné nakládání s citlivými údaji je pro Vás prioritou, ale manuální anonymizace dokumentů je nesmírně zdlouhavá práce, která odvádí pozornost od důležitějších úkolů.
+
+Vedle své praxe v IT jsem vyvinul SKRYI Document Suite – nástroj, který řeší to, v čem globální AI selhávají: českou morfologii.
+
+V čem je SKRYI jiné:
+
+100% Offline (Zero-Trust): Dokumenty nikdy neopustí Vaše zařízení. To je klíčové např. pro zachování advokátního tajemství či ochranu pacientských dat.
+
+Chápe český jazyk: Automaticky identifikuje jména ve všech 7 pádech (Janu Novákovi, s Janem Novákem...) a sjednotí je pod jeden štítek.
+
+Rychlost: Běžnou smlouvu zprocesuje do 5 sekund s přesností 98–99 %. Detekuje 34 typů údajů (včetně RČ, IBAN či SPZ).
+
+V příloze posílám stručný one-pager s technickými detaily.
+
+Dávalo by Vám smysl zkusit si SKRYI na Vašich reálných dokumentech v rámci bezplatného 14denního trialu? Stačí mi jen odpovědět na tuto zprávu a pošlu Vám instrukce.
+
+Přeji úspěšný den,
+
+Daniel Václav

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:18.720869",
+  "generated_at": "2026-03-18T14:50:25.164614",
   "source_file": "smlouva_gdpr_test_75.docx",
   "entities": [
     {
@@ -18,12 +18,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ignáce Holíke",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Ignácovi Holíkovi",
       "occurrences": 1
     },
@@ -35,8 +29,20 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Ignáce Holíke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Hedvika Malíková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Hedvikě Malíkové",
       "occurrences": 1
     },
     {
@@ -54,19 +60,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Hedviku Malíkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Hedvikě Malíkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Hedviky Malíkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Hedviku Malíkováovou",
       "occurrences": 1
     },
     {
@@ -120,13 +120,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Daliborovi Rendlovi",
+      "original": "Dalibora Rendla",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Dalibora Rendla",
+      "original": "Daliborovi Rendlovi",
       "occurrences": 1
     },
     {

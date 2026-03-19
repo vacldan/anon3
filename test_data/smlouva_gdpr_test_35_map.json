@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:57.520341",
+  "generated_at": "2026-03-18T14:49:44.560048",
   "source_file": "smlouva_gdpr_test_35.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Adamu Královi",
+      "original": "Adamem Králem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Adamem Králem",
+      "original": "Adamu Královi",
       "occurrences": 1
     },
     {
@@ -42,13 +42,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Janě Procházkové",
+      "original": "Jany Procházkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Jany Procházkové",
+      "original": "Janě Procházkové",
       "occurrences": 1
     },
     {

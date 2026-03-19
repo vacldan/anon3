@@ -1,12 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:53.703326",
+  "generated_at": "2026-03-18T14:49:38.076355",
   "source_file": "smlouva_gdpr_test_22.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Pavel Hrubeš",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Pavle Hrubeše",
       "occurrences": 1
     },
     {
@@ -29,12 +35,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Pavle Hrubeše",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Pavel Svoboda",
       "occurrences": 1
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavle Svobodo",
+      "original": "Pavla Svobody",
       "occurrences": 1
     },
     {
@@ -54,25 +54,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavlem Svobodou",
+      "original": "Pavle Svobodo",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavla Svobody",
+      "original": "Pavlem Svobodou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Roman Beneš",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Romanem Benešem",
       "occurrences": 1
     },
     {
@@ -85,6 +79,12 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Romanovi Benešovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Romanem Benešem",
       "occurrences": 1
     },
     {
@@ -232,8 +232,8 @@
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_1]]",
+      "type": "PASSPORT",
+      "label": "[[PASSPORT_1]]",
       "original": "185234674",
       "occurrences": 1
     },
@@ -247,12 +247,6 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
       "original": "5AZ 7562",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0FA3461",
       "occurrences": 1
     },
     {
@@ -289,6 +283,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "AE:71:8F:DF:41:95",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0FA346110",
       "occurrences": 1
     }
   ]

@@ -1,7 +1,7 @@
 # SKRYI Document Suite - Technical Documentation
 
-> **Version:** 3.3.0
-> **Last Updated:** 2026-03-13
+> **Version:** 3.1.0
+> **Last Updated:** 2026-03-18
 > **Audience:** Senior developers, DevOps engineers, maintainers
 
 ---
@@ -243,7 +243,8 @@ anonymize_docx(input, output, map_json, map_txt, pdf_report)
   ├── 3. Post-processing:
   │     ├── _fix_canonical_names_not_in_document()  # Remove phantom inferences
   │     ├── _fix_gender_mismatches()                # Fix cross-gender pairs
-  │     └── _deduplicate_persons()                  # Merge duplicate persons
+  │     ├── _deduplicate_persons()                  # Merge duplicate persons
+  │     ├── Vocative dedup: merges -o vocative phantoms (Petro→Petra)
   │           └── Returns tag_remap dict → applied to all paragraphs/tables
   │
   ├── 4. Post-pass pipeline (6 passes, on full document):
@@ -326,6 +327,7 @@ This is the most complex part of the engine. It handles:
    - Phase 1: Exact match (same first+last, different tag)
    - Phase 2: Surname-only match (one has first name, other doesn't)
    - Phase 3: Cross-gender match (Novák ↔ Nováková if same-person context)
+   - Phase: Vocative pairs - merges feminine vocative forms ending in -o (Petro, Martino) with their nominative counterparts (Petra, Martina) when surnames share a common root.
    - Returns `tag_remap` dict for document-wide tag replacement
 
 5. **Standalone first-name post-pass** (`_postpass_standalone_firstnames`):
@@ -337,7 +339,7 @@ This is the most complex part of the engine. It handles:
      - Longer names (4+ chars: Jakub, Barbora, Petra) replaced broadly
      - Blacklist of common Czech words that collide with name forms (`nová`, `město`, `stav`, `server`, `svědci`, etc.)
      - Never replaces inside existing `[[...]]` tags
-   - Typical impact: catches standalone first names across 236 test contracts
+   - Typical impact: catches standalone first names across 241 test contracts
 
 6. **Orphan surname absorption after person tags** (`_postpass_orphan_surname_after_tag`):
    - Handles cases where a **multi-word first name** (e.g. `Mai Linh Nguyenová`) is partially anonymized and the surname fragment remains right after a `[[PERSON_N]]` tag.
@@ -404,12 +406,29 @@ This is the most complex part of the engine. It handles:
     - **Double-suffix detection**: Priority 0 rule in the `-ou` handler detects doubled `-ová` suffixes (e.g., `Bartůňkováovou` → correctly strips to `Bartůňková`).
     - Without these coordinated sets, masculine -a surnames create **duplicate PERSON entities** (e.g., "Dalibor Fiala" + "Dalibor Fialý" + "Dalibor Fialo") because the nominative inference returns incorrect forms that don't match the existing person index key.
 
+12. **Context-aware PHONE classification** (v3.1):
+   - `replace_phone()` now checks 40 characters of context before each match for keywords like `VS`, `variabilní symbol`, `číslo pojištěnce`, `pojišťovna`.
+   - If context matches, the number is NOT tagged as PHONE (prevents misclassification of insurance IDs and payment references).
+   - 10-digit numbers already tagged as INSURANCE_ID or BIRTH_ID are also excluded.
+   - `_remove_phone_idcard_overlap()` extended to check INSURANCE_ID (previously only ID_CARD and BIRTH_ID).
+   - PHONE_RE regex updated with negative lookbehinds for `VS:` and `pojištěnce:` patterns.
+
+13. **Context-aware LICENSE_PLATE filtering** (v3.1):
+   - `replace_license_plate()` now checks context for protocol/record indicators (protokol, zápis, záznam, č.j., inv.č, sériové, výrobní).
+   - Specific filter for "NB" prefix in medical context (nemocnice, pacient, vyšetření, operace, diagnóza).
+   - Prevents false positives like "NB2004" (medical protocol number) being tagged as LICENSE_PLATE.
+
+14. **Vocative-aware gender fix** (v3.1):
+   - `_is_female_first()` in gender-fix now recognizes -o endings as potential feminine vocatives (Martino→Martina, Petro→Petra).
+   - Previously, "Martino Jeřábková" was incorrectly converted to "Martino Jeřábek" (male surname). Now the feminine surname is preserved.
+
 15. **Non-person blacklists** (sector-specific):
    - `critical_blacklist` in person detection: prevents roles/institutions from being tagged as PERSON
    - `role_blacklist_words` in map cleanup: removes false PERSON entries post-hoc
    - Institution/brand coverage is **data-driven**:
      - Terms are maintained in `institutions_blacklist.json` (banks, insurers, universities, hospitals, large retailers, gov. bodies) and loaded once at module import.
      - `anon72.py` merges this set into `critical_blacklist`/`role_words`; `run_anonymize_tests.py` merges it into `non_person_tokens`, so both engine and validators share the same view of “non-person” tokens.
+   - **v3.1 additions**: Automotive brands (Hyundai Tucson), address-adjective combinations (Brno Přechodný), project roles (Horáková Projektová), and education institutions (Gymnázi Na) added to all blacklist layers.
    - Sector coverage spans 6 target domains:
      - **Legal**: advokát, advokátní, notář, soud, soudce, soudkyně
      - **Healthcare**: nemocnice, klinika, ordinace, ambulance, oddělení, pracoviště
@@ -716,7 +735,7 @@ CSS custom properties (variables) define the Chrome/Silver dark theme:
 
 12. **ADDRESS deduplication ordering** - `_deduplicate_addresses()` must run AFTER all post-processing (person dedup, standalone firstnames, orphan surnames) but BEFORE document save and map creation. This ensures all ADDRESS tags are finalized before the merge pass.
 
-13. **Non-person false positives** - Common Czech words like `Stav`, `Banka`, `Zpracovatel`, `Nové`, `Poplatek`, `Specifikace`, `Běžný` can be mistakenly detected as person names when they appear in "FirstName LastName" position. The `critical_blacklist` and `role_blacklist_words` sets prevent this but must be kept up-to-date for each target sector (legal, healthcare, HR, education, finance, public admin). Multi-word city names (Kutná Hora, Havlíčkův Brod, Přemysla Otakara, etc.) are also blacklisted to prevent detection as person names.
+13. **Non-person false positives** - Common Czech words like `Stav`, `Banka`, `Zpracovatel`, `Nové`, `Poplatek`, `Specifikace`, `Běžný` can be mistakenly detected as person names when they appear in "FirstName LastName" position. The `critical_blacklist` and `role_blacklist_words` sets prevent this but must be kept up-to-date for each target sector (legal, healthcare, HR, education, finance, public admin). Multi-word city names (Kutná Hora, Havlíčkův Brod, Přemysla Otakara, etc.) are also blacklisted to prevent detection as person names. In v3.1, automotive brands (Hyundai Tucson), address+adjective pairs (Brno Přechodný), and project/education terms were added. Context-aware PHONE filtering prevents insurance IDs and payment references from being tagged as phone numbers.
 
 **13a. Masculine -a surname stem synchronization** - The `infer_surname_nominative` function has **6 separate stem sets** that must be kept in sync (`masculine_a_stems`, `surname_stems_needing_a` in 3 locations, `known_a_surnames`, `protected_a_surnames`, `_vocative_a_stems`). Adding a new masculine -a surname (e.g., "Fiala") requires adding its stem to ALL of these sets. Failure to do so causes the person to be split into multiple entities with incorrect nominative forms.
 
@@ -726,12 +745,12 @@ CSS custom properties (variables) define the Chrome/Silver dark theme:
 
 15. **Antivirus false positives** - Nuitka-compiled .exe files are sometimes flagged by antivirus software. The license validator has a Python fallback if the .exe fails silently.
 
-### Testing and validation (v3.3.0)
+### Testing and validation (v3.0.0)
 
 To validate the correctness of the engine after all changes (6 post-passes, masculine -a surname inference, expanded blacklists, extended diacritics, batch error handling), a comprehensive audit pipeline was used:
 
-- **Full batch regression**: Batch anonymization of **236 synthetic contracts** (150 GDPR-specific tests, 30 loan variants, 15 high-complexity stress tests, legacy documents). **0 errors, 0 warnings**.
-- **Deep automated verification**: Script checking all 236 anonymized DOCX + JSON maps for NAME-LEAK (known names outside tags), ORPHAN-DOC/MAP (tag-map mismatches), MAP-DUP (duplicate persons). Result: **236/236 CLEAN**.
+- **Full batch regression**: Batch anonymization of **241 synthetic contracts** (150 GDPR-specific tests, 30 loan variants, 15 high-complexity stress tests, legacy documents). **0 errors, 0 warnings**.
+- **Deep automated verification**: Script checking all 241 anonymized DOCX + JSON maps for NAME-LEAK (known names outside tags), ORPHAN-DOC/MAP (tag-map mismatches), MAP-DUP (duplicate persons). Result: **241 smluv testováno**.
 - **Address variant stress-test**: 30 loan contract variants with varied address formats/word orders. **Zero address leaks, zero false person detections, zero duplicate ADDRESS entries**.
 - **Masculine -a surname regression**: Contracts with "Dalibor Fiala", "Arnošt Malina" etc. verified across all 7 cases + vocative. Previously created 3 PERSON entities for one person; after fix, all forms correctly unified.
 - **Production readiness**: 0 DeprecationWarnings, debug output gated behind `--verbose`, batch mode handles OSError/PermissionError with timestamped fallback files.
@@ -781,7 +800,7 @@ User selects smlouva.docx
     │     ├── _postpass_birth_id_as_var_symbol()      → "var.symbol 6005301111"
     │     ├── _deduplicate_addresses()
     │     ├── _deduplicate_phones()
-    │     ├── _remove_phone_idcard_overlap()
+    │     ├── _remove_phone_idcard_overlap()   # Now also checks INSURANCE_ID
     │     ├── Save _anon.docx
     │     └── _create_maps() → _map.json, _map.txt, _report.pdf
     └── Print JSON result to stdout

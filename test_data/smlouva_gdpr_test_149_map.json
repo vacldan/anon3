@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:51.020951",
+  "generated_at": "2026-03-18T14:49:33.338504",
   "source_file": "smlouva_gdpr_test_149.docx",
   "entities": [
     {
@@ -12,19 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Filipovi Malíkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Filipe Malíke",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Filipem Malíkem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Filipovi Malíkovi",
       "occurrences": 1
     },
     {
@@ -35,14 +29,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Aleš Vaněk",
+      "label": "[[PERSON_1]]",
+      "original": "Filipe Malíke",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Aleše Vaněke",
+      "original": "Aleš Vaněk",
       "occurrences": 1
     },
     {
@@ -60,6 +54,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Aleše Vaněke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Alešovi Vaněkovi",
       "occurrences": 1
     },
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucie Benešovou",
+      "original": "Lucie Benešové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucie Benešové",
+      "original": "Lucie Benešovou",
       "occurrences": 1
     },
     {
@@ -90,13 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Aleša Turka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Alešovi Turkovi",
+      "original": "Aleše Turku",
       "occurrences": 1
     },
     {
@@ -108,7 +102,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Aleše Turku",
+      "original": "Alešovi Turkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Aleša Turka",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0HA1763",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4971 2045 2844 5917",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "7F:FC:4B:C2:4B:FC",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0HA176306",
       "occurrences": 1
     }
   ]

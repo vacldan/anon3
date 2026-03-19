@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:32.187759",
+  "generated_at": "2026-03-18T14:48:57.116293",
   "source_file": "smlouva_gdpr_test_108.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Filipe Beneše",
+      "original": "Filipem Benešem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Filipem Benešem",
+      "original": "Filipe Beneše",
       "occurrences": 1
     },
     {
@@ -84,12 +84,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Aleše Hrubeše",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Alešovi Hrubešovi",
       "occurrences": 1
     },
@@ -97,6 +91,12 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Alešem Hrubešem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Aleše Hrubeše",
       "occurrences": 1
     },
     {
@@ -256,12 +256,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0KA6200",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4966 3855 9612 7205",
@@ -289,6 +283,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "23:E6:78:68:03:05",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0KA620005",
       "occurrences": 1
     }
   ]

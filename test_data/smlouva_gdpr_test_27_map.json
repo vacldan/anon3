@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:55.153961",
+  "generated_at": "2026-03-18T14:49:40.507535",
   "source_file": "smlouva_gdpr_test_27.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Markéty Černé",
+      "original": "Markétě Černé",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Markétě Černé",
+      "original": "Markéty Černé",
       "occurrences": 1
     },
     {
@@ -48,6 +48,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Barborou Královou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Barborě Králové",
       "occurrences": 1
     },
@@ -59,12 +65,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Barborou Královou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Erik Novák",
       "occurrences": 1
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Erikovi Novákovi",
+      "original": "Erikem Novákem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Erikem Novákem",
+      "original": "Erikovi Novákovi",
       "occurrences": 1
     },
     {
@@ -226,8 +226,8 @@
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_1]]",
+      "type": "PASSPORT",
+      "label": "[[PASSPORT_1]]",
       "original": "841183583",
       "occurrences": 1
     },
@@ -241,12 +241,6 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
       "original": "2AC 8768",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0KA7326",
       "occurrences": 1
     },
     {
@@ -283,6 +277,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "C9:E8:03:1D:A5:8D",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0KA732654",
       "occurrences": 1
     }
   ]

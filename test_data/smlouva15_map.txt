@@ -56,9 +56,8 @@ ACCOUNT_ID
 
 ADDRESS
 [[ADDRESS_1]]: Karlovo náměstí 12/34, Praha 2, 120 00
-[[ADDRESS_2]]: Slezská 45/9, Praha 3 - Vinohrady, 130 00
-[[ADDRESS_3]]: Žižkova 123/8, 130 00 Praha 3
-[[ADDRESS_4]]: Masarykova 67/12, 602 00 Brno
+[[ADDRESS_3]]: Slezská 45/9, Praha 3 - Vinohrady, 130 00
+[[ADDRESS_4]]: Žižkova 123/8, 130 00 Praha 3
 [[ADDRESS_6]]: Evropská 178/123, Praha 6 - Dejvice, 160 00
 [[ADDRESS_7]]: Korunní 234/56, 130 00 Praha 3
 [[ADDRESS_8]]: Poliklinika Vinohradská 123/45, Praha 3
@@ -68,15 +67,14 @@ ADDRESS
 [[ADDRESS_15]]: Dlouhá 45/12, 110 00 Praha 1
 [[ADDRESS_18]]: Mánesova 234/12, 120 00 Praha 2
 [[ADDRESS_19]]: Průmyslová 12, 170 00 Praha 7
-[[ADDRESS_20]]: Technická 456, 616 00 Brno
-[[ADDRESS_21]]: Ostravská 123, 702 00, Ostrava
-[[ADDRESS_22]]: Brněnská 456, 602 00, Brno
-[[ADDRESS_23]]: Náměstí Svobody 21, 602 00, Brno
-[[ADDRESS_24]]: Husova 123/45, 602 00, Brno
-[[ADDRESS_25]]: Vodní 67/8, 602 00, Brno
-[[ADDRESS_26]]: Purkyňova 234/56, 612 00, Brno
-[[ADDRESS_30]]: Wenceslas Square 89/23, Praha 1, 110 00
-[[ADDRESS_31]]: Vinohradská 1234/89, Praha 3 - Vinohrady, 130 00
+[[ADDRESS_20]]: Ostravská 123, 702 00, Ostrava
+[[ADDRESS_21]]: Brněnská 456, 602 00
+[[ADDRESS_22]]: Náměstí Svobody 21, 602 00
+[[ADDRESS_2]]: Husova 123/45, Brno
+[[ADDRESS_24]]: Vodní 67/8, 602 00 Brno
+[[ADDRESS_25]]: Purkyňova 234/56, 612 00 Brno
+[[ADDRESS_26]]: Wenceslas Square 89/23, Praha 1, 110 00
+[[ADDRESS_27]]: Vinohradská 1234/89, Praha 3 - Vinohrady, 130 00
 
 API_KEY
 [[API_KEY_1]]: ghp_Kx7mP2vQ9wR5tYu8iO3nM6lJ4hG1sA0dF
@@ -162,9 +160,6 @@ BIRTH_ID
 [[BIRTH_ID_55]]: 900315/2314
 [[BIRTH_ID_56]]: 880615/5634
 [[BIRTH_ID_57]]: 820923/6745
-
-BIRTH_PLACE
-[[BIRTH_PLACE_1]]: Brno
 
 CARD
 [[CARD_1]]: 4532 1234 5678 9012
@@ -365,19 +360,18 @@ PHONE
 [[PHONE_22]]: +420 606 789 012
 [[PHONE_23]]: +420 777 123 456
 [[PHONE_24]]: +420 603 567 890
-[[PHONE_25]]: 202403089
-[[PHONE_26]]: +420 603 789 012
-[[PHONE_27]]: +420 541 234 567
-[[PHONE_28]]: +420 605 678 901
-[[PHONE_29]]: +420 603 123 456
-[[PHONE_30]]: +420 777 890 123
-[[PHONE_31]]: +420 541 678 901
-[[PHONE_32]]: +420 541 234 600
-[[PHONE_33]]: +420 724 567 890
-[[PHONE_34]]: +420 224 433 111
-[[PHONE_35]]: +420 261 363 111
-[[PHONE_36]]: +420 543 136 111
-[[PHONE_37]]: +420 221 710 111
+[[PHONE_25]]: +420 603 789 012
+[[PHONE_26]]: +420 541 234 567
+[[PHONE_27]]: +420 605 678 901
+[[PHONE_28]]: +420 603 123 456
+[[PHONE_29]]: +420 777 890 123
+[[PHONE_30]]: +420 541 678 901
+[[PHONE_31]]: +420 541 234 600
+[[PHONE_32]]: +420 724 567 890
+[[PHONE_33]]: +420 224 433 111
+[[PHONE_34]]: +420 261 363 111
+[[PHONE_35]]: +420 543 136 111
+[[PHONE_36]]: +420 221 710 111
 
 SECRET
 [[SECRET_1]]: jakub-prochazka-innovate

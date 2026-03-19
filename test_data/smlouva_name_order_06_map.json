@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-03-18T14:51:01.573676",
+  "source_file": "smlouva_name_order_06.docx",
+  "entities": [
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Jan Novák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Novákovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Novákem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Jana Nováková",
+      "occurrences": 1
+    }
+  ]
+}

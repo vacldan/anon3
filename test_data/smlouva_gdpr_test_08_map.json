@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:27.346546",
+  "generated_at": "2026-03-18T14:48:47.866606",
   "source_file": "smlouva_gdpr_test_08.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Renaty Slámové",
+      "original": "Renatou Slámovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Renatou Slámovou",
+      "original": "Renaty Slámové",
       "occurrences": 1
     },
     {

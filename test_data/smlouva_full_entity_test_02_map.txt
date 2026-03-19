@@ -1,0 +1,54 @@
+OSOBY
+-----
+[[PERSON_1]]: Pavel Dvořák
+  - Pavelem Dvořákem
+
+API_KEY
+[[API_KEY_1]]: AKIAIOSFODNN7EXAMPLE
+[[API_KEY_2]]: sk_live_51H8xYz1234567890abcdef
+
+BIO_HASH
+[[BIO_HASH_1]]: HASH_BIO_JP_2024_0156
+
+EMAIL
+[[EMAIL_1]]: pavel.dvorak@example.com
+
+FACEBOOK
+[[FACEBOOK_1]]: https://www.facebook.com/pavel.dvorak
+
+HOST
+[[HOST_1]]: server.production.example.com
+
+IMEI
+[[IMEI_1]]: 123456789012345
+
+INSTAGRAM
+[[INSTAGRAM_1]]: @pavel_dvorak
+
+IP
+[[IP_1]]: 36.47.194.25
+
+LINKEDIN
+[[LINKEDIN_1]]: https://www.linkedin.com/in/pavel-dvorak
+
+MAC
+[[MAC_1]]: B7:B0:87:16:EB:3F
+
+PASSWORD
+[[PASSWORD_1]]: SecretPass123!xyz
+
+PHOTO_ID
+[[PHOTO_ID_1]]: photo_id_jan_novak_001.jpg
+
+SKYPE
+[[SKYPE_1]]: pavel.dvorak
+
+SSH_KEY
+[[SSH_KEY_1]]: AAAAB3NzaC1yc2EAAAADAQABAAABAQC7x8K9vZ1q2w3e4r5t6y7u8i9o0p1q2w3e4r5t6y7u8i9o0p1q2w3e4r5t6y7u8i9o0p1q2w3e4r5t6y7u8i9o0p
+
+USERNAME
+[[USERNAME_1]]: pavel.dvorak
+
+VOICE_ID
+[[VOICE_ID_1]]: VOICE_JP_2024_0156
+

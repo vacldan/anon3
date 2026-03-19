@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:44.164789",
+  "generated_at": "2026-03-18T14:49:20.026209",
   "source_file": "smlouva_gdpr_test_134.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Filipa Turka",
+      "original": "Filipe Turku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Filipe Turku",
+      "original": "Filipem Turkem",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Filipem Turkem",
+      "original": "Filipa Turka",
       "occurrences": 1
     },
     {
@@ -48,6 +48,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Janem Křížem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Jana Kříža",
       "occurrences": 1
     },
@@ -55,12 +61,6 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Janovi Křížovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Janem Křížem",
       "occurrences": 1
     },
     {
@@ -96,13 +96,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Jaroslavovi Černýovi",
+      "original": "Jaroslava Černýa",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Jaroslava Černýa",
+      "original": "Jaroslavovi Černýovi",
       "occurrences": 1
     },
     {
@@ -274,12 +274,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0HA2682",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4742 3018 5219 9472",
@@ -307,6 +301,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "07:CB:FF:60:E4:DE",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0HA268273",
       "occurrences": 1
     }
   ]

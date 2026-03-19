@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:46.351509",
+  "generated_at": "2026-03-18T14:49:24.255401",
   "source_file": "smlouva_gdpr_test_139.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Heleno Holíková",
+      "original": "Heleny Holíkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Heleně Holíkové",
+      "original": "Heleno Holíková",
       "occurrences": 1
     },
     {
@@ -30,7 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Heleny Holíkové",
+      "original": "Heleně Holíkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Beneš Karel",
       "occurrences": 1
     },
     {
@@ -48,12 +54,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Karlovi Benešovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Karle Beneše",
       "occurrences": 1
     },
@@ -65,50 +65,56 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
+      "label": "[[PERSON_2]]",
+      "original": "Karlovi Benešovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Gabriela Procházková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Gabrielě Procházkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
+      "label": "[[PERSON_4]]",
       "original": "Gabrielou Procházkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
+      "original": "Gabrielě Procházkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Pavel Řezníček",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Pavle Řezníčku",
+      "label": "[[PERSON_5]]",
+      "original": "Pavla Řezníčka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Pavlem Řezníčkem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
+      "label": "[[PERSON_5]]",
       "original": "Pavlovi Řezníčkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Pavla Řezníčka",
+      "label": "[[PERSON_5]]",
+      "original": "Pavle Řezníčku",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Pavlem Řezníčkem",
       "occurrences": 1
     },
     {
@@ -268,12 +274,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0KA4729",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4139 2095 9404 6677",
@@ -301,6 +301,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "8B:06:41:4D:52:D2",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0KA472921",
       "occurrences": 1
     }
   ]

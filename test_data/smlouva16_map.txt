@@ -35,13 +35,14 @@ ACCOUNT_ID
 [[ACCOUNT_ID_1]]: 987654321098
 
 ADDRESS
-[[ADDRESS_1]]: Pařížská 123/45, Praha 1 - Josefov, 110 00
-[[ADDRESS_2]]: Mánesova 67/89, Praha 2 - Vinohrady, 120 00
-[[ADDRESS_3]]: Evropská 234/56, Praha 6 - Dejvice, 160 00
-[[ADDRESS_4]]: Karlovo náměstí 89/34, Praha 2, 120 00
-[[ADDRESS_5]]: Vinohradská 234/78, 130 00 Praha 3
-[[ADDRESS_6]]: Korunní 123/45, 120 00 Praha 2
-[[ADDRESS_7]]: Slezská 67/89, 130 00 Praha 3
+[[ADDRESS_1]]: Brno
+[[ADDRESS_2]]: Pařížská 123/45, Praha 1 - Josefov, 110 00
+[[ADDRESS_3]]: Mánesova 67/89, Praha 2 - Vinohrady, 120 00
+[[ADDRESS_4]]: Evropská 234/56, Praha 6 - Dejvice, 160 00
+[[ADDRESS_5]]: Karlovo náměstí 89/34, Praha 2, 120 00
+[[ADDRESS_6]]: Vinohradská 234/78, 130 00 Praha 3
+[[ADDRESS_7]]: Korunní 123/45, 120 00 Praha 2
+[[ADDRESS_8]]: Slezská 67/89, 130 00 Praha 3
 
 API_KEY
 [[API_KEY_1]]: AKIAJ7XYZ3EXAMPLE
@@ -85,10 +86,6 @@ BIRTH_ID
 [[BIRTH_ID_20]]: 750823/2314
 [[BIRTH_ID_21]]: 900523/6745
 [[BIRTH_ID_22]]: 820923/6745
-
-BIRTH_PLACE
-[[BIRTH_PLACE_1]]: Brno
-[[BIRTH_PLACE_2]]: Praha
 
 DATE
 [[DATE_1]]: 28.03.2024

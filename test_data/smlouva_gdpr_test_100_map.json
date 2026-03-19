@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:28.721308",
+  "generated_at": "2026-03-18T14:48:50.654653",
   "source_file": "smlouva_gdpr_test_100.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Lubomírovi Polákovi",
+      "original": "Lubomíre Poláke",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Lubomíre Poláke",
+      "original": "Lubomírovi Polákovi",
       "occurrences": 1
     },
     {
@@ -60,18 +60,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Hugoa Vavry",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Hugoem Vavrou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Hugoovi Vavrovi",
       "occurrences": 1
     },
@@ -79,6 +67,18 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Hugoa Vavru",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Hugoa Vavry",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Hugoem Vavrou",
       "occurrences": 1
     },
     {

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:59.787331",
+  "generated_at": "2026-03-18T14:49:48.469921",
   "source_file": "smlouva_gdpr_test_44.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Patrikem Králem",
+      "original": "Patrika Krále",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Patrika Krále",
+      "original": "Patrikem Králem",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Tomášem Doležalem",
+      "original": "Tomáše Doležala",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Tomáše Doležala",
+      "original": "Tomášem Doležalem",
       "occurrences": 1
     },
     {

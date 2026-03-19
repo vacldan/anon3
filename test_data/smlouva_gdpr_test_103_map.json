@@ -1,24 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:30.170924",
+  "generated_at": "2026-03-18T14:48:53.274500",
   "source_file": "smlouva_gdpr_test_103.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Renata Holíková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Renatou Holíkovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Renatě Holíkové",
       "occurrences": 1
     },
     {
@@ -35,14 +23,20 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Tomáš Dvořák",
+      "label": "[[PERSON_1]]",
+      "original": "Renatou Holíkovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Renatě Holíkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Tomáši Dvořáke",
+      "original": "Tomáš Dvořák",
       "occurrences": 1
     },
     {
@@ -60,6 +54,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Tomáši Dvořáke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Tomáše Dvořáka",
       "occurrences": 1
     },
@@ -72,31 +72,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Gabrielě Novákové",
+      "original": "Gabrielou Novákovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Gabrielou Novákovou",
+      "original": "Gabrielě Novákové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Václav Roubal",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Václava Roubala",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Václave Roubale",
       "occurrences": 1
     },
     {
@@ -109,6 +97,18 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Václavem Roubalem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Václava Roubala",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Václave Roubale",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0FA1886",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4630 6670 4257 7498",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "C5:ED:B4:EB:56:F6",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0FA188600",
       "occurrences": 1
     }
   ]

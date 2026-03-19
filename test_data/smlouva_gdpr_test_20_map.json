@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:53.170822",
+  "generated_at": "2026-03-18T14:49:37.048185",
   "source_file": "smlouva_gdpr_test_20.docx",
   "entities": [
     {
@@ -18,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Romanem Křížem",
+      "original": "Romana Kříža",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Romana Kříža",
+      "original": "Romanem Křížem",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jaroslavem Vaněkem",
+      "original": "Jaroslave Vaněke",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jaroslave Vaněke",
+      "original": "Jaroslavovi Vaněkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jaroslavovi Vaněkovi",
+      "original": "Jaroslavem Vaněkem",
       "occurrences": 1
     },
     {
@@ -238,8 +238,8 @@
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_1]]",
+      "type": "PASSPORT",
+      "label": "[[PASSPORT_1]]",
       "original": "526051298",
       "occurrences": 1
     },
@@ -253,12 +253,6 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
       "original": "5AZ 5529",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0GA3827",
       "occurrences": 1
     },
     {
@@ -295,6 +289,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "4C:4C:75:42:17:5F",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0GA382715",
       "occurrences": 1
     }
   ]

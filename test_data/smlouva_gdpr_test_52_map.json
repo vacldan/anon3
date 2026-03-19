@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:02.336382",
+  "generated_at": "2026-03-18T14:49:52.976314",
   "source_file": "smlouva_gdpr_test_52.docx",
   "entities": [
     {
@@ -12,19 +12,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Dalibora Fialy",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Daliborovi Fialovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Dalibore Fialo",
+      "original": "Dalibora Fialy",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Dalibora Fialu",
       "occurrences": 1
     },
     {
@@ -36,13 +36,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Dalibora Fialu",
+      "original": "Dalibore Fialo",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Natálie Bartůňková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Natálii Bartůňkové",
       "occurrences": 1
     },
     {
@@ -65,12 +71,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Natálii Bartůňkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Marek Hrubeš",
       "occurrences": 1
@@ -79,12 +79,6 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Marka Hrubeša",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Markem Hrubešem",
       "occurrences": 1
     },
     {
@@ -101,6 +95,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Markem Hrubešem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Tereza Doležalová",
       "occurrences": 1
@@ -108,13 +108,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Terezu Doležalováovou",
+      "original": "Terezy Doležalové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Terezy Doležalové",
+      "original": "Terezu Doležalováovou",
       "occurrences": 1
     },
     {
@@ -144,13 +144,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Arnošta Malinu",
+      "original": "Arnošta Maliny",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Arnošta Maliny",
+      "original": "Arnošta Malinu",
       "occurrences": 1
     },
     {

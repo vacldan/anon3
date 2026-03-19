@@ -1,31 +1,29 @@
-import json, re, sys, glob
+import json, re, sys
+from pathlib import Path
 from docx import Document
 
-def check(num, suffix=None):
-    import os
-    if suffix:
-        map_path = f'test_data/smlouva{num}_map_{suffix}.json'
-        anon_path = f'test_data/smlouva{num}_anon_{suffix}.docx'
-    else:
-        candidates = glob.glob(f'test_data/smlouva{num}_map*.json')
-        if not candidates:
-            print(f'No map found for smlouva{num}')
-            return
-        map_path = max(candidates, key=os.path.getmtime)
-        if '_map_' in map_path:
-            ts = map_path.split('_map_')[1].replace('.json', '')
-            anon_path = f'test_data/smlouva{num}_anon_{ts}.docx'
-        else:
-            anon_path = f'test_data/smlouva{num}_anon.docx'
+TEST_DIR = Path(__file__).resolve().parent
 
+
+def check(base_name: str, map_path: Path, anon_path: Path, src_path: Path):
     with open(map_path, encoding='utf-8') as f:
         mdata = json.load(f)
 
-    src = Document(f'test_data/smlouva{num}.docx')
-    src_text = '\n'.join(p.text for p in src.paragraphs)
+    src = Document(str(src_path))
+    src_parts = [p.text for p in src.paragraphs]
+    for t in src.tables:
+        for row in t.rows:
+            for cell in row.cells:
+                src_parts.append(cell.text)
+    src_text = '\n'.join(src_parts)
 
-    anon = Document(anon_path)
-    anon_text = '\n'.join(p.text for p in anon.paragraphs)
+    anon = Document(str(anon_path))
+    anon_parts = [p.text for p in anon.paragraphs]
+    for t in anon.tables:
+        for row in t.rows:
+            for cell in row.cells:
+                anon_parts.append(cell.text)
+    anon_text = '\n'.join(anon_parts)
     clean = re.sub(r'\[\[\w+_\d+\]\]', '___', anon_text)
 
     persons = [e for e in mdata['entities'] if e['type'] == 'PERSON']
@@ -33,7 +31,7 @@ def check(num, suffix=None):
     insurances = [e for e in mdata['entities'] if e['type'] == 'INSURANCE_ID']
     plates = [e for e in mdata['entities'] if e['type'] == 'LICENSE_PLATE']
 
-    print(f'\n====== SMLOUVA {num} ======')
+    print(f'\n====== {base_name} ======')
     print(f'Persons: {len(persons)} | Phones: {len(phones)} | Insurance: {len(insurances)} | Plates: {len(plates)}')
 
     # Print persons
@@ -119,9 +117,14 @@ def check(num, suffix=None):
             if len(parts) == 1:
                 print(f'  INCOMPLETE: {p["label"]}: "{p["original"]}" (surname only)')
 
-import os
-nums = [int(x) for x in sys.argv[1:]] if len(sys.argv) > 1 else list(range(20, 34))
-for n in nums:
-    src_path = f'test_data/smlouva{n}.docx'
-    if os.path.exists(src_path):
-        check(n)
+# Najdi všechny páry (anon, map, src) – všechny smlouvy
+anon_files = sorted(TEST_DIR.glob("*_anon.docx"))
+for anon_path in anon_files:
+    base = anon_path.stem.replace("_anon", "")
+    if "_deanon" in base:
+        continue
+    map_path = TEST_DIR / f"{base}_map.json"
+    src_path = TEST_DIR / f"{base}.docx"
+    if not map_path.exists() or not src_path.exists():
+        continue
+    check(base, map_path, anon_path, src_path)

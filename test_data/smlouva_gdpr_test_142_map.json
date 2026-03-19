@@ -1,24 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:47.904306",
+  "generated_at": "2026-03-18T14:49:27.035857",
   "source_file": "smlouva_gdpr_test_142.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Renata Řezníčková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Renatě Řezníčkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Renato Řezníčková",
       "occurrences": 1
     },
     {
@@ -35,20 +23,20 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Renatě Řezníčkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Renato Řezníčková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Michal Procházka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Michala Procházky",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Michalem Procházkou",
       "occurrences": 1
     },
     {
@@ -60,7 +48,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Michala Procházky",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Michale Procházko",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Michalem Procházkou",
       "occurrences": 1
     },
     {
@@ -90,7 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Václave Svobodo",
+      "original": "Václava Svobody",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Václavovi Svobodovi",
       "occurrences": 1
     },
     {
@@ -102,13 +108,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Václava Svobody",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Václavovi Svobodovi",
+      "original": "Václave Svobodo",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0FA6374",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4150 4302 6226 2781",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "09:AF:C1:E3:76:C8",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0FA637426",
       "occurrences": 1
     }
   ]

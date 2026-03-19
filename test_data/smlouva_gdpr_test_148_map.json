@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:50.520677",
+  "generated_at": "2026-03-18T14:49:32.460829",
   "source_file": "smlouva_gdpr_test_148.docx",
   "entities": [
     {
@@ -18,6 +18,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Veronikou Vaňkovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Veronikě Vaňkové",
       "occurrences": 1
     },
@@ -25,12 +31,6 @@
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Veroniky Vaňkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Veronikou Vaňkovou",
       "occurrences": 1
     },
     {
@@ -48,13 +48,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Janě Svobodové",
+      "original": "Jano Svobodová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jano Svobodová",
+      "original": "Janě Svobodové",
       "occurrences": 1
     },
     {
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Veronikě Malíkové",
+      "original": "Veronikou Malíkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Veronikou Malíkovou",
+      "original": "Veronikě Malíkové",
       "occurrences": 1
     },
     {
@@ -96,7 +96,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Janem Holíkem",
+      "original": "Jane Holíke",
       "occurrences": 1
     },
     {
@@ -108,7 +108,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Jane Holíke",
+      "original": "Janem Holíkem",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0FA2269",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4873 2141 9963 3024",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "00:1F:94:16:37:0C",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0FA226940",
       "occurrences": 1
     }
   ]

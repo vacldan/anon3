@@ -15,6 +15,7 @@ OSOBY
 [[PERSON_3]]: Filip Zíka
   - Filipa Zíku
   - Filipa Zíky
+  - Filipem Zíkou
   - Filipovi Zíkovi
 [[PERSON_4]]: Ondřej Popelka
   - Ondřeja Popelku
@@ -24,11 +25,9 @@ OSOBY
   - Anežky Holubové
 [[PERSON_6]]: Vojtěch Dvořák
   - Vojtěcha Dvořáka
-[[PERSON_7]]: Filip Zíký
-  - Filipem Zíkou
 
 ADDRESS
-[[ADDRESS_1]]: 110 00, Praha 1
+[[ADDRESS_1]]: Václavské nám. 12, 110 00 Praha 1
 [[ADDRESS_2]]: Žižkova 133, 460 01 Liberec
 [[ADDRESS_3]]: Jihlavská 186/38, 625 00, Brno
 [[ADDRESS_5]]: Palackého 5, 301 00 Plzeň

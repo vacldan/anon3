@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:31.021198",
+  "generated_at": "2026-03-18T14:48:54.779701",
   "source_file": "smlouva_gdpr_test_105.docx",
   "entities": [
     {
@@ -42,12 +42,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jane Malíke",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Jana Malíka",
       "occurrences": 1
     },
@@ -55,6 +49,12 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Janovi Malíkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Jane Malíke",
       "occurrences": 1
     },
     {
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Petrě Benešové",
+      "original": "Petrou Benešovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Petrou Benešovou",
+      "original": "Petrě Benešové",
       "occurrences": 1
     },
     {
@@ -90,7 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Markéty Turkové",
+      "original": "Markétě Turkové",
       "occurrences": 1
     },
     {
@@ -102,13 +102,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Markétě Turkové",
+      "original": "Markétou Turkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Markétou Turkovou",
+      "original": "Markéty Turkové",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0FA9485",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4229 4168 9894 3390",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "50:0F:2B:06:78:B4",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0FA948549",
       "occurrences": 1
     }
   ]

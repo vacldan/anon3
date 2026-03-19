@@ -1,24 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:26.004091",
+  "generated_at": "2026-03-18T14:50:40.928513",
   "source_file": "smlouva_gdpr_test_86.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Miloslav Beneš",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Miloslave Beneše",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Miloslava Beneša",
       "occurrences": 1
     },
     {
@@ -31,6 +19,18 @@
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Miloslavem Benešem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Miloslava Beneša",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Miloslave Beneše",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jitko Holubová",
+      "original": "Jitkě Holubové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jitkě Holubové",
+      "original": "Jitko Holubová",
       "occurrences": 1
     },
     {
@@ -78,13 +78,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Blahoslavem Kopeckým",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Blahoslava Kopeckého",
+      "original": "Blahoslavovi Kopeckém",
       "occurrences": 1
     },
     {
@@ -96,7 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Blahoslavovi Kopeckém",
+      "original": "Blahoslava Kopeckého",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Blahoslavem Kopeckým",
       "occurrences": 1
     },
     {
@@ -138,13 +138,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Blahoslava Brázdu",
+      "original": "Blahoslava Brázdy",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Blahoslava Brázdy",
+      "original": "Blahoslava Brázdu",
       "occurrences": 1
     },
     {

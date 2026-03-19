@@ -1,24 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:30.587581",
+  "generated_at": "2026-03-18T14:48:54.032631",
   "source_file": "smlouva_gdpr_test_104.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Tomáš Holík",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Tomášovi Holíkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Tomášem Holíkem",
       "occurrences": 1
     },
     {
@@ -31,6 +19,18 @@
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Tomáši Holíke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Tomášem Holíkem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Tomášovi Holíkovi",
       "occurrences": 1
     },
     {
@@ -48,6 +48,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Barborou Novákovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Barborě Novákové",
       "occurrences": 1
     },
@@ -59,12 +65,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Barborou Novákovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Helena Nováková",
       "occurrences": 1
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Heleně Novákové",
+      "original": "Helenou Novákovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Helenou Novákovou",
+      "original": "Heleně Novákové",
       "occurrences": 1
     },
     {
@@ -96,6 +96,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
+      "original": "Tomáše Krála",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Tomášovi Královi",
       "occurrences": 1
     },
@@ -103,12 +109,6 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Tomášem Králem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Tomáše Krála",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0GA9235",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4674 7435 7171 7702",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "96:77:ED:03:12:55",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0GA923583",
       "occurrences": 1
     }
   ]

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:01.621205",
+  "generated_at": "2026-03-18T14:49:51.568242",
   "source_file": "smlouva_gdpr_test_51.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpáne Turku",
+      "original": "Štěpánem Turkem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpánem Turkem",
+      "original": "Štěpánovi Turkovi",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpánovi Turkovi",
+      "original": "Štěpáne Turku",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Natálie Fialové",
+      "original": "Natálii Fialováovou",
       "occurrences": 1
     },
     {
@@ -54,7 +54,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Natálii Fialováovou",
+      "original": "Natálie Fialové",
       "occurrences": 1
     },
     {
@@ -72,7 +72,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Cecílii Rendlováovou",
+      "original": "Cecílie Rendlové",
       "occurrences": 1
     },
     {
@@ -84,13 +84,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Cecílií Rendlovou",
+      "original": "Cecílii Rendlováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Cecílie Rendlové",
+      "original": "Cecílií Rendlovou",
       "occurrences": 1
     },
     {
@@ -102,13 +102,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Milady Fialové",
+      "original": "Miladu Fialováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Miladu Fialováovou",
+      "original": "Milady Fialové",
       "occurrences": 1
     },
     {

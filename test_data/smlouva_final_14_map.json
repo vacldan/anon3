@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:24.194062",
+  "generated_at": "2026-03-18T14:48:40.694085",
   "source_file": "smlouva_final_14.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Aleksandrovi Petrovovi",
+      "original": "Aleksandra Petrova",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Aleksandra Petrova",
+      "original": "Aleksandrovi Petrovovi",
       "occurrences": 1
     },
     {

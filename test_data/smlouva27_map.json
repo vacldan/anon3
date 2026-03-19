@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:00.331962",
+  "generated_at": "2026-03-18T14:47:23.039340",
   "source_file": "smlouva27.docx",
   "entities": [
     {
@@ -42,13 +42,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Michala Dvořáka",
+      "original": "Dvořákovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Dvořákovi",
+      "original": "Michala Dvořáka",
       "occurrences": 1
     },
     {
@@ -84,13 +84,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Procházkovi",
+      "original": "Martina Procházku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Martina Procházku",
+      "original": "Procházkovi",
       "occurrences": 1
     },
     {
@@ -408,7 +408,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_47]]",
-      "original": "Karel Marek",
+      "original": "Marek Karel",
       "occurrences": 1
     },
     {

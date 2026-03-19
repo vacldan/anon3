@@ -1,0 +1,20 @@
+OSOBY
+-----
+[[PERSON_1]]: Marek Procházka
+
+ADDRESS
+[[ADDRESS_1]]: Pojišťovací 36/15, 110 00 Praha 1
+[[ADDRESS_2]]: Václavské nám. 12, 110 00 Praha 1
+[[ADDRESS_3]]: 17. listopadu 45, 602 00 Brno
+
+DATE
+[[DATE_1]]: 28. 04. 1966
+[[DATE_2]]: 15. 3. 2025
+[[DATE_3]]: 28. října 2024
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: 1AB 2345
+
+VIN
+[[VIN_1]]: WAUZZZ8V0FA123456
+

@@ -764,6 +764,14 @@ def infer_first_name_nominative(obs: str) -> str:
         if (stem + 'a').lower() in common_ou_names:
             return (stem + 'a').capitalize()
 
+    # VOKATIV ženských jmen: -o → -a (Petro → Petra, Jano → Jana, Markéto → Markéta, Heleno → Helena)
+    # DŮLEŽITÉ: Musí být PŘED mužskými jmény, protože "Petro" by se jinak vrátilo jako-is
+    if lo.endswith('o') and len(obs) > 2:
+        stem = obs[:-1]
+        candidate = (stem + 'a').lower()
+        if candidate in CZECH_FIRST_NAMES:
+            return (stem + 'a').capitalize()
+
     # MUŽSKÁ JMÉNA - genitiv/dativ/instrumentál
     male_nom = _male_genitive_to_nominative(obs)
     if male_nom:
@@ -1692,11 +1700,11 @@ BIRTH_ID_RE = re.compile(
 )
 
 # Číslo OP (formát: AB 123456 nebo OP: 123456789)
-# DŮLEŽITÉ: Musí být před PHONE_RE!
+# DŮLEŽITÉ: Musí být před PHONE_RE! "pas/pas." odstraněno – patří do PASSPORT_RE.
 ID_CARD_RE = re.compile(
     r'(?:'
     r'\b([A-Z]{2}\s?\d{6})\b|'
-    r'(?:OP|pas|pas\.|pas\.č\.|č\.OP|[Oo]bčansk(?:ý|ého)\s+průkaz[eu]?)(?:\s+č\.?)?\s*[:\-]?\s*(\d{6,9})|'
+    r'(?:OP|č\.?\s*OP|[Oo]bčansk(?:ý|ého)\s+průkaz[eu]?)(?:\s+č\.?)?\s*[:\-]?\s*(\d{6,9})|'
     r'(?:[Čč]íslo\s+(?:občanského\s+)?průkazu)(?:\s+č\.?)?\s*[:\-]?\s*(\d{6,9})'
     r')',
     re.IGNORECASE
@@ -1716,6 +1724,8 @@ PHONE_RE = re.compile(
     r'(?!'  # Negative lookahead - NEchytej pokud předchází:
     r'(?:IRIS_SCAN|VOICE_RK|HASH_BIO|FINGERPRINT|FACIAL_|RETINA_|PALM_|DNA_)_[A-Z0-9_]*'
     r')'
+    r'(?<!VS:\s)(?<!VS:\s\s)'  # NEchytej variabilní symboly (VS: 202403089)
+    r'(?<!pojištěnce:\s)(?<!pojištěnce:\s\s)'  # NEchytej čísla pojištěnce
     r'(?:tel\.?|telefon|mobil|GSM)?\s*:?\s*'  # Volitelný prefix (MIMO capture group!)
     r'('  # START capture group - jen samotné číslo
     r'\+420\s?\d{3}\s?\d{3}\s?\d{3}|'  # +420 xxx xxx xxx
@@ -2127,7 +2137,9 @@ class Anonymizer:
         # Vygeneruj všechny pádové varianty (použij normalizované jméno pro generování variant)
         fvars = variants_for_first(first_normalized)
         svars = variants_for_surname(last_nom)
-        self.person_variants[tag] = {f'{f} {s}' for f in fvars for s in svars}
+        normal_order = {f'{f} {s}' for f in fvars for s in svars}
+        reversed_order = {f'{s} {f}' for f in fvars for s in svars}
+        self.person_variants[tag] = normal_order | reversed_order
 
         # Store index and reverse map using canonical name (not inferred!)
         self.entity_index_cache['PERSON'][canonical_full] = self.counter['PERSON']
@@ -2341,6 +2353,9 @@ class Anonymizer:
                 'jen', 'jena', 'pouze',
                 'františku', 'bulovce', 'bulovka',
                 'finanec', 'finance',
+                'hyundai', 'tucson',
+                'přechodný', 'přechodného', 'přechodném',
+                'projektová', 'projeket',
             }
             critical_blacklist |= INSTITUTION_BLACKLIST
 
@@ -2429,6 +2444,14 @@ class Anonymizer:
         person_pattern = re.compile(
             r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)'
             r'\s+'
+            r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)\b',
+            re.UNICODE
+        )
+
+        # Pattern pro "Příjmení, Jméno" (s čárkou – obrácené pořadí)
+        person_comma_pattern = re.compile(
+            r'\b([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)'
+            r',\s+'
             r'([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)\b',
             re.UNICODE
         )
@@ -3204,7 +3227,8 @@ class Anonymizer:
                 'na', 'ke', 've', 'po', 'za', 'od', 'do', 'se',
                 'processing', 'agreement', 'contractual', 'clauses',
                 'certification', 'advanced', 'met', 'london',
-                'octavia', 'octavi', 'combi', 'passat',
+                'octavia', 'octavi', 'combi', 'passat', 'tucson', 'hyundai',
+                'přechodný', 'přechodného', 'projektová', 'projeket',
                 'spolek', 'spolku', 'položek', 'položka',
                 'elektřina', 'přepisová', 'přepis', 'plyn',
                 'bytová', 'bytový', 'finanec', 'finance',
@@ -3336,6 +3360,10 @@ class Anonymizer:
                 'elektřina přepisová', 'elektřina přepis',
                 'plyn přepis', 'plyn přepisový',
                 'finanec corp', 'finance corp',
+                'hyundai tucson', 'hyundai i30', 'hyundai ix35',
+                'brno přechodný', 'brno přechodného',
+                'horáková projektová', 'horáková projeket',
+                'gymnázi na', 'gymnázia na', 'gymnázium na',
             }
             if combined in two_word_blacklist:
                 return match.group(0)
@@ -4147,7 +4175,23 @@ class Anonymizer:
 
             # ========== B) VALIDACE ČESKÉ OSOBY ==========
 
-            # 5. Požadované patterny pro skutečnou osobu
+            # 5. SWAP: "Příjmení Jméno" → "Jméno Příjmení" (bez čárky)
+            # Pokud Word1 NENÍ v knihovně jmen ale Word2 ANO, a Word1 má
+            # typické příjmenní koncovky → prohodit
+            _surname_swap_endings = (
+                'ová', 'ský', 'cký', 'ák', 'ík', 'ek', 'ec', 'el',
+                'ý', 'á', 'ův', 'ova',
+                'ka', 'da', 'la', 'ra', 'na', 'ta', 'ša', 'ža', 'ča',  # Procházka, Svoboda, Skála, Fiala…
+            )
+            _first_lo = first_obs.lower()
+            _last_lo = last_obs.lower()
+            if (_first_lo not in CZECH_FIRST_NAMES
+                    and _last_lo in CZECH_FIRST_NAMES
+                    and _first_lo.endswith(_surname_swap_endings)
+                    and len(first_obs) >= 3 and len(last_obs) >= 3):
+                first_obs, last_obs = last_obs, first_obs
+
+            # 5b. Požadované patterny pro skutečnou osobu
             # Max 2-3 tokeny (již splněno regex patternem)
             # Každý token začíná velkým písmenem (již splněno)
 
@@ -4532,7 +4576,19 @@ class Anonymizer:
             # Posun o 1 znak pro nalezení překrývajících se matchů
             pos = match.start() + 1
 
-        # 4. Kombinuj matche a odstraň překryvy (preferuj delší = 4-slovné > 3-slovné > 2-slovné)
+        # 3b. "Příjmení, Jméno" (s čárkou – obrácené pořadí)
+        matches_comma = []
+        pos = 0
+        while pos < len(text):
+            match = person_comma_pattern.search(text, pos)
+            if not match:
+                break
+            word2_lo = match.group(2).lower()
+            if word2_lo in CZECH_FIRST_NAMES and len(match.group(1)) >= 3:
+                matches_comma.append(match)
+            pos = match.start() + 1
+
+        # 4. Kombinuj matche a odstraň překryvy (preferuj delší = 4-slovné > 3-slovné > 2-slovné > comma)
         all_candidates = []
 
         for match in matches_4word:
@@ -4541,8 +4597,10 @@ class Anonymizer:
             all_candidates.append(('3word', match))
         for match in matches_2word:
             all_candidates.append(('2word', match))
+        for match in matches_comma:
+            all_candidates.append(('comma', match))
 
-        priority = {'4word': 0, '3word': 1, '2word': 2}
+        priority = {'4word': 0, '3word': 1, '2word': 2, 'comma': 2}
         all_candidates.sort(key=lambda x: (priority[x[0]], x[1].start()))
 
         all_matches = []
@@ -4557,11 +4615,24 @@ class Anonymizer:
 
         all_matches.sort(key=lambda x: x[1].start(), reverse=True)
 
+        def replace_comma_person(match):
+            """Handler pro 'Příjmení, Jméno' – prohodí pořadí a vytvoří tag."""
+            last_candidate = match.group(1)
+            first_candidate = match.group(2)
+            first_nom = infer_first_name_nominative(first_candidate) or first_candidate
+            last_nom = infer_surname_nominative(last_candidate)
+            tag, canonical = self._ensure_person_tag(first_nom, last_nom, first_candidate, last_candidate)
+            if tag is None:
+                return match.group(0)
+            return tag
+
         for match_type, match in all_matches:
             if match_type == '4word':
                 replacement = replace_double_role_person(match)
             elif match_type == '3word':
                 replacement = replace_role_person(match)
+            elif match_type == 'comma':
+                replacement = replace_comma_person(match)
             else:  # '2word'
                 replacement = replace_person(match)
 
@@ -5213,6 +5284,16 @@ class Anonymizer:
             return match.group(0)
         text = ID_CARD_RE.sub(replace_id_card, text)
 
+        # 14.1. PAS (PŘED telefony! "pas: 12345678" nesmí být PHONE ani ID_CARD)
+        def replace_passport(match):
+            return self._get_or_create_label('PASSPORT', match.group(1))
+        text = PASSPORT_RE.sub(replace_passport, text)
+
+        # 14.2. ŘIDIČSKÝ PRŮKAZ (PŘED telefony! "ŘP: 987654321" nesmí být PHONE)
+        def replace_driver_license(match):
+            return self._get_or_create_label('DRIVER_LICENSE', match.group(1))
+        text = DRIVER_LICENSE_RE.sub(replace_driver_license, text)
+
         # 14.5. VARIABILNÍ SYMBOL (PŘED telefony! VS čísla nejsou telefony)
 
         # 14.6. KONSTANTNÍ SYMBOL
@@ -5229,10 +5310,27 @@ class Anonymizer:
 
         # 14.12. ČÍSLO SMLOUVY (generické)
 
-        # 15. TELEFONY (po ID_CARD a VS, ale PŘED částkami!)
+        # 15. TELEFONY (po ID_CARD, PASSPORT, ŘP a VS, ale PŘED částkami!)
+        _phone_context_skip_re = re.compile(
+            r'(?:VS|variabilní\s+symbol|č\.?\s*j\.|spisová\s+značka|'
+            r'číslo\s+pojištěnce|pojištěnec|pojišťovna)\s*:?\s*$',
+            re.IGNORECASE
+        )
         def replace_phone(match):
-            # PHONE_RE má capture group (1) pro samotné číslo (bez prefixu!)
-            return self._get_or_create_label('PHONE', match.group(1))
+            phone_val = match.group(1)
+            start = match.start()
+            ctx_before = text[max(0, start-40):start]
+            if _phone_context_skip_re.search(ctx_before):
+                return match.group(0)
+            digits_only = re.sub(r'\D', '', phone_val)
+            if len(digits_only) == 10:
+                for existing_key in self.entity_map.get('INSURANCE_ID', {}):
+                    if re.sub(r'\D', '', existing_key) == digits_only:
+                        return match.group(0)
+                for existing_key in self.entity_map.get('BIRTH_ID', {}):
+                    if re.sub(r'\D', '', existing_key) == digits_only:
+                        return match.group(0)
+            return self._get_or_create_label('PHONE', phone_val)
         text = PHONE_RE.sub(replace_phone, text)
 
         # 16. DIČ (před IČO)
@@ -5271,15 +5369,7 @@ class Anonymizer:
             return self._get_or_create_label('DATE', match.group(1))
         text = DATE_WORDS_RE.sub(replace_date_words, text)
 
-        # 16.8. ČÍSLO PASU
-        def replace_passport(match):
-            return self._get_or_create_label('PASSPORT', match.group(1))
-        text = PASSPORT_RE.sub(replace_passport, text)
-
-        # 16.8. ŘIDIČSKÝ PRŮKAZ
-        def replace_driver_license(match):
-            return self._get_or_create_label('DRIVER_LICENSE', match.group(1))
-        text = DRIVER_LICENSE_RE.sub(replace_driver_license, text)
+        # 16.8. PAS + ŘP – přesunuty do kroku 14.1/14.2 (před telefony)
 
         # 16.9. BENEFITNÍ KARTY (MultiSport, Sodexo) - PII!
         def replace_benefit_card(match):
@@ -5310,17 +5400,23 @@ class Anonymizer:
             return full
         text = ICO_RE.sub(replace_ico, text)
 
-        # 18. SPZ / License Plates
+        # 18. VIN PŘED SPZ (VIN je 17 znaků, SPZ regex by sežral část VINu)
+        def replace_vin(match):
+            vin = match.group(1) or match.group(2) or match.group(3)
+            if vin:
+                tag = self._get_or_create_label('VIN', vin)
+                full = match.group(0)
+                return full.replace(vin, tag)
+            return match.group(0)
+        text = VIN_RE.sub(replace_vin, text)
+
+        # 18.1. SPZ / License Plates (PO VIN!)
         def replace_license_plate(match):
-            # LICENSE_PLATE_RE má capture group (1) pro celou SPZ
             plate = match.group(1) if match.lastindex and match.lastindex >= 1 else match.group(0)
 
-            # Filtruj false positives
-            # Nesmí být jen číslice (789456, 456789)
             if plate.replace(' ', '').isdigit():
                 return match.group(0)
 
-            # Nesmí začínat "EU " (EU 2016)
             if plate.upper().startswith('EU '):
                 return match.group(0)
 
@@ -5338,18 +5434,14 @@ class Anonymizer:
                 if plate_upper.startswith('EN') and len(plate_upper) <= 6:
                     return match.group(0)
 
+            if re.match(r'^[A-Z]{2}\d{4,5}$', plate_upper):
+                if re.search(r'(?:protokol|zápis|záznam|číslo\s+jednací|č\.j\.|inv\.?\s*č|SN[:\s-]|sériové|výrobní)', context_before):
+                    return match.group(0)
+                if plate_upper.startswith('NB') and re.search(r'(?:protokol|nemocnic|pacient|vyšetření|operac|diagnóz)', context_before):
+                    return match.group(0)
+
             return self._get_or_create_label('LICENSE_PLATE', plate)
         text = LICENSE_PLATE_RE.sub(replace_license_plate, text)
-
-        # 18.1. VIN (Vehicle Identification Number)
-        def replace_vin(match):
-            vin = match.group(1) or match.group(2) or match.group(3)
-            if vin:
-                tag = self._get_or_create_label('VIN', vin)
-                full = match.group(0)
-                return full.replace(vin, tag)
-            return match.group(0)
-        text = VIN_RE.sub(replace_vin, text)
 
         # 18.2. MAC ADRESA
         def replace_mac(match):
@@ -5537,7 +5629,7 @@ class Anonymizer:
                 pattern = rf'\b{re.escape(first_caps)}\s+{re.escape(last_caps)}\b'
                 text = re.sub(pattern, p['tag'], text)
 
-        # POST-PASS: Místo narození
+        # POST-PASS: Místo narození → ADDRESS (sloučeno pod ADDRESS)
         birth_place_pattern = re.compile(
             r'(Místo\s+narození\s*:)\s*([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽÄÖÜÀÂÆÇÈÊËÏÎÔÙÛŒĄĆĘŁŃŚŹŻŐŰÑ][a-záčďéěíňóřšťúůýžäöüàâæçèêëïîôùûœąćęłńóśźżőűñ]+)',
             re.IGNORECASE
@@ -5545,8 +5637,7 @@ class Anonymizer:
         def replace_birth_place(match):
             prefix = match.group(1)
             place = match.group(2)
-            # Simple tag - don't reuse ADDRESS tags
-            tag = self._get_or_create_label('BIRTH_PLACE', place)
+            tag = self._get_or_create_label('ADDRESS', place)
             return f"{prefix} {tag}"
         text = birth_place_pattern.sub(replace_birth_place, text)
 
@@ -6027,6 +6118,8 @@ class Anonymizer:
                 return True
             if lo.endswith(_female_endings):
                 return True
+            if lo.endswith('o') and len(lo) > 2 and (lo[:-1] + 'a') in CZECH_FEMALE_NAMES:
+                return True
             return False
 
         def _is_male_surname(surname_lo):
@@ -6056,7 +6149,7 @@ class Anonymizer:
                         variant_first = parts[0]
                         if variant_first.lower().endswith('a') and variant_first.lower() != first.lower():
                             if variant_first in self.source_text or variant in self.source_text:
-                                print(f"  [GENDER-FIX] '{canonical_full}' → '{variant_first} {last}' (female first from variant)")
+                                print(f"  [GENDER-FIX] '{canonical_full}' -> '{variant_first} {last}' (female first from variant)")
                                 person['first'] = variant_first
                                 new_canonical = f"{variant_first} {last}"
                                 if person['tag'] in self.person_canonical_names:
@@ -6086,7 +6179,7 @@ class Anonymizer:
                                         male_last = candidate
                                         male_canonical = f"{first} {male_last}"
                                         break
-                        print(f"  [GENDER-FIX] '{canonical_full}' → '{male_canonical}' (male surname conversion)")
+                        print(f"  [GENDER-FIX] '{canonical_full}' -> '{male_canonical}' (male surname conversion)")
                         person['last'] = male_last
                         if person['tag'] in self.person_canonical_names:
                             self.person_canonical_names[person['tag']] = male_canonical
@@ -6120,7 +6213,7 @@ class Anonymizer:
                         fem_last = last + 'ová'
                 if fem_last and fem_last != last:
                     new_canonical = f"{first} {fem_last}"
-                    print(f"  [GENDER-FIX] '{canonical_full}' → '{new_canonical}' (female surname conversion)")
+                    print(f"  [GENDER-FIX] '{canonical_full}' -> '{new_canonical}' (female surname conversion)")
                     person['last'] = fem_last
                     if person['tag'] in self.person_canonical_names:
                         self.person_canonical_names[person['tag']] = new_canonical
@@ -6169,7 +6262,7 @@ class Anonymizer:
             if new_canonical == canonical_full:
                 continue
 
-            print(f"  [NOM-FIX] '{canonical_full}' → '{new_canonical}'")
+            print(f"  [NOM-FIX] '{canonical_full}' -> '{new_canonical}'")
             person['first'] = nom_first
             person['last'] = nom_last
             if person['tag'] in self.person_canonical_names:
@@ -6402,12 +6495,12 @@ class Anonymizer:
         return remap
 
     def _remove_phone_idcard_overlap(self):
-        """Remove PHONE entries whose normalized digit value matches an ID_CARD or BIRTH_ID entry."""
+        """Remove PHONE entries whose normalized digit value matches an ID_CARD, BIRTH_ID or INSURANCE_ID entry."""
         if 'PHONE' not in self.entity_map:
             return {}
 
         id_digits = {}
-        for id_type in ('ID_CARD', 'BIRTH_ID'):
+        for id_type in ('ID_CARD', 'BIRTH_ID', 'INSURANCE_ID'):
             if id_type not in self.entity_map:
                 continue
             for key in self.entity_map[id_type]:
@@ -6476,6 +6569,34 @@ class Anonymizer:
                     print(f"  [DEDUP] Found variant overlap: '{canonical_b}' has variant '{canonical_a}'")
                     to_merge.append((i, j))
                     continue
+
+                # VOCATIVE CHECK: "Petro Konečný" is vocative of "Petra Konečná"
+                # If one first name + "a" == other first name, and surnames share the same root
+                a_first_lo = person_a['first'].lower()
+                b_first_lo = person_b['first'].lower()
+                a_last_lo = person_a['last'].lower()
+                b_last_lo = person_b['last'].lower()
+                vocative_match = False
+                if a_first_lo.endswith('o') and b_first_lo == a_first_lo[:-1] + 'a':
+                    vocative_match = True
+                elif b_first_lo.endswith('o') and a_first_lo == b_first_lo[:-1] + 'a':
+                    vocative_match = True
+                if vocative_match:
+                    a_last_base = infer_surname_nominative(person_a['last'])
+                    b_last_base = infer_surname_nominative(person_b['last'])
+                    a_root = re.sub(r'(ová|ový|á|ý)$', '', a_last_base.lower())
+                    b_root = re.sub(r'(ová|ový|á|ý)$', '', b_last_base.lower())
+                    a_male = re.sub(r'ová$', '', a_last_base.lower())
+                    b_male = re.sub(r'ová$', '', b_last_base.lower())
+                    if (a_root == b_root
+                        or a_last_base.lower() == b_last_base.lower()
+                        or a_male == b_last_base.lower()
+                        or b_male == a_last_base.lower()
+                        or a_male + 'ová' == b_last_base.lower()
+                        or b_male + 'ová' == a_last_base.lower()):
+                        print(f"  [DEDUP] Found vocative pair: '{canonical_a}' <-> '{canonical_b}'")
+                        to_merge.append((i, j))
+                        continue
 
                 # NEW: Check if inferred forms match (catches cases where inference doesn't work during initial detection)
                 # Example: "Adéla Jarošová" (infers to itself) vs "Adéle Jarošové" (should infer to "Adéla Jarošová")
@@ -7602,6 +7723,8 @@ class Anonymizer:
             'web', 'cloud', 'data', 'tech', 'enterprise', 'premium',
             'account', 'risk', 'career', 'customer', 'success', 'compliance',
             'senior', 'junior', 'lead', 'head', 'team',
+            'hyundai', 'tucson', 'přechodný', 'přechodného', 'projektová', 'projeket',
+            'gymnázi', 'gymnázia', 'gymnázium',
         }
         role_cleanup_deleted = []
         for i, person in enumerate(self.canonical_persons):

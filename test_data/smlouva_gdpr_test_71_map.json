@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:15.970788",
+  "generated_at": "2026-03-18T14:50:19.743538",
   "source_file": "smlouva_gdpr_test_71.docx",
   "entities": [
     {
@@ -12,25 +12,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Hynkovi Urbanovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Hynku Urbane",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Hynka Urbana",
+      "original": "Hynkovi Urbanovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Hynkem Urbanem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Hynka Urbana",
       "occurrences": 1
     },
     {
@@ -43,12 +43,6 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Drahomírou Vlachovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Drahomíru Vlachováovou",
       "occurrences": 1
     },
     {
@@ -71,8 +65,20 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Drahomíru Vlachováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Marek Holub",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Marka Holuba",
       "occurrences": 1
     },
     {
@@ -84,19 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Markem Holubem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
       "original": "Holub",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Marka Holuba",
+      "original": "Markem Holubem",
       "occurrences": 1
     },
     {
@@ -138,13 +138,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Marka Kuchtu",
+      "original": "Marka Kuchty",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Marka Kuchty",
+      "original": "Marka Kuchtu",
       "occurrences": 1
     },
     {

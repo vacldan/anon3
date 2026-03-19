@@ -1,0 +1,11 @@
+OSOBY
+-----
+[[PERSON_1]]: Petr Dvořák
+[[PERSON_2]]: Pavel Dvořák
+  - Dvořák Pavel
+[[PERSON_3]]: Petro Dvořák
+  - Petrou Dvořákovou
+
+PHONE
+[[PHONE_1]]: +420 777 123 456
+

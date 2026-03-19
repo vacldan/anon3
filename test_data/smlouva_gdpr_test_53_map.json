@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:03.053821",
+  "generated_at": "2026-03-18T14:49:54.319968",
   "source_file": "smlouva_gdpr_test_53.docx",
   "entities": [
     {
@@ -12,13 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Janovi Benešovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Jana Beneša",
+      "original": "Jane Beneše",
       "occurrences": 1
     },
     {
@@ -30,7 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Jane Beneše",
+      "original": "Jana Beneša",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Janovi Benešovi",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Věry Polákové",
+      "original": "Věru Polákováovou",
       "occurrences": 1
     },
     {
@@ -54,19 +54,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Věrě Polákové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Věrou Polákovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Věru Polákováovou",
+      "original": "Věry Polákové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Věrě Polákové",
       "occurrences": 1
     },
     {
@@ -78,13 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Přemyslovi Marešovi",
+      "original": "Přemysla Mareša",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Přemysla Mareša",
+      "original": "Přemyslovi Marešovi",
       "occurrences": 1
     },
     {

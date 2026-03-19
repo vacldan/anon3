@@ -1,18 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:32.570274",
+  "generated_at": "2026-03-18T14:50:54.301395",
   "source_file": "smlouva_gdpr_test_96.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Michal Dvořák",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Michale Dvořáke",
       "occurrences": 1
     },
     {
@@ -30,6 +24,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Michale Dvořáke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Michalovi Dvořákovi",
       "occurrences": 1
     },
@@ -42,13 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Veroniko Řípová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Veroniku Řípováovou",
+      "original": "Veronikou Řípovou",
       "occurrences": 1
     },
     {
@@ -60,19 +54,31 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Veronikou Řípovou",
+      "original": "Veroniky Řípové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Veroniky Řípové",
+      "original": "Veroniku Řípováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Veroniko Řípová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Štěpán Křeček",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Štěpánem Křečkem",
       "occurrences": 1
     },
     {
@@ -85,12 +91,6 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Štěpána Křečka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Štěpánem Křečkem",
       "occurrences": 1
     },
     {

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:38.754154",
+  "generated_at": "2026-03-18T14:49:09.776604",
   "source_file": "smlouva_gdpr_test_122.docx",
   "entities": [
     {
@@ -12,25 +12,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Václave Vaněke",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Václavovi Vaněkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Václavem Vaněkem",
+      "original": "Václava Vaněka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Václava Vaněka",
+      "original": "Václave Vaněke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Václavem Vaněkem",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Romanem Černýem",
+      "original": "Romanovi Černýovi",
       "occurrences": 1
     },
     {
@@ -54,7 +54,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Romanovi Černýovi",
+      "original": "Romanem Černýem",
       "occurrences": 1
     },
     {
@@ -96,25 +96,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Štěpánem Procházkou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
       "original": "Štěpánovi Procházkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Štěpáne Procházko",
+      "original": "Štěpána Procházky",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Štěpána Procházky",
+      "original": "Štěpánem Procházkou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Štěpáne Procházko",
       "occurrences": 1
     },
     {
@@ -274,12 +274,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0HA1124",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4044 7220 9921 2020",
@@ -307,6 +301,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "1C:6F:47:68:AA:2A",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0HA112440",
       "occurrences": 1
     }
   ]

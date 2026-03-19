@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T08:31:04.308294",
+  "generated_at": "2026-03-18T14:51:03.038816",
   "source_file": "test_pypy.docx",
   "entities": [
     {
@@ -34,80 +34,8 @@
       "occurrences": 1
     },
     {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_40]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_43]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "EMAIL",
-      "label": "[[EMAIL_7]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "EMAIL",
-      "label": "[[EMAIL_2]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_3]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_15]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
       "type": "PHONE",
-      "label": "[[PHONE_9]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_8]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_2]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_13]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_44]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_6]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "EMAIL",
-      "label": "[[EMAIL_5]]",
+      "label": "[[PHONE_10]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
@@ -118,20 +46,14 @@
       "occurrences": 1
     },
     {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_2]]",
+      "type": "ICO",
+      "label": "[[ICO_1]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_14]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
+      "label": "[[ADDRESS_12]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
@@ -142,152 +64,8 @@
       "occurrences": 1
     },
     {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_6]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
       "type": "PHONE",
-      "label": "[[PHONE_1]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_1]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_24]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_12]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_22]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "ICO",
-      "label": "[[ICO_1]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_6]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_31]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "EMAIL",
-      "label": "[[EMAIL_3]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_5]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_8]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_18]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_2]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_10]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_9]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "EMAIL",
-      "label": "[[EMAIL_1]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_16]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_17]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_11]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_30]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_32]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_27]]",
+      "label": "[[PHONE_9]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
@@ -299,121 +77,25 @@
     },
     {
       "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_26]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_3]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_11]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_19]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_21]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_9]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_36]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_7]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_10]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_13]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "EMAIL",
-      "label": "[[EMAIL_6]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_34]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_12]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_41]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "EMAIL",
-      "label": "[[EMAIL_4]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_25]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_20]]",
+      "label": "[[BIRTH_ID_15]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_23]]",
+      "label": "[[BIRTH_ID_44]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_13]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_35]]",
+      "label": "[[BIRTH_ID_27]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
@@ -425,31 +107,7 @@
     },
     {
       "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_33]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_42]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_38]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_5]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_8]]",
+      "label": "[[BIRTH_ID_43]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
@@ -460,14 +118,74 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_2]]",
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_28]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_4]]",
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_6]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_6]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_8]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_21]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_10]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_26]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_5]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_35]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_38]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_13]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_14]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
@@ -484,14 +202,194 @@
       "occurrences": 1
     },
     {
-      "type": "EMAIL",
-      "label": "[[EMAIL_8]]",
+      "type": "PHONE",
+      "label": "[[PHONE_5]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_6]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_17]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_5]]",
+      "label": "[[ADDRESS_11]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_4]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_3]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_8]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_6]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_12]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_29]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_9]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_3]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_3]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_20]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_1]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_3]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_7]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_13]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_5]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_34]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_1]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_2]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_14]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_32]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_5]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "ID_CARD",
+      "label": "[[ID_CARD_2]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_1]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_30]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_11]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_22]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_4]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
@@ -503,31 +401,115 @@
     },
     {
       "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_23]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_42]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_19]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_40]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_16]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_36]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_7]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_33]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_39]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_2]]",
+      "type": "EMAIL",
+      "label": "[[EMAIL_2]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_1]]",
-      "original": "***REDACTED***",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_29]]",
+      "type": "PHONE",
+      "label": "[[PHONE_13]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
     {
       "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_28]]",
+      "label": "[[BIRTH_ID_31]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "LICENSE_PLATE",
+      "label": "[[LICENSE_PLATE_2]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_8]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_8]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_11]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_9]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_18]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "PHONE",
+      "label": "[[PHONE_2]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
@@ -539,19 +521,37 @@
     },
     {
       "type": "BIRTH_ID",
-      "label": "[[BIRTH_ID_14]]",
+      "label": "[[BIRTH_ID_2]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_7]]",
+      "type": "EMAIL",
+      "label": "[[EMAIL_1]]",
       "original": "***REDACTED***",
       "occurrences": 1
     },
     {
-      "type": "PHONE",
-      "label": "[[PHONE_11]]",
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_24]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_7]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_41]]",
+      "original": "***REDACTED***",
+      "occurrences": 1
+    },
+    {
+      "type": "BIRTH_ID",
+      "label": "[[BIRTH_ID_3]]",
       "original": "***REDACTED***",
       "occurrences": 1
     }

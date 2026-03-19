@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:55:41.204738",
+  "generated_at": "2026-03-18T14:46:38.544111",
   "source_file": "smlouva18.docx",
   "entities": [
     {
@@ -36,6 +36,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
+      "original": "Pokornou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
       "original": "Pavlíny Pokorné",
       "occurrences": 1
     },
@@ -47,14 +53,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Pokornou",
+      "label": "[[PERSON_4]]",
+      "original": "Robert Klíma",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Robert Klíma",
+      "original": "Roberta Klímy",
       "occurrences": 1
     },
     {
@@ -71,20 +77,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Roberta Klímy",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Tereza Houfová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Houfová",
       "occurrences": 1
     },
     {
@@ -97,6 +91,12 @@
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Houfovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Houfová",
       "occurrences": 1
     },
     {
@@ -180,13 +180,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_14]]",
-      "original": "Vránou",
+      "original": "Tobiášem Vránou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_14]]",
-      "original": "Tobiášem Vránou",
+      "original": "Vránou",
       "occurrences": 1
     },
     {
@@ -310,6 +310,18 @@
       "occurrences": 1
     },
     {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WF0XXXTTGXHA44510",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_2]]",
+      "original": "TMBJJ7NU0L5199221",
+      "occurrences": 1
+    },
+    {
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_1]]",
       "original": "7B7 1189",
@@ -318,25 +330,13 @@
     {
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
-      "original": "HA44510",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
       "original": "5M4 6629",
       "occurrences": 1
     },
     {
       "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_4]]",
+      "label": "[[LICENSE_PLATE_3]]",
       "original": "EI 86674",
-      "occurrences": 1
-    },
-    {
-      "type": "VIN",
-      "label": "[[VIN_1]]",
-      "original": "TMBJJ7NU0L5199221",
       "occurrences": 1
     }
   ]

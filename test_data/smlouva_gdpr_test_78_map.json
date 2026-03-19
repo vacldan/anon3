@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:20.853835",
+  "generated_at": "2026-03-18T14:50:30.072813",
   "source_file": "smlouva_gdpr_test_78.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alexe Pospíšile",
+      "original": "Alexa Pospíšila",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alexovi Pospíšilovi",
+      "original": "Alexe Pospíšile",
       "occurrences": 1
     },
     {
@@ -30,13 +30,31 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alexa Pospíšila",
+      "original": "Alexovi Pospíšilovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Helena Černá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Heleně Černé",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Helenu Černou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Heleno Černá",
       "occurrences": 1
     },
     {
@@ -53,32 +71,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Heleno Černá",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Helenu Černou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Heleně Černé",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Milada Pazderová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Miladu Pazderováovou",
       "occurrences": 1
     },
     {
@@ -89,8 +83,20 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Miladu Pazderováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Pavel Kuchta",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Pavla Kuchtu",
       "occurrences": 1
     },
     {
@@ -108,12 +114,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Pavla Kuchtu",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Pavlovi Kuchtovi",
       "occurrences": 1
     },
@@ -126,13 +126,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Emy Vaňkové",
+      "original": "Emu Vaňkováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Emu Vaňkováovou",
+      "original": "Emy Vaňkové",
       "occurrences": 1
     },
     {

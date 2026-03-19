@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:07.804244",
+  "generated_at": "2026-03-18T14:50:03.791500",
   "source_file": "smlouva_gdpr_test_59.docx",
   "entities": [
     {
@@ -30,13 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Přemyslovi Švestkovi",
+      "original": "Přemyslem Švestkou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Přemyslem Švestkou",
+      "original": "Přemyslovi Švestkovi",
       "occurrences": 1
     },
     {
@@ -48,13 +48,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ivou Kratochvílovou",
+      "original": "Ivu Kratochvílováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Ivu Kratochvílováovou",
+      "original": "Ivou Kratochvílovou",
       "occurrences": 1
     },
     {
@@ -84,12 +84,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Metodějovi Kopeckému",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
       "original": "Metoděja Kopeckého",
       "occurrences": 1
     },
@@ -97,6 +91,12 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Metodějem Kopeckým",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Metodějovi Kopeckému",
       "occurrences": 1
     },
     {

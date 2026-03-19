@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:55:40.361050",
+  "generated_at": "2026-03-18T14:46:36.713897",
   "source_file": "smlouva17.docx",
   "entities": [
     {
@@ -306,42 +306,36 @@
     {
       "type": "PHONE",
       "label": "[[PHONE_2]]",
-      "original": "987654321",
-      "occurrences": 1
-    },
-    {
-      "type": "PHONE",
-      "label": "[[PHONE_3]]",
       "original": "+420 724 567 890",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_4]]",
+      "label": "[[PHONE_3]]",
       "original": "+420 606 345 678",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_5]]",
+      "label": "[[PHONE_4]]",
       "original": "+420 603 234 567",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_6]]",
+      "label": "[[PHONE_5]]",
       "original": "+420 605 456 789",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_7]]",
+      "label": "[[PHONE_6]]",
       "original": "+420 606 234 567",
       "occurrences": 1
     },
     {
       "type": "PHONE",
-      "label": "[[PHONE_8]]",
+      "label": "[[PHONE_7]]",
       "original": "+420 222 456 700",
       "occurrences": 1
     },
@@ -383,18 +377,6 @@
     },
     {
       "type": "ADDRESS",
-      "label": "[[ADDRESS_3]]",
-      "original": "Karlova 45/12, 602 00 Brno",
-      "occurrences": 2
-    },
-    {
-      "type": "ADDRESS",
-      "label": "[[ADDRESS_4]]",
-      "original": "Masarykova 123/45, 602 00 Brno",
-      "occurrences": 1
-    },
-    {
-      "type": "ADDRESS",
       "label": "[[ADDRESS_6]]",
       "original": "Na Františku 12/34, 110 00 Praha 1",
       "occurrences": 1
@@ -416,6 +398,12 @@
       "label": "[[ADDRESS_2]]",
       "original": "Vinohradská 1234/89, 130 00 Praha 3, Praha 3 - Vinohrady",
       "occurrences": 5
+    },
+    {
+      "type": "ADDRESS",
+      "label": "[[ADDRESS_4]]",
+      "original": "Karlova 45/12, 602 00, Brno",
+      "occurrences": 4
     },
     {
       "type": "BIRTH_ID",
@@ -466,9 +454,9 @@
       "occurrences": 1
     },
     {
-      "type": "BIRTH_PLACE",
-      "label": "[[BIRTH_PLACE_1]]",
-      "original": "Brno",
+      "type": "DRIVER_LICENSE",
+      "label": "[[DRIVER_LICENSE_1]]",
+      "original": "987654321",
       "occurrences": 1
     },
     {

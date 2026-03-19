@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:28.477302",
+  "generated_at": "2026-03-18T14:50:46.062376",
   "source_file": "smlouva_gdpr_test_90.docx",
   "entities": [
     {
@@ -18,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Matěje Šimůnku",
+      "original": "Matějem Šimůnkem",
       "occurrences": 1
     },
     {
@@ -30,13 +30,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Matějem Šimůnkem",
+      "original": "Matěje Šimůnku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Miluše Brázdová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Miluše Brázdové",
       "occurrences": 1
     },
     {
@@ -53,20 +59,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Miluše Brázdové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Alex Fiala",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Alexa Fialu",
       "occurrences": 1
     },
     {
@@ -78,13 +72,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Alexovi Fialovi",
+      "original": "Alexem Fialou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Alexem Fialou",
+      "original": "Alexa Fialu",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Alexovi Fialovi",
       "occurrences": 1
     },
     {
@@ -108,13 +108,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Emy Vaňkové",
+      "original": "Emu Vaňkováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Emu Vaňkováovou",
+      "original": "Emy Vaňkové",
       "occurrences": 1
     },
     {

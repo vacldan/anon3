@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:33.799305",
+  "generated_at": "2026-03-18T14:49:00.302806",
   "source_file": "smlouva_gdpr_test_111.docx",
   "entities": [
     {
@@ -12,25 +12,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michala Procházky",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Michalem Procházkou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Michalovi Procházkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Michala Procházky",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Michale Procházko",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Michalem Procházkou",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavla Nováka",
+      "original": "Pavlovi Novákovi",
       "occurrences": 1
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavlovi Novákovi",
+      "original": "Pavla Nováka",
       "occurrences": 1
     },
     {
@@ -90,12 +90,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Erika Černýa",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Erikovi Černýovi",
       "occurrences": 1
     },
@@ -103,6 +97,12 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Erikem Černýem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Erika Černýa",
       "occurrences": 1
     },
     {
@@ -274,12 +274,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0FA9248",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4728 4029 6069 7070",
@@ -307,6 +301,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "EF:C8:C0:1B:5C:5A",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0FA924805",
       "occurrences": 1
     }
   ]

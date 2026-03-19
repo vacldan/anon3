@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:33.170620",
+  "generated_at": "2026-03-18T14:50:55.502370",
   "source_file": "smlouva_gdpr_test_97.docx",
   "entities": [
     {
@@ -24,13 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Hynku Řezníčku",
+      "original": "Hynkem Řezníčkem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Hynkem Řezníčkem",
+      "original": "Hynku Řezníčku",
       "occurrences": 1
     },
     {
@@ -42,13 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Adélou Dvořákovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Adélu Dvořákováovou",
+      "original": "Adélo Dvořáková",
       "occurrences": 1
     },
     {
@@ -60,13 +54,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Adélo Dvořáková",
+      "original": "Adély Dvořákové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Adély Dvořákové",
+      "original": "Adélu Dvořákováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Adélou Dvořákovou",
       "occurrences": 1
     },
     {
@@ -84,13 +84,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Miluše Svobodováovou",
+      "original": "Miluše Svobodovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Miluše Svobodovou",
+      "original": "Miluše Svobodováovou",
       "occurrences": 1
     },
     {
@@ -102,13 +102,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Květy Holubové",
+      "original": "Květu Holubováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Květu Holubováovou",
+      "original": "Květy Holubové",
       "occurrences": 1
     },
     {
@@ -120,13 +120,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Kláru Beranováovou",
+      "original": "Kláry Beranové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Kláry Beranové",
+      "original": "Kláru Beranováovou",
       "occurrences": 1
     },
     {
@@ -430,12 +430,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_4]]",
-      "original": "WZ5234",
-      "occurrences": 1
-    },
-    {
       "type": "PASSWORD",
       "label": "[[PASSWORD_1]]",
       "original": "Adé63!5198",
@@ -451,6 +445,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "CE:20:13:FA:29:A4",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WVWZ5234Z0EA1H8AX",
       "occurrences": 1
     }
   ]

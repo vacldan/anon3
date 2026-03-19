@@ -1,12 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:42.874045",
+  "generated_at": "2026-03-18T14:49:17.514558",
   "source_file": "smlouva_gdpr_test_131.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "David Kříž",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Davida Kříža",
       "occurrences": 1
     },
     {
@@ -24,12 +30,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Davida Kříža",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Davide Kříže",
       "occurrences": 1
     },
@@ -42,25 +42,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Matěja Procházky",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Matějovi Procházkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Matějem Procházkou",
+      "original": "Matěje Procházko",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Matěje Procházko",
+      "original": "Matěja Procházky",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Matějem Procházkou",
       "occurrences": 1
     },
     {
@@ -72,25 +72,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Petrě Králové",
+      "original": "Petrou Královou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Petrou Královou",
+      "original": "Petrě Králové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Aleš Král",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Aleša Krála",
       "occurrences": 1
     },
     {
@@ -103,6 +97,12 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Alešovi Královi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Aleša Krála",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0HA2716",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4799 2550 6484 7530",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "C3:70:CC:44:78:50",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0HA271640",
       "occurrences": 1
     }
   ]

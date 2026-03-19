@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:29.737756",
+  "generated_at": "2026-03-18T14:48:52.537641",
   "source_file": "smlouva_gdpr_test_102.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpánovi Dvořákovi",
+      "original": "Štěpáne Dvořáke",
       "occurrences": 1
     },
     {
@@ -24,7 +24,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpáne Dvořáke",
+      "original": "Štěpánovi Dvořákovi",
       "occurrences": 1
     },
     {
@@ -42,13 +42,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavle Roubale",
+      "original": "Pavla Roubala",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Pavla Roubala",
+      "original": "Pavle Roubale",
       "occurrences": 1
     },
     {
@@ -72,19 +72,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Alžbětou Řezníčkovou",
+      "original": "Alžbětě Řezníčkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Alžbětě Řezníčkové",
+      "original": "Alžbětou Řezníčkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Jan Král",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Jana Krála",
       "occurrences": 1
     },
     {
@@ -97,12 +103,6 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Janovi Královi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Jana Krála",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0GA3824",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4968 1638 5359 7391",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "16:75:F4:DB:42:DD",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0GA382464",
       "occurrences": 1
     }
   ]

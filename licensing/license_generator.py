@@ -66,6 +66,9 @@ def create_license(
     issue_date = datetime.now()
     expiry_date = issue_date + timedelta(days=duration_days)
 
+    # Normalizuj HW ID (validátor používá tuto formu)
+    hw_id_norm = hw_id.replace('-', '').replace(' ', '').upper()
+
     # Vytvoř licenční data
     license_data = {
         "license_key": license_key,
@@ -73,7 +76,7 @@ def create_license(
             "name": customer_name,
             "email": customer_email
         },
-        "hw_id": hw_id.replace('-', '').upper(),
+        "hw_id": hw_id_norm,
         "type": license_type,
         "issued_at": issue_date.isoformat(),
         "expires_at": expiry_date.isoformat(),
@@ -81,8 +84,8 @@ def create_license(
         "version": "1.0"
     }
 
-    # Vytvoř string pro podpis
-    sign_string = f"{license_key}|{hw_id}|{expiry_date.isoformat()}|{license_type}"
+    # Vytvoř string pro podpis (MUSÍ odpovídat license_data - validátor používá hw_id ze souboru)
+    sign_string = f"{license_key}|{hw_id_norm}|{expiry_date.isoformat()}|{license_type}"
     signature = sign_license_data(sign_string)
 
     license_data["signature"] = signature
@@ -104,8 +107,8 @@ def save_license_file(license_data, output_path="license.lic"):
     # Base64 encode (lehká obfuskace)
     encoded = base64.b64encode(json_str.encode('utf-8')).decode('utf-8')
 
-    # Ulož do souboru
-    with open(output_path, 'w') as f:
+    # Ulož do souboru (UTF-8 pro konzistenci)
+    with open(output_path, 'w', encoding='utf-8') as f:
         f.write(encoded)
 
     print(f"[OK] Licence uložena do: {output_path}")

@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-03-18T14:51:01.771638",
+  "source_file": "smlouva_name_order_07.docx",
+  "entities": [
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Tomáš Svoboda",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Svobody Tomáše",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Tomáši Svobodovi",
+      "occurrences": 1
+    }
+  ]
+}

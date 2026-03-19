@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:12.537387",
+  "generated_at": "2026-03-18T14:50:12.972392",
   "source_file": "smlouva_gdpr_test_66.docx",
   "entities": [
     {
@@ -12,19 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Maxovi Švestkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Maxem Švestkou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Maxa Švestky",
       "occurrences": 1
     },
     {
@@ -36,13 +24,31 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Maxovi Švestkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Maxe Švestko",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Maxa Švestky",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Libuše Rendlová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Libuše Rendlové",
       "occurrences": 1
     },
     {
@@ -59,12 +65,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Libuše Rendlové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Miloslav Rendl",
       "occurrences": 1
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Miloslava Rendla",
+      "original": "Miloslavem Rendlem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Miloslavem Rendlem",
+      "original": "Miloslava Rendla",
       "occurrences": 1
     },
     {
@@ -90,7 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Darjou Kuchtovou",
+      "original": "Darjy Kuchtové",
       "occurrences": 1
     },
     {
@@ -102,13 +102,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Darjy Kuchtové",
+      "original": "Darju Kuchtováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Darju Kuchtováovou",
+      "original": "Darjou Kuchtovou",
       "occurrences": 1
     },
     {
@@ -120,13 +120,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Květu Holíkováovou",
+      "original": "Květy Holíkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Květy Holíkové",
+      "original": "Květu Holíkováovou",
       "occurrences": 1
     },
     {
@@ -138,13 +138,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Ondřeja Kuchty",
+      "original": "Ondřeja Kuchtu",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Ondřeja Kuchtu",
+      "original": "Ondřeja Kuchty",
       "occurrences": 1
     },
     {

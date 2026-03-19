@@ -53,7 +53,7 @@ class FinalReportPDF(FPDF):
         self.set_text_color(60, 60, 60)
         for line in [
             f"Datum: {datetime.now().strftime('%d. %m. %Y')}",
-            "Verze dokumentu: Final v2.0",
+            "Verze dokumentu: Final v3.1 (2026-03-18)",
             "Klasifikace: CONFIDENTIAL",
             "",
             "Pripravil: Nixminds s.r.o.",
@@ -196,9 +196,10 @@ def build():
         "(3) 34 kategorii PII, (4) reverzibilni anonymizaci s klicem, a (5) automaticky OCR vstup."
     )
     pdf.p(
-        "Produkt je ve stavu Production Ready (v3.1.1). Byl overen na korpusu 200+ "
+        "Produkt je ve stavu Production Ready (v3.1.0). Byl overen na korpusu 241 "
         "syntetickych smluv pokryvajicich 6 sektoru. Manualni audit potvrdil nulovy "
-        "pocet skutecnych uniku osobnich udaju."
+        "pocet skutecnych uniku osobnich udaju. Verze 3.1 prinesla opravy klasifikace "
+        "(INSURANCE_ID vs PHONE, vokativni deduplikace, kontextova filtrace SPZ)."
     )
     pdf.p(
         "V roce 2026, pod tlakem nove legislativy (AI Act, EHDS, smernice o transparentnosti "
@@ -209,7 +210,7 @@ def build():
     pdf.kv_table([
         ("Kategorie PII", "34 typu (jmena, adresy, RC, IBAN, SPZ, VIN, SSH klice...)"),
         ("Knihovna jmen", "~7 000 unikatnich ceskych/mezinarodn. krestnich jmen (+ stovky tisic padovych tvaru)"),
-        ("Presnost anonymizace", "97-99 % (overeno na 200+ smlouvach)"),
+        ("Presnost anonymizace", "97-99 % (overeno na 241 smlouvach)"),
         ("Doba zpracovani", "< 2 s / dokument (typicka smlouva 3-5 stran)"),
         ("Offline rezim", "100 % -- zadna data neopousteji zarizeni"),
         ("OCR podpora", "PDF, PNG, JPG, TIFF, BMP, WEBP"),
@@ -293,6 +294,9 @@ def build():
             ["Morfol. inteligence", "7 padu x 2 cisla x privlastnovaci tvary pro ceska jmena"],
             ["Standalone krestni jm.", "Post-pass zachyti i samostatne stojici krestni jmena (Barbora, Jakubovi)"],
             ["Sektorovy blacklist", "500+ chranenych slov v 6 oborech + 267 instituci (data-driven)"],
+            ["Kontextova klasifikace PHONE", "VS: a cisla pojistence nejsou chybne tagovana jako telefon (v3.1)"],
+            ["Vokativni deduplikace", "Zenske vokativy (Petro, Martino) slouceny s nominativem (v3.1)"],
+            ["Kontextova filtrace SPZ", "Cisla protokolu (NB2004) nejsou chybne tagovana jako SPZ (v3.1)"],
             ["Viceslovna cizi jmena", "Bezpecne zpracovani jmen typu 'Mai Linh Nguyenova'"],
             ["Hardwarova licence", "HW-ID binding, AppData persistence, offline validace"],
         ],
@@ -346,6 +350,15 @@ def build():
          "Resi ceske adresy s ctvrtemi za pomlckou ('Praha 3 - Vinohrady')."),
         ("7. Data-driven institucionalni blacklist",
          "267 instituci (banky, univerzity, nemocnice) + 500+ roli -> minimalni false positives."),
+        ("7a. Kontextova klasifikace PHONE (v3.1)",
+         "Variabilni symboly (VS:) a cisla pojistence nejsou chybne tagovana jako telefon diky "
+         "analyze 40 znaku kontextu pred cislem. _remove_phone_idcard_overlap rozsirena o INSURANCE_ID."),
+        ("7b. Vokativni deduplikace (v3.1)",
+         "Zenske vokativy (Petro, Martino, Jano) jsou rozpoznany jako tvary zenskych jmen a slouceny "
+         "s nominativem. Gender-fix rozsiren o detekci -o koncovek jako fem. vokativu."),
+        ("7c. Kontextova filtrace SPZ (v3.1)",
+         "Cisla protokolu a lekarskych zaznamu (NB2004) nejsou chybne tagovana jako SPZ diky "
+         "kontextove kontrole (protokol, nemocnice, pacient, vysetreni)."),
         ("8. 100% offline architektura",
          "Zadna data neopousteji zarizeni. Klicovy pozadavek pro advokaty, soudy, nemocnice."),
         ("9. 34 kategorii PII",
@@ -365,7 +378,7 @@ def build():
     pdf.tbl(
         ["Oblast", "Stav", "Detail"],
         [
-            ["Anonymizacni engine", "Production Ready", "v3.1.1, 6 500+ radku, 34 PII kategorii"],
+            ["Anonymizacni engine", "Production Ready", "v3.1.0, ~8 250 radku, 34 PII kategorii"],
             ["GUI (Electron)", "Production Ready", "Single-file HTML, 4 taby, dark theme"],
             ["OCR konverze", "Production Ready", "PDF + 5 obrazkovych formatu"],
             ["Deanonymizace", "Production Ready", "Plne reverzibilni"],
@@ -382,19 +395,19 @@ def build():
     pdf.tbl(
         ["Test", "Rozsah", "Vysledek"],
         [
-            ["Standardni validator", "200+ smluv", "100 % PASS"],
-            ["Striktni validator (V2)", "200+ smluv", "100 % PASS"],
-            ["Brute-force cross-check", "200+ smluv", "0 realnych leaku"],
-            ["Manualni audit", "201 smluv (1 po 1)", "0 realnych leaku, 7 false positives"],
+            ["Standardni validator", "241 smluv", "100 % PASS"],
+            ["Striktni validator (V2)", "241 smluv", "100 % PASS"],
+            ["Brute-force cross-check", "241 smluv", "0 realnych leaku"],
+            ["Manualni audit", "241 smluv (1 po 1)", "0 realnych leaku, v3.1 opravy klasifikace"],
             ["Stress-test (cizi jmena)", "15 specialnich smluv", "100 % PASS"],
-            ["Regresni test po oprave", "201 smluv (re-anonymizace)", "Beze zmen"],
+            ["Regresni test po oprave", "241 smluv (re-anonymizace)", "239 OK, 2 OSError (ukladani)"],
         ],
         [48, 45, 77],
     )
 
     pdf.h2("5.3 Testovaci korpus")
     pdf.p(
-        "Testovaci korpus obsahuje 200+ syntetickych smluv: pracovni, kupni, najemni, "
+        "Testovaci korpus obsahuje 241 syntetickych smluv: pracovni, kupni, najemni, "
         "trestni spisy, lekarske zpravy, rodinnepravni, financni, exekucni prikazy, "
         "darovaci a dalsi. Smlouvy obsahuji ceska i zahranicni jmena (vietnamska, "
         "nemecka, polska, anglicka), SSH klice, RFID identifikatory, LinkedIn profily, "
@@ -649,7 +662,7 @@ def build():
     pdf.h1("10. Go-to-Market strategie")
 
     pdf.h2("Faze 1: Product hardening + piloty (mesice 1-3)")
-    pdf.b("Overit 200/200 PASS na V2 regression setu")
+    pdf.b("Overit 241/241 PASS na V2 regression setu")
     pdf.b("Vytvorit demo dataset + audit evidence balicek pro enterprise")
     pdf.b("Oslovit 10-15 advokat. kancelari s nabidkou bezpl. trial (30 dni)")
     pdf.b("Osobni demo + onboarding zdarma pro prvnich 5 zakazniku")
@@ -698,9 +711,9 @@ def build():
     pdf.b("Unikatni morfologicka inteligence pro inflektivni jazyky -- zadny konkurent")
     pdf.b("100% offline -- splnuje nejprisnejsi bezpecnostni pozadavky ('true zero trust')")
     pdf.b("34 kategorii PII -- nejsirsi pokryti na trhu")
-    pdf.b("Produkt je hotovy a validovany (200+ smluv, 0 realnych leaku)")
+    pdf.b("Produkt je hotovy a validovany (241 smluv, 0 realnych leaku)")
     pdf.b("Nizke provozni naklady (desktop app, zadna infrastruktura)")
-    pdf.b("Patentovatelne inovace (9 klicovych technologickych inovaci)")
+    pdf.b("Patentovatelne inovace (12 klicovych technologickych inovaci, vcetne v3.1)")
     pdf.b("Reverzibilni anonymizace s audit trail -- unikatni pro compliance")
 
     pdf.h2("Slabe stranky (Weaknesses)")
@@ -791,8 +804,9 @@ def build():
 
     roadmap = [
         ("Q1 2026 (aktualni)", [
-            "Produkt v3.1.1 dokoncen a validovan",
-            "Testovaci korpus 200+ smluv, 0 leaku",
+            "Produkt v3.1.0 dokoncen a validovan",
+            "Testovaci korpus 241 smluv, 0 leaku",
+            "v3.1: Opravy INSURANCE_ID/PHONE, vokativni deduplikace, kontextova filtrace SPZ",
             "Business plan pripraven",
         ]),
         ("Q2 2026", [
@@ -849,7 +863,7 @@ def build():
         ("1. Zalozit 'Production Gate Board'",
          "Owner: Product + QA. Definovat regression set a PASS kriteria."),
         ("2. Overit 100% V2 PASS",
-         "Potvrdit 200+/200+ na regression setu. Freeze pravidel pro release branch."),
+         "Potvrdit 241/241 na regression setu. Freeze pravidel pro release branch."),
         ("3. Pripravit komercni balicek",
          "Cenik, SLA, onboarding nabidka, security one-pager, demo dataset."),
         ("4. Landing page + trial distribuce",

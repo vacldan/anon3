@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:03.770260",
+  "generated_at": "2026-03-18T14:47:31.217100",
   "source_file": "smlouva28.docx",
   "entities": [
     {
@@ -222,13 +222,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_24]]",
-      "original": "Bohumila Sedláka",
+      "original": "Sedlákovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_24]]",
-      "original": "Sedlákovi",
+      "original": "Bohumila Sedláka",
       "occurrences": 1
     },
     {
@@ -288,13 +288,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_31]]",
-      "original": "Pokorné",
+      "original": "Dany Pokorné",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_31]]",
-      "original": "Dany Pokorné",
+      "original": "Pokorné",
       "occurrences": 1
     },
     {

@@ -1,0 +1,83 @@
+OSOBY
+-----
+[[PERSON_1]]: Stanislav Křeček
+[[PERSON_2]]: Klára Jirsová
+[[PERSON_3]]: Iva Hrdinová
+[[PERSON_4]]: Ema Kopecká
+[[PERSON_5]]: Růžena Vavrová
+[[PERSON_6]]: Svatopluk Vaněk
+
+ADDRESS
+[[ADDRESS_2]]: Palackého 24, 301 00 Plzeň
+[[ADDRESS_3]]: Doručovací Komenského 40/31, 702 00, Ostrava
+[[ADDRESS_6]]: Hlavní 240, 669 02 Znojmo
+[[ADDRESS_7]]: Vinohradská 179/2, 130 00 Praha 3
+[[ADDRESS_8]]: Jabloňová 102, 400 01 Ústí nad Labem
+[[ADDRESS_1]]: se Náměstí 1, 500 02, Hradec Králové
+[[ADDRESS_5]]: Iva Hrdinová Husova 177, 390 02 Tábor
+
+BANK
+[[BANK_1]]: 9815278283/2700
+[[BANK_2]]: 7286619139/0800
+[[BANK_3]]: 9536713391/6210
+
+BIRTH_ID
+[[BIRTH_ID_1]]: 021105/2488
+[[BIRTH_ID_2]]: 755920/3446
+[[BIRTH_ID_3]]: 025515/0237
+[[BIRTH_ID_4]]: 585505/5085
+[[BIRTH_ID_5]]: 000217/9812
+
+DATE
+[[DATE_1]]: 18. 2. 2002
+[[DATE_2]]: 4. 10. 1987
+[[DATE_3]]: 13. 10. 1998
+[[DATE_4]]: 23. 9. 1987
+[[DATE_5]]: 13. 11. 1984
+[[DATE_6]]: 26. 3. 1994
+[[DATE_7]]: 09. 05. 2026
+[[DATE_8]]: 04. 10. 2026
+
+DIC
+[[DIC_1]]: CZ00223344
+
+EMAIL
+[[EMAIL_1]]: stanislav.krecek@post.cz
+[[EMAIL_2]]: klara.jirsova@example.com
+[[EMAIL_3]]: iva.hrdinova@seznam.cz
+[[EMAIL_4]]: ema.kopecka@post.cz
+[[EMAIL_5]]: ruzena.vavrova@seznam.cz
+[[EMAIL_6]]: svatopluk.vanek@email.cz
+
+IBAN
+[[IBAN_1]]: CZ12 0100 0000 4552 7182 9423
+[[IBAN_2]]: CZ88 0300 0000 5393 6098 2278
+
+ICO
+[[ICO_1]]: 00223344
+
+ID_CARD
+[[ID_CARD_1]]: JC 585928
+
+IP
+[[IP_1]]: 13.201.152.43
+
+LICENSE_PLATE
+[[LICENSE_PLATE_1]]: CZ73497
+[[LICENSE_PLATE_2]]: PP94796
+[[LICENSE_PLATE_3]]: AK 65033
+
+MAC
+[[MAC_1]]: E7:C0:AC:2F:DA:16
+
+PHONE
+[[PHONE_1]]: 640952536
+[[PHONE_2]]: +420791849306
+[[PHONE_3]]: 968459339
+[[PHONE_4]]: 709 782 286
+[[PHONE_5]]: 912362034
+[[PHONE_6]]: 708 912 682
+[[PHONE_7]]: 722 536 702
+[[PHONE_8]]: 777 196 914
+[[PHONE_9]]: +420 648 821 380
+

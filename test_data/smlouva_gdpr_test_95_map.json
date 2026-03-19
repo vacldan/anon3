@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:31.870650",
+  "generated_at": "2026-03-18T14:50:53.039286",
   "source_file": "smlouva_gdpr_test_95.docx",
   "entities": [
     {
@@ -18,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Jaroslava Tesařa",
+      "original": "Jaroslav Tesař",
       "occurrences": 1
     },
     {
@@ -30,13 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Jaroslavovi Tesařovi",
+      "original": "Jaroslava Tesařa",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Jaroslav Tesař",
+      "original": "Jaroslavovi Tesařovi",
       "occurrences": 1
     },
     {
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Kristo Pospíšilová",
+      "original": "Kristy Pospíšilové",
       "occurrences": 1
     },
     {
@@ -60,19 +60,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Kristě Pospíšilové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Kristy Pospíšilové",
+      "original": "Kristo Pospíšilová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Kristou Pospíšilovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Kristě Pospíšilové",
       "occurrences": 1
     },
     {
@@ -84,25 +84,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Stanislava Růžičku",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
       "original": "Stanislavem Růžičkou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Stanislavovi Růžičkovi",
+      "original": "Stanislava Růžičku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Stanislava Růžičky",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Stanislavovi Růžičkovi",
       "occurrences": 1
     },
     {
@@ -132,13 +132,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Hedviku Jirsováovou",
+      "original": "Hedviky Jirsové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Hedviky Jirsové",
+      "original": "Hedviku Jirsováovou",
       "occurrences": 1
     },
     {

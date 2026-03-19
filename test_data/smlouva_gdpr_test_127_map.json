@@ -1,12 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:40.984445",
+  "generated_at": "2026-03-18T14:49:14.122922",
   "source_file": "smlouva_gdpr_test_127.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Helena Svobodová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Heleny Svobodové",
       "occurrences": 1
     },
     {
@@ -29,12 +35,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Heleny Svobodové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Matěj Vaněk",
       "occurrences": 1
@@ -48,6 +48,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Matějem Vaněkem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Matěje Vaněke",
       "occurrences": 1
     },
@@ -55,12 +61,6 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Matěja Vaněka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Matějem Vaněkem",
       "occurrences": 1
     },
     {
@@ -90,25 +90,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Štěpánem Hrubešem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Štěpáne Hrubeše",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Štěpána Hrubeša",
+      "original": "Štěpánovi Hrubešovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Štěpánovi Hrubešovi",
+      "original": "Štěpánem Hrubešem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Štěpána Hrubeša",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0FA1811",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4942 5244 2378 5996",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "A4:26:F7:F3:95:8F",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0FA181172",
       "occurrences": 1
     }
   ]

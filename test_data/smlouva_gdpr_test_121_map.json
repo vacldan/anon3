@@ -1,12 +1,24 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:38.270946",
+  "generated_at": "2026-03-18T14:49:08.798478",
   "source_file": "smlouva_gdpr_test_121.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Helena Procházková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Heleny Procházkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Helenou Procházkovou",
       "occurrences": 1
     },
     {
@@ -19,18 +31,6 @@
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Heleně Procházkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Helenou Procházkovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Heleny Procházkové",
       "occurrences": 1
     },
     {
@@ -48,12 +48,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Michala Malíka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Michalem Malíkem",
       "occurrences": 1
     },
@@ -65,6 +59,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Michala Malíka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Adéla Hrubešová",
       "occurrences": 1
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Adélě Hrubešové",
+      "original": "Adélou Hrubešovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Adélou Hrubešovou",
+      "original": "Adélě Hrubešové",
       "occurrences": 1
     },
     {
@@ -96,7 +96,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Davidovi Malíkovi",
+      "original": "Davidem Malíkem",
       "occurrences": 1
     },
     {
@@ -108,7 +108,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Davidem Malíkem",
+      "original": "Davidovi Malíkovi",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0GA1923",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4172 5965 5559 8945",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "EC:29:62:3C:E0:63",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0GA192367",
       "occurrences": 1
     }
   ]

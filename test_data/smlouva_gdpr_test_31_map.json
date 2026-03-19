@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:56.448180",
+  "generated_at": "2026-03-18T14:49:42.670020",
   "source_file": "smlouva_gdpr_test_31.docx",
   "entities": [
     {
@@ -36,7 +36,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Petrem Dohnalem",
+      "original": "Petra Dohnala",
       "occurrences": 1
     },
     {
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Petra Dohnala",
+      "original": "Petrem Dohnalem",
       "occurrences": 1
     },
     {
@@ -66,13 +66,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Gabrielou Štěpánovou",
+      "original": "Gabrielu Štěpánovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Gabrielu Štěpánovou",
+      "original": "Gabrielou Štěpánovou",
       "occurrences": 1
     },
     {

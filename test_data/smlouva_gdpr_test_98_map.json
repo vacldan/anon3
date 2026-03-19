@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:33.753717",
+  "generated_at": "2026-03-18T14:50:57.976260",
   "source_file": "smlouva_gdpr_test_98.docx",
   "entities": [
     {
@@ -12,13 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ondřejovi Kořínkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Ondřeje Kořínku",
+      "original": "Ondřejem Kořínkem",
       "occurrences": 1
     },
     {
@@ -30,7 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ondřejem Kořínkem",
+      "original": "Ondřeje Kořínku",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Ondřejovi Kořínkovi",
       "occurrences": 1
     },
     {
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Ivanu Růžičkováovou",
+      "original": "Ivany Růžičkové",
       "occurrences": 1
     },
     {
@@ -60,13 +60,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Ivany Růžičkové",
+      "original": "Ivaně Růžičkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Ivaně Růžičkové",
+      "original": "Ivanu Růžičkováovou",
       "occurrences": 1
     },
     {
@@ -78,13 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Milady Fialové",
+      "original": "Miladu Fialováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Miladu Fialováovou",
+      "original": "Milady Fialové",
       "occurrences": 1
     },
     {
@@ -96,13 +96,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Moniku Tesařováovou",
+      "original": "Moniky Tesařové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Moniky Tesařové",
+      "original": "Moniku Tesařováovou",
       "occurrences": 1
     },
     {

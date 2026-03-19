@@ -1,12 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:22.770693",
+  "generated_at": "2026-03-18T14:50:33.998504",
   "source_file": "smlouva_gdpr_test_81.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Erik Tesařa",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Erike Tesaře",
       "occurrences": 1
     },
     {
@@ -24,31 +30,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Erika Tesařa",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Erike Tesaře",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Erikovi Tesařovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Erika Tesařa",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Viktorie Svobodová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Viktorii Svobodové",
       "occurrences": 1
     },
     {
@@ -66,6 +60,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Viktorii Svobodové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Viktorii Svobodováovou",
       "occurrences": 1
     },
@@ -78,13 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Karla Brázdu",
+      "original": "Karlem Brázdou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Karlovi Brázdovi",
+      "original": "Karla Brázdu",
       "occurrences": 1
     },
     {
@@ -96,7 +96,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Karlem Brázdou",
+      "original": "Karlovi Brázdovi",
       "occurrences": 1
     },
     {
@@ -114,13 +114,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Olgu Fialováovou",
+      "original": "Olgy Fialové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Olgy Fialové",
+      "original": "Olgu Fialováovou",
       "occurrences": 1
     },
     {

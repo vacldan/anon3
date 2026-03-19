@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:13.671185",
+  "generated_at": "2026-03-19T10:19:06.804666",
   "source_file": "smlouva32.docx",
   "entities": [
     {
@@ -907,18 +907,6 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_3]]",
       "original": "7A5 6789",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_4]]",
-      "original": "FM 2009",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_5]]",
-      "original": "NB2004",
       "occurrences": 1
     },
     {

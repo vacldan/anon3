@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:15.236818",
+  "generated_at": "2026-03-18T14:50:18.302775",
   "source_file": "smlouva_gdpr_test_70.docx",
   "entities": [
     {
@@ -12,13 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Vincencem Novákem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Vincencovi Novákovi",
+      "original": "Vincenca Nováka",
       "occurrences": 1
     },
     {
@@ -30,7 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Vincenca Nováka",
+      "original": "Vincencovi Novákovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Vincencem Novákem",
       "occurrences": 1
     },
     {
@@ -42,19 +42,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Šárkě Brázdové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Šárku Brázdováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Šárky Brázdové",
+      "original": "Šárko Brázdová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Šárkě Brázdové",
       "occurrences": 1
     },
     {
@@ -66,19 +66,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Šárko Brázdová",
+      "original": "Šárky Brázdové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Ivana Soukupová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Ivanu Soukupováovou",
       "occurrences": 1
     },
     {
@@ -97,6 +91,12 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Ivaně Soukupové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Ivanu Soukupováovou",
       "occurrences": 1
     },
     {
@@ -138,13 +138,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Brunoa Kuchty",
+      "original": "Brunoa Kuchtu",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Brunoa Kuchtu",
+      "original": "Brunoa Kuchty",
       "occurrences": 1
     },
     {

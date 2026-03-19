@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:14.654156",
+  "generated_at": "2026-03-18T14:50:17.181846",
   "source_file": "smlouva_gdpr_test_69.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Zdeněke Havličko",
+      "original": "Zdeněka Havličku",
       "occurrences": 1
     },
     {
@@ -24,19 +24,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Zdeněkovi Havličkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Zdeněka Havličky",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Zdeněka Havličku",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Zdeněkovi Havličkovi",
+      "original": "Zdeněke Havličko",
       "occurrences": 1
     },
     {
@@ -48,13 +48,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Adély Pospíšilové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Adélu Pospíšilováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Adélou Pospíšilovou",
+      "original": "Adélo Pospíšilová",
       "occurrences": 1
     },
     {
@@ -66,13 +72,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Adély Pospíšilové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Adélo Pospíšilová",
+      "original": "Adélou Pospíšilovou",
       "occurrences": 1
     },
     {
@@ -84,25 +84,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Nikoly Vlachové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
       "original": "Nikolě Vlachové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Nikolou Vlachovou",
+      "original": "Nikoly Vlachové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Nikolu Vlachováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Nikolou Vlachovou",
       "occurrences": 1
     },
     {
@@ -114,13 +114,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Terezu Vavrováovou",
+      "original": "Terezy Vavrové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Terezy Vavrové",
+      "original": "Terezu Vavrováovou",
       "occurrences": 1
     },
     {

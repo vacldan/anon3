@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:21.847084",
+  "generated_at": "2026-03-18T14:48:36.400269",
   "source_file": "smlouva_final_05.docx",
   "entities": [
     {
@@ -37,7 +37,7 @@
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
       "original": "Pražská 55, 301 00 Plzeň",
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "type": "ADDRESS",
@@ -169,12 +169,6 @@
       "type": "BIRTH_ID",
       "label": "[[BIRTH_ID_3]]",
       "original": "110204/8556",
-      "occurrences": 1
-    },
-    {
-      "type": "BIRTH_PLACE",
-      "label": "[[BIRTH_PLACE_1]]",
-      "original": "Plzeň",
       "occurrences": 1
     },
     {

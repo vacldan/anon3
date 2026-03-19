@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:05.336257",
+  "generated_at": "2026-03-18T14:49:58.861051",
   "source_file": "smlouva_gdpr_test_56.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Erika Hájka",
+      "original": "Erike Hájku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Erike Hájku",
+      "original": "Erikovi Hájkovi",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Erikovi Hájkovi",
+      "original": "Erika Hájka",
       "occurrences": 1
     },
     {
@@ -42,25 +42,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Drahomíru Švestkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Drahomírě Švestkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Drahomíry Švestkové",
+      "original": "Drahomíru Švestkováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Drahomíro Švestková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Drahomíry Švestkové",
       "occurrences": 1
     },
     {
@@ -78,6 +78,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
+      "original": "Ctiborem Benešem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Ctibora Beneša",
       "occurrences": 1
     },
@@ -85,12 +91,6 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Ctiborovi Benešovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Ctiborem Benešem",
       "occurrences": 1
     },
     {

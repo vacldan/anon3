@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:25.366922",
+  "generated_at": "2026-03-18T14:50:39.600258",
   "source_file": "smlouva_gdpr_test_85.docx",
   "entities": [
     {
@@ -12,13 +12,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Vincencovi Tesařovi",
+      "original": "Vincence Tesaře",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Vincence Tesaře",
+      "original": "Vincenc Tesař",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Vincencovi Tesařovi",
       "occurrences": 1
     },
     {
@@ -35,12 +41,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Vincenc Tesař",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Krista Šemberová",
       "occurrences": 1
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Kristou Šemberovou",
+      "original": "Kristě Šemberové",
       "occurrences": 1
     },
     {
@@ -60,19 +60,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Kristo Šemberová",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Kristu Šemberováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Kristě Šemberové",
+      "original": "Kristo Šemberová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Kristou Šemberovou",
       "occurrences": 1
     },
     {
@@ -84,13 +84,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Věru Havličkováovou",
+      "original": "Věry Havličkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Věrou Havličkovou",
+      "original": "Věru Havličkováovou",
       "occurrences": 1
     },
     {
@@ -102,7 +102,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Věry Havličkové",
+      "original": "Věrou Havličkovou",
       "occurrences": 1
     },
     {
@@ -150,13 +150,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Blahoslava Brázdu",
+      "original": "Blahoslava Brázdy",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Blahoslava Brázdy",
+      "original": "Blahoslava Brázdu",
       "occurrences": 1
     },
     {

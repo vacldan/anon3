@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:55:42.188009",
+  "generated_at": "2026-03-18T14:46:40.727062",
   "source_file": "smlouva19.docx",
   "entities": [
     {
@@ -36,13 +36,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Novotnou",
+      "original": "Lucie Novotné",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucie Novotné",
+      "original": "Novotnou",
       "occurrences": 1
     },
     {
@@ -108,13 +108,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Melichovou",
+      "original": "Kláry Melichové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_8]]",
-      "original": "Kláry Melichové",
+      "original": "Melichovou",
       "occurrences": 1
     },
     {
@@ -352,6 +352,18 @@
       "occurrences": 1
     },
     {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WV1ZZZ7HZFH077119",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_2]]",
+      "original": "TMBJG9NP8N7022812",
+      "occurrences": 1
+    },
+    {
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_1]]",
       "original": "8AF 2231",
@@ -360,25 +372,13 @@
     {
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
-      "original": "FH07711",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
       "original": "3L9 5221",
       "occurrences": 1
     },
     {
       "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_4]]",
+      "label": "[[LICENSE_PLATE_3]]",
       "original": "EI 35677",
-      "occurrences": 1
-    },
-    {
-      "type": "VIN",
-      "label": "[[VIN_1]]",
-      "original": "TMBJG9NP8N7022812",
       "occurrences": 1
     }
   ]

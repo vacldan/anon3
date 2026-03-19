@@ -171,7 +171,7 @@ def build():
         "(4) reverzibilní anonymizaci s klíčem, a (5) automatický OCR vstup."
     )
     pdf.body(
-        "Produkt je ve stavu Production Ready (v3.1.1). Byl ověřen na korpusu 200+ syntetických "
+        "Produkt je ve stavu Production Ready (v3.0.0). Byl ověřen na korpusu 200+ syntetických "
         "smluv pokrývajících 6 sektorů (právo, zdravotnictví, veřejná správa, HR, školství, finance). "
         "Manuální audit potvrdil nulový počet skutečných úniků osobních údajů."
     )
@@ -549,7 +549,7 @@ def build():
     pdf.table(
         ["Oblast", "Stav", "Detail"],
         [
-            ["Anonymizační engine", "✓ Production Ready", "v3.1.1, 6 500+ řádků, 34 PII kategorií"],
+            ["Anonymizační engine", "✓ Production Ready", "v3.0.0, 6 500+ řádků, 34 PII kategorií"],
             ["GUI (Electron)", "✓ Production Ready", "Single-file HTML, 4 taby, dark theme"],
             ["OCR konverze", "✓ Production Ready", "PDF + 5 obrázkových formátů"],
             ["Deanonymizace", "✓ Production Ready", "Plně reverzibilní"],
@@ -612,7 +612,7 @@ def build():
 
     roadmap = [
         ("Q1 2026", [
-            "Produkt v3.1.1 dokončen",
+            "Produkt v3.0.0 dokončen",
             "Testovací korpus 200+ smluv",
             "Business plan připraven",
         ]),

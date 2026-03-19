@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:03.870730",
+  "generated_at": "2026-03-18T14:49:55.997726",
   "source_file": "smlouva_gdpr_test_54.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Filipovi Krejčím",
+      "original": "Filipe Krejčí",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Filipe Krejčí",
+      "original": "Filipovi Krejčím",
       "occurrences": 1
     },
     {
@@ -36,7 +36,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Monikou Urbanovou",
+      "original": "Moniky Urbanové",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Moniky Urbanové",
+      "original": "Moniku Urbanováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Moniku Urbanováovou",
+      "original": "Monikou Urbanovou",
       "occurrences": 1
     },
     {
@@ -78,13 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Davidem Kořínkem",
+      "original": "Davidovi Kořínkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Davidovi Kořínkovi",
+      "original": "Davidem Kořínkem",
       "occurrences": 1
     },
     {
@@ -96,13 +96,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Nikolu Havličkováovou",
+      "original": "Nikoly Havličkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Nikoly Havličkové",
+      "original": "Nikolu Havličkováovou",
       "occurrences": 1
     },
     {
@@ -114,13 +114,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Ivanu Urbanováovou",
+      "original": "Ivany Urbanové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Ivany Urbanové",
+      "original": "Ivanu Urbanováovou",
       "occurrences": 1
     },
     {
@@ -132,13 +132,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Marka Malinu",
+      "original": "Marka Maliny",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Marka Maliny",
+      "original": "Marka Malinu",
       "occurrences": 1
     },
     {

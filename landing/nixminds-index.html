@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Nixminds – AI školení, automatizace a produkty pro firmy</title>
+    <meta name="description" content="AI kurzy, automatizace na míru a SKRYI anonymizátor. Pomáháme firmám využívat AI prakticky – od školení přes konzultace po vlastní produkty.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f1419;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --accent: #6AAFE8;
+            --accent2: #4A8FCC;
+            --accent-purple: #a78bfa;
+            --accent-purple-dark: #8b5cf6;
+            --gradient-primary: linear-gradient(135deg, #6AAFE8 0%, #8b5cf6 100%);
+            --accent-glow: rgba(106, 175, 232, 0.25);
+            --accent-glow-strong: rgba(139, 92, 246, 0.35);
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --success: #22c55e;
+            --border: rgba(139, 148, 158, 0.12);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --font: 'DM Sans', system-ui, -apple-system, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        img { max-width: 100%; height: auto; }
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        body {
+            font-family: var(--font);
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
+            min-width: 0;
+            overflow-wrap: break-word;
+            padding-top: 100px;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 90% 60% at 50% -15%, rgba(106, 175, 232, 0.1), transparent 55%),
+                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(139, 92, 246, 0.06), transparent 50%),
+                radial-gradient(ellipse 70% 50% at 100% 40%, rgba(74, 143, 204, 0.05), transparent 50%),
+                linear-gradient(rgba(106, 175, 232, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(106, 175, 232, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+            background-color: var(--bg-dark);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header – fixní nahoře při scrollování */
+        .header-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(15, 20, 25, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(139, 148, 158, 0.08);
+        }
+
+        header {
+            padding: 16px 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .logo-wrap img {
+            height: 56px;
+            width: auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.02em;
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--accent); }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        .nav-links .nav-cta {
+            padding: 10px 22px;
+            background: var(--gradient-primary);
+            color: white !important;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .nav-links .nav-cta:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 48px 0 72px;
+        }
+
+        .hero-badge {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .stat {
+            text-align: center;
+            padding: 28px 20px;
+            background: rgba(30, 36, 45, 0.8);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        .stat.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat:hover {
+            border-color: rgba(139, 92, 246, 0.35);
+            background: rgba(35, 42, 54, 0.9);
+        }
+
+        .stat-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+        }
+
+        .stat-icon svg { width: 24px; height: 24px; }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #93c5fd 0%, #6AAFE8 30%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 580px;
+            margin: 0 auto 36px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: var(--gradient-primary);
+            color: white !important;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.2), 0 4px 24px rgba(139, 92, 246, 0.25);
+            transition: all 0.25s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.4), 0 8px 32px rgba(139, 92, 246, 0.35);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            padding: 14px 28px;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--accent-purple);
+            background: transparent;
+            transition: all 0.25s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-purple);
+            background: rgba(139, 92, 246, 0.12);
+        }
+
+        /* Section */
+        section { padding: 64px 0; }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .section-title .accent {
+            color: var(--accent);
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        /* Product highlight - SKRYI */
+        .product-highlight {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 48px;
+            align-items: center;
+            background: rgba(30, 36, 45, 0.8);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            border-radius: var(--radius);
+            padding: 48px;
+            box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.1), 0 12px 40px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.5s ease;
+        }
+
+        .product-highlight.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .product-highlight { grid-template-columns: 1fr; }
+        }
+
+        .product-highlight h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .product-highlight .product-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(106, 175, 232, 0.15);
+            color: var(--accent);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .product-highlight p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .product-stats {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .product-stats span {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* Cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: rgba(30, 36, 45, 0.8);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            backdrop-filter: blur(8px);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            border-color: rgba(139, 92, 246, 0.35);
+            box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.12), 0 8px 32px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(106, 175, 232, 0.25), rgba(139, 92, 246, 0.15));
+            border: 1px solid rgba(106, 175, 232, 0.2);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            color: var(--accent);
+        }
+
+        .card-icon svg { width: 24px; height: 24px; }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Training grid */
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .training-card {
+            background: rgba(30, 36, 45, 0.8);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        .training-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .training-card:hover {
+            border-color: rgba(139, 92, 246, 0.35);
+            box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.12), 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .training-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .training-card .meta {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .training-card ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .training-card li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .training-card li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Process steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .process-steps { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 500px) {
+            .process-steps { grid-template-columns: 1fr; }
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 24px 16px;
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.4s ease;
+        }
+
+        .process-step.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .process-step .num {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(106, 175, 232, 0.25), rgba(139, 92, 246, 0.2));
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .process-step h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .process-step p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial {
+            background: rgba(30, 36, 45, 0.8);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.4s ease;
+        }
+
+        .testimonial.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .testimonial:hover {
+            border-color: rgba(139, 92, 246, 0.35);
+            box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.12);
+        }
+
+        .testimonial blockquote {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .testimonial .author {
+            font-size: 0.9rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .testimonial .role {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 48px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--accent); }
+
+        .footer-text { color: var(--text-muted); font-size: 0.9rem; }
+
+        /* Mobilní responzivita */
+        @media (max-width: 768px) {
+            body { padding-top: 85px; }
+            .container { padding: 0 16px; }
+            header { padding: 12px 0 20px; }
+            .nav-links { flex-wrap: wrap; justify-content: flex-end; gap: 12px; font-size: 0.85rem; }
+            .nav-links a { font-size: 0.85rem; }
+            .nav-links .nav-cta { padding: 8px 14px; font-size: 0.85rem; }
+            .logo-wrap img { height: 44px; }
+            .logo { font-size: 1.2rem; }
+            .hero { padding: 32px 0 48px; }
+            .hero h1 { font-size: 1.75rem; }
+            .hero .subtitle { font-size: 1rem; }
+            .stat { padding: 20px 12px; }
+            .stat-value { font-size: 1.4rem; }
+            .stat-label { font-size: 0.8rem; }
+            .hero-buttons { flex-direction: column; align-items: stretch; }
+            .btn-primary, .btn-secondary { justify-content: center; }
+            section { padding: 40px 0; }
+            .section-title { font-size: 1.4rem; }
+            .product-highlight { padding: 24px; }
+            .card, .training-card { padding: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 0 12px; }
+            .nav-links { gap: 8px; }
+            .hero h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <header class="container">
+        <a href="/" class="logo-wrap">
+            <img src="assets/logo5.png" alt="Nixminds logo">
+            <span class="logo">Nix<span>minds</span></span>
+        </a>
+        <nav class="nav-links">
+            <a href="#skoleni">Školení</a>
+            <a href="#produkty">Produkty</a>
+            <a href="#konzultace">Konzultace</a>
+            <a href="#o-nas">O nás</a>
+            <a href="mailto:info@nixminds.cz" class="nav-cta">Kontakt</a>
+        </nav>
+    </header>
+    </div>
+
+    <main class="container">
+        <section class="hero">
+            <p class="hero-badge">• AI školení • Automatizace • SKRYI anonymizace</p>
+            <h1>AI, která šetří čas. Školení, automatizace a produkty.</h1>
+            <p class="subtitle">Pomáháme firmám a týmům využívat AI prakticky – od kurzů pro začátečníky přes automatizace na míru až po vlastní nástroje jako SKRYI pro anonymizaci dokumentů.</p>
+            <div class="hero-stats scroll-reveal">
+                <div class="stat">
+                    <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
+                    <div class="stat-value">~5 s</div>
+                    <div class="stat-label">SKRYI anonymizace</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg></div>
+                    <div class="stat-value">AI Kity</div>
+                    <div class="stat-label">Hotové balíčky</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <div class="stat-value">100 %</div>
+                    <div class="stat-label">Praktický přístup</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+                    <div class="stat-value">GDPR</div>
+                    <div class="stat-label">SKRYI offline</div>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#skoleni" class="btn-primary">Školení & kurzy</a>
+                <a href="https://nixminds.cz/SKRYI" class="btn-primary">SKRYI – anonymizace</a>
+                <a href="mailto:info@nixminds.cz" class="btn-secondary">Domluvit konzultaci</a>
+            </div>
+        </section>
+
+        <!-- Produkt SKRYI -->
+        <section id="produkty">
+            <h2 class="section-title">Produkty</h2>
+            <p class="section-desc">Vlastní nástroje vyvinuté v Nixminds pro konkrétní potřeby firem.</p>
+            <div class="product-highlight scroll-reveal">
+                <div>
+                    <span class="product-tag">Nové</span>
+                    <h3>SKRYI Document Suite</h3>
+                    <p>Automatická anonymizace osobních údajů v dokumentech (DOCX, PDF, obrázky). 100% offline, GDPR compliant. Pro právníky, healthcare, státní správu.</p>
+                    <div class="product-stats">
+                        <span>~5 s</span>
+                        <span>98–99 % přesnost</span>
+                        <span>34 typů entit</span>
+                    </div>
+                    <a href="https://nixminds.cz/SKRYI" class="btn-primary">Více o SKRYI</a>
+                </div>
+                <div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Morfologicky inteligentní anonymizace v češtině a slovenštině. Rozpoznává pádové varianty jmen, generuje PDF certifikát s SHA-256 otiskem. Žádná data neopouštějí váš počítač.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Školení -->
+        <section id="skoleni">
+            <h2 class="section-title">Školení & kurzy</h2>
+            <p class="section-desc">Od prvních kroků s AI až po automatizace a specializovaná školení pro obory.</p>
+            <div class="training-grid scroll-reveal">
+                <div class="training-card">
+                    <h3>AI pro začátečníky</h3>
+                    <p class="meta">Základní kurz</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">Pro ty, kteří s AI teprve začínají. Principy, nástroje a konkrétní scénáře bez technického žargonu.</p>
+                    <ul>
+                        <li>Základy ChatGPT a prompt engineering</li>
+                        <li>Praktické nástroje pro běžné úkoly</li>
+                        <li>Kde AI pomůže v byznysu i osobním životě</li>
+                    </ul>
+                    <a href="mailto:info@nixminds.cz?subject=Kurz%20AI%20pro%20začátečníky" class="btn-secondary" style="display: inline-block;">Chci informace</a>
+                </div>
+                <div class="training-card">
+                    <h3>AI & GDPR / ochrana dat</h3>
+                    <p class="meta">Specializované školení</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">Pro firmy pracující s osobními údaji. Jak používat AI bezpečně a v souladu s GDPR.</p>
+                    <ul>
+                        <li>Rizika AI v kontextu osobních údajů</li>
+                        <li>Offline vs. cloud nástroje</li>
+                        <li>Anonymizace v praxi – včetně nástroje <a href="https://nixminds.cz/SKRYI" style="color: var(--accent); text-decoration: none;">SKRYI</a></li>
+                    </ul>
+                    <a href="mailto:info@nixminds.cz?subject=Školení%20AI%20a%20GDPR" class="btn-secondary" style="display: inline-block;">Více informací</a>
+                </div>
+                <div class="training-card">
+                    <h3>AI na míru pro váš obor</h3>
+                    <p class="meta">Workshop / firemní školení</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">Školení šité na míru – právní kanceláře, healthcare, výroba, obchod. Konkrétní scénáře pro váš obor.</p>
+                    <ul>
+                        <li>Analýza vašich procesů</li>
+                        <li>Scénáře a prompty pro váš obor</li>
+                        <li>Implementace do praxe – pro právníky a healthcare i <a href="https://nixminds.cz/SKRYI" style="color: var(--accent); text-decoration: none;">SKRYI</a> pro anonymizaci</li>
+                    </ul>
+                    <a href="mailto:info@nixminds.cz?subject=Firemní%20školení%20AI" class="btn-secondary" style="display: inline-block;">Domluvit workshop</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Kity -->
+        <section>
+            <h2 class="section-title">AI Kity – hotové balíčky</h2>
+            <p class="section-desc">Otestované prompty, šablony a návody. Stačí vyplnit dotazník, za pár desítek hodin máte balíček nastavený na váš obor.</p>
+            <div class="cards-grid scroll-reveal">
+                <div class="card">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+                    <h3>Startovací balíček</h3>
+                    <p>Jasnější identita značky, sloganové varianty, měsíční plán obsahu a AI asistent pro texty. Pro ty, kdo neví, jak o službě mluvit online.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></div>
+                    <h3>Social Master Pack</h3>
+                    <p>Reels scénáře, hooky, CTA, texty v různých tone of voice a kalendář publikací. Pro profily, které postují často, ale nerostou.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg></div>
+                    <h3>Brand Booster</h3>
+                    <p>Varianty loga, směrování značky, barvy, fonty a tone of voice. Aby vaše komunikace byla konzistentní na všech kanálech.</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px;"><a href="mailto:info@nixminds.cz?subject=AI%20Kity" class="btn-secondary" style="display: inline-block;">Zeptat se na kity</a></p>
+        </section>
+
+        <!-- Kde pomáháme -->
+        <section>
+            <h2 class="section-title">Kde vám AI ušetří čas</h2>
+            <p class="section-desc">Typické situace, se kterými přicházejí naši klienti.</p>
+            <div class="cards-grid scroll-reveal">
+                <div class="card">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+                    <h3>Obsah pro sociální sítě</h3>
+                    <p>Scénáře, hooky, plánování obsahu. Připravené prompty a šablony místo prázdné obrazovky.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
+                    <h3>Administrativa & dokumenty</h3>
+                    <p>E-maily, faktury, reporty. A anonymizace citlivých dokumentů – <a href="https://nixminds.cz/SKRYI" style="color: var(--accent); text-decoration: none;">SKRYI</a> zvládne dokument za pár sekund, 100% offline.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M8 7l4-4 4 4"/><path d="M8 17l4 4 4-4"/><path d="M4 12h16"/></svg></div>
+                    <h3>Komunikace & prodej</h3>
+                    <p>Odpovědi zákazníkům, nabídky, follow-up. AI asistent pro konzistentní a rychlou komunikaci.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Konzultace -->
+        <section id="konzultace">
+            <h2 class="section-title">Konzultace & automatizace na míru</h2>
+            <p class="section-desc">Když přestává stačit kurz nebo hotový kit – navrhneme a implementujeme workflow pro váš byznys.</p>
+            <div class="process-steps scroll-reveal">
+                <div class="process-step">
+                    <div class="num">1</div>
+                    <h4>Úvodní konzultace</h4>
+                    <p>Projdeme cíle a procesy. Vytipujeme oblasti pro automatizaci.</p>
+                </div>
+                <div class="process-step">
+                    <div class="num">2</div>
+                    <h4>Návrh řešení</h4>
+                    <p>Plán workflow, nástroje, odhad dopadu a rozpočtu.</p>
+                </div>
+                <div class="process-step">
+                    <div class="num">3</div>
+                    <h4>Realizace</h4>
+                    <p>Implementace přes Zapier, Make nebo Power Automate.</p>
+                </div>
+                <div class="process-step">
+                    <div class="num">4</div>
+                    <h4>Školení & podpora</h4>
+                    <p>Naučíme tým pracovat s řešením. Dlouhodobá údržba.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- O Nixminds -->
+        <section id="o-nas">
+            <h2 class="section-title">O Nixminds</h2>
+            <p class="section-desc">Praktický AI partner – ne další teoretický kurz.</p>
+            <div class="card scroll-reveal" style="max-width: 700px;">
+                <p style="color: var(--text-muted); margin-bottom: 16px;">Nixminds založil Dan Václav s více než deseti lety zkušeností v IT a bezpečnosti. Pomáhal implementovat technologie ve firmách od menších podniků po mezinárodní týmy.</p>
+                <p style="color: var(--text-muted); margin-bottom: 16px;">Věříme, že AI nemusí být děsivá ani složitá. Zaměřujeme se na konkrétní úkoly, které vám dnes berou čas – a ukazujeme, jak je AI zvládne za minuty.</p>
+                <ul style="list-style: none;">
+                    <li style="padding: 6px 0; color: var(--text-muted); padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">→</span> Řešíme realitu vašeho podnikání, ne jen trendy</li>
+                    <li style="padding: 6px 0; color: var(--text-muted); padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">→</span> Konkrétní příklady z praxe, žádný žargon</li>
+                    <li style="padding: 6px 0; color: var(--text-muted); padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">→</span> Dan stojí u každého projektu osobně</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section>
+            <h2 class="section-title">Co říkají klienti</h2>
+            <div class="testimonials-grid scroll-reveal">
+                <div class="testimonial">
+                    <blockquote>„Díky AI kitu konečně vím, co komunikovat na sítích. Připravené scénáře mi šetří několik hodin týdně a obsah je konzistentní.“</blockquote>
+                    <div class="author">Jana K.</div>
+                    <div class="role">služby pro zdraví a péči</div>
+                </div>
+                <div class="testimonial">
+                    <blockquote>„Po nastavení automatizací jsme ušetřili několik hodin měsíčně jen na reportech a e-mailech. Nemuseli jsme nabírat další lidi.“</blockquote>
+                    <div class="author">Tomáš K.</div>
+                    <div class="role">majitel e-shopu</div>
+                </div>
+                <div class="testimonial">
+                    <blockquote>„Dan vysvětluje AI tak, že tomu rozumí i totální ne-technici. Po workshopu jsme měli konkrétní scénáře, které jsme hned zavedli.“</blockquote>
+                    <div class="author">Lucie P.</div>
+                    <div class="role">HR manažerka výrobní firmy</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section>
+            <div class="card scroll-reveal" style="text-align: center; padding: 48px 24px; border: 1px solid rgba(139, 92, 246, 0.25);">
+                <h2 class="section-title" style="margin-bottom: 12px;">Pojďme zjistit, kde vám AI ušetří nejvíc času</h2>
+                <p class="section-desc" style="margin: 0 auto 24px;">Napište pár vět o vašem podnikání a výzvách. Ozveme se s návrhem krátkého callu.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="mailto:info@nixminds.cz" class="btn-primary">Napsat e-mail</a>
+                    <a href="https://calendly.com/" class="btn-secondary" target="_blank" rel="noopener">Rezervovat 30 min call</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://nixminds.cz/SKRYI">SKRYI</a>
+                <a href="#skoleni">Školení</a>
+                <a href="#konzultace">Konzultace</a>
+                <a href="mailto:info@nixminds.cz">Kontakt</a>
+            </div>
+            <span class="footer-text">© 2026 Nixminds s.r.o.</span>
+        </div>
+    </footer>
+
+    <script>
+    (function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const children = el.querySelectorAll('.stat, .card, .training-card, .process-step, .testimonial');
+                    if (children.length) {
+                        children.forEach((child, i) => {
+                            setTimeout(() => child.classList.add('visible'), i * 80);
+                        });
+                    } else {
+                        el.classList.add('visible');
+                    }
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+    })();
+    </script>
+</body>
+</html>

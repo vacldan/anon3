@@ -1,0 +1,11 @@
+OSOBY
+-----
+[[PERSON_1]]: Jan Novák
+  - Janem Novákem
+[[PERSON_2]]: Pavel Novák
+  - Novákem Pavlem
+[[PERSON_3]]: Jana Svobodová
+  - Janou Svobodovou
+[[PERSON_4]]: Tomáš Dvořák
+[[PERSON_5]]: Petr Dvořák
+

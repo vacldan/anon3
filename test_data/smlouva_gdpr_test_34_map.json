@@ -1,12 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:57.236040",
+  "generated_at": "2026-03-18T14:49:44.062976",
   "source_file": "smlouva_gdpr_test_34.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Václav Svoboda",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Václavu Svobodovi",
       "occurrences": 1
     },
     {
@@ -19,12 +25,6 @@
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Václava Svobody",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Václavu Svobodovi",
       "occurrences": 1
     },
     {
@@ -60,13 +60,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucií Malou",
+      "original": "Lucii Malé",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucii Malé",
+      "original": "Lucií Malou",
       "occurrences": 1
     },
     {

@@ -1,18 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:04.520261",
+  "generated_at": "2026-03-18T14:49:57.210959",
   "source_file": "smlouva_gdpr_test_55.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Roman Kuchta",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Romana Kuchty",
       "occurrences": 1
     },
     {
@@ -30,13 +24,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Romanovi Kuchtovi",
+      "original": "Romanem Kuchtou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Romanem Kuchtou",
+      "original": "Romana Kuchty",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Romanovi Kuchtovi",
       "occurrences": 1
     },
     {
@@ -49,12 +49,6 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Adélou Roubalovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Adély Roubalové",
       "occurrences": 1
     },
     {
@@ -73,6 +67,12 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Adélo Roubalová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Adély Roubalové",
       "occurrences": 1
     },
     {
@@ -96,13 +96,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Miladu Bartůňkováovou",
+      "original": "Miladě Bartůňkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Miladě Bartůňkové",
+      "original": "Miladu Bartůňkováovou",
       "occurrences": 1
     },
     {

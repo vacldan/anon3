@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:54:47.399720",
+  "generated_at": "2026-03-18T14:44:17.682821",
   "source_file": "smlouva.docx",
   "entities": [
     {
@@ -24,7 +24,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Janem Novákem",
+      "original": "Jana Nováka",
       "occurrences": 1
     },
     {
@@ -36,7 +36,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Jana Nováka",
+      "original": "Janem Novákem",
       "occurrences": 1
     },
     {

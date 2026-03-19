@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:59.553910",
+  "generated_at": "2026-03-18T14:49:48.058044",
   "source_file": "smlouva_gdpr_test_43.docx",
   "entities": [
     {
@@ -60,13 +60,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Nikole Hálkové",
+      "original": "Nikolou Hálkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Nikolou Hálkovou",
+      "original": "Nikole Hálkové",
       "occurrences": 1
     },
     {

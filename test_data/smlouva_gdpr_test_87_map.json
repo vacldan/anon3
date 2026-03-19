@@ -1,12 +1,24 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:26.703871",
+  "generated_at": "2026-03-18T14:50:42.301462",
   "source_file": "smlouva_gdpr_test_87.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Leoš Bartůněk",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Leoša Bartůněka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Leoše Bartůněke",
       "occurrences": 1
     },
     {
@@ -23,18 +35,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Leoše Bartůněke",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Leoša Bartůněka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Alžběta Tesařová",
       "occurrences": 1
@@ -42,7 +42,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Alžbětě Tesařové",
+      "original": "Alžběto Tesařová",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Alžbětou Tesařovou",
       "occurrences": 1
     },
     {
@@ -60,13 +66,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Alžbětou Tesařovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Alžběto Tesařová",
+      "original": "Alžbětě Tesařové",
       "occurrences": 1
     },
     {
@@ -78,7 +78,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Vojtěchovi Hrubešovi",
+      "original": "Vojtěchem Hrubešem",
       "occurrences": 1
     },
     {
@@ -90,7 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Vojtěchem Hrubešem",
+      "original": "Vojtěchovi Hrubešovi",
       "occurrences": 1
     },
     {

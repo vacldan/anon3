@@ -5,15 +5,16 @@ OSOBY
   - Helenou Holíkovou
   - Heleny Holíkové
   - Heleně Holíkové
-[[PERSON_2]]: Karel Beneš
+[[PERSON_2]]: Beneš Karel
+  - Karel Beneš
   - Karla Beneša
   - Karle Beneše
   - Karlem Benešem
   - Karlovi Benešovi
-[[PERSON_3]]: Gabriela Procházková
+[[PERSON_4]]: Gabriela Procházková
   - Gabrielou Procházkovou
   - Gabrielě Procházkové
-[[PERSON_4]]: Pavel Řezníček
+[[PERSON_5]]: Pavel Řezníček
   - Pavla Řezníčka
   - Pavle Řezníčku
   - Pavlem Řezníčkem
@@ -65,7 +66,6 @@ IP
 LICENSE_PLATE
 [[LICENSE_PLATE_1]]: EA82498
 [[LICENSE_PLATE_2]]: 3AA 1455
-[[LICENSE_PLATE_3]]: 0KA4729
 
 MAC
 [[MAC_1]]: 8B:06:41:4D:52:D2
@@ -76,4 +76,7 @@ PHONE
 [[PHONE_3]]: +420 653 658 603
 [[PHONE_4]]: +420 659 187 888
 [[PHONE_5]]: +420 799 545 942
+
+VIN
+[[VIN_1]]: WAUZZZ8V0KA472921
 

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:41.384320",
+  "generated_at": "2026-03-18T14:49:14.878987",
   "source_file": "smlouva_gdpr_test_128.docx",
   "entities": [
     {
@@ -18,7 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ondřejovi Dvořákovi",
+      "original": "Ondřejem Dvořákem",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ondřejem Dvořákem",
+      "original": "Ondřejovi Dvořákovi",
       "occurrences": 1
     },
     {
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Simoně Novákové",
+      "original": "Simonou Novákovou",
       "occurrences": 1
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Simonou Novákovou",
+      "original": "Simoně Novákové",
       "occurrences": 1
     },
     {
@@ -90,13 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Jaroslavem Hrubešem",
+      "original": "Jaroslave Hrubeše",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Jaroslave Hrubeše",
+      "original": "Jaroslava Hrubeša",
       "occurrences": 1
     },
     {
@@ -108,7 +108,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Jaroslava Hrubeša",
+      "original": "Jaroslavem Hrubešem",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0FA2269",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4380 5488 7196 5432",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "15:80:AE:66:86:10",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0FA226986",
       "occurrences": 1
     }
   ]

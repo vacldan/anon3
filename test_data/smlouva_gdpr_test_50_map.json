@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:01.052898",
+  "generated_at": "2026-03-18T14:49:50.464326",
   "source_file": "smlouva_gdpr_test_50.docx",
   "entities": [
     {
@@ -36,13 +36,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Jana Krále",
+      "original": "Janem Králem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Janem Králem",
+      "original": "Jana Krále",
       "occurrences": 1
     },
     {

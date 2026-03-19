@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:24.704162",
+  "generated_at": "2026-03-18T14:50:38.156943",
   "source_file": "smlouva_gdpr_test_84.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Blahoslavovi Dvořákovi",
+      "original": "Blahoslava Dvořáka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Blahoslava Dvořáka",
+      "original": "Blahoslave Dvořáke",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Blahoslave Dvořáke",
+      "original": "Blahoslavovi Dvořákovi",
       "occurrences": 1
     },
     {
@@ -42,19 +42,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Antonie Černé",
+      "original": "Antonie Černá",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Antonie Černá",
+      "original": "Antonie Černé",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Antoni Černá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Antonii Černou",
       "occurrences": 1
     },
     {
@@ -71,12 +77,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Antonii Černou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Růžena Krejčová",
       "occurrences": 1
@@ -84,7 +84,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Růženu Krejčováovou",
+      "original": "Růženy Krejčové",
       "occurrences": 1
     },
     {
@@ -96,7 +96,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Růženy Krejčové",
+      "original": "Růženu Krejčováovou",
       "occurrences": 1
     },
     {

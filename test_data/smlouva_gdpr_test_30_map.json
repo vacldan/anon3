@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:56.003927",
+  "generated_at": "2026-03-18T14:49:41.933503",
   "source_file": "smlouva_gdpr_test_30.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ondřeje Turku",
+      "original": "Ondřejovi Turkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ondřeja Turka",
+      "original": "Ondřeje Turku",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Ondřejovi Turkovi",
+      "original": "Ondřeja Turka",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Adélě Hrubešové",
+      "original": "Adélou Hrubešovou",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Adély Hrubešové",
+      "original": "Adélě Hrubešové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Adélou Hrubešovou",
+      "original": "Adély Hrubešové",
       "occurrences": 1
     },
     {
@@ -84,7 +84,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Štěpána Kříža",
+      "original": "Štěpánem Křížem",
       "occurrences": 1
     },
     {
@@ -96,7 +96,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Štěpánem Křížem",
+      "original": "Štěpána Kříža",
       "occurrences": 1
     },
     {
@@ -238,8 +238,8 @@
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_1]]",
+      "type": "PASSPORT",
+      "label": "[[PASSPORT_1]]",
       "original": "826592866",
       "occurrences": 1
     },
@@ -253,12 +253,6 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
       "original": "7B8 9749",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0KA9563",
       "occurrences": 1
     },
     {
@@ -295,6 +289,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "F3:D8:B3:1F:C4:59",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0KA956354",
       "occurrences": 1
     }
   ]

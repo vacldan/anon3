@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:23.897028",
+  "generated_at": "2026-03-18T14:48:40.173697",
   "source_file": "smlouva_final_13.docx",
   "entities": [
     {
@@ -42,13 +42,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Horváth",
+      "original": "Hansem Horváthem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Hansem Horváthem",
+      "original": "Horváth",
       "occurrences": 1
     },
     {

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:29.310138",
+  "generated_at": "2026-03-18T14:50:47.932229",
   "source_file": "smlouva_gdpr_test_91.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Arnošta Šídlo",
+      "original": "Arnošte Šídlo",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Arnošte Šídlo",
+      "original": "Arnošta Šídlo",
       "occurrences": 1
     },
     {
@@ -48,13 +48,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Lídě Šídlové",
+      "original": "Lídy Šídlové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Lídy Šídlové",
+      "original": "Lídě Šídlové",
       "occurrences": 1
     },
     {
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Arnošta Šídla",
+      "original": "Arnoštovi Šídlovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Arnoštovi Šídlovi",
+      "original": "Arnošta Šídla",
       "occurrences": 1
     },
     {
@@ -90,7 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Matěja Poláka",
+      "original": "Matějovi Polákovi",
       "occurrences": 1
     },
     {
@@ -102,7 +102,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Matějovi Polákovi",
+      "original": "Matěja Poláka",
       "occurrences": 1
     },
     {
@@ -126,13 +126,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Blanku Řezníčkováovou",
+      "original": "Blanky Řezníčkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Blanky Řezníčkové",
+      "original": "Blanku Řezníčkováovou",
       "occurrences": 1
     },
     {

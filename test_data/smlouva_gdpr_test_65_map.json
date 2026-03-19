@@ -1,18 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:11.953960",
+  "generated_at": "2026-03-18T14:50:11.740438",
   "source_file": "smlouva_gdpr_test_65.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Michal Vaněk",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Michale Vaněke",
       "occurrences": 1
     },
     {
@@ -35,14 +29,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Gabriela Hájková",
+      "label": "[[PERSON_1]]",
+      "original": "Michale Vaněke",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Gabrielě Hájkové",
+      "original": "Gabriela Hájková",
       "occurrences": 1
     },
     {
@@ -54,13 +48,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Gabrielo Hájková",
+      "original": "Gabrielou Hájkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Gabrielou Hájkovou",
+      "original": "Gabrielě Hájkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Gabrielo Hájková",
       "occurrences": 1
     },
     {
@@ -90,7 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Anežku Dvořákováovou",
+      "original": "Anežkě Dvořákové",
       "occurrences": 1
     },
     {
@@ -102,13 +102,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Anežkě Dvořákové",
+      "original": "Anežky Dvořákové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Anežky Dvořákové",
+      "original": "Anežku Dvořákováovou",
       "occurrences": 1
     },
     {
@@ -138,13 +138,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Simony Švestkové",
+      "original": "Simonu Švestkováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Simonu Švestkováovou",
+      "original": "Simony Švestkové",
       "occurrences": 1
     },
     {

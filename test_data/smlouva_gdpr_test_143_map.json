@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:48.368278",
+  "generated_at": "2026-03-18T14:49:27.934263",
   "source_file": "smlouva_gdpr_test_143.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpáne Roubale",
+      "original": "Štěpánem Roubalem",
       "occurrences": 1
     },
     {
@@ -30,13 +30,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Štěpánem Roubalem",
+      "original": "Štěpáne Roubale",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Aleš Vlach",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Aleše Vlache",
       "occurrences": 1
     },
     {
@@ -59,12 +65,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Aleše Vlache",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Gabriela Roubalová",
       "occurrences": 1
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Gabrielou Roubalovou",
+      "original": "Gabrielě Roubalové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Gabrielě Roubalové",
+      "original": "Gabrielou Roubalovou",
       "occurrences": 1
     },
     {
@@ -90,7 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Alešem Malíkem",
+      "original": "Aleša Malíka",
       "occurrences": 1
     },
     {
@@ -108,7 +108,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Aleša Malíka",
+      "original": "Alešem Malíkem",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0FA7500",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4046 2308 4099 7235",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "12:DD:A0:EC:D1:2C",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0FA750084",
       "occurrences": 1
     }
   ]

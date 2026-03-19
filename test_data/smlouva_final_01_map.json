@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:20.804566",
+  "generated_at": "2026-03-18T14:48:34.469450",
   "source_file": "smlouva_final_01.docx",
   "entities": [
     {
@@ -60,13 +60,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Vladimíra Šimka",
+      "original": "Vladimírovi Šimkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Vladimírovi Šimkovi",
+      "original": "Vladimíra Šimka",
       "occurrences": 1
     },
     {

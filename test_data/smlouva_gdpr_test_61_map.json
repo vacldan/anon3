@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:09.204159",
+  "generated_at": "2026-03-18T14:50:06.508766",
   "source_file": "smlouva_gdpr_test_61.docx",
   "entities": [
     {
@@ -12,7 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Jaroslavovi Růžičkovi",
+      "original": "Jaroslavem Růžičkou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Jaroslava Růžičku",
       "occurrences": 1
     },
     {
@@ -24,19 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Jaroslavem Růžičkou",
+      "original": "Jaroslavovi Růžičkovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Jaroslava Růžičky",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Jaroslava Růžičku",
       "occurrences": 1
     },
     {
@@ -60,13 +60,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Leošem Benešem",
+      "original": "Leoša Beneša",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Leoša Beneša",
+      "original": "Leošem Benešem",
       "occurrences": 1
     },
     {

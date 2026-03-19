@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-12T22:18:36.122973",
+  "generated_at": "2026-03-18T14:47:44.878683",
   "source_file": "smlouva28_deanon_deanon.docx",
   "entities": [
     {
@@ -126,13 +126,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_16]]",
-      "original": "Bohumila Sedláka",
+      "original": "Sedlákovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_16]]",
-      "original": "Sedlákovi",
+      "original": "Bohumila Sedláka",
       "occurrences": 1
     },
     {

@@ -1,12 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:45.414936",
+  "generated_at": "2026-03-18T14:49:22.381679",
   "source_file": "smlouva_gdpr_test_137.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Aleš Roubal",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Alešem Roubalem",
       "occurrences": 1
     },
     {
@@ -24,12 +30,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Alešem Roubalem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Aleše Roubale",
       "occurrences": 1
     },
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Karle Svobodo",
+      "original": "Karla Svobody",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Karlovi Svobodovi",
+      "original": "Karle Svobodo",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Karla Svobody",
+      "original": "Karlovi Svobodovi",
       "occurrences": 1
     },
     {
@@ -90,13 +90,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Václavem Hrubešem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Václavovi Hrubešovi",
+      "original": "Václava Hrubeša",
       "occurrences": 1
     },
     {
@@ -108,7 +102,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Václava Hrubeša",
+      "original": "Václavovi Hrubešovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Václavem Hrubešem",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0KA1581",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4607 2599 7511 8714",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "27:C4:F4:C3:BA:9D",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0KA158114",
       "occurrences": 1
     }
   ]

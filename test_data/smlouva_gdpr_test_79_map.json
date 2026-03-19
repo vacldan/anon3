@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:21.416666",
+  "generated_at": "2026-03-18T14:50:31.233023",
   "source_file": "smlouva_gdpr_test_79.docx",
   "entities": [
     {
@@ -24,6 +24,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
+      "original": "Markovi Procházkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
       "original": "Marka Procházku",
       "occurrences": 1
     },
@@ -35,12 +41,6 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Markovi Procházkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Helena Krejčová",
       "occurrences": 1
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Helenu Krejčováovou",
+      "original": "Heleno Krejčová",
       "occurrences": 1
     },
     {
@@ -60,19 +60,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Heleny Krejčové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Heleně Krejčové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Heleno Krejčová",
+      "original": "Heleny Krejčové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Helenu Krejčováovou",
       "occurrences": 1
     },
     {
@@ -102,7 +102,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Markétou Bartůňkovou",
+      "original": "Markétě Bartůňkové",
       "occurrences": 1
     },
     {
@@ -120,7 +120,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Markétě Bartůňkové",
+      "original": "Markétou Bartůňkovou",
       "occurrences": 1
     },
     {

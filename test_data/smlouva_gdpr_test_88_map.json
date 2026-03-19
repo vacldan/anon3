@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:27.270645",
+  "generated_at": "2026-03-18T14:50:43.549046",
   "source_file": "smlouva_gdpr_test_88.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Bohumil Tesař",
+      "original": "Bohumile Tesaře",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Bohumile Tesaře",
+      "original": "Bohumil Tesař",
       "occurrences": 1
     },
     {
@@ -48,7 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Hedviku Řípováovou",
+      "original": "Hedvikě Řípové",
       "occurrences": 1
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Hedvikě Řípové",
+      "original": "Hedviku Řípováovou",
       "occurrences": 1
     },
     {
@@ -90,13 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucii Fialováovou",
+      "original": "Lucii Fialové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lucii Fialové",
+      "original": "Lucii Fialováovou",
       "occurrences": 1
     },
     {

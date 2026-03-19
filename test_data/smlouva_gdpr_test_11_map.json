@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:32.904131",
+  "generated_at": "2026-03-18T14:48:58.460982",
   "source_file": "smlouva_gdpr_test_11.docx",
   "entities": [
     {
@@ -12,7 +12,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Adélou Dvořákovou",
+      "original": "Adélo Dvořáková",
       "occurrences": 1
     },
     {
@@ -24,13 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Adélo Dvořáková",
+      "original": "Adély Dvořákové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Adély Dvořákové",
+      "original": "Adélou Dvořákovou",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Oldřichovi Černýovi",
+      "original": "Oldřichem Černýem",
       "occurrences": 1
     },
     {
@@ -54,7 +54,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Oldřichem Černýem",
+      "original": "Oldřichovi Černýovi",
       "occurrences": 1
     },
     {
@@ -96,13 +96,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Alešovi Novákovi",
+      "original": "Alešem Novákem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Alešem Novákem",
+      "original": "Alešovi Novákovi",
       "occurrences": 1
     },
     {
@@ -244,8 +244,8 @@
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_1]]",
+      "type": "PASSPORT",
+      "label": "[[PASSPORT_1]]",
       "original": "552481831",
       "occurrences": 1
     },
@@ -259,12 +259,6 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
       "original": "1AB 4954",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0HA5187",
       "occurrences": 1
     },
     {
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "82:24:68:8F:88:DB",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0HA518750",
       "occurrences": 1
     }
   ]

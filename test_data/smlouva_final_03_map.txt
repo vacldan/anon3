@@ -11,7 +11,7 @@ OSOBY
   - Natálie Nguyenovou
 
 ADDRESS
-[[ADDRESS_1]]: 702 00, Ostrava
+[[ADDRESS_1]]: 17. listopadu 1790/5, 702 00 Ostrava - Moravská Ostrava
 [[ADDRESS_2]]: Palackého 170/9, 612 00, Brno - Královo
 [[ADDRESS_3]]: Masarykovo náměstí 61/18, 586 01 Jihlava
 
@@ -19,9 +19,8 @@ BIRTH_ID
 [[BIRTH_ID_1]]: 035227/6029
 
 DATE
-[[DATE_1]]: 17. listopadu 1790
-[[DATE_2]]: 3. 2. 1968
-[[DATE_3]]: 11. 10. 2026
+[[DATE_1]]: 3. 2. 1968
+[[DATE_2]]: 11. 10. 2026
 
 EMAIL
 [[EMAIL_1]]: ruzena.horvathova@email.cz

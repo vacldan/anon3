@@ -1,12 +1,18 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:35.170901",
+  "generated_at": "2026-03-18T14:49:02.957856",
   "source_file": "smlouva_gdpr_test_114.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Jan Vaněk",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Jana Vaněka",
       "occurrences": 1
     },
     {
@@ -24,12 +30,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Jana Vaněka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
       "original": "Jane Vaněke",
       "occurrences": 1
     },
@@ -42,12 +42,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Matějovi Černýovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Matěja Černýa",
       "occurrences": 1
     },
@@ -55,6 +49,12 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Matějem Černýem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Matějovi Černýovi",
       "occurrences": 1
     },
     {
@@ -96,6 +96,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
+      "original": "Davida Krála",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Davide Krále",
       "occurrences": 1
     },
@@ -109,12 +115,6 @@
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Davidem Králem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Davida Krála",
       "occurrences": 1
     },
     {
@@ -274,12 +274,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0GA7613",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4768 8137 8776 4921",
@@ -307,6 +301,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "5C:7E:23:29:5B:93",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0GA761386",
       "occurrences": 1
     }
   ]

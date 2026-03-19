@@ -1,24 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:46.670989",
+  "generated_at": "2026-03-18T14:49:24.797511",
   "source_file": "smlouva_gdpr_test_14.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Tomáš Holík",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Tomášovi Holíkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Tomášem Holíkem",
       "occurrences": 1
     },
     {
@@ -35,8 +23,26 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Tomášem Holíkem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Tomášovi Holíkovi",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Filip Novák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Filipe Nováke",
       "occurrences": 1
     },
     {
@@ -48,25 +54,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Filipa Nováka",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Filipovi Novákovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Filipe Nováke",
+      "original": "Filipa Nováka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Tomáš Král",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Tomáše Krála",
       "occurrences": 1
     },
     {
@@ -79,12 +85,6 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Tomášem Králem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Tomáše Krála",
       "occurrences": 1
     },
     {
@@ -232,8 +232,8 @@
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_1]]",
+      "type": "PASSPORT",
+      "label": "[[PASSPORT_1]]",
       "original": "480791941",
       "occurrences": 1
     },
@@ -247,12 +247,6 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
       "original": "5AZ 6764",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0GA9235",
       "occurrences": 1
     },
     {
@@ -289,6 +283,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "96:77:ED:03:12:55",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0GA923583",
       "occurrences": 1
     }
   ]

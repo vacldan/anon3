@@ -1,0 +1,9 @@
+OSOBY
+-----
+[[PERSON_1]]: Pavel Dvořák
+  - Dvořák Pavel
+  - Pavlem Dvořákem
+
+EMAIL
+[[EMAIL_1]]: dvorak@example.com
+

@@ -1,18 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:40.570608",
+  "generated_at": "2026-03-18T14:49:13.439109",
   "source_file": "smlouva_gdpr_test_126.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Tomáš Svoboda",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Tomášem Svobodou",
       "occurrences": 1
     },
     {
@@ -35,6 +29,12 @@
     },
     {
       "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Tomášem Svobodou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Erik Černý",
       "occurrences": 1
@@ -48,13 +48,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Erikovi Černýovi",
+      "original": "Erikem Černýem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Erikem Černýem",
+      "original": "Erikovi Černýovi",
       "occurrences": 1
     },
     {
@@ -78,25 +78,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Gabrielě Křížové",
+      "original": "Gabrielou Křížovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Gabrielou Křížovou",
+      "original": "Gabrielě Křížové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Jaroslav Novák",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Jaroslava Nováka",
       "occurrences": 1
     },
     {
@@ -115,6 +109,12 @@
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Jaroslave Nováke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Jaroslava Nováka",
       "occurrences": 1
     },
     {
@@ -274,12 +274,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0KA7647",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4293 9158 4821 1297",
@@ -307,6 +301,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "1C:37:85:4C:B7:17",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0KA764778",
       "occurrences": 1
     }
   ]

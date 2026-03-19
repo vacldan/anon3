@@ -1,12 +1,24 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:19.367163",
+  "generated_at": "2026-03-18T14:50:26.543642",
   "source_file": "smlouva_gdpr_test_76.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Miloslav Brázda",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Miloslava Brázdy",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Miloslave Brázdo",
       "occurrences": 1
     },
     {
@@ -29,26 +41,8 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Miloslave Brázdo",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Miloslava Brázdy",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Simona Šimůnková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Simony Šimůnkové",
       "occurrences": 1
     },
     {
@@ -60,13 +54,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Simonu Šimůnkováovou",
+      "original": "Simono Šimůnková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Simono Šimůnková",
+      "original": "Simony Šimůnkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Simonu Šimůnkováovou",
       "occurrences": 1
     },
     {
@@ -102,31 +102,19 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Štěpána Procházky",
+      "original": "Štěpána Procházku",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Štěpána Procházku",
+      "original": "Štěpána Procházky",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Hugo Vavra",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Hugoa Vavry",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Hugoem Vavrou",
       "occurrences": 1
     },
     {
@@ -139,6 +127,18 @@
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Hugoa Vavru",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Hugoa Vavry",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
+      "original": "Hugoem Vavrou",
       "occurrences": 1
     },
     {

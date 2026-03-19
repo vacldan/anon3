@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:42.446579",
+  "generated_at": "2026-03-18T14:49:16.594527",
   "source_file": "smlouva_gdpr_test_130.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Moniko Vlachová",
+      "original": "Monikě Vlachové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Monikě Vlachové",
+      "original": "Moniko Vlachová",
       "occurrences": 1
     },
     {
@@ -42,6 +42,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Alešem Svobodou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Alešovi Svobodovi",
       "occurrences": 1
     },
@@ -49,12 +55,6 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Aleše Svobodo",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Alešem Svobodou",
       "occurrences": 1
     },
     {
@@ -90,13 +90,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Renatě Dvořákové",
+      "original": "Renato Dvořáková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Renatou Dvořákovou",
+      "original": "Renatě Dvořákové",
       "occurrences": 1
     },
     {
@@ -108,7 +108,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Renato Dvořáková",
+      "original": "Renatou Dvořákovou",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0GA8283",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4222 8020 1321 5217",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "AE:79:47:FF:8E:A5",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0GA828383",
       "occurrences": 1
     }
   ]

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:55:57.787739",
+  "generated_at": "2026-03-18T14:47:17.307177",
   "source_file": "smlouva25.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Karlem Voříškem",
+      "original": "Karla Voříška",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Karla Voříška",
+      "original": "Karlem Voříškem",
       "occurrences": 1
     },
     {
@@ -30,13 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Lenkou Peškovou",
+      "original": "Lenky Peškové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Lenky Peškové",
+      "original": "Lenkou Peškovou",
       "occurrences": 1
     },
     {
@@ -138,13 +138,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Pavla Jury",
+      "original": "Pavlem Jurou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Pavlem Jurou",
+      "original": "Pavla Jury",
       "occurrences": 1
     },
     {

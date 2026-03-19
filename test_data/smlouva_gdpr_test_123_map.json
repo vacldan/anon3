@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:39.238400",
+  "generated_at": "2026-03-18T14:49:10.767062",
   "source_file": "smlouva_gdpr_test_123.docx",
   "entities": [
     {
@@ -24,13 +24,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Matějovi Hrubešovi",
+      "original": "Matějem Hrubešem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Matějem Hrubešem",
+      "original": "Matějovi Hrubešovi",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Tomášem Králem",
+      "original": "Tomáše Krála",
       "occurrences": 1
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Tomáše Krála",
+      "original": "Tomášovi Královi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Tomášovi Královi",
+      "original": "Tomášem Králem",
       "occurrences": 1
     },
     {
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Simoně Turkové",
+      "original": "Simonou Turkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Simonou Turkovou",
+      "original": "Simoně Turkové",
       "occurrences": 1
     },
     {
@@ -102,13 +102,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Jaroslavovi Dvořákovi",
+      "original": "Jaroslavem Dvořákem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Jaroslavem Dvořákem",
+      "original": "Jaroslavovi Dvořákovi",
       "occurrences": 1
     },
     {
@@ -262,12 +262,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0KA6027",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4962 3024 8241 6663",
@@ -295,6 +289,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "1E:13:7F:BA:A2:1B",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0KA602743",
       "occurrences": 1
     }
   ]

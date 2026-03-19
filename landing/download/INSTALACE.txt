@@ -1,0 +1,35 @@
+SKRYI Document Suite – Instalace a aktivace
+============================================
+
+1. STAŽENÍ A INSTALACE
+---------------------
+• Stáhněte soubor SKRYI-Setup-3.0.0.exe z webu nixminds.cz/SKRYI
+• Spusťte stažený soubor
+• Odsouhlaste licenční podmínky (EULA)
+• Zvolte instalační složku (výchozí: Program Files)
+• Dokončete instalaci
+
+2. AKTIVACE LICENCE
+-------------------
+• Při prvním spuštění bez licence se zobrazí vaše Hardware ID
+  (např. C87C-FA4E-F36D-48AE)
+
+• Pošlete Hardware ID na: info@nixminds.com
+  Předmět e-mailu: SKRYI – aktivace licence
+
+• Obdržíte licenční soubor license.lic
+
+• Umístěte license.lic do:
+  - složky s aplikací SKRYI Document Suite, NEBO
+  - C:\Program Files\SKRYI Document Suite\
+
+• Restartujte aplikaci – licence se načte automaticky
+
+3. POZNÁMKY
+-----------
+• Licence je vázána na váš počítač (Hardware ID)
+• Licence přežije reinstalaci aplikace (ukládá se do AppData)
+• Pro další počítače je potřeba další licence
+
+Kontakt: info@nixminds.com
+Web: nixminds.cz/SKRYI

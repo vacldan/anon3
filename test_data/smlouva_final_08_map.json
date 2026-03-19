@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:22.754453",
+  "generated_at": "2026-03-18T14:48:38.110353",
   "source_file": "smlouva_final_08.docx",
   "entities": [
     {
@@ -30,19 +30,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Nguyen Duca",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Nguyen Ducovi",
+      "original": "Nguyen Nguyena",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Nguyen Duc",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Duca Nguyena",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Ducovi Nguyenovi",
       "occurrences": 1
     },
     {

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:27.820604",
+  "generated_at": "2026-03-18T14:50:44.591789",
   "source_file": "smlouva_gdpr_test_89.docx",
   "entities": [
     {
@@ -18,13 +18,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Matějem Černým",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Matějovi Černém",
+      "original": "Matěja Černého",
       "occurrences": 1
     },
     {
@@ -36,7 +30,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Matěja Černého",
+      "original": "Matějovi Černém",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Matějem Černým",
       "occurrences": 1
     },
     {
@@ -48,13 +48,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Lucie Hájkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Lucii Hájkováovou",
+      "original": "Lucii Hájkové",
       "occurrences": 1
     },
     {
@@ -66,7 +60,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Lucii Hájkové",
+      "original": "Lucii Hájkováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Lucie Hájkové",
       "occurrences": 1
     },
     {
@@ -78,13 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Gabrielou Malinovou",
+      "original": "Gabriely Malinové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Gabriely Malinové",
+      "original": "Gabrielu Malinováovou",
       "occurrences": 1
     },
     {
@@ -96,7 +96,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Gabrielu Malinováovou",
+      "original": "Gabrielou Malinovou",
       "occurrences": 1
     },
     {

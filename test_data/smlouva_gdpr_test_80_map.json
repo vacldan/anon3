@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:22.070469",
+  "generated_at": "2026-03-18T14:50:32.559135",
   "source_file": "smlouva_gdpr_test_80.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michalem Řezníčkem",
+      "original": "Michala Řezníčka",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michala Řezníčka",
+      "original": "Michale Řezníčku",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Michale Řezníčku",
+      "original": "Michalem Řezníčkem",
       "occurrences": 1
     },
     {
@@ -60,13 +60,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Veronikou Marešovou",
+      "original": "Veroniky Marešové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Veroniky Marešové",
+      "original": "Veroniku Marešováovou",
       "occurrences": 1
     },
     {
@@ -78,7 +78,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Veroniku Marešováovou",
+      "original": "Veronikou Marešovou",
       "occurrences": 1
     },
     {

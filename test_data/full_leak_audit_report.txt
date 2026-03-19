@@ -1,0 +1,183 @@
+================================================================================
+KOMPLETNÍ AUDIT ANONYMIZOVANÝCH SMLUV – LEAK REPORT
+================================================================================
+
+Celkem zpracovaných párů: 253
+
+--------------------------------------------------------------------------------
+1. SMLOUVY S LEAKEM (originál z mapy v anonymizovaném textu)
+--------------------------------------------------------------------------------
+Počet smluv s leakem: 8
+Smlouvy:
+  - smlouva10
+  - smlouva12
+  - smlouva14
+  - smlouva15
+  - smlouva17
+  - smlouva_final_03
+  - smlouva_final_04
+  - smlouva_final_08
+
+--------------------------------------------------------------------------------
+2. SMLOUVY S PII REGEX HIT MIMO TAG (RC, telefon, email, IBAN, SPZ, VIN)
+--------------------------------------------------------------------------------
+Počet smluv s PII regex hit mimo tag: 0
+
+--------------------------------------------------------------------------------
+3. TYPY ENTIT (četnost)
+--------------------------------------------------------------------------------
+STANDARD GDPR (jména, adresy, RČ, telefony, emaily, účty, doklady, SPZ, VIN, data):
+  ACCOUNT_ID: 4
+  ADDRESS: 1149
+  BANK: 494
+  BENEFIT_CARD: 5
+  BIRTH_ID: 1592
+  CARD: 91
+  DATE: 1454
+  DIC: 91
+  DRIVER_LICENSE: 2
+  EMAIL: 1119
+  GENETIC_ID: 3
+  IBAN: 228
+  ICO: 396
+  ID_CARD: 336
+  INSURANCE_ID: 27
+  LICENSE_PLATE: 331
+  PASSPORT: 25
+  PERSON: 5601
+  PHONE: 1189
+  RFID: 4
+  VIN: 88
+
+MIMO GDPR (USERNAME, SSH_KEY, API_KEY, LINKEDIN, VOICE_ID, ...):
+  API_KEY: 7
+  BIO_HASH: 8
+  FACEBOOK: 5
+  HOST: 9
+  IMEI: 2
+  INSTAGRAM: 4
+  IP: 183
+  LINKEDIN: 9
+  MAC: 144
+  PASSWORD: 121
+  PHOTO_ID: 2
+  SECRET: 2
+  SKYPE: 3
+  SSH_KEY: 1
+  USERNAME: 40
+  VOICE_ID: 2
+
+Ostatní typy (v mapách):
+
+--------------------------------------------------------------------------------
+4. KONKRÉTNÍ PŘÍKLADY LEAKŮ (originál v textu) – max 20
+--------------------------------------------------------------------------------
+  [1] smlouva10
+      Typ: PERSON, Original: 'Nové'
+      Kontext: ...7]] (bezpečnostní manažer) Členové: Bc. [[PERSON_43]] (mistr), M...
+
+  [2] smlouva12
+      Typ: PERSON, Original: 'Nové'
+      Kontext: ...7]] (bezpečnostní manažer) Členové: Bc. [[PERSON_43]] (mistr), M...
+
+  [3] smlouva14
+      Typ: USERNAME, Original: 'hcp_admin'
+      Kontext: ...: admin, root, administrator, hcp_admin - Výsledek: BLOKOVÁNO (fail2b...
+
+  [4] smlouva15
+      Typ: USERNAME, Original: 'hcp_admin'
+      Kontext: ...: admin, root, administrator, hcp_admin - Výsledek: BLOKOVÁNO (fail2b...
+
+  [5] smlouva17
+      Typ: ID_CARD, Original: '123456'
+      Kontext: ...anz, č. smlouvy: POJ-BYT-2015-123456 Havarijní pojištění vozidla: ...
+
+  [6] smlouva17
+      Typ: ID_CARD, Original: '123456'
+      Kontext: ...r: Dell 24", SN: MON-DEL-2023-123456 Tiskárna: HP LaserJet Pro, SN...
+
+  [7] smlouva17
+      Typ: ID_CARD, Original: '123456'
+      Kontext: ...va o zpracování: DPA-2023-AWS-123456  ČLÁNEK XIV. - INFORMOVANÝ SO...
+
+  [8] smlouva_final_03
+      Typ: RFID, Original: 'RFID'
+      Kontext: ...PHONE_1]] E-mail: [[EMAIL_1]] RFID identifikátor pacienta: RFID:...
+
+  [9] smlouva_final_03
+      Typ: RFID, Original: 'RFID'
+      Kontext: ... RFID identifikátor pacienta: RFID:[[LICENSE_PLATE_1]]FE  Kontak...
+
+  [10] smlouva_final_03
+      Typ: RFID, Original: 'RFID'
+      Kontext: ...3]]    E-mail: [[EMAIL_3]]    RFID [[RFID_1]]:F1C28209  Anestezi...
+
+  [11] smlouva_final_03
+      Typ: RFID, Original: 'RFID'
+      Kontext: ...E-mail: [[EMAIL_3]]    RFID [[RFID_1]]:F1C28209  Anesteziolog: M...
+
+  [12] smlouva_final_03
+      Typ: RFID, Original: 'RFID'
+      Kontext: ...4]]    E-mail: [[EMAIL_4]]    RFID [[RFID_1]]:[[ID_CARD_1]]  III...
+
+  [13] smlouva_final_03
+      Typ: RFID, Original: 'RFID'
+      Kontext: ...E-mail: [[EMAIL_4]]    RFID [[RFID_1]]:[[ID_CARD_1]]  III. Diagn...
+
+  [14] smlouva_final_03
+      Typ: RFID, Original: 'RFID'
+      Kontext: ...o poskytování zdravotní péče. RFID identifikátor [[PERSON_1]] bu...
+
+  [15] smlouva_final_04
+      Typ: USERNAME, Original: 'username'
+      Kontext: ...nuté objednatelem: - Admin: [[USERNAME_1]], [[PASSWORD_1]] - [[USERN...
+
+  [16] smlouva_final_04
+      Typ: USERNAME, Original: 'username'
+      Kontext: ...RNAME_1]], [[PASSWORD_1]] - [[USERNAME_2]]: test_user, [[PASSWORD_2]...
+
+  [17] smlouva_final_08
+      Typ: RFID, Original: 'RFID'
+      Kontext: ... - Počáteční [[PASSWORD_1]] - RFID [[RFID_1]]:B6D944D4 - SSH klí...
+
+  [18] smlouva_final_08
+      Typ: RFID, Original: 'RFID'
+      Kontext: ...teční [[PASSWORD_1]] - RFID [[RFID_1]]:B6D944D4 - SSH klíč pro p...
+
+  [19] smlouva_final_08
+      Typ: RFID, Original: 'RFID'
+      Kontext: ...efon, e-mail, bankovní údaje, RFID badge, fotografie pro ID kart...
+
+--------------------------------------------------------------------------------
+5. KONKRÉTNÍ PŘÍKLADY PII REGEX (mimo tag) – max 20
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+6. POTENCIÁLNÍ MISKLASIFIKACE (PHONE jako částka, BIRTH_ID vs BANK)
+--------------------------------------------------------------------------------
+Počet: 5
+  [1] smlouva13: PHONE_AS_AMOUNT '123789456'
+  [2] smlouva27: PHONE_AS_AMOUNT '111222333'
+  [3] smlouva_gdpr_test_42: PHONE_AS_AMOUNT '123456789'
+  [4] smlouva_gdpr_test_57: PHONE_AS_AMOUNT '191976141'
+  [5] smlouva_gdpr_test_96: PHONE_AS_AMOUNT '100615591'
+
+--------------------------------------------------------------------------------
+7. SHRNUTÍ AUDITU – CO JE SPRÁVNĚ / ŠPATNĚ
+--------------------------------------------------------------------------------
+SKUTEČNÉ LEAKY (originál z mapy v textu):
+  - BIRTH_PLACE (Brno, Praha): anonymizuje se jen 'Místo narození: X',
+    ostatní výskyty (DataCloud Brno, ÚMČ Brno-střed) zůstávají = LEAK
+  - USERNAME (hcp_admin): anonymizuje se jen s prefixem Login/Username,
+    výskyt v seznamu 'admin, root, hcp_admin' zůstává = LEAK
+  - PERSON 'Nové': false positive z 'Nové Město' (místo)
+
+PII REGEX FALSE POSITIVE (opraveno v tomto skriptu):
+  - Částky (125 000 000 Kč) jako 'telefon' – vyloučeno (?!Kč|EUR|USD)
+  - Číslo jednací (FÚ-123456/2024) jako 'RC' – vyloučeno (?<!FÚ-)
+
+PII REGEX – SKUTEČNÉ LEAKY:
+  - Pokud po opravě stále zůstávají hity = skutečný PII mimo tag
+
+================================================================================
+KONEC REPORTU
+================================================================================

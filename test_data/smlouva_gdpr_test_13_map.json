@@ -1,24 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:42.104029",
+  "generated_at": "2026-03-18T14:49:16.015235",
   "source_file": "smlouva_gdpr_test_13.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Renata Holíková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Renatou Holíkovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Renatě Holíkové",
       "occurrences": 1
     },
     {
@@ -35,14 +23,20 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Tomáš Dvořák",
+      "label": "[[PERSON_1]]",
+      "original": "Renatou Holíkovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Renatě Holíkové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Tomáši Dvořáke",
+      "original": "Tomáš Dvořák",
       "occurrences": 1
     },
     {
@@ -60,6 +54,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Tomáši Dvořáke",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Tomáše Dvořáka",
       "occurrences": 1
     },
@@ -72,12 +72,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Václava Roubala",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
       "original": "Václavovi Roubalovi",
       "occurrences": 1
     },
@@ -85,6 +79,12 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Václavem Roubalem",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Václava Roubala",
       "occurrences": 1
     },
     {
@@ -232,8 +232,8 @@
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_1]]",
+      "type": "PASSPORT",
+      "label": "[[PASSPORT_1]]",
       "original": "485850659",
       "occurrences": 1
     },
@@ -247,12 +247,6 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
       "original": "3AA 1795",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0FA1886",
       "occurrences": 1
     },
     {
@@ -289,6 +283,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "C5:ED:B4:EB:56:F6",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0FA188600",
       "occurrences": 1
     }
   ]

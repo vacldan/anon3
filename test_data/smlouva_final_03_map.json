@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:25:28.712285",
+  "generated_at": "2026-03-18T14:48:35.495910",
   "source_file": "smlouva_final_03.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Růženy Horváthové",
+      "original": "Růženě Horváthové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Růženě Horváthové",
+      "original": "Růženy Horváthové",
       "occurrences": 1
     },
     {
@@ -58,27 +58,9 @@
       "occurrences": 1
     },
     {
-      "type": "DATE",
-      "label": "[[DATE_1]]",
-      "original": "17. listopadu 1790",
-      "occurrences": 1
-    },
-    {
-      "type": "DATE",
-      "label": "[[DATE_2]]",
-      "original": "3. 2. 1968",
-      "occurrences": 1
-    },
-    {
-      "type": "DATE",
-      "label": "[[DATE_3]]",
-      "original": "11. 10. 2026",
-      "occurrences": 1
-    },
-    {
       "type": "ADDRESS",
       "label": "[[ADDRESS_1]]",
-      "original": "702 00, Ostrava",
+      "original": "17. listopadu 1790/5, 702 00 Ostrava - Moravská Ostrava",
       "occurrences": 1
     },
     {
@@ -97,6 +79,18 @@
       "type": "ICO",
       "label": "[[ICO_1]]",
       "original": "00843989",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_1]]",
+      "original": "3. 2. 1968",
+      "occurrences": 1
+    },
+    {
+      "type": "DATE",
+      "label": "[[DATE_2]]",
+      "original": "11. 10. 2026",
       "occurrences": 1
     },
     {

@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>SKRYI Document Suite – Anonymizace dokumentů | GDPR | Nixminds</title>
+    <meta name="description" content="Automatická anonymizace osobních údajů v dokumentech. 100% offline, GDPR compliant. Průměrně 5 sekund na dokument. Pro právníky, healthcare, státní správu.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f1419;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --accent: #6AAFE8;
+            --accent2: #4A8FCC;
+            --accent-purple: #a78bfa;
+            --accent-purple-dark: #8b5cf6;
+            --accent-300: #93c5fd;
+            --accent-400: #6AAFE8;
+            --accent-500: #5a9fd8;
+            --accent-600: #4A8FCC;
+            --gradient-primary: linear-gradient(135deg, #6AAFE8 0%, #8b5cf6 100%);
+            --accent-glow: rgba(106, 175, 232, 0.25);
+            --accent-glow-strong: rgba(139, 92, 246, 0.35);
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --success: #22c55e;
+            --border: rgba(139, 148, 158, 0.12);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --font: 'DM Sans', system-ui, -apple-system, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        img { max-width: 100%; height: auto; }
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        body {
+            font-family: var(--font);
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
+            min-width: 0;
+            overflow-wrap: break-word;
+            padding-top: 100px;
+        }
+
+        /* Background effects */
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 90% 60% at 50% -15%, rgba(106, 175, 232, 0.1), transparent 55%),
+                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(139, 92, 246, 0.06), transparent 50%),
+                radial-gradient(ellipse 70% 50% at 100% 40%, rgba(74, 143, 204, 0.05), transparent 50%),
+                linear-gradient(rgba(106, 175, 232, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(106, 175, 232, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+            background-color: var(--bg-dark);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header – fixní nahoře při scrollování */
+        .header-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(15, 20, 25, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(139, 148, 158, 0.08);
+        }
+
+        header {
+            padding: 16px 0 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .logo-wrap img {
+            height: 56px;
+            width: auto;
+            max-width: 100%;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+
+        .logo-text span { color: var(--accent-400); }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--accent-400); }
+
+        .nav-cta {
+            padding: 10px 22px;
+            background: var(--gradient-primary);
+            color: white !important;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .nav-cta:hover { opacity: 0.95; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3); }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 48px 0 72px;
+        }
+
+        .hero-badge {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #93c5fd 0%, #6AAFE8 30%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 560px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .stat {
+            text-align: center;
+            padding: 28px 20px;
+            background: rgba(30, 36, 45, 0.8);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        .stat.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat:hover {
+            border-color: rgba(139, 92, 246, 0.35);
+            background: rgba(35, 42, 54, 0.9);
+        }
+
+        .stat-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+        }
+
+        .stat-icon svg { width: 24px; height: 24px; }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--accent-purple);
+            background: transparent;
+            transition: all 0.25s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-purple);
+            background: rgba(139, 92, 246, 0.12);
+        }
+
+        .cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: var(--gradient-primary);
+            color: white !important;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.2), 0 4px 24px rgba(139, 92, 246, 0.25);
+            transition: all 0.25s ease;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.4), 0 8px 32px rgba(139, 92, 246, 0.35);
+        }
+
+        /* Section */
+        section {
+            padding: 64px 0;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .section-title .accent {
+            color: var(--accent);
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        /* What is SKRYI */
+        .what-is {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .what-is { grid-template-columns: 1fr; }
+        }
+
+        .what-is-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .what-is {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.5s ease;
+        }
+
+        .what-is.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .what-is-visual::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            background: linear-gradient(135deg, rgba(106, 175, 232, 0.15), rgba(139, 92, 246, 0.2));
+            border-radius: var(--radius);
+            z-index: -1;
+            filter: blur(20px);
+        }
+
+        .what-is-visual img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: var(--radius);
+        }
+
+        .what-is-content p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .what-is-content .highlight {
+            color: var(--accent-300);
+            font-weight: 500;
+        }
+
+        /* Video / GIF demo placeholder */
+        .demo-video-wrap {
+            position: relative;
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto 40px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: rgba(22, 27, 34, 0.9);
+            aspect-ratio: 16/9;
+        }
+
+        .demo-video-wrap video,
+        .demo-video-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .demo-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            min-height: 280px;
+            color: var(--text-muted);
+            gap: 16px;
+        }
+
+        .demo-placeholder svg {
+            width: 64px;
+            height: 64px;
+            opacity: 0.5;
+        }
+
+        /* Features grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: rgba(30, 36, 45, 0.8);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        .feature-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-card:hover {
+            border-color: rgba(139, 92, 246, 0.35);
+            box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.12), 0 12px 40px rgba(0, 0, 0, 0.25), 0 0 30px rgba(139, 92, 246, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, rgba(106, 175, 232, 0.25), rgba(139, 92, 246, 0.15));
+            border: 1px solid rgba(106, 175, 232, 0.25);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            box-shadow: 0 0 20px rgba(106, 175, 232, 0.15);
+            color: var(--accent);
+        }
+
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Why section */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .why-grid { grid-template-columns: 1fr; }
+        }
+
+        .why-card {
+            background: rgba(30, 36, 45, 0.8);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            text-align: center;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        .why-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .why-card:hover {
+            border-color: rgba(106, 175, 232, 0.25);
+            box-shadow: 0 0 0 1px rgba(106, 175, 232, 0.08), 0 8px 28px rgba(0, 0, 0, 0.2);
+        }
+
+        .why-card .icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(106, 175, 232, 0.2), rgba(74, 143, 204, 0.08));
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(106, 175, 232, 0.2);
+            color: var(--accent);
+        }
+
+        .why-card .icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .why-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .why-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Entity types */
+        .entity-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .entity-tag {
+            background: rgba(106, 175, 232, 0.15);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            word-break: keep-all;
+        }
+
+        /* Social proof */
+        .social-proof {
+            text-align: center;
+        }
+
+        .logos-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+            margin-bottom: 48px;
+            opacity: 0.7;
+        }
+
+        .logos-row img {
+            height: 36px;
+            max-height: 40px;
+            width: auto;
+            filter: grayscale(1);
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            text-align: left;
+        }
+
+        .testimonial-card {
+            background: rgba(30, 36, 45, 0.8);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+        }
+
+        .testimonial-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-style: italic;
+            margin-bottom: 16px;
+            padding-left: 20px;
+        }
+
+        .testimonial-card .author {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-card .role {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Trial license form */
+        .trial-form-box {
+            background: rgba(30, 36, 45, 0.9);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .trial-form-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .trial-form-box p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .trial-form-box .form-row {
+            margin-bottom: 16px;
+        }
+
+        .trial-form-box label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+
+        .trial-form-box input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        .trial-form-box input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .trial-form-box input::placeholder {
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+
+        .trial-form-box .form-note {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        .trial-form-box button[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .trial-form-box button[type="submit"]:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+        }
+
+        .trial-success {
+            display: none;
+            padding: 20px;
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: var(--radius-sm);
+            color: var(--success);
+            text-align: center;
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .pricing-card {
+            background: rgba(30, 36, 45, 0.8);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px rgba(106, 175, 232, 0.2);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .pricing-card .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .price-note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .pricing-card ul li::before {
+            content: "✓ ";
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 48px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo img { height: 36px; }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-badges {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: rgba(34, 197, 94, 0.12);
+            color: var(--success);
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .badge.accent {
+            background: rgba(106, 175, 232, 0.15);
+            color: var(--accent);
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: var(--gradient-primary);
+            color: white !important;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 1px rgba(106, 175, 232, 0.2), 0 4px 24px var(--accent-glow);
+            transition: all 0.25s ease;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.4), 0 8px 32px rgba(139, 92, 246, 0.3);
+        }
+
+        .btn-download svg { width: 20px; height: 20px; }
+
+        .btn-row { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+
+        .instalace-box {
+            background: rgba(30, 36, 45, 0.8);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .instalace-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .instalace-box ol {
+            margin: 0 0 20px 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .instalace-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .instalace-box .highlight-box {
+            background: rgba(106, 175, 232, 0.1);
+            border: 1px solid rgba(106, 175, 232, 0.25);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin-top: 16px;
+        }
+
+        .instalace-box .highlight-box strong { color: var(--accent); }
+
+        .instalace-box code {
+            background: rgba(0,0,0,0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .instalace-box {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.5s ease;
+        }
+
+        .instalace-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #cta .cta-box {
+            background: linear-gradient(145deg, rgba(22, 27, 34, 0.95), rgba(28, 33, 40, 0.9));
+            border: 1px solid rgba(106, 175, 232, 0.2);
+            box-shadow: 0 0 0 1px rgba(106, 175, 232, 0.08), 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .trial-badge {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--success);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        /* Mobilní responzivita */
+        @media (max-width: 768px) {
+            body { padding-top: 85px; }
+            .container { padding: 0 16px; }
+            header { padding: 12px 0 20px; }
+            .nav-links { flex-wrap: wrap; justify-content: flex-end; }
+            .logo-wrap img { height: 44px; }
+            .logo-text { font-size: 1.2rem; }
+            .nav-links {
+                gap: 12px;
+                font-size: 0.85rem;
+            }
+            .nav-links a { font-size: 0.85rem; }
+            .nav-cta { padding: 8px 14px; font-size: 0.85rem; }
+            .hero { padding: 32px 0 48px; }
+            .hero h1 { font-size: 1.75rem; }
+            .hero .subtitle { font-size: 1rem; }
+            .stat { padding: 20px 12px; }
+            .stat-value { font-size: 1.4rem; }
+            .stat-label { font-size: 0.8rem; }
+            .btn-row { flex-direction: column; align-items: stretch; }
+            .cta-primary, .btn-secondary { justify-content: center; }
+            section { padding: 40px 0; }
+            .section-title { font-size: 1.4rem; }
+            .what-is-visual img { max-width: 100%; }
+            .feature-card, .why-card { padding: 20px; }
+            .instalace-box { padding: 20px; }
+            .trial-form-box { padding: 24px; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 0 12px; }
+            .nav-links { gap: 8px; }
+            .hero h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <div class="header-wrapper">
+    <header class="container">
+        <a href="#" class="logo-wrap">
+            <img src="assets/logo5.png" alt="SKRYI logo">
+            <span class="logo-text">SKRYI <span>Suite</span></span>
+        </a>
+        <nav class="nav-links">
+            <a href="#co-je">Co je SKRYI</a>
+            <a href="#funkce">Funkce</a>
+            <a href="#bezpecnost">Bezpečnost</a>
+            <a href="#cenik">Ceník</a>
+            <a href="#instalace">Instalace</a>
+            <a href="#proc">Proč SKRYI</a>
+            <a href="#trial-form" class="nav-cta">Získat trial licenci</a>
+        </nav>
+    </header>
+    </div>
+
+    <main class="container">
+        <section class="hero">
+            <p class="hero-badge">• GDPR compliant • 100% offline - AES-256</p>
+            <h1>Anonymizace dokumentů za 5 sekund</h1>
+            <p class="subtitle">Automatická anonymizace osobních údajů v DOCX, PDF a obrázcích. Morfologicky inteligentní. Pro právníky, healthcare, státní správu.</p>
+            <div class="hero-stats scroll-reveal">
+                <div class="stat">
+                    <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+                    <div class="stat-value">~5 s</div>
+                    <div class="stat-label">Průměrná anonymizace</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                    <div class="stat-value">98–99 %</div>
+                    <div class="stat-label">Přesnost detekce</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
+                    <div class="stat-value">34</div>
+                    <div class="stat-label">Typů entit</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div>
+                    <div class="stat-value">100 %</div>
+                    <div class="stat-label">Offline provoz</div>
+                </div>
+            </div>
+            <div class="btn-row">
+                <a href="download/SKRYI-Setup-3.0.0.exe" class="cta-primary btn-download" download>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Stáhnout SKRYI <span class="trial-badge">5 anonymizací zdarma</span>
+                </a>
+                <a href="#trial-form" class="btn-secondary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    Získat 14denní trial
+                </a>
+            </div>
+        </section>
+
+        <!-- Video / GIF ukázka -->
+        <section id="funkce">
+            <h2 class="section-title">Co SKRYI <span class="accent">umí</span></h2>
+            <p class="section-desc">Jednoduché rozhraní, výkonný engine pod kapotou. Podívejte se, jak anonymizace probíhá.</p>
+            <div class="demo-video-wrap scroll-reveal">
+                <!-- Nahraďte src atributem vašeho videa nebo GIFu -->
+                <!-- <video src="assets/skryi-demo.mp4" autoplay muted loop playsinline></video> -->
+                <!-- <img src="assets/skryi-demo.gif" alt="Ukázka anonymizace v SKRYI"> -->
+                <div class="demo-placeholder" id="demo-placeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    <span>Video ukázka – přetáhněte dokument, klikněte, anonymizované PDF s certifikátem za 5 sekund</span>
+                    <span style="font-size: 0.85rem;">Přidejte soubor <code>skryi-demo.mp4</code> nebo <code>skryi-demo.gif</code> do složky assets</span>
+                </div>
+            </div>
+            <div class="features-grid scroll-reveal">
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
+                    <h3>Anonymizace DOCX</h3>
+                    <p>Vyberte soubor, zvolte typy entit (jména, adresy, RČ…) a spusťte. Výsledek je anonymizovaný dokument + mapa náhrad.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h2"/><path d="M8 17h2"/><path d="M16 13h2"/></svg></div>
+                    <h3>PDF a obrázky → DOCX</h3>
+                    <p>OCR integrace (Tesseract). Převod PDF nebo obrázků (PNG, JPG, TIFF, BMP, WEBP) na DOCX s českým rozpoznáváním.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h10a8 8 0 0 1 8 8v2M3 14l6 6m-6 0l6-6"/></svg></div>
+                    <h3>Deanonymizace</h3>
+                    <p>Reverzibilní anonymizace – s mapou náhrad můžete dokument kdykoli vrátit do původního stavu.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+                    <h3>Hromadné zpracování</h3>
+                    <p>Složkový režim s watcherem – vložte PDF do složky, systém automaticky převede na DOCX.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+                    <h3>PDF certifikát</h3>
+                    <p>Automatický certifikát o anonymizaci – SHA-256, statistiky, GDPR doložka pro audit.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                    <h3>100% offline</h3>
+                    <p>Žádná data neopouštějí váš počítač. AES 256, lokální zpracování, plná kontrola GDPR.</p>
+                </div>
+            </div>
+            <p style="margin-top: 24px; color: var(--text-muted); font-size: 0.9rem;">Detekované typy entit:</p>
+            <div class="entity-list">
+                <span class="entity-tag">Jména</span>
+                <span class="entity-tag">Adresy</span>
+                <span class="entity-tag">Rodná čísla</span>
+                <span class="entity-tag">Telefony</span>
+                <span class="entity-tag">E-maily</span>
+                <span class="entity-tag">Bank. účty</span>
+                <span class="entity-tag">IČO / DIČ</span>
+                <span class="entity-tag">SPZ</span>
+                <span class="entity-tag">IBAN</span>
+                <span class="entity-tag">Platební karty</span>
+                <span class="entity-tag">OP / Pas</span>
+                <span class="entity-tag">+ další</span>
+            </div>
+        </section>
+
+        <!-- Social Proof -->
+        <section id="social-proof" class="social-proof">
+            <h2 class="section-title">Důvěřují nám</h2>
+            <p class="section-desc">Advokátní kanceláře, healthcare a státní správa.</p>
+            <div class="logos-row scroll-reveal">
+                <!-- Přidejte loga klientů – např. <img src="assets/clients/logo1.svg" alt="Klient"> -->
+                <span style="color: var(--text-muted); font-size: 0.9rem;">Loga klientů – doplňte do assets/clients/</span>
+            </div>
+            <div class="testimonials scroll-reveal">
+                <div class="testimonial-card">
+                    <p>Ušetřili jsme hodiny času při začerňování smluv. SKRYI zvládne za minuty to, co dříve trvalo celé odpoledne.</p>
+                    <div class="author">JUDr. Jan Novák</div>
+                    <div class="role">Advokátní kancelář Novák & partneři</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>Jednoduché ovládání, spolehlivá detekce. Pro právníky, kteří potřebují anonymizovat dokumenty v souladu s GDPR, ideální řešení.</p>
+                    <div class="author">Mgr. Marie Svobodová</div>
+                    <div class="role">Beta tester, právní oddělení</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bezpecnost">
+            <h2 class="section-title">Bezpečnost & důvěra</h2>
+            <p class="section-desc">Data zůstávají pod vaší kontrolou.</p>
+            <div class="why-grid scroll-reveal">
+                <div class="why-card">
+                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                    <h3>100 % offline</h3>
+                    <p>Žádná data neopouštějí váš počítač. Zpracování probíhá výhradně lokálně.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+                    <h3>Certifikát s otiskem</h3>
+                    <p>Každá anonymizace generuje PDF certifikát s SHA-256 otiskem pro ověření integrity.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+                    <h3>GDPR compliant</h3>
+                    <p>Navrženo pro soulad s požadavky na ochranu osobních údajů.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ceník -->
+        <section id="cenik">
+            <h2 class="section-title">Licencování & <span class="accent">ceník</span></h2>
+            <p class="section-desc">Transparentní obchodní model. Ceny od 4 990 Kč / rok pro jednotlivé uživatele.</p>
+            <div class="pricing-grid scroll-reveal">
+                <div class="pricing-card">
+                    <h3>Standard</h3>
+                    <div class="price">od 4 990 Kč / rok</div>
+                    <div class="price-note">Jednorázová licence na 1 PC</div>
+                    <ul>
+                        <li>Neomezená anonymizace</li>
+                        <li>Všechny typy dokumentů</li>
+                        <li>Technická podpora e-mailem</li>
+                        <li>Aktualizace v rámci verze</li>
+                    </ul>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Professional</h3>
+                    <div class="price">na vyžádání</div>
+                    <div class="price-note">Pro advokátní kanceláře a týmy</div>
+                    <ul>
+                        <li>Více licencí / slevy</li>
+                        <li>Prioritní podpora</li>
+                        <li>Školení a nasazení</li>
+                        <li>Individuální podmínky</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Kontaktujte nás</div>
+                    <div class="price-note">Státní správa, healthcare</div>
+                    <ul>
+                        <li>Hromadné licence</li>
+                        <li>On-premise nasazení</li>
+                        <li>SLA a smluvní garance</li>
+                        <li>Dedikovaná podpora</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="proc">
+            <h2 class="section-title">Proč SKRYI</h2>
+            <p class="section-desc">Pro koho je SKRYI určen a proč ho potřebujete.</p>
+            <div class="why-grid scroll-reveal">
+                <div class="why-card">
+                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M8 7l4-4 4 4"/><path d="M8 17l4 4 4-4"/><path d="M4 12h16"/></svg></div>
+                    <h3>Právní kanceláře</h3>
+                    <p>Anonymizace smluv, soudních dokumentů před sdílením nebo archivací.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                    <h3>Healthcare</h3>
+                    <p>Anonymizace lékařských zpráv v souladu s GDPR a ochranou osobních údajů.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 9v.01"/><path d="M15 9v.01"/><path d="M9 15v.01"/><path d="M15 15v.01"/></svg></div>
+                    <h3>Státní správa</h3>
+                    <p>Zpracování oficiálních dokumentů, příprava dat pro výzkum nebo archivaci.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="instalace">
+            <h2 class="section-title">Instalace & aktivace</h2>
+            <p class="section-desc">Stáhněte, nainstalujte a vyzkoušejte – bez e-mailování.</p>
+            <div class="instalace-box scroll-reveal">
+                <h3>1. Stažení a instalace</h3>
+                <ol>
+                    <li>Stáhněte instalátor tlačítkem výše (SKRYI-Setup-3.0.0.exe, ~450 MB).</li>
+                    <li>Spusťte stažený soubor a postupujte podle průvodce instalací.</li>
+                    <li>Odsouhlaste licenční podmínky (EULA) a zvolte instalační složku.</li>
+                    <li>Dokončete instalaci.</li>
+                </ol>
+                <h3>2. Vyzkoušejte zdarma – bez licence</h3>
+                <p>Po instalaci můžete <strong>hned anonymizovat 5 dokumentů zdarma</strong> – žádný e-mail, žádné čekání. Až uvidíte, jak to funguje, můžete si vyžádat plnou licenci.</p>
+                <h3>3. Získání plné licence</h3>
+                <p>Potřebujete víc než 5 dokumentů? Použijte formulář níže – zadejte e-mail a Hardware ID (zobrazené v aplikaci) a <strong>obratem obdržíte licenční soubor e-mailem</strong>. Žádné ruční kopírování, vše automaticky.</p>
+            </div>
+        </section>
+
+        <!-- Automatický formulář pro trial licenci -->
+        <section id="trial-form">
+            <h2 class="section-title">Získejte trial licenci <span class="accent">automaticky</span></h2>
+            <p class="section-desc">Zadejte e-mail a Hardware ID – licence vám přijde na e-mail během minut. Žádné čekání na odpověď.</p>
+            <div class="trial-form-box scroll-reveal">
+                <h3>14denní zkušební licence</h3>
+                <p>Hardware ID najdete v aplikaci při prvním spuštění (nebo po vyčerpání 5 zdarma anonymizací).</p>
+                <form id="license-request-form" action="#" method="post">
+                    <div class="form-row">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" placeholder="vas@email.cz" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="hwid">Hardware ID *</label>
+                        <input type="text" id="hwid" name="hwid" placeholder="C87C-FA4E-F36D-48AE" pattern="[A-Fa-f0-9\- ]{16,20}" title="16 hex znaků, např. C87C-FA4E-F36D-48AE">
+                        <div class="form-note">Formát: XXXX-XXXX-XXXX-XXXX (s nebo bez pomlček)</div>
+                    </div>
+                    <div class="form-row">
+                        <button type="submit">Odeslat – licence přijde na e-mail</button>
+                    </div>
+                </form>
+                <div class="trial-success" id="trial-success">
+                    ✓ Žádost odeslána. Licence vám přijde na e-mail během několika minut. Zkontrolujte i složku Spam.
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 16px; color: var(--text-muted); font-size: 0.85rem;">Při napojení na backend se licence odešle automaticky. Jinak se otevře e-mail s předvyplněnou žádostí.</p>
+        </section>
+
+        <section id="cta">
+            <div class="cta-box" style="text-align: center; padding: 48px 24px; border-radius: var(--radius);">
+                <h2 class="section-title" style="margin-bottom: 16px;">Zkuste SKRYI</h2>
+                <p class="section-desc" style="margin: 0 auto 24px;">5 anonymizací zdarma po instalaci – nebo trial licence přes formulář výše.</p>
+                <div class="btn-row">
+                    <a href="download/SKRYI-Setup-3.0.0.exe" class="cta-primary btn-download" download>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Stáhnout SKRYI
+                    </a>
+                    <a href="#trial-form" class="cta-primary">Získat 14denní trial</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo5.png" alt="SKRYI">
+                <span class="footer-text">© 2026 Nixminds s.r.o. · SKRYI Document Suite</span>
+            </div>
+            <div class="footer-badges">
+                <span class="badge">GDPR compliant</span>
+                <span class="badge accent">100% offline · AES 256</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const children = el.querySelectorAll('.stat, .feature-card, .why-card');
+                    if (children.length) {
+                        children.forEach((child, i) => {
+                            setTimeout(() => child.classList.add('visible'), i * 80);
+                        });
+                    } else {
+                        el.classList.add('visible');
+                    }
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Formulář pro trial licenci
+        // Pro automatické generování: napojte na API endpoint, který volá license_generator.create_license()
+        // a odešle .lic soubor e-mailem (např. přes SendGrid, Resend, nebo vlastní SMTP)
+        document.getElementById('license-request-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            const hwid = document.getElementById('hwid').value.trim();
+            const hwidNorm = hwid.replace(/[\s-]/g, '').toUpperCase();
+            if (!email || hwidNorm.length < 16) {
+                alert('Vyplňte prosím e-mail a platné Hardware ID (16 znaků).');
+                return;
+            }
+            // Zkus API endpoint (nastavte URL vašeho backendu)
+            const apiUrl = '/api/request-trial'; // nebo např. 'https://api.nixminds.cz/skryi/trial'
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, hw_id: hwidNorm })
+            }).then(r => {
+                if (r.ok) {
+                    document.getElementById('license-request-form').style.display = 'none';
+                    document.getElementById('trial-success').style.display = 'block';
+                } else throw new Error();
+            }).catch(() => {
+                // Fallback: otevři mailto s předvyplněnými údaji
+                const subj = encodeURIComponent('SKRYI – žádost o trial licenci');
+                const body = encodeURIComponent('Dobrý den,\n\nprosím o trial licenci pro SKRYI.\n\nE-mail: ' + email + '\nHardware ID: ' + hwid + '\n\nDěkuji.');
+                window.location.href = 'mailto:info@nixminds.com?subject=' + subj + '&body=' + body;
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:20.520040",
+  "generated_at": "2026-03-18T14:48:33.993031",
   "source_file": "smlouva9.docx",
   "entities": [
     {
@@ -132,18 +132,30 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
-      "original": "Martina Horáková",
+      "original": "Horáková Projeket",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_21]]",
+      "original": "Horáková Projektová",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_22]]",
-      "original": "Jana Černá",
+      "original": "Martina Díková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_23]]",
+      "original": "Jana Černá",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_24]]",
       "original": "Iveta Zelená",
       "occurrences": 1
     },

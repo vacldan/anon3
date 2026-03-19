@@ -1,24 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:16.652980",
+  "generated_at": "2026-03-18T14:50:21.069008",
   "source_file": "smlouva_gdpr_test_72.docx",
   "entities": [
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Bruno Kořínek",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Brunoem Kořínkem",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Brunoa Kořínka",
       "occurrences": 1
     },
     {
@@ -31,6 +19,18 @@
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Brunoe Kořínku",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Brunoa Kořínka",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Brunoem Kořínkem",
       "occurrences": 1
     },
     {
@@ -48,6 +48,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
+      "original": "Miladě Hájkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
       "original": "Miladu Hájkováovou",
       "occurrences": 1
     },
@@ -55,12 +61,6 @@
       "type": "PERSON",
       "label": "[[PERSON_2]]",
       "original": "Miladou Hájkovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Miladě Hájkové",
       "occurrences": 1
     },
     {
@@ -78,7 +78,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Hedviky Benešové",
+      "original": "Hedviku Benešováovou",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_3]]",
+      "original": "Hedvikou Benešovou",
       "occurrences": 1
     },
     {
@@ -90,13 +96,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Hedviku Benešováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Hedvikou Benešovou",
+      "original": "Hedviky Benešové",
       "occurrences": 1
     },
     {
@@ -120,13 +120,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Kláry Dvořákové",
+      "original": "Kláru Dvořákováovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Kláru Dvořákováovou",
+      "original": "Kláry Dvořákové",
       "occurrences": 1
     },
     {

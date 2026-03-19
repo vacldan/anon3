@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:22.432820",
+  "generated_at": "2026-03-18T14:48:37.470932",
   "source_file": "smlouva_final_07.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Hansem Müllerem",
+      "original": "Hansovi Müllerovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Hansovi Müllerovi",
+      "original": "Hansem Müllerem",
       "occurrences": 1
     },
     {
@@ -36,25 +36,25 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Kristýně Petrova",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
       "original": "Kristýna Petrova",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Kristýny Petrova",
+      "original": "Kristýnou Petrova",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Kristýnou Petrova",
+      "original": "Kristýně Petrova",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Kristýny Petrova",
       "occurrences": 1
     },
     {

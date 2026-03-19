@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:56.987421",
+  "generated_at": "2026-03-18T14:49:43.660147",
   "source_file": "smlouva_gdpr_test_33.docx",
   "entities": [
     {
@@ -42,13 +42,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Nikol Šťastná",
+      "original": "Nikol Šťastné",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Nikol Šťastné",
+      "original": "Nikol Šťastná",
       "occurrences": 1
     },
     {

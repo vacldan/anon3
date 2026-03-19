@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:11.312986",
+  "generated_at": "2026-03-18T14:50:10.507036",
   "source_file": "smlouva_gdpr_test_64.docx",
   "entities": [
     {
@@ -13,6 +13,12 @@
       "type": "PERSON",
       "label": "[[PERSON_1]]",
       "original": "Dobroslave Růžičko",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Dobroslavem Růžičkou",
       "occurrences": 1
     },
     {
@@ -35,14 +41,26 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_1]]",
-      "original": "Dobroslavem Růžičkou",
+      "label": "[[PERSON_2]]",
+      "original": "Iva Řezníčková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Iva Řezníčková",
+      "original": "Ivě Řezníčkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Ivy Řezníčkové",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_2]]",
+      "original": "Ivo Řezníčková",
       "occurrences": 1
     },
     {
@@ -59,26 +77,14 @@
     },
     {
       "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Ivo Řezníčková",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Ivy Řezníčkové",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_2]]",
-      "original": "Ivě Řezníčkové",
+      "label": "[[PERSON_3]]",
+      "original": "Lída Zíková",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Lída Zíková",
+      "original": "Lídou Zíkovou",
       "occurrences": 1
     },
     {
@@ -97,12 +103,6 @@
       "type": "PERSON",
       "label": "[[PERSON_3]]",
       "original": "Lídu Zíkováovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_3]]",
-      "original": "Lídou Zíkovou",
       "occurrences": 1
     },
     {
@@ -126,13 +126,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Drahomíru Černou",
+      "original": "Drahomíry Černé",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
-      "original": "Drahomíry Černé",
+      "original": "Drahomíru Černou",
       "occurrences": 1
     },
     {

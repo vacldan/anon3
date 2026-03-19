@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:54:56.104766",
+  "generated_at": "2026-03-18T14:44:40.800440",
   "source_file": "smlouva12.docx",
   "entities": [
     {
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Sokola",
+      "original": "Sokol",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_10]]",
-      "original": "Sokol",
+      "original": "Sokola",
       "occurrences": 1
     },
     {
@@ -174,7 +174,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
-      "original": "Vráno",
+      "original": "Vránovi",
       "occurrences": 1
     },
     {
@@ -186,7 +186,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_21]]",
-      "original": "Vránovi",
+      "original": "Vráno",
       "occurrences": 1
     },
     {
@@ -378,13 +378,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_43]]",
-      "original": "Havran",
+      "original": "Havranem",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_43]]",
-      "original": "Havranem",
+      "original": "Havran",
       "occurrences": 1
     },
     {

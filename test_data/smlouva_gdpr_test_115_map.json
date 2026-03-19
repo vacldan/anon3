@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:35.503917",
+  "generated_at": "2026-03-18T14:49:03.616913",
   "source_file": "smlouva_gdpr_test_115.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Jany Procházkové",
+      "original": "Janou Procházkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Janou Procházkovou",
+      "original": "Jano Procházková",
       "occurrences": 1
     },
     {
@@ -30,7 +30,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Jano Procházková",
+      "original": "Jany Procházkové",
       "occurrences": 1
     },
     {
@@ -42,7 +42,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Michalem Králem",
+      "original": "Michalovi Královi",
       "occurrences": 1
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Michalovi Královi",
+      "original": "Michalem Králem",
       "occurrences": 1
     },
     {
@@ -72,13 +72,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Gabrielě Malíkové",
+      "original": "Gabrielou Malíkovou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_3]]",
-      "original": "Gabrielou Malíkovou",
+      "original": "Gabrielě Malíkové",
       "occurrences": 1
     },
     {
@@ -96,12 +96,6 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
-      "original": "Alžbětou Novákovou",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
       "original": "Alžběty Novákové",
       "occurrences": 1
     },
@@ -109,6 +103,12 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Alžběto Nováková",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
+      "original": "Alžbětou Novákovou",
       "occurrences": 1
     },
     {
@@ -268,12 +268,6 @@
       "occurrences": 1
     },
     {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0KA1957",
-      "occurrences": 1
-    },
-    {
       "type": "CARD",
       "label": "[[CARD_1]]",
       "original": "4285 7164 5026 9589",
@@ -301,6 +295,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "A9:A2:05:37:44:A0",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0KA195749",
       "occurrences": 1
     }
   ]

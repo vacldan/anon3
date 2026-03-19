@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:52.270858",
+  "generated_at": "2026-03-18T14:49:35.565028",
   "source_file": "smlouva_gdpr_test_17.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Veroniky Svobodové",
+      "original": "Veronikě Svobodové",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Veronikě Svobodové",
+      "original": "Veroniky Svobodové",
       "occurrences": 1
     },
     {
@@ -42,13 +42,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Erika Procházky",
+      "original": "Erikem Procházkou",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Erikem Procházkou",
+      "original": "Erike Procházko",
       "occurrences": 1
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Erike Procházko",
+      "original": "Erika Procházky",
       "occurrences": 1
     },
     {
@@ -84,6 +84,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_4]]",
+      "original": "Filipa Procházky",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_4]]",
       "original": "Filipem Procházkou",
       "occurrences": 1
     },
@@ -91,12 +97,6 @@
       "type": "PERSON",
       "label": "[[PERSON_4]]",
       "original": "Filipovi Procházkovi",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_4]]",
-      "original": "Filipa Procházky",
       "occurrences": 1
     },
     {
@@ -238,8 +238,8 @@
       "occurrences": 1
     },
     {
-      "type": "ID_CARD",
-      "label": "[[ID_CARD_1]]",
+      "type": "PASSPORT",
+      "label": "[[PASSPORT_1]]",
       "original": "214009775",
       "occurrences": 1
     },
@@ -253,12 +253,6 @@
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
       "original": "5AZ 7358",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
-      "original": "0FA2085",
       "occurrences": 1
     },
     {
@@ -295,6 +289,12 @@
       "type": "MAC",
       "label": "[[MAC_1]]",
       "original": "6E:FA:65:A2:E2:F1",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0FA208507",
       "occurrences": 1
     }
   ]

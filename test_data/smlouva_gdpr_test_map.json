@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:56:25.021119",
+  "generated_at": "2026-03-18T14:48:43.661937",
   "source_file": "smlouva_gdpr_test.docx",
   "entities": [
     {
@@ -12,13 +12,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Janem Novákem",
+      "original": "Janu Novákovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_1]]",
-      "original": "Janu Novákovi",
+      "original": "Janem Novákem",
       "occurrences": 1
     },
     {
@@ -66,6 +66,12 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_5]]",
+      "original": "Lucii Malé",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_5]]",
       "original": "Lucií Malou",
       "occurrences": 1
     },
@@ -73,12 +79,6 @@
       "type": "PERSON",
       "label": "[[PERSON_5]]",
       "original": "Lucie Malé",
-      "occurrences": 1
-    },
-    {
-      "type": "PERSON",
-      "label": "[[PERSON_5]]",
-      "original": "Lucii Malé",
       "occurrences": 1
     },
     {
@@ -96,13 +96,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Václavem Svobodou",
+      "original": "Václavu Svobodovi",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_6]]",
-      "original": "Václavu Svobodovi",
+      "original": "Václavem Svobodou",
       "occurrences": 1
     },
     {
@@ -300,19 +300,19 @@
     {
       "type": "LICENSE_PLATE",
       "label": "[[LICENSE_PLATE_2]]",
-      "original": "0FA1234",
-      "occurrences": 1
-    },
-    {
-      "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_3]]",
       "original": "PP98765",
       "occurrences": 1
     },
     {
       "type": "LICENSE_PLATE",
-      "label": "[[LICENSE_PLATE_4]]",
+      "label": "[[LICENSE_PLATE_3]]",
       "original": "7B8 2345",
+      "occurrences": 1
+    },
+    {
+      "type": "VIN",
+      "label": "[[VIN_1]]",
+      "original": "WAUZZZ8V0FA123456",
       "occurrences": 1
     },
     {

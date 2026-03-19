@@ -1,4 +1,4 @@
-# SKRYI Document Suite - Technická dokumentace v3.3
+# SKRYI Document Suite - Technická dokumentace v3.1
 
 ## Systém pro morfologicky inteligentní anonymizaci dokumentů v inflektivních jazycích
 
@@ -10,7 +10,7 @@
 **SKRYI Document Suite** - Offline anonymizační systém pro GDPR compliance
 
 ## 1.2 Verze
-**3.1.1** (Production Ready)
+**3.1.0** (Production Ready)
 
 ## 1.3 Účel
 Automatická anonymizace osobních údajů v dokumentech (DOCX, PDF, obrázky) s podporou českého a slovenského jazyka včetně morfologických variant (skloňování). Systém je navržen pro **plně offline provoz** - žádná data neopouštějí zařízení uživatele.
@@ -29,6 +29,10 @@ Automatická anonymizace osobních údajů v dokumentech (DOCX, PDF, obrázky) s
 - **Hardware-bound licence** - ochrana proti neoprávněnému kopírování s AppData persistencí
 - **Nativní kompilace** - zdrojový kód chráněn před reverzním inženýrstvím
 - **Sektorový blacklist** - 500+ českých slov chráněných před falešnou detekcí, pokrývající 6 oborů: právo, zdravotnictví, veřejná správa, HR, školství, finance
+- **Kontextová klasifikace telefonů** - variabilní symboly (VS:) a čísla pojištěnce nejsou chybně tagována jako PHONE
+- **Vokativní deduplikace** - ženské vokativy (Petro, Martino) jsou sloučeny s nominativem (Petra, Martina)
+- **Rozšířený non-person blacklist** - automobilové značky (Hyundai Tucson), adresy s přívlastky (Brno Přechodný), projektové role a gymnázia
+- **Kontextová filtrace SPZ** - čísla protokolů (NB2004) nejsou chybně tagována jako LICENSE_PLATE
 
 ## 1.5 Oblast techniky
 Vynález se týká oblasti zpracování přirozeného jazyka (NLP), konkrétně automatizované anonymizace osobních údajů v textových dokumentech. Technologie je primárně určena pro **inflektivní jazyky** (čeština, slovenština, polština, ruština), kde se slova skloňují podle gramatických pádů.
@@ -765,7 +769,7 @@ del anon72.py
 # 7. Build Windows installer
 npm run dist
 
-# Výsledek: dist/SKRYI-Setup-3.1.0.exe
+# Výsledek: dist/SKRYI-Setup-3.0.0.exe
 ```
 
 **Poznámka k Nuitka buildu:** Při kompilaci `anonymize_cli.exe` je nutné zahrnout balíček `fpdf2` pro generování PDF reportů: `--include-package=fpdf`.
@@ -776,7 +780,7 @@ npm run dist
 
 ## 10.1 Instalace
 
-1. Spusťte `SKRYI-Setup-3.1.0.exe`
+1. Spusťte `SKRYI-Setup-3.0.0.exe`
 2. Odsouhlaste licenční podmínky (EULA)
 3. Zvolte instalační složku
 4. Dokončete instalaci
@@ -982,8 +986,8 @@ Počítačový program obsahující instrukce pro provedení způsobu podle nár
 
 **Výrobce:** Nixminds s.r.o.
 **Email:** info@nixminds.com
-**Verze dokumentace:** 3.4.1
-**Datum:** 24. února 2026
+**Verze dokumentace:** 3.1.0
+**Datum:** 18. března 2026
 **Klasifikace:** G06F 40/00 (zpracování přirozeného jazyka), G06F 21/62 (ochrana osobních údajů)
 
 *© 2026 Nixminds s.r.o. Všechna práva vyhrazena.*

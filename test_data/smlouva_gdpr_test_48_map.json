@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-13T09:57:00.597982",
+  "generated_at": "2026-03-18T14:49:49.743083",
   "source_file": "smlouva_gdpr_test_48.docx",
   "entities": [
     {
@@ -18,13 +18,13 @@
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Tomášem Konečným",
+      "original": "Tomáše Konečného",
       "occurrences": 1
     },
     {
       "type": "PERSON",
       "label": "[[PERSON_2]]",
-      "original": "Tomáše Konečného",
+      "original": "Tomášem Konečným",
       "occurrences": 1
     },
     {

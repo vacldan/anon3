@@ -1,0 +1,121 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-03-18T14:48:42.000125",
+  "source_file": "smlouva_full_entity_test_02.docx",
+  "entities": [
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Pavel Dvořák",
+      "occurrences": 1
+    },
+    {
+      "type": "PERSON",
+      "label": "[[PERSON_1]]",
+      "original": "Pavelem Dvořákem",
+      "occurrences": 1
+    },
+    {
+      "type": "EMAIL",
+      "label": "[[EMAIL_1]]",
+      "original": "pavel.dvorak@example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "USERNAME",
+      "label": "[[USERNAME_1]]",
+      "original": "pavel.dvorak",
+      "occurrences": 1
+    },
+    {
+      "type": "PASSWORD",
+      "label": "[[PASSWORD_1]]",
+      "original": "SecretPass123!xyz",
+      "occurrences": 1
+    },
+    {
+      "type": "API_KEY",
+      "label": "[[API_KEY_1]]",
+      "original": "AKIAIOSFODNN7EXAMPLE",
+      "occurrences": 1
+    },
+    {
+      "type": "API_KEY",
+      "label": "[[API_KEY_2]]",
+      "original": "sk_live_51H8xYz1234567890abcdef",
+      "occurrences": 1
+    },
+    {
+      "type": "SSH_KEY",
+      "label": "[[SSH_KEY_1]]",
+      "original": "AAAAB3NzaC1yc2EAAAADAQABAAABAQC7x8K9vZ1q2w3e4r5t6y7u8i9o0p1q2w3e4r5t6y7u8i9o0p1q2w3e4r5t6y7u8i9o0p1q2w3e4r5t6y7u8i9o0p",
+      "occurrences": 1
+    },
+    {
+      "type": "IP",
+      "label": "[[IP_1]]",
+      "original": "36.47.194.25",
+      "occurrences": 1
+    },
+    {
+      "type": "MAC",
+      "label": "[[MAC_1]]",
+      "original": "B7:B0:87:16:EB:3F",
+      "occurrences": 1
+    },
+    {
+      "type": "IMEI",
+      "label": "[[IMEI_1]]",
+      "original": "123456789012345",
+      "occurrences": 1
+    },
+    {
+      "type": "HOST",
+      "label": "[[HOST_1]]",
+      "original": "server.production.example.com",
+      "occurrences": 1
+    },
+    {
+      "type": "LINKEDIN",
+      "label": "[[LINKEDIN_1]]",
+      "original": "https://www.linkedin.com/in/pavel-dvorak",
+      "occurrences": 1
+    },
+    {
+      "type": "FACEBOOK",
+      "label": "[[FACEBOOK_1]]",
+      "original": "https://www.facebook.com/pavel.dvorak",
+      "occurrences": 1
+    },
+    {
+      "type": "INSTAGRAM",
+      "label": "[[INSTAGRAM_1]]",
+      "original": "@pavel_dvorak",
+      "occurrences": 1
+    },
+    {
+      "type": "SKYPE",
+      "label": "[[SKYPE_1]]",
+      "original": "pavel.dvorak",
+      "occurrences": 1
+    },
+    {
+      "type": "VOICE_ID",
+      "label": "[[VOICE_ID_1]]",
+      "original": "VOICE_JP_2024_0156",
+      "occurrences": 1
+    },
+    {
+      "type": "BIO_HASH",
+      "label": "[[BIO_HASH_1]]",
+      "original": "HASH_BIO_JP_2024_0156",
+      "occurrences": 1
+    },
+    {
+      "type": "PHOTO_ID",
+      "label": "[[PHOTO_ID_1]]",
+      "original": "photo_id_jan_novak_001.jpg",
+      "occurrences": 1
+    }
+  ]
+}
